@@ -1,0 +1,97 @@
+{
+  "id": "engine_body_structure_draft_v0",
+  "one_line_definition": "The engine body is not the graph; it is the structure that stores, defers, and rereads generated values and connection layers. Graph is one projection surface over that body.",
+  "body": {
+    "ledger_body": {
+      "role": "records what happened, where the state is, and why it is there",
+      "includes": [
+        "input source and split units",
+        "anchor",
+        "processing",
+        "handle",
+        "local_ref",
+        "canonical",
+        "possibility",
+        "review",
+        "blocker",
+        "proposal",
+        "pre_entry",
+        "lifecycle",
+        "revisit necessity",
+        "state_signature",
+        "review ledger"
+      ]
+    },
+    "layer_board_body": {
+      "role": "tracks which layer each material or candidate currently occupies",
+      "layers": [
+        "none",
+        "possibility",
+        "review",
+        "space_pre_entry",
+        "canonical",
+        "archived_cold"
+      ]
+    }
+  },
+  "field": {
+    "local_workbench": {
+      "role": "local judgment field around best_local_ref and nearby evidence",
+      "includes": [
+        "source local_ref",
+        "translated handles",
+        "processing residual",
+        "family support",
+        "canonicalization proposal",
+        "blockers",
+        "next review target"
+      ]
+    }
+  },
+  "projections": [
+    "graph_view",
+    "space_view",
+    "timeline_view",
+    "review_surface"
+  ],
+  "mapping_to_current_engine": {
+    "ledger_body": [
+      "review_state_ledger",
+      "state_signature",
+      "evaluated_at",
+      "trace_temperature",
+      "lifecycle_stage",
+      "lifecycle_reason",
+      "proposal_blocker_review_records"
+    ],
+    "layer_board_body": [
+      "none",
+      "possibility",
+      "review",
+      "space_pre_entry",
+      "canonical",
+      "blocked_waiting_revisit",
+      "approved_active"
+    ],
+    "local_workbench": [
+      "best_local_ref",
+      "translation hit",
+      "processing residual",
+      "family support",
+      "canonicalization proposal trace",
+      "next_review_blocker"
+    ],
+    "projections": [
+      "graph view",
+      "space entry reading",
+      "review output surface"
+    ]
+  },
+  "locked_sentences": {
+    "engine_definition": "We are not building space itself; we are building an engine that generates, stores, and rereads connection layers over inputs.",
+    "body_definition": "The body of the engine is ledger plus layer.",
+    "field_definition": "Actual judgment and review happen in the local workbench.",
+    "view_definition": "Graph and space are views, not the body."
+  },
+  "final_lock": "Graph is the map, workbench is the field, and the real vessel of the engine is ledger plus layer."
+}

@@ -1,0 +1,31 @@
+{
+  "current_diagnosis": {
+    "gap": "lifecycle fields existed but revisit semantics were not yet readable through ledger and runner",
+    "need": "make temperature/stage/state signature operationally meaningful"
+  },
+  "exact_changes": {
+    "files": [
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/review_state_ledger.py",
+      "/Users/sungsookim/universe/vectorfl_replica/scripts/run_review_fixture_check.py",
+      "/Users/sungsookim/universe/vectorfl_replica/runtime/review_ledgers/review_state_ledger.json"
+    ],
+    "added_runner_fields": [
+      "ledger_state_signature_unchanged",
+      "persisted_last_reviewed_at",
+      "persisted_review_count",
+      "ledger_revisit_recommended",
+      "ledger_warm_downgrade_candidate"
+    ]
+  },
+  "verification": {
+    "unchanged_signature_count": 6,
+    "unchanged_ledger_signature_count": 6,
+    "changed_signature_count": 0,
+    "changed_ledger_signature_count": 0
+  },
+  "current_reading": "lifecycle_semantics_documented_and_minimally_wired",
+  "next_recommendation": [
+    "delay pruning automation",
+    "use runner plus ledger for revisit semantics in current phase"
+  ]
+}

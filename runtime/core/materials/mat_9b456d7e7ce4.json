@@ -1,0 +1,241 @@
+{
+  "actor_id": "local_viewer_user",
+  "created_at": "2026-03-21T04:19:55.774874+00:00",
+  "family_id": null,
+  "lineage_refs": [
+    "dst_src_9f5b585035c5_002"
+  ],
+  "material_id": "mat_9b456d7e7ce4",
+  "metadata": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "anchors": [
+      {
+        "canonical_key": "operator",
+        "key": "operator",
+        "type": "semantic",
+        "value": "operator"
+      },
+      {
+        "canonical_key": "bridge",
+        "key": "bridge",
+        "type": "semantic",
+        "value": "bridge"
+      }
+    ],
+    "dust_input_id": "dst_src_9f5b585035c5_001",
+    "flow": "compare",
+    "formation_role": "memo_material",
+    "last_seen": "2026-03-21T04:19:55.624428Z",
+    "legacy_anchors": [
+      {
+        "type": "domain_term",
+        "value": "operator"
+      },
+      {
+        "type": "domain_term",
+        "value": "bridge"
+      },
+      {
+        "type": "domain_term",
+        "value": "reason"
+      },
+      {
+        "type": "domain_term",
+        "value": "dropped"
+      },
+      {
+        "type": "domain_term",
+        "value": "weak"
+      },
+      {
+        "type": "domain_term",
+        "value": "anchor"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc77d\uc5b4\uc57c"
+      }
+    ],
+    "observer_ambiguity": 0.34,
+    "observer_confidence_numeric": 0.715,
+    "observer_or_ambiguity_trace": {
+      "available": true,
+      "generation_path": "runtime_commonization",
+      "items": [],
+      "merged": {
+        "ambiguity": 0.34,
+        "confidence": 0.715,
+        "direction": 0.72,
+        "intensity": 0.58,
+        "role": "support",
+        "scene": "explanation",
+        "signals": [],
+        "stability": 0.64
+      },
+      "note": "runtime internal observer baseline",
+      "profiles": {
+        "chatgpt_like": {
+          "ambiguity": 0.27,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "operator",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "bridge",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "reason",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.74,
+          "direction": 0.72,
+          "evidence_text": [
+            "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "surface structure sensitive"
+          ],
+          "profile_name": "chatgpt_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "operator",
+            "bridge",
+            "reason",
+            "dropped"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "surface_structure",
+            "explanation",
+            "support"
+          ],
+          "why_short": "\ud45c\uba74 \uad6c\uc870 \uc2e0\ud638\ub97c \uac15\ud558\uac8c \uc77d\uc5b4 explanation/support\ub85c \ud310\uc815\ud55c\ub2e4."
+        },
+        "codex_like": {
+          "ambiguity": 0.34,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "operator",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "bridge",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "reason",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.69,
+          "direction": 0.72,
+          "evidence_text": [
+            "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "conservative baseline"
+          ],
+          "profile_name": "codex_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "operator",
+            "bridge",
+            "reason",
+            "dropped"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "explanation",
+            "support"
+          ],
+          "why_short": "explanation \uc911\uc2ec\uc73c\ub85c \uc77d\ub418 support \uae30\ub2a5\uc744 \ubcf4\uc218\uc801\uc73c\ub85c \uc720\uc9c0\ud55c\ub2e4."
+        },
+        "gemini_like": {
+          "ambiguity": 0.24,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "operator",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "bridge",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+              "label": "reason",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.73,
+          "direction": 0.72,
+          "evidence_text": [
+            "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "secondary abstract observer"
+          ],
+          "profile_name": "gemini_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "operator",
+            "bridge",
+            "reason",
+            "dropped"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "abstraction_prone",
+            "explanation",
+            "support"
+          ],
+          "why_short": "\uc0c1\uc704 \uc758\ubbf8 \uc774\ub3d9\uc744 \ubbfc\uac10\ud558\uac8c \uc77d\uc5b4 explanation/support\ub85c \uae30\uc6b8\uc5b4\uc9c4\ub2e4."
+        }
+      },
+      "unavailable_reason": ""
+    },
+    "observer_role": "support",
+    "observer_signals": [],
+    "recurrence_count": 1,
+    "scene": "review",
+    "short_label": "operator\ub294 bridge r\u2026",
+    "source_origin_id": "src_9f5b585035c5",
+    "time_in": "2026-03-21T04:19:55.624428Z"
+  },
+  "project_id": "vectorfl-next",
+  "raw_payload": "operator\ub294 bridge reason\uacfc dropped weak anchor\ub97c \ud568\uaed8 \uc77d\uc5b4\uc57c \ud55c\ub2e4.",
+  "session_id": "live-session-20260321",
+  "source_ref": "operator_phase1_test_20260321_b",
+  "source_type": "memo"
+}

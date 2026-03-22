@@ -1,0 +1,65 @@
+{
+  "bridge_id": "brg_1a2b56112e35",
+  "bridge_reason_kind": "canonical_shared_anchor_with_processing_overlap",
+  "created_at": "2026-03-21T06:04:33.789862+00:00",
+  "from_local_space_id": "lsp_ddc406eb4938",
+  "note": "canonical shared anchors: Graph, Graph RAG",
+  "observer_contribution": {
+    "available": true,
+    "left_roles": [
+      "support"
+    ],
+    "right_roles": [
+      "support"
+    ],
+    "shared_signals": [],
+    "unavailable_reason": ""
+  },
+  "processing_overlap": {
+    "support_refs": [
+      {
+        "note": "dust_emit",
+        "ref_id": "mat_9dffbdcf3521",
+        "ref_kind": "material"
+      },
+      {
+        "note": "candidate_scan",
+        "ref_id": "mat_bfcf3d47d979",
+        "ref_kind": "material"
+      },
+      {
+        "note": "scene_match",
+        "ref_id": "review",
+        "ref_kind": "scene"
+      },
+      {
+        "note": "flow_match",
+        "ref_id": "compare",
+        "ref_kind": "flow"
+      }
+    ],
+    "trace_note": "direct"
+  },
+  "rejected_overlap_anchors": [
+    "\uad6c\uc870\uc5d0\uc11c\ub294"
+  ],
+  "shared_anchors": [
+    {
+      "anchor_type": "semantic",
+      "bridge_score": 0.72,
+      "canonical_key": "graph",
+      "display_label": "Graph"
+    },
+    {
+      "anchor_type": "semantic",
+      "bridge_score": 0.72,
+      "canonical_key": "graph_rag",
+      "display_label": "Graph RAG"
+    }
+  ],
+  "state": "candidate",
+  "to_local_space_id": "lsp_6acb597c7476",
+  "trace_refs": [
+    "trc_f495963f0858"
+  ]
+}

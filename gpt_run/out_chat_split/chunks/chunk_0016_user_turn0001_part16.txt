@@ -1,0 +1,79 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 16
+[char_count] 1137
+
+앵커는 문자열 하나로 끝나면 안 된다.  
+최소한 아래 구조가 있어야 한다.
+
+```json
+{
+  "anchor_id": "anc_000123",
+  "anchor_type": "semantic",
+  "key": "retrieval.failure",
+  "label": "retrieval failure",
+  "source_fragment_id": "frag_0019",
+  "evidence_text": "the retriever often misses latent supporting evidence",
+  "confidence": 0.84,
+  "origin": "labeler_v1",
+  "normalization": {
+    "canonical": "retrieval.failure",
+    "aliases": ["retriever miss", "search bottleneck", "retrieval miss"]
+  },
+  "scope": "local",
+  "status": "active"
+}
+핵심은 이거다.
+
+anchor_type: 어떤 계층의 앵커인지
+
+key: 기계적 비교용 canonical 값
+
+label: 사람이 보기 쉬운 이름
+
+evidence_text: 왜 이 앵커가 붙었는지 근거
+
+confidence: 확신도
+
+origin: rule/ai/manual 중 어디서 왔는지
+
+normalization: 동의어/정규화 정보
+
+8. 앵커는 “문자열”보다 “핸들(handle)”처럼 다루는 게 좋다
+예를 들어 단순 태그면 이렇게 끝난다.
+
+#RAG
+
+#retrieval
+
+#failure
+
+그런데 앵커는 핸들처럼 다뤄야 한다.
+
+예:
+
+pipeline.rag
+
+component.retriever
+
+retrieval.failure
+
+role.failure_mode
+
+이렇게 계층형 key를 쓰면 좋은 점:
+
+너무 넓은 태그 폭발을 줄인다
+
+비교 규칙을 만들기 쉽다
+
+object / meaning / role을 분리할 수 있다
+
+UI에서 필터링하기 쉽다
+
+나중에 ontology를 강제하지 않아도 최소 질서는 유지된다
+
+즉 추천은:
+초기 앵커 키는 dot-path형 canonical handle 로 가는 것.
+
+9. 앵커 생성 흐름
+앵커는 입력기와 라벨기 뒤에서 이런 흐름으로 나오는 게 좋다.

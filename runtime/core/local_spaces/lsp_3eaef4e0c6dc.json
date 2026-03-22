@@ -1,0 +1,80 @@
+{
+  "bridge_trace_refs": [
+    "brg_5ffb99714fbd",
+    "brg_c84da4760249"
+  ],
+  "cell_refs": [
+    "cel_efeb89788b18"
+  ],
+  "created_at": "2026-03-21T00:32:45.057005+00:00",
+  "local_space_id": "lsp_3eaef4e0c6dc",
+  "pressure_profile_id": "prs_282d736d25ad",
+  "representative_anchors": [
+    {
+      "canonical_key": "graph_rag",
+      "display_label": "Graph RAG",
+      "anchor_type": "semantic"
+    },
+    {
+      "canonical_key": "link",
+      "display_label": "Link",
+      "anchor_type": "structural"
+    },
+    {
+      "canonical_key": "ontology",
+      "display_label": "Ontology",
+      "anchor_type": "semantic"
+    },
+    {
+      "canonical_key": "property",
+      "display_label": "Property",
+      "anchor_type": "structural"
+    }
+  ],
+  "source_label": "test_live_space_sync_20260321",
+  "state": "bridge_exposed",
+  "supporting_anchors": [
+    "온톨로지 Graph",
+    "온톨로지 Graph RAG"
+  ],
+  "processing_baseline": {
+    "D": 0.5,
+    "I": 0.8,
+    "S": 0.5,
+    "dominant_scene": "review",
+    "dominant_flow": "compare"
+  },
+  "state_transition_summary": {
+    "available": true,
+    "current_state": "bridge_exposed",
+    "inferred_transition": "forming -> bridge_exposed",
+    "bridge_exposure_count": 2,
+    "canonical_bridge_exposure_count": 2,
+    "possibility_bridge_exposure_count": 2,
+    "material_count": 2,
+    "source_ref_count": 1,
+    "source_refs": [
+      "manual/test_live_space_sync_20260321.txt"
+    ]
+  },
+  "observer_or_ambiguity_trace": {
+    "available": true,
+    "merged": {
+      "role": "support",
+      "scene": "explanation",
+      "ambiguity": 0.34,
+      "confidence": 0.735,
+      "signals": []
+    },
+    "items": [],
+    "item_count": 0,
+    "unavailable_reason": "",
+    "note": "observer compare propagated from material baseline"
+  },
+  "canonical_bridge_exposure_count": 2,
+  "possibility_bridge_exposure_count": 2,
+  "possibility_bridge_refs": [
+    "pbg_lsp_327fa516bc6c__lsp_3eaef4e0c6dc",
+    "pbg_lsp_3eaef4e0c6dc__lsp_fca5c1cfe512"
+  ]
+}

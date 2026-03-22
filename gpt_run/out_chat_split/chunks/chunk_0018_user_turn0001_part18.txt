@@ -1,0 +1,85 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 18
+[char_count] 1181
+
+12. 네 주제 입력 현실에 맞는 앵커 세트 예시
+예를 들어 “AI 논문/리뷰/유튜브 설명”이 들어온다고 했을 때:
+
+예시 A
+원문:
+“Long-context models still fail to retrieve the right latent evidence consistently.”
+
+앵커:
+
+object: model.long_context
+
+object: component.retrieval
+
+semantic: retrieval.failure
+
+semantic: evidence.miss
+
+structural: role.failure_mode
+
+예시 B
+원문:
+“RAG compensates for context window limits by externalizing recall.”
+
+앵커:
+
+object: pipeline.rag
+
+object: context.window
+
+semantic: context.window.limit
+
+semantic: retrieval.compensation
+
+structural: role.claim
+
+예시 C
+원문:
+“This benchmark may overstate practical agent coordination quality.”
+
+앵커:
+
+object: benchmark.agent_eval
+
+semantic: evaluation.bias
+
+semantic: coordination.overclaim
+
+structural: role.limit
+
+structural: role.critique
+
+13. UI에서 앵커는 어떻게 보여야 하나
+앞단에서 원본을 읽을 때 앵커는 너무 많이 보이면 오히려 망가진다.
+그래서 UI는 계층별로 보여주는 게 좋다.
+
+원본 Reader에서 추천 표시
+상단: 주요 object anchor 1~3개
+
+옆 패널: semantic anchor 목록
+
+작은 배지: structural anchor
+
+클릭 시:
+
+같은 object anchor를 가진 다른 source 조각
+
+같은 semantic anchor를 가진 조각
+
+contrast/related 조각
+
+공간에서 가까운 dust/point/local space
+
+즉 UI에서 앵커는 “태그 구름”이 아니라
+탐색 핸들처럼 작동해야 한다.
+
+14. 공간에서 앵커는 어떻게 쓰이나
+공간에서는 앵커가 다음처럼 사용된다.
+
+object anchor
+같은 대상권 점/먼지의 지역 응집 형성

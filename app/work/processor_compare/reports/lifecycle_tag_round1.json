@@ -1,0 +1,30 @@
+{
+  "round": 1,
+  "date": "2026-03-22",
+  "current_reading": [
+    "lifecycle policy is now callable",
+    "active review candidates can be temperature-tagged without storage redesign",
+    "lifecycle is still partial and review-lane scoped"
+  ],
+  "new_types": [
+    "LifecyclePolicyContext",
+    "LifecyclePolicyResult"
+  ],
+  "new_policy_function": "evaluate_review_lifecycle_policy",
+  "new_surface_fields": [
+    "trace_temperature",
+    "lifecycle_stage",
+    "lifecycle_reason"
+  ],
+  "verification": {
+    "compile": true,
+    "doc_006_hot_review": true,
+    "doc_005_control_preserved": true,
+    "canonical_fixture_preserved": true
+  },
+  "next_priority": [
+    "top-level lifecycle surface",
+    "review timestamps",
+    "lifecycle automation"
+  ]
+}

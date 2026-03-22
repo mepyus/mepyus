@@ -1,0 +1,31 @@
+{
+  "round": 4,
+  "date": "2026-03-22",
+  "current_reading": [
+    "promotion, cross_path, direct_overlap, canonicalization, and space_entry now have callable policy boundaries",
+    "executor is still dominant but policy growth no longer needs to stay inside the core file",
+    "next step can move toward fixture and output stabilization"
+  ],
+  "new_types": [
+    "CanonicalizationPolicyContext",
+    "CanonicalizationPolicyResult",
+    "SpaceEntryPolicyContext",
+    "SpaceEntryPolicyResult"
+  ],
+  "new_policy_functions": [
+    "evaluate_canonicalization_family_policy",
+    "evaluate_space_entry_policy"
+  ],
+  "verification": {
+    "compile": true,
+    "canonical_fixtures_preserved": true,
+    "doc_006_review_candidate_preserved": true,
+    "doc_005_control_preserved": true,
+    "doc_004_control_preserved": true
+  },
+  "next_priority": [
+    "fixture manifest",
+    "review surface stabilization",
+    "lifecycle tags"
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-21T00:28:16.750332+00:00",
+  "family_id": "test_canonical_ingest_20260321",
+  "lineage_refs": [
+    "dst_src_4c7bf070012d_002"
+  ],
+  "material_id": "mat_c1f872a4b49c",
+  "metadata": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "anchors": [
+      {
+        "canonical_key": "graph_rag",
+        "key": "graph_rag",
+        "type": "semantic",
+        "value": "Graph RAG"
+      },
+      {
+        "canonical_key": "rag",
+        "key": "rag",
+        "type": "semantic",
+        "value": "RAG"
+      },
+      {
+        "canonical_key": "graph",
+        "key": "graph",
+        "type": "semantic",
+        "value": "Graph"
+      }
+    ],
+    "dust_input_id": "dst_src_4c7bf070012d_001",
+    "flow": "compare",
+    "formation_role": "review_material",
+    "last_seen": "2026-03-21T00:28:16.133560Z",
+    "legacy_anchors": [
+      {
+        "type": "domain_term",
+        "value": "Graph"
+      },
+      {
+        "type": "domain_term",
+        "value": "RAG"
+      },
+      {
+        "type": "domain_term",
+        "value": "Knowledge"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ud65c\uc6a9\ud574"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ub2e4\ub2e8\uacc4"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ucd94\ub860\uc744"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc218\ud589\ud558\uace0"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc628\ud1a8\ub85c\uc9c0\ub294"
+      }
+    ],
+    "observer_ambiguity": 0.34,
+    "observer_confidence_numeric": 0.755,
+    "observer_or_ambiguity_trace": {
+      "available": true,
+      "generation_path": "runtime_commonization",
+      "items": [],
+      "merged": {
+        "ambiguity": 0.34,
+        "confidence": 0.755,
+        "direction": 0.72,
+        "intensity": 0.58,
+        "role": "definition",
+        "scene": "explanation",
+        "signals": [],
+        "stability": 0.64
+      },
+      "note": "runtime internal observer baseline",
+      "profiles": {
+        "chatgpt_like": {
+          "ambiguity": 0.27,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "knowledge",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.78,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "surface structure sensitive"
+          ],
+          "profile_name": "chatgpt_like",
+          "role": "definition",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "knowledge",
+            "\ud65c\uc6a9\ud574"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "surface_structure",
+            "explanation",
+            "definition"
+          ],
+          "why_short": "\ud45c\uba74 \uad6c\uc870 \uc2e0\ud638\ub97c \uac15\ud558\uac8c \uc77d\uc5b4 explanation/definition\ub85c \ud310\uc815\ud55c\ub2e4."
+        },
+        "codex_like": {
+          "ambiguity": 0.34,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "knowledge",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.73,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "conservative baseline"
+          ],
+          "profile_name": "codex_like",
+          "role": "definition",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "knowledge",
+            "\ud65c\uc6a9\ud574"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "explanation",
+            "definition"
+          ],
+          "why_short": "explanation \uc911\uc2ec\uc73c\ub85c \uc77d\ub418 definition \uae30\ub2a5\uc744 \ubcf4\uc218\uc801\uc73c\ub85c \uc720\uc9c0\ud55c\ub2e4."
+        },
+        "gemini_like": {
+          "ambiguity": 0.24,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+              "label": "knowledge",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.77,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "secondary abstract observer"
+          ],
+          "profile_name": "gemini_like",
+          "role": "definition",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "knowledge",
+            "\ud65c\uc6a9\ud574"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "abstraction_prone",
+            "explanation",
+            "definition"
+          ],
+          "why_short": "\uc0c1\uc704 \uc758\ubbf8 \uc774\ub3d9\uc744 \ubbfc\uac10\ud558\uac8c \uc77d\uc5b4 explanation/definition\ub85c \uae30\uc6b8\uc5b4\uc9c4\ub2e4."
+        }
+      },
+      "unavailable_reason": ""
+    },
+    "observer_role": "definition",
+    "observer_signals": [],
+    "recurrence_count": 1,
+    "scene": "review",
+    "short_label": "Graph RAG\ub294 Knowled\u2026",
+    "source_origin_id": "src_4c7bf070012d",
+    "time_in": "2026-03-21T00:28:16.133560Z"
+  },
+  "project_id": "vectorfl-next",
+  "raw_payload": "Graph RAG\ub294 Knowledge Graph\ub97c \ud65c\uc6a9\ud574 \ub2e4\ub2e8\uacc4 \ucd94\ub860\uc744 \uc218\ud589\ud558\uace0, \uc628\ud1a8\ub85c\uc9c0\ub294 \ub370\uc774\ud130\uc640 \uac1d\uccb4 \uad00\uacc4\ub97c \uc758\ubbf8\uc801\uc73c\ub85c \uc5f0\uacb0\ud55c\ub2e4.",
+  "session_id": "manual-canonical-test-20260321",
+  "source_ref": "manual/test_canonical_ingest_20260321.txt",
+  "source_type": "review"
+}

@@ -1,0 +1,100 @@
+{
+  "bridge_trace_refs": [
+    "brg_227bc93135d9",
+    "brg_23859e92076c",
+    "brg_24677f0f16ec",
+    "brg_6af1fa90efc8",
+    "brg_b52b0241dc66",
+    "brg_cf3d4c6e6feb",
+    "brg_fef602029067"
+  ],
+  "cell_refs": [
+    "cel_6984f05f9329"
+  ],
+  "created_at": "2026-03-20T22:50:13.709484+00:00",
+  "doc_id": "doc_008",
+  "dropped_weak_anchors": [
+    "작가는",
+    "작가의",
+    "작가가",
+    "내용이",
+    "있는",
+    "사건처럼",
+    "관점에서",
+    "사람을",
+    "하는",
+    "사람의"
+  ],
+  "local_space_id": "lsp_4542bbda31fb",
+  "pressure_profile_id": "prs_b1dfe95c7cd5",
+  "representative_anchors": [
+    {
+      "anchor_type": "object",
+      "canonical_key": "kafka_author",
+      "display_label": "Kafka",
+      "region_anchor_score": 0.7
+    },
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "reversal",
+      "display_label": "반전",
+      "region_anchor_score": 0.664
+    },
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "ambiguity",
+      "display_label": "다의성",
+      "region_anchor_score": 0.661
+    }
+  ],
+  "source_label": "doc_008",
+  "state": "bridge_exposed",
+  "supporting_anchors": [
+    "Kafka",
+    "Kafka",
+    "Kafka",
+    "Kafka",
+    "다의성"
+  ],
+  "processing_baseline": {
+    "D": 0.4835,
+    "I": 0.5297,
+    "S": 0.5132,
+    "dominant_scene": "review",
+    "dominant_flow": "compare"
+  },
+  "state_transition_summary": {
+    "available": true,
+    "current_state": "bridge_exposed",
+    "inferred_transition": "forming -> bridge_exposed",
+    "bridge_exposure_count": 7,
+    "canonical_bridge_exposure_count": 7,
+    "possibility_bridge_exposure_count": 0,
+    "material_count": 182,
+    "source_ref_count": 1,
+    "source_refs": [
+      "processor_compare/doc_008.txt"
+    ]
+  },
+  "observer_or_ambiguity_trace": {
+    "available": true,
+    "merged": {
+      "role": "support",
+      "scene": "explanation",
+      "ambiguity": 0.3513,
+      "confidence": 0.711,
+      "signals": [
+        "gemini_reflection_signal",
+        "gemini_expansion_signal",
+        "role_disagreement"
+      ]
+    },
+    "items": [],
+    "item_count": 8,
+    "unavailable_reason": "",
+    "note": "observer compare propagated from material baseline"
+  },
+  "canonical_bridge_exposure_count": 7,
+  "possibility_bridge_exposure_count": 0,
+  "possibility_bridge_refs": []
+}

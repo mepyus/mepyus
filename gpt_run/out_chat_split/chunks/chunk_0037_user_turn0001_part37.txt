@@ -1,0 +1,68 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 37
+[char_count] 1184
+
+{"conversation_id":"chat_20260318_001","turn_index":2,"sector_index":1,"speaker":"assistant","sector_label":"판정","text":"응. 그렇게 하면 된다."}
+{"conversation_id":"chat_20260318_001","turn_index":2,"sector_index":2,"speaker":"assistant","sector_label":"왜 가능한가","text":"그리고 더 정확히 말하면 [[A]] 하나만 있어도..."}
+5. 추천 판정
+내 추천은 명확해.
+
+옵션 A
+[[A]], [[B]] 둘 다 쓴다
+장점: 명시적
+단점: 번거롭다
+
+옵션 B
+[[A]]만 assistant 시작에 쓴다
+장점: 단순하고 현실적
+단점: 파서가 약간 더 똑똑해야 함
+
+추천
+지금은 B가 맞다.
+
+이유:
+
+네가 매번 user 표식 안 넣어도 됨
+
+내가 답변 시작만 맞춰주면 됨
+
+parser가 [[A]] 기준으로 충분히 나눌 수 있음
+
+6. 지금 진짜 중요한 것
+여기서 핵심은 “표식을 예쁘게 정하는 것”보다
+raw를 안 잃고 1차 turn split을 안정화하는 것이야.
+
+즉 우선순위는:
+
+assistant 시작 표식 규칙 잠금
+
+raw txt 저장
+
+turn split script 작성
+
+긴 turn sector split
+
+그다음 anchor/projection
+
+이 순서가 맞다.
+
+7. 한 줄 판정
+맞다. [[A]] 같은 시작 표식을 기준으로 txt를 저장한 뒤 스크립트가 자동으로 turn을 나누게 만들면 된다. 그리고 요즘 답변이 길기 때문에 1차는 turn 분리, 2차는 sector 분리로 가는 게 가장 현실적이다.
+
+자 그럼 달고 시작해봐
+
+Thought for 23s
+[[A]]
+좋아. 지금부터 내 답변은 시작 표식으로 연다.
+기본은 [[A]]로 두고, 장면 전환이 필요해지면 [[A]] [[SCENE:...]] 형태로 붙이자.
+
+좋습니다!!  혹시 앵커값을 부여하고 시작하는 것도 가능할까요?  ㅋㅋㅋㅋ
+
+Thought for 32s
+[[A]] [[OBJ:conversation.protocol]] [[SEM:anchor.bootstrap]] [[ROLE:proposal]]
+
+응, 가능해.
+오히려 표식 + 앵커를 같이 시작하는 구조가 벡터플 레플리카 쪽엔 더 잘 맞아.
+
+다만 여기서 하나만 잠그면 좋아.

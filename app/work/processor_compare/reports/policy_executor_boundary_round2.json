@@ -1,0 +1,27 @@
+{
+  "round": 2,
+  "date": "2026-03-22",
+  "current_reading": [
+    "cross_path overlap policy separated, executor still dominant",
+    "promotion review plus cross_path classification now both have callable policy boundaries",
+    "output surface separation is partial but stable"
+  ],
+  "new_types": [
+    "CrossPathPolicyContext",
+    "CrossPathPolicyResult"
+  ],
+  "new_policy_function": "evaluate_cross_path_overlap_policy",
+  "new_output_function": "assemble_cross_path_review_surface",
+  "verification": {
+    "compile": true,
+    "canonical_fixtures_preserved": true,
+    "doc_006_review_candidate_preserved": true,
+    "doc_005_control_preserved": true,
+    "doc_004_control_preserved": true
+  },
+  "next_priority": [
+    "family canonicalization policy",
+    "direct overlap promotion policy",
+    "fixture manifest"
+  ]
+}

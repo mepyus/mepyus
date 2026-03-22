@@ -1,0 +1,52 @@
+{
+  "draft_date": "2026-03-22",
+  "draft_kind": "lifecycle_pruning",
+  "current_bottleneck": "all traces remain at the same temperature",
+  "layers": {
+    "hot": [
+      "active review",
+      "current possibility",
+      "current candidate"
+    ],
+    "warm": [
+      "condensed review history",
+      "strongest evidence",
+      "last seen state"
+    ],
+    "cold": [
+      "raw proposal trace",
+      "full blocker history",
+      "token pair logs",
+      "process logs"
+    ]
+  },
+  "hot_fields": [
+    "bridge_mode",
+    "review_state",
+    "translation_gate",
+    "processing_gate",
+    "observer_gate",
+    "best_local_ref",
+    "direct_overlap_candidate_families",
+    "space_entry_state",
+    "next_review_blocker"
+  ],
+  "warm_fields": [
+    "last_seen",
+    "support_density_class",
+    "cross_path_overlap_family_count",
+    "cross_path_overlap_quality_class",
+    "canonicalizable_token_pair_count",
+    "strongest proposal families",
+    "stable blocker summary"
+  ],
+  "cold_fields": [
+    "full promotion_review payload",
+    "proposal trace",
+    "token pair history",
+    "blocker history",
+    "process log"
+  ],
+  "principle": "pruning should start as temperature downshift, not hard delete",
+  "next_step": "introduce trace_temperature and review timestamps before storage implementation"
+}

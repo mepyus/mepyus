@@ -1,0 +1,165 @@
+{
+  "revision_judgments": [
+    {
+      "fragment_id": "frag_basic_001",
+      "column_key": "primary_anchor",
+      "previous_value": {
+        "key": "source.claude_md",
+        "anchor_type": "source"
+      },
+      "new_value": {
+        "key": "object.field.ai",
+        "anchor_type": "object"
+      },
+      "reason": "document-like source currently overweights source.* anchors over object/semantic anchors",
+      "reason_family": "source_anchor_overweight",
+      "operator": "reviewer",
+      "notes": "recorded as an observer-layer revision target, not auto-applied",
+      "confidence": 0.83
+    }
+  ],
+  "connection_observations": [
+    {
+      "fragment_id": "frag_basic_001",
+      "counterpart_fragment_id": "frag_basic_005",
+      "relation_status": "deferred_connection",
+      "reason": "shared system/object vocabulary exists, but source-anchor overlap is still stronger than semantic overlap",
+      "reason_family": "insufficient_semantic_alignment",
+      "shared_signals": [
+        "object.field.ai",
+        "object.system.claude"
+      ],
+      "missing_signals": [
+        "strong structural match",
+        "stable semantic overlap"
+      ],
+      "operator": "reviewer",
+      "notes": "keep as observation until anchor quality improves",
+      "confidence": 0.48
+    },
+    {
+      "fragment_id": "frag_basic_001",
+      "counterpart_fragment_id": "frag_ytex_003",
+      "relation_status": "rejected_connection",
+      "reason": "surface technical vocabulary is not enough; workflow note and historical interview excerpt do not yet share stable semantic or structural anchors",
+      "reason_family": "false_resonance",
+      "shared_signals": [
+        "technical vocabulary"
+      ],
+      "missing_signals": [
+        "shared semantic handle",
+        "shared structural role"
+      ],
+      "operator": "reviewer",
+      "notes": "recorded to avoid over-connecting weak technical similarities",
+      "confidence": 0.61
+    },
+    {
+      "fragment_id": "frag_basic_005",
+      "counterpart_fragment_id": "frag_basic3_003",
+      "relation_status": "accepted_connection",
+      "reason": "both fragments converge on AI as a primary object and share a bridge-like structural role around platform/interface framing",
+      "reason_family": "cross_source_semantic_alignment",
+      "shared_signals": [
+        "object.field.ai",
+        "structural.role.bridge",
+        "object.system chat systems"
+      ],
+      "missing_signals": [
+        "strong exact semantic overlap"
+      ],
+      "operator": "reviewer",
+      "notes": "accepted as a useful cross-source comparison even though the exact semantic handles differ",
+      "confidence": 0.67
+    },
+    {
+      "fragment_id": "frag_basic_001",
+      "counterpart_fragment_id": "frag_basic3_004",
+      "relation_status": "deferred_connection",
+      "reason": "both fragments sit in the broader AI field, but one is manifesto framing and the other is verification anxiety; relation is plausible but still weak",
+      "reason_family": "cross_source_weak_signal",
+      "shared_signals": [
+        "object.field.ai"
+      ],
+      "missing_signals": [
+        "shared structural role",
+        "closer semantic handle overlap"
+      ],
+      "operator": "reviewer",
+      "notes": "keep as cross-source observation rather than strong accepted relation",
+      "confidence": 0.46
+    },
+    {
+      "fragment_id": "frag_basic4_001",
+      "counterpart_fragment_id": "frag_basic3_003",
+      "relation_status": "accepted_connection",
+      "reason": "both fragments read AI change as a structural shift and retain a bridge-like role around platform or paradigm transition",
+      "reason_family": "cross_source_semantic_alignment",
+      "shared_signals": [
+        "structural.role.bridge",
+        "AI transition framing",
+        "shift-oriented interpretation"
+      ],
+      "missing_signals": [
+        "strong exact object overlap"
+      ],
+      "operator": "reviewer",
+      "notes": "accepted as a useful cross-source comparison between paradigm-shift recap and platform-shift framing",
+      "confidence": 0.64
+    },
+    {
+      "fragment_id": "frag_basic4_004",
+      "counterpart_fragment_id": "frag_basic3_004",
+      "relation_status": "deferred_connection",
+      "reason": "both fragments react to AI acceleration pressure, but one centers constrained-compute frontier escalation while the other centers verification difficulty and personal uncertainty",
+      "reason_family": "cross_source_weak_signal",
+      "shared_signals": [
+        "AI pressure",
+        "future-oriented uncertainty"
+      ],
+      "missing_signals": [
+        "shared semantic handle",
+        "shared structural role"
+      ],
+      "operator": "reviewer",
+      "notes": "retain as a weak comparison candidate rather than a strong accepted relation",
+      "confidence": 0.43
+    },
+    {
+      "fragment_id": "frag_basic5_003",
+      "counterpart_fragment_id": "frag_basic4_004",
+      "relation_status": "accepted_connection",
+      "reason": "both fragments treat DeepSeek as the trigger that changed what frontier progress looks like under constrained compute, one from architecture diffusion and the other from paradigm-level strategy shift",
+      "reason_family": "cross_source_semantic_alignment",
+      "shared_signals": [
+        "object.org.deepseek",
+        "constrained-compute frontier framing",
+        "shift after DeepSeek"
+      ],
+      "missing_signals": [
+        "shared structural role"
+      ],
+      "operator": "reviewer",
+      "notes": "accepted as a strong cross-source comparison between architecture diffusion and strategic shift narratives",
+      "confidence": 0.69
+    },
+    {
+      "fragment_id": "frag_basic5_002",
+      "counterpart_fragment_id": "frag_basic3_003",
+      "relation_status": "deferred_connection",
+      "reason": "both fragments carry a bridge-like explanatory role, but one is a technical sparsity and compute discussion while the other is a platform-shift market framing, so the relation is structurally similar but semantically weak",
+      "reason_family": "cross_source_weak_signal",
+      "shared_signals": [
+        "structural.role.bridge",
+        "transition-oriented explanation"
+      ],
+      "missing_signals": [
+        "shared object anchor",
+        "closer semantic overlap"
+      ],
+      "operator": "reviewer",
+      "notes": "keep as a deferred comparison until stronger cross-source technical-to-platform links accumulate",
+      "confidence": 0.41
+    }
+  ]
+}

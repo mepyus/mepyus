@@ -1,0 +1,168 @@
+# workbench view: canonical_doc005_doc006_stage1
+
+- reading_category: `canonical`
+- reading_status: `stable_reading`
+- meaning: source -> translation -> bridge closure is sufficiently persisted, so this candidate stays in stable reading mode
+
+## A. source
+- `left_material_id`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"mat_c4639ab53a49"`
+  - note: left live-side material fixed for this stage1 packet
+- `right_material_id`
+  - status: `derived`
+  - source: `review_output_surface + material_metadata`
+  - value: `"mat_208c930fbc7b"`
+  - note: right material selected from exact canonical bridge support pair
+- `left_source_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_005.txt"`
+  - note: left material source path
+- `right_source_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_004.txt"`
+  - note: right material source path
+- `left_source_local_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_005.txt::dst_src_ee95f3c2ea44_001"`
+  - note: left local fragment coordinate
+- `right_source_local_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_004.txt::dst_src_340b01958e5f_011"`
+  - note: right local fragment coordinate
+- `left_lineage_refs`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `["dst_src_ee95f3c2ea44_002", "dst_src_ee95f3c2ea44_003", "dst_src_ee95f3c2ea44_004", "dst_src_ee95f3c2ea44_005", "dst_src_ee95f3c2ea44_006", "dst_src_ee95f3c2ea44_007", "dst_src_ee95f3c2ea44_008", "dst_src_ee95f3c2ea44_009", "dst_src_ee95f3c2ea44_010", "dst_src_ee95f3c2ea44_011", "dst_src_ee95f3c2ea44_012", "dst_src_ee95f3c2ea44_013", "dst_src_ee95f3c2ea44_014", "dst_src_ee95f3c2ea44_015", "dst_src_ee95f3c2ea44_016", "dst_src_ee95f3c2ea44_017", "dst_src_ee95f3c2ea44_018", "dst_src_ee95f3c2ea44_019", "dst_src_ee95f3c2ea44_020", "dst_src_ee95f3c2ea44_021", "dst_src_ee95f3c2ea44_022", "dst_src_ee95f3c2ea44_023", "dst_src_ee95f3c2ea44_024", "dst_src_ee95f3c2ea44_025", "dst_src_ee95f3c2ea44_026", "dst_src_ee95f3c2ea44_027", "dst_src_ee95f3c2ea44_028", "dst_src_ee95f3c2ea44_029", "dst_src_ee95f3c2ea44_030", "dst_src_ee95f3c2ea44_031", "dst_src_ee95f3c2ea44_032", "dst_src_ee95f3c2ea44_033", "dst_src_ee95f3c2ea44_034", "dst_src_ee95f3c2ea44_035", "dst_src_ee95f3c2ea44_036", "dst_src_ee95f3c2ea44_037", "dst_src_ee95f3c2ea44_038", "dst_src_ee95f3c2ea44_039", "dst_src_ee95f3c2ea44_040", "dst_src_ee95f3c2ea44_041", "dst_src_ee95f3c2ea44_042", "dst_src_ee95f3c2ea44_043", "dst_src_ee95f3c2ea44_044", "dst_src_ee95f3c2ea44_045", "dst_src_ee95f3c2ea44_046", "dst_src_ee95f3c2ea44_047", "dst_src_ee95f3c2ea44_048", "dst_src_ee95f3c2ea44_049", "dst_src_ee95f3c2ea44_050", "dst_src_ee95f3c2ea44_051", "dst_src_ee95f3c2ea44_052", "dst_src_ee95f3c2ea44_053", "dst_src_ee95f3c2ea44_054", "dst_src_ee95f3c2ea44_055", "dst_src_ee95f3c2ea44_056", "dst_src_ee95f3c2ea44_057", "dst_src_ee95f3c2ea44_058", "dst_src_ee95f3c2ea44_059", "dst_src_ee95f3c2ea44_060", "dst_src_ee95f3c2ea44_061", "dst_src_ee95f3c2ea44_062", "dst_src_ee95f3c2ea44_063", "dst_src_ee95f3c2ea44_064", "dst_src_ee95f3c2ea44_065", "dst_src_ee95f3c2ea44_066", "dst_src_ee95f3c2ea44_067", "dst_src_ee95f3c2ea44_068", "dst_src_ee95f3c2ea44_069", "dst_src_ee95f3c2ea44_070", "dst_src_ee95f3c2ea44_071", "dst_src_ee95f3c2ea44_072", "dst_src_ee95f3c2ea44_073"]`
+  - note: left lineage spine currently sparse or empty
+- `right_lineage_refs`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `["dst_src_340b01958e5f_001", "dst_src_340b01958e5f_002", "dst_src_340b01958e5f_003", "dst_src_340b01958e5f_004", "dst_src_340b01958e5f_005", "dst_src_340b01958e5f_006", "dst_src_340b01958e5f_007", "dst_src_340b01958e5f_008", "dst_src_340b01958e5f_009", "dst_src_340b01958e5f_010", "dst_src_340b01958e5f_012", "dst_src_340b01958e5f_013", "dst_src_340b01958e5f_014", "dst_src_340b01958e5f_015"]`
+  - note: right lineage spine from imported material
+
+## B. translation / processing
+- `left_translated_handles`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `[{"display_label": "Palantir", "original_handle": "팔란티어", "translated_handle": "palantir", "translation_basis": "representative_anchor", "translation_confidence": 0.8, "translation_scope": "local_ref", "translation_source_local_ref": "processor_compare/doc_005.txt::dst_src_ee95f3c2ea44_001"}, {"display_label": "Ontology", "original_handle": "온톨로지", "translated_handle": "ontology", "translation_basis": "representative_anchor", "translation_confidence": 0.8, "translation_scope": "local_ref", "translation_source_local_ref": "processor_compare/doc_005.txt::dst_src_ee95f3c2ea44_001"}]`
+  - note: left translated handle layer
+- `right_translated_handles`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `[{"display_label": "Foundry", "original_handle": "Foundry", "translated_handle": "foundry", "translation_basis": "representative_anchor", "translation_confidence": 0.8, "translation_scope": "local_ref", "translation_source_local_ref": "processor_compare/doc_004.txt::dst_src_340b01958e5f_011"}, {"display_label": "Ontology", "original_handle": "온톨로지", "translated_handle": "ontology", "translation_basis": "supporting_anchor", "translation_confidence": 0.72, "translation_scope": "local_ref", "translation_source_local_ref": "processor_compare/doc_004.txt::dst_src_340b01958e5f_011"}]`
+  - note: right translated handle layer
+- `left_anchor_bundle_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"representative": ["데이터", "엔지니어링", "팔란티어", "온톨로지"], "supporting": ["라이크나우"], "promoted_anchor_count": 5, "dropped_weak_count": 0}`
+  - note: left anchor convergence summary
+- `right_anchor_bundle_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"representative": ["Foundry", "온톨로지는", "데이터", "모델이"], "supporting": ["온톨로지", "개념을", "조직의", "데이터에"], "promoted_anchor_count": 8, "dropped_weak_count": 0}`
+  - note: right anchor convergence summary
+- `left_processing_values_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"D": 0.78, "I": 0.58, "S": 0.5, "flow": "run", "scene": "spec"}`
+  - note: left processing baseline
+- `right_processing_values_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"D": 0.5, "I": 0.5, "S": 0.5, "flow": "unknown", "scene": "unknown"}`
+  - note: right processing baseline
+- `translation_join_quality`
+  - status: `derived`
+  - source: `material_metadata`
+  - value: `"symmetric_or_unknown"`
+  - note: translation layer asymmetry across the pair
+- `source_local_to_translation_gap`
+  - status: `derived`
+  - source: `material_metadata`
+  - value: `"not_primary_gap"`
+  - note: stage1 readout of source-local to translation asymmetry
+
+## C. join
+- `best_local_ref`
+  - status: `missing`
+  - source: `review_output_surface`
+  - value: `""`
+  - note: current best local candidate ref from review assembly
+- `direct_overlap_candidate`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `[]`
+  - note: direct overlap family candidates
+- `family_support_summary`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `{"review_anchor_support_class": "", "anchor_family_support_strength": {}, "live_side_support_families": [], "cross_path_overlap_families": []}`
+  - note: family support and cross-path summary
+- `canonicalization_proposal_summary`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `{"proposal_state": "", "proposals": {}}`
+  - note: canonicalization proposal readout
+- `bridge_trace_ref`
+  - status: `persisted`
+  - source: `bridge_trace`
+  - value: `"brg_f30a3a351a8b"`
+  - note: exact persisted bridge for the current local-space pair
+- `local_space_ref`
+  - status: `persisted`
+  - source: `local_space`
+  - value: `["lsp_2dde7aef787a", "lsp_4eadb2fe7a96"]`
+  - note: current pair local-space coordinates
+- `current_pair_closure_strength`
+  - status: `derived`
+  - source: `review_output_surface + bridge_trace`
+  - value: `"pair_bridge_present"`
+  - note: stage1 closure estimate
+- `review_focus_class`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `""`
+  - note: current review focus
+
+## D. block
+- `next_review_blocker`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `""`
+  - note: current next blocker
+- `missing_join_points`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `[]`
+  - note: gaps surfaced by this packet
+- `mixed_record_ref`
+  - status: `missing`
+  - source: `workbench_stage1`
+  - value: `"mixed_minimum_record::canonical_doc005_doc006_stage1"`
+  - note: minimal linkage to confirmed mixed hold record
+- `why_not_closed`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `"canonical pair already closes through persisted bridge/local-space exposure"`
+  - note: short closure diagnosis
+- `next_review_question`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `""`
+  - note: next approval-facing question
+- `likely_gap_layer`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `"closure present"`
+  - note: dominant gap layer for this mixed candidate
+- `review_status_summary`
+  - status: `derived`
+  - source: `review_output_surface + review_ledger`
+  - value: `{"bridge_mode": "canonical", "review_state": "not_applicable", "space_entry_state": "", "space_entry_blocker": "", "canonical_approval_readiness_class": ""}`
+  - note: top-level review status summary

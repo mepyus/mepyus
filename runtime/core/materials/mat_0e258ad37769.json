@@ -1,0 +1,168 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-19T12:06:16.845341+00:00",
+  "family_id": null,
+  "lineage_refs": [],
+  "material_id": "mat_0e258ad37769",
+  "metadata": {
+    "D": 0.8,
+    "I": 0.67,
+    "S": 0.86,
+    "anchor": {
+      "aliases": [],
+      "anchor_type": "object",
+      "canonical_key": "object.architecture.moe",
+      "confidence": 0.86,
+      "evidence_text": "moe",
+      "key": "object.architecture.moe",
+      "label": "MoE",
+      "origin": "object_rule",
+      "status": "active",
+      "value": "MoE"
+    },
+    "anchors": [
+      {
+        "aliases": [],
+        "anchor_type": "object",
+        "canonical_key": "object.architecture.moe",
+        "confidence": 0.86,
+        "evidence_text": "moe",
+        "key": "object.architecture.moe",
+        "label": "MoE",
+        "origin": "object_rule",
+        "status": "active",
+        "value": "MoE"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.compute_multiplier",
+        "confidence": 0.76,
+        "evidence_text": "\uc5f0\uc0b0 \ubc30\uc218",
+        "key": "semantic.compute_multiplier",
+        "label": "compute multiplier",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "compute multiplier"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.inference",
+        "confidence": 0.76,
+        "evidence_text": "inference",
+        "key": "semantic.inference",
+        "label": "inference",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "inference"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.sparsity",
+        "confidence": 0.76,
+        "evidence_text": "sparsity",
+        "key": "semantic.sparsity",
+        "label": "sparsity",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "sparsity"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "structural",
+        "canonical_key": "structural.role.bridge",
+        "confidence": 0.7,
+        "evidence_text": "\uadf8\ub7f0\ub370",
+        "key": "structural.role.bridge",
+        "label": "role.bridge",
+        "origin": "structural_rule",
+        "status": "active",
+        "value": "structural.role.bridge"
+      }
+    ],
+    "confidence": "mid",
+    "flow": "expand",
+    "formation_role": "review_material",
+    "fragment_id": "frag_basic5_002",
+    "fragment_metadata": {
+      "ingest_batch_id": "batch_cdaeb5ee6c60",
+      "ingest_history": [
+        {
+          "ingest_batch_id": "batch_cdaeb5ee6c60",
+          "ingest_session_id": "ingest_session:20260319T120616Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic5_fragments.json",
+          "recorded_at": "20260319T120616Z"
+        }
+      ],
+      "ingest_input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic5_fragments.json",
+      "ingest_session_id": "ingest_session:20260319T120616Z",
+      "sample_batch": "basic5_conversation_v1"
+    },
+    "page_ref": {
+      "page_index": 0,
+      "page_label": "p1"
+    },
+    "paragraph_index": null,
+    "projected_material_id": "mat_0e258ad37769",
+    "provenance_log": [
+      {
+        "note": "basic5.md sparsity and compute multiplier explanation block",
+        "payload": {},
+        "recorded_at": "2026-03-19T12:06:16.831013+00:00",
+        "step": "manual_seed"
+      },
+      {
+        "note": "registered ingest batch lineage",
+        "payload": {
+          "ingest_batch_id": "batch_cdaeb5ee6c60",
+          "ingest_session_id": "ingest_session:20260319T120616Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic5_fragments.json"
+        },
+        "recorded_at": "2026-03-19T12:06:16.840438+00:00",
+        "step": "ingest_batch"
+      },
+      {
+        "note": "applied anchor enrichment",
+        "payload": {
+          "anchor_count": 5,
+          "ingest_batch_id": "batch_cdaeb5ee6c60",
+          "primary_anchor": "object.architecture.moe"
+        },
+        "recorded_at": "2026-03-19T12:06:16.840940+00:00",
+        "step": "anchorizer"
+      },
+      {
+        "note": "applied source location enrichment",
+        "payload": {
+          "ingest_batch_id": "batch_cdaeb5ee6c60",
+          "page_ref": {
+            "page_index": 0,
+            "page_label": "p1"
+          },
+          "paragraph_index": null,
+          "source_range": {
+            "end": null,
+            "start": null
+          }
+        },
+        "recorded_at": "2026-03-19T12:06:16.843308+00:00",
+        "step": "source_locator"
+      }
+    ],
+    "scene": "meta",
+    "source_id": "src_basic5_001",
+    "source_range": {
+      "end": null,
+      "start": null
+    },
+    "time_in": "t02",
+    "unit_scale": "turn_block"
+  },
+  "project_id": "vectorfl-replica",
+  "raw_payload": "sparsity\uc640 compute multiplier: \uc65c MoE\uac00 \uc720\ub9ac\ud55c\uac00 06:14\n\n06:14 \ucd5c\uc2b9\uc900 \uadf8\ub7f0\ub370 MoE \ubaa8\ub378\uc774 \uc138 \uac00\uc9c0\uac00 \uc788\ub2e4\ub294 \uc774\uac8c \uc65c \ubd84\ub9ac\uac00 \ub418\uc5b4 \uc788\ub294 \uac70\uc8e0.\n\n06:24 \uae40\uc131\ud604 \uc774\uac8c sparsity\ub77c\uace0 \ubd80\ub974\ub294 \uac74\ub370\uc694. \uc804\uccb4 \ud30c\ub77c\ubbf8\ud130 \uc911\uc5d0\uc11c \uc2e4\uc81c\ub85c \ud55c \ubc88 inference \ud1a0\ud070\uc744 \uc608\uce21\ud560 \ub54c \uc4f0\ub294 \ud30c\ub77c\ubbf8\ud130 \uc218\uc758 \ube44\uc728\uc774\ub77c\uace0 \ubcf4\uc2dc\uba74 \ub429\ub2c8\ub2e4.\n\n06:32 \ucd5c\uc2b9\uc900 \ub354 \uc798\uac8c \ucabc\uac1c\uc9c4 \uac83, \ubb50 \uadf8\ub7f0 \ub290\ub08c\uc778 \uac74\uac00\uc694?\n\n06:35 \uae40\uc131\ud604 \ub124, \uc608\ub97c \ub4e4\uba74 \uc774\uac74 \uc804\uccb4 \ud30c\ub77c\ubbf8\ud130 \uc911\uc5d0 4\ubd84\uc758 1\ub9cc \uc4f0\ub294 \uac70\uc8e0. \uadf8\ub7f0\ub370 \uc704\uc5d0 \uc788\ub294 \uac74 \uc804\uccb4 \ud30c\ub77c\ubbf8\ud130 \uc911\uc5d0 50\ubd84\uc758 1\ub9cc \uc4f0\ub294 \uac81\ub2c8\ub2e4. \uc608\ub97c \ub4e4\uba74 \uc0ac\uc6a9\ud558\ub294 \ud30c\ub77c\ubbf8\ud130 \uc218\uac00 \uc801\uc5b4\uc9c0\uba74, \uc0ac\uc6a9\ud558\ub294 \ud30c\ub77c\ubbf8\ud130 \uc218\uac00 \uc801\uc5b4\uc9c0\uba74 \uc801\uc5b4\uc9c8\uc218\ub85d, \ud639\uc740 \ub354 \ud76c\uc18c\ud574\uc9c8\uc218\ub85d \uc774 \uc2b9\uc218\ub77c\uace0 \ud45c\ud604\ud574\uc57c \ud560\uae4c\uc694? compute multiplier\ub77c\uace0 \ud45c\ud604\ud558\ub294\ub370 compute multiplier, \uc5f0\uc0b0 \ubc30\uc218\ub294 \ub354 \ucee4\uc9c0\ub294 \uac81\ub2c8\ub2e4. \uae30\uc6b8\uae30\uac00 \ub354 \ucee4\uc9c0\uace0 \uc788\uc8e0. \uc774\uac74 \ubb3c\ub860 FLOPs\ub85c \uacc4\uc0b0\ud558\ub294 \uac70\uae30 \ub54c\ubb38\uc5d0 \uc2e4\uc81c \ucd94\ub860\uc758 \uc870\uac74\uc774\ub77c\ub4e0\uc9c0 \uba54\ubaa8\ub9ac \ub300\uc5ed\ud3ed \uac19\uc740 \uac83\ub4e4\uc744 \uace0\ub824\ud558\uba74 \ubc18\ub4dc\uc2dc \uc774\ub807\uac8c \ub418\uc9c0\ub294 \uc54a\uae30\ub294 \ud569\ub2c8\ub2e4. \uadf8\ub807\uc9c0\ub9cc \uc21c\uc218\ud558\uac8c \ud559\uc2b5 \uc5f0\uc0b0\ub7c9 \uce21\uba74\uc5d0\uc11c\ub9cc \ubd10\ub3c4 \uc774\ub7f0 \ud615\ud0dc\uc758 \ud328\ud134\uc774 \ub098\ud0c0\ub09c\ub2e4\ub294 \uac83 \uc790\uccb4\uac00 \uad49\uc7a5\ud788 \ub180\ub77c\uc6b4 \uc77c\uc774\uc8e0.\n\n07:20 \ucd5c\uc2b9\uc900 scaling law\uae4c\uc9c0\ub294 \uc544\ub2c8\uc9c0\ub9cc \uc57d\uac04 \ube44\uc2b7\ud55c \ub290\ub08c\uc801\uc778 \ub290\ub08c\uc774 \uc788\ub124\uc694.\n\n07:26 \uae40\uc131\ud604 \uc77c\uc885\uc758 scaling law\uc785\ub2c8\ub2e4. \uc774\uac83\ub3c4 scaling law\uac00 \ub450 \uac00\uc9c0 component\uac00 \uc788\ub294\ub370 exponent\ub77c\uace0, \uc81c\uacf1\uc758 \uc2b9\uc218\ub77c\uace0 \ubd80\ub974\ub294 exponent\uac00 \uc788\uace0 \uadf8 \uc55e\uc5d0 \uacc4\uc218\uac00 \uc788\ub294\ub370 exponent\uac00 \ubcc0\ud654\ud558\ub294 \ud615\ud0dc\uc758 \ud328\ud134\uc774 \ub418\uba74 \uc774\ub7f0 \uac83\ub4e4\uc774 \ub098\ud0c0\ub0a9\ub2c8\ub2e4. \uadf8\ub807\uac8c \ub418\uba74 \uc774\uac74 \uc4f0\uc9c0 \uc54a\uc73c\uba74, \uc18c\uc704 \ub9d0\ud574 \uc4f0\uc9c0 \uc54a\uc73c\uba74 \uc774\uc0c1\ud55c \ud615\ud0dc\uc758 \uae30\uc220\uc801 \ubc1c\uc804\uc774 \ub418\uc8e0. MoE\uac00 \uadf8\ub7f0 \uc5ed\ud560\uc744 \ud588\uc2b5\ub2c8\ub2e4.",
+  "session_id": "replica_session",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_replica/basic5.md",
+  "source_type": "conversation"
+}

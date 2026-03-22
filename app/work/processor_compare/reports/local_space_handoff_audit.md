@@ -1,0 +1,35 @@
+# Local Space Handoff Audit
+
+- anchor bundle handoff: yes
+- processing values handoff: partial
+- existing vs new connection distinction: partial
+
+## audit
+```json
+{
+  "generated_at": "2026-03-21T05:49:11.543980Z",
+  "anchor_bundle_handoff": {
+    "verdict": "yes",
+    "evidence": [
+      "runtime_space_anchor_sync writes representative_anchors and supporting_anchors into local_space",
+      "dropped weak aggregate is now synced into local space when present"
+    ]
+  },
+  "processing_values_handoff": {
+    "verdict": "partial",
+    "evidence": [
+      "live_input_space creates pressure profiles from D/I/S averages",
+      "graph view exposes pressure_axes and interpretation labels",
+      "state and interpretation still read more like explanatory labels than explicit transition records"
+    ]
+  },
+  "existing_vs_new_connection_distinction": {
+    "verdict": "partial",
+    "evidence": [
+      "bridge_trace_refs and latest intake local_space selection show new exposure",
+      "but local space does not yet keep explicit state_transition or delta fields"
+    ]
+  },
+  "largest_mismatch": "local space stores meaningful summaries, but not yet enough explicit transition semantics to prove interaction depth"
+}
+```

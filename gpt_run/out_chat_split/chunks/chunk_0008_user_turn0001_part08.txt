@@ -1,0 +1,132 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 8
+[char_count] 1193
+
+paper_001 p12
+
+video_003 14:32~15:10
+
+review_008 para_6
+
+용도:
+
+원본 복귀
+
+출처 추적
+
+2) Semantic Anchor
+의미 앵커
+예:
+
+transformer_attention
+
+benchmark_limit
+
+alignment_risk
+
+inference_pipeline
+
+agent_loop_failure
+
+용도:
+
+비슷한 내용끼리 묶기
+
+주제 축 형성
+
+3) Structural Anchor
+공간용 앵커
+예:
+
+evidence
+
+claim
+
+contrast
+
+bridge
+
+background
+
+method
+
+failure_mode
+
+evaluation_signal
+
+용도:
+
+공간 상호작용 성질 결정
+
+VECTORFL 내부 상호작용용 실마리 제공
+
+즉 네 시스템에서 앵커는 “태그”보다 강하다.
+앵커는
+원본 좌표
+의미 축
+공간 동작 축
+을 동시에 이어주는 구조여야 한다.
+
+6. 네가 말한 “앞단”과 “뒷단”을 기술적으로 다시 풀면
+앞단
+원본 reader 중심
+
+사용자가 논문을 볼 때 보이는 것:
+
+원본 텍스트
+
+해당 구간의 anchor
+
+해당 구간에서 생성된 processed fragment
+
+비슷한 anchor를 가진 다른 source 조각
+
+공간에서 현재 가까운 dust/point/local-space
+
+관련 source들의 연결 목록
+
+즉 앞단은 “문서를 읽는 화면”인데,
+문서만 읽는 게 아니라
+문서에 연결된 공간 해석을 같이 읽는 화면이어야 한다.
+
+뒷단
+space reactor 중심
+
+보이는 것:
+
+dust field
+
+point seeds
+
+local groupings
+
+bridge traces
+
+source lineage
+
+anchor overlap
+
+current active cells/local spaces
+
+즉 뒷단은 원문 편집기가 아니라
+원문에서 나온 처리 단위들이 어떻게 상호작용하는지 보는 반응기다.
+
+7. 여기서 가장 중요한 설계 판단
+지금 네 상황에서는
+“사용자가 자유롭게 메모하고 링크하고 캔버스 만들고...” 같은 일반 노트앱 기능을 먼저 키우면 안 된다.
+
+그건 확장이다.
+지금은 수렴이 먼저다.
+
+추천 판단
+초기 MVP는 반드시 아래 순서여야 한다.
+
+A. 원본 저장
+논문/리뷰/전사/정리본을 안정적으로 넣는다
+
+B. 의미 단위 추출
+문맥 보존 조각 생성
+
+C. 앵커 + 라벨 + 처리값 생성
+원본과 연결된 fragment 생성

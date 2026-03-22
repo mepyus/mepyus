@@ -1,0 +1,100 @@
+{
+  "bridge_trace_refs": [
+    "brg_1cdd5ed3a21a",
+    "brg_227bc93135d9",
+    "brg_565067865f24",
+    "brg_6736a8344f1f",
+    "brg_697989ad7188",
+    "brg_6af1fa90efc8"
+  ],
+  "cell_refs": [
+    "cel_287dbd8be592"
+  ],
+  "created_at": "2026-03-20T22:49:58.793745+00:00",
+  "doc_id": "doc_003",
+  "dropped_weak_anchors": [
+    "운동의",
+    "관계를",
+    "내용을",
+    "운동과",
+    "문제를",
+    "있다는"
+  ],
+  "local_space_id": "lsp_3e994a127e88",
+  "pressure_profile_id": "prs_a22ff0a751ba",
+  "representative_anchors": [
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "gravity",
+      "display_label": "중력",
+      "region_anchor_score": 0.673
+    },
+    {
+      "anchor_type": "object",
+      "canonical_key": "newton",
+      "display_label": "뉴턴",
+      "region_anchor_score": 0.672
+    },
+    {
+      "anchor_type": "process",
+      "canonical_key": "thought_experiment",
+      "display_label": "사고실험",
+      "region_anchor_score": 0.662
+    },
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "dynamics",
+      "display_label": "동역학",
+      "region_anchor_score": 0.658
+    }
+  ],
+  "source_label": "doc_003",
+  "state": "bridge_exposed",
+  "supporting_anchors": [
+    "중력",
+    "중력",
+    "동역학",
+    "중력",
+    "중력"
+  ],
+  "processing_baseline": {
+    "D": 0.5474,
+    "I": 0.5474,
+    "S": 0.5316,
+    "dominant_scene": "review",
+    "dominant_flow": "compare"
+  },
+  "state_transition_summary": {
+    "available": true,
+    "current_state": "bridge_exposed",
+    "inferred_transition": "forming -> bridge_exposed",
+    "bridge_exposure_count": 6,
+    "canonical_bridge_exposure_count": 6,
+    "possibility_bridge_exposure_count": 0,
+    "material_count": 19,
+    "source_ref_count": 1,
+    "source_refs": [
+      "processor_compare/doc_003.txt"
+    ]
+  },
+  "observer_or_ambiguity_trace": {
+    "available": true,
+    "merged": {
+      "role": "support",
+      "scene": "explanation",
+      "ambiguity": 0.3453,
+      "confidence": 0.7118,
+      "signals": [
+        "gemini_reflection_signal",
+        "gemini_expansion_signal"
+      ]
+    },
+    "items": [],
+    "item_count": 2,
+    "unavailable_reason": "",
+    "note": "observer compare propagated from material baseline"
+  },
+  "canonical_bridge_exposure_count": 6,
+  "possibility_bridge_exposure_count": 0,
+  "possibility_bridge_refs": []
+}

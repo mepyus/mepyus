@@ -1,0 +1,15 @@
+실패 메모
+
+문제:
+겉으로 많이 바뀌어 보여도 실제 구조는 거의 안 바뀌었을 수 있고,
+겉보기 변화가 적어도 물리는 크게 흔들렸을 수 있다.
+
+위험:
+- node count 변화만 보고 scale effect를 과장
+- wording 변화만 보고 law shift로 오독
+- UI 변화와 runtime 변화를 혼동
+
+대응:
+- semantic diff와 presentation diff 분리
+- invariant change를 중심으로 비교
+- quiet persistence 변화는 별도 확인

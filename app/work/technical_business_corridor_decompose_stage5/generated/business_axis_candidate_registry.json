@@ -1,0 +1,74 @@
+[
+  {
+    "input_id": "tb_y0318_value_capture",
+    "source_path": "youtube_03_18.md",
+    "expected_axis": "monetization_value_capture",
+    "format_family": "transcript_interview",
+    "why_selected": "model/company value capture and software core-value shift are explicitly discussed in the same transcript.",
+    "expected_noise_risk": "medium",
+    "note": "may also overlap with software_value_shift."
+  },
+  {
+    "input_id": "tb_y0318_startup",
+    "source_path": "youtube_03_18.md",
+    "expected_axis": "startup_thesis",
+    "format_family": "transcript_interview",
+    "why_selected": "startup opportunity, copy risk, time-gap advantage, and new-company logic appear directly.",
+    "expected_noise_risk": "medium",
+    "note": "can spill into monetization or org-business boundary."
+  },
+  {
+    "input_id": "tb_y0318_org_boundary",
+    "source_path": "youtube_03_18.md",
+    "expected_axis": "org_business_boundary",
+    "format_family": "transcript_interview",
+    "why_selected": "workflow, CFO/content operations, and company-wide adoption are directly translated into business planning.",
+    "expected_noise_risk": "medium",
+    "note": "strong bridge but can blur into business_leverage."
+  },
+  {
+    "input_id": "tb_basic3_startup",
+    "source_path": "basic3.md",
+    "expected_axis": "startup_thesis",
+    "format_family": "transcript_excerpt",
+    "why_selected": "platform shift, market-share anxiety, and startup timing logic are tightly concentrated.",
+    "expected_noise_risk": "low",
+    "note": "clean startup-thesis candidate."
+  },
+  {
+    "input_id": "tb_basic4_value_shift",
+    "source_path": "basic4.md",
+    "expected_axis": "software_value_shift",
+    "format_family": "transcript_excerpt",
+    "why_selected": "frontier shift and architecture dominance are described as an industry-value redefinition, not just raw model metrics.",
+    "expected_noise_risk": "medium",
+    "note": "may echo broad business corridor more than a narrow sub-axis."
+  },
+  {
+    "input_id": "tb_exam_software_shift_noise",
+    "source_path": "references/vectorfl_next_gemini_session/youtube_exam.md",
+    "expected_axis": "software_value_shift",
+    "format_family": "same_family_history_transcript",
+    "why_selected": "same transcript family and AI-history tone can weakly mimic a technology-to-industry transition without real business arrival.",
+    "expected_noise_risk": "high",
+    "note": "family echo candidate rather than clean business reentry."
+  },
+  {
+    "input_id": "tb_codex1_format_noise",
+    "source_path": "references/vectorfl_next_gemini_session/codex1.md",
+    "expected_axis": "software_value_shift",
+    "format_family": "dust_annotation",
+    "why_selected": "annotation shell has repeatedly produced weak business echoes even without true business-arrival content.",
+    "expected_noise_risk": "high",
+    "note": "pure format noise check."
+  },
+  {
+    "input_id": "tb_memo4_family_noise",
+    "source_path": "references/vectorfl_next_gemini_session/reference_engine/vectorfl_next/memo4.md",
+    "expected_axis": "business_leverage",
+    "format_family": "same_family_design_bundle",
+    "why_selected": "same family and authorial habits, but arrival axis is design/space/record layering rather than business leverage.",
+    "expected_noise_risk": "high",
+    "note": "family-noise and observer-style shell check."
+  }
+]

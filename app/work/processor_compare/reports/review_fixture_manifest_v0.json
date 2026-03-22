@@ -1,0 +1,86 @@
+{
+  "manifest_id": "review_fixture_manifest_v0",
+  "manifest_kind": "review_fixture_manifest",
+  "version": "v0",
+  "date": "2026-03-22",
+  "fixtures": [
+    {
+      "fixture_id": "fx_reg_canonical_doc004_doc005",
+      "fixture_kind": "immutable_regression_fixture",
+      "left_local_space_id": "lsp_00018441d497",
+      "right_local_space_id": "lsp_2dde7aef787a",
+      "expected_bridge_mode": "canonical",
+      "expected_review_state": "not_applicable",
+      "expected_lifecycle_temperature": "hot",
+      "expected_lifecycle_stage": "approved_active",
+      "allowed_drift": "none",
+      "mutable": false,
+      "description": "stable canonical control"
+    },
+    {
+      "fixture_id": "fx_reg_canonical_doc005_doc006",
+      "fixture_kind": "immutable_regression_fixture",
+      "left_local_space_id": "lsp_2dde7aef787a",
+      "right_local_space_id": "lsp_4eadb2fe7a96",
+      "expected_bridge_mode": "canonical",
+      "expected_review_state": "not_applicable",
+      "expected_lifecycle_temperature": "hot",
+      "expected_lifecycle_stage": "approved_active",
+      "allowed_drift": "none",
+      "mutable": false,
+      "description": "stable canonical control"
+    },
+    {
+      "fixture_id": "fx_reg_canonical_live_sync",
+      "fixture_kind": "immutable_regression_fixture",
+      "left_local_space_id": "lsp_3eaef4e0c6dc",
+      "right_local_space_id": "lsp_3630ca5d8a22",
+      "expected_bridge_mode": "canonical",
+      "expected_review_state": "not_applicable",
+      "expected_lifecycle_temperature": "hot",
+      "expected_lifecycle_stage": "approved_active",
+      "allowed_drift": "none",
+      "mutable": false,
+      "description": "stable canonical sync control"
+    },
+    {
+      "fixture_id": "fx_exp_probe_doc006",
+      "fixture_kind": "mutable_exploration_control",
+      "left_local_space_id": "lsp_ddc406eb4938",
+      "right_local_space_id": "lsp_4eadb2fe7a96",
+      "expected_bridge_mode": "possibility_candidate",
+      "expected_review_state": "candidate",
+      "expected_lifecycle_temperature": "hot",
+      "expected_lifecycle_stage": "review_active",
+      "allowed_drift": "exploration_state_change_allowed",
+      "mutable": true,
+      "description": "space pre-entry review candidate; may evolve"
+    },
+    {
+      "fixture_id": "fx_exp_probe_doc005",
+      "fixture_kind": "mutable_exploration_control",
+      "left_local_space_id": "lsp_ddc406eb4938",
+      "right_local_space_id": "lsp_2dde7aef787a",
+      "expected_bridge_mode": "none",
+      "expected_review_state": "translation_missing",
+      "expected_lifecycle_temperature": "warm",
+      "expected_lifecycle_stage": "blocked_waiting_revisit",
+      "allowed_drift": "exploration_state_change_allowed",
+      "mutable": true,
+      "description": "translation-missing exploration control; future change allowed"
+    },
+    {
+      "fixture_id": "fx_exp_probe_doc004",
+      "fixture_kind": "mutable_exploration_control",
+      "left_local_space_id": "lsp_ddc406eb4938",
+      "right_local_space_id": "lsp_00018441d497",
+      "expected_bridge_mode": "none",
+      "expected_review_state": "translation_missing",
+      "expected_lifecycle_temperature": "warm",
+      "expected_lifecycle_stage": "blocked_waiting_revisit",
+      "allowed_drift": "exploration_state_change_allowed",
+      "mutable": true,
+      "description": "translation-missing exploration control; future change allowed"
+    }
+  ]
+}

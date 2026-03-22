@@ -1,0 +1,333 @@
+[
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_001",
+    "fragment_text": "AI 기술의 빠른 발전은 지식의 저장과 활용 방식에도 변화를 요구하고 있다. 대규모 언어 모델(LLM)은 자연어 생성 능력을 통해 다양한 산업 분야에서 혁신을 이끌고 있지만, 정보의 정확성, 최신성, 문맥 기반 추론에는 한계가 존재한다. 이러한 문제를 해결하기 위해 등장한 기술이 RAG(Retrieval-Augmented Generation) 인데, 기존 RAG는 텍스트를 벡터로 변환해 유사도 기반 검색을 수행하므로 복잡한 데이터 관계를 충분히 반영하기는 어렵다. 이를 보완한 것이 Graph RAG이다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_rag_evolution",
+        "anchor_label": "rag_evolution",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.8,
+    "intensity": 0.6,
+    "stability": 0.9,
+    "scene": "explanation",
+    "role": "definition",
+    "semantic_tags": [
+      "llm_limitations",
+      "vector_rag",
+      "graph_rag_introduction"
+    ],
+    "structural_tags": [
+      "problem_solution",
+      "context_setting"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "복잡한 데이터 관계를 충분히 반영하기는 어렵다",
+      "이를 보완한 것이 Graph RAG이다"
+    ],
+    "why_short": "기존 Vector RAG의 관계 표현 한계를 지적하며 Graph RAG의 등장 배경을 설명함.",
+    "processor_notes": [
+      "rag_limitation_focus"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_002",
+    "fragment_text": "Graph DB는 데이터를 노드(Node), 관계(Relationship), 속성(Property)의 형태로 저장하는 데이터베이스이다. 전통적인 관계형 데이터베이스(RDBMS)가 테이블과 조인을 기반으로 관계를 표현하는 것과 달리, Graph DB는 데이터 간의 연결(관계)을 엔티티와 동등한 수준의 데이터 모델 요소로 직접 저장·관리한다. 이로 인해 관계가 복잡하게 얽힌 데이터에서도 탐색 속도가 빠르며, 직관적인 질의가 가능하다. 대표적인 Graph DB로는 Neo4j, Amazon Neptune, ArangoDB, TigerGraph 등이 있다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_graph_db_definition",
+        "anchor_label": "graph_db_definition",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.9,
+    "intensity": 0.7,
+    "stability": 0.95,
+    "scene": "explanation",
+    "role": "definition",
+    "semantic_tags": [
+      "graph_database",
+      "node_relationship_property",
+      "native_relationship_storage"
+    ],
+    "structural_tags": [
+      "comparative_definition",
+      "enumeration"
+    ],
+    "confidence": 0.98,
+    "ambiguity": 0.02,
+    "evidence_text": [
+      "노드(Node), 관계(Relationship), 속성(Property)의 형태",
+      "관계를 엔티티와 동등한 수준의 데이터 모델 요소로 직접 저장"
+    ],
+    "why_short": "Graph DB의 구조적 특징과 RDBMS와의 차별점, 대표 사례를 정의함.",
+    "processor_notes": [
+      "structural_differentiator"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_003",
+    "fragment_text": "Graph RAG는 데이터를 노드와 관계로 구성된 지식 그래프(Knowledge Graph) 형태로 표현하고 탐색함으로써, 다단계 연결 질의와 관계 기반 추론을 수행할 수 있다. ... 나아가, Vector RAG와 Graph RAG를 하이브리드 구조로 결합하면, 텍스트 유사도 기반 효율성과 그래프 기반 정확성을 동시에 확보할 수 있다. 즉, 대규모 문서 검색과 관계 중심 추론을 통합하여 정확하고 신뢰성 있는 질의 응답이 가능해지는 차세대 RAG 아키텍처를 구현할 수 있다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_graph_rag_mechanism",
+        "anchor_label": "graph_rag_mechanism",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_hybrid_rag",
+        "anchor_label": "hybrid_rag",
+        "anchor_type": "semantic",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.85,
+    "intensity": 0.8,
+    "stability": 0.9,
+    "scene": "explanation",
+    "role": "expansion",
+    "semantic_tags": [
+      "knowledge_graph",
+      "multi_hop_reasoning",
+      "hybrid_architecture"
+    ],
+    "structural_tags": [
+      "mechanism_description",
+      "future_direction"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "다단계 연결 질의와 관계 기반 추론을 수행",
+      "유사도 기반 효율성과 그래프 기반 정확성을 동시에 확보"
+    ],
+    "why_short": "지식 그래프 기반의 추론 능력과 Vector RAG와의 하이브리드 결합 이점을 설명함.",
+    "processor_notes": [
+      "hybrid_strategy_highlight"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_004",
+    "fragment_text": "지식 그래프 구축 단계: (1) 데이터 수집 및 정제: RDB, 문서, CSV, API 등에서 수집. (2) 엔티티 추출 및 속성 정규화: 일관성 확보 및 탐색 기반 마련. (3) 관계 정의 및 지식 그래프 생성: 엔티티 간 관계를 노드와 엣지로 구조화하여 Graph DB에 적재. 이렇게 구축된 지식 그래프는 이후 질의 처리 단계에서 복잡한 관계 쿼리를 처리할 수 있는 기반이 된다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_knowledge_graph_construction",
+        "anchor_label": "knowledge_graph_construction",
+        "anchor_type": "process",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.75,
+    "intensity": 0.6,
+    "stability": 0.9,
+    "scene": "process",
+    "role": "support",
+    "semantic_tags": [
+      "data_ingestion",
+      "entity_extraction",
+      "normalization",
+      "graph_loading"
+    ],
+    "structural_tags": [
+      "step_by_step_process",
+      "technical_workflow"
+    ],
+    "confidence": 0.92,
+    "ambiguity": 0.08,
+    "evidence_text": [
+      "엔티티 추출 및 속성 정규화",
+      "관계 정의 및 지식 그래프 생성"
+    ],
+    "why_short": "데이터 수집부터 Graph DB 적재까지의 지식 그래프 구축 파이프라인을 단계별로 기술함.",
+    "processor_notes": [
+      "construction_workflow_summary"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_005",
+    "fragment_text": "사용자 질의 처리 및 답변 생성: (1) 질의 변환: 자연어 질의를 그래프 쿼리(Cypher/SPARQL)로 변환. (2) 그래프 탐색 및 검색: 관련 엔티티와 관계 정보 검색. (3) 컨텍스트 결합 및 답변 생성: 검색된 데이터를 컨텍스트로 결합하여 LLM이 답변 생성. 생성된 답변은 근거와 출처를 포함하여 신뢰성을 확보한다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_query_processing_flow",
+        "anchor_label": "query_processing_flow",
+        "anchor_type": "process",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.8,
+    "intensity": 0.7,
+    "stability": 0.92,
+    "scene": "process",
+    "role": "support",
+    "semantic_tags": [
+      "nl2query",
+      "graph_traversal",
+      "context_augmentation",
+      "grounded_generation"
+    ],
+    "structural_tags": [
+      "operational_flow",
+      "logical_sequence"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "자연어 질의를 그래프 쿼리로 변환",
+      "근거와 출처를 포함하여 신뢰성을 확보"
+    ],
+    "why_short": "자연어 질의가 그래프 쿼리를 거쳐 근거 기반 답변으로 생성되는 운영 흐름을 설명함.",
+    "processor_notes": [
+      "runtime_architecture_logic"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_006",
+    "fragment_text": "여러 관계가 포함된 Multi-hop 질의 처리에서는 단순 사실 검색을 넘어, 여러 개체가 연계된 정보를 정확히 추론하는 능력이 중요하다. Vector RAG는 관계 추적과 조건 기반 집계가 필요한 복잡 질의에서 한계가 나타나는 반면, Graph RAG는 질문을 구조적으로 해석하고 Graph DB에서 관계를 명시적으로 탐색하며 정확하고 안정적인 답변을 제공한다. 질문 예시: “팀 A가 속한 부서의 다른 팀이 담당하는 프로젝트의 이름은 무엇인가?”",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_multi_hop_query",
+        "anchor_label": "multi_hop_query",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.9,
+    "intensity": 0.85,
+    "stability": 0.88,
+    "scene": "evidence",
+    "role": "problem",
+    "semantic_tags": [
+      "multi_hop_reasoning",
+      "relational_traversal",
+      "structural_interpretation"
+    ],
+    "structural_tags": [
+      "comparative_analysis",
+      "use_case_logic"
+    ],
+    "confidence": 0.9,
+    "ambiguity": 0.1,
+    "evidence_text": [
+      "여러 개체가 연계된 정보를 정확히 추론",
+      "관계를 명시적으로 탐색하며 정확하고 안정적인 답변"
+    ],
+    "why_short": "복잡한 다단계 관계 탐색(Multi-hop) 상황에서 Graph RAG의 구조적 우월성을 논리적으로 제시함.",
+    "processor_notes": [
+      "reasoning_capability_contrast"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_007",
+    "fragment_text": "활용 사례: 1. 인력 관리(NASA): 직원 전문 분야와 프로젝트 성과를 연결하여 최적화 팀원 추천 및 멘토 매핑. 2. 헬스케어(Precina Health): 환자 기록, 식습관, 혈당 수치를 연결하여 복합적 원인 분석 및 치료 계획 수립. 이외에도 금융 리스크 관리(사기 패턴 탐지), 사내 지식 관리 시스템 등 다양한 분야 활용이 가능하다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_graph_rag_applications",
+        "anchor_label": "graph_rag_applications",
+        "anchor_type": "object",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.7,
+    "intensity": 0.5,
+    "stability": 0.95,
+    "scene": "explanation",
+    "role": "example",
+    "semantic_tags": [
+      "nasa_hr_management",
+      "healthcare_analytics",
+      "fraud_detection",
+      "knowledge_management"
+    ],
+    "structural_tags": [
+      "industry_cases",
+      "enumeration"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "직원 전문 분야와 프로젝트 성과를 연결",
+      "환자 기록, 식습관, 혈당 수치를 연결"
+    ],
+    "why_short": "공공, 의료, 금융 등 실제 산업 현장에서의 Graph RAG 적용 사례를 구체화함.",
+    "processor_notes": [
+      "cross_industry_value_evidence"
+    ]
+  },
+  {
+    "input_doc_id": "doc_006",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "auto_doc_006_frag_008",
+    "fragment_text": "기술적 과제: 지식 그래프 내 엔티티와 관계를 정확하게 정의하고 속성을 정규화하는 과정이 필수적이며, 그렇지 않으면 결과가 왜곡될 수 있다. 또한 자연어 질의를 쿼리로 변환하는 NL2GraphQuery 기술과 검증이 필요하다. 해결을 위해 하이브리드 검색(Vector + Graph) 전략과 피드백 루프를 통한 반복 검증이 고려되어야 한다. Graph RAG는 답변의 정확성과 신뢰성을 높이며 데이터 활용의 범위를 확장하고 있다.",
+    "source_type": "technical_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_technical_challenges",
+        "anchor_label": "technical_challenges",
+        "anchor_type": "process",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.82,
+    "intensity": 0.75,
+    "stability": 0.85,
+    "scene": "reflection",
+    "role": "expansion",
+    "semantic_tags": [
+      "data_quality_control",
+      "nl2graphquery",
+      "hybrid_search_strategy",
+      "validation_feedback"
+    ],
+    "structural_tags": [
+      "limitation_analysis",
+      "strategy_proposal",
+      "closing_remark"
+    ],
+    "confidence": 0.9,
+    "ambiguity": 0.1,
+    "evidence_text": [
+      "의미적 중복이나 잘못된 관계로 인해 결과가 왜곡",
+      "NL2GraphQuery 기술과 함께 쿼리 검증이 필요"
+    ],
+    "why_short": "구축 및 운영상의 기술적 난제와 이를 극복하기 위한 하이브리드 및 검증 전략을 제언함.",
+    "processor_notes": [
+      "implementation_barriers_and_solutions"
+    ]
+  }
+]

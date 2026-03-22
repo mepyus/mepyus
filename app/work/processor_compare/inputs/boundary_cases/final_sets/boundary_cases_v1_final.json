@@ -1,0 +1,302 @@
+[
+  {
+    "final_case_id": "bcase_001",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_001",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_reflection",
+    "case_text": "사람들이 메신저 답장을 늦게 보내는 이유는 대개 무례해서가 아니라, 대화가 끊기지 않을 만한 여유를 찾지 못해서다. 그래서 읽어놓고도 바로 답하지 못하는 일이 자주 생긴다. 그런데 이상하게도 기다리는 쪽에서는 그 공백을 늘 감정으로 해석하게 된다.",
+    "why_boundary": "앞부분은 사회적 행동을 설명하는 문단처럼 읽히지만 마지막 문장이 해석 주체의 내면 쪽으로 기울어 reflection으로도 볼 수 있다.",
+    "expected_tension": ["행동 설명", "감정 해석", "일상 관찰"]
+  },
+  {
+    "final_case_id": "bcase_002",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_002",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_reflection",
+    "case_text": "오래된 도시는 길이 비효율적으로 얽혀 있어서 처음 온 사람에게는 불친절하게 느껴진다. 하지만 그런 길은 목적지만 연결하는 대신, 사람이 잠깐 멈춰 서게 만드는 틈을 남겨 둔다. 편리함을 기준으로만 보면 단점인데, 자꾸 걷다 보면 그 불편이 도시의 기억을 붙잡는 방식처럼 보인다.",
+    "why_boundary": "도시 구조에 대한 설명으로 시작하지만 결말이 가치 판단과 성찰로 이동해 reflection 경계를 흔든다.",
+    "expected_tension": ["도시 구조", "가치 판단", "성찰"]
+  },
+  {
+    "final_case_id": "bcase_003",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_005",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_reflection",
+    "case_text": "책을 끝까지 읽지 못하는 건 집중력이 부족해서만은 아니다. 앞부분에서 이미 이 책이 어디로 갈지 짐작해 버리면, 사람은 남은 페이지를 정보가 아니라 절차처럼 느끼기 쉽다. 어쩌면 내가 자주 중간에서 멈추는 건 피곤해서가 아니라, 더 놀라지 않을 거라는 예감 때문인지도 모른다.",
+    "why_boundary": "독서 행동을 설명하는 문장들이지만 마지막이 화자의 자기 추론으로 닫혀 reflection 판독을 유도한다.",
+    "expected_tension": ["독서 습관", "자기 추론", "설명과 성찰"]
+  },
+  {
+    "final_case_id": "bcase_004",
+    "source_model": "gemini",
+    "source_case_id": "BC_002",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_reflection",
+    "case_text": "이 알고리즘은 사용자 데이터를 실시간으로 군집화하여 최적의 추천 리스트를 생성합니다. 기술적으로는 효율적인 자원 배분이라 부르지만, 우리가 진정으로 원하는 것이 기계에 의한 취향의 박제인지에 대해서는 다시 한번 자문해 보아야 할 시점입니다.",
+    "why_boundary": "기능적 작동 원리에 대한 설명 뒤에 즉각적인 철학적 질문이 이어져 장면 전환의 경계가 모호합니다.",
+    "expected_tension": ["기술 명세", "철학적 회의", "기계적 추천"]
+  },
+  {
+    "final_case_id": "bcase_005",
+    "source_model": "gemini",
+    "source_case_id": "BC_004",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_reflection",
+    "case_text": "심리학에서 투사란 자신의 내면적 갈등을 외부의 대상에게 전가하는 방어 기제입니다. 우리가 타인의 사소한 습관에 분노를 느끼는 순간마다, 사실은 거울 속에 비친 자신의 일그러진 욕망을 마주하고 있는 것은 아닐까요.",
+    "why_boundary": "학술적 정의(Explanation)가 바로 개인적 깨달음이나 성찰(Reflection)의 질문으로 전이됩니다.",
+    "expected_tension": ["심리 정의", "투사 기제", "내면 성찰"]
+  },
+  {
+    "final_case_id": "bcase_006",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_006",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_evidence",
+    "case_text": "작은 가게가 단골을 붙잡는 방식은 대체로 가격보다 리듬에 가깝다. 문 여는 시간, 익숙한 인사, 계산대 앞의 짧은 대화가 반복되면 손님은 그 가게를 서비스가 아니라 일상의 일부로 기억한다. 동네 빵집에서 아침마다 같은 자리에 식빵이 놓여 있는 것도 그런 리듬의 한 장면이다.",
+    "why_boundary": "대체로 일반 원리를 설명하지만 마지막 문장이 구체 사례처럼 기능해 evidence로도 읽힐 수 있다.",
+    "expected_tension": ["일반 원리", "구체 장면", "반복 리듬"]
+  },
+  {
+    "final_case_id": "bcase_007",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_007",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_evidence",
+    "case_text": "온라인 수업이 피곤한 이유는 화면을 오래 봐서만이 아니다. 서로의 반응이 작게 잘려 들어오니까, 말하는 사람은 계속 이해 여부를 추측해야 한다. 그래서 누군가 카메라를 끄고 오래 침묵하면 그 한 칸의 검은 화면이 생각보다 큰 압박으로 남는다.",
+    "why_boundary": "원인 구조를 설명하는 문단이지만 마지막의 시각적 장면이 거의 증거 제시처럼 작동한다.",
+    "expected_tension": ["원인 설명", "시각 장면", "체감 증거"]
+  },
+  {
+    "final_case_id": "bcase_008",
+    "source_model": "gemini",
+    "source_case_id": "BC_006",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_evidence",
+    "case_text": "이번 신제품 개발 과정에서는 탄소 배출량을 기존 대비 30% 절감하는 데 성공했습니다. 재생 플라스틱의 비중을 높이고 공정 에너지를 최적화한 결과, 업계 최초로 친환경 인증 최고 등급을 획득하며 지속 가능 경영의 지표를 제시했습니다.",
+    "why_boundary": "성과에 대한 설명(Explanation) 자체가 곧 그 성과를 입증하는 구체적 데이터(Evidence)로 기능합니다.",
+    "expected_tension": ["성과 지표", "데이터 제시", "인증 획득"]
+  },
+  {
+    "final_case_id": "bcase_009",
+    "source_model": "gemini",
+    "source_case_id": "BC_008",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_evidence",
+    "case_text": "브랜드의 충성도는 고객과의 정서적 유대감이 깊어질수록 강화됩니다. 지난 분기 고객 만족도 조사에서 5년 이상 사용자 중 85%가 지인 추천 의사를 밝힌 점은 유대감이 실질적인 구매 의향으로 전환됨을 시사합니다.",
+    "why_boundary": "브랜드 이론 설명과 조사 결과 수치가 결합되어 원리 설명인지 데이터 입증인지 갈릴 수 있습니다.",
+    "expected_tension": ["마케팅 이론", "통계 수치", "추천 의향"]
+  },
+  {
+    "final_case_id": "bcase_010",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_010",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_comparison",
+    "case_text": "종이책은 내용을 따라가게 만들고, 전자책은 위치를 관리하게 만든다는 말을 들은 적이 있다. 실제로 종이책을 읽을 때는 앞뒤 페이지의 감각이 남지만, 전자책에서는 남은 퍼센트가 더 자주 눈에 들어온다. 둘 다 읽기라는 점은 같지만, 하나는 문장을 걷게 하고 다른 하나는 진행률을 보게 한다.",
+    "why_boundary": "읽기 경험을 설명하는 문단이지만 구조 자체가 두 매체를 나란히 세워 comparison으로도 강하게 읽힌다.",
+    "expected_tension": ["매체 차이", "설명", "대조 구조"]
+  },
+  {
+    "final_case_id": "bcase_011",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_011",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_comparison",
+    "case_text": "신입이 적응하는 방식과 오래 일한 사람이 버티는 방식은 얼핏 비슷해 보인다. 둘 다 규칙을 배우고, 말실수를 줄이고, 분위기를 살핀다. 하지만 한쪽은 들어가기 위해 조심하고 다른 쪽은 남기 위해 조심한다는 점에서 같은 행동도 전혀 다르게 읽힌다.",
+    "why_boundary": "조직 적응 원리를 설명하지만 두 집단을 대칭적으로 배치해 comparison 판독을 부른다.",
+    "expected_tension": ["적응", "대칭 배치", "동일 행동의 차이"]
+  },
+  {
+    "final_case_id": "bcase_012",
+    "source_model": "gemini",
+    "source_case_id": "BC_012",
+    "target_axis": "scene",
+    "boundary_pair": "explanation_vs_comparison",
+    "case_text": "예술적 직관과 기계적 연산은 서로 다른 궤적을 그리며 발전해 왔습니다. 연산이 확률과 통계에 기반한 예측의 영역이라면, 직관은 논리적 비약을 통해 미지의 세계를 포착하는 창조적 행위로 정의됩니다.",
+    "why_boundary": "두 개념의 차이점을 부각하는 대조 구조와 각 개념의 본질에 대한 정의적 설명이 겹쳐 있습니다.",
+    "expected_tension": ["직관 vs 연산", "창조적 행위", "논리 구조"]
+  },
+  {
+    "final_case_id": "bcase_013",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_013",
+    "target_axis": "role",
+    "boundary_pair": "thesis_vs_expansion",
+    "case_text": "좋은 도구는 인간을 대체하는 것이 아니라, 인간이 무엇을 붙들어야 하는지 더 선명하게 드러내 준다. 그래서 도구가 좋아질수록 사람의 역할이 사라지는 게 아니라, 오히려 남는 역할의 윤곽이 더 또렷해진다. 문제는 그 윤곽이 드러날 때 대부분의 사람은 자신이 잃은 것부터 먼저 본다는 데 있다.",
+    "why_boundary": "앞 두 문장은 주장을 압축한 thesis처럼 보이지만 마지막 문장이 인간 반응에 대한 확장적 해석으로 번져 expansion 가능성을 만든다.",
+    "expected_tension": ["핵심 주장", "인간 반응", "확장 해석"]
+  },
+  {
+    "final_case_id": "bcase_014",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_016",
+    "target_axis": "role",
+    "boundary_pair": "thesis_vs_expansion",
+    "case_text": "팀이 무너질 때 가장 먼저 사라지는 것은 동료애가 아니라 예측 가능성이다. 누가 무엇을 언제까지 할지 감이 없어지는 순간, 사람들은 실수보다 침묵을 더 두려워하게 된다. 신뢰라는 말도 결국은, 내일이 오늘과 완전히 다르지는 않으리라는 기대에서 시작되는 것 같다.",
+    "why_boundary": "첫 문장의 선언성은 thesis에 가깝지만 후반부는 개념을 감정적·사회적 층위로 넓혀 expansion으로도 읽힌다.",
+    "expected_tension": ["선언", "신뢰 해석", "사회적 확장"]
+  },
+  {
+    "final_case_id": "bcase_015",
+    "source_model": "gemini",
+    "source_case_id": "BC_015",
+    "target_axis": "role",
+    "boundary_pair": "thesis_vs_expansion",
+    "case_text": "데이터 주권은 21세기 민주주의의 새로운 토대입니다. 개인이 자신의 정보를 통제할 권리를 가질 때 비로소 디지털 플랫폼의 지배로부터 해방될 수 있으며, 이는 정보 공유의 공정성을 확보하는 시스템 구축으로 이어져야 합니다.",
+    "why_boundary": "데이터 주권의 중요성 역설(Thesis)과 그 결과로 나타날 시스템적 요구(Expansion)가 등가로 읽힙니다.",
+    "expected_tension": ["데이터 주권", "민주주의", "시스템 확장"]
+  },
+  {
+    "final_case_id": "bcase_016",
+    "source_model": "gemini",
+    "source_case_id": "BC_016",
+    "target_axis": "role",
+    "boundary_pair": "thesis_vs_expansion",
+    "case_text": "진정한 혁신은 기존의 것을 파괴하는 것이 아니라 새로운 맥락을 부여하는 것입니다. 낡은 공장 건물을 예술 공간으로 바꾸는 것처럼, 가치의 재정의를 통해 우리는 과거의 유산과 현대의 필요를 동시에 충족시키는 지속 가능한 성장을 이룰 수 있습니다.",
+    "why_boundary": "혁신의 정의(Thesis)를 내린 후, 지속 가능한 성장이라는 더 큰 담론으로 논의를 넓히고 있습니다.",
+    "expected_tension": ["혁신 재정의", "맥락 부여", "지속 가능성"]
+  },
+  {
+    "final_case_id": "bcase_017",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_017",
+    "target_axis": "role",
+    "boundary_pair": "support_vs_example",
+    "case_text": "정책이 현장에서 오래 살아남으려면, 사람들이 그것을 옳다고 믿기 전에 먼저 다룰 수 있어야 한다. 메뉴 이름이 어렵거나 절차가 길면 좋은 제도도 곧 피로의 대상이 된다. 주민센터 키오스크 앞에서 직원이 절차보다 버튼 위치부터 설명하는 모습은 그 점을 잘 보여준다.",
+    "why_boundary": "앞부분은 일반 논지를 뒷받침하는 support 같지만 마지막 장면이 독립 예시로도 작동한다.",
+    "expected_tension": ["정책 실행", "현장 장면", "일반 논지"]
+  },
+  {
+    "final_case_id": "bcase_018",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_018",
+    "target_axis": "role",
+    "boundary_pair": "support_vs_example",
+    "case_text": "집에서 일하면 자유로울 거라고 생각했는데, 실제로는 경계가 사라져서 더 자주 스스로를 확인하게 된다. 일을 안 하는 시간이 아니라, 일을 안 하고 있다는 불안을 관리하는 시간이 늘어난다. 점심 먹다가도 괜히 노트북 화면을 한 번 더 켜보는 습관이 바로 그 불안의 모양일 것이다.",
+    "why_boundary": "주장을 보조하는 체험 진술처럼 읽히면서도 마지막 문장이 대표적 예시처럼 도드라진다.",
+    "expected_tension": ["재택근무", "불안", "대표 장면"]
+  },
+  {
+    "final_case_id": "bcase_019",
+    "source_model": "gemini",
+    "source_case_id": "BC_017",
+    "target_axis": "role",
+    "boundary_pair": "support_vs_example",
+    "case_text": "지역 사회의 활성화는 소상공인들의 네트워크 강화에서 시작됩니다. 이웃한 빵집과 서점이 협업하여 문화 행사를 열고 공동 마일리지를 운영하는 형태의 상생 모델은 지역 공동체의 유대감을 높이는 실질적인 토대가 됩니다.",
+    "why_boundary": "상생 모델이라는 구체적 사례(Example)가 동시에 네트워크 강화의 필요성을 뒷받침(Support)합니다.",
+    "expected_tension": ["네트워크", "상생 모델", "구체 사례"]
+  },
+  {
+    "final_case_id": "bcase_020",
+    "source_model": "gemini",
+    "source_case_id": "BC_019",
+    "target_axis": "role",
+    "boundary_pair": "support_vs_example",
+    "case_text": "업무 자동화는 인간의 창의성을 발휘할 시간을 확보해 줍니다. 단순 반복적인 데이터 입력을 봇에게 맡기고 기획과 전략 수립에 집중함으로써 프로젝트의 질적 수준을 비약적으로 높인 최근의 사례들은 이러한 가능성을 현실로 보여줍니다.",
+    "why_boundary": "자동화의 장점을 설명하는 부연(Support)과 프로젝트 성공 사례 언급(Example)이 융합되어 있습니다.",
+    "expected_tension": ["자동화 편익", "시간 확보", "성공 사례"]
+  },
+  {
+    "final_case_id": "bcase_021",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_022",
+    "target_axis": "role",
+    "boundary_pair": "contrast_vs_expansion",
+    "case_text": "예전의 교육은 모르는 것을 줄이는 일에 가까웠고, 지금의 교육은 넘치는 것 중 무엇을 믿을지 고르는 일에 더 가까워 보인다. 질문의 수는 늘었는데, 정답의 권위는 오히려 얇아졌다. 그래서 공부는 지식을 채우는 일이라기보다 판단을 지탱할 근육을 만드는 일처럼 들린다.",
+    "why_boundary": "두 시대를 비교하는 contrast가 분명하지만 마지막 문장이 교육의 의미 자체를 넓혀 expansion으로 판독될 수 있다.",
+    "expected_tension": ["교육 변화", "비교", "의미 재정의"]
+  },
+  {
+    "final_case_id": "bcase_022",
+    "source_model": "gemini",
+    "source_case_id": "BC_021",
+    "target_axis": "role",
+    "boundary_pair": "contrast_vs_expansion",
+    "case_text": "단기적인 이익에 매몰된 기업은 시장 변화에 취약할 수밖에 없습니다. 이와 달리 장기적 가치를 추구하는 기업은 위기 상황에서도 회복 탄력성을 발휘하며, 이는 단순히 생존을 넘어 시장의 질서를 재편하는 리더십으로 이어집니다.",
+    "why_boundary": "기업 유형 간 대조(Contrast)로 시작했으나, 장기적 가치 추구의 결과인 리더십으로 논의가 확장(Expansion)됩니다.",
+    "expected_tension": ["이익 vs 가치", "회복 탄력성", "질서 재편"]
+  },
+  {
+    "final_case_id": "bcase_023",
+    "source_model": "gemini",
+    "source_case_id": "BC_022",
+    "target_axis": "role",
+    "boundary_pair": "contrast_vs_expansion",
+    "case_text": "기존의 선형 경제가 자원을 채취하고 폐기하는 방식이었다면, 순환 경제는 자원의 재활용과 재구성을 통해 폐기물 제로를 지향합니다. 이러한 패러다임의 전환은 산업 전반의 공급망 구조를 근본적으로 재설계해야 하는 과제를 우리에게 안겨줍니다.",
+    "why_boundary": "경제 모델 대조(Contrast) 이후 산업 구조 재설계라는 거시적 과제로 논의가 뻗어 나갑니다(Expansion).",
+    "expected_tension": ["선형 vs 순환", "제로 웨이스트", "공급망 재편"]
+  },
+  {
+    "final_case_id": "bcase_024",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_024",
+    "target_axis": "role",
+    "boundary_pair": "problem_vs_support",
+    "case_text": "우리 팀 문서는 많지만 이상하게도 결정이 반복해서 흔들린다. 지난달 회의록에도 같은 문장이 있는데, 이번 주에도 거의 같은 표현으로 다시 논쟁했다. 기록이 부족한 게 아니라, 기록이 누구의 언어로 남아야 하는지가 아직 정리되지 않은 것 같다.",
+    "why_boundary": "문제 진단처럼 읽히지만 마지막 문장이 원인 설명이자 논지 support처럼 작동한다.",
+    "expected_tension": ["문제 진단", "원인 제시", "문서 언어"]
+  },
+  {
+    "final_case_id": "bcase_025",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_025",
+    "target_axis": "role",
+    "boundary_pair": "problem_vs_support",
+    "case_text": "학생들은 발표를 어려워한다고 말하지만, 정작 더 힘든 건 발표 자체보다 질문이 끝난 뒤의 침묵일 수 있다. 누가 먼저 손을 들지 모르는 몇 초 동안, 발표자는 자기 말 전체가 흔들리는 것처럼 느낀다. 그래서 발표 교육은 말하기 훈련이면서 동시에 그 침묵을 버티는 훈련이어야 한다.",
+    "why_boundary": "문제를 제기하는 문단으로 시작하지만 마지막 문장이 해결 방향을 지지하는 support처럼 읽힌다.",
+    "expected_tension": ["발표 불안", "침묵", "교육 방향"]
+  },
+  {
+    "final_case_id": "bcase_026",
+    "source_model": "gemini",
+    "source_case_id": "BC_026",
+    "target_axis": "role",
+    "boundary_pair": "problem_vs_support",
+    "case_text": "알고리즘 편향성은 인공지능이 내리는 의사결정의 공정성을 심각하게 훼손합니다. 학습 데이터에 내재된 특정 집단에 대한 고정관념이 결과값에 반영될 경우, 시스템은 차별을 정당화하고 고착화하는 도구로 전락할 위험이 큽니다.",
+    "why_boundary": "편향성이라는 문제(Problem)를 지적하는 문장과 그 위험성을 논리적으로 보강하는 문장(Support)의 경계입니다.",
+    "expected_tension": ["알고리즘 편향", "의사결정 공정성", "차별 고착화"]
+  },
+  {
+    "final_case_id": "bcase_027",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_028",
+    "target_axis": "score",
+    "boundary_pair": "confidence_vs_ambiguity",
+    "case_text": "기억은 사건을 저장하는 창고가 아니라, 나중에 다시 꺼내 쓸 수 있도록 형태를 바꾸는 편집실에 가깝다. 그래서 같은 일을 겪어도 서로 전혀 다른 문장으로 회상하는 것은 자연스럽다. 다만 그 차이가 어디까지가 편집이고 어디부터가 왜곡인지는, 막상 한 사람의 기억 안으로 들어가 보면 쉽게 선을 긋기 어렵다.",
+    "why_boundary": "정의 문장들은 confidence를 높게 주고 싶게 만들지만 결말이 개념 경계를 흐려 ambiguity를 함께 남긴다.",
+    "expected_tension": ["개념 정의", "경계 흐림", "기억 편집"]
+  },
+  {
+    "final_case_id": "bcase_028",
+    "source_model": "gemini",
+    "source_case_id": "BC_028",
+    "target_axis": "score",
+    "boundary_pair": "confidence_vs_ambiguity",
+    "case_text": "해당 유적지의 발굴 성과는 당시 주거 형태를 짐작하게 하는 중요한 단서를 제공하지만, 문자의 부재로 인해 정확한 신앙 체계나 통치 구조를 파악하는 데는 한계가 있습니다. 파편화된 유물들 사이의 관계는 여전히 학계의 추측 영역에 머물러 있습니다.",
+    "why_boundary": "정보의 출처와 한계를 명확히 밝히고 있으나, 데이터 자체가 파편적이라 라벨러의 판단이 흔들릴 수 있습니다.",
+    "expected_tension": ["발굴 단서", "추측 영역", "정보의 공백"]
+  },
+  {
+    "final_case_id": "bcase_029",
+    "source_model": "chatgpt",
+    "source_case_id": "bc_029",
+    "target_axis": "score",
+    "boundary_pair": "stability_vs_mixed",
+    "case_text": "\"그건 규정상 안 됩니다.\" 직원은 단호하게 말했지만, 바로 다음 문장에서는 방법이 전혀 없는 것은 아니라며 다른 창구를 조용히 알려줬다. 듣는 입장에서는 거절을 들은 것 같기도 하고, 우회를 권유받은 것 같기도 했다.",
+    "why_boundary": "표면상 메시지는 안정적으로 보이지만 실제 내용은 규정 준수와 비공식 우회가 섞여 있어 mixed 판독이 가능하다.",
+    "expected_tension": ["단호함", "우회", "이중 메시지"]
+  },
+  {
+    "final_case_id": "bcase_030",
+    "source_model": "gemini",
+    "source_case_id": "BC_029",
+    "target_axis": "score",
+    "boundary_pair": "stability_vs_mixed",
+    "case_text": "이번 프로젝트의 성공은 철저한 사전 기획 덕분이었으나, 실행 단계에서 발생한 예상치 못한 소통 부재는 팀원들 사이에 깊은 상처를 남겼습니다. 겉으로는 성과를 축하하면서도 내부적으로는 해체 위기를 겪고 있는 모순된 상태가 지속되고 있습니다.",
+    "why_boundary": "문단 전체가 '모순'이라는 하나의 주제를 일관되게 다루고 있으나(Stability), 감정과 성과라는 이질적 요소가 섞여 있습니다(Mixed).",
+    "expected_tension": ["성과와 갈등", "내적 모순", "구조적 일관성"]
+  }
+]

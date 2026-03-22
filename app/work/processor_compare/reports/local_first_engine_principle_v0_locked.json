@@ -1,0 +1,79 @@
+{
+  "id": "local_first_engine_principle_v0_locked",
+  "one_line_definition": "The engine core must remain valid locally without internet or external AI, and external connections must remain optional amplifiers rather than the body.",
+  "core": {
+    "must_survive_locally": [
+      "input collection",
+      "input splitting",
+      "local_ref generation and preservation",
+      "anchor_handle_processing recording",
+      "ledger recording",
+      "layer state management",
+      "blocker_proposal_revisit recording",
+      "local workbench reading",
+      "basic review surface generation",
+      "basic graph_space_timeline projection",
+      "local file based lifecycle"
+    ]
+  },
+  "optional_amplifier": {
+    "examples": [
+      "external llm interpretation",
+      "internet search",
+      "external knowledge enrichment",
+      "external api calls",
+      "large generation",
+      "cross verification",
+      "summary and expansion assistance"
+    ],
+    "principle": "Amplifiers may strengthen the core but must not replace it."
+  },
+  "operating_rules": [
+    "Core must continue even when external connectivity fails.",
+    "External results must enter as proposal/enrichment/support, not first truth.",
+    "State confirmation must happen only through local ledger plus layer transition.",
+    "External connections are boosters, not life-support."
+  ],
+  "body_mapping": {
+    "ledger": "local memory layer",
+    "layer": "state layer",
+    "local_workbench": "local judgment field",
+    "projection": [
+      "graph view",
+      "space view",
+      "timeline view",
+      "review surface"
+    ]
+  },
+  "design_tests": [
+    "Does core lifecycle stop without this feature?",
+    "Does this feature confirm state or only enrich it?",
+    "Does it become meaningless when disconnected?",
+    "Does it record into ledger/layer or only emit output?"
+  ],
+  "implementation_lock": {
+    "core_defaults": [
+      "local file based",
+      "text and json centered",
+      "explicit state transitions",
+      "ledger append centered",
+      "layer board separated",
+      "workbench local_ref centered",
+      "projection read only"
+    ],
+    "amplifier_defaults": [
+      "adapter attachment",
+      "proposal/enrichment/support only",
+      "failure tolerant",
+      "graceful degradation",
+      "no direct core state mutation"
+    ]
+  },
+  "final_locks": [
+    "The engine body must live locally.",
+    "External AI and internet are amplifiers, not the core.",
+    "Recording, state, and rereading must continue when connections fail.",
+    "External results are proposals to be reread by the local body.",
+    "Simple but strong scripts are a major strength of this engine."
+  ]
+}

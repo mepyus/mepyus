@@ -1,0 +1,536 @@
+{
+  "total_docs_seen": 8,
+  "total_fragments_seen": 177,
+  "total_fragments_compared": 65,
+  "valid_outputs_by_processor": {
+    "codex": 65,
+    "chatgpt": 66,
+    "gemini": 46
+  },
+  "unmatched_fragments_by_processor": {
+    "codex": 0,
+    "chatgpt": 17,
+    "gemini": 7
+  },
+  "doc_fragment_counts": {
+    "doc_001": {
+      "codex": 2,
+      "chatgpt": 1,
+      "gemini": 1
+    },
+    "doc_002": {
+      "codex": 4,
+      "chatgpt": 4,
+      "gemini": 4
+    },
+    "doc_003": {
+      "codex": 5,
+      "chatgpt": 5,
+      "gemini": 4
+    },
+    "doc_004": {
+      "codex": 6,
+      "chatgpt": 6,
+      "gemini": 5
+    },
+    "doc_005": {
+      "codex": 10,
+      "chatgpt": 12,
+      "gemini": 9
+    },
+    "doc_006": {
+      "codex": 11,
+      "chatgpt": 11,
+      "gemini": 8
+    },
+    "doc_007": {
+      "codex": 12,
+      "chatgpt": 14,
+      "gemini": 7
+    },
+    "doc_008": {
+      "codex": 15,
+      "chatgpt": 13,
+      "gemini": 8
+    }
+  },
+  "category_counts": {
+    "stable": 0,
+    "split": 35,
+    "hidden_candidate": 0,
+    "broken_link": 30
+  },
+  "calibration_signal_counts": {
+    "summary_definition_boundary_candidate": 10,
+    "overmerged_candidate": 54,
+    "mid_granularity_candidate": 48,
+    "meta_overreach_candidate": 5,
+    "problem_solution_boundary_candidate": 6,
+    "oversegmentation_candidate": 12,
+    "mechanism_value_boundary_candidate": 10
+  },
+  "top_anchor_divergence": [
+    {
+      "anchor_label": "ontology_definition",
+      "processor": "codex",
+      "count": 2
+    },
+    {
+      "anchor_label": "ontology",
+      "processor": "chatgpt",
+      "count": 2
+    },
+    {
+      "anchor_label": "graph_rag",
+      "processor": "codex",
+      "count": 2
+    },
+    {
+      "anchor_label": "graph_db",
+      "processor": "chatgpt",
+      "count": 2
+    },
+    {
+      "anchor_label": "graph_rag",
+      "processor": "chatgpt",
+      "count": 2
+    },
+    {
+      "anchor_label": "knowledge_representation",
+      "processor": "codex",
+      "count": 1
+    },
+    {
+      "anchor_label": "semantic_web_expression",
+      "processor": "codex",
+      "count": 1
+    },
+    {
+      "anchor_label": "knowledge_representation",
+      "processor": "chatgpt",
+      "count": 1
+    },
+    {
+      "anchor_label": "semantic_web_formalization",
+      "processor": "chatgpt",
+      "count": 1
+    },
+    {
+      "anchor_label": "knowledge_representation",
+      "processor": "gemini",
+      "count": 1
+    }
+  ],
+  "scene_disagreement_top": [
+    {
+      "scene_values": [
+        "explanation",
+        "missing",
+        "missing"
+      ],
+      "count": 8
+    },
+    {
+      "scene_values": [
+        "evidence",
+        "explanation",
+        "missing"
+      ],
+      "count": 5
+    },
+    {
+      "scene_values": [
+        "explanation",
+        "explanation",
+        "missing"
+      ],
+      "count": 5
+    },
+    {
+      "scene_values": [
+        "explanation",
+        "explanation",
+        "reflection"
+      ],
+      "count": 4
+    },
+    {
+      "scene_values": [
+        "evidence",
+        "explanation",
+        "explanation"
+      ],
+      "count": 2
+    },
+    {
+      "scene_values": [
+        "comparison",
+        "explanation",
+        "explanation"
+      ],
+      "count": 2
+    },
+    {
+      "scene_values": [
+        "explanation",
+        "explanation",
+        "instruction"
+      ],
+      "count": 2
+    },
+    {
+      "scene_values": [
+        "evidence",
+        "missing",
+        "missing"
+      ],
+      "count": 2
+    },
+    {
+      "scene_values": [
+        "comparison",
+        "comparison",
+        "missing"
+      ],
+      "count": 2
+    },
+    {
+      "scene_values": [
+        "missing",
+        "missing",
+        "reflection"
+      ],
+      "count": 2
+    }
+  ],
+  "role_disagreement_top": [
+    {
+      "role_values": [
+        "missing",
+        "missing",
+        "support"
+      ],
+      "count": 3
+    },
+    {
+      "role_values": [
+        "example",
+        "example",
+        "missing"
+      ],
+      "count": 3
+    },
+    {
+      "role_values": [
+        "expansion",
+        "support",
+        "support"
+      ],
+      "count": 3
+    },
+    {
+      "role_values": [
+        "contrast",
+        "contrast",
+        "missing"
+      ],
+      "count": 3
+    },
+    {
+      "role_values": [
+        "expansion",
+        "missing",
+        "missing"
+      ],
+      "count": 3
+    },
+    {
+      "role_values": [
+        "definition",
+        "definition",
+        "support"
+      ],
+      "count": 2
+    },
+    {
+      "role_values": [
+        "bridge",
+        "expansion",
+        "thesis"
+      ],
+      "count": 2
+    },
+    {
+      "role_values": [
+        "definition",
+        "definition",
+        "thesis"
+      ],
+      "count": 2
+    },
+    {
+      "role_values": [
+        "definition",
+        "definition",
+        "missing"
+      ],
+      "count": 2
+    },
+    {
+      "role_values": [
+        "definition",
+        "definition",
+        "expansion"
+      ],
+      "count": 2
+    }
+  ],
+  "tag_mismatch_examples": [
+    {
+      "reference_fragment_id": "doc_001_frag_001",
+      "semantic_overlap": 0.375,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "knowledge_representation",
+          "ontology_definition",
+          "semantic_web_expression"
+        ],
+        "chatgpt": [
+          "knowledge_representation",
+          "ontology",
+          "semantic_web_formalization"
+        ],
+        "gemini": [
+          "knowledge_representation",
+          "ontology_definition",
+          "semantic_web_tools"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 0.7885,
+        "gemini": 0.7885
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_002_frag_001",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "agent_framework",
+          "tool_selection_logic"
+        ],
+        "chatgpt": [
+          "agent_framework",
+          "tool_selection_logic"
+        ],
+        "gemini": [
+          "agent_framework_adoption"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 1.0
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_002_frag_002",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "framework_specific_integration",
+          "tool_sdk"
+        ],
+        "chatgpt": [
+          "langchain",
+          "tool_sdk"
+        ],
+        "gemini": [
+          "framework_specific_sdk"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 1.0
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_002_frag_003",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "integration_burden",
+          "sdk_update_overhead"
+        ],
+        "chatgpt": [
+          "agent_framework_provider",
+          "sdk_update_burden"
+        ],
+        "gemini": [
+          "integration_inefficiency"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 1.0
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_002_frag_004",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "mcp_protocol",
+          "standardized_integration",
+          "tool_interoperability"
+        ],
+        "chatgpt": [
+          "mcp",
+          "standard_protocol"
+        ],
+        "gemini": [
+          "mcp_standard"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 1.0
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_003_frag_001",
+      "semantic_overlap": 0.6667,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "dynamics_definition",
+          "rigid_body"
+        ],
+        "chatgpt": [
+          "dynamics",
+          "rigid_body"
+        ],
+        "gemini": [
+          "dynamics_definition",
+          "rigid_body"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 0.9355
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_003_frag_002",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "f_equals_ma",
+          "force_motion_relation"
+        ],
+        "chatgpt": [
+          "force_motion_relation",
+          "newtons_second_law"
+        ],
+        "gemini": [
+          "newtons_law_of_motion"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 0.8889
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_003_frag_003",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "scientific_principle_discovery",
+          "universal_gravitation"
+        ],
+        "chatgpt": [
+          "natural_principle",
+          "universal_gravitation"
+        ],
+        "gemini": [
+          "universal_gravitation"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 1.0,
+        "gemini": 0.36
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_003_frag_004",
+      "semantic_overlap": 0.5,
+      "structural_overlap": 0.3333,
+      "anchors": {
+        "codex": [
+          "newton_thought_experiment",
+          "projectile_trajectory"
+        ],
+        "chatgpt": [
+          "cannonball_trajectory",
+          "thought_experiment"
+        ],
+        "gemini": []
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 0.4615,
+        "gemini": 0.0
+      }
+    },
+    {
+      "reference_fragment_id": "codex_doc_003_frag_005",
+      "semantic_overlap": 0.0,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "gravity_orbit_relation",
+          "orbital_fall",
+          "thought_experiment"
+        ],
+        "chatgpt": [
+          "continuous_fall",
+          "orbital_motion"
+        ],
+        "gemini": [
+          "orbital_mechanics",
+          "thought_experiment"
+        ]
+      },
+      "match_scores": {
+        "codex": 1.0,
+        "chatgpt": 0.6329,
+        "gemini": 0.7722
+      }
+    }
+  ],
+  "input_adjustment_candidates": [
+    "split fragments with repeated scene or role disagreement",
+    "review fragments where anchor overlap stays low across all processors",
+    "review summary_definition_boundary, problem_solution_boundary, and mechanism_value_boundary patterns"
+  ],
+  "label_adjustment_candidates": [
+    "tighten scene and role boundary guidance for repeated disagreement clusters",
+    "review semantic tag vocabulary when hidden_candidate tags repeat",
+    "report scene_schema_violation and meta_overreach explicitly during calibration review"
+  ]
+}

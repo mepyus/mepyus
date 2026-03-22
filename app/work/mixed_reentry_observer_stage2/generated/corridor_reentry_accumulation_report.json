@@ -1,0 +1,120 @@
+[
+  {
+    "corridor_id": "technical->business::ai_business",
+    "matched_input_id": "observer_exam::w02",
+    "anchor_overlap": "different_anchor_family",
+    "bridge_support": "yes",
+    "arrival_axis_reinforcement": "same_arrival_axis",
+    "closure_delta": "anchor_only_reinforced",
+    "reentry_strength": "weak",
+    "retention_value_confirmed": "partial",
+    "bridge_fragment_count": 2,
+    "excerpt": "[para04] 06:52 이진원 실수한 것 같다라는 얘기도 많이 했었고. / [para05] 2016년 AlphaGo 대국 현장 이야기 06:54 / [para06] 06:58 노정석 저희가 2016년, 10년 전을 반추해 보면 저희 TensorFlow가 나오고 막 이런 거 할 때가 2015년 정도였던. TensorFlow가 나오긴 했지만 그게 뭔지 세상이 전혀 알지 못하던 때였",
+    "titles": [
+      "para04",
+      "para05",
+      "para06",
+      "para07"
+    ],
+    "match_type": [
+      "bridge_reentry",
+      "arrival_axis_reentry"
+    ]
+  },
+  {
+    "corridor_id": "technical->business::ai_business",
+    "matched_input_id": "observer_session::w12",
+    "anchor_overlap": "same_anchor",
+    "bridge_support": "yes",
+    "arrival_axis_reinforcement": "same_arrival_axis",
+    "closure_delta": "closure_partially_strengthened",
+    "reentry_strength": "strong",
+    "retention_value_confirmed": "yes",
+    "bridge_fragment_count": 2,
+    "excerpt": "[Step Update 13] - Added `basic3.md` as another retained source-side comparison input. - Created: - `data/exports/basic3_fragments.json`  / [basic3 Interpretation] - `basic3.md` works as a useful comparison source against `basic.md`. - Some later fragments now connect cross-source th / [Meaning Of This Step] - The replica is no longer comparing only one speech-like document and one interview excerpt. - It now has another conve",
+    "titles": [
+      "Step Update 13",
+      "basic3 Interpretation",
+      "Meaning Of This Step",
+      "Step Update 14",
+      "Conversational Semantic Result"
+    ],
+    "match_type": [
+      "anchor_reentry",
+      "bridge_reentry",
+      "arrival_axis_reentry",
+      "closure_support_reentry"
+    ]
+  },
+  {
+    "corridor_id": "technical->organization::ai_business",
+    "matched_input_id": "observer_exam::w04",
+    "anchor_overlap": "same_anchor",
+    "bridge_support": "no",
+    "arrival_axis_reinforcement": "different_arrival_axis",
+    "closure_delta": "anchor_only_reinforced",
+    "reentry_strength": "weak",
+    "retention_value_confirmed": "partial",
+    "bridge_fragment_count": 0,
+    "excerpt": "[para10] 08:33 노정석 봤죠. 저도 바둑을 다 이해하지 못하기 때문에 그 수의 깊음이나 이런 거는 제가 이해는 못했습니다만 그 사람들, 해설해 주시는 해설자들의 탄식과 놀라움과 좌절감들을 보면서 아, 이거 엄청난 거구나라 / [para11] 08:51 이진원 또 굉장히 재미있었던 거는 그때 유튜브 포함해서 다양한 채널에서 해설, 소위 프로바둑 기사들이 해설을 했는데 의견이 굉장히 많이 갈렸었어요. 어떤 한 수 한 수 나올 때마다 그거를 보는 것도 재미있 / [para12] 09:03 최승준 그 당시에는 정책망이 뭐다 가치망이 뭐다 그런 용어들을 저는 잘 몰랐던 때라 가지고 이게 무슨 소리인가 블로그 보기도 하고, 기억이 나네요.",
+    "titles": [
+      "para10",
+      "para11",
+      "para12",
+      "para13"
+    ],
+    "match_type": [
+      "anchor_reentry"
+    ]
+  },
+  {
+    "corridor_id": "technical->organization::ai_business",
+    "matched_input_id": "observer_session::w13",
+    "anchor_overlap": "same_anchor",
+    "bridge_support": "yes",
+    "arrival_axis_reinforcement": "same_arrival_axis",
+    "closure_delta": "closure_partially_strengthened",
+    "reentry_strength": "strong",
+    "retention_value_confirmed": "yes",
+    "bridge_fragment_count": 1,
+    "excerpt": "[Step Update 14] - Re-tuned semantic prioritization for conversation-like fragments. - Rule-based semantic handles are now preferred over / [Conversational Semantic Result] - `frag_basic3_001` primary anchor is now: - `semantic.future_of_work` - `frag_basic3_002` primary anchor is now: - `sem / [Interpretation] - This is the first clear improvement where conversation-like fragments moved from surface token semantics toward higher",
+    "titles": [
+      "Step Update 14",
+      "Conversational Semantic Result",
+      "Interpretation",
+      "Step Update 15",
+      "Cross-Source Comparison Result"
+    ],
+    "match_type": [
+      "anchor_reentry",
+      "bridge_reentry",
+      "arrival_axis_reentry",
+      "closure_support_reentry"
+    ]
+  },
+  {
+    "corridor_id": "technical->organization::harness_agent",
+    "matched_input_id": "observer_session::w10",
+    "anchor_overlap": "same_anchor",
+    "bridge_support": "yes",
+    "arrival_axis_reinforcement": "same_arrival_axis",
+    "closure_delta": "closure_partially_strengthened",
+    "reentry_strength": "strong",
+    "retention_value_confirmed": "yes",
+    "bridge_fragment_count": 3,
+    "excerpt": "[Observer Template Interpretation] - The observer layer is now usable as a repeatable input path, not just a proof-of-concept. - This makes it easier to re / [Step Update 11] - Re-tuned anchor ordering for document-like inputs. - Reduced the tendency for `source.*` handles to dominate primary a / [Document-Like Anchor Result] - `frag_basic_001` primary anchor moved from source-heavy ordering toward: - `object.field.ai` - `frag_basic_005` primar",
+    "titles": [
+      "Observer Template Interpretation",
+      "Step Update 11",
+      "Document-Like Anchor Result",
+      "Interpretation",
+      "Step Update 12"
+    ],
+    "match_type": [
+      "anchor_reentry",
+      "bridge_reentry",
+      "arrival_axis_reentry",
+      "closure_support_reentry"
+    ]
+  }
+]

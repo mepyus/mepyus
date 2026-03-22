@@ -1,0 +1,283 @@
+[
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_001",
+    "fragment_text": "Foundry 온톨로지에서 사용자는 액션을 적용하여 오브젝트, 속성, 링크를 변경할 수 있습니다. 액션은 사용자 정의 로직에 따라 하나 이상의 오브젝트의 속성을 변경하는 단일 트랜잭션입니다. 액션은 사용자가 특정 속성 편집 대신 전체 목표를 생각하면서 데이터를 처리하고 관리할 수 있도록 합니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_foundry_action",
+        "anchor_label": "foundry_action",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_single_transaction",
+        "anchor_label": "single_transaction",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.82,
+    "intensity": 0.69,
+    "stability": 0.92,
+    "scene": "definition",
+    "role": "definition",
+    "semantic_tags": [
+      "foundry_action",
+      "object_change",
+      "property_change"
+    ],
+    "structural_tags": [
+      "definition",
+      "transaction_unit"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "액션을 적용하여 오브젝트, 속성, 링크를 변경할 수 있습니다",
+      "하나 이상의 오브젝트의 속성을 변경하는 단일 트랜잭션입니다",
+      "전체 목표를 생각하면서 데이터를 처리하고 관리할 수 있도록 합니다"
+    ],
+    "why_short": "Foundry 온톨로지에서 액션이 무엇이며 어떤 편집 단위로 작동하는지 직접 정의하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_002",
+    "fragment_text": "액션 유형은 사용자가 한 번에 수행할 수 있는 오브젝트, 속성 값, 링크에 대한 변경 또는 편집의 집합을 정의하는 것입니다. 또한 액션을 제출할 때 함께 발생하는 사이드 이펙트 동작을 포함합니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_action_type",
+        "anchor_label": "action_type",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_side_effect",
+        "anchor_label": "side_effect",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.84,
+    "intensity": 0.66,
+    "stability": 0.94,
+    "scene": "definition",
+    "role": "definition",
+    "semantic_tags": [
+      "action_type",
+      "side_effect"
+    ],
+    "structural_tags": [
+      "definition",
+      "edit_scope"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "오브젝트, 속성 값, 링크에 대한 변경 또는 편집의 집합을 정의하는 것입니다",
+      "사이드 이펙트 동작을 포함합니다"
+    ],
+    "why_short": "액션 유형이 편집 범위와 사이드 이펙트 동작을 함께 정의한다는 점을 직접 설명하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_003",
+    "fragment_text": "예시:\n\nAssign Employee 액션 유형을 생성하여 사용자가 주어진 Employee 오브젝트의 role 속성 값을 변경하는 방법을 정의할 수 있습니다. 이 액션 유형은 사용자가 표준화된 양식으로 새로운 역할을 입력할 수 있도록 파라미터 정의 요구 및 Employee 오브젝트와 새로운 Manager 오브젝트 사이의 링크 자동 생성 방법 규칙을 포함할 수 있습니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_assign_employee",
+        "anchor_label": "assign_employee",
+        "anchor_type": "object",
+        "anchor_scope": "local"
+      },
+      {
+        "anchor_id": "anc_role_change",
+        "anchor_label": "role_change",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_link_auto_creation",
+        "anchor_label": "link_auto_creation",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.88,
+    "intensity": 0.77,
+    "stability": 0.91,
+    "scene": "explanation",
+    "role": "example",
+    "semantic_tags": [
+      "assign_employee",
+      "role_change",
+      "manager_link"
+    ],
+    "structural_tags": [
+      "example_support",
+      "parameter_rule"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.06,
+    "evidence_text": [
+      "Assign Employee 액션 유형",
+      "role 속성 값을 변경하는 방법을 정의할 수 있습니다",
+      "링크 자동 생성 방법 규칙을 포함할 수 있습니다"
+    ],
+    "why_short": "Assign Employee 사례로 액션 유형이 속성 변경과 링크 생성 규칙을 함께 정의하는 방식을 보여주는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_004",
+    "fragment_text": "또한 액션은\n\n변경 사항을 이전 및 새 관리자에게 알릴 수 있는 알림 사이드 이펙트를 포함할 수 있습니다.\n인사 담당자와 같은 권한이 있는 직원이 액션을 수행할 수 있는지 확인할 수 있습니다.\n이러한 파라미터가 설정되면 HR 직원이 예를 들어 \"Melissa Chang\"을 \"Product Manager\" role로 전환하는 액션을 수행할 수 있습니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_notification_side_effect",
+        "anchor_label": "notification_side_effect",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_permission_check",
+        "anchor_label": "permission_check",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.86,
+    "intensity": 0.72,
+    "stability": 0.9,
+    "scene": "explanation",
+    "role": "support",
+    "semantic_tags": [
+      "notification",
+      "permission_check",
+      "hr_action"
+    ],
+    "structural_tags": [
+      "side_effect_rule",
+      "authorization_rule"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.06,
+    "evidence_text": [
+      "알림 사이드 이펙트를 포함할 수 있습니다",
+      "권한이 있는 직원이 액션을 수행할 수 있는지 확인할 수 있습니다",
+      "\"Melissa Chang\"을 \"Product Manager\" role로 전환하는 액션을 수행할 수 있습니다"
+    ],
+    "why_short": "액션이 알림과 권한 확인 같은 사이드 이펙트 및 실행 조건을 포함할 수 있음을 설명하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_005",
+    "fragment_text": "Foundry 온톨로지는 추상 데이터 모델이 아니라 각 온톨로지 개념을 조직의 실제 데이터에 매핑하여 이 데이터 자산이 실제 애플리케이션을 지원하게 합니다. 온톨로지 편집을 통해 사용자의 결정과 통찰력을 기록으로 남겨 데이터 자산이 풍부해지고 그 가치가 증가하게 됩니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_real_data_mapping",
+        "anchor_label": "real_data_mapping",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_user_decision_record",
+        "anchor_label": "user_decision_record",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.83,
+    "intensity": 0.71,
+    "stability": 0.92,
+    "scene": "explanation",
+    "role": "thesis",
+    "semantic_tags": [
+      "real_data_mapping",
+      "decision_record",
+      "data_asset"
+    ],
+    "structural_tags": [
+      "core_claim",
+      "value_statement"
+    ],
+    "confidence": 0.96,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "추상 데이터 모델이 아니라",
+      "조직의 실제 데이터에 매핑하여",
+      "사용자의 결정과 통찰력을 기록으로 남겨",
+      "그 가치가 증가하게 됩니다"
+    ],
+    "why_short": "Foundry 온톨로지가 실제 데이터와 사용자 결정을 연결해 데이터 자산 가치를 높인다는 핵심 주장을 담은 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_004",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_004_frag_006",
+    "fragment_text": "오브젝트, 속성 값, 링크에 대한 변경 사항은 사용자가 액션을 취할 때 온톨로지에 커밋되며 모든 사용자 애플리케이션에 반영됩니다. 마찬가지로 동일한 액션 로직 및 검증은 모든 사용자 인터페이스 애플리케이션에서 사용할 수 있도록 제공되어 온톨로지에 일관된 편집을 보장합니다. 사용자 편집이 통합된 가장 최신 버전의 오브젝트 데이터는 오브젝트 유형의 writeback 데이터셋에 포착됩니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_ontology_commit",
+        "anchor_label": "ontology_commit",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_consistent_editing",
+        "anchor_label": "consistent_editing",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_writeback_dataset",
+        "anchor_label": "writeback_dataset",
+        "anchor_type": "object",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.9,
+    "intensity": 0.78,
+    "stability": 0.94,
+    "scene": "explanation",
+    "role": "support",
+    "semantic_tags": [
+      "ontology_commit",
+      "consistent_editing",
+      "writeback_dataset"
+    ],
+    "structural_tags": [
+      "commit_flow",
+      "shared_validation"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "온톨로지에 커밋되며 모든 사용자 애플리케이션에 반영됩니다",
+      "온톨로지에 일관된 편집을 보장합니다",
+      "writeback 데이터셋에 포착됩니다"
+    ],
+    "why_short": "액션 결과가 온톨로지에 커밋되고 모든 애플리케이션과 writeback 데이터셋에 일관되게 반영되는 흐름을 설명하는 fragment다.",
+    "processor_notes": []
+  }
+]

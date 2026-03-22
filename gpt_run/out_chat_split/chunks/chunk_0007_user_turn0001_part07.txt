@@ -1,0 +1,108 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 7
+[char_count] 1195
+
+4. 구조를 다시 잠그면 층은 4개다
+네 설명을 기준으로 하면 3층보다 4층으로 보는 게 더 정확하다.
+
+1) Source Layer
+원본 보존층
+
+대상:
+
+AI 논문
+
+리뷰
+
+유튜브 대화 전사
+
+유튜브 요약
+
+특정 주제 노트
+
+역할:
+
+원본 파일/텍스트를 그대로 저장
+
+페이지, 문단, 문장, 구간 정보 유지
+
+source_id, source_type, source_range 같은 출처 좌표 유지
+
+중요:
+여기는 절대 “공간 엔진에 맞게” 원본을 망가뜨리면 안 된다.
+원본은 원본대로 남아야 한다.
+
+2) Intake / Label / Anchor Layer
+처리층
+
+역할:
+
+원본에서 의미 단위를 뽑음
+
+단위 크기는 고정하지 않음
+
+문단, 문장, 페이지, 발화 묶음 등
+맥락을 유지하는 최소 의미 단위를 선택
+
+라벨 부여
+
+앵커 추출
+
+처리값 생성
+
+여기서 중요한 것은 단위 크기가 아니라:
+
+정보의 맥락을 충분히 담는가
+이거다.
+
+즉 segmentation 기준은 길이 기준보다
+맥락 보존 기준이 우선이다.
+
+3) Projection Layer
+원본-처리 연결층
+
+이 층이 네 구조에서 매우 중요하다.
+이건 그냥 결과 저장이 아니라, 원본과 처리값을 다시 잇는 층이다.
+
+예:
+
+원본 문단 A
+
+그 문단에서 추출된 fragment 3개
+
+fragment마다 anchor set, label set, processed signals 존재
+
+원본 화면에서 해당 fragment를 클릭하면
+관련 anchor, 유사 fragment, 연결 source, space 상태를 보여줌
+
+즉 이 층은
+원본 읽기와 공간 읽기를 이어주는 중간 판독기다.
+
+4) Space Formation Layer
+공간 형성층
+
+역할:
+
+처리된 fragment/dust를 공간에 뿌림
+
+기존 vectorfl_next처럼
+point seed, relation trace, local space, bridge trace 등으로 상호작용
+
+공간 반응을 기록
+
+나중에 source layer로 다시 역참조 가능하게 함
+
+중요:
+여기서는 원본 문서가 직접 상호작용하는 게 아니라
+처리된 먼지/조각/신호가 상호작용한다.
+
+5. 네 기준에서 “앵커”의 위치를 정확히 정해야 한다
+네 설명에서 앵커는 단순 태그가 아니다.
+앵커는 사실상 원본과 처리공간을 잇는 중간 축이다.
+
+그래서 앵커는 최소 3종으로 나누는 게 좋다.
+
+1) Source Anchor
+원본 위치 앵커
+예:

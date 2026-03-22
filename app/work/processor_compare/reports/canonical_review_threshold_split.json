@@ -1,0 +1,36 @@
+{
+  "summary": "doc_006 now has dense same-local-ref multi-family support, but the canonical review threshold still fails because direct cross-path anchor overlap remains only 1.",
+  "review_candidate": {
+    "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "bridge_mode": "possibility_candidate",
+    "promotion_review": {
+      "review_anchor_support_class": "multi_family_same_local_ref_support_present",
+      "anchor_alignment_compound_state": "multi_family_compound_candidate",
+      "support_density_class": "dense_same_local_ref",
+      "corroboration_scope_class": "same_local_ref",
+      "threshold_gap_class": "cross_path_anchor_overlap_below_threshold",
+      "threshold_review_vector": {
+        "same_local_ref_support_strength": 3,
+        "nearby_local_ref_support_strength": 0,
+        "canonical_anchor_alignment_count": 1
+      },
+      "next_review_blocker": "cross_path_anchor_overlap_below_threshold"
+    }
+  },
+  "controls": [
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_004",
+      "review_state": "translation_missing"
+    },
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "review_state": "translation_missing"
+    }
+  ],
+  "canonical_pairs_unchanged": [
+    "doc_004 -> doc_005",
+    "doc_005 -> doc_006",
+    "test_live_space_sync_20260321 -> test_canonical_ingest_20260321"
+  ],
+  "current_reading": "The next engine task is not more translation or processing, but a clearer split of canonical review thresholds for cross-path anchor corroboration."
+}

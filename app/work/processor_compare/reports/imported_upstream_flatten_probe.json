@@ -1,0 +1,400 @@
+{
+  "current_diagnosis": {
+    "imported_upstream_state": "split_preserved_but_post_materialization_local_signal_sparse",
+    "flatten_suspected": true,
+    "strongest_upstream_blocker": "imported material keeps sentence-level units, but post-materialization metadata drops anchor_bundle / processing_values / transformable_handles across imported docs"
+  },
+  "exact_changes": {
+    "files": [
+      "app/core/runtime/imported_material_probe.py"
+    ],
+    "what_added": [
+      "pre_materialization_profile",
+      "post_materialization_profile",
+      "flatten_indicators"
+    ],
+    "what_not_changed": [
+      "bridge evaluator thresholds",
+      "viewer",
+      "translation layer"
+    ]
+  },
+  "verification": {
+    "canonical_cases_unchanged": [
+      "doc_004 <-> doc_005",
+      "doc_005 <-> doc_006",
+      "test_live_space_sync_20260321 <-> test_canonical_ingest_20260321"
+    ],
+    "live_imported_none_cases": [
+      {
+        "kind": "live_imported_none",
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_004",
+        "bridge_mode": "none",
+        "cross_path_type": "live-imported",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "left_pre": {
+          "source_ref": "engine_phase1_observer_probe_20260321",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 121.0,
+          "max_span_width": 121,
+          "min_span_width": 121,
+          "sample_units": [
+            "Graph RAG 구조에서는 Ontology와 Property가 연결 기준으로 남지만, imported doc 쪽은 같은 개념이 broad description으로만 남아 local alignment가 잘 안 열린다"
+          ],
+          "sibling_density": 0
+        },
+        "left_post": {
+          "material_count": 1,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 7.0,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 5.0,
+          "flatten_indicators": []
+        },
+        "right_pre": {
+          "source_ref": "processor_compare/doc_004.txt",
+          "source_type": "review",
+          "unit_count": 15,
+          "avg_span_width": 69.07,
+          "max_span_width": 118,
+          "min_span_width": 39,
+          "sample_units": [
+            "Foundry 온톨로지에서 사용자는 액션을 적용하여 오브젝트, 속성, 링크를 변경할 수 있습니다.",
+            "액션은 사용자 정의 로직에 따라 하나 이상의 오브젝트의 속성을 변경하는 단일 트랜잭션입니다.",
+            "액션은 사용자가 특정 속성 편집 대신 전체 목표를 생각하면서 데이터를 처리하고 관리할 수 있도록 합니다."
+          ],
+          "sibling_density": 14
+        },
+        "right_post": {
+          "material_count": 15,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 0.0,
+          "processing_values_presence_ratio": 0.0,
+          "transformable_handles_presence_ratio": 0.0,
+          "dropped_weak_presence_ratio": 0.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 0.0,
+          "avg_processing_key_count": 0.0,
+          "avg_handle_key_count": 0.0,
+          "flatten_indicators": [
+            "material_count_high_but_anchor_bundle_absent",
+            "material_count_high_but_processing_values_absent",
+            "material_count_high_but_transformable_handles_absent",
+            "single_source_ref_spread_over_many_materials",
+            "localizable_anchor_density_absent"
+          ]
+        }
+      },
+      {
+        "kind": "live_imported_none",
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_005",
+        "bridge_mode": "none",
+        "cross_path_type": "live-imported",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "left_pre": {
+          "source_ref": "engine_phase1_observer_probe_20260321",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 121.0,
+          "max_span_width": 121,
+          "min_span_width": 121,
+          "sample_units": [
+            "Graph RAG 구조에서는 Ontology와 Property가 연결 기준으로 남지만, imported doc 쪽은 같은 개념이 broad description으로만 남아 local alignment가 잘 안 열린다"
+          ],
+          "sibling_density": 0
+        },
+        "left_post": {
+          "material_count": 1,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 7.0,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 5.0,
+          "flatten_indicators": []
+        },
+        "right_pre": {
+          "source_ref": "processor_compare/doc_005.txt",
+          "source_type": "review",
+          "unit_count": 73,
+          "avg_span_width": 69.58,
+          "max_span_width": 266,
+          "min_span_width": 2,
+          "sample_units": [
+            "데이터 엔지니어링\n팔란티어 개념 설명 - 온톨로지\n라이크나우 2025.",
+            "12.",
+            "10."
+          ],
+          "sibling_density": 72
+        },
+        "right_post": {
+          "material_count": 73,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 0.0,
+          "processing_values_presence_ratio": 0.0,
+          "transformable_handles_presence_ratio": 0.0,
+          "dropped_weak_presence_ratio": 0.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 0.0,
+          "avg_processing_key_count": 0.0,
+          "avg_handle_key_count": 0.0,
+          "flatten_indicators": [
+            "material_count_high_but_anchor_bundle_absent",
+            "material_count_high_but_processing_values_absent",
+            "material_count_high_but_transformable_handles_absent",
+            "single_source_ref_spread_over_many_materials",
+            "localizable_anchor_density_absent"
+          ]
+        }
+      },
+      {
+        "kind": "live_imported_none",
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_006",
+        "bridge_mode": "none",
+        "cross_path_type": "live-imported",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "left_pre": {
+          "source_ref": "engine_phase1_observer_probe_20260321",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 121.0,
+          "max_span_width": 121,
+          "min_span_width": 121,
+          "sample_units": [
+            "Graph RAG 구조에서는 Ontology와 Property가 연결 기준으로 남지만, imported doc 쪽은 같은 개념이 broad description으로만 남아 local alignment가 잘 안 열린다"
+          ],
+          "sibling_density": 0
+        },
+        "left_post": {
+          "material_count": 1,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 7.0,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 5.0,
+          "flatten_indicators": []
+        },
+        "right_pre": {
+          "source_ref": "processor_compare/doc_006.txt",
+          "source_type": "review",
+          "unit_count": 73,
+          "avg_span_width": 72.68,
+          "max_span_width": 180,
+          "min_span_width": 2,
+          "sample_units": [
+            "들어가며\nAI 기술의 빠른 발전은 지식의 저장과 활용 방식에도 변화를 요구하고 있다.",
+            "대규모 언어 모델(LLM)은 자연어 생성 능력을 통해 다양한 산업 분야에서 혁신을 이끌고 있지만, 정보의 정확성, 최신성, 문맥 기반 추론에는 한계가 존재한다.",
+            "이러한 문제를 해결하기 위해 등장한 기술이 RAG(Retrieval-Augmented Generation) 인데, 기존 RAG는 텍스트를 벡터로 변환해 유사도 기반 검색을 수행하므로 복잡한 데이터 관계를 충분히 반영"
+          ],
+          "sibling_density": 72
+        },
+        "right_post": {
+          "material_count": 73,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 0.0,
+          "processing_values_presence_ratio": 0.0,
+          "transformable_handles_presence_ratio": 0.0,
+          "dropped_weak_presence_ratio": 0.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 0.0,
+          "avg_processing_key_count": 0.0,
+          "avg_handle_key_count": 0.0,
+          "flatten_indicators": [
+            "material_count_high_but_anchor_bundle_absent",
+            "material_count_high_but_processing_values_absent",
+            "material_count_high_but_transformable_handles_absent",
+            "single_source_ref_spread_over_many_materials",
+            "localizable_anchor_density_absent"
+          ]
+        }
+      }
+    ],
+    "live_legacy_possibility_cases": [
+      {
+        "kind": "live_legacy_possibility",
+        "pair": "engine_phase1_imported_doc_probe_20260321 <-> test_live_space_sync_20260321",
+        "bridge_mode": "possibility_candidate",
+        "cross_path_type": "live-legacy",
+        "none_reason_kind": "",
+        "translation_gap_details": [
+          "processing_overlap_below_possibility"
+        ],
+        "left_pre": {
+          "source_ref": "engine_phase1_imported_doc_probe_20260321",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 117.0,
+          "max_span_width": 117,
+          "min_span_width": 117,
+          "sample_units": [
+            "Ontology와 Foundry, Link와 Action Type 같은 축은 imported path와 이어질 수 있지만 지금은 canonical 승격 전 weak possibility 수준으로만 남아야 한다."
+          ],
+          "sibling_density": 0
+        },
+        "left_post": {
+          "material_count": 1,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 2.0,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 5.0,
+          "flatten_indicators": []
+        },
+        "right_pre": {
+          "source_ref": "manual/test_live_space_sync_20260321.txt",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 87.0,
+          "max_span_width": 87,
+          "min_span_width": 87,
+          "sample_units": [
+            "Ontology Graph RAG Link Property를 중심으로 local space와 bridge exposure가 일어나는지 보는 테스트 입력이다."
+          ],
+          "sibling_density": 0
+        },
+        "right_post": {
+          "material_count": 2,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 0.0,
+          "processing_values_presence_ratio": 0.0,
+          "transformable_handles_presence_ratio": 0.0,
+          "dropped_weak_presence_ratio": 0.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 0.0,
+          "avg_processing_key_count": 0.0,
+          "avg_handle_key_count": 0.0,
+          "flatten_indicators": [
+            "localizable_anchor_density_absent"
+          ]
+        }
+      },
+      {
+        "kind": "live_legacy_possibility",
+        "pair": "engine_phase1_imported_doc_probe2_20260321 <-> test_live_space_sync_20260321",
+        "bridge_mode": "possibility_candidate",
+        "cross_path_type": "live-legacy",
+        "none_reason_kind": "",
+        "translation_gap_details": [
+          "processing_overlap_below_possibility"
+        ],
+        "left_pre": {
+          "source_ref": "engine_phase1_imported_doc_probe2_20260321",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 100.0,
+          "max_span_width": 100,
+          "min_span_width": 100,
+          "sample_units": [
+            "Ontology와 Foundry 기반 설명은 local bridge 기준을 남기지만 imported doc 전체 설명과 만나면 아직 possibility 수준으로 머무를 수 있다."
+          ],
+          "sibling_density": 0
+        },
+        "left_post": {
+          "material_count": 1,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 4.0,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 5.0,
+          "flatten_indicators": []
+        },
+        "right_pre": {
+          "source_ref": "manual/test_live_space_sync_20260321.txt",
+          "source_type": "review",
+          "unit_count": 1,
+          "avg_span_width": 87.0,
+          "max_span_width": 87,
+          "min_span_width": 87,
+          "sample_units": [
+            "Ontology Graph RAG Link Property를 중심으로 local space와 bridge exposure가 일어나는지 보는 테스트 입력이다."
+          ],
+          "sibling_density": 0
+        },
+        "right_post": {
+          "material_count": 2,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 0.0,
+          "processing_values_presence_ratio": 0.0,
+          "transformable_handles_presence_ratio": 0.0,
+          "dropped_weak_presence_ratio": 0.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 0.0,
+          "avg_processing_key_count": 0.0,
+          "avg_handle_key_count": 0.0,
+          "flatten_indicators": [
+            "localizable_anchor_density_absent"
+          ]
+        }
+      }
+    ]
+  },
+  "upstream_reading": "flatten + vocabulary gap both present, flatten dominates",
+  "next_recommendation": {
+    "first": "fragment narrowing / localizable projection before handle translation",
+    "second": "bounded handle translation only after imported post-materialization contract keeps local handles"
+  }
+}

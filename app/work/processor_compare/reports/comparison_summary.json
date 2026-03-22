@@ -1,0 +1,148 @@
+{
+  "total_fragments_seen": 4,
+  "total_fragments_compared": 4,
+  "valid_outputs_by_processor": {
+    "codex": 4,
+    "chatgpt": 4,
+    "gemini": 4
+  },
+  "category_counts": {
+    "stable": 1,
+    "split": 1,
+    "hidden_candidate": 1,
+    "broken_link": 1
+  },
+  "top_anchor_divergence": [
+    {
+      "anchor_label": "input_layer",
+      "processor": "codex",
+      "count": 1
+    },
+    {
+      "anchor_label": "label_consistency",
+      "processor": "codex",
+      "count": 1
+    },
+    {
+      "anchor_label": "label_consistency",
+      "processor": "chatgpt",
+      "count": 1
+    },
+    {
+      "anchor_label": "viewer_deprioritized",
+      "processor": "chatgpt",
+      "count": 1
+    },
+    {
+      "anchor_label": "input_layer",
+      "processor": "gemini",
+      "count": 1
+    },
+    {
+      "anchor_label": "label_consistency",
+      "processor": "gemini",
+      "count": 1
+    },
+    {
+      "anchor_label": "adjustment_data",
+      "processor": "codex",
+      "count": 1
+    },
+    {
+      "anchor_label": "adjustment_data",
+      "processor": "gemini",
+      "count": 1
+    },
+    {
+      "anchor_label": "label_refinement",
+      "processor": "gemini",
+      "count": 1
+    },
+    {
+      "anchor_label": "hidden_axis",
+      "processor": "codex",
+      "count": 1
+    }
+  ],
+  "scene_disagreement_top": [
+    {
+      "scene_values": [
+        "instruction",
+        "instruction",
+        "reflection"
+      ],
+      "count": 1
+    }
+  ],
+  "role_disagreement_top": [
+    {
+      "role_values": [
+        "definition",
+        "support",
+        "thesis"
+      ],
+      "count": 1
+    }
+  ],
+  "tag_mismatch_examples": [
+    {
+      "fragment_id": "frag_002",
+      "semantic_overlap": 0.5,
+      "structural_overlap": 0.0,
+      "anchors": {
+        "codex": [
+          "input_layer",
+          "label_consistency"
+        ],
+        "chatgpt": [
+          "label_consistency",
+          "viewer_deprioritized"
+        ],
+        "gemini": [
+          "input_layer",
+          "label_consistency"
+        ]
+      }
+    },
+    {
+      "fragment_id": "frag_003",
+      "semantic_overlap": 0.5,
+      "structural_overlap": 0.5,
+      "anchors": {
+        "codex": [
+          "adjustment_data"
+        ],
+        "chatgpt": [],
+        "gemini": [
+          "adjustment_data",
+          "label_refinement"
+        ]
+      }
+    },
+    {
+      "fragment_id": "frag_004",
+      "semantic_overlap": 0.6667,
+      "structural_overlap": 0.5,
+      "anchors": {
+        "codex": [
+          "hidden_axis",
+          "repeat_observation"
+        ],
+        "chatgpt": [
+          "repeat_observation"
+        ],
+        "gemini": [
+          "repeat_observation"
+        ]
+      }
+    }
+  ],
+  "input_adjustment_candidates": [
+    "split fragments with repeated scene or role disagreement",
+    "review fragments where anchor overlap stays low across all processors"
+  ],
+  "label_adjustment_candidates": [
+    "tighten scene and role boundary guidance for repeated disagreement clusters",
+    "review semantic tag vocabulary when hidden_candidate tags repeat"
+  ]
+}

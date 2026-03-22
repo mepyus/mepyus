@@ -1,0 +1,28 @@
+{
+  "document_date": "2026-03-22",
+  "document_kind": "policy_executor_code_split_map",
+  "executor_heavy": [
+    "evaluate_mixed_path_pair",
+    "_find_best_cross_path_trace",
+    "_build_possibility_basis",
+    "_build_translation_gap_details",
+    "_build_promotion_blockers"
+  ],
+  "policy_heavy": [
+    "_build_anchor_review",
+    "_build_threshold_review",
+    "_build_cross_path_review",
+    "_build_cross_path_canonicalization_review",
+    "_build_direct_overlap_review",
+    "_build_space_entry_review"
+  ],
+  "new_policy_file": "app/core/runtime/review_policies.py",
+  "new_output_surface_file": "app/core/runtime/review_output_surface.py",
+  "new_types_file": "app/core/runtime/review_policy_types.py",
+  "next_split_candidates": [
+    "cross_path overlap policy",
+    "family canonicalization policy",
+    "direct overlap promotion policy",
+    "space entry policy"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "summary": "Localized processing refinement around doc_006 translation-hit local refs turned the mixed pair from translation-led/processing-weak into a translation-assisted local candidate with strong processing residual, while doc_005 remains a translation-missing control.",
+  "relabel_result": {
+    "updated_material_count": 48,
+    "synced_local_spaces": [
+      "lsp_2dde7aef787a",
+      "lsp_4eadb2fe7a96"
+    ]
+  },
+  "doc_006_before": {
+    "bridge_mode": "possibility_candidate",
+    "review_kind": "translation_led_processing_weak",
+    "best_processing_score": 0.483,
+    "processing_convergence_level": "weak"
+  },
+  "doc_006_after": {
+    "bridge_mode": "possibility_candidate",
+    "review_kind": "translation_assisted_local_candidate",
+    "best_processing_score": 0.936,
+    "processing_convergence_level": "strong",
+    "best_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016",
+    "next_review_blocker": "missing_canonical_anchor_alignment"
+  },
+  "doc_005_after": {
+    "bridge_mode": "none",
+    "promotion_review": {
+      "available": false,
+      "review_state": "translation_missing"
+    }
+  },
+  "canonical_pairs_unchanged": [
+    "doc_004 -> doc_005",
+    "doc_005 -> doc_006",
+    "test_live_space_sync_20260321 -> test_canonical_ingest_20260321"
+  ],
+  "current_reading": "doc_006 is now a stable promotion-review candidate; doc_005 remains the translation-missing control."
+}

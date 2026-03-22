@@ -1,0 +1,84 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 13
+[char_count] 1160
+
+단어는 같아도 공간에서 같은 방식으로 움직이면 안 된다.  
+그래서 semantic anchor만으로 부족하고 structural anchor가 필요하다.
+
+---
+
+## 3-4. 공간 투사 역할
+앵커는 dust가 공간에 뿌려질 때
+“무엇과 가까워질 가능성이 높은가”
+“무엇과 bridge를 형성할 수 있는가”
+를 암시한다.
+
+즉 앵커는 단순 표식이 아니라 **공간 배치 힌트**다.
+
+---
+
+## 3-5. 설명 가능성 역할
+나중에 사용자가 원본을 볼 때,
+왜 이 문단이 저 문서와 연결되었는지 설명할 수 있어야 한다.
+
+예:
+- shared semantic anchor: `retrieval.failure`
+- shared structural anchor: `failure_mode`
+- shared object anchor: `rag.pipeline`
+- contrast anchor: `benchmark_claim vs field_limitation`
+
+즉 앵커는 단순 링크 키가 아니라 **연결 사유의 근거**가 된다.
+
+---
+
+## 4. 앵커는 어떤 단위에 붙는가
+
+중요한 건 이거다.
+
+앵커는 **문서 전체**에만 붙는 게 아니다.  
+앵커는 **맥락을 담는 의미 단위(fragment)** 에 붙는다.
+
+그 의미 단위는 상황에 따라 다를 수 있다.
+
+- 문장 1개
+- 문단 1개
+- 연속된 문장 2~4개
+- 페이지 한 구간
+- 발화 묶음
+- 요약 chunk
+
+기준은 길이가 아니라:
+
+**이 조각이 하나의 맥락적 의미를 들고 있는가**
+
+다.
+
+즉 anchor의 기본 대상은 `source_fragment` 또는 `processed_fragment`다.
+
+---
+
+## 5. 추천 앵커 계층 구조
+
+지금 네 구조에서는 앵커를 최소 4층으로 보는 게 좋다.
+
+---
+
+## 5-1. Source Anchor
+원본 위치를 가리키는 앵커
+
+### 목적
+- 원본 복귀
+- 출처 추적
+- provenance 보장
+
+### 예시
+- `paper:gpt4_report:p12`
+- `paper:rag_survey:sec_3_2`
+- `youtube:agent_talk:14m32s_15m10s`
+- `review:ai_pipeline_review:para_06`
+
+### 특징
+- 가장 안정적
+- 해석이 아니라 좌표
+- 공간 유사도 판단의 주재료는 아니지만 반드시 필요

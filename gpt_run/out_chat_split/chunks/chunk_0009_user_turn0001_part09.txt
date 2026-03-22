@@ -1,0 +1,132 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 9
+[char_count] 1153
+
+D. source view
+원본 읽을 때 처리 결과를 옆에서 확인
+
+E. space view
+fragment/dust가 공간에서 반응하는 모습 확인
+
+이 순서가 맞다.
+
+반대로 하면 안 되는 순서:
+
+편집기 고도화부터
+
+그래프뷰 UI부터
+
+복잡한 검색 기능부터
+
+범용 입력 포맷 지원부터
+
+8. 기존 vectorfl / vectorfl_next 자산 활용 방식
+여기서 중요한 건 둘을 그대로 복붙하는 게 아니다.
+
+vectorfl 에서 가져올 것
+dust/point/space 해석의 기본 철학
+
+상호작용/형성 관찰 관점
+
+약한 신호를 버리지 않는 태도
+
+공간을 먼저 보고 승격을 늦추는 해석
+
+vectorfl_next 에서 가져올 것
+입력층 구조화 방식
+
+fragment/schema/store/provenance
+
+runtime 분리
+
+source_view / space_view / bridge_layer 식의 계층화
+
+viewer 구조
+
+즉 정리하면:
+
+vectorfl = 엔진 철학
+vectorfl_next = 앱/레이어 구조 골격
+
+이렇게 쓰는 게 맞다.
+
+9. 지금 네 구상에 맞는 핵심 데이터 객체
+초기엔 이 정도면 충분하다.
+
+source_document
+원본 단위
+
+source_id
+
+source_type
+
+title
+
+raw_content
+
+metadata
+
+imported_at
+
+source_fragment
+원본에서 잘라낸 의미 단위
+
+fragment_id
+
+source_id
+
+source_range
+
+raw_text
+
+context_before
+
+context_after
+
+segment_kind
+
+processed_fragment
+라벨/앵커/처리값이 붙은 단위
+
+processed_id
+
+fragment_id
+
+anchors
+
+labels
+
+signal_profile
+
+provenance
+
+created_at
+
+dust_projection
+공간 투입 단위
+
+dust_id
+
+processed_id
+
+projection_payload
+
+current_space_refs
+
+space_trace
+상호작용 기록
+
+trace_id
+
+dust_ids
+
+relation_type
+
+evidence
+
+created_at
+
+이렇게 하면
+원본 → fragment → processed → dust → space trace
+라인이 끊기지 않는다.

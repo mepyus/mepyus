@@ -1,0 +1,74 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 14
+[char_count] 1006
+
+### 저장 예
+- source_id
+- span_start
+- span_end
+- page_no / paragraph_no / timestamp_range
+
+---
+
+## 5-2. Object Anchor
+무엇에 대해 말하는지 잡는 앵커
+
+### 목적
+- 같은 대상/개념/구성요소끼리 묶기
+- 주제별 응집 만들기
+
+### 예시
+- `model.transformer`
+- `pipeline.rag`
+- `component.retriever`
+- `benchmark.mmlu`
+- `dataset.hotpotqa`
+- `artifact.prompt_cache`
+- `system.multi_agent_loop`
+
+### 특징
+이건 “이 조각이 무엇을 다루는가”에 대한 축이다.
+
+### 질문 형태
+- 이 조각의 주인공은 무엇인가
+- 무엇을 두고 말하고 있나
+- 어느 계층의 대상인가
+
+---
+
+## 5-3. Semantic Anchor
+무슨 의미를 말하는지 잡는 앵커
+
+### 목적
+- 표현이 달라도 의미 축으로 묶기
+- 주제적 근접성 형성
+- 같은 논점 반복 감지
+
+### 예시
+- `retrieval.failure`
+- `context.window.limit`
+- `tool.use.coordination`
+- `evaluation.bias`
+- `reasoning.trace`
+- `hallucination.risk`
+- `alignment.constraint`
+- `cost.efficiency.tradeoff`
+
+### 특징
+Object anchor가 “무엇”이라면  
+Semantic anchor는 “무슨 의미/논점”이다.
+
+예:
+- object: `pipeline.rag`
+- semantic: `retrieval.failure`
+
+---
+
+## 5-4. Structural Anchor
+공간에서 어떤 역할을 하는 조각인지 잡는 앵커
+
+### 목적
+- 같은 주제라도 역할이 다른 조각을 구분
+- 공간 상호작용 성질 결정
+- point/bridge/local cluster 형성 힌트 제공

@@ -1,0 +1,29 @@
+{
+  "current_diagnosis": {
+    "largest_bottleneck": "approval grammar not yet isolated from review flow",
+    "goal": "extract gate/readiness/decision as explicit approval policy without behavior change"
+  },
+  "exact_changes": {
+    "files": [
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/approval_policy_types.py",
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/approval_policies.py",
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/review_policies.py"
+    ],
+    "added_units": [
+      "ApprovalGrammarContext",
+      "ApprovalGrammarResult",
+      "evaluate_approval_grammar_policy"
+    ]
+  },
+  "verification": {
+    "behavior_preserved": true,
+    "canonical_fixture_preserved": true,
+    "doc006_review_candidate_preserved": true,
+    "doc005_doc004_control_preserved": true
+  },
+  "current_reading": "approval_grammar_boundary_introduced_behavior_preserved",
+  "next_recommendation": [
+    "lift canonical approval decision into explicit approval policy next",
+    "delay actual threshold changes until grammar extraction is further stabilized"
+  ]
+}

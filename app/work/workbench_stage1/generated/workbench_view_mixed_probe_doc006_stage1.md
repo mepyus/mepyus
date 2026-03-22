@@ -1,0 +1,168 @@
+# workbench view: mixed_probe_doc006_stage1
+
+- reading_category: `mixed`
+- reading_status: `confirmed_hold`
+- meaning: persisted closure gap is confirmed, so this candidate stays in hold / re-read mode
+
+## A. source
+- `left_material_id`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"mat_9dffbdcf3521"`
+  - note: left live-side material fixed for this stage1 packet
+- `right_material_id`
+  - status: `derived`
+  - source: `review_output_surface + material_metadata`
+  - value: `"mat_0a58754edde8"`
+  - note: material matched back from best_local_ref within the right local space
+- `left_source_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"engine_phase1_observer_probe_20260321"`
+  - note: left material source path
+- `right_source_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_006.txt"`
+  - note: right material source path
+- `left_source_local_ref`
+  - status: `missing`
+  - source: `material_metadata`
+  - value: `""`
+  - note: left local fragment coordinate
+- `right_source_local_ref`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `"processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016"`
+  - note: right local fragment coordinate
+- `left_lineage_refs`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `[]`
+  - note: left lineage spine currently sparse or empty
+- `right_lineage_refs`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `["dst_src_2fd2c39f0fd7_001", "dst_src_2fd2c39f0fd7_002", "dst_src_2fd2c39f0fd7_003", "dst_src_2fd2c39f0fd7_004", "dst_src_2fd2c39f0fd7_005", "dst_src_2fd2c39f0fd7_006", "dst_src_2fd2c39f0fd7_007", "dst_src_2fd2c39f0fd7_008", "dst_src_2fd2c39f0fd7_009", "dst_src_2fd2c39f0fd7_010", "dst_src_2fd2c39f0fd7_011", "dst_src_2fd2c39f0fd7_012", "dst_src_2fd2c39f0fd7_013", "dst_src_2fd2c39f0fd7_014", "dst_src_2fd2c39f0fd7_015", "dst_src_2fd2c39f0fd7_017", "dst_src_2fd2c39f0fd7_018", "dst_src_2fd2c39f0fd7_019", "dst_src_2fd2c39f0fd7_020", "dst_src_2fd2c39f0fd7_021", "dst_src_2fd2c39f0fd7_022", "dst_src_2fd2c39f0fd7_023", "dst_src_2fd2c39f0fd7_024", "dst_src_2fd2c39f0fd7_025", "dst_src_2fd2c39f0fd7_026", "dst_src_2fd2c39f0fd7_027", "dst_src_2fd2c39f0fd7_028", "dst_src_2fd2c39f0fd7_029", "dst_src_2fd2c39f0fd7_030", "dst_src_2fd2c39f0fd7_031", "dst_src_2fd2c39f0fd7_032", "dst_src_2fd2c39f0fd7_033", "dst_src_2fd2c39f0fd7_034", "dst_src_2fd2c39f0fd7_035", "dst_src_2fd2c39f0fd7_036", "dst_src_2fd2c39f0fd7_037", "dst_src_2fd2c39f0fd7_038", "dst_src_2fd2c39f0fd7_039", "dst_src_2fd2c39f0fd7_040", "dst_src_2fd2c39f0fd7_041", "dst_src_2fd2c39f0fd7_042", "dst_src_2fd2c39f0fd7_043", "dst_src_2fd2c39f0fd7_044", "dst_src_2fd2c39f0fd7_045", "dst_src_2fd2c39f0fd7_046", "dst_src_2fd2c39f0fd7_047", "dst_src_2fd2c39f0fd7_048", "dst_src_2fd2c39f0fd7_049", "dst_src_2fd2c39f0fd7_050", "dst_src_2fd2c39f0fd7_051", "dst_src_2fd2c39f0fd7_052", "dst_src_2fd2c39f0fd7_053", "dst_src_2fd2c39f0fd7_054", "dst_src_2fd2c39f0fd7_055", "dst_src_2fd2c39f0fd7_056", "dst_src_2fd2c39f0fd7_057", "dst_src_2fd2c39f0fd7_058", "dst_src_2fd2c39f0fd7_059", "dst_src_2fd2c39f0fd7_060", "dst_src_2fd2c39f0fd7_061", "dst_src_2fd2c39f0fd7_062", "dst_src_2fd2c39f0fd7_063", "dst_src_2fd2c39f0fd7_064", "dst_src_2fd2c39f0fd7_065", "dst_src_2fd2c39f0fd7_066", "dst_src_2fd2c39f0fd7_067", "dst_src_2fd2c39f0fd7_068", "dst_src_2fd2c39f0fd7_069", "dst_src_2fd2c39f0fd7_070", "dst_src_2fd2c39f0fd7_071", "dst_src_2fd2c39f0fd7_072", "dst_src_2fd2c39f0fd7_073"]`
+  - note: right lineage spine from imported material
+
+## B. translation / processing
+- `left_translated_handles`
+  - status: `missing`
+  - source: `material_metadata`
+  - value: `[]`
+  - note: left translated handle layer
+- `right_translated_handles`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `[{"display_label": "RAG", "original_handle": "RAG", "translated_handle": "rag", "translation_basis": "representative_anchor", "translation_confidence": 0.8, "translation_scope": "local_ref", "translation_source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016"}]`
+  - note: right translated handle layer
+- `left_anchor_bundle_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"representative": ["Graph RAG", "RAG", "Graph", "Graph RAG 구조"], "supporting": ["RAG 구조", "RAG 구조 On", "구조 On"], "promoted_anchor_count": 7, "dropped_weak_count": 2}`
+  - note: left anchor convergence summary
+- `right_anchor_bundle_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"representative": ["Graph", "RAG", "Retrieval-Augmented", "Generation"], "supporting": ["지식을", "검색하여", "LLM", "정확성을"], "promoted_anchor_count": 8, "dropped_weak_count": 0}`
+  - note: right anchor convergence summary
+- `left_processing_values_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"D": 0.5, "I": 0.5, "S": 0.5, "flow": "compare", "scene": "review"}`
+  - note: left processing baseline
+- `right_processing_values_summary`
+  - status: `persisted`
+  - source: `material_metadata`
+  - value: `{"D": 0.6, "I": 0.68, "S": 0.52, "flow": "compare", "scene": "review"}`
+  - note: right processing baseline
+- `translation_join_quality`
+  - status: `derived`
+  - source: `material_metadata`
+  - value: `"right_present_left_missing"`
+  - note: translation layer asymmetry across the pair
+- `source_local_to_translation_gap`
+  - status: `derived`
+  - source: `material_metadata`
+  - value: `"left_live_gap_right_imported_available"`
+  - note: stage1 readout of source-local to translation asymmetry
+
+## C. join
+- `best_local_ref`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `"processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016"`
+  - note: current best local candidate ref from review assembly
+- `direct_overlap_candidate`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `["object", "structural"]`
+  - note: direct overlap family candidates
+- `family_support_summary`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `{"review_anchor_support_class": "multi_family_same_local_ref_support_present", "anchor_family_support_strength": {"same_local_ref": 3, "nearby_local_ref": 0}, "live_side_support_families": ["semantic", "structural", "object"], "cross_path_overlap_families": ["semantic"]}`
+  - note: family support and cross-path summary
+- `canonicalization_proposal_summary`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `{"proposal_state": "token_supported_candidates_present", "proposals": {"object": ["property", "ontology", "object"], "structural": ["graph structure", "rag structure", "graph rag 구조", "rag 구조"]}}`
+  - note: canonicalization proposal readout
+- `bridge_trace_ref`
+  - status: `missing`
+  - source: `bridge_trace`
+  - value: `""`
+  - note: exact persisted bridge for the current local-space pair
+- `local_space_ref`
+  - status: `persisted`
+  - source: `local_space`
+  - value: `["lsp_ddc406eb4938", "lsp_4eadb2fe7a96"]`
+  - note: current pair local-space coordinates
+- `current_pair_closure_strength`
+  - status: `derived`
+  - source: `review_output_surface + bridge_trace`
+  - value: `"mixed_pair_explicit_bridge_missing"`
+  - note: stage1 closure estimate
+- `review_focus_class`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `"cross_path_corroboration"`
+  - note: current review focus
+
+## D. block
+- `next_review_blocker`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `"live_side_family_present_but_not_canonicalized"`
+  - note: current next blocker
+- `missing_join_points`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `["left.source_local_ref missing", "left.translated_handles missing", "exact current_pair bridge_trace missing"]`
+  - note: gaps surfaced by this packet
+- `mixed_record_ref`
+  - status: `inferred`
+  - source: `workbench_stage1`
+  - value: `"mixed_minimum_record::mixed_probe_doc006_stage1"`
+  - note: minimal linkage to confirmed mixed hold record
+- `why_not_closed`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `"source-side live material lacks source_local/translated layer and the current pair has no exact persisted bridge closure"`
+  - note: short closure diagnosis
+- `next_review_question`
+  - status: `derived`
+  - source: `review_output_surface`
+  - value: `"increase_cross_path_family_corroboration"`
+  - note: next approval-facing question
+- `likely_gap_layer`
+  - status: `derived`
+  - source: `workbench_stage1`
+  - value: `"source-local / translated join gap + cross-path corroboration gap"`
+  - note: dominant gap layer for this mixed candidate
+- `review_status_summary`
+  - status: `derived`
+  - source: `review_output_surface + review_ledger`
+  - value: `{"bridge_mode": "possibility_candidate", "review_state": "candidate", "space_entry_state": "structural_led_space_pre_entry", "space_entry_blocker": "token_pair_exists_but_alignment_rule_not_satisfied", "canonical_approval_readiness_class": "cross_path_corroboration_pending"}`
+  - note: top-level review status summary

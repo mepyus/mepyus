@@ -1,0 +1,52 @@
+{
+  "summary": "doc_006 now shows same-local-ref structural/process/object support on top of semantic overlap, making it a multi-family compound candidate that is still below canonical review strength.",
+  "review_candidate": {
+    "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "bridge_mode": "possibility_candidate",
+    "promotion_review": {
+      "translation_gate": true,
+      "processing_gate": true,
+      "observer_gate": true,
+      "canonical_anchor_gate": false,
+      "review_anchor_gap_class": "multi_family_support_below_canonical",
+      "review_anchor_support_class": "multi_family_same_local_ref_support_present",
+      "anchor_alignment_compound_state": "multi_family_compound_candidate",
+      "anchor_support_scope": "same_local_ref",
+      "anchor_family_additions": {
+        "same_local_ref": [
+          "structural",
+          "process",
+          "object"
+        ],
+        "nearby_local_ref": []
+      },
+      "anchor_family_support_strength": {
+        "same_local_ref": 3,
+        "nearby_local_ref": 0
+      },
+      "compound_candidate_families": [
+        "structural",
+        "process",
+        "object"
+      ],
+      "compound_support_scope": "same_local_ref",
+      "next_review_blocker": "multi_family_support_below_canonical"
+    }
+  },
+  "controls": [
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_004",
+      "review_state": "translation_missing"
+    },
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "review_state": "translation_missing"
+    }
+  ],
+  "canonical_pairs_unchanged": [
+    "doc_004 -> doc_005",
+    "doc_005 -> doc_006",
+    "test_live_space_sync_20260321 -> test_canonical_ingest_20260321"
+  ],
+  "current_reading": "The next step should split canonical review thresholds for multi-family same-local-ref support, not widen translation or global processing."
+}

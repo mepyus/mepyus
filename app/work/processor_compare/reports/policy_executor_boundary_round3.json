@@ -1,0 +1,31 @@
+{
+  "round": 3,
+  "date": "2026-03-22",
+  "current_reading": [
+    "direct overlap promotion policy separated, executor still dominant",
+    "promotion, cross_path, direct_overlap now all have callable policy boundaries",
+    "family canonicalization rule is not yet fully externalized, but the main split line now exists"
+  ],
+  "new_types": [
+    "DirectOverlapFamilyPolicyContext",
+    "DirectOverlapFamilyPolicyResult",
+    "DirectOverlapAggregatePolicyContext",
+    "DirectOverlapAggregatePolicyResult"
+  ],
+  "new_policy_functions": [
+    "evaluate_direct_overlap_family_policy",
+    "evaluate_direct_overlap_aggregate_policy"
+  ],
+  "verification": {
+    "compile": true,
+    "canonical_fixtures_preserved": true,
+    "doc_006_review_candidate_preserved": true,
+    "doc_005_control_preserved": true,
+    "doc_004_control_preserved": true
+  },
+  "next_priority": [
+    "cross_path canonicalization policy",
+    "space entry policy",
+    "fixture manifest"
+  ]
+}

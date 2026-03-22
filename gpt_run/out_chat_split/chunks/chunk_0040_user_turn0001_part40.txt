@@ -1,0 +1,29 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 40
+[char_count] 1156
+
+넷째, 오늘 가장 중요한 변화로 기록 레이어를 따로 만들었습니다.
+  애매한 값, 임시 판정, projection 결과를 덮어쓰지 않고 별도 측정 레코드로 남기도록 했습니다. 새로 만든 핵심은 schema.py, store.py, builder.py, build_measurement_view.py입니다.
+  지금 샘플 기준으로 measurement_count = 34가 쌓였고, 타입은 anchor, source_location, processing_values, projection입니다. 결과 리포트는 measurement_view.json,
+  measurement_view.html입니다.
+
+정책적으로 합의한 것
+
+앵커는 단순 태그가 아니라 원본 <-> 처리값 <-> 공간을 잇는 핸들로 다루기로 했습니다. 현재 기준 문서는 ANCHOR_V1.md입니다. 여기서 source, object, semantic, structural 4층을 우
+  선 기준으로 삼고 있습니다.
+  또 애매한 값과 실패도 버리지 않고 남기기로 했고, 그 원칙은 MEASUREMENT_RETENTION_POLICY.md, AMBIGUITY_REVIEW_POLICY.md에 정리돼 있습니다.
+
+현재 상태
+
+지금은 원문 저장, fragment 저장, source 위치 보강, anchor 부여, processing value 유지, material projection, source view 생성, measurement view 생성까지는 됩니다.
+  아직 약한 건 anchor quality와 edge formation입니다. 다만 지금은 연결을 억지로 만들지 않고, 형태와 기록을 먼저 안정화하는 전략으로 가고 있습니다.
+
+현재 문제/주의점
+
+- app/runtime/*와 app/core/runtime/*가 wrapper 구조라 수정 지점이 헷갈릴 수 있습니다.
+  - anchorizer는 아직 초안 수준이라 canonical handle 그릇은 생겼지만 내용 품질은 더 올려야 합니다.
+  - viewer의 새 /measurements 엔드포인트는 코드상 추가했지만 오늘은 로컬 포트 충돌 때문에 실서빙 확인은 못 했습니다. 파일 산출은 정상입니다.
+  - material이 재-ingest 때 누적되므로 이후 session/batch 정리가 필요합니다.
+
+오늘의 핵심 한 줄

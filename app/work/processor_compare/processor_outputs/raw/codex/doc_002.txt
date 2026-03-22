@@ -1,0 +1,16 @@
+
+Agent SDK vs MCP
+이러한 Agent를 구현하려면 직접 처음부터 구현할 수 도 있지만, 적절한 Tool을 선택하는 로직이나, 또는 Tool에서 리턴된 결과를 질문을 답변하는데 사용하기 위한 처리까지 많은 로직이 필요하기 때문에, 미리 만들어진 프레임웍을 사용한다. 이런 Agent Framework 에는  Langchain이 대표적이며, Crew AI, AutoGen, Llama Index와 같은 오픈 소스 프레임워크 에서 부터,  Anthropic의 Agent framework 과 같은 수많은 상용 프레임워크들이 있다. 
+
+
+이러한 Agent framework들은 Tool과 연동하기 위해서, 각자 Tool SDK를 제공한다. 예를 들어 Langchain에는 Google search와 연동하기 위한 SDK, Yahoo finance와 연동하기 위한 SDK들이 있는데, 이는 Langchain이 각각의 서비스 provider와 협업을 해서 서로 연동 스펙을 맞춰서 SDK을 개발해서 제공한것이다. 이렇게 제공된 SDK는 Langchain에서만 사용이 가능하다. 
+
+ 
+
+
+이 말은 Langchain, CrewAI,AutoGen과 같은 Agent Framework 제공자들이 각각의 Tool에 대한 SDK를 개별로 만들어야 한다는 이야기가 되고, 반대로 Tool 제공자 입장에서는 이 각각의 Agent Framework 제공자들과 협업을 통해서 LLM 애플리케이션과 연동되도록 해야하기 때문에, 커뮤니케이션 부하가 엄청나고, Tool의 기능이 하나가 업데이트 되면, 각 Agent Framework의 SDK로 업데이트 하도록 해야 하기 때문에, 개발 관리 입장에서 부담이 엄청나게 늘어난다. 
+
+ 
+
+이렇게 각각의 Agent Framework 제공자와 Tool 제공자가 각각 Integration을 하지 않도록 하기 위한 아이디어가 MCP (Model Context Protocol)이다. Agent Framework 제공자와 Tool 제공자가 서로 SDK 스펙을 맞출 필요없이 업계의 표준화된 프로토콜을 이용하여, 개발을 하게 되면, 어느 Agent Framework이던지, 어떤 Tool과도 연동될 수 있도록 할 수 있다. 이렇게 함으로써 Agent Framework 제공자는 개별로 Tool과 연동이 필요없이 MCP 표준에 맞춰서 Tool을 연동하던가, 이미 개발된 Tool들을 연동할 수 있기 때문에, Tool 제공자와 Integration을 위한 별도의 작업이 없어진다. 
+출처: https://bcho.tistory.com/1470 [조대협의 블로그:티스토리]

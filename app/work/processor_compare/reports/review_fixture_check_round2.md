@@ -1,0 +1,73 @@
+# review fixture check round2
+
+## 1. summary
+- manifest_fixture_count: `6`
+- immutable_regression_fixture_count: `3`
+- mutable_exploration_control_count: `3`
+- immutable_pass_count: `3`
+- mutable_match_count: `3`
+- previous_signature_fixture_count: `6`
+- unchanged_signature_count: `6`
+- changed_signature_count: `0`
+
+## 2. results
+- `fx_reg_canonical_doc004_doc005`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - lifecycle: `hot / approved_active`
+  - evaluated_at: `2026-03-21T15:42:28.006721+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_00018441d497|lsp_2dde7aef787a`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_00018441d497|lsp_2dde7aef787a`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`
+- `fx_reg_canonical_doc005_doc006`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - lifecycle: `hot / approved_active`
+  - evaluated_at: `2026-03-21T15:42:28.499276+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_2dde7aef787a|lsp_4eadb2fe7a96`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_2dde7aef787a|lsp_4eadb2fe7a96`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`
+- `fx_reg_canonical_live_sync`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - lifecycle: `hot / approved_active`
+  - evaluated_at: `2026-03-21T15:42:28.871150+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_3eaef4e0c6dc|lsp_3630ca5d8a22`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_3eaef4e0c6dc|lsp_3630ca5d8a22`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`
+- `fx_exp_probe_doc006`
+  - kind: `mutable_exploration_control`
+  - expected: `possibility_candidate / candidate`
+  - actual: `possibility_candidate / candidate`
+  - lifecycle: `hot / review_active`
+  - evaluated_at: `2026-03-21T15:42:29.262757+00:00`
+  - state_signature: `possibility_candidate|candidate|hot|review_active|structural_led_space_pre_entry|live_side_family_present_but_not_canonicalized|lsp_ddc406eb4938|lsp_4eadb2fe7a96`
+  - previous_state_signature: `possibility_candidate|candidate|hot|review_active|structural_led_space_pre_entry|live_side_family_present_but_not_canonicalized|lsp_ddc406eb4938|lsp_4eadb2fe7a96`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`
+- `fx_exp_probe_doc005`
+  - kind: `mutable_exploration_control`
+  - expected: `none / translation_missing`
+  - actual: `none / translation_missing`
+  - lifecycle: `warm / blocked_waiting_revisit`
+  - evaluated_at: `2026-03-21T15:42:29.636021+00:00`
+  - state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_2dde7aef787a`
+  - previous_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_2dde7aef787a`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`
+- `fx_exp_probe_doc004`
+  - kind: `mutable_exploration_control`
+  - expected: `none / translation_missing`
+  - actual: `none / translation_missing`
+  - lifecycle: `warm / blocked_waiting_revisit`
+  - evaluated_at: `2026-03-21T15:42:29.982044+00:00`
+  - state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_00018441d497`
+  - previous_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_00018441d497`
+  - state_signature_unchanged: `true`
+  - matches_expected: `true`

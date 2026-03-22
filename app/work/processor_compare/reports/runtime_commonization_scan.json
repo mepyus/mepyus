@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-03-21T06:20:00Z",
+  "scope": "minimum observer-aware runtime baseline commonization",
+  "material_observer_counts": {
+    "imported_doc": {
+      "available_true": 845,
+      "available_false": 0,
+      "none": 0
+    },
+    "legacy_or_live": {
+      "available_true": 12,
+      "available_false": 1,
+      "none": 0
+    }
+  },
+  "fixed_cases": [
+    {
+      "kind": "imported_doc_bridge",
+      "bridge_id": "brg_e4d1fa10fa46",
+      "pair": "doc_004 <-> doc_005",
+      "bridge_reason_kind": "canonical_shared_anchor_with_processing_overlap",
+      "observer_available": true,
+      "rejected_overlap_count": 0
+    },
+    {
+      "kind": "imported_doc_bridge",
+      "bridge_id": "brg_f30a3a351a8b",
+      "pair": "doc_005 <-> doc_006",
+      "bridge_reason_kind": "canonical_shared_anchor_with_processing_overlap",
+      "observer_available": true,
+      "rejected_overlap_count": 0
+    },
+    {
+      "kind": "legacy_bridge",
+      "bridge_id": "brg_c84da4760249",
+      "pair": "test_live_space_sync_20260321 <-> test_canonical_ingest_20260321",
+      "bridge_reason_kind": "canonical_shared_anchor_with_processing_overlap",
+      "observer_available": true,
+      "rejected_overlap_count": 0
+    },
+    {
+      "kind": "mixed_live_legacy_bridge",
+      "bridge_id": "brg_d138637f3f01",
+      "pair": "engine_phase1_observer_probe_20260321 <-> test_canonical_ingest_20260321",
+      "bridge_reason_kind": "canonical_shared_anchor_with_processing_overlap",
+      "observer_available": true,
+      "rejected_overlap_count": 0
+    }
+  ],
+  "local_space_baseline_examples": [
+    {
+      "local_space_id": "lsp_00018441d497",
+      "source_label": "doc_004",
+      "observer_available": true,
+      "current_state": "bridge_exposed",
+      "bridge_exposure_count": 6
+    },
+    {
+      "local_space_id": "lsp_3630ca5d8a22",
+      "source_label": "test_canonical_ingest_20260321",
+      "observer_available": true,
+      "current_state": "bridge_exposed",
+      "bridge_exposure_count": 3
+    },
+    {
+      "local_space_id": "lsp_ddc406eb4938",
+      "source_label": "engine_phase1_observer_probe_20260321",
+      "observer_available": true,
+      "current_state": "bridge_exposed",
+      "bridge_exposure_count": 2
+    }
+  ],
+  "mixed_pair_review": {
+    "live_to_legacy": {
+      "verdict": "yes",
+      "example_bridge_id": "brg_d138637f3f01"
+    },
+    "live_to_imported_doc": {
+      "verdict": "not_yet_observed",
+      "attempted_sources": [
+        "engine_phase1_imported_doc_probe_20260321",
+        "engine_phase1_imported_doc_probe2_20260321"
+      ],
+      "note": "observer-aware baseline is commonized, but imported-doc-facing bridge formation still tends to stay weak or route to other live/legacy spaces first"
+    }
+  },
+  "current_reading": "runtime-common observer baseline with partial legacy parity and incomplete live-to-imported bridge parity",
+  "next_mismatch": [
+    "one legacy/live material still carries an older available=false placeholder trace",
+    "live-to-imported-doc mixed bridge remains hard to open under current bridge semantics",
+    "observer_contribution is now commonized, but shared_signals are still often empty"
+  ]
+}

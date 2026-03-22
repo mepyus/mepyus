@@ -1,0 +1,31 @@
+# Engine Comparison Matrix
+
+## axes
+```json
+{
+  "generated_at": "2026-03-21T05:49:11.543984Z",
+  "axes": [
+    {
+      "axis": "input convergence line vs existing source links",
+      "finding": "existing doc bridges align well with canonical anchor convergence, especially doc_004-005 and doc_005-006"
+    },
+    {
+      "axis": "input convergence line vs new attempted links",
+      "finding": "manual live inputs reuse the same bridge opening logic and connect through Graph RAG, showing convergence is operationally consumed"
+    },
+    {
+      "axis": "existing links vs new links",
+      "finding": "existing links are richer in shared anchors and region evidence; new links are valid but shallower in observer/evidence depth"
+    },
+    {
+      "axis": "anchor-only reading vs anchor+processing reading",
+      "finding": "current bridge semantics remain anchor-led; processing values influence relation profiling and pressure formation, but are under-preserved downstream"
+    },
+    {
+      "axis": "summary-based bridge vs evidence-aware bridge",
+      "finding": "viewer can read summary-based bridge well; evidence-aware bridge is still partial because source/dust often rely on material-backed synthetic fallback"
+    }
+  ],
+  "priority_gap": "preserve processing-aware and observer-aware handoff fields as first-class evidence, not only display summaries"
+}
+```

@@ -1,0 +1,39 @@
+# transcript probe round2 readable anchor report
+
+## repeated anchors
+- `ai_business`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: ai, 가치, 비즈니스, 사업, 산업, 시장
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['ai', '회사']
+- `harness_agent`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05`
+  - linkage: `direct_repeat / strong`
+  - aliases: agent, backend.ai, backend.ai:go, claude code, codex, continuum
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['backend.ai', 'backend.ai:go', 'claude code', '에이전트']
+- `health_human`
+  - first_seen: `win_02`
+  - repeated_windows: `win_02, win_03, win_04, win_05`
+  - linkage: `direct_repeat / strong`
+  - aliases: 도파민, 인간, 인지
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['인간']
+- `model_compute`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: gpu, inference, token, 모델, 토큰
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['모델']
+- `organization_ax`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `translated_repeat / medium`
+  - aliases: ax, talent, 복제, 스타트업, 업무, 적응
+  - note: axes=['business', 'human', 'technical'], shared_aliases=[]
+- `security_isolation`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04`
+  - linkage: `translated_repeat / medium`
+  - aliases: vm, 보안
+  - note: axes=['business', 'human', 'technical'], shared_aliases=[]

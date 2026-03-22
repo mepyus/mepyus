@@ -1,0 +1,596 @@
+[
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_001",
+    "fragment_text": "팔란티어는 사실 기술보다도 주가로 인해 핫해서 자주 들어봤습니다. 항상 보면서 공부해야지.. 데엔으로서 알아봐야지.. 하던 그 팔란티어를 드디어 정리해봅니다.\n\n결론부터 말씀드리자면, 팔란티어는 모든 데이터를 라벨링하고 라벨링된 데이터 사이의 관계도 라벨링합니다. 그러면 디지털 상에 현실의 정보를 고스란히 반영할 수 있다고 보죠. 이 디지털화 된 정보를 효율적으로 활용하여 현실의 여러 문제를 해결하겠다는 플랫폼 입니다. 어리둥절하죠? 이를 이해하려면 온톨로지 개념을 가볍게 먼저 짚고 시작해야겠습니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_data_labeling",
+        "anchor_label": "data_labeling",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_reality_reflection",
+        "anchor_label": "reality_reflection",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.84,
+    "intensity": 0.71,
+    "stability": 0.87,
+    "scene": "explanation",
+    "role": "thesis",
+    "semantic_tags": [
+      "data_labeling",
+      "reality_reflection",
+      "palantir"
+    ],
+    "structural_tags": [
+      "core_claim",
+      "intro_statement"
+    ],
+    "confidence": 0.93,
+    "ambiguity": 0.08,
+    "evidence_text": [
+      "모든 데이터를 라벨링하고",
+      "라벨링된 데이터 사이의 관계도 라벨링합니다",
+      "디지털 상에 현실의 정보를 고스란히 반영할 수 있다고 보죠",
+      "현실의 여러 문제를 해결하겠다는 플랫폼"
+    ],
+    "why_short": "팔란티어를 데이터와 관계의 라벨링을 통해 현실을 디지털에 반영하는 플랫폼으로 요약하는 도입 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_002",
+    "fragment_text": "Ontology란?\n\n데이터에 “의미와 맥락”을 부여해\n현실 세계(조직·자산·사람·프로세스)를 그대로 디지털에서 재현하는 구조(=디지털 트윈)\n\n온톨로지를 깊숙하게 이해하기 위해서는 다른 용어들도 많이 필요하지만 우선 이렇게만 이해해도 좋다고 생각합니다. 현실의 모든 것을 객체화하고 해당 객체 사이의 관계는 링크로 표현합니다. 현실에서 일어나는 모든 사건은 액션으로 표현하여서 디지털화 시키는 개념입니다. 현실을 그대로 반영한다는 의미로 디지털 트윈이라고 표현하기도 합니다. 말만 들으면 참 방대한데요, 이 방대한 작업을 쉽게 해내기 위해서 지난 20년 동안 노력한 회사가 팔란티어라고 보면 됩니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_ontology",
+        "anchor_label": "ontology",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_digital_twin",
+        "anchor_label": "digital_twin",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_object_link_action",
+        "anchor_label": "object_link_action",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.89,
+    "intensity": 0.77,
+    "stability": 0.93,
+    "scene": "definition",
+    "role": "definition",
+    "semantic_tags": [
+      "ontology",
+      "digital_twin",
+      "object_link_action"
+    ],
+    "structural_tags": [
+      "definition",
+      "reference_core"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "데이터에 “의미와 맥락”을 부여해",
+      "현실 세계(조직·자산·사람·프로세스)를 그대로 디지털에서 재현하는 구조",
+      "현실의 모든 것을 객체화하고",
+      "관계는 링크로 표현합니다",
+      "모든 사건은 액션으로 표현"
+    ],
+    "why_short": "온톨로지를 의미와 맥락을 부여해 현실을 디지털 트윈으로 재현하는 구조로 정의하는 핵심 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_003",
+    "fragment_text": "아직도 이해가 안가신다면 우선 반대로 접근해봅시다. 현실의 모든 것을 디지털화 시키고 싶다면 어떤 작업을 거칠까요?\n\n\"블로그 글을 작성하고 있는 나\" 를 설명하기 위해선\n\n나(User)\n노트북(Device)\n카페(Location)\n블로그(Blog)\n티스토리(Platform)\n작성 중인 글(Post)\n글쓰기라는 행위(WriteEvent)\n등으로 쪼개어 생각할 수 있습니다. 그리고 이 개념은 아래와 같이 서로 연결할 수 있죠.\n\n나는 카페에 있다\n내 노트북은 카페에 있다\n글은 내 블로그에 있다\n내 블로그는 티스토리에 속한다\n나는 글을 작성한다\n나는 노트북을 사용한다\n이렇게 현실을 나노단위로 쪼개야 디지털에 반영할 수 있지 않을까요? 이런 식으로 디지털에 현실의 쌍둥이 버전을 만드는 과정이 팔란티어의 온톨리지를 구축하는 과정입니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_entity_decomposition",
+        "anchor_label": "entity_decomposition",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_relationship_modeling",
+        "anchor_label": "relationship_modeling",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_write_event",
+        "anchor_label": "write_event",
+        "anchor_type": "object",
+        "anchor_scope": "local"
+      }
+    ],
+    "direction": 0.86,
+    "intensity": 0.79,
+    "stability": 0.9,
+    "scene": "example",
+    "role": "example",
+    "semantic_tags": [
+      "entity_decomposition",
+      "relationship_modeling",
+      "digital_twin"
+    ],
+    "structural_tags": [
+      "example_support",
+      "decomposition_pattern"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.05,
+    "evidence_text": [
+      "등으로 쪼개어 생각할 수 있습니다",
+      "이 개념은 아래와 같이 서로 연결할 수 있죠",
+      "현실을 나노단위로 쪼개야 디지털에 반영할 수 있지 않을까요?",
+      "현실의 쌍둥이 버전을 만드는 과정"
+    ],
+    "why_short": "일상 사례를 통해 현실을 객체와 관계로 쪼개어 디지털 트윈을 만드는 방식을 설명하는 example fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_004",
+    "fragment_text": "우선 팔란티어는 왜 이 \"온톨로지\"를 중요시 여기는지만 짚고 넘어갑시다.\n\n1. 현실의 문제점\n지금까지 기업의 데이터 시스템은 대부분 아래와 같이 다뤄집니다.\n\n시스템 별로 데이터를 따로 저장함 (사일로)\n서로 다른 관점으로 존재함 (서비스, 마케팅, 로그, 결제 등)\n이렇게 수많은 데이터는 존재하지만 이 데이터들 사이의 관계가 끊어진 상태임\n그래서 현실에서는 직장인들이 협업하여 이 정보들을 유기적으로 연결하여 사용해야합니다.\n\n데이터 사이의 관계가 끊어져 있기 때문에 수작업으로 진행해야하는 경우도 허다하구요, 특정 부서에서 적용한 최적화 방법이 전체에게 적용되지 않는 방법이라 전사 적용이 힘들 수 있습니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_data_silo",
+        "anchor_label": "data_silo",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_broken_relationship",
+        "anchor_label": "broken_relationship",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.88,
+    "intensity": 0.82,
+    "stability": 0.93,
+    "scene": "explanation",
+    "role": "problem",
+    "semantic_tags": [
+      "data_silo",
+      "broken_relationship",
+      "manual_work"
+    ],
+    "structural_tags": [
+      "problem_statement",
+      "fragmented_system"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "시스템 별로 데이터를 따로 저장함 (사일로)",
+      "이 데이터들 사이의 관계가 끊어진 상태임",
+      "유기적으로 연결하여 사용해야합니다",
+      "수작업으로 진행해야하는 경우도 허다하구요"
+    ],
+    "why_short": "온톨로지가 필요해지는 배경으로 데이터 사일로와 관계 단절 문제를 설명하는 problem fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_005",
+    "fragment_text": "만약 이 모든 데이터를 디지털 상으로 그대로 본뜨듯이 옮기고\n\n현실에서 문제였던 데이터 사이의 단절을 해결하기 위하여 온톨로지 개념을 입혀서 데이터들에 라벨링 즉 의미를 부여한다면요?\n\n이들을 서로 연결하여 융합적으로 바라볼 수 있다면 데이터를 더 잘 활용할 수 있지 않을까요?\n\n그러니까, 온톨로지를 사용해서 데이터에 개념적으로 접근하면 현실의 문제점을 해결할 수 있는거죠.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_conceptual_labeling",
+        "anchor_label": "conceptual_labeling",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_data_connection",
+        "anchor_label": "data_connection",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.87,
+    "intensity": 0.74,
+    "stability": 0.91,
+    "scene": "explanation",
+    "role": "thesis",
+    "semantic_tags": [
+      "conceptual_labeling",
+      "data_connection",
+      "problem_solving"
+    ],
+    "structural_tags": [
+      "solution_statement",
+      "causal_claim"
+    ],
+    "confidence": 0.95,
+    "ambiguity": 0.06,
+    "evidence_text": [
+      "데이터들에 라벨링 즉 의미를 부여한다면요?",
+      "서로 연결하여 융합적으로 바라볼 수 있다면",
+      "현실의 문제점을 해결할 수 있는거죠"
+    ],
+    "why_short": "온톨로지가 라벨링과 연결을 통해 데이터 활용성과 문제 해결을 높인다는 해결 논리를 제시하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_006",
+    "fragment_text": "2 . 핵심 개념 - Ontology\n이제 온톨로지를 검색하면 나오는 개발자 관점의 접근도 살펴봅시다.\n\nOntology 구성\nObject Type: 현실의 엔터티/이벤트\nProperty: 속성\nLink Type: 관계\nAction Type: 실제 행동(재할당·승인·스케줄 변경 등)\nOntology를 구성하는 Object / Property / Link / Action을 하나씩 살펴보면,\n팔란티어가 ‘현실을 디지털로 반영한다’는 말을 왜 강조하는지 자연스럽게 이해됩니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_ontology_components",
+        "anchor_label": "ontology_components",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_object_property_link_action",
+        "anchor_label": "object_property_link_action",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.9,
+    "intensity": 0.73,
+    "stability": 0.95,
+    "scene": "definition",
+    "role": "definition",
+    "semantic_tags": [
+      "ontology_components",
+      "object_property_link_action"
+    ],
+    "structural_tags": [
+      "definition",
+      "component_list"
+    ],
+    "confidence": 0.98,
+    "ambiguity": 0.03,
+    "evidence_text": [
+      "Object Type: 현실의 엔터티/이벤트",
+      "Property: 속성",
+      "Link Type: 관계",
+      "Action Type: 실제 행동"
+    ],
+    "why_short": "온톨로지의 네 가지 핵심 구성요소를 개발자 관점에서 정리하는 정의 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_007",
+    "fragment_text": "2-1) Object Type\n\n앞서 예로 들었던 나(User), 노트북(Device), 카페(Location), 블로그(Blog) 같은 것들이 전부 Object Type입니다.\n\n데이터 입장에서 보면 사람, 카페, 콘텐츠 같은 테이블이 Object Type으로 승격되는 구조라고 볼 수 있습니다.\nFoundry 내에서 온톨로지를 만드는 과정을 해보면 더 직관적인 이해가 가능한데요, Pipeline Builder에서 만들어놓은 완성된 데이터인 Dataset을 Object로 지정하면서 Ontology를 만들 수가 있습니다.\n\n여기서 중요한 점은 Object Type이 단순히 테이블이라는 의미를 넘어서,\n비즈니스적으로 중요한 개체를 ‘하나의 단위’로 정의하는 컨테이너 역할을 한다는 것입니다.\nObject Type 안에\n\n데이터 품질 규칙\n계산된 속성\n보안 정책\n연결된 액션\n모델 결과\n까지 통합할 수 있기 때문에 Object는 그 자체로 비즈니스의 최소 단위가 됩니다. 이게 기존 데이터모델링과 가장 다른 점입니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_object_type",
+        "anchor_label": "object_type",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_business_unit_container",
+        "anchor_label": "business_unit_container",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_dataset_to_object",
+        "anchor_label": "dataset_to_object",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.91,
+    "intensity": 0.81,
+    "stability": 0.94,
+    "scene": "explanation",
+    "role": "definition",
+    "semantic_tags": [
+      "object_type",
+      "business_unit",
+      "dataset_mapping"
+    ],
+    "structural_tags": [
+      "definition",
+      "container_role"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "전부 Object Type입니다",
+      "테이블이 Object Type으로 승격되는 구조",
+      "Dataset을 Object로 지정하면서 Ontology를 만들 수가 있습니다",
+      "비즈니스적으로 중요한 개체를 ‘하나의 단위’로 정의하는 컨테이너 역할",
+      "비즈니스의 최소 단위가 됩니다"
+    ],
+    "why_short": "Object Type을 데이터셋 기반의 비즈니스 최소 단위이자 컨테이너로 설명하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_008",
+    "fragment_text": "2-2) Property\n\nObject 안에 포함된 컬럼이 Property입니다.\n\nCafe라는 Object Type이 있다면\n\ncafe.name\ncafe.location\n이게 Property죠. 단순 컬럼으로 생각해도 좋지만\nFunctions(타입스크립트/파이썬)로 계산된 값도 Property가 될 수 있습니다.\n예를 들어\n\n사용자의 churn_score\n콘텐츠의 retention_lift\n재생 실패율\n같은 계산된 비즈니스 지표도 Property가 됩니다.\n\n즉, Property는 실제 데이터의 컬럼 + 계산된 지표까지 포함하는 더 넓은 의미의 속성입니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_property",
+        "anchor_label": "property",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_computed_metric",
+        "anchor_label": "computed_metric",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.9,
+    "intensity": 0.74,
+    "stability": 0.95,
+    "scene": "definition",
+    "role": "definition",
+    "semantic_tags": [
+      "property",
+      "computed_metric"
+    ],
+    "structural_tags": [
+      "definition",
+      "attribute_scope"
+    ],
+    "confidence": 0.98,
+    "ambiguity": 0.03,
+    "evidence_text": [
+      "Object 안에 포함된 컬럼이 Property입니다",
+      "계산된 값도 Property가 될 수 있습니다",
+      "계산된 비즈니스 지표도 Property가 됩니다",
+      "더 넓은 의미의 속성입니다"
+    ],
+    "why_short": "Property를 실제 컬럼뿐 아니라 계산된 지표까지 포함하는 속성으로 정의하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_009",
+    "fragment_text": "2-3) Link Type: Object 사이의 관계 (RDB의 FK와 다르다)\n\n현실 세계는 개체들이 서로 연결되어 있기 때문에 의미가 생깁니다.\nOntology는 이 현실의 관계를 Link Type으로 표현합니다.\n\n나는 노트북을 사용한다              : User —[uses]→ Device\n나는   카페에 있다                      : User —[located_at]→ Location\n글은 내 블로그에 있다                : Post —[belongs_to]→ Blog\n내 블로그는 티스토리에 속한다   : Blog —[hosted_by]→ Platform\n\nFoundry에서는 위와 같이 세가지 방식으로 object 간에 관계를 맺게 해줍니다.\n\n1) Object type foreign keys\n\n한 Object Type 안에 다른 Object Type의 primary key가 포함되어 있을 때 사용하는 방식입니다.\n현실에서도 “A 안에 B의 아이디가 들어 있다”는 형태라면 대부분 1:1 또는 1:N 관계죠.\n가장 단순하고 직관적인 관계입니다.\n\n예: Order 테이블 안의 user_id → User —[placed]→ Order\n\n2) Join table dataset\n\n두 객체가 서로 many-to-many 관계일 때,\n중간에 두 객체의 primary key만 담긴 테이블을 이용해 관계를 표현하는 방식입니다.\n관계 자체에 속성이 필요 없을 때 사용합니다.\n\n예:\n배우 ↔ 영화\nUser ↔ Genre\n\n3) Backing object type\n\n관계 자체에 속성(Property) 이 붙는 경우, 혹은 그 관계가 사실상 하나의 이벤트(Event) 로 취급되어야 하는 경우에는\n관계를 단순 링크로 만들 수 없어서 아예 독립된 Object로 승격합니다.\n\n예:\nUser가 Content를 시청(Watch)하는 행위\n→ watch_time, device, timestamp 등이 필요\n→ 관계가 아니라 WatchEvent라는 Object로 만들어야 함",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_link_type",
+        "anchor_label": "link_type",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_foreign_key_link",
+        "anchor_label": "foreign_key_link",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_backing_object_type",
+        "anchor_label": "backing_object_type",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.93,
+    "intensity": 0.86,
+    "stability": 0.92,
+    "scene": "explanation",
+    "role": "definition",
+    "semantic_tags": [
+      "link_type",
+      "foreign_key_link",
+      "join_table_dataset",
+      "backing_object_type"
+    ],
+    "structural_tags": [
+      "definition",
+      "relationship_model",
+      "type_comparison"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.04,
+    "evidence_text": [
+      "Ontology는 이 현실의 관계를 Link Type으로 표현합니다",
+      "세가지 방식으로 object 간에 관계를 맺게 해줍니다",
+      "Object type foreign keys",
+      "Join table dataset",
+      "Backing object type",
+      "독립된 Object로 승격합니다"
+    ],
+    "why_short": "Link Type의 의미와 Foundry에서 관계를 모델링하는 세 가지 방식을 한 번에 설명하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_010",
+    "fragment_text": "여기서 중요한 점은 Link Type이 단순 join이 아니라는 점입니다.\n\nLink Type은 한 번 정의되고 나면 단순히 두 테이블을 이어주는 것을 넘어, 아래 요소들에 적극적으로 활용됩니다:\n\n그래프 탐색\n관계 기반 검색 및 필터링\n관계 기반 보안 정책(Purpose-based Security)\nLLM이 관계를 따라 reasoning 하는 근거\nML 모델이 관계 경로를 feature로 활용하는 구조\n즉, 관계는 단순한 데이터 연결선이 아니라\nAI가 현실을 이해하고 추론하도록 만드는 의미의 연결선입니다.\n\nOntology에서 관계를 제대로 만드는 것이 중요한 이유가 바로 여기에 있습니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_relation_reasoning_basis",
+        "anchor_label": "relation_reasoning_basis",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_graph_traversal",
+        "anchor_label": "graph_traversal",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.92,
+    "intensity": 0.82,
+    "stability": 0.94,
+    "scene": "explanation",
+    "role": "support",
+    "semantic_tags": [
+      "relation_reasoning_basis",
+      "graph_traversal",
+      "relationship_security",
+      "ml_feature"
+    ],
+    "structural_tags": [
+      "importance_statement",
+      "capability_list"
+    ],
+    "confidence": 0.97,
+    "ambiguity": 0.03,
+    "evidence_text": [
+      "Link Type이 단순 join이 아니라는 점입니다",
+      "그래프 탐색",
+      "LLM이 관계를 따라 reasoning 하는 근거",
+      "ML 모델이 관계 경로를 feature로 활용하는 구조",
+      "의미의 연결선입니다"
+    ],
+    "why_short": "Link Type이 단순 조인을 넘어 AI 추론과 검색, 보안, ML에 활용되는 의미 연결선임을 강조하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_011",
+    "fragment_text": "2-4) Action Type: 객체의 실제 행동이자 운영계 접점\n\n현실에서는 모든 개체가 행동합니다.\n글을 작성하고, 위치가 이동하고, 이름이 바뀌고, 주문이 승인되고, 재고가 보충되는 식이죠.\n\nOntology에서는 이 현실의 행동을 Action Type으로 정의합니다.\n\n예를 들면,\n\n나는 글을 작성한다                    : write_post\n나는 카페를 옮긴다                    : update_location\n나는 블로그 글 제목을 변경한다  : change_title\n등이 있습니다.\n이 Action들은 Ontology 내의 Workshop 등의 기능을 통해 UI 버튼으로 구현될 수도 있고 자연어로 처리될 수도 있습니다.\n이는 단순히 데이터를 변경시키는 과정이 아니라 실제 운영 시스템에 적용되는 명령 그 자체로 여겨집니다.\n실행되면 내부적으로 Function, 외부 API, 모델 호출 등과 연결되며 LLM 에이전트가 Action을 자동으로 실행할 수도 있습니다.\n\n즉, Action Type은 데이터 레이어와 운영 레이어를 연결하는 팔란티어만의 핵심 구조입니다.",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_action_type",
+        "anchor_label": "action_type",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_operational_command",
+        "anchor_label": "operational_command",
+        "anchor_type": "process",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_data_operation_bridge",
+        "anchor_label": "data_operation_bridge",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.94,
+    "intensity": 0.85,
+    "stability": 0.94,
+    "scene": "explanation",
+    "role": "definition",
+    "semantic_tags": [
+      "action_type",
+      "operational_command",
+      "automation"
+    ],
+    "structural_tags": [
+      "definition",
+      "bridge_role"
+    ],
+    "confidence": 0.98,
+    "ambiguity": 0.03,
+    "evidence_text": [
+      "현실의 행동을 Action Type으로 정의합니다",
+      "실제 운영 시스템에 적용되는 명령 그 자체",
+      "LLM 에이전트가 Action을 자동으로 실행할 수도 있습니다",
+      "데이터 레이어와 운영 레이어를 연결하는"
+    ],
+    "why_short": "Action Type을 현실의 행동을 디지털 명령으로 연결하는 운영계 접점으로 설명하는 fragment다.",
+    "processor_notes": []
+  },
+  {
+    "input_doc_id": "doc_005",
+    "input_bundle_id": "bundle_compare_v1",
+    "fragment_id": "doc_005_frag_012",
+    "fragment_text": "위에서 언급했듯이 지금까지의 데이터 시스템은 복잡했습니다.\n\n데이터는 여러 시스템에 흩어져 있고\n서로 연결되지 않았고\n운영에서 발생하는 행동(Action)은 데이터와 완전히 분리되어 있었죠.\nObject / Property / Link / Action 구조는\n이 세 가지 문제를 한 번에 해결합니다.\n\nObject – 현실의 개체가 디지털로 존재하고\nProperty – 그 개체의 모든 상태가 기록되고\nLink – 개체 간의 관계가 그래프 형태로 의미 있게 연결되고\nAction – 현실의 행동이 디지털 세계에서도 그대로 실행됩니다\n\n이 네 가지를 합치면 현실과 1:1로 대응되는 디지털 트윈 세계가 만들어집니다.\n\n그리고 이 디지털 트윈은 AI 모델과 LLM이 정확하게 reasoning 하고, 운영에 직접 영향을 주는 자동화(Action)를 할 수 있는 기반이 됩니다. 팔란티어가 말하는 온톨로지 중심 운영 시스템이 바로 이런 구조입니다",
+    "source_type": "reference_article",
+    "fragment_version": "v1",
+    "anchors": [
+      {
+        "anchor_id": "anc_digital_twin_world",
+        "anchor_label": "digital_twin_world",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_object_property_link_action",
+        "anchor_label": "object_property_link_action",
+        "anchor_type": "structural",
+        "anchor_scope": "cross_source"
+      },
+      {
+        "anchor_id": "anc_ontology_centered_operation",
+        "anchor_label": "ontology_centered_operation",
+        "anchor_type": "semantic",
+        "anchor_scope": "cross_source"
+      }
+    ],
+    "direction": 0.95,
+    "intensity": 0.87,
+    "stability": 0.95,
+    "scene": "explanation",
+    "role": "thesis",
+    "semantic_tags": [
+      "digital_twin_world",
+      "ontology_centered_operation",
+      "automation",
+      "reasoning"
+    ],
+    "structural_tags": [
+      "synthesis",
+      "solution_statement"
+    ],
+    "confidence": 0.98,
+    "ambiguity": 0.03,
+    "evidence_text": [
+      "이 세 가지 문제를 한 번에 해결합니다",
+      "현실과 1:1로 대응되는 디지털 트윈 세계가 만들어집니다",
+      "AI 모델과 LLM이 정확하게 reasoning 하고",
+      "온톨로지 중심 운영 시스템"
+    ],
+    "why_short": "Object, Property, Link, Action을 통합해 디지털 트윈과 온톨로지 중심 운영 시스템을 만든다는 최종 종합 fragment다.",
+    "processor_notes": []
+  }
+]

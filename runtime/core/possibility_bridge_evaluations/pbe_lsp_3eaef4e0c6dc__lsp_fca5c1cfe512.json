@@ -1,0 +1,96 @@
+{
+  "possibility_bridge_evaluation_id": "pbe_lsp_3eaef4e0c6dc__lsp_fca5c1cfe512",
+  "from_local_space_id": "lsp_fca5c1cfe512",
+  "to_local_space_id": "lsp_3eaef4e0c6dc",
+  "from_label": "engine_phase1_imported_doc_probe2_20260321",
+  "to_label": "test_live_space_sync_20260321",
+  "trace_refs": [
+    "trc_c6bee4ee25fa"
+  ],
+  "cross_path_type": "live-legacy",
+  "bridge_mode": "possibility_candidate",
+  "bridge_reason_kind": "mixed_path_possibility_candidate",
+  "possibility_basis": {
+    "partial_anchor_alignment": [
+      "Link"
+    ],
+    "weak_processing_overlap": [
+      {
+        "ref_kind": "scene",
+        "ref_id": "review",
+        "note": "scene_match"
+      },
+      {
+        "ref_kind": "flow",
+        "ref_id": "compare",
+        "note": "flow_match"
+      }
+    ],
+    "observer_affinity": {
+      "available": true,
+      "left_roles": [
+        "contrast"
+      ],
+      "right_roles": [
+        "support"
+      ],
+      "shared_signals": []
+    },
+    "structural_echo": [
+      "scene_match",
+      "flow_match"
+    ],
+    "partial_handle_overlap": [
+      "engine_phase1_imported_doc_probe2_20260321",
+      "test_live_space_sync_20260321.txt"
+    ],
+    "shared_scene_or_flow_hint": [
+      "review",
+      "compare"
+    ]
+  },
+  "promotion_blockers": [
+    "missing_canonical_anchor_alignment",
+    "processing_overlap_below_canonical",
+    "cross_path_translation_gap",
+    "processing_overlap_below_possibility"
+  ],
+  "translation_gap_details": [
+    "processing_overlap_below_possibility"
+  ],
+  "none_reason_kind": "",
+  "blocked_reason": "missing_canonical_anchor_alignment",
+  "weak_support_summary": {
+    "partial_anchor_alignment_count": 1,
+    "weak_processing_overlap_count": 2,
+    "structural_echo_count": 2,
+    "observer_affinity_available": true,
+    "shared_scene_or_flow_hint_count": 2
+  },
+  "blocked_alignment_evidence": {
+    "partial_anchor_alignment": [
+      "Link"
+    ],
+    "weak_processing_overlap": [
+      {
+        "ref_kind": "scene",
+        "ref_id": "review",
+        "note": "scene_match"
+      },
+      {
+        "ref_kind": "flow",
+        "ref_id": "compare",
+        "note": "flow_match"
+      }
+    ],
+    "partial_handle_overlap": [
+      "engine_phase1_imported_doc_probe2_20260321",
+      "test_live_space_sync_20260321.txt"
+    ],
+    "shared_scene_or_flow_hint": [
+      "review",
+      "compare"
+    ]
+  },
+  "state": "recorded"
+}

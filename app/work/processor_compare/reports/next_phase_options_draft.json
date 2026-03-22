@@ -1,0 +1,115 @@
+{
+  "current_checkpoint": {
+    "engine_kind": "connection_layer_engine",
+    "space_is_view_not_engine": true,
+    "doc_006_state": "space_pre_entry_review_candidate",
+    "doc_005_doc_004_state": "translation_missing_controls",
+    "stabilization_complete": true
+  },
+  "current_diagnosis": {
+    "largest_bottleneck": "approval_policy_not_yet_locked",
+    "not_largest_bottleneck": [
+      "more_review_fields",
+      "viewer_work",
+      "more_translation_or_processing_expansion"
+    ]
+  },
+  "phases": {
+    "phase_a_approval_policy": {
+      "purpose": [
+        "lock direct canonical overlap approval grammar",
+        "define direct/derived/translated/token-supported acceptance range",
+        "define family weighting and same-local-ref vs cross-path relation"
+      ],
+      "needed_now": true,
+      "entry_ready": true,
+      "risk_if_delayed": [
+        "automation will rest on provisional approval logic",
+        "model interface may freeze unstable policy"
+      ],
+      "no_go": [
+        "translation expansion",
+        "processing refinement restart",
+        "canonical threshold relaxation"
+      ]
+    },
+    "phase_b_operation_automation": {
+      "purpose": [
+        "automate hot/warm/cold movement",
+        "add revisit scheduling",
+        "add warm downgrade and archive candidate handling"
+      ],
+      "needed_now": false,
+      "entry_ready": "partial",
+      "risk_if_opened_too_early": [
+        "automation may freeze provisional approval logic",
+        "temperature movement may encode wrong semantics"
+      ],
+      "no_go": [
+        "pruning first",
+        "behavior-changing lifecycle automation before policy lock"
+      ]
+    },
+    "phase_c_model_attachment_readiness": {
+      "purpose": [
+        "prepare processing/review/state vectors for prediction or learning models",
+        "define history/transition/export grammar"
+      ],
+      "needed_now": false,
+      "entry_ready": false,
+      "risk_if_opened_too_early": [
+        "unstable review/canonical policy becomes model feature schema",
+        "interface overfits to temporary state semantics"
+      ],
+      "no_go": [
+        "freeze model-facing feature schema before policy lock",
+        "treat viewer surface as model api"
+      ]
+    }
+  },
+  "entry_criteria_summary": {
+    "phase_a": {
+      "can_open_now": true,
+      "prepared": [
+        "review_lane",
+        "fixture_control_split",
+        "lifecycle_ledger_baseline"
+      ],
+      "missing": [
+        "approval_policy_finalization"
+      ]
+    },
+    "phase_b": {
+      "can_open_now": "partial",
+      "prepared": [
+        "lifecycle_semantics",
+        "ledger_runner_signature_diff"
+      ],
+      "missing": [
+        "approval_policy_lock"
+      ]
+    },
+    "phase_c": {
+      "can_open_now": false,
+      "prepared": [
+        "rich_review_state"
+      ],
+      "missing": [
+        "approval_policy_stability",
+        "export_value_grammar_stability"
+      ]
+    }
+  },
+  "recommended_order": [
+    "phase_a_approval_policy",
+    "phase_b_operation_automation",
+    "phase_c_model_attachment_readiness"
+  ],
+  "recommended_next_phase": "phase_a_approval_policy",
+  "why_now": "doc_006 shows that the next bottleneck is approval policy, not automation or model wiring",
+  "why_not_yet": [
+    "phase_b may automate provisional policy",
+    "phase_c may freeze unstable policy into model-facing schema"
+  ],
+  "next_after_that": "phase_b_operation_automation"
+}

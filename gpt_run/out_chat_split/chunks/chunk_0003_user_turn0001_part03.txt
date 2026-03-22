@@ -1,0 +1,23 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 3
+[char_count] 1178
+
+mkdir -p ~/universe/vectorfl_replica/{references/{vectorfl,vectorfl_next,vectorfl_next_gemini_session},app/{core,models,events,runtime/{ingest,source_view,space_view,bridge_layer,reporting},fragment,input_layer/{segmenter,labeler,anchorizer,source_locator},work/{experiments,prompts,evaluations}},scripts,runtime/{core/{materials,traces,pressure_profiles,point_seeds,space_cells,local_spaces,bridge_traces},fragments,source_documents,manifests/{reactive_spaces,reactive_cells,bridges,source_views},events,reports,logs/{ingest,segmentation,labeling,linking,corrections}},data/{inbox/{papers,reviews,conversations,notes},processed,exports},docs/{architecture,policies,prompts,evaluations,reports},tests/{unit,integration,fixtures}}
+파일까지 같이 빈 파일로 만들려면 이어서 이것도 실행하면 됩니다.
+
+touch ~/universe/vectorfl_replica/README.md \
+
+~/universe/vectorfl_replica/CURRENT.md \
+
+~/universe/vectorfl_replica/AGENTS.md \
+
+~/universe/vectorfl_replica/app/runtime/viewer_server.py \
+
+~/universe/vectorfl_replica/app/fragment/schema.py \
+
+~/universe/vectorfl_replica/app/fragment/store.py \
+
+~/universe/vectorfl_replica/app/fragment/projector.py \
+
+~/universe/vectorfl_replica/app/fragment/provenance.py \

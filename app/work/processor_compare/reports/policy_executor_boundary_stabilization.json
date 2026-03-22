@@ -1,0 +1,26 @@
+{
+  "current_diagnosis": {
+    "risk": "policy logic flowing back into live_input_space.py",
+    "need": "make executor/policy/output boundary operationally visible without changing behavior"
+  },
+  "exact_changes": {
+    "files": [
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/live_input_space.py"
+    ],
+    "actions": [
+      "added executor/policy/output boundary comments",
+      "marked promotion review builder as orchestration-only",
+      "kept review policy logic in review_policies.py"
+    ]
+  },
+  "verification": {
+    "py_compile": true,
+    "canonical_fixture_preserved": true,
+    "exploration_control_preserved": true
+  },
+  "current_reading": "policy_executor_boundary_now_operationally_visible",
+  "next_recommendation": [
+    "keep new approval rules inside review_policies.py",
+    "prefer helper stabilization over more policy splitting in current phase"
+  ]
+}

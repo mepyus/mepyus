@@ -1,0 +1,187 @@
+# Bridge Handoff Audit
+
+- consumes anchor bundle: yes
+- consumes processing values: partial
+- consumes observer trace: no
+- preserves rejected overlap: partial
+
+## audit
+```json
+{
+  "generated_at": "2026-03-21T05:49:11.543974Z",
+  "consumes_anchor_bundle": {
+    "verdict": "yes",
+    "evidence": [
+      "bridge traces persist shared_anchors",
+      "atlas bridge rows are built from canonical anchor_hints / reason_line"
+    ],
+    "samples": [
+      {
+        "bridge_id": "brg_f30a3a351a8b",
+        "from_label": "doc_005",
+        "to_label": "doc_006",
+        "strength": 0.809,
+        "anchor_hints": [
+          "모델 LLM",
+          "LLM",
+          "AI",
+          "Property"
+        ],
+        "reason_line": "doc_005와 모델 LLM / LLM 축으로 연결",
+        "source_links": [
+          {
+            "label": "doc_005",
+            "source_ref": "processor_compare/doc_005.txt"
+          },
+          {
+            "label": "doc_006",
+            "source_ref": "processor_compare/doc_006.txt"
+          }
+        ],
+        "dust_links": [
+          {
+            "label": "dst_src_ee95f3c2ea44_001",
+            "dust_id": "dst_src_ee95f3c2ea44_001"
+          },
+          {
+            "label": "dst_src_ee95f3c2ea44_002",
+            "dust_id": "dst_src_ee95f3c2ea44_002"
+          },
+          {
+            "label": "dst_src_ee95f3c2ea44_003",
+            "dust_id": "dst_src_ee95f3c2ea44_003"
+          }
+        ]
+      },
+      {
+        "bridge_id": "brg_e4d1fa10fa46",
+        "from_label": "doc_004",
+        "to_label": "doc_005",
+        "strength": 0.763,
+        "anchor_hints": [
+          "Ontology",
+          "Foundry",
+          "Link",
+          "Action Type"
+        ],
+        "reason_line": "doc_004와 Ontology / Foundry 축으로 연결",
+        "source_links": [
+          {
+            "label": "doc_004",
+            "source_ref": "processor_compare/doc_004.txt"
+          },
+          {
+            "label": "doc_005",
+            "source_ref": "processor_compare/doc_005.txt"
+          }
+        ],
+        "dust_links": [
+          {
+            "label": "dst_src_340b01958e5f_001",
+            "dust_id": "dst_src_340b01958e5f_001"
+          },
+          {
+            "label": "dst_src_340b01958e5f_002",
+            "dust_id": "dst_src_340b01958e5f_002"
+          },
+          {
+            "label": "dst_src_340b01958e5f_003",
+            "dust_id": "dst_src_340b01958e5f_003"
+          }
+        ]
+      },
+      {
+        "bridge_id": "brg_7c5135a8f481",
+        "from_label": "None",
+        "to_label": "test_canonical_ingest_20260321",
+        "strength": 0.461,
+        "anchor_hints": [
+          "Graph",
+          "Graph RAG"
+        ],
+        "reason_line": "None와 Graph / Graph RAG 축으로 연결",
+        "source_links": [
+          {
+            "label": "engine_phase1_probe_20260321",
+            "source_ref": "engine_phase1_probe_20260321"
+          },
+          {
+            "label": "test_canonical_ingest_20260321",
+            "source_ref": "manual/test_canonical_ingest_20260321.txt"
+          }
+        ],
+        "dust_links": [
+          {
+            "label": "dst_src_9a22e5b91fd5_001",
+            "dust_id": "dst_src_9a22e5b91fd5_001"
+          },
+          {
+            "label": "dst_src_4c7bf070012d_001",
+            "dust_id": "dst_src_4c7bf070012d_001"
+          },
+          {
+            "label": "dst_src_4c7bf070012d_002",
+            "dust_id": "dst_src_4c7bf070012d_002"
+          }
+        ]
+      },
+      {
+        "bridge_id": "brg_0dfd0bf196d9",
+        "from_label": "doc_004",
+        "to_label": "doc_006",
+        "strength": 0.443,
+        "anchor_hints": [
+          "Property"
+        ],
+        "reason_line": "doc_004와 Property 축으로 연결",
+        "source_links": [
+          {
+            "label": "doc_004",
+            "source_ref": "processor_compare/doc_004.txt"
+          },
+          {
+            "label": "doc_006",
+            "source_ref": "processor_compare/doc_006.txt"
+          }
+        ],
+        "dust_links": [
+          {
+            "label": "dst_src_340b01958e5f_001",
+            "dust_id": "dst_src_340b01958e5f_001"
+          },
+          {
+            "label": "dst_src_340b01958e5f_002",
+            "dust_id": "dst_src_340b01958e5f_002"
+          },
+          {
+            "label": "dst_src_340b01958e5f_003",
+            "dust_id": "dst_src_340b01958e5f_003"
+          }
+        ]
+      }
+    ]
+  },
+  "consumes_processing_values": {
+    "verdict": "partial",
+    "evidence": [
+      "live_input relation profile compares scene/flow and stores them in trace support_refs",
+      "patched live bridge now stores processing_overlap support_refs",
+      "imported doc bridges still mostly surface canonical overlap and note text"
+    ]
+  },
+  "consumes_observer_trace": {
+    "verdict": "no",
+    "evidence": [
+      "bridge rows do not yet persist observer disagreement or merge basis as first-class fields"
+    ]
+  },
+  "preserves_rejected_overlap": {
+    "verdict": "partial",
+    "evidence": [
+      "doc bridge traces can store rejected_overlap_anchors",
+      "live input bridge path still does not populate rejected overlap"
+    ]
+  },
+  "largest_mismatch": "bridge opens mostly on canonical overlap, while processing-aware / observer-aware reasons are still secondary or absent"
+}
+```

@@ -1,0 +1,33 @@
+{
+  "draft_date": "2026-03-22",
+  "draft_kind": "fixture_control_split",
+  "immutable_regression_fixture_candidates": [
+    {
+      "case": "doc_004 -> doc_005",
+      "expected_state": "canonical"
+    },
+    {
+      "case": "doc_005 -> doc_006",
+      "expected_state": "canonical"
+    },
+    {
+      "case": "test_live_space_sync_20260321 -> test_canonical_ingest_20260321",
+      "expected_state": "canonical"
+    }
+  ],
+  "mutable_exploration_controls": [
+    {
+      "case": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "current_state": "translation_missing"
+    },
+    {
+      "case": "engine_phase1_observer_probe_20260321 -> doc_004",
+      "current_state": "translation_missing"
+    },
+    {
+      "case": "engine_phase1_observer_probe_20260321 -> doc_006",
+      "current_state": "space pre-entry review candidate"
+    }
+  ],
+  "next_step": "create small regression manifest with mutable flag and expected tier"
+}

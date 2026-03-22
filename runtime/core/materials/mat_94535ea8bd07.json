@@ -1,0 +1,190 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-19T11:57:28.416932+00:00",
+  "family_id": null,
+  "lineage_refs": [],
+  "material_id": "mat_94535ea8bd07",
+  "metadata": {
+    "D": 0.76,
+    "I": 0.62,
+    "S": 0.84,
+    "anchor": {
+      "aliases": [],
+      "anchor_type": "object",
+      "canonical_key": "object.field.ai",
+      "confidence": 0.86,
+      "evidence_text": "ai",
+      "key": "object.field.ai",
+      "label": "AI",
+      "origin": "object_rule",
+      "status": "active",
+      "value": "AI"
+    },
+    "anchors": [
+      {
+        "aliases": [],
+        "anchor_type": "object",
+        "canonical_key": "object.field.ai",
+        "confidence": 0.86,
+        "evidence_text": "ai",
+        "key": "object.field.ai",
+        "label": "AI",
+        "origin": "object_rule",
+        "status": "active",
+        "value": "AI"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.deepseek",
+        "confidence": 0.76,
+        "evidence_text": "DeepSeek",
+        "key": "semantic.deepseek",
+        "label": "DeepSeek",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "DeepSeek"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.deepseek_r1",
+        "confidence": 0.76,
+        "evidence_text": "DeepSeek-R1",
+        "key": "semantic.deepseek_r1",
+        "label": "DeepSeek-R1",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "DeepSeek-R1"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.rlvr",
+        "confidence": 0.76,
+        "evidence_text": "RLVR",
+        "key": "semantic.rlvr",
+        "label": "RLVR",
+        "origin": "semantic_rule",
+        "status": "active",
+        "value": "RLVR"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "structural",
+        "canonical_key": "structural.role.bridge",
+        "confidence": 0.7,
+        "evidence_text": "\uadf8\ub7f0\ub370",
+        "key": "structural.role.bridge",
+        "label": "role.bridge",
+        "origin": "structural_rule",
+        "status": "active",
+        "value": "structural.role.bridge"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "source",
+        "canonical_key": "source.z_ai",
+        "confidence": 0.9,
+        "evidence_text": "Z.ai",
+        "key": "source.z_ai",
+        "label": "Z.ai",
+        "origin": "source_rule",
+        "status": "active",
+        "value": "Z.ai"
+      }
+    ],
+    "confidence": "mid",
+    "flow": "expand",
+    "formation_role": "review_material",
+    "fragment_id": "frag_basic4_001",
+    "fragment_metadata": {
+      "ingest_batch_id": "batch_505cfd0a9de7",
+      "ingest_history": [
+        {
+          "ingest_batch_id": "batch_505cfd0a9de7",
+          "ingest_session_id": "ingest_session:20260319T115728Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic4_fragments.json",
+          "recorded_at": "20260319T115728Z"
+        }
+      ],
+      "ingest_input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic4_fragments.json",
+      "ingest_session_id": "ingest_session:20260319T115728Z",
+      "sample_batch": "basic4_conversation_v1"
+    },
+    "page_ref": {
+      "page_index": 0,
+      "page_label": "p1"
+    },
+    "paragraph_index": null,
+    "projected_material_id": "mat_94535ea8bd07",
+    "provenance_log": [
+      {
+        "note": "basic4.md opening paradigm-shift and open-frontier framing block",
+        "payload": {},
+        "recorded_at": "2026-03-19T11:57:28.408790+00:00",
+        "step": "manual_seed"
+      },
+      {
+        "note": "registered ingest batch lineage",
+        "payload": {
+          "ingest_batch_id": "batch_505cfd0a9de7",
+          "ingest_session_id": "ingest_session:20260319T115728Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic4_fragments.json"
+        },
+        "recorded_at": "2026-03-19T11:57:28.408993+00:00",
+        "step": "ingest_batch"
+      },
+      {
+        "note": "applied anchor enrichment",
+        "payload": {
+          "anchor_count": 6,
+          "ingest_batch_id": "batch_505cfd0a9de7",
+          "primary_anchor": "object.field.ai"
+        },
+        "recorded_at": "2026-03-19T11:57:28.410243+00:00",
+        "step": "anchorizer"
+      },
+      {
+        "note": "applied source location enrichment",
+        "payload": {
+          "ingest_batch_id": "batch_505cfd0a9de7",
+          "page_ref": {
+            "page_index": 0,
+            "page_label": "p1"
+          },
+          "paragraph_index": null,
+          "source_range": {
+            "end": null,
+            "start": null
+          }
+        },
+        "recorded_at": "2026-03-19T11:57:28.413435+00:00",
+        "step": "source_locator"
+      },
+      {
+        "note": "attached ambient anchor probe measurement",
+        "payload": {
+          "candidate_count": 3,
+          "measurement_id": "msr_ec82edeea376ea11",
+          "top_handle": "operation.measurement_retention"
+        },
+        "recorded_at": "2026-03-19T11:57:28.415898+00:00",
+        "step": "ambient_probe"
+      }
+    ],
+    "scene": "meta",
+    "source_id": "src_basic4_001",
+    "source_range": {
+      "end": null,
+      "start": null
+    },
+    "time_in": "t01",
+    "unit_scale": "turn_block"
+  },
+  "project_id": "vectorfl-replica",
+  "raw_payload": "DeepSeek-R1 \uc774\ud6c4: RLVR\u00b7\uc5d0\uc774\uc804\ud2b8 \ud3ec\uc2a4\ud2b8\ud2b8\ub808\uc774\ub2dd 00:29\n\n00:29 \uae40\uc131\ud604 2025\ub144 \ud68c\uace0\ub97c \uc774\ub7f0 \ud615\ud0dc\ub85c \ud558\uac8c \ub420 \uc904\uc740 \ubab0\ub790\ub124\uc694. \uadf8\ub807\uc9c0\ub9cc \uc7ac\ubbf8\uc788\ub294 \uae30\ud68c\uac00 \ub420 \uac83 \uac19\uc2b5\ub2c8\ub2e4. 2025\ub144\uc5d0 \uc815\ub9d0 \ub9ce\uc740 \uc77c\uc774 \uc788\uc5c8\ub358 \uac83 \uac19\uae30\ub294 \ud569\ub2c8\ub2e4. \uadf8\ub7f0\ub370 \uc774 \ud68c\uace0\ub97c \ud574\ubcf4\ub824\uace0 \ub2e4\uc2dc \uacfc\uac70\uc758 \uae30\ub85d\ub4e4 \uac19\uc740 \uac83\ub4e4\uc744 \ucb49 \uc0b4\ud3b4\ubcf4\ub2c8\uae4c \uc0dd\uac01\ubcf4\ub2e4 \uadf8\ub807\uac8c \ub9ce\uc740 \ubcc0\ud654\uac00 \uc788\uc5c8\ub358 \uac83 \uac19\uc9c0 \uc54a\uae30\ub3c4 \ud558\ub354\ub77c\uace0\uc694.\n\n2025\ub144 \ucd08\uc5d0 \uc788\uc5c8\ub358 R1, DeepSeek \uc0ac\uac74\uc73c\ub85c \ud55c \ubc88 \ud328\ub7ec\ub2e4\uc784\uc774 \ud655 \uc804\ud658\ub41c \uc774\ud6c4\uc5d0 \uadf8 \uc774\ud6c4\uc5d0 \uc788\uc5c8\ub358 \uc77c\uc740 \uc810\uc9c4\uc801\uc778 \ubc1c\uc804\uc5d0 \uac00\uae4c\uc6b4 \uac83 \uac19\uae30\ub294 \ud569\ub2c8\ub2e4. RLVR\uacfc \uc5d0\uc774\uc804\ud2b8 \ud3ec\uc2a4\ud2b8\ud2b8\ub808\uc774\ub2dd\uc774\ub77c\ub294 \uc0c8\ub85c\uc6b4 \ud328\ub7ec\ub2e4\uc784\uc774 \ub4f1\uc7a5\ud588\uace0 2025\ub144 \ucd08\uc5d0, 2025\ub144 \ub0b4\ub0b4 \uadf8 \ud328\ub7ec\ub2e4\uc784\uc744 \ubc1c\uc804\uc2dc\ud0a4\uace0 \uc774\ud574\ud558\uace0 \ud0d0\uc0c9\ud558\ub294 \uac83\uc73c\ub85c 2025\ub144\uc774 \uc9c0\ub098\uac04 \uac83 \uac19\uae34 \ud569\ub2c8\ub2e4.\n\n\ud559\uc220\uc801\uc778 \uac83\uacfc\ub294 \uc57d\uac04\uc758 \ubcc4\uac1c\ub85c \ud639\uc740 \ud559\uc220\uc801\uc778 \uac83\uacfc \uac78\uccd0\uc11c \uc788\uc5c8\ub358 \uc77c \uc911\uc5d0\uc11c \uac00\uc7a5 \ud765\ubbf8\ub85c\uc6b4 \uac83\uc740 \uc218\ub9ce\uc740 \uc624\ud508 \ud504\ub7f0\ud2f0\uc5b4 \ubaa8\ub378\ub4e4\uc774 \ub4f1\uc7a5\ud588\ub2e4\ub294 \uac8c \uac00\uc7a5 \ud070 \uc9c0\uc810\uc778 \uac83 \uac19\uc2b5\ub2c8\ub2e4. DeepSeek, MiniMax, Z.ai, Xiaomi, Tencent, Moonshot, Ant, Alibaba, Meituan \ub4f1\ub4f1 \uc218\ub9ce\uc740 \uae30\uc5c5\ub4e4\uc774 \ubaa8\ub378\uc744 \uacf5\uac1c\ud588\uace0",
+  "session_id": "replica_session",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_replica/basic4.md",
+  "source_type": "conversation"
+}

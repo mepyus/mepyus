@@ -1,0 +1,308 @@
+{
+  "current_diagnosis": {
+    "translation_before": "imported contract recovered, but live-imported remained none with anchor_vocabulary_translation_gap dominance",
+    "translation_after": "local_ref-scoped translated handles are attached additively and mixed evaluator reads them only for live-imported possibility assist",
+    "strongest_residual_blocker": "processing_projection_mismatch / broad imported alignment still dominate on doc_004 and doc_005, while doc_006 can narrow to local_ref-scoped rag matches"
+  },
+  "exact_changes": {
+    "files": [
+      "app/core/runtime/local_ref_handle_translation.py",
+      "app/core/runtime/imported_material_contract.py",
+      "app/core/runtime/imported_material_probe.py",
+      "app/core/runtime/live_input_space.py"
+    ],
+    "what_changed": [
+      "added local_ref-scoped translation helper backed by alias dictionary and strict source_local_ref provenance",
+      "attached translated_handles additively to imported material metadata without overwriting original transformable_handles",
+      "extended imported probe with translation gain and broadcast leak metrics",
+      "let mixed evaluator read translated handles only on live-imported pairs as possibility assist; canonical logic unchanged"
+    ],
+    "not_changed": [
+      "viewer routes and rendering",
+      "region semantics",
+      "canonical thresholds",
+      "document-scoped alias broadcast"
+    ]
+  },
+  "verification": {
+    "canonical_results": [
+      {
+        "pair": "doc_004 <-> doc_005",
+        "bridge_mode": "canonical",
+        "cross_path_type": "imported-imported"
+      },
+      {
+        "pair": "doc_005 <-> doc_006",
+        "bridge_mode": "canonical",
+        "cross_path_type": "imported-imported"
+      },
+      {
+        "pair": "test_live_space_sync_20260321 <-> test_canonical_ingest_20260321",
+        "bridge_mode": "canonical",
+        "cross_path_type": "legacy-legacy"
+      }
+    ],
+    "imported_profiles": {
+      "processor_compare/doc_004.txt": {
+        "material_count": 15,
+        "source_ref_count": 1,
+        "anchor_bundle_presence_ratio": 1.0,
+        "processing_values_presence_ratio": 1.0,
+        "transformable_handles_presence_ratio": 1.0,
+        "source_local_ref_presence_ratio": 1.0,
+        "dropped_weak_presence_ratio": 1.0,
+        "observer_trace_presence_ratio": 1.0,
+        "observer_trace_available_ratio": 1.0,
+        "avg_anchor_density": 7.87,
+        "avg_processing_key_count": 5.0,
+        "avg_handle_key_count": 6.0,
+        "unique_source_local_ref_count": 15,
+        "materials_per_local_ref_max": 1,
+        "translation_applied_local_ref_count": 6,
+        "translation_handle_gain_ratio": 0.4,
+        "translation_handle_total_count": 8,
+        "translation_broadcast_leak": false,
+        "anchor_signature_unique_ratio": 1.0,
+        "processing_signature_unique_ratio": 0.3333,
+        "handle_signature_unique_ratio": 1.0,
+        "translated_signature_unique_ratio": 0.2667,
+        "scene_unique_count": 3,
+        "flow_unique_count": 2,
+        "role_unique_count": 3,
+        "local_alignment_readiness": {
+          "level": "high",
+          "blockers": []
+        },
+        "flatten_indicators": [
+          "single_source_ref_spread_over_many_materials"
+        ]
+      },
+      "processor_compare/doc_005.txt": {
+        "material_count": 73,
+        "source_ref_count": 1,
+        "anchor_bundle_presence_ratio": 1.0,
+        "processing_values_presence_ratio": 1.0,
+        "transformable_handles_presence_ratio": 1.0,
+        "source_local_ref_presence_ratio": 1.0,
+        "dropped_weak_presence_ratio": 1.0,
+        "observer_trace_presence_ratio": 1.0,
+        "observer_trace_available_ratio": 1.0,
+        "avg_anchor_density": 6.34,
+        "avg_processing_key_count": 5.0,
+        "avg_handle_key_count": 6.0,
+        "unique_source_local_ref_count": 73,
+        "materials_per_local_ref_max": 1,
+        "translation_applied_local_ref_count": 27,
+        "translation_handle_gain_ratio": 0.3699,
+        "translation_handle_total_count": 38,
+        "translation_broadcast_leak": false,
+        "anchor_signature_unique_ratio": 0.9452,
+        "processing_signature_unique_ratio": 0.1644,
+        "handle_signature_unique_ratio": 1.0,
+        "translated_signature_unique_ratio": 0.1507,
+        "scene_unique_count": 4,
+        "flow_unique_count": 3,
+        "role_unique_count": 4,
+        "local_alignment_readiness": {
+          "level": "partial",
+          "blockers": [
+            "processing_profile_too_flat"
+          ]
+        },
+        "flatten_indicators": [
+          "single_source_ref_spread_over_many_materials"
+        ]
+      },
+      "processor_compare/doc_006.txt": {
+        "material_count": 73,
+        "source_ref_count": 1,
+        "anchor_bundle_presence_ratio": 1.0,
+        "processing_values_presence_ratio": 1.0,
+        "transformable_handles_presence_ratio": 1.0,
+        "source_local_ref_presence_ratio": 1.0,
+        "dropped_weak_presence_ratio": 1.0,
+        "observer_trace_presence_ratio": 1.0,
+        "observer_trace_available_ratio": 1.0,
+        "avg_anchor_density": 6.6,
+        "avg_processing_key_count": 5.0,
+        "avg_handle_key_count": 6.0,
+        "unique_source_local_ref_count": 73,
+        "materials_per_local_ref_max": 1,
+        "translation_applied_local_ref_count": 26,
+        "translation_handle_gain_ratio": 0.3562,
+        "translation_handle_total_count": 27,
+        "translation_broadcast_leak": false,
+        "anchor_signature_unique_ratio": 0.8904,
+        "processing_signature_unique_ratio": 0.1644,
+        "handle_signature_unique_ratio": 1.0,
+        "translated_signature_unique_ratio": 0.0274,
+        "scene_unique_count": 4,
+        "flow_unique_count": 2,
+        "role_unique_count": 4,
+        "local_alignment_readiness": {
+          "level": "partial",
+          "blockers": [
+            "processing_profile_too_flat"
+          ]
+        },
+        "flatten_indicators": [
+          "single_source_ref_spread_over_many_materials"
+        ]
+      }
+    },
+    "live_imported_results": [
+      {
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_004",
+        "bridge_mode": "none",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 0,
+          "matched_local_refs": [],
+          "matched_handles": [],
+          "matched_rows": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      },
+      {
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_005",
+        "bridge_mode": "none",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 0,
+          "matched_local_refs": [],
+          "matched_handles": [],
+          "matched_rows": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      },
+      {
+        "pair": "engine_phase1_observer_probe_20260321 <-> doc_006",
+        "bridge_mode": "possibility_candidate",
+        "none_reason_kind": "",
+        "translation_assisted_alignment": {
+          "available": true,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 26,
+          "matched_local_refs": [
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_003",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_036",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_070"
+          ],
+          "matched_handles": [
+            "rag"
+          ],
+          "matched_rows": [
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_003",
+              "translated_handle": "rag",
+              "translation_basis": "supporting_anchor",
+              "translation_confidence": 0.72
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_036",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_070",
+              "translated_handle": "rag",
+              "translation_basis": "supporting_anchor",
+              "translation_confidence": 0.72
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_026",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_019",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_037",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_007",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            }
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "translation_assisted_possibility_only",
+          "translation_scope_local_ref",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      }
+    ],
+    "live_legacy_results": [
+      {
+        "pair": "engine_phase1_imported_doc_probe_20260321 <-> test_live_space_sync_20260321",
+        "bridge_mode": "possibility_candidate",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": ""
+        }
+      },
+      {
+        "pair": "engine_phase1_imported_doc_probe2_20260321 <-> test_live_space_sync_20260321",
+        "bridge_mode": "possibility_candidate",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": ""
+        }
+      }
+    ],
+    "translation_broadcast_leak": false,
+    "translation_assisted_alignment_count": 1,
+    "translation_assisted_possibility_count": 1
+  },
+  "current_reading": "translation helps doc_006 at local_ref scope, but broad imported alignment and processing flatness still block doc_004/doc_005; canonical lane remains preserved",
+  "next_recommendation": {
+    "primary": "treat processing flatness as next blocker before widening translation coverage",
+    "translation_scope": "if translation continues, keep it local_ref-scoped only",
+    "promotion_review": "review doc_006 translation-assisted possibility basis before considering any broader promotion rule"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-18T11:15:40.675104+00:00",
+  "family_id": null,
+  "lineage_refs": [],
+  "material_id": "mat_6ac5bd192311",
+  "metadata": {
+    "D": 0.74,
+    "I": 0.61,
+    "S": 0.84,
+    "anchor": {
+      "aliases": [],
+      "anchor_type": "source",
+      "canonical_key": "source.claude_md",
+      "confidence": 0.9,
+      "evidence_text": "CLAUDE.md",
+      "key": "source.claude_md",
+      "label": "CLAUDE.md",
+      "origin": "rule",
+      "status": "active",
+      "value": "CLAUDE.md"
+    },
+    "anchors": [
+      {
+        "aliases": [],
+        "anchor_type": "source",
+        "canonical_key": "source.claude_md",
+        "confidence": 0.9,
+        "evidence_text": "CLAUDE.md",
+        "key": "source.claude_md",
+        "label": "CLAUDE.md",
+        "origin": "rule",
+        "status": "active",
+        "value": "CLAUDE.md"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "object",
+        "canonical_key": "object.system.claude",
+        "confidence": 0.86,
+        "evidence_text": "claude",
+        "key": "object.system.claude",
+        "label": "Claude",
+        "origin": "rule",
+        "status": "active",
+        "value": "Claude"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "object",
+        "canonical_key": "object.field.ai",
+        "confidence": 0.86,
+        "evidence_text": "\uc778\uacf5\uc9c0\ub2a5",
+        "key": "object.field.ai",
+        "label": "AI",
+        "origin": "rule",
+        "status": "active",
+        "value": "AI"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.\uc5d0\uc774\uc804\ud2b8\uc758",
+        "confidence": 0.76,
+        "evidence_text": "\uc5d0\uc774\uc804\ud2b8\uc758",
+        "key": "semantic.\uc5d0\uc774\uc804\ud2b8\uc758",
+        "label": "\uc5d0\uc774\uc804\ud2b8\uc758",
+        "origin": "rule",
+        "status": "active",
+        "value": "\uc5d0\uc774\uc804\ud2b8\uc758"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.\uc124\uacc4\ud558\ub2e4",
+        "confidence": 0.76,
+        "evidence_text": "\uc124\uacc4\ud558\ub2e4",
+        "key": "semantic.\uc124\uacc4\ud558\ub2e4",
+        "label": "\uc124\uacc4\ud558\ub2e4",
+        "origin": "rule",
+        "status": "active",
+        "value": "\uc124\uacc4\ud558\ub2e4"
+      },
+      {
+        "aliases": [],
+        "anchor_type": "semantic",
+        "canonical_key": "semantic.\ub9e4\ub2c8\ud398\uc2a4\ud2b8",
+        "confidence": 0.76,
+        "evidence_text": "\ub9e4\ub2c8\ud398\uc2a4\ud2b8",
+        "key": "semantic.\ub9e4\ub2c8\ud398\uc2a4\ud2b8",
+        "label": "\ub9e4\ub2c8\ud398\uc2a4\ud2b8",
+        "origin": "rule",
+        "status": "active",
+        "value": "\ub9e4\ub2c8\ud398\uc2a4\ud2b8"
+      }
+    ],
+    "confidence": "mid",
+    "flow": "expand",
+    "formation_role": "review_material",
+    "fragment_id": "frag_basic_001",
+    "fragment_metadata": {
+      "ingest_batch_id": "batch_16576a9aed48",
+      "ingest_history": [
+        {
+          "ingest_batch_id": "batch_16576a9aed48",
+          "ingest_session_id": "ingest_session:20260318T111540Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic_speech_fragments.json",
+          "recorded_at": "20260318T111540Z"
+        }
+      ],
+      "ingest_input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic_speech_fragments.json",
+      "ingest_session_id": "ingest_session:20260318T111540Z",
+      "sample_batch": "basic_speech_v1"
+    },
+    "page_ref": {
+      "page_index": 0,
+      "page_label": "p1"
+    },
+    "paragraph_index": null,
+    "projected_material_id": "mat_6ac5bd192311",
+    "provenance_log": [
+      {
+        "note": "basic.md speech section 1",
+        "payload": {},
+        "recorded_at": "2026-03-18T11:15:40.664939+00:00",
+        "step": "manual_seed"
+      },
+      {
+        "note": "registered ingest batch lineage",
+        "payload": {
+          "ingest_batch_id": "batch_16576a9aed48",
+          "ingest_session_id": "ingest_session:20260318T111540Z",
+          "input_path": "/Users/sungsookim/universe/vectorfl_replica/data/exports/basic_speech_fragments.json"
+        },
+        "recorded_at": "2026-03-18T11:15:40.665162+00:00",
+        "step": "ingest_batch"
+      },
+      {
+        "note": "applied anchor enrichment",
+        "payload": {
+          "anchor_count": 6,
+          "ingest_batch_id": "batch_16576a9aed48",
+          "primary_anchor": "source.claude_md"
+        },
+        "recorded_at": "2026-03-18T11:15:40.666812+00:00",
+        "step": "anchorizer"
+      },
+      {
+        "note": "applied source location enrichment",
+        "payload": {
+          "ingest_batch_id": "batch_16576a9aed48",
+          "page_ref": {
+            "page_index": 0,
+            "page_label": "p1"
+          },
+          "paragraph_index": null,
+          "source_range": {
+            "end": null,
+            "start": null
+          }
+        },
+        "recorded_at": "2026-03-18T11:15:40.671744+00:00",
+        "step": "source_locator"
+      }
+    ],
+    "scene": "meta",
+    "source_id": "src_basic_001",
+    "source_range": {
+      "end": null,
+      "start": null
+    },
+    "time_in": "t01",
+    "unit_scale": "section"
+  },
+  "project_id": "vectorfl-replica",
+  "raw_payload": "[\ubc1c\ud45c\ubb38] \uc5d0\uc774\uc804\ud2b8\uc758 \uc601\ud63c\uc744 \uc124\uacc4\ud558\ub2e4: CLAUDE.md \ub9e4\ub2c8\ud398\uc2a4\ud2b8 \uc804\ub7b5\n1. \uc11c\ub860: \ucf54\ub529\uc740 \uc774\uc81c '\uc11c\uc0ac'\uc758 \uc601\uc5ed\uc785\ub2c8\ub2e4\n\uc5ec\ub7ec\ubd84, \uc778\uacf5\uc9c0\ub2a5\uc774 \ucf54\ub4dc\ub97c \uc9dc\ub294 \uc2dc\ub300\ub294 \uc774\ubbf8 \uc9c0\ub0ac\uc2b5\ub2c8\ub2e4. \uc774\uc81c\ub294 AI\uac00 \uc2a4\uc2a4\ub85c \ubb38\uc81c\ub97c \uc815\uc758\ud558\uace0, \ud574\uacb0\ucc45\uc744 \uc2e4\ud589\ud558\uba70, \uac80\uc99d\uae4c\uc9c0 \ub9c8\uce58\ub294 '\uc5d0\uc774\uc804\ud2f1 \ucf54\ub529(Agentic Coding)'\uc758 \uc2dc\ub300\uc785\ub2c8\ub2e4. \uc5ec\uae30\uc11c \uac00\uc7a5 \uc911\uc694\ud55c \uac83\uc740 AI\uc758 \uc5f0\uc0b0 \uc18d\ub3c4\uac00 \uc544\ub2d9\ub2c8\ub2e4. \ubc14\ub85c '\ub9e5\ub77d(Context)\uc758 \ud1b5\uc81c'\uc785\ub2c8\ub2e4. \uc624\ub298 \uc800\ub294 AI \uc5d0\uc774\uc804\ud2b8\uc5d0\uac8c \uba85\ud655\ud55c \uc138\uacc4\uad00\uacfc \uaddc\uce59\uc744 \ubd80\uc5ec\ud558\ub294 \uac15\ub825\ud55c \ub3c4\uad6c, CLAUDE.md \ud30c\uc77c \uc124\uacc4 \uc804\ub7b5\uc5d0 \ub300\ud574 \ub9d0\uc500\ub4dc\ub9ac\uace0\uc790 \ud569\ub2c8\ub2e4.",
+  "session_id": "replica_session",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+  "source_type": "review"
+}

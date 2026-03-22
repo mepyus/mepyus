@@ -1,0 +1,894 @@
+{
+  "current_diagnosis": {
+    "current_bridge_state": "bridge-common runtime with imported-gap semantics partially resolved",
+    "live_legacy_possibility_status": "active",
+    "live_imported_none_status": "dominant",
+    "strongest_sub_blockers": [
+      [
+        "anchor_vocabulary_translation_gap",
+        3
+      ],
+      [
+        "document_span_too_broad_for_local_alignment",
+        3
+      ],
+      [
+        "granularity_mismatch",
+        3
+      ],
+      [
+        "imported_doc_signal_not_reconciled",
+        3
+      ],
+      [
+        "imported_semantics_flattened",
+        3
+      ],
+      [
+        "one_sided_anchor_presence",
+        3
+      ],
+      [
+        "processing_projection_mismatch",
+        3
+      ],
+      [
+        "scene_flow_alignment_insufficient",
+        3
+      ]
+    ]
+  },
+  "exact_changes": {
+    "files": [
+      "app/core/runtime/live_input_space.py"
+    ],
+    "what_added": [
+      "pair-level mixed path evaluator",
+      "translation_gap_details decomposition",
+      "none_reason_kind",
+      "weak_support_summary",
+      "blocked_alignment_evidence"
+    ],
+    "what_not_changed": [
+      "canonical bridge threshold",
+      "viewer",
+      "region semantics"
+    ]
+  },
+  "verification": {
+    "canonical_cases": [
+      {
+        "from_local_space_id": "lsp_00018441d497",
+        "to_local_space_id": "lsp_2dde7aef787a",
+        "from_label": "doc_004",
+        "to_label": "doc_005",
+        "cross_path_type": "imported-imported",
+        "bridge_mode": "canonical",
+        "trace_note": "weak",
+        "trace_support_refs": [
+          {
+            "note": "dust_emit",
+            "ref_id": "mat_c4639ab53a49",
+            "ref_kind": "material"
+          },
+          {
+            "note": "candidate_scan",
+            "ref_id": "mat_f014f64c115c",
+            "ref_kind": "material"
+          },
+          {
+            "note": "scene_mismatch",
+            "ref_id": "spec",
+            "ref_kind": "scene"
+          },
+          {
+            "note": "flow_partial",
+            "ref_id": "compare",
+            "ref_kind": "flow"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "데이터",
+            "ref_kind": "domain_term"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "온톨로지",
+            "ref_kind": "domain_term"
+          }
+        ],
+        "possibility_basis": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "spec",
+              "note": "scene_mismatch"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_partial"
+            }
+          ],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support",
+              "definition"
+            ],
+            "right_roles": [
+              "support",
+              "contrast"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [],
+          "partial_handle_overlap": [
+            "doc_004.txt",
+            "doc_005.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "spec",
+            "compare"
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_overlap_below_possibility",
+          "weak_trace_not_compounding"
+        ],
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_overlap_below_possibility",
+          "weak_trace_not_compounding"
+        ],
+        "none_reason_kind": "",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 0,
+          "weak_processing_overlap_count": 2,
+          "structural_echo_count": 0,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 2
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "spec",
+              "note": "scene_mismatch"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_partial"
+            }
+          ],
+          "partial_handle_overlap": [
+            "doc_004.txt",
+            "doc_005.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "spec",
+            "compare"
+          ]
+        }
+      },
+      {
+        "from_local_space_id": "lsp_2dde7aef787a",
+        "to_local_space_id": "lsp_4eadb2fe7a96",
+        "from_label": "doc_005",
+        "to_label": "doc_006",
+        "cross_path_type": "imported-imported",
+        "bridge_mode": "canonical",
+        "trace_note": "direct",
+        "trace_support_refs": [
+          {
+            "note": "dust_emit",
+            "ref_id": "mat_4ce9b28ee2f7",
+            "ref_kind": "material"
+          },
+          {
+            "note": "candidate_scan",
+            "ref_id": "mat_7598d44b83c0",
+            "ref_kind": "material"
+          },
+          {
+            "note": "scene_match",
+            "ref_id": "review",
+            "ref_kind": "scene"
+          },
+          {
+            "note": "flow_match",
+            "ref_id": "compare",
+            "ref_kind": "flow"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "데이터를",
+            "ref_kind": "domain_term"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "연결하여",
+            "ref_kind": "domain_term"
+          }
+        ],
+        "possibility_basis": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support",
+              "contrast"
+            ],
+            "right_roles": [
+              "support",
+              "contrast"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [
+            "scene_match",
+            "flow_match"
+          ],
+          "partial_handle_overlap": [
+            "doc_005.txt",
+            "doc_006.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence"
+        ],
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence"
+        ],
+        "none_reason_kind": "",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 0,
+          "weak_processing_overlap_count": 2,
+          "structural_echo_count": 2,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 2
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "partial_handle_overlap": [
+            "doc_005.txt",
+            "doc_006.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        }
+      },
+      {
+        "from_local_space_id": "lsp_3eaef4e0c6dc",
+        "to_local_space_id": "lsp_3630ca5d8a22",
+        "from_label": "test_live_space_sync_20260321",
+        "to_label": "test_canonical_ingest_20260321",
+        "cross_path_type": "legacy-legacy",
+        "bridge_mode": "canonical",
+        "trace_note": "direct",
+        "trace_support_refs": [
+          {
+            "note": "dust_emit",
+            "ref_id": "mat_c12a48830cfc",
+            "ref_kind": "material"
+          },
+          {
+            "note": "candidate_scan",
+            "ref_id": "mat_c1f872a4b49c",
+            "ref_kind": "material"
+          },
+          {
+            "note": "scene_match",
+            "ref_id": "review",
+            "ref_kind": "scene"
+          },
+          {
+            "note": "flow_match",
+            "ref_id": "compare",
+            "ref_kind": "flow"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "Graph RAG",
+            "ref_kind": "semantic"
+          }
+        ],
+        "possibility_basis": {
+          "partial_anchor_alignment": [
+            "Graph RAG"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support"
+            ],
+            "right_roles": [
+              "definition",
+              "support"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [
+            "scene_match",
+            "flow_match"
+          ],
+          "partial_handle_overlap": [
+            "test_canonical_ingest_20260321.txt",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment"
+        ],
+        "translation_gap_details": [],
+        "none_reason_kind": "",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 1,
+          "weak_processing_overlap_count": 2,
+          "structural_echo_count": 2,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 2
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [
+            "Graph RAG"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "partial_handle_overlap": [
+            "test_canonical_ingest_20260321.txt",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        }
+      }
+    ],
+    "possibility_cases": [
+      {
+        "from_local_space_id": "lsp_327fa516bc6c",
+        "to_local_space_id": "lsp_3eaef4e0c6dc",
+        "from_label": "engine_phase1_imported_doc_probe_20260321",
+        "to_label": "test_live_space_sync_20260321",
+        "cross_path_type": "live-legacy",
+        "bridge_mode": "possibility_candidate",
+        "trace_note": "weak",
+        "trace_support_refs": [
+          {
+            "note": "dust_emit",
+            "ref_id": "mat_c76a12c09376",
+            "ref_kind": "material"
+          },
+          {
+            "note": "candidate_scan",
+            "ref_id": "mat_c12a48830cfc",
+            "ref_kind": "material"
+          },
+          {
+            "note": "scene_match",
+            "ref_id": "review",
+            "ref_kind": "scene"
+          },
+          {
+            "note": "flow_match",
+            "ref_id": "compare",
+            "ref_kind": "flow"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "Ontology",
+            "ref_kind": "semantic"
+          }
+        ],
+        "possibility_basis": {
+          "partial_anchor_alignment": [
+            "Ontology"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "contrast"
+            ],
+            "right_roles": [
+              "support"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [
+            "scene_match",
+            "flow_match"
+          ],
+          "partial_handle_overlap": [
+            "engine_phase1_imported_doc_probe_20260321",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "processing_overlap_below_possibility"
+        ],
+        "translation_gap_details": [
+          "processing_overlap_below_possibility"
+        ],
+        "none_reason_kind": "",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 1,
+          "weak_processing_overlap_count": 2,
+          "structural_echo_count": 2,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 2
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [
+            "Ontology"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "partial_handle_overlap": [
+            "engine_phase1_imported_doc_probe_20260321",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        }
+      },
+      {
+        "from_local_space_id": "lsp_fca5c1cfe512",
+        "to_local_space_id": "lsp_3eaef4e0c6dc",
+        "from_label": "engine_phase1_imported_doc_probe2_20260321",
+        "to_label": "test_live_space_sync_20260321",
+        "cross_path_type": "live-legacy",
+        "bridge_mode": "possibility_candidate",
+        "trace_note": "weak",
+        "trace_support_refs": [
+          {
+            "note": "dust_emit",
+            "ref_id": "mat_0b43a7eaf993",
+            "ref_kind": "material"
+          },
+          {
+            "note": "candidate_scan",
+            "ref_id": "mat_c12a48830cfc",
+            "ref_kind": "material"
+          },
+          {
+            "note": "scene_match",
+            "ref_id": "review",
+            "ref_kind": "scene"
+          },
+          {
+            "note": "flow_match",
+            "ref_id": "compare",
+            "ref_kind": "flow"
+          },
+          {
+            "note": "anchor_overlap",
+            "ref_id": "Ontology",
+            "ref_kind": "semantic"
+          }
+        ],
+        "possibility_basis": {
+          "partial_anchor_alignment": [
+            "Ontology"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "contrast"
+            ],
+            "right_roles": [
+              "support"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [
+            "scene_match",
+            "flow_match"
+          ],
+          "partial_handle_overlap": [
+            "engine_phase1_imported_doc_probe2_20260321",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "processing_overlap_below_possibility"
+        ],
+        "translation_gap_details": [
+          "processing_overlap_below_possibility"
+        ],
+        "none_reason_kind": "",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 1,
+          "weak_processing_overlap_count": 2,
+          "structural_echo_count": 2,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 2
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [
+            "Ontology"
+          ],
+          "weak_processing_overlap": [
+            {
+              "ref_kind": "scene",
+              "ref_id": "review",
+              "note": "scene_match"
+            },
+            {
+              "ref_kind": "flow",
+              "ref_id": "compare",
+              "note": "flow_match"
+            }
+          ],
+          "partial_handle_overlap": [
+            "engine_phase1_imported_doc_probe2_20260321",
+            "test_live_space_sync_20260321.txt"
+          ],
+          "shared_scene_or_flow_hint": [
+            "review",
+            "compare"
+          ]
+        }
+      }
+    ],
+    "none_cases": [
+      {
+        "from_local_space_id": "lsp_ddc406eb4938",
+        "to_local_space_id": "lsp_00018441d497",
+        "from_label": "engine_phase1_observer_probe_20260321",
+        "to_label": "doc_004",
+        "cross_path_type": "live-imported",
+        "bridge_mode": "none",
+        "trace_note": "",
+        "trace_support_refs": [],
+        "possibility_basis": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support"
+            ],
+            "right_roles": [
+              "support",
+              "definition"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [],
+          "partial_handle_overlap": [
+            "doc_004.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 0,
+          "weak_processing_overlap_count": 0,
+          "structural_echo_count": 0,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 0
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "partial_handle_overlap": [
+            "doc_004.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        }
+      },
+      {
+        "from_local_space_id": "lsp_ddc406eb4938",
+        "to_local_space_id": "lsp_2dde7aef787a",
+        "from_label": "engine_phase1_observer_probe_20260321",
+        "to_label": "doc_005",
+        "cross_path_type": "live-imported",
+        "bridge_mode": "none",
+        "trace_note": "",
+        "trace_support_refs": [],
+        "possibility_basis": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support"
+            ],
+            "right_roles": [
+              "support",
+              "contrast"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [],
+          "partial_handle_overlap": [
+            "doc_005.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 0,
+          "weak_processing_overlap_count": 0,
+          "structural_echo_count": 0,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 0
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "partial_handle_overlap": [
+            "doc_005.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        }
+      },
+      {
+        "from_local_space_id": "lsp_ddc406eb4938",
+        "to_local_space_id": "lsp_4eadb2fe7a96",
+        "from_label": "engine_phase1_observer_probe_20260321",
+        "to_label": "doc_006",
+        "cross_path_type": "live-imported",
+        "bridge_mode": "none",
+        "trace_note": "",
+        "trace_support_refs": [],
+        "possibility_basis": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "observer_affinity": {
+            "available": true,
+            "left_roles": [
+              "support"
+            ],
+            "right_roles": [
+              "support",
+              "contrast"
+            ],
+            "shared_signals": []
+          },
+          "structural_echo": [],
+          "partial_handle_overlap": [
+            "doc_006.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "translation_gap_details": [
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding",
+          "imported_doc_signal_not_reconciled",
+          "document_span_too_broad_for_local_alignment",
+          "granularity_mismatch",
+          "imported_semantics_flattened"
+        ],
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "weak_support_summary": {
+          "partial_anchor_alignment_count": 0,
+          "weak_processing_overlap_count": 0,
+          "structural_echo_count": 0,
+          "observer_affinity_available": true,
+          "shared_scene_or_flow_hint_count": 0
+        },
+        "blocked_alignment_evidence": {
+          "partial_anchor_alignment": [],
+          "weak_processing_overlap": [],
+          "partial_handle_overlap": [
+            "doc_006.txt",
+            "engine_phase1_observer_probe_20260321"
+          ],
+          "shared_scene_or_flow_hint": []
+        }
+      }
+    ],
+    "none_reason_distribution": {
+      "anchor_vocabulary_translation_gap": 3
+    },
+    "translation_gap_distribution": {
+      "anchor_vocabulary_translation_gap": 3,
+      "one_sided_anchor_presence": 3,
+      "processing_projection_mismatch": 3,
+      "scene_flow_alignment_insufficient": 3,
+      "weak_trace_not_compounding": 3,
+      "imported_doc_signal_not_reconciled": 3,
+      "document_span_too_broad_for_local_alignment": 3,
+      "granularity_mismatch": 3,
+      "imported_semantics_flattened": 3
+    }
+  },
+  "current_reading": "live-imported none decomposed into translation blocker classes",
+  "next_recommendation": {
+    "first_question": "imported_semantics_flattened and document_span_too_broad_for_local_alignment are true upstream causes or evaluator side proxies?",
+    "second_question": "live-imported에서 anchor vocabulary translation을 보완할 handle translation layer가 필요한가?",
+    "viewer_or_region_ready": false
+  }
+}

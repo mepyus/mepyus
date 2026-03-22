@@ -1,0 +1,39 @@
+# youtube 03 22 readable anchor report
+
+## repeated anchors
+- `ai_business`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: ai, 가치, 비용, 비즈니스, 사업, 산업
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['ai', '비즈니스', '사업', '회사']
+- `harness_agent`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: agent, auto research, chedex, meta cascading, openclaw, ralph loop
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['openclaw', '에이전트']
+- `health_human`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: beautiful, kyyb, young, 건강, 알레르기, 인간
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['인간']
+- `model_compute`
+  - first_seen: `win_02`
+  - repeated_windows: `win_02, win_03, win_04, win_05, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: capability overhang, computation, compute, cua, frontier, mimo
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['모델']
+- `organization_ax`
+  - first_seen: `win_01`
+  - repeated_windows: `win_01, win_02, win_03, win_04, win_05, win_06`
+  - linkage: `translated_repeat / medium`
+  - aliases: ai transformation, ax, efficiency, entrepreneur, talent, 신사업
+  - note: axes=['business', 'human', 'technical'], shared_aliases=[]
+- `security_isolation`
+  - first_seen: `win_03`
+  - repeated_windows: `win_03, win_06`
+  - linkage: `direct_repeat / strong`
+  - aliases: 2fa, credential, dgx, injection, prompt injection, vm
+  - note: axes=['business', 'human', 'technical'], shared_aliases=['보안']

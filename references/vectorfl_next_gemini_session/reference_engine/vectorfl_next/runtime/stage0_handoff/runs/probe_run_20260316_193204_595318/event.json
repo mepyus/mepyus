@@ -1,0 +1,10 @@
+{
+  "id": "evt_probe_run_20260316_193204_595318",
+  "type": "event",
+  "run_id": "probe_run_20260316_193204_595318",
+  "source_note_path": "/Users/sungsookim/universe/vectorfl_next/runtime/source_documents/memo-20260316-103204.note.txt",
+  "source_content_hash": "a39a1779b5fe3eeccf601ac973f28c44d97d9f5b832f7058b088294bc5f7d5da",
+  "parent_ids": [],
+  "body": "실패 메모\n\n문제:\n겉으로 많이 바뀌어 보여도 실제 구조는 거의 안 바뀌었을 수 있고,\n겉보기 변화가 적어도 물리는 크게 흔들렸을 수 있다.\n\n위험:\n- node count 변화만 보고 scale effect를 과장\n- wording 변화만 보고 law shift로 오독\n- UI 변화와 runtime 변화를 혼동\n\n대응:\n- semantic diff와 presentation diff 분리\n- invariant change를 중심으로 비교\n- quiet persistence 변화는 별도 확인",
+  "created_at": "2026-03-16T10:32:04.596080+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "codex_routing_protocol_handoff_v0",
+  "purpose": "Route each request first as code modification, engine input, or operating rule before deciding how to respond.",
+  "top_level_routes": {
+    "CODE_MOD": {
+      "meaning": "real code fix, patch, verification, or technical behavior correction",
+      "codex_focus": [
+        "diagnosis",
+        "options",
+        "recommendation",
+        "exact file/function",
+        "patch",
+        "verification"
+      ]
+    },
+    "ENGINE_INPUT": {
+      "meaning": "new idea, philosophy, concept, technical direction, or connection material for the engine",
+      "codex_focus": [
+        "anchor extraction",
+        "connection potential",
+        "engine placement",
+        "store/observe/test direction"
+      ]
+    },
+    "OPERATING_RULE": {
+      "meaning": "meta rule for how to separate code modification from engine input",
+      "codex_focus": [
+        "routing criterion",
+        "shared protocol",
+        "locked operating rule"
+      ]
+    }
+  },
+  "checklist": [
+    "Does this request solve a reproducible code behavior problem?",
+    "Does this request introduce a new idea or interpretation material for the engine?",
+    "Does this request define the rule for separating input from structure?",
+    "Would treating this as code modification cause excessive structural change?",
+    "Is this an immediate blockage or future direction material?"
+  ],
+  "prohibitions": [
+    "Do not automatically convert philosophy or idea input into a structural patch request.",
+    "Do not redirect real code fix requests into abstract philosophy.",
+    "Do not treat operating rules as immediate core patches.",
+    "Do not create a separate interpretation axis detached from the engine."
+  ],
+  "engine_alignment_rule": [
+    "Find the anchor.",
+    "Find what it can connect to.",
+    "Place it inside existing engine flow.",
+    "Judge whether it widens space, narrows it, or keeps it deferred.",
+    "Judge whether it should be fixed now or stored and observed."
+  ],
+  "locked_sentences": [
+    "Treat things to fix as code.",
+    "Treat discussion and new viewpoints as engine material.",
+    "Treat the boundary between them as an operating rule.",
+    "Codex does not pull the user into a separate axis detached from the engine.",
+    "Engine direction is the fixed axis and Codex works inside it."
+  ],
+  "final_lock": "From now on, Codex first classifies each request as CODE_MOD, ENGINE_INPUT, or OPERATING_RULE, then treats fixes as code, accumulable material as engine input, and the boundary itself as an operating rule."
+}

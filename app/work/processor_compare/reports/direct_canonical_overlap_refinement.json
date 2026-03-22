@@ -1,0 +1,100 @@
+{
+  "current_diagnosis": {
+    "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "state": "direct_overlap_candidates_present_but_noncanonical",
+    "strongest_blocker": "token_pair_exists_but_alignment_rule_not_satisfied"
+  },
+  "exact_changes": {
+    "file": "app/core/runtime/live_input_space.py",
+    "added_fields": [
+      "direct_overlap_candidate_families",
+      "direct_overlap_gap_class",
+      "direct_overlap_evidence",
+      "family_canonicalization_strengths",
+      "family_direct_overlap_ready",
+      "family_direct_overlap_blockers",
+      "token_pair_alignment_state",
+      "live_anchor_form_state",
+      "canonicalizable_token_pair_count",
+      "noncanonical_token_pair_count",
+      "family_mapping_state"
+    ],
+    "preserved": [
+      "canonical threshold",
+      "possibility threshold",
+      "local_ref translation scope"
+    ]
+  },
+  "verification": {
+    "review_candidate": {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+      "bridge_mode": "possibility_candidate",
+      "direct_overlap_candidate_families": [
+        "object",
+        "structural"
+      ],
+      "direct_overlap_gap_class": "token_pair_exists_but_alignment_rule_not_satisfied",
+      "family_direct_overlap_ready": {
+        "object": false,
+        "structural": false
+      },
+      "family_direct_overlap_blockers": {
+        "object": "token_pair_exists_but_alignment_rule_not_satisfied",
+        "structural": "token_pair_exists_but_alignment_rule_not_satisfied"
+      },
+      "token_pair_alignment_state": "candidate_pairs_present_but_noncanonical",
+      "live_anchor_form_state": "present",
+      "canonicalizable_token_pair_count": 4,
+      "noncanonical_token_pair_count": 4,
+      "family_mapping_state": "canonicalizable_pairs_present",
+      "direct_overlap_evidence": {
+        "object": {
+          "canonicalizable_token_pairs": [
+            "object",
+            "ontology",
+            "property"
+          ]
+        },
+        "structural": {
+          "canonicalizable_token_pairs": [
+            "rag 구조"
+          ]
+        }
+      }
+    },
+    "control_case": {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "bridge_mode": "none",
+      "review_state": "translation_missing"
+    },
+    "canonical_pairs": [
+      {
+        "pair": "doc_004 -> doc_005",
+        "bridge_mode": "canonical"
+      },
+      {
+        "pair": "doc_005 -> doc_006",
+        "bridge_mode": "canonical"
+      },
+      {
+        "pair": "test_live_space_sync_20260321 -> test_canonical_ingest_20260321",
+        "bridge_mode": "canonical"
+      }
+    ]
+  },
+  "current_reading": {
+    "status": "candidate_pairs_present_but_noncanonical",
+    "summary": [
+      "object and structural both have canonicalizable token pairs",
+      "live anchor form is present",
+      "the remaining gap is family-level canonicalization/promotion rule, not missing tokens"
+    ]
+  },
+  "next_recommendation": {
+    "priority": "family canonicalization rule refinement",
+    "focus": [
+      "object token pair promotion rule",
+      "structural token pair promotion rule"
+    ]
+  }
+}

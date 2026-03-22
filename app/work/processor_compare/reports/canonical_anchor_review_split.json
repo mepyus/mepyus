@@ -1,0 +1,52 @@
+{
+  "summary": "doc_006 is now a typed canonical review candidate: translation, processing, and observer gates are open, but canonical anchor support remains semantic-only and subcritical.",
+  "review_candidate": {
+    "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "bridge_mode": "possibility_candidate",
+    "promotion_review": {
+      "translation_gate": true,
+      "processing_gate": true,
+      "observer_gate": true,
+      "canonical_anchor_gate": false,
+      "review_anchor_gap_class": "anchor_alignment_present_but_subcritical",
+      "review_anchor_support_class": "semantic_anchor_present_but_subcritical",
+      "anchor_alignment_compound_state": "single_family_only",
+      "anchor_alignment_missing_types": [
+        "structural_anchor_alignment_missing",
+        "process_anchor_alignment_missing",
+        "object_anchor_alignment_missing"
+      ],
+      "anchor_alignment_evidence": {
+        "semantic_overlap": [
+          "graph",
+          "rag"
+        ],
+        "structural_overlap": [],
+        "process_overlap": [],
+        "object_overlap": [],
+        "translated_handle_hits": [
+          "rag"
+        ]
+      },
+      "next_review_blocker": "single_anchor_supported_but_not_compounded",
+      "promotion_readiness_class": "anchor_alignment_pending",
+      "promotion_decision": "review_canonical_anchor_alignment"
+    }
+  },
+  "controls": [
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_004",
+      "review_state": "translation_missing"
+    },
+    {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "review_state": "translation_missing"
+    }
+  ],
+  "canonical_pairs_unchanged": [
+    "doc_004 -> doc_005",
+    "doc_005 -> doc_006",
+    "test_live_space_sync_20260321 -> test_canonical_ingest_20260321"
+  ],
+  "current_reading": "The next engine step should target anchor derivation/support accumulation, not translation or processing expansion."
+}

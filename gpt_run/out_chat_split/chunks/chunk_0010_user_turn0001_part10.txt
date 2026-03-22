@@ -1,0 +1,62 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 10
+[char_count] 1147
+
+10. 이 구조에서 절대 놓치면 안 되는 것
+1) 원본과 처리값의 분리
+원본을 처리값으로 덮어쓰면 안 된다.
+
+2) 처리값의 provenance
+이 processed fragment가
+어떤 원본 구간에서 왔는지 항상 되돌아가야 한다.
+
+3) 공간 결과의 역참조
+공간에서 point나 cluster가 생겨도
+반드시 원본 fragment/source까지 돌아갈 수 있어야 한다.
+
+4) 앵커의 다층성
+앵커를 단순 태그 하나로 축소하면 나중에 공간 연결이 얕아진다.
+
+5) 단위 크기 유연성
+문장 단위 고정, 문단 단위 고정 이런 식으로 잠그면 안 된다.
+현재 기준은
+맥락을 담는 최소 의미 단위
+다.
+
+11. 내가 보는 가장 안전한 MVP 정의
+이걸 너무 크게 잡지 말고, 지금 당장 만들 수 있는 최소 성공선은 이거다.
+
+MVP 목표
+특정 주제 자료 1묶음을 넣었을 때:
+
+원본이 저장된다
+
+원본에서 의미 단위가 추출된다
+
+각 단위에 anchor/label/processed value가 붙는다
+
+원본 reader에서 해당 연결을 확인할 수 있다
+
+processed dust가 space view에 투입된다
+
+space에서 최소한의 local relation/adjacency가 보인다
+
+사용자가 space에서 다시 원본으로 돌아갈 수 있다
+
+이게 되면 성공이다.
+
+즉 MVP는 “완성된 우주”가 아니라
+
+원본-처리-공간-역참조의 폐회로가 성립하는가
+를 보는 거다.
+
+12. 지금 기준으로 추천하는 다음 고정 문장
+이 문장을 CURRENT.md의 최상단 기준문으로 잠그면 좋다.
+
+VECTORFL Replica is not a generic note app.
+
+It is a source-preserving, topic-focused note system that ingests original materials
+(papers, reviews, transcripts, summaries), extracts context-bearing semantic units
+through the intake/label/anchor pipeline, links those processed units back to the
+original source view, and projects them into a VECTORFL-style interactive space.

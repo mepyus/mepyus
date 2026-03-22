@@ -1,0 +1,131 @@
+# review fixture check round3
+
+## 1. summary
+- manifest_fixture_count: `6`
+- immutable_regression_fixture_count: `3`
+- mutable_exploration_control_count: `3`
+- immutable_pass_count: `3`
+- mutable_match_count: `3`
+- lifecycle_match_count: `6`
+- previous_signature_fixture_count: `6`
+- unchanged_signature_count: `6`
+- changed_signature_count: `0`
+- ledger_path: `/Users/sungsookim/universe/vectorfl_replica/runtime/review_ledgers/review_state_ledger.json`
+- unchanged_ledger_signature_count: `6`
+- changed_ledger_signature_count: `0`
+
+## 2. results
+- `fx_reg_canonical_doc004_doc005`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - expected_lifecycle: `hot / approved_active`
+  - lifecycle: `hot / approved_active`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:50.027014+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_00018441d497|lsp_2dde7aef787a`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_00018441d497|lsp_2dde7aef787a`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:15.013320+00:00`
+  - previous_ledger_state_signature: `canonical|not_applicable|hot|approved_active|lsp_00018441d497|lsp_2dde7aef787a`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:50.027014+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `false`
+  - ledger_warm_downgrade_candidate: `false`
+  - matches_expected: `true`
+- `fx_reg_canonical_doc005_doc006`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - expected_lifecycle: `hot / approved_active`
+  - lifecycle: `hot / approved_active`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:50.525338+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_2dde7aef787a|lsp_4eadb2fe7a96`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_2dde7aef787a|lsp_4eadb2fe7a96`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:15.426549+00:00`
+  - previous_ledger_state_signature: `canonical|not_applicable|hot|approved_active|lsp_2dde7aef787a|lsp_4eadb2fe7a96`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:50.525338+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `false`
+  - ledger_warm_downgrade_candidate: `false`
+  - matches_expected: `true`
+- `fx_reg_canonical_live_sync`
+  - kind: `immutable_regression_fixture`
+  - expected: `canonical / not_applicable`
+  - actual: `canonical / not_applicable`
+  - expected_lifecycle: `hot / approved_active`
+  - lifecycle: `hot / approved_active`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:50.966322+00:00`
+  - state_signature: `canonical|not_applicable|hot|approved_active|lsp_3eaef4e0c6dc|lsp_3630ca5d8a22`
+  - previous_state_signature: `canonical|not_applicable|hot|approved_active|lsp_3eaef4e0c6dc|lsp_3630ca5d8a22`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:15.792240+00:00`
+  - previous_ledger_state_signature: `canonical|not_applicable|hot|approved_active|lsp_3eaef4e0c6dc|lsp_3630ca5d8a22`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:50.966322+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `false`
+  - ledger_warm_downgrade_candidate: `false`
+  - matches_expected: `true`
+- `fx_exp_probe_doc006`
+  - kind: `mutable_exploration_control`
+  - expected: `possibility_candidate / candidate`
+  - actual: `possibility_candidate / candidate`
+  - expected_lifecycle: `hot / review_active`
+  - lifecycle: `hot / review_active`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:51.376128+00:00`
+  - state_signature: `possibility_candidate|candidate|hot|review_active|structural_led_space_pre_entry|live_side_family_present_but_not_canonicalized|lsp_ddc406eb4938|lsp_4eadb2fe7a96`
+  - previous_state_signature: `possibility_candidate|candidate|hot|review_active|structural_led_space_pre_entry|live_side_family_present_but_not_canonicalized|lsp_ddc406eb4938|lsp_4eadb2fe7a96`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:16.188203+00:00`
+  - previous_ledger_state_signature: `possibility_candidate|candidate|hot|review_active|structural_led_space_pre_entry|live_side_family_present_but_not_canonicalized|lsp_ddc406eb4938|lsp_4eadb2fe7a96`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:51.376128+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `false`
+  - ledger_warm_downgrade_candidate: `false`
+  - matches_expected: `true`
+- `fx_exp_probe_doc005`
+  - kind: `mutable_exploration_control`
+  - expected: `none / translation_missing`
+  - actual: `none / translation_missing`
+  - expected_lifecycle: `warm / blocked_waiting_revisit`
+  - lifecycle: `warm / blocked_waiting_revisit`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:51.804855+00:00`
+  - state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_2dde7aef787a`
+  - previous_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_2dde7aef787a`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:16.622065+00:00`
+  - previous_ledger_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_2dde7aef787a`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:51.804855+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `true`
+  - ledger_warm_downgrade_candidate: `true`
+  - matches_expected: `true`
+- `fx_exp_probe_doc004`
+  - kind: `mutable_exploration_control`
+  - expected: `none / translation_missing`
+  - actual: `none / translation_missing`
+  - expected_lifecycle: `warm / blocked_waiting_revisit`
+  - lifecycle: `warm / blocked_waiting_revisit`
+  - lifecycle_matches_expected: `true`
+  - evaluated_at: `2026-03-21T22:50:52.203534+00:00`
+  - state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_00018441d497`
+  - previous_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_00018441d497`
+  - state_signature_unchanged: `true`
+  - previous_ledger_last_reviewed_at: `2026-03-21T22:49:17.013120+00:00`
+  - previous_ledger_state_signature: `none|translation_missing|warm|blocked_waiting_revisit|lsp_ddc406eb4938|lsp_00018441d497`
+  - ledger_state_signature_unchanged: `true`
+  - persisted_last_reviewed_at: `2026-03-21T22:50:52.203534+00:00`
+  - persisted_review_count: `7`
+  - ledger_revisit_recommended: `true`
+  - ledger_warm_downgrade_candidate: `true`
+  - matches_expected: `true`

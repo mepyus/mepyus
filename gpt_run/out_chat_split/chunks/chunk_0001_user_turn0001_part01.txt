@@ -1,0 +1,106 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 1
+[char_count] 1177
+
+~/universe/vectorfl_replica/
+
+├── README.md
+
+├── CURRENT.md
+
+├── AGENTS.md
+
+├── references/
+
+│   ├── vectorfl/
+
+│   ├── vectorfl_next/
+
+│   └── vectorfl_next_gemini_session/
+
+├── app/
+
+│   ├── core/
+
+│   ├── models/
+
+│   ├── events/
+
+│   ├── runtime/
+
+│   │   ├── ingest/
+
+│   │   ├── source_view/
+
+│   │   ├── space_view/
+
+│   │   ├── bridge_layer/
+
+│   │   ├── reporting/
+
+│   │   └── viewer_server.py
+
+│   ├── fragment/
+
+│   │   ├── schema.py
+
+│   │   ├── store.py
+
+│   │   ├── projector.py
+
+│   │   └── provenance.py
+
+│   ├── input_layer/
+
+│   │   ├── segmenter/
+
+│   │   ├── labeler/
+
+│   │   ├── anchorizer/
+
+│   │   └── source_locator/
+
+│   └── work/
+
+│       ├── experiments/
+
+│       ├── prompts/
+
+│       └── evaluations/
+
+├── scripts/
+
+│   ├── ingest_fragments.py
+
+│   ├── build_source_view.py
+
+│   ├── build_space_view.py
+
+│   ├── run_viewer_server.py
+
+│   └── compare_fragment_runs.py
+
+├── runtime/
+
+│   ├── core/
+
+│   │   ├── materials/
+
+│   │   ├── traces/
+
+│   │   ├── pressure_profiles/
+
+│   │   ├── point_seeds/
+
+│   │   ├── space_cells/
+
+│   │   ├── local_spaces/
+
+│   │   └── bridge_traces/
+
+│   ├── fragments/
+
+│   ├── source_documents/
+
+│   ├── manifests/

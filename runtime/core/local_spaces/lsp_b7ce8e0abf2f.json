@@ -1,0 +1,82 @@
+{
+  "bridge_trace_refs": [
+    "brg_60d220e75150",
+    "brg_7eb2f909da7e",
+    "brg_a2ba1e01527d",
+    "brg_b6d1e1481e90",
+    "brg_d6a77129734d",
+    "brg_e9dab2a60a76",
+    "brg_eeee7cbbad8b"
+  ],
+  "cell_refs": [
+    "cel_41c617feac4e"
+  ],
+  "created_at": "2026-03-20T22:49:58.473161+00:00",
+  "doc_id": "doc_002",
+  "dropped_weak_anchors": [
+    "결과를",
+    "처리까지",
+    "한다는",
+    "애플리케이션과",
+    "기능이",
+    "작업이"
+  ],
+  "local_space_id": "lsp_b7ce8e0abf2f",
+  "pressure_profile_id": "prs_b93d0af26223",
+  "representative_anchors": [
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "llm",
+      "display_label": "LLM",
+      "region_anchor_score": 0.698
+    },
+    {
+      "anchor_type": "semantic",
+      "canonical_key": "ai",
+      "display_label": "AI",
+      "region_anchor_score": 0.683
+    }
+  ],
+  "source_label": "doc_002",
+  "state": "bridge_exposed",
+  "supporting_anchors": [],
+  "processing_baseline": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "dominant_scene": "review",
+    "dominant_flow": "compare"
+  },
+  "state_transition_summary": {
+    "available": true,
+    "current_state": "bridge_exposed",
+    "inferred_transition": "forming -> bridge_exposed",
+    "bridge_exposure_count": 7,
+    "canonical_bridge_exposure_count": 7,
+    "possibility_bridge_exposure_count": 0,
+    "material_count": 9,
+    "source_ref_count": 1,
+    "source_refs": [
+      "processor_compare/doc_002.txt"
+    ]
+  },
+  "observer_or_ambiguity_trace": {
+    "available": true,
+    "merged": {
+      "role": "support",
+      "scene": "explanation",
+      "ambiguity": 0.3511,
+      "confidence": 0.7117,
+      "signals": [
+        "gemini_expansion_signal"
+      ]
+    },
+    "items": [],
+    "item_count": 1,
+    "unavailable_reason": "",
+    "note": "observer compare propagated from material baseline"
+  },
+  "canonical_bridge_exposure_count": 7,
+  "possibility_bridge_exposure_count": 0,
+  "possibility_bridge_refs": []
+}

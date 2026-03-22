@@ -1,0 +1,26 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 39
+[char_count] 974
+
+저장된 메모리 업데이트됨
+Thought for 9s
+[[A]] [[OBJ:conversation.protocol]] [[SEM:memory.persisted]] [[ROLE:confirmation]]
+
+저장했어.
+이제부터는 이 대화도 기록 재료로 들어간다는 전제로, 답변 시작에 기본적으로 [[A]]를 두고, 필요할 때 [[OBJ:...]] [[SEM:...]] [[ROLE:...]] 같은 임시 힌트 앵커를 함께 붙이는 기준으로 갈게.
+
+그리고 이건 codex 가 오늘 한 일이야 오늘 작업 정리
+
+오늘 vectorfl_replica에서 한 일은 크게 4층입니다.
+
+첫째, 중심 객체를 material이 아니라 fragment로 고정했습니다.
+  즉 원문 위에 붙는 조각과 공간으로 투영되는 조각을 같은 객체로 다루기 시작했습니다. 이 기준은 schema.py, store.py, projector.py에 들어가 있습니다.
+
+둘째, 원문 -> fragment -> 저장 -> 원문 뷰 -> 공간 투영 최소 루프를 만들었습니다.
+  샘플 원문과 샘플 fragment를 넣고 ingest를 실제로 돌렸고, source 위치 보강과 projection까지 확인했습니다. 관련 샘플은 youtube_exam_excerpt.md, sample_youtube_fragments.json에
+  있습니다. 원문 비교 뷰는 source_fragment_view.json, source_fragment_view.html로 생성됩니다.
+
+셋째, dust 쪽을 fragment-first로 정렬했습니다.
+  기존처럼 projected material을 다시 문장 단위로 쪼개지 않게 바꿨고, source-side fragment 수와 dust-side 단위를 맞췄습니다. 지금은 “연결이 잘 생기느냐”보다 “같은 단위를 양쪽에
+  서 공유하느냐”를 먼저 맞춘 상태입니다. 이 작업은 dust_field.py, viewer_server.py 축에서 진행했습니다.

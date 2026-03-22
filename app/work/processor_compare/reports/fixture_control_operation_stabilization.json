@@ -1,0 +1,28 @@
+{
+  "current_diagnosis": {
+    "gap": "fixture/control split existed but runner did not enforce lifecycle expectation or drift semantics",
+    "need": "make immutable and mutable entries operationally distinct"
+  },
+  "exact_changes": {
+    "files": [
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/review_fixture_manifest.py",
+      "/Users/sungsookim/universe/vectorfl_replica/app/work/processor_compare/reports/review_fixture_manifest_v0.json",
+      "/Users/sungsookim/universe/vectorfl_replica/scripts/run_review_fixture_check.py"
+    ],
+    "added_manifest_fields": [
+      "expected_lifecycle_temperature",
+      "expected_lifecycle_stage",
+      "allowed_drift"
+    ]
+  },
+  "verification": {
+    "immutable_pass_count": 3,
+    "mutable_match_count": 3,
+    "lifecycle_match_count": 6
+  },
+  "current_reading": "fixture_control_split_enforceable_via_runner",
+  "next_recommendation": [
+    "keep immutable fixtures strict",
+    "treat mutable control drift as exploration signal rather than hard failure"
+  ]
+}

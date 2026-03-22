@@ -1,0 +1,124 @@
+{
+  "fragments": [
+    {
+      "fragment_id": "frag_basic_001",
+      "source_id": "src_basic_001",
+      "source_type": "review",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+      "raw_text": "[발표문] 에이전트의 영혼을 설계하다: CLAUDE.md 매니페스트 전략\n1. 서론: 코딩은 이제 '서사'의 영역입니다\n여러분, 인공지능이 코드를 짜는 시대는 이미 지났습니다. 이제는 AI가 스스로 문제를 정의하고, 해결책을 실행하며, 검증까지 마치는 '에이전틱 코딩(Agentic Coding)'의 시대입니다. 여기서 가장 중요한 것은 AI의 연산 속도가 아닙니다. 바로 '맥락(Context)의 통제'입니다. 오늘 저는 AI 에이전트에게 명확한 세계관과 규칙을 부여하는 강력한 도구, CLAUDE.md 파일 설계 전략에 대해 말씀드리고자 합니다.",
+      "unit_scale": "section",
+      "D": 0.74,
+      "I": 0.61,
+      "S": 0.84,
+      "scene": "meta",
+      "flow": "expand",
+      "time": "t01",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic.md speech section 1"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic_speech_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic_002",
+      "source_id": "src_basic_001",
+      "source_type": "review",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+      "raw_text": "2. 본론: CLAUDE.md는 무엇인가?\nCLAUDE.md는 단순한 설명서가 아닙니다. 프로젝트의 루트 디렉토리에 위치하여 에이전트가 작업을 시작할 때 가장 먼저 읽는 '프로젝트의 헌법'이자, 길을 잃지 않게 돕는 '북극성'입니다. 효율적인 CLAUDE.md는 크게 세 가지 레이어로 구성됩니다.",
+      "unit_scale": "section",
+      "D": 0.68,
+      "I": 0.57,
+      "S": 0.86,
+      "scene": "meta",
+      "flow": "expand",
+      "time": "t02",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic.md speech section 2 header frame"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic_speech_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic_003",
+      "source_id": "src_basic_001",
+      "source_type": "review",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+      "raw_text": "첫째, 환경의 정의(Context Layer): \"여기는 어디인가?\"를 알려줘야 합니다. 프로젝트의 목적, 기술 스택, 데이터의 흐름을 명시합니다. 예를 들어, 우리가 개발 중인 JMS(ISO 탱크 관리 시스템)가 어떤 물리적 공정을 디지털화하는지 그 '무대'를 설명하는 단계입니다.\n\n둘째, 행동의 규약(Rules Layer): 에이전트가 지켜야 할 '페르소나'를 설정합니다. 함수 네이밍부터 에러 핸들링 원칙, 특히 우리가 약속한 'UPPER_CASE Enum' 같은 엄격한 코드 스타일을 규정합니다. 이것이 바로 시스템의 '무결성'을 지키는 핵심 장치입니다.\n\n셋째, 실행의 도구(Command Layer): 에이전트가 즉시 휘두를 수 있는 '무기'를 쥐여주는 것입니다. 테스트 실행, 빌드, 권한 설정(chmod) 등 복잡한 명령어를 한 줄의 키워드로 정리하여 에이전트가 시행착오 없이 작업을 완수하게 만듭니다.",
+      "unit_scale": "section",
+      "D": 0.79,
+      "I": 0.66,
+      "S": 0.88,
+      "scene": "work",
+      "flow": "expand",
+      "time": "t03",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic.md speech section 2 body merged by three command layers"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic_speech_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic_004",
+      "source_id": "src_basic_001",
+      "source_type": "review",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+      "raw_text": "3. 핵심 전략: 작가적 사고로 접근하라\n우리는 이제 개발자를 넘어 '시나리오 작가'가 되어야 합니다. 주인공인 AI 에이전트가 어떤 상황(Event)을 만났을 때, 어떤 논리(Logic)로 사건을 해결할지 미리 설계해야 합니다.\n\"코드를 수정하기 전 반드시 영향 분석 보고서를 작성하라\"는 지시는 단순한 잔소리가 아닙니다. 이는 서사의 개연성을 확보하고, 시스템이라는 세계관이 무너지지 않게 하는 작가적 통제력입니다.",
+      "unit_scale": "section",
+      "D": 0.76,
+      "I": 0.63,
+      "S": 0.85,
+      "scene": "meta",
+      "flow": "bridge",
+      "time": "t04",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic.md speech strategy section"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic_speech_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic_005",
+      "source_id": "src_basic_001",
+      "source_type": "review",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic.md",
+      "raw_text": "4. 결론: 인간과 AI의 협업 모델\n결국 CLAUDE.md를 잘 쓴다는 것은, 인간의 '심리학적 통찰'과 AI의 '실행력'을 연결하는 완벽한 인터페이스를 구축하는 일입니다. 복잡한 로직은 Gemini Web이라는 '작가실'에서 숙의하고, 정교한 실행은 Gemini CLI라는 '현장'에서 구현하는 이원화 체계 속에서, CLAUDE.md는 그 둘을 하나로 묶는 강력한 접착제가 될 것입니다.\n\n5. 맺음말\n기술은 도구일 뿐입니다. 하지만 그 도구에 '철학'과 '구조'를 담는 순간, 그것은 예술이 됩니다. 여러분의 프로젝트 루트에 단순한 텍스트 파일이 아닌, 시스템의 영혼이 담긴 CLAUDE.md를 심으시길 바랍니다. 경청해 주셔서 감사합니다.",
+      "unit_scale": "section",
+      "D": 0.71,
+      "I": 0.59,
+      "S": 0.87,
+      "scene": "meta",
+      "flow": "contract",
+      "time": "t05",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic.md speech conclusion and closing merged"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic_speech_v1"
+      }
+    }
+  ]
+}

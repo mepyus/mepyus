@@ -1,0 +1,91 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 17
+[char_count] 1186
+
+raw source
+-> source segmentation
+-> context-bearing fragment
+-> object extraction
+-> semantic labeling
+-> structural reading
+-> anchor normalization
+-> processed_fragment 저장
+-> dust projection
+즉 앵커라이저는 단독 작업자가 아니라,
+입력기/라벨기의 결과를 받아 정규화하고 구조화하는 층이다.
+
+10. 앵커 생성 시 질문 프롬프트의 핵심 기준
+앵커를 뽑을 때 AI나 규칙 기반이 묻는 질문은 대충 이런 방향이어야 한다.
+
+object anchor용 질문
+이 조각이 직접 다루는 대상은 무엇인가?
+
+시스템/모델/데이터셋/구성요소/개념 중 무엇이 핵심인가?
+
+semantic anchor용 질문
+이 조각이 주장하는 핵심 의미는 무엇인가?
+
+무엇이 문제/강점/제약/통찰로 제시되는가?
+
+structural anchor용 질문
+이 조각의 기능은 무엇인가?
+
+정의인가, 주장인가, 근거인가, 반례인가, 한계인가, 연결인가?
+
+이 세 축을 분리하면 anchor 품질이 훨씬 안정된다.
+
+11. 연결 규칙은 앵커의 “동일성”만 보면 안 된다
+초기 설계에서 자주 생기는 실수가 이거다.
+
+“앵커 같으면 연결”
+이렇게만 하면 얕다.
+
+연결은 최소 4단계로 보는 게 좋다.
+
+11-1. exact match
+canonical key가 같음
+
+예:
+
+둘 다 retrieval.failure
+
+11-2. family match
+상위 계층이 같음
+
+예:
+
+retrieval.failure
+
+retrieval.latency
+
+retrieval.coverage
+
+이들은 exact는 아니지만 family가 같다.
+
+11-3. cross-type resonance
+object는 같고 structural role이 다름
+
+예:
+
+object: pipeline.rag
+
+하나는 role.method
+
+다른 하나는 role.failure_mode
+
+이건 충돌이 아니라 의미 있는 대비다.
+
+11-4. complement match
+semantic은 다르지만 bridge가 생김
+
+예:
+
+context.window.limit
+
+retrieval.compensation
+
+둘은 동일 개념은 아니지만 보완 관계일 수 있다.
+
+즉 앵커는 단순 equality key가 아니라
+다층 연결 판단 재료여야 한다.

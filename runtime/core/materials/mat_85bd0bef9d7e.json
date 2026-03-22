@@ -1,0 +1,273 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-20T22:49:58.522563+00:00",
+  "family_id": "doc_003",
+  "lineage_refs": [
+    "dst_src_59ad767a3239_001",
+    "dst_src_59ad767a3239_002",
+    "dst_src_59ad767a3239_003",
+    "dst_src_59ad767a3239_004",
+    "dst_src_59ad767a3239_005",
+    "dst_src_59ad767a3239_006",
+    "dst_src_59ad767a3239_008",
+    "dst_src_59ad767a3239_009",
+    "dst_src_59ad767a3239_010",
+    "dst_src_59ad767a3239_011",
+    "dst_src_59ad767a3239_012",
+    "dst_src_59ad767a3239_013",
+    "dst_src_59ad767a3239_014",
+    "dst_src_59ad767a3239_015",
+    "dst_src_59ad767a3239_016",
+    "dst_src_59ad767a3239_017",
+    "dst_src_59ad767a3239_018",
+    "dst_src_59ad767a3239_019"
+  ],
+  "material_id": "mat_85bd0bef9d7e",
+  "metadata": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "anchors": [
+      {
+        "type": "domain_term",
+        "value": "\uc2dc\ub300\uac00"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc9c0\ub098\uace0"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ub974\ub124\uc0c1\uc2a4"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc5f4\ub9ac\uba74\uc11c"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc790\uc5f0\uc758"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc6d0\ub9ac\ub97c"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uacfc\ud559\uc801\uc73c\ub85c"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ud0d0\uad6c\ud560"
+      }
+    ],
+    "dust_input_id": "dst_src_59ad767a3239_007",
+    "flow": "compare",
+    "formation_role": "review_material",
+    "last_seen": "2026-03-20T22:49:58.497597Z",
+    "observer_ambiguity": 0.34,
+    "observer_confidence_numeric": 0.715,
+    "observer_or_ambiguity_trace": {
+      "available": true,
+      "generation_path": "runtime_commonization",
+      "items": [
+        {
+          "kind": "scene",
+          "profiles": {
+            "chatgpt_like": "explanation",
+            "codex_like": "explanation",
+            "gemini_like": "reflection"
+          },
+          "summary": "scene disagreement: codex_like=explanation / chatgpt_like=explanation / gemini_like=reflection"
+        },
+        {
+          "kind": "role",
+          "profiles": {
+            "chatgpt_like": "support",
+            "codex_like": "support",
+            "gemini_like": "expansion"
+          },
+          "summary": "role disagreement: codex_like=support / chatgpt_like=support / gemini_like=expansion"
+        }
+      ],
+      "merged": {
+        "ambiguity": 0.34,
+        "confidence": 0.715,
+        "direction": 0.72,
+        "intensity": 0.58,
+        "role": "support",
+        "scene": "explanation",
+        "signals": [
+          "gemini_reflection_signal",
+          "gemini_expansion_signal"
+        ],
+        "stability": 0.61
+      },
+      "note": "runtime internal observer baseline",
+      "profiles": {
+        "chatgpt_like": {
+          "ambiguity": 0.27,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc2dc\ub300\uac00",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc9c0\ub098\uace0",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\ub974\ub124\uc0c1\uc2a4",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.74,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "surface structure sensitive"
+          ],
+          "profile_name": "chatgpt_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "\uc2dc\ub300\uac00",
+            "\uc9c0\ub098\uace0",
+            "\ub974\ub124\uc0c1\uc2a4",
+            "\uc5f4\ub9ac\uba74\uc11c"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "surface_structure",
+            "explanation",
+            "support"
+          ],
+          "why_short": "\ud45c\uba74 \uad6c\uc870 \uc2e0\ud638\ub97c \uac15\ud558\uac8c \uc77d\uc5b4 explanation/support\ub85c \ud310\uc815\ud55c\ub2e4."
+        },
+        "codex_like": {
+          "ambiguity": 0.34,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc2dc\ub300\uac00",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc9c0\ub098\uace0",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\ub974\ub124\uc0c1\uc2a4",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.69,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "conservative baseline"
+          ],
+          "profile_name": "codex_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "\uc2dc\ub300\uac00",
+            "\uc9c0\ub098\uace0",
+            "\ub974\ub124\uc0c1\uc2a4",
+            "\uc5f4\ub9ac\uba74\uc11c"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "explanation",
+            "support"
+          ],
+          "why_short": "explanation \uc911\uc2ec\uc73c\ub85c \uc77d\ub418 support \uae30\ub2a5\uc744 \ubcf4\uc218\uc801\uc73c\ub85c \uc720\uc9c0\ud55c\ub2e4."
+        },
+        "gemini_like": {
+          "ambiguity": 0.24,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc2dc\ub300\uac00",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\uc9c0\ub098\uace0",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+              "label": "\ub974\ub124\uc0c1\uc2a4",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.73,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "secondary abstract observer"
+          ],
+          "profile_name": "gemini_like",
+          "role": "expansion",
+          "scene": "reflection",
+          "semantic_tags": [
+            "\uc2dc\ub300\uac00",
+            "\uc9c0\ub098\uace0",
+            "\ub974\ub124\uc0c1\uc2a4",
+            "\uc5f4\ub9ac\uba74\uc11c"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "abstraction_prone",
+            "reflection",
+            "expansion"
+          ],
+          "why_short": "\uc0c1\uc704 \uc758\ubbf8 \uc774\ub3d9\uc744 \ubbfc\uac10\ud558\uac8c \uc77d\uc5b4 reflection/expansion\ub85c \uae30\uc6b8\uc5b4\uc9c4\ub2e4."
+        }
+      },
+      "unavailable_reason": ""
+    },
+    "observer_role": "support",
+    "observer_signals": [
+      "gemini_reflection_signal",
+      "gemini_expansion_signal"
+    ],
+    "recurrence_count": 1,
+    "scene": "review",
+    "short_label": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\u2026",
+    "source_origin_id": "src_59ad767a3239",
+    "time_in": "2026-03-20T22:49:58.497597Z"
+  },
+  "project_id": "vectorfl-next",
+  "raw_payload": "\uc911\uc138 \uc2dc\ub300\uac00 \uc9c0\ub098\uace0 \ub974\ub124\uc0c1\uc2a4 \uc2dc\ub300\uac00 \uc5f4\ub9ac\uba74\uc11c, \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \uacfc\ud559\uc801\uc73c\ub85c \ud0d0\uad6c\ud560 \uc218 \uc788\uac8c \ub418\uc790, \ub274\ud134\uc740 \uc77c\ubc18\ud654\ub41c \uc790\uc5f0\uc758 \uc6d0\ub9ac\ub97c \ucc3e\uc544\ub0c5\ub2c8\ub2e4.",
+  "session_id": "processor-compare-doc-import-20260321",
+  "source_ref": "processor_compare/doc_003.txt",
+  "source_type": "review"
+}

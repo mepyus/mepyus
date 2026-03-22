@@ -1,0 +1,51 @@
+{
+  "draft_date": "2026-03-22",
+  "draft_kind": "policy_executor_boundary",
+  "current_bottleneck": "policy_executor_coupling",
+  "executor_roles": [
+    "material gathering",
+    "pair selection",
+    "trace lookup",
+    "basis assembly",
+    "review payload orchestration",
+    "runtime persistence"
+  ],
+  "policy_roles": [
+    "evidence interpretation",
+    "family canonicalization rule",
+    "threshold and corroboration rule",
+    "approval condition",
+    "readiness classification"
+  ],
+  "output_roles": [
+    "readable blocker fields",
+    "readiness labels",
+    "proposal trace presentation",
+    "state explanation"
+  ],
+  "current_policy_heavy_functions": [
+    "_build_anchor_review",
+    "_build_threshold_review",
+    "_build_cross_path_review",
+    "_build_cross_path_canonicalization_review",
+    "_build_direct_overlap_review",
+    "_build_space_entry_review",
+    "_promotion_readiness_class",
+    "_promotion_decision"
+  ],
+  "current_executor_heavy_functions": [
+    "evaluate_mixed_path_pair",
+    "_build_possibility_basis",
+    "_build_translation_gap_details",
+    "_build_promotion_blockers"
+  ],
+  "policy_candidates": [
+    "evaluate_semantic_canonicalization",
+    "evaluate_structural_canonicalization",
+    "evaluate_object_canonicalization",
+    "evaluate_cross_path_overlap_policy",
+    "evaluate_direct_overlap_promotion",
+    "evaluate_space_entry_policy"
+  ],
+  "priority": "split structural policy first"
+}

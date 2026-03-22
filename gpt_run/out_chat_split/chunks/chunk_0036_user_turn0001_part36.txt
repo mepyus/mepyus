@@ -1,0 +1,73 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 36
+[char_count] 996
+
+예외 3. 아주 긴 assistant 응답
+요즘 내가 길게 말하니까,
+turn은 하나인데 내부에 장면이 여러 개일 수 있다.
+그래서 나중에 2차 분할이 필요하다.
+
+즉 1차는 turn,
+2차는 sector/scene 이다.
+
+3. 네가 말한 “섹터로 나눈다”가 맞는 방향
+이건 중요하다.
+
+지금은 먼저 대화를 turn 단위로 보존하는 게 맞고,
+그 다음에 너무 긴 turn은 내부를 다시 나눠야 한다.
+
+예를 들면 assistant turn 하나가 이런 구조일 수 있잖아.
+
+현재 해석
+
+장점
+
+주의점
+
+추천 구조
+
+한 줄 결론
+
+이걸 통째로 하나의 블록으로만 두면
+나중에 공간에 뿌릴 때 너무 크다.
+
+그래서 추천은 이거야.
+
+1차
+conversation_turns.jsonl
+
+user/assistant turn 보존
+
+2차
+conversation_sectors.jsonl
+
+긴 turn 내부를 소제목/문단 흐름 기준으로 절단
+
+즉:
+
+원문 대화
+→ turn
+→ sector
+→ fragment/anchor
+→ space
+
+이 흐름이 가장 자연스럽다.
+
+4. 지금 기준으로 가장 현실적인 저장 구조
+예를 들면 이렇게 가면 된다.
+
+raw
+data/inbox/conversations/raw/chat_20260318_001.txt
+
+1차 turn split
+data/processed/conversations/chat_20260318_001.turns.jsonl
+
+예:
+
+{"conversation_id":"chat_20260318_001","turn_index":1,"speaker":"user","text":"만약에 [[A]] 이든 뭐든 ..."}
+{"conversation_id":"chat_20260318_001","turn_index":2,"speaker":"assistant","text":"응. 그렇게 하면 된다..."}
+2차 sector split
+data/processed/conversations/chat_20260318_001.sectors.jsonl
+
+예:

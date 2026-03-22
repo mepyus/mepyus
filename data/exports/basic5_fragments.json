@@ -1,0 +1,100 @@
+{
+  "fragments": [
+    {
+      "fragment_id": "frag_basic5_001",
+      "source_id": "src_basic5_001",
+      "source_type": "conversation",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic5.md",
+      "raw_text": "MoE 그래프 해설: dense vs MoE, 연산 배수 04:34\n\n04:34 최승준 이 그래프는 어떻게 읽어야 되는 건가요?\n\n04:40 김성현 사실 이 그래프를 넣을까 말까 굉장히 고민을 많이 했는데요.\n\n어떻게 직관적으로 이해할 수 있을까 생각해 보면 가장 연한 하늘색 부분이 어떻게 보면 소위 dense model이라고 보시면 됩니다.\n\n그리고 위의 이 선들이 MoE 모델들이라고 보시면 될 것 같아요. 여기 이 legend가 좀 잘못되어 있는데 이게 MoE 모델들입니다.\n\n이 그래프가 굉장히 중요하고 임팩트가 있는 게 밑에 있는 것이 학습 연산량이거든요. 학습 연산량이 10의 24승 정도라고 하면 프런티어 모델에는 조금 못 미치는 정도의 연산 규모입니다.\n\n이 연산 규모에서 MoE 모델의 성능은 dense model에 비해서 7배 이상이라는 겁니다. 다르게 말하면 10의 24승의 연산력을 쓴 모델로 비교했을 때 dense model에 비해서 MoE 모델은 dense model의 7배 정도의 연산력을 부은 것과 비슷한 성능을 낸다는 겁니다.\n\n그러니까 dense model에 10의 24승 연산력을 썼을 때 똑같은 연산력을 써서 MoE를 만들면, MoE 모델을 만들면 7 곱하기 10의 24승 정도의 성능이 나온다는 거죠.\n\n이게 굉장히 임팩트가 있는 게, 학습 연산량이 증가할수록 이 배수가 커집니다. 이건 굉장히 드문 현상이거든요.\n\n모델에서는 사실 직선으로 두 배가 유지된다는 것만으로도 엄청난 발견인데 지금까지 알려진 바로는 MoE 모델 같은 경우는 학습 연산량이 증가하면 증가할수록 이 배수가 더 커집니다. 그러니까 더더욱 좋아지는 거죠.\n\ndense model에 비해서 MoE 모델을 쓰지 않을 이유가 사라집니다. 이제 이렇게 되면 쓰지 않으면 이상해지는 거죠.",
+      "unit_scale": "turn_block",
+      "D": 0.82,
+      "I": 0.71,
+      "S": 0.87,
+      "scene": "evidence",
+      "flow": "expand",
+      "time": "t01",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic5.md dense versus MoE compute multiplier block"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic5_conversation_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic5_002",
+      "source_id": "src_basic5_001",
+      "source_type": "conversation",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic5.md",
+      "raw_text": "sparsity와 compute multiplier: 왜 MoE가 유리한가 06:14\n\n06:14 최승준 그런데 MoE 모델이 세 가지가 있다는 이게 왜 분리가 되어 있는 거죠.\n\n06:24 김성현 이게 sparsity라고 부르는 건데요. 전체 파라미터 중에서 실제로 한 번 inference 토큰을 예측할 때 쓰는 파라미터 수의 비율이라고 보시면 됩니다.\n\n06:32 최승준 더 잘게 쪼개진 것, 뭐 그런 느낌인 건가요?\n\n06:35 김성현 네, 예를 들면 이건 전체 파라미터 중에 4분의 1만 쓰는 거죠. 그런데 위에 있는 건 전체 파라미터 중에 50분의 1만 쓰는 겁니다. 예를 들면 사용하는 파라미터 수가 적어지면, 사용하는 파라미터 수가 적어지면 적어질수록, 혹은 더 희소해질수록 이 승수라고 표현해야 할까요? compute multiplier라고 표현하는데 compute multiplier, 연산 배수는 더 커지는 겁니다. 기울기가 더 커지고 있죠. 이건 물론 FLOPs로 계산하는 거기 때문에 실제 추론의 조건이라든지 메모리 대역폭 같은 것들을 고려하면 반드시 이렇게 되지는 않기는 합니다. 그렇지만 순수하게 학습 연산량 측면에서만 봐도 이런 형태의 패턴이 나타난다는 것 자체가 굉장히 놀라운 일이죠.\n\n07:20 최승준 scaling law까지는 아니지만 약간 비슷한 느낌적인 느낌이 있네요.\n\n07:26 김성현 일종의 scaling law입니다. 이것도 scaling law가 두 가지 component가 있는데 exponent라고, 제곱의 승수라고 부르는 exponent가 있고 그 앞에 계수가 있는데 exponent가 변화하는 형태의 패턴이 되면 이런 것들이 나타납니다. 그렇게 되면 이건 쓰지 않으면, 소위 말해 쓰지 않으면 이상한 형태의 기술적 발전이 되죠. MoE가 그런 역할을 했습니다.",
+      "unit_scale": "turn_block",
+      "D": 0.8,
+      "I": 0.67,
+      "S": 0.86,
+      "scene": "meta",
+      "flow": "expand",
+      "time": "t02",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic5.md sparsity and compute multiplier explanation block"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic5_conversation_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic5_003",
+      "source_id": "src_basic5_001",
+      "source_type": "conversation",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic5.md",
+      "raw_text": "MoE 대세와 DeepSeek 레시피의 확산 07:48\n\n07:51 김성현 2024년까지만 해도 MoE 모델은 드물었는데 지금 2025년에 나오는 모델들은 거의 대부분 MoE 모델입니다. 소위 엣지 디바이스 같은 사례를 제외하면 다 MoE 모델이고 GPT-OSS 같은 모델만 해도 상당히 희소한 MoE 모델이었습니다. 그리고 이 MoE의 레시피를 잘 정립한 것이 DeepSeek의 굉장히 큰 기여입니다. 그리고 어떻게 보면 DeepSeek이 설계한 아키텍처가 이전 세대의 Llama 같은 아키텍처가 되어서 그 베이스 아키텍처가 되었습니다.\n\n그래서 Kimi 같은, Moonshot의 Kimi 같은 모델의 경우에는 DeepSeek 아키텍처를 굳이 개선하려고 노력하는 게 불필요하다. 이 아키텍처는 충분히 좋기 때문에 이 아키텍처의 기본적인 구조를 그대로 끌고 가면 된다, 이런 얘기를 하면서 그대로 채택해 버리는 형태의 작업도 했고, Mistral도 아마 비슷한 행동을 했던 것 같습니다. 그만큼 굉장히 잘 정립된 MoE 아키텍처를 DeepSeek이 선구자적으로 개발했고 이걸 통해서 모두가 이 아키텍처를 쓰면 이 아키텍처를 채택하면 우리의 굉장히 제한된 연산력만으로도 GPT-4 그 이상을 노릴 수 있다는 걸 경험을 했죠. 이게 굉장히 중요한 컴포넌트였습니다.",
+      "unit_scale": "turn_block",
+      "D": 0.85,
+      "I": 0.73,
+      "S": 0.88,
+      "scene": "meta",
+      "flow": "bridge",
+      "time": "t03",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic5.md MoE mainstreaming and DeepSeek recipe diffusion block"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic5_conversation_v1"
+      }
+    },
+    {
+      "fragment_id": "frag_basic5_004",
+      "source_id": "src_basic5_001",
+      "source_type": "conversation",
+      "source_path": "/Users/sungsookim/universe/vectorfl_replica/basic5.md",
+      "raw_text": "MoE의 원리: 희소성·모듈화·라우팅 관점 09:01\n\n09:01 노정석 MoE는 참 직관적으로는 ‘그래, 그러면 좋겠지’라고 이해가 되지만 그럼에도 불구하고 또 이해가 안 되는 그런 영역이긴 해요. 이게 저희가 expert라고 하면 수학은 이 expert가 하고 과학은 이 expert가 하고 이런 식으로 생각하기 쉬운데 사실은 그렇지 않잖아요. 매 토큰마다 전부 다른 expert 라우팅을 타고 그 안에서도 share되는 거 있고 7개 동시에 activation되고 이런 것들이 전부 hyperparameter로 구성돼 있잖아요. 성현님, 이게 MoE에 이론적인 배경 같은 게 좀 밝혀진 건 있나요? 이게 왜 되는지.\n\n09:37 김성현 최근에 MoE 모델 같은 경우는 희소성이라고 보는 게 가장 좋을 것 같습니다. 희소성이라는 개념으로 생각하는 게 굉장히 좋을 것 같고 굉장히 잠재적인 모듈이 수백 개가 있다고 할 때 실제로 매번 쓰는 것들은 그 모듈 중 일부만 쓰는 거죠. 이런 상황을 희소하다고 표현할 수 있습니다. 그리고 그 희소성을 통해서 실제 매번 사용하는 연산의 양은 제한되어 있죠. 왜냐하면 실질적으로 사용하는 파라미터는 그중에서 일부만 사용하니까요. 그건 고정되어 있습니다. 전체 파라미터는 굉장히 많기 때문에 그리고 매번 경우에 따라서, 어떤 토큰에 따라서 다른 모듈을 사용하기 때문에 실제 전체 파라미터가 증폭되는 효과가 있다고 볼 수 있습니다. 설명이 좀 어려운 것 같긴 한데요.\n\n10:26 노정석 네, 어렵죠. 어려운데 이거 설명이 참 애매합니다.\n\n10:34 최승준 그냥 막연하긴 한데 이게 모듈화되어 있고 직교적이어서 조합 가능한 그런 느낌도 있는 건가요?\n\n10:38 김성현 네, 그렇습니다. 조합 가능성을 열어준 게 DeepSeek이기도 한데요. 모듈화되어 있고 그중 각각의 모듈 중 일부만 쓴다. 경우에 따라서 그렇지만 모듈이 굉장히 여러 개 준비되어 있기 때문에 전체 시스템의 측면에서는 굉장히 큰 모델의 효과를 낸다 이렇게 생각할 수 있을 것 같습니다. 23년, 24년에도 MoE가 좋은 방향이라는 생각을 많이 했지만 이렇게 좋을 거라는 생각은 다들 못 했던 것 같습니다. GPT-4가 MoE라는 게 알려진 시점에서도 계속 경험이 쌓이다 보니까 그냥 좋은 정도가 아니라 ‘너무 좋은 것 같은데?’ 하는 느낌이 드는 거죠.\n\n11:13 최승준 이게 1번이군요, 2025년에.\n\n11:17 김성현 MoE가 1번입니다. 그리고 이 모든 모델들이 이제 MoE로 변화했고 MoE가 아닌 모델들이 굉장히 드문 상황이죠.\n\n11:23 최승준 정석님이 리뷰하셨던 Kimi k2에서도 MoE에서 단위로 쪼갠 게 굉장히 많았던, 몇천 개였나요?\n\n11:32 노정석 아니요, 몇백 개 수준입니다. DeepSeek보다 더 숫자를 늘린 걸로 그렇게 했는데 전체적인 아키텍처는 똑같았고 성현님이 아까 말씀하셨던 저 sparsity 관련한 효율이 어느 정도가 optimal인지 이런 실험들 몇 개 했었던 것 같습니다.\n\n11:46 최승준 중요한 키워드가 또 sparsity가 되는 거네요. MoE와 연결돼서.\n\n11:53 노정석 2025년 1번으로 꼽아주신 게 MoE고요. MoE는 Mixture of Experts, expert들을 섞었다 이런 뜻입니다.\n\n11:58 최승준 이름이 좀 이상해요. 쭉쭉 가보시죠.",
+      "unit_scale": "turn_block",
+      "D": 0.83,
+      "I": 0.69,
+      "S": 0.85,
+      "scene": "meta",
+      "flow": "expand",
+      "time": "t04",
+      "confidence": "mid",
+      "provenance_log": [
+        {
+          "step": "manual_seed",
+          "note": "basic5.md MoE routing, modularity, and sparsity interpretation block"
+        }
+      ],
+      "metadata": {
+        "sample_batch": "basic5_conversation_v1"
+      }
+    }
+  ]
+}

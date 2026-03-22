@@ -1,0 +1,79 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 43
+[char_count] 1173
+
+2. anchor quality
+이건 당연한 약점이야.
+지금은 그릇이 먼저고 품질은 나중이 맞다.
+
+오히려 지금 단계에서 품질을 억지로 올리려 들면,
+그릇이 흔들릴 가능성이 더 크다.
+
+그래서 현재 읽기는:
+
+anchorizer 품질 부족 = 문제 맞음
+하지만
+지금 당장 core 방향을 흔들 정도의 문제는 아님
+
+즉 이건 다음 개선축이지, 현재 실패축은 아니다.
+
+3. measurement explosion 가능성
+이건 아직 바로 드러난 문제는 아니지만,
+나는 미리 보인다.
+
+measurement를 잘 보존하기 시작하면
+금방 양이 많아질 거야.
+그럼 나중에 중요한 건 “더 많이 남기기”보다
+세션/배치/실행 단위로 어떻게 읽을 수 있게 만들까가 된다.
+
+즉 지금 바로 필요한 건 삭제가 아니라
+lineage 있는 정리 단위다.
+
+4. re-ingest 누적
+이건 나중에 꽤 중요한 operational issue가 된다.
+
+현재는 좋은데,
+같은 material/fragment가 재투입될 때
+
+같은 건지
+
+revision인지
+
+새 batch인지
+
+누적 관찰 대상인지
+
+이게 안 나뉘면 measurement와 projection 둘 다 흐려질 수 있어.
+
+즉 이건 단순 청소 문제가 아니라,
+관측계의 시간축 문제다.
+
+내 추천 다음 한 걸음
+지금 여기서 가장 좋은 다음 스텝은 연결 품질 올리기가 아니야.
+
+내 추천은 이거다.
+
+추천
+fragment-first + measurement retention 계약을 먼저 스모크로 잠가라.
+
+즉 확인해야 하는 건:
+
+source fragment 수와 projected dust 수가 기본적으로 대응하는가
+
+ambiguous / provisional 값이 overwrite되지 않고 measurement에 별도 남는가
+
+source view와 measurement view가 같은 fragment lineage를 따라갈 수 있는가
+
+re-ingest 시 session/batch 구분이 최소한 표시되는가
+
+이걸 smoke 또는 contract 체크로 잠가두면,
+그다음 anchor quality 개선이 훨씬 안전해진다.
+
+한 줄로 더 압축하면
+오늘 codex가 한 일은 기능 몇 개를 추가한 게 아니라:
+
+Replica의 중심 단위를 fragment로 고정하고,
+애매함을 지워버리지 않고 measurement로 남기는 관측형 구조를 세운 것
+
+이다.

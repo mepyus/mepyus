@@ -1,0 +1,28 @@
+{
+  "current_diagnosis": {
+    "remaining_gap_after_round3": "final next_review_blocker and promotion_decision were still composed implicitly in review flow",
+    "goal": "extract canonical review decision into explicit approval policy"
+  },
+  "exact_changes": {
+    "files": [
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/approval_policy_types.py",
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/approval_policies.py",
+      "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/live_input_space.py"
+    ],
+    "added_units": [
+      "CanonicalReviewDecisionContext",
+      "CanonicalReviewDecisionResult",
+      "evaluate_canonical_review_decision_policy"
+    ]
+  },
+  "verification": {
+    "behavior_preserved": true,
+    "fixture_runner_preserved": true,
+    "doc006_focus_readable": true,
+    "doc005_preserved": true
+  },
+  "current_reading": "canonical_review_decision_boundary_introduced_behavior_preserved",
+  "next_recommendation": [
+    "perform actual canonical approval threshold refinement only inside approval policies next"
+  ]
+}

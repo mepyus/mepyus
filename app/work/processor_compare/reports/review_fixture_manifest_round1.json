@@ -1,0 +1,23 @@
+{
+  "round": 1,
+  "date": "2026-03-22",
+  "current_reading": [
+    "fixture manifest introduced",
+    "control meaning is now split into immutable regression versus mutable exploration",
+    "policy split can now be measured against a stable minimal baseline"
+  ],
+  "new_files": [
+    "app/core/runtime/review_fixture_manifest.py",
+    "app/work/processor_compare/reports/review_fixture_manifest_v0.json",
+    "app/work/processor_compare/reports/review_fixture_manifest_v0.md"
+  ],
+  "verification_targets": {
+    "immutable_regression_fixture_count": 3,
+    "mutable_exploration_control_count": 3
+  },
+  "next_priority": [
+    "review surface stabilization",
+    "lifecycle tags",
+    "fixture runner"
+  ]
+}

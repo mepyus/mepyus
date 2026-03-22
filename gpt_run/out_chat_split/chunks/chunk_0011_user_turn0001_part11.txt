@@ -1,0 +1,55 @@
+[speaker] user
+[turn_index] 1
+[chunk_index_in_turn] 11
+[char_count] 1177
+
+The front side is a source reader with anchor- and processed-value-based linkage.
+The back side is a space reactor where processed dust interacts, forms traces, and
+becomes observable as local spatial structure.
+
+The core contract is:
+source preservation -> context-bearing fragmentation -> anchor/label processing ->
+space projection -> reverse-readable source/space linkage.
+13. 추천 다음 스텝
+지금 제일 먼저 해야 할 건 UI가 아니라 계약 고정이다.
+
+순서는 이렇게 추천한다.
+
+CURRENT.md에 제품 정의와 층 계약을 고정
+
+docs/architecture/에 source→fragment→processed→dust→space 흐름 문서화
+
+app/fragment/schema.py에 최소 데이터 스키마 잠금
+
+scripts/ingest_fragments.py가 raw source에서 fragment/provenance를 만들도록 고정
+
+build_source_view.py는 원본 + anchor/processed 연결 보기부터
+
+build_space_view.py는 dust projection과 local relation 보기부터
+
+한 줄 요약:
+벡터플 레플리카는 노트앱이 아니라, 원본을 보존한 채 처리값을 공간으로 투사하고 다시 원본으로 되돌아올 수 있게 만드는 주제형 source-space 시스템으로 잠그는 게 맞다.
+
+일단 앵커부분만 좀 더 디테일하게 정리해줘!
+
+Thought for 30s
+# VECTORFL Replica — Anchor 상세 정리
+
+## 0. 한 줄 정의
+
+앵커는 단순 태그가 아니다.  
+앵커는 **원본의 특정 의미 단위를 다시 찾게 해주고**,  
+**다른 원본과 연결되게 해주며**,  
+**공간에 뿌릴 때 어떤 성질로 반응할지 힌트를 주는 중간 구조물**이다.
+
+즉:
+
+`원본 <-> 처리값 <-> 공간`
+
+이 세 층을 이어주는 **핵심 연결자**가 앵커다.
+
+---
+
+## 1. 왜 앵커가 핵심인가
+
+지금 네 입력 현실은 범용 PKM이 아니다.

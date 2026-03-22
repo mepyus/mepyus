@@ -1,0 +1,48 @@
+{
+  "current_diagnosis": {
+    "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "space_entry_state": "structural_led_space_pre_entry",
+    "strongest_blocker": "token_pair_exists_but_alignment_rule_not_satisfied"
+  },
+  "exact_changes": {
+    "file": "app/core/runtime/live_input_space.py",
+    "added_fields": [
+      "space_entry_state",
+      "space_entry_vector",
+      "space_entry_ready_families",
+      "space_entry_lead_family",
+      "space_entry_blocker",
+      "space_entry_reason"
+    ]
+  },
+  "verification": {
+    "review_candidate": {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_006",
+      "bridge_mode": "possibility_candidate",
+      "space_entry_state": "structural_led_space_pre_entry",
+      "space_entry_vector": {
+        "translation_gate": true,
+        "processing_gate": true,
+        "observer_gate": true,
+        "same_local_ref_support_strength": 3,
+        "direct_overlap_candidate_count": 2,
+        "canonicalizable_token_pair_count": 4
+      },
+      "space_entry_ready_families": [
+        "object",
+        "structural"
+      ],
+      "space_entry_lead_family": "structural",
+      "space_entry_blocker": "token_pair_exists_but_alignment_rule_not_satisfied"
+    },
+    "control_case": {
+      "pair": "engine_phase1_observer_probe_20260321 -> doc_005",
+      "bridge_mode": "none",
+      "review_state": "translation_missing"
+    }
+  },
+  "next_recommendation": {
+    "priority": "structural family canonicalization rule refinement",
+    "secondary": "object family token pair promotion rule"
+  }
+}

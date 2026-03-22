@@ -1,0 +1,325 @@
+{
+  "actor_id": "local_viewer_user",
+  "created_at": "2026-03-21T05:46:35.685155+00:00",
+  "family_id": null,
+  "lineage_refs": [],
+  "material_id": "mat_bfcf3d47d979",
+  "metadata": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "anchor_bundle": {
+      "convergence_source": "input_anchor_pipeline",
+      "dropped_weak_count": 2,
+      "promoted_anchor_count": 7,
+      "representative_anchors": [
+        {
+          "anchor_type": "semantic",
+          "canonical_key": "graph_rag",
+          "display_label": "Graph RAG"
+        },
+        {
+          "anchor_type": "semantic",
+          "canonical_key": "rag",
+          "display_label": "RAG"
+        },
+        {
+          "anchor_type": "semantic",
+          "canonical_key": "graph",
+          "display_label": "Graph"
+        },
+        {
+          "anchor_type": "semantic",
+          "canonical_key": "graph_rag_\uad6c\uc870",
+          "display_label": "Graph RAG \uad6c\uc870"
+        }
+      ],
+      "supporting_anchors": [
+        "RAG \uad6c\uc870",
+        "RAG \uad6c\uc870 On",
+        "\uad6c\uc870 On"
+      ]
+    },
+    "anchors": [
+      {
+        "canonical_key": "graph_rag",
+        "key": "graph_rag",
+        "type": "semantic",
+        "value": "Graph RAG"
+      },
+      {
+        "canonical_key": "rag",
+        "key": "rag",
+        "type": "semantic",
+        "value": "RAG"
+      },
+      {
+        "canonical_key": "graph",
+        "key": "graph",
+        "type": "semantic",
+        "value": "Graph"
+      },
+      {
+        "canonical_key": "graph_rag_\uad6c\uc870",
+        "key": "graph_rag_\uad6c\uc870",
+        "type": "semantic",
+        "value": "Graph RAG \uad6c\uc870"
+      },
+      {
+        "canonical_key": "rag_\uad6c\uc870",
+        "key": "rag_\uad6c\uc870",
+        "type": "semantic",
+        "value": "RAG \uad6c\uc870"
+      },
+      {
+        "canonical_key": "rag_\uad6c\uc870_on",
+        "key": "rag_\uad6c\uc870_on",
+        "type": "semantic",
+        "value": "RAG \uad6c\uc870 On"
+      },
+      {
+        "canonical_key": "\uad6c\uc870_on",
+        "key": "\uad6c\uc870_on",
+        "type": "semantic",
+        "value": "\uad6c\uc870 On"
+      }
+    ],
+    "dropped_weak_anchors": [
+      "\uad6c\uc870\uc5d0\uc11c\ub294",
+      "\uad6c\uc870\uc5d0\uc11c\ub294"
+    ],
+    "dust_input_id": "dst_src_9a22e5b91fd5_001",
+    "flow": "compare",
+    "formation_role": "memo_material",
+    "ingest_input_path": "engine_phase1_probe_20260321",
+    "ingest_session_id": "live-session-20260321",
+    "last_seen": "2026-03-21T05:46:35.076009Z",
+    "legacy_anchors": [
+      {
+        "type": "domain_term",
+        "value": "Graph"
+      },
+      {
+        "type": "domain_term",
+        "value": "RAG"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uad6c\uc870\uc5d0\uc11c\ub294"
+      },
+      {
+        "type": "domain_term",
+        "value": "Ontology"
+      },
+      {
+        "type": "domain_term",
+        "value": "Property"
+      },
+      {
+        "type": "domain_term",
+        "value": "bridge"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc5f4\ub9ac\ub294\uc9c0"
+      },
+      {
+        "type": "domain_term",
+        "value": "\ud655\uc778\ud558\uace0"
+      }
+    ],
+    "observer_ambiguity": 0.34,
+    "observer_confidence_numeric": 0.715,
+    "observer_or_ambiguity_trace": {
+      "available": true,
+      "generation_path": "runtime_commonization",
+      "items": [],
+      "merged": {
+        "ambiguity": 0.34,
+        "confidence": 0.715,
+        "direction": 0.72,
+        "intensity": 0.58,
+        "role": "support",
+        "scene": "explanation",
+        "signals": [],
+        "stability": 0.64
+      },
+      "note": "runtime internal observer baseline",
+      "profiles": {
+        "chatgpt_like": {
+          "ambiguity": 0.27,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "\uad6c\uc870\uc5d0\uc11c\ub294",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.74,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "surface structure sensitive"
+          ],
+          "profile_name": "chatgpt_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "\uad6c\uc870\uc5d0\uc11c\ub294",
+            "ontology"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "surface_structure",
+            "explanation",
+            "support"
+          ],
+          "why_short": "\ud45c\uba74 \uad6c\uc870 \uc2e0\ud638\ub97c \uac15\ud558\uac8c \uc77d\uc5b4 explanation/support\ub85c \ud310\uc815\ud55c\ub2e4."
+        },
+        "codex_like": {
+          "ambiguity": 0.34,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "\uad6c\uc870\uc5d0\uc11c\ub294",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.69,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "conservative baseline"
+          ],
+          "profile_name": "codex_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "\uad6c\uc870\uc5d0\uc11c\ub294",
+            "ontology"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "explanation",
+            "support"
+          ],
+          "why_short": "explanation \uc911\uc2ec\uc73c\ub85c \uc77d\ub418 support \uae30\ub2a5\uc744 \ubcf4\uc218\uc801\uc73c\ub85c \uc720\uc9c0\ud55c\ub2e4."
+        },
+        "gemini_like": {
+          "ambiguity": 0.24,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "graph",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "rag",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+              "label": "\uad6c\uc870\uc5d0\uc11c\ub294",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.73,
+          "direction": 0.72,
+          "evidence_text": [
+            "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "secondary abstract observer"
+          ],
+          "profile_name": "gemini_like",
+          "role": "support",
+          "scene": "explanation",
+          "semantic_tags": [
+            "graph",
+            "rag",
+            "\uad6c\uc870\uc5d0\uc11c\ub294",
+            "ontology"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "abstraction_prone",
+            "explanation",
+            "support"
+          ],
+          "why_short": "\uc0c1\uc704 \uc758\ubbf8 \uc774\ub3d9\uc744 \ubbfc\uac10\ud558\uac8c \uc77d\uc5b4 explanation/support\ub85c \uae30\uc6b8\uc5b4\uc9c4\ub2e4."
+        }
+      },
+      "unavailable_reason": ""
+    },
+    "observer_role": "support",
+    "observer_signals": [],
+    "processing_values": {
+      "D": 0.5,
+      "I": 0.5,
+      "S": 0.5,
+      "flow": "compare",
+      "scene": "review"
+    },
+    "recurrence_count": 1,
+    "scene": "review",
+    "short_label": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 On\u2026",
+    "source_origin_id": "src_9a22e5b91fd5",
+    "time_in": "2026-03-21T05:46:35.076009Z",
+    "transformable_handles": {
+      "dust_input_id": "dst_src_9a22e5b91fd5_001",
+      "short_label": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 On\u2026",
+      "sibling_ids": [],
+      "source_origin_id": "src_9a22e5b91fd5",
+      "source_ref": "engine_phase1_probe_20260321"
+    }
+  },
+  "project_id": "vectorfl-next",
+  "raw_payload": "Graph RAG \uad6c\uc870\uc5d0\uc11c\ub294 Ontology\uc640 Property\uac00 \uac19\uc774 \ubcf4\uc77c \ub54c bridge\uac00 \uc5f4\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uace0, observer disagreement\uc640 weak rejection\ub3c4 \uac19\uc774 \ub0a8\uaca8\uc57c \ud55c\ub2e4.",
+  "session_id": "live-session-20260321",
+  "source_ref": "engine_phase1_probe_20260321",
+  "source_type": "memo"
+}

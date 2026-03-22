@@ -1,0 +1,15 @@
+{
+  "actor_id": "codex",
+  "created_at": "2026-03-15T23:54:02.916747+00:00",
+  "family_id": "seed-engine-self",
+  "lineage_refs": [],
+  "material_id": "mat_96db48c85807",
+  "metadata": {
+    "formation_role": "engine_self_material"
+  },
+  "project_id": "vectorfl_next",
+  "raw_payload": "Next bounded step:\n\n- Add an intake policy document or lightweight validation for allowed formation-role patterns.\n\n## 2026-03-16T05:40:00Z initial-material-seed-022\n\n- Added a rerunnable seed script for the first three material roles: fresh, engine-self, and observer.\n- Kept the seed set small so the first runtime intake remains space-first rather than taxonomy-first.\n- Fixed the first seed policy around reingestable families instead of one-off bootstrap fixtures.\n\nContract notes:\n\n- initial seed set stays material-first\n- seed bootstrap remains reentry-friendly\n- observer output does not replace core records\n\nOpen risks:\n\n- seeded materials do not yet auto-form traces or cells\n- observer summary is still coarse at zero-reaction runtime states\n\nNext bounded step:\n\n- Run the seed script against the workspace runtime and verify the three initial materials land with the intended roles.",
+  "session_id": "bootstrap-initial-materials",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_next/logs/runlogs/codex_worklog.md",
+  "source_type": "worklog"
+}

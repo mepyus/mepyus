@@ -1,0 +1,58 @@
+[
+  {
+    "corridor_id": "technical->business::ai_business",
+    "origin_round": "round2",
+    "transition_from": "technical",
+    "transition_to": "business",
+    "anchor_group": "ai_business",
+    "initial_hold_reason": "technical -> business passage stays active but closure remains transition-led",
+    "reentry_count": 3,
+    "matched_inputs": [
+      "round1::win_06",
+      "observer_exam::w02",
+      "observer_session::w12"
+    ],
+    "strongest_reentry_strength": "strong",
+    "latest_closure_state": "closure_partially_strengthened",
+    "stable_closure_reached": false,
+    "note": "observer-stage reentry exists, but reinforcement is uneven and still mostly explanatory."
+  },
+  {
+    "corridor_id": "technical->organization::ai_business",
+    "origin_round": "round1+round2",
+    "transition_from": "technical",
+    "transition_to": "organization",
+    "anchor_group": "ai_business",
+    "initial_hold_reason": "technical -> business passage stays active but closure remains transition-led",
+    "reentry_count": 6,
+    "matched_inputs": [
+      "round2::win_05",
+      "round2::win_05",
+      "round1::win_06",
+      "round1::win_06",
+      "observer_exam::w04",
+      "observer_session::w13"
+    ],
+    "strongest_reentry_strength": "strong",
+    "latest_closure_state": "closure_partially_strengthened",
+    "stable_closure_reached": false,
+    "note": "observer-stage reentry exists, but reinforcement is uneven and still mostly explanatory."
+  },
+  {
+    "corridor_id": "technical->organization::harness_agent",
+    "origin_round": "round1",
+    "transition_from": "technical",
+    "transition_to": "organization",
+    "anchor_group": "harness_agent",
+    "initial_hold_reason": "technical -> business passage stays active but closure remains transition-led",
+    "reentry_count": 2,
+    "matched_inputs": [
+      "round2::win_05",
+      "observer_session::w10"
+    ],
+    "strongest_reentry_strength": "strong",
+    "latest_closure_state": "closure_partially_strengthened",
+    "stable_closure_reached": false,
+    "note": "observer-stage reentry keeps reinforcing this hold corridor, but still does not close it."
+  }
+]

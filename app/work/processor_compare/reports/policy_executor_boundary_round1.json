@@ -1,0 +1,26 @@
+{
+  "round": 1,
+  "date": "2026-03-22",
+  "current_reading": [
+    "policy interface introduced, executor still dominant",
+    "first review policy separated, behavior preserved",
+    "output surface partially separated, next split ready"
+  ],
+  "new_files": [
+    "app/core/runtime/review_policy_types.py",
+    "app/core/runtime/review_policies.py",
+    "app/core/runtime/review_output_surface.py"
+  ],
+  "verification": {
+    "compile": true,
+    "canonical_fixtures_preserved": true,
+    "doc_006_review_candidate_preserved": true,
+    "doc_005_control_preserved": true,
+    "doc_004_control_preserved": true
+  },
+  "next_priority": [
+    "cross_path overlap policy",
+    "family canonicalization policy",
+    "fixture manifest"
+  ]
+}

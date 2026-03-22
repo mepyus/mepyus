@@ -1,0 +1,417 @@
+{
+  "current_diagnosis": {
+    "imported_processing_flatness_state": "doc_005/doc_006 remain flat at processing signature level while doc_004 is smaller and more discriminative",
+    "doc_differences": {
+      "doc_004": "high readiness; 15 units only; pre/post processing_signature_unique_ratio stays 0.3333 and scene_flow_role_uniqueness_ratio is 0.4667",
+      "doc_005": "partial readiness; 73 units; pre/post processing_signature_unique_ratio stays 0.1644 with processing_profile_flatness_score 0.7623",
+      "doc_006": "partial readiness; 73 units; pre/post processing_signature_unique_ratio stays 0.1644 with processing_profile_flatness_score 0.8103"
+    },
+    "strongest_upstream_flatness_point": "imported docs are normalized to source_type=text and then labeled through label_dust_inputs; many units default to scene=review, flow=compare, D/I/S=0.5 before materialization"
+  },
+  "exact_changes": {
+    "files_changed": [
+      "app/core/runtime/imported_material_probe.py"
+    ],
+    "probes_added": [
+      "pre_processing_signature_unique_ratio",
+      "pre_processing_signature_entropy",
+      "pre_scene_flow_uniqueness_ratio",
+      "processing_value_variance",
+      "processing_signature_entropy",
+      "local_ref_processing_uniqueness",
+      "processing_profile_flatness_score",
+      "scene_flow_role_uniqueness_ratio"
+    ],
+    "files_read_for_path_tracking": [
+      "scripts/import_processor_compare_docs.py",
+      "app/core/runtime/inputter.py",
+      "app/core/runtime/live_input.py",
+      "app/core/runtime/labeler.py"
+    ],
+    "not_changed": [
+      "viewer routes",
+      "translation scope",
+      "canonical/possibility evaluator thresholds"
+    ]
+  },
+  "verification": {
+    "canonical_results": [
+      {
+        "pair": "doc_004 <-> doc_005",
+        "bridge_mode": "canonical",
+        "cross_path_type": "imported-imported"
+      },
+      {
+        "pair": "doc_005 <-> doc_006",
+        "bridge_mode": "canonical",
+        "cross_path_type": "imported-imported"
+      },
+      {
+        "pair": "test_live_space_sync_20260321 <-> test_canonical_ingest_20260321",
+        "bridge_mode": "canonical",
+        "cross_path_type": "legacy-legacy"
+      }
+    ],
+    "doc_processing_profiles": {
+      "doc_004.txt": {
+        "pre": {
+          "source_ref": "processor_compare/doc_004.txt",
+          "source_type": "review",
+          "unit_count": 15,
+          "avg_span_width": 69.07,
+          "max_span_width": 118,
+          "min_span_width": 39,
+          "sample_units": [
+            "Foundry 온톨로지에서 사용자는 액션을 적용하여 오브젝트, 속성, 링크를 변경할 수 있습니다.",
+            "액션은 사용자 정의 로직에 따라 하나 이상의 오브젝트의 속성을 변경하는 단일 트랜잭션입니다.",
+            "액션은 사용자가 특정 속성 편집 대신 전체 목표를 생각하면서 데이터를 처리하고 관리할 수 있도록 합니다."
+          ],
+          "sibling_density": 14,
+          "pre_processing_signature_unique_ratio": 0.3333,
+          "pre_processing_signature_entropy": 0.8313,
+          "pre_scene_flow_uniqueness_ratio": 0.2667,
+          "pre_direction_variance": 0.0014,
+          "pre_intensity_variance": 0.0,
+          "pre_stability_variance": 0.0,
+          "pre_scene_counts": {
+            "review": 12,
+            "impl": 2,
+            "spec": 1
+          },
+          "pre_flow_counts": {
+            "run": 10,
+            "compare": 5
+          }
+        },
+        "post": {
+          "material_count": 15,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "source_local_ref_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 7.87,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 6.0,
+          "unique_source_local_ref_count": 15,
+          "materials_per_local_ref_max": 1,
+          "translation_applied_local_ref_count": 6,
+          "translation_handle_gain_ratio": 0.4,
+          "translation_handle_total_count": 8,
+          "translation_broadcast_leak": false,
+          "anchor_signature_unique_ratio": 1.0,
+          "processing_signature_unique_ratio": 0.3333,
+          "processing_signature_entropy": 0.8313,
+          "local_ref_processing_uniqueness": 0.3333,
+          "scene_flow_role_uniqueness_ratio": 0.4667,
+          "processing_value_variance": {
+            "D": 0.0014,
+            "I": 0.0,
+            "S": 0.0
+          },
+          "handle_signature_unique_ratio": 1.0,
+          "translated_signature_unique_ratio": 0.2667,
+          "scene_unique_count": 3,
+          "flow_unique_count": 2,
+          "role_unique_count": 3,
+          "processing_profile_flatness_score": 0.7263,
+          "local_alignment_readiness": {
+            "level": "high",
+            "blockers": []
+          },
+          "flatten_indicators": [
+            "single_source_ref_spread_over_many_materials"
+          ]
+        }
+      },
+      "doc_005.txt": {
+        "pre": {
+          "source_ref": "processor_compare/doc_005.txt",
+          "source_type": "review",
+          "unit_count": 73,
+          "avg_span_width": 69.58,
+          "max_span_width": 266,
+          "min_span_width": 2,
+          "sample_units": [
+            "데이터 엔지니어링\n팔란티어 개념 설명 - 온톨로지\n라이크나우 2025.",
+            "12.",
+            "10."
+          ],
+          "sibling_density": 72,
+          "pre_processing_signature_unique_ratio": 0.1644,
+          "pre_processing_signature_entropy": 0.6056,
+          "pre_scene_flow_uniqueness_ratio": 0.0822,
+          "pre_direction_variance": 0.0135,
+          "pre_intensity_variance": 0.0124,
+          "pre_stability_variance": 0.0,
+          "pre_scene_counts": {
+            "spec": 1,
+            "review": 64,
+            "evidence": 7,
+            "impl": 1
+          },
+          "pre_flow_counts": {
+            "compare": 57,
+            "run": 15,
+            "break": 1
+          }
+        },
+        "post": {
+          "material_count": 73,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "source_local_ref_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 6.34,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 6.0,
+          "unique_source_local_ref_count": 73,
+          "materials_per_local_ref_max": 1,
+          "translation_applied_local_ref_count": 27,
+          "translation_handle_gain_ratio": 0.3699,
+          "translation_handle_total_count": 38,
+          "translation_broadcast_leak": false,
+          "anchor_signature_unique_ratio": 0.9452,
+          "processing_signature_unique_ratio": 0.1644,
+          "processing_signature_entropy": 0.6056,
+          "local_ref_processing_uniqueness": 0.1644,
+          "scene_flow_role_uniqueness_ratio": 0.137,
+          "processing_value_variance": {
+            "D": 0.0135,
+            "I": 0.0124,
+            "S": 0.0
+          },
+          "handle_signature_unique_ratio": 1.0,
+          "translated_signature_unique_ratio": 0.1507,
+          "scene_unique_count": 4,
+          "flow_unique_count": 3,
+          "role_unique_count": 4,
+          "processing_profile_flatness_score": 0.7623,
+          "local_alignment_readiness": {
+            "level": "partial",
+            "blockers": [
+              "processing_profile_too_flat"
+            ]
+          },
+          "flatten_indicators": [
+            "single_source_ref_spread_over_many_materials"
+          ]
+        }
+      },
+      "doc_006.txt": {
+        "pre": {
+          "source_ref": "processor_compare/doc_006.txt",
+          "source_type": "review",
+          "unit_count": 73,
+          "avg_span_width": 72.68,
+          "max_span_width": 180,
+          "min_span_width": 2,
+          "sample_units": [
+            "들어가며\nAI 기술의 빠른 발전은 지식의 저장과 활용 방식에도 변화를 요구하고 있다.",
+            "대규모 언어 모델(LLM)은 자연어 생성 능력을 통해 다양한 산업 분야에서 혁신을 이끌고 있지만, 정보의 정확성, 최신성, 문맥 기반 추론에는 한계가 존재한다.",
+            "이러한 문제를 해결하기 위해 등장한 기술이 RAG(Retrieval-Augmented Generation) 인데, 기존 RAG는 텍스트를 벡터로 변환해 유사도 기반 검색을 수행하므로 복잡한 데이터 관계를 충분히 반영"
+          ],
+          "sibling_density": 72,
+          "pre_processing_signature_unique_ratio": 0.1644,
+          "pre_processing_signature_entropy": 0.5569,
+          "pre_scene_flow_uniqueness_ratio": 0.0822,
+          "pre_direction_variance": 0.0064,
+          "pre_intensity_variance": 0.0068,
+          "pre_stability_variance": 0.0024,
+          "pre_scene_counts": {
+            "spec": 2,
+            "review": 64,
+            "evidence": 6,
+            "impl": 1
+          },
+          "pre_flow_counts": {
+            "compare": 55,
+            "run": 18
+          }
+        },
+        "post": {
+          "material_count": 73,
+          "source_ref_count": 1,
+          "anchor_bundle_presence_ratio": 1.0,
+          "processing_values_presence_ratio": 1.0,
+          "transformable_handles_presence_ratio": 1.0,
+          "source_local_ref_presence_ratio": 1.0,
+          "dropped_weak_presence_ratio": 1.0,
+          "observer_trace_presence_ratio": 1.0,
+          "observer_trace_available_ratio": 1.0,
+          "avg_anchor_density": 6.6,
+          "avg_processing_key_count": 5.0,
+          "avg_handle_key_count": 6.0,
+          "unique_source_local_ref_count": 73,
+          "materials_per_local_ref_max": 1,
+          "translation_applied_local_ref_count": 26,
+          "translation_handle_gain_ratio": 0.3562,
+          "translation_handle_total_count": 27,
+          "translation_broadcast_leak": false,
+          "anchor_signature_unique_ratio": 0.8904,
+          "processing_signature_unique_ratio": 0.1644,
+          "processing_signature_entropy": 0.5569,
+          "local_ref_processing_uniqueness": 0.1644,
+          "scene_flow_role_uniqueness_ratio": 0.1507,
+          "processing_value_variance": {
+            "D": 0.0064,
+            "I": 0.0068,
+            "S": 0.0024
+          },
+          "handle_signature_unique_ratio": 1.0,
+          "translated_signature_unique_ratio": 0.0274,
+          "scene_unique_count": 4,
+          "flow_unique_count": 2,
+          "role_unique_count": 4,
+          "processing_profile_flatness_score": 0.8103,
+          "local_alignment_readiness": {
+            "level": "partial",
+            "blockers": [
+              "processing_profile_too_flat"
+            ]
+          },
+          "flatten_indicators": [
+            "single_source_ref_spread_over_many_materials"
+          ]
+        }
+      }
+    },
+    "mixed_pair_results": {
+      "doc_004": {
+        "bridge_mode": "none",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 0,
+          "matched_local_refs": [],
+          "matched_handles": [],
+          "matched_rows": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      },
+      "doc_005": {
+        "bridge_mode": "none",
+        "none_reason_kind": "anchor_vocabulary_translation_gap",
+        "translation_assisted_alignment": {
+          "available": false,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 0,
+          "matched_local_refs": [],
+          "matched_handles": [],
+          "matched_rows": []
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "anchor_vocabulary_translation_gap",
+          "one_sided_anchor_presence",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      },
+      "doc_006": {
+        "bridge_mode": "possibility_candidate",
+        "none_reason_kind": "",
+        "translation_assisted_alignment": {
+          "available": true,
+          "translation_scope_used": "local_ref",
+          "matched_local_ref_count": 26,
+          "matched_local_refs": [
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_003",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_036",
+            "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_070"
+          ],
+          "matched_handles": [
+            "rag"
+          ],
+          "matched_rows": [
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_016",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_003",
+              "translated_handle": "rag",
+              "translation_basis": "supporting_anchor",
+              "translation_confidence": 0.72
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_036",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_070",
+              "translated_handle": "rag",
+              "translation_basis": "supporting_anchor",
+              "translation_confidence": 0.72
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_026",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_019",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_037",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            },
+            {
+              "source_local_ref": "processor_compare/doc_006.txt::dst_src_2fd2c39f0fd7_007",
+              "translated_handle": "rag",
+              "translation_basis": "representative_anchor",
+              "translation_confidence": 0.8
+            }
+          ]
+        },
+        "promotion_blockers": [
+          "missing_canonical_anchor_alignment",
+          "processing_overlap_below_canonical",
+          "cross_path_translation_gap",
+          "translation_assisted_possibility_only",
+          "translation_scope_local_ref",
+          "processing_projection_mismatch",
+          "scene_flow_alignment_insufficient",
+          "weak_trace_not_compounding"
+        ]
+      }
+    }
+  },
+  "current_reading": "processing flatness is confirmed as the next dominant blocker, but doc_006 reaches possibility because local_ref translation hits rag; doc_005 remains none because flatness combines with no translation-assisted handle convergence",
+  "next_recommendation": {
+    "primary": "target processing projection refinement before widening translation",
+    "refinement_kind": "prefer local_ref-level processing derivation/projection refinement over document-wide adjustment",
+    "parallel": "keep vocabulary gap as secondary track, not primary next move"
+  }
+}

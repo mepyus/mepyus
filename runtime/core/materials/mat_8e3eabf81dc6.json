@@ -1,0 +1,238 @@
+{
+  "actor_id": "replica_user",
+  "created_at": "2026-03-20T22:49:58.349347+00:00",
+  "family_id": "doc_002",
+  "lineage_refs": [
+    "dst_src_0625ca57c84f_001",
+    "dst_src_0625ca57c84f_002",
+    "dst_src_0625ca57c84f_003",
+    "dst_src_0625ca57c84f_005",
+    "dst_src_0625ca57c84f_006",
+    "dst_src_0625ca57c84f_007",
+    "dst_src_0625ca57c84f_008",
+    "dst_src_0625ca57c84f_009"
+  ],
+  "material_id": "mat_8e3eabf81dc6",
+  "metadata": {
+    "D": 0.5,
+    "I": 0.5,
+    "S": 0.5,
+    "anchors": [
+      {
+        "type": "domain_term",
+        "value": "Langchain"
+      },
+      {
+        "type": "domain_term",
+        "value": "Google"
+      },
+      {
+        "type": "domain_term",
+        "value": "search"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc5f0\ub3d9\ud558\uae30"
+      },
+      {
+        "type": "domain_term",
+        "value": "SDK"
+      },
+      {
+        "type": "domain_term",
+        "value": "Yahoo"
+      },
+      {
+        "type": "domain_term",
+        "value": "finance"
+      },
+      {
+        "type": "domain_term",
+        "value": "\uc788\ub294\ub370"
+      }
+    ],
+    "dust_input_id": "dst_src_0625ca57c84f_004",
+    "flow": "compare",
+    "formation_role": "review_material",
+    "last_seen": "2026-03-20T22:49:58.330454Z",
+    "observer_ambiguity": 0.34,
+    "observer_confidence_numeric": 0.715,
+    "observer_or_ambiguity_trace": {
+      "available": true,
+      "generation_path": "runtime_commonization",
+      "items": [],
+      "merged": {
+        "ambiguity": 0.34,
+        "confidence": 0.715,
+        "direction": 0.72,
+        "intensity": 0.58,
+        "role": "example",
+        "scene": "explanation",
+        "signals": [],
+        "stability": 0.64
+      },
+      "note": "runtime internal observer baseline",
+      "profiles": {
+        "chatgpt_like": {
+          "ambiguity": 0.27,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "langchain",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "google",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "search",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.74,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c\ub85c \uc5f0\ub3d9 \uc2a4\ud399\uc744 \ub9de\ucdb0\uc11c SDK\uc744 \uac1c\ubc1c\ud574\uc11c \uc81c\uacf5\ud55c\uac83\uc774\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "surface structure sensitive"
+          ],
+          "profile_name": "chatgpt_like",
+          "role": "example",
+          "scene": "explanation",
+          "semantic_tags": [
+            "langchain",
+            "google",
+            "search",
+            "\uc5f0\ub3d9\ud558\uae30"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "surface_structure",
+            "explanation",
+            "example"
+          ],
+          "why_short": "\ud45c\uba74 \uad6c\uc870 \uc2e0\ud638\ub97c \uac15\ud558\uac8c \uc77d\uc5b4 explanation/example\ub85c \ud310\uc815\ud55c\ub2e4."
+        },
+        "codex_like": {
+          "ambiguity": 0.34,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "langchain",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "google",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "search",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.69,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c\ub85c \uc5f0\ub3d9 \uc2a4\ud399\uc744 \ub9de\ucdb0\uc11c SDK\uc744 \uac1c\ubc1c\ud574\uc11c \uc81c\uacf5\ud55c\uac83\uc774\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "conservative baseline"
+          ],
+          "profile_name": "codex_like",
+          "role": "example",
+          "scene": "explanation",
+          "semantic_tags": [
+            "langchain",
+            "google",
+            "search",
+            "\uc5f0\ub3d9\ud558\uae30"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "explanation",
+            "example"
+          ],
+          "why_short": "explanation \uc911\uc2ec\uc73c\ub85c \uc77d\ub418 example \uae30\ub2a5\uc744 \ubcf4\uc218\uc801\uc73c\ub85c \uc720\uc9c0\ud55c\ub2e4."
+        },
+        "gemini_like": {
+          "ambiguity": 0.24,
+          "anchors": [
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "langchain",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "google",
+              "score": 0.66
+            },
+            {
+              "anchor_type": "semantic",
+              "evidence_text": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c",
+              "label": "search",
+              "score": 0.66
+            }
+          ],
+          "confidence": 0.73,
+          "direction": 0.72,
+          "evidence_text": [
+            "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c\ub85c \uc5f0\ub3d9 \uc2a4\ud399\uc744 \ub9de\ucdb0\uc11c SDK\uc744 \uac1c\ubc1c\ud574\uc11c \uc81c\uacf5\ud55c\uac83\uc774\ub2e4"
+          ],
+          "intensity": 0.58,
+          "notes": [
+            "secondary abstract observer"
+          ],
+          "profile_name": "gemini_like",
+          "role": "example",
+          "scene": "explanation",
+          "semantic_tags": [
+            "langchain",
+            "google",
+            "search",
+            "\uc5f0\ub3d9\ud558\uae30"
+          ],
+          "stability": 0.64,
+          "structural_tags": [
+            "internal_observer",
+            "abstraction_prone",
+            "explanation",
+            "example"
+          ],
+          "why_short": "\uc0c1\uc704 \uc758\ubbf8 \uc774\ub3d9\uc744 \ubbfc\uac10\ud558\uac8c \uc77d\uc5b4 explanation/example\ub85c \uae30\uc6b8\uc5b4\uc9c4\ub2e4."
+        }
+      },
+      "unavailable_reason": ""
+    },
+    "observer_role": "example",
+    "observer_signals": [],
+    "recurrence_count": 1,
+    "scene": "review",
+    "short_label": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 \u2026",
+    "source_origin_id": "src_0625ca57c84f",
+    "time_in": "2026-03-20T22:49:58.330454Z"
+  },
+  "project_id": "vectorfl-next",
+  "raw_payload": "\uc608\ub97c \ub4e4\uc5b4 Langchain\uc5d0\ub294 Google search\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK, Yahoo finance\uc640 \uc5f0\ub3d9\ud558\uae30 \uc704\ud55c SDK\ub4e4\uc774 \uc788\ub294\ub370, \uc774\ub294 Langchain\uc774 \uac01\uac01\uc758 \uc11c\ube44\uc2a4 provider\uc640 \ud611\uc5c5\uc744 \ud574\uc11c \uc11c\ub85c \uc5f0\ub3d9 \uc2a4\ud399\uc744 \ub9de\ucdb0\uc11c SDK\uc744 \uac1c\ubc1c\ud574\uc11c \uc81c\uacf5\ud55c\uac83\uc774\ub2e4.",
+  "session_id": "processor-compare-doc-import-20260321",
+  "source_ref": "processor_compare/doc_002.txt",
+  "source_type": "review"
+}

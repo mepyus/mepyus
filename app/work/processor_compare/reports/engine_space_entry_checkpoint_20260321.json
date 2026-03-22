@@ -1,0 +1,98 @@
+{
+  "checkpoint_date": "2026-03-21",
+  "checkpoint_kind": "space_entry",
+  "viewer_state": "phase1_frozen",
+  "engine_state": "space_pre_entry_checkpoint",
+  "fixed_cases": {
+    "canonical_controls": [
+      "doc_004 -> doc_005",
+      "doc_005 -> doc_006",
+      "test_live_space_sync_20260321 -> test_canonical_ingest_20260321"
+    ],
+    "review_candidate": "engine_phase1_observer_probe_20260321 -> doc_006",
+    "controls": [
+      "engine_phase1_observer_probe_20260321 -> doc_005",
+      "engine_phase1_observer_probe_20260321 -> doc_004"
+    ]
+  },
+  "doc_006_state": {
+    "bridge_mode": "possibility_candidate",
+    "translation_gate": true,
+    "processing_gate": true,
+    "observer_gate": true,
+    "canonical_anchor_gate": false,
+    "space_entry_state": "structural_led_space_pre_entry",
+    "space_entry_ready_families": [
+      "object",
+      "structural"
+    ],
+    "space_entry_lead_family": "structural",
+    "space_entry_blocker": "token_pair_exists_but_alignment_rule_not_satisfied"
+  },
+  "controls_state": {
+    "doc_005": {
+      "bridge_mode": "none",
+      "review_state": "translation_missing"
+    },
+    "doc_004": {
+      "bridge_mode": "none",
+      "review_state": "translation_missing"
+    }
+  },
+  "completed_structure": [
+    "possibility_lane",
+    "promotion_review_lane",
+    "typed_canonical_review_candidate",
+    "same_local_ref_accumulation",
+    "threshold_split",
+    "cross_path_corroboration_split",
+    "live_side_support_split",
+    "canonicalization_candidate_split",
+    "proposal_trace",
+    "direct_overlap_candidate_split",
+    "family_rule_refinement_split",
+    "space_pre_entry_state"
+  ],
+  "policy_mapping": {
+    "same": [
+      "canonical",
+      "direct canonical overlap"
+    ],
+    "similar": [
+      "family-level partial overlap",
+      "typed anchor support",
+      "semantic_only_cross_path"
+    ],
+    "connectable": [
+      "possibility_candidate",
+      "review candidate with translation/processing/observer gates"
+    ],
+    "strong_connection": [
+      "multi_family_same_local_ref_support_present",
+      "multi_family_compound_candidate",
+      "direct_overlap_candidate_families"
+    ],
+    "deferred_asset": [
+      "blocker",
+      "promotion review",
+      "proposal trace",
+      "control trace",
+      "space pre-entry"
+    ]
+  },
+  "remaining_blocker": "token_pair_exists_but_alignment_rule_not_satisfied",
+  "next_phase": {
+    "name": "family_canonicalization_rule_refinement",
+    "priority_order": [
+      "structural",
+      "object"
+    ],
+    "not_reopen": [
+      "viewer expansion",
+      "region semantics expansion",
+      "translation breadth expansion",
+      "global processing redesign",
+      "canonical threshold relaxation"
+    ]
+  }
+}
