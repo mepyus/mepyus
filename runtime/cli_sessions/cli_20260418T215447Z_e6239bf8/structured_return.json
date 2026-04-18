@@ -1,0 +1,56 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T215447Z_e6239bf8",
+  "backend_kind": "codex",
+  "task_type": "inspect",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T21:54:47Z",
+  "worker_return": {
+    "schema_version": "integrated_engine_worker_return_v0",
+    "worker_id": "codex",
+    "package_id": "pkg_openharness_structure_probe",
+    "run_kind": "inspect",
+    "answer": "source: references/git_search/openharness-main / directory / exists=True\nsummary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\ntop_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\ntop_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\nmarker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md",
+    "findings": [
+      "source: references/git_search/openharness-main / directory / exists=True",
+      "summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend",
+      "top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts",
+      "top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml",
+      "marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md"
+    ],
+    "files_artifacts": [
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/stdout.log",
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/stderr.log",
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/prompt.md",
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/deposit_candidate.md",
+      "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/operator_report.md",
+      "references/git_search/openharness-main",
+      "references/git_search/openharness-main/LICENSE",
+      "references/git_search/openharness-main/CHANGELOG.md",
+      "references/git_search/openharness-main/pyproject.toml",
+      "references/git_search/openharness-main/README.md",
+      "references/git_search/openharness-main/CONTRIBUTING.md",
+      "references/git_search/openharness-main/ohmo/session_storage.py",
+      "references/git_search/openharness-main/ohmo/memory.py",
+      "references/git_search/openharness-main/ohmo/__init__.py"
+    ],
+    "next_continue_hint": "Reread the latest answer with its artifact refs and decide the next package-specific question.",
+    "open_questions": [
+      "What should be validated before reuse or redeposit?"
+    ],
+    "risks_or_limits": [
+      "dry-run validates spine/context carryover, not worker reasoning quality",
+      "return remains reread-target; not approval or completion"
+    ],
+    "source_refs": [
+      "references/git_search/openharness-main"
+    ],
+    "raw_fallback_text": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n"
+  }
+}

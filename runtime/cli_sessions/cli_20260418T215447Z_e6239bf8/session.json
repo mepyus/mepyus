@@ -1,0 +1,37 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T215447Z_e6239bf8",
+  "backend_kind": "codex",
+  "task_type": "inspect",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "runrecord_contract_validation",
+  "purpose_text": "Validate structured worker return contract on the existing OpenHarness package continuity path.",
+  "bounded_context_refs": [
+    "references/git_search/openharness-main"
+  ],
+  "prompt_payload": "Dry-run contract validation: profile the source, return structured worker_return fields, and keep route as reread_target.",
+  "active_package": {
+    "id": "pkg_openharness_structure_probe",
+    "title": "OpenHarness 구조 분석",
+    "summary": "references/git_search/openharness-main 구조를 내부 재료로 읽는 패키지",
+    "stage": "inspect",
+    "status": "active"
+  },
+  "status": "done",
+  "started_at": "2026-04-18T21:54:47Z",
+  "ended_at": "2026-04-18T21:54:47Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 30,
+  "dry_run": true,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T215447Z_e6239bf8/prompt.md",
+  "exit_code": 0,
+  "result_summary": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n",
+  "suggested_next_use": "reread_target",
+  "error_message": ""
+}

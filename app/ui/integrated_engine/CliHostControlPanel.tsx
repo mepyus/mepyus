@@ -91,6 +91,20 @@ type PackageNotebookRun = {
   open_questions?: string[];
   risks_or_limits?: string[];
   source_refs?: string[];
+  worker_return?: {
+    schema_version?: string;
+    worker_id?: string;
+    package_id?: string;
+    run_kind?: string;
+    answer?: string;
+    findings?: string[];
+    files_artifacts?: string[];
+    next_continue_hint?: string;
+    open_questions?: string[];
+    risks_or_limits?: string[];
+    source_refs?: string[];
+    raw_fallback_text?: string;
+  };
   suggested_next_use?: string;
   route_label?: string;
   started_at?: string;
