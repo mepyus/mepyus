@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T102144Z_d65ce415",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Conversation-mode smoke test: read the stable UI migration note and tell the VectorFL operator what should remain true before the next change.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md"
+  ],
+  "prompt_payload": "Answer as a bounded Codex conversation turn inside the VectorFL surface. Return three short sections: 1) what remains true for the fixed 3-surface body, 2) what the CLI on-top layer may do now, 3) the next smallest safe action. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:21:44Z",
+  "ended_at": "2026-04-16T10:21:59Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "reread_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n\n1. Fixed 3-surface body remains true: the integrated-engine UI is now sourced from `app/ui/integrated_engine`; `gemini/mock_test` remains reference/proposal clay; `runtime` remains for artifacts, manifests, state, and execution returns. This migration does not create package 2, a new surface, or a new engine shape.\n\n2. CLI on-top layer may now operate through the stable app path. The note records a successful read-only Codex session through the stable app proxy, plus successful marking as `validation_target`.\n\n3. Next smallest safe action: hand-check one VectorFL CLI run from the browser at `http://127.0.0.1:5173/`.\n\n- important findings / diffs / outputs\n\nStable source folder: `app/ui/integrated_engine`.\n\nImportant invariants:\n- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.\n- Do not move React/Vite source into `runtime`.\n- Do not add Gemini adapter, background runner, or session browsing before the stable Codex path is hand-used.\n\nValidation already noted:\n- `npm run build` passed in `app/ui/integrated_engine`.\n- served title confirmed as `VectorFL Integrated Engine`.\n- stable app proxy to `127.0.0.1:8421` worked.\n- real read-only Codex session completed with exit code `0`.\n\n- uncertainty or failure notes\n\nNo files were modified. I only reread `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`.\n\nRemaining uncertainty from the note: browser-click/user-feel validation still needs a human hand-check.\n\n- suggested next use\n\nvalidation target: run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:22:03Z",
+  "mark_history": [
+    {
+      "mark": "reread_target",
+      "marked_at": "2026-04-16T10:22:03Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "residue_reentry_rules_v0",
+  "updated_at": "2026-04-06T20:00:00+09:00",
+  "rules": [
+    {
+      "rule_id": "reentry_rule_preservation_to_transition",
+      "source_residue_bias": "preservation_before_flattening",
+      "question_shift": "entry_shaping_to_transition_condition",
+      "preferred_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "preferred_projection_ids": [
+        "proj_transition_preflight_reread"
+      ],
+      "preferred_route_ids": [
+        "route_preflight_reread"
+      ],
+      "strength": "medium",
+      "notes": [
+        "only applies when entry shaping pressure gives way to blockage/closure question"
+      ]
+    },
+    {
+      "rule_id": "reentry_rule_closure_to_readout",
+      "source_residue_bias": "closure_before_presentation",
+      "question_shift": "transition_condition_to_operator_readability",
+      "preferred_family_ids": [
+        "fam_transition_thickening",
+        "fam_operator_readout"
+      ],
+      "preferred_projection_ids": [
+        "proj_transition_operator_readout",
+        "proj_operator_board_readout"
+      ],
+      "preferred_route_ids": [
+        "route_readonly_board"
+      ],
+      "strength": "medium",
+      "notes": [
+        "prefer projection shift inside transition family before full handoff to operator readout family"
+      ]
+    },
+    {
+      "rule_id": "reentry_rule_presentation_to_search",
+      "source_residue_bias": "presentation_before_narrow_search",
+      "question_shift": "broad_readout_to_explicit_query",
+      "preferred_family_ids": [
+        "fam_operator_readout"
+      ],
+      "preferred_projection_ids": [
+        "proj_operator_search_readout"
+      ],
+      "preferred_route_ids": [
+        "route_internal_search"
+      ],
+      "strength": "medium",
+      "notes": [
+        "applies when broad board is present but explicit query demands narrower route"
+      ]
+    }
+  ]
+}

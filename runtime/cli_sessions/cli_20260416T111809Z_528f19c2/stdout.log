@@ -1,0 +1,35 @@
+- result summary
+  - Reread completed without file modification.
+  - The selected Codex turn `cli_20260416T111421Z_ab9778e6` remains valid as a successful bounded `reread` run: `status=done`, `exit_code=0`, marked `validation_target`.
+  - The stable UI migration note remains valid: the active integrated-engine UI source is `app/ui/integrated_engine`; `gemini/mock_test` is reference/proposal clay, not the operating source.
+  - The selected turn’s core conclusion remains valid: CLI-on-top is not a fourth surface. It is a VectorFL-operated execution layer whose returns are reread differently by User / VectorFL / Engine surfaces.
+  - The strongest surviving axis is still: readable Codex report grammar before visible UI translation.
+
+- important findings / diffs / outputs
+  - Raw `stdout.log` contains the full intended return.
+  - `structured_return.json`, `session.json.result_summary`, `deposit_candidate.md`, and `operator_report.md` contain a truncated preview beginning mid-word: `posure can keep...`
+  - This looks like a reduction/storage preview issue, not a failed Codex run, because `stdout.log` has the complete output.
+  - Valid observed lines from the full stdout:
+    - `CLI는 4번째 surface가 아니다`
+    - `mark는 완료 선언이 아니라 route signal이다`
+    - `deposit candidate는 ingestion이 아니다`
+    - `User surface는 실행자가 아니라 조직/결정면이다`
+    - `Engine surface는 판단기관이 아니라 처리/반환면이다`
+    - `한국어 UI copy 전에 Codex 보고 문법`
+  - Preserved boundaries:
+    - `validation_target` means “read as validation target,” not validation complete.
+    - `deposit_candidate` means candidate material, not official ingestion.
+    - User surface reads work/decision candidates, not automatic assignment.
+    - Engine surface reads processing/validation/deposit material, not final authority.
+    - UI Korean copy replacement remains closed.
+
+- uncertainty or failure notes
+  - The selected turn only reread two bounded reports, not a live screen or browser-click observation.
+  - Surface exposure remains the main uncertainty: the reports say the route works, but actual screen/user readability still needs validation.
+  - There is a concrete artifact-quality issue: structured summaries are truncated while raw stdout is complete. Any deposit or validation should prefer `stdout.log` over the truncated `result_summary`.
+
+- suggested next use: validation target
+  - Next smallest safe action: validate one actual current screen observation or one actual Codex CLI return against the preserved authority boundaries: candidate vs completed, mark vs approval, deposit candidate vs ingestion.
+  - Best reread target: `runtime/cli_sessions/cli_20260416T111421Z_ab9778e6/stdout.log`, because it contains the complete selected turn output.
+  - Implementation return: not yet.
+  - Deposit candidate: not yet, unless regenerated from full `stdout.log` rather than the truncated summary.

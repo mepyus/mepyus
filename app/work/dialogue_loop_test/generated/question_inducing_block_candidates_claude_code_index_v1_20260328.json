@@ -1,0 +1,113 @@
+{
+  "created_at": "2026-03-28T09:38:39.700077Z",
+  "input_asset": "inputs/external_cases/claude_code_index.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w3_s1_20260328T093821Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w6_s3_20260328T093821Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w6_s3_20260328T093821Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/claude_code_index.txt",
+    "supporting_first_pass_patterns": [
+      "top_question_intent_windows",
+      "object_candidates",
+      "layer_hints",
+      "relation_hints",
+      "top_anchor_values"
+    ],
+    "second_order_reading_type": "question_inducing_block_review",
+    "rereading_mode": "cross_window_candidate_selection",
+    "scope_local_page_comparison": "local_plus_page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "question_opening_and_residue_deprioritization_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "question-inducing candidate rules are still being observed as patterns, not generalized",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w3_s1_20260328T093821Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w6_s3_20260328T093821Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_dialogue_loop_test_w6_s3_20260328T093821Z.json"
+    ]
+  },
+  "question_inducing_candidates": [
+    {
+      "window_id": "0_0",
+      "question_intent_score": 11,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "구현/자동화",
+        "전략/방향성"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "구현/실행 층",
+        "검증/근거 층",
+        "구조/연결 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "기존 앱의 moat는 agent interface 시대에 무엇으로 남는가?",
+        "agent layer는 실제 workflow와 운영 구조를 어디까지 대체하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 이렇게, 있습니다, MCP, 저희가, 보겠습니다",
+      "after_anchor_surface": "이렇게, 있습니다, MCP, 보겠습니다, 들어서, 작업을",
+      "deprioritized_values": [
+        "그래서",
+        "저희가"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "conversational_filler_residue": 1
+      },
+      "headings": [
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요. 클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다. 그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나…"
+        }
+      ],
+      "second_order_reading_type": "question_inducing_block",
+      "rereading_mode": "high_score_window_rereading",
+      "scope_local_page_comparison": "local_plus_page",
+      "domain_specific_suspicion": "high_ai_agent_transition",
+      "reusable_attitude_hint": "question_opening_plus_transition_detection",
+      "candidate_status": "hold_candidate",
+      "hold_reason": "question-inducing reading is clear but still domain-skewed toward AI/agent/business transition",
+      "evidence_pointers": [
+        "untitled"
+      ]
+    }
+  ],
+  "summary_stage_deprioritization_candidates": [
+    {
+      "residue_type": "discourse_connective_residue",
+      "count": 1,
+      "example_values": [
+        "그래서"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    },
+    {
+      "residue_type": "conversational_filler_residue",
+      "count": 1,
+      "example_values": [
+        "저희가"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    }
+  ]
+}

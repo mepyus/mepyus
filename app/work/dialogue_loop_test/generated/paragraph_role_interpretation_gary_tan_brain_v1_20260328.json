@@ -1,0 +1,153 @@
+{
+  "created_at": "2026-03-28T12:06:11.189063Z",
+  "input_asset": "inputs/external_cases/gary_tan_brain.txt",
+  "collection_context": {
+    "input_asset_type": "technical_index_like_doc",
+    "source_asset_ref": "inputs/external_cases/gary_tan_brain.txt",
+    "supporting_first_pass_patterns": [
+      "context_unit",
+      "present_window_refs",
+      "grounding_status",
+      "page_role",
+      "relation_movement"
+    ],
+    "second_order_reading_type": "heading_independent_role_probe",
+    "rereading_mode": "role_like_probe_without_heading",
+    "scope_local_page_comparison": "local_page_probe",
+    "domain_specific_suspicion": "medium_high",
+    "reusable_attitude_hint": "role_like_reading_from_functional_cues",
+    "candidate_status": "collect_only",
+    "hold_reason": "probe observes role-like reading conditions without claiming generalized role interpretation",
+    "evidence_pointers": {
+      "context_json": "app/work/dialogue_loop_test/generated/context_unit_candidates_gary_tan_brain_v1_20260328.json",
+      "purpose_json": "app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_gary_tan_brain_v1_20260328.json"
+    }
+  },
+  "paragraph_role_analyses": [
+    {
+      "analysis_id": "agent_interface_transition_unit",
+      "probe_mode": "heading_independent_role_probe",
+      "heading_dependency_reduced": true,
+      "heading_found": false,
+      "context_unit": "agent_interface_transition_unit",
+      "excerpt": "명시 heading 없이 fallback evidence window를 통해 role-like reading만 관찰됨",
+      "objects": [
+        "에이전트 애플리케이션",
+        "전략/방향성",
+        "구현/자동화"
+      ],
+      "layers": [
+        "구조/연결 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "contrast_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "role_probe_status": "role_like_reading_weak",
+      "role_hint_strength": "weak",
+      "role_like_hint": "transition_or_strategy_role_hint",
+      "page_flow_role": "pivot",
+      "comparison_target": "",
+      "comparison_role": "explicit heading 없이도 기능 단서와 evidence window로만 약한 role-like reading을 시도",
+      "grounding_status": "empty_ref",
+      "pointer_support_source": "none",
+      "role_evidence_pointers": [],
+      "unsupported_role_naming_risk": "medium",
+      "second_order_reading_type": "heading_independent_role_probe",
+      "rereading_mode": "role_like_probe_without_heading",
+      "scope_local_page_comparison": "local_page_probe",
+      "domain_specific_suspicion": "medium_high",
+      "reusable_attitude_hint": "role_like_reading_from_functional_cues",
+      "candidate_status": "hold_candidate",
+      "hold_reason": "role-like hint is observable, but still fallback-grounded and not a generalized paragraph-role system",
+      "evidence_pointers": []
+    },
+    {
+      "analysis_id": "future_of_work_supervisor_unit",
+      "probe_mode": "heading_independent_role_probe",
+      "heading_dependency_reduced": true,
+      "heading_found": false,
+      "context_unit": "future_of_work_supervisor_unit",
+      "excerpt": "명시 heading 없이 fallback evidence window를 통해 role-like reading만 관찰됨",
+      "objects": [
+        "일의 미래",
+        "생산성/코딩",
+        "에이전트 애플리케이션"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "role_probe_status": "role_like_reading_weak",
+      "role_hint_strength": "weak",
+      "role_like_hint": "question_or_role_shift_hint",
+      "page_flow_role": "question_seed",
+      "comparison_target": "",
+      "comparison_role": "explicit heading 없이도 기능 단서와 evidence window로만 약한 role-like reading을 시도",
+      "grounding_status": "empty_ref",
+      "pointer_support_source": "none",
+      "role_evidence_pointers": [],
+      "unsupported_role_naming_risk": "medium",
+      "second_order_reading_type": "heading_independent_role_probe",
+      "rereading_mode": "role_like_probe_without_heading",
+      "scope_local_page_comparison": "local_page_probe",
+      "domain_specific_suspicion": "medium_high",
+      "reusable_attitude_hint": "role_like_reading_from_functional_cues",
+      "candidate_status": "hold_candidate",
+      "hold_reason": "role-like hint is observable, but still fallback-grounded and not a generalized paragraph-role system",
+      "evidence_pointers": []
+    },
+    {
+      "analysis_id": "model_eval_shift_unit",
+      "probe_mode": "heading_independent_role_probe",
+      "heading_dependency_reduced": true,
+      "heading_found": false,
+      "context_unit": "model_eval_shift_unit",
+      "excerpt": "명시 heading 없이 fallback evidence window를 통해 role-like reading만 관찰됨",
+      "objects": [
+        "AI의 미래",
+        "모델 work",
+        "에이전트 애플리케이션"
+      ],
+      "layers": [
+        "검증/근거 층",
+        "구조/연결 층",
+        "전략/방향 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "role_probe_status": "role_like_reading_weak",
+      "role_hint_strength": "weak",
+      "role_like_hint": "compression_or_evaluation_hint",
+      "page_flow_role": "compression_node",
+      "comparison_target": "",
+      "comparison_role": "explicit heading 없이도 기능 단서와 evidence window로만 약한 role-like reading을 시도",
+      "grounding_status": "empty_ref",
+      "pointer_support_source": "none",
+      "role_evidence_pointers": [],
+      "unsupported_role_naming_risk": "medium",
+      "second_order_reading_type": "heading_independent_role_probe",
+      "rereading_mode": "role_like_probe_without_heading",
+      "scope_local_page_comparison": "local_page_probe",
+      "domain_specific_suspicion": "medium_high",
+      "reusable_attitude_hint": "role_like_reading_from_functional_cues",
+      "candidate_status": "hold_candidate",
+      "hold_reason": "role-like hint is observable, but still fallback-grounded and not a generalized paragraph-role system",
+      "evidence_pointers": []
+    }
+  ]
+}

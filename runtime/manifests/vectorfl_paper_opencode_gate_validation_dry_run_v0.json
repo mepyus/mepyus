@@ -1,0 +1,45 @@
+{
+  "schema_version": "vectorfl_paper_actual_export_gate_validation_dry_run_v0",
+  "source_slot_artifact": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+  "source_record_artifact": "runtime/manifests/vectorfl_paper_opencode_candidate_evidence_record_v0.json",
+  "validation_status": "partial",
+  "passed_checks": [
+    "required_surface_present:issues_row",
+    "required_surface_present:heartbeat_runs_row",
+    "required_surface_present:issue_comments_rows",
+    "required_surface_present:approvals_row",
+    "issues_row has id/title/description/status",
+    "heartbeat_runs_row has id/status/startedAt/resultJson",
+    "issue_comments_rows has at least one body-bearing comment",
+    "approvals_row has id/status/decisionNote/payload",
+    "issue -> line-guided work packet seam is readable",
+    "heartbeat_run -> execution trace seam is readable",
+    "result/comment -> result/residue reinjection seam is readable",
+    "approvals_row -> governance gate seam is readable"
+  ],
+  "failed_checks": [],
+  "uncertain_checks": [
+    "reopen_evidence: no direct real reopen decision path in the record"
+  ],
+  "honesty_class": "external_candidate",
+  "gate_effect": "candidate_for_reopen_validation",
+  "recommendation": "Use this record to test the mapping and reopen path, but keep hold until it is verified as a true host export for this gate.",
+  "validated_at": "2026-04-10T23:14:46.619915+00:00",
+  "delta_vs_current_anchor": {
+    "same_shape_checks": [
+      "approvals_row has id/status/decisionNote/payload",
+      "heartbeat_runs_row has id/status/startedAt/resultJson",
+      "issues_row has id/title/description/status",
+      "required_surface_present:approvals_row",
+      "required_surface_present:heartbeat_runs_row",
+      "required_surface_present:issue_comments_rows",
+      "required_surface_present:issues_row"
+    ],
+    "new_failed_checks": [],
+    "lost_passed_checks": [],
+    "honesty_boundary_change": "local_fixture -> external_candidate",
+    "gate_effect_change": "narrowed_but_still_binding -> candidate_for_reopen_validation",
+    "still_missing_reopen_evidence": true,
+    "no_gate_close_change": true
+  }
+}

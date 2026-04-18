@@ -1,0 +1,95 @@
+{
+  "schema_version": "auto_hint_generation_rules_v0",
+  "updated_at": "2026-04-06T16:25:00+09:00",
+  "rules": [
+    {
+      "rule_id": "hint_rule_input_preprocess_shaping",
+      "artifact_kind": "comparison_result",
+      "match_all": [
+        "before_gate.decision=preprocess_required",
+        "after_gate.decision=uncertain_needs_probe",
+        "after_gate.checkpoints.pre_ingest_gate.status=uncertain_needs_probe"
+      ],
+      "generated_hint": {
+        "candidate_family_ids": [
+          "fam_input_to_reading"
+        ],
+        "candidate_projection_ids": [
+          "proj_preprocess_shaping"
+        ],
+        "candidate_route_ids": [
+          "route_preprocess_compare_first"
+        ],
+        "hint_confidence": "high",
+        "residue_reentry_bias": "preservation_before_flattening"
+      }
+    },
+    {
+      "rule_id": "hint_rule_transition_preflight_reread",
+      "artifact_kind": "phase_surface",
+      "match_all": [
+        "active_latent_lines exists",
+        "decision=thickening",
+        "next_check_trigger exists"
+      ],
+      "generated_hint": {
+        "candidate_family_ids": [
+          "fam_transition_thickening"
+        ],
+        "candidate_projection_ids": [
+          "proj_transition_preflight_reread"
+        ],
+        "candidate_route_ids": [
+          "route_preflight_reread"
+        ],
+        "hint_confidence": "high",
+        "residue_reentry_bias": "closure_before_presentation"
+      }
+    },
+    {
+      "rule_id": "hint_rule_transition_preflight_snapshot_reread",
+      "artifact_kind": "phase_surface",
+      "match_all": [
+        "phase_snapshot.active_latent_lines exists",
+        "phase_snapshot.decision=thickening",
+        "phase_snapshot.next_check_trigger exists"
+      ],
+      "generated_hint": {
+        "candidate_family_ids": [
+          "fam_transition_thickening"
+        ],
+        "candidate_projection_ids": [
+          "proj_transition_preflight_reread"
+        ],
+        "candidate_route_ids": [
+          "route_preflight_reread"
+        ],
+        "hint_confidence": "high",
+        "residue_reentry_bias": "closure_before_presentation"
+      }
+    },
+    {
+      "rule_id": "hint_rule_operator_board_readout",
+      "artifact_kind": "engine_state_index",
+      "match_all": [
+        "items exists",
+        "items[].asset_id exists",
+        "items[].maturation_state exists",
+        "items[].traceability_status exists"
+      ],
+      "generated_hint": {
+        "candidate_family_ids": [
+          "fam_operator_readout"
+        ],
+        "candidate_projection_ids": [
+          "proj_operator_board_readout"
+        ],
+        "candidate_route_ids": [
+          "route_readonly_board"
+        ],
+        "hint_confidence": "high",
+        "residue_reentry_bias": "presentation_before_narrow_search"
+      }
+    }
+  ]
+}

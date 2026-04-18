@@ -1,0 +1,47 @@
+{
+  "asset_id": "turboquant_youtube",
+  "asset_name": "turboquant_youtube",
+  "carryover_risk": "high",
+  "comparison_memory_reason": [
+    "same_compressed_family",
+    "similar_carryover_pattern"
+  ],
+  "emergence_status": "low_emergence",
+  "evidence_refs": [
+    {
+      "note": "live run input source",
+      "ref_id": "inputs/external_cases/TurboQuant_youtube.txt",
+      "ref_kind": "source_file"
+    },
+    {
+      "note": "single-window probe artifact for first live run",
+      "ref_id": "app/work/dialogue_loop_test/generated/turboquant_youtube_live_run_v1_w6_s3_20260328T212851Z.json",
+      "ref_kind": "probe_output"
+    }
+  ],
+  "experimental_namespace": {
+    "first_pass_layer_hints": [
+      "\uc124\uba85/\ud574\uc11d \uce35",
+      "\uad6c\ud604/\uc2e4\ud589 \uce35",
+      "\uac80\uc99d/\uadfc\uac70 \uce35"
+    ],
+    "first_pass_object_candidates": [
+      "\uc5d0\uc774\uc804\ud2b8 \uc560\ud50c\ub9ac\ucf00\uc774\uc158",
+      "\ubaa8\ub378 work"
+    ],
+    "input_character": "concept_structure_case_mixed_technical_transcript",
+    "packet_formation_note": "window_count=1 and untitled mega-block suggest compressed packet"
+  },
+  "gate_blocker_summary": [
+    "fallback_grounding_dominance",
+    "scaffold_carryover_risk"
+  ],
+  "grounding_status": "fallback_grounded",
+  "maturation_state": "fallback",
+  "packet_texture": "overcompressed_closure_heavy",
+  "schema_version": "engine_state_schema_v1",
+  "source_type": "dialogue_asset",
+  "state_notes": "first live run: bridge confirmed, single-window packet, naming-heavy technical transcript kept conservative",
+  "traceability_status": "traceable",
+  "updated_at": "2026-03-28T21:31:34.399318+00:00"
+}

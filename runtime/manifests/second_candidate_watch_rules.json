@@ -1,0 +1,23 @@
+{
+  "watch_name": "second_candidate_emergence_watch",
+  "current_clear_candidates": [
+    "raw_to_first_pass_to_report"
+  ],
+  "must_not_be_explained_by": [
+    "family_variation",
+    "divergent_mode_boundary",
+    "existing_scope_extension"
+  ],
+  "minimum_repeat_requirement": 2,
+  "minimum_context_diversity": 2,
+  "disqualifiers": [
+    "same_candidate_new_family",
+    "same_candidate_boundary_note_only"
+  ],
+  "trigger_for_seed_found": "distinct repeated path not collapsible to existing candidate",
+  "notes": [
+    "This watch rule is only for marking when a second reading-path candidate should be named.",
+    "It does not promote or lock any pipeline.",
+    "The current evidence still belongs to the existing candidate plus boundary notes."
+  ]
+}

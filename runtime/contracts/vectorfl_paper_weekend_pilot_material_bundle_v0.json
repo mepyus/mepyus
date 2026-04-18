@@ -1,0 +1,73 @@
+{
+  "bundle_id": "vectorfl_paper_weekend_pilot_material_bundle_v0",
+  "title": "VectorFL Paper Weekend Pilot Material Bundle",
+  "purpose": "Scenario-bearing material bundle for the first weekend pilot loop.",
+  "first_target": "scenario-included material -> internal read -> line seeds -> selective external comparison -> synthesis report -> supervisor decision -> internal return",
+  "live_bundle_selection_ref": "runtime/contracts/vectorfl_paper_weekend_live_bundle_selection_v0.json",
+  "live_external_target_ref": "runtime/contracts/vectorfl_paper_weekend_live_external_comparison_target_v0.json",
+  "materials": [
+    {
+      "material_id": "conversation_bundle_current_turn",
+      "source_type": "conversation_bundle",
+      "role": "primary scenario-bearing reasoning flow",
+      "why_it_matters": "The conversation carries the pressure, correction, and operating-philosophy formation directly."
+    },
+    {
+      "material_id": "weekend_pilot_scenario_v0",
+      "source_type": "spec",
+      "path": "docs/specs/vectorfl_paper_weekend_pilot_scenario_v0.md",
+      "role": "pilot target lock",
+      "why_it_matters": "Defines the first loop and the minimum definition of done."
+    },
+    {
+      "material_id": "operating_cell_schema_v0",
+      "source_type": "contract",
+      "path": "docs/contracts/vectorfl_paper_operating_cell_schema_v0.md",
+      "role": "cell structure lock",
+      "why_it_matters": "Prevents team labels from drifting back into vague org metaphors."
+    },
+    {
+      "material_id": "conversation_to_line_procedure_v0",
+      "source_type": "contract",
+      "path": "docs/contracts/vectorfl_paper_conversation_to_line_procedure_v0.md",
+      "role": "line extraction procedure",
+      "why_it_matters": "Turns scenario-bearing conversation into reusable line seeds."
+    },
+    {
+      "material_id": "paperclip_absorption_overlay_v1",
+      "source_type": "review",
+      "path": "docs/reviews/paperclip_absorption_overlay_v1.md",
+      "role": "control-plane reference",
+      "why_it_matters": "Keeps Paperclip as a structural reference rather than a UI imitation target."
+    },
+    {
+      "material_id": "vectorfl_host_coupled_maturation_strategy_v0",
+      "source_type": "review",
+      "path": "docs/reviews/vectorfl_host_coupled_maturation_strategy_v0.md",
+      "role": "maturation strategy reference",
+      "why_it_matters": "Anchors the internal-first and maturation-oriented reading posture."
+    },
+    {
+      "material_id": "human_language_work_surface_readiness_reread_v0",
+      "source_type": "report",
+      "path": "docs/reports/human_language_work_surface_readiness_reread_v0.md",
+      "role": "supervision language reference",
+      "why_it_matters": "Supports the requirement that internal output must rise as human-readable supervision language."
+    }
+  ],
+  "expected_outputs": [
+    "internal_read_output",
+    "external_resource_output",
+    "synthesis_output",
+    "supervisor_report"
+  ],
+  "recommended_live_materials": [
+    "vectorfl_host_coupled_maturation_strategy_v0",
+    "human_language_work_surface_readiness_reread_v0",
+    "vectorfl_paper_operating_brief_lock_v0",
+    "vectorfl_paper_surface_as_reading_organs_lock_v0",
+    "paperclip_absorption_overlay_v1",
+    "paperclip_to_vectorfl_overlay_requirements_v0",
+    "conversation_bundle_current_turn"
+  ]
+}

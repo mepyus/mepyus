@@ -1,0 +1,1189 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "para_001",
+    "end_ref": "para_002",
+    "unit_type": "paragraph",
+    "text_excerpt": "별첨 91. 클로드 코드 소스 코드 분석서 분석 대상: claude code source code (2026-03-31)\n분석 일자: 2026-04-01\n총 소스 파일: 약 1,884개 (TypeScript + React)",
+    "char_count": 124,
+    "source_segment_ids": [
+      "seg_001",
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "para_003",
+    "end_ref": "para_004",
+    "unit_type": "paragraph",
+    "text_excerpt": "Anthropic의 Claude Code 전체 소스 코드가 노출되었습니다. 본 장에서는 해당 소스 코드에 대한 심층 분석 내용을 공유합니다. 다만, 소스 코드 분석서임에도 불구하고 유출된 소스 코드는 단 한 줄도 직접 공개하지 않습니다. 대신 전체 구조, 기능, 동작 흐름을 중심으로 분석을 진행했습니다. 소스 코드 분석서 공유에 대한 공정성 논란의 여지가 있을 수 있으나, Claude Cod",
+    "char_count": 552,
+    "source_segment_ids": [
+      "seg_003",
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "para_005",
+    "end_ref": "para_006",
+    "unit_type": "paragraph",
+    "text_excerpt": "1. Claude Code란 무엇인가\nClaude Code는 Anthropic이 만든 공식 CLI(터미널 명령줄) 도구다. 사용자가 터미널에서 Claude AI와 대화하면서 코드를 읽고, 수정하고, 실행할 수 있게 해준다. 단순한 챗봇이 아니라, 파일을 직접 편집하고, 셸 명령을 실행하고, 웹을 검색하고, 외부 서비스와 연동하는 \"AI 소프트웨어 엔지니어\"에 가깝다. 비유하자면, 일반적인 A",
+    "char_count": 396,
+    "source_segment_ids": [
+      "seg_005",
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "para_007",
+    "end_ref": "para_008",
+    "unit_type": "paragraph",
+    "text_excerpt": "기술적으로는 TypeScript로 작성되었고, 터미널 UI는 React 기반의 TUI(Terminal User Interface) 프레임워크인 Ink를 사용한다. 상태 관리는 Zustand 라이브러리를 채택했으며, 빌드 시스템은 bun을 사용해서 사용하지 않는 코드를 자동으로 제거(tree-shaking)한다. 2. 전체 구조를 한눈에 보기\nClaude Code의 동작은 크게 네 단계로 요약",
+    "char_count": 279,
+    "source_segment_ids": [
+      "seg_007",
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "para_009",
+    "end_ref": "para_009",
+    "unit_type": "paragraph",
+    "text_excerpt": "+---------------------+\n  |   User types in     |\n  |   the terminal      |\n  +---------+-----------+\n            |\n            v\n  +---------------------+     Phase 1: STARTUP\n  |     main.tsx        |     - Auth (OAuth",
+    "char_count": 1568,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "para_010",
+    "end_ref": "para_011",
+    "unit_type": "paragraph",
+    "text_excerpt": "둘째, 대화 루프. 사용자가 메시지를 입력하면, 그 메시지를 Claude API에 보내고, 스트리밍으로 응답을 받는다. 응답 중에 \"파일을 읽어라\", \"명령을 실행해라\" 같은 도구 사용 요청이 포함되어 있으면, 해당 도구를 실행하고 결과를 다시 API에 보낸다. 이 과정이 더 이상 도구를 쓸 필요가 없을 때까지 반복된다. 셋째, 도구 실행. 파일 읽기, 파일 수정, 셸 명령 실행, 웹 검색 ",
+    "char_count": 297,
+    "source_segment_ids": [
+      "seg_010",
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "para_012",
+    "end_ref": "para_013",
+    "unit_type": "paragraph",
+    "text_excerpt": "넷째, 결과 표시. 터미널에 대화 내용, 도구 실행 결과, 파일 변경 사항 등을 보기 좋게 렌더링한다. 이 네 단계의 핵심은 2단계와 3단계 사이의 루프다. 사용자가 \"이 버그를 고쳐줘\"라고 한 번 입력하면, Claude Code는 내부적으로 파일을 읽고(도구 실행) → AI가 분석하고 → 파일을 수정하고(도구 실행) → AI가 검증하고 → 테스트를 실행하고(도구 실행) → 결과를 확인하는 ",
+    "char_count": 306,
+    "source_segment_ids": [
+      "seg_012",
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "para_014",
+    "end_ref": "para_015",
+    "unit_type": "paragraph",
+    "text_excerpt": "3. 실행 모드\nClaude Code는 하나의 프로그램이지만, 상황에 따라 여러 모드로 동작한다. 이것은 마치 하나의 자동차가 도로에서는 일반 모드, 오프로드에서는 4WD 모드, 주차할 때는 저속 모드로 전환되는 것과 같다. 핵심 엔진(query.ts)은 동일하지만, 입력과 출력을 처리하는 방식이 달라진다. +------------------+\n                        | ",
+    "char_count": 944,
+    "source_segment_ids": [
+      "seg_014",
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "para_016",
+    "end_ref": "para_017",
+    "unit_type": "paragraph",
+    "text_excerpt": "헤드리스 모드는 UI 없이 프로그래밍 방식으로 실행되는 모드다. Agent SDK나 파이프라인에서 Claude Code를 사용할 때 이 모드가 쓰인다. QueryEngine이라는 클래스가 이 모드의 핵심이며, 쿼리 루프를 감싸서 외부 프로그램이 쉽게 호출할 수 있게 해준다. 코디네이터 모드는 하나의 \"리더\" 에이전트가 여러 \"워커\" 에이전트를 동시에 관리하는 멀티에이전트 모드다. 리더가 작업",
+    "char_count": 271,
+    "source_segment_ids": [
+      "seg_016",
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "para_018",
+    "end_ref": "para_019",
+    "unit_type": "paragraph",
+    "text_excerpt": "브리지 모드는 로컬 터미널의 Claude Code를 클라우드의 claude.ai 웹 인터페이스와 연결하는 모드다. 웹에서 입력한 명령이 로컬 환경에서 실행되고, 결과가 다시 웹으로 전송된다. 어시스턴트 모드(Kairos)는 상시 대기하는 프로액티브 어시스턴트 모드이고, 데몬 모드는 백그라운드에서 실행되는 모드, 뷰어 모드는 원격 세션을 읽기 전용으로 관찰하는 모드다.",
+    "char_count": 206,
+    "source_segment_ids": [
+      "seg_018",
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "para_020",
+    "end_ref": "para_021",
+    "unit_type": "paragraph",
+    "text_excerpt": "어떤 모드를 사용하든 내부의 핵심 엔진은 동일하다. 차이점은 \"사용자 입력을 어디서 받느냐\"(터미널 키보드? SDK 호출? 웹 인터페이스?)와 \"결과를 어디에 보여주느냐\"(터미널 UI? JSON 스트림? 웹 페이지?)에 있다. 이렇게 입출력 레이어를 분리한 덕분에, 하나의 코드베이스로 다양한 환경을 지원할 수 있다. 4. 시작과 초기화 과정\n4.1 main.tsx — 모든 것의 출발점\nmai",
+    "char_count": 478,
+    "source_segment_ids": [
+      "seg_020",
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "para_022",
+    "end_ref": "para_023",
+    "unit_type": "paragraph",
+    "text_excerpt": "시작 과정은 여섯 단계로 나뉜다. main.tsx startup sequence\n  =========================",
+    "char_count": 72,
+    "source_segment_ids": [
+      "seg_022",
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "para_024",
+    "end_ref": "para_024",
+    "unit_type": "paragraph",
+    "text_excerpt": "[1] Parallel I/O prefetch            (saves ~65ms)\n      |-- MDM subprocess read\n      |-- macOS Keychain prefetch\n      |                                   These run WHILE\n      v                                   heavy",
+    "char_count": 1376,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "para_025",
+    "end_ref": "para_026",
+    "unit_type": "paragraph",
+    "text_excerpt": "2단계: 조건부 모듈 로딩. 코디네이터 모드, 어시스턴트 모드 같은 선택적 기능들은 해당 기능이 활성화되었을 때만 관련 코드를 불러온다. bun 빌드 시스템의 \"피처 게이트\"라는 메커니즘을 사용하는데, 비활성화된 기능의 코드는 빌드 결과물에서 아예 제거된다. 3단계: 설정 조기 로딩. CLI 인수에서 설정 파일 경로를 먼저 파싱해서, 이후 모든 로직에서 올바른 설정을 사용할 수 있게 한다.",
+    "char_count": 219,
+    "source_segment_ids": [
+      "seg_025",
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "para_027",
+    "end_ref": "para_028",
+    "unit_type": "paragraph",
+    "text_excerpt": "4단계: 인증. 다섯 가지 인증 방식을 우선순위에 따라 시도한다. 5단계: 모델 해석. 어떤 AI 모델을 사용할지 결정한다. 사용자가 명시적으로 지정한 모델이 있으면 그것을 쓰고, 없으면 구독 등급에 따라 기본 모델이 선택된다.",
+    "char_count": 127,
+    "source_segment_ids": [
+      "seg_027",
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "para_029",
+    "end_ref": "para_030",
+    "unit_type": "paragraph",
+    "text_excerpt": "6단계: 초기 상태 구성 후 REPL 실행. 모든 준비가 끝나면 초기 상태 객체를 만들고, 선택된 모드에 따라 REPL을 실행하거나 헤드리스 모드로 진입한다. 4.2 컨텍스트 수집\n모든 대화에는 두 가지 컨텍스트가 주입된다.",
+    "char_count": 125,
+    "source_segment_ids": [
+      "seg_029",
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "para_031",
+    "end_ref": "para_032",
+    "unit_type": "paragraph",
+    "text_excerpt": "Context injection (memoized for session lifetime)\n  ================================================== System Context                    User Context\n  +--------------------------+      +--------------------------+\n  | G",
+    "char_count": 971,
+    "source_segment_ids": [
+      "seg_031",
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "para_033",
+    "end_ref": "para_034",
+    "unit_type": "paragraph",
+    "text_excerpt": "사용자 컨텍스트는 프로젝트의 CLAUDE.md 파일들과 오늘 날짜를 포함한다. CLAUDE.md는 프로젝트별 지침 파일로, Claude Code가 해당 프로젝트에서 어떻게 동작해야 하는지를 담고 있다. 컨텍스트가 중요한 이유는, AI가 \"지금 어떤 프로젝트에서 작업하고 있는지\"를 알아야 적절한 도움을 줄 수 있기 때문이다. 예를 들어 Git 상태를 알면 \"어떤 파일이 변경되었는지\"를 파악해서",
+    "char_count": 297,
+    "source_segment_ids": [
+      "seg_033",
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "para_035",
+    "end_ref": "para_036",
+    "unit_type": "paragraph",
+    "text_excerpt": "5. 쿼리 루프 — 핵심 엔진\n5.1 기본 구조\nquery.ts(약 68KB)는 Claude Code의 심장이다. 다른 모든 시스템(도구, 권한, 훅, 상태 관리 등)은 이 파일을 중심으로 동작한다. \"비동기 제너레이터\"라는 패턴을 사용하는데, 이를 이해하기 위해 두 가지 방식을 비교해보자. 일반적인 방식은 레스토랑에서 모든 음식이 준비될 때까지 기다렸다가 한꺼번에 서빙하는 것과 같다. 제너",
+    "char_count": 345,
+    "source_segment_ids": [
+      "seg_035",
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "para_037",
+    "end_ref": "para_038",
+    "unit_type": "paragraph",
+    "text_excerpt": "5.2 턴(Turn)의 처리 흐름\n쿼리 루프는 무한 반복문으로 구성되어 있으며, 매 반복(턴)마다 다음 과정을 거친다. Query Loop: one turn\n  =====================",
+    "char_count": 111,
+    "source_segment_ids": [
+      "seg_037",
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "para_039",
+    "end_ref": "para_039",
+    "unit_type": "paragraph",
+    "text_excerpt": "+--[1. Message Preprocessing]-------------------------------+\n  |                                                           |\n  |  Snip Compact -----> remove old messages entirely         |\n  |  Microcompact -----> shrin",
+    "char_count": 3196,
+    "source_segment_ids": [
+      "seg_039"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "para_040",
+    "end_ref": "para_041",
+    "unit_type": "paragraph",
+    "text_excerpt": "2단계: API 호출. 전처리된 메시지, 시스템 프롬프트, 사용자 컨텍스트, 도구 스키마를 Claude API에 보낸다. 응답은 스트리밍으로 도착하며, 텍스트 조각이 도착할 때마다 즉시 사용자에게 표시된다. 3단계: 에러 보류와 복구. 복구 가능한 에러는 사용자에게 바로 보여주지 않고 일단 \"보류(withholding)\"한다. 413 에러의 경우 먼저 컨텍스트 축소를 시도하고, 그래도 안 되",
+    "char_count": 315,
+    "source_segment_ids": [
+      "seg_040",
+      "seg_041"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "para_042",
+    "end_ref": "para_043",
+    "unit_type": "paragraph",
+    "text_excerpt": "4단계: 도구 실행. 동시에 실행해도 안전한 도구들은 최대 10개까지 병렬로, 안전하지 않은 도구는 하나씩 순차적으로 실행한다. 결과가 너무 크면 디스크 파일로 저장하고 참조만 넘긴다. 5단계: 후처리. Stop Hook을 실행하고, 예산과 턴 제한을 확인한다. 도구 사용이 있었으면 다음 턴으로, 없으면 루프를 종료한다.",
+    "char_count": 180,
+    "source_segment_ids": [
+      "seg_042",
+      "seg_043"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "para_044",
+    "end_ref": "para_045",
+    "unit_type": "paragraph",
+    "text_excerpt": "구체적인 예시로 이해하기. 사용자가 \"auth.ts의 버그를 고쳐줘\"라고 입력하면, 실제로 이런 일이 벌어진다. Example: \"Fix the bug in auth.ts\"\n  ====================================",
+    "char_count": 135,
+    "source_segment_ids": [
+      "seg_044",
+      "seg_045"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "para_046",
+    "end_ref": "para_047",
+    "unit_type": "paragraph",
+    "text_excerpt": "Turn 1:  AI: \"Let me read the file first.\"\n           --> tool_use: FileRead(\"auth.ts\")\n           --> result: [file contents returned] Turn 2:  AI: \"I see a null check missing on line 42. Let me fix it.\"\n           --> ",
+    "char_count": 335,
+    "source_segment_ids": [
+      "seg_046",
+      "seg_047"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "para_048",
+    "end_ref": "para_049",
+    "unit_type": "paragraph",
+    "text_excerpt": "Turn 3:  AI: \"Let me verify the fix by running tests.\"\n           --> tool_use: Bash(\"npm test -- auth.test.ts\")\n           --> result: \"All 12 tests passed\" Turn 4:  AI: \"Done! I fixed the null check on line 42. The iss",
+    "char_count": 476,
+    "source_segment_ids": [
+      "seg_048",
+      "seg_049"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "para_050",
+    "end_ref": "para_051",
+    "unit_type": "paragraph",
+    "text_excerpt": "6. QueryEngine — SDK용 래퍼\nQueryEngine은 query.ts의 쿼리 루프를 외부 프로그램이 쉽게 사용할 수 있게 감싼 클래스다. External Program (Agent SDK, etc.)\n        |\n        v\n  +--[QueryEngine]----------------------------------+\n  |                       ",
+    "char_count": 1512,
+    "source_segment_ids": [
+      "seg_050",
+      "seg_051"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "para_052",
+    "end_ref": "para_053",
+    "unit_type": "paragraph",
+    "text_excerpt": "7. 도구(Tool) 시스템\n7.1 도구란 무엇인가\n\"도구\"는 Claude가 외부 세계와 상호작용하기 위한 수단이다. 이것은 Claude Code에서 가장 중요한 개념이다. Claude AI는 그 자체로는 텍스트만 생성할 수 있다. 파일을 읽거나, 코드를 실행하거나, 인터넷을 검색하는 것은 불가능하다. 그래서 Claude Code가 \"다리\" 역할을 한다. AI가 \"이 파일을 읽어야겠다\"고 판",
+    "char_count": 357,
+    "source_segment_ids": [
+      "seg_052",
+      "seg_053"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "para_054",
+    "end_ref": "para_055",
+    "unit_type": "paragraph",
+    "text_excerpt": "이런 구조 덕분에 AI의 능력은 \"어떤 도구가 제공되느냐\"에 따라 확장된다. 45개 이상의 내장 도구가 있으며, MCP(Model Context Protocol)를 통해 GitHub, Slack, 데이터베이스 같은 외부 도구도 추가할 수 있다. 7.2 도구의 공통 구조\n모든 도구는 동일한 인터페이스를 따른다.",
+    "char_count": 173,
+    "source_segment_ids": [
+      "seg_054",
+      "seg_055"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "para_056",
+    "end_ref": "para_056",
+    "unit_type": "paragraph",
+    "text_excerpt": "Every Tool has:\n  +-----------------------------------------------------------------+\n  |  name          \"BashTool\", \"FileEditTool\", ...                  |\n  |  inputSchema   Zod schema defining required/optional inputs ",
+    "char_count": 1034,
+    "source_segment_ids": [
+      "seg_056"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "para_057",
+    "end_ref": "para_058",
+    "unit_type": "paragraph",
+    "text_excerpt": "Tool Assembly Pipeline\n  ====================== getAllBaseTools()                     44+ tools registered\n        |\n        v\n  Feature gate filter                  Remove disabled features\n        |                    ",
+    "char_count": 881,
+    "source_segment_ids": [
+      "seg_057",
+      "seg_058"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "para_059",
+    "end_ref": "para_060",
+    "unit_type": "paragraph",
+    "text_excerpt": "7.4 주요 도구 설명\n  Tool Categories\n  =============== File Operations     Shell          Search          Web\n  +-------------+  +---------+   +-----------+   +----------+\n  | FileRead    |  | Bash    |   | Grep      |   | Web",
+    "char_count": 475,
+    "source_segment_ids": [
+      "seg_059",
+      "seg_060"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "para_061",
+    "end_ref": "para_061",
+    "unit_type": "paragraph",
+    "text_excerpt": "Agent/Team          Planning        Tasks           Skill\n  +-------------+  +-----------+   +----------+   +----------+\n  | Agent       |  | EnterPlan |   | TaskCreate|  | Skill    |\n  | SendMessage |  | ExitPlan  |   |",
+    "char_count": 734,
+    "source_segment_ids": [
+      "seg_061"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "para_062",
+    "end_ref": "para_063",
+    "unit_type": "paragraph",
+    "text_excerpt": "AgentTool — \"다른 AI를 고용하는\" 도구다. 복잡한 작업을 만나면, 메인 AI가 서브에이전트(작은 AI 일꾼)를 만들어서 부분 작업을 위임한다. 서브에이전트는 다섯 가지 방식으로 실행될 수 있다: 같은 프로세스에서 즉시 실행, 백그라운드에서 비동기 실행, tmux 패널에 별도 팀메이트로 스폰, 격리된 Git 워크트리에서 안전하게 실행, 또는 클라우드 환경에서 원격 실행. 서브에이전",
+    "char_count": 334,
+    "source_segment_ids": [
+      "seg_062",
+      "seg_063"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "para_064",
+    "end_ref": "para_065",
+    "unit_type": "paragraph",
+    "text_excerpt": "GrepTool — ripgrep 기반 텍스트 검색. 세 가지 출력 모드(content, files_with_matches, count)와 기본 250개 결과 제한을 지원한다. 8. 도구 실행 오케스트레이션\n8.1 실행 파이프라인 10단계\n하나의 도구가 실행되기까지 10개의 단계를 거친다. 이렇게 단계가 많은 이유는 안전성 때문이다. AI가 \"rm -rf /\"를 실행하려 하면, 중간 단계에서",
+    "char_count": 276,
+    "source_segment_ids": [
+      "seg_064",
+      "seg_065"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "para_066",
+    "end_ref": "para_067",
+    "unit_type": "paragraph",
+    "text_excerpt": "Tool Execution Pipeline (for each tool_use block)\n  ================================================== [1] Lookup tool by name ---> not found? try aliases\n                |\n  [2] Check abort signal ---> user pressed Ctrl",
+    "char_count": 812,
+    "source_segment_ids": [
+      "seg_066",
+      "seg_067"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "para_068",
+    "end_ref": "para_069",
+    "unit_type": "paragraph",
+    "text_excerpt": "Tool Concurrency: Partitioning Algorithm\n  ========================================= Input:  [Read] [Grep] [Glob] [Edit] [Read] [Read] [Bash]\n           safe   safe   safe  UNSAFE  safe   safe  UNSAFE",
+    "char_count": 200,
+    "source_segment_ids": [
+      "seg_068",
+      "seg_069"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "para_070",
+    "end_ref": "para_071",
+    "unit_type": "paragraph",
+    "text_excerpt": "Batch 1: [Read, Grep, Glob]  --> parallel (up to 10)\n  Batch 2: [Edit]              --> serial (alone)\n  Batch 3: [Read, Read]        --> parallel\n  Batch 4: [Bash]              --> serial (alone)\n연속된 동시성 안전 도구들은 하나의 배치로",
+    "char_count": 446,
+    "source_segment_ids": [
+      "seg_070",
+      "seg_071"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "para_072",
+    "end_ref": "para_073",
+    "unit_type": "paragraph",
+    "text_excerpt": "8.3 스트리밍 도구 실행기\nAPI 응답이 아직 스트리밍 중일 때부터 이미 도착한 도구 사용 블록의 실행을 시작하는 최적화가 있다. Streaming Tool Executor (overlaps API streaming + execution)\n  =============================================================",
+    "char_count": 198,
+    "source_segment_ids": [
+      "seg_072",
+      "seg_073"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "para_074",
+    "end_ref": "para_075",
+    "unit_type": "paragraph",
+    "text_excerpt": "Time ---> API stream:   [...text...][tool_use A][...text...][tool_use B][done]\n                                |                        |\n  Execution:              start A                   start B\n                      ",
+    "char_count": 450,
+    "source_segment_ids": [
+      "seg_074",
+      "seg_075"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "para_076",
+    "end_ref": "para_077",
+    "unit_type": "paragraph",
+    "text_excerpt": "9. 명령어(Command) 시스템\n명령어는 사용자가 슬래시(/)로 시작하는 입력을 통해 호출하는 기능이다. 도구(Tool)가 \"AI가 사용하는 기능\"이라면, 명령어(Command)는 \"사용자가 직접 사용하는 기능\"이다. 80개 이상의 명령어가 있다. Command Types\n  =============",
+    "char_count": 170,
+    "source_segment_ids": [
+      "seg_076",
+      "seg_077"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "para_078",
+    "end_ref": "para_079",
+    "unit_type": "paragraph",
+    "text_excerpt": "/commit, /review ...       /settings, /doctor ...    /help ...\n  +-------------------+      +-------------------+     +-----------+\n  | Prompt Command    |      | Local Command     |     | Slash Cmd |\n  | Expands to a   ",
+    "char_count": 822,
+    "source_segment_ids": [
+      "seg_078",
+      "seg_079"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "para_080",
+    "end_ref": "para_081",
+    "unit_type": "paragraph",
+    "text_excerpt": "10. 태스크(Task) 시스템\n태스크는 백그라운드에서 실행되는 비동기 작업을 관리하는 시스템이다. \"지금 당장 결과가 필요하지 않은 작업\"을 백그라운드로 보내서, 사용자가 다른 일을 하는 동안 처리되게 하는 것이 목적이다. 예를 들어 대규모 테스트 실행이나 서브에이전트의 독립적인 조사 작업이 여기에 해당한다. Task Lifecycle\n  ==============",
+    "char_count": 206,
+    "source_segment_ids": [
+      "seg_080",
+      "seg_081"
+    ]
+  },
+  {
+    "unit_id": "unit_044",
+    "start_ref": "para_082",
+    "end_ref": "para_083",
+    "unit_type": "paragraph",
+    "text_excerpt": "Spawn                  Register               Run in background\n  (BashTool async,  -->  AppState.tasks[id]  --> output -> disk file\n   AgentTool, etc.)      status: \"running\"       progress reported\n                    ",
+    "char_count": 1024,
+    "source_segment_ids": [
+      "seg_082",
+      "seg_083"
+    ]
+  },
+  {
+    "unit_id": "unit_045",
+    "start_ref": "para_084",
+    "end_ref": "para_085",
+    "unit_type": "paragraph",
+    "text_excerpt": "11. 상태 관리\n11.1 AppState — 글로벌 상태\nClaude Code의 모든 글로벌 상태는 AppState라는 하나의 큰 타입으로 정의된다. \"상태(state)\"란 프로그램이 현재 기억하고 있는 모든 정보를 말한다 — 어떤 모델을 쓰고 있는지, 어떤 태스크가 실행 중인지, 어떤 플러그인이 활성화되어 있는지 등. \"불변(Immutable)\" 제약이 적용되어 있다. 이는 상태를 직접 ",
+    "char_count": 373,
+    "source_segment_ids": [
+      "seg_084",
+      "seg_085"
+    ]
+  },
+  {
+    "unit_id": "unit_046",
+    "start_ref": "para_086",
+    "end_ref": "para_087",
+    "unit_type": "paragraph",
+    "text_excerpt": "AppState (DeepImmutable)\n  ======================== +-- Settings & Config ----+  +-- UI State -----------+\n  |  settings               |  |  expandedView         |\n  |  mainLoopModel          |  |  statusLineText       |",
+    "char_count": 336,
+    "source_segment_ids": [
+      "seg_086",
+      "seg_087"
+    ]
+  },
+  {
+    "unit_id": "unit_047",
+    "start_ref": "para_088",
+    "end_ref": "para_089",
+    "unit_type": "paragraph",
+    "text_excerpt": "+-- Agent / Team ---------+  +-- Tasks ---------------+\n  |  agentNameRegistry      |  |  tasks (mutable!)      |\n  |  teamContext            |  |  foregroundedTaskId     |\n  |  viewingAgentTaskId     |  |               ",
+    "char_count": 634,
+    "source_segment_ids": [
+      "seg_088",
+      "seg_089"
+    ]
+  },
+  {
+    "unit_id": "unit_048",
+    "start_ref": "para_090",
+    "end_ref": "para_091",
+    "unit_type": "paragraph",
+    "text_excerpt": "+-- Bridge / Remote -----+   +-- Feature Flags -------+\n  |  replBridgeConnected   |   |  kairosEnabled         |\n  |  remoteSessionUrl      |   |  fastMode              |\n  |  connectionStatus      |   |  effortValue   ",
+    "char_count": 568,
+    "source_segment_ids": [
+      "seg_090",
+      "seg_091"
+    ]
+  },
+  {
+    "unit_id": "unit_049",
+    "start_ref": "para_092",
+    "end_ref": "para_093",
+    "unit_type": "paragraph",
+    "text_excerpt": "12.1 API 클라이언트와 재시도\nAPI 클라이언트는 Claude API와의 모든 통신을 담당하며, 약 3,000줄에 달한다. 주요 역할은 세 가지다. 베타 기능 조립은 사용하는 모델의 능력에 따라 thinking, tool_search 같은 기능을 동적으로 활성화한다. 프롬프트 캐싱은 시스템 프롬프트와 도구 스키마를 1시간 동안 캐시하여 API 비용을 절감한다. 도구 스키마 정규화는 내부",
+    "char_count": 308,
+    "source_segment_ids": [
+      "seg_092",
+      "seg_093"
+    ]
+  },
+  {
+    "unit_id": "unit_050",
+    "start_ref": "para_094",
+    "end_ref": "para_095",
+    "unit_type": "paragraph",
+    "text_excerpt": "API Retry Strategy\n  ================== Error        Action\n  -----        ------\n  429          retry-after < 500ms? wait & retry (preserve cache)\n  (rate limit) otherwise: disable fast mode, switch to standard model",
+    "char_count": 217,
+    "source_segment_ids": [
+      "seg_094",
+      "seg_095"
+    ]
+  },
+  {
+    "unit_id": "unit_051",
+    "start_ref": "para_096",
+    "end_ref": "para_097",
+    "unit_type": "paragraph",
+    "text_excerpt": "529          3 consecutive? switch to fallback model\n  (overloaded) non-foreground tasks: give up immediately 401          force-refresh OAuth token, recreate client\n  (auth fail)",
+    "char_count": 179,
+    "source_segment_ids": [
+      "seg_096",
+      "seg_097"
+    ]
+  },
+  {
+    "unit_id": "unit_052",
+    "start_ref": "para_098",
+    "end_ref": "para_099",
+    "unit_type": "paragraph",
+    "text_excerpt": "ECONNRESET   disable keep-alive, recreate client\n  EPIPE Persistent   retry forever with exponential backoff\n  mode (ANT)   up to 6 hours total (unattended sessions only)\n12.2 자동 압축 서비스\n대화가 길어지면 컨텍스트 윈도우(AI가 한 번에 기억할 수 있",
+    "char_count": 389,
+    "source_segment_ids": [
+      "seg_098",
+      "seg_099"
+    ]
+  },
+  {
+    "unit_id": "unit_053",
+    "start_ref": "para_100",
+    "end_ref": "para_101",
+    "unit_type": "paragraph",
+    "text_excerpt": "Auto-Compact Flow\n  ================= Token usage > threshold?\n        |\n        v\n  Circuit breaker check (3 consecutive failures = stop trying)\n        |\n        v\n  Try session memory compact first (preserves granular",
+    "char_count": 802,
+    "source_segment_ids": [
+      "seg_100",
+      "seg_101"
+    ]
+  },
+  {
+    "unit_id": "unit_054",
+    "start_ref": "para_102",
+    "end_ref": "para_103",
+    "unit_type": "paragraph",
+    "text_excerpt": "MCP Server Connection States\n  ============================= Connected ----> Failed -----> NeedsAuth\n      ^             |               |\n      |             v               v\n      +------- Pending <-----------+\n      ",
+    "char_count": 284,
+    "source_segment_ids": [
+      "seg_102",
+      "seg_103"
+    ]
+  },
+  {
+    "unit_id": "unit_055",
+    "start_ref": "para_104",
+    "end_ref": "para_105",
+    "unit_type": "paragraph",
+    "text_excerpt": "Transport Types:\n    Stdio ------> spawn local process\n    SSE/HTTP ---> connect to remote server\n    WebSocket --> bidirectional communication\n    SDK --------> built-in server\n    Claude.ai --> proxy relay\n12.4 비용 추적 비",
+    "char_count": 318,
+    "source_segment_ids": [
+      "seg_104",
+      "seg_105"
+    ]
+  },
+  {
+    "unit_id": "unit_056",
+    "start_ref": "para_106",
+    "end_ref": "para_107",
+    "unit_type": "paragraph",
+    "text_excerpt": "13. 권한(Permission) 시스템\n13.1 왜 권한 시스템이 필요한가\nClaude Code는 사용자 컴퓨터에서 파일을 수정하고 명령을 실행할 수 있다. 이는 강력하지만 위험하다. AI가 잘못된 판단으로 중요한 파일을 삭제하거나, 의도치 않은 명령을 실행할 수 있기 때문이다. 권한 시스템은 \"어떤 도구를, 어떤 입력으로, 실행해도 되는가\"를 판단하는 게이트키퍼 역할을 한다. 이것은 건물",
+    "char_count": 332,
+    "source_segment_ids": [
+      "seg_106",
+      "seg_107"
+    ]
+  },
+  {
+    "unit_id": "unit_057",
+    "start_ref": "para_108",
+    "end_ref": "para_108",
+    "unit_type": "paragraph",
+    "text_excerpt": "Tool use request arrives\n        |\n  [1]   v\n  validateInput()            Is the input semantically valid?\n        |\n  [2]   v\n  checkPermissions()         Tool-specific rules\n        |                    (e.g. file path",
+    "char_count": 1078,
+    "source_segment_ids": [
+      "seg_108"
+    ]
+  },
+  {
+    "unit_id": "unit_058",
+    "start_ref": "para_109",
+    "end_ref": "para_110",
+    "unit_type": "paragraph",
+    "text_excerpt": "Rule sources (highest to lowest priority):\n    Local settings > Project settings > User settings > Flags > Policy\nDefault 모드는 읽기 전용 작업은 자동 승인하고, 위험한 작업은 사용자에게 확인한다. 예를 들어 파일 읽기는 바로 실행되지만, git push는 \"이 명령을 실행할까요?\"라고 물어본다.",
+    "char_count": 364,
+    "source_segment_ids": [
+      "seg_109",
+      "seg_110"
+    ]
+  },
+  {
+    "unit_id": "unit_059",
+    "start_ref": "para_111",
+    "end_ref": "para_112",
+    "unit_type": "paragraph",
+    "text_excerpt": "Plan 모드는 코드를 실제로 변경하지 않고, 읽기 전용 도구만 허용하는 \"계획 수립 전용\" 모드다. AI가 코드를 분석하고 계획을 세우지만, 실행은 사용자가 승인한 후에만 이루어진다. Bypass 모드는 모든 것을 자동 승인한다. 개발 환경에서 빠르게 작업할 때 사용하며, 프로덕션 환경에서는 사용하지 않아야 한다.",
+    "char_count": 177,
+    "source_segment_ids": [
+      "seg_111",
+      "seg_112"
+    ]
+  },
+  {
+    "unit_id": "unit_060",
+    "start_ref": "para_113",
+    "end_ref": "para_114",
+    "unit_type": "paragraph",
+    "text_excerpt": "14. 훅(Hook) 시스템\n훅은 특정 이벤트가 발생했을 때 자동으로 실행되는 사용자 정의 동작이다. 훅을 이해하려면 \"이벤트 리스너\"를 떠올리면 된다. 웹 페이지에서 버튼 클릭 이벤트에 함수를 등록하듯, Claude Code에서도 \"도구 실행 직전\", \"사용자 입력 시\", \"세션 시작 시\" 같은 이벤트에 사용자 정의 동작을 등록할 수 있다. 이를 통해 Claude Code의 동작을 커스터마",
+    "char_count": 358,
+    "source_segment_ids": [
+      "seg_113",
+      "seg_114"
+    ]
+  },
+  {
+    "unit_id": "unit_061",
+    "start_ref": "para_115",
+    "end_ref": "para_115",
+    "unit_type": "paragraph",
+    "text_excerpt": "SessionStart                                        Stop\n      |                                                |\n      v                                                v\n  [session begins]                               ",
+    "char_count": 1100,
+    "source_segment_ids": [
+      "seg_115"
+    ]
+  },
+  {
+    "unit_id": "unit_062",
+    "start_ref": "para_116",
+    "end_ref": "para_117",
+    "unit_type": "paragraph",
+    "text_excerpt": "Hook Response Controls:\n    continue: false  --> stop current operation\n    decision: block  --> deny the tool execution\n    updatedInput     --> modify tool input before execution\n    additionalContext --> inject extra ",
+    "char_count": 593,
+    "source_segment_ids": [
+      "seg_116",
+      "seg_117"
+    ]
+  },
+  {
+    "unit_id": "unit_063",
+    "start_ref": "para_118",
+    "end_ref": "para_119",
+    "unit_type": "paragraph",
+    "text_excerpt": "Tools vs Skills vs Plugins vs Commands\n  ======================================== Tool       Low-level, atomic action        \"Read this file\"\n             Used by AI automatically         \"Run this command\"",
+    "char_count": 206,
+    "source_segment_ids": [
+      "seg_118",
+      "seg_119"
+    ]
+  },
+  {
+    "unit_id": "unit_064",
+    "start_ref": "para_120",
+    "end_ref": "para_121",
+    "unit_type": "paragraph",
+    "text_excerpt": "Skill      High-level, reusable template   \"Review this code\"\n             Invoked by user as /command      \"Create a commit\" Plugin     Package of skills + hooks +     \"GitHub integration\"\n             MCP servers bundl",
+    "char_count": 255,
+    "source_segment_ids": [
+      "seg_120",
+      "seg_121"
+    ]
+  },
+  {
+    "unit_id": "unit_065",
+    "start_ref": "para_122",
+    "end_ref": "para_123",
+    "unit_type": "paragraph",
+    "text_excerpt": "Command    User-facing / shortcut          /help, /settings, /model\n             Can be prompt-type or UI-type\n  Skill System\n  ============ Disk-based skills                     Bundled skills\n  (user-created)          ",
+    "char_count": 253,
+    "source_segment_ids": [
+      "seg_122",
+      "seg_123"
+    ]
+  },
+  {
+    "unit_id": "unit_066",
+    "start_ref": "para_124",
+    "end_ref": "para_124",
+    "unit_type": "paragraph",
+    "text_excerpt": "~/.claude/skills/                     src/skills/bundled/\n  .claude/skills/                       registerBundledSkill()\n       |                                     |\n       v                                     v\n  +--",
+    "char_count": 887,
+    "source_segment_ids": [
+      "seg_124"
+    ]
+  },
+  {
+    "unit_id": "unit_067",
+    "start_ref": "para_125",
+    "end_ref": "para_126",
+    "unit_type": "paragraph",
+    "text_excerpt": "15.2 플러그인\n플러그인은 스킬보다 상위 개념으로, 스킬, 훅, MCP 서버를 하나의 패키지로 묶은 것이다. 스킬이 \"개별 기능\"이라면, 플러그인은 \"기능 모음집\"이다. 예를 들어 \"GitHub 통합\" 플러그인은 PR 리뷰 스킬, 자동 수정 스킬, GitHub MCP 서버를 하나로 묶어서 제공한다. Plugin = Skills + Hooks + MCP Servers (bundled toge",
+    "char_count": 285,
+    "source_segment_ids": [
+      "seg_125",
+      "seg_126"
+    ]
+  },
+  {
+    "unit_id": "unit_068",
+    "start_ref": "para_127",
+    "end_ref": "para_128",
+    "unit_type": "paragraph",
+    "text_excerpt": "BuiltinPlugin\n  +--------------------------------------------+\n  |  name: \"github-integration\"                |\n  |                                            |\n  |  skills:     [pr-review, autofix-pr, ...]  |\n  |  hooks",
+    "char_count": 648,
+    "source_segment_ids": [
+      "seg_127",
+      "seg_128"
+    ]
+  },
+  {
+    "unit_id": "unit_069",
+    "start_ref": "para_129",
+    "end_ref": "para_130",
+    "unit_type": "paragraph",
+    "text_excerpt": "16. UI 레이어 16.1 자체 제작 TUI 프레임워크 (Ink)\nClaude Code의 터미널 UI는 React를 기반으로 한 자체 제작 TUI 프레임워크를 사용한다. 왜 기존 터미널 라이브러리를 쓰지 않고 자체 제작했을까? React의 컴포넌트 모델(UI를 작은 조각으로 나누어 조합하는 방식)이 복잡한 터미널 UI에 매우 적합하기 때문이다. 메시지 목록, 도구 진행률, 파일 변경 미리보",
+    "char_count": 309,
+    "source_segment_ids": [
+      "seg_129",
+      "seg_130"
+    ]
+  },
+  {
+    "unit_id": "unit_070",
+    "start_ref": "para_131",
+    "end_ref": "para_132",
+    "unit_type": "paragraph",
+    "text_excerpt": "Ink TUI Rendering Pipeline\n  =========================== React component update\n        |\n        v\n  Reconciler calculates diff  (custom react-reconciler)\n        |\n        v\n  Yoga layout engine           (Flexbox for ",
+    "char_count": 673,
+    "source_segment_ids": [
+      "seg_131",
+      "seg_132"
+    ]
+  },
+  {
+    "unit_id": "unit_071",
+    "start_ref": "para_133",
+    "end_ref": "para_134",
+    "unit_type": "paragraph",
+    "text_excerpt": "Memory optimization:\n    CharPool ------> intern strings (one copy of \"hello\")\n    StylePool -----> intern ANSI codes + pre-serialized transitions\n    HyperlinkPool -> intern URLs\n    Dirty tracking > skip unchanged subt",
+    "char_count": 398,
+    "source_segment_ids": [
+      "seg_133",
+      "seg_134"
+    ]
+  },
+  {
+    "unit_id": "unit_072",
+    "start_ref": "para_135",
+    "end_ref": "para_136",
+    "unit_type": "paragraph",
+    "text_excerpt": "객체 풀링은 같은 문자열이나 스타일을 여러 번 사용할 때, 메모리에 하나만 저장하고 인덱스로 참조하는 기법이다. 터미널 화면에는 같은 색상, 같은 글자가 반복되므로 메모리를 크게 절약한다. 더티 추적은 변경된 부분만 다시 그리는 기법이다. 화면의 95%가 그대로인데 전체를 다시 그리면 낭비니까, 변경된 5%만 업데이트한다.",
+    "char_count": 181,
+    "source_segment_ids": [
+      "seg_135",
+      "seg_136"
+    ]
+  },
+  {
+    "unit_id": "unit_073",
+    "start_ref": "para_137",
+    "end_ref": "para_138",
+    "unit_type": "paragraph",
+    "text_excerpt": "프레임 조절은 업데이트 빈도를 제한하여 터미널이 느려지는 것을 방지한다. 16.2 화면 구성\n  REPL Screen Layout\n  ===================",
+    "char_count": 94,
+    "source_segment_ids": [
+      "seg_137",
+      "seg_138"
+    ]
+  },
+  {
+    "unit_id": "unit_074",
+    "start_ref": "para_139",
+    "end_ref": "para_139",
+    "unit_type": "paragraph",
+    "text_excerpt": "+---------------------------------------------------+\n  |  Logo Header (memoized, rarely re-renders)         |\n  +---------------------------------------------------+\n  |                                                  ",
+    "char_count": 1379,
+    "source_segment_ids": [
+      "seg_139"
+    ]
+  },
+  {
+    "unit_id": "unit_075",
+    "start_ref": "para_140",
+    "end_ref": "para_141",
+    "unit_type": "paragraph",
+    "text_excerpt": "Keybinding Contexts\n  ==================== Global:       Ctrl+C = interrupt,  Ctrl+D = exit,  Ctrl+T = tasks\n  Chat:         Enter = submit,  Up/Down = history\n  Autocomplete: Tab = accept,  Esc = dismiss,  Up/Down = nav",
+    "char_count": 268,
+    "source_segment_ids": [
+      "seg_140",
+      "seg_141"
+    ]
+  },
+  {
+    "unit_id": "unit_076",
+    "start_ref": "para_142",
+    "end_ref": "para_143",
+    "unit_type": "paragraph",
+    "text_excerpt": "Chord support:  Ctrl+K -> Ctrl+S  (two-key sequence)\n                  First key enters \"chord started\" state\n                  Second key completes the action Customizable via ~/.claude/keybindings.json\n17. 브리지(Bridge) ",
+    "char_count": 324,
+    "source_segment_ids": [
+      "seg_142",
+      "seg_143"
+    ]
+  },
+  {
+    "unit_id": "unit_077",
+    "start_ref": "para_144",
+    "end_ref": "para_145",
+    "unit_type": "paragraph",
+    "text_excerpt": "왜 브리지가 필요한가? claude.ai 웹 인터페이스에서 \"이 프로젝트의 테스트를 실행해줘\"라고 요청했을 때, 그 테스트는 사용자의 로컬 컴퓨터에서 실행되어야 한다(코드가 거기에 있으니까). 하지만 웹 브라우저에서 로컬 컴퓨터의 파일에 직접 접근할 수는 없다. 브리지가 이 간극을 메운다 — 클라우드에서 온 작업 요청을 받아서 로컬에서 실행하고, 결과를 다시 클라우드로 보낸다. Bridge ",
+    "char_count": 255,
+    "source_segment_ids": [
+      "seg_144",
+      "seg_145"
+    ]
+  },
+  {
+    "unit_id": "unit_078",
+    "start_ref": "para_146",
+    "end_ref": "para_146",
+    "unit_type": "paragraph",
+    "text_excerpt": "claude.ai (web)               Local Machine\n  +----------------+            +---------------------------+\n  |  User types    |            |  Bridge (bridgeMain.ts)   |\n  |  in browser    |            |                   ",
+    "char_count": 1110,
+    "source_segment_ids": [
+      "seg_146"
+    ]
+  },
+  {
+    "unit_id": "unit_079",
+    "start_ref": "para_147",
+    "end_ref": "para_148",
+    "unit_type": "paragraph",
+    "text_excerpt": "Multi-session: up to 32 parallel sessions\n  Dedup: BoundedUUIDSet (circular buffer, fixed memory) Token Refresh:\n    CCR v1: OAuth token, direct refresh\n    CCR v2: Session JWT (~5h55m), reconnect to server for new token",
+    "char_count": 270,
+    "source_segment_ids": [
+      "seg_147",
+      "seg_148"
+    ]
+  },
+  {
+    "unit_id": "unit_080",
+    "start_ref": "para_149",
+    "end_ref": "para_150",
+    "unit_type": "paragraph",
+    "text_excerpt": "Backoff:\n    Connection errors: 2s -> 120s (cap), give up after 10 min\n    General errors:    500ms -> 30s (cap)\n    Shutdown grace:    SIGTERM, then SIGKILL after 30s\n브리지의 핵심은 \"폴링 루프\"다. 환경을 등록한 후, 주기적으로 서버에 작업이 있는지 물어본다",
+    "char_count": 409,
+    "source_segment_ids": [
+      "seg_149",
+      "seg_150"
+    ]
+  },
+  {
+    "unit_id": "unit_081",
+    "start_ref": "para_151",
+    "end_ref": "para_152",
+    "unit_type": "paragraph",
+    "text_excerpt": "Remote Session WebSocket\n  ========================= wss://api.anthropic.com/v1/sessions/ws/{sessionId}/subscribe",
+    "char_count": 113,
+    "source_segment_ids": [
+      "seg_151",
+      "seg_152"
+    ]
+  },
+  {
+    "unit_id": "unit_082",
+    "start_ref": "para_153",
+    "end_ref": "para_154",
+    "unit_type": "paragraph",
+    "text_excerpt": "State Machine: closed ---(connect)---> connecting ---(onopen)---> connected\n    ^                                                    |\n    |                                                    |\n    +---------(close/error",
+    "char_count": 252,
+    "source_segment_ids": [
+      "seg_153",
+      "seg_154"
+    ]
+  },
+  {
+    "unit_id": "unit_083",
+    "start_ref": "para_155",
+    "end_ref": "para_156",
+    "unit_type": "paragraph",
+    "text_excerpt": "Reconnection:\n    - General disconnect: max 5 attempts, 2s delay\n    - Session not found (4001): 3 retries (transient during compaction)\n    - Auth failure (4003): no retry\n    - Ping/Pong every 30s to detect stale conne",
+    "char_count": 534,
+    "source_segment_ids": [
+      "seg_155",
+      "seg_156"
+    ]
+  },
+  {
+    "unit_id": "unit_084",
+    "start_ref": "para_157",
+    "end_ref": "para_158",
+    "unit_type": "paragraph",
+    "text_excerpt": "19. 코디네이터(Coordinator) 모드\n코디네이터 모드는 하나의 \"리더\" 에이전트가 여러 \"워커\" 에이전트를 관리하는 멀티에이전트 오케스트레이션 시스템이다. 비유하자면, 한 명의 시니어 개발자(리더)가 여러 주니어 개발자(워커)에게 작업을 분배하는 것과 같다. 시니어는 직접 코드를 작성하지 않고, 전체 구조를 파악하고 지시를 내리며 결과를 종합한다. 대규모 코드베이스에서 복잡한 리팩토",
+    "char_count": 303,
+    "source_segment_ids": [
+      "seg_157",
+      "seg_158"
+    ]
+  },
+  {
+    "unit_id": "unit_085",
+    "start_ref": "para_159",
+    "end_ref": "para_159",
+    "unit_type": "paragraph",
+    "text_excerpt": "+-------------------+\n                  |  LEADER (main)    |\n                  |  - AgentTool      |  Does NOT edit code directly.\n                  |  - SendMessage    |  Delegates everything.\n                  |  - Ta",
+    "char_count": 878,
+    "source_segment_ids": [
+      "seg_159"
+    ]
+  },
+  {
+    "unit_id": "unit_086",
+    "start_ref": "para_160",
+    "end_ref": "para_161",
+    "unit_type": "paragraph",
+    "text_excerpt": "Work Phases: [1] Research     Multiple workers in parallel\n      (parallel)   Each explores different files/angles\n          |\n  [2] Synthesis    Leader reads all results\n      (sequential) Leader MUST understand (no del",
+    "char_count": 594,
+    "source_segment_ids": [
+      "seg_160",
+      "seg_161"
+    ]
+  },
+  {
+    "unit_id": "unit_087",
+    "start_ref": "para_162",
+    "end_ref": "para_163",
+    "unit_type": "paragraph",
+    "text_excerpt": "종합 단계에서 중요한 규칙이 있다: 리더는 반드시 워커의 결과를 직접 이해해야 한다. \"워커가 알아서 했을 테니 넘어가자\"는 식의 위임은 금지된다. 이를 통해 리더가 전체 맥락을 놓치지 않고 올바른 결정을 내릴 수 있다. 20. 메모리(Memory) 시스템\n메모리 시스템은 대화가 끝나도 유지되는 영속적인 정보 저장소다. 일반적으로 AI와의 대화는 세션이 끝나면 사라진다. 다음 대화에서 \"지난",
+    "char_count": 384,
+    "source_segment_ids": [
+      "seg_162",
+      "seg_163"
+    ]
+  },
+  {
+    "unit_id": "unit_088",
+    "start_ref": "para_164",
+    "end_ref": "para_165",
+    "unit_type": "paragraph",
+    "text_excerpt": "Memory System Structure\n  ======================== ~/.claude/projects/{project-slug}/memory/\n  |\n  +-- MEMORY.md              (index file, max 200 lines / 25KB)\n  |   |\n  |   +-- \"- [User role](user_role.md) -- senior Go",
+    "char_count": 636,
+    "source_segment_ids": [
+      "seg_164",
+      "seg_165"
+    ]
+  },
+  {
+    "unit_id": "unit_089",
+    "start_ref": "para_166",
+    "end_ref": "para_167",
+    "unit_type": "paragraph",
+    "text_excerpt": "Memory Types: +----------+--------------------------------------------------+\n  | user     | Who the user is. Role, expertise, preferences.   |\n  |          | \"Deep Go expertise, new to React\"                |\n  +-------",
+    "char_count": 936,
+    "source_segment_ids": [
+      "seg_166",
+      "seg_167"
+    ]
+  },
+  {
+    "unit_id": "unit_090",
+    "start_ref": "para_168",
+    "end_ref": "para_169",
+    "unit_type": "paragraph",
+    "text_excerpt": "NOT saved: code patterns, architecture, git history,\n             debugging recipes, anything already in CLAUDE.md\n각 메모리 파일은 마크다운 형식이며, 상단 YAML 프론트매터로 이름, 설명, 유형을 명시한다. 단순히 규칙만 기록하는 게 아니라, \"왜(Why)\"와 \"어떻게 적용(How to apply)",
+    "char_count": 489,
+    "source_segment_ids": [
+      "seg_168",
+      "seg_169"
+    ]
+  },
+  {
+    "unit_id": "unit_091",
+    "start_ref": "para_170",
+    "end_ref": "para_171",
+    "unit_type": "paragraph",
+    "text_excerpt": "21.2 설정 소스 우선순위\n  Settings Priority (highest to lowest)\n  ====================================== [1] Local     .claude/settings.local.json    (editable)\n  [2] Project   .claude/settings.json          (editable)\n  [3] Use",
+    "char_count": 535,
+    "source_segment_ids": [
+      "seg_170",
+      "seg_171"
+    ]
+  },
+  {
+    "unit_id": "unit_092",
+    "start_ref": "para_172",
+    "end_ref": "para_173",
+    "unit_type": "paragraph",
+    "text_excerpt": "샌드박스 — 도구 실행을 격리된 환경에서 수행한다. //path는 절대 루트, /path는 설정 파일 기준 상대, ~/path는 홈 디렉토리를 의미한다. 토큰 계산 — tokenCountWithEstimation()이 핵심으로, 마지막 API 응답의 정확한 토큰 수에 이후 메시지의 추정치를 더한다. 자동 압축, 세션 메모리, 임계값 확인 등에 사용된다.",
+    "char_count": 198,
+    "source_segment_ids": [
+      "seg_172",
+      "seg_173"
+    ]
+  },
+  {
+    "unit_id": "unit_093",
+    "start_ref": "para_174",
+    "end_ref": "para_175",
+    "unit_type": "paragraph",
+    "text_excerpt": "스웜/팀 관리 — 팀 파일(TeamFile)을 통해 에이전트 간 협업을 관리한다. 인프로세스 러너는 메시지 라우팅, 도구 필터링, 권한 동기화를 처리한다. 글로벌 세션 상태 (56KB) — 세션 ID, 누적 비용, API 지속시간, 모델별 사용량, 등록된 훅, 에이전트 색상 맵 등을 세션 수명 동안 유지한다.",
+    "char_count": 173,
+    "source_segment_ids": [
+      "seg_174",
+      "seg_175"
+    ]
+  },
+  {
+    "unit_id": "unit_094",
+    "start_ref": "para_176",
+    "end_ref": "para_177",
+    "unit_type": "paragraph",
+    "text_excerpt": "23. 핵심 설계 패턴\n마지막으로, Claude Code 전반에서 반복적으로 나타나는 설계 패턴 여덟 가지를 정리한다. 이 패턴들을 이해하면 코드의 어떤 부분을 보더라도 \"아, 이건 이 패턴이구나\"하고 빠르게 파악할 수 있다. Design Patterns Summary\n  ========================",
+    "char_count": 177,
+    "source_segment_ids": [
+      "seg_176",
+      "seg_177"
+    ]
+  },
+  {
+    "unit_id": "unit_095",
+    "start_ref": "para_178",
+    "end_ref": "para_179",
+    "unit_type": "paragraph",
+    "text_excerpt": "[1] Generator Streaming     query() yields events one-by-one\n                              --> real-time display of AI \"thinking\" [2] Feature Gate            bun:bundle dead-code elimination\n      Dead Code Removal      ",
+    "char_count": 264,
+    "source_segment_ids": [
+      "seg_178",
+      "seg_179"
+    ]
+  },
+  {
+    "unit_id": "unit_096",
+    "start_ref": "para_180",
+    "end_ref": "para_181",
+    "unit_type": "paragraph",
+    "text_excerpt": "[3] Memoized Context        getSystemContext(), getUserContext()\n                              --> computed once, cached for session [4] Withhold & Recover      Buffer recoverable errors (413, max tokens)\n               ",
+    "char_count": 274,
+    "source_segment_ids": [
+      "seg_180",
+      "seg_181"
+    ]
+  },
+  {
+    "unit_id": "unit_097",
+    "start_ref": "para_182",
+    "end_ref": "para_183",
+    "unit_type": "paragraph",
+    "text_excerpt": "[5] Lazy Import             Wrap in function to avoid circular deps\n                              --> loaded only when actually called [6] Immutable State         DeepImmutable + Zustand\n                              -->",
+    "char_count": 246,
+    "source_segment_ids": [
+      "seg_182",
+      "seg_183"
+    ]
+  },
+  {
+    "unit_id": "unit_098",
+    "start_ref": "para_184",
+    "end_ref": "para_185",
+    "unit_type": "paragraph",
+    "text_excerpt": "[7] Interruption            Save transcript BEFORE query loop\n      Resilience              --> crash mid-API = resume from last message [8] Dependency Injection    query() receives deps parameter\n                       ",
+    "char_count": 333,
+    "source_segment_ids": [
+      "seg_184",
+      "seg_185"
+    ]
+  },
+  {
+    "unit_id": "unit_099",
+    "start_ref": "para_186",
+    "end_ref": "para_186",
+    "unit_type": "paragraph",
+    "text_excerpt": "User runs \"claude\" in terminal\n        |\n        v\n  main.tsx\n  +-- Auth (OAuth / API key / Bedrock / Vertex)\n  +-- Model resolution (Opus for Max, Sonnet for others)\n  +-- Load settings + feature gates\n  +-- Collect con",
+    "char_count": 1260,
+    "source_segment_ids": [
+      "seg_186"
+    ]
+  },
+  {
+    "unit_id": "unit_100",
+    "start_ref": "para_187",
+    "end_ref": "para_187",
+    "unit_type": "paragraph",
+    "text_excerpt": "사용자가 터미널에서 Claude Code를 실행하면, main.tsx가 인증, 모델 해석, 설정 로딩, 컨텍스트 수집을 수행한 후 REPL을 시작한다. 사용자가 메시지를 입력하면, 메시지가 정규화되어 Claude API에 스트리밍으로 전송된다. 응답이 도착하면 텍스트는 즉시 화면에 표시되고, 도구 사용 요청은 권한 확인을 거쳐 실행된다. 도구 결과는 다시 API에 전달되고, 이 과정이 AI가",
+    "char_count": 328,
+    "source_segment_ids": [
+      "seg_187"
+    ]
+  }
+]

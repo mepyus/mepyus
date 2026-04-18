@@ -1,0 +1,144 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d95cf-9e48-7ed1-8a4e-9bc235c70399
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+Conversation-mode smoke test: read the stable UI migration note and tell the VectorFL operator what should remain true before the next change.
+
+Bounded context refs:
+- docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md
+
+Prompt payload:
+Answer as a bounded Codex conversation turn inside the VectorFL surface. Return three short sections: 1) what remains true for the fixed 3-surface body, 2) what the CLI on-top layer may do now, 3) the next smallest safe action. Do not modify files.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll reread the referenced migration note only and keep this to a compact VectorFL-style response.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine UI Stable Folder Migration Note v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The integrated-engine main operating UI has been promoted from `gemini/mock_test` into `app/ui/integrated_engine`.
+
+The note is that `gemini/mock_test` remains as Gemini proposal/reference clay, while `app/ui/integrated_engine` is now the stable source folder for the actual main UI path. Some old report wording still says `gemini/mock_test`; that wording should be reread as historical context, not the current source location.
+
+## Round Goal
+
+Move the currently usable Gemini mock UI into a stable project folder before further CLI-on-top work makes the source location ambiguous.
+
+## Files Changed
+
+- `.gitignore`
+- `app/ui/integrated_engine/*`
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## What Changed
+
+- Created `app/ui/integrated_engine` as the stable source folder for the current integrated-engine UI.
+- Copied the existing working UI from `gemini/mock_test` into the stable folder.
+- Kept `gemini/mock_test` in place as reference/proposal material.
+- Updated the stable app package name to `vectorfl-integrated-engine-ui`.
+- Updated the stable app browser title to `VectorFL Integrated Engine`.
+- Updated the stable app shell label from `VECTORFL Shell` to `Integrated Engine`.
+- Added broad ignores for `node_modules/` and `dist/` so local dependency/build artifacts do not become the project signal.
+
+## Why This Was Done
+
+- `gemini/mock_test` should not remain the long-term source of the real operating UI.
+- Gemini material is design/proposal clay; the actual integrated-engine UI needs a stable source location.
+- `runtime` should remain for session artifacts, manifests, state, and execution returns, not React/Vite source.
+- The 3-surface engine structure remains fixed; this migration only changes source placement.
+
+## Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- The stable app dev server is running at `http://127.0.0.1:5173/`.
+- The served HTML title is `VectorFL Integrated Engine`, confirming the new source is active.
+- The API proxy from the stable app to `http://127.0.0.1:8421` works.
+- A real read-only Codex session succeeded through the stable app proxy path:
+  - session id: `cli_20260416T101531Z_ba21f03e`
+  - requested_by_surface: `vectorfl_surface`
+  - requested_by_page: `app/ui/integrated_engine`
+  - status: `done`
+  - exit code: `0`
+- Marking the same session as `validation_target` succeeded.
+
+## Pass / Fail
+
+PASS_WITH_NOTE.
+
+The stable folder now runs and can operate the existing CLI on-top path. The only note is that browser-click/user-feel validation still needs the user, and some prior documentation still refers to `gemini/mock_test` because it was written before the stable-folder promotion.
+
+## Watchpoints
+
+- Do not continue feature work against `gemini/mock_test` unless intentionally modifying the reference mock.
+- Do not move React/Vite source into `runtime`.
+- Do not treat this migration as package 2 or as a new surface.
+- Do not add Gemini adapter, background runner, or session browsing until the stable Codex path is hand-used.
+
+## Next Small Step
+
+Use `http://127.0.0.1:5173/` from the stable app and hand-check one VectorFL CLI run from the browser.
+
+codex
+- result summary
+
+1. Fixed 3-surface body remains true: the integrated-engine UI is now sourced from `app/ui/integrated_engine`; `gemini/mock_test` remains reference/proposal clay; `runtime` remains for artifacts, manifests, state, and execution returns. This migration does not create package 2, a new surface, or a new engine shape.
+
+2. CLI on-top layer may now operate through the stable app path. The note records a successful read-only Codex session through the stable app proxy, plus successful marking as `validation_target`.
+
+3. Next smallest safe action: hand-check one VectorFL CLI run from the browser at `http://127.0.0.1:5173/`.
+
+- important findings / diffs / outputs
+
+Stable source folder: `app/ui/integrated_engine`.
+
+Important invariants:
+- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.
+- Do not move React/Vite source into `runtime`.
+- Do not add Gemini adapter, background runner, or session browsing before the stable Codex path is hand-used.
+
+Validation already noted:
+- `npm run build` passed in `app/ui/integrated_engine`.
+- served title confirmed as `VectorFL Integrated Engine`.
+- stable app proxy to `127.0.0.1:8421` worked.
+- real read-only Codex session completed with exit code `0`.
+
+- uncertainty or failure notes
+
+No files were modified. I only reread `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`.
+
+Remaining uncertainty from the note: browser-click/user-feel validation still needs a human hand-check.
+
+- suggested next use
+
+validation target: run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.
+tokens used
+1,788

@@ -1,0 +1,46 @@
+{
+  "schema_version": "vectorfl_paper_weekend_live_line_guided_work_packets_v0",
+  "updated_at": "2026-04-10T22:10:00+09:00",
+  "mode": "weekend_live_runtime_write_back",
+  "purpose": "Register the first live translated work packet as a runtime-visible slot rather than leaving it only as a contract artifact.",
+  "packet_refs": [
+    "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v1.json",
+    "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v2.json",
+    "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v3.json"
+  ],
+  "packets": [
+    {
+      "packet_id": "lwp_vectorfl_paper_weekend_live_001",
+      "status": "superseded_by_native_shape_rerun",
+      "selected_line": "supervision_language_as_hard_requirement",
+      "target_overlay": "issue_run_result_governance",
+      "runtime_owner": "vectorfl_paper_weekend_pilot",
+      "source_issue_ref": "runtime/contracts/vectorfl_paper_weekend_live_issue_sample_v0.json",
+      "write_back_reason": "The first weekend pilot loop needs a real runtime slot so the translated packet is not stranded as documentation only.",
+      "last_runtime_event": "reopen_weekend_live_001",
+      "next_cell": "internal_read_cell"
+    },
+    {
+      "packet_id": "lwp_vectorfl_paper_weekend_live_002",
+      "status": "superseded_by_export_shaped_rerun",
+      "selected_line": "supervision_language_as_hard_requirement",
+      "target_overlay": "issue_run_result_governance",
+      "runtime_owner": "vectorfl_paper_weekend_pilot",
+      "source_issue_ref": "runtime/contracts/vectorfl_paper_weekend_live_native_shape_source_record_v1.json",
+      "write_back_reason": "The native-shape source rerun strengthens source realism before general pilot promotion.",
+      "last_runtime_event": "native_shape_overlay_rerun_v0",
+      "next_cell": "external_resource_cell"
+    },
+    {
+      "packet_id": "lwp_vectorfl_paper_weekend_live_003",
+      "status": "registered_from_export_shaped_source",
+      "selected_line": "supervision_language_as_hard_requirement",
+      "target_overlay": "issue_run_result_governance",
+      "runtime_owner": "vectorfl_paper_weekend_pilot",
+      "source_issue_ref": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+      "write_back_reason": "The export-shaped source rerun is the closest in-repo stand-in for a real host export before general pilot promotion.",
+      "last_runtime_event": "export_shaped_overlay_rerun_v0",
+      "next_cell": "external_resource_cell"
+    }
+  ]
+}

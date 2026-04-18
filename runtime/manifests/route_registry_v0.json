@@ -1,0 +1,269 @@
+{
+  "schema_version": "route_registry_v0",
+  "updated_at": "2026-04-06T12:40:00+09:00",
+  "routes": [
+    {
+      "route_id": "route_input_direct_ingest",
+      "family_id": "fam_input_to_reading",
+      "route_name": "direct ingest",
+      "mode_class": "ingest",
+      "purpose_invariant": "turn raw input into a visible, traceable readable entry without deeper shaping",
+      "activation_conditions": [
+        "input is readable enough for split-first entry",
+        "no preprocess-required verdict exists"
+      ],
+      "exclusion_conditions": [
+        "raw transcript is too noisy",
+        "preprocess-required verdict already exists"
+      ],
+      "current_position_schema": [
+        "input_kind detected",
+        "split_mode resolved",
+        "readable board available"
+      ],
+      "next_decision_points": [
+        "handoff to downstream reading",
+        "escalate to preprocess shaping"
+      ],
+      "primary_spaces": [
+        "input_ingest_space"
+      ],
+      "input_signals": [
+        "input_kind",
+        "split_mode"
+      ],
+      "expected_outputs": [
+        "source_manifest",
+        "split_units",
+        "readable_input_board",
+        "operator_summary"
+      ],
+      "fallback_routes": [
+        "route_preprocess_compare_first"
+      ],
+      "residue_hooks": [
+        "ingest trace retained as entry residue"
+      ]
+    },
+    {
+      "route_id": "route_preprocess_compare_first",
+      "family_id": "fam_input_to_reading",
+      "route_name": "compare-first preprocess",
+      "mode_class": "preprocess",
+      "purpose_invariant": "judge preprocess necessity before reshaping raw input",
+      "activation_conditions": [
+        "transcript feels too raw for direct ingest",
+        "uncertain-needs-probe state is detected"
+      ],
+      "exclusion_conditions": [
+        "input already entered canonical ingest",
+        "no preprocessing ambiguity remains"
+      ],
+      "current_position_schema": [
+        "before/after preprocess comparison visible",
+        "readiness status available",
+        "regroup or probe branch still open"
+      ],
+      "next_decision_points": [
+        "regroup-first",
+        "post-preprocess probe",
+        "return to direct ingest"
+      ],
+      "primary_spaces": [
+        "external_input_preprocess_space"
+      ],
+      "input_signals": [
+        "preprocess verdict",
+        "readiness status",
+        "regroup candidate"
+      ],
+      "expected_outputs": [
+        "preprocess comparison result",
+        "regroup output",
+        "post-preprocess probe output"
+      ],
+      "fallback_routes": [
+        "route_input_direct_ingest"
+      ],
+      "residue_hooks": [
+        "comparison ambiguity retained as preprocess residue"
+      ]
+    },
+    {
+      "route_id": "route_preflight_reread",
+      "family_id": "fam_transition_thickening",
+      "route_name": "preflight reread",
+      "mode_class": "reread",
+      "purpose_invariant": "reread active latent lines against current phase before closure",
+      "activation_conditions": [
+        "active latent line exists",
+        "preflight or same-line recurrence occurs"
+      ],
+      "exclusion_conditions": [
+        "no active line is selected",
+        "closure already frozen for this family slice"
+      ],
+      "current_position_schema": [
+        "active_latent_lines",
+        "continuity/residue/tension/sufficiency signals",
+        "phase decision record"
+      ],
+      "next_decision_points": [
+        "remain in thickening",
+        "reopen same family with more evidence",
+        "review closure readiness"
+      ],
+      "primary_spaces": [
+        "transition_validation_space"
+      ],
+      "input_signals": [
+        "active_latent_lines",
+        "phase_decision",
+        "signal_summary"
+      ],
+      "expected_outputs": [
+        "updated phase decision",
+        "reread observation entry",
+        "next check trigger"
+      ],
+      "fallback_routes": [
+        "route_stage_corridor_probe"
+      ],
+      "residue_hooks": [
+        "unresolved transition edges retained as thickening residue"
+      ]
+    },
+    {
+      "route_id": "route_stage_corridor_probe",
+      "family_id": "fam_transition_thickening",
+      "route_name": "stage corridor probe",
+      "mode_class": "validation",
+      "purpose_invariant": "narrow corridor boundary and transition pressure through staged validation",
+      "activation_conditions": [
+        "stage corridor outputs exist",
+        "boundary ambiguity still matters"
+      ],
+      "exclusion_conditions": [
+        "stage lineage is not relevant to the active blockage",
+        "route is already reduced to local residue only"
+      ],
+      "current_position_schema": [
+        "current stage number",
+        "corridor boundary note",
+        "survivor/nonreinforced signals"
+      ],
+      "next_decision_points": [
+        "advance next stage",
+        "keep as residue",
+        "fold back into preflight reread"
+      ],
+      "primary_spaces": [
+        "transition_validation_space"
+      ],
+      "input_signals": [
+        "stage number",
+        "boundary ambiguity",
+        "survivor signal"
+      ],
+      "expected_outputs": [
+        "stage report",
+        "corridor note",
+        "probe follow-up decision"
+      ],
+      "fallback_routes": [
+        "route_preflight_reread"
+      ],
+      "residue_hooks": [
+        "nonreinforced cards and boundary residue remain visible"
+      ]
+    },
+    {
+      "route_id": "route_readonly_board",
+      "family_id": "fam_operator_readout",
+      "route_name": "readonly board",
+      "mode_class": "readout",
+      "purpose_invariant": "present current state as broad operator board",
+      "activation_conditions": [
+        "engine_state_latest is available",
+        "broad overview is requested"
+      ],
+      "exclusion_conditions": [
+        "operator needs narrow asset-specific explanation only",
+        "latest state view is missing"
+      ],
+      "current_position_schema": [
+        "latest state object",
+        "update event summary",
+        "board component model"
+      ],
+      "next_decision_points": [
+        "drill down to selected detail",
+        "open activity panel",
+        "launch internal search"
+      ],
+      "primary_spaces": [
+        "operating_readout_space"
+      ],
+      "input_signals": [
+        "engine_state_latest",
+        "update_event_summary",
+        "overview_request"
+      ],
+      "expected_outputs": [
+        "asset state board",
+        "header badges",
+        "overview readout"
+      ],
+      "fallback_routes": [
+        "route_internal_search"
+      ],
+      "residue_hooks": [
+        "presentation caution returns as readout residue"
+      ]
+    },
+    {
+      "route_id": "route_internal_search",
+      "family_id": "fam_operator_readout",
+      "route_name": "internal search",
+      "mode_class": "search",
+      "purpose_invariant": "find the most relevant internal route from current runtime and reading surfaces",
+      "activation_conditions": [
+        "operator query exists",
+        "indexed internal search surface is available"
+      ],
+      "exclusion_conditions": [
+        "no query or no search surface exists",
+        "direct selected-detail route is already sufficient"
+      ],
+      "current_position_schema": [
+        "query text",
+        "search hits across reading/capability surfaces",
+        "selected result context"
+      ],
+      "next_decision_points": [
+        "open selected detail",
+        "jump to capability route",
+        "return to board overview"
+      ],
+      "primary_spaces": [
+        "operating_readout_space"
+      ],
+      "input_signals": [
+        "query text",
+        "search index availability",
+        "selected result"
+      ],
+      "expected_outputs": [
+        "search result list",
+        "selected result context",
+        "next action hints"
+      ],
+      "fallback_routes": [
+        "route_readonly_board"
+      ],
+      "residue_hooks": [
+        "query/result mismatch retained as search residue"
+      ]
+    }
+  ]
+}

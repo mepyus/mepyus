@@ -1,0 +1,78 @@
+{
+  "probe_name": "post_preprocess_first_pass_probe_v0",
+  "generated_at": "2026-04-02T22:17:02.442573Z",
+  "input_path": "inputs/external_cases/builder_choi_interview.txt",
+  "preprocessed_path": "app/work/external_input_preprocess/generated/builder_choi_interview_post_preprocess_first_pass_20260402T221702Z.txt",
+  "first_pass_read": {
+    "dust_count": 489,
+    "top_scene_counts": {
+      "review": 461,
+      "evidence": 12,
+      "impl": 9,
+      "spec": 7
+    },
+    "top_flow_counts": {
+      "compare": 453,
+      "run": 35,
+      "fix": 1
+    },
+    "scene_flatness_ratio": 0.943,
+    "flow_flatness_ratio": 0.926,
+    "sample_rows": [
+      {
+        "short_label": "오프닝 & 오늘 에피소드 프리뷰 …",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "오프닝 & 오늘 에피소드 프리뷰 요즘 클로드 코드 활용해서 프로젝트를 거의 다 하고 있거든요."
+      },
+      {
+        "short_label": "왜 클루드 코드가 압도적일 수밖에…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "왜 클루드 코드가 압도적일 수밖에 없는지 말씀드리고 싶어요."
+      },
+      {
+        "short_label": "가져올 페이지를 하나 잡고 이렇게…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "가져올 페이지를 하나 잡고 이렇게만 명령하면 되거든요."
+      },
+      {
+        "short_label": "그를 참고해서 처리하세요라고 하면…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "그를 참고해서 처리하세요라고 하면 돼요."
+      },
+      {
+        "short_label": "그러면은 오 그냥 이게이 상태로 …",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "그러면은 오 그냥 이게이 상태로 만들어집니다."
+      },
+      {
+        "short_label": "굉장하네요.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "굉장하네요."
+      },
+      {
+        "short_label": "속도가 장난이 아닐 것 같아요.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "속도가 장난이 아닐 것 같아요."
+      },
+      {
+        "short_label": "여기 프롬프트 중에 하나를 또 보…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "여기 프롬프트 중에 하나를 또 보여 드리면은 한 200개씩 후출할 때 있거든요."
+      }
+    ],
+    "human_read_summary": "전처리 후에도 first pass가 거의 한 가지 review/compare 질감으로 눌려 있어 읽기 면이 아직 평평하다.",
+    "caution_notes": [
+      "flow flatness가 아직 높아 compare/read review 쪽으로 다시 눌릴 수 있다.",
+      "scene flatness가 높아 case-specific reading으로 바로 올리면 과장될 수 있다."
+    ],
+    "next_read": "전처리된 sidecar를 기준으로 bounded first-pass report를 만들되, 아직 line corroboration보다 case block readability를 먼저 본다."
+  }
+}

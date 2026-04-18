@@ -1,0 +1,40 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T103857Z_dcf7d364",
+  "backend_kind": "codex",
+  "task_type": "validate",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Cross-surface reflection smoke test: verify CLI return can be read as user assignment signal and engine return material.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md",
+    "app/ui/integrated_engine/VectorFLIntegrationShell.tsx"
+  ],
+  "prompt_payload": "Read the bounded context. Return three short sections: user surface assignment signal, VectorFL operating signal, engine return/validation signal. End with suggested next use: validation target. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:38:57Z",
+  "ended_at": "2026-04-16T10:39:15Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T103857Z_dcf7d364/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T103857Z_dcf7d364/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T103857Z_dcf7d364/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T103857Z_dcf7d364/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T103857Z_dcf7d364/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Read bounded context only.\n  - No files modified.\n  - Cross-surface reflection smoke test: PASS_WITH_NOTE.\n\n- important findings / diffs / outputs\n  - user surface assignment signal: latest CLI return is rendered as user-facing work organization material through `UserCliAssignmentPanel`, including latest turn, decision mark state, and deposit-ready count.\n  - VectorFL operating signal: `VectorFLIntegrationShell.tsx` keeps the VectorFL surface as the operating place through `CliHostControlPanel`, recent CLI turn counts, deposit count badges, surface focus switching, and bounded follow-up context flow described in the report.\n  - engine return/validation signal: `EngineCliReturnPanel` exposes latest processing status, route label, structured return preview, recent processing returns, and extract/deposit candidate count as engine-side validation material.\n  - Report confirms current state as synchronous session-artifact conversation control, with recent returns, continue-latest, inferred `suggested_next_use`, and deposit-ready queue visibility.\n\n- uncertainty or failure notes\n  - This validation only reread bounded files; it did not run build, API state checks, browser checks, or a new CLI session.\n  - The report explicitly defers browser-click/user-feel validation, async/background orchestration, full session browsing, Gemini adapter, and automatic deposit ingestion.\n\n- suggested next use: validation target\n  - validation target: hand-check the browser VectorFL panel for `Continue latest`, recent-turn selection, and deposit-ready queue selection to confirm the surface reads as assignment signal plus engine return material.\n",
+  "suggested_next_use": "deposit_candidate",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:39:35Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:39:35Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

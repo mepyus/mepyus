@@ -1,0 +1,364 @@
+{
+  "created_at": "2026-03-28T10:40:45.907718Z",
+  "input_asset": "inputs/external_cases/openai_02_11.md",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/openai_02_11_baseline_probe_v1_w3_s1_20260328T103933Z.json",
+    "app/work/dialogue_loop_test/generated/openai_02_11_baseline_probe_v1_w6_s3_20260328T103933Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/openai_02_11.md",
+    "supporting_first_pass_patterns": [
+      "overall_object_candidates",
+      "overall_layer_hints",
+      "overall_relation_hints",
+      "overall_residue_breakdown",
+      "top_question_intent_windows"
+    ],
+    "second_order_reading_type": "purpose_synthesis",
+    "rereading_mode": "cross_run_probe_synthesis",
+    "scope_local_page_comparison": "page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "object_opening_and_question_opening_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "purpose reading is still strongly tied to AI/agent/business transition discourse",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/openai_02_11_baseline_probe_v1_w3_s1_20260328T103933Z.json",
+      "app/work/dialogue_loop_test/generated/openai_02_11_baseline_probe_v1_w6_s3_20260328T103933Z.json"
+    ]
+  },
+  "top_objects": [
+    {
+      "object": "생산성/코딩",
+      "count": 118,
+      "reading": "개발 생산성 압축과 작업 방식 변형을 여는 객체"
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 112,
+      "reading": "앱 형태 재편과 인터페이스 전환을 여는 객체"
+    },
+    {
+      "object": "전략/방향성",
+      "count": 17,
+      "reading": "사업 적응, moat, 시장 재편을 여는 객체"
+    },
+    {
+      "object": "모델 work",
+      "count": 14,
+      "reading": "모델 경쟁, 학습/평가/검증 축을 여는 객체"
+    },
+    {
+      "object": "구현/자동화",
+      "count": 13,
+      "reading": "실행화, workflow, 운영 자동화를 여는 객체"
+    }
+  ],
+  "top_layers": [
+    {
+      "layer": "설명/해석 층",
+      "count": 773,
+      "reading": "대화가 시대 인식을 설명하고 해석하는 기본 층"
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 321,
+      "reading": "실제 자동화와 operationalization으로 내려가는 층"
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 109,
+      "reading": "앱/모델/시장 구조가 어떻게 재편되는지 보는 층"
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 92,
+      "reading": "평가, metric, reward, reliability를 묻는 층"
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 32,
+      "reading": "사용자의 다음 탐색 질문을 발생시키는 층"
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 27,
+      "reading": "적응, moat, 신사업, 시장 포지션을 읽는 층"
+    }
+  ],
+  "top_relations": [
+    {
+      "relation": "execution_shift_hint",
+      "count": 83,
+      "reading": "아이디어가 운영/실행 쪽으로 내려가는 운동"
+    },
+    {
+      "relation": "reinforcement_hint",
+      "count": 54,
+      "reading": "같은 문제의식이 다른 문단에서 누적 보강되는 운동"
+    },
+    {
+      "relation": "specification_hint",
+      "count": 30,
+      "reading": "막연한 전망이 기준/평가/형식 쪽으로 굳어지는 운동"
+    },
+    {
+      "relation": "transition_hint",
+      "count": 28,
+      "reading": "설명에서 다음 층위로 이동하는 전이 운동"
+    },
+    {
+      "relation": "question_generation_hint",
+      "count": 25,
+      "reading": "문단이 다음 질문을 직접 발생시키는 운동"
+    },
+    {
+      "relation": "contrast_hint",
+      "count": 4,
+      "reading": "기존 방식과 새 방식의 긴장/대비가 드러나는 운동"
+    }
+  ],
+  "top_residue": [
+    {
+      "residue": "generic_abstraction_residue",
+      "count": 104,
+      "reading": "너무 일반적인 추상어가 의미층을 흐리게 하는 residue"
+    },
+    {
+      "residue": "discourse_connective_residue",
+      "count": 39,
+      "reading": "발화 연결어가 의미 층위 opening을 덮는 residue"
+    },
+    {
+      "residue": "conversational_filler_residue",
+      "count": 5,
+      "reading": "구어 filler가 summary 선두를 흐리는 residue"
+    },
+    {
+      "residue": "speaker_or_source_residue",
+      "count": 0,
+      "reading": "화자/출처 흔적이 topic signal과 경쟁하는 residue"
+    },
+    {
+      "residue": "quasi_topic_residue",
+      "count": 0,
+      "reading": "주제처럼 보이지만 broad discourse에 가까운 residue"
+    }
+  ],
+  "top_windows": [
+    {
+      "window_id": "39_44",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 구조/연결 층 / 관계 힌트: transition_hint, execution_shift_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "에이전트는 엄격한 경계와 예측 가능한 구조⁠(새 창에서 열기)를 갖춘 환경에서 가장 효과적이므로, 우리는 엄격한 아키텍처 모델을 중심으로 애플리케이션을 구축했습니다. 각 비즈니스 도메인은 엄격하게 검증된 종속성 방향과 제한된 허용 에지 집합을 사용하여 고정된 계층 집합으로 나뉩니다. 이러한 제약은 Codex가 생성한 맞…"
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "아래 다이어그램은 다음 규칙을 보여줍니다. 각 비즈니스 도메인 내에서(예: 앱 설정) 코드는 고정된 레이어 집합(Types → Config → Repo → Service → Runtime → UI)을 통해서만 “전달”할 수 있습니다. 교차되는 문제(인증, 커넥터, 텔레메트, 기능 플래그)는 하나의 명시적인 인터페이스인 …"
+        }
+      ]
+    },
+    {
+      "window_id": "38_40",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "에이전트 애플리케이션",
+        "생산성/코딩",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 생산성/코딩, 모델 work / 주요 층위: 구현/실행 층, 설명/해석 층, 구조/연결 층 / 관계 힌트: transition_hint, execution_shift_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "아키텍처 및 취향 강제 적용 문서화만으로는 에이전트가 생성한 코드베이스의 완전히 일관되게 유지할 수 없습니다. 구현을 세세하게 관리하지 않고 불변 조건을 강제 적용함으로써 기초를 튼튼히 유지하면서 에이전트가 빠르게 출시할 수 있도록 합니다. 예를 들어, Codex가 경계에서 데이터 형태를 파싱⁠(새 창에서 열기)하기를 …"
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "에이전트는 엄격한 경계와 예측 가능한 구조⁠(새 창에서 열기)를 갖춘 환경에서 가장 효과적이므로, 우리는 엄격한 아키텍처 모델을 중심으로 애플리케이션을 구축했습니다. 각 비즈니스 도메인은 엄격하게 검증된 종속성 방향과 제한된 허용 에지 집합을 사용하여 고정된 계층 집합으로 나뉩니다. 이러한 제약은 Codex가 생성한 맞…"
+        }
+      ]
+    },
+    {
+      "window_id": "36_41",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "이 구상은 많은 절충점을 명확히 해주었습니다. 우리는 리포지터리 내에서 완전히 내부화하고 추론할 수 있는 종속성과 추상화를 선호했습니다. “지루하다”고 자주 묘사되는 기술은 결합성, API 안정성, 학습 설정 내 표현 덕분에 에이전트가 모델링하기 더 쉬운 경향이 있습니다. 어떤 경우에는 공개 라이브러리의 불투명한 업스트…"
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "에이전트가 검사하고 검증하며 직접 수정할 수 있는 형태로 시스템을 더 많이 끌어오면 Codex뿐만 아니라 코드베이스에서 작업하는 다른 에이전트(예: Aardvark)에서도 레버리지를 높일 수 있습니다."
+        }
+      ]
+    },
+    {
+      "window_id": "39_41",
+      "repeat_count": 1,
+      "question_intent_score": 6,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 구조/연결 층 / 관계 힌트: transition_hint, execution_shift_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "에이전트는 엄격한 경계와 예측 가능한 구조⁠(새 창에서 열기)를 갖춘 환경에서 가장 효과적이므로, 우리는 엄격한 아키텍처 모델을 중심으로 애플리케이션을 구축했습니다. 각 비즈니스 도메인은 엄격하게 검증된 종속성 방향과 제한된 허용 에지 집합을 사용하여 고정된 계층 집합으로 나뉩니다. 이러한 제약은 Codex가 생성한 맞…"
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "아래 다이어그램은 다음 규칙을 보여줍니다. 각 비즈니스 도메인 내에서(예: 앱 설정) 코드는 고정된 레이어 집합(Types → Config → Repo → Service → Runtime → UI)을 통해서만 “전달”할 수 있습니다. 교차되는 문제(인증, 커넥터, 텔레메트, 기능 플래그)는 하나의 명시적인 인터페이스인 …"
+        }
+      ]
+    },
+    {
+      "window_id": "37_39",
+      "repeat_count": 1,
+      "question_intent_score": 6,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 구현/실행 층, 설명/해석 층, 전략/방향 층 / 관계 힌트: reinforcement_hint, execution_shift_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "에이전트가 검사하고 검증하며 직접 수정할 수 있는 형태로 시스템을 더 많이 끌어오면 Codex뿐만 아니라 코드베이스에서 작업하는 다른 에이전트(예: Aardvark)에서도 레버리지를 높일 수 있습니다."
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "아키텍처 및 취향 강제 적용 문서화만으로는 에이전트가 생성한 코드베이스의 완전히 일관되게 유지할 수 없습니다. 구현을 세세하게 관리하지 않고 불변 조건을 강제 적용함으로써 기초를 튼튼히 유지하면서 에이전트가 빠르게 출시할 수 있도록 합니다. 예를 들어, Codex가 경계에서 데이터 형태를 파싱⁠(새 창에서 열기)하기를 …"
+        }
+      ]
+    },
+    {
+      "window_id": "57_62",
+      "repeat_count": 1,
+      "question_intent_score": 5,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 전략/방향 층 / 관계 힌트: reinforcement_hint, execution_shift_hint, question_generation_hint",
+      "headings": [
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled",
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "엔트로피 및 가비지 컬렉션 에이전트의 완전한 자율성은 새로운 문제를 야기하기도 합니다. Codex는 리포지터리에 이미 존재하는 패턴, 심지어 불균일하거나 최적 상태가 아닌 패턴도 복제합니다. 따라서 시간이 지나면 필연적으로 드리프트가 발생합니다."
+        },
+        {
+          "heading": "untitled",
+          "excerpt": "처음에는 사람들이 이를 수동으로 처리했습니다. 예전에는 우리 팀이 매주 금요일(일주일의 20%)마다 “AI 슬로프”를 정리하느라 시간을 보냈습니다. 예상대로 그 방식은 확장되지 않았습니다."
+        }
+      ]
+    }
+  ],
+  "era_questions": [
+    "앱과 서비스의 형태는 agent interface 쪽으로 어떻게 재편되는가",
+    "모델 경쟁은 pre-train 이후 evaluation, RLVR, harness 쪽으로 어떻게 이동하는가",
+    "기업과 제품은 moat, bundle/unbundle, 적응 경쟁 속에서 어떻게 살아남는가",
+    "검증과 신뢰는 미래 담론 속에서 어떤 바닥 역할을 맡는가"
+  ],
+  "object_growth_reading": [
+    "이 자산은 모델 능력 경쟁과 agent application 형태 전환을 서로 붙여 키운다",
+    "전략 담론을 실제 구현/운영 자동화와 접속시키며 사업 적응 문제로 내린다",
+    "개발 생산성 변화는 독립 객체라기보다 실행층과 일의 미래를 잇는 중간층으로 자란다"
+  ],
+  "engine_learning_targets": [
+    "질문 유도 문단을 별도 candidate로 승격할 수 있는지 계속 본다",
+    "설명층에서 실행층으로 내려가는 전이 문단을 relation movement로 더 잘 읽게 만든다",
+    "전망 담론을 전략/적응 문제로 번역하는 층을 user-layer opening에 더 직접 연결한다",
+    "interview/dialogue 특유 residue가 summary 선두를 덮지 않게 summary-stage 후순위화를 검토한다"
+  ]
+}

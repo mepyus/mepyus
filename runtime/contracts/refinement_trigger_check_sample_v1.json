@@ -1,0 +1,14 @@
+{
+  "schema": "refinement_trigger_check_sample_v1",
+  "checked_at": "2026-03-26T19:05:00+09:00",
+  "status": "watch",
+  "trigger_results": {
+    "external_case_accumulated_ge_5": false,
+    "repeated_relation_slot_ge_3": true,
+    "observer_readout_confusion": false,
+    "guide_contract_index_relayout_needed": false,
+    "repeated_defer_candidate": false
+  },
+  "reason": "같은 relation slot이 반복되기 시작했지만 refinement를 바로 열 수준은 아니다.",
+  "next_action_hint": "다음 탐색 observation 1~2건을 더 보고 refinement_candidate 여부 재판정"
+}

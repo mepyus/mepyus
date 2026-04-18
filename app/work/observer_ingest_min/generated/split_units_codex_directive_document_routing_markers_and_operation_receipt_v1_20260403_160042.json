@@ -1,0 +1,376 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[DOCROLE:directive]] [[RUNMODE:ingest_then_execute]] [[PRIORITY:high]]",
+    "char_count": 77,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1",
+    "end_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# codex_directive_document_routing_markers_and_operation_receipt_v1",
+    "char_count": 67,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "0. 문서 목적",
+    "end_ref": "0. 문서 목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. 문서 목적 이번 작업의 목적은 아래 4개를 동시에 해결하는 것이다. 1. 구조화 문서를 붙여 넣었을 때 기존처럼 바로 실행부터 튀지 않도록, **가벼운 문서 라우팅 표식 체계**를 고정한다. 2. 사용자가 문서 맨 위에 최소 표식만 붙여도 **입력 -> 등록 -> 티켓화 -> 실행** 흐름이 안정적으로 갈 수 있게 만든다. 3. 문서 처리 후 결과가 여러 파일에 흩어져 사용자가 일",
+    "char_count": 451,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. 현재 문제 진단",
+    "end_ref": "1. 현재 문제 진단",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 현재 문제 진단",
+    "char_count": 14,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "1.1 실행이 먼저 튄다",
+    "end_ref": "1.1 실행이 먼저 튄다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 1.1 실행이 먼저 튄다 구조화 문서를 붙여 넣으면, 현재는 종종 - 문서를 먼저 엔진 재료로 등록/판독하기보다 - 기존 습관대로 바로 실행부터 들어가는 경향이 있다. 이건 현재 운영 기준과 어긋난다. 현재 맞는 순서는 아래다. - 문서 수신 - 문서 역할 판독/등록 - 필요한 경우에만 티켓화 - 실행 - 사건 기록 - 단일 요약면 생성",
+    "char_count": 193,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "1.2 표식이 없으면 역할 분리가 흐려진다",
+    "end_ref": "1.2 표식이 없으면 역할 분리가 흐려진다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 1.2 표식이 없으면 역할 분리가 흐려진다 지금까지는 대화 맥락으로도 추론이 가능했지만, - declaration - baseline - directive - summary - memo 같은 문서 역할과, - ingest_only - ingest_then_execute - reference_only 같은 처리 모드를 매번 문맥 추론에만 맡기면 헷갈릴 수 있다.",
+    "char_count": 206,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "1.3 결과 확인이 너무 분산돼 있다",
+    "end_ref": "1.3 결과 확인이 너무 분산돼 있다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 1.3 결과 확인이 너무 분산돼 있다 현재는 - registry - ticket - provenance - event ledger - ingest 결과 파일 - status 문서 를 각각 따로 들어가 봐야 해서 확인 비용이 높다. 즉 지금 필요한 것은 **가벼운 입력 표식** 과 **단일 요약/조회면** 이다.",
+    "char_count": 178,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "2. 이번 턴의 목표 상태",
+    "end_ref": "2. 이번 턴의 목표 상태",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. 이번 턴의 목표 상태 이번 턴이 끝나면 아래가 가능해야 한다. 1. 사용자가 문서 맨 위에 작은 표식 2~3개만 붙여도 된다. 2. Codex는 그 표식을 보고 먼저 ingest/등록을 수행한다. 3. `RUNMODE` 가 실행을 허용할 때만 티켓화 및 실행으로 간다. 4. 처리 결과는 append-only 이벤트로 남는다. 5. 사용자는 개별 파일을 일일이 뒤지지 않고, **op",
+    "char_count": 319,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "3. 이번 턴의 핵심 원칙",
+    "end_ref": "3. 이번 턴의 핵심 원칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 이번 턴의 핵심 원칙",
+    "char_count": 17,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "3.1 표식은 작고 가벼워야 한다",
+    "end_ref": "3.1 표식은 작고 가벼워야 한다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.1 표식은 작고 가벼워야 한다 무거운 문법을 만들지 않는다. 최소 표식 3개만 도입한다. - `[[DOCROLE:...]]` - `[[RUNMODE:...]]` - `[[PRIORITY:...]]`",
+    "char_count": 116,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "3.2 무표식 기본값은 실행 금지 쪽으로 둔다",
+    "end_ref": "3.2 무표식 기본값은 실행 금지 쪽으로 둔다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.2 무표식 기본값은 실행 금지 쪽으로 둔다 가장 중요한 기본값은 아래다. **`RUNMODE` 가 없으면 `ingest_only` 로 간주한다.** 즉 무표식 문서는 바로 실행하지 않는다.",
+    "char_count": 111,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "3.3 사람은 편하게 쓰고, 엔진은 정규화해서 저장한다",
+    "end_ref": "3.3 사람은 편하게 쓰고, 엔진은 정규화해서 저장한다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.3 사람은 편하게 쓰고, 엔진은 정규화해서 저장한다 사용자는 영어 canonical value를 억지로 외우지 않아도 된다. 한글 표현도 허용하되, Codex는 내부에서 canonical value로 정규화해 기록한다. 예: - `[[DOCROLE:지시서]]` -> `directive` - `[[RUNMODE:입력후실행]]` -> `ingest_then_execute` - `[[P",
+    "char_count": 243,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "3.4 operation receipt 는 단일 조회면이어야 한다",
+    "end_ref": "3.4 operation receipt 는 단일 조회면이어야 한다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.4 operation receipt 는 단일 조회면이어야 한다 이번 문서 처리 결과를 확인할 때 여러 registry, ledger, generated 파일을 따로 열지 않도록 **한 문서당 1개의 operation receipt** 를 만든다.",
+    "char_count": 143,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "3.5 운영 뷰는 처음부터 거대 UI로 가지 않는다",
+    "end_ref": "3.5 운영 뷰는 처음부터 거대 UI로 가지 않는다",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.5 운영 뷰는 처음부터 거대 UI로 가지 않는다 이번 턴은 live UI 전체가 아니라 **운영화면 뷰 시드(seed)** 를 만든다. 즉: - latest operation board - recent docs - recent tickets - recent outputs - recent events - latest commands 정도의 단일 md/board면이면 충분하다.",
+    "char_count": 216,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "4. 반드시 만들 산출물",
+    "end_ref": "4. 반드시 만들 산출물",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 반드시 만들 산출물",
+    "char_count": 16,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "4.1 정책 문서",
+    "end_ref": "4.1 정책 문서",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.1 정책 문서 - `docs/policies/document_routing_markers_policy_v1.md`",
+    "char_count": 69,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "4.2 사용자용 템플릿 문서",
+    "end_ref": "4.2 사용자용 템플릿 문서",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.2 사용자용 템플릿 문서 - `docs/templates/structured_doc_routing_header_template_v1.md`",
+    "char_count": 83,
+    "source_segment_ids": [
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "4.3 alias / normalization 기준",
+    "end_ref": "4.3 alias / normalization 기준",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.3 alias / normalization 기준 - `runtime/manifests/document_routing_alias_map_v1.json`",
+    "char_count": 89,
+    "source_segment_ids": [
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "4.4 처리 스크립트 또는 wrapper",
+    "end_ref": "4.4 처리 스크립트 또는 wrapper",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.4 처리 스크립트 또는 wrapper - `scripts/process_structured_doc_with_routing.py`",
+    "char_count": 77,
+    "source_segment_ids": [
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "4.5 operation receipt",
+    "end_ref": "4.5 operation receipt",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.5 operation receipt - `runtime/receipts/<doc_id>_operation_receipt.md`",
+    "char_count": 76,
+    "source_segment_ids": [
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "4.6 operation board 시드",
+    "end_ref": "4.6 operation board 시드",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.6 operation board 시드 - `runtime/views/operation_board_latest.md`",
+    "char_count": 70,
+    "source_segment_ids": [
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "4.7 실행 명령어 저장 문서",
+    "end_ref": "4.7 실행 명령어 저장 문서",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.7 실행 명령어 저장 문서 - `runtime/commands/structured_doc_routing_commands_v1.md`",
+    "char_count": 79,
+    "source_segment_ids": [
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "5. 라우팅 표식 규칙",
+    "end_ref": "5. 라우팅 표식 규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. 라우팅 표식 규칙",
+    "char_count": 15,
+    "source_segment_ids": [
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "5.1 최소 표식",
+    "end_ref": "5.1 최소 표식",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.1 최소 표식 문서 맨 위에 아래 세 줄을 허용한다. ```text [[DOCROLE:directive]] [[RUNMODE:ingest_then_execute]] [[PRIORITY:high]] ``` 또는 사용자 편의상 아래도 허용한다. ```text [[DOCROLE:지시서]] [[RUNMODE:입력후실행]] [[PRIORITY:높음]] ``` Codex는 이를 내부 cano",
+    "char_count": 239,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "5.2 기본값 규칙",
+    "end_ref": "5.2 기본값 규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.2 기본값 규칙 - `DOCROLE` 없고 애매하면 `memo` - `RUNMODE` 없으면 `ingest_only` - `PRIORITY` 없으면 `normal`",
+    "char_count": 97,
+    "source_segment_ids": [
+      "seg_025"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "5.3 사용 권장 규칙",
+    "end_ref": "5.3 사용 권장 규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.3 사용 권장 규칙 - declaration / baseline / summary / memo -> 보통 `ingest_only` - directive -> 보통 `ingest_then_execute` - 외부 참고자료 -> `reference_only` - `execute_only` 는 예외적으로만 허용",
+    "char_count": 177,
+    "source_segment_ids": [
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "6. 처리 흐름",
+    "end_ref": "6. 처리 흐름",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. 처리 흐름 `문서 -> parse -> normalize -> register -> (optional ticket) -> (optional execute) -> record -> receipt -> board`",
+    "char_count": 123,
+    "source_segment_ids": [
+      "seg_027"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "7. 반드시 점검할 기록 항목",
+    "end_ref": "7. 반드시 점검할 기록 항목",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. 반드시 점검할 기록 항목 - `doc_registered` - `routing_normalized` - `ticket_created` (해당 시) - `execution_started` (해당 시) - `file_created` / `file_updated` (해당 시) - `output_generated` - `receipt_written` - `board_updated`",
+    "char_count": 216,
+    "source_segment_ids": [
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "8. operation receipt 확인 항목",
+    "end_ref": "8. operation receipt 확인 항목",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. operation receipt 확인 항목 1. 어떤 문서를 처리했는가 2. 어떤 표식을 읽었는가 3. 어떤 canonical 값으로 정규화되었는가 4. 티켓이 생겼는가 5. 실제 실행되었는가 6. 어떤 이벤트가 남았는가 7. 어떤 산출물이 생겼는가 8. 어디를 보면 다음 추적이 가능한가 9. 어떤 명령으로 재현 가능한가",
+    "char_count": 186,
+    "source_segment_ids": [
+      "seg_029"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "9. operation board 최소 섹션",
+    "end_ref": "9. operation board 최소 섹션",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. operation board 최소 섹션 - latest structured docs - latest tickets - latest outputs - latest events - latest receipts - latest commands - current note / caution",
+    "char_count": 163,
+    "source_segment_ids": [
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "10. 이번 턴 비범위",
+    "end_ref": "10. 이번 턴 비범위",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. 이번 턴 비범위 - full web UI 구축 - 거대한 dashboard 프레임워크 설치 - 모든 문서 타입 완전 지원 - complex ontology 편집기 추가 - 자동 reclassification 고도화 - 모든 existing docs 일괄 마이그레이션",
+    "char_count": 155,
+    "source_segment_ids": [
+      "seg_031"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "11. 완료 조건",
+    "end_ref": "11. 완료 조건",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 11. 완료 조건 1. 라우팅 표식 정책 md가 생긴다. 2. 사용자용 최소 템플릿이 생긴다. 3. alias 정규화 기준 파일이 생긴다. 4. 라우팅 처리 wrapper 또는 동등한 진입점이 생긴다. 5. 문서 1개 이상을 `ingest_then_execute` 로 실제 처리한다. 6. operation receipt 가 생성된다. 7. latest operation board 가 생",
+    "char_count": 282,
+    "source_segment_ids": [
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "12. 보고 형식",
+    "end_ref": "12. 보고 형식",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 12. 보고 형식 - 생성/수정 파일 목록 - 테스트 문서 처리 결과 - 기록 검산 - 다음 턴 연결점",
+    "char_count": 60,
+    "source_segment_ids": [
+      "seg_033"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "13. 마지막 지시",
+    "end_ref": "13. 마지막 지시",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 13. 마지막 지시 Codex는 이번 턴에서 **구조화 문서를 “붙여 넣자마자 바로 실행되는 텍스트”가 아니라, 작은 라우팅 표식을 통해 먼저 등록/판독되고, 필요할 때만 실행되며, 그 전체 처리 결과가 단일 receipt와 board로 모이는 운영 객체**로 만들어라. 특히 아래를 지켜라. - `RUNMODE` 가 없으면 기본값은 `ingest_only` - 사용자는 한글 alias를",
+    "char_count": 350,
+    "source_segment_ids": [
+      "seg_034"
+    ]
+  }
+]

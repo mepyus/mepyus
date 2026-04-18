@@ -1,0 +1,91 @@
+{
+  "mapping_id": "vectorfl_paper_issue_run_result_governance_intake_mapping_v0",
+  "target_id": "paperclip_issue_run_result_governance_overlay_v0",
+  "purpose": "Translate Paperclip issue, run, result, and governance events into VectorFL line-centered intake grammar.",
+  "mappings": [
+    {
+      "surface": "issue",
+      "external_fields": [
+        "issue_id",
+        "title",
+        "description",
+        "assignee",
+        "project_ref",
+        "goal_ref",
+        "parent_ref",
+        "status"
+      ],
+      "vectorfl_translation": [
+        "source_assignment",
+        "line_translation",
+        "context_refs",
+        "execution_guidance"
+      ],
+      "primary_internal_object": "line_guided_work_packet",
+      "output_slot": "line_guided_work_packets"
+    },
+    {
+      "surface": "heartbeat_run",
+      "external_fields": [
+        "run_id",
+        "started_at",
+        "ended_at",
+        "status",
+        "adapter_type",
+        "runtime_config",
+        "usage",
+        "error"
+      ],
+      "vectorfl_translation": [
+        "execution_trace",
+        "reentry_hint",
+        "residue_capture_candidate",
+        "run_state"
+      ],
+      "primary_internal_object": "append_only_trace_row",
+      "output_slot": "execution_trace_log"
+    },
+    {
+      "surface": "result",
+      "external_fields": [
+        "result_summary",
+        "comment",
+        "artifact_ref",
+        "patch_ref",
+        "completion_claim"
+      ],
+      "vectorfl_translation": [
+        "observed_line_candidate",
+        "residue_note",
+        "operator_summary",
+        "advisory_return_hint"
+      ],
+      "primary_internal_object": "result_reinjection_stub",
+      "output_slot": "reinjection_stubs"
+    },
+    {
+      "surface": "governance_event",
+      "external_fields": [
+        "approval_state",
+        "budget_state",
+        "reassignment",
+        "pause_state",
+        "board_intervention"
+      ],
+      "vectorfl_translation": [
+        "route_gate",
+        "hold_trace",
+        "promotion_gate",
+        "caution_note"
+      ],
+      "primary_internal_object": "governance_gate_note",
+      "output_slot": "governance_trace_notes"
+    }
+  ],
+  "minimum_acceptance": [
+    "issue explains as line_guided_work_packet",
+    "run stores as append_only_trace_row",
+    "result stores as result_reinjection_stub",
+    "governance stores as governance_gate_note"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T100450Z_9e24bf20",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "gemini/mock_test",
+  "purpose_text": "Verify the Gemini mock main UI CLI path after VectorFL-first and mark-history readability hardening.",
+  "bounded_context_refs": [
+    "docs/reports/gemini_mock_test_cli_on_top_main_surface_patch_note_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context and return three short bullets: current usable path, what changed, and remaining note. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:04:50Z",
+  "ended_at": "2026-04-16T10:05:03Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T100450Z_9e24bf20/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T100450Z_9e24bf20/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T100450Z_9e24bf20/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T100450Z_9e24bf20/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T100450Z_9e24bf20/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Current usable path: `gemini/mock_test` is now the main CLI-on-top UI body; `/vectorfl-engine/vectorfl` remains a validation/control reference.\n\n- important findings / diffs / outputs\n  - Changed: added `CliHostControlPanel.tsx`, mounted it in `VectorFLIntegrationShell.tsx`, and added a Vite `/api` proxy to `http://127.0.0.1:8421`. Build passed, proxy state fetch worked, a real read-only Codex run completed, and marking with `validation_target` succeeded.\n\n- uncertainty or failure notes\n  - Remaining note: validation used `curl` through the mock app proxy path, not automated browser-click testing. Deferred items include browser-click automation, session browsing/history, async runner, Gemini adapter, deposit bridge, and promotion automation.\n\n- suggested next use\n  - validation target: hand-validate the `gemini/mock_test` panel in browser before adding session browsing/history.\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:05:06Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:05:06Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

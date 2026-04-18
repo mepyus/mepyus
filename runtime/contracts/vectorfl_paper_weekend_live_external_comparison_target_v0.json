@@ -1,0 +1,25 @@
+{
+  "target_id": "vectorfl_paper_weekend_live_external_comparison_target_v0",
+  "comparison_target": "paperclip_issue_run_result_governance_overlay_v0",
+  "input_reference_docs": [
+    "docs/reviews/paperclip_absorption_overlay_v1.md",
+    "docs/reviews/paperclip_to_vectorfl_overlay_requirements_v0.md",
+    "docs/reviews/paperclip_structural_fit_for_vectorfl_v0.md"
+  ],
+  "comparison_questions": [
+    "How thin can the first overlay be while still preserving issue, run, result, and governance traces?",
+    "Which Paperclip surfaces map cleanly into VectorFL line, trace, residue, and advisory-return grammar?",
+    "What should remain external ontology and what should be translated into VectorFL internal grammar?"
+  ],
+  "acceptance_signals": [
+    "one issue can become a work-root line candidate",
+    "one heartbeat run can become an append-only execution trace",
+    "one result comment can become a residue or observation candidate",
+    "one governance event can become a hold or caution trace"
+  ],
+  "rejection_signals": [
+    "the comparison drifts into UI imitation",
+    "company / org ontology replaces line-centered grammar",
+    "the target becomes broader than issue/run/result/governance"
+  ]
+}

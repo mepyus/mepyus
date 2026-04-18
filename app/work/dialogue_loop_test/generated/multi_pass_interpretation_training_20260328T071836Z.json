@@ -1,0 +1,145 @@
+{
+  "created_at": "2026-03-28T07:18:36.858563Z",
+  "input_asset": "inputs/external_cases/youtube_03_22.md",
+  "pass_a": {
+    "name": "object_layer_relation_question_reading",
+    "front_objects": [
+      "에이전트 애플리케이션",
+      "모델 work",
+      "전략/방향성",
+      "구현/자동화",
+      "생산성/코딩",
+      "AI의 미래"
+    ],
+    "front_layers": [
+      "설명/해석 층",
+      "전략/방향 층",
+      "질문 유도 층",
+      "검증/근거 층",
+      "구현/실행 층",
+      "구조/연결 층"
+    ],
+    "front_relations": [
+      "reinforcement_hint",
+      "transition_hint",
+      "question_generation_hint",
+      "contrast_hint",
+      "execution_shift_hint",
+      "specification_hint"
+    ],
+    "question_blocks": [
+      "84_91",
+      "80_87",
+      "21_26",
+      "84_89",
+      "32_39",
+      "88_95"
+    ],
+    "residue_note": "residue exists but is not the front reading target in pass A",
+    "what_looks_new": [
+      "객체가 단순 키워드가 아니라 AI 시대의 주요 질문 묶음으로 보인다",
+      "질문 유도 블록이 object growth와 함께 잡힌다"
+    ]
+  },
+  "pass_b": {
+    "name": "page_flow_transition_pivot_reading",
+    "pivot_windows": [
+      "84_91",
+      "80_87",
+      "21_26",
+      "84_89",
+      "32_39",
+      "88_95",
+      "20_27",
+      "87_92"
+    ],
+    "pivot_objects": [
+      "에이전트 애플리케이션",
+      "일의 미래",
+      "전략/방향성",
+      "모델 work",
+      "생산성/코딩"
+    ],
+    "pivot_relations": [
+      "reinforcement_hint",
+      "transition_hint",
+      "execution_shift_hint",
+      "question_generation_hint",
+      "contrast_hint"
+    ],
+    "pivot_headings": [
+      "Bundle-Unbundle 프레임워크",
+      "Bundle-Unbundle 프레임워크",
+      "에이전트가 기존 앱을 대신 조작하는 레이어",
+      "에이전트가 기존 앱을 대신 조작하는 레이어",
+      "GTC 키노트와 ‘일의 미래’",
+      "GTC 키노트와 ‘일의 미래’",
+      "Bundle-Unbundle 프레임워크",
+      "Bundle-Unbundle 프레임워크"
+    ],
+    "what_looks_new": [
+      "같은 블록이 객체 후보가 아니라 페이지 흐름을 꺾는 pivot로 보인다",
+      "Bundle-Unbundle, UX 마찰, RLVR/CUA 구간이 실행 질문을 발생시키는 전이점으로 보인다"
+    ]
+  },
+  "pass_c": {
+    "name": "summary_opening_residue_priority_reading",
+    "front_residue_types": [
+      "discourse_connective_residue",
+      "speaker_or_source_residue",
+      "conversational_filler_residue"
+    ],
+    "front_deprioritized_values": [
+      "그래서",
+      "노정석",
+      "Benedict",
+      "저희가"
+    ],
+    "candidate_losses": [
+      {
+        "window_id": "84_91",
+        "before": "그래서, 때문에, 대부분의, 노정석, 사업자, 어떻게",
+        "after": "때문에, 대부분의, 사업자, 어떻게, 경쟁의, 자동차",
+        "deprioritized_values": [
+          "그래서",
+          "노정석"
+        ]
+      },
+      {
+        "window_id": "80_87",
+        "before": "unbundle, Bundle-Unbundle, 프레임워크, Benedict, 에이전트가, 노정석",
+        "after": "unbundle, Bundle-Unbundle, 프레임워크, 에이전트가, 사람이",
+        "deprioritized_values": [
+          "Benedict",
+          "노정석",
+          "그래서"
+        ]
+      },
+      {
+        "window_id": "21_26",
+        "before": "그래서, 노정석, 대해서, GTC, 키노트와, 비즈니스의",
+        "after": "대해서, GTC, 키노트와, 비즈니스의, 본질적, 관점으로",
+        "deprioritized_values": [
+          "그래서",
+          "노정석"
+        ]
+      },
+      {
+        "window_id": "84_89",
+        "before": "그래서, 사업자, 어떻게, 자동차, 경기는, 때문에",
+        "after": "사업자, 어떻게, 자동차, 경기는, 때문에, Bundle-Unbundle",
+        "deprioritized_values": [
+          "그래서"
+        ]
+      }
+    ],
+    "what_looks_new": [
+      "같은 block이 요약 opening에서는 residue 때문에 덜 살아난다",
+      "삭제가 아니라 summary-stage 우선순위 조정이 핵심이라는 점이 보인다"
+    ]
+  },
+  "references": {
+    "purpose_json": "app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_20260328T064938Z.json",
+    "question_json": "app/work/dialogue_loop_test/generated/question_inducing_block_candidates_20260328T065751Z.json"
+  }
+}

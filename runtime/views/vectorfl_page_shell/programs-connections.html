@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VectorFL Page Shell</title>
+  <style>
+    :root {
+      --bg: #f3f5f7;
+      --panel: #fcfcfd;
+      --panel-soft: #f7f8fa;
+      --line: #d7dde4;
+      --line-strong: #0f172a;
+      --ink: #111827;
+      --muted: #667085;
+      --chip: #eef2f6;
+      --accent-soft: #f0f4f8;
+      --warn-bg: #f8f2df;
+      --warn-line: #b98a32;
+      --active-bg: #eef2f6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 1860px; margin: 0 auto; padding: 12px; display: grid; gap: 10px; }
+    .topbar, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 0; }
+    .topbar { padding: 12px 14px; display: grid; gap: 10px; }
+    .frame { display: grid; grid-template-columns: 228px minmax(0, 1.6fr) 336px; gap: 14px; align-items: start; }
+    .panel { padding: 12px; display: grid; gap: 10px; }
+    .panel.soft { background: var(--panel-soft); }
+    .stack { display: grid; gap: 10px; }
+    .primary-panel { gap: 12px; }
+    .list-panel { gap: 8px; }
+    .log-panel { gap: 8px; }
+    .inspector-panel { background: var(--panel-soft); gap: 8px; }
+    .nav-panel { align-self: start; position: sticky; top: 12px; }
+    .main-column { display: grid; gap: 10px; }
+    .right-column { display: grid; gap: 10px; }
+    .nav-stack { display: grid; gap: 0; border: 1px solid var(--line); }
+    .nav-item, .context-link { display: grid; gap: 4px; border-bottom: 1px solid var(--line); padding: 10px 12px; background: #fcfcfd; color: var(--ink); }
+    .nav-item:last-child, .context-link:last-child { border-bottom: 0; }
+    .nav-item.active { background: var(--active-bg); }
+    .context-link { background: var(--panel-soft); }
+    .kicker, .label { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .eyebrow { color: var(--muted); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+    h1, h2, h3 { margin: 0; color: var(--ink); }
+    h1 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+    h2 { font-size: 15px; font-weight: 600; }
+    h3 { font-size: 14px; font-weight: 600; }
+    .meta { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--muted); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 8px; font-size: 11px; background: var(--chip); color: var(--ink); border: 1px solid var(--line); }
+    .card { border: 1px solid var(--line); background: #fcfcfd; padding: 10px; display: grid; gap: 6px; }
+    .trace-item { background: #fcfcfd; padding: 10px 0; display: grid; gap: 6px; border-bottom: 1px solid var(--line); }
+    .trace-item:first-child { padding-top: 0; }
+    .trace-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .list-shell { border: 1px solid var(--line); background: #fcfcfd; }
+    .list-row { display: grid; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    .list-row:last-child { border-bottom: 0; }
+    .row-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .metric-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: #fcfcfd; }
+    .metric-cell { padding: 10px 12px; border-right: 1px solid var(--line); display: grid; gap: 4px; }
+    .metric-cell:last-child { border-right: 0; }
+    .metric-value { font-size: 19px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+    .body-copy { line-height: 1.65; white-space: pre-wrap; font-size: 13px; }
+    .simple-list { display: grid; gap: 4px; margin: 0; padding-left: 18px; font-size: 13px; }
+    .warn { border: 1px solid var(--warn-line); background: var(--warn-bg); color: #8a5a2b; padding: 10px; display: grid; gap: 6px; }
+    .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .breadcrumb .sep { color: var(--muted); }
+    .toolbar-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toolbar-link { border: 1px solid var(--line); padding: 5px 8px; background: #fcfcfd; color: var(--ink); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .panel-divider { border-top: 1px solid var(--line); margin-top: 2px; padding-top: 10px; }
+    .surface-head { display: grid; gap: 5px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+    .shell-note { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .dense-row { display: grid; gap: 2px; }
+    .main-reading { display: grid; gap: 12px; }
+    .reading-block { border-left: 2px solid var(--line); padding-left: 12px; }
+    .inspector-block { border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 8px; }
+    .page-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0 0; border-top: 1px solid var(--line); }
+    .page-tabs { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); background: #fcfcfd; }
+    .page-tab { padding: 7px 11px; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-right: 1px solid var(--line); background: #fcfcfd; color: var(--muted); }
+    .page-tab:last-child { border-right: 0; }
+    .page-tab.active { color: var(--ink); background: var(--active-bg); }
+    .entity-list { border: 1px solid var(--line); background: #fcfcfd; }
+    .entity-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr) auto; gap: 12px; align-items: center; padding: 11px 12px; border-bottom: 1px solid var(--line); }
+    .entity-row:last-child { border-bottom: 0; }
+    .entity-main { display: grid; gap: 4px; min-width: 0; }
+    .entity-title { font-size: 13px; font-weight: 600; color: var(--ink); }
+    .entity-sub { font-size: 12px; color: var(--muted); line-height: 1.45; }
+    .entity-meta { display: grid; gap: 2px; justify-items: start; }
+    .entity-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+    .summary-grid { display: grid; grid-template-columns: 1.3fr .9fr; gap: 10px; }
+    .detail-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 10px; }
+    .reading-slab { border: 1px solid var(--line); background: #fcfcfd; padding: 12px; display: grid; gap: 8px; }
+    .activity-list { border: 1px solid var(--line); background: #fcfcfd; }
+    .activity-row { display: grid; gap: 4px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    .activity-row:last-child { border-bottom: 0; }
+    .mini-stat-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: #fcfcfd; }
+    .mini-stat { padding: 9px 10px; border-right: 1px solid var(--line); display: grid; gap: 3px; }
+    .mini-stat:last-child { border-right: 0; }
+    .inspector-title { font-size: 12px; font-weight: 600; color: var(--ink); }
+  </style>
+</head>
+<body>
+  <script id="vectorfl-page-app-shell-data" type="application/json">{"state": "loaded", "page_title": "VectorFL Page / Route Mock / programs-connections", "left_rail": {"enabled": false, "mode": "rail_minimal", "note": "Left rail remains optional at this stage; sidebar and center console stay primary."}, "navigation_items": [{"key": "current-reading", "label": "Current Reading", "active": false}, {"key": "inputs", "label": "Inputs / Intake", "active": false}, {"key": "cases", "label": "Cases / Queue", "active": false}, {"key": "history", "label": "History / Trace", "active": false}, {"key": "programs", "label": "Programs / Connections", "active": true}], "navigation_structure": {"primary": ["Current Reading", "Cases / Queue", "Inputs / Intake", "History / Trace", "Programs / Connections"], "secondary": ["Organ Detail (contextual drill-in only)"]}, "scenario": {"name": "mixed_hold_transition_case", "intent": "Show current-reading, governance, residue, and reentry together in a single active case.", "status": "active_not_closed"}, "current_responsibility": {"current_organ_ref": "organ:flow_interpretation", "current_lane_ref": "lane_transition_reread_001", "placement_reason": "Translation narrowed this case into transition-thickening grammar, and flow interpretation is currently responsible for preserving unresolved edge and next-hop readability.", "restriction_flags": ["observer_only", "promotion_forbidden", "closure_before_presentation"], "next_hop_candidates": ["lane_operator_readout_review", "lane_transition_preflight_reread"], "detail_entry_target": "organ_detail:flow_interpretation"}, "progression_preview": {"previous_step": {"organ_ref": "organ:translation", "summary": "Translated mixed intake into transition-thickening and explanation-first grammar."}, "current_step": {"organ_ref": "organ:flow_interpretation", "summary": "Reading next hop and preserving unresolved edge before direct operator presentation."}, "next_candidates": [{"organ_ref": "organ:governance", "lane_ref": "lane_transition_preflight_reread", "status": "preferred_candidate", "detail_entry_target": "organ_detail:governance"}, {"organ_ref": "organ:current_reading_return", "lane_ref": "lane_operator_readout_review", "status": "held_candidate", "detail_entry_target": "organ_detail:current_reading_return"}]}, "queue_preview": [{"case_id": "case_transition_surface_reentry_001", "case_kind": "transition_case", "case_status": "active", "current_organ_ref": "organ:flow_interpretation", "lane_kind": "transition_thickening", "lane_status": "hold_mixed", "placement_reason_short": "flow interpretation is preserving unresolved edge before direct readout", "hold_state": "mixed_hold", "restriction_flags": ["observer_only", "promotion_forbidden", "closure_before_presentation"], "preferred_next_candidate": "organ:governance / lane_transition_preflight_reread", "held_candidate_exists": true, "headline": "Transition surface is readable, but still closure-incomplete.", "linked_program_refs": ["program:tank_program"], "updated_at": "2026-04-08T15:20:00+09:00"}], "drill_in_navigation": {"queue_to_current_reading": {"entry_target": "current_reading:case_transition_surface_reentry_001", "carried_refs": ["case_transition_surface_reentry_001", "lane_transition_reread_001", "surface_current_reading_001", "gov_transition_hold_001"]}, "current_reading_to_organ_detail": {"entry_target": "organ_detail:flow_interpretation", "carried_refs": ["case_transition_surface_reentry_001", "lane_transition_reread_001", "organ:flow_interpretation"]}}, "current_reading": {"case_header": {"case_id": "case_transition_surface_reentry_001", "case_kind": "transition_case", "case_status": "active", "linked_program_refs": ["program:tank_program"], "updated_at": "2026-04-08T15:20:00+09:00"}, "body": {"headline": "Transition surface is readable, but still closure-incomplete.", "summary_body_text": "The case is currently read as a transition-thickening situation rather than a presentation-ready state. The transition edge is visible enough to support reread and next-hop review, but the governance state still holds the case in mixed observer-only mode.", "supporting_unit_refs": ["unit_phase_decision_001", "unit_surface_summary_002", "unit_operator_note_003"]}, "lane": {"lane_kind": "transition_thickening", "lane_status": "hold_mixed", "next_hop_candidates": ["lane_operator_readout_review", "lane_transition_preflight_reread"]}, "governance": {"hold_state": "mixed_hold", "restriction_flags": ["observer_only", "promotion_forbidden", "closure_before_presentation"], "reason_summary": "Current reading is usable, but direct presentation is held until transition closure and reread conditions are rechecked.", "release_condition": "Confirm transition closure or downgrade to residue-backed operator readout.", "next_check_trigger": "Re-run transition reread after next surface refresh or linked program state change."}, "trace_preview": [{"trace_id": "trace_transition_residue_001", "trace_kind": "residue_note", "summary": "Transition remains readable but unresolved; preserve explanation-first bias before direct readout.", "residue_note": "closure_before_presentation", "reentry_hint": "If operator asks for summary first, reopen transition interpretation before final readout.", "created_at": "2026-04-08T15:05:00+09:00"}, {"trace_id": "trace_transition_reentry_002", "trace_kind": "reentry_hint", "summary": "Route next read through transition reread if linked program state changes or if new blockage evidence appears.", "residue_note": "preserve unresolved edge", "reentry_hint": "transition_condition_to_operator_readability", "created_at": "2026-04-08T15:12:00+09:00"}]}, "inputs_preview": {"source_id": "source_external_transition_case_001", "source_kind": "mixed_runtime_material", "source_family": "external_case", "source_subgroup": "transition_case", "matched_context_layers": ["global:external_reference", "family:transition_thickening", "case:mixed_hold_transition"], "intake_classification": "mixed_material", "next_lane_hint": "translation_first", "weakness_note": "Initial intake used fallback split across mixed runtime and operator note material.", "fallback_used": true, "readiness_level": "usable_with_caution", "re_read_needed": true}, "history_trace_preview": {"latest_trace_list": [{"trace_id": "trace_transition_residue_001", "trace_kind": "residue_note", "summary": "Transition remains readable but unresolved; preserve explanation-first bias before direct readout.", "residue_note": "closure_before_presentation", "reentry_hint": "If operator asks for summary first, reopen transition interpretation before final readout.", "created_at": "2026-04-08T15:05:00+09:00"}, {"trace_id": "trace_transition_reentry_002", "trace_kind": "reentry_hint", "summary": "Route next read through transition reread if linked program state changes or if new blockage evidence appears.", "residue_note": "preserve unresolved edge", "reentry_hint": "transition_condition_to_operator_readability", "created_at": "2026-04-08T15:12:00+09:00"}], "decision_trace_anchor": null, "residue_emphasis": ["closure_before_presentation", "preserve unresolved edge"], "reentry_cues": ["If operator asks for summary first, reopen transition interpretation before final readout.", "transition_condition_to_operator_readability"]}, "programs_connections_preview": {"linked_programs": ["program:tank_program"], "connection_state": "read_connected_request_limited", "current_linked_surface": ["program:tank_program"], "action_request_preview": "Hold direct presentation. Keep request at explanation-first or reread-first level until closure condition is satisfied.", "governance_restriction_summary": ["observer_only", "promotion_forbidden", "closure_before_presentation"]}, "contextual_panels": {"active_panel": "organ_detail_current", "available_panels": [{"panel_id": "organ_detail_current", "entry_target": "organ_detail:flow_interpretation", "entry_label": "Current Organ Detail", "source": "current responsibility strip"}, {"panel_id": "organ_detail_governance", "entry_target": "organ_detail:governance", "entry_label": "Preferred Next Candidate Detail", "source": "progression strip"}]}, "unified_shell": {"mode": "current_reading_centered_with_contextual_detail", "current_center": "Current Reading", "support_columns": ["Cases / Queue + Inputs / Intake", "Governance + History / Trace + Programs / Connections"]}, "sidebar_sections": [{"section_label": "Read", "items": ["Current Reading", "Cases / Queue", "Inputs / Intake"]}, {"section_label": "Carry", "items": ["History / Trace", "Programs / Connections"]}], "route_state_preview": {"active_primary_surface": "programs-connections", "active_case_ref": "case_transition_surface_reentry_001", "active_contextual_panel": "organ_detail_current", "contextual_entry_targets": ["organ_detail:flow_interpretation", "organ_detail:governance"], "note": "Current Reading remains the center route; organ detail stays contextual rather than becoming a primary route.", "active_nav_key": "programs", "breadcrumb_chain": ["VectorFL Page", "programs-connections"], "contextual_panel_entry": {"active_panel": "organ_detail_current", "entry_targets": ["organ_detail:flow_interpretation", "organ_detail:governance"]}, "route_note": "Current Reading remains the semantic center even when another primary surface is opened as the active page state."}, "organ_detail_panels": {"current": {"fixture_id": "vectorfl_flow_interpretation_organ_detail_mock_fixture_v0", "fixture_kind": "organ_detail_first_mock", "organ_identity": {"organ_ref": "organ:flow_interpretation", "organ_label": "Flow Interpretation Organ", "current_status": "active_transition_reading", "related_lane_refs": ["lane_transition_reread_001", "lane_transition_preflight_reread"]}, "instruction_bundle_preview": {"role_sentence": "Flow interpretation organ reads transition, next hop, and unresolved edge without flattening the case into premature closure.", "reading_priorities": ["current lane tension", "previous translation carry", "governance restriction carry", "reentry-sensitive trace cues"], "output_contract": ["flow reading summary", "next candidate ordering", "unresolved edge note", "route caution"]}, "accepted_handoff_preview": {"accepted_input_kinds": ["translation return", "current surface packet", "trace/reentry carry", "governance restriction snapshot"], "required_packet_fields": ["case_ref", "current_lane_ref", "current_surface_ref", "restriction_flags", "question_or_trigger", "expected_return_type"], "common_triggers": ["transition-first explanation needed", "next hop remains unresolved", "direct readout feels premature"]}, "caution_profile": {"stop_hold_conditions": ["next hop is asserted without evidence carry", "unresolved edge disappears in summary", "presentation pressure overrides current restrictions"], "preserve_first_rules": ["keep preferred vs held candidate distinction", "keep observer-only restrictions visible", "keep transition reread route legible"], "avoid_wording": ["done", "clear to present", "resolved flow"]}, "recent_return_preview": {"summary_return": "Read this case as transition-readable but closure-incomplete; governance review should precede direct operator readout.", "lane_hint_update": ["lane_transition_preflight_reread", "lane_operator_readout_review"], "recent_trace_carry": ["closure_before_presentation", "transition_condition_to_operator_readability"], "recent_handoff_target": "organ:governance"}}, "governance_candidate": {"fixture_id": "vectorfl_governance_organ_detail_mock_fixture_v0", "fixture_kind": "organ_detail_first_mock", "organ_identity": {"organ_ref": "organ:governance", "organ_label": "Governance Organ", "current_status": "restriction_review_pending", "related_lane_refs": ["lane_transition_preflight_reread", "lane_operator_readout_review"]}, "instruction_bundle_preview": {"role_sentence": "Governance organ preserves restriction, hold, and release conditions so current-reading does not collapse into premature action or presentation.", "reading_priorities": ["active restriction flags", "evidence sufficiency", "release condition clarity", "trace-backed carry obligations"], "output_contract": ["governance state update", "reason summary", "release condition", "next check trigger"]}, "accepted_handoff_preview": {"accepted_input_kinds": ["flow interpretation return", "trace/residue carry", "linked program caution", "surface packet summary"], "required_packet_fields": ["case_ref", "current_lane_ref", "restriction_flags", "supporting_evidence_refs", "release_condition_candidate", "expected_return_type"], "common_triggers": ["mixed hold persists", "direct readout candidate must stay held", "next check trigger needs tightening"]}, "caution_profile": {"stop_hold_conditions": ["release proposed without supporting evidence", "weak intake is being ignored", "promotion pressure exceeds current-reading confidence"], "preserve_first_rules": ["keep observer-only visible until release condition is satisfied", "keep promotion-forbidden state explicit", "keep decision anchor linked to trace"], "avoid_wording": ["approved", "safe to execute", "final release"]}, "recent_return_preview": {"summary_return": "Maintain mixed hold; allow explanation-first reread but keep direct operator presentation in held candidate status.", "lane_hint_update": ["lane_transition_preflight_reread"], "recent_trace_carry": ["observer_only", "promotion_forbidden", "closure_before_presentation"], "recent_handoff_target": "organ:current_reading_return"}}}, "active_primary_surface": "programs-connections", "paper_operating_bridge_preview": {"kind": "paper_operating_bridge_preview", "mode": "read_only_projection", "source_manifests": {"handoff": "runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json", "codex_return": "runtime/manifests/vectorfl_paper_codex_return_latest_v0.json", "gemini_review": "runtime/manifests/vectorfl_paper_gemini_review_latest_v0.json", "supervisor_decision": "runtime/manifests/vectorfl_paper_supervisor_decision_latest_v0.json", "slot": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json", "validation_latest": "runtime/manifests/vectorfl_paper_actual_export_gate_validation_latest_v0.json", "validation_dry_run": "runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json", "comparison": "runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json"}, "current_posture": "hold_pending_validations", "current_ssot_label": "current_ssot: actual_export_host_record_slot remains unchanged", "preview_only_label": "preview_only: dry-run candidate does not replace current slot", "summary_only_label": "summary_only: reference comparison is a supervisor reading aid", "codex_bridge_status": "completed", "gemini_review_status": "completed", "supervisor_decision": "hold_pending_validations", "supervisor_rationale": "Codex supports the current thin mapping, and Gemini's review does not identify a new mapping objection. The honest supervisor state is still hold because actual_export_only remains evidenced as an open validation gate.", "gate_effect": "narrowed_but_still_binding", "validation_status": "partial", "honesty_class": "local_fixture", "dry_run_gate_effect": "candidate_for_reopen_validation", "dry_run_honesty_class": "external_candidate", "comparison_repeatable_reopen": true, "comparison_gate_close_candidate": false, "comparison_candidate_count": 4, "next_gate": "Continue becomes honest only after the fixed export-shaped fixture is replaced by a truly actual external record and one supervisor-readable hold/go/reopen decision is directly verified.", "return_route": "current-reading -> programs-connections -> history-trace -> current-reading", "guard_language": ["no gate close", "no slot replacement", "no candidate promotion", "proper/weekend surfaces are not imported wholesale"]}, "paper_proper_translation_payload": {"kind": "paper_proper_translation_payload", "mode": "paperclip_design_reference_translated_to_vectorfl", "source_contracts": {"page_tree": "runtime/contracts/vectorfl_paper_proper_page_tree_v0.json", "operating_board": "runtime/contracts/vectorfl_paper_operating_board_sections_v0.json", "cell_worker_panel": "runtime/contracts/vectorfl_paper_cell_worker_panel_sections_v0.json", "trace_governance": "runtime/contracts/vectorfl_paper_trace_governance_sections_v0.json"}, "source_design_locks": ["docs/specs/vectorfl_paper_ui_design_reference_lock_v0.md", "docs/specs/paperclip_frame_component_extraction_reading_v0.md", "docs/reports/paperclip_git_search_surface_translation_v0.md"], "top_direction": "VectorFL Paper proper should grow as a reading-first integrated engine that closes input, internal read, selective external comparison, cli-managed execution, governance decision, and internal return in one loop grammar.", "flow_rule": ["operating_board", "case_detail", "inspector", "cell_worker_panel", "trace_governance", "return", "next_case_loop"], "paperclip_translation": {"dashboard": "supervisor_board", "issue": "current_case_or_line_guided_work_packet", "issue_detail": "case_detail", "issue_properties": "inspector_and_governance_fields", "agent_detail": "cell_worker_operating_panel", "activity": "trace_audit", "approval": "supervisor_gate", "heartbeat_run": "execution_pass_or_run_trace"}, "operating_board_sections": ["current_proof", "decision_queue", "active_cases", "active_cells_and_cli_runs", "latest_returns", "remaining_gates"], "operating_board_rules": ["start with supervisor-readable sentences before counts", "each section must make clear why this matters now", "active case, active cell, and latest return must share one loop grammar", "avoid company ontology as first-order board language", "artifact refs are secondary to human-readable judgment language"], "cell_worker_sections": ["cell_registry", "selected_cell_detail", "cli_ownership", "contract_readout", "adapter_config", "payload_preview", "launch_controls", "return_slot"], "cell_worker_rules": ["read lens and role before label", "show cli as owner and manager rather than just a provider", "always pair payload preview with return slot", "keep launch controls connected to trace and governance", "avoid paperclip company or agent naming as canonical language"], "trace_governance_sections": ["run_trace", "governance_gate", "reopen_history", "reinjection", "supervisor_decision", "next_loop_trigger"], "trace_governance_rules": ["trace language and structure must remain append-only", "governance protects reading quality before promotion", "reopen is part of the loop rather than failure noise", "reinjection must point back into internal memory or next probe", "the current supervisor decision must be readable without raw manifests"], "design_translation_rules": ["compact metric and status strips before hero presentation", "border-led operating lists over soft card stacks", "bounded panel roles: navigation, primary surface, governance carry, contextual detail", "Paperclip frame grammar is reused; company/issue/agent ontology is not imported"], "operator_language_rule": "Use Paper proper operating language: supervisor entrypoint, active loop, cell/CLI ownership, governance gate, return slot, reopen, and next-loop trigger."}, "shell_runtime": {"kind": "vectorfl_page_app_shell", "active_surface": "programs-connections", "surface_links": {"current-reading": "current-reading.html", "cases-queue": "cases-queue.html", "inputs-intake": "inputs-intake.html", "history-trace": "history-trace.html", "programs-connections": "programs-connections.html"}, "index_href": "index.html"}}</script>
+  <div id="app"></div>
+  <script>
+    const data = JSON.parse(document.getElementById('vectorfl-page-app-shell-data').textContent);
+    const app = document.getElementById('app');
+    const runtime = data.shell_runtime || {};
+    const routeState = data.route_state_preview || {};
+    const current = data.current_reading || {};
+    const body = current.body || {};
+    const lane = current.lane || {};
+    const governance = current.governance || {};
+    const responsibility = data.current_responsibility || {};
+    const progression = data.progression_preview || {};
+    const queue = data.queue_preview || [];
+    const intake = data.inputs_preview || {};
+    const history = data.history_trace_preview || {};
+    const programs = data.programs_connections_preview || {};
+    const detailPanels = data.organ_detail_panels || {};
+    const contextualLinkMap = routeState.contextual_link_map || {};
+    const bridge = data.paper_operating_bridge_preview || {};
+    const paper = data.paper_proper_translation_payload || {};
+    const metricStrip = [
+      { label: 'Active Surface', value: routeState.active_primary_surface || runtime.active_surface || 'unknown', note: routeState.active_nav_key || 'none' },
+      { label: 'Current Organ', value: responsibility.current_organ_ref || 'unknown', note: lane.lane_kind || 'no lane' },
+      { label: 'Restrictions', value: String((governance.restriction_flags || []).length), note: (governance.hold_state || 'none') },
+      { label: 'Trace Rows', value: String((history.latest_trace_list || []).length), note: programs.connection_state || 'no connection state' },
+    ];
+
+    function esc(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function chip(text) {
+      return `<span class="chip">${esc(text)}</span>`;
+    }
+
+    function renderBridgePostureStrip() {
+      if (!bridge.kind) return '';
+      return `
+        <section class="panel inspector-panel">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Paper Operating Bridge</div>
+              <h3>Current supervisor posture</h3>
+            </div>
+            <div class="mono">${esc(bridge.current_posture || 'unknown')}</div>
+          </div>
+          <div class="chip-row">
+            ${chip(bridge.current_ssot_label || 'current_ssot')}
+            ${chip(bridge.preview_only_label || 'preview_only')}
+            ${chip(bridge.summary_only_label || 'summary_only')}
+          </div>
+          <div class="body-copy">${esc(bridge.supervisor_rationale || 'none')}</div>
+          <div class="meta">next gate: ${esc(bridge.next_gate || 'none')}</div>
+        </section>
+      `;
+    }
+
+    function renderBridgeAuditBlock() {
+      if (!bridge.kind) return '';
+      return `
+        <section class="panel inspector-panel">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Paper Bridge Audit</div>
+              <h3>Gate / validation reading</h3>
+            </div>
+            <div class="mono">${esc(bridge.gate_effect || 'unknown')}</div>
+          </div>
+          <div class="mini-stat-row">
+            <div class="mini-stat"><div class="kicker">latest</div><div class="mono">${esc(bridge.validation_status || 'unknown')}</div></div>
+            <div class="mini-stat"><div class="kicker">honesty</div><div class="mono">${esc(bridge.honesty_class || 'unknown')}</div></div>
+            <div class="mini-stat"><div class="kicker">dry-run</div><div class="mono">${esc(bridge.dry_run_gate_effect || 'none')}</div></div>
+          </div>
+          <div class="chip-row">
+            ${chip(`comparison candidates=${bridge.comparison_candidate_count ?? 0}`)}
+            ${chip(`repeatable_reopen=${bridge.comparison_repeatable_reopen === true ? 'yes' : 'no'}`)}
+            ${chip(`gate_close_candidate=${bridge.comparison_gate_close_candidate === true ? 'yes' : 'no'}`)}
+          </div>
+          <div class="meta">guard: ${(bridge.guard_language || []).map(esc).join(' / ') || 'none'}</div>
+        </section>
+      `;
+    }
+
+    function renderBridgeConnectionBlock() {
+      if (!bridge.kind) return '';
+      return `
+        <section class="panel inspector-panel">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Paper Bridge Connections</div>
+              <h3>Codex / Gemini availability</h3>
+            </div>
+            <div class="mono">${esc(bridge.mode || 'read_only_projection')}</div>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-cell"><div class="kicker">codex</div><div class="mono">${esc(bridge.codex_bridge_status || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">gemini</div><div class="mono">${esc(bridge.gemini_review_status || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">decision</div><div class="mono">${esc(bridge.supervisor_decision || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">route</div><div class="mono">${esc(bridge.return_route || 'none')}</div></div>
+          </div>
+          <div class="meta">This shell reads the bridge state only. It does not run workers, replace slots, promote candidates, or close gates.</div>
+        </section>
+      `;
+    }
+
+    function renderPaperProperCurrentSurface() {
+      if (!paper.kind) return '';
+      return `
+        <section class="panel primary-panel">
+          <div class="surface-head">
+            <div class="section-head">
+              <div>
+                <div class="kicker">Primary Surface / VectorFL Paper Proper</div>
+                <h2>Supervisor operating board</h2>
+              </div>
+              <div class="mono">${esc(paper.mode || 'translated')}</div>
+            </div>
+            <div class="shell-note">${esc(paper.top_direction || 'one operating loop')}</div>
+          </div>
+          ${renderBridgePostureStrip()}
+          <div class="metric-strip">
+            <div class="metric-cell"><div class="kicker">posture</div><div class="mono">${esc(bridge.current_posture || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">codex</div><div class="mono">${esc(bridge.codex_bridge_status || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">gemini</div><div class="mono">${esc(bridge.gemini_review_status || 'unknown')}</div></div>
+            <div class="metric-cell"><div class="kicker">gate</div><div class="mono">${esc(bridge.gate_effect || 'unknown')}</div></div>
+          </div>
+          <div class="detail-grid">
+            <div class="reading-slab">
+              <div class="label">Operating board sections</div>
+              <div class="entity-list">
+                ${(paper.operating_board_sections || []).map((item) => `
+                  <div class="list-row">
+                    <div class="row-head"><strong>${esc(item)}</strong><span class="mono">board</span></div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="label">Paperclip translation map</div>
+              <div class="list-shell">
+                ${Object.entries(paper.paperclip_translation || {}).map(([source, target]) => `
+                  <div class="list-row">
+                    <div class="row-head"><strong>${esc(source)}</strong><span class="mono">${esc(target)}</span></div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="reading-slab">
+              <div class="label">Flow rule</div>
+              <div class="chip-row">${(paper.flow_rule || []).map(chip).join('') || chip('none')}</div>
+              <div class="label">Design translation</div>
+              <ul class="simple-list">${(paper.design_translation_rules || []).map((item) => `<li>${esc(item)}</li>`).join('') || '<li>none</li>'}</ul>
+              <div class="label">Operator language</div>
+              <div class="body-copy">${esc(paper.operator_language_rule || 'none')}</div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPrimarySurface() {
+      switch (runtime.active_surface) {
+        case 'cases-queue':
+          return `
+            <section class="panel list-panel">
+              <div class="surface-head">
+                <div class="section-head">
+                  <div>
+                    <div class="kicker">Primary Surface</div>
+                    <h2>Cases / Queue</h2>
+                  </div>
+                  <div class="mono">progression entry surface</div>
+                </div>
+                <div class="shell-note">Assigned work, current organ placement, and next-hop visibility come before deep detail.</div>
+              </div>
+              <div class="page-toolbar">
+                <div class="page-tabs">
+                  <span class="page-tab active">all active</span>
+                  <span class="page-tab">observer-only</span>
+                  <span class="page-tab">mixed hold</span>
+                </div>
+                <div class="mono">${queue.length} visible cases</div>
+              </div>
+              <div class="entity-list">
+                ${queue.map((item) => `
+                  <div class="entity-row">
+                    <div class="entity-main">
+                      <div class="row-head">
+                        <span class="entity-title">${item.headline || item.case_id}</span>
+                        <span class="mono">${item.case_id}</span>
+                      </div>
+                      <div class="entity-sub">${item.placement_reason_short || 'no placement reason'}</div>
+                      <div class="entity-sub">update=${item.recent_update_reason || 'none'} / attention_pattern=${item.attention_pattern_summary || 'none'}</div>
+                    </div>
+                    <div class="entity-meta">
+                      <div class="mono">organ=${item.current_organ_ref || 'unknown'}</div>
+                      <div class="meta">lane=${item.lane_kind || 'unknown'} / updated=${item.updated_at || 'unknown'}</div>
+                      <div class="chip-row">${(item.restriction_flags || []).map(chip).join("")}</div>
+                      <div class="meta">next=${item.preferred_next_candidate || 'none'} / saved=${item.saved_connection_count ?? 0} / attention=${item.attention_flag ? 'yes' : 'no'}</div>
+                    </div>
+                    <div class="entity-actions">
+                      ${item.detail_href ? `<a class="toolbar-link" href="${item.detail_href}">Current Organ Detail</a>` : ''}
+                      ${item.next_detail_href ? `<a class="toolbar-link" href="${item.next_detail_href}">Next Candidate Detail</a>` : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+          `;
+        case 'inputs-intake':
+          return `
+            <section class="panel inspector-panel">
+              <div class="surface-head">
+                <div class="section-head">
+                  <div>
+                    <div class="kicker">Primary Surface</div>
+                    <h2>Inputs / Intake</h2>
+                  </div>
+                  <div class="mono">${intake.intake_classification || 'unknown classification'}</div>
+                </div>
+                <div class="shell-note">Source and context stay visible before any later lane meaning is assumed.</div>
+              </div>
+              <div class="summary-grid">
+              <div class="card">
+                <strong>${intake.source_id || 'no source id'}</strong>
+                <div class="meta">kind=${intake.source_kind || 'unknown'} / family=${intake.source_family || 'unknown'}</div>
+                <div class="chip-row">${(intake.matched_context_layers || []).map(chip).join('')}</div>
+                <div class="label">Selected Artifact Refs</div>
+                <ul class="simple-list">${(intake.selected_artifact_refs || []).map((item) => `<li>${item}</li>`).join('') || '<li>none</li>'}</ul>
+              </div>
+              <div class="card">
+                <div class="label">Artifact Roots</div>
+                <div class="chip-row">${(intake.artifact_roots || []).map(chip).join('') || chip('none')}</div>
+                <div class="meta">first_read=${intake.first_read_ref || 'none'} / requested=${intake.requested_artifact_ref || 'none'}</div>
+                <div class="meta">phase_source_turn=${intake.phase_source_turn || 'none'} / mode_source=${intake.mode_source || 'none'}</div>
+                <div class="toolbar-links">
+                  ${intake.detail_href ? `<a class="toolbar-link" href="${intake.detail_href}">Input Organ Detail</a>` : ''}
+                  ${intake.current_reading_href ? `<a class="toolbar-link" href="${intake.current_reading_href}">Current Reading Center</a>` : ''}
+                </div>
+                <div class="warn">
+                  <strong>Weak / Fallback Carry</strong>
+                  <div>${intake.weakness_note || 'none'}</div>
+                  <div class="meta">fallback=${String(!!intake.fallback_used)} / readiness=${intake.readiness_level || 'unknown'}</div>
+                </div>
+              </div>
+              </div>
+            </section>
+          `;
+        case 'history-trace':
+          return `
+            <section class="panel log-panel">
+              <div class="surface-head">
+                <div class="section-head">
+                  <div>
+                    <div class="kicker">Primary Surface</div>
+                    <h2>History / Trace</h2>
+                  </div>
+                  <div class="mono">append-only carry surface</div>
+                </div>
+                <div class="shell-note">Trace rows read as operational carry, not as generic activity cards.</div>
+              </div>
+              ${renderBridgeAuditBlock()}
+              ${paper.kind ? `
+                <section class="panel inspector-panel">
+                  <div class="section-head">
+                    <div><div class="kicker">Trace Governance Contract</div><h3>Loop closure sections</h3></div>
+                    <div class="mono">append-only / decision-readable</div>
+                  </div>
+                  <div class="chip-row">${(paper.trace_governance_sections || []).map(chip).join('') || chip('none')}</div>
+                  <ul class="simple-list">${(paper.trace_governance_rules || []).map((item) => `<li>${esc(item)}</li>`).join('') || '<li>none</li>'}</ul>
+                </section>
+              ` : ''}
+              <div class="mini-stat-row">
+                <div class="mini-stat"><div class="kicker">trace rows</div><div class="metric-value" style="font-size:16px;">${(history.latest_trace_list || []).length}</div></div>
+                <div class="mini-stat"><div class="kicker">decision anchor</div><div class="mono">${history.decision_trace_anchor || 'none'}</div></div>
+                <div class="mini-stat"><div class="kicker">residue cues</div><div class="mono">${(history.reentry_cues || []).length}</div></div>
+              </div>
+              <div class="activity-list">
+                ${(history.latest_trace_list || []).map((item) => `
+                  <div class="activity-row">
+                    <div class="row-head">
+                      <div class="label">${item.trace_kind || 'trace'}</div>
+                      <span class="mono">${item.trace_id || 'unknown trace'}</span>
+                    </div>
+                    <strong>${item.detail_href ? `<a href="${item.detail_href}">${item.summary || 'none'}</a>` : (item.summary || 'none')}</strong>
+                    <div class="meta">residue=${item.residue_note || 'none'}</div>
+                    <div class="body-copy">${item.reentry_hint || 'none'}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+          `;
+        case 'programs-connections':
+          return `
+            <section class="panel list-panel">
+              <div class="surface-head">
+                <div class="section-head">
+                  <div>
+                    <div class="kicker">Primary Surface</div>
+                    <h2>Programs / Connections</h2>
+                  </div>
+                  <div class="mono">${programs.connection_state || 'unknown connection state'}</div>
+                </div>
+                <div class="shell-note">Boundary state, linked programs, attention memory, and update evidence stay inspectable from one surface.</div>
+              </div>
+              ${renderBridgeConnectionBlock()}
+              ${paper.kind ? `
+                <section class="panel inspector-panel">
+                  <div class="section-head">
+                    <div><div class="kicker">Cell / Worker Panel Contract</div><h3>CLI ownership setup</h3></div>
+                    <div class="mono">payload -> return slot</div>
+                  </div>
+                  <div class="chip-row">${(paper.cell_worker_sections || []).map(chip).join('') || chip('none')}</div>
+                  <ul class="simple-list">${(paper.cell_worker_rules || []).map((item) => `<li>${esc(item)}</li>`).join('') || '<li>none</li>'}</ul>
+                </section>
+              ` : ''}
+              <div class="detail-grid">
+              <div class="card">
+                <div class="chip-row">
+                  ${chip(`state=${programs.connection_state || 'unknown'}`)}
+                  ${(programs.linked_programs || []).map(chip).join('')}
+                </div>
+                <div class="body-copy">${programs.action_request_preview || 'none'}</div>
+                <div class="panel-divider">
+                <div class="label">Saved Connections</div>
+                <div class="list-shell" style="padding:0 12px;">
+                  ${(programs.saved_connection_preview || []).map((item) => `
+                    <div class="trace-item">
+                      <div class="row-head">
+                        <strong>${item.detail_href ? `<a href="${item.detail_href}">${item.value_label || item.id || 'saved connection'}</a>` : (item.value_label || item.id || 'saved connection')}</strong>
+                        <span class="mono">${item.id || 'connection'}</span>
+                      </div>
+                      <div class="body-copy">${item.relation_summary || 'none'}</div>
+                      <div class="meta">${item.source_pointer || 'no source pointer'}</div>
+                    </div>
+                  `).join('') || '<div class="meta">none</div>'}
+                </div>
+                </div>
+                <div class="panel-divider">
+                <div class="label">Attention / Update</div>
+                <div class="list-shell" style="padding:0 12px;">
+                  ${(programs.attention_memory_preview || []).map((item) => `
+                    <div class="trace-item">
+                      <div class="row-head">
+                        <strong>${item.detail_href ? `<a href="${item.detail_href}">${item.attention_pattern_summary || 'attention pattern'}</a>` : (item.attention_pattern_summary || 'attention pattern')}</strong>
+                        <span class="mono">${item.asset_id || 'attention'}</span>
+                      </div>
+                      <div class="meta">active=${item.active_attention_count || 0}</div>
+                      <div class="body-copy">${(item.dominant_attention_reasons || []).join(' / ') || 'none'}</div>
+                    </div>
+                  `).join('')}
+                  ${(programs.update_event_preview || []).map((item) => `
+                    <div class="trace-item">
+                      <strong>${item.update_reason || 'runtime update'}</strong>
+                      <div class="meta">trigger=${item.trigger_type || 'unknown'} / updated=${item.updated_at || 'unknown'}</div>
+                    </div>
+                  `).join('') || '<div class="meta">none</div>'}
+                </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="label">Restriction Carry</div>
+                <div class="chip-row">${(programs.governance_restriction_summary || []).map(chip).join('') || chip('none')}</div>
+                <div class="label">Linked Programs</div>
+                <div class="simple-list">${(programs.linked_programs || []).map((item) => `<div>${item}</div>`).join('') || '<div>none</div>'}</div>
+              </div>
+              </div>
+            </section>
+          `;
+        default:
+          return renderPaperProperCurrentSurface() || `
+            <section class="panel primary-panel">
+              <div class="surface-head">
+                <div class="section-head">
+                  <div>
+                    <div class="kicker">Primary Surface</div>
+                    <h2>${body.headline || 'Current Reading'}</h2>
+                  </div>
+                  <div class="mono">${(body.supporting_unit_refs || [])[0] || 'no supporting unit'}</div>
+                </div>
+                <div class="shell-note">This is the semantic center. Responsibility, reading body, and progression stay in one continuous work surface.</div>
+              </div>
+              ${renderBridgePostureStrip()}
+              <div class="main-reading">
+                <div class="summary-grid">
+                <div class="reading-slab dense-row">
+                  <div class="label">Current Responsibility</div>
+                  <strong>${responsibility.detail_href ? `<a href="${responsibility.detail_href}">${responsibility.current_organ_ref || 'unknown organ'}</a>` : (responsibility.current_organ_ref || 'unknown organ')}</strong>
+                  <div class="meta">${responsibility.placement_reason || 'none'}</div>
+                  <div class="chip-row">${(responsibility.restriction_flags || []).map(chip).join('')}</div>
+                </div>
+                <div class="reading-slab">
+                  <div class="label">Reading Status</div>
+                  <div class="mini-stat-row">
+                    <div class="mini-stat"><div class="kicker">lane</div><div class="mono">${lane.lane_kind || 'unknown'}</div></div>
+                    <div class="mini-stat"><div class="kicker">status</div><div class="mono">${lane.lane_status || 'unknown'}</div></div>
+                    <div class="mini-stat"><div class="kicker">next</div><div class="mono">${(progression.next_candidates || []).length}</div></div>
+                  </div>
+                </div>
+                </div>
+                <div class="reading-block">
+                  <div class="label">Current Reading Body</div>
+                  <div class="body-copy">${body.summary_body_text || 'none'}</div>
+                </div>
+                <div class="inspector-block">
+                  <div class="section-head">
+                    <div class="label">Lane + Progression</div>
+                    <div class="mono">${lane.lane_status || 'unknown'}</div>
+                  </div>
+                  <div class="chip-row">
+                    ${chip(`lane=${lane.lane_kind || 'unknown'}`)}
+                    ${chip(`status=${lane.lane_status || 'unknown'}`)}
+                  </div>
+                  <div class="body-copy">${(progression.current_step || {}).summary || 'none'}</div>
+                  <div class="toolbar-links">
+                    ${(progression.next_candidates || []).map((item) => item.detail_href ? `<a class="toolbar-link" href="${item.detail_href}">${item.organ_ref || 'next candidate'}</a>` : '').join('')}
+                  </div>
+                </div>
+              </div>
+            </section>
+          `;
+      }
+    }
+
+    function renderDetail(detail, heading) {
+      const organ = detail.organ_identity || {};
+      const bundle = detail.instruction_bundle_preview || {};
+      const handoff = detail.accepted_handoff_preview || {};
+      const recent = detail.recent_return_preview || {};
+      const semiLive = detail.semi_live_status || {};
+      const detailHref = organ.organ_ref === 'organ:governance'
+        ? contextualLinkMap['organ_detail:governance']
+        : contextualLinkMap['organ_detail:flow_interpretation'];
+      return `
+        <section class="panel inspector-panel">
+          <div class="kicker">${heading}</div>
+          <h3>${detailHref ? `<a href="${detailHref}">${organ.organ_label || 'Organ Detail'}</a>` : (organ.organ_label || 'Organ Detail')}</h3>
+          <div class="meta">organ=${organ.organ_ref || 'unknown'} / status=${organ.current_status || 'unknown'}</div>
+          <div class="body-copy">${bundle.role_sentence || 'none'}</div>
+          <div class="label">Accepted Inputs</div>
+          <ul class="simple-list">${(handoff.accepted_input_kinds || []).map((item) => `<li>${item}</li>`).join('') || '<li>none</li>'}</ul>
+          <div class="label">Semi-Live Status</div>
+          <div class="meta">phase=${semiLive.phase || 'none'} / decision=${semiLive.decision || 'none'} / candidates=${semiLive.candidate_count ?? 0}</div>
+          <div class="body-copy">${(semiLive.restriction_flags || []).join(' / ') || semiLive.decision_reason || 'no semi-live status'}</div>
+          <div class="label">Recent Return</div>
+          <div class="body-copy">${recent.summary_return || 'none'}</div>
+        </section>
+      `;
+    }
+
+    const navHtml = (data.navigation_items || []).map((item) => {
+      const href = (runtime.surface_links || {})[item.key === 'cases' ? 'cases-queue' : item.key === 'inputs' ? 'inputs-intake' : item.key === 'history' ? 'history-trace' : item.key === 'programs' ? 'programs-connections' : 'current-reading'] || '#';
+      return `<a class="nav-item ${item.active ? 'active' : ''}" href="${href}"><strong>${item.label}</strong><span class="meta">${item.active ? 'active primary surface' : 'switch primary surface'}</span></a>`;
+    }).join('');
+
+    const breadcrumb = (routeState.breadcrumb_chain || ['VectorFL Page']).map((item, idx, arr) => `
+      <span>${item}</span>${idx < arr.length - 1 ? '<span class="sep">/</span>' : ''}
+    `).join('');
+
+    app.innerHTML = `
+      <div class="page">
+        <section class="topbar">
+          <div class="eyebrow">VectorFL Page / App Shell</div>
+          <div class="section-head">
+            <div style="display:grid;gap:4px;">
+              <h1>Operational Reading Console</h1>
+              <div class="breadcrumb">${breadcrumb}</div>
+            </div>
+            <div class="mono">contextual_panel=${routeState.active_contextual_panel || 'none'}</div>
+          </div>
+          <div class="metric-strip">
+            ${metricStrip.map((item) => `
+              <div class="metric-cell">
+                <div class="kicker">${item.label}</div>
+                <div class="metric-value">${item.value}</div>
+                <div class="meta">${item.note}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="toolbar-links">
+            <a class="toolbar-link" href="${runtime.index_href || 'index.html'}">Mock Index</a>
+            <a class="toolbar-link" href="${(runtime.surface_links || {})['current-reading'] || '#'}">Current Reading Center</a>
+          </div>
+        </section>
+        <div class="frame">
+          <aside class="panel nav-panel inspector-panel stack">
+            <div class="kicker">Navigation</div>
+            <div class="nav-stack">${navHtml}</div>
+          </aside>
+          <main class="main-column">
+            ${renderPrimarySurface()}
+            <section class="panel inspector-panel">
+              <div class="section-head">
+                <div class="kicker">Core Governance Carry</div>
+                <div class="mono">${governance.hold_state || 'no hold state'}</div>
+              </div>
+              <div class="chip-row">${(governance.restriction_flags || []).map(chip).join('')}</div>
+              <div class="body-copy">${governance.reason_summary || 'none'}</div>
+              <div class="meta">release=${governance.release_condition || 'none'} / next_check=${governance.next_check_trigger || 'none'}</div>
+            </section>
+          </main>
+          <aside class="right-column">
+            ${renderDetail(detailPanels.current || {}, 'Contextual Panel / Current Organ')}
+            ${renderDetail(detailPanels.governance_candidate || {}, 'Contextual Panel / Preferred Next Candidate')}
+          </aside>
+        </div>
+      </div>
+    `;
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+- result summary  
+  The selected Codex turn remains valid. Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/reference clay; `runtime` remains for session artifacts, state, and returns.  
+  The CLI backend is still an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface or fourth surface.  
+  No files were modified in this reread.
+
+- important findings / diffs / outputs  
+  Prior validation still stands from the bounded context: `npm run build` passed in `app/ui/integrated_engine`, served title was confirmed as `VectorFL Integrated Engine`, API proxy to `127.0.0.1:8421` worked, and a real read-only Codex session exited `0`.  
+  Session `cli_20260416T102720Z_8e045e9b` resolves the earlier metadata mismatch: its structured field and mark both say `validation_target`.  
+  Session `cli_20260416T102612Z_277b5388` still contains the mismatch: embedded result says `validation target`, structured field says `reread_target`, but it was later marked `validation_target`.
+
+- uncertainty or failure notes  
+  No fresh browser validation was performed in this turn.  
+  Remaining uncertainty is still browser-click/user-feel validation of the stable VectorFL CLI UI path at `http://127.0.0.1:5173/`.
+
+- suggested next use: validation target

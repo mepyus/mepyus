@@ -1,0 +1,23 @@
+{
+  "schema_version": "vectorfl_paper_cell_worker_panel_sections_v0",
+  "updated_at": "2026-04-11T00:10:00+09:00",
+  "page_id": "cell_worker_panel",
+  "role": "contract_driven_operating_panel",
+  "section_order": [
+    "cell_registry",
+    "selected_cell_detail",
+    "cli_ownership",
+    "contract_readout",
+    "adapter_config",
+    "payload_preview",
+    "launch_controls",
+    "return_slot"
+  ],
+  "global_rules": [
+    "read lens and role before label",
+    "show cli as owner and manager rather than just a provider",
+    "always pair payload preview with return slot",
+    "keep launch controls connected to trace and governance",
+    "avoid paperclip company or agent naming as canonical language"
+  ]
+}

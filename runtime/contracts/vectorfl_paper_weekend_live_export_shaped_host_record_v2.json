@@ -1,0 +1,91 @@
+{
+  "record_id": "vectorfl_paper_weekend_live_export_shaped_host_record_v2",
+  "source_program": "paperclip",
+  "source_kind": "export_shaped_host_record",
+  "scenario_scope": "weekend_pilot_first_loop_live_bundle",
+  "schema_basis": [
+    "references/git_search/paperclip-master/packages/db/src/schema/issues.ts",
+    "references/git_search/paperclip-master/packages/db/src/schema/heartbeat_runs.ts",
+    "references/git_search/paperclip-master/packages/db/src/schema/issue_comments.ts",
+    "references/git_search/paperclip-master/packages/db/src/schema/approvals.ts"
+  ],
+  "honesty_note": "This is still local fixture data, but it preserves host export field names and boundary shape closely enough to serve as the next canonical thin-overlay source.",
+  "issues_row": {
+    "id": "9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+    "companyId": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+    "projectId": "9e0a1304-fb2f-4815-86eb-717f5d790021",
+    "goalId": "b11f0b47-62f0-4814-bd1a-d06d419e1001",
+    "parentId": null,
+    "title": "summarize current reading residue before next routing change",
+    "description": "Review the current reading residue and write a short operator-facing note before the next routing change is attempted.",
+    "status": "in_progress",
+    "priority": "high",
+    "assigneeAgentId": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+    "issueNumber": 17,
+    "identifier": "VFP-17",
+    "originKind": "manual",
+    "originId": "operator_request_001",
+    "requestDepth": 0,
+    "createdAt": "2026-04-10T21:04:00+09:00",
+    "updatedAt": "2026-04-10T21:24:00+09:00"
+  },
+  "heartbeat_runs_row": {
+    "id": "2f54b4a2-8570-4f0a-a3ce-010101010017",
+    "companyId": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+    "agentId": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+    "invocationSource": "issue_assignment_wakeup",
+    "triggerDetail": "assignee active and issue not in backlog",
+    "status": "completed",
+    "startedAt": "2026-04-10T21:10:00+09:00",
+    "finishedAt": "2026-04-10T21:24:00+09:00",
+    "error": null,
+    "wakeupRequestId": "7b88fbb7-4060-42bc-a71b-010101010001",
+    "exitCode": 0,
+    "usageJson": {
+      "mode": "manual_supervised",
+      "tokenBand": "low"
+    },
+    "resultJson": {
+      "summary": "Operator-facing residue note drafted and attached back to the issue thread.",
+      "message": "Routing change should wait until the current residue note is carried forward explicitly.",
+      "error": null
+    },
+    "sessionIdBefore": "sess_overlay_001",
+    "sessionIdAfter": "sess_overlay_001",
+    "stdoutExcerpt": "Residue note prepared for operator-facing issue thread.",
+    "contextSnapshot": {
+      "taskKey": "issue:9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+      "issueFocus": "current reading residue before routing change",
+      "constraint": "do not broaden into general refactor"
+    }
+  },
+  "issue_comments_rows": [
+    {
+      "id": "3094513d-b2e0-43d1-973a-010101010001",
+      "companyId": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+      "issueId": "9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+      "authorAgentId": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+      "authorUserId": null,
+      "createdByRunId": "2f54b4a2-8570-4f0a-a3ce-010101010017",
+      "body": "Current residue should stay visible before any routing change. Keep the next pass narrow and attach the caution to the same issue.",
+      "createdAt": "2026-04-10T21:24:00+09:00",
+      "updatedAt": "2026-04-10T21:24:00+09:00"
+    }
+  ],
+  "approvals_row": {
+    "id": "ef117d6b-ecc8-4f5b-8a10-010101010001",
+    "companyId": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+    "type": "change_review",
+    "requestedByAgentId": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+    "requestedByUserId": null,
+    "status": "approved_with_caution",
+    "payload": {
+      "issueId": "9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+      "runId": "2f54b4a2-8570-4f0a-a3ce-010101010017",
+      "reason": "routing change follows current reading residue note"
+    },
+    "decisionNote": "Proceed only if the residue note remains attached to the same issue and the next run stays narrow.",
+    "decidedByUserId": "supervisor",
+    "decidedAt": "2026-04-10T21:26:00+09:00"
+  }
+}

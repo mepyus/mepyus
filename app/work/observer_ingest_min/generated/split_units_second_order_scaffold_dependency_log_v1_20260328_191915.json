@@ -1,0 +1,134 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:second_order_scaffold_dependency_log_v1]] [[SEM:logging_formal_scaffolds_required_by_current_second_order_readers]]",
+    "char_count": 127,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "second-order scaffold dependency log v1",
+    "end_ref": "second-order scaffold dependency log v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# second-order scaffold dependency log v1",
+    "char_count": 41,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. purpose",
+    "end_ref": "1. purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. purpose - 이 문서의 목적은 현재 2차 스크립트들이 무엇을 내용으로 읽는지보다, 무엇을 발판(scaffold)으로 필요로 하는지를 기록하는 것이다. - 즉 이 로그는 `현재 2차 판독기의 scaffold dependency map`이다.",
+    "char_count": 142,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. segmentation scaffold",
+    "end_ref": "2. segmentation scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. segmentation scaffold - current dependency: - splitter가 충분한 block/window 다양성을 만들어 줘야 한다 - question opening, pivot, context unit은 단일 mega block으로 붕괴하면 급격히 약해진다 - observed evidence: - `youtube_03_22`: block/window di",
+    "char_count": 463,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "update after minimal segmentation support",
+    "end_ref": "update after minimal segmentation support",
+    "unit_type": "heading_block",
+    "text_excerpt": "### update after minimal segmentation support - `index_support`를 넣자 single block collapse는 실제로 풀렸다. - 하지만 이 변화는 `segmentation is necessary`를 보여줬을 뿐, `segmentation is sufficient`를 보여주진 못했다. - support 이후에도: - question-indu",
+    "char_count": 366,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "3. heading scaffold",
+    "end_ref": "3. heading scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. heading scaffold - current dependency: - paragraph role interpretation은 heading 또는 유사 paragraph pointer를 사실상 전제로 둔다 - observed evidence: - `youtube_03_22`: heading-driven paragraph selection이 가능 - `claude_code_inde",
+    "char_count": 386,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "4. source pointer scaffold",
+    "end_ref": "4. source pointer scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. source pointer scaffold - current dependency: - context unit은 이름만이 아니라 ref 안정성이 있어야 한다 - local/page/comparison rereading은 pointer granularity가 충분해야 한다 - observed evidence: - `claude_code_index` multi-pass에서는 contex",
+    "char_count": 410,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "update after minimal pointer stabilization",
+    "end_ref": "update after minimal pointer stabilization",
+    "unit_type": "heading_block",
+    "text_excerpt": "### update after minimal pointer stabilization - `nearest_top_window` fallback stitching을 넣자 empty-ref context unit은 실제로 줄었다. - 하지만 recovered grounding은 `direct_grounded`가 아니라 `fallback_grounded`였다. - 즉 pointer scaffold는",
+    "char_count": 303,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "5. comparison scaffold",
+    "end_ref": "5. comparison scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. comparison scaffold - current dependency: - local / page / comparison 세 축이 실제 문서 형식에 맞게 걸릴 수 있어야 한다 - observed evidence: - 대화형 자산에서는 local/page/comparison 구분이 비교적 의미 있게 작동 - 인덱스형/운영형 문서에서는 page 흐름과 comparison 축이 약해",
+    "char_count": 308,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "6. domain-language scaffold",
+    "end_ref": "6. domain-language scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. domain-language scaffold - current dependency: - AI dialogue에서 익숙해진 naming이 새 도메인에도 쉽게 carryover 된다 - observed evidence: - `claude_code_index`에서도 `AI의 미래`, `일의 미래`, `에이전트 애플리케이션` 같은 naming이 과하게 전면화됨 - implication: ",
+    "char_count": 436,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "7. report wording scaffold",
+    "end_ref": "7. report wording scaffold",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. report wording scaffold - current dependency: - 일부 purpose / multi-pass report wording이 여전히 `youtube_03_22` 중심 문장을 재사용한다 - observed evidence: - `claude_code_index` 보고서에도 AI 시대 대화용 표현이 잔존 - implication: - report sur",
+    "char_count": 301,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "8. one-line summary",
+    "end_ref": "8. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. one-line summary > 현재 2차 판독기는 내용만 읽는 것이 아니라 segmentation, heading, pointer, comparison axis, domain language, report wording 같은 여러 scaffold 위에서 겨우 서 있고, 이번 단계의 핵심은 그것을 고치기 전에 먼저 기록하는 것이다.",
+    "char_count": 193,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  }
+]

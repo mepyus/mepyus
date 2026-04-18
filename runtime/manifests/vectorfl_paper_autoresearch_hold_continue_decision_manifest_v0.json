@@ -1,0 +1,18 @@
+{
+  "schema_version": "vectorfl_paper_autoresearch_hold_continue_decision_manifest_v0",
+  "source_brief_artifact": "runtime/manifests/vectorfl_paper_autoresearch_external_candidate_search_brief_v0.json",
+  "source_record_artifact": "runtime/manifests/vectorfl_paper_autoresearch_candidate_evidence_record_v0.json",
+  "source_review_artifact": "runtime/manifests/vectorfl_paper_autoresearch_crosscheck_review_report_v0.json",
+  "decision": "hold_for_gate_close_continue_for_dry_run",
+  "rationale": "The candidate is useful for validator discrimination because it has the required four surfaces and bounded experiment-loop evidence, but it is not a Paperclip host export.",
+  "reduced_uncertainty": [
+    "Autoresearch reference can be translated into the four Paper pilot operating records without importing the full organization surface.",
+    "The candidate is concrete enough to dry-run through the validator."
+  ],
+  "remaining_hold_reasons": [
+    "actual_export_only still requires a true host export candidate.",
+    "Paperclip-specific reopen/gate evidence remains absent."
+  ],
+  "next_action": "Run validator dry-run with runtime/manifests/vectorfl_paper_autoresearch_candidate_evidence_record_v0.json and compare against the current anchor.",
+  "decided_at": "2026-04-11T08:03:00+09:00"
+}

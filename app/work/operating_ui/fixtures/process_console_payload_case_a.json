@@ -1,0 +1,109 @@
+{
+  "summary": {
+    "selected_asset_id": "turboquant_youtube",
+    "state_unavailable": false
+  },
+  "header": {
+    "state": "loaded",
+    "asset_name": "turboquant_youtube",
+    "source_type": "dialogue_asset",
+    "updated_at": "2026-03-28T21:31:34.399318+00:00",
+    "badges": [
+      {"key": "packet_texture", "label": "overcompressed / closure-heavy"},
+      {"key": "grounding_status", "label": "fallback grounded"},
+      {"key": "emergence_status", "label": "low emergence"},
+      {"key": "carryover_risk", "label": "high"},
+      {"key": "maturation_state", "label": "fallback"},
+      {"key": "traceability_status", "label": "traceable"}
+    ]
+  },
+  "asset_rail": [
+    {
+      "asset_id": "turboquant_youtube",
+      "asset_name": "turboquant_youtube",
+      "packet_texture_label": "overcompressed / closure-heavy",
+      "maturation_state_label": "fallback",
+      "traceability_status_label": "traceable",
+      "emergence_status_label": "low emergence",
+      "updated_at": "2026-03-28T21:31:34.399318+00:00"
+    }
+  ],
+  "state_panel": {
+    "state": "loaded",
+    "canonical_fields": [
+      {"key": "packet_texture", "label": "overcompressed / closure-heavy"},
+      {"key": "grounding_status", "label": "fallback grounded"},
+      {"key": "emergence_status", "label": "low emergence"},
+      {"key": "carryover_risk", "label": "high"},
+      {"key": "maturation_state", "label": "fallback"},
+      {"key": "traceability_status", "label": "traceable"}
+    ],
+    "state_notes": "first live run: bridge confirmed, single-window packet, naming-heavy technical transcript kept conservative",
+    "evidence_refs": [
+      {"ref_kind": "generated_probe", "ref_id": "turboquant_youtube_live_run_v1_w6_s3_20260328T212851Z"}
+    ],
+    "compare_reasons": ["same_compressed_family", "similar_carryover_pattern"],
+    "gate_blockers": ["fallback_grounding_dominance", "scaffold_carryover_risk"],
+    "history_summary": {
+      "recent_update_count": 2,
+      "latest_update_trigger_type": "runtime_evidence",
+      "latest_update_reason": "first_live_run_turboquant_youtube_v1",
+      "latest_change_kind": "canonical_change"
+    },
+    "diff_summary": {
+      "state": "loaded",
+      "diff_class": "canonical_change",
+      "changed_field_count": 6,
+      "provenance_only": false
+    }
+  },
+  "latest_state_preview": {
+    "state": "loaded",
+    "packet_texture_label": "overcompressed / closure-heavy",
+    "maturation_state_label": "fallback",
+    "traceability_status_label": "traceable",
+    "updated_at": "2026-03-28T21:31:34.399318+00:00"
+  },
+  "compare_entry": {
+    "state": "loaded",
+    "related_assets": [
+      {"asset_id": "knowledge_editing_youtube", "reason": "same compressed family"}
+    ]
+  },
+  "attention_queue": {
+    "selected_asset_attention": {
+      "kind": "active_item",
+      "queue_status": "new",
+      "priority_level": "high",
+      "attention_reason": "no_previous_state_anchor",
+      "diff_class": "canonical_change",
+      "changed_fields": ["packet_texture", "maturation_state"]
+    },
+    "selected_asset_memory": {
+      "attention_pattern_summary": "mostly provenance_only background updates",
+      "total_attention_events": 3,
+      "reopened_attention_count": 0,
+      "suppressed_attention_count": 1,
+      "provenance_only_repeat_density": 0.67,
+      "dominant_shift_types": ["provenance_only"]
+    }
+  },
+  "history_drilldown": {
+    "state": "loaded",
+    "items": [
+      {
+        "updated_at": "2026-03-28T21:31:34.399318+00:00",
+        "update_trigger_type": "runtime_evidence",
+        "update_reason": "first_live_run_turboquant_youtube_v1",
+        "changed_fields": ["packet_texture", "maturation_state"],
+        "compare_index": 0
+      }
+    ],
+    "latest_lineage_link": {
+      "summary": "current latest formed from recent 2 updates",
+      "latest_update_trigger_type": "runtime_evidence",
+      "latest_update_reason": "first_live_run_turboquant_youtube_v1",
+      "latest_updated_at": "2026-03-28T21:31:34.399318+00:00"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T114724Z_f6aaedcc`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `user_surface`
+- requested_by_page: `scripts/run_integrated_engine_language_loop.py`
+- status: `done`
+
+## Task Purpose
+Internal language Koreanization data loop 3: collect Korean operating-language data from bounded context.
+
+## Used Context Refs
+- `docs/reports/integrated_engine_line_connection_axis_to_shared_language_map_v0.md`
+- `docs/reports/integrated_engine_internal_language_grammar_candidate_v0.md`
+
+## Result Summary
+ use observation | surface gravity axis | user: 운영, vectorfl: 숙성/중재, engine: 실행/반환 | “gravity” 은유 설명 필요 | gravity가 UI 위치인지 운영 중심인지 혼동되는가 | implementation return |
+| `design clay` | shared map, authority grammar | Gemini design output은 구조가 아니라 번역 가능한 raw material | 디자인 점토 / 설계 원재료 | visual strength와 structural authority 분리 | 디자인 초안 | 사용자가 시각 강도를 core 권위로 오인하지 않음 | proposal material, translation 필요성 | Gemini mock analysis, handoff artifact, explanation trial | proposal material axis | user: 채택 판단, vectorfl: 분류, engine: 없음 | clay 은유 외부 표현 지원 필요 | design clay가 너무 비공식적으로 들리지 않는가 | deposit candidate |
+| `bridge-before-flatten` | internal grammar candidate | 단순화 전 route/authority/state/boundary/support 관계 보존 | 평탄화 전 다리 놓기 | 쉬운 말보다 보호 의미 우선 | 쉽게 풀기, 간단히 말하기 | 사용자가 용어 단순화로 운영 규칙을 잃지 않음 | authority, route reason, hold/watch 구분 | friction terms, bridge work | bridge preservation axis | user: 이해, vectorfl: bridge 관리, engine: 없음 | bridge layer 명명 필요 | 어떤 의미를 bridge에서 반드시 못 줄이는가 | validation target |
+
+- uncertainty or failure notes
+  - `reflux`, `central panel gravity`, `design clay`는 한국어 후보가 아직 은유 의존적이다. 외부 노출 전 보조 설명 또는 더 운영적인 후보 검증이 필요하다.
+  - `translation`은 언어 번역보다 baseline/canonical 권한 변환 의미가 강하므로 `Codex translation`의 한국어 처리에서 오해 위험이 있다.
+  - `support reread recovery`는 사용자가 “그냥 다시 읽기”로 축약할 위험이 크다. 읽기 순서와 회복 판정 조건이 같이 보존되어야 한다.
+
+- suggested next use
+  - reread target: `support reread recovery`, `hold / watch keep / not promoted`, `follow-up / reprocess / rewind`
+  - implementation return: `current_loop_state`, `central panel gravity`
+  - validation target: `request / return / reflux`, `return validation`, `anchor drift`, `workspace ownership`, `collision stop / reject-conflict`, `bridge-before-flatten`
+  - deposit candidate: `proposal-only / needs Codex translation`, `design clay`
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+validation_target

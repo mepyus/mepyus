@@ -1,0 +1,185 @@
+**result summary**
+
+Bounded reread completed from:
+
+- `docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md`
+- `docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md`
+
+Observed dominant pattern: current problem is not translation, but controlled Koreanization of internal operating language so the user can steer route, decision, validation, and deposit without losing VectorFL/engine boundaries.
+
+**important findings / diffs / outputs**
+
+1.  
+- internal phrase or signal observed: `CLI layer: on-top tool/control layer, not a fourth surface`
+- source context where it appeared: current operating state / Fixed Interpretation
+- internal meaning / operational role: CLI is an execution/control attachment over existing 3-surface engine, not a new actor surface
+- Koreanization candidate, not final UI copy: `CLI 층은 기존 3면 위에 얹힌 도구/제어층`
+- Korean preservation requirement: `on-top`, `not fourth surface`, `surface boundary` 의미 보존
+- risky Korean flattening to avoid: `CLI도 하나의 화면`, `네 번째 면`
+- why this helps the user operate: 사용자가 Codex 실행 결과를 새 체계가 아니라 기존 VectorFL 경로 안에서 판단하게 함
+- what meaning gets lost if shortened: CLI가 권한/판단 면으로 오해되지 않게 하는 경계
+- repeated connection it belongs to: surface identity / authority boundary
+- emerging axis candidate: `execution attachment vs surface authority`
+- surface exposure note: vectorfl / engine
+- external expression support needed, if any: 한국어에서 `층`, `면`, `경로` 구분 유지 필요
+- next reread question: CLI 반환이 언제 “material”이고 언제 “decision signal”인가?
+- suggested next use: validation target
+
+2.  
+- internal phrase or signal observed: `return material`
+- source context where it appeared: engine surface exposure rule, current operating state
+- internal meaning / operational role: engine/CLI가 돌려준 처리 산출물이며 최종 판단이 아님
+- Koreanization candidate, not final UI copy: `반환 자료`, `돌아온 처리 자료`
+- Korean preservation requirement: final completion이 아니라 validation/deposit 전 단계임을 보존
+- risky Korean flattening to avoid: `완료 결과`, `최종 결과`
+- why this helps the user operate: 사용자가 반환물을 바로 확정하지 않고 검토/검증 대상으로 다루게 함
+- what meaning gets lost if shortened: validation authority가 아직 올라오지 않았다는 상태
+- repeated connection it belongs to: processing → return → validation → deposit
+- emerging axis candidate: `material status axis`
+- surface exposure note: engine primary, vectorfl mediation, user as decision signal
+- external expression support needed, if any: `자료`만으로 약하면 `검증 전 반환 자료` 필요
+- next reread question: 사용자 면에서는 `return material`을 어느 정도까지 노출해야 하는가?
+- suggested next use: validation target
+
+3.  
+- internal phrase or signal observed: `suggested_next_use`
+- source context where it appeared: validated this round, requested return format
+- internal meaning / operational role: 반환물이 다음에 어떤 처리 경로로 가야 하는지 분류하는 신호
+- Koreanization candidate, not final UI copy: `다음 사용처 제안`, `다음 처리 용도`
+- Korean preservation requirement: route/deposit/validation/reread classification 의미 유지
+- risky Korean flattening to avoid: `다음 단계`, `추천`
+- why this helps the user operate: 반환물을 reread, implementation, validation, deposit 중 어디에 둘지 빠르게 판단하게 함
+- what meaning gets lost if shortened: 단순 순서가 아니라 용도 분류라는 점
+- repeated connection it belongs to: CLI return → route assignment
+- emerging axis candidate: `return routing axis`
+- surface exposure note: vectorfl / user / engine
+- external expression support needed, if any: enum 값은 영어 보존 또는 병기 필요
+- next reread question: `suggested_next_use`가 자동 추론일 때 사용자 승인 문구는 필요한가?
+- suggested next use: validation target
+
+4.  
+- internal phrase or signal observed: `shared operational language`
+- source context where it appeared: shared language boundary document
+- internal meaning / operational role: user-only 번역이 아니라 3면/여러 actor가 함께 쓰는 운영 문법층
+- Koreanization candidate, not final UI copy: `공유 운영 언어`, `공유 작동 언어`
+- Korean preservation requirement: shared, operational, cross-actor, not glossary 의미 보존
+- risky Korean flattening to avoid: `사용자용 쉬운 말`, `번역문`, `표준 용어집`
+- why this helps the user operate: 내부 구조를 숨기지 않고도 판단 가능한 수준으로 연결함
+- what meaning gets lost if shortened: 여러 주체가 다른 노출 밀도로 같은 축을 공유한다는 점
+- repeated connection it belongs to: internal language → shared grammar → surface exposure
+- emerging axis candidate: `shared grammar axis`
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any: `운영 언어`와 `UI 문구` 구분 설명 필요
+- next reread question: 어떤 내부어가 공유 운영 언어까지 올라올 반복성을 가졌는가?
+- suggested next use: deposit candidate
+
+5.  
+- internal phrase or signal observed: `line / connection / axis`
+- source context where it appeared: shared language position, VectorFL exposure rule
+- internal meaning / operational role: 개별 기록, 기록 간 연결, 반복되어 자라는 판단축
+- Koreanization candidate, not final UI copy: `선 / 연결 / 축`
+- Korean preservation requirement: line은 단순 목록이 아니고, axis는 외부 템플릿이 아니라 반복에서 생김
+- risky Korean flattening to avoid: `항목 / 관계 / 카테고리`
+- why this helps the user operate: 아직 확정되지 않은 자료를 증거, 연결, 축 후보로 단계화해서 볼 수 있음
+- what meaning gets lost if shortened: axis가 interface 성장 근거라는 점
+- repeated connection it belongs to: evidence accumulation → interface growth
+- emerging axis candidate: `axis-from-repetition`
+- surface exposure note: vectorfl primary, user selective
+- external expression support needed, if any: `line`은 필요 시 영어 병기 유지
+- next reread question: 어떤 line들이 이미 repeated axis로 승격 가능한가?
+- suggested next use: reread target
+
+6.  
+- internal phrase or signal observed: `human-readable Korean/operator summary layer`
+- source context where it appeared: next bottleneck candidates, recommended next step
+- internal meaning / operational role: 전체 번역이 아니라 각 surface의 현재 의미를 얇게 설명하는 운영 요약층
+- Koreanization candidate, not final UI copy: `사람이 읽을 수 있는 한국어 운영 요약층`
+- Korean preservation requirement: summary/explanation only, not glossary replacement
+- risky Korean flattening to avoid: `한국어 UI 전면 번역`, `최종 문구 정리`
+- why this helps the user operate: 화면의 내부어를 Codex 설명 없이도 현재 판단 가능한 신호로 바꿈
+- what meaning gets lost if shortened: 얇은 요약층이라는 범위 제한
+- repeated connection it belongs to: usability gap → bounded operating summary
+- emerging axis candidate: `readability without replacement`
+- surface exposure note: user primary, vectorfl supportive
+- external expression support needed, if any: 각 surface별 요약 밀도 규칙 필요
+- next reread question: surface별 “지금 무엇을 의미하는가” 한 줄 요약 단위는 무엇인가?
+- suggested next use: implementation return
+
+7.  
+- internal phrase or signal observed: `validation authority and route decision must not be absorbed`
+- source context where it appeared: engine surface exposure rule
+- internal meaning / operational role: engine은 처리/반환을 맡지만 검증 권한과 경로 결정은 흡수하면 안 됨
+- Koreanization candidate, not final UI copy: `검증 권한과 경로 결정은 engine에 흡수되지 않아야 함`
+- Korean preservation requirement: authority, route decision, absorbed 경계 유지
+- risky Korean flattening to avoid: `엔진이 검증한다`, `엔진 결과가 확정이다`
+- why this helps the user operate: 자동 처리와 사용자/VectorFL 판단을 분리해서 오판을 막음
+- what meaning gets lost if shortened: 권한 이동 금지
+- repeated connection it belongs to: engine processing vs VectorFL/user validation
+- emerging axis candidate: `authority separation axis`
+- surface exposure note: engine / vectorfl / user
+- external expression support needed, if any: `권한`은 governance처럼 과해 보일 수 있어 `판단 권한` 병기 가능
+- next reread question: validation authority가 user와 VectorFL 사이에서 어떻게 나뉘는가?
+- suggested next use: validation target
+
+8.  
+- internal phrase or signal observed: `deposit-ready queue`
+- source context where it appeared: current works / validated this round
+- internal meaning / operational role: deposit 후보로 모인 반환물 대기열
+- Koreanization candidate, not final UI copy: `deposit 준비 대기열`, `저장/편입 준비 후보열`
+- Korean preservation requirement: deposit은 자동 ingestion이 아니라 후보/준비 상태
+- risky Korean flattening to avoid: `저장 완료 목록`, `자동 반영 목록`
+- why this helps the user operate: 무엇이 core에 들어가기 전 승인 대기 중인지 식별하게 함
+- what meaning gets lost if shortened: approval 전 단계와 후보성
+- repeated connection it belongs to: return → candidate → approval → deposit
+- emerging axis candidate: `bounded ingestion axis`
+- surface exposure note: vectorfl / engine / user
+- external expression support needed, if any: `deposit`은 당분간 영어 병기 필요
+- next reread question: deposit candidate와 validation target의 갈림 기준은 무엇인가?
+- suggested next use: validation target
+
+9.  
+- internal phrase or signal observed: `hold / watch / carry-forward / reject-conflict`
+- source context where it appeared: user surface allowed exposure, high-risk boundary terms
+- internal meaning / operational role: 현재 자료를 유지, 관찰, 다음으로 넘김, 충돌로 거부하는 운영 상태
+- Koreanization candidate, not final UI copy: `보류 / 관찰 유지 / 다음으로 이월 / 충돌 거부`
+- Korean preservation requirement: boundary-first exposure, 단순 감정/상태어로 축소 금지
+- risky Korean flattening to avoid: `보류`, `확인`, `넘김`, `거절`만 단독 사용
+- why this helps the user operate: 열린 판단을 즉시 확정하지 않고 상태별로 다룰 수 있음
+- what meaning gets lost if shortened: conflict, continuity, watch-state, carry-forward의 운영 차이
+- repeated connection it belongs to: decision state taxonomy
+- emerging axis candidate: `decision-state boundary axis`
+- surface exposure note: user primary, vectorfl mediation
+- external expression support needed, if any: 각 상태는 짧은 설명 병기 필요
+- next reread question: 네 상태가 route board에서 같은 차원의 상태인가, 서로 다른 차원의 신호인가?
+- suggested next use: reread target
+
+10.  
+- internal phrase or signal observed: `surface identity must remain visible`
+- source context where it appeared: shared language boundary rule 3
+- internal meaning / operational role: shared language가 각 surface의 역할 차이를 무너뜨리면 안 됨
+- Koreanization candidate, not final UI copy: `각 면의 정체성은 계속 보여야 함`
+- Korean preservation requirement: user operation, VectorFL mediation, engine processing 구분 유지
+- risky Korean flattening to avoid: `통합 화면`, `하나의 작업판`
+- why this helps the user operate: 어디서 결정하고 어디서 처리하고 어디서 중재하는지 잃지 않게 함
+- what meaning gets lost if shortened: 공유 언어가 replacement layer가 아니라 controlled exposure layer라는 점
+- repeated connection it belongs to: shared language boundary / surface exposure density
+- emerging axis candidate: `surface-density axis`
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any: `면`과 `surface` 병기 유지 가능
+- next reread question: 각 surface에서 동일 phrase가 다른 밀도로 나타날 때 어떤 표기가 필요한가?
+- suggested next use: deposit candidate
+
+**uncertainty or failure notes**
+
+- No files modified.
+- This is not a final glossary and not UI copy.
+- Korean candidates are operating-language candidates only.
+- Uncertainty: `deposit`, `line`, `axis`, `surface`는 내부 체계성이 강해서 완전 번역보다 병기/보존이 더 안전해 보임.
+- Potential risk: `요약층`이 UI rewrite로 오해될 수 있으므로 “summary/explanation only” boundary가 계속 필요함.
+
+**suggested next use**
+
+- reread target: `hold / watch / carry-forward / reject-conflict` 상태 구분
+- validation target: `return material`, `suggested_next_use`, `deposit-ready queue`
+- deposit candidate: `shared operational language`, `surface identity must remain visible`
+- implementation return: bounded Korean/operator summary layer only, not full translation or glossary replacement

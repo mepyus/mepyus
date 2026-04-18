@@ -1,0 +1,38 @@
+{
+  "packet_id": "packet_return_axis_followup_001",
+  "packet_kind": "return",
+  "source_surface": "engine_surface",
+  "target_surface": "user_surface",
+  "purpose": "axis candidate internal follow-up return",
+  "directionality": "followup_return",
+  "anchor_refs": [
+    "integrated_engine_3_surface_baseline",
+    "packet_routing_anchor_v0"
+  ],
+  "related_objects": [
+    "packet_request_axis_followup_001",
+    "maturation_object_axis_candidate_001",
+    "axis_candidate_anchor_packet_reflux"
+  ],
+  "current_judgment_state": "returned_for_user_decision",
+  "requested_or_next_action": "decide_close_or_send_to_vectorfl_recheck",
+  "validation_points": [
+    "whether the follow-up resolves a maturation open edge",
+    "whether the user can decide without additional VectorFL validation",
+    "whether the axis candidate should be sent back to VectorFL recheck"
+  ],
+  "reflux_need": "maybe",
+  "packet_status": "returned",
+  "return_summary": "Engine-side internal follow-up organized the maturation-canvas signal into a short decision note and kept VectorFL recheck available because the axis candidate remains open.",
+  "produced_artifacts": [
+    "axis_followup_internal_note_001",
+    "axis_followup_user_decision_options_001"
+  ],
+  "result_confidence": "medium",
+  "open_questions": [
+    "whether the axis candidate open edge is sufficiently narrowed",
+    "whether VectorFL should reread the follow-up before loop closure"
+  ],
+  "needs_followup": "maybe",
+  "suggested_next_route": "user_decision_or_vectorfl_recheck"
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T114515Z_125ce536",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "user_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language Koreanization data loop 1: collect Korean operating-language data from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_shared_language_grammar_reread_v0.md",
+    "docs/reports/integrated_engine_cli_on_top_operator_report_grammar_trial_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- source context where it appeared\n- internal meaning / operational role\n- Koreanization candidate, not final UI copy\n- Korean preservation requirement\n- risky Korean flattening to avoid\n- why this helps the user operate\n- what meaning gets lost if shortened\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:45:15Z",
+  "ended_at": "2026-04-16T11:46:07Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T114515Z_125ce536/prompt.md",
+  "exit_code": 0,
+  "result_summary": "ry | source-authority axis candidate | vectorfl/engine internal; user only when source matters | Need Korean for `design clay` if retained | Should `design clay` remain English as internal term? | reread target |\n| current status -> 3 surfaces -> routes -> friction -> next smallest action | shared grammar reread §6; operator trial §10 | Reporting sequence for Codex Korean status reports | `상태 -> 3면별 읽기 -> 열린/닫힌 route -> 마찰 -> 다음 작은 실행` | Preserve order | `요약`, `결론만`, `로드맵 나열` | Lets user make a bounded decision | Loses operational diagnosis sequence | Codex report -> user judgment -> reread input | readable-report-before-UI-copy axis | user-facing report grammar | Need template validation on real run | Does this sequence reduce user judgment burden? | validation target |\n\n- uncertainty or failure notes\n  - The bounded docs already contain Korean trial language, so some candidates are extracted rather than newly coined.\n  - `route`, `mark`, `deposit`, `readable`, `surface`, and `design clay` may need partial English preservation; fully Koreanizing them risks losing internal-engine distinctions.\n  - No implementation verification was needed because this was a reread-only data collection task.\n  - No UI copy was proposed and no final glossary was created.\n\n- suggested next use: validation target\n  - Validate whether these Koreanization candidates preserve the core repeated distinction:\n    - `후보 / 신호 / 재료` are not `완료 / 승인 / 공식 편입`.\n  - Best next reread target:\n    - one real Codex CLI return from `runtime/cli_sessions`\n    - one current VectorFL surface observation where `latest`, `recent`, `mark`, and `deposit candidate` appear together.\n  - Deposit candidate:\n    - the table above can be deposited as Koreanization loop data only, not as a glossary or UI wording source.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:46:07Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:46:07Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

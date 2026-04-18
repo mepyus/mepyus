@@ -1,0 +1,54 @@
+{
+  "schema_version": "vectorfl_integrated_engine_work_packet_v0",
+  "packet_id": "vectorfl_engine_work_packet_latest",
+  "status": "drafted_for_supervisor_routing",
+  "created_at": "2026-04-11T23:23:16Z",
+  "topic": "current-run freshness gate 재검증: 새 운영 객체에서 이전 completed execution이 현재 완료로 보이지 않는지 read-only로 확인하라.",
+  "memo": "새 operating dialogue와 draft/execution fingerprint가 일치할 때만 현재 실행 완료로 표시되는지 확인한다.",
+  "directive": "freshness gate가 stale completed false positive를 줄이는지 확인한다.",
+  "selected_stage": "line_generation",
+  "target_cell": "conversation_to_line_cell",
+  "requested_action": "freshness gate가 stale completed false positive를 줄이는지 확인한다.",
+  "expected_output": [
+    "summary",
+    "evidence used",
+    "next routing recommendation"
+  ],
+  "reference_md_files": [
+    "app/runtime/vectorfl_integrated_engine_shell.py",
+    "app/runtime/vectorfl_integrated_engine_api.py",
+    "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+    "docs/reports/paperclip_native_product_reading_v0.md",
+    "docs/reports/vectorfl_paper_human_direction_readout_v0.md",
+    "gemini/vectorfl_core_concepts_and_hierarchical_translation_data.md"
+  ],
+  "forbidden_scope": [
+    "do not modify repo",
+    "do not replace current slot",
+    "do not declare gate close",
+    "do not add UI features"
+  ],
+  "supervisor_note": "bridged from user-facing operating desk",
+  "operating_object_id": "vectorfl_engine_operating_object_da6e2a8274cd9309",
+  "source_operating_dialogue_artifact": "runtime/manifests/vectorfl_integrated_engine_operating_dialogue_latest_v0.json",
+  "source_operating_dialogue_id": "vectorfl_engine_operating_dialogue_latest",
+  "source_operating_dialogue_fingerprint": "da6e2a8274cd9309121ab1c63cd7cb3cb9a505186b169cf648375ab387d47f57",
+  "operating_team_name": "현재 실행 신선도 검증 팀",
+  "operating_team_purpose": "새 operating dialogue와 draft/execution fingerprint가 일치할 때만 현재 실행 완료로 표시되는지 확인한다.",
+  "assignee_text": "freshness gate 판독 담당",
+  "selected_worker": "codex",
+  "selected_worker_label": "Codex CLI",
+  "selected_model": "current codex session",
+  "guard": {
+    "does_not_run_worker": true,
+    "does_not_replace_current_slot": true,
+    "does_not_close_gate": true,
+    "latest_only": true
+  },
+  "next_allowed_actions": [
+    "review work packet",
+    "convert to line-generation handoff",
+    "route to internal-read cell after supervisor confirmation"
+  ],
+  "content_fingerprint": "2299e96e1b1e5123c3e3342f982e3d78b838dd66514bf112369359e9bbcaca8e"
+}

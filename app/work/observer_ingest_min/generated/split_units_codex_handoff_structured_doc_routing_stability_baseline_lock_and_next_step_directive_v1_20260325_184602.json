@@ -1,0 +1,431 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[DOCROLE:directive]] [[RUNMODE:ingest_only]] [[PRIORITY:high]]",
+    "char_count": 63,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "CODEX HANDOFF — STRUCTURED DOC ROUTING STABILITY BASELINE LOCK + NEXT STEP DIRECTIVE",
+    "end_ref": "CODEX HANDOFF — STRUCTURED DOC ROUTING STABILITY BASELINE LOCK + NEXT STEP DIRECTIVE",
+    "unit_type": "heading_block",
+    "text_excerpt": "# CODEX HANDOFF — STRUCTURED DOC ROUTING STABILITY BASELINE LOCK + NEXT STEP DIRECTIVE",
+    "char_count": 86,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "0. turn purpose",
+    "end_ref": "0. turn purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. turn purpose 이번 턴의 목적은 기능 확장이 아니라 structured doc routing 경로의 운영 안정화를 기준선으로 잠그고, 다음 Codex가 바로 이어서 유지/정리 레이어 작업으로 들어갈 수 있게 하는 것이다. 현재 repo는 “더 똑똑한 해석 엔진”보다 “문서 입력 -> routing -> registry/provenance/event -> receipt/bo",
+    "char_count": 351,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. current locked reading",
+    "end_ref": "1. current locked reading",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. current locked reading 현재 repo의 올바른 해석은 다음과 같다. - 이번 턴의 진전은 semantic intelligence 확장이 아니다. - 이번 턴의 진전은 structured doc operating floor stability 강화다. - 즉, 문서가 들어오고, routing 되고, 기록되고, 조회 surface로 남는 경로가 예전보다 덜 깨진다. -",
+    "char_count": 432,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "2. already reflected assets",
+    "end_ref": "2. already reflected assets",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. already reflected assets",
+    "char_count": 30,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "2.1 structured doc input / execution",
+    "end_ref": "2.1 structured doc input / execution",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 2.1 structured doc input / execution - `codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md` - 처리 방식: - `directive` - `ingest_then_execute` - `high` - receipt: - `runtime/receipts/doc_codex_directive_vecto",
+    "char_count": 280,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "2.2 preset setup documents",
+    "end_ref": "2.2 preset setup documents",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 2.2 preset setup documents - `docs/reports/append_safety_review.md` - `docs/reports/append_safety_patch_plan.md` - `docs/reports/memory_layer_separation_map_v1.md` - `docs/reports/existing_assets_to_memory_layers_map",
+    "char_count": 667,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "3. stabilization patches",
+    "end_ref": "3. stabilization patches",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. stabilization patches",
+    "char_count": 27,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "3.1 common atomic / lock helper",
+    "end_ref": "3.1 common atomic / lock helper",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.1 common atomic / lock helper files: - `app/core/registry/atomic_io.py` - `app/core/registry/__init__.py` introduced helpers: - `atomic_write_json` - `atomic_write_text` - `file_lock` - `make_idempotency_key` role:",
+    "char_count": 303,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "3.2 event append guard + malformed tail recovery",
+    "end_ref": "3.2 event append guard + malformed tail recovery",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.2 event append guard + malformed tail recovery file: - `app/core/events/event_append_guard.py` introduced helpers: - `append_jsonl_locked` - `load_jsonl_with_tail_recovery` - `recover_jsonl_tail` role: - JSONL appe",
+    "char_count": 266,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "3.3 routing script stabilization",
+    "end_ref": "3.3 routing script stabilization",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.3 routing script stabilization file: - `scripts/process_structured_doc_with_routing.py` applied: - registry / ticket / provenance write에 lock + atomic rewrite 적용 - receipt / board / commands write에 atomic text writ",
+    "char_count": 456,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "3.4 operation event recording alignment",
+    "end_ref": "3.4 operation event recording alignment",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3.4 operation event recording alignment file: - `scripts/record_operation_event.py` applied: - guarded append helper 재사용 - event append 방식 일관화 ---",
+    "char_count": 150,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "4. verification assets / tests",
+    "end_ref": "4. verification assets / tests",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. verification assets / tests",
+    "char_count": 33,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "4.1 unit tests",
+    "end_ref": "4.1 unit tests",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.1 unit tests - `tests/unit/test_atomic_io.py` - `tests/unit/test_event_append_guard.py` - `tests/unit/test_structured_doc_stability_helpers.py` package init: - `tests/__init__.py` - `tests/unit/__init__.py`",
+    "char_count": 212,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "4.2 self-check scripts",
+    "end_ref": "4.2 self-check scripts",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.2 self-check scripts - `scripts/run_structured_doc_stability_check.py` - `scripts/run_structured_doc_parallel_stress_check.py` - `scripts/run_jsonl_recovery_drill.py` ---",
+    "char_count": 176,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "5. confirmed results",
+    "end_ref": "5. confirmed results",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. confirmed results",
+    "char_count": 23,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "5.1 tests passed",
+    "end_ref": "5.1 tests passed",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.1 tests passed executed: - `python3 -m unittest tests.unit.test_atomic_io tests.unit.test_event_append_guard tests.unit.test_structured_doc_stability_helpers -v` confirmed: - atomic io helper 동작 확인 - event append g",
+    "char_count": 270,
+    "source_segment_ids": [
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "5.2 recovery drill success",
+    "end_ref": "5.2 recovery drill success",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.2 recovery drill success executed: - `python3 scripts/run_jsonl_recovery_drill.py` confirmed: - malformed tail 감지 - recovery 적용 - `.broken` 백업 생성 - 정상 row만 복구",
+    "char_count": 164,
+    "source_segment_ids": [
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "5.3 parallel stress success",
+    "end_ref": "5.3 parallel stress success",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 5.3 parallel stress success executed: - `python3 scripts/run_structured_doc_parallel_stress_check.py` confirmed: - `successful_runs=4` - `unique_run_ids=4` - `same_idempotency_key_for_all_runs=true` - registry / tick",
+    "char_count": 329,
+    "source_segment_ids": [
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "6. interpretation of current state",
+    "end_ref": "6. interpretation of current state",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. interpretation of current state 현재 운영 해석은 아래로 고정한다.",
+    "char_count": 57,
+    "source_segment_ids": [
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "6.1 what improved",
+    "end_ref": "6.1 what improved",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.1 what improved - structured doc routing repeatability improved - concurrent execution durability improved - event / registry / provenance write safety improved - malformed ledger tail survivability improved - late",
+    "char_count": 267,
+    "source_segment_ids": [
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "6.2 what did NOT improve",
+    "end_ref": "6.2 what did NOT improve",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.2 what did NOT improve - semantic reading sophistication 자체를 확장한 것은 아님 - interpretation engine를 넓힌 것은 아님 - distributed system 수준 보장을 한 것은 아님 - long-horizon storage hygiene를 완결한 것은 아님",
+    "char_count": 188,
+    "source_segment_ids": [
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "6.3 locked verdict",
+    "end_ref": "6.3 locked verdict",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.3 locked verdict **이번 턴의 성과는 “의미 판정 강화”가 아니라 “운영 경로 안정화”다.** ---",
+    "char_count": 70,
+    "source_segment_ids": [
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "7. remaining risks",
+    "end_ref": "7. remaining risks",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. remaining risks 아직 남은 리스크는 숨기지 말고 아래처럼 유지한다.",
+    "char_count": 50,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "7.1 provenance accumulation risk",
+    "end_ref": "7.1 provenance accumulation risk",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 7.1 provenance accumulation risk - provenance link는 계속 누적된다 - 장기적으로 dedupe / compaction 정책이 없으면 surface 가독성과 유지비가 나빠질 수 있다",
+    "char_count": 126,
+    "source_segment_ids": [
+      "seg_025"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "7.2 lock scope limitation",
+    "end_ref": "7.2 lock scope limitation",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 7.2 lock scope limitation - 현재 file lock 기반은 단일 머신 / 현재 환경에서는 유효하다 - 더 큰 분산 환경 보장으로 읽으면 안 된다",
+    "char_count": 96,
+    "source_segment_ids": [
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "7.3 recovery visibility gap",
+    "end_ref": "7.3 recovery visibility gap",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 7.3 recovery visibility gap - recovery helper는 존재한다 - 하지만 실제 운영 ledger / event / receipt에 recovery 발생 사실을 자동으로 얼마나 명시적으로 남길지 더 다듬을 수 있다",
+    "char_count": 139,
+    "source_segment_ids": [
+      "seg_027"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "7.4 latest vs per-run surface ambiguity",
+    "end_ref": "7.4 latest vs per-run surface ambiguity",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 7.4 latest vs per-run surface ambiguity - latest surface와 per-run surface는 둘 다 존재한다 - 둘의 관계를 더 얇고 명확한 pointer 구조로 정리할 여지가 있다 ---",
+    "char_count": 132,
+    "source_segment_ids": [
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "8. next priority lock",
+    "end_ref": "8. next priority lock",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. next priority lock 다음 Codex는 아래 우선순위로 바로 들어간다.",
+    "char_count": 52,
+    "source_segment_ids": [
+      "seg_029"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "8.1 P1 — provenance dedupe / compaction",
+    "end_ref": "8.1 P1 — provenance dedupe / compaction",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.1 P1 — provenance dedupe / compaction goal: - provenance 누적 흔적을 무조건 지우는 것이 아니라 중복과 장기 누적 노이즈를 안전하게 줄이는 정책/코드를 만든다 expected outputs: - provenance dedupe / compaction policy doc - bounded compaction script or helper ",
+    "char_count": 374,
+    "source_segment_ids": [
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "8.2 P2 — latest board / commands pointer surface thinning",
+    "end_ref": "8.2 P2 — latest board / commands pointer surface thinning",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.2 P2 — latest board / commands pointer surface thinning goal: - latest surface를 실제 내용을 중복해서 많이 품는 덩어리보다 “가장 최근 실행을 가리키는 얇은 pointer surface”로 정리한다 expected outputs: - latest board pointer spec - latest commands poin",
+    "char_count": 377,
+    "source_segment_ids": [
+      "seg_031"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "8.3 P3 — explicit recovery recording",
+    "end_ref": "8.3 P3 — explicit recovery recording",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.3 P3 — explicit recovery recording goal: - recovery가 발생했을 때 operation receipt / event / board 등에서 그 사실이 더 명시적으로 드러나게 한다 expected outputs: - recovery recording rule - recovery event emission patch or hook - receipt ",
+    "char_count": 354,
+    "source_segment_ids": [
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "8.4 P4 — higher parallel stress only if needed",
+    "end_ref": "8.4 P4 — higher parallel stress only if needed",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.4 P4 — higher parallel stress only if needed goal: - 현재 성공한 parallel stress를 더 높은 병렬 수로 늘려 경계 확인 expected outputs: - expanded stress plan - higher concurrency result summary - failure mode가 있으면 bounded note reading",
+    "char_count": 290,
+    "source_segment_ids": [
+      "seg_033"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "9. do not do first",
+    "end_ref": "9. do not do first",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. do not do first 다음 Codex는 아래를 첫 작업으로 잡지 않는다. - broad feature expansion - interpretation-engine widening - unnecessary schema redesign - distributed abstraction jump - major refactor unrelated to trace hygiene - sem",
+    "char_count": 324,
+    "source_segment_ids": [
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "10. recommended next-turn objective",
+    "end_ref": "10. recommended next-turn objective",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. recommended next-turn objective 다음 턴의 한 줄 objective는 아래로 고정한다. **Move from “prevent breaking” to “manage accumulated traces safely and readably”.** 한국어 표현: **이제는 “덜 깨지게” 다음으로, “쌓인 흔적을 안전하고 읽기 좋게 유지하는 법”으로 넘어간다.** ",
+    "char_count": 223,
+    "source_segment_ids": [
+      "seg_035"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "11. execution posture for next codex",
+    "end_ref": "11. execution posture for next codex",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 11. execution posture for next codex 다음 Codex는 아래 posture로 작업한다.",
+    "char_count": 67,
+    "source_segment_ids": [
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "11.1 correct posture",
+    "end_ref": "11.1 correct posture",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 11.1 correct posture - maintenance-layer tightening first - evidence-preserving hygiene - pointer-surface clarification - recovery visibility improvement - bounded change with clear receipts",
+    "char_count": 194,
+    "source_segment_ids": [
+      "seg_037"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "11.2 wrong posture",
+    "end_ref": "11.2 wrong posture",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 11.2 wrong posture - 새 기능을 먼저 여는 것 - 지금 상태를 semantic engine 부족으로 오독하는 것 - append-only spirit를 무시하고 누적 흔적을 공격적으로 삭제하는 것 - distributed-grade guarantee가 이미 된 것처럼 과장하는 것 ---",
+    "char_count": 173,
+    "source_segment_ids": [
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "12. final locked summary",
+    "end_ref": "12. final locked summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 12. final locked summary 현재 repo는 structured doc -> routing -> registry/provenance/event -> receipt/board 경로의 안정화가 꽤 진전됐다. 다음 단계는 “더 안 깨지게 만들기” 자체보다 “이미 쌓이기 시작한 흔적을 어떻게 안전하게 정리하고 유지하며 읽기 좋게 만들 것인가”로 넘어가면 된다. 최종 한 줄: *",
+    "char_count": 319,
+    "source_segment_ids": [
+      "seg_039"
+    ]
+  }
+]

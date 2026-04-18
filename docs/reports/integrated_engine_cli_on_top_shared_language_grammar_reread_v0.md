@@ -1,0 +1,243 @@
+# Integrated Engine CLI On-Top Shared Language Grammar Reread v0
+
+Date: 2026-04-16
+
+## 0. verdict
+
+PASS_WITH_NOTE
+
+이 문서는 현재 CLI-on-top 작업 상태를 기존 internal language / line / connection / axis 자료로 다시 읽고, Codex가 앞으로 사용자에게 한국어로 보고할 때 사용할 수 있는 운영 문법을 잠근다.
+
+이 문서는 UI 번역, wording patch, final glossary, scaffold 수정, manifest/read-map 변경, Gemini adapter, deposit ingestion automation을 열지 않는다.
+
+## 1. reread reason
+
+현재 화면은 구조적으로는 동작하지만, 사용자가 직접 보면 영어와 내부 공간 언어가 많이 노출된다.
+
+여기서 바로 한국어를 붙이면 의미가 약해진다. 이유는 한국어 문장이 Codex의 즉석 번역이 되기 쉽고, 우리가 이미 만든 내부 번역 자료와 line / connection / axis 축을 충분히 쓰지 못하기 때문이다.
+
+따라서 먼저 해야 할 일은 다음이다.
+
+```text
+내부 자료 reread
+-> 현재 CLI-on-top 상태에서 반복되는 line 추출
+-> line 사이 connection 확인
+-> emerging axis 확인
+-> Codex 보고용 shared language grammar 작성
+-> 그 grammar로 사용자에게 한국어 리포트
+-> 다시 엔진 내부에서 line / axis / space 재탐색
+```
+
+## 2. current material read
+
+이번 reread의 기준 자료:
+
+- `integrated_engine_cli_on_top_current_operating_state_v0`
+- `integrated_engine_direction_reset_note_v0`
+- `integrated_engine_shared_operational_language_growth_note_v0`
+- `integrated_engine_internal_language_grammar_candidate_v0`
+- `integrated_engine_line_connection_axis_to_shared_language_map_v0`
+- `integrated_engine_surface_exposure_and_shared_language_boundary_v0`
+- `integrated_engine_vectorfl_cli_conversation_control_round_v0`
+- stable UI / CLI session runtime state
+
+현재 상태에서 직접 읽히는 사실:
+
+- `app/ui/integrated_engine`가 실제 main UI source다.
+- `gemini/mock_test`는 proposal / design clay로 남아 있다.
+- CLI는 `runtime/cli_sessions`에 structured session artifact를 남긴다.
+- VectorFL surface가 CLI host/control을 직접 다룬다.
+- User surface는 CLI return을 work / decision candidate로 읽는다.
+- Engine surface는 CLI return을 processing / return / validation / extraction material로 읽는다.
+- Codex run은 local CLI auth/session을 상속한다.
+- 자동 assignment, 자동 deposit ingestion, promotion, Gemini adapter는 아직 닫혀 있다.
+
+## 3. extracted lines
+
+| line | current evidence | human-readable line form |
+|---|---|---|
+| CLI는 4번째 surface가 아니다 | current operating state, conversation control note | CLI는 통합엔진 바깥의 새 면이 아니라, VectorFL에서 다루는 보조 실행층이다. |
+| VectorFL이 주 운영면이다 | UI panel placement, direct run / mark actions | CLI에 지시하고 결과를 되읽는 곳은 VectorFL surface다. |
+| User surface는 실행자가 아니라 조직/결정면이다 | User assignment panel, route board tickets | 사용자면은 CLI 결과를 바로 수행하지 않고, 업무 후보와 결정 신호로 정리한다. |
+| Engine surface는 판단기관이 아니라 처리/반환면이다 | engine material strip, validation/extraction queue | 엔진면은 결과 재료와 검증 후보를 보여주지만 최종 판단권을 가져가지 않는다. |
+| mark는 route signal이지 완료 선언이 아니다 | mark actions and mark history | reread / validation / implementation / deposit mark는 다음 읽기 방향을 표시한다. |
+| deposit candidate는 ingestion이 아니다 | deposit queue notes | deposit 후보는 보관/재진입 가능성이지 공식 기록 편입 완료가 아니다. |
+| latest/recent session은 conversation aid다 | recent readable returns, continue latest | 최근 세션은 대화를 이어가기 위한 문맥 장치이지 전체 history DB가 아니다. |
+| internal language는 그대로 필요하다 | direction reset, shared language note | 엔진 내부 언어를 없애면 route / authority / state / boundary가 사라진다. |
+| user-facing language는 surface 노출 밀도 조절이다 | surface exposure note | 사용자에게는 전체 내부 언어가 아니라 결정 가능한 shared grammar가 올라와야 한다. |
+
+## 4. repeated connections
+
+### 4.1 VectorFL operation -> User organization -> Engine material
+
+CLI run은 VectorFL에서 시작된다. 그 결과는 User surface에서 work/decision candidate가 되고, Engine surface에서 return/validation/extraction material이 된다.
+
+이 연결은 "VectorFL만 쓴다"가 아니다. VectorFL이 운영하고, User가 조직/결정 후보로 읽고, Engine이 처리/반환 재료로 읽는 3면 반영이다.
+
+### 4.2 Codex return -> mark -> route readability
+
+Codex output은 그 자체로 final이 아니다. mark가 붙으면 다음 route가 읽힌다.
+
+- `reread_target`: 다시 읽을 재료
+- `implementation_return`: 구현 반환 후보
+- `validation_target`: 검증 대상
+- `deposit_candidate`: 보관/편입 후보
+
+이 연결에서 중요한 것은 mark가 권위 확정이 아니라 route signal이라는 점이다.
+
+### 4.3 raw artifact reduction -> readable return -> still-not-ingestion
+
+latest readable return과 deposit preview는 raw file 직접 확인 부담을 줄인다.
+
+하지만 이것은 자동 ingestion이 아니다. 읽기 부담을 줄이는 것과 공식 편입은 다른 축이다.
+
+### 4.4 Gemini mock -> stable UI -> proposal boundary
+
+`gemini/mock_test`에서 가져온 화면은 실제 UI의 출발 재료가 되었지만, 안정 소스는 `app/ui/integrated_engine`로 이동했다.
+
+이 연결은 Gemini material이 가치가 있어도 design clay / proposal material에서 Codex translation / stable folder migration을 거쳐야 함을 보여준다.
+
+## 5. emerging axes
+
+### 5.1 CLI-on-top route axis
+
+```text
+VectorFL CLI request
+-> Codex run
+-> structured return
+-> mark / readable return
+-> User work candidate or Engine material
+-> VectorFL follow-up / validation / deposit candidate
+```
+
+이 축은 현재 실제 동작한다.
+
+### 5.2 surface exposure axis
+
+```text
+Engine surface = 처리/반환 내부 언어 허용
+VectorFL surface = 중재/되읽기/shared grammar 중심
+User surface = 결정 가능한 인간 가독 shared grammar 중심
+```
+
+이 축은 앞으로 UI나 보고 문법을 만들 때 최상위 기준이다.
+
+### 5.3 candidate-not-authority axis
+
+```text
+CLI return
+-> candidate signal
+-> user/vectorfl/engine reading
+-> mark
+-> possible next route
+```
+
+여기서 어떤 것도 자동 권위가 되지 않는다. session, mark, queue, preview는 모두 route 후보와 읽기 재료다.
+
+### 5.4 readable-report-before-UI-copy axis
+
+한국어 UI copy보다 먼저 필요한 것은 Codex가 사용자에게 설명할 때 쓸 보고 문법이다.
+
+화면 언어를 바꾸기 전에, 보고가 다음 순서를 안정적으로 지켜야 한다.
+
+```text
+현재 상태
+-> 3면별 읽기
+-> 열린 route / 닫힌 route
+-> 사용자 판단이 필요한 지점
+-> 아직 자동화하면 안 되는 지점
+-> 다음 가장 작은 실행
+```
+
+## 6. Codex reporting grammar
+
+앞으로 Codex가 사용자에게 현재 상태를 "사용자의 언어"로 보고할 때는 다음 문법을 먼저 적용한다.
+
+### 6.1 status first
+
+먼저 지금 실제로 된 것을 말한다.
+
+예: "VectorFL면에서 Codex를 실행하고, 결과를 최근 세션/mark/deposit 후보로 다시 읽는 경로는 동작합니다."
+
+### 6.2 surface split second
+
+그 다음 같은 결과가 3면에서 어떻게 다르게 읽히는지 나눈다.
+
+- 사용자면: 업무 후보 / 결정 후보
+- VectorFL면: 지시 / 되읽기 / mark / follow-up
+- 엔진면: 처리 반환 / 검증 후보 / 추출 또는 deposit 후보
+
+### 6.3 route and authority third
+
+그 다음 route와 권위 경계를 말한다.
+
+- 무엇이 열려 있는가
+- 무엇이 닫혀 있는가
+- 무엇은 후보일 뿐인가
+- 무엇은 사용자 결정이나 다음 package 없이는 진행되지 않는가
+
+### 6.4 friction fourth
+
+그 다음 사용자가 헷갈릴 수 있는 지점을 구조 문제와 언어 문제로 분리한다.
+
+- 구조가 안 된 것인가
+- 화면 언어가 너무 내부적인가
+- 아직 의도적으로 닫힌 기능을 기대해서 생긴 마찰인가
+- raw file 확인 부담이 남아 있는가
+
+### 6.5 next smallest action last
+
+마지막에는 여러 로드맵을 펼치지 말고, 다음 가장 작은 유효 단계를 하나로 좁힌다.
+
+## 7. do-not-flatten rules for reports
+
+Codex 보고에서 납작하게 만들면 안 되는 표현:
+
+| internal expression | do not reduce to | preserve |
+|---|---|---|
+| CLI on-top layer | 새 채팅창 / 네 번째 화면 | 3면 위 보조 실행층 |
+| VectorFL operation | 그냥 명령 입력 | 해석/중재/되읽기 중심 운영 |
+| mark | 완료 상태 | 다음 route 신호 |
+| deposit candidate | 저장 완료 | 편입 후보 / 아직 승인 전 |
+| user assignment candidate | 자동 배정 | 사용자면의 조직/판단 후보 |
+| engine material | 최종 결과 | 처리/반환/검증 재료 |
+| Gemini mock | 본체 | proposal/design clay |
+| latest return | 전체 기억 | 최근 판단을 돕는 readable artifact |
+
+## 8. how this feeds back into engine space
+
+이 문법은 사용자 보고에서 끝나면 안 된다.
+
+사용자 보고 뒤에는 다시 다음을 기록해야 한다.
+
+- 어떤 line이 반복됐는가
+- 어떤 connection이 새로 보였는가
+- 어떤 axis가 강해졌는가
+- 어떤 surface 노출 규칙이 더 분명해졌는가
+- 다음 UI/문서/CLI 작업이 어느 축을 따라야 하는가
+
+즉 Codex의 한국어 보고는 "번역 결과"가 아니라 다음 내부 reread의 입력 재료가 된다.
+
+## 9. current closeout
+
+현재 단계에서 바로 열지 말 것:
+
+- UI 한국어 copy patch
+- final glossary
+- wording patch
+- Gemini adapter
+- deposit ingestion automation
+- automatic assignment
+- session history/browser expansion
+
+현재 먼저 해야 할 것:
+
+- 이 문법으로 실제 현재 상태를 사용자에게 보고해 보기
+- 사용자가 판단하기 쉬운지 확인하기
+- 그 보고에서 다시 line / connection / axis를 추출하기
+
+## 10. verdict note
+
+PASS_WITH_NOTE.
+
+CLI-on-top 경로는 동작하지만, 사용자가 판단하기 쉬운 언어는 아직 UI에 직접 붙일 단계가 아니다. 먼저 이 문서의 보고 문법을 사용해 Codex가 사용자에게 의미를 번역하고, 그 번역 결과를 다시 엔진 내부의 line / connection / axis 재료로 돌려야 한다.

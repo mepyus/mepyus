@@ -1,0 +1,75 @@
+- result summary
+  - bounded context 2개를 reread했다.
+  - 관찰된 핵심은 `raw execution artifact`를 바로 UI 문구로 바꾸는 것이 아니라, `Codex run -> structured return -> operator_report.md -> mark update -> VectorFL latest preview` 흐름 안에서 사용자 판단용 shared operational grammar를 키우는 것이다.
+  - 이번 데이터는 final glossary가 아니라 validation용 Koreanization candidate다.
+
+- important findings / diffs / outputs
+
+| internal phrase or signal observed | source context where it appeared | internal meaning / operational role | Koreanization candidate, not final UI copy | Korean preservation requirement | risky Korean flattening to avoid |
+|---|---|---|---|---|---|
+| `operator_report.md` | CLI operator report loop patch note | raw output과 사용자 판단 사이의 bridge artifact | 운영자 판단 리포트 / 운영 판단 기록 | `report`가 단순 요약이 아니라 route/state/authority를 읽는 기록임을 보존 | 결과 요약, 실행 로그 |
+| `Status First` | report generation structure | 사용자가 먼저 상태를 판별하게 하는 report ordering | 상태 우선 읽기 | status가 완료/실패뿐 아니라 route 판단 진입점임을 보존 | 상태 표시 |
+| `Surface Split` | report generation structure | User / VectorFL / Engine surface를 분리해 읽는 장치 | 3면별 분리 읽기 | surface별 권위와 노출 밀도 차이를 보존 | 화면 구분, 섹션 구분 |
+| `Route And Authority` | report generation structure | 어떤 경로가 열렸고 누가 판단 권위를 갖는지 밝힘 | 경로와 권위 읽기 | route와 authority를 함께 보존 | 담당자, 권한 안내 |
+| `Friction Reading` | report generation structure | 막힘/마찰을 오류가 아닌 운영 신호로 읽음 | 마찰 읽기 | friction이 failure와 다름을 보존 | 문제점, 에러 |
+| `Next Smallest Action` | report generation structure / next smallest step | promotion 없이 다음 검증 가능한 최소 행동 지정 | 다음 최소 행동 | 작고 검증 가능한 route step임을 보존 | 다음 할 일, TODO |
+| `mark update regeneration` | patch note 3.3 | mark 변화가 report route signal에 반영되어야 함 | mark 갱신에 따른 리포트 재생성 | mark가 완료 상태가 아니라 route signal임을 보존 | 완료 표시 갱신 |
+| `validation_target` | patch note validation / mark regeneration | 검증 대상으로 route 지정 | 검증 대상 신호 | target은 자동 검증/승인이 아님을 보존 | 검증 완료 |
+| `deposit_candidate` | patch note baseline-safe | official ingestion 전 후보 상태 | 적립 후보 신호 | candidate와 official ingestion의 차이 보존 | 등록됨, 반영됨 |
+| `shared operational language` | growth note 전체 | user/vectorfl/engine/codex/gemini가 권위를 유지하며 공유하는 중간층 언어 | 공유 운영 언어 | UI copy나 final glossary가 아니라 중간 운영 문법임을 보존 | 공통 용어집, 번역문 |
+| `line / connection / axis` | patch note section 6, growth note sections 3/6 | 반복 관찰이 grammar와 interface 요구로 자라는 단계 | 선 / 연결 / 축 | line은 단일 문장, connection은 반복 관계, axis는 구조화 후보임을 구분 | 항목 / 관계 / 분류 |
+| `human-readable line` | growth note sections 2/6 | 내부 의미를 지우지 않고 사용자가 다룰 수 있게 올린 line | 인간 가독 운영선 | readable이 simplification이 아님을 보존 | 쉬운 설명 |
+| `route signal` | patch note mark regeneration / baseline-safe | 상태 변경이 다음 행동 경로를 지시하는 신호 | 경로 신호 | signal이 자동 assignment/promotion이 아님을 보존 | 상태값 |
+| `baseline-safe translation` | growth note Codex role | core behavior/promotion을 열지 않는 제한 번역 | 기준선 안전 번역 | translation이 UI patch나 canonicalization이 아님을 보존 | 안전한 번역 완료 |
+| `bounded executor` | growth note Codex role | 제한된 범위 안에서 실행/기록하는 Codex 역할 | 경계 실행자 | bounded scope와 authority 제한 보존 | 실행 담당자 |
+| `proposal-only status` | growth note Gemini role | Gemini material은 core로 직접 들어가지 않는 제안 상태 | 제안 전용 상태 | no direct path 보존 | 제안됨, 반영 예정 |
+| `no direct Gemini-to-core path` | growth note Gemini role | Gemini output은 Codex translation/validation 없이 core 권위를 갖지 않음 | Gemini에서 core로 직접 경로 없음 | authority boundary 보존 | Gemini 반영 차단, 외부 입력 금지 |
+| `workspace ownership` | growth note example | proposal/canonical/scaffold/manifest authority 구분 | 작업공간 권위 경계 | 폴더 소유가 아니라 authority separation임을 보존 | 폴더 소유권 |
+| `anchor drift` | growth note example | route brake 역할을 하는 drift signal | anchor 이탈 신호 | warning보다 route brake 의미 보존 | 경고 |
+| `return packet` | growth note example | engine output과 VectorFL validation 경계가 있는 반환 단위 | 반환 패킷 | 단순 결과가 아니라 validation boundary 포함 | 결과 |
+
+- why this helps the user operate
+  - 사용자는 engine 내부 용어 전체를 외우지 않고도 `지금 열린 route`, `closed 상태`, `hold/watch/carry-forward`, `다음 package를 열 수 있는 axis`를 판단할 수 있다.
+  - `operator_report.md`는 raw stdout보다 판단 가능하고, UI copy보다 덜 확정적이라 validation 전에 의미를 보존한다.
+
+- what meaning gets lost if shortened
+  - `operator_report.md -> 결과 요약`: route/authority/friction/next-action 구조가 사라진다.
+  - `validation_target -> 검증 완료`: 아직 검증할 대상이라는 route state가 완료 상태로 오독된다.
+  - `shared operational language -> 공통 용어`: surface별 권위와 노출 밀도 차이가 사라진다.
+  - `anchor drift -> 경고`: route brake와 재처리 필요성이 약해진다.
+  - `deposit_candidate -> 등록 후보`: official ingestion 전이라는 제한은 남지만, route signal과 validation 필요성이 약해질 수 있다.
+
+- repeated connection it belongs to
+  - `Codex run -> structured return -> operator_report.md -> mark update -> regenerated operator report -> VectorFL latest preview`
+  - `3면 내부 언어 -> 인간 가독 line -> repeated connection -> emerging axis -> shared operational grammar -> surface별 노출 규칙`
+  - `proposal material -> Codex translation -> validation target -> deposit candidate`
+
+- emerging axis candidate
+  - `run artifact must carry user-judgment grammar before UI language patch`
+  - `mark is route signal, not completion state`
+  - `shared language grows between internal engine language and user-readable operation`
+  - `surface split preserves authority before wording`
+
+- surface exposure note: user / vectorfl / engine
+  - user: route, closed/open, next decision, hold/watch/carry-forward 중심으로 낮은 밀도 노출.
+  - vectorfl: line/connection/axis, anchor/validation/reflux/reprocess 중심의 중재 언어 노출.
+  - engine: shaped input, execution state, return material, processing history 중심으로 내부 실행 언어 유지.
+
+- external expression support needed, if any
+  - Gemini 쪽은 `proposal-only`, `design clay`, `needs Codex translation`, `no direct Gemini-to-core path`를 보존하는 표현 지원이 필요하다.
+  - 단, 이번 bounded context에서는 Gemini adapter, external style guide, UI copy 확장은 열리지 않는다.
+
+- uncertainty or failure notes
+  - 실제 `operator_report.md` artifact 본문은 bounded refs에 포함되지 않아 직접 확인하지 않았다.
+  - Koreanization candidate는 final glossary가 아니며, UI copy로 승격하면 안 된다.
+  - `line / connection / axis`는 한국어로 완전히 대체하기보다 초기에는 원어 병기 가능성이 높다.
+
+- next reread question
+  - `operator_report.md` 실제 생성물에서 `validation_target`, `deposit_candidate`, `current_marks`, `Next Smallest Action`이 사용자 판단 언어로 어떻게 배열되는가?
+  - preview에서 route signal이 완료/승인처럼 오독되는 지점이 있는가?
+
+- suggested next use: validation target
+  - reread target: `runtime/cli_sessions/<latest_session_id>/operator_report.md`
+  - implementation return: 없음
+  - validation target: `operator report preview`가 `validation_target`을 완료가 아닌 route signal로 읽히게 하는지 확인
+  - deposit candidate: 이번 결과는 Koreanization data loop deposit candidate로 적합하나, final glossary deposit은 아님

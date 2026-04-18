@@ -1,0 +1,32 @@
+{
+  "schema_version": "vectorfl_paper_legacy_merge_test_closeout_v0",
+  "legacy_surface_ref": "runtime/views/vectorfl_paper_weekend_pilot/index.html",
+  "current_supervisor_surface_ref": "runtime/views/vectorfl_paper_proper/index.html",
+  "integrated": [
+    "current anchor summary",
+    "dry-run candidate preview summary",
+    "reference candidate comparison summary",
+    "supervisor-safe hold/reopen decision reading"
+  ],
+  "intentionally_excluded": [
+    "current slot replacement",
+    "candidate promotion",
+    "actual_export_only gate close declaration",
+    "legacy Paper full merge",
+    "surface redesign",
+    "cell architecture expansion"
+  ],
+  "input_artifacts": [
+    "runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json",
+    "runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json",
+    "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json"
+  ],
+  "supervisor_readability_survived": true,
+  "current_surface_stayed_unpolluted": true,
+  "current_slot_unchanged": true,
+  "current_vs_dry_run_separation_preserved": true,
+  "comparison_verdicts_visible_without_current_ssot_confusion": true,
+  "merge_layer_removable_without_runtime_behavior_change": true,
+  "bounded_merge_testing_verdict": "passed_read_only_attachment_test",
+  "decision_posture": "hold_current_ssot_allow_bounded_reopen_validation_no_gate_close"
+}

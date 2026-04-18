@@ -1,0 +1,54 @@
+{
+  "output_id": "vectorfl_paper_weekend_pilot_synthesis_output_v0",
+  "cell_id": "synthesis_cell",
+  "confirmed_lines": [
+    {
+      "line_name": "internal_reading_before_expansion",
+      "core_claim": "The first pilot loop should not trigger external search until internal reread has shaped the actual question.",
+      "evidence_basis": [
+        "repeated internal-first pressure from conversation bundle",
+        "host coupled maturation reference"
+      ],
+      "human_translation": "We should search only after we know exactly what is missing inside.",
+      "next_use": "Gate the external resource cell with shaped questions only."
+    },
+    {
+      "line_name": "worker_as_paper_manager",
+      "core_claim": "Codex and Gemini should appear as managers of cell contracts, not as free-floating helper tools.",
+      "evidence_basis": [
+        "conversation correction flow",
+        "Paperclip control-plane reading"
+      ],
+      "human_translation": "The CLI should run the loop for you, not wait for step-by-step babysitting.",
+      "next_use": "Attach CLI ownership explicitly to each pilot cell."
+    },
+    {
+      "line_name": "human_readable_supervision_surface",
+      "core_claim": "Every loop output must rise to a supervisor-readable decision surface.",
+      "evidence_basis": [
+        "conversation pressure around user bottleneck",
+        "human language work surface reference"
+      ],
+      "human_translation": "You should be able to judge what to do next without decoding the whole internal engine.",
+      "next_use": "Use supervisor report format as mandatory output of synthesis."
+    }
+  ],
+  "unresolved_tensions": [
+    "The first live injected reference has not yet been selected from a real external pass.",
+    "The first runtime return slot is still a contract object rather than a live memory update.",
+    "A true go/hold/reopen cycle still needs one real supervised decision after the first report."
+  ],
+  "next_loop_proposal": {
+    "next_cell": "supervisor",
+    "why": "The three minimum cells have emitted enough structure for a real decision point.",
+    "carry_forward": [
+      "confirmed_lines",
+      "unresolved_tensions",
+      "reference injection candidates"
+    ]
+  },
+  "recommendation": {
+    "decision": "go",
+    "reason": "The first weekend pilot is ready to move from contract definition into one real sample loop using the current scenario-bearing bundle."
+  }
+}

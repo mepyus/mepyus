@@ -1,0 +1,99 @@
+{
+  "created_at": "2026-03-28T12:06:02.944951Z",
+  "input_asset": "inputs/external_cases/gary_tan_brain.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/gary_tan_brain_probe_v1_w6_s3_20260328T120547Z.json",
+    "app/work/dialogue_loop_test/generated/gary_tan_brain_probe_v1_w3_s1_w3_s1_20260328T120547Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/gary_tan_brain.txt",
+    "supporting_first_pass_patterns": [
+      "top_question_intent_windows",
+      "object_candidates",
+      "layer_hints",
+      "relation_hints",
+      "top_anchor_values"
+    ],
+    "second_order_reading_type": "question_inducing_block_review",
+    "rereading_mode": "cross_window_candidate_selection",
+    "scope_local_page_comparison": "local_plus_page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "question_opening_and_residue_deprioritization_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "question-inducing candidate rules are still being observed as patterns, not generalized",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/gary_tan_brain_probe_v1_w6_s3_20260328T120547Z.json",
+      "app/work/dialogue_loop_test/generated/gary_tan_brain_probe_v1_w3_s1_w3_s1_20260328T120547Z.json"
+    ]
+  },
+  "question_inducing_candidates": [
+    {
+      "window_id": "0_0",
+      "question_intent_score": 8,
+      "objects": [
+        "생산성/코딩",
+        "일의 미래",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "구현/실행 층",
+        "검증/근거 층",
+        "구조/연결 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 생산성/코딩, 일의 미래, 에이전트 애플리케이션 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "사람의 일은 수행에서 감독과 설계 쪽으로 얼마나 이동하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 생산성/코딩, 일의 미래, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그다음에, 그래서, 됩니다, 되면은, 있습니다, CEO",
+      "after_anchor_surface": "그다음에, 됩니다, 되면은, 있습니다, CEO, 클로드",
+      "deprioritized_values": [
+        "그래서"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1
+      },
+      "headings": [
+        "untitled"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다. 그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요. 그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스…"
+        }
+      ],
+      "second_order_reading_type": "question_inducing_block",
+      "rereading_mode": "high_score_window_rereading",
+      "scope_local_page_comparison": "local_plus_page",
+      "domain_specific_suspicion": "high_ai_agent_transition",
+      "reusable_attitude_hint": "question_opening_plus_transition_detection",
+      "candidate_status": "hold_candidate",
+      "hold_reason": "question-inducing reading is clear but still domain-skewed toward AI/agent/business transition",
+      "evidence_pointers": [
+        "untitled"
+      ]
+    }
+  ],
+  "summary_stage_deprioritization_candidates": [
+    {
+      "residue_type": "discourse_connective_residue",
+      "count": 1,
+      "example_values": [
+        "그래서"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    }
+  ]
+}

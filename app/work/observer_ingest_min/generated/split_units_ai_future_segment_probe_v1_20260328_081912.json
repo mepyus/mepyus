@@ -1,0 +1,101 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "ai future segment probe result",
+    "end_ref": "ai future segment probe result",
+    "unit_type": "heading_block",
+    "text_excerpt": "# ai future segment probe result",
+    "char_count": 32,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "1. probe scope",
+    "end_ref": "1. probe scope",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. probe scope - engine path: - `build_dust_inputs_from_source` - `label_dust_inputs` - helper: - [run_ai_future_segment_probe.py](/Users/sungsookim/universe/vectorfl_replica/scripts/run_ai_future_segment_probe.py) - ",
+    "char_count": 418,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "2. what was searched",
+    "end_ref": "2. what was searched",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. what was searched - scope: - `inputs/external_cases` text-like inputs - filter: - `미래` - `future` - `AGI` - `초지능` - `자동화` - adjacent future-oriented phrases",
+    "char_count": 162,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "3. high-level result",
+    "end_ref": "3. high-level result",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. high-level result - matched source count: - `21` - overall scene counts: - `review`: `160` - `evidence`: `11` - `impl`: `10` - `spec`: `1` - overall flow counts: - `compare`: `150` - `run`: `28` - `break`: `3` - `f",
+    "char_count": 228,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "4. what this means",
+    "end_ref": "4. what this means",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. what this means - `AI의 미래` 관련 분절값은 한 층으로만 나오지 않았다. - 가장 많이는 `review / compare` 층으로 읽히지만, `impl / run`, `evidence / run`, `spec / fix` 쪽도 실제로 존재한다. - 즉 이 축은 이미 엔진 안에서 - 전망/서술 층 - 실행/자동화 층 - 근거/검증 층 - 일부 명세성 층 으로 흩어져",
+    "char_count": 224,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "5. top sources",
+    "end_ref": "5. top sources",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. top sources - [dario_amodei_youtube.txt](/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/dario_amodei_youtube.txt) - matched segments: `24` - dominant read: `review / compare` - recurring anchors:",
+    "char_count": 1347,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "6. layer examples",
+    "end_ref": "6. layer examples",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. layer examples - future as trajectory / forecast layer: - Dario: - `우린는 확실히 AGI를 향해 가고 있죠.` - Andrej: - `20년 뒤에 미래를.` - Alex: - `앞으로 이런 슈퍼 기술의 가치는 지금과는 비교도 안 될만큼 폭등할 것입니다.` - future as automation / execution layer:",
+    "char_count": 582,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "7. important caution",
+    "end_ref": "7. important caution",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. important caution - 이번 probe는 `연결의 단단함`을 본 것이 아니다. - 이번 probe는 오직 - 미래 관련 분절값이 실제로 여러 층위로 나타나는지 - 엔진 내부 분절 구조에서 어떤 scene/flow로 퍼지는지 를 본 것이다. - 따라서 지금 단계의 결론은 - `future-of-ai` 축이 이미 다층적이다 이지, - 그 층들이 잘 연결되었다 는 뜻은 아니",
+    "char_count": 222,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "8. one-line summary",
+    "end_ref": "8. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. one-line summary - 엔진 내부 분절 기준으로 보면 `AI의 미래` 관련 입력값은 단순 전망 서술에만 머물지 않고, review/compare를 중심으로 impl/run, evidence/run, spec/fix까지 얇게 퍼진 다층 분포를 이미 만들고 있다.",
+    "char_count": 157,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  }
+]

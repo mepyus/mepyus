@@ -1,0 +1,19 @@
+{
+  "schema_version": "vectorfl_paper_reference_crosscheck_review_report_v0",
+  "reference_id": "ralph",
+  "source_record_artifact": "runtime/manifests/vectorfl_paper_ralph_candidate_evidence_record_v0.json",
+  "review_status": "prepared_for_validator",
+  "review_summary": "Ralph preserves a compact story/run/result/pass-gate loop and is useful as a reopen-loop comparison candidate.",
+  "agreement_assessment": "partial_agree",
+  "detected_risks": [
+    "Reference is a coding iteration loop, not a host export.",
+    "Full Ralph adoption would introduce orchestration and progress-memory structure beyond the current pilot."
+  ],
+  "missing_points": [
+    "No Paperclip host export provenance.",
+    "No current actual_export slot replacement evidence."
+  ],
+  "recommendation": "Dry-run only if a third sample is needed to test repeatability of candidate_for_reopen_validation.",
+  "suggested_supervisor_action": "hold",
+  "created_at": "2026-04-11T08:37:00+09:00"
+}

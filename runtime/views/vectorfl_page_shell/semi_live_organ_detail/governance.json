@@ -1,0 +1,97 @@
+{
+  "page_title": "VectorFL Page / Semi-Live / organ-detail-governance",
+  "detail_kind": "governance",
+  "surface_key": "organ-detail-governance",
+  "title": "Governance Candidate Detail",
+  "organ_identity": {
+    "organ_ref": "organ:governance",
+    "organ_label": "Governance Organ",
+    "current_status": "restriction_review_pending",
+    "related_lane_refs": [
+      "lane_transition_preflight_reread",
+      "lane_operator_readout_review"
+    ]
+  },
+  "instruction_bundle_preview": {
+    "role_sentence": "Governance organ preserves restriction, hold, and release conditions so current-reading does not collapse into premature action or presentation.",
+    "reading_priorities": [
+      "active restriction flags",
+      "evidence sufficiency",
+      "release condition clarity",
+      "trace-backed carry obligations"
+    ],
+    "output_contract": [
+      "governance state update",
+      "reason summary",
+      "release condition",
+      "next check trigger"
+    ]
+  },
+  "accepted_handoff_preview": {
+    "accepted_input_kinds": [
+      "flow interpretation return",
+      "trace/residue carry",
+      "linked program caution",
+      "surface packet summary"
+    ],
+    "required_packet_fields": [
+      "case_ref",
+      "current_lane_ref",
+      "restriction_flags",
+      "supporting_evidence_refs",
+      "release_condition_candidate",
+      "expected_return_type"
+    ],
+    "common_triggers": [
+      "mixed hold persists",
+      "direct readout candidate must stay held",
+      "next check trigger needs tightening"
+    ]
+  },
+  "recent_return_preview": {
+    "summary_return": "Maintain mixed hold; allow explanation-first reread but keep direct operator presentation in held candidate status.",
+    "lane_hint_update": [
+      "lane_transition_preflight_reread"
+    ],
+    "recent_trace_carry": [
+      "observer_only",
+      "promotion_forbidden",
+      "closure_before_presentation"
+    ],
+    "recent_handoff_target": "organ:current_reading_return"
+  },
+  "caution_profile": {
+    "stop_hold_conditions": [
+      "release proposed without supporting evidence",
+      "weak intake is being ignored",
+      "promotion pressure exceeds current-reading confidence"
+    ],
+    "preserve_first_rules": [
+      "keep observer-only visible until release condition is satisfied",
+      "keep promotion-forbidden state explicit",
+      "keep decision anchor linked to trace"
+    ],
+    "avoid_wording": [
+      "approved",
+      "safe to execute",
+      "final release"
+    ]
+  },
+  "semi_live_status": {
+    "phase": "thickening",
+    "decision_reason": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+    "release_condition": "Re-evaluate after next runtime refresh and preflight guard recheck.",
+    "next_check_trigger": [
+      "same latent line repeats in a future reread",
+      "residue becomes high because a new path cannot be collapsed",
+      "sufficiency moves to high and closure can be reviewed"
+    ]
+  },
+  "context_links": {
+    "current_reading": "../semi_live_routes/current-reading.html",
+    "cases_queue": "../semi_live_routes/cases-queue.html",
+    "inputs_intake": "../semi_live_routes/inputs-intake.html",
+    "history_trace": "../semi_live_routes/history-trace.html",
+    "programs_connections": "../semi_live_routes/programs-connections.html"
+  }
+}

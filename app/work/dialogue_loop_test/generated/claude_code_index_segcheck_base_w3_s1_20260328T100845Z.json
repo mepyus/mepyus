@@ -1,0 +1,870 @@
+{
+  "probe_name": "claude_code_index_segcheck_base",
+  "input_path": "inputs/external_cases/claude_code_index.txt",
+  "created_at": "2026-03-28T10:08:45.644793Z",
+  "window_size": 3,
+  "stride": 1,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 928,
+    "spec": 25,
+    "impl": 18,
+    "evidence": 29
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 928
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 29
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 25
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 18
+    }
+  ],
+  "overall_flow_counts": {
+    "compare": 787,
+    "run": 185,
+    "break": 11,
+    "fix": 17
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 787
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 185
+    },
+    {
+      "value": "fix",
+      "display_label": "수정/보정 흐름",
+      "count": 17
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 11
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "생산성/코딩",
+      "count": 3
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 3
+    },
+    {
+      "object": "구현/자동화",
+      "count": 2
+    },
+    {
+      "object": "전략/방향성",
+      "count": 2
+    },
+    {
+      "object": "AI의 미래",
+      "count": 1
+    },
+    {
+      "object": "일의 미래",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "설명/해석 층",
+      "count": 932
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 207
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 30
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 28
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 6
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 4
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "discourse_residue_anchor": 149,
+    "core_topic_anchor": 375
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "그래서",
+      "count": 119
+    },
+    {
+      "value": "이렇게",
+      "count": 77
+    },
+    {
+      "value": "있습니다",
+      "count": 77
+    },
+    {
+      "value": "MCP",
+      "count": 42
+    },
+    {
+      "value": "저희가",
+      "count": 38
+    },
+    {
+      "value": "보겠습니다",
+      "count": 38
+    },
+    {
+      "value": "들어서",
+      "count": 37
+    },
+    {
+      "value": "작업을",
+      "count": 34
+    },
+    {
+      "value": "에이전트를",
+      "count": 32
+    },
+    {
+      "value": "그러면",
+      "count": 30
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 8,
+    "speaker_or_source_residue": 1,
+    "conversational_filler_residue": 7,
+    "generic_abstraction_residue": 5,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 928,
+        "spec": 25,
+        "impl": 18,
+        "evidence": 29
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 928
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 29
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 25
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 18
+        }
+      ],
+      "flow_counts": {
+        "compare": 787,
+        "run": 185,
+        "break": 11,
+        "fix": 17
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 787
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 185
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 17
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 11
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 3
+        },
+        {
+          "object": "구현/자동화",
+          "count": 2
+        },
+        {
+          "object": "전략/방향성",
+          "count": 2
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 932
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 207
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 30
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 28
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 11,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 119
+        },
+        {
+          "value": "이렇게",
+          "count": 77
+        },
+        {
+          "value": "있습니다",
+          "count": 77
+        },
+        {
+          "value": "MCP",
+          "count": 42
+        },
+        {
+          "value": "저희가",
+          "count": 38
+        },
+        {
+          "value": "보겠습니다",
+          "count": 38
+        },
+        {
+          "value": "들어서",
+          "count": 37
+        },
+        {
+          "value": "작업을",
+          "count": 34
+        },
+        {
+          "value": "에이전트를",
+          "count": 32
+        },
+        {
+          "value": "그러면",
+          "count": 30
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 5236,
+        "discourse_residue_anchor": 155,
+        "user_layer_hint_anchor": 36
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 1,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요. 클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다. 그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_c9584de2c383_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 파트 1 하…",
+          "excerpt": "## untitled 파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "클러드는 모든 0:06 파일을 읽…",
+          "excerpt": "클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 0:12 과정에서 그리고 오늘…",
+          "excerpt": "그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나의 커스텀 셋시 명령어를 만들 수 있는 건데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:19 커맨즈라는 폴더가 새로 …",
+          "excerpt": "0:19 커맨즈라는 폴더가 새로 만들어졌고요."
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 928,
+        "spec": 25,
+        "impl": 18,
+        "evidence": 29
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 928
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 29
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 25
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 18
+        }
+      ],
+      "flow_counts": {
+        "compare": 787,
+        "run": 185,
+        "break": 11,
+        "fix": 17
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 787
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 185
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 17
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 11
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 3
+        },
+        {
+          "object": "구현/자동화",
+          "count": 2
+        },
+        {
+          "object": "전략/방향성",
+          "count": 2
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 932
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 207
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 30
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 28
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 11,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 119
+        },
+        {
+          "value": "이렇게",
+          "count": 77
+        },
+        {
+          "value": "있습니다",
+          "count": 77
+        },
+        {
+          "value": "MCP",
+          "count": 42
+        },
+        {
+          "value": "저희가",
+          "count": 38
+        },
+        {
+          "value": "보겠습니다",
+          "count": 38
+        },
+        {
+          "value": "들어서",
+          "count": 37
+        },
+        {
+          "value": "작업을",
+          "count": 34
+        },
+        {
+          "value": "에이전트를",
+          "count": 32
+        },
+        {
+          "value": "그러면",
+          "count": 30
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 5236,
+        "discourse_residue_anchor": 155,
+        "user_layer_hint_anchor": 36
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 1,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요. 클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다. 그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_c9584de2c383_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 파트 1 하…",
+          "excerpt": "## untitled 파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "클러드는 모든 0:06 파일을 읽…",
+          "excerpt": "클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 0:12 과정에서 그리고 오늘…",
+          "excerpt": "그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나의 커스텀 셋시 명령어를 만들 수 있는 건데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:19 커맨즈라는 폴더가 새로 …",
+          "excerpt": "0:19 커맨즈라는 폴더가 새로 만들어졌고요."
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 928,
+        "spec": 25,
+        "impl": 18,
+        "evidence": 29
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 928
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 29
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 25
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 18
+        }
+      ],
+      "flow_counts": {
+        "compare": 787,
+        "run": 185,
+        "break": 11,
+        "fix": 17
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 787
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 185
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 17
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 11
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 3
+        },
+        {
+          "object": "구현/자동화",
+          "count": 2
+        },
+        {
+          "object": "전략/방향성",
+          "count": 2
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 932
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 207
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 30
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 28
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 11,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 119
+        },
+        {
+          "value": "이렇게",
+          "count": 77
+        },
+        {
+          "value": "있습니다",
+          "count": 77
+        },
+        {
+          "value": "MCP",
+          "count": 42
+        },
+        {
+          "value": "저희가",
+          "count": 38
+        },
+        {
+          "value": "보겠습니다",
+          "count": 38
+        },
+        {
+          "value": "들어서",
+          "count": 37
+        },
+        {
+          "value": "작업을",
+          "count": 34
+        },
+        {
+          "value": "에이전트를",
+          "count": 32
+        },
+        {
+          "value": "그러면",
+          "count": 30
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 5236,
+        "discourse_residue_anchor": 155,
+        "user_layer_hint_anchor": 36
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 1,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요. 클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다. 그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_c9584de2c383_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 파트 1 하…",
+          "excerpt": "## untitled 파트 1 하이라이트 0:00 클러드램 MD의 중요성을 이해하려면 클러드가 어떻게 작동하는지를 원리를 이해해야 되는데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "클러드는 모든 0:06 파일을 읽…",
+          "excerpt": "클러드는 모든 0:06 파일을 읽어올 수 있고 그 파일을 읽어오고 나서 이제 플랜을 세우든지 어떤 테스크를 수행하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 0:12 과정에서 그리고 오늘…",
+          "excerpt": "그 0:12 과정에서 그리고 오늘 제가 마지막으로 데모를 하고 싶은 거는 나의 커스텀 셋시 명령어를 만들 수 있는 건데요."
+        },
+        {
+          "dust_id": "dst_src_c9584de2c383_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:19 커맨즈라는 폴더가 새로 …",
+          "excerpt": "0:19 커맨즈라는 폴더가 새로 만들어졌고요."
+        }
+      ]
+    }
+  ]
+}

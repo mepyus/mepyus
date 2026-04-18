@@ -1,0 +1,49 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T102854Z_33211af5`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+## Task Purpose
+Continue from Codex turn cli_20260416T102612Z_277b5388 inside the VectorFL surface.
+
+## Used Context Refs
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+- `runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/session.json`
+- `runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/structured_return.json`
+- `runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md`
+- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json`
+- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json`
+- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md`
+
+## Result Summary
+- result summary  
+  The selected Codex turn remains valid. Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/reference clay; `runtime` remains for session artifacts, state, and returns.  
+  The CLI backend is still an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface or fourth surface.  
+  No files were modified in this reread.
+
+- important findings / diffs / outputs  
+  Prior validation still stands from the bounded context: `npm run build` passed in `app/ui/integrated_engine`, served title was confirmed as `VectorFL Integrated Engine`, API proxy to `127.0.0.1:8421` worked, and a real read-only Codex session exited `0`.  
+  Session `cli_20260416T102720Z_8e045e9b` resolves the earlier metadata mismatch: its structured field and mark both say `validation_target`.  
+  Session `cli_20260416T102612Z_277b5388` still contains the mismatch: embedded result says `validation target`, structured field says `reread_target`, but it was later marked `validation_target`.
+
+- uncertainty or failure notes  
+  No fresh browser validation was performed in this turn.  
+  Remaining uncertainty is still browser-click/user-feel validation of the stable VectorFL CLI UI path at `http://127.0.0.1:5173/`.
+
+- suggested next use: validation target
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+validation_target

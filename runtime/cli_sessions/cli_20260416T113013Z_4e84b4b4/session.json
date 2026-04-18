@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T113013Z_4e84b4b4",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 8: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md",
+    "docs/reports/integrated_engine_shared_operational_language_growth_note_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:30:13Z",
+  "ended_at": "2026-04-16T11:30:42Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4/prompt.md",
+  "exit_code": 0,
+  "result_summary": "idation; engine handles shaped input, state, and return material\n  - what must not be flattened: user surface, VectorFL surface, and engine surface must not merge into one explanation layer\n  - next reread question: where does preview density become too high for VectorFL control flow?\n  - suggested next use: validation target\n\n  - internal phrase or signal observed: `bridge artifact`\n  - human-readable line, not final wording: an artifact that translates run material into operational judgment without becoming canonical source\n  - repeated connection it belongs to: raw output / structured return / deposit candidate / operator report\n  - emerging axis candidate: readable artifact can exist before official ingestion\n  - surface exposure note: user reads first-pass judgment; VectorFL previews it; engine stores artifact and source material\n  - what must not be flattened: bridge must not become deposit, canonical report, UI replacement, or feature promotion\n  - next reread question: what minimum source material is needed for trust without overexposing engine detail?\n  - suggested next use: implementation return\n\n- uncertainty or failure notes\n  - Browser visibility of the VectorFL panel was not validated in this reread.\n  - The bounded notes assert API and build validation, but this loop only reread the two provided docs.\n  - No final glossary or UI wording should be derived from this pass.\n\n- suggested next use\n  - validation target: verify `operator report preview` preserves `validation_target` as route signal, not completion.\n  - reread target: compare a generated `operator_report.md` against the shared operational language growth note for surface-density drift.\n  - deposit candidate: not yet; this pass is collection material, not canonical glossary or official ingestion.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:30:42Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:30:42Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

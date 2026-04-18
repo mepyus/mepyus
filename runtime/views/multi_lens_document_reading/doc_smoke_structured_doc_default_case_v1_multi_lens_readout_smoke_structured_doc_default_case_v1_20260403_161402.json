@@ -1,0 +1,128 @@
+{
+  "kind": "multi_lens_document_reading_v0_observation_flow",
+  "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+  "observer_run_id": "smoke_structured_doc_default_case_v1_20260403_161402",
+  "split_units_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_smoke_structured_doc_default_case_v1_20260403_161402.json",
+  "invocation_stage": "after_context_linked_segmentation_v0",
+  "linked_segments": [
+    {
+      "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+      "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "segment_ids": [
+        "unit_001"
+      ],
+      "linked_text": "# smoke_structured_doc_default_case_v1 marker 일부 또는 전체가 누락된 default path smoke 문서다. 목적은 fallback 이 `docrole=memo`, `runmode=ingest_only`, `priority=normal` 으로 안전하게 채워지는지 확인하는 것이다.",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_001"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    }
+  ],
+  "raw_reading_result": {
+    "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+    "readings": [
+      {
+        "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+        "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "weak",
+        "reading_basis": "low-confidence basis only: no relevant input-to-reading-organ seed found, but linkage_confidence is low; kept at weak guard; primary stable/thick lens; operating_state=active basis",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": null
+      },
+      {
+        "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+        "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "absent",
+        "reading_basis": "no relevant transition-over-surface combination seed; single token/context only; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": null
+      }
+    ],
+    "lens_ids_used": [
+      "line_input_to_reading_organ",
+      "line_transition_over_surface"
+    ],
+    "is_stable_lens_only": true
+  },
+  "surfaced_readout": {
+    "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+    "lens_ids_used": [
+      "line_input_to_reading_organ",
+      "line_transition_over_surface"
+    ],
+    "is_stable_lens_only": true,
+    "line_states": {
+      "line_input_to_reading_organ": "active",
+      "line_transition_over_surface": "parked"
+    },
+    "readings": [
+      {
+        "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+        "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "weak",
+        "reading_basis": "low-confidence basis only: no relevant input-to-reading-organ seed found, but linkage_confidence is low; kept at weak guard; primary stable/thick lens; operating_state=active basis",
+        "caution_reason": null,
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+        "source_id": "docs/reports/smoke_structured_doc_default_case_v1.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "absent",
+        "reading_basis": "no relevant transition-over-surface combination seed; single token/context only; primary stable/thick lens; operating_state=parked",
+        "caution_reason": null,
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "docs/reports/smoke_structured_doc_default_case_v1.md:0-0",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      }
+    ]
+  },
+  "parked_axes": [
+    "line_transition_over_surface"
+  ],
+  "handoff_boundary": {
+    "runtime_stops_after": "surfaced_readout",
+    "next_owner": "supervisor_docs_operating_loop",
+    "decision_logic_in_runtime": false
+  }
+}

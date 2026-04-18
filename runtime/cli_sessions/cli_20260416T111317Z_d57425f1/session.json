@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T111317Z_d57425f1",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 1: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_shared_language_grammar_reread_v0.md",
+    "docs/reports/integrated_engine_cli_on_top_operator_report_grammar_trial_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "failed",
+  "started_at": "2026-04-16T11:13:17Z",
+  "ended_at": "2026-04-16T11:13:17Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T111317Z_d57425f1/prompt.md",
+  "exit_code": 1,
+  "result_summary": "WARNING: proceeding, even though we could not update PATH: Operation not permitted (os error 1)\n2026-04-16T11:13:17.518089Z ERROR codex_core::codex: Failed to create session: Operation not permitted (os error 1)\nError: thread/start: thread/start failed: error creating thread: Fatal error: Codex cannot access session files at /Users/sungsookim/.codex/sessions (permission denied). If sessions were created using sudo, fix ownership: sudo chown -R $(whoami) /Users/sungsookim/.codex (underlying error: Operation not permitted (os error 1))\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:13:17Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:13:17Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

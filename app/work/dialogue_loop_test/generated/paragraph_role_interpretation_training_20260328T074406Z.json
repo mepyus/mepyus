@@ -1,0 +1,83 @@
+{
+  "created_at": "2026-03-28T07:44:06.247669Z",
+  "input_asset": "inputs/external_cases/youtube_03_22.md",
+  "paragraph_role_analyses": [
+    {
+      "analysis_id": "bundle_unbundle_block",
+      "heading": "Bundle-Unbundle 프레임워크",
+      "context_unit": "agent_interface_transition_unit",
+      "excerpt": "노정석: 이걸 저희가 산업 구조의 bundle, unbundle이라는 표현으로 많이 사용하거든요. 그리고 이 bundle, unbundle이라는 표현을 제일 잘 도식화하고 설명해 주는 사람이 a16z의 Benedict Evans라는 사람이에요. 그 Benedict Evans가 Andreessen Horowitz가 유명한 게 “Software is eating the world”라는 그 표현으로 익숙하잖아요. 근데 “AI is eating the world”라고 새로 밀고 있는데, 그 “AI is eating the world” 프레임 만든 사람이 Benedict Evans인데, 결국은 이렇게 얘기하면 맞을 것 같은데, 앞서 얘기한 것처럼 어떤 산업이 끊임없이 어떤 패러다임이 바뀌는데, 매체가 바뀔 때마다 종이에서 TV로 갈 때, TV에서 인터넷으로 갈 때, 인터넷에서 그러니까 웹에서 모바일로 갈 때 이제 모바일에서 AI로 갈 때 어떤 distri…",
+      "objects": [
+        "에이전트 애플리케이션",
+        "전략/방향성",
+        "구현/자동화"
+      ],
+      "layers": [
+        "구조/연결 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "contrast_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "local_context_role": "question_seed_block",
+      "page_flow_role": "strategy_pivot_block",
+      "comparison_target": "future_of_work_supervisor_unit",
+      "comparison_role": "노동 역할 변화보다 앱 구조 재편과 moat 이동을 더 강하게 여는 단락"
+    },
+    {
+      "analysis_id": "future_of_work_block",
+      "heading": "GTC 키노트와 ‘일의 미래’",
+      "context_unit": "future_of_work_supervisor_unit",
+      "excerpt": "최승준: 근데 또 아픈 중에 GTC 보신 거 아니에요?",
+      "objects": [
+        "일의 미래",
+        "생산성/코딩",
+        "에이전트 애플리케이션"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "local_context_role": "role_shift_seed_block",
+      "page_flow_role": "future_of_work_question_seed",
+      "comparison_target": "agent_interface_transition_unit",
+      "comparison_role": "앱 구조보다 사람의 역할 재배치와 감독자형 노동을 더 강하게 여는 단락"
+    },
+    {
+      "analysis_id": "model_eval_shift_block",
+      "heading": "RLVR과 CUA",
+      "context_unit": "model_eval_shift_unit",
+      "excerpt": "노정석: 좀 넘어가 보면, frontier lab들의 경쟁의 축은, 저희 성현님도 지난번 세션에 오셔서 올해는 이건 것 같다, RL 환경 스케일링이라고 딱 규정을 해 주셨잖아요. 그게 RLVR이라고 저희가 계속 얘기하는 건데, RLVR은 Reinforcement Learning by Verifiable Rewards라는 건데, 검증 가능한 어떤 보상 신호를 낼 수만 있으면 모델이 무조건 학습 가능하다라는 얘기를 하는 거죠. 그래서 저희가 도메인이, 처음에 RLVR 나왔을 때는 VR이라는 얘기도 안 했죠. Verifiable Rewards라는 얘기도 안 했고, 수학과 코딩이 그냥 대표적인 예제였어요. 왜냐하면 수학이랑 코딩은 문제를 푸는 과정은 어려울 수 있지만 이 솔루션이 맞냐 안 맞냐를 검증해 보는 건 쉬운 얘기니까. 마치 Sudoku 문제처럼 푸는 건 어렵지만 풀어 놓은 게 이게 정답이냐라는 걸 확인하는 건 쉽잖아요. 그래서 그런 것들만 있었…",
+      "objects": [
+        "AI의 미래",
+        "모델 work",
+        "에이전트 애플리케이션"
+      ],
+      "layers": [
+        "검증/근거 층",
+        "구조/연결 층",
+        "전략/방향 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "local_context_role": "evaluation_shift_block",
+      "page_flow_role": "compression_node",
+      "comparison_target": "agent_interface_transition_unit",
+      "comparison_role": "앱 인터페이스 재편보다 모델 경쟁의 검증 바닥과 환경 이동을 더 강하게 여는 단락"
+    }
+  ]
+}

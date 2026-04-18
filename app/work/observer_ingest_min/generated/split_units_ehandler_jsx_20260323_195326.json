@@ -1,0 +1,623 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "para_001",
+    "end_ref": "para_002",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* -------------------------------------------------------------------------- */\n/* [SYSTEM_ARCHITECT] EMPTY_EQUIPMENT_OPERATOR_CONSOLE v1.0 (BRIGHT_MODE)     */\n/* - 기준: 장비기사는 \"좌표(블록/바닥/단)\"만 담당 (SSOT)                   ",
+    "char_count": 830,
+    "source_segment_ids": [
+      "seg_001",
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "para_003",
+    "end_ref": "para_004",
+    "unit_type": "paragraph",
+    "text_excerpt": "// ✅ 프로젝트 경로에 맞게 수정\nimport { supabase } from \"./supabaseClient\"; const UI = {\n  main_blue: \"#3b82f6\",\n  soft_bg: \"#f8fafc\",\n  card_white: \"#ffffff\",\n  border_light: \"#e2e8f0\",\n  dark_slate: \"#0f172a\",\n  accent_amber: \"#f",
+    "char_count": 278,
+    "source_segment_ids": [
+      "seg_003",
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "para_005",
+    "end_ref": "para_006",
+    "unit_type": "paragraph",
+    "text_excerpt": "const BLOCKS_BY_SITE_CODE = {\n  \"1YARD\": [\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\"],\n  \"2YARD\": [\"A1\", \"B1\", \"C1\", \"D1\", \"E1\", \"F1\", \"G1\", \"H1\", \"I1\", \"J1\", \"K1\", \"L1\", \"M1\", \"N1\", \"O1\", \"P1\", \"Q1\", \"R1\", \"S1\"],\n}; // 장비기사",
+    "char_count": 285,
+    "source_segment_ids": [
+      "seg_005",
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "para_007",
+    "end_ref": "para_008",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- 작은 유틸들 ----------------------------- */\nconst pad2 = (n) => String(n ?? \"\").padStart(2, \"0\");\nconst yardKey = (block, row, tier) => `${block}|${row}|${tier}`; function formatCoord(block, ",
+    "char_count": 325,
+    "source_segment_ids": [
+      "seg_007",
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "para_009",
+    "end_ref": "para_010",
+    "unit_type": "paragraph",
+    "text_excerpt": "export default function EmptyOperatorConsole({\n  siteCode = \"1YARD\", // ✅ 엠티 장비가 1부지면 기본 1YARD로\n  onBack,\n}) {\n  /* ----------------------------- UI State ----------------------------- */\n  const [activeTab, setActiveTab",
+    "char_count": 569,
+    "source_segment_ids": [
+      "seg_009",
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "para_011",
+    "end_ref": "para_012",
+    "unit_type": "paragraph",
+    "text_excerpt": "const [site, setSite] = useState(null);           // {site_id, site_code, site_name, yard_row_max}\n  const [tanks, setTanks] = useState([]);           // view_tank_coords 기반\n  const [locations, setLocations] = useState([",
+    "char_count": 763,
+    "source_segment_ids": [
+      "seg_011",
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "para_013",
+    "end_ref": "para_014",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (siteErr) throw siteErr;\n      if (!siteRow) throw new Error(\"SITE_NOT_FOUND\");\n      if (!siteRow.is_active) console.warn(\"[SITE_INACTIVE]\", siteRow.site_code); setSite(siteRow);",
+    "char_count": 182,
+    "source_segment_ids": [
+      "seg_013",
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "para_015",
+    "end_ref": "para_016",
+    "unit_type": "paragraph",
+    "text_excerpt": "// 2) locations 로드 (해당 site_id)\n      const { data: locRows, error: locErr } = await supabase\n        .from(\"locations\")\n        .select(\"location_id, location_name, location_type, block, grid_row, grid_column, site_id\")",
+    "char_count": 322,
+    "source_segment_ids": [
+      "seg_015",
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "para_017",
+    "end_ref": "para_018",
+    "unit_type": "paragraph",
+    "text_excerpt": "// 3) tanks 좌표 뷰 로드\n      // - 장비기사는 보통 \"미지정\"도 봐야 해서, 우선 넓게 가져오고 UI에서 필터링\n      const { data: tankRows, error: tankErr } = await supabase\n        .from(\"view_tank_coords\")\n        .select(\"tank_id, tank_number, current_l",
+    "char_count": 634,
+    "source_segment_ids": [
+      "seg_017",
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "para_019",
+    "end_ref": "para_020",
+    "unit_type": "paragraph",
+    "text_excerpt": "useEffect(() => {\n    loadAll();\n  }, [loadAll]); /* ----------------------------- 파생 데이터 ----------------------------- */\n  const blocks = useMemo(() => {\n    return BLOCKS_BY_SITE_CODE[siteCode] || [];\n  }, [siteCode])",
+    "char_count": 221,
+    "source_segment_ids": [
+      "seg_019",
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "para_021",
+    "end_ref": "para_022",
+    "unit_type": "paragraph",
+    "text_excerpt": "const tankByLocationId = useMemo(() => {\n    const map = {};\n    for (const t of tanks) {\n      if (t.current_location_id) map[t.current_location_id] = t;\n    }\n    return map;\n  }, [tanks]); const yardLocations = useMem",
+    "char_count": 508,
+    "source_segment_ids": [
+      "seg_021",
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "para_023",
+    "end_ref": "para_024",
+    "unit_type": "paragraph",
+    "text_excerpt": "// Yard: 좌표 -> location_id (seed가 있으면 항상 매칭됨)\n  const yardLocIdByCoord = useMemo(() => {\n    const map = {};\n    for (const l of yardLocations) {\n      if (!l.block || !l.grid_row || !l.grid_column) continue;\n      map[y",
+    "char_count": 875,
+    "source_segment_ids": [
+      "seg_023",
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "para_025",
+    "end_ref": "para_026",
+    "unit_type": "paragraph",
+    "text_excerpt": "const filteredList = useMemo(() => {\n    const q = search.trim().toLowerCase();\n    const base = tanks.filter((t) => {\n      // listMode\n      if (listMode === \"UNASSIGNED\") return !t.current_location_id;\n      if (listM",
+    "char_count": 564,
+    "source_segment_ids": [
+      "seg_025",
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "para_027",
+    "end_ref": "para_028",
+    "unit_type": "paragraph",
+    "text_excerpt": "return base.filter((t) => {\n      const no = (t.tank_number || \"\").toLowerCase();\n      const coord = (t.coord_label || \"\").toLowerCase();\n      const block = (t.block || \"\").toLowerCase();\n      return no.includes(q) ||",
+    "char_count": 413,
+    "source_segment_ids": [
+      "seg_027",
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "para_029",
+    "end_ref": "para_030",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- RPC: Yard 좌표 배정 ----------------------------- */\n  const assignYardByCoord = useCallback(\n    async ({ tankId, block, row, tier }) => {\n      if (!site?.site_id) return;\n      setIsBusy(t",
+    "char_count": 900,
+    "source_segment_ids": [
+      "seg_029",
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "para_031",
+    "end_ref": "para_032",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- RPC: location_id로 배정 (공정 슬롯용) ----------------------------- */\n  const assignByLocationId = useCallback(\n    async ({ tankId, locationId }) => {\n      setIsBusy(true);\n      setErrMsg(\"\")",
+    "char_count": 750,
+    "source_segment_ids": [
+      "seg_031",
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "para_033",
+    "end_ref": "para_034",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- 공통: 탱크 카드 클릭 ----------------------------- */\n  const handleSelectTank = (tank) => {\n    setSelectedTank(tank);\n    // Yard 모달이 열려있으면, 탱크 바꿔도 모달은 유지 가능 (운영 취향)\n  }; /* -------------------",
+    "char_count": 368,
+    "source_segment_ids": [
+      "seg_033",
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "para_035",
+    "end_ref": "para_036",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- Yard: 슬롯 클릭 ----------------------------- */\n  const handlePickYardSlot = async (block, row, tier) => {\n    if (!selectedTank) return;\n    const locId = yardLocIdByCoord[yardKey(block, ro",
+    "char_count": 638,
+    "source_segment_ids": [
+      "seg_035",
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "para_037",
+    "end_ref": "para_038",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ----------------------------- WashBay/InspectBay: 슬롯 클릭 ----------------------------- */\n  const handlePickProcessSlot = async (loc) => {\n    if (!selectedTank) {\n      alert(\"먼저 좌측에서 탱크를 선택하세요.\");\n      return;\n    }",
+    "char_count": 833,
+    "source_segment_ids": [
+      "seg_037",
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "para_039",
+    "end_ref": "para_040",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.titleArea}>\n            <div style={styles.subTitle}>EMPTY_EQUIPMENT_OPERATOR</div>\n            <div style={styles.mainTitle}>\n              {site?.site_name || siteCode} 좌표 콘솔\n              <span styl",
+    "char_count": 1071,
+    "source_segment_ids": [
+      "seg_039",
+      "seg_040"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "para_041",
+    "end_ref": "para_042",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.navRight}>\n          {!!errMsg && (\n            <div style={styles.errPill}>\n              <AlertTriangle size={14} />\n              <span>{errMsg}</span>\n            </div>\n          )}\n          <but",
+    "char_count": 765,
+    "source_segment_ids": [
+      "seg_041",
+      "seg_042"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "para_043",
+    "end_ref": "para_043",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.filterBar}>\n              {[\n                [\"UNASSIGNED\", \"미지정\", counts.UNASSIGNED],\n                [\"IN_YARD\", \"야드\", counts.IN_YARD],\n                [\"IN_WASH\", \"세척\", counts.IN_WASH],\n            ",
+    "char_count": 912,
+    "source_segment_ids": [
+      "seg_043"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "para_044",
+    "end_ref": "para_045",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.searchBox}>\n              <Search size={16} color={UI.slate} />\n              <input\n                value={search}\n                onChange={(e) => setSearch(e.target.value)}\n                placehold",
+    "char_count": 860,
+    "source_segment_ids": [
+      "seg_044",
+      "seg_045"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "para_046",
+    "end_ref": "para_047",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.coordLine}>\n                    <Layers size={14} color={selectedTank?.tank_id === t.tank_id ? \"#fff\" : UI.slate} />\n                    <span style={{ fontWeight: 900 }}>\n                      {t.coor",
+    "char_count": 542,
+    "source_segment_ids": [
+      "seg_046",
+      "seg_047"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "para_048",
+    "end_ref": "para_049",
+    "unit_type": "paragraph",
+    "text_excerpt": "{filteredList.length === 0 && (\n                <div style={styles.emptyBox}>조건에 맞는 탱크가 없습니다.</div>\n              )}\n            </div>\n          </section> <section style={styles.hintSection}>\n            <div style={st",
+    "char_count": 514,
+    "source_segment_ids": [
+      "seg_048",
+      "seg_049"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "para_050",
+    "end_ref": "para_051",
+    "unit_type": "paragraph",
+    "text_excerpt": "{/* RIGHT: Workspace */}\n        <section style={styles.workSection}>\n          {activeTab === \"YARD\" && (\n            <div style={styles.workspaceCard}>\n              <div style={styles.workspaceHeader}>\n               ",
+    "char_count": 1034,
+    "source_segment_ids": [
+      "seg_050",
+      "seg_051"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "para_052",
+    "end_ref": "para_053",
+    "unit_type": "paragraph",
+    "text_excerpt": "{!selectedTank && (\n                <div style={styles.bigEmpty}>\n                  좌측에서 탱크를 먼저 선택하세요.\n                </div>\n              )} {selectedTank && (\n                <div style={styles.selectedBar}>\n         ",
+    "char_count": 486,
+    "source_segment_ids": [
+      "seg_052",
+      "seg_053"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "para_054",
+    "end_ref": "para_055",
+    "unit_type": "paragraph",
+    "text_excerpt": "{selectedBlock && (\n                <YardSlotModal\n                  block={selectedBlock}\n                  onClose={() => setSelectedBlock(null)}\n                  rowMax={yardRowMax}\n                  tiers={tiers}\n  ",
+    "char_count": 919,
+    "source_segment_ids": [
+      "seg_054",
+      "seg_055"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "para_056",
+    "end_ref": "para_057",
+    "unit_type": "paragraph",
+    "text_excerpt": "{activeTab === \"INSPECT_BAY\" && (\n            <ProcessGrid\n              title=\"검사베이 배치\"\n              icon={<ShieldCheck size={18} color={UI.accent_amber} />}\n              selectedTank={selectedTank}\n              slot",
+    "char_count": 661,
+    "source_segment_ids": [
+      "seg_056",
+      "seg_057"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "para_058",
+    "end_ref": "para_059",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* -------------------------------------------------------------------------- */\n/* SUB: Yard 슬롯 모달 (좌표 입력의 핵심)                                      */\n/* - row: 바닥(1..N), tier: 높이(1..4)                                  ",
+    "char_count": 1192,
+    "source_segment_ids": [
+      "seg_058",
+      "seg_059"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "para_060",
+    "end_ref": "para_061",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.gridWrap}>\n          <div style={styles.gridHeaderRow}>\n            <div style={styles.gridCorner}>T \\\\ R</div>\n            {rows.map((r) => (\n              <div key={r} style={styles.gridHeaderCell}>R",
+    "char_count": 664,
+    "source_segment_ids": [
+      "seg_060",
+      "seg_061"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "para_062",
+    "end_ref": "para_063",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n                  <button\n                    key={`${t}-${r}`}\n                    onClick={() => onPick(block, r, t)}\n                    disabled={!selectedTank || !locId || (isOcc && occ.tank_id !== selected",
+    "char_count": 900,
+    "source_segment_ids": [
+      "seg_062",
+      "seg_063"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "para_064",
+    "end_ref": "para_064",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* -------------------------------------------------------------------------- */\n/* SUB: 공정 슬롯 그리드 (wash_bay / inspect_bay 등 location_id 기반 배치)      */\n/* -----------------------------------------------------------------",
+    "char_count": 723,
+    "source_segment_ids": [
+      "seg_064"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "para_065",
+    "end_ref": "para_066",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n    <div style={styles.workspaceCard}>\n      <div style={styles.workspaceHeader}>\n        {icon}\n        <div>\n          <div style={styles.workspaceTitle}>{title}</div>\n          <div style={styles.workspaceSub",
+    "char_count": 608,
+    "source_segment_ids": [
+      "seg_065",
+      "seg_066"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "para_067",
+    "end_ref": "para_068",
+    "unit_type": "paragraph",
+    "text_excerpt": "{sorted.length === 0 ? (\n        <div style={styles.bigEmpty}>{emptyHint}</div>\n      ) : (\n        <div style={styles.procGrid}>\n          {sorted.map((loc) => {\n            const occ = tankByLocationId[loc.location_id]",
+    "char_count": 1029,
+    "source_segment_ids": [
+      "seg_067",
+      "seg_068"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "para_069",
+    "end_ref": "para_070",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={{ marginTop: 10, fontWeight: 950, fontSize: 16 }}>\n                  {isOcc ? occ.tank_number : \"AVAILABLE\"}\n                </div> <div style={{ marginTop: 6, color: isOcc ? \"rgba(255,255,255,0.85)\" : UI.sla",
+    "char_count": 434,
+    "source_segment_ids": [
+      "seg_069",
+      "seg_070"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "para_071",
+    "end_ref": "para_072",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* -------------------------------------------------------------------------- */\n/* STYLES                                                                      */\n/* ------------------------------------------------------",
+    "char_count": 737,
+    "source_segment_ids": [
+      "seg_071",
+      "seg_072"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "para_073",
+    "end_ref": "para_074",
+    "unit_type": "paragraph",
+    "text_excerpt": "navLeft: { display: \"flex\", gap: \"18px\", alignItems: \"center\", flex: 1 },\n  navRight: { display: \"flex\", gap: \"12px\", alignItems: \"center\" }, iconBtn: { background: \"transparent\", border: \"none\", cursor: \"pointer\", displ",
+    "char_count": 255,
+    "source_segment_ids": [
+      "seg_073",
+      "seg_074"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "para_075",
+    "end_ref": "para_076",
+    "unit_type": "paragraph",
+    "text_excerpt": "titleArea: { display: \"flex\", flexDirection: \"column\", gap: 2 },\n  subTitle: { fontSize: 11, fontWeight: 950, color: UI.main_blue, letterSpacing: 0.6 },\n  mainTitle: { fontSize: 18, fontWeight: 950, display: \"flex\", alig",
+    "char_count": 625,
+    "source_segment_ids": [
+      "seg_075",
+      "seg_076"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "para_077",
+    "end_ref": "para_078",
+    "unit_type": "paragraph",
+    "text_excerpt": "tabBtn: {\n    border: \"none\",\n    padding: \"10px 14px\",\n    borderRadius: 12,\n    fontSize: 13,\n    fontWeight: 900,\n    cursor: \"pointer\",\n    transition: \"0.2s\",\n    display: \"flex\",\n    alignItems: \"center\",\n    gap: ",
+    "char_count": 467,
+    "source_segment_ids": [
+      "seg_077",
+      "seg_078"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "para_079",
+    "end_ref": "para_080",
+    "unit_type": "paragraph",
+    "text_excerpt": "errPill: {\n    display: \"flex\",\n    alignItems: \"center\",\n    gap: 8,\n    padding: \"8px 10px\",\n    borderRadius: 12,\n    background: \"rgba(239,68,68,0.08)\",\n    border: \"1px solid rgba(239,68,68,0.25)\",\n    color: \"#b91c",
+    "char_count": 495,
+    "source_segment_ids": [
+      "seg_079",
+      "seg_080"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "para_081",
+    "end_ref": "para_082",
+    "unit_type": "paragraph",
+    "text_excerpt": "sidebar: { display: \"flex\", flexDirection: \"column\", gap: 14, overflow: \"hidden\" }, taskSection: {\n    flex: 1,\n    background: \"#fff\",\n    borderRadius: \"28px\",\n    border: `1px solid ${UI.border_light}`,\n    display: \"",
+    "char_count": 334,
+    "source_segment_ids": [
+      "seg_081",
+      "seg_082"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "para_083",
+    "end_ref": "para_084",
+    "unit_type": "paragraph",
+    "text_excerpt": "hintSection: {\n    background: \"#fff\",\n    borderRadius: \"22px\",\n    border: `1px solid ${UI.border_light}`,\n    padding: 16,\n    boxShadow: \"0 4px 6px -1px rgba(0,0,0,0.02)\",\n  },\n  hintHeader: { fontSize: 12, fontWeigh",
+    "char_count": 595,
+    "source_segment_ids": [
+      "seg_083",
+      "seg_084"
+    ]
+  },
+  {
+    "unit_id": "unit_044",
+    "start_ref": "para_085",
+    "end_ref": "para_086",
+    "unit_type": "paragraph",
+    "text_excerpt": "filterBar: { display: \"flex\", gap: 8, padding: 12, flexWrap: \"wrap\", borderBottom: `1px solid ${UI.border_light}` },\n  filterChip: {\n    border: `1px solid ${UI.border_light}`,\n    padding: \"8px 10px\",\n    borderRadius: ",
+    "char_count": 785,
+    "source_segment_ids": [
+      "seg_085",
+      "seg_086"
+    ]
+  },
+  {
+    "unit_id": "unit_045",
+    "start_ref": "para_087",
+    "end_ref": "para_088",
+    "unit_type": "paragraph",
+    "text_excerpt": "scrollArea: { flex: 1, overflowY: \"auto\", padding: 14 }, tankCard: {\n    padding: 14,\n    background: UI.soft_bg,\n    borderRadius: 18,\n    marginBottom: 12,\n    cursor: \"pointer\",\n    border: `1px solid ${UI.border_ligh",
+    "char_count": 1052,
+    "source_segment_ids": [
+      "seg_087",
+      "seg_088"
+    ]
+  },
+  {
+    "unit_id": "unit_046",
+    "start_ref": "para_089",
+    "end_ref": "para_090",
+    "unit_type": "paragraph",
+    "text_excerpt": "emptyBox: { textAlign: \"center\", padding: 28, color: UI.slate, fontWeight: 900 }, workSection: {\n    background: \"transparent\",\n    borderRadius: 28,\n    overflow: \"hidden\",\n    display: \"flex\",\n    flexDirection: \"colum",
+    "char_count": 241,
+    "source_segment_ids": [
+      "seg_089",
+      "seg_090"
+    ]
+  },
+  {
+    "unit_id": "unit_047",
+    "start_ref": "para_091",
+    "end_ref": "para_092",
+    "unit_type": "paragraph",
+    "text_excerpt": "workspaceCard: {\n    flex: 1,\n    background: \"#fff\",\n    borderRadius: 28,\n    border: `1px solid ${UI.border_light}`,\n    boxShadow: \"0 10px 15px -3px rgba(0,0,0,0.05)\",\n    padding: 18,\n    position: \"relative\",\n    o",
+    "char_count": 557,
+    "source_segment_ids": [
+      "seg_091",
+      "seg_092"
+    ]
+  },
+  {
+    "unit_id": "unit_048",
+    "start_ref": "para_093",
+    "end_ref": "para_094",
+    "unit_type": "paragraph",
+    "text_excerpt": "blockRow: { display: \"flex\", gap: 10, flexWrap: \"wrap\", marginTop: 10 },\n  blockBtn: (active) => ({\n    padding: \"12px 14px\",\n    borderRadius: 16,\n    border: `2px solid ${active ? UI.main_blue : UI.border_light}`,\n    ",
+    "char_count": 618,
+    "source_segment_ids": [
+      "seg_093",
+      "seg_094"
+    ]
+  },
+  {
+    "unit_id": "unit_049",
+    "start_ref": "para_095",
+    "end_ref": "para_096",
+    "unit_type": "paragraph",
+    "text_excerpt": "selectedBar: {\n    marginTop: 14,\n    padding: \"10px 12px\",\n    borderRadius: 14,\n    background: \"rgba(59,130,246,0.08)\",\n    border: \"1px solid rgba(59,130,246,0.18)\",\n    fontWeight: 950,\n  }, modalOverlay: {\n    posi",
+    "char_count": 871,
+    "source_segment_ids": [
+      "seg_095",
+      "seg_096"
+    ]
+  },
+  {
+    "unit_id": "unit_050",
+    "start_ref": "para_097",
+    "end_ref": "para_098",
+    "unit_type": "paragraph",
+    "text_excerpt": "gridWrap: { display: \"flex\", flexDirection: \"column\", gap: 10, overflowX: \"auto\", paddingBottom: 8 },\n  gridHeaderRow: { display: \"flex\", gap: 8 },\n  gridCorner: {\n    width: 80,\n    padding: \"10px 10px\",\n    borderRadiu",
+    "char_count": 946,
+    "source_segment_ids": [
+      "seg_097",
+      "seg_098"
+    ]
+  },
+  {
+    "unit_id": "unit_051",
+    "start_ref": "para_099",
+    "end_ref": "para_100",
+    "unit_type": "paragraph",
+    "text_excerpt": "slotBtn: (occupied, hasLoc) => ({\n    width: 130,\n    borderRadius: 16,\n    border: `2px solid ${occupied ? UI.main_blue : hasLoc ? UI.border_light : \"rgba(239,68,68,0.25)\"}`,\n    background: occupied ? UI.main_blue : ha",
+    "char_count": 581,
+    "source_segment_ids": [
+      "seg_099",
+      "seg_100"
+    ]
+  },
+  {
+    "unit_id": "unit_052",
+    "start_ref": "para_101",
+    "end_ref": "para_101",
+    "unit_type": "paragraph",
+    "text_excerpt": "procGrid: {\n    marginTop: 14,\n    display: \"grid\",\n    gridTemplateColumns: \"repeat(auto-fill, minmax(220px, 1fr))\",\n    gap: 12,\n  },\n  procCard: (occupied, clickable) => ({\n    padding: 16,\n    borderRadius: 18,\n    b",
+    "char_count": 565,
+    "source_segment_ids": [
+      "seg_101"
+    ]
+  }
+]

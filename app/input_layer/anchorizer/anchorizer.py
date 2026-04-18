@@ -11,6 +11,10 @@ FILE_RE = re.compile(r"([A-Za-z0-9_./-]+\.[A-Za-z0-9_]+)")
 NON_WORD_RE = re.compile(r"[^a-z0-9가-힣]+")
 
 KNOWN_OBJECTS: Dict[str, Tuple[str, str]] = {
+    "비전 랭귀지 모델": ("object.model.vision_language_model", "비전 랭귀지 모델"),
+    "vision language model": ("object.model.vision_language_model", "비전 랭귀지 모델"),
+    "매트릭 러닝": ("object.method.metric_learning", "매트릭 러닝"),
+    "metric learning": ("object.method.metric_learning", "매트릭 러닝"),
     "google deepmind": ("object.org.google_deepmind", "Google DeepMind"),
     "alphago": ("object.system.alphago", "AlphaGo"),
     "google": ("object.org.google", "Google"),
@@ -56,6 +60,20 @@ KNOWN_OBJECTS: Dict[str, Tuple[str, str]] = {
 }
 
 SEMANTIC_RULES: Sequence[Tuple[str, str, str]] = (
+    ("semantic.embedding_space_distance", "embedding space distance", "인베딩 공간"),
+    ("semantic.embedding_space_distance", "embedding space distance", "거리"),
+    ("semantic.contrastive_learning", "contrastive learning", "네거티브"),
+    ("semantic.contrastive_learning", "contrastive learning", "파지티브"),
+    ("semantic.contrastive_learning", "contrastive learning", "레이블 없이"),
+    ("semantic.label_classification", "label classification", "레이블은"),
+    ("semantic.label_classification", "label classification", "분류도"),
+    ("semantic.class_token_classification", "class token classification", "클래스 토큰"),
+    ("semantic.class_token_classification", "class token classification", "이미지 분류"),
+    ("semantic.retrieval_ranking_clustering", "retrieval ranking clustering", "클러스터링"),
+    ("semantic.retrieval_ranking_clustering", "retrieval ranking clustering", "리트리벌"),
+    ("semantic.retrieval_ranking_clustering", "retrieval ranking clustering", "랭킹"),
+    ("semantic.topic_similarity", "topic similarity", "주제 이미지"),
+    ("semantic.topic_similarity", "topic similarity", "가장 가까운 거"),
     ("semantic.match.signature_move", "signature move", "37수"),
     ("semantic.match.signature_move", "signature move", "78수"),
     ("semantic.public_shock", "public shock", "놀라운 수"),

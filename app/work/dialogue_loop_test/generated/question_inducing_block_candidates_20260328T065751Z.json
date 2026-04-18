@@ -1,0 +1,500 @@
+{
+  "created_at": "2026-03-28T06:57:51.723724Z",
+  "input_asset": "inputs/external_cases/youtube_03_22.md",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/youtube_03_22_dialogue_loop_test_w3_s1_20260328T064937Z.json",
+    "app/work/dialogue_loop_test/generated/youtube_03_22_dialogue_loop_test_w4_s2_20260328T064937Z.json",
+    "app/work/dialogue_loop_test/generated/youtube_03_22_dialogue_loop_test_w6_s3_20260328T064938Z.json",
+    "app/work/dialogue_loop_test/generated/youtube_03_22_dialogue_loop_test_w8_s4_20260328T064938Z.json"
+  ],
+  "question_inducing_candidates": [
+    {
+      "window_id": "84_91",
+      "question_intent_score": 10,
+      "objects": [
+        "전략/방향성",
+        "에이전트 애플리케이션",
+        "구현/자동화",
+        "일의 미래"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "구조/연결 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 전략/방향성, 에이전트 애플리케이션, 구현/자동화 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "기존 앱의 moat는 agent interface 시대에 무엇으로 남는가?",
+        "agent layer는 실제 workflow와 운영 구조를 어디까지 대체하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 전략/방향성, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 전략/방향 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 때문에, 대부분의, 노정석, 사업자, 어떻게",
+      "after_anchor_surface": "때문에, 대부분의, 사업자, 어떻게, 경쟁의, 자동차",
+      "deprioritized_values": [
+        "그래서",
+        "노정석"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "speaker_or_source_residue": 1
+      },
+      "headings": [
+        "Bundle-Unbundle 프레임워크",
+        "Bundle-Unbundle 프레임워크",
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "1/10x 효율 vs 10x 신사업"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "Bundle-Unbundle 프레임워크",
+          "excerpt": "어떤 환경의 변화에 따라서 끊임없이 diversification이 생기고 diversification이 생기면 그중에서 어느 하나의 승자의 후보들이 나오고 승자가 나오면 그 승자가 후보가 나왔다는 얘기가 몇 개의 selection이 된다는 얘기인데 그 selection이 되고 나면 그게 다시 지배종이 돼서 amplifi…"
+        },
+        {
+          "heading": "Bundle-Unbundle 프레임워크",
+          "excerpt": "그러면서 Benedict가 얘기하는 게 우리가 알고 있는 거의 대부분의 B2B SaaS 애플리케이션은 그냥 Oracle unbundling이다. 심하게 얘기하면 Excel과 Oracle만 갖고 다 만들 수 있는 서비스인데 그거를 각각의 어떤 사용 예에 맞춰 가지고 전부 unbundling 해 놓은 시대다라고 얘기를 하고…"
+        }
+      ]
+    },
+    {
+      "window_id": "80_87",
+      "question_intent_score": 10,
+      "objects": [
+        "에이전트 애플리케이션",
+        "전략/방향성",
+        "구현/자동화",
+        "일의 미래"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "구조/연결 층",
+        "전략/방향 층",
+        "구현/실행 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 에이전트 애플리케이션, 전략/방향성, 구현/자동화 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "기존 앱의 moat는 agent interface 시대에 무엇으로 남는가?",
+        "agent layer는 실제 workflow와 운영 구조를 어디까지 대체하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 전략/방향성, 구현/자동화 / 주요 층위: 설명/해석 층, 구조/연결 층, 전략/방향 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "unbundle, Bundle-Unbundle, 프레임워크, Benedict, 에이전트가, 노정석",
+      "after_anchor_surface": "unbundle, Bundle-Unbundle, 프레임워크, 에이전트가, 사람이",
+      "deprioritized_values": [
+        "Benedict",
+        "노정석",
+        "그래서"
+      ],
+      "residue_types": {
+        "speaker_or_source_residue": 2,
+        "discourse_connective_residue": 1
+      },
+      "headings": [
+        "에이전트가 기존 앱을 대신 조작하는 레이어",
+        "에이전트가 기존 앱을 대신 조작하는 레이어",
+        "Bundle-Unbundle 프레임워크",
+        "Bundle-Unbundle 프레임워크",
+        "Bundle-Unbundle 프레임워크",
+        "Bundle-Unbundle 프레임워크",
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "기존 사업자의 UX 마찰과 Disintermediation"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "에이전트가 기존 앱을 대신 조작하는 레이어",
+          "excerpt": "최승준: 막으면 안 되겠죠. 이 방향성에서는."
+        },
+        {
+          "heading": "에이전트가 기존 앱을 대신 조작하는 레이어",
+          "excerpt": "노정석: 그렇죠, 못 막을 거예요. 왜냐하면 사람이 오는 것과 트래픽이 구별이 안 될 테니까. 왜냐하면 그냥 내 에뮬레이터에 내가 로그인해 놓고 그 에뮬레이터를 내 에이전트가 조작하면 어떻게 막죠? IP도 전부 다르고 모든 게 전부 다 다를 텐데. 그리고 샤오미가 MiMo V2 하면서 당연히 MiMo Claw 만들어서 …"
+        }
+      ]
+    },
+    {
+      "window_id": "21_26",
+      "question_intent_score": 9,
+      "objects": [
+        "일의 미래",
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 일의 미래, 생산성/코딩, 에이전트 애플리케이션 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "사람의 일은 수행에서 감독과 설계 쪽으로 얼마나 이동하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 일의 미래, 생산성/코딩, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 전략/방향 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 노정석, 대해서, GTC, 키노트와, 비즈니스의",
+      "after_anchor_surface": "대해서, GTC, 키노트와, 비즈니스의, 본질적, 관점으로",
+      "deprioritized_values": [
+        "그래서",
+        "노정석"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "speaker_or_source_residue": 1
+      },
+      "headings": [
+        "GTC 키노트와 ‘일의 미래’",
+        "GTC 키노트와 ‘일의 미래’",
+        "AI 비즈니스의 본질적 관점으로 전환",
+        "AI 비즈니스의 본질적 관점으로 전환",
+        "2026년 3월 AI 산업 스냅샷",
+        "2026년 3월 AI 산업 스냅샷"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "GTC 키노트와 ‘일의 미래’",
+          "excerpt": "최승준: 그리고 지인들 만나서 밥을 먹는데 개발자분들인데 계속 스마트폰을 보면서 그 노티 확인하고 에이전트한테 일을 주는 풍경이 또 무척 달라졌다. 이게 뭐 하시냐 했더니 일을 계속 주고 있더라고요."
+        },
+        {
+          "heading": "GTC 키노트와 ‘일의 미래’",
+          "excerpt": "노정석: 감독관처럼. 그날 저희 OpenClaw 미팅에서도 보니까 예찬님 아이패드 하나 가지고 오셔가지고 몇 개 CLI 이렇게 돌리시면서 다 감독하고 계시더라고요. 그래서 야 저게 일의 미래구나라는 생각을 하게 됐습니다."
+        }
+      ]
+    },
+    {
+      "window_id": "84_89",
+      "question_intent_score": 9,
+      "objects": [
+        "전략/방향성",
+        "에이전트 애플리케이션",
+        "구현/자동화",
+        "일의 미래"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "구조/연결 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 전략/방향성, 에이전트 애플리케이션, 구현/자동화 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "기존 앱의 moat는 agent interface 시대에 무엇으로 남는가?",
+        "agent layer는 실제 workflow와 운영 구조를 어디까지 대체하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 전략/방향성, 에이전트 애플리케이션, 구현/자동화 / 주요 층위: 설명/해석 층, 전략/방향 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 사업자, 어떻게, 자동차, 경기는, 때문에",
+      "after_anchor_surface": "사업자, 어떻게, 자동차, 경기는, 때문에, Bundle-Unbundle",
+      "deprioritized_values": [
+        "그래서"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1
+      },
+      "headings": [
+        "Bundle-Unbundle 프레임워크",
+        "Bundle-Unbundle 프레임워크",
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "Bundle-Unbundle 프레임워크",
+          "excerpt": "어떤 환경의 변화에 따라서 끊임없이 diversification이 생기고 diversification이 생기면 그중에서 어느 하나의 승자의 후보들이 나오고 승자가 나오면 그 승자가 후보가 나왔다는 얘기가 몇 개의 selection이 된다는 얘기인데 그 selection이 되고 나면 그게 다시 지배종이 돼서 amplifi…"
+        },
+        {
+          "heading": "Bundle-Unbundle 프레임워크",
+          "excerpt": "그러면서 Benedict가 얘기하는 게 우리가 알고 있는 거의 대부분의 B2B SaaS 애플리케이션은 그냥 Oracle unbundling이다. 심하게 얘기하면 Excel과 Oracle만 갖고 다 만들 수 있는 서비스인데 그거를 각각의 어떤 사용 예에 맞춰 가지고 전부 unbundling 해 놓은 시대다라고 얘기를 하고…"
+        }
+      ]
+    },
+    {
+      "window_id": "32_39",
+      "question_intent_score": 9,
+      "objects": [
+        "AI의 미래",
+        "모델 work",
+        "에이전트 애플리케이션",
+        "생산성/코딩"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "검증/근거 층",
+        "구조/연결 층",
+        "전략/방향 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: AI의 미래, 모델 work, 에이전트 애플리케이션 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "모델 경쟁의 승부처는 pre-train 이후 어떤 평가/환경 축으로 이동하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: AI의 미래, 모델 work, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 검증/근거 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 저희가, 모델이, 노정석, RLVR, 문제는",
+      "after_anchor_surface": "모델이, RLVR, 문제는, 문제를, 환경을",
+      "deprioritized_values": [
+        "그래서",
+        "저희가",
+        "노정석"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "conversational_filler_residue": 1,
+        "speaker_or_source_residue": 1
+      },
+      "headings": [
+        "2026년 3월 AI 산업 스냅샷",
+        "RLVR과 CUA",
+        "RLVR과 CUA",
+        "모든 문제는 Search Problem으로 수렴한다",
+        "모든 문제는 Search Problem으로 수렴한다",
+        "모든 문제는 Search Problem으로 수렴한다",
+        "모델은 우리 생각보다 훨씬 똑똑하다",
+        "모델은 우리 생각보다 훨씬 똑똑하다"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "2026년 3월 AI 산업 스냅샷",
+          "excerpt": "노정석: 그렇죠. 그래서 MiMoV2 Pro 같은 경우에도 그런 준비가 깔끔히 됐을 때 1년 정도면 따라잡는 거고 품질을 만들 수 있다라는 거를 좀 보여주는 좋은 예제가 된 것 같고. 그래서 pre-train은, 아 이거는 어느 정도는 되겠다. 그리고 또 이 AI의 어떤 미래의 궁극적인 발전상에 대해서, 그냥 미래에 훅…"
+        },
+        {
+          "heading": "RLVR과 CUA",
+          "excerpt": "노정석: 좀 넘어가 보면, frontier lab들의 경쟁의 축은, 저희 성현님도 지난번 세션에 오셔서 올해는 이건 것 같다, RL 환경 스케일링이라고 딱 규정을 해 주셨잖아요. 그게 RLVR이라고 저희가 계속 얘기하는 건데, RLVR은 Reinforcement Learning by Verifiable Rewards라는…"
+        }
+      ]
+    },
+    {
+      "window_id": "88_95",
+      "question_intent_score": 9,
+      "objects": [
+        "전략/방향성",
+        "생산성/코딩",
+        "모델 work",
+        "일의 미래"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "구조/연결 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 전략/방향성, 생산성/코딩, 모델 work / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "사람의 일은 수행에서 감독과 설계 쪽으로 얼마나 이동하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 전략/방향성, 생산성/코딩, 모델 work / 주요 층위: 설명/해석 층, 전략/방향 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 때문에, 싶었던, 경쟁의, 노정석, 자동차",
+      "after_anchor_surface": "때문에, 싶었던, 경쟁의, 자동차, 경기는, 있어요",
+      "deprioritized_values": [
+        "그래서",
+        "노정석"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "speaker_or_source_residue": 1
+      },
+      "headings": [
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "1/10x 효율 vs 10x 신사업",
+        "1/10x 효율 vs 10x 신사업",
+        "1/10x 효율 vs 10x 신사업",
+        "에이전트를 붙여도 10배는 아직",
+        "에이전트를 붙여도 10배는 아직"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "적응 경쟁의 시대",
+          "excerpt": "노정석: 그래서 저는 이런 쪽 스타트업 사업 쪽에 있으니까 누가 사업 계획 같은 거 갖고 와가지고 이것저것 물어보면 저는 자동차 경주냐 자전거 경기냐 요트 경주냐를 물어보거든요. 자동차 경기는 돈 많으면 무조건 이겨요. 그냥 더 좋은 차 사면 조금 더 안 좋은 차를 타는 사람은 무조건 이길 수가 있어요. 물론 드라이버의…"
+        },
+        {
+          "heading": "적응 경쟁의 시대",
+          "excerpt": "자동차 경기, 자전거 경기 둘 다 게임을 리딩하는 건 다 리더예요. 리더가 어떻게 변화하면 뒤에 있는 애들이 다 리액션하는 형태로 게임이 굴러가는데, 요트 경기는 좀 다르거든요. 후발 주자가 방향을 바꾸면 앞에 있는 사람들 다 바꿔야 돼요. 왜냐하면 내가 뭘 잘하는 게 중요한 게 아니라 밖에 어떤 바람이 부느냐가 훨씬 …"
+        }
+      ]
+    },
+    {
+      "window_id": "20_27",
+      "question_intent_score": 9,
+      "objects": [
+        "일의 미래",
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 일의 미래, 생산성/코딩, 에이전트 애플리케이션 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "사람의 일은 수행에서 감독과 설계 쪽으로 얼마나 이동하는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 일의 미래, 생산성/코딩, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 전략/방향 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "before_anchor_surface": "그래서, 노정석, 대해서, 그다음에, GTC, 키노트와",
+      "after_anchor_surface": "대해서, 그다음에, GTC, 키노트와, 스냅샷, 비즈니스의",
+      "deprioritized_values": [
+        "그래서",
+        "노정석"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1,
+        "speaker_or_source_residue": 1
+      },
+      "headings": [
+        "GTC 키노트와 ‘일의 미래’",
+        "GTC 키노트와 ‘일의 미래’",
+        "GTC 키노트와 ‘일의 미래’",
+        "AI 비즈니스의 본질적 관점으로 전환",
+        "AI 비즈니스의 본질적 관점으로 전환",
+        "2026년 3월 AI 산업 스냅샷",
+        "2026년 3월 AI 산업 스냅샷",
+        "2026년 3월 AI 산업 스냅샷"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "GTC 키노트와 ‘일의 미래’",
+          "excerpt": "노정석: 말로도 할 수 있고 네."
+        },
+        {
+          "heading": "GTC 키노트와 ‘일의 미래’",
+          "excerpt": "최승준: 그리고 지인들 만나서 밥을 먹는데 개발자분들인데 계속 스마트폰을 보면서 그 노티 확인하고 에이전트한테 일을 주는 풍경이 또 무척 달라졌다. 이게 뭐 하시냐 했더니 일을 계속 주고 있더라고요."
+        }
+      ]
+    },
+    {
+      "window_id": "87_92",
+      "question_intent_score": 9,
+      "objects": [
+        "전략/방향성",
+        "에이전트 애플리케이션",
+        "일의 미래",
+        "모델 work"
+      ],
+      "layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "구조/연결 층",
+        "질문 유도 층"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "why_candidate": "객체가 함께 살아남음: 전략/방향성, 에이전트 애플리케이션, 일의 미래 / 질문 생성 힌트가 직접 동반됨 / 설명에서 전략/실행 쪽으로 이동하는 전이가 보임",
+      "next_questions": [
+        "기존 앱의 moat는 agent interface 시대에 무엇으로 남는가?"
+      ],
+      "existing_opening_summary": "주요 객체 후보: 전략/방향성, 에이전트 애플리케이션, 일의 미래 / 주요 층위: 설명/해석 층, 전략/방향 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "before_anchor_surface": "때문에, 그래서, 경쟁의, 자동차, 경기는, 왜냐하면",
+      "after_anchor_surface": "때문에, 경쟁의, 자동차, 경기는, 왜냐하면, 결국은",
+      "deprioritized_values": [
+        "그래서"
+      ],
+      "residue_types": {
+        "discourse_connective_residue": 1
+      },
+      "headings": [
+        "기존 사업자의 UX 마찰과 Disintermediation",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "적응 경쟁의 시대",
+        "1/10x 효율 vs 10x 신사업",
+        "1/10x 효율 vs 10x 신사업"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "기존 사업자의 UX 마찰과 Disintermediation",
+          "excerpt": "Jensen이 아예 이번에 GTC에서 “Are you OpenClaw ready?”라는 그런 표현을 하잖아요. 모든 비즈니스든 모든 개인이든 OpenClaw 전략을 갖고 있어야 된다고. 제가 고객 입장에서 제가 OMO.BOT의 고객이 됐다는 입장에서 생각을 해보면 저희가 회장님 analogy를 많이 쓰고 있는데, AI …"
+        },
+        {
+          "heading": "적응 경쟁의 시대",
+          "excerpt": "노정석: 그래서 저는 이런 쪽 스타트업 사업 쪽에 있으니까 누가 사업 계획 같은 거 갖고 와가지고 이것저것 물어보면 저는 자동차 경주냐 자전거 경기냐 요트 경주냐를 물어보거든요. 자동차 경기는 돈 많으면 무조건 이겨요. 그냥 더 좋은 차 사면 조금 더 안 좋은 차를 타는 사람은 무조건 이길 수가 있어요. 물론 드라이버의…"
+        }
+      ]
+    }
+  ],
+  "summary_stage_deprioritization_candidates": [
+    {
+      "residue_type": "discourse_connective_residue",
+      "count": 8,
+      "example_values": [
+        "그래서"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    },
+    {
+      "residue_type": "speaker_or_source_residue",
+      "count": 7,
+      "example_values": [
+        "노정석",
+        "Benedict"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    },
+    {
+      "residue_type": "conversational_filler_residue",
+      "count": 1,
+      "example_values": [
+        "저희가"
+      ],
+      "why_not_hard_suppress": "문서 전체의 의미를 없애려는 것이 아니라 opening summary 선두에서만 뒤로 밀기 위한 후보이기 때문",
+      "why_summary_stage_only": "질문 유도 블록의 핵심 객체와 relation movement는 유지한 채, surface opening만 더 선명하게 하기 위함"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T112750Z_8ea87b3a",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 4: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md",
+    "docs/reports/integrated_engine_shared_operational_language_growth_note_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:27:50Z",
+  "ended_at": "2026-04-16T11:28:26Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a/prompt.md",
+  "exit_code": 0,
+  "result_summary": "tus` | Gemini can expand proposal/design material but has no direct path into core. | `Gemini material -> Codex translation -> bounded route` | External proposal containment. | engine / vectorfl | Must not create direct Gemini-to-core path. | What language marks Gemini material clearly as proposal clay? | reread target |\n| `hold / carry-forward / reject-conflict / watch keep` | These are distinct operational states, not backlog or task labels. | `classification -> route brake/carry state -> next action` | Non-project-management state vocabulary. | user / vectorfl | Must not flatten into TODO, backlog, warning, or error. | Which state distinctions need examples from real returns? | validation target |\n| `workspace ownership` | Authority over proposal, canonical, scaffold, and manifest areas must stay distinct. | `surface authority -> route boundary -> patch scope` | Ownership as authority boundary, not folder ownership. | engine / vectorfl | Must not become filesystem ownership only. | Where do current reports risk confusing patch scope with authority? | reread target |\n\n- uncertainty or failure notes\n  - Only the two bounded docs were read.\n  - No runtime artifact such as `operator_report.md` was reread in this loop.\n  - Axis candidates are inferred from repeated language in the bounded context, not validated against broader session history.\n  - No final glossary or UI wording was produced.\n\n- suggested next use: validation target\n  - Validate whether the generated `operator_report.md` preview preserves the same distinctions:\n    - `validation_target` as route signal, not completion.\n    - `deposit_candidate` as candidate, not ingestion.\n    - 3-surface split as authority preservation, not summary decoration.\n    - friction as route-reading material, not generic error.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:28:26Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:28:26Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

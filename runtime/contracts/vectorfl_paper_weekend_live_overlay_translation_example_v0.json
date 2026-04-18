@@ -1,0 +1,106 @@
+{
+  "example_id": "vectorfl_paper_weekend_live_overlay_translation_example_v0",
+  "source_program": "paperclip",
+  "issue_surface": {
+    "issue_id": "issue_001",
+    "title": "stabilize first vectorfl pilot handoff",
+    "description": "shape the first weekend pilot so one scenario-bearing loop can close cleanly",
+    "assignee": "codex_local",
+    "project_ref": "proj_vectorfl_paper",
+    "goal_ref": "goal_weekend_first_loop",
+    "parent_ref": null,
+    "status": "assigned"
+  },
+  "translated_work_packet": {
+    "packet_id": "lwp_weekend_pilot_001",
+    "packet_version": "v1",
+    "status": "translated",
+    "source_program": "paperclip",
+    "source_assignment": {
+      "assignment_id": "issue_001",
+      "project_ref": "proj_vectorfl_paper",
+      "goal_ref": "goal_weekend_first_loop",
+      "title": "stabilize first vectorfl pilot handoff",
+      "description": "shape the first weekend pilot so one scenario-bearing loop can close cleanly",
+      "assignee_ref": "codex_local",
+      "source_status": "assigned"
+    },
+    "line_translation": {
+      "primary_line_id": "human_readable_supervision_surface",
+      "support_line_ids": [
+        "internal_reading_before_expansion",
+        "worker_as_paper_manager"
+      ],
+      "corridor": "pilot_loop_to_supervision_surface",
+      "boundary": "runtime",
+      "translation_confidence": "medium",
+      "translation_reason": [
+        "the assignment is about closing a first loop rather than adding features",
+        "the loop must reduce the user bottleneck",
+        "the result must remain human-readable"
+      ]
+    },
+    "context_refs": {
+      "evidence_refs": [
+        "docs/reports/vectorfl_paper_weekend_live_bundle_selection_v0.md",
+        "docs/reports/vectorfl_paper_weekend_pilot_supervisor_report_v0.md"
+      ]
+    },
+    "execution_guidance": {
+      "objective": "close one scenario-bearing loop without flattening the material into TODOs",
+      "acceptance_criteria": [
+        "cell chain is explicit",
+        "supervisor decision is readable",
+        "return packet is explicit"
+      ],
+      "execution_hints": [
+        "preserve scenario-bearing pressure",
+        "prefer thin overlay over broad integration",
+        "record hold or caution as explicit governance note"
+      ]
+    }
+  },
+  "heartbeat_run_surface": {
+    "run_id": "run_001",
+    "started_at": "queued",
+    "ended_at": "not_started",
+    "status": "pending_approval",
+    "adapter_type": "codex-cli",
+    "runtime_config": "pilot",
+    "usage": "n/a",
+    "error": null
+  },
+  "translated_trace_row": {
+    "trace_id": "run_001",
+    "trace_kind": "pilot_loop_handoff",
+    "status": "pending_approval",
+    "adapter": "codex-cli",
+    "summary": "first weekend pilot packet is ready for the live pass",
+    "reentry_hint": "if the supervisor reopens, preserve the same line translation and change only the live bundle selection"
+  },
+  "result_surface": {
+    "result_summary": "first pilot packet and supervisor-readable report prepared",
+    "comment": "ready to move from sample packet to live pass",
+    "artifact_ref": "docs/reports/vectorfl_paper_weekend_pilot_supervisor_report_v0.md",
+    "patch_ref": null,
+    "completion_claim": "pilot_sample_ready"
+  },
+  "translated_reinjection_stub": {
+    "operator_summary": "The pilot loop now has contracts, outputs, a supervisor report, and a return packet.",
+    "residue_note": "The first live external reference injection is still pending.",
+    "advisory_return_hint": "Run the first live pass using the selected live bundle and the thin Paperclip overlay target."
+  },
+  "governance_event_surface": {
+    "approval_state": "requested",
+    "budget_state": "not_applicable",
+    "reassignment": null,
+    "pause_state": "none",
+    "board_intervention": "supervisor_gate_pending"
+  },
+  "translated_governance_gate": {
+    "route_gate": "supervisor_decision_required_before_live_pass",
+    "hold_trace": "do_not_expand_scope_until_first_live_loop_closes",
+    "promotion_gate": "after_first_real_return_packet_only",
+    "caution_note": "do not replace live reading with more architecture writing"
+  }
+}

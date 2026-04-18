@@ -1,0 +1,25 @@
+{
+  "schema": "external_case_repeat_check_saltlux_aifrontier_v1",
+  "base_case": "saltlux_agentic_ai_ontology_raw_transcript_v1",
+  "compare_case": "aifrontier_01_28_raw_transcript_v1",
+  "repeated_frames": [
+    {
+      "frame": "agentic_workflow_orchestration_frame",
+      "reading": "두 사례 모두 생성기보다 workflow를 수행하는 agentic 구조로 읽는다.",
+      "saltlux_side": "reasoning + planning + tool use + multi-agent coordination",
+      "aifrontier_side": "harness, guardrail, agentic tool use, batch/orchestration usability"
+    }
+  ],
+  "new_outer_frames_in_aifrontier": [
+    "harness_reduction_model_delegation_frame",
+    "agentic_ux_barrier_reduction_frame",
+    "intent_to_spec_to_generation_frame",
+    "ax_champion_path_context_fit_frame"
+  ],
+  "weaker_or_missing_compared_to_saltlux": [
+    "semantic_interoperability_data_fabric_frame",
+    "grounding_plus_symbolic_expression_frame",
+    "ontology_direct_frame"
+  ],
+  "note": "반복을 억지로 만들지 않고, 실제로 겹치는 축은 agentic workflow/orchestration 정도로 보수적으로 잡는다."
+}

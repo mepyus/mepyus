@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T112903Z_ff06574b",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 6: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md",
+    "docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:29:03Z",
+  "ended_at": "2026-04-16T11:29:37Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T112903Z_ff06574b/prompt.md",
+  "exit_code": 0,
+  "result_summary": "n\n  - emerging axis candidate: evidence-before-interface\n  - surface exposure note: vectorfl first, user later, engine as source material\n  - what must not be flattened: a single line or connection should not be promoted into fixed UI structure.\n  - next reread question: which axes have repeated enough to justify interface return?\n  - suggested next use: reread target\n\n  - internal phrase or signal observed: `bounded human-readable operating summary layer, not full translation`\n  - human-readable line, not final wording: next usability step is a thin meaning-now layer per surface, not a broad rewrite.\n  - repeated connection it belongs to: internal-heavy UI -> human steering gap -> bounded summary\n  - emerging axis candidate: summary layer before glossary/canonical copy\n  - surface exposure note: user needs it most; vectorfl/engine need boundary-preserving summaries\n  - what must not be flattened: summary must not become final translation, glossary replacement, or feature promotion.\n  - next reread question: what is the smallest per-surface summary that preserves route, authority, and state?\n  - suggested next use: validation target\n\n- uncertainty or failure notes\n  - No files were modified.\n  - This pass did not validate runtime behavior or UI state; it only reread bounded documents.\n  - Some axis candidates are inferred from repeated boundary language, not declared as final axes.\n  - Korean-facing wording is intentionally not finalized.\n\n- suggested next use: validation target\n  - Validate whether the next implementation return should be a bounded per-surface operating-summary layer that preserves:\n    - user: decision / route / open-closed state\n    - VectorFL: line / connection / axis mediation\n    - engine: processing / return material without validation authority\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:29:37Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:29:37Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

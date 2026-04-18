@@ -1,0 +1,75 @@
+{
+  "schema_version": "entry_prebias_examples_v0",
+  "updated_at": "2026-04-06T16:05:00+09:00",
+  "examples": [
+    {
+      "example_id": "prebias_builder_choi_preprocess_ambiguity",
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+      "signal_kind": "preprocess_ambiguity",
+      "family_rooted_alias": "input_family_preservation_conflict",
+      "hint_ref": "source_to_family_hints_v0:/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+      "prebias_family_ids": [
+        "fam_input_to_reading"
+      ],
+      "prebias_projection_ids": [
+        "proj_preprocess_shaping"
+      ],
+      "prebias_route_ids": [
+        "route_preprocess_compare_first"
+      ],
+      "prebias_strength": "high",
+      "prebias_reason": [
+        "artifact already points to input family shaping path",
+        "alias indicates preservation conflict rather than direct entry",
+        "signal default family agrees with source hint"
+      ],
+      "classifier_override_allowed": true
+    },
+    {
+      "example_id": "prebias_transition_preflight_thickening",
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/preflight_last_decision.json",
+      "signal_kind": "transition_blockage",
+      "family_rooted_alias": "transition_family_closure_conflict",
+      "hint_ref": "source_to_family_hints_v0:/Users/sungsookim/universe/vectorfl_replica/runtime/preflight_last_decision.json",
+      "prebias_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "prebias_projection_ids": [
+        "proj_transition_preflight_reread"
+      ],
+      "prebias_route_ids": [
+        "route_preflight_reread"
+      ],
+      "prebias_strength": "high",
+      "prebias_reason": [
+        "artifact already points to active thickening state",
+        "alias indicates closure conflict rather than broad readout",
+        "signal default family agrees with source hint"
+      ],
+      "classifier_override_allowed": true
+    },
+    {
+      "example_id": "prebias_operator_board_overview",
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/engine_state_latest/index.json",
+      "signal_kind": "operator_overview_request",
+      "family_rooted_alias": "operator_family_broad_readout_request",
+      "hint_ref": "source_to_family_hints_v0:/Users/sungsookim/universe/vectorfl_replica/runtime/views/engine_state_latest/index.json",
+      "prebias_family_ids": [
+        "fam_operator_readout"
+      ],
+      "prebias_projection_ids": [
+        "proj_operator_board_readout"
+      ],
+      "prebias_route_ids": [
+        "route_readonly_board"
+      ],
+      "prebias_strength": "high",
+      "prebias_reason": [
+        "artifact already points to broad overview surface",
+        "alias indicates readout request rather than narrow query",
+        "signal default family agrees with source hint"
+      ],
+      "classifier_override_allowed": true
+    }
+  ]
+}

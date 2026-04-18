@@ -1,0 +1,112 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "middle layer layered implementation note v1",
+    "end_ref": "middle layer layered implementation note v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# middle layer layered implementation note v1",
+    "char_count": 45,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "1. implementation stance",
+    "end_ref": "1. implementation stance",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. implementation stance - experimental - read-only - no `inputter.py` patch - no `labeler.py` patch - no promotion logic touch",
+    "char_count": 130,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "2. implemented helper",
+    "end_ref": "2. implemented helper",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. implemented helper - script: - [run_middle_layer_interview_probe.py](/Users/sungsookim/universe/vectorfl_replica/scripts/run_middle_layer_interview_probe.py)",
+    "char_count": 163,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "3. implemented layer mapping",
+    "end_ref": "3. implemented layer mapping",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. implemented layer mapping",
+    "char_count": 31,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "layer 1. transcript pre-normalization",
+    "end_ref": "layer 1. transcript pre-normalization",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 1. transcript pre-normalization - remove timestamps from structural dominance - weaken chapter markers - strip simple speaker prefixes - split long transcript stream into sentence-like units before regrouping",
+    "char_count": 218,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "layer 2. discourse noise suppression",
+    "end_ref": "layer 2. discourse noise suppression",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 2. discourse noise suppression - maintain explicit generic discourse term bucket - downweight generic discourse tokens in topic anchor scoring - keep suppressed discourse anchors visible instead of deleting the",
+    "char_count": 221,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "layer 3. case block aggregation",
+    "end_ref": "layer 3. case block aggregation",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 3. case block aggregation - regroup normalized units by bounded character/sentence budget - emit block previews and block-level top topic terms",
+    "char_count": 153,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "layer 4. provisional frame sketch + packet",
+    "end_ref": "layer 4. provisional frame sketch + packet",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 4. provisional frame sketch + packet - emit: - dominant topic anchors - suppressed discourse anchors - case blocks - provisional frame sketch - caution notes",
+    "char_count": 167,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "4. known limitation",
+    "end_ref": "4. known limitation",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. known limitation - current role inference is still too problem/constraint-heavy - frame sketch is visible but too coarse - topic anchors are better than raw-only in some places, but still noisy",
+    "char_count": 199,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "5. one-line lock",
+    "end_ref": "5. one-line lock",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. one-line lock - current prototype proves the middle layer can be externalized, but not yet that it is semantically mature.",
+    "char_count": 128,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  }
+]

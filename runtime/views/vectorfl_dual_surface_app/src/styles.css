@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #09090b;
+  --color-slate-900: #18181b;
+  --color-slate-800: #27272a;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-300: #d4d4d8;
+  --color-blue-500: #3b82f6;
+  --color-emerald-500: #10b981;
+  --color-rose-500: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  background: #09090b;
+  color: #f4f4f5;
+  font-family: Inter, "Geist Sans", "IBM Plex Sans KR", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 78% 10%, rgba(59, 130, 246, 0.16), transparent 28%),
+    radial-gradient(circle at 12% 18%, rgba(16, 185, 129, 0.1), transparent 30%),
+    #09090b;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.vui-card { display: block; overflow: hidden; }
+select {
+  width: 100%;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  background: #111114;
+  color: #f4f4f5;
+  padding: 10px 12px;
+}
+.vui-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.62);
+  padding: 20px;
+}
+.vui-dialog-content {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid #27272a;
+  border-radius: 20px;
+  background: #18181b;
+  color: #f4f4f5;
+  padding: 20px;
+}
+.vui-dialog-header,
+.vui-dialog-footer {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.vui-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0 0;
+}
+.vui-dialog-title {
+  margin: 0;
+}
+.vui-dialog-description {
+  margin: 0;
+  color: #a1a1aa;
+}

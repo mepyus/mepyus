@@ -1,0 +1,59 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T103344Z_b4acde63`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+## Task Purpose
+Continue from Codex turn cli_20260416T102332Z_300af10e inside the VectorFL surface.
+
+## Used Context Refs
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+- `runtime/cli_sessions/cli_20260416T102332Z_300af10e/session.json`
+- `runtime/cli_sessions/cli_20260416T102332Z_300af10e/structured_return.json`
+- `runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md`
+
+## Result Summary
+ce clay, not the active UI source.
+  - CLI remains an on-top tool-call path through VectorFL Integrated Engine, not a fourth surface or new engine surface.
+  - Migration note verdict remains `PASS_WITH_NOTE`.
+
+- important findings / diffs / outputs
+  - Reread artifacts confirm:
+    - session status: `done`
+    - exit code: `0`
+    - marks: `implementation_return`, `reread_target`, `validation_target`, `deposit_candidate`
+    - `deposit_ready: true`
+  - Migration note records successful validation at the time:
+    - `npm run build` passed in `app/ui/integrated_engine`
+    - dev server was served at `http://127.0.0.1:5173/`
+    - API proxy to `http://127.0.0.1:8421` worked
+    - read-only Codex session `cli_20260416T101531Z_ba21f03e` succeeded through the stable app path
+  - The main unresolved distinction is documentation reread: old reports saying `gemini/mock_test` as if it were the operating UI should be treated as pre-migration historical wording.
+
+- uncertainty or failure notes
+  - No files were modified.
+  - I did not revalidate whether the dev server is currently still running.
+  - I did not scan all reports for stale `gemini/mock_test` wording.
+  - Browser hand-use validation is still recorded as the remaining user-facing check.
+
+- suggested next use
+  - reread target: scan prior reports for `gemini/mock_test` references that now need historical-context reread.
+  - validation target: run one browser hand-check from `app/ui/integrated_engine` through `http://127.0.0.1:5173/`.
+  - implementation return: defer Gemini adapter, background runner, and session browsing until stable Codex path is hand-used.
+  - deposit candidate: safe to deposit with condition note: CLI remains on-top; stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` is reference clay.
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+deposit_candidate

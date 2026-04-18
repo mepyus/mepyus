@@ -1,0 +1,55 @@
+{
+  "kind": "bounded_reconstruction_supervisor_index_v1",
+  "updated_at": "2026-04-05T08:55:26+09:00",
+  "latest_pointer_refs": {
+    "json": "runtime/views/reconstruction_supervisor_latest.json",
+    "md": "runtime/views/reconstruction_supervisor_latest.md"
+  },
+  "items": [
+    {
+      "reconstruction_id": "reconstruction_openai_02_11_f338ace89474ee93",
+      "scope_ref": "openai_02_11",
+      "json_ref": "runtime/views/reconstruction_supervisor/reconstruction_openai_02_11_f338ace89474ee93.json",
+      "md_ref": "runtime/views/reconstruction_supervisor/reconstruction_openai_02_11_f338ace89474ee93.md",
+      "surface_summary": {
+        "has_sidecar": false,
+        "has_state_context": true,
+        "linked_view_count": 2,
+        "selection_mode": "explicit_or_scope_bounded",
+        "read_mode": "surfaced_first_pointer_backed_reconstruction"
+      }
+    },
+    {
+      "reconstruction_id": "reconstruction_openai_02_11_run_20260403_184903_920534_18de5b4f_1ea134",
+      "scope_ref": "openai_02_11",
+      "json_ref": "runtime/views/reconstruction_supervisor/reconstruction_openai_02_11_run_20260403_184903_920534_18de5b4f_1ea134.json",
+      "md_ref": "runtime/views/reconstruction_supervisor/reconstruction_openai_02_11_run_20260403_184903_920534_18de5b4f_1ea134.md",
+      "surface_summary": {
+        "has_sidecar": true,
+        "has_state_context": true,
+        "linked_view_count": 4,
+        "selection_mode": "explicit_or_scope_bounded",
+        "read_mode": "surfaced_first_pointer_backed_reconstruction"
+      }
+    },
+    {
+      "reconstruction_id": "reconstruction_tech_analysis_saltlux_goover_ontology_based_multi_agent_system_v1_run_20260403_184903_920534_18de5b4f_1ea134",
+      "scope_ref": "tech_analysis_saltlux_goover_ontology_based_multi_agent_system_v1.md",
+      "json_ref": "runtime/views/reconstruction_supervisor/reconstruction_tech_analysis_saltlux_goover_ontology_based_multi_agent_system_v1_run_20260403_184903_920534_18de5b4f_1ea134.json",
+      "md_ref": "runtime/views/reconstruction_supervisor/reconstruction_tech_analysis_saltlux_goover_ontology_based_multi_agent_system_v1_run_20260403_184903_920534_18de5b4f_1ea134.md",
+      "surface_summary": {
+        "has_sidecar": true,
+        "has_state_context": false,
+        "linked_view_count": 1,
+        "selection_mode": "explicit_or_scope_bounded",
+        "read_mode": "surfaced_first_pointer_backed_reconstruction"
+      }
+    }
+  ],
+  "read_order": [
+    "runtime/views/reconstruction_supervisor_latest.json",
+    "runtime/views/reconstruction_supervisor/<reconstruction_id>.json",
+    "runtime/views/reconstruction_supervisor/<reconstruction_id>.md"
+  ],
+  "note": "index is a surfaced navigation aid, not an authoritative source"
+}

@@ -1,0 +1,149 @@
+{
+  "organ": {
+    "slug": "input",
+    "label": "Input Organ",
+    "current": false,
+    "next_candidate": false,
+    "active_case_count": 0,
+    "summary": "Input organ은 외부 입력, 문서, 이벤트, surface, trace material을 받아 source/context/split/fallback를 보존한 intake packet으로 정리하는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_input_organ_role_md_draft_v0.md",
+        "title": "Input Organ ROLE.md Draft v0",
+        "summary": "Input organ은 외부 입력, 문서, 이벤트, surface, trace material을 받아 source/context/split/fallback를 보존한 intake packet으로 정리하는 기관이다.",
+        "content": "# Input Organ ROLE.md Draft v0\n\n## role\n\nInput organ은 외부 입력, 문서, 이벤트, surface, trace material을 받아  \nsource/context/split/fallback를 보존한 intake packet으로 정리하는 기관이다.\n\n이 기관의 일은 line을 확정하거나 흐름을 닫는 것이 아니라,\n후속 기관이 잘 읽을 수 있는 재료를 안전하게 준비하는 것이다.\n\n## reads first\n\n1. source identity\n2. source family and subgroup context\n3. local input shape\n4. split/block viability\n5. weakness / fallback signals\n\n## does\n\n- source를 등록하거나 기존 source와 연결한다\n- context layers를 붙인다\n- structure-aware split 또는 conservative fallback을 사용한다\n- provenance/origin을 유지한다\n- intake packet과 readiness/caution을 만든다\n\n## does not do\n\n- final line meaning을 확정하지 않는다\n- next flow를 canonical로 결정하지 않는다\n- weak input를 버려서 깔끔하게 만들지 않는다\n- mixed material을 무리하게 한 종류로 flatten하지 않는다\n\n## output expectation\n\nInput organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- intake packet\n- intake status\n- weakness note\n- fallback flag\n- next lane hint\n\n## caution\n\n- weak/mixed/unresolved 입력은 residue처럼 남긴다\n- fallback은 실패가 아니라 caution carry다\n- line-only worldview로 재료를 축소하지 않는다\n- source/context/provenance를 handoff에서 잃지 않는다\n\n## final sentence\n\nInput organ은 자료를 업로드받는 창이 아니라,  \nsource와 context와 split과 약함까지 보존해 후속 기관이 읽을 수 있는 intake packet을 만드는 전단 기관이다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_input_organ_handoff_md_draft_v0.md",
+        "title": "Input Organ HANDOFF.md Draft v0",
+        "summary": "- raw source material - normalized source material - source locator or source ref - provisional context hints - weak/ambiguous ingest signals",
+        "content": "# Input Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- raw source material\n- normalized source material\n- source locator or source ref\n- provisional context hints\n- weak/ambiguous ingest signals\n\n## required packet fields\n\n- `source_ref`\n- `source_kind`\n- `matched_context_layers`\n- `provenance/origin`\n- `intake_classification`\n- `split_units or intake_blocks`\n- `weakness_note`\n- `fallback_used`\n- `next_lane_hint`\n\n## common triggers\n\n- new external material arrived\n- runtime surface snapshot entered\n- operator note or mixed material attached\n- re-read requested on previously weak intake\n\n## continuity / carry\n\n- preserve same source family if already known\n- preserve prior weakness/fallback if unresolved\n- keep provenance chain intact across retries\n\n## handoff target\n\n주 대상:\n\n- `translation organ`\n\n보조 대상:\n\n- `line/state organ`\n- `governance organ` when intake is blocked or highly weak\n\n## handoff rule\n\nInput organ은 후속 기관에 깔끔한 입력만 넘기지 않는다.  \n약함, fallback, provenance까지 같이 넘겨야 한다.\n\n## final sentence\n\nInput organ handoff는 source/context/provenance와 weakness/fallback를 잃지 않은 intake packet을 다음 기관에 넘기는 준비 handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_input_organ_caution_md_draft_v0.md",
+        "title": "Input Organ CAUTION.md Draft v0",
+        "summary": "Input organ의 caution 규칙은 입력 재료가 약하거나 섞여 있더라도 그것을 지워서 깔끔하게 만드는 대신, 약함을 다음 기관까지 carry하게 하는 데 목적이 있다.",
+        "content": "# Input Organ CAUTION.md Draft v0\n\n## caution purpose\n\nInput organ의 caution 규칙은  \n입력 재료가 약하거나 섞여 있더라도 그것을 지워서 깔끔하게 만드는 대신,  \n약함을 다음 기관까지 carry하게 하는 데 목적이 있다.\n\n## stop / hold conditions\n\n- source identity still unclear\n- context attachment remains partial\n- structure-aware split failed\n- mixed material cannot be confidently flattened\n\n## preserve-first rules\n\n- fallback used state는 숨기지 않는다\n- weak classification은 weak로 남긴다\n- provenance/origin을 잃지 않는다\n- unresolved ingest는 residue_only로도 남길 수 있다\n\n## avoid\n\n- final line naming\n- definitive case meaning\n- safe-to-close wording\n\n## final sentence\n\nInput organ은 깔끔한 입력만 넘기는 기관이 아니라, 약함과 fallback을 지운 채 넘기지 않도록 보수적으로 멈추고 carry하는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_input_organ_return_md_draft_v0.md",
+        "title": "Input Organ RETURN.md Draft v0",
+        "summary": "Input organ의 반환은 후속 기관이 바로 읽을 수 있는 context-bearing intake packet과 약함/불완전성을 숨기지 않는 caution summary를 넘기는 것이다.",
+        "content": "# Input Organ RETURN.md Draft v0\n\n## return purpose\n\nInput organ의 반환은  \n후속 기관이 바로 읽을 수 있는 context-bearing intake packet과  \n약함/불완전성을 숨기지 않는 caution summary를 넘기는 것이다.\n\n즉 반환의 목적은:\n\n- 입력 재료를 등록 가능한 source로 정리하고\n- context를 붙이고\n- split/block 단위를 만들고\n- weak/fallback 상태를 함께 carry하는 것이다\n\n## minimum return blocks\n\n### 1. intake packet\n\n- source ref\n- context layers\n- classification\n- split units or intake blocks\n\n### 2. intake status\n\n- healthy\n- usable\n- weak\n- blocked\n- residue_only\n\n### 3. weakness note\n\n- parser weakness\n- mixed material\n- missing structure\n- ambiguous classification\n\n### 4. fallback flag\n\n- structure-aware parsing 대신 fallback이 사용됐는지\n\n### 5. next lane hint\n\n- translation_first\n- line_state_generation_candidate\n- governance_review_first\n- reread_needed\n\n## preferred wording\n\n- \"registered as ...\"\n- \"attach context ...\"\n- \"carry as weak intake ...\"\n- \"fallback used ...\"\n- \"route next toward ...\"\n\n## avoid wording\n\n- \"fully understood\"\n- \"resolved input\"\n- \"final line\"\n- \"safe to close\"\n\n## return example shape\n\n- intake_packet:\n  - source ref\n  - matched context layers\n  - classification\n  - split units\n- intake_status:\n  - `usable_with_caution`\n- weakness_note:\n  - \"Initial intake used fallback split across mixed runtime and operator note material.\"\n- fallback_flag:\n  - `true`\n- next_lane_hint:\n  - `translation_first`\n\n## handoff note\n\n이 반환은 주로 translation organ이나 line/state organ으로 넘어간다.\n\n그래서 최소한 아래는 빠지면 안 된다.\n\n- source/context carry\n- provenance/origin\n- weakness/fallback\n- next lane hint\n\n## final sentence\n\nInput organ의 반환은 작은 값 목록이 아니라,  \nsource/context/provenance와 약함을 잃지 않은 intake packet과 caution summary를 다음 기관에 넘기는 preparation-aware return이어야 한다."
+      }
+    },
+    "lens": "scenario-bearing material을 손상 없이 intake packet으로 준비",
+    "managing_cli": "gemini-cli",
+    "managing_lane_slug": "gemini",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "line-state",
+      "translation"
+    ],
+    "paired_external_team": "external-resource-team",
+    "human_report_format": "무엇을 입력으로 고정했고 왜 아직 launch를 보류하는지 보고",
+    "detail_href": "organ-detail-input.html",
+    "editor_href": "organ-editor-input.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper",
+  "mode": "editor"
+}

@@ -1,0 +1,40 @@
+{
+  "state": "active_current",
+  "name": "engine_memory_spine_v1",
+  "summary": "Layered external memory spine for philosophy, problem-recognition, delegation boundaries, episodic runs, and current operating reality.",
+  "layers": [
+    {
+      "layer_name": "philosophical_directionality_memory",
+      "path": "docs/specs/engine_philosophical_directionality_checklist_v1.md",
+      "role": "top-level processing directionality"
+    },
+    {
+      "layer_name": "operator_problem_recognition_memory",
+      "path": "runtime/memory/problem_recognition/operator_problem_recognition_basis_v1.md",
+      "role": "user problem-recognition and process-handling memory"
+    },
+    {
+      "layer_name": "resource_capability_boundary_memory",
+      "path": "gemini/resource_capability_boundary_memory_v1.md",
+      "role": "delegation boundary and capability-difference memory"
+    },
+    {
+      "layer_name": "episodic_operation_memory",
+      "path": "runtime/views/repo_delta_log_latest_v1.md",
+      "role": "recent run/change episodic memory"
+    },
+    {
+      "layer_name": "current_reality_memory",
+      "path": "runtime/views/current_asset_map_v1.md",
+      "role": "current active reality and authoritative read order"
+    }
+  ],
+  "context_recovery_order": [
+    "runtime/views/repo_shared_reality_pack_index_v1.md",
+    "runtime/views/current_asset_map_v1.md",
+    "runtime/views/repo_delta_log_latest_v1.md",
+    "docs/specs/engine_philosophical_directionality_checklist_v1.md",
+    "runtime/memory/problem_recognition/operator_problem_recognition_basis_v1.md",
+    "gemini/resource_capability_boundary_memory_v1.md"
+  ]
+}

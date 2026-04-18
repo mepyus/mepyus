@@ -1,0 +1,37 @@
+{
+  "packet_id": "packet_request_axis_reprocess_001",
+  "packet_kind": "request",
+  "source_surface": "vectorfl_surface",
+  "target_surface": "engine_surface",
+  "purpose": "axis candidate reprocess after anchor drift",
+  "directionality": "reprocess",
+  "anchor_refs": [
+    "integrated_engine_3_surface_baseline",
+    "packet_routing_anchor_v0"
+  ],
+  "related_objects": [
+    "packet_return_axis_enrichment_001",
+    "maturation_object_axis_candidate_001",
+    "axis_candidate_anchor_packet_reflux"
+  ],
+  "current_judgment_state": "anchor_drift_recheck",
+  "requested_or_next_action": "reprocess_against_anchor",
+  "validation_points": [
+    "fit against integrated_engine_3_surface_baseline",
+    "whether return material should be narrowed before user decision",
+    "whether axis-candidate open edges are reduced or merely repeated"
+  ],
+  "reflux_need": "maybe",
+  "packet_status": "created",
+  "request_type": "engine_reprocess_after_vectorfl_anchor_drift",
+  "requested_team_or_executor": "engine_surface",
+  "input_materials": [
+    "packet_return_axis_enrichment_001.return_summary",
+    "packet_return_axis_enrichment_001.open_questions",
+    "maturation_object_axis_candidate_001.open_edges",
+    "active_anchor_integrated_engine_3_surface.comparison_rule"
+  ],
+  "expected_output_shape": "reprocessed return note with anchor-fit correction and remaining drift points",
+  "external_support_need": "maybe",
+  "urgency_level": "medium"
+}

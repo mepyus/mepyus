@@ -1,0 +1,24 @@
+dry_run: package execution pipeline prepared without invoking the external CLI.
+This validates internal package vessel/context/event flow, not backend model quality.
+
+Internal material structural profile:
+- ref: references/git_search/openharness-main / directory / exists=True
+  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend
+  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts
+  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml
+  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py
+- ref: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/session.json / file / exists=True
+  summary: file: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/session.json
+- ref: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/structured_return.json / file / exists=True
+  summary: file: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/structured_return.json
+- ref: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/deposit_candidate.md / file / exists=True
+  summary: file: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/deposit_candidate.md
+- ref: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/operator_report.md / file / exists=True
+  summary: file: runtime/cli_sessions/cli_20260418T214000Z_c2841b32/operator_report.md
+
+VectorFL reread:
+- Treat source structure as lens material candidate, not final approval.
+- Read top directories/files as possible line/axis signals.
+- Return route remains reread_target unless a human promotes the next package.
+
+suggested_next_use: reread_target

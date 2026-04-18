@@ -1,0 +1,65 @@
+{
+  "slot_state": "waiting_for_actual_export",
+  "placeholder_ref": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+  "validation_passed": true,
+  "errors": [],
+  "materialized_packet_preview": {
+    "packet_id": "lwp_vectorfl_paper_weekend_live_004",
+    "packet_version": "v4",
+    "status": "materialized_from_actual_export",
+    "source_program": "paperclip",
+    "source_assignment": {
+      "assignment_id": "9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+      "company_ref": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+      "project_ref": "9e0a1304-fb2f-4815-86eb-717f5d790021",
+      "goal_ref": "b11f0b47-62f0-4814-bd1a-d06d419e1001",
+      "parent_ref": null,
+      "title": "summarize current reading residue before next routing change",
+      "description": "Review the current reading residue and write a short operator-facing note before the next routing change is attempted.",
+      "assignee_ref": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+      "priority": 1,
+      "source_status": "in_progress"
+    },
+    "line_translation": {
+      "primary_line_id": "supervision_language_as_hard_requirement",
+      "support_line_ids": [
+        "thin_overlay_before_broad_integration",
+        "cli_as_cell_manager"
+      ],
+      "corridor": "actual_export_issue_to_runtime_trace",
+      "boundary": "runtime",
+      "translation_confidence": "high",
+      "translation_reason": [
+        "Keep the same thin issue/run/result/governance overlay.",
+        "Do not redesign the seam when the real export arrives.",
+        "Replace only the source realism, then rerun the same packet path."
+      ]
+    },
+    "context_refs": {
+      "source_record_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+      "template_ref": "runtime/contracts/vectorfl_paper_actual_export_host_record_template_v0.json",
+      "actual_export_refs": [
+        "issues_row",
+        "heartbeat_runs_row",
+        "issue_comments_rows[0]",
+        "approvals_row"
+      ]
+    },
+    "execution_guidance": {
+      "objective": "Turn the first actual exported host record into the same thin line-guided packet seam.",
+      "acceptance_criteria": [
+        "actual export fills the canonical slot",
+        "same four host surfaces are preserved",
+        "packet v4 is emitted without widening scope"
+      ],
+      "promotion_gate": "actual_export_overlay_review_before_general_pilot_promotion"
+    },
+    "actual_export_summary": {
+      "issue_identifier": "VFP-17",
+      "run_id": "2f54b4a2-8570-4f0a-a3ce-010101010017",
+      "comment_count": 1,
+      "approval_status": "approved_with_caution",
+      "result_summary": "Operator-facing residue note drafted and attached back to the issue thread."
+    }
+  }
+}

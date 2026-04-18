@@ -1,0 +1,46 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T070527Z_e1d97433",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md"
+  ],
+  "prompt_payload": "You are operating as a Codex turn inside the integrated-engine VectorFL surface.\nThe CLI is an on-top tool layer, not a fourth surface.\nThe fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.\n\nCurrent work packet visible in the VectorFL surface:\n- purpose: VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.\n- task lens: summarize\n- internal search gate: thin evidence (not explicitly requested)\n- evidence bundle summary: 1 attached refs: source ref\n- evidence limitation: Evidence bundle is thin; only one ref is attached.\n- active locks: fixed 3-surface body + CLI on-top boundary (inferred)\n- evidence refs: docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md\n- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)\n- expected return shape: bounded operating summary\n- next route candidate: vectorfl_reread\n- internal search usage: thin evidence\n\nCurrent user-facing purpose:\nVectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.\n\nCurrent message to Codex:\n대답만 해줘 1004 출력.\n\nReturn format for this VectorFL CLI conversation turn:\n1. Korean operating summary\n2. Surface reading: user / VectorFL / engine\n3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold\n4. What must not be inferred\n5. Suggested next use\nDo not modify files. Do not promote, ingest, or canonicalize anything.",
+  "status": "done",
+  "started_at": "2026-04-18T07:05:27Z",
+  "ended_at": "2026-04-18T07:05:36Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "reread_target",
+    "user_assignment_candidate"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T070527Z_e1d97433/prompt.md",
+  "exit_code": 0,
+  "result_summary": "1004\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-18T09:30:42Z",
+  "mark_history": [
+    {
+      "mark": "reread_target",
+      "marked_at": "2026-04-18T09:30:40Z",
+      "source": "vectorfl_cli_host_control_panel"
+    },
+    {
+      "mark": "user_assignment_candidate",
+      "marked_at": "2026-04-18T09:30:42Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

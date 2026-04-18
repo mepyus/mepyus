@@ -1,0 +1,29 @@
+{
+  "schema_version": "vectorfl_paper_actual_export_gate_validation_latest_v0",
+  "source_slot_artifact": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+  "source_record_artifact": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+  "validation_status": "partial",
+  "passed_checks": [
+    "required_surface_present:issues_row",
+    "required_surface_present:heartbeat_runs_row",
+    "required_surface_present:issue_comments_rows",
+    "required_surface_present:approvals_row",
+    "issues_row has id/title/description/status",
+    "heartbeat_runs_row has id/status/startedAt/resultJson",
+    "issue_comments_rows has at least one body-bearing comment",
+    "approvals_row has id/status/decisionNote/payload",
+    "issue -> line-guided work packet seam is readable",
+    "heartbeat_run -> execution trace seam is readable",
+    "result/comment -> result/residue reinjection seam is readable",
+    "approvals_row -> governance gate seam is readable"
+  ],
+  "failed_checks": [],
+  "uncertain_checks": [
+    "honesty_boundary: record preserves export shape but remains local fixture data",
+    "reopen_evidence: no direct real reopen decision path in the record"
+  ],
+  "honesty_class": "local_fixture",
+  "gate_effect": "narrowed_but_still_binding",
+  "recommendation": "Use this record as the current shape-complete validation anchor, but keep hold until it is replaced by a truly actual external export and reopen/gate evidence is exercised.",
+  "validated_at": "2026-04-10T23:05:55.733169+00:00"
+}

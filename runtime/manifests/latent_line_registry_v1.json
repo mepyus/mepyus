@@ -1,0 +1,166 @@
+{
+  "registry_name": "latent_line_registry_v1",
+  "generated_at": "2026-04-01T21:00:00+09:00",
+  "purpose": "Track latent lines as first-class observation objects so future materials can be tagged before candidate promotion.",
+  "append_time_tagging_rule": {
+    "tag_before_candidate": true,
+    "tag_fields": [
+      "latent_line_name",
+      "signal_type",
+      "evidence_ref",
+      "family",
+      "mode",
+      "why_this_matches",
+      "confidence",
+      "note"
+    ],
+    "tagging_order": [
+      "preflight_or_source_read",
+      "latent_line_tag",
+      "candidate_or_boundary_evaluation"
+    ],
+    "disqualifiers": [
+      "cannot_name_the_line_without_forcing_it",
+      "only_summary_level_similarity",
+      "candidate_only_without_repeatable_lineage"
+    ]
+  },
+  "lines": [
+    {
+      "latent_line_name": "raw_return_preservation",
+      "source_family": "vectorfl_internal",
+      "definition": "raw / first-pass / report / provenance remain separated and raw recovery remains possible.",
+      "our_space_connection": "pre_read_eye",
+      "status": "alive",
+      "strength": "strong",
+      "strongest_sources": [
+        "docs/reports/latent_line_watchpoints_v1.md",
+        "docs/reports/deep_internal_reread_long_arc_map_v1.md",
+        "docs/reports/process_reread_map_v1.md"
+      ],
+      "evidence_refs": [
+        "runtime/preflight_last_decision.json",
+        "runtime/manifests/pipeline_candidate_scope_summary.json",
+        "runtime/breadcrumbs.jsonl"
+      ],
+      "next_watch": "Does new material preserve a raw anchor and a reverse path after report/trace?"
+    },
+    {
+      "latent_line_name": "transition_over_surface",
+      "source_family": "vectorfl_internal",
+      "definition": "Pages, docs, and code are read as transition hubs / operation hubs / role hubs rather than static surfaces.",
+      "our_space_connection": "transition_over_surface",
+      "status": "alive",
+      "strength": "medium",
+      "strongest_sources": [
+        "docs/reports/latent_line_watchpoints_v1.md",
+        "docs/reports/deep_internal_reread_long_arc_map_v1.md",
+        "docs/reports/process_reread_map_v1.md"
+      ],
+      "evidence_refs": [
+        "references/WashTank/src/officeout.jsx",
+        "docs/reports/officeout_ontology_reference_reading_v1.md"
+      ],
+      "next_watch": "Does the material foreground transition / role / hub language before static surface descriptions?"
+    },
+    {
+      "latent_line_name": "input_to_reading_organ",
+      "source_family": "vectorfl_internal",
+      "definition": "Input / record structures become reusable reading organs for later judgment, candidate watching, and boundary tracking.",
+      "our_space_connection": "input_to_reading_organ",
+      "status": "alive",
+      "strength": "medium",
+      "strongest_sources": [
+        "docs/reports/latent_line_watchpoints_v1.md",
+        "docs/reports/process_reread_map_v1.md",
+        "docs/reports/deep_internal_reread_long_arc_map_v1.md"
+      ],
+      "evidence_refs": [
+        "runtime/manifests/pipeline_observation_registry.jsonl",
+        "runtime/manifests/pipeline_candidate_scope_summary.json",
+        "runtime/manifests/second_candidate_watch_rules.json"
+      ],
+      "next_watch": "Does the structure get reused for judgment / watch / boundary rather than only stored?"
+    },
+    {
+      "latent_line_name": "pre_read_eye",
+      "source_family": "vectorfl_internal",
+      "definition": "Mode / phase / drift are set before reading and observation begins.",
+      "our_space_connection": "pre_read_eye",
+      "status": "alive",
+      "strength": "strong",
+      "strongest_sources": [
+        "docs/reports/latent_line_watchpoints_v1.md",
+        "docs/reports/process_reread_map_v1.md",
+        "docs/reports/deep_internal_reread_long_arc_map_v1.md"
+      ],
+      "evidence_refs": [
+        "control/space_kernel.json",
+        "control/turn_router.json",
+        "control/drift_guard.json",
+        "runtime/preflight_last_decision.json"
+      ],
+      "next_watch": "Does the material force a mode-first or gate-first read before any interpretation?"
+    },
+    {
+      "latent_line_name": "alignment_before_autonomy",
+      "source_family": "claude_code_bridge",
+      "definition": "Control and alignment come before full autonomy; plan / verify / gate precede execution.",
+      "our_space_connection": "pre_read_eye",
+      "status": "alive",
+      "strength": "strong",
+      "strongest_sources": [
+        "docs/reports/claude_code_latent_lines_bridge_v1.md",
+        "docs/reports/youtube_03_29_claude_code_latent_lines_reread_v1.md",
+        "docs/reports/youtube_03_29_and_claude_code_common_latent_lines_comparison_v1.md"
+      ],
+      "evidence_refs": [
+        "inputs/external_cases/youtube_03_29.md",
+        "inputs/external_cases/claude_code.txt",
+        "runtime/receipts/doc_youtube_03_29_operation_receipt.md",
+        "runtime/receipts/doc_claude_code_operation_receipt.md"
+      ],
+      "next_watch": "Does a new source place plan / verify / gate ahead of autonomous execution?"
+    },
+    {
+      "latent_line_name": "harness_over_model",
+      "source_family": "claude_code_bridge",
+      "definition": "The deterministic harness / operating layer is more important than the model itself.",
+      "our_space_connection": "pre_read_eye / transition_over_surface",
+      "status": "alive",
+      "strength": "strong",
+      "strongest_sources": [
+        "docs/reports/claude_code_latent_lines_bridge_v1.md",
+        "docs/reports/youtube_03_29_claude_code_latent_lines_reread_v1.md",
+        "docs/reports/youtube_03_29_and_claude_code_common_latent_lines_comparison_v1.md"
+      ],
+      "evidence_refs": [
+        "inputs/external_cases/claude_code.txt",
+        "inputs/external_cases/youtube_03_29.md",
+        "runtime/receipts/doc_claude_code_operation_receipt.md",
+        "runtime/receipts/doc_youtube_03_29_operation_receipt.md"
+      ],
+      "next_watch": "Does the material foreground harness / loop / evaluator / mode before model talk?"
+    },
+    {
+      "latent_line_name": "work_absorption_harness",
+      "source_family": "claude_code_bridge",
+      "definition": "Work gets absorbed into commands / skills / triggers / shared config so repeated labor becomes reusable machinery.",
+      "our_space_connection": "input_to_reading_organ",
+      "status": "alive",
+      "strength": "medium",
+      "strongest_sources": [
+        "docs/reports/claude_code_latent_lines_bridge_v1.md",
+        "docs/reports/youtube_03_29_claude_code_latent_lines_reread_v1.md",
+        "docs/reports/youtube_03_29_and_claude_code_common_latent_lines_comparison_v1.md"
+      ],
+      "evidence_refs": [
+        "inputs/external_cases/claude_code.txt",
+        "inputs/external_cases/youtube_03_29.md",
+        "runtime/receipts/doc_claude_code_operation_receipt.md",
+        "runtime/receipts/doc_youtube_03_29_operation_receipt.md"
+      ],
+      "next_watch": "Does the material repeatedly convert ad hoc work into reusable command / skill / trigger machinery?"
+    }
+  ]
+}

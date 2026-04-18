@@ -1,0 +1,64 @@
+- result summary
+  - 첨부된 내부 문서 `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md` 기준으로는 `app/ui/integrated_engine`가 현재 Integrated Engine UI의 안정 소스 폴더로 승격된 상태입니다.
+  - `gemini/mock_test`는 더 이상 실제 운영 UI의 기준 위치가 아니라, Gemini 제안/참고용 재료로 남겨진 것으로 읽어야 합니다.
+  - 이번 실행은 내부 문서 생성/검증 목적도 있지만, VectorFL integrated-engine 화면에서 Codex CLI 반환이 어떻게 보이는지 확인하는 목적도 포함됩니다.
+  - 파일 수정, 승격, ingest, canonicalization은 수행하지 않았습니다.
+
+- important findings / diffs / outputs
+  - 판정: `PASS_WITH_NOTE`
+  - 현재 UI 기준 위치: `app/ui/integrated_engine`
+  - 과거/참고 위치: `gemini/mock_test`
+  - 고정 구조:
+    - user = 목적 / 배정 / 결정
+    - VectorFL = 해석 / reread / mediation
+    - engine = 처리 / 반환 / deposit material
+    - CLI는 네 번째 surface가 아니라 engine 위의 on-top tool layer
+  - 문서상 검증된 내용:
+    - `npm run build` passed in `app/ui/integrated_engine`
+    - dev server: `http://127.0.0.1:5173/`
+    - HTML title: `VectorFL Integrated Engine`
+    - stable app proxy to `http://127.0.0.1:8421` works
+    - read-only Codex session succeeded through stable app proxy path
+    - same session marked as `validation_target` succeeded
+  - 핵심 watchpoint:
+    - `gemini/mock_test`에서 후속 기능 작업을 계속하지 말 것
+    - React/Vite source를 `runtime`으로 옮기지 말 것
+    - 이 migration을 package 2나 새 surface로 해석하지 말 것
+    - stable Codex path를 손으로 써보기 전 Gemini adapter/background runner/session browsing으로 확장하지 말 것
+
+- Surface reading: user / VectorFL / engine
+  - user:
+    - 현재 목적을 부여하고, “외부 렌즈 재료 읽기”를 요청함.
+    - OpenCode / Claude Code 화면 선례는 참고하되, 아직 자동 확장하지 않는다는 판단을 유지함.
+    - 이번 실행이 화면 표시 확인용이기도 하다고 명시함.
+  - VectorFL:
+    - 단일 첨부 문서를 근거로 reread/mediation을 수행하는 위치.
+    - thin evidence 상태를 유지해야 하며, 부족한 근거를 임의로 보강하지 않아야 함.
+    - CLI 반환을 화면에서 읽고 검증 가능한 bounded summary로 정리하는 역할.
+  - engine:
+    - 문서 내용을 처리해 compact return material을 생성하는 위치.
+    - 현재 Codex CLI는 engine 위의 도구 계층으로 관찰되어야 하며, 독립 surface로 승격되면 안 됨.
+    - deposit 가능성은 있지만, 현재 turn에서는 deposit/promotion/ingestion 금지.
+
+- Route suggestion
+  - reread_target: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+  - validation_target: VectorFL 화면에서 이 CLI 반환이 의도한 구조로 보이는지 확인
+  - implementation_return: 해당 없음
+  - deposit_candidate: 가능하지만 아직 hold 권장
+  - hold: 외부 렌즈(OpenCode / Claude Code) 비교를 자동 확장 재료로 삼는 것은 보류
+
+- What must not be inferred
+  - OpenCode / Claude Code 화면 선례를 현재 UI 변경 요구로 해석하면 안 됨.
+  - `gemini/mock_test`를 현재 운영 UI의 기준 소스로 되돌려 읽으면 안 됨.
+  - CLI를 user / VectorFL / engine 외의 네 번째 surface로 해석하면 안 됨.
+  - 이 문서 하나만으로 Gemini adapter, background runner, session browsing 구현을 시작하면 안 됨.
+  - thin evidence 상태에서 “외부 렌즈 검토 완료” 또는 “자동 확장 승인”으로 승격하면 안 됨.
+
+- uncertainty or failure notes
+  - 근거는 단일 내부 문서 1개뿐입니다.
+  - 현재 실행에서는 실제 브라우저 화면, OpenCode 화면, Claude Code 화면을 직접 검증하지 않았습니다.
+  - 문서에 적힌 dev server나 proxy 상태가 현재도 살아 있는지는 이 turn에서 재검증하지 않았습니다.
+
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+  - suggested next use: `validation_target`
+  - 구체적으로는 VectorFL integrated-engine 화면에서 이 반환이 user / VectorFL / engine 분리, CLI on-top boundary, no promotion/no ingestion guard를 충분히 드러내는지 확인하는 용도로 쓰는 것이 적절합니다.

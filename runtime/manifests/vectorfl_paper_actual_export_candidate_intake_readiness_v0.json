@@ -1,0 +1,146 @@
+{
+  "schema_version": "vectorfl_paper_actual_export_candidate_intake_readiness_v0",
+  "created_at": "2026-04-11T09:20:00+09:00",
+  "purpose": "Prepare a bounded intake path for the first true host/export candidate without replacing the current actual_export slot, promoting any reference candidate, or declaring actual_export_only gate close.",
+  "current_slot_guard": {
+    "current_slot_ref": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+    "current_slot_state_must_remain": "waiting_for_actual_export",
+    "current_validation_anchor_must_remain": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+    "slot_replacement_in_this_step": "forbidden",
+    "candidate_promotion_in_this_step": "forbidden",
+    "gate_close_in_this_step": "forbidden"
+  },
+  "canonical_candidate_intake_path": {
+    "incoming_candidate_record_ref": "runtime/manifests/vectorfl_paper_actual_export_candidate_inbox_latest_v0.json",
+    "status": "reserved_not_created",
+    "rule": "Place exactly one future true host/export candidate record here for dry-run validation. Do not wire it into the current slot until a separate supervisor review explicitly approves slot replacement testing.",
+    "why_separate": "The inbox is a candidate intake path, not the current SSOT. Validator dry-runs should use --override-record against this path while preserving the existing current slot."
+  },
+  "candidate_contract": {
+    "candidate_kind": "true_host_export_candidate",
+    "must_not_be": [
+      "reference-derived candidate",
+      "local fixture",
+      "synthetic reconstruction without raw export provenance",
+      "paperclip/opencode/ralph/autoresearch comparison record",
+      "manually normalized record without transformation history"
+    ],
+    "required_envelope_fields": {
+      "candidate_id": "Stable id for this candidate intake attempt.",
+      "candidate_kind": "Must be true_host_export_candidate.",
+      "provenance": {
+        "source_system": "Host system or product that emitted the export.",
+        "export_origin": "Concrete export origin such as workspace/project/repository/run source.",
+        "export_method": "How the export was captured, for example CLI export, API export, downloaded JSON, or host-generated archive.",
+        "raw_export_ref": "Path or durable reference to the raw captured export before VectorFL normalization.",
+        "captured_by": "Actor or adapter that captured the export.",
+        "captured_at": "Timestamp from capture time, preferably source timestamp plus local receipt timestamp.",
+        "transformation_history": "List of transformations from raw export into the four-surface candidate shape."
+      },
+      "capture_context": {
+        "host_runtime_relation": "How the host/runtime that emitted the record relates to the VectorFL Paper pilot.",
+        "export_scope": "What subset of host data was exported and what was intentionally omitted.",
+        "redaction_note": "Whether any field was redacted and whether redaction affects validator judgment.",
+        "operator_note": "Short human-readable note about why this candidate is being tested."
+      },
+      "honesty_declaration": {
+        "not_reference_derived": "Must be true.",
+        "not_local_fixture": "Must be true.",
+        "raw_export_available": "Must be true or the candidate remains hold.",
+        "synthetic_fields": "List any synthetic or inferred fields; empty list is preferred.",
+        "normalization_boundary": "Explain exactly what was normalized and what host grammar was preserved."
+      }
+    },
+    "required_record_surfaces": [
+      "issues_row",
+      "heartbeat_runs_row",
+      "issue_comments_rows",
+      "approvals_row"
+    ],
+    "minimum_surface_fields": {
+      "issues_row": [
+        "id",
+        "title",
+        "description",
+        "status"
+      ],
+      "heartbeat_runs_row": [
+        "id",
+        "status",
+        "startedAt",
+        "resultJson"
+      ],
+      "issue_comments_rows": [
+        "at least one body-bearing comment"
+      ],
+      "approvals_row": [
+        "id",
+        "status",
+        "decisionNote",
+        "payload"
+      ]
+    }
+  },
+  "validation_path": {
+    "preserve_override_record_flow": true,
+    "dry_run_command": "python3 scripts/run_vectorfl_paper_actual_export_gate_validator.py --override-record runtime/manifests/vectorfl_paper_actual_export_candidate_inbox_latest_v0.json",
+    "dry_run_output_ref": "runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json",
+    "comparison_followup_ref": "runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json",
+    "current_slot_update_allowed": false,
+    "expected_validator_reading": "A true host/export candidate may become candidate_for_reopen_validation or candidate_for_gate_close, but the dry-run result alone does not replace the current slot."
+  },
+  "supervisor_acceptance_rules": {
+    "classify_as_reopen_candidate_when": [
+      "all four required surfaces are present",
+      "minimum surface fields validate",
+      "issue/run/result/governance mapping seams are readable",
+      "honesty declaration separates the candidate from reference-derived or local fixture material",
+      "raw export provenance and capture timestamp are present",
+      "the record provides enough result or decision material to exercise a real reopen reading"
+    ],
+    "keep_hold_when": [
+      "raw export reference is missing",
+      "candidate is reference-derived or fixture-like",
+      "any required surface is missing",
+      "normalization hides the host/runtime relation",
+      "redaction prevents shape or mapping judgment",
+      "validator result is fail or no_change",
+      "validator result is partial but reopen evidence remains uncertain"
+    ],
+    "slot_replacement_reviewable_only_when": [
+      "candidate was validated by override-record without mutating current slot",
+      "honesty_class is actual_external_like",
+      "gate_effect is candidate_for_gate_close or a supervisor explicitly accepts candidate_for_reopen_validation as a pre-slot-replacement review input",
+      "raw export provenance, capture context, and transformation history are complete",
+      "a separate supervisor decision manifest authorizes a slot replacement test"
+    ],
+    "does_not_count_as_gate_close": [
+      "reference candidate passes shape",
+      "local fixture passes shape",
+      "dry-run produces candidate_for_reopen_validation",
+      "comparison manifest says validator is stable enough for merge testing",
+      "legacy surface can display the comparison layer",
+      "candidate inbox file exists without raw export provenance"
+    ],
+    "allowed_decision_outcomes": [
+      "hold_current_ssot",
+      "reopen_candidate_validation",
+      "request_candidate_provenance_fix",
+      "approve_slot_replacement_test_later"
+    ],
+    "forbidden_decision_outcomes": [
+      "replace_current_slot_now",
+      "promote_reference_candidate",
+      "declare_actual_export_only_gate_closed",
+      "merge_legacy_paper_surface",
+      "redesign_supervisor_surface"
+    ]
+  },
+  "closeout_note": {
+    "what_the_intake_contract_is": "A single true host/export candidate envelope plus the four required host surfaces and explicit provenance/honesty declarations.",
+    "where_actual_candidates_should_be_placed": "runtime/manifests/vectorfl_paper_actual_export_candidate_inbox_latest_v0.json, reserved as a future candidate inbox and kept separate from the current actual export slot.",
+    "how_candidates_are_validated": "Run the existing validator with --override-record against the inbox path, then read the dry-run result and comparison manifest before any supervisor decision.",
+    "what_decision_outcomes_are_allowed": "hold_current_ssot, reopen_candidate_validation, request_candidate_provenance_fix, or approve_slot_replacement_test_later.",
+    "what_remains_forbidden": "No current slot replacement, no reference candidate promotion, no gate close declaration, no proper surface modification, no UI layer, and no full legacy merge."
+  }
+}

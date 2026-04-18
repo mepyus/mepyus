@@ -1,0 +1,213 @@
+{
+  "runner": "transcript_aware_regroup_v0",
+  "input_path": "inputs/external_cases/builder_choi_interview.txt",
+  "preprocessed_path": "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_20260402T220745Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+    "decision": "preprocess_required",
+    "decision_reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+    "format_profile": "raw_transcript_like",
+    "should_preprocess": true,
+    "preprocess_kind": "transcript_aware_regroup",
+    "metrics": {
+      "line_count": 358,
+      "dust_count": 574,
+      "timestamp_line_count": 1,
+      "timestamp_density": 0.003,
+      "timestamp_token_count": 1,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 358,
+      "transcript_marker_density": 1.0,
+      "short_line_count": 3,
+      "short_line_ratio": 0.008,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 167,
+      "short_dust_ratio": 0.291,
+      "timestamp_dust_count": 1,
+      "timestamp_dust_ratio": 0.002,
+      "transcript_marker_dust_count": 292,
+      "transcript_marker_dust_ratio": 0.509,
+      "avg_chars_per_dust": 38.61,
+      "top_scene_counts": {
+        "review": 546,
+        "evidence": 12,
+        "impl": 9,
+        "spec": 7
+      },
+      "top_flow_counts": {
+        "compare": 538,
+        "run": 35,
+        "fix": 1
+      },
+      "sample_short_labels": [
+        "챕터 1: 오프닝 & 오늘 에피소…",
+        "왜 클루드 코드가 압도적일 수밖에…",
+        "가져올 페이지를 0:077초하나 …",
+        "그를 참고해서 처리하세요라고 하면…",
+        "그러면은 오 그냥 이게이 상태로 …",
+        "0:1616초굉장하네요.",
+        "속도가 장난이 아닐 것 같아요.",
+        "0:1818초여기 프롬프트 중에 …",
+        "아까 프롬프트로 요청하면은 125…",
+        "지금 0:2626초거의 100개 …"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "preprocess_required",
+        "reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.003,
+        "timestamp_dust_ratio": 0.002,
+        "transcript_marker_dust_ratio": 0.509,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.291,
+        "avg_chars_per_dust": 38.61,
+        "sample_short_labels": [
+          "챕터 1: 오프닝 & 오늘 에피소…",
+          "왜 클루드 코드가 압도적일 수밖에…",
+          "가져올 페이지를 0:077초하나 …",
+          "그를 참고해서 처리하세요라고 하면…",
+          "그러면은 오 그냥 이게이 상태로 …",
+          "0:1616초굉장하네요.",
+          "속도가 장난이 아닐 것 같아요.",
+          "0:1818초여기 프롬프트 중에 …",
+          "아까 프롬프트로 요청하면은 125…",
+          "지금 0:2626초거의 100개 …"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_20260402T220745Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 131,
+      "dust_count": 489,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 1,
+      "short_line_ratio": 0.008,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 153,
+      "short_dust_ratio": 0.313,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 40.22,
+      "top_scene_counts": {
+        "review": 461,
+        "evidence": 12,
+        "impl": 9,
+        "spec": 7
+      },
+      "top_flow_counts": {
+        "compare": 453,
+        "run": 35,
+        "fix": 1
+      },
+      "sample_short_labels": [
+        "오프닝 & 오늘 에피소드 프리뷰 …",
+        "왜 클루드 코드가 압도적일 수밖에…",
+        "가져올 페이지를 하나 잡고 이렇게…",
+        "그를 참고해서 처리하세요라고 하면…",
+        "그러면은 오 그냥 이게이 상태로 …",
+        "굉장하네요.",
+        "속도가 장난이 아닐 것 같아요.",
+        "여기 프롬프트 중에 하나를 또 보…",
+        "아까 프롬프트로 요청하면은 125…",
+        "지금 거의 100개 에이전트를 동…"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.313,
+        "avg_chars_per_dust": 40.22,
+        "sample_short_labels": [
+          "오프닝 & 오늘 에피소드 프리뷰 …",
+          "왜 클루드 코드가 압도적일 수밖에…",
+          "가져올 페이지를 하나 잡고 이렇게…",
+          "그를 참고해서 처리하세요라고 하면…",
+          "그러면은 오 그냥 이게이 상태로 …",
+          "굉장하네요.",
+          "속도가 장난이 아닐 것 같아요.",
+          "여기 프롬프트 중에 하나를 또 보…",
+          "아까 프롬프트로 요청하면은 125…",
+          "지금 거의 100개 에이전트를 동…"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "preprocess_summary": {
+    "original_line_count": 358,
+    "normalized_sentence_count": 651,
+    "regrouped_chunk_count": 131,
+    "dropped_interjection_count": 85,
+    "sample_chunks": [
+      "오프닝 & 오늘 에피소드 프리뷰 요즘 클로드 코드 활용해서 프로젝트를 거의 다 하고 있거든요. 왜 클루드 코드가 압도적일 수밖에 없는지 말씀드리고 싶어요. 가져올 페이지를 하나 잡고 이렇게만 명령하면 되거든요.",
+      "그를 참고해서 처리하세요라고 하면 돼요. 그러면은 오 그냥 이게이 상태로 만들어집니다. 굉장하네요. 속도가 장난이 아닐 것 같아요. 여기 프롬프트 중에 하나를 또 보여 드리면은 한 200개씩 후출할 때 있거든요.",
+      "아까 프롬프트로 요청하면은 125개 한 번에 다 구현해요. 지금 거의 100개 에이전트를 동시에 돌리고 있다라는 것은 정말 놀랄 놀자인 거 같습니다. 구독자 여러분 안녕하세요. 반갑습니다.",
+      "오늘 ‘커서 마피아’ 최수민 님 등장 하우 아이 팟캐스트에는 바이브코딩계 레전드 커서 마피아 최수민 님을 모셨습니다. 최수민 님. 님 어 안녕하세요.",
+      "반갑습니다. 아네 안녕하세요. 그 고창하게 소개해 주셔서 감사합니다.네 커서마피아로 활동 중인 최수민입니다.네 반갑습니다.네 레전드를 모셔서 너무너무 영광이고 그리고 오늘 같은 경우에는 최근에 그 커서 마피아 님이 진행하고 있는 프로젝트나 뭐 최근에 어떻게 AI 활용하고 계신지에 대해서 우리 간단하게 한번 이야기 나눠 봤으면 좋겠고 오늘 어떤 주제를 한번 나누실 예정이신지 그냥 간단하게 말씀 주시면 감사할 것 같아요."
+    ]
+  },
+  "checkpoints": {
+    "preprocess_objective": "move from subtitle-like shards toward bounded meaning chunks",
+    "verification_points": [
+      "timestamp markers should stop dominating chunk starts",
+      "short response tails should be absorbed or dropped when they carry no local claim",
+      "chunk count should be materially lower than raw dust shard count",
+      "result should still remain traceable to source text family"
+    ]
+  }
+}

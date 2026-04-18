@@ -1,0 +1,170 @@
+{
+  "created_at": "2026-03-28T10:45:45.604712Z",
+  "input_asset": "inputs/external_cases/enterprise.txt",
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/enterprise.txt",
+    "supporting_first_pass_patterns": [
+      "top_objects",
+      "top_layers",
+      "top_relations",
+      "question_inducing_candidates",
+      "summary_stage_deprioritization_candidates"
+    ],
+    "second_order_reading_type": "multi_pass_interpretation",
+    "rereading_mode": "same_asset_multi_layer_rereading",
+    "scope_local_page_comparison": "local_page_comparison",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "context_unit_reconstruction_from_pass_difference",
+    "candidate_status": "collect_only",
+    "hold_reason": "context units are still observed as rereading outputs, not generalized units",
+    "evidence_pointers": {
+      "purpose_json": "app/work/dialogue_loop_test/generated/enterprise_engine_purpose_validation_v1_20260328.json",
+      "question_json": "app/work/dialogue_loop_test/generated/question_inducing_block_enterprise_validation_v1_20260328.json"
+    },
+    "pointer_stabilization": "nearest_top_window"
+  },
+  "context_units": [
+    {
+      "unit_id": "agent_interface_transition_unit",
+      "candidate_status": "hold_candidate",
+      "domain_specific_suspicion": "high_ai_agent_product_transition",
+      "reusable_attitude_hint": "transition_plus_question_seed_pairing",
+      "source_windows": [
+        "75_80",
+        "80_87",
+        "84_91",
+        "84_89"
+      ],
+      "why_more_alive_than_paragraph": "OpenClaw, 앱 대체/대리 조작, bundle-unbundle가 따로가 아니라 하나의 앱 구조 재편 맥락으로 읽히기 때문",
+      "center_objects": [
+        "에이전트 애플리케이션",
+        "전략/방향성",
+        "구현/자동화"
+      ],
+      "center_layers": [
+        "구조/연결 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "contrast_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "page_role": "pivot",
+      "question_seed": [
+        "기존 앱의 moat는 어디로 이동하는가?",
+        "agent layer는 workflow의 기본 인터페이스가 되는가?"
+      ],
+      "residue_interference": [
+        "speaker_or_source_residue",
+        "discourse_connective_residue"
+      ],
+      "present_window_refs": [
+        "267_272",
+        "130_132"
+      ],
+      "pointer_support_source": "purpose_top_windows",
+      "grounding_status": "fallback_grounded",
+      "grounding_note": "직접 candidate ref는 없지만 object-overlap 기반 fallback window로 grounding 보조",
+      "evidence_pointers": [
+        "267_272",
+        "130_132"
+      ]
+    },
+    {
+      "unit_id": "future_of_work_supervisor_unit",
+      "candidate_status": "hold_candidate",
+      "domain_specific_suspicion": "medium_ai_future_of_work",
+      "reusable_attitude_hint": "role_shift_plus_question_seed_pairing",
+      "source_windows": [
+        "20_27",
+        "21_26"
+      ],
+      "why_more_alive_than_paragraph": "GTC와 일의 미래, 생산성/코딩, 감독자형 노동이 하나의 역할 전환 맥락으로 묶이기 때문",
+      "center_objects": [
+        "일의 미래",
+        "생산성/코딩",
+        "에이전트 애플리케이션"
+      ],
+      "center_layers": [
+        "설명/해석 층",
+        "전략/방향 층",
+        "질문 유도 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "page_role": "question_seed",
+      "question_seed": [
+        "사람의 일은 수행보다 감독과 설계로 이동하는가?",
+        "생산성 도구 변화가 역할 구조를 어떻게 바꾸는가?"
+      ],
+      "residue_interference": [
+        "discourse_connective_residue",
+        "speaker_or_source_residue"
+      ],
+      "present_window_refs": [
+        "267_272",
+        "277_279"
+      ],
+      "pointer_support_source": "purpose_top_windows",
+      "grounding_status": "fallback_grounded",
+      "grounding_note": "직접 candidate ref는 없지만 object-overlap 기반 fallback window로 grounding 보조",
+      "evidence_pointers": [
+        "267_272",
+        "277_279"
+      ]
+    },
+    {
+      "unit_id": "model_eval_shift_unit",
+      "candidate_status": "hold_candidate",
+      "domain_specific_suspicion": "high_ai_model_eval_transition",
+      "reusable_attitude_hint": "compression_plus_specification_shift_pairing",
+      "source_windows": [
+        "32_39"
+      ],
+      "why_more_alive_than_paragraph": "AI 산업 스냅샷과 RLVR/CUA가 미래 담론을 평가/환경/검증 축으로 내리는 하나의 맥락이기 때문",
+      "center_objects": [
+        "AI의 미래",
+        "모델 work",
+        "에이전트 애플리케이션"
+      ],
+      "center_layers": [
+        "검증/근거 층",
+        "구조/연결 층",
+        "전략/방향 층"
+      ],
+      "relation_movement": [
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "page_role": "compression_node",
+      "question_seed": [
+        "모델 경쟁의 승부처는 evaluation environment로 이동하는가?",
+        "미래 담론은 어떤 검증 바닥 위에서만 의미를 갖는가?"
+      ],
+      "residue_interference": [
+        "discourse_connective_residue",
+        "conversational_filler_residue"
+      ],
+      "present_window_refs": [
+        "267_272",
+        "277_279"
+      ],
+      "pointer_support_source": "purpose_top_windows",
+      "grounding_status": "fallback_grounded",
+      "grounding_note": "직접 candidate ref는 없지만 object-overlap 기반 fallback window로 grounding 보조",
+      "evidence_pointers": [
+        "267_272",
+        "277_279"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T095505Z_30757cb3",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "gemini/mock_test",
+  "purpose_text": "Gemini mock main surface proxy validation: summarize package 1.1 closeout note.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context and return two short bullets: usable path and remaining deferral. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T09:55:05Z",
+  "ended_at": "2026-04-16T09:55:18Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T095505Z_30757cb3/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T095505Z_30757cb3/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T095505Z_30757cb3/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T095505Z_30757cb3/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T095505Z_30757cb3/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Usable path: real read-only Codex path through the CLI session API used by the VectorFL panel; latest return is readable from the VectorFL page via `cli_host_control.latest_readable_return`.\n  - Remaining deferral: browser-click UI automation, background runner/polling, interrupt hardening, Gemini adapters, session explorer/log viewer, structured ingestion, and promotion automation remain deferred.\n\n- important findings / diffs / outputs\n  - `PASS_WITH_NOTE`: validation used the same HTTP endpoint wired to the panel, not an automated browser click.\n  - Generated artifacts included `stdout.log`, `stderr.log`, `structured_return.json`, and `deposit_candidate.md`; mark action worked with `validation_target`.\n\n- uncertainty or failure notes\n  - No file modifications made.\n  - Main caveat is that UI wiring was validated through endpoint execution rather than browser-click automation.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T09:55:24Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T09:55:24Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "trigger_panel": "engine_surface/result_return_panel",
+  "trigger_action": "create_return_packet",
+  "source_object_or_packet": "packet_return_axis_enrichment_001",
+  "emitted_packet_or_state_change": "return packet created and routed to VectorFL validation",
+  "target_surface": "vectorfl_surface",
+  "target_panel": "validation_mediation_panel",
+  "expected_effect": "Start checking relevance, result confidence, open questions, and suggested next route before user decision or reflux.",
+  "record_written": "return generation log"
+}

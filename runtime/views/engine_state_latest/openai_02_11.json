@@ -1,0 +1,49 @@
+{
+  "asset_id": "openai_02_11",
+  "asset_name": "openai_02_11",
+  "carryover_risk": "medium",
+  "comparison_memory_reason": [
+    "same_fallback_dominance",
+    "similar_grounding_failure_surface"
+  ],
+  "emergence_status": "low_emergence",
+  "evidence_refs": [
+    {
+      "note": null,
+      "ref_id": "docs/reports/openai_02_11_process_trace_validation_v1.md",
+      "ref_kind": "report"
+    },
+    {
+      "note": null,
+      "ref_id": "docs/reports/openai_02_11_next_loop_gate_validation_v1.md",
+      "ref_kind": "report"
+    },
+    {
+      "note": null,
+      "ref_id": "docs/reports/process_console_state_wiring_v1_report.md",
+      "ref_kind": "report"
+    }
+  ],
+  "experimental_namespace": {
+    "context_unit_candidates_ref": "app/work/dialogue_loop_test/generated/openai_02_11_context_unit_candidates_v1_20260328.json",
+    "question_inducing_candidate_count": 0,
+    "runtime_update_context": {
+      "evidence_summary": "Process console wiring reaffirmed latest-state readability for openai_02_11.",
+      "evidence_type": "process_console_runtime_evidence"
+    }
+  },
+  "gate_blocker_summary": [
+    "question_inducing_candidate_absence",
+    "fallback_grounding_dominance",
+    "weak_role_like_only",
+    "pivot_compression_non_recurrence"
+  ],
+  "grounding_status": "fallback_grounded",
+  "maturation_state": "hold",
+  "packet_texture": "structured_open_low_emergence",
+  "schema_version": "engine_state_schema_v1",
+  "source_type": "structured_markdown_asset",
+  "state_notes": "Trace is stable and reusable attitudes survive, but emergence stays low and grounding remains fallback-dominant.",
+  "traceability_status": "traceable",
+  "updated_at": "2026-03-28T13:53:26.990821+00:00"
+}

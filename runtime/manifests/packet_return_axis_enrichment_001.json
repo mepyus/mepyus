@@ -1,0 +1,38 @@
+{
+  "packet_id": "packet_return_axis_enrichment_001",
+  "packet_kind": "return",
+  "source_surface": "engine_surface",
+  "target_surface": "vectorfl_surface",
+  "purpose": "axis enrichment result review",
+  "directionality": "enrichment",
+  "anchor_refs": [
+    "integrated_engine_3_surface_baseline"
+  ],
+  "related_objects": [
+    "packet_request_axis_enrichment_001",
+    "axis_candidate_anchor_packet_reflux",
+    "line_candidate_user_vector_engine_loop"
+  ],
+  "current_judgment_state": "under_review",
+  "requested_or_next_action": "validate_and_decide",
+  "validation_points": [
+    "relevance to axis candidate",
+    "duplicate risk",
+    "reprocess value",
+    "reflux value"
+  ],
+  "reflux_need": "maybe",
+  "packet_status": "returned",
+  "return_summary": "Engine-side review found enough relation between the axis candidate and packet/reflux flow to justify VectorFL validation and possible reflux preservation.",
+  "produced_artifacts": [
+    "axis_enrichment_evidence_note_001",
+    "axis_candidate_reprocess_recommendation_001"
+  ],
+  "result_confidence": "medium",
+  "open_questions": [
+    "whether external evidence is strong enough for later axis promotion",
+    "whether engine reprocessing should run before user-facing return"
+  ],
+  "needs_followup": "yes",
+  "suggested_next_route": "vectorfl_validation"
+}

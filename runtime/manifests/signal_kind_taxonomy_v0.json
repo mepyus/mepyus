@@ -1,0 +1,123 @@
+{
+  "schema_version": "signal_kind_taxonomy_v0",
+  "updated_at": "2026-04-06T13:35:00+09:00",
+  "categories": [
+    {
+      "category_id": "entry_signal",
+      "description": "signals for raw input entry and preprocess shaping"
+    },
+    {
+      "category_id": "transition_signal",
+      "description": "signals for blockage, thickening, reread, and boundary narrowing"
+    },
+    {
+      "category_id": "readout_signal",
+      "description": "signals for operator overview, explanation, and search surfaces"
+    }
+  ],
+  "signals": [
+    {
+      "signal_kind": "raw_input",
+      "category_id": "entry_signal",
+      "family_rooted_alias": "input_family_entry_material",
+      "meaning": "new material arrives before shaping and readable entry conversion",
+      "artifact_hints": [
+        "transcript",
+        "note",
+        "memo",
+        "article"
+      ],
+      "default_family_id": "fam_input_to_reading",
+      "default_projection_id": "proj_input_ingest_visibility",
+      "default_route_id": "route_input_direct_ingest",
+      "override_notes": [
+        "if requested outcome becomes blockage explanation, review transition family"
+      ]
+    },
+    {
+      "signal_kind": "preprocess_ambiguity",
+      "category_id": "entry_signal",
+      "family_rooted_alias": "input_family_preservation_conflict",
+      "meaning": "raw input cannot yet be safely entry-shaped without ambiguity review",
+      "artifact_hints": [
+        "noisy transcript",
+        "uncertain-needs-probe",
+        "preprocess comparison ambiguity"
+      ],
+      "default_family_id": "fam_input_to_reading",
+      "default_projection_id": "proj_preprocess_shaping",
+      "default_route_id": "route_preprocess_compare_first",
+      "override_notes": [
+        "if ambiguity resolves, fallback to direct ingest"
+      ]
+    },
+    {
+      "signal_kind": "transition_blockage",
+      "category_id": "transition_signal",
+      "family_rooted_alias": "transition_family_closure_conflict",
+      "meaning": "current transition state needs blockage explanation or active-line reread",
+      "artifact_hints": [
+        "phase decision",
+        "active latent line",
+        "blockage explanation request"
+      ],
+      "default_family_id": "fam_transition_thickening",
+      "default_projection_id": "proj_transition_preflight_reread",
+      "default_route_id": "route_preflight_reread",
+      "override_notes": [
+        "if requested outcome is operator explanation, keep family and switch projection to transition operator readout"
+      ]
+    },
+    {
+      "signal_kind": "boundary_ambiguity",
+      "category_id": "transition_signal",
+      "family_rooted_alias": "transition_family_boundary_narrowing_conflict",
+      "meaning": "corridor or staged boundary still needs narrowing beyond local reread",
+      "artifact_hints": [
+        "stage outputs",
+        "corridor boundary note",
+        "survivor/nonreinforced signals"
+      ],
+      "default_family_id": "fam_transition_thickening",
+      "default_projection_id": "proj_transition_corridor_validation",
+      "default_route_id": "route_stage_corridor_probe",
+      "override_notes": [
+        "if local evidence becomes more important than staged lineage, fallback to preflight reread"
+      ]
+    },
+    {
+      "signal_kind": "operator_overview_request",
+      "category_id": "readout_signal",
+      "family_rooted_alias": "operator_family_broad_readout_request",
+      "meaning": "operator wants broad state overview rather than narrow search",
+      "artifact_hints": [
+        "engine_state_latest",
+        "update event summary",
+        "overview request"
+      ],
+      "default_family_id": "fam_operator_readout",
+      "default_projection_id": "proj_operator_board_readout",
+      "default_route_id": "route_readonly_board",
+      "override_notes": [
+        "if explicit query appears, switch to operator search projection"
+      ]
+    },
+    {
+      "signal_kind": "operator_search_query",
+      "category_id": "readout_signal",
+      "family_rooted_alias": "operator_family_narrow_query_request",
+      "meaning": "operator wants a narrow answer or route via explicit query",
+      "artifact_hints": [
+        "query text",
+        "search surface availability",
+        "selected result context"
+      ],
+      "default_family_id": "fam_operator_readout",
+      "default_projection_id": "proj_operator_search_readout",
+      "default_route_id": "route_internal_search",
+      "override_notes": [
+        "if search result is too sparse or broad context is needed, fallback to readonly board"
+      ]
+    }
+  ]
+}

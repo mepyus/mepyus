@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T094421Z_8b0ef908",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "/vectorfl-engine/vectorfl",
+  "purpose_text": "Package 1.1 real-path validation: read the package 1 closeout note and return a short summary.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_package1_closeout_note_v0.md"
+  ],
+  "prompt_payload": "Read docs/reports/integrated_engine_cli_on_top_package1_closeout_note_v0.md. Return three short bullets: what was implemented, what remains deferred, and whether the CLI layer stays on-top rather than a fourth surface. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T09:44:21Z",
+  "ended_at": "2026-04-16T09:44:35Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T094421Z_8b0ef908/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T094421Z_8b0ef908/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T094421Z_8b0ef908/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T094421Z_8b0ef908/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T094421Z_8b0ef908/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Implemented: Package 1 adds a usable synchronous Codex CLI host/control path with canonical `runtime/cli_sessions/<session_id>/` artifacts, integrated-engine API actions, `cli_host_control` state, and a bounded VectorFL panel with mark actions.\n  - Deferred: long-running background polling, interruption of already-running subprocesses, multi-agent routing, autonomous planning, distributed workers, plugin/skill framework, page promotion automation, selected-object behavior, and actual deposit ingestion/promotion.\n  - CLI posture: the CLI layer stays on top as `on_top_cli_host_control_layer`; it is not a fourth surface.\n\n- important findings / diffs / outputs\n  - Verdict: `PASS_WITH_NOTE`.\n  - No new engine surface was added.\n  - VectorFL remains the primary observation/control surface.\n  - Verification listed Python compile pass, integrated-engine `cli_host_control` exposure, dry-run session artifact creation, dry-run mark action, and React build pass.\n\n- uncertainty or failure notes\n  - Actual Codex runs require a working local `codex` CLI in the viewer-server environment.\n  - Synchronous execution may block API requests for long tasks.\n  - `deposit_candidate.md` is prepared material only, not automatically ingested.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T09:44:42Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T09:44:42Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

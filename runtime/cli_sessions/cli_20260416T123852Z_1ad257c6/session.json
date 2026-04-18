@@ -1,0 +1,47 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T123852Z_1ad257c6",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Step 3 smoke: route label dry-run target for engine request candidate.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_next_operating_checklist_v0.md"
+  ],
+  "prompt_payload": "Dry-run route label smoke. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T12:38:52Z",
+  "ended_at": "2026-04-16T12:38:52Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 30,
+  "dry_run": true,
+  "marks": [
+    "engine_request_candidate",
+    "deposit_candidate"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T123852Z_1ad257c6/prompt.md",
+  "exit_code": 0,
+  "result_summary": "dry_run: Codex adapter prepared the prompt and artifact folder without invoking the external CLI.\nThis proves the on-top CLI session contract, not backend model quality.\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T12:45:38Z",
+  "mark_history": [
+    {
+      "mark": "engine_request_candidate",
+      "marked_at": "2026-04-16T12:38:56Z",
+      "source": "vectorfl_cli_host_control_panel"
+    },
+    {
+      "mark": "deposit_candidate",
+      "marked_at": "2026-04-16T12:45:38Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ],
+  "deposit_ready": true
+}

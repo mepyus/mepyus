@@ -1,0 +1,477 @@
+{
+  "state": "loaded",
+  "page_title": "VectorFL Page / Route Mock / current-reading",
+  "left_rail": {
+    "enabled": false,
+    "mode": "rail_minimal",
+    "note": "Left rail remains optional at this stage; sidebar and center console stay primary."
+  },
+  "navigation_items": [
+    {
+      "key": "current-reading",
+      "label": "Current Reading",
+      "active": true
+    },
+    {
+      "key": "inputs",
+      "label": "Inputs / Intake",
+      "active": false
+    },
+    {
+      "key": "cases",
+      "label": "Cases / Queue",
+      "active": false
+    },
+    {
+      "key": "history",
+      "label": "History / Trace",
+      "active": false
+    },
+    {
+      "key": "programs",
+      "label": "Programs / Connections",
+      "active": false
+    }
+  ],
+  "navigation_structure": {
+    "primary": [
+      "Current Reading",
+      "Cases / Queue",
+      "Inputs / Intake",
+      "History / Trace",
+      "Programs / Connections"
+    ],
+    "secondary": [
+      "Organ Detail (contextual drill-in only)"
+    ]
+  },
+  "scenario": {
+    "name": "mixed_hold_transition_case",
+    "intent": "Show current-reading, governance, residue, and reentry together in a single active case.",
+    "status": "active_not_closed"
+  },
+  "current_responsibility": {
+    "current_organ_ref": "organ:flow_interpretation",
+    "current_lane_ref": "lane_transition_reread_001",
+    "placement_reason": "Translation narrowed this case into transition-thickening grammar, and flow interpretation is currently responsible for preserving unresolved edge and next-hop readability.",
+    "restriction_flags": [
+      "observer_only",
+      "promotion_forbidden",
+      "closure_before_presentation"
+    ],
+    "next_hop_candidates": [
+      "lane_operator_readout_review",
+      "lane_transition_preflight_reread"
+    ],
+    "detail_entry_target": "organ_detail:flow_interpretation"
+  },
+  "progression_preview": {
+    "previous_step": {
+      "organ_ref": "organ:translation",
+      "summary": "Translated mixed intake into transition-thickening and explanation-first grammar."
+    },
+    "current_step": {
+      "organ_ref": "organ:flow_interpretation",
+      "summary": "Reading next hop and preserving unresolved edge before direct operator presentation."
+    },
+    "next_candidates": [
+      {
+        "organ_ref": "organ:governance",
+        "lane_ref": "lane_transition_preflight_reread",
+        "status": "preferred_candidate",
+        "detail_entry_target": "organ_detail:governance"
+      },
+      {
+        "organ_ref": "organ:current_reading_return",
+        "lane_ref": "lane_operator_readout_review",
+        "status": "held_candidate",
+        "detail_entry_target": "organ_detail:current_reading_return"
+      }
+    ]
+  },
+  "queue_preview": [
+    {
+      "case_id": "case_transition_surface_reentry_001",
+      "case_kind": "transition_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "transition_thickening",
+      "lane_status": "hold_mixed",
+      "placement_reason_short": "flow interpretation is preserving unresolved edge before direct readout",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance / lane_transition_preflight_reread",
+      "held_candidate_exists": true,
+      "headline": "Transition surface is readable, but still closure-incomplete.",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-04-08T15:20:00+09:00"
+    }
+  ],
+  "drill_in_navigation": {
+    "queue_to_current_reading": {
+      "entry_target": "current_reading:case_transition_surface_reentry_001",
+      "carried_refs": [
+        "case_transition_surface_reentry_001",
+        "lane_transition_reread_001",
+        "surface_current_reading_001",
+        "gov_transition_hold_001"
+      ]
+    },
+    "current_reading_to_organ_detail": {
+      "entry_target": "organ_detail:flow_interpretation",
+      "carried_refs": [
+        "case_transition_surface_reentry_001",
+        "lane_transition_reread_001",
+        "organ:flow_interpretation"
+      ]
+    }
+  },
+  "current_reading": {
+    "case_header": {
+      "case_id": "case_transition_surface_reentry_001",
+      "case_kind": "transition_case",
+      "case_status": "active",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-04-08T15:20:00+09:00"
+    },
+    "body": {
+      "headline": "Transition surface is readable, but still closure-incomplete.",
+      "summary_body_text": "The case is currently read as a transition-thickening situation rather than a presentation-ready state. The transition edge is visible enough to support reread and next-hop review, but the governance state still holds the case in mixed observer-only mode.",
+      "supporting_unit_refs": [
+        "unit_phase_decision_001",
+        "unit_surface_summary_002",
+        "unit_operator_note_003"
+      ]
+    },
+    "lane": {
+      "lane_kind": "transition_thickening",
+      "lane_status": "hold_mixed",
+      "next_hop_candidates": [
+        "lane_operator_readout_review",
+        "lane_transition_preflight_reread"
+      ]
+    },
+    "governance": {
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "reason_summary": "Current reading is usable, but direct presentation is held until transition closure and reread conditions are rechecked.",
+      "release_condition": "Confirm transition closure or downgrade to residue-backed operator readout.",
+      "next_check_trigger": "Re-run transition reread after next surface refresh or linked program state change."
+    },
+    "trace_preview": [
+      {
+        "trace_id": "trace_transition_residue_001",
+        "trace_kind": "residue_note",
+        "summary": "Transition remains readable but unresolved; preserve explanation-first bias before direct readout.",
+        "residue_note": "closure_before_presentation",
+        "reentry_hint": "If operator asks for summary first, reopen transition interpretation before final readout.",
+        "created_at": "2026-04-08T15:05:00+09:00"
+      },
+      {
+        "trace_id": "trace_transition_reentry_002",
+        "trace_kind": "reentry_hint",
+        "summary": "Route next read through transition reread if linked program state changes or if new blockage evidence appears.",
+        "residue_note": "preserve unresolved edge",
+        "reentry_hint": "transition_condition_to_operator_readability",
+        "created_at": "2026-04-08T15:12:00+09:00"
+      }
+    ]
+  },
+  "inputs_preview": {
+    "source_id": "source_external_transition_case_001",
+    "source_kind": "mixed_runtime_material",
+    "source_family": "external_case",
+    "source_subgroup": "transition_case",
+    "matched_context_layers": [
+      "global:external_reference",
+      "family:transition_thickening",
+      "case:mixed_hold_transition"
+    ],
+    "intake_classification": "mixed_material",
+    "next_lane_hint": "translation_first",
+    "weakness_note": "Initial intake used fallback split across mixed runtime and operator note material.",
+    "fallback_used": true,
+    "readiness_level": "usable_with_caution",
+    "re_read_needed": true
+  },
+  "history_trace_preview": {
+    "latest_trace_list": [
+      {
+        "trace_id": "trace_transition_residue_001",
+        "trace_kind": "residue_note",
+        "summary": "Transition remains readable but unresolved; preserve explanation-first bias before direct readout.",
+        "residue_note": "closure_before_presentation",
+        "reentry_hint": "If operator asks for summary first, reopen transition interpretation before final readout.",
+        "created_at": "2026-04-08T15:05:00+09:00"
+      },
+      {
+        "trace_id": "trace_transition_reentry_002",
+        "trace_kind": "reentry_hint",
+        "summary": "Route next read through transition reread if linked program state changes or if new blockage evidence appears.",
+        "residue_note": "preserve unresolved edge",
+        "reentry_hint": "transition_condition_to_operator_readability",
+        "created_at": "2026-04-08T15:12:00+09:00"
+      }
+    ],
+    "decision_trace_anchor": null,
+    "residue_emphasis": [
+      "closure_before_presentation",
+      "preserve unresolved edge"
+    ],
+    "reentry_cues": [
+      "If operator asks for summary first, reopen transition interpretation before final readout.",
+      "transition_condition_to_operator_readability"
+    ]
+  },
+  "programs_connections_preview": {
+    "linked_programs": [
+      "program:tank_program"
+    ],
+    "connection_state": "read_connected_request_limited",
+    "current_linked_surface": [
+      "program:tank_program"
+    ],
+    "action_request_preview": "Hold direct presentation. Keep request at explanation-first or reread-first level until closure condition is satisfied.",
+    "governance_restriction_summary": [
+      "observer_only",
+      "promotion_forbidden",
+      "closure_before_presentation"
+    ]
+  },
+  "contextual_panels": {
+    "active_panel": "organ_detail_current",
+    "available_panels": [
+      {
+        "panel_id": "organ_detail_current",
+        "entry_target": "organ_detail:flow_interpretation",
+        "entry_label": "Current Organ Detail",
+        "source": "current responsibility strip"
+      },
+      {
+        "panel_id": "organ_detail_governance",
+        "entry_target": "organ_detail:governance",
+        "entry_label": "Preferred Next Candidate Detail",
+        "source": "progression strip"
+      }
+    ]
+  },
+  "unified_shell": {
+    "mode": "current_reading_centered_with_contextual_detail",
+    "current_center": "Current Reading",
+    "support_columns": [
+      "Cases / Queue + Inputs / Intake",
+      "Governance + History / Trace + Programs / Connections"
+    ]
+  },
+  "sidebar_sections": [
+    {
+      "section_label": "Read",
+      "items": [
+        "Current Reading",
+        "Cases / Queue",
+        "Inputs / Intake"
+      ]
+    },
+    {
+      "section_label": "Carry",
+      "items": [
+        "History / Trace",
+        "Programs / Connections"
+      ]
+    }
+  ],
+  "route_state_preview": {
+    "active_primary_surface": "current-reading",
+    "active_case_ref": "case_transition_surface_reentry_001",
+    "active_contextual_panel": "organ_detail_current",
+    "contextual_entry_targets": [
+      "organ_detail:flow_interpretation",
+      "organ_detail:governance"
+    ],
+    "note": "Current Reading remains the center route; organ detail stays contextual rather than becoming a primary route.",
+    "active_nav_key": "current-reading",
+    "breadcrumb_chain": [
+      "VectorFL Page",
+      "current-reading"
+    ],
+    "contextual_panel_entry": {
+      "active_panel": "organ_detail_current",
+      "entry_targets": [
+        "organ_detail:flow_interpretation",
+        "organ_detail:governance"
+      ]
+    },
+    "route_note": "Current Reading remains the semantic center even when another primary surface is opened as the active page state."
+  },
+  "organ_detail_panels": {
+    "current": {
+      "fixture_id": "vectorfl_flow_interpretation_organ_detail_mock_fixture_v0",
+      "fixture_kind": "organ_detail_first_mock",
+      "organ_identity": {
+        "organ_ref": "organ:flow_interpretation",
+        "organ_label": "Flow Interpretation Organ",
+        "current_status": "active_transition_reading",
+        "related_lane_refs": [
+          "lane_transition_reread_001",
+          "lane_transition_preflight_reread"
+        ]
+      },
+      "instruction_bundle_preview": {
+        "role_sentence": "Flow interpretation organ reads transition, next hop, and unresolved edge without flattening the case into premature closure.",
+        "reading_priorities": [
+          "current lane tension",
+          "previous translation carry",
+          "governance restriction carry",
+          "reentry-sensitive trace cues"
+        ],
+        "output_contract": [
+          "flow reading summary",
+          "next candidate ordering",
+          "unresolved edge note",
+          "route caution"
+        ]
+      },
+      "accepted_handoff_preview": {
+        "accepted_input_kinds": [
+          "translation return",
+          "current surface packet",
+          "trace/reentry carry",
+          "governance restriction snapshot"
+        ],
+        "required_packet_fields": [
+          "case_ref",
+          "current_lane_ref",
+          "current_surface_ref",
+          "restriction_flags",
+          "question_or_trigger",
+          "expected_return_type"
+        ],
+        "common_triggers": [
+          "transition-first explanation needed",
+          "next hop remains unresolved",
+          "direct readout feels premature"
+        ]
+      },
+      "caution_profile": {
+        "stop_hold_conditions": [
+          "next hop is asserted without evidence carry",
+          "unresolved edge disappears in summary",
+          "presentation pressure overrides current restrictions"
+        ],
+        "preserve_first_rules": [
+          "keep preferred vs held candidate distinction",
+          "keep observer-only restrictions visible",
+          "keep transition reread route legible"
+        ],
+        "avoid_wording": [
+          "done",
+          "clear to present",
+          "resolved flow"
+        ]
+      },
+      "recent_return_preview": {
+        "summary_return": "Read this case as transition-readable but closure-incomplete; governance review should precede direct operator readout.",
+        "lane_hint_update": [
+          "lane_transition_preflight_reread",
+          "lane_operator_readout_review"
+        ],
+        "recent_trace_carry": [
+          "closure_before_presentation",
+          "transition_condition_to_operator_readability"
+        ],
+        "recent_handoff_target": "organ:governance"
+      }
+    },
+    "governance_candidate": {
+      "fixture_id": "vectorfl_governance_organ_detail_mock_fixture_v0",
+      "fixture_kind": "organ_detail_first_mock",
+      "organ_identity": {
+        "organ_ref": "organ:governance",
+        "organ_label": "Governance Organ",
+        "current_status": "restriction_review_pending",
+        "related_lane_refs": [
+          "lane_transition_preflight_reread",
+          "lane_operator_readout_review"
+        ]
+      },
+      "instruction_bundle_preview": {
+        "role_sentence": "Governance organ preserves restriction, hold, and release conditions so current-reading does not collapse into premature action or presentation.",
+        "reading_priorities": [
+          "active restriction flags",
+          "evidence sufficiency",
+          "release condition clarity",
+          "trace-backed carry obligations"
+        ],
+        "output_contract": [
+          "governance state update",
+          "reason summary",
+          "release condition",
+          "next check trigger"
+        ]
+      },
+      "accepted_handoff_preview": {
+        "accepted_input_kinds": [
+          "flow interpretation return",
+          "trace/residue carry",
+          "linked program caution",
+          "surface packet summary"
+        ],
+        "required_packet_fields": [
+          "case_ref",
+          "current_lane_ref",
+          "restriction_flags",
+          "supporting_evidence_refs",
+          "release_condition_candidate",
+          "expected_return_type"
+        ],
+        "common_triggers": [
+          "mixed hold persists",
+          "direct readout candidate must stay held",
+          "next check trigger needs tightening"
+        ]
+      },
+      "caution_profile": {
+        "stop_hold_conditions": [
+          "release proposed without supporting evidence",
+          "weak intake is being ignored",
+          "promotion pressure exceeds current-reading confidence"
+        ],
+        "preserve_first_rules": [
+          "keep observer-only visible until release condition is satisfied",
+          "keep promotion-forbidden state explicit",
+          "keep decision anchor linked to trace"
+        ],
+        "avoid_wording": [
+          "approved",
+          "safe to execute",
+          "final release"
+        ]
+      },
+      "recent_return_preview": {
+        "summary_return": "Maintain mixed hold; allow explanation-first reread but keep direct operator presentation in held candidate status.",
+        "lane_hint_update": [
+          "lane_transition_preflight_reread"
+        ],
+        "recent_trace_carry": [
+          "observer_only",
+          "promotion_forbidden",
+          "closure_before_presentation"
+        ],
+        "recent_handoff_target": "organ:current_reading_return"
+      }
+    }
+  },
+  "active_primary_surface": "current-reading"
+}

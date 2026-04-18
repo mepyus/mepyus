@@ -1,0 +1,142 @@
+{
+  "engine_status": {
+    "syncRate": 92,
+    "maturationLevel": 68,
+    "activeSlotCount": "03 / 03",
+    "systemLoad": "OPTIMIZED"
+  },
+  "ingestSlot": {
+    "status": "done",
+    "sourceLabel": "builder_jang_interview.txt",
+    "sourceType": "raw_text_interview",
+    "sourcePath": "inputs/builder_jang_interview.txt",
+    "linkedGoalIds": ["goal-logistics-ref"],
+    "mockAttachmentPoint": "IngestEntryPanel",
+    "actualAttachmentPoint": "scripts/run_external_case_raw_intake_probe.py"
+  },
+  "pipelineSlot": {
+    "status": "processing",
+    "currentStep": "structural_extraction",
+    "steps": [
+      { "stepId": "S1", "name": "Context Reading", "status": "done", "note": "장 빌더 인터뷰 맥락 읽기 완료" },
+      { "stepId": "S2", "name": "Line Formation", "status": "done", "note": "4개의 핵심 철학 라인 생성 완료" },
+      { "stepId": "S3", "name": "Structural Extraction", "status": "done", "note": "현재 의미 문장 단위 분절 및 구조화 진행 중" },
+      { "stepId": "S4", "name": "Governance Check", "status": "processing", "note": "기준선 위반 여부 검사 중" }
+    ],
+    "mockAttachmentPoint": "PipelineStatusPanel",
+    "actualAttachmentPoint": "app/core/engine_pipeline_v2.py"
+  },
+  "validationReturnSlot": {
+    "status": "ready_for_review",
+    "packetId": "VP-20260411-009",
+    "summary": "추출된 라인의 85%가 기존 탱크프로그램 구조와 호환됨을 확인했습니다. 일부 명칭 불일치 구간 발견.",
+    "acceptedRefs": ["ref-valve-logic", "ref-pump-flow"],
+    "holdRefs": ["ref-tank-capacity-mapping"],
+    "reasoningNotes": [
+      "물류 시스템의 '펌프'와 탱크프로그램의 '벨브 제어'는 논리적 대칭 구조임",
+      "용량(Capa) 계산 방식은 도메인별 단위 환산 로직 필요"
+    ],
+    "nextReingestRequested": true,
+    "mockAttachmentPoint": "ValidationReturnPanel",
+    "actualAttachmentPoint": "scripts/validate/run_logic_gap_validator.py"
+  },
+  "workMemory": {
+    "decision": "현재 장 빌더의 설계 맥락을 90% 이상 확보하였으며, 이를 기반으로 한 4개의 핵심 라인은 숙성 임계점에 도달함. 다음 단계인 구조 추출(S3) 과정에서 데이터 불일치 위험이 있으나, 거버넌스 체크(S4)에서 보정이 가능할 것으로 판단됨.",
+    "holdReason": "\"ref-tank-capacity-mapping\" 자산의 경우, 물류 시스템과 기존 시스템 간의 단위 환산 로직이 아직 불분명하여 해석을 일시 보류함.",
+    "nextDirection": "단위 환산 모듈(Adapter) 선구현 후 재입력(Re-ingest) 시도"
+  },
+  "assets": [
+    {
+      "id": "live-repo-root",
+      "kind": "runtime",
+      "title": "LIVE REPOSITORY ROOT",
+      "path": "./",
+      "health": "healthy",
+      "role": "현재 가동 중인 리포지토리의 최상위 루트",
+      "updatedAt": "2026-04-11 14:00",
+      "summary": "모든 자산이 연결된 통합 공간입니다. 현재 Gemini Sandbox가 활성화되어 있습니다.",
+      "connectedTo": ["gemini/mock_test"],
+      "warnings": [],
+      "children": [
+        {
+          "id": "live-gemini-folder",
+          "kind": "views",
+          "title": "gemini/mock_test",
+          "path": "gemini/mock_test/",
+          "health": "watch",
+          "role": "현재 리팩터링 및 데이터 연결 테스트 구역",
+          "updatedAt": "2026-04-11 14:05",
+          "summary": "데이터 주입형 골격으로 전환 완료. 실시간 매니페스트 연결 테스트 중입니다.",
+          "connectedTo": ["live_manifest.json"],
+          "warnings": ["실시간 데이터 동기화 지연 가능성 점검 필요"],
+          "attentionScore": 95,
+          "scriptLink": "scripts/apply_internal_observer.py",
+          "deltaStatus": "modified"
+        },
+        {
+          "id": "live-violation-sample",
+          "kind": "scripts",
+          "title": "unauthorized_patch.py",
+          "path": "scripts/unauthorized_patch.py",
+          "health": "broken",
+          "role": "허가되지 않은 엔진 수정 시도",
+          "updatedAt": "2026-04-11 14:20",
+          "summary": "Baseline 규칙을 위반하여 core 레이어를 직접 수정하려고 시도한 흔적이 발견되었습니다.",
+          "connectedTo": ["app/core/engine.py"],
+          "warnings": ["CONSTITUTIONAL_VIOLATION: Direct core modification prohibited"],
+          "attentionScore": 100,
+          "scriptLink": "scripts/run_security_audit.py",
+          "deltaStatus": "violation"
+        }
+      ],
+      "attentionScore": 40,
+      "deltaStatus": "synced"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-live-002",
+      "type": "warning",
+      "title": "Critical Logic Gap Detected",
+      "detail": "샌드박스와 엔진 본체 간의 데이터 싱크 로직에서 미세한 시간차가 발견되었습니다.",
+      "time": "14:15",
+      "assetId": "live-gemini-folder"
+    },
+    {
+      "id": "ev-live-001",
+      "type": "created",
+      "title": "Live Manifest Connection Established",
+      "detail": "외부 JSON 파일로부터 엔진 인벤토리 데이터를 로드하는 데 성공했습니다.",
+      "time": "14:10",
+      "assetId": "live-gemini-folder"
+    }
+  ],
+  "watchpoints": [
+    {
+      "id": "wp-live-001",
+      "title": "샌드박스 데이터 무결성 감시",
+      "severity": "medium",
+      "status": "watching",
+      "assetId": "live-gemini-folder",
+      "why": "수동 수정된 데이터와 자동 생성된 데이터 간의 충돌 가능성",
+      "nextAction": "데이터 덮어쓰기 로직의 원자성(Atomicity) 확인"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec-live-001",
+      "title": "매니페스트 자동 갱신 스크립트 가동",
+      "body": "파일 시스템 변화를 감지하여 live_manifest.json을 자동으로 업데이트하는 파이썬 워처를 실행하세요.",
+      "priority": "now"
+    }
+  ],
+  "bridgeItems": [
+    {
+      "id": "br-live-001",
+      "direction": "from_vectorfl",
+      "title": "실시간 데이터 환류",
+      "body": "샌드박스에서 수행된 테스트 결과가 매니페스트를 통해 다시 공간으로 기록됩니다.",
+      "payload": ["manifest_update", "test_verdict"]
+    }
+  ]
+}

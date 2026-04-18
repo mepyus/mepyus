@@ -1,0 +1,67 @@
+{
+  "packet_id": "lwp_vectorfl_paper_weekend_live_003",
+  "packet_version": "v3",
+  "created_at": "2026-04-10T23:40:00+09:00",
+  "updated_at": "2026-04-10T23:40:00+09:00",
+  "status": "translated_from_export_shaped_host_record",
+  "source_program": "paperclip",
+  "source_assignment": {
+    "assignment_id": "9aa3532d-4e13-4ac4-8d68-01ea5b6f0017",
+    "company_ref": "c4b58764-5f91-43aa-9f43-0f5700e01001",
+    "project_ref": "9e0a1304-fb2f-4815-86eb-717f5d790021",
+    "goal_ref": "b11f0b47-62f0-4814-bd1a-d06d419e1001",
+    "parent_ref": null,
+    "title": "summarize current reading residue before next routing change",
+    "description": "Review the current reading residue and write a short operator-facing note before the next routing change is attempted.",
+    "assignee_ref": "a5c1b0f4-5c11-4ec2-9dd9-010101010001",
+    "priority": 1,
+    "source_status": "in_progress"
+  },
+  "line_translation": {
+    "primary_line_id": "supervision_language_as_hard_requirement",
+    "support_line_ids": [
+      "thin_overlay_before_broad_integration",
+      "cli_as_cell_manager"
+    ],
+    "corridor": "export_shaped_issue_to_runtime_trace",
+    "boundary": "runtime",
+    "translation_confidence": "high",
+    "translation_reason": [
+      "the source now follows host export field grammar closely enough to test the overlay against near-real record shape",
+      "issue, run, comment, and approval remain distinct source rows rather than flattened summaries",
+      "the same narrow task still favors supervisor-readable residue carry over broad orchestration drift"
+    ]
+  },
+  "context_refs": {
+    "source_record_refs": [
+      "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json#issues_row",
+      "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json#heartbeat_runs_row",
+      "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json#issue_comments_rows[0]",
+      "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json#approvals_row"
+    ],
+    "line_refs": [
+      "runtime/contracts/vectorfl_paper_weekend_live_internal_read_output_v1.json#line:supervision_language_as_hard_requirement",
+      "runtime/contracts/vectorfl_paper_weekend_live_internal_read_output_v1.json#line:thin_overlay_before_broad_integration"
+    ]
+  },
+  "execution_guidance": {
+    "objective": "prove the same thin overlay holds when the source is export-shaped rather than merely native-shaped",
+    "acceptance_criteria": [
+      "export-shaped issue row becomes packet root without losing line-centered reading",
+      "export-shaped heartbeat row remains append-only trace material",
+      "comment row becomes readable residue carry",
+      "approval row becomes governance hold/caution rather than cosmetic status"
+    ],
+    "execution_hints": [
+      "keep source row naming visible in source refs",
+      "do not widen beyond issue/run/comment/approval",
+      "treat this as the final source-realism pass before general pilot promotion"
+    ],
+    "promotion_gate": "export_shaped_overlay_review_before_general_pilot_promotion"
+  },
+  "run_state": {
+    "selected_for_run_at": "2026-04-10T23:40:00+09:00",
+    "run_ref": "run_weekend_export_shaped_001",
+    "completion_claim": "export_shaped_overlay_translation_ready"
+  }
+}

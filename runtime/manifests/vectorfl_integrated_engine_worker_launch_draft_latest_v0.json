@@ -1,0 +1,59 @@
+{
+  "schema_version": "vectorfl_integrated_engine_worker_launch_draft_v0",
+  "launch_draft_id": "vectorfl_engine_worker_launch_draft_latest",
+  "status": "drafted_not_executed",
+  "created_at": "2026-04-11T23:23:30Z",
+  "source_operating_dialogue_artifact": "runtime/manifests/vectorfl_integrated_engine_operating_dialogue_latest_v0.json",
+  "source_operating_dialogue_fingerprint": "da6e2a8274cd9309121ab1c63cd7cb3cb9a505186b169cf648375ab387d47f57",
+  "operating_object_id": "vectorfl_engine_operating_object_da6e2a8274cd9309",
+  "source_worker_session_artifact": "runtime/manifests/vectorfl_integrated_engine_worker_session_latest_v0.json",
+  "selected_worker": "codex",
+  "selected_worker_label": "Codex CLI",
+  "selected_model": "current codex session",
+  "authority": "primary_builder",
+  "safe_default": "read/write only after explicit supervisor gate",
+  "execution_mode": "manual_supervised",
+  "command_family": "codex_cli",
+  "command_preview": "codex exec --cd <repo> --sandbox <mode> -",
+  "input_mode": "stdin_prompt",
+  "prompt_material": {
+    "operator_message": "freshness gate가 stale completed false positive를 줄이는지 확인한다.",
+    "purpose": "current-run freshness gate 재검증: 새 운영 객체에서 이전 completed execution이 현재 완료로 보이지 않는지 read-only로 확인하라.",
+    "team_name": "현재 실행 신선도 검증 팀",
+    "team_purpose": "새 operating dialogue와 draft/execution fingerprint가 일치할 때만 현재 실행 완료로 표시되는지 확인한다.",
+    "assignee_role": "freshness gate 판독 담당",
+    "intent_mode": "configure_worker_session",
+    "reference_md_files": [
+      "app/runtime/vectorfl_integrated_engine_shell.py",
+      "app/runtime/vectorfl_integrated_engine_api.py",
+      "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+      "docs/reports/paperclip_native_product_reading_v0.md",
+      "docs/reports/vectorfl_paper_human_direction_readout_v0.md",
+      "gemini/vectorfl_core_concepts_and_hierarchical_translation_data.md"
+    ],
+    "line_script_candidates": [
+      "scripts/run_line_thickening_sample.py",
+      "scripts/run_external_case_flowline_sweep.py"
+    ],
+    "forbidden_scope": [
+      "do not modify repo",
+      "do not replace current slot",
+      "do not declare gate close",
+      "do not add UI features"
+    ]
+  },
+  "api_boundary": {
+    "draft_endpoint": "/api/vectorfl-engine/actions/worker-launch-draft",
+    "execute_endpoint": "/api/vectorfl-engine/actions/run-worker-launch-draft",
+    "result_return_slot": "runtime/manifests/vectorfl_integrated_engine_worker_execution_latest_v0.json"
+  },
+  "guard": {
+    "draft_only": true,
+    "does_not_run_cli": true,
+    "does_not_modify_repo": true,
+    "does_not_replace_current_slot": true,
+    "does_not_declare_gate_close": true,
+    "latest_only": true
+  },
+  "content_fingerprint": "4fb25ba18b2fed41e685fcfaed0e4749e2ff70ed4407ae71d199fc5e69f1506f"
+}

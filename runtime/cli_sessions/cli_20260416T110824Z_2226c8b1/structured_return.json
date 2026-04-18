@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T110824Z_2226c8b1",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary  \nPASS_WITH_NOTE. The bounded note confirms CLI-on-top is not a new engine surface; it is a helper execution layer operated through the VectorFL surface, with returns reread by User and Engine surfaces as candidates/material.\n\n- important findings / diffs / outputs  \nVectorFL is the active operation/control surface for CLI runs, marks, rereads, and follow-ups.  \nUser surface reads CLI returns as work or decision candidates, not automatic assignments.  \nEngine surface reads returns as processing, validation, extraction, or deposit material, not final authority.  \nMarks are route signals, not completion declarations.  \nDeposit candidate means possible later ingestion, not official deposit.  \nStable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/design clay.  \nRecommended reporting grammar order: status first, surface split second, route/authority third, friction fourth, next smallest action last.\n\n- uncertainty or failure notes  \nNo file modifications were made. No failure reading the bounded context. The note explicitly keeps UI copy changes, manifest/read-map changes, Gemini adapter work, automatic assignment, automatic deposit ingestion, and promotion closed.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-16T11:08:38Z"
+}

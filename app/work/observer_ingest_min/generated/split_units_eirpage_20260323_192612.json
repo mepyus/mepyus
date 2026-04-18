@@ -1,0 +1,85 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "para_001",
+    "end_ref": "para_002",
+    "unit_type": "paragraph",
+    "text_excerpt": "// src/pages/EIRPage.jsx\nimport React from 'react';\nimport { useInbound } from '../hooks/useInbound'; /**\n * EIR (Entry Inspection Report) Page for managing inbound tank processes.\n * This page uses the useInbound hook t",
+    "char_count": 548,
+    "source_segment_ids": [
+      "seg_001",
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "para_003",
+    "end_ref": "para_004",
+    "unit_type": "paragraph",
+    "text_excerpt": "// Placeholder for a tank ID for demonstration purposes\n  // In a real application, this would come from a selected tank, route params, or other state.\n  const demoTankId = 'demo-tank-001';\n  const demoWorkerId = 'worker",
+    "char_count": 514,
+    "source_segment_ids": [
+      "seg_003",
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "para_005",
+    "end_ref": "para_006",
+    "unit_type": "paragraph",
+    "text_excerpt": "const handleStart = () => {\n    console.log(`Attempting to start inbound job for tank: ${demoTankId}`);\n    startInboundJob(demoTankId, demoWorkerId);\n  }; const handleComplete = () => {\n    console.log(`Attempting to co",
+    "char_count": 615,
+    "source_segment_ids": [
+      "seg_005",
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "para_007",
+    "end_ref": "para_008",
+    "unit_type": "paragraph",
+    "text_excerpt": "const handleCancel = () => {\n    console.log(`Attempting to cancel inbound job for tank: ${demoTankId}`);\n    cancelInboundJob(demoTankId, demoWorkerId, 'User cancelled inbound process manually.');\n  }; return (\n    <div",
+    "char_count": 470,
+    "source_segment_ids": [
+      "seg_007",
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "para_009",
+    "end_ref": "para_010",
+    "unit_type": "paragraph",
+    "text_excerpt": "{loading && <p style={{ color: 'blue' }}>Loading...</p>}\n      {error && <p style={{ color: 'red', fontWeight: 'bold' }}>Error: {error}</p>} <div style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', m",
+    "char_count": 722,
+    "source_segment_ids": [
+      "seg_009",
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "para_011",
+    "end_ref": "para_011",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>\n        <button\n          onClick={handleInitiate}\n          disabled={loading || (currentJob && currentJob.job_type === 'INBOUND' && currentJob.job_status",
+    "char_count": 1613,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "para_012",
+    "end_ref": "para_013",
+    "unit_type": "paragraph",
+    "text_excerpt": "{/* Here is where you would integrate specific components for the EIR workflow,\n          e.g., an InspectionForm for data entry, or a QueueList for tanks awaiting inbound. */}\n      <div style={{ marginTop: '30px', bord",
+    "char_count": 556,
+    "source_segment_ids": [
+      "seg_012",
+      "seg_013"
+    ]
+  }
+]

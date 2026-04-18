@@ -1,0 +1,47 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T102720Z_8e045e9b",
+  "backend_kind": "codex",
+  "task_type": "validate",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Suggested-next-use inference smoke test for validation target.",
+  "bounded_context_refs": [
+    "runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json",
+    "runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json"
+  ],
+  "prompt_payload": "Read the bounded context. Return that the suggested next use should be validation target because the remaining uncertainty is browser validation. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:27:20Z",
+  "ended_at": "2026-04-16T10:27:36Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target",
+    "deposit_candidate"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  Read the bounded context refs. The suggested next use should be `validation target` because the remaining uncertainty is browser validation of the stable VectorFL CLI UI path.\n\n- important findings / diffs / outputs  \n  No files modified.  \n  Prior context says the stable UI source remains `app/ui/integrated_engine`, runtime artifacts remain under `runtime`, and the CLI layer is an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface.  \n  The bounded context contains a metadata mismatch: embedded result text says `validation target`, while the structured field says `reread_target`.\n\n- uncertainty or failure notes  \n  No fresh browser validation was performed in this turn.  \n  Remaining uncertainty is the browser-click/user-feel validation pass at `http://127.0.0.1:5173/`.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:30:54Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:27:42Z",
+      "source": "vectorfl_cli_host_control_panel"
+    },
+    {
+      "mark": "deposit_candidate",
+      "marked_at": "2026-04-16T10:30:54Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ],
+  "deposit_ready": true
+}

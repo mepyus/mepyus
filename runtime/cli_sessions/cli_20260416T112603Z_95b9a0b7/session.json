@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T112603Z_95b9a0b7",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 1: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_shared_language_grammar_reread_v0.md",
+    "docs/reports/integrated_engine_cli_on_top_operator_report_grammar_trial_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:26:03Z",
+  "ended_at": "2026-04-16T11:26:34Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7/prompt.md",
+  "exit_code": 0,
+  "result_summary": "on이 아니다`\n    - human-readable line, not final wording: deposit 후보는 나중에 편입 판단할 수 있는 재료이지 공식 기록 편입이 아니다.\n    - repeated connection it belongs to: raw artifact reduction -> readable return -> still-not-ingestion\n    - emerging axis candidate: candidate-not-authority axis\n    - surface exposure note: engine / vectorfl\n    - what must not be flattened: deposit preview나 queue를 자동 저장 완료로 읽으면 안 됨\n    - next reread question: deposit candidate가 재진입 후보로만 노출되는가?\n    - suggested next use: validation target\n\n  - internal phrase or signal observed: `readable report before UI copy`\n    - human-readable line, not final wording: 한국어 UI 문구보다 먼저 Codex 보고 문법이 반복 가능해야 한다.\n    - repeated connection it belongs to: internal language reread -> shared report grammar -> user-readable decision support -> next reread\n    - emerging axis candidate: readable-report-before-visible-translation axis\n    - surface exposure note: user / vectorfl\n    - what must not be flattened: 내부 언어를 즉석 한국어 UI copy로 덮으면 안 됨\n    - next reread question: 같은 보고 순서가 실제 run에서도 판단 부담을 줄이는가?\n    - suggested next use: validation target\n\n- uncertainty or failure notes\n  - Only the two bounded context refs were read.\n  - No files were modified.\n  - This is not a final glossary, UI copy proposal, or feature promotion.\n  - The strongest uncertainty is whether the report grammar is already sufficient for user decision-making without a surface summary layer.\n\n- suggested next use: validation target\n  - Validate one actual Codex run or current screen observation against this sequence:\n    `current status -> 3-surface reading -> open/closed routes -> authority boundary -> friction -> next smallest action`.\n  - Reread target candidate: one recent `runtime/cli_sessions` return marked as `validation_target`.\n  - Deposit candidate: not yet.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:26:34Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:26:34Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

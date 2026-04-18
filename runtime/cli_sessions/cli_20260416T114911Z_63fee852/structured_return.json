@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T114911Z_63fee852",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "copy axis`\n- surface exposure note: user에는 판단 가능한 보고, vectorfl에는 되읽기 문법, engine에는 reread material\n- external expression support needed, if any: Codex 응답 템플릿 검증\n- next reread question: 실제 Codex run 1건을 이 문법으로 보고하면 사용자가 판단 부담을 덜 느끼는가?\n- suggested next use: validation target\n\n7.\n- internal phrase or signal observed: `latest / recent return`\n- source context where it appeared: shared grammar reread §3, §4.3, §7, operator trial §1, §7\n- internal meaning / operational role: 전체 history DB가 아니라 최근 판단을 돕는 readable artifact\n- Koreanization candidate, not final UI copy: `최신 반환`, `최근 반환`, `최근 판단 보조 기록`\n- Korean preservation requirement: 기억 전체가 아니라 대화 지속과 판단 보조용 artifact라는 한계\n- risky Korean flattening to avoid: `전체 기록`, `메모리`, `완전한 히스토리`\n- why this helps the user operate: raw artifact를 직접 열지 않고도 다음 판단에 필요한 맥락을 회수함\n- what meaning gets lost if shortened: session history/browser expansion이 아직 닫혀 있다는 사실\n- repeated connection it belongs to: `raw artifact reduction -> readable return -> still-not-ingestion`\n- emerging axis candidate: `surface exposure axis`\n- surface exposure note: vectorfl에서 되읽고, user/engine에는 후보 재료로 반영\n- external expression support needed, if any: latest와 recent의 범위 제한 표시\n- next reread question: latest/recent card가 내부 기록 카드처럼만 보이고 실제 대화 흐름으로는 약한가?\n- suggested next use: validation target\n\n- uncertainty or failure notes\n  - 읽은 문서 2개만 기준으로 한 bounded reread임.\n  - 실제 화면 관찰이나 새 Codex run 검증은 수행하지 않았음.\n  - 후보 표현은 final glossary나 UI copy가 아님.\n  - `surface exposure note`는 문서 내 반복 구조에서 추출한 운영 해석임.\n\n- suggested next use: validation target\n  - 다음 reread target: 실제 Codex run 1건의 반환을 이 문법으로 다시 읽기\n  - implementation return: 없음\n  - validation target: `mark`, `deposit candidate`, `CLI on-top layer`가 사용자에게 권위/완료로 오해되지 않는지 확인\n  - deposit candidate: 아직 이르며, 최소 1회 실제 run 적용 후 반복 line 확인 필요\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-16T11:50:04Z"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T102332Z_300af10e",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - `PASS_WITH_NOTE` 상태로 reread됨.\n  - VectorFL Surface 관점에서 현재 기준 UI 소스는 `app/ui/integrated_engine`.\n  - `gemini/mock_test`는 더 이상 실제 운영 UI 소스가 아니라 Gemini 제안/참조 clay로 해석해야 함.\n  - CLI는 여전히 “새 엔진 표면”이 아니라 VectorFL Integrated Engine 위에 얹힌 on-top tool call 경로로 유지됨.\n\n- important findings / diffs / outputs\n  - 안정 폴더 승격 완료: `gemini/mock_test` → `app/ui/integrated_engine`.\n  - 기존 문서 중 `gemini/mock_test`를 실제 UI 위치처럼 말하는 문장은 현재 기준이 아니라 “마이그레이션 전 역사적 문맥”으로 reread 필요.\n  - 검증 기록상 `app/ui/integrated_engine`에서 build 통과, dev server `http://127.0.0.1:5173/` 동작, API proxy `127.0.0.1:8421` 경유 성공.\n  - 실제 read-only Codex session 성공 기록 있음:\n    - `cli_20260416T101531Z_ba21f03e`\n    - `requested_by_surface: vectorfl_surface`\n    - `requested_by_page: app/ui/integrated_engine`\n    - `status: done`\n    - `exit code: 0`\n  - 같은 session을 `validation_target`으로 마킹한 기록도 성공.\n\n- uncertainty or failure notes\n  - 파일 수정은 하지 않음.\n  - 브라우저 클릭/사용감 검증은 아직 사용자 hand-check가 남은 것으로 기록되어 있음.\n  - 현재 note만 읽었으므로, 다른 보고서들의 오래된 `gemini/mock_test` 표현 목록은 별도 스캔 전까지 미확정.\n  - dev server가 현재도 실행 중인지는 이번 reread에서 재검증하지 않음.\n\n- suggested next use\n  - reread target: 이전 reports 중 `gemini/mock_test`를 운영 UI처럼 언급하는 문서들.\n  - implementation return: 아직 보류. 안정 Codex path hand-use 전에는 Gemini adapter, background runner, session browsing 추가 금지.\n  - validation target: `app/ui/integrated_engine` 브라우저에서 VectorFL CLI run 1회 hand-check.\n  - deposit candidate: `integrated_engine_ui_stable_folder_migration_note_v0.md`는 deposit 가능하되, 조건부 note 포함: “CLI remains on-top; stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` is reference clay.”\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T10:23:51Z"
+}

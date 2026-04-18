@@ -1,0 +1,51 @@
+[[A]] [[OBJ:report_guided_paragraph_interpretation_training_v1]] [[SEM:actual_paragraph_role_reading_execution_after_example_learning]]
+
+# report-guided paragraph interpretation training v1
+
+## 1. purpose
+
+- 이번 문서는 example를 저장한 것이 아니라, 실제 단락을 역할 단위로 읽는 실행 결과다.
+- 같은 단락을 `local context`, `whole-page flow`, `comparison context`에서 다시 읽어, 내용 요약이 아니라 역할 판독이 가능한지 본다.
+
+## 2. paragraph analyses
+
+- `Bundle-Unbundle 프레임워크`
+  - context_unit: agent_interface_transition_unit
+  - excerpt: 노정석: 이걸 저희가 산업 구조의 bundle, unbundle이라는 표현으로 많이 사용하거든요. 그리고 이 bundle, unbundle이라는 표현을 제일 잘 도식화하고 설명해 주는 사람이 a16z의 Benedict Evans라는 사람이에요. 그 Benedict Evans가 Andreessen Horowitz가 유명한 게 “Software is eating the world”라는 그 표현으로 익숙하잖아요. 근데 “AI is eating the world”라고 새로 밀고 있는데, 그 “AI is eating the world” 프레임 만든 사람이 Benedict Evans인데, 결국은 이렇게 얘기하면 맞을 것 같은데, 앞서 얘기한 것처럼 어떤 산업이 끊임없이 어떤 패러다임이 바뀌는데, 매체가 바뀔 때마다 종이에서 TV로 갈 때, TV에서 인터넷으로 갈 때, 인터넷에서 그러니까 웹에서 모바일로 갈 때 이제 모바일에서 AI로 갈 때 어떤 distri…
+  - local_context_role: question_seed_block
+  - page_flow_role: strategy_pivot_block
+  - comparison_target: future_of_work_supervisor_unit
+  - comparison_role: 노동 역할 변화보다 앱 구조 재편과 moat 이동을 더 강하게 여는 단락
+  - objects: 에이전트 애플리케이션, 전략/방향성, 구현/자동화
+  - layers: 구조/연결 층, 전략/방향 층, 질문 유도 층
+  - relation_movement: transition_hint, contrast_hint, execution_shift_hint, question_generation_hint
+- `GTC 키노트와 ‘일의 미래’`
+  - context_unit: future_of_work_supervisor_unit
+  - excerpt: 최승준: 근데 또 아픈 중에 GTC 보신 거 아니에요? 노정석: 할 일이 없어 가지고 Jensen Huang 얘기하는 거 2시간 동안 멍하니 보고 있었죠. 승준님도 GTC 보셨어요? 최승준: 아니요. 대충 클립들만 봤고 아 그런가 보다 했지 자세히 들여다보진 않았는데요. 근데 또 재밌는 패턴이 정석님도 이번에 아프셔 가지고 그렇게 대화했는데 주변 분들 보니까 이렇게 누워 있을 때 수액 맞을 때 코딩하시는 분들이 있더라고요. 이제는 할 수 있으니까. 노정석: 말로도 할 수 있고 네. 최승준: 그리고 지인들 만나서 밥을 먹는데 개발자분들인데 계속 스마트폰을 보면서 그 노티 확인하고 에이전트한테 일을 주는 풍경이 또 무척 달라졌다. 이게 뭐 하시냐 했더니 일을 계속 주고 있더라고요. 노정석: 감독관처럼. 그날 저희 OpenClaw 미팅에서도 보니까 예찬님 아이패드 하나 가지고 오셔가지고 몇 개 CLI 이렇게 돌리시면서 다 감독하고 계시더라고요. 그래서…
+  - local_context_role: role_shift_seed_block
+  - page_flow_role: future_of_work_question_seed
+  - comparison_target: agent_interface_transition_unit
+  - comparison_role: 앱 구조보다 사람의 역할 재배치와 감독자형 노동을 더 강하게 여는 단락
+  - objects: 일의 미래, 생산성/코딩, 에이전트 애플리케이션
+  - layers: 설명/해석 층, 전략/방향 층, 질문 유도 층
+  - relation_movement: transition_hint, execution_shift_hint, question_generation_hint
+- `RLVR과 CUA`
+  - context_unit: model_eval_shift_unit
+  - excerpt: 노정석: 좀 넘어가 보면, frontier lab들의 경쟁의 축은, 저희 성현님도 지난번 세션에 오셔서 올해는 이건 것 같다, RL 환경 스케일링이라고 딱 규정을 해 주셨잖아요. 그게 RLVR이라고 저희가 계속 얘기하는 건데, RLVR은 Reinforcement Learning by Verifiable Rewards라는 건데, 검증 가능한 어떤 보상 신호를 낼 수만 있으면 모델이 무조건 학습 가능하다라는 얘기를 하는 거죠. 그래서 저희가 도메인이, 처음에 RLVR 나왔을 때는 VR이라는 얘기도 안 했죠. Verifiable Rewards라는 얘기도 안 했고, 수학과 코딩이 그냥 대표적인 예제였어요. 왜냐하면 수학이랑 코딩은 문제를 푸는 과정은 어려울 수 있지만 이 솔루션이 맞냐 안 맞냐를 검증해 보는 건 쉬운 얘기니까. 마치 Sudoku 문제처럼 푸는 건 어렵지만 풀어 놓은 게 이게 정답이냐라는 걸 확인하는 건 쉽잖아요. 그래서 그런 것들만 있었…
+  - local_context_role: evaluation_shift_block
+  - page_flow_role: compression_node
+  - comparison_target: agent_interface_transition_unit
+  - comparison_role: 앱 인터페이스 재편보다 모델 경쟁의 검증 바닥과 환경 이동을 더 강하게 여는 단락
+  - objects: AI의 미래, 모델 work, 에이전트 애플리케이션
+  - layers: 검증/근거 층, 구조/연결 층, 전략/방향 층
+  - relation_movement: transition_hint, execution_shift_hint, specification_hint, question_generation_hint
+
+## 3. what changed by reading paragraphs as roles
+
+- `Bundle-Unbundle 프레임워크`는 단순 설명 문단이 아니라 앱 구조 재편과 moat 이동을 여는 pivot으로 읽혔다.
+- `GTC 키노트와 ‘일의 미래’`는 사례 설명이 아니라 사람의 역할이 감독/설계 쪽으로 이동하는 question seed로 읽혔다.
+- `RLVR과 CUA`는 트렌드 서술이 아니라 모델 경쟁이 evaluation environment로 이동한다는 compression node로 읽혔다.
+
+## 4. one-line verdict
+
+> 이번 실행은 단락을 요약하는 대신, 같은 단락이 맥락과 비교축에 따라 `seed / pivot / compression node` 같은 다른 역할로 읽힌다는 점을 실제로 보여준다.

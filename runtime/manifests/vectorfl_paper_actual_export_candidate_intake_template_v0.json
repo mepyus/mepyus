@@ -1,0 +1,104 @@
+{
+  "schema_version": "vectorfl_paper_actual_export_candidate_intake_template_v0",
+  "template_status": "operator_template_only_not_candidate",
+  "usage_rule": "Copy this structure into runtime/manifests/vectorfl_paper_actual_export_candidate_inbox_latest_v0.json only after a real true host/export candidate with raw export evidence is available.",
+  "candidate_id": "<stable-candidate-id>",
+  "candidate_type": "true_host_export_candidate",
+  "provenance": {
+    "source_system": "<host system that emitted the export>",
+    "export_origin": "<workspace/project/repository/run/export origin>",
+    "export_method": "<api_export|cli_export|downloaded_json|host_generated_archive|other>",
+    "raw_export_ref": "<path-or-durable-reference-to-raw-export-before-normalization>",
+    "captured_by": "<operator-or-adapter>",
+    "captured_at": "<source-or-local-capture-timestamp>",
+    "received_at": "<local-receipt-timestamp>",
+    "transformation_history": [
+      {
+        "step": "<raw-export-to-four-surface-normalization-step>",
+        "input_ref": "<input-ref>",
+        "output_ref": "<output-ref>",
+        "changed_fields": [
+          "<field-or-empty-if-none>"
+        ],
+        "operator_note": "<what changed and why>"
+      }
+    ]
+  },
+  "export_origin": {
+    "host_product": "<host product or runtime>",
+    "host_workspace": "<host workspace or project>",
+    "host_record_ids": [
+      "<original host issue/run/comment/approval ids>"
+    ],
+    "export_scope": "<what was included in this export>",
+    "export_boundary": "<what was intentionally omitted>"
+  },
+  "capture_context": {
+    "capture_reason": "<why this candidate is being tested now>",
+    "capture_method_detail": "<exact command/API/export action if available>",
+    "redaction_note": "<none or describe redactions>",
+    "operator_note": "<supervisor-readable capture context>"
+  },
+  "timestamp": {
+    "source_created_at": "<source-created-timestamp-or-null>",
+    "source_updated_at": "<source-updated-timestamp-or-null>",
+    "exported_at": "<host-export-timestamp>",
+    "captured_at": "<local-capture-timestamp>",
+    "normalized_at": "<normalization-timestamp>"
+  },
+  "host_runtime_relation": {
+    "relation_to_vectorfl_paper": "<why this host/runtime record can test the VectorFL Paper actual_export_only gate>",
+    "runtime_relation_evidence": [
+      "<evidence-ref-or-note>"
+    ],
+    "not_reference_derived_reason": "<why this is not a reference candidate>"
+  },
+  "raw_export_ref": "<repeat the primary raw export ref for validator/operator readability>",
+  "transformation_history": [
+    {
+      "step": "<normalization-step>",
+      "preserved_host_fields": [
+        "<field>"
+      ],
+      "synthetic_or_inferred_fields": [],
+      "normalization_boundary": "<exact boundary of normalization>"
+    }
+  ],
+  "honesty_declaration": {
+    "not_reference_derived": true,
+    "not_local_fixture": true,
+    "raw_export_available": true,
+    "synthetic_fields": [],
+    "normalization_boundary": "<explain what was normalized and what host grammar was preserved>",
+    "operator_honesty_note": "<known limitations; do not claim gate close here>"
+  },
+  "issues_row": {
+    "id": "<host-issue-id>",
+    "title": "<host issue title>",
+    "description": "<host issue description/body>",
+    "status": "<host issue status>"
+  },
+  "heartbeat_runs_row": {
+    "id": "<host-run-id>",
+    "status": "<host run status>",
+    "startedAt": "<host run start timestamp>",
+    "completedAt": "<host run completion timestamp or null>",
+    "stdoutExcerpt": "<host run excerpt if available>",
+    "contextSnapshot": {},
+    "resultJson": {}
+  },
+  "issue_comments_rows": [
+    {
+      "id": "<host-comment-id>",
+      "body": "<host comment body>",
+      "createdAt": "<host comment timestamp>",
+      "author": "<host comment author or adapter>"
+    }
+  ],
+  "approvals_row": {
+    "id": "<host-approval-or-decision-id>",
+    "status": "<approval or governance status>",
+    "decisionNote": "<host governance or decision note>",
+    "payload": {}
+  }
+}

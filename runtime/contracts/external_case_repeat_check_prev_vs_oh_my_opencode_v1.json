@@ -1,0 +1,36 @@
+{
+  "schema": "external_case_repeat_check_prev_vs_oh_my_opencode_v1",
+  "base_cases": [
+    "saltlux_agentic_ai_ontology_raw_transcript_v1",
+    "aifrontier_01_28_raw_transcript_v1"
+  ],
+  "compare_case": "oh_my_opencode_raw_input_v1",
+  "repeated_frames": [
+    {
+      "frame": "agentic_workflow_orchestration_frame",
+      "reading": "세 사례 모두 생성기보다 workflow를 수행하는 agentic 구조로 읽는다.",
+      "saltlux_side": "reasoning + planning + tool use + multi-agent coordination",
+      "aifrontier_side": "harness, guardrail, agentic tool use, batch/orchestration usability",
+      "oh_my_opencode_side": "멀티모델/멀티에이전트 하네스, 병렬 작업, 역할 분담형 실행"
+    },
+    {
+      "frame": "agentic_ux_or_barrier_reduction_frame",
+      "reading": "aifrontier와 oh_my_opencode 모두 일반 사용자 장벽 축소와 사용성 향상을 강하게 말한다.",
+      "aifrontier_side": "CLI/폴더/설치 장벽 축소",
+      "oh_my_opencode_side": "비개발자도 설치 후 바로 활용 가능한 위임형 사용성"
+    }
+  ],
+  "new_outer_frames_in_oh_my_opencode": [
+    "multi_model_multi_agent_harness_frame",
+    "context_management_as_reporting_frame",
+    "ultra_work_parallel_trigger_frame",
+    "agent_roles_with_named_worldbuilding_frame"
+  ],
+  "weaker_or_missing_compared_to_previous": [
+    "ontology_direct_frame",
+    "semantic_interoperability_data_fabric_frame",
+    "grounding_plus_symbolic_expression_frame",
+    "market_strategy_frame"
+  ],
+  "note": "반복은 agentic workflow와 barrier reduction 축에서 주로 나타나고, oh_my_opencode는 하네스/에이전트 협업 설계 쪽이 더 강하다."
+}

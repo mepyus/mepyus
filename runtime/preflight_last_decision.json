@@ -1,0 +1,136 @@
+{
+  "preflight_id": "preflight_20260405T074526_912614_827bbb",
+  "selected_mode": "space_reading",
+  "mode_source": "default_order",
+  "phase_snapshot": {
+    "phase": "thickening",
+    "status": "active",
+    "last_updated": "2026-04-02T10:58:30+00:00",
+    "reading_frame": "binding_closed -> semantic_fidelity -> output-worthiness -> meaning_context_sufficiency -> detector -> widening_trigger",
+    "evaluated_from": "turn_preflight",
+    "phase_source_turn": "preflight_20260402T105830_908210_f49ed8",
+    "decision_scope": "mode_scoped",
+    "active_latent_lines": [
+      "pre_read_eye",
+      "raw_return_preservation"
+    ],
+    "signals": {
+      "continuity": "high",
+      "residue": "medium",
+      "tension": "low",
+      "sufficiency": "medium"
+    },
+    "decision": "thickening",
+    "decision_reason": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+    "blocked_by": [],
+    "next_check_trigger": [
+      "same latent line repeats in a future reread",
+      "residue becomes high because a new path cannot be collapsed",
+      "sufficiency moves to high and closure can be reviewed"
+    ],
+    "phase_confidence": "medium",
+    "related_candidate_ids": [
+      "raw_to_first_pass_to_report"
+    ],
+    "related_watch_rules": [
+      "second_candidate_emergence_watch"
+    ],
+    "related_breadcrumb_refs": [
+      "crumb_7045_191c"
+    ],
+    "reopen_hint": [
+      "if residue becomes high with same line repeated twice",
+      "if a new observation cannot collapse back to the current candidate"
+    ],
+    "notes": {
+      "selected_mode": "space_reading",
+      "first_read_ref": "inputs/external_cases/enterprise.txt",
+      "requested_artifact_ref": "inputs/external_cases/enterprise.txt"
+    }
+  },
+  "selected_artifact_group": {
+    "group_key": "raw_external_cases",
+    "artifact_roots": [
+      "inputs/external_cases",
+      "source_assets/external_case_inputs"
+    ],
+    "selected_artifacts": [
+      "inputs/external_cases/README.md",
+      "inputs/external_cases/saltlux_ai.txt",
+      "source_assets/external_case_inputs/folder_status.md",
+      "source_assets/external_case_inputs/external_case_first_pass_saltlux_ai_input_v1.md"
+    ]
+  },
+  "why_selected": "mode=space_reading / mode_source=default_order / group=raw_external_cases / raw materials should be read before promotion into reports or downstream structures",
+  "drift_risks": [
+    "space reading -> immediate solution",
+    "reflection -> implementation jump",
+    "trace reading -> summary only",
+    "closure -> semantic fidelity conflation",
+    "pre-closure -> widening trigger jump",
+    "raw import -> summary shortcut",
+    "derived report treated as raw source"
+  ],
+  "guard_actions": [
+    "ask which layer this belongs to",
+    "record the path that was read",
+    "separate binding from fidelity",
+    "delay widening until detector fires",
+    "keep the read unit explicit",
+    "read raw source before derived surfaces",
+    "keep raw / first-pass / report separate"
+  ],
+  "requested_mode": "",
+  "requested_artifact_ref": "",
+  "page_key": "",
+  "purpose": "",
+  "selected_artifact_root_hint": "inputs/external_cases",
+  "first_read_ref": "inputs/external_cases/README.md",
+  "selected_at": "2026-04-05T07:45:26+00:00",
+  "phase_transition": {
+    "phase": "thickening",
+    "status": "active",
+    "last_updated": "2026-04-05T07:45:26+00:00",
+    "reading_frame": "binding_closed -> semantic_fidelity -> output-worthiness -> meaning_context_sufficiency -> detector -> widening_trigger",
+    "evaluated_from": "turn_preflight",
+    "phase_source_turn": "preflight_20260405T074526_912614_827bbb",
+    "decision_scope": "mode_scoped",
+    "active_latent_lines": [
+      "pre_read_eye",
+      "raw_return_preservation"
+    ],
+    "signals": {
+      "continuity": "high",
+      "residue": "medium",
+      "tension": "low",
+      "sufficiency": "medium"
+    },
+    "decision": "thickening",
+    "decision_reason": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+    "blocked_by": [],
+    "next_check_trigger": [
+      "same latent line repeats in a future reread",
+      "residue becomes high because a new path cannot be collapsed",
+      "sufficiency moves to high and closure can be reviewed"
+    ],
+    "phase_confidence": "medium",
+    "related_candidate_ids": [
+      "raw_to_first_pass_to_report"
+    ],
+    "related_watch_rules": [
+      "second_candidate_emergence_watch"
+    ],
+    "related_breadcrumb_refs": [
+      "runtime/breadcrumbs.jsonl"
+    ],
+    "reopen_hint": [
+      "if residue becomes high with same line repeated twice",
+      "if a new observation cannot collapse back to the current candidate"
+    ],
+    "notes": {
+      "selected_mode": "space_reading",
+      "first_read_ref": "inputs/external_cases/README.md",
+      "requested_artifact_ref": ""
+    }
+  }
+}

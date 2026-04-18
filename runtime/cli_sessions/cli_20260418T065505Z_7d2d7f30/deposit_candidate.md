@@ -1,0 +1,63 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260418T065505Z_7d2d7f30`
+- backend_kind: `codex`
+- task_type: `summarize`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+- route_label: `vectorfl_reread`
+- current_marks: `none`
+- user_decision_state: `pending_candidate_review`
+- canonical_deposition_state: `not_ingested`
+
+## Task Purpose
+VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.
+
+## Used Context Refs
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## Result Summary
+- result summary  
+  테스트 메시지는 운용 판단을 확장하기보다, VectorFL 통합 엔진 면에서 Codex CLI-on-top 호출이 “작게 왕복 가능한지” 확인하는 성격으로 읽힙니다. 첨부 근거에 따르면 현재 안정 소스 위치는 `app/ui/integrated_engine`이며, `gemini/mock_test`는 제안/참조용 clay로 남아 있습니다. CLI는 별도 제4면이 아니라 VectorFL 표면 위에 관찰되는 도구 호출 계층으로 유지해야 합니다.
+
+- important findings / diffs / outputs  
+  1. Korean operating summary:  
+     현재 턴은 파일 수정, 승격, 수집, 정본화 없이 단일 근거 문서를 바탕으로 “통합 엔진 UI의 안정 폴더 전환 이후 Codex 호출을 어떻게 해석할지”를 확인하는 요약 턴입니다. 핵심 판단은 `app/ui/integrated_engine`를 실제 UI 경로로 보고, CLI는 VectorFL면 위의 on-top 처리 계층으로만 읽는 것입니다.
+
+  2. Surface reading:  
+     user: 목적, 과제, 판단 요청을 제시하는 면입니다. 이번 입력의 실질 메시지는 “테스트”이며, 작은 왕복 검증입니다.  
+     VectorFL: 사용자 목적을 해석하고, 근거 제한과 가드, 다음 라우팅 후보를 붙여 Codex에 전달하는 중재/재읽기 면입니다.  
+     engine: 첨부 근거를 처리해 요약, 반환, 검증 후보 또는 deposit 재료를 산출하는 처리 면입니다. CLI는 이 engine 처리의 관찰 가능한 도구 계층이지 독립 표면이 아닙니다.
+
+  3. Route suggestion:  
+     reread_target
+
+  4. Suggested reread target:  
+     `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`를 기준으로, “stable UI source = `app/ui/integrated_engine`”와 “CLI-on-top is not a fourth surface” 판단을 VectorFL reread에서 재확인하는 용도에 적합합니다.
+
+- uncertainty or failure notes  
+  근거는 단일 문서뿐이라 현재 UI 상태, 서버 실행 여부, 최신 변경 사항은 재검증하지 않았습니다. 또한 이번 턴은 read-only guard에 따라 파일 변경, ingestion, promotion, canonicalization을 수행하지 않았습니다.
+
+- suggested next use: reread target / implementation return / validation target / deposit candidate  
+  suggested next use: `reread_target`  
+  다음에는 VectorFL reread에서 이 반환을 사용해 “고정 3-surface 구조 + CLI on-top boundary”가 올바르게 유지되는지 확인하는 것이 적절합니다.
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+reread_target
+
+## Validation / Decision Boundary
+- This file is a deposition candidate only.
+- It is not canonical memory, not an approved record, and not automatic ingestion.
+- User decision or a later explicit deposition package is still required.
+

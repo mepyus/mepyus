@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-03-28T10:09:23.805348Z",
+  "input_asset": "inputs/external_cases/claude_code_index.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w3_s1_20260328T100910Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/claude_code_index.txt",
+    "supporting_first_pass_patterns": [
+      "top_question_intent_windows",
+      "object_candidates",
+      "layer_hints",
+      "relation_hints",
+      "top_anchor_values"
+    ],
+    "second_order_reading_type": "question_inducing_block_review",
+    "rereading_mode": "cross_window_candidate_selection",
+    "scope_local_page_comparison": "local_plus_page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "question_opening_and_residue_deprioritization_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "question-inducing candidate rules are still being observed as patterns, not generalized",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w3_s1_20260328T100910Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json"
+    ]
+  },
+  "question_inducing_candidates": [],
+  "summary_stage_deprioritization_candidates": []
+}

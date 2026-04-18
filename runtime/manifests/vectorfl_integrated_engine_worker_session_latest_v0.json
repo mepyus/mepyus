@@ -1,0 +1,49 @@
+{
+  "schema_version": "vectorfl_integrated_engine_worker_session_v0",
+  "session_id": "vectorfl_engine_worker_session_latest",
+  "status": "configured_not_running",
+  "updated_at": "2026-04-11T23:23:16Z",
+  "session_scope": "operating dialogue configured session",
+  "primary_worker": "codex",
+  "primary_model": "current codex session",
+  "secondary_worker": "gemini",
+  "secondary_model": "gemini-cli default",
+  "gemini_role": "후단 보조 작업자로 내부 흐름을 읽고 라인/번역 재료를 생산한다. 이 대화 액션에서는 CLI를 실행하거나 repo를 수정하지 않는다.",
+  "active_task": "freshness gate가 stale completed false positive를 줄이는지 확인한다.",
+  "line_script_candidates": [
+    "scripts/run_line_thickening_sample.py",
+    "scripts/run_external_case_flowline_sweep.py"
+  ],
+  "translation_material_targets": [
+    "app/runtime/vectorfl_integrated_engine_shell.py",
+    "app/runtime/vectorfl_integrated_engine_api.py",
+    "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+    "docs/reports/paperclip_native_product_reading_v0.md",
+    "docs/reports/vectorfl_paper_human_direction_readout_v0.md",
+    "gemini/vectorfl_core_concepts_and_hierarchical_translation_data.md"
+  ],
+  "operator_visibility": [
+    "selected worker",
+    "selected model",
+    "operator message",
+    "intent mode",
+    "reference md files",
+    "forbidden scope",
+    "latest operating dialogue"
+  ],
+  "return_slot": "runtime/manifests/vectorfl_integrated_engine_worker_session_latest_v0.json",
+  "forbidden_scope": [
+    "do not modify repo",
+    "do not replace current slot",
+    "do not declare gate close",
+    "do not add UI features"
+  ],
+  "supervisor_note": "configured from integrated engine operating dialogue",
+  "guard": {
+    "records_session_config_only": true,
+    "does_not_run_cli": true,
+    "does_not_modify_repo": true,
+    "latest_only": true
+  },
+  "content_fingerprint": "6b8a37a165811589d99b29be7aedc8121cab0cc59680739f0c9fdd0fc3022cec"
+}

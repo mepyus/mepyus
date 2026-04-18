@@ -1,0 +1,553 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "para_001",
+    "end_ref": "para_002",
+    "unit_type": "paragraph",
+    "text_excerpt": "니어 개발자가 AI와 6개월간 25만 라인의 시스템을 만들며 발견한 것들\n나에게 딱 맞는 바퀴를 만드는 시대\nKim, min tae\nKim, min tae Follow\n26 min read\n·\nMar 5, 2026\n15",
+    "char_count": 122,
+    "source_segment_ids": [
+      "seg_001",
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "para_003",
+    "end_ref": "para_004",
+    "unit_type": "paragraph",
+    "text_excerpt": "AI 와 함께 25만 줄 규모의 프로젝트를 만들었습니다. 한 사람이, 6개월 만에! AI가 폭발적인 생산성을 제공한다는 건 이미 많은 분이 체감하고 계실 겁니다. 하지만 규모가 커지면 다른 문제가 보이기 시작합니다. AI는 확인하지 않고 추론에 의지하고, 작업이 길어지면 지침을 잊고, 규칙을 지키라고 해도 스스로 지켰다고 착각합니다. 이 글은 그 문제들을 하나씩 풀어가며 만들어낸 개발 파이프",
+    "char_count": 323,
+    "source_segment_ids": [
+      "seg_003",
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "para_005",
+    "end_ref": "para_006",
+    "unit_type": "paragraph",
+    "text_excerpt": "Baden for Claude Code\n0에서 25만 라인까지\nDay1Company에서 Methii라는 서비스를 개발하고 있습니다. 업계에 오래 있었지만, AI 코딩 에이전트를 개발의 중심에 놓고 본격적으로 작업하기 시작한 건 작년부터입니다. 회사에서 신규 서비스를 만들 때, 모험적이면서도 멋진 제품을 만드는 건 생각보다 어렵습니다. 참여자의 능력이 부족해서가 아닙니다. 이해관계자가 많고 참",
+    "char_count": 495,
+    "source_segment_ids": [
+      "seg_005",
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "para_007",
+    "end_ref": "para_008",
+    "unit_type": "paragraph",
+    "text_excerpt": "Methii는 그래프 기반 학습 캔버스 서비스입니다. 사용자가 어떤 주제에 대해 학습 트리를 만들면, AI가 콘텐츠를 생성하고, 캔버스 위에서 지식 구조를 시각화합니다. 여기에 퀴즈, 콘텐츠 스타일 변환, 다국어 지원, 실시간 협업 기능까지 들어갑니다. 서비스 하나를 만드는 게 아니라 하나의 플랫폼을 만드는 일이었고 개발은 현재도 계속 진행중입니다. 처음 2개월은 Anthropic의 Clau",
+    "char_count": 365,
+    "source_segment_ids": [
+      "seg_007",
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "para_009",
+    "end_ref": "para_010",
+    "unit_type": "paragraph",
+    "text_excerpt": "이후에는 Claude와 단독으로 작업하며 규모를 키워갔습니다. 6개월이 지난 지금, Methii의 코드베이스는 이렇게 생겼습니다. 소스 파일 1,271개. 코드 약 249,000줄. Turborepo 모노레포 안에 14개의 앱과 9개의 공유 패키지가 들어 있습니다. React 프론트엔드에는 Konva.js 기반의 인터랙티브 캔버스가 있고, Express + Prisma로 구성된 API 서버에",
+    "char_count": 589,
+    "source_segment_ids": [
+      "seg_009",
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "para_011",
+    "end_ref": "para_012",
+    "unit_type": "paragraph",
+    "text_excerpt": "Git 커밋 1,185개. 컨트리뷰터 1명. 설계와 판단은 제가 했고, 실행은 AI가 했습니다. 이 조합은 폭발적인 생산성을 만들어냈습니다. 한 사람이 이 규모의 시스템을 6개월 만에 만들 수 있었던 건 분명히 AI 덕분입니다. 그런데 규모가 커지면서 보이기 시작한 것들이 있었습니다.",
+    "char_count": 159,
+    "source_segment_ids": [
+      "seg_011",
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "para_013",
+    "end_ref": "para_014",
+    "unit_type": "paragraph",
+    "text_excerpt": "AI는 읽었다고 착각한다\nMethii의 LLM 파이프라인에는 Prompteer라는 자체 제작 프롬프트 관리 라이브러리가 있습니다. LLM 기반 서비스를 만들다 보면 프롬프트 관리가 금방 복잡해지는데, 오픈소스에 이를 위한 도구가 꽤 있었습니다. 하지만 대부분 프로젝트에 적용하기엔 불필요한 기능이 많았고, 저에게 필요한 건 훨씬 가벼운 것이었습니다. Next.js의 파일 기반 라우팅 개념을 프",
+    "char_count": 728,
+    "source_segment_ids": [
+      "seg_013",
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "para_015",
+    "end_ref": "para_016",
+    "unit_type": "paragraph",
+    "text_excerpt": "더 근본적인 문제는 따로 있었습니다. AI가 Prompteer의 문법 문서를 실제로 읽지 않고도, “읽은 것 같다”는 추론 위에서 작업을 진행한다는 것이었습니다. 파일을 열어 확인하는 도구를 갖고 있으면서도, 실제로 열지 않고 “이 파일은 아마 이런 내용일 것이다”라고 추론하여 프롬프트를 작성해놓습니다. 그리고 자신이 추론한 것과 실제로 읽은 것을 구분하지 못합니다. 이런 일은 프롬프트 시스",
+    "char_count": 581,
+    "source_segment_ids": [
+      "seg_015",
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "para_017",
+    "end_ref": "para_018",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size Methii Knowledge Tree GCS\nAI는 엄청난 분량의 작업을 빠르게 처리합니다. 하지만 실제로 확인하지 않고 매우 많은 것을 “추론”에 의지합니다. 작은 프로젝트에서는 이 추론이 대부분 맞고, 틀려도 금방 잡을 수 있습니다. 하지만 25만 줄 규모에서, 14개 서비스가 얽히고, 독자적 문법과 ",
+    "char_count": 269,
+    "source_segment_ids": [
+      "seg_017",
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "para_019",
+    "end_ref": "para_020",
+    "unit_type": "paragraph",
+    "text_excerpt": "문서는 특정 시점의 스냅샷일 뿐이다\n처음에는 문서로 시스템을 설명했습니다. AI에게 코드베이스를 이해시키기 위해 상세한 설계 문서를 작성했습니다. 에디터 콘텐츠 아키텍처, 이벤트 시스템, i18n 아키텍처, 빌링 시스템, 콘텐츠 생성 워크플로, RAG 아키텍처, 지식 추천 시스템, 코드 실행 샌드박스 아키텍처, 파이프라인 모니터링… 프로젝트의 docs 디렉토리에는 57개의 마크다운 문서가 쌓",
+    "char_count": 376,
+    "source_segment_ids": [
+      "seg_019",
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "para_021",
+    "end_ref": "para_022",
+    "unit_type": "paragraph",
+    "text_excerpt": "문서와 코드의 불일치가 조금씩 쌓이기 시작했습니다. 처음에는 사소했습니다. 문서에는 ApiService라고 되어 있지만 코드에서는 이미 httpClient 싱글톤으로 전환된 상태. 문서에는 컨트롤러에 비즈니스 로직이 있다고 되어 있지만 서비스 레이어로 분리가 완료된 상태. 이런 불일치 하나하나는 작지만, AI가 오래된 문서를 참조해서 이미 리팩토링된 패턴으로 새 코드를 작성하기 시작하면 문제",
+    "char_count": 394,
+    "source_segment_ids": [
+      "seg_021",
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "para_023",
+    "end_ref": "para_024",
+    "unit_type": "paragraph",
+    "text_excerpt": "결국 하나의 결론에 도달했습니다. 시스템을 설명하는 것은 코드 그 자체여야 합니다. 문서는 특정 시점의 스냅샷일 뿐이고, 코드만이 항상 현재 상태를 정확하게 반영합니다. 그런데 코드가 시스템을 스스로 설명하려면, 코드 자체가 일관된 품질과 구조를 유지하고 있어야 합니다. 네이밍이 제멋대로이고, 패턴이 파일마다 다르고, 의존 방향이 뒤엉켜 있으면 코드를 읽어도 시스템이 보이지 않습니다.",
+    "char_count": 216,
+    "source_segment_ids": [
+      "seg_023",
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "para_025",
+    "end_ref": "para_026",
+    "unit_type": "paragraph",
+    "text_excerpt": "그리고 품질을 유지하는 버팀목은 규칙입니다. 규칙도 코드와 함께 유지되어야 하는 대상입니다. 이 생각의 전환이, 이후 모든 것의 출발점이 됐습니다.",
+    "char_count": 82,
+    "source_segment_ids": [
+      "seg_025",
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "para_027",
+    "end_ref": "para_028",
+    "unit_type": "paragraph",
+    "text_excerpt": "규칙에서 파이프라인으로\n코드 품질을 지키는 규칙을 만들기로 했습니다. 그런데 어떤 규칙을 만들 것인가? ESLint 같은 정적 분석 도구로 잡을 수 있는 것들 — unused imports, 세미콜론 스타일, 들여쓰기 — 은 이미 자동화되어 있습니다. 이런 것들을 규칙에 넣을 필요는 없습니다. 관심을 둔 것은 정적 분석이 잡을 수 없는 것들이었습니다.",
+    "char_count": 197,
+    "source_segment_ids": [
+      "seg_027",
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "para_029",
+    "end_ref": "para_030",
+    "unit_type": "paragraph",
+    "text_excerpt": "“컨트롤러에서 50줄 이상의 복잡한 비즈니스 로직을 직접 작성하지 않는다.” “다른 도메인과의 상호작용을 정확히 이해한다.” “핵심 작업은 에러가 전파되어야 한다.” “레이아웃 계산을 렌더링 사이클 내에서 수행하지 않는다.” — 이런 규칙은 AST 파싱으로 검증할 수 없습니다. 코드의 의미와 맥락을 이해해야만 판단할 수 있습니다. 바로 LLM이 할 수 있는 일입니다. 240개의 MUST/MU",
+    "char_count": 535,
+    "source_segment_ids": [
+      "seg_029",
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "para_031",
+    "end_ref": "para_032",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size INDEX.yaml\n여기서 핵심적인 설계 결정이 있었습니다. INDEX.yaml이라는 트리거 매핑 파일을 만들어, 수정 대상 파일의 경로, 코드 패턴, import문을 기준으로 관련 규칙이 동적으로 로드되도록 했습니다. 예를 들어 에이전트가 apps/web/src/engine/** 경로의 파일을 수정하려 하",
+    "char_count": 413,
+    "source_segment_ids": [
+      "seg_031",
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "para_033",
+    "end_ref": "para_034",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size rules/concerns/registry-pattern.md\n규칙을 만들었습니다. 그런데 규칙은 만드는 것보다 지켜지게 하는 것이 어렵습니다.",
+    "char_count": 128,
+    "source_segment_ids": [
+      "seg_033",
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "para_035",
+    "end_ref": "para_036",
+    "unit_type": "paragraph",
+    "text_excerpt": "작업 에이전트에게 “규칙을 확인하고 준수하라”고 지시할 수는 있습니다. 하지만 이건 자기 코드를 자기가 심판하는 구조입니다. 앞서 보았듯이 AI는 확인하지 않고도 “확인했다고 착각”할 수 있습니다. 규칙을 실제로 읽지 않고도 “이 규칙은 아마 이런 내용일 것이다”라고 추론하여 통과시켜버릴 수 있습니다. 그래서 Rule Guard라는 독립 에이전트를 만들어 규칙 검증을 전담시켰습니다. Clau",
+    "char_count": 423,
+    "source_segment_ids": [
+      "seg_035",
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "para_037",
+    "end_ref": "para_038",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size .claude/agents/rule-guard.md\n작업 흐름은 이렇습니다. 작업 에이전트가 수정 계획을 세우면, Rule Guard를 호출하여 사전 검토를 받습니다. Rule Guard는 INDEX.yaml에서 해당 파일에 적용되는 규칙을 확인하고, 규칙 파일을 실제로 읽은 뒤, 수정 계획이 MUST/MU",
+    "char_count": 378,
+    "source_segment_ids": [
+      "seg_037",
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "para_039",
+    "end_ref": "para_040",
+    "unit_type": "paragraph",
+    "text_excerpt": "그런데 여기서 한 가지 문제를 더 풀어야 했습니다. 검증 결과가 구조화되지 않으면, 어떤 규칙이 자주 위반되는지, 어떤 도메인이 취약한지, 시간이 지나면서 품질이 나아지고 있는지 파악할 수 없습니다. Rule Guard의 검증 행위 자체를 정량화 가능한 데이터로 만들어야 했습니다. 그래서 프로토콜을 설계했습니다. ruleId 필수, 규칙별 개별 보고. 하나의 검증 보고에는 하나의 규칙 ID만",
+    "char_count": 403,
+    "source_segment_ids": [
+      "seg_039",
+      "seg_040"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "para_041",
+    "end_ref": "para_042",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size CLAUDE.md 의 Rule Gard 지침\n이 프로토콜이 존재하는 이유는, 이 데이터가 최종적으로 흘러들어갈 곳이 있기 때문입니다.",
+    "char_count": 122,
+    "source_segment_ids": [
+      "seg_041",
+      "seg_042"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "para_043",
+    "end_ref": "para_044",
+    "unit_type": "paragraph",
+    "text_excerpt": "AI의 기억은 믿을 수 없다\n규칙도 만들었고, 파수꾼도 세웠습니다. 그런데 더 근본적인 문제가 남아 있었습니다. Claude Code에서 작업이 길어지면 컨텍스트 압축(context compaction)이 일어납니다. 대화가 일정 길이를 넘으면 이전 맥락이 요약되면서 세부 정보가 소실됩니다. 이때 CLAUDE.md에 명시한 지침도, Rule Guard 호출 의무도, 보고 프로토콜도 함께 희석",
+    "char_count": 304,
+    "source_segment_ids": [
+      "seg_043",
+      "seg_044"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "para_045",
+    "end_ref": "para_046",
+    "unit_type": "paragraph",
+    "text_excerpt": "지침이 프롬프트 수준에만 존재하는 한, 이 문제는 구조적으로 해결할 수 없습니다. AI의 기억은 본질적으로 불안정하고, 그 위에 세운 모든 약속은 시간이 지나면 흔들립니다. 이 문제에 대해 여러 방면에서 접근했습니다.",
+    "char_count": 121,
+    "source_segment_ids": [
+      "seg_045",
+      "seg_046"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "para_047",
+    "end_ref": "para_048",
+    "unit_type": "paragraph",
+    "text_excerpt": "첫째, CLAUDE.md를 극도로 절제했습니다. 25만 줄 코드베이스의 모노레포 전체를 다루면서도 134줄. Baden 보고 지침, Rule Guard 흐름, 아키텍처 개요, 개발 명령어 — 에이전트가 알아야 할 최소한만 담았습니다. 상세한 도메인 지식은 rules/ 디렉토리와 docs/에 분리했습니다. Rule Guard의 작동 지침은 별도 에이전트 정의 파일에 뒀습니다. 핵심 지침의 컨텍",
+    "char_count": 466,
+    "source_segment_ids": [
+      "seg_047",
+      "seg_048"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "para_049",
+    "end_ref": "para_050",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size AI의 기억이 희석되는 정확한 시점에, 지침을 기계적으로 재주입하는 것입니다. 이건 프롬프트 수준의 해결이 아니라 인프라 수준의 강제입니다. AI가 잊든 말든 상관없이 작동합니다.",
+    "char_count": 148,
+    "source_segment_ids": [
+      "seg_049",
+      "seg_050"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "para_051",
+    "end_ref": "para_052",
+    "unit_type": "paragraph",
+    "text_excerpt": "그런데 아직 하나가 빠져 있습니다. 이 모든 장치가 실제로 작동하고 있는지 어떻게 확인할 것인가? Baden — 관측할 수 없으면 통제할 수 없다\n규칙을 만들었습니다. 파수꾼을 세웠습니다. 기억 소실에 대한 보정 장치도 마련했습니다. 하지만 이것만으로는 충분하지 않았습니다.",
+    "char_count": 153,
+    "source_segment_ids": [
+      "seg_051",
+      "seg_052"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "para_053",
+    "end_ref": "para_054",
+    "unit_type": "paragraph",
+    "text_excerpt": "Get Kim, min tae’s stories in your inbox\nJoin Medium for free to get updates from this writer. Enter your email\nSubscribe",
+    "char_count": 121,
+    "source_segment_ids": [
+      "seg_053",
+      "seg_054"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "para_055",
+    "end_ref": "para_056",
+    "unit_type": "paragraph",
+    "text_excerpt": "Remember me for faster sign in 에이전트가 지금 규칙을 실제로 참조하고 있는지, Rule Guard를 호출했는지, 파일을 탐색은 했는지, 검증은 거쳤는지 — 이것들을 실시간으로 볼 수 있어야 파이프라인이 완성됩니다. 관측할 수 없으면 통제할 수 없습니다. 터미널에 흘러가는 텍스트 로그만으로는 에이전트의 행동 패턴을 파악할 수 없습니다.",
+    "char_count": 201,
+    "source_segment_ids": [
+      "seg_055",
+      "seg_056"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "para_057",
+    "end_ref": "para_058",
+    "unit_type": "paragraph",
+    "text_excerpt": "설계 철학: 자유 서술, 사후 분류\nBaden의 가장 핵심적인 설계 결정은 에이전트에게 고정된 이벤트 타입을 강요하지 않는다는 것입니다. 에이전트가 행동을 보고할 때, read_auth_logic, modify_handler, plan_refactor_approach, check_c5_compliance 같은 snake_case 키워드를 자유롭게 만들어 씁니다. 서버가 첫 단어를 기반으로 자",
+    "char_count": 402,
+    "source_segment_ids": [
+      "seg_057",
+      "seg_058"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "para_059",
+    "end_ref": "para_060",
+    "unit_type": "paragraph",
+    "text_excerpt": "이 접근법은 AI의 특성을 정면으로 반영합니다. AI 에이전트는 미리 정해진 분류 체계를 외우고 매번 정확하게 맞추는 일에 강하지 않습니다. 앞서 본 것처럼, 명시적 지침이 있어도 학습 데이터의 관성에 끌려가거나, 확인 없이 추론으로 처리하는 경향이 있습니다. 대신 자연어에 가까운 자유로운 서술에는 강합니다. Baden은 이 특성을 거스르지 않고 활용합니다. 에이전트는 부담 없이 보고하고, ",
+    "char_count": 540,
+    "source_segment_ids": [
+      "seg_059",
+      "seg_060"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "para_061",
+    "end_ref": "para_062",
+    "unit_type": "paragraph",
+    "text_excerpt": "Press enter or click to view image in full size CLAUDE.md\nMCP 도구: 에이전트와의 접점\nBaden은 MCP(Model Context Protocol)를 통해 에이전트와 연결됩니다. 6개의 도구를 제공합니다.",
+    "char_count": 142,
+    "source_segment_ids": [
+      "seg_061",
+      "seg_062"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "para_063",
+    "end_ref": "para_063",
+    "unit_type": "paragraph",
+    "text_excerpt": "baden_start_task: 사용자가 새로운 지시를 내리면 가장 먼저 호출합니다. 프로젝트 이름과 사용자의 지시 내용을 받아 taskId를 반환합니다. 이후 같은 작업의 모든 보고에 이 taskId가 포함되어, 하나의 지시에서 파생된 모든 행동이 하나의 체인으로 연결됩니다\nbaden_plan: 코드를 읽거나 수정하지 않더라도, 접근 방식을 결정하거나 계획을 세울 때 호출합니다. 계획 수립",
+    "char_count": 772,
+    "source_segment_ids": [
+      "seg_063"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "para_064",
+    "end_ref": "para_065",
+    "unit_type": "paragraph",
+    "text_excerpt": "타임라인: 에이전트의 작업 패턴을 공간으로 펼치다\nBaden 대시보드의 중심은 타임라인 뷰입니다. 가로축은 시간, 세로축은 행동의 성격에 따라 다섯 개 레인으로 나뉩니다. User: 사용자가 에이전트에게 내린 지시와 메인 에이전트가 작업 에이전트에게 내린 지시. 모든 작업 체인의 시작점입니다.\nExploration: 파일 읽기, 코드 검색, 의존성 확인, 문서 참조. 에이전트가 코드베이스를 ",
+    "char_count": 439,
+    "source_segment_ids": [
+      "seg_064",
+      "seg_065"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "para_066",
+    "end_ref": "para_067",
+    "unit_type": "paragraph",
+    "text_excerpt": "이 구조가 드러내는 것은 단순한 이벤트의 나열이 아니라 에이전트의 작업 패턴 자체입니다. 좋은 에이전트 작업은 Exploration → Planning → Implementation → Rules의 흐름을 자연스럽게 따릅니다. 파일을 먼저 읽고, 계획을 세우고, 구현하고, 검증합니다. 반대로 Exploration 레인이 비어 있는데 Implementation에 이벤트가 가득하다면, 에이전트가",
+    "char_count": 360,
+    "source_segment_ids": [
+      "seg_066",
+      "seg_067"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "para_068",
+    "end_ref": "para_069",
+    "unit_type": "paragraph",
+    "text_excerpt": "하나의 사용자 지시에서 시작된 모든 행동은 taskId로 연결됩니다. 타임라인에서는 이 연결이 L자형 연결선으로 시각화되어, 복잡한 작업에서도 인과 관계의 흐름을 놓치지 않습니다. 메인 에이전트가 Rule Guard 서브에이전트를 호출하면, Rule Guard의 보고도 같은 taskId를 사용하므로 동일한 체인에 표시됩니다. 3분 이상의 유휴 구간은 자동으로 압축됩니다. 에이전트가 잠시 멈추",
+    "char_count": 379,
+    "source_segment_ids": [
+      "seg_068",
+      "seg_069"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "para_070",
+    "end_ref": "para_071",
+    "unit_type": "paragraph",
+    "text_excerpt": "규칙 검증의 시각화\nRules 레인에서는 Rule Guard의 검증 사이클이 실시간으로 표시됩니다. 대시보드 상단의 카운터 — Check 58, Violation 7, Pass 69 — 가 현재 세션의 규칙 준수 상태를 한눈에 보여줍니다. 개별 이벤트를 클릭하면 드로어에 상세 정보가 나타납니다. Press enter or click to view image in full size",
+    "char_count": 213,
+    "source_segment_ids": [
+      "seg_070",
+      "seg_071"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "para_072",
+    "end_ref": "para_073",
+    "unit_type": "paragraph",
+    "text_excerpt": "예를 들어 rule_violation 이벤트를 클릭하면, 어떤 규칙(S-temporal)을 위반했는지, 어떤 파일(generate-goalmap-content.workflow.ts)의 어떤 항목(\"MUST NOT: Activity 호출 시 트레이스 정보 누락\")이 위반되었는지, severity는 high인지가 표시됩니다. Verification Cycles 패널을 열면 Rule Guard가 ",
+    "char_count": 414,
+    "source_segment_ids": [
+      "seg_072",
+      "seg_073"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "para_074",
+    "end_ref": "para_075",
+    "unit_type": "paragraph",
+    "text_excerpt": "아키텍처\n서버는 Express + SQLite + WebSocket. SQLite를 선택한 건 로컬 도구의 성격에 정확히 맞기 때문입니다. 별도의 데이터베이스 서버 없이 ~/.baden/baden.db 파일 하나로 운영되며, WebSocket을 통해 이벤트가 발생하는 즉시 대시보드에 반영됩니다. 클라이언트는 React + Vite + Tailwind CSS SPA입니다. 타임라인은 SVG 기",
+    "char_count": 325,
+    "source_segment_ids": [
+      "seg_074",
+      "seg_075"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "para_076",
+    "end_ref": "para_077",
+    "unit_type": "paragraph",
+    "text_excerpt": "MCP 서버는 @modelcontextprotocol/sdk 기반의 stdio 트랜스포트로, 에이전트 쪽의 실패가 모니터링 시스템에 영향을 주지 않도록 에러를 조용히 무시하는 설계를 채택했습니다. 모니터링 도구가 작업 도구의 안정성을 해쳐서는 안 됩니다. CLI(node bin/baden.js start)로 데몬을 실행하면 포트 3800에서 대시보드, API, WebSocket이 모두 시작됩",
+    "char_count": 307,
+    "source_segment_ids": [
+      "seg_076",
+      "seg_077"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "para_078",
+    "end_ref": "para_079",
+    "unit_type": "paragraph",
+    "text_excerpt": "INDEX.yaml과의 연동\nBaden은 프로젝트의 rules/INDEX.yaml을 파싱하여 규칙 메타데이터를 등록합니다. 규칙 파일의 마크다운 본문을 렌더링하여 대시보드에서 직접 열람할 수 있고, 각 규칙별 참조/위반/수정 빈도를 추적합니다. 규칙 ID로 이벤트를 필터링하면, 특정 규칙이 얼마나 자주 검증되고 있는지, 위반 추이가 개선되고 있는지를 시계열로 볼 수 있습니다. 파이프라인의 완",
+    "char_count": 454,
+    "source_segment_ids": [
+      "seg_078",
+      "seg_079"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "para_080",
+    "end_ref": "para_081",
+    "unit_type": "paragraph",
+    "text_excerpt": "나에게 딱 맞는 바퀴\n결과부터 말씀드리면, 이 파이프라인은 효과가 있었습니다. 최근 2개월간 제가 직접 코드를 작성한 경우는 전무합니다. 설계하고, 판단하고, 지시하고, 결과를 검토하는 것이 저의 역할입니다. 실행은 전부 AI가 수행합니다. 그리고 룰 시스템이 도입된 이후 최근 3주간, 에이전트가 엉뚱한 방향으로 구현을 진행하는 케이스가 거의 발견되지 않고 있습니다.",
+    "char_count": 206,
+    "source_segment_ids": [
+      "seg_080",
+      "seg_081"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "para_082",
+    "end_ref": "para_083",
+    "unit_type": "paragraph",
+    "text_excerpt": "물론 이 시스템이 완벽하지는 않습니다. CLAUDE.md 기반의 보고 강제는 결국 에이전트가 지침을 따르느냐에 의존하는 부분이 있고, Hooks로 보정하더라도 100%를 보장할 수는 없습니다. Rule Guard 역시 LLM 기반이므로 자체적인 판단 오류 가능성이 존재합니다. 현재는 단일 머신의 로컬 환경에 한정되어 있어, 팀 단위의 에이전트 운용에는 추가적인 발전이 필요합니다. 그리고 오해",
+    "char_count": 639,
+    "source_segment_ids": [
+      "seg_082",
+      "seg_083"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "para_084",
+    "end_ref": "para_085",
+    "unit_type": "paragraph",
+    "text_excerpt": "하지만 이 경험 전체를 관통하는 더 큰 이야기가 있습니다. 개발자의 세계에는 오래된 격언이 있습니다. “바퀴를 재발명하지 마라.” 그래서 우리는 늘 이미 있는 바퀴를 찾아 씁니다. 대부분의 경우 그게 맞습니다. 하지만 오래 일하다 보면 알게 됩니다 — 세상에 바퀴는 많지만, 나에게 딱 필요한 만큼의 바퀴가 없는 경우가 놀라울 정도로 많다는 것을. 기존 도구가 80%는 맞지만 나머지 20%가 ",
+    "char_count": 320,
+    "source_segment_ids": [
+      "seg_084",
+      "seg_085"
+    ]
+  },
+  {
+    "unit_id": "unit_044",
+    "start_ref": "para_086",
+    "end_ref": "para_087",
+    "unit_type": "paragraph",
+    "text_excerpt": "AI 시대에 이것이 근본적으로 달라졌습니다. “나에게 딱 맞는 최적의 바퀴”를 만드는 데 주저함이 없어졌습니다. 101개의 프롬프트 템플릿을 관리하는 데 딱 맞는 프롬프트 매니저가 필요했습니다 — Prompteer를 만들었습니다. 지식 트리를 캔버스에 그리는 데 딱 맞는 다이어그램 엔진이 필요했습니다 — Depix를 만들었습니다. 수식을 캔버스에서 편집하는 데 딱 맞는 도구가 필요했습니다 —",
+    "char_count": 299,
+    "source_segment_ids": [
+      "seg_086",
+      "seg_087"
+    ]
+  },
+  {
+    "unit_id": "unit_045",
+    "start_ref": "para_088",
+    "end_ref": "para_089",
+    "unit_type": "paragraph",
+    "text_excerpt": "이것이 가능했던 건 AI가 실행력을 제공하기 때문입니다. 제가 가진 건 오래 일하며 쌓인 설계 감각과, “이건 이렇게 되어야 한다”는 판단력입니다. AI가 가진 건 그 판단을 코드로 빠르게 실현하는 실행력입니다. 이 둘이 결합하면 “딱 맞는 바퀴”를 만드는 비용이 극적으로 낮아집니다. Baden 자체가 그 증거입니다. AI 에이전트 모니터링 도구라는 카테고리의 기존 제품을 찾아 쓰는 대신, ",
+    "char_count": 431,
+    "source_segment_ids": [
+      "seg_088",
+      "seg_089"
+    ]
+  },
+  {
+    "unit_id": "unit_046",
+    "start_ref": "para_090",
+    "end_ref": "para_092",
+    "unit_type": "paragraph",
+    "text_excerpt": "AI 에이전트의 능력은 계속 발전할 것입니다. 컨텍스트 윈도우는 더 커질 것이고, 추론 능력은 더 정확해질 것이고, 기억 소실 문제도 점차 개선될 것입니다. 하지만 발전하면 할수록, 아니 발전하면 할수록 — “에이전트가 제대로 하고 있는지 어떻게 알 것인가”라는 질문은 더 중요해질 것입니다. 더 많은 자율성을 주면 줄수록, 더 정밀한 관측이 필요합니다. 이것은 역설이 아니라 필연입니다. 6개",
+    "char_count": 408,
+    "source_segment_ids": [
+      "unit_046",
+      "seg_092"
+    ]
+  }
+]

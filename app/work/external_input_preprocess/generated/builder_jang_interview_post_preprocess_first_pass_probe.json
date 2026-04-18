@@ -1,0 +1,78 @@
+{
+  "probe_name": "post_preprocess_first_pass_probe_v0",
+  "generated_at": "2026-04-02T22:22:02.730902Z",
+  "input_path": "inputs/builder_jang_interview.txt",
+  "preprocessed_path": "app/work/external_input_preprocess/generated/builder_jang_interview_post_preprocess_first_pass_20260402T222202Z.txt",
+  "first_pass_read": {
+    "dust_count": 270,
+    "top_scene_counts": {
+      "review": 249,
+      "evidence": 12,
+      "impl": 5,
+      "spec": 4
+    },
+    "top_flow_counts": {
+      "compare": 243,
+      "run": 26,
+      "fix": 1
+    },
+    "scene_flatness_ratio": 0.922,
+    "flow_flatness_ratio": 0.9,
+    "sample_rows": [
+      {
+        "short_label": "하이라이트 및 BatiAI 류장근…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "하이라이트 및 BatiAI 류장근 대표 소개 인공지능 수업을 하나 같이 터디를 하고 있는게 있는데 중요한 내용 위주로 백페이지 형태로 만들어서 웹크 공유해 줄 수 있어."
+      },
+      {
+        "short_label": "그런 결과물들이 퀴즈 형태로 나오…",
+        "scene": "evidence",
+        "flow": "run",
+        "preview": "그런 결과물들이 퀴즈 형태로 나오게 되고요."
+      },
+      {
+        "short_label": "그래서 이런 퀴즈들을 보면서이 과…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "그래서 이런 퀴즈들을 보면서이 과정들을 진행을 할 수가 있게 되는 에이전트 형태를 다양하게 만들어서 비즈니스를 분석하는 형태로 좀 만들어 봤습니다."
+      },
+      {
+        "short_label": "일단 기본적으로 PPT 형식으로 …",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "일단 기본적으로 PPT 형식으로 트렌드라든지 세그멘트 분석 같은 이런 흐름들을 분석을 할 수 있도록 실체적으로 좀 많이 쓰고 있는 형태는 요런 거 서비스 기획서 형태인데요."
+      },
+      {
+        "short_label": "뭐 50페이지 넘는 이런 페이지들…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "뭐 50페이지 넘는 이런 페이지들을 항상 일정한 퀄리티로 오른쪽에는 이런 AI 패널들이 있습니다."
+      },
+      {
+        "short_label": "어떤 엑셀 파일이든 업로드를 하면…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "어떤 엑셀 파일이든 업로드를 하면 AI가 알아서 실제 DB의 데이터 적제까지도 다 시켜 줍니다."
+      },
+      {
+        "short_label": "금방 만든 것들을 어 이제 본인이…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "금방 만든 것들을 어 이제 본인이 원하는 형태로 구성을 해서 공유를 하거나 웹페이지로도 활용을 할 수가 있습니다."
+      },
+      {
+        "short_label": "안녕하세요.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "안녕하세요."
+      }
+    ],
+    "human_read_summary": "전처리 후에도 first pass가 거의 한 가지 review/compare 질감으로 눌려 있어 읽기 면이 아직 평평하다.",
+    "caution_notes": [
+      "flow flatness가 아직 높아 compare/read review 쪽으로 다시 눌릴 수 있다.",
+      "scene flatness가 높아 case-specific reading으로 바로 올리면 과장될 수 있다."
+    ],
+    "next_read": "전처리된 sidecar를 기준으로 bounded first-pass report를 만들되, 아직 line corroboration보다 case block readability를 먼저 본다."
+  }
+}

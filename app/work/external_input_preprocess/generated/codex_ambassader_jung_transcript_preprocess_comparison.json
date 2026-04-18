@@ -1,0 +1,267 @@
+{
+  "comparison_name": "transcript_preprocess_comparison_v0",
+  "generated_at": "2026-04-02T22:19:18.366199Z",
+  "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/codex_ambassader_jung.txt",
+  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/codex_ambassader_jung_transcript_regroup_compare_20260402T221918Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/codex_ambassader_jung.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 550,
+      "dust_count": 178,
+      "timestamp_line_count": 275,
+      "timestamp_density": 0.5,
+      "timestamp_token_count": 275,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 275,
+      "transcript_marker_density": 0.5,
+      "short_line_count": 1,
+      "short_line_ratio": 0.002,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 28,
+      "short_dust_ratio": 0.157,
+      "timestamp_dust_count": 139,
+      "timestamp_dust_ratio": 0.781,
+      "transcript_marker_dust_count": 139,
+      "transcript_marker_dust_ratio": 0.781,
+      "avg_chars_per_dust": 58.18,
+      "top_scene_counts": {
+        "review": 162,
+        "evidence": 8,
+        "spec": 6,
+        "impl": 2
+      },
+      "top_flow_counts": {
+        "compare": 158,
+        "run": 18,
+        "fix": 2
+      },
+      "sample_short_labels": [
+        "0:06 아, 안녕하세요.",
+        "반갑습니다.",
+        "정구봉이라고 합니다.",
+        "0:14 네, 오늘 아는 얼굴이 …",
+        "아는 얼굴서 너무 0:20 반갑고…",
+        "그래서 굉장히 감계가 무량합니다.",
+        "오늘 제가 0:31 어떤 이야기를…",
+        "이제 코덱스를 활용해서 어떻게 1…",
+        "1:17 지진난주였나?",
+        "진행을 했어요."
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.5,
+        "timestamp_dust_ratio": 0.781,
+        "transcript_marker_dust_ratio": 0.781,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.157,
+        "avg_chars_per_dust": 58.18,
+        "sample_short_labels": [
+          "0:06 아, 안녕하세요.",
+          "반갑습니다.",
+          "정구봉이라고 합니다.",
+          "0:14 네, 오늘 아는 얼굴이 …",
+          "아는 얼굴서 너무 0:20 반갑고…",
+          "그래서 굉장히 감계가 무량합니다.",
+          "오늘 제가 0:31 어떤 이야기를…",
+          "이제 코덱스를 활용해서 어떻게 1…",
+          "1:17 지진난주였나?",
+          "진행을 했어요."
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/codex_ambassader_jung_transcript_regroup_compare_20260402T221918Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 82,
+      "dust_count": 163,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 13,
+      "short_dust_ratio": 0.08,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 62.17,
+      "top_scene_counts": {
+        "review": 147,
+        "evidence": 8,
+        "spec": 6,
+        "impl": 2
+      },
+      "top_flow_counts": {
+        "compare": 143,
+        "run": 18,
+        "fix": 2
+      },
+      "sample_short_labels": [
+        "아, 안녕하세요.",
+        "반갑습니다.",
+        "정구봉이라고 합니다.",
+        "네, 오늘 아는 얼굴이 많아서 정…",
+        "아는 얼굴서 너무 반갑고 아까 방…",
+        "그래서 굉장히 감계가 무량합니다.",
+        "오늘 제가 어떤 이야기를 할 거냐…",
+        "이제 코덱스를 활용해서 어떻게 하…",
+        "지진난주였나?",
+        "진행을 했어요."
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.08,
+        "avg_chars_per_dust": 62.17,
+        "sample_short_labels": [
+          "아, 안녕하세요.",
+          "반갑습니다.",
+          "정구봉이라고 합니다.",
+          "네, 오늘 아는 얼굴이 많아서 정…",
+          "아는 얼굴서 너무 반갑고 아까 방…",
+          "그래서 굉장히 감계가 무량합니다.",
+          "오늘 제가 어떤 이야기를 할 거냐…",
+          "이제 코덱스를 활용해서 어떻게 하…",
+          "지진난주였나?",
+          "진행을 했어요."
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "before_probe": {
+    "dust_count": 178,
+    "short_dust_ratio": 0.18,
+    "avg_chars_per_dust": 65.44,
+    "top_scene_counts": {
+      "review": 162,
+      "evidence": 8,
+      "spec": 6,
+      "impl": 2
+    },
+    "top_flow_counts": {
+      "compare": 158,
+      "run": 18,
+      "fix": 2
+    },
+    "sample_short_labels": [
+      "0:06 아, 안녕하세요.",
+      "반갑습니다.",
+      "정구봉이라고 합니다.",
+      "0:14 네, 오늘 아는 얼굴이 …",
+      "아는 얼굴서 너무 0:20 반갑고…",
+      "그래서 굉장히 감계가 무량합니다.",
+      "오늘 제가 0:31 어떤 이야기를…",
+      "이제 코덱스를 활용해서 어떻게 1…"
+    ]
+  },
+  "after_probe": {
+    "dust_count": 163,
+    "short_dust_ratio": 0.129,
+    "avg_chars_per_dust": 62.17,
+    "top_scene_counts": {
+      "review": 147,
+      "evidence": 8,
+      "spec": 6,
+      "impl": 2
+    },
+    "top_flow_counts": {
+      "compare": 143,
+      "run": 18,
+      "fix": 2
+    },
+    "sample_short_labels": [
+      "아, 안녕하세요.",
+      "반갑습니다.",
+      "정구봉이라고 합니다.",
+      "네, 오늘 아는 얼굴이 많아서 정…",
+      "아는 얼굴서 너무 반갑고 아까 방…",
+      "그래서 굉장히 감계가 무량합니다.",
+      "오늘 제가 어떤 이야기를 할 거냐…",
+      "이제 코덱스를 활용해서 어떻게 하…"
+    ]
+  },
+  "comparison": {
+    "dust_count_delta": -15,
+    "short_dust_ratio_delta": -0.051,
+    "avg_chars_per_dust_delta": -3.27,
+    "regrouped_chunk_count": 82,
+    "dropped_interjection_count": 15,
+    "readiness_read": {
+      "status": "probe_again_before_ingest",
+      "reason": "preprocess reduced transcript noise, but intake should still be checked before mutation",
+      "before_dust_count": "178",
+      "after_dust_count": "163"
+    },
+    "check_surface": {
+      "what_improved": [
+        "dust count moved down toward larger meaning units",
+        "short shard ratio decreased"
+      ],
+      "what_is_still_missing": [
+        "post-preprocess state is still not direct-ingest-safe"
+      ],
+      "next_checkpoint": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+    }
+  }
+}

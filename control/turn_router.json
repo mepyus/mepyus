@@ -1,0 +1,32 @@
+{
+  "modes": [
+    "space_reading",
+    "reflection",
+    "problem_solving",
+    "implementation"
+  ],
+  "default_order": [
+    "space_reading",
+    "reflection",
+    "problem_solving",
+    "implementation"
+  ],
+  "routing_rules": [
+    {
+      "when": "the user asks about meaning, direction, structure, or why this space exists",
+      "mode": "space_reading"
+    },
+    {
+      "when": "the user asks what should be preserved, what is drifting, or what should be judged",
+      "mode": "reflection"
+    },
+    {
+      "when": "the user asks to resolve a bounded technical issue inside the existing frame",
+      "mode": "problem_solving"
+    },
+    {
+      "when": "the user asks to change files, add records, or implement a bounded structure",
+      "mode": "implementation"
+    }
+  ]
+}

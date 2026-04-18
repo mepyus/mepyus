@@ -1,0 +1,92 @@
+{
+  "schema_version": "vectorfl_paper_reference_candidate_evidence_record_v0",
+  "record_id": "vectorfl_paper_opencode_candidate_evidence_record_v0",
+  "source_program": "opencode_ecc",
+  "source_kind": "external_candidate_from_reference_repo",
+  "scenario_scope": "vectorfl_paper_actual_export_only_dry_run",
+  "source_refs": [
+    "references/git_search/everything-claude-code-main/.opencode/README.md",
+    "references/git_search/everything-claude-code-main/.opencode/MIGRATION.md",
+    "references/git_search/everything-claude-code-main/.opencode/opencode.json"
+  ],
+  "honesty_note": "Derived from a checked-in OpenCode/ECC reference config. It is useful for worker-input and hook-event review, but it is not a Paperclip host export.",
+  "issues_row": {
+    "id": "opencode-issue-001",
+    "companyId": "opencode-reference",
+    "projectId": "ecc-opencode-plugin",
+    "goalId": "portable-agent-config",
+    "parentId": null,
+    "title": "Run one scoped OpenCode plugin command with review hooks visible",
+    "description": "Use opencode.json to route one command through agent, instruction, plugin hook, and quality-gate surfaces without importing the full ECC catalog.",
+    "status": "ready_for_dry_run",
+    "priority": "medium",
+    "assigneeAgentId": "opencode-build-agent",
+    "issueNumber": 1,
+    "identifier": "OC-1",
+    "originKind": "reference_repo",
+    "originId": "references/git_search/everything-claude-code-main/.opencode/opencode.json",
+    "requestDepth": 0,
+    "createdAt": "2026-04-11T08:20:00+09:00",
+    "updatedAt": "2026-04-11T08:20:00+09:00"
+  },
+  "heartbeat_runs_row": {
+    "id": "opencode-run-001",
+    "companyId": "opencode-reference",
+    "agentId": "opencode-build-agent",
+    "invocationSource": "opencode_command_plugin_event",
+    "triggerDetail": "A scoped command runs through OpenCode config, instructions, and plugin hook event mapping.",
+    "status": "dry_run_candidate",
+    "startedAt": "2026-04-11T08:20:00+09:00",
+    "finishedAt": "2026-04-11T08:22:00+09:00",
+    "error": null,
+    "wakeupRequestId": "opencode-plugin-event-001",
+    "exitCode": 0,
+    "usageJson": {
+      "config": "opencode.json",
+      "hook_event": "tool.execute.after",
+      "quality_gate": "typecheck_or_review"
+    },
+    "resultJson": {
+      "summary": "Command/plugin event stayed visible as a scoped worker-input review surface.",
+      "message": "Use as review-system candidate for dry-run only.",
+      "error": null
+    },
+    "sessionIdBefore": "opencode-session-before",
+    "sessionIdAfter": "opencode-session-after",
+    "stdoutExcerpt": "OpenCode command completed with plugin-event review surface available.",
+    "contextSnapshot": {
+      "taskKey": "issue:opencode-issue-001",
+      "issueFocus": "plugin-configured worker-input and quality hook",
+      "constraint": "do not import full ECC agent catalog"
+    }
+  },
+  "issue_comments_rows": [
+    {
+      "id": "opencode-comment-001",
+      "companyId": "opencode-reference",
+      "issueId": "opencode-issue-001",
+      "authorAgentId": "opencode-build-agent",
+      "authorUserId": null,
+      "createdByRunId": "opencode-run-001",
+      "body": "Keep OpenCode evidence scoped to command, agent, instructions, and hook-event review. Do not expand into a full worker framework.",
+      "createdAt": "2026-04-11T08:22:00+09:00",
+      "updatedAt": "2026-04-11T08:22:00+09:00"
+    }
+  ],
+  "approvals_row": {
+    "id": "opencode-approval-001",
+    "companyId": "opencode-reference",
+    "type": "quality_gate_review",
+    "requestedByAgentId": "opencode-build-agent",
+    "requestedByUserId": null,
+    "status": "hold_for_vectorfl_gate",
+    "payload": {
+      "issueId": "opencode-issue-001",
+      "runId": "opencode-run-001",
+      "decision_basis": "Good review/hook candidate but not host export evidence."
+    },
+    "decisionNote": "Use as dry-run evidence only. It can stress worker-input review but cannot close actual_export_only.",
+    "decidedByUserId": "supervisor",
+    "decidedAt": "2026-04-11T08:23:00+09:00"
+  }
+}

@@ -1,0 +1,714 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d9622-8203-7523-92c8-77d18434d4e5
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: user_surface
+Requested by page: scripts/run_integrated_engine_language_loop.py
+
+Purpose:
+Internal language Koreanization data loop 8: collect Korean operating-language data from bounded context.
+
+Bounded context refs:
+- docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md
+- docs/reports/integrated_engine_shared_operational_language_growth_note_v0.md
+
+Prompt payload:
+Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.
+
+Do not modify files.
+Do not propose UI copy.
+Do not create a final glossary.
+Do not promote features.
+
+Return compact data in this shape:
+- internal phrase or signal observed
+- source context where it appeared
+- internal meaning / operational role
+- Koreanization candidate, not final UI copy
+- Korean preservation requirement
+- risky Korean flattening to avoid
+- why this helps the user operate
+- what meaning gets lost if shortened
+- repeated connection it belongs to
+- emerging axis candidate
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any
+- next reread question
+- suggested next use: validation target
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll read the two bounded context files and extract only operational-language data. No file edits.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine CLI Operator Report Loop Patch Note v0
+
+Date: 2026-04-16
+
+## 0. verdict
+
+PASS
+
+이번 라운드는 CLI run 직후 Codex가 사용할 shared operational language 문법으로 `operator_report.md`를 자동 생성하는 얇은 기록 루프를 추가했다.
+
+이 패치는 UI 한국어 번역, final glossary, wording patch, Gemini adapter, deposit ingestion, automatic assignment, promotion/canonicalization을 열지 않는다.
+
+## 1. round goal
+
+사용자가 지적한 핵심은 "화면에 한국어를 붙이는 것"이 아니라, 우리가 만든 번역/문법 자료를 바탕으로 Codex가 먼저 사용할 수 있는 보고 문법을 만드는 것이었다.
+
+따라서 이번 목표는:
+
+- Codex run 결과를 단순 raw stdout / structured return으로만 남기지 않는다.
+- run 직후 사용자 판단용 운영 리포트를 함께 남긴다.
+- 그 리포트는 `상태 -> 3면별 읽기 -> route/authority -> friction -> 다음 작은 행동` 순서를 따른다.
+- VectorFL page에서도 latest operator report preview를 볼 수 있게 한다.
+
+## 2. files changed
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+- `app/ui/integrated_engine/CliHostControlPanel.tsx`
+- `docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md`
+
+생성된 검증 artifact:
+
+- `runtime/cli_sessions/cli_20260416T110824Z_2226c8b1/operator_report.md`
+
+## 3. what changed
+
+### 3.1 session artifact
+
+CLI session spec에 `operator_report_path`를 추가했다.
+
+새로운 session artifact:
+
+```text
+runtime/cli_sessions/<session_id>/operator_report.md
+```
+
+### 3.2 operator report generation
+
+Codex run이 끝나면 `_build_cli_operator_report`가 다음 구조로 report를 생성한다.
+
+- Status First
+- Surface Split
+  - User Surface
+  - VectorFL Surface
+  - Engine Surface
+- Route And Authority
+- Friction Reading
+- Source Material
+- Result Summary Preview
+- Next Smallest Action
+
+이 보고서는 화면 문구 번역이 아니라, 내부 route signal을 사용자 판단 언어로 다시 읽는 기록이다.
+
+### 3.3 mark update regeneration
+
+session에 mark가 붙을 때도 `operator_report.md`를 다시 쓴다.
+
+이유:
+
+- `validation_target`, `deposit_candidate` 같은 mark는 route signal이다.
+- mark가 바뀌면 operator report의 `current_marks`도 바뀌어야 한다.
+
+### 3.4 API readable state
+
+`build_cli_host_control_state`가 다음 값을 노출한다.
+
+- `latest_operator_report_preview`
+- `latest_readable_return.operator_report_preview`
+- `recent_readable_returns[].operator_report_preview`
+- `deposit_ready_returns[].operator_report_preview`
+- 각 readable item의 `operator_report_path`
+
+### 3.5 VectorFL UI preview
+
+`CliHostControlPanel`에 `operator report preview` 영역을 추가했다.
+
+이 영역은 UI 한국어 copy replacement가 아니다. 최신 session의 operator report를 VectorFL operating flow에서 바로 읽을 수 있게 하는 preview다.
+
+## 4. validation
+
+### 4.1 static checks
+
+통과:
+
+- `python3 -m py_compile app/runtime/vectorfl_integrated_engine_api.py`
+- `npm run build` in `app/ui/integrated_engine`
+
+### 4.2 server refresh
+
+viewer server를 재시작해서 새 API code를 로드했다.
+
+확인:
+
+- `http://127.0.0.1:8421/api/vectorfl-engine/state` 응답 정상
+- `cli_host_control.latest_readable_return.operator_report_path` 노출
+
+### 4.3 real Codex run
+
+실제 read-only Codex run을 실행했다.
+
+- session id: `cli_20260416T110824Z_2226c8b1`
+- task type: `reread`
+- status: `done`
+- exit code: `0`
+- suggested next use: `validation_target`
+- generated operator report: `runtime/cli_sessions/cli_20260416T110824Z_2226c8b1/operator_report.md`
+
+### 4.4 mark regeneration
+
+동일 session을 `validation_target`으로 mark했다.
+
+확인:
+
+- mark action succeeded
+- session marks include `validation_target`
+- `operator_report.md` regenerated with `current_marks: validation_target`
+- API latest readable return includes operator report preview
+
+## 5. why this is baseline-safe
+
+- CLI는 여전히 4번째 surface가 아니다.
+- VectorFL surface가 CLI operation / reread 중심이다.
+- User surface와 Engine surface는 operator report 안에서 역할별 읽기로만 분리된다.
+- report는 candidate/route signal을 설명하지만, 자동 assignment나 promotion을 만들지 않는다.
+- deposit candidate는 여전히 official ingestion이 아니다.
+- UI 문구를 한국어로 치환하지 않았다.
+- Gemini adapter를 열지 않았다.
+
+## 6. line / connection / axis feedback
+
+강해진 line:
+
+- `operator_report.md`는 raw output과 사용자 판단 사이의 bridge artifact다.
+- mark가 붙으면 report도 route signal에 맞게 갱신되어야 한다.
+- UI copy 이전에 session-level operator report가 먼저 안정되어야 한다.
+
+강해진 connection:
+
+```text
+Codex run
+-> structured return
+-> operator_report.md
+-> mark update
+-> regenerated operator report
+-> VectorFL latest preview
+```
+
+강해진 axis:
+
+```text
+run artifact must carry user-judgment grammar before UI language patch
+```
+
+## 7. watchpoints
+
+1. Operator report가 final glossary처럼 굳으면 안 된다.
+2. Operator report preview가 automatic validation/promotion처럼 읽히면 안 된다.
+3. UI에서 보고서 preview가 너무 커져 VectorFL control flow를 밀어내면 안 된다.
+
+## 8. next smallest step
+
+다음 가장 작은 단계는 브라우저에서 VectorFL panel의 `operator report preview`가 실제로 보이는지 확인하는 것이다.
+
+확인 기준:
+
+- 최신 session `cli_20260416T110824Z_2226c8b1`가 보인다.
+- operator report preview가 보인다.
+- preview에서 `validation_target`이 완료가 아니라 route signal로 설명된다.
+- raw file을 열지 않아도 1차 판단이 가능하다.
+
+## 9. closeout
+
+PASS.
+
+CLI-on-top run 결과는 이제 raw artifact / structured return / deposit candidate에 더해, 사용자 판단용 shared language report까지 함께 남긴다. 이로써 UI 번역을 열기 전에 Codex가 사용할 보고 문법이 실제 session artifact 경로에 붙었다.
+
+exec
+/bin/bash -lc "sed -n '1,260p' docs/reports/integrated_engine_shared_operational_language_growth_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Shared Operational Language Growth Note v0
+
+Date: 2026-04-15
+
+## 0. verdict
+
+PASS_WITH_NOTE
+
+이 문서는 3면 언어를 멈추거나 인간용 요약으로 치환하지 않고, 내부 기록/기억/출력/데이터에서 나온 언어를 shared operational language로 자라게 하는 방향을 잠근다.
+
+이 문서는 final glossary, UI copy, wording patch, scaffold 수정, runtime/views 수정, manifest/read-map 변경, external style guide, 새 기능, selected-object behavior, trace UI, runtime binding, extension promotion을 열지 않는다.
+
+## 1. 왜 3면 언어를 계속 늘려야 하는가
+
+통합엔진은 단일 언어로 움직이지 않는다.
+
+현재 구조에는 최소 세 층의 언어가 있다.
+
+- user surface language: 목적, 범위, 운영, 분배, 결정
+- VectorFL surface language: 검토, 중재, 숙성, anchor, validation, reflux
+- engine surface language: shaped input, processing, return material, execution state
+
+이 언어들은 서로 대체 관계가 아니다.
+
+각 surface는 다른 질문을 처리한다. 따라서 한 surface 언어를 줄이면 다른 surface의 판단이 흐려진다.
+
+예:
+
+- `return packet`을 단순 결과라고 줄이면 engine output과 VectorFL validation의 경계가 사라진다.
+- `anchor drift`를 단순 경고라고 줄이면 route brake가 사라진다.
+- `workspace ownership`을 폴더 소유라고 줄이면 proposal / canonical / scaffold / manifest authority가 섞인다.
+
+그래서 3면 언어는 계속 자라야 한다. 다만 모든 언어가 사용자에게 같은 밀도로 노출되면 안 된다.
+
+## 2. 왜 인간 가독 해석이 필요한가
+
+내부 언어가 계속 자라면, 사용자는 내부 engine language 전체를 외워야 하는 부담을 갖게 된다.
+
+이것은 실패한 interface다.
+
+인간 가독 해석은 내부 언어를 없애는 작업이 아니다. 인간 가독 해석은 내부 언어에서 사용자가 다뤄야 할 line을 추려, 운영 가능한 형태로 올리는 작업이다.
+
+필요한 것은:
+
+- 내부 의미를 지우지 않는 인간 가독 line
+- surface별로 다른 노출 밀도
+- route / authority / state / boundary를 보존하는 설명 순서
+- 사용자가 결정할 수 있는 고정 인터페이스
+
+이다.
+
+## 3. 왜 두 층이 합쳐져야 하는가
+
+내부 언어만 적립하면:
+
+- 정확하지만 사용자가 매번 해석해야 한다.
+- engine language가 user surface까지 과밀하게 올라온다.
+- 내부팀이나 외부 보조 주체가 같은 의미를 공유하기 어렵다.
+
+인간 언어로만 수렴하면:
+
+- 읽기 쉽지만 route / authority / state / boundary가 납작해진다.
+- `hold`, `carry-forward`, `reject / conflict`, `watch keep`이 backlog/TODO/error처럼 변한다.
+- Gemini/Codex/User 권위 경계가 흐려진다.
+
+따라서 필요한 것은 shared operational language다.
+
+Shared operational language는:
+
+- 내부 3면 언어를 덮어쓰지 않는다.
+- 사용자가 읽을 수 있는 line으로 올라온다.
+- 여러 주체가 같은 operational meaning을 공유할 수 있게 한다.
+- line / connection / axis가 반복되며 자라는 중간층이다.
+
+## 4. 누가 이 언어를 써야 하는가
+
+### User
+
+User는 모든 engine 내부 용어를 외울 필요가 없다.
+
+User가 써야 하는 것은:
+
+- 지금 어떤 route가 열렸는가
+- 무엇이 closed인가
+- 무엇을 결정해야 하는가
+- 무엇이 hold/watch/carry-forward인가
+- 어떤 축이 다음 package를 열 수 있는가
+
+이다.
+
+### VectorFL
+
+VectorFL은 shared operational language의 중심 중재층이다.
+
+VectorFL이 써야 하는 것은:
+
+- 내부 기록/기억에서 line을 읽는 언어
+- line 간 연결을 확인하는 언어
+- 연결이 axis가 되는지 판단하는 언어
+- anchor / validation / reflux / reprocess를 중재하는 언어
+
+이다.
+
+### Engine-side operators
+
+Engine-side operators는 execution detail을 다루되 판단 권위를 가져가면 안 된다.
+
+쓸 수 있어야 하는 것은:
+
+- shaped input
+- execution state
+- return material
+- reprocess request
+- processing history
+
+이다.
+
+### Codex
+
+Codex는 baseline translator / canonical report writer / bounded executor 역할을 한다.
+
+Codex가 써야 하는 것은:
+
+- 내부 자료 reread
+- baseline-safe translation
+- proposal / hold / carry-forward / reject-conflict classification
+- 문서화와 patch scope 분리
+
+이다.
+
+### Gemini
+
+Gemini는 proposal material과 표현/디자인 가능성을 확장하는 주체로 쓴다.
+
+Gemini가 써야 하는 것은:
+
+- proposal-only status
+- design clay
+- needs Codex translation
+- no direct Gemini-to-core path
+
+이다.
+
+### 내부팀
+
+내부팀은 surface별 언어를 모두 다룰 수 있어야 하지만, 모든 언어를 같은 화면/같은 밀도로 드러내면 안 된다.
+
+내부팀이 공유해야 하는 것은:
+
+- 어떤 언어가 어느 surface에 속하는가
+- 어떤 line이 shared grammar로 올라왔는가
+- 어떤 축이 interface를 요구하는가
+
+이다.
+
+## 5. 두 극단이 왜 부족한가
+
+### 인간 언어로만 수렴
+
+부족한 이유:
+
+- 쉬운 말이 route를 지운다.
+- 친숙한 말이 authority를 지운다.
+- 프로젝트 관리 언어가 hold/watch/carry-forward를 납작하게 만든다.
+- UI copy가 operational brake를 warning label로 만든다.
+
+### 내부 언어만 적립
+
+부족한 이유:
+
+- 사용자가 계속 해석 부담을 진다.
+- 외부 보조 주체가 같은 의미를 재사용하기 어렵다.
+- 고정 인터페이스가 자라지 않는다.
+- line / connection / axis가 사용자 결정 단위로 올라오지 않는다.
+
+## 6. 성장 방향
+
+올바른 성장 방향은:
+
+```text
+3면 내부 언어
+-> 내부 기록/기억/출력/데이터에서 증폭
+-> 인간 가독 line
+-> repeated connection
+-> emerging axis
+-> shared operational grammar
+-> surface별 노출 규칙
+-> 사용자 고정 인터페이스
+```
+
+이다.
+
+이때 shared operational language는 user-only language가 아니다.
+
+그것은 User, VectorFL, Engine-side operators, Codex, Gemini, 내부팀이 각자의 surface 권위를 유지하면서 함께 쓸 수 있는 운영 언어다.
+
+## 7. round closeout
+
+이번 라운드의 방향은 "번역 완료"가 아니다.
+
+이번 라운드의 방향은 3면 언어의 성장을 멈추지 않으면서, 그 언어가 인간 가독 line / connection / axis를 통해 shared operational language로 자라도록 기준을 다시 잠그는 것이다.
+
+codex
+- result summary
+  - bounded context 2개를 reread했다.
+  - 핵심 수집 대상은 `operator_report.md`가 raw output과 사용자 판단 사이에 놓이는 shared operational language artifact라는 점이다.
+  - 이번 loop에서 강하게 반복되는 축은 `run artifact must carry user-judgment grammar before UI language patch`다.
+  - final glossary, UI copy, feature promotion으로 확정하면 안 되는 후보 언어다.
+
+- important findings / diffs / outputs
+
+1. internal phrase or signal observed
+   - `operator_report.md`
+
+   source context where it appeared
+   - `integrated_engine_cli_operator_report_loop_patch_note_v0.md`
+
+   internal meaning / operational role
+   - CLI run 직후 raw stdout / structured return을 사용자 판단 가능한 운영 문법으로 다시 읽는 session artifact.
+
+   Koreanization candidate, not final UI copy
+   - `운영 리포트 기록물`
+   - `판단용 운영 보고 기록`
+   - `세션 운영 해석 기록`
+
+   Korean preservation requirement
+   - `report`를 단순 `요약`으로 줄이지 말 것.
+   - raw 결과를 대체하는 문서가 아니라, route/state/friction을 읽는 중간 artifact임을 보존해야 한다.
+
+   risky Korean flattening to avoid
+   - `결과 요약`
+   - `실행 보고서`
+   - `완료 리포트`
+
+   why this helps the user operate
+   - 사용자가 raw file을 열지 않아도 현재 상태, route, authority, friction, 다음 행동을 판단할 수 있다.
+
+   what meaning gets lost if shortened
+   - session artifact라는 점, route signal을 담는다는 점, UI copy 이전의 내부 판단 문법이라는 점이 사라진다.
+
+   repeated connection it belongs to
+   - `Codex run -> structured return -> operator_report.md -> mark update -> regenerated operator report -> VectorFL latest preview`
+
+   emerging axis candidate
+   - `run artifact carries user-judgment grammar before UI language patch`
+
+   surface exposure note: user / vectorfl / engine
+   - user: 판단 가능한 운영 읽기
+   - vectorfl: latest preview / 중재 표면
+   - engine: run artifact / structured return 이후 기록 생성
+
+   external expression support needed, if any
+   - 외부 표현에서는 `summary`보다 `operator-facing report artifact`에 가까운 설명 필요.
+
+   next reread question
+   - `operator_report.md`가 어느 지점부터 final glossary처럼 굳어 보이는가?
+
+   suggested next use: validation target
+   - VectorFL panel preview에서 `validation_target`이 완료 상태가 아니라 route signal로 읽히는지 검증.
+
+2. internal phrase or signal observed
+   - `3면별 읽기`
+
+   source context where it appeared
+   - patch note round goal, shared operational language note sections 1-4
+
+   internal meaning / operational role
+   - User surface, VectorFL surface, Engine surface가 같은 결과를 각기 다른 질문과 권위로 읽는 구조.
+
+   Koreanization candidate, not final UI copy
+   - `세 표면별 운영 읽기`
+   - `3면 운영 해석`
+   - `표면별 판단 읽기`
+
+   Korean preservation requirement
+   - 세 면이 번역 단계가 아니라 권위와 질문이 다른 운영 층이라는 점을 보존해야 한다.
+
+   risky Korean flattening to avoid
+   - `세 가지 요약`
+   - `사용자/시스템 보기`
+   - `화면별 설명`
+
+   why this helps the user operate
+   - 사용자가 “누가 무엇을 판단하는가”를 분리해 볼 수 있다.
+
+   what meaning gets lost if shortened
+   - surface authority, route boundary, execution detail의 분리가 사라진다.
+
+   repeated connection it belongs to
+   - `user purpose -> VectorFL mediation -> engine execution state`
+
+   emerging axis candidate
+   - `surface language density must differ by authority`
+
+   surface exposure note: user / vectorfl / engine
+   - user: 목적/결정/범위
+   - vectorfl: 검토/중재/숙성/validation
+   - engine: shaped input/processing/return material
+
+   external expression support needed, if any
+   - 외부 협업자에게는 “three surfaces”를 “three authority-bearing operating surfaces”로 설명할 필요.
+
+   next reread question
+   - 각 surface가 같은 mark를 다르게 읽는 사례를 더 수집할 수 있는가?
+
+   suggested next use: validation target
+   - operator report의 Surface Split 항목이 실제 판단에 충분한지 검증.
+
+3. internal phrase or signal observed
+   - `mark update regeneration`
+
+   source context where it appeared
+   - patch note section 3.3, validation section 4.4
+
+   internal meaning / operational role
+   - session mark가 변경되면 route signal도 변경되므로 operator report를 다시 생성해야 한다는 규칙.
+
+   Koreanization candidate, not final UI copy
+   - `표식 변경에 따른 보고 재생성`
+   - `route 표식 갱신 반영`
+   - `mark 변경 반영 기록 갱신`
+
+   Korean preservation requirement
+   - `mark`가 완료/승인 판정이 아니라 route signal이라는 점을 보존해야 한다.
+
+   risky Korean flattening to avoid
+   - `상태 업데이트`
+   - `완료 표시`
+   - `검증 완료`
+
+   why this helps the user operate
+   - 사용자가 현재 session이 어떤 다음 사용 경로에 놓였는지 최신 상태로 읽을 수 있다.
+
+   what meaning gets lost if shortened
+   - mark와 report 사이의 동기화 책임, route signal의 변동성이 사라진다.
+
+   repeated connection it belongs to
+   - `mark -> current_marks -> regenerated operator report -> latest preview`
+
+   emerging axis candidate
+   - `route signal changes must refresh readable judgment artifact`
+
+   surface exposure note: user / vectorfl / engine
+   - user: 현재 판단 경로 확인
+   - vectorfl: mark 관리와 preview 노출
+   - engine: session metadata 갱신
+
+   external expression support needed, if any
+   - `mark`를 “label”보다 “routing signal”로 설명할 필요.
+
+   next reread question
+   - 어떤 mark들이 사용자에게 완료처럼 오독될 위험이 가장 큰가?
+
+   suggested next use: validation target
+   - `validation_target`, `deposit_candidate` mark의 preview 표현 검증.
+
+4. internal phrase or signal observed
+   - `shared operational language`
+
+   source context where it appeared
+   - shared operational language growth note 전체
+
+   internal meaning / operational role
+   - 내부 3면 언어와 인간 가독 line 사이의 중간층. 여러 주체가 같은 operational meaning을 공유하도록 하는 언어.
+
+   Koreanization candidate, not final UI copy
+   - `공유 운영 언어`
+   - `공동 운영 문법`
+   - `공유 판단 언어`
+
+   Korean preservation requirement
+   - user-only 쉬운 말이 아니며, internal engine language를 덮어쓰는 번역도 아니라는 점을 보존해야 한다.
+
+   risky Korean flattening to avoid
+   - `공통 용어집`
+   - `한글 번역`
+   - `사용자 안내 문구`
+
+   why this helps the user operate
+   - 사용자가 내부 engine detail 전체를 외우지 않고도 route, authority, state, boundary를 판단할 수 있다.
+
+   what meaning gets lost if shortened
+   - line / connection / axis가 반복되며 자라는 중간층이라는 성장 구조가 사라진다.
+
+   repeated connection it belongs to
+   - `3면 내부 언어 -> 인간 가독 line -> repeated connection -> emerging axis -> shared operational grammar`
+
+   emerging axis candidate
+   - `human-readable does not mean internally flattened`
+
+   surface exposure note: user / vectorfl / engine
+   - user: 결정 가능한 line
+   - vectorfl: line/connection/axis 중재
+   - engine: shaped input/return material을 보존한 source
+
+   external expression support needed, if any
+   - 외부에는 `shared operational grammar`가 `style guide`나 `glossary`가 아님을 분리 설명해야 함.
+
+   next reread question
+   - shared operational language가 final glossary로 굳는 징후는 무엇인가?
+
+   suggested next use: deposit candidate
+   - 성장 원칙 문서로 deposit 후보 가능. 단, canonical glossary로 승격 금지.
+
+5. internal phrase or signal observed
+   - `route / authority / state / boundary`
+
+   source context where it appeared
+   - shared note sections 2-3, patch note operator report structure
+
+   internal meaning / operational role
+   - 사용자 판단을 가능하게 만드는 핵심 보존 순서. 쉬운 말로 바꾸더라도 지워지면 안 되는 운영 차원.
+
+   Koreanization candidate, not final UI copy
+   - `경로 / 권위 / 상태 / 경계`
+   - `route / 판단 권위 / 실행 상태 / 운영 경계`
+
+   Korean preservation requirement
+   - 네 항목을 프로젝트 관리 용어인 TODO/status/error로 치환하지 말 것.
+
+   risky Korean flattening to avoid
+   - `진행상황`
+   - `작업 상태`
+   - `해야 할 일`
+
+   why this helps the user operate
+   - 사용자가 “무엇이 열렸고, 누가 판단하며, 지금 상태가 무엇이고, 넘지 말아야 할 경계가 어디인지” 볼 수 있다.
+
+   what meaning gets lost if shortened
+   - authority와 boundary가 사라지면 자동 승인, 기능 홍보, UI copy 확정으로 오독될 수 있다.
+
+   repeated connection it belongs to
+   - `status first -> surface split -> route/authority -> friction -> next smallest action`
+
+   emerging axis candidate
+   - `readable report order must preserve route authority before action`
+
+   surface exposure note: user / vectorfl / engine
+   - user: 결정과 보류
+   - vectorfl: 중재와 validation
+   - engine: execution state와 return material
+
+   external expression support needed, if any
+   - 외부 문서에서는 `authority`를 권한(permission)이 아니라 판단 권위(decision authority)로 제한 설명해야 함.
+
+   next reread question
+   - operator report에서 이 네 축의 순서가 바뀌면 사용자 판단이 어떻게 흐려지는가?
+
+   suggested next use: validation target
+   - report 구조 검증 기준으로 사용.
+
+- uncertainty or failure notes
+  - read-only 조건을 지켰고 파일 수정은 하지 않았다.
+  - 두 bounded context 안에서만 수집했다.
+  - 생성된 실제 `operator_report.md` artifact는 이번 bounded ref에 포함되지 않아 직접 reread하지 않았다.
+  - Koreanization candidates는 final UI copy나 glossary가 아니라 운영언어 후보로만 취급해야 한다.
+
+- suggested next use: validation target
+  - 다음 reread target: `runtime/cli_sessions/cli_20260416T110824Z_2226c8b1/operator_report.md`
+  - validation target: VectorFL panel의 `operator report preview`가 `validation_target`을 완료/승인으로 오독시키지 않고 route signal로 읽히는지 확인.
+  - deposit candidate: `shared operational language` 성장 원칙은 deposit 후보가 될 수 있으나, final glossary 승격은 보류.
+tokens used
+6,515

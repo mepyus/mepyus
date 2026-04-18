@@ -1,9 +1,1195 @@
 {
   "summary": {
-    "region_count": 16,
-    "bridge_count": 37
+    "region_count": 21,
+    "bridge_count": 69
   },
   "regions": [
+    {
+      "local_space_id": "lsp_8b1a20a74630",
+      "label": "raw_live_input_builder_choi_interview",
+      "dominant_scene": "explanation",
+      "dominant_role": "",
+      "material_count": 574,
+      "representative_anchors": [
+        {
+          "canonical_key": "그래서",
+          "display_label": "그래서",
+          "anchor_type": "domain_term"
+        },
+        {
+          "canonical_key": "초그래서",
+          "display_label": "초그래서",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "에이전트",
+          "display_label": "에이전트",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "이렇게",
+          "display_label": "이렇게",
+          "anchor_type": "domain_term"
+        }
+      ],
+      "supporting_anchors": [
+        {
+          "canonical_key": "100",
+          "display_label": "100",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "초근데",
+          "display_label": "초근데",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "어떻게",
+          "display_label": "어떻게",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "서브에트",
+          "display_label": "서브에트",
+          "anchor_type": "semantic"
+        }
+      ],
+      "anchor_summary": [
+        "그래서",
+        "초그래서",
+        "에이전트",
+        "이렇게"
+      ],
+      "supporting_anchor_summary": [
+        "100",
+        "초근데",
+        "어떻게",
+        "서브에트"
+      ],
+      "landmarks": [
+        {
+          "material_id": "mat_adc014a00ec4",
+          "x": 426,
+          "y": 30190,
+          "label": "24:0024분그래서 엄청 빨리 …",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_dbcb497f0a6d",
+          "x": 90,
+          "y": 28994,
+          "label": "12:3112분 31초근데 이때 …",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_8ea5e521ca41",
+          "x": 90,
+          "y": 31480,
+          "label": "요즘 뭐 보통 제가 알기로 우리 …",
+          "scene": "unknown",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_ce96212f9676",
+          "x": 258,
+          "y": 29486,
+          "label": "이상하게 나오면은 16:3416분…",
+          "scene": "explanation",
+          "observer_role": ""
+        }
+      ],
+      "connections": [
+        {
+          "bridge_id": "brg_4c7ad1a5fa78",
+          "peer_local_space_id": "lsp_3bcd7adadbe4",
+          "peer_label": "alignment_probe_choi",
+          "strength": 0.54,
+          "anchor_hints": [
+            "프롬프트"
+          ],
+          "reason_line": "alignment_probe_choi와 프롬프트 축으로 연결",
+          "source_links": [
+            {
+              "label": "choi_ai_classroom_vlm",
+              "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_950a081d529b_001",
+              "dust_id": "dst_src_950a081d529b_001"
+            },
+            {
+              "label": "dst_src_950a081d529b_002",
+              "dust_id": "dst_src_950a081d529b_002"
+            },
+            {
+              "label": "dst_src_950a081d529b_003",
+              "dust_id": "dst_src_950a081d529b_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_9a58689d1c98",
+          "peer_local_space_id": "lsp_6fa13a768aca",
+          "peer_label": "raw_live_input_andrej_karpathy_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "엔지니어링"
+          ],
+          "reason_line": "raw_live_input_andrej_karpathy_youtube와 엔지니어링 축으로 연결",
+          "source_links": [
+            {
+              "label": "andrej_karpathy_youtube",
+              "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_faf6244e2d3a_001",
+              "dust_id": "dst_src_faf6244e2d3a_001"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_002",
+              "dust_id": "dst_src_faf6244e2d3a_002"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_003",
+              "dust_id": "dst_src_faf6244e2d3a_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_c7aadbe3c97d",
+          "peer_local_space_id": "lsp_0b1e256a3ede",
+          "peer_label": "raw_live_input_alexkarp_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "초여기"
+          ],
+          "reason_line": "raw_live_input_alexkarp_youtube와 초여기 축으로 연결",
+          "source_links": [
+            {
+              "label": "alexkarp_youtube",
+              "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_c64537e9daa1_001",
+              "dust_id": "dst_src_c64537e9daa1_001"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_002",
+              "dust_id": "dst_src_c64537e9daa1_002"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_003",
+              "dust_id": "dst_src_c64537e9daa1_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_f37406be9f9f",
+          "peer_local_space_id": "lsp_c57a17a81743",
+          "peer_label": "raw_live_input_dario_amodei_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "컨텍스트"
+          ],
+          "reason_line": "raw_live_input_dario_amodei_youtube와 컨텍스트 축으로 연결",
+          "source_links": [
+            {
+              "label": "dario_amodei_youtube",
+              "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_32c001a1f6e5_001",
+              "dust_id": "dst_src_32c001a1f6e5_001"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_002",
+              "dust_id": "dst_src_32c001a1f6e5_002"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_003",
+              "dust_id": "dst_src_32c001a1f6e5_003"
+            }
+          ]
+        }
+      ],
+      "why_region_exists": "대표 anchor 그래서 / 초그래서와 material 574개, 연결 4개가 이 region을 지지함",
+      "bridge_reason_summary": [
+        "alignment_probe_choi와 프롬프트 축으로 연결",
+        "raw_live_input_andrej_karpathy_youtube와 엔지니어링 축으로 연결",
+        "raw_live_input_alexkarp_youtube와 초여기 축으로 연결",
+        "raw_live_input_dario_amodei_youtube와 컨텍스트 축으로 연결"
+      ],
+      "source_links": [
+        {
+          "label": "builder_choi_interview",
+          "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_85951b53e99a_001",
+          "dust_id": "dst_src_85951b53e99a_001"
+        },
+        {
+          "label": "dst_src_85951b53e99a_002",
+          "dust_id": "dst_src_85951b53e99a_002"
+        },
+        {
+          "label": "dst_src_85951b53e99a_003",
+          "dust_id": "dst_src_85951b53e99a_003"
+        },
+        {
+          "label": "dst_src_85951b53e99a_004",
+          "dust_id": "dst_src_85951b53e99a_004"
+        },
+        {
+          "label": "dst_src_85951b53e99a_005",
+          "dust_id": "dst_src_85951b53e99a_005"
+        },
+        {
+          "label": "dst_src_85951b53e99a_006",
+          "dust_id": "dst_src_85951b53e99a_006"
+        }
+      ],
+      "rejected_overlap_state": {
+        "available": false,
+        "items": []
+      }
+    },
+    {
+      "local_space_id": "lsp_3bcd7adadbe4",
+      "label": "alignment_probe_choi",
+      "dominant_scene": "explanation",
+      "dominant_role": "",
+      "material_count": 1013,
+      "representative_anchors": [
+        {
+          "canonical_key": "이미지",
+          "display_label": "이미지",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "그래서",
+          "display_label": "그래서",
+          "anchor_type": "domain_term"
+        },
+        {
+          "canonical_key": "그다음",
+          "display_label": "그다음",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "텍스트",
+          "display_label": "텍스트",
+          "anchor_type": "semantic"
+        }
+      ],
+      "supporting_anchors": [
+        {
+          "canonical_key": "이렇게",
+          "display_label": "이렇게",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "인코더",
+          "display_label": "인코더",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "그렇게",
+          "display_label": "그렇게",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "파지티브",
+          "display_label": "파지티브",
+          "anchor_type": "semantic"
+        }
+      ],
+      "anchor_summary": [
+        "이미지",
+        "그래서",
+        "그다음",
+        "텍스트"
+      ],
+      "supporting_anchor_summary": [
+        "이렇게",
+        "인코더",
+        "그렇게",
+        "파지티브"
+      ],
+      "landmarks": [
+        {
+          "material_id": "mat_ea49c9fab504",
+          "x": 584,
+          "y": 21954,
+          "label": "두글에서 21:02 제프리 힌튼 …",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_1094fbb55912",
+          "x": 332,
+          "y": 22702,
+          "label": "그렇게 한 이유는 어 그 원래 이…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_1390ef14d870",
+          "x": 164,
+          "y": 24878,
+          "label": "그래서 어이 문제 보기에 대한 인…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_5a1167fe5f19",
+          "x": 164,
+          "y": 26606,
+          "label": "1:03:57 아까 말씀드린 것도…",
+          "scene": "explanation",
+          "observer_role": ""
+        }
+      ],
+      "connections": [
+        {
+          "bridge_id": "brg_1c680ecc9a36",
+          "peer_local_space_id": "lsp_0b1e256a3ede",
+          "peer_label": "raw_live_input_alexkarp_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "그럼 이제"
+          ],
+          "reason_line": "raw_live_input_alexkarp_youtube와 그럼 이제 축으로 연결",
+          "source_links": [
+            {
+              "label": "alexkarp_youtube",
+              "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_c64537e9daa1_001",
+              "dust_id": "dst_src_c64537e9daa1_001"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_002",
+              "dust_id": "dst_src_c64537e9daa1_002"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_003",
+              "dust_id": "dst_src_c64537e9daa1_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_4c7ad1a5fa78",
+          "peer_local_space_id": "lsp_8b1a20a74630",
+          "peer_label": "raw_live_input_builder_choi_interview",
+          "strength": 0.54,
+          "anchor_hints": [
+            "프롬프트"
+          ],
+          "reason_line": "raw_live_input_builder_choi_interview와 프롬프트 축으로 연결",
+          "source_links": [
+            {
+              "label": "builder_choi_interview",
+              "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_85951b53e99a_001",
+              "dust_id": "dst_src_85951b53e99a_001"
+            },
+            {
+              "label": "dst_src_85951b53e99a_002",
+              "dust_id": "dst_src_85951b53e99a_002"
+            },
+            {
+              "label": "dst_src_85951b53e99a_003",
+              "dust_id": "dst_src_85951b53e99a_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_ad419117e416",
+          "peer_local_space_id": "lsp_c57a17a81743",
+          "peer_label": "raw_live_input_dario_amodei_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "사실 우리"
+          ],
+          "reason_line": "raw_live_input_dario_amodei_youtube와 사실 우리 축으로 연결",
+          "source_links": [
+            {
+              "label": "dario_amodei_youtube",
+              "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_32c001a1f6e5_001",
+              "dust_id": "dst_src_32c001a1f6e5_001"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_002",
+              "dust_id": "dst_src_32c001a1f6e5_002"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_003",
+              "dust_id": "dst_src_32c001a1f6e5_003"
+            }
+          ]
+        }
+      ],
+      "why_region_exists": "대표 anchor 이미지 / 그래서와 material 1013개, 연결 3개가 이 region을 지지함",
+      "bridge_reason_summary": [
+        "raw_live_input_alexkarp_youtube와 그럼 이제 축으로 연결",
+        "raw_live_input_builder_choi_interview와 프롬프트 축으로 연결",
+        "raw_live_input_dario_amodei_youtube와 사실 우리 축으로 연결"
+      ],
+      "source_links": [
+        {
+          "label": "choi_ai_classroom_vlm",
+          "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_950a081d529b_001",
+          "dust_id": "dst_src_950a081d529b_001"
+        },
+        {
+          "label": "dst_src_950a081d529b_002",
+          "dust_id": "dst_src_950a081d529b_002"
+        },
+        {
+          "label": "dst_src_950a081d529b_003",
+          "dust_id": "dst_src_950a081d529b_003"
+        },
+        {
+          "label": "dst_src_950a081d529b_004",
+          "dust_id": "dst_src_950a081d529b_004"
+        },
+        {
+          "label": "dst_src_950a081d529b_005",
+          "dust_id": "dst_src_950a081d529b_005"
+        },
+        {
+          "label": "dst_src_950a081d529b_006",
+          "dust_id": "dst_src_950a081d529b_006"
+        }
+      ],
+      "rejected_overlap_state": {
+        "available": false,
+        "items": []
+      }
+    },
+    {
+      "local_space_id": "lsp_0b1e256a3ede",
+      "label": "raw_live_input_alexkarp_youtube",
+      "dominant_scene": "explanation",
+      "dominant_role": "",
+      "material_count": 560,
+      "representative_anchors": [
+        {
+          "canonical_key": "ai",
+          "display_label": "AI",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "초하지",
+          "display_label": "초하지",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "sector",
+          "display_label": "Sector",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "솔직히",
+          "display_label": "솔직히",
+          "anchor_type": "semantic"
+        }
+      ],
+      "supporting_anchors": [
+        {
+          "canonical_key": "초그래서",
+          "display_label": "초그래서",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "거대한",
+          "display_label": "거대한",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "도대체",
+          "display_label": "도대체",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "여기서",
+          "display_label": "여기서",
+          "anchor_type": "semantic"
+        }
+      ],
+      "anchor_summary": [
+        "AI",
+        "초하지",
+        "Sector",
+        "솔직히"
+      ],
+      "supporting_anchor_summary": [
+        "초그래서",
+        "거대한",
+        "도대체",
+        "여기서"
+      ],
+      "landmarks": [
+        {
+          "material_id": "mat_d6a64824ce3a",
+          "x": 90,
+          "y": 15928,
+          "label": "전 세계 주권 국가들이 정말 가장…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_f376a98641ee",
+          "x": 574,
+          "y": 16258,
+          "label": "이건 연결이 완전히 끊겨 버린 그…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_169d88f78761",
+          "x": 406,
+          "y": 16706,
+          "label": "가령 당신이 보험 회사라면 당신들…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_226e6589f82b",
+          "x": 500,
+          "y": 16888,
+          "label": "핵심은이 동맥경화 같은 유입 흐름…",
+          "scene": "explanation",
+          "observer_role": ""
+        }
+      ],
+      "connections": [
+        {
+          "bridge_id": "brg_1c680ecc9a36",
+          "peer_local_space_id": "lsp_3bcd7adadbe4",
+          "peer_label": "alignment_probe_choi",
+          "strength": 0.54,
+          "anchor_hints": [
+            "그럼 이제"
+          ],
+          "reason_line": "alignment_probe_choi와 그럼 이제 축으로 연결",
+          "source_links": [
+            {
+              "label": "choi_ai_classroom_vlm",
+              "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_950a081d529b_001",
+              "dust_id": "dst_src_950a081d529b_001"
+            },
+            {
+              "label": "dst_src_950a081d529b_002",
+              "dust_id": "dst_src_950a081d529b_002"
+            },
+            {
+              "label": "dst_src_950a081d529b_003",
+              "dust_id": "dst_src_950a081d529b_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_3a9d4a188d8b",
+          "peer_local_space_id": "lsp_6fa13a768aca",
+          "peer_label": "raw_live_input_andrej_karpathy_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "도대체"
+          ],
+          "reason_line": "raw_live_input_andrej_karpathy_youtube와 도대체 축으로 연결",
+          "source_links": [
+            {
+              "label": "andrej_karpathy_youtube",
+              "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_faf6244e2d3a_001",
+              "dust_id": "dst_src_faf6244e2d3a_001"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_002",
+              "dust_id": "dst_src_faf6244e2d3a_002"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_003",
+              "dust_id": "dst_src_faf6244e2d3a_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_c7aadbe3c97d",
+          "peer_local_space_id": "lsp_8b1a20a74630",
+          "peer_label": "raw_live_input_builder_choi_interview",
+          "strength": 0.54,
+          "anchor_hints": [
+            "초여기"
+          ],
+          "reason_line": "raw_live_input_builder_choi_interview와 초여기 축으로 연결",
+          "source_links": [
+            {
+              "label": "builder_choi_interview",
+              "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_85951b53e99a_001",
+              "dust_id": "dst_src_85951b53e99a_001"
+            },
+            {
+              "label": "dst_src_85951b53e99a_002",
+              "dust_id": "dst_src_85951b53e99a_002"
+            },
+            {
+              "label": "dst_src_85951b53e99a_003",
+              "dust_id": "dst_src_85951b53e99a_003"
+            }
+          ]
+        }
+      ],
+      "why_region_exists": "대표 anchor AI / 초하지와 material 560개, 연결 3개가 이 region을 지지함",
+      "bridge_reason_summary": [
+        "alignment_probe_choi와 그럼 이제 축으로 연결",
+        "raw_live_input_andrej_karpathy_youtube와 도대체 축으로 연결",
+        "raw_live_input_builder_choi_interview와 초여기 축으로 연결"
+      ],
+      "source_links": [
+        {
+          "label": "alexkarp_youtube",
+          "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_c64537e9daa1_001",
+          "dust_id": "dst_src_c64537e9daa1_001"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_002",
+          "dust_id": "dst_src_c64537e9daa1_002"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_003",
+          "dust_id": "dst_src_c64537e9daa1_003"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_004",
+          "dust_id": "dst_src_c64537e9daa1_004"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_005",
+          "dust_id": "dst_src_c64537e9daa1_005"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_006",
+          "dust_id": "dst_src_c64537e9daa1_006"
+        }
+      ],
+      "rejected_overlap_state": {
+        "available": false,
+        "items": []
+      }
+    },
+    {
+      "local_space_id": "lsp_6fa13a768aca",
+      "label": "raw_live_input_andrej_karpathy_youtube",
+      "dominant_scene": "explanation",
+      "dominant_role": "",
+      "material_count": 483,
+      "representative_anchors": [
+        {
+          "canonical_key": "ai",
+          "display_label": "AI",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "lrm",
+          "display_label": "LRM",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "보세요",
+          "display_label": "보세요",
+          "anchor_type": "domain_term"
+        },
+        {
+          "canonical_key": "강화_학습",
+          "display_label": "강화 학습",
+          "anchor_type": "semantic"
+        }
+      ],
+      "supporting_anchors": [
+        {
+          "canonical_key": "그렇다면",
+          "display_label": "그렇다면",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "생각해",
+          "display_label": "생각해",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "여전히",
+          "display_label": "여전히",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "lm",
+          "display_label": "LM",
+          "anchor_type": "semantic"
+        }
+      ],
+      "anchor_summary": [
+        "AI",
+        "LRM",
+        "보세요",
+        "강화 학습"
+      ],
+      "supporting_anchor_summary": [
+        "그렇다면",
+        "생각해",
+        "여전히",
+        "LM"
+      ],
+      "landmarks": [
+        {
+          "material_id": "mat_1ede510f94ef",
+          "x": 80,
+          "y": 11202,
+          "label": "이건 얼룩말이 태어나서 강화 학습…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_5391130f66f2",
+          "x": 322,
+          "y": 12216,
+          "label": "우리는 여기서 아주 중요한 퍼즐 …",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_72e4a61542e6",
+          "x": 258,
+          "y": 13934,
+          "label": "만약 당신이 강화 24:00 학습…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_e2f0e25cf6a6",
+          "x": 490,
+          "y": 14648,
+          "label": "다중 에이전트 영역에는 아직 실제…",
+          "scene": "unknown",
+          "observer_role": ""
+        }
+      ],
+      "connections": [
+        {
+          "bridge_id": "brg_3a9d4a188d8b",
+          "peer_local_space_id": "lsp_0b1e256a3ede",
+          "peer_label": "raw_live_input_alexkarp_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "도대체"
+          ],
+          "reason_line": "raw_live_input_alexkarp_youtube와 도대체 축으로 연결",
+          "source_links": [
+            {
+              "label": "alexkarp_youtube",
+              "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_c64537e9daa1_001",
+              "dust_id": "dst_src_c64537e9daa1_001"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_002",
+              "dust_id": "dst_src_c64537e9daa1_002"
+            },
+            {
+              "label": "dst_src_c64537e9daa1_003",
+              "dust_id": "dst_src_c64537e9daa1_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_9a58689d1c98",
+          "peer_local_space_id": "lsp_8b1a20a74630",
+          "peer_label": "raw_live_input_builder_choi_interview",
+          "strength": 0.54,
+          "anchor_hints": [
+            "엔지니어링"
+          ],
+          "reason_line": "raw_live_input_builder_choi_interview와 엔지니어링 축으로 연결",
+          "source_links": [
+            {
+              "label": "builder_choi_interview",
+              "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_85951b53e99a_001",
+              "dust_id": "dst_src_85951b53e99a_001"
+            },
+            {
+              "label": "dst_src_85951b53e99a_002",
+              "dust_id": "dst_src_85951b53e99a_002"
+            },
+            {
+              "label": "dst_src_85951b53e99a_003",
+              "dust_id": "dst_src_85951b53e99a_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_d3d7f1f7b92c",
+          "peer_local_space_id": "lsp_c57a17a81743",
+          "peer_label": "raw_live_input_dario_amodei_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "엔지니어링"
+          ],
+          "reason_line": "raw_live_input_dario_amodei_youtube와 엔지니어링 축으로 연결",
+          "source_links": [
+            {
+              "label": "dario_amodei_youtube",
+              "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_32c001a1f6e5_001",
+              "dust_id": "dst_src_32c001a1f6e5_001"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_002",
+              "dust_id": "dst_src_32c001a1f6e5_002"
+            },
+            {
+              "label": "dst_src_32c001a1f6e5_003",
+              "dust_id": "dst_src_32c001a1f6e5_003"
+            }
+          ]
+        }
+      ],
+      "why_region_exists": "대표 anchor AI / LRM와 material 483개, 연결 3개가 이 region을 지지함",
+      "bridge_reason_summary": [
+        "raw_live_input_alexkarp_youtube와 도대체 축으로 연결",
+        "raw_live_input_builder_choi_interview와 엔지니어링 축으로 연결",
+        "raw_live_input_dario_amodei_youtube와 엔지니어링 축으로 연결"
+      ],
+      "source_links": [
+        {
+          "label": "andrej_karpathy_youtube",
+          "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_faf6244e2d3a_001",
+          "dust_id": "dst_src_faf6244e2d3a_001"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_002",
+          "dust_id": "dst_src_faf6244e2d3a_002"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_003",
+          "dust_id": "dst_src_faf6244e2d3a_003"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_004",
+          "dust_id": "dst_src_faf6244e2d3a_004"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_005",
+          "dust_id": "dst_src_faf6244e2d3a_005"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_006",
+          "dust_id": "dst_src_faf6244e2d3a_006"
+        }
+      ],
+      "rejected_overlap_state": {
+        "available": false,
+        "items": []
+      }
+    },
+    {
+      "local_space_id": "lsp_c57a17a81743",
+      "label": "raw_live_input_dario_amodei_youtube",
+      "dominant_scene": "explanation",
+      "dominant_role": "",
+      "material_count": 471,
+      "representative_anchors": [
+        {
+          "canonical_key": "ai",
+          "display_label": "AI",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "초물론",
+          "display_label": "초물론",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "100",
+          "display_label": "100",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "거대한",
+          "display_label": "거대한",
+          "anchor_type": "semantic"
+        }
+      ],
+      "supporting_anchors": [
+        {
+          "canonical_key": "초당신",
+          "display_label": "초당신",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "ai_모델",
+          "display_label": "AI 모델",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "기술적",
+          "display_label": "기술적",
+          "anchor_type": "semantic"
+        },
+        {
+          "canonical_key": "초_ai",
+          "display_label": "초 AI",
+          "anchor_type": "semantic"
+        }
+      ],
+      "anchor_summary": [
+        "AI",
+        "초물론",
+        "100",
+        "거대한"
+      ],
+      "supporting_anchor_summary": [
+        "초당신",
+        "AI 모델",
+        "기술적",
+        "초 AI"
+      ],
+      "landmarks": [
+        {
+          "material_id": "mat_9e83303b4aaa",
+          "x": 668,
+          "y": 8194,
+          "label": "저는 그런 미래가 10:1810분…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_47b1b184d192",
+          "x": 174,
+          "y": 9080,
+          "label": "저는 훗날 AGI나 더 강력한 A…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_79b6243362a5",
+          "x": 510,
+          "y": 9730,
+          "label": "작년에 발표된 아주 중요한 연구 …",
+          "scene": "evidence",
+          "observer_role": ""
+        },
+        {
+          "material_id": "mat_b34ffab41710",
+          "x": 174,
+          "y": 9838,
+          "label": "저희 트스로픽 내부 상황을 말씀드…",
+          "scene": "explanation",
+          "observer_role": ""
+        }
+      ],
+      "connections": [
+        {
+          "bridge_id": "brg_ad419117e416",
+          "peer_local_space_id": "lsp_3bcd7adadbe4",
+          "peer_label": "alignment_probe_choi",
+          "strength": 0.54,
+          "anchor_hints": [
+            "사실 우리"
+          ],
+          "reason_line": "alignment_probe_choi와 사실 우리 축으로 연결",
+          "source_links": [
+            {
+              "label": "choi_ai_classroom_vlm",
+              "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_950a081d529b_001",
+              "dust_id": "dst_src_950a081d529b_001"
+            },
+            {
+              "label": "dst_src_950a081d529b_002",
+              "dust_id": "dst_src_950a081d529b_002"
+            },
+            {
+              "label": "dst_src_950a081d529b_003",
+              "dust_id": "dst_src_950a081d529b_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_d3d7f1f7b92c",
+          "peer_local_space_id": "lsp_6fa13a768aca",
+          "peer_label": "raw_live_input_andrej_karpathy_youtube",
+          "strength": 0.54,
+          "anchor_hints": [
+            "엔지니어링"
+          ],
+          "reason_line": "raw_live_input_andrej_karpathy_youtube와 엔지니어링 축으로 연결",
+          "source_links": [
+            {
+              "label": "andrej_karpathy_youtube",
+              "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_faf6244e2d3a_001",
+              "dust_id": "dst_src_faf6244e2d3a_001"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_002",
+              "dust_id": "dst_src_faf6244e2d3a_002"
+            },
+            {
+              "label": "dst_src_faf6244e2d3a_003",
+              "dust_id": "dst_src_faf6244e2d3a_003"
+            }
+          ]
+        },
+        {
+          "bridge_id": "brg_f37406be9f9f",
+          "peer_local_space_id": "lsp_8b1a20a74630",
+          "peer_label": "raw_live_input_builder_choi_interview",
+          "strength": 0.54,
+          "anchor_hints": [
+            "컨텍스트"
+          ],
+          "reason_line": "raw_live_input_builder_choi_interview와 컨텍스트 축으로 연결",
+          "source_links": [
+            {
+              "label": "builder_choi_interview",
+              "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_85951b53e99a_001",
+              "dust_id": "dst_src_85951b53e99a_001"
+            },
+            {
+              "label": "dst_src_85951b53e99a_002",
+              "dust_id": "dst_src_85951b53e99a_002"
+            },
+            {
+              "label": "dst_src_85951b53e99a_003",
+              "dust_id": "dst_src_85951b53e99a_003"
+            }
+          ]
+        }
+      ],
+      "why_region_exists": "대표 anchor AI / 초물론와 material 471개, 연결 3개가 이 region을 지지함",
+      "bridge_reason_summary": [
+        "alignment_probe_choi와 사실 우리 축으로 연결",
+        "raw_live_input_andrej_karpathy_youtube와 엔지니어링 축으로 연결",
+        "raw_live_input_builder_choi_interview와 컨텍스트 축으로 연결"
+      ],
+      "source_links": [
+        {
+          "label": "dario_amodei_youtube",
+          "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_32c001a1f6e5_001",
+          "dust_id": "dst_src_32c001a1f6e5_001"
+        },
+        {
+          "label": "dst_src_32c001a1f6e5_002",
+          "dust_id": "dst_src_32c001a1f6e5_002"
+        },
+        {
+          "label": "dst_src_32c001a1f6e5_003",
+          "dust_id": "dst_src_32c001a1f6e5_003"
+        },
+        {
+          "label": "dst_src_32c001a1f6e5_004",
+          "dust_id": "dst_src_32c001a1f6e5_004"
+        },
+        {
+          "label": "dst_src_32c001a1f6e5_005",
+          "dust_id": "dst_src_32c001a1f6e5_005"
+        },
+        {
+          "label": "dst_src_32c001a1f6e5_006",
+          "dust_id": "dst_src_32c001a1f6e5_006"
+        }
+      ],
+      "rejected_overlap_state": {
+        "available": false,
+        "items": []
+      }
+    },
     {
       "local_space_id": "lsp_3630ca5d8a22",
       "label": "test_canonical_ingest_20260321",
@@ -393,7 +1579,7 @@
       "landmarks": [
         {
           "material_id": "mat_007ca306aee0",
-          "x": 2979.2,
+          "x": 3639.2,
           "y": 305.0,
           "label": "늘 아쉬운 점이 유튜브 그 자체가…",
           "scene": "explanation",
@@ -401,7 +1587,7 @@
         },
         {
           "material_id": "mat_1ac54dc04718",
-          "x": 2970.0,
+          "x": 3630.0,
           "y": 689.0,
           "label": "저희가 지난주에 성현님이랑 이야기…",
           "scene": "explanation",
@@ -409,7 +1595,7 @@
         },
         {
           "material_id": "mat_fa19c715ef47",
-          "x": 2980.0,
+          "x": 3640.0,
           "y": 795.0,
           "label": "노정석: 타임라인에서 보고되는 품…",
           "scene": "explanation",
@@ -417,7 +1603,7 @@
         },
         {
           "material_id": "mat_87ce1cd21ca4",
-          "x": 2969.2,
+          "x": 3629.2,
           "y": 1443.0,
           "label": "지금은 그거를 아마 매각하고 코딩…",
           "scene": "explanation",
@@ -425,6 +1611,34 @@
         }
       ],
       "connections": [
+        {
+          "bridge_id": "brg_229d6dde914b",
+          "peer_local_space_id": "lsp_3bcd7adadbe4",
+          "peer_label": "alignment_probe_choi",
+          "strength": 0.55,
+          "anchor_hints": [],
+          "reason_line": "shared bridge trace로 연결",
+          "source_links": [
+            {
+              "label": "choi_ai_classroom_vlm",
+              "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+            }
+          ],
+          "dust_links": [
+            {
+              "label": "dst_src_950a081d529b_001",
+              "dust_id": "dst_src_950a081d529b_001"
+            },
+            {
+              "label": "dst_src_950a081d529b_002",
+              "dust_id": "dst_src_950a081d529b_002"
+            },
+            {
+              "label": "dst_src_950a081d529b_003",
+              "dust_id": "dst_src_950a081d529b_003"
+            }
+          ]
+        },
         {
           "bridge_id": "brg_3839c09dc414",
           "peer_local_space_id": "lsp_4eadb2fe7a96",
@@ -450,34 +1664,6 @@
             {
               "label": "dst_src_2fd2c39f0fd7_003",
               "dust_id": "dst_src_2fd2c39f0fd7_003"
-            }
-          ]
-        },
-        {
-          "bridge_id": "brg_61b246d34dd4",
-          "peer_local_space_id": "lsp_00018441d497",
-          "peer_label": "doc_004",
-          "strength": 0.55,
-          "anchor_hints": [],
-          "reason_line": "shared bridge trace로 연결",
-          "source_links": [
-            {
-              "label": "doc_004",
-              "source_ref": "processor_compare/doc_004.txt"
-            }
-          ],
-          "dust_links": [
-            {
-              "label": "dst_src_340b01958e5f_001",
-              "dust_id": "dst_src_340b01958e5f_001"
-            },
-            {
-              "label": "dst_src_340b01958e5f_002",
-              "dust_id": "dst_src_340b01958e5f_002"
-            },
-            {
-              "label": "dst_src_340b01958e5f_003",
-              "dust_id": "dst_src_340b01958e5f_003"
             }
           ]
         }
@@ -571,7 +1757,7 @@
       "landmarks": [
         {
           "material_id": "mat_8779cf935aee",
-          "x": 2760.0,
+          "x": 3420.0,
           "y": 627.0,
           "label": "우리 자신보다 더 사랑했던 사람의…",
           "scene": "explanation",
@@ -579,7 +1765,7 @@
         },
         {
           "material_id": "mat_8fdde292c9a6",
-          "x": 2760.0,
+          "x": 3420.0,
           "y": 679.0,
           "label": "(Kafka 1999: 36) 독…",
           "scene": "explanation",
@@ -587,7 +1773,7 @@
         },
         {
           "material_id": "mat_8943e4f597d5",
-          "x": 2749.2,
+          "x": 3409.2,
           "y": 1059.0,
           "label": "오스트리아인가 체코인가, 기독교 …",
           "scene": "explanation",
@@ -595,7 +1781,7 @@
         },
         {
           "material_id": "mat_c7340610961b",
-          "x": 2739.2,
+          "x": 3399.2,
           "y": 3247.0,
           "label": "카는 그 자신이 겪는 문제의 본질…",
           "scene": "explanation",
@@ -755,7 +1941,7 @@
       "landmarks": [
         {
           "material_id": "mat_2db2627b2876",
-          "x": 2540.0,
+          "x": 3200.0,
           "y": 233.0,
           "label": "보드리야르 이론의 핵심을 이루는 …",
           "scene": "explanation",
@@ -763,7 +1949,7 @@
         },
         {
           "material_id": "mat_21db797a3e40",
-          "x": 2540.0,
+          "x": 3200.0,
           "y": 881.0,
           "label": "그러나 플라톤주의의 핵심은 오히려…",
           "scene": "explanation",
@@ -771,7 +1957,7 @@
         },
         {
           "material_id": "mat_7fce87f5a73f",
-          "x": 2539.2,
+          "x": 3199.2,
           "y": 1039.0,
           "label": "시뮬라크르와 복사물의 ‘본성상의 …",
           "scene": "explanation",
@@ -779,7 +1965,7 @@
         },
         {
           "material_id": "mat_5307a49745af",
-          "x": 2529.2,
+          "x": 3189.2,
           "y": 1231.0,
           "label": "가치-존재론을 가능케 하는 ‘거리…",
           "scene": "explanation",
@@ -816,30 +2002,30 @@
           ]
         },
         {
-          "bridge_id": "brg_470ea9377365",
-          "peer_local_space_id": "lsp_00018441d497",
-          "peer_label": "doc_004",
+          "bridge_id": "brg_0ec3d345c8a6",
+          "peer_local_space_id": "lsp_6fa13a768aca",
+          "peer_label": "raw_live_input_andrej_karpathy_youtube",
           "strength": 0.55,
           "anchor_hints": [],
           "reason_line": "shared bridge trace로 연결",
           "source_links": [
             {
-              "label": "doc_004",
-              "source_ref": "processor_compare/doc_004.txt"
+              "label": "andrej_karpathy_youtube",
+              "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
             }
           ],
           "dust_links": [
             {
-              "label": "dst_src_340b01958e5f_001",
-              "dust_id": "dst_src_340b01958e5f_001"
+              "label": "dst_src_faf6244e2d3a_001",
+              "dust_id": "dst_src_faf6244e2d3a_001"
             },
             {
-              "label": "dst_src_340b01958e5f_002",
-              "dust_id": "dst_src_340b01958e5f_002"
+              "label": "dst_src_faf6244e2d3a_002",
+              "dust_id": "dst_src_faf6244e2d3a_002"
             },
             {
-              "label": "dst_src_340b01958e5f_003",
-              "dust_id": "dst_src_340b01958e5f_003"
+              "label": "dst_src_faf6244e2d3a_003",
+              "dust_id": "dst_src_faf6244e2d3a_003"
             }
           ]
         }
@@ -889,7 +2075,7 @@
     {
       "local_space_id": "lsp_2dde7aef787a",
       "label": "doc_005",
-      "dominant_scene": "explanation",
+      "dominant_scene": "unknown",
       "dominant_role": "",
       "material_count": 73,
       "representative_anchors": [
@@ -944,35 +2130,35 @@
       ],
       "landmarks": [
         {
+          "material_id": "mat_357de80fe5a6",
+          "x": 2770.0,
+          "y": 1467.0,
+          "label": "여기서 중요한 점은 Link Ty…",
+          "scene": "unknown",
+          "observer_role": ""
+        },
+        {
           "material_id": "mat_acc23d8dbc9f",
-          "x": 2079.2,
-          "y": 339.0,
+          "x": 2757.92,
+          "y": 342.12,
           "label": "이 디지털화 된 정보를 효율적으로…",
-          "scene": "explanation",
+          "scene": "unknown",
           "observer_role": ""
         },
         {
           "material_id": "mat_2b8afdbd19d0",
-          "x": 2099.2,
-          "y": 737.0,
+          "x": 2760.64,
+          "y": 740.12,
           "label": "현실의 문제점 지금까지 기업의 데…",
-          "scene": "explanation",
+          "scene": "unknown",
           "observer_role": ""
         },
         {
           "material_id": "mat_6a9608b8a49b",
-          "x": 2099.2,
-          "y": 819.0,
+          "x": 2780.08,
+          "y": 812.24,
           "label": "만약 이 모든 데이터를 디지털 상…",
-          "scene": "explanation",
-          "observer_role": ""
-        },
-        {
-          "material_id": "mat_e55d57d8b762",
-          "x": 2089.2,
-          "y": 847.0,
-          "label": "그러니까, 온톨로지를 사용해서 데…",
-          "scene": "explanation",
+          "scene": "unknown",
           "observer_role": ""
         }
       ],
@@ -1089,7 +2275,7 @@
     {
       "local_space_id": "lsp_4eadb2fe7a96",
       "label": "doc_006",
-      "dominant_scene": "explanation",
+      "dominant_scene": "unknown",
       "dominant_role": "",
       "material_count": 73,
       "representative_anchors": [
@@ -1150,34 +2336,34 @@
       ],
       "landmarks": [
         {
+          "material_id": "mat_b9fdbf032539",
+          "x": 2993.6,
+          "y": 146.48,
+          "label": "대규모 언어 모델(LLM)은 자연…",
+          "scene": "explanation",
+          "observer_role": ""
+        },
+        {
           "material_id": "mat_1e3015ba2cca",
-          "x": 2299.2,
-          "y": 151.0,
+          "x": 2973.6,
+          "y": 150.48,
           "label": "이러한 문제를 해결하기 위해 등장…",
           "scene": "explanation",
           "observer_role": ""
         },
         {
-          "material_id": "mat_a4487193b0bc",
-          "x": 2320.0,
-          "y": 771.0,
-          "label": "(2) 엔티티 추출 및 속성 정규…",
+          "material_id": "mat_d050487924c5",
+          "x": 2993.6,
+          "y": 198.48,
+          "label": "Graph RAG는 노드와 엣지로…",
           "scene": "explanation",
           "observer_role": ""
         },
         {
-          "material_id": "mat_25751615cf64",
-          "x": 2310.0,
-          "y": 963.0,
-          "label": "Graph RAG의 관계 정보가 …",
-          "scene": "explanation",
-          "observer_role": ""
-        },
-        {
-          "material_id": "mat_ced1d67bff59",
-          "x": 2299.2,
-          "y": 1737.2,
-          "label": "이러한 문제를 해결하기 위해 체계…",
+          "material_id": "mat_478da51b772a",
+          "x": 2993.6,
+          "y": 280.48,
+          "label": "Graph DB는 관계 중심의 데…",
           "scene": "explanation",
           "observer_role": ""
         }
@@ -1342,7 +2528,7 @@
       "landmarks": [
         {
           "material_id": "mat_f55429e4d3f4",
-          "x": 1680.8,
+          "x": 2340.8,
           "y": 123.0,
           "label": "동역학(動力學, Dynamics)…",
           "scene": "unknown",
@@ -1350,7 +2536,7 @@
         },
         {
           "material_id": "mat_2c88c1638cb6",
-          "x": 1670.0,
+          "x": 2330.0,
           "y": 175.0,
           "label": "힘을 받았을 때 변형되지 않는 단…",
           "scene": "explanation",
@@ -1358,7 +2544,7 @@
         },
         {
           "material_id": "mat_166c295d3d88",
-          "x": 1660.0,
+          "x": 2320.0,
           "y": 233.0,
           "label": "우리말로 번역하면 ‘물체는 가해지…",
           "scene": "explanation",
@@ -1366,7 +2552,7 @@
         },
         {
           "material_id": "mat_85bd0bef9d7e",
-          "x": 1670.0,
+          "x": 2330.0,
           "y": 257.0,
           "label": "중세 시대가 지나고 르네상스 시대…",
           "scene": "explanation",
@@ -1476,7 +2662,7 @@
     {
       "local_space_id": "lsp_00018441d497",
       "label": "doc_004",
-      "dominant_scene": "explanation",
+      "dominant_scene": "unknown",
       "dominant_role": "",
       "material_count": 15,
       "representative_anchors": [
@@ -1526,34 +2712,34 @@
       "landmarks": [
         {
           "material_id": "mat_c80711163956",
-          "x": 1870.0,
+          "x": 2537.92,
           "y": 103.0,
           "label": "Foundry 온톨로지에서 사용자…",
-          "scene": "explanation",
+          "scene": "unknown",
           "observer_role": ""
         },
         {
           "material_id": "mat_4201351c7d56",
-          "x": 1880.0,
-          "y": 127.0,
+          "x": 2550.08,
+          "y": 120.24,
           "label": "액션은 사용자 정의 로직에 따라 …",
           "scene": "unknown",
           "observer_role": ""
         },
         {
-          "material_id": "mat_7c22d56f4a07",
-          "x": 1890.0,
-          "y": 151.0,
-          "label": "액션은 사용자가 특정 속성 편집 …",
-          "scene": "explanation",
+          "material_id": "mat_f88ecbb6b853",
+          "x": 2540.08,
+          "y": 178.24,
+          "label": "액션 유형은 사용자가 한 번에 수…",
+          "scene": "unknown",
           "observer_role": ""
         },
         {
-          "material_id": "mat_f88ecbb6b853",
-          "x": 1870.0,
-          "y": 185.0,
-          "label": "액션 유형은 사용자가 한 번에 수…",
-          "scene": "explanation",
+          "material_id": "mat_d5f461dd4f94",
+          "x": 2560.08,
+          "y": 226.24,
+          "label": "예시: Assign Employe…",
+          "scene": "unknown",
           "observer_role": ""
         }
       ],
@@ -1691,7 +2877,7 @@
       "landmarks": [
         {
           "material_id": "mat_38abcc11482c",
-          "x": 1460.8,
+          "x": 2120.8,
           "y": 123.0,
           "label": "Agent SDK vs MCP 이…",
           "scene": "unknown",
@@ -1699,7 +2885,7 @@
         },
         {
           "material_id": "mat_9d6fa71e3500",
-          "x": 1430.0,
+          "x": 2090.0,
           "y": 127.0,
           "label": "이런 Agent Framework…",
           "scene": "explanation",
@@ -1707,7 +2893,7 @@
         },
         {
           "material_id": "mat_6a114d999fd2",
-          "x": 1440.0,
+          "x": 2100.0,
           "y": 151.0,
           "label": "이러한 Agent framewor…",
           "scene": "explanation",
@@ -1715,7 +2901,7 @@
         },
         {
           "material_id": "mat_8e3eabf81dc6",
-          "x": 1450.0,
+          "x": 2110.0,
           "y": 175.0,
           "label": "예를 들어 Langchain에는 …",
           "scene": "explanation",
@@ -1843,7 +3029,7 @@
       "landmarks": [
         {
           "material_id": "mat_836547f7b6fb",
-          "x": 1230.0,
+          "x": 1890.0,
           "y": 247.0,
           "label": "온톨로지(Ontology)란 사람…",
           "scene": "explanation",
@@ -1851,7 +3037,7 @@
         },
         {
           "material_id": "mat_eaa25396bba7",
-          "x": 1210.0,
+          "x": 1870.0,
           "y": 281.0,
           "label": "온톨로지는 일종의 지식표현(kno…",
           "scene": "explanation",
@@ -1859,7 +3045,7 @@
         },
         {
           "material_id": "mat_81b772726338",
-          "x": 1230.8,
+          "x": 1890.8,
           "y": 305.0,
           "label": "프로그램과 인간이 지식을 공유하는…",
           "scene": "evidence",
@@ -1867,7 +3053,7 @@
         },
         {
           "material_id": "mat_dfa522562b41",
-          "x": 1240.8,
+          "x": 1900.8,
           "y": 329.0,
           "label": "온톨로지는 시맨틱 웹을 구현할 수…",
           "scene": "unknown",
@@ -1904,30 +3090,30 @@
           ]
         },
         {
-          "bridge_id": "brg_b6d1e1481e90",
-          "peer_local_space_id": "lsp_b7ce8e0abf2f",
-          "peer_label": "doc_002",
+          "bridge_id": "brg_9ed57c4af65e",
+          "peer_local_space_id": "lsp_6fa13a768aca",
+          "peer_label": "raw_live_input_andrej_karpathy_youtube",
           "strength": 0.55,
           "anchor_hints": [],
           "reason_line": "shared bridge trace로 연결",
           "source_links": [
             {
-              "label": "doc_002",
-              "source_ref": "processor_compare/doc_002.txt"
+              "label": "andrej_karpathy_youtube",
+              "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
             }
           ],
           "dust_links": [
             {
-              "label": "dst_src_0625ca57c84f_001",
-              "dust_id": "dst_src_0625ca57c84f_001"
+              "label": "dst_src_faf6244e2d3a_001",
+              "dust_id": "dst_src_faf6244e2d3a_001"
             },
             {
-              "label": "dst_src_0625ca57c84f_002",
-              "dust_id": "dst_src_0625ca57c84f_002"
+              "label": "dst_src_faf6244e2d3a_002",
+              "dust_id": "dst_src_faf6244e2d3a_002"
             },
             {
-              "label": "dst_src_0625ca57c84f_003",
-              "dust_id": "dst_src_0625ca57c84f_003"
+              "label": "dst_src_faf6244e2d3a_003",
+              "dust_id": "dst_src_faf6244e2d3a_003"
             }
           ]
         }
@@ -2557,6 +3743,278 @@
         {
           "label": "dst_src_340b01958e5f_003",
           "dust_id": "dst_src_340b01958e5f_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_1c680ecc9a36",
+      "from_label": "alignment_probe_choi",
+      "to_label": "raw_live_input_alexkarp_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "그럼 이제"
+      ],
+      "reason_line": "alignment_probe_choi와 그럼 이제 축으로 연결",
+      "source_links": [
+        {
+          "label": "choi_ai_classroom_vlm",
+          "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+        },
+        {
+          "label": "alexkarp_youtube",
+          "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_950a081d529b_001",
+          "dust_id": "dst_src_950a081d529b_001"
+        },
+        {
+          "label": "dst_src_950a081d529b_002",
+          "dust_id": "dst_src_950a081d529b_002"
+        },
+        {
+          "label": "dst_src_950a081d529b_003",
+          "dust_id": "dst_src_950a081d529b_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_3a9d4a188d8b",
+      "from_label": "raw_live_input_alexkarp_youtube",
+      "to_label": "raw_live_input_andrej_karpathy_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "도대체"
+      ],
+      "reason_line": "raw_live_input_alexkarp_youtube와 도대체 축으로 연결",
+      "source_links": [
+        {
+          "label": "alexkarp_youtube",
+          "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+        },
+        {
+          "label": "andrej_karpathy_youtube",
+          "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_c64537e9daa1_001",
+          "dust_id": "dst_src_c64537e9daa1_001"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_002",
+          "dust_id": "dst_src_c64537e9daa1_002"
+        },
+        {
+          "label": "dst_src_c64537e9daa1_003",
+          "dust_id": "dst_src_c64537e9daa1_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_4c7ad1a5fa78",
+      "from_label": "raw_live_input_builder_choi_interview",
+      "to_label": "alignment_probe_choi",
+      "strength": 0.54,
+      "anchor_hints": [
+        "프롬프트"
+      ],
+      "reason_line": "raw_live_input_builder_choi_interview와 프롬프트 축으로 연결",
+      "source_links": [
+        {
+          "label": "builder_choi_interview",
+          "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+        },
+        {
+          "label": "choi_ai_classroom_vlm",
+          "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_85951b53e99a_001",
+          "dust_id": "dst_src_85951b53e99a_001"
+        },
+        {
+          "label": "dst_src_85951b53e99a_002",
+          "dust_id": "dst_src_85951b53e99a_002"
+        },
+        {
+          "label": "dst_src_85951b53e99a_003",
+          "dust_id": "dst_src_85951b53e99a_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_9a58689d1c98",
+      "from_label": "raw_live_input_builder_choi_interview",
+      "to_label": "raw_live_input_andrej_karpathy_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "엔지니어링"
+      ],
+      "reason_line": "raw_live_input_builder_choi_interview와 엔지니어링 축으로 연결",
+      "source_links": [
+        {
+          "label": "builder_choi_interview",
+          "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+        },
+        {
+          "label": "andrej_karpathy_youtube",
+          "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_85951b53e99a_001",
+          "dust_id": "dst_src_85951b53e99a_001"
+        },
+        {
+          "label": "dst_src_85951b53e99a_002",
+          "dust_id": "dst_src_85951b53e99a_002"
+        },
+        {
+          "label": "dst_src_85951b53e99a_003",
+          "dust_id": "dst_src_85951b53e99a_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_ad419117e416",
+      "from_label": "alignment_probe_choi",
+      "to_label": "raw_live_input_dario_amodei_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "사실 우리"
+      ],
+      "reason_line": "alignment_probe_choi와 사실 우리 축으로 연결",
+      "source_links": [
+        {
+          "label": "choi_ai_classroom_vlm",
+          "source_ref": "inputs/external_cases/choi_ai_classroom_vlm.txt#active_alignment_probe"
+        },
+        {
+          "label": "dario_amodei_youtube",
+          "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_950a081d529b_001",
+          "dust_id": "dst_src_950a081d529b_001"
+        },
+        {
+          "label": "dst_src_950a081d529b_002",
+          "dust_id": "dst_src_950a081d529b_002"
+        },
+        {
+          "label": "dst_src_950a081d529b_003",
+          "dust_id": "dst_src_950a081d529b_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_c7aadbe3c97d",
+      "from_label": "raw_live_input_builder_choi_interview",
+      "to_label": "raw_live_input_alexkarp_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "초여기"
+      ],
+      "reason_line": "raw_live_input_builder_choi_interview와 초여기 축으로 연결",
+      "source_links": [
+        {
+          "label": "builder_choi_interview",
+          "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+        },
+        {
+          "label": "alexkarp_youtube",
+          "source_ref": "inputs/external_cases/alexkarp_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_85951b53e99a_001",
+          "dust_id": "dst_src_85951b53e99a_001"
+        },
+        {
+          "label": "dst_src_85951b53e99a_002",
+          "dust_id": "dst_src_85951b53e99a_002"
+        },
+        {
+          "label": "dst_src_85951b53e99a_003",
+          "dust_id": "dst_src_85951b53e99a_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_d3d7f1f7b92c",
+      "from_label": "raw_live_input_andrej_karpathy_youtube",
+      "to_label": "raw_live_input_dario_amodei_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "엔지니어링"
+      ],
+      "reason_line": "raw_live_input_andrej_karpathy_youtube와 엔지니어링 축으로 연결",
+      "source_links": [
+        {
+          "label": "andrej_karpathy_youtube",
+          "source_ref": "inputs/external_cases/andrej_karpathy_youtube.txt#raw_live_input_v1"
+        },
+        {
+          "label": "dario_amodei_youtube",
+          "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_faf6244e2d3a_001",
+          "dust_id": "dst_src_faf6244e2d3a_001"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_002",
+          "dust_id": "dst_src_faf6244e2d3a_002"
+        },
+        {
+          "label": "dst_src_faf6244e2d3a_003",
+          "dust_id": "dst_src_faf6244e2d3a_003"
+        }
+      ]
+    },
+    {
+      "bridge_id": "brg_f37406be9f9f",
+      "from_label": "raw_live_input_builder_choi_interview",
+      "to_label": "raw_live_input_dario_amodei_youtube",
+      "strength": 0.54,
+      "anchor_hints": [
+        "컨텍스트"
+      ],
+      "reason_line": "raw_live_input_builder_choi_interview와 컨텍스트 축으로 연결",
+      "source_links": [
+        {
+          "label": "builder_choi_interview",
+          "source_ref": "inputs/external_cases/builder_choi_interview.txt#raw_live_input_v1"
+        },
+        {
+          "label": "dario_amodei_youtube",
+          "source_ref": "inputs/external_cases/dario_amodei_youtube.txt#raw_live_input_v1"
+        }
+      ],
+      "dust_links": [
+        {
+          "label": "dst_src_85951b53e99a_001",
+          "dust_id": "dst_src_85951b53e99a_001"
+        },
+        {
+          "label": "dst_src_85951b53e99a_002",
+          "dust_id": "dst_src_85951b53e99a_002"
+        },
+        {
+          "label": "dst_src_85951b53e99a_003",
+          "dust_id": "dst_src_85951b53e99a_003"
         }
       ]
     },

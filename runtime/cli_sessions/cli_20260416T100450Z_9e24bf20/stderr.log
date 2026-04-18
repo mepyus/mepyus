@@ -1,0 +1,126 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d95c0-23d8-7920-9c7b-a9af889bbe4f
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: summarize
+Requested by surface: vectorfl_surface
+Requested by page: gemini/mock_test
+
+Purpose:
+Verify the Gemini mock main UI CLI path after VectorFL-first and mark-history readability hardening.
+
+Bounded context refs:
+- docs/reports/gemini_mock_test_cli_on_top_main_surface_patch_note_v0.md
+
+Prompt payload:
+Read the bounded context and return three short bullets: current usable path, what changed, and remaining note. Do not modify files.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll read the bounded report only and return the compact structured summary requested.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/gemini_mock_test_cli_on_top_main_surface_patch_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Gemini Mock Test CLI On-Top Main Surface Patch Note v0
+
+## Verdict
+PASS_WITH_NOTE
+
+`gemini/mock_test` is now treated as the main UI body for the CLI on-top path. The existing `/vectorfl-engine/vectorfl` page remains a functional validation shell, while the mock UI now contains the bounded CLI Host / Control panel inside the VectorFL surface.
+
+The note is that validation used the mock app's proxied API path with `curl`, not automated browser-click testing.
+
+## What Changed
+
+- Added `gemini/mock_test/CliHostControlPanel.tsx`.
+- Mounted the panel inside `gemini/mock_test/VectorFLIntegrationShell.tsx` in the VectorFL surface's optional tool/support layer position.
+- Added a Vite dev proxy in `gemini/mock_test/vite.config.ts`:
+  - `/api` -> `http://127.0.0.1:8421`
+
+## Why This Preserves The Baseline
+
+- The mock UI remains the visible body.
+- CLI is still an on-top host/control layer, not a fourth surface.
+- The panel is placed inside VectorFL support/tool territory, not in the user surface or engine surface.
+- The existing `runtime/cli_sessions` contract and integrated-engine API are reused.
+- No package 2 behavior, background registry, Gemini adapter, ingestion automation, or new orchestration concept was added.
+
+## What The Panel Provides
+
+- Codex backend, fixed as package-1 backend.
+- Task type selection: `summarize`, `inspect`, `reread`, `validate`.
+- Purpose input.
+- Bounded context refs input.
+- Prompt payload input.
+- Run Codex action.
+- Refresh latest return action.
+- Latest session id / backend / task / status / marks.
+- Structured return preview.
+- Deposit candidate preview.
+- Mark actions:
+  - `reread_target`
+  - `implementation_return`
+  - `validation_target`
+  - `deposit_candidate`
+
+## Validation
+
+- `npm run build` passed in `gemini/mock_test`.
+- Vite dev server started at `http://127.0.0.1:5173/`.
+- Dev proxy returned integrated-engine state through `http://127.0.0.1:5173/api/vectorfl-engine/state`.
+- A real Codex read-only run succeeded through the mock app proxy path:
+  - session id: `cli_20260416T095505Z_30757cb3`
+  - requested by page: `gemini/mock_test`
+  - status: `done`
+  - exit code: `0`
+- Mark action through the same proxy path succeeded with `validation_target`.
+
+## Still Deferred
+
+- Browser-click automation.
+- Session browsing/history.
+- Background/async runner.
+- Gemini adapter.
+- Deposit ingestion bridge.
+- Promotion automation.
+
+## Current Operating Read
+
+The usable screen should now be `gemini/mock_test`, not the old integrated-engine page. The old page remains useful as a validation/control reference, but the visible working body has moved to the Gemini mock surface.
+
+## Recommended Next Target
+
+Keep using the Gemini mock body and validate the panel by hand in the browser before adding session browsing/history.
+
+codex
+- result summary
+  - Current usable path: `gemini/mock_test` is now the main CLI-on-top UI body; `/vectorfl-engine/vectorfl` remains a validation/control reference.
+
+- important findings / diffs / outputs
+  - Changed: added `CliHostControlPanel.tsx`, mounted it in `VectorFLIntegrationShell.tsx`, and added a Vite `/api` proxy to `http://127.0.0.1:8421`. Build passed, proxy state fetch worked, a real read-only Codex run completed, and marking with `validation_target` succeeded.
+
+- uncertainty or failure notes
+  - Remaining note: validation used `curl` through the mock app proxy path, not automated browser-click testing. Deferred items include browser-click automation, session browsing/history, async runner, Gemini adapter, deposit bridge, and promotion automation.
+
+- suggested next use
+  - validation target: hand-validate the `gemini/mock_test` panel in browser before adding session browsing/history.
+tokens used
+2,985

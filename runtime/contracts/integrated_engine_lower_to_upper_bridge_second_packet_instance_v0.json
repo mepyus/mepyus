@@ -1,0 +1,206 @@
+{
+  "packet_id": "lower_to_upper_bridge_second_packet_instance_v0",
+  "process_camera_id": "integrated_engine_candidate_handling_process_camera_v0",
+  "target_type": "lower_input_routing_bundle_to_upper_packet_input_bridge_example",
+  "current_purpose": {
+    "value": "Test whether one lower-input routing bundle can support a bounded upper packet input for route/authority inspection without claiming execution approval, automation, canonical bridge status, or upper/lower unification.",
+    "origin": "upper_added_supervisory_context"
+  },
+  "scope_boundary": {
+    "included": [
+      "one selected lower routing bundle",
+      "label packet",
+      "operation receipt",
+      "registry and ticket references",
+      "one draft upper packet instance",
+      "bridge viability evaluation"
+    ],
+    "excluded": [
+      "automatic packetization",
+      "upper/lower unification",
+      "code rewrite",
+      "runtime automation",
+      "line generation",
+      "execution approval",
+      "canonical bridge declaration",
+      "treating label packet or receipt as an upper packet"
+    ],
+    "origin": "upper_added_supervisory_context"
+  },
+  "candidate_source_zone": {
+    "primary_zone": "runtime/manifests + runtime/receipts",
+    "selected_lower_bundle": {
+      "bundle_type": "label_packet_plus_routing_basis_plus_receipt",
+      "label_packet_path": "runtime/manifests/label_packets/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_label_packet.json",
+      "receipt_path": "runtime/receipts/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_operation_receipt.md",
+      "registry_reference": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_reference": "runtime/manifests/ticket_registry_v1.json"
+    },
+    "origin": "lower_derived"
+  },
+  "selected_lens_set": {
+    "primary": "routing_authority_bridge_lens",
+    "supporting": [
+      "evidence_lens",
+      "boundary_lens",
+      "readiness_lens",
+      "execution_linkability_guard_lens"
+    ],
+    "lens_status": {
+      "routing_authority_bridge_lens": "upper_added_for_this_second_pilot",
+      "evidence_lens": "process_camera_compatible",
+      "boundary_lens": "process_camera_compatible",
+      "readiness_lens": "derived_from_lower_input_readiness_package",
+      "execution_linkability_guard_lens": "derived_from bridge stop rules"
+    },
+    "origin": "upper_added_supervisory_context"
+  },
+  "candidate_list": [
+    {
+      "candidate_id": "selected_routing_bundle",
+      "selection_status": "selected_for_second_bridge_example",
+      "bundle_components": [
+        "label_packet",
+        "routing_basis",
+        "operation_receipt",
+        "registry_reference",
+        "ticket_reference"
+      ],
+      "support_reason": "Provides route, authority clues, receipt trace, and low line-overread pressure.",
+      "origin": "lower_derived_plus_selection_note"
+    },
+    {
+      "candidate_id": "deferred_origin_provenance_bundle",
+      "selection_status": "not_selected",
+      "support_reason": "Strong source-return support but less useful for route/authority bridge contrast.",
+      "origin": "upper_added_selection_reasoning"
+    },
+    {
+      "candidate_id": "deferred_gmd_native_read_bundle",
+      "selection_status": "deferred",
+      "support_reason": "Higher reread value but line-overread pressure remains higher than routing bundle.",
+      "origin": "upper_added_selection_reasoning"
+    }
+  ],
+  "evidence_bundle": [
+    {
+      "evidence_id": "label_packet_route_identity",
+      "source": "runtime/manifests/label_packets/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_label_packet.json",
+      "lower_fields_used": {
+        "doc_id": "doc_codex_directive_document_routing_markers_and_operation_receipt_v1",
+        "doc_ref": "source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+        "external_labels": {
+          "docrole": "directive",
+          "runmode": "ingest_then_execute",
+          "priority": "high"
+        },
+        "core_labels": {
+          "input_class": "structured_internal_doc",
+          "processing_profile": "execution_coupled",
+          "material_grade": "grade_a",
+          "role": "directive",
+          "execution_linkable": true,
+          "source_session": "local_codex_session"
+        },
+        "packet_kind": "structured_doc_intake_label_packet"
+      },
+      "support_reason": "Provides normalized route and core intake labels.",
+      "origin": "lower_derived",
+      "authority_guard": "execution_linkable means route/link possibility, not execution approval or completion."
+    },
+    {
+      "evidence_id": "receipt_route_trace",
+      "source": "runtime/receipts/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_operation_receipt.md",
+      "lower_fields_used": {
+        "source_path": "/Users/sungsookim/universe/vectorfl_replica/source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+        "raw_markers": {
+          "DOCROLE": "directive",
+          "RUNMODE": "ingest_then_execute",
+          "PRIORITY": "high"
+        },
+        "normalized_routing": {
+          "docrole": "directive",
+          "runmode": "ingest_then_execute",
+          "priority": "high"
+        },
+        "ticket_id": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+        "ticket_created": "yes",
+        "run_id": "run_20260403_161911_449139_9df83980_b444fc",
+        "final_status_summary": "document routed, registered, recorded, and receipt written"
+      },
+      "support_reason": "Provides receipt-level route trace, generated/updated file list, and run identity.",
+      "origin": "lower_derived",
+      "authority_guard": "ticket_created and final receipt status prove routing/recording, not user approval or semantic correctness."
+    }
+  ],
+  "validation_criteria": [
+    {
+      "criterion": "routing_bundle_grounding",
+      "question": "Are the label packet and receipt real lower-input routing outputs for the same document?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "route_legibility",
+      "question": "Are docrole, runmode, priority, processing profile, and ticket relation visible?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "execution_linkability_guard",
+      "question": "Is execution_linkable/ticket_created blocked from being read as approval or completion?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "direct_vs_added_context_separation",
+      "question": "Does the packet preserve lower-derived route evidence vs upper-added purpose and authority?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "bridge_boundedness",
+      "question": "Does this remain one bridge example rather than a canonical bridge or automation path?",
+      "origin": "upper_added_validation_gate"
+    }
+  ],
+  "allowed_actions": [
+    "inspect selected routing bundle",
+    "map lower-derived routing evidence to upper packet fields",
+    "identify upper-added context",
+    "evaluate bridge viability",
+    "compare with first bridge example"
+  ],
+  "forbidden_actions": [
+    "rewrite lower input organ",
+    "unify upper and lower input layers",
+    "declare automatic packetization",
+    "treat execution_linkable as execution approval",
+    "treat ticket_created as user approval",
+    "declare canonical bridge path",
+    "modify runtime code",
+    "treat this packet as worker-execution authorization"
+  ],
+  "expected_output_shape": {
+    "format": "bounded_second_bridge_package",
+    "must_include": [
+      "second_candidate_selection_note",
+      "second_translation_note",
+      "second_packet_instance",
+      "second_evaluation_note",
+      "cross_example_comparison"
+    ],
+    "origin": "upper_added_supervisory_context"
+  },
+  "authority_boundary": {
+    "bridge_status": "bounded_second_example_only",
+    "packet_status": "draft_upper_packet_input_instance",
+    "automation_allowed": false,
+    "canonical_bridge_allowed": false,
+    "upper_lower_unification_allowed": false,
+    "execution_approval_inferred": false,
+    "runtime_execution_authorized": false,
+    "origin": "upper_added_supervisory_context"
+  },
+  "why_this_path_was_chosen": {
+    "value": "The routing bundle tests a different bridge dimension than the first source bundle: route/authority evidence with low line-overread pressure but high execution-linkability overread risk.",
+    "origin": "upper_added_selection_reasoning"
+  }
+}
+

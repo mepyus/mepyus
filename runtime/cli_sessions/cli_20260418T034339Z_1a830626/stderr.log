@@ -1,0 +1,303 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d9eaf-e1f1-74f1-8543-e1f998bd5a03
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: summarize
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+Continue from Codex turn cli_20260417T093643Z_d49a7ba6 inside the VectorFL surface.
+
+Bounded context refs:
+- docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md
+- runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/session.json
+- runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/structured_return.json
+- runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md
+
+Prompt payload:
+You are operating as a Codex turn inside the integrated-engine VectorFL surface.
+The CLI is an on-top tool layer, not a fourth surface.
+The fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.
+
+Current work packet visible in the VectorFL surface:
+- purpose: Continue from Codex turn cli_20260417T093643Z_d49a7ba6 inside the VectorFL surface.
+- task lens: summarize
+- internal search gate: skipped (not explicitly requested)
+- evidence bundle summary: 4 attached refs: source ref, prior CLI turn
+- evidence limitation: Evidence bundle is usable for a bounded reread, but not an exhaustive search.
+- active locks: fixed 3-surface body + CLI on-top boundary (inferred)
+- evidence refs: docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md; runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/session.json; runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/structured_return.json; runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md
+- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)
+- expected return shape: bounded operating summary
+- next route candidate: vectorfl_reread
+- internal search usage: skipped
+
+Current user-facing purpose:
+Continue from Codex turn cli_20260417T093643Z_d49a7ba6 inside the VectorFL surface.
+
+Current message to Codex:
+오늘 작업을 정리해줘
+
+Return format for this VectorFL CLI conversation turn:
+1. Korean operating summary
+2. Surface reading: user / VectorFL / engine
+3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold
+4. What must not be inferred
+5. Suggested next use
+Do not modify files. Do not promote, ingest, or canonicalize anything.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+요청된 범위가 “오늘 작업 요약”이고 파일 수정 금지가 걸려 있어서, 지정된 세션 산출물과 보고서만 읽어서 bounded summary로 정리하겠습니다.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/structured_return.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine UI Stable Folder Migration Note v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The integrated-engine main operating UI has been promoted from `gemini/mock_test` into `app/ui/integrated_engine`.
+
+The note is that `gemini/mock_test` remains as Gemini proposal/reference clay, while `app/ui/integrated_engine` is now the stable source folder for the actual main UI path. Some old report wording still says `gemini/mock_test`; that wording should be reread as historical context, not the current source location.
+
+## Round Goal
+
+Move the currently usable Gemini mock UI into a stable project folder before further CLI-on-top work makes the source location ambiguous.
+
+## Files Changed
+
+- `.gitignore`
+- `app/ui/integrated_engine/*`
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## What Changed
+
+- Created `app/ui/integrated_engine` as the stable source folder for the current integrated-engine UI.
+- Copied the existing working UI from `gemini/mock_test` into the stable folder.
+- Kept `gemini/mock_test` in place as reference/proposal material.
+- Updated the stable app package name to `vectorfl-integrated-engine-ui`.
+- Updated the stable app browser title to `VectorFL Integrated Engine`.
+- Updated the stable app shell label from `VECTORFL Shell` to `Integrated Engine`.
+- Added broad ignores for `node_modules/` and `dist/` so local dependency/build artifacts do not become the project signal.
+
+## Why This Was Done
+
+- `gemini/mock_test` should not remain the long-term source of the real operating UI.
+- Gemini material is design/proposal clay; the actual integrated-engine UI needs a stable source location.
+- `runtime` should remain for session artifacts, manifests, state, and execution returns, not React/Vite source.
+- The 3-surface engine structure remains fixed; this migration only changes source placement.
+
+## Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- The stable app dev server is running at `http://127.0.0.1:5173/`.
+- The served HTML title is `VectorFL Integrated Engine`, confirming the new source is active.
+- The API proxy from the stable app to `http://127.0.0.1:8421` works.
+- A real read-only Codex session succeeded through the stable app proxy path:
+  - session id: `cli_20260416T101531Z_ba21f03e`
+  - requested_by_surface: `vectorfl_surface`
+  - requested_by_page: `app/ui/integrated_engine`
+  - status: `done`
+  - exit code: `0`
+- Marking the same session as `validation_target` succeeded.
+
+## Pass / Fail
+
+PASS_WITH_NOTE.
+
+The stable folder now runs and can operate the existing CLI on-top path. The only note is that browser-click/user-feel validation still needs the user, and some prior documentation still refers to `gemini/mock_test` because it was written before the stable-folder promotion.
+
+## Watchpoints
+
+- Do not continue feature work against `gemini/mock_test` unless intentionally modifying the reference mock.
+- Do not move React/Vite source into `runtime`.
+- Do not treat this migration as package 2 or as a new surface.
+- Do not add Gemini adapter, background runner, or session browsing until the stable Codex path is hand-used.
+
+## Next Small Step
+
+Use `http://127.0.0.1:5173/` from the stable app and hand-check one VectorFL CLI run from the browser.
+
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260417T093643Z_d49a7ba6",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  PASS_WITH_NOTE. 현재 work packet formation layer는 3-surface body를 유지합니다. User Surface는 목적/결정, VectorFL Surface는 해석/매개/packet 형성, Engine Surface는 처리/반환/검증 feed 역할로 남아 있으며, CLI는 여전히 네 번째 surface가 아니라 VectorFL 위에 붙은 실행 도구로 해석됩니다.\n\n- important findings / diffs / outputs  \n  - 새 layer는 `Send Codex Turn` 앞에서 `current work packet formation`을 노출해, 사용자가 수동으로 조립하던 목적, refs, task lens, guard, expected return shape, next route candidate를 VectorFL mediation 영역 안에 보이게 합니다.  \n  - 변경 범위는 `app/ui/integrated_engine/CliHostControlPanel.tsx`로 제한되며, 새 surface/API/backend/persistence는 추가하지 않았습니다.  \n  - 자동 packet generation은 아직 완성되지 않았습니다. 현재는 기존 `purpose`, `taskType`, `contextRefs`, `promptPayload`에서 상태를 파생하고, 누락/추론/제공/guard 상태를 드러내는 단계입니다.  \n  - 핵심 경계는 보존됩니다: VectorFL이 packet을 형성/매개하고, CLI는 packet을 실행합니다. CLI가 packet owner가 되지 않습니다.\n\n- uncertainty or failure notes  \n  - 실제 UI 실행 검증은 하지 않았고, bounded context 문서 reread 기준의 smoke 판단입니다.  \n  - inferred route와 inferred locks는 권위 있는 확정값이 아니라 현재 refs/purpose 기반의 보조 판단입니다.  \n  - internal search는 실제 검색/선택 엔진이 아니라 refs-based reread flag 수준으로 남아 있습니다.\n\n- suggested next use  \n  validation target: main UI에서 `current work packet formation`이 `Send Codex Turn` 앞에 보이는지 확인하고, 작은 read-only Codex turn을 보내 current packet과 latest return이 하나의 흐름으로 읽히는지 검증. 이후에는 broad preset이 아니라 source/lock bundle helper 필요 여부를 bounded reread 대상으로 삼는 것이 적절합니다.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-17T09:37:04Z"
+}
+
+exec
+/bin/bash -lc "sed -n '1,260p' runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/session.json" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,260p' runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260417T093643Z_d49a7ba6",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Validate the new VectorFL current work packet layer as a read-only smoke turn.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_vectorfl_current_work_packet_formation_layer_patch_note_v0.md",
+    "docs/reports/integrated_engine_work_packet_generation_gap_and_screen_reread_note_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context and return a short Korean summary of whether the current work packet formation layer preserves the 3-surface body and CLI on-top boundary. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-17T09:36:43Z",
+  "ended_at": "2026-04-17T09:37:04Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  PASS_WITH_NOTE. 현재 work packet formation layer는 3-surface body를 유지합니다. User Surface는 목적/결정, VectorFL Surface는 해석/매개/packet 형성, Engine Surface는 처리/반환/검증 feed 역할로 남아 있으며, CLI는 여전히 네 번째 surface가 아니라 VectorFL 위에 붙은 실행 도구로 해석됩니다.\n\n- important findings / diffs / outputs  \n  - 새 layer는 `Send Codex Turn` 앞에서 `current work packet formation`을 노출해, 사용자가 수동으로 조립하던 목적, refs, task lens, guard, expected return shape, next route candidate를 VectorFL mediation 영역 안에 보이게 합니다.  \n  - 변경 범위는 `app/ui/integrated_engine/CliHostControlPanel.tsx`로 제한되며, 새 surface/API/backend/persistence는 추가하지 않았습니다.  \n  - 자동 packet generation은 아직 완성되지 않았습니다. 현재는 기존 `purpose`, `taskType`, `contextRefs`, `promptPayload`에서 상태를 파생하고, 누락/추론/제공/guard 상태를 드러내는 단계입니다.  \n  - 핵심 경계는 보존됩니다: VectorFL이 packet을 형성/매개하고, CLI는 packet을 실행합니다. CLI가 packet owner가 되지 않습니다.\n\n- uncertainty or failure notes  \n  - 실제 UI 실행 검증은 하지 않았고, bounded context 문서 reread 기준의 smoke 판단입니다.  \n  - inferred route와 inferred locks는 권위 있는 확정값이 아니라 현재 refs/purpose 기반의 보조 판단입니다.  \n  - internal search는 실제 검색/선택 엔진이 아니라 refs-based reread flag 수준으로 남아 있습니다.\n\n- suggested next use  \n  validation target: main UI에서 `current work packet formation`이 `Send Codex Turn` 앞에 보이는지 확인하고, 작은 read-only Codex turn을 보내 current packet과 latest return이 하나의 흐름으로 읽히는지 검증. 이후에는 broad preset이 아니라 source/lock bundle helper 필요 여부를 bounded reread 대상으로 삼는 것이 적절합니다.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-17T09:37:09Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-17T09:37:09Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}
+
+ succeeded in 0ms:
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260417T093643Z_d49a7ba6`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+- route_label: `engine_request_candidate`
+- current_marks: `validation_target`
+- user_decision_state: `pending_candidate_review`
+- canonical_deposition_state: `not_ingested`
+
+## Task Purpose
+Validate the new VectorFL current work packet layer as a read-only smoke turn.
+
+## Used Context Refs
+- `docs/reports/integrated_engine_vectorfl_current_work_packet_formation_layer_patch_note_v0.md`
+- `docs/reports/integrated_engine_work_packet_generation_gap_and_screen_reread_note_v0.md`
+
+## Result Summary
+- result summary  
+  PASS_WITH_NOTE. 현재 work packet formation layer는 3-surface body를 유지합니다. User Surface는 목적/결정, VectorFL Surface는 해석/매개/packet 형성, Engine Surface는 처리/반환/검증 feed 역할로 남아 있으며, CLI는 여전히 네 번째 surface가 아니라 VectorFL 위에 붙은 실행 도구로 해석됩니다.
+
+- important findings / diffs / outputs  
+  - 새 layer는 `Send Codex Turn` 앞에서 `current work packet formation`을 노출해, 사용자가 수동으로 조립하던 목적, refs, task lens, guard, expected return shape, next route candidate를 VectorFL mediation 영역 안에 보이게 합니다.  
+  - 변경 범위는 `app/ui/integrated_engine/CliHostControlPanel.tsx`로 제한되며, 새 surface/API/backend/persistence는 추가하지 않았습니다.  
+  - 자동 packet generation은 아직 완성되지 않았습니다. 현재는 기존 `purpose`, `taskType`, `contextRefs`, `promptPayload`에서 상태를 파생하고, 누락/추론/제공/guard 상태를 드러내는 단계입니다.  
+  - 핵심 경계는 보존됩니다: VectorFL이 packet을 형성/매개하고, CLI는 packet을 실행합니다. CLI가 packet owner가 되지 않습니다.
+
+- uncertainty or failure notes  
+  - 실제 UI 실행 검증은 하지 않았고, bounded context 문서 reread 기준의 smoke 판단입니다.  
+  - inferred route와 inferred locks는 권위 있는 확정값이 아니라 현재 refs/purpose 기반의 보조 판단입니다.  
+  - internal search는 실제 검색/선택 엔진이 아니라 refs-based reread flag 수준으로 남아 있습니다.
+
+- suggested next use  
+  validation target: main UI에서 `current work packet formation`이 `Send Codex Turn` 앞에 보이는지 확인하고, 작은 read-only Codex turn을 보내 current packet과 latest return이 하나의 흐름으로 읽히는지 검증. 이후에는 broad preset이 아니라 source/lock bundle helper 필요 여부를 bounded reread 대상으로 삼는 것이 적절합니다.
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+validation_target
+
+## Validation / Decision Boundary
+- This file is a deposition candidate only.
+- It is not canonical memory, not an approved record, and not automatic ingestion.
+- User decision or a later explicit deposition package is still required.
+
+
+codex
+- result summary  
+  오늘 작업은 `gemini/mock_test`에 있던 Integrated Engine UI를 안정 소스 위치인 `app/ui/integrated_engine`로 옮기고, 이후 Codex CLI가 VectorFL 위에 붙은 실행 도구로 동작하는지 bounded reread로 확인한 흐름입니다. 결론은 `PASS_WITH_NOTE`입니다. 3-surface body는 유지됩니다: user는 목적/결정, VectorFL은 해석/packet 형성/매개, engine은 처리/반환/검증 feed 역할입니다. CLI는 네 번째 surface가 아니라 VectorFL surface 위의 on-top 실행 계층입니다.
+
+- important findings / diffs / outputs  
+  - `app/ui/integrated_engine`가 현재 실제 Integrated Engine UI의 stable source folder로 승격되었습니다.  
+  - `gemini/mock_test`는 삭제되지 않았고, Gemini 제안/참조 clay로 남았습니다.  
+  - stable app 이름, 브라우저 title, shell label이 Integrated Engine 기준으로 정리되었습니다.  
+  - `npm run build`가 통과했고, stable app은 `http://127.0.0.1:5173/`에서 동작하는 것으로 기록되어 있습니다.  
+  - API proxy는 `http://127.0.0.1:8421`로 연결되며, read-only Codex 세션이 stable app proxy 경로에서 성공했습니다.  
+  - 이어진 Codex 세션 `cli_20260417T093643Z_d49a7ba6`는 current work packet formation layer를 bounded reread했고, `validation_target`으로 표시되었습니다.  
+  - 해당 reread 결과에 따르면 `current work packet formation`은 `Send Codex Turn` 앞에서 purpose, refs, task lens, guards, expected return shape, next route candidate를 VectorFL mediation 영역에 노출합니다.  
+  - 자동 packet generation은 아직 완성된 상태가 아니라 기존 입력값에서 상태를 파생하고 누락/추론/guard 상태를 보여주는 단계입니다.
+
+- surface reading: user / VectorFL / engine  
+  - user: 목적, assignment, 판단, promotion 여부를 결정하는 표면입니다.  
+  - VectorFL: 사용자의 목적을 reread하고 work packet을 형성/매개하며 CLI 실행을 붙이는 표면입니다.  
+  - engine: packet을 처리하고 structured return, validation feed, deposit candidate material을 반환하는 표면입니다.  
+  - CLI: 이 셋 중 하나가 아니며, VectorFL 위에 붙은 실행 도구입니다.
+
+- route suggestion  
+  validation_target
+
+- uncertainty or failure notes  
+  - 이번 요약은 제공된 4개 bounded refs 기준입니다. 전체 repo 검색은 하지 않았습니다.  
+  - 실제 브라우저 클릭/사용감 검증은 아직 사용자 손검증 대상으로 남아 있습니다.  
+  - `inferred route`, `inferred locks`, `internal search`는 권위 있는 canonical 상태가 아니라 현재 refs 기반의 보조 판독입니다.  
+  - `deposit_candidate.md`는 deposit 후보일 뿐이며 canonical memory로 ingest된 기록은 아닙니다.
+
+- what must not be inferred  
+  - `gemini/mock_test`가 현재 운영 UI source라고 추론하면 안 됩니다. 현재 stable source는 `app/ui/integrated_engine`입니다.  
+  - CLI를 네 번째 surface로 승격했다고 추론하면 안 됩니다.  
+  - 이번 결과를 canonical ingestion 또는 promotion 완료로 보면 안 됩니다.  
+  - 자동 packet generation이 완성되었다고 보면 안 됩니다.  
+  - 새 backend, 새 API, 새 persistence가 추가되었다고 보면 안 됩니다.
+
+- suggested next use  
+  validation target: stable UI에서 `current work packet formation`이 `Send Codex Turn` 앞에 보이는지 손으로 확인하고, 작은 read-only Codex turn을 한 번 보내 current packet과 latest return이 하나의 VectorFL 흐름으로 읽히는지 검증하는 것이 다음 단계입니다.
+tokens used
+6,808

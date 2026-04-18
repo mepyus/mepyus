@@ -1,0 +1,21 @@
+{
+  "schema_version": "vectorfl_paper_trace_governance_sections_v0",
+  "updated_at": "2026-04-11T00:25:00+09:00",
+  "page_id": "trace_governance",
+  "role": "loop_closure_and_decision_page",
+  "section_order": [
+    "run_trace",
+    "governance_gate",
+    "reopen_history",
+    "reinjection",
+    "supervisor_decision",
+    "next_loop_trigger"
+  ],
+  "global_rules": [
+    "trace language and structure must remain append-only",
+    "governance protects reading quality before promotion",
+    "reopen is part of the loop rather than failure noise",
+    "reinjection must point back into internal memory or next probe",
+    "the current supervisor decision must be readable without raw manifests"
+  ]
+}

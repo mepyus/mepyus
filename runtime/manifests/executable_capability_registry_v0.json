@@ -1,0 +1,575 @@
+{
+  "registry_id": "executable_capability_registry_v0",
+  "purpose": "Store executable capabilities by function rather than only by folder or script path.",
+  "reading_rule": [
+    "Capability is the primary unit.",
+    "Entrypoint scripts are secondary pointers.",
+    "Intent aliases should be enough to recover the right runner later.",
+    "Safety mode must be visible before execution."
+  ],
+  "capabilities": [
+    {
+      "capability_id": "cap_input_structured_doc_routing",
+      "capability_class": "inputter",
+      "label": "structured doc inputter",
+      "intent_aliases": [
+        "structured intake",
+        "markdown inputter",
+        "외부자료 정식 입력기"
+      ],
+      "primary_impl_refs": [
+        "scripts/process_structured_doc_with_routing.py",
+        "app/input_layer/source_locator/origin_map_minimum_v1.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/process_structured_doc_with_routing.py"
+      ],
+      "input_kinds": [
+        "structured markdown",
+        "memo-like doc"
+      ],
+      "output_surfaces": [
+        "runtime/receipts",
+        "runtime/manifests/label_packets",
+        "runtime/manifests/origin_maps",
+        "app/work/observer_ingest_min/generated"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_loop_external_case_flowline_sweep",
+      "capability_class": "loop_probe",
+      "label": "external case flowline sweep",
+      "intent_aliases": [
+        "외부문서 전체 훑기",
+        "공통 흐름선 sweep",
+        "flowline sweep"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_external_case_flowline_sweep.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_flowline_sweep.py"
+      ],
+      "input_kinds": [
+        "inputs/external_cases folder"
+      ],
+      "output_surfaces": [
+        "app/work/external_case_flowline_sweep/generated"
+      ],
+      "safety_mode": "workspace_generated_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_post_preprocess_first_pass_probe",
+      "capability_class": "inputter_probe",
+      "label": "post-preprocess first-pass probe",
+      "intent_aliases": [
+        "전처리 후 first pass",
+        "post-preprocess first pass",
+        "정리된 입력 첫 패스"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_post_preprocess_first_pass_probe.py",
+        "app/core/runtime/post_preprocess_first_pass.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_post_preprocess_first_pass_probe.py"
+      ],
+      "input_kinds": [
+        "preprocess-required transcript-like text"
+      ],
+      "output_surfaces": [
+        "app/work/external_input_preprocess/generated"
+      ],
+      "safety_mode": "workspace_generated_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_transcript_preprocess_comparison",
+      "capability_class": "inputter_probe",
+      "label": "transcript preprocess comparison surface",
+      "intent_aliases": [
+        "전처리 전후 비교",
+        "preprocess comparison",
+        "점검면"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_transcript_preprocess_comparison.py",
+        "app/core/runtime/external_input_comparison.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_transcript_preprocess_comparison.py"
+      ],
+      "input_kinds": [
+        "raw transcript-like text"
+      ],
+      "output_surfaces": [
+        "app/work/external_input_preprocess/generated"
+      ],
+      "safety_mode": "workspace_generated_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_transcript_regroup_preprocess",
+      "capability_class": "inputter_component",
+      "label": "transcript-aware regroup preprocessor",
+      "intent_aliases": [
+        "transcript regroup",
+        "전처리기",
+        "transcript aware preprocess"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_transcript_aware_regroup.py",
+        "app/core/runtime/external_transcript_preprocess.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_transcript_aware_regroup.py"
+      ],
+      "input_kinds": [
+        "raw transcript-like text"
+      ],
+      "output_surfaces": [
+        "app/work/external_input_preprocess/generated"
+      ],
+      "safety_mode": "workspace_generated_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_external_gate_probe",
+      "capability_class": "inputter_probe",
+      "label": "external input gate probe",
+      "intent_aliases": [
+        "external input gate",
+        "바로 넣어도 되는지 판다",
+        "전처리 필요 여부 판정"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_external_input_gate.py",
+        "app/core/runtime/external_input_gate.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_input_gate.py"
+      ],
+      "input_kinds": [
+        "raw external text",
+        "transcript",
+        "markdown",
+        "txt"
+      ],
+      "output_surfaces": [
+        "stdout json gate reading"
+      ],
+      "safety_mode": "stdout_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_raw_intake_probe",
+      "capability_class": "inputter_probe",
+      "label": "raw intake texture probe",
+      "intent_aliases": [
+        "raw intake probe",
+        "scene flow texture read",
+        "질감만 한번 보기"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_external_case_raw_intake_probe.py",
+        "app/core/runtime/inputter.py",
+        "app/core/runtime/labeler.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_raw_intake_probe.py"
+      ],
+      "input_kinds": [
+        "raw external text",
+        "transcript",
+        "md",
+        "txt"
+      ],
+      "output_surfaces": [
+        "stdout json"
+      ],
+      "safety_mode": "stdout_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_raw_live_batch",
+      "capability_class": "inputter",
+      "label": "raw live input batch ingester",
+      "intent_aliases": [
+        "raw live input batch",
+        "외부자료 batch ingest"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_external_case_raw_live_input_batch.py",
+        "app/core/runtime/live_input.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_raw_live_input_batch.py"
+      ],
+      "input_kinds": [
+        "raw external text batch"
+      ],
+      "output_surfaces": [
+        "runtime material store",
+        "stdout batch summary"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_loop_external_case_folder_sweep",
+      "capability_class": "loop",
+      "label": "external case folder sweep loop",
+      "intent_aliases": [
+        "folder sweep",
+        "external_cases loop",
+        "폴더 전체 훑기 루프"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_external_case_folder_sweep_loop.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_folder_sweep_loop.py"
+      ],
+      "input_kinds": [
+        "inputs/external_cases folder"
+      ],
+      "output_surfaces": [
+        "app/work/external_case_folder_sweep/generated"
+      ],
+      "safety_mode": "plan_only_default",
+      "plan_mode_available": true
+    },
+    {
+      "capability_id": "cap_label_dust_runtime_labeler",
+      "capability_class": "labeler",
+      "label": "dust input labeler",
+      "intent_aliases": [
+        "dust labeler",
+        "scene flow labeler",
+        "라벨기"
+      ],
+      "primary_impl_refs": [
+        "app/core/runtime/labeler.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_raw_intake_probe.py",
+        "scripts/run_ai_future_segment_probe.py"
+      ],
+      "input_kinds": [
+        "dust units"
+      ],
+      "output_surfaces": [
+        "labeled dust rows",
+        "scene/flow anchors"
+      ],
+      "safety_mode": "embedded_component",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_input_dust_splitter",
+      "capability_class": "inputter_component",
+      "label": "dust input splitter",
+      "intent_aliases": [
+        "dust splitter",
+        "inputter",
+        "문장/단위 분절기"
+      ],
+      "primary_impl_refs": [
+        "app/core/runtime/inputter.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_external_case_raw_intake_probe.py",
+        "scripts/run_ai_future_segment_probe.py"
+      ],
+      "input_kinds": [
+        "raw text",
+        "material payload"
+      ],
+      "output_surfaces": [
+        "dust units"
+      ],
+      "safety_mode": "embedded_component",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_anchor_origin_map_seed",
+      "capability_class": "anchorizer",
+      "label": "origin map seed builder",
+      "intent_aliases": [
+        "origin map",
+        "source anchor seed",
+        "앵커기"
+      ],
+      "primary_impl_refs": [
+        "app/input_layer/source_locator/origin_map_minimum_v1.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/process_structured_doc_with_routing.py"
+      ],
+      "input_kinds": [
+        "structured document text"
+      ],
+      "output_surfaces": [
+        "runtime/manifests/origin_maps"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_anchor_fragment_ingest",
+      "capability_class": "anchorizer",
+      "label": "fragment anchor enrichment",
+      "intent_aliases": [
+        "fragment anchorizer",
+        "fragment ingest",
+        "fragment 앵커기"
+      ],
+      "primary_impl_refs": [
+        "scripts/ingest_fragments.py",
+        "app/input_layer/anchorizer.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/ingest_fragments.py"
+      ],
+      "input_kinds": [
+        "fragment batch"
+      ],
+      "output_surfaces": [
+        "fragment store",
+        "anchor-enriched fragments",
+        "measurements"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_grounded_internal_observer",
+      "capability_class": "grounded_feed",
+      "label": "internal observer grounded feed",
+      "intent_aliases": [
+        "fragment grounded feed",
+        "internal observer",
+        "grounded line feed"
+      ],
+      "primary_impl_refs": [
+        "scripts/apply_internal_observer.py",
+        "app/core/runtime/line_thickening.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/apply_internal_observer.py"
+      ],
+      "input_kinds": [
+        "stored fragment ids"
+      ],
+      "output_surfaces": [
+        "runtime/logs/reread_observation_log.jsonl",
+        "runtime/logs/line_promotion_log.jsonl",
+        "runtime/manifests/line_registry.json"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_primary_structured_source_view",
+      "capability_class": "grounded_feed",
+      "label": "source fragment view feed",
+      "intent_aliases": [
+        "source fragment view",
+        "primary structured feed",
+        "source view line feed"
+      ],
+      "primary_impl_refs": [
+        "scripts/build_source_view.py",
+        "app/core/runtime/line_thickening.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/build_source_view.py"
+      ],
+      "input_kinds": [
+        "fragment id"
+      ],
+      "output_surfaces": [
+        "runtime/reports/source_fragment_view.json",
+        "runtime/logs/reread_observation_log.jsonl",
+        "runtime/manifests/line_registry.json"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_summary_preflight_sink",
+      "capability_class": "summary_sink",
+      "label": "preflight summary sink",
+      "intent_aliases": [
+        "preflight line sink",
+        "summary echo sink",
+        "preflight line_thickening"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_runtime_preflight.py",
+        "app/core/runtime/line_thickening.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_runtime_preflight.py"
+      ],
+      "input_kinds": [
+        "preflight decision",
+        "requested artifact ref"
+      ],
+      "output_surfaces": [
+        "runtime/preflight_last_decision.json",
+        "runtime/logs/reread_observation_log.jsonl",
+        "runtime/manifests/line_registry.json"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_transition_validation_chain",
+      "capability_class": "validation_chain",
+      "label": "transition_over_surface validation chain",
+      "intent_aliases": [
+        "transition_over_surface validation",
+        "primary breadth validation",
+        "residue robustness probe"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_transition_over_surface_targeted_breadth_validation.py",
+        "scripts/run_primary_material_breadth_validation.py",
+        "scripts/run_transition_over_surface_forward_persistence_confirmation.py",
+        "scripts/run_transition_over_surface_residue_robustness_probe.py",
+        "scripts/run_transition_over_surface_reintroduction_sentinel_probe.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_transition_over_surface_targeted_breadth_validation.py",
+        "scripts/run_primary_material_breadth_validation.py",
+        "scripts/run_transition_over_surface_forward_persistence_confirmation.py",
+        "scripts/run_transition_over_surface_residue_robustness_probe.py",
+        "scripts/run_transition_over_surface_reintroduction_sentinel_probe.py"
+      ],
+      "input_kinds": [
+        "existing line history",
+        "existing primary routes"
+      ],
+      "output_surfaces": [
+        "runtime/manifests/line_registry.json",
+        "runtime/logs/line_promotion_log.jsonl"
+      ],
+      "safety_mode": "main_runtime_mutating",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_sandbox_trip_probe",
+      "capability_class": "sandbox_probe",
+      "label": "sandbox reintroduction trip",
+      "intent_aliases": [
+        "sentinel flip test",
+        "sandbox trip",
+        "derived re-entry trip"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_transition_over_surface_sandbox_reintroduction_trip.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_transition_over_surface_sandbox_reintroduction_trip.py"
+      ],
+      "input_kinds": [
+        "copied runtime history",
+        "existing derived row"
+      ],
+      "output_surfaces": [
+        "tmp sandbox runtime",
+        "sandbox line registry",
+        "sandbox promotion log"
+      ],
+      "safety_mode": "sandbox_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_line_sandbox_recovery_probe",
+      "capability_class": "sandbox_probe",
+      "label": "sandbox sentinel recovery loop",
+      "intent_aliases": [
+        "sentinel recovery check",
+        "sandbox recovery",
+        "trip recovery loop"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_transition_over_surface_sandbox_recovery_check.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_transition_over_surface_sandbox_recovery_check.py"
+      ],
+      "input_kinds": [
+        "copied runtime history",
+        "existing primary rows",
+        "existing derived row"
+      ],
+      "output_surfaces": [
+        "tmp sandbox runtime",
+        "sandbox line registry",
+        "sandbox promotion log"
+      ],
+      "safety_mode": "sandbox_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_probe_ai_future_segment",
+      "capability_class": "loop_probe",
+      "label": "future-oriented segment probe",
+      "intent_aliases": [
+        "future segment probe",
+        "future-oriented loop",
+        "미래 segment 탐침"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_ai_future_segment_probe.py",
+        "app/core/runtime/inputter.py",
+        "app/core/runtime/labeler.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_ai_future_segment_probe.py"
+      ],
+      "input_kinds": [
+        "external_cases subset"
+      ],
+      "output_surfaces": [
+        "app/work/future_segment_probe/generated"
+      ],
+      "safety_mode": "generated_output_only",
+      "plan_mode_available": false
+    },
+    {
+      "capability_id": "cap_operating_internal_search_panel",
+      "capability_class": "loop_probe",
+      "label": "capability-aware internal search panel",
+      "intent_aliases": [
+        "internal search panel",
+        "reading capability search",
+        "운용화면 내부검색"
+      ],
+      "primary_impl_refs": [
+        "scripts/run_internal_search_operating_panel_demo.py",
+        "app/runtime/internal_search_minimum.py",
+        "app/work/operating_ui/components/internal_search_panel.py"
+      ],
+      "entrypoint_refs": [
+        "scripts/run_internal_search_operating_panel_demo.py"
+      ],
+      "input_kinds": [
+        "runtime registry/logs",
+        "capability registry",
+        "search query"
+      ],
+      "output_surfaces": [
+        "app/work/operating_ui/generated",
+        "stdout json"
+      ],
+      "safety_mode": "generated_output_only",
+      "plan_mode_available": false
+    }
+  ]
+}

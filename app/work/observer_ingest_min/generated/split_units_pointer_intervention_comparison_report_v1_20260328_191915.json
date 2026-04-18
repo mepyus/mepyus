@@ -1,0 +1,134 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:pointer_intervention_comparison_report_v1]] [[SEM:before_after_comparison_for_minimal_pointer_stabilization_probe]]",
+    "char_count": 127,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "pointer intervention comparison report v1",
+    "end_ref": "pointer intervention comparison report v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# pointer intervention comparison report v1",
+    "char_count": 43,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. experiment purpose",
+    "end_ref": "1. experiment purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. experiment purpose - 이번 비교의 목적은 segmentation support 이후에도 남아 있던 grounding/ref 계열 문제를 `pointer stabilization` 최소 개입만으로 얼마나 줄일 수 있는지 보는 것이다. - 즉 이 문서는 pointer가 왜 2순위인지 실제 비교 근거로 남기는 문서다.",
+    "char_count": 190,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. baseline after segmentation support",
+    "end_ref": "2. baseline after segmentation support",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. baseline after segmentation support - input_asset: `inputs/external_cases/claude_code_index.txt` - baseline state: - context units: `3` - empty-ref context units: `3` - question-inducing candidates: `0` - naming su",
+    "char_count": 293,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. pointer intervention",
+    "end_ref": "3. pointer intervention",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. pointer intervention - mode: `nearest_top_window` - support: - direct candidate ref가 없을 때, `purpose_synthesis top_windows`에서 object-overlap이 있는 window를 fallback evidence pointer로 연결 - unchanged: - segmentation outp",
+    "char_count": 260,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. after pointer stabilization",
+    "end_ref": "4. after pointer stabilization",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. after pointer stabilization - context units: `3` - empty-ref context units: - before: `3` - after: `0` - grounding_status: - `fallback_grounded`: `3` - `direct_grounded`: `0` - pointer_support_source: - `purpose_to",
+    "char_count": 294,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. comparison reading",
+    "end_ref": "5. comparison reading",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. comparison reading",
+    "char_count": 24,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "A. what actually recovered",
+    "end_ref": "A. what actually recovered",
+    "unit_type": "heading_block",
+    "text_excerpt": "### A. what actually recovered - `empty-ref context unit` 문제는 줄었다 - context unit마다 최소 2개 수준의 evidence pointer가 붙었다 - `naming-without-support`는 `naming-with-fallback-support` 수준으로는 완화됐다",
+    "char_count": 184,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "B. what did not recover",
+    "end_ref": "B. what did not recover",
+    "unit_type": "heading_block",
+    "text_excerpt": "### B. what did not recover - stable question-inducing candidate는 여전히 `0` - pivot / compression은 이름은 유지되지만 여전히 direct evidence 기반이라고 보기 어렵다 - relation movement와 question opening 태도는 살아 있으나, grounding의 질은 아직 fallback 수준이다",
+    "char_count": 220,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "C. why this still matters",
+    "end_ref": "C. why this still matters",
+    "unit_type": "heading_block",
+    "text_excerpt": "### C. why this still matters - segmentation만으로는 `이름은 있는데 ref가 없음` 문제가 남았고 - pointer stabilization은 그 문제를 줄이는 데 실제로 도움이 됐다 - 따라서 pointer는 2순위가 아니라, segmentation 다음의 직접적인 grounding 축이라는 점이 더 선명해졌다",
+    "char_count": 195,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "6. verdict",
+    "end_ref": "6. verdict",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. verdict - pointer stabilization only recovered: - empty-ref reduction - evidence pointer coverage - better-supported hold - pointer stabilization did not recover: - direct grounding - stable question seed generatio",
+    "char_count": 513,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "7. one-line summary",
+    "end_ref": "7. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. one-line summary > pointer stabilization은 `claude_code_index`에서 empty-ref context unit을 실제로 줄였고 grounding coverage를 늘렸지만, direct question-seed / pivot / compression support까지 회복시키진 못했기 때문에 object lift hold는 그대로 유지된",
+    "char_count": 222,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  }
+]

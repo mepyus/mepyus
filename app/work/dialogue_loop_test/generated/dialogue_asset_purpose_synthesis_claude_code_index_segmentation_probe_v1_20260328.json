@@ -1,0 +1,385 @@
+{
+  "created_at": "2026-03-28T10:09:23.765065Z",
+  "input_asset": "inputs/external_cases/claude_code_index.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w3_s1_20260328T100910Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json",
+    "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/claude_code_index.txt",
+    "supporting_first_pass_patterns": [
+      "overall_object_candidates",
+      "overall_layer_hints",
+      "overall_relation_hints",
+      "overall_residue_breakdown",
+      "top_question_intent_windows"
+    ],
+    "second_order_reading_type": "purpose_synthesis",
+    "rereading_mode": "cross_run_probe_synthesis",
+    "scope_local_page_comparison": "page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "object_opening_and_question_opening_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "purpose reading is still strongly tied to AI/agent/business transition discourse",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w3_s1_20260328T100910Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json",
+      "app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w6_s3_20260328T100910Z.json"
+    ]
+  },
+  "top_objects": [
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 283,
+      "reading": "앱 형태 재편과 인터페이스 전환을 여는 객체"
+    },
+    {
+      "object": "생산성/코딩",
+      "count": 187,
+      "reading": "개발 생산성 압축과 작업 방식 변형을 여는 객체"
+    },
+    {
+      "object": "모델 work",
+      "count": 115,
+      "reading": "모델 경쟁, 학습/평가/검증 축을 여는 객체"
+    },
+    {
+      "object": "전략/방향성",
+      "count": 98,
+      "reading": "사업 적응, moat, 시장 재편을 여는 객체"
+    },
+    {
+      "object": "구현/자동화",
+      "count": 75,
+      "reading": "실행화, workflow, 운영 자동화를 여는 객체"
+    },
+    {
+      "object": "일의 미래",
+      "count": 40,
+      "reading": "인간 역할, 감독 구조, 노동 재배치를 여는 객체"
+    }
+  ],
+  "top_layers": [
+    {
+      "layer": "설명/해석 층",
+      "count": 7658,
+      "reading": "대화가 시대 인식을 설명하고 해석하는 기본 층"
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 2410,
+      "reading": "실제 자동화와 operationalization으로 내려가는 층"
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 560,
+      "reading": "사용자의 다음 탐색 질문을 발생시키는 층"
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 291,
+      "reading": "앱/모델/시장 구조가 어떻게 재편되는지 보는 층"
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 224,
+      "reading": "평가, metric, reward, reliability를 묻는 층"
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 120,
+      "reading": "적응, moat, 신사업, 시장 포지션을 읽는 층"
+    }
+  ],
+  "top_relations": [
+    {
+      "relation": "reinforcement_hint",
+      "count": 754,
+      "reading": "같은 문제의식이 다른 문단에서 누적 보강되는 운동"
+    },
+    {
+      "relation": "execution_shift_hint",
+      "count": 513,
+      "reading": "아이디어가 운영/실행 쪽으로 내려가는 운동"
+    },
+    {
+      "relation": "transition_hint",
+      "count": 471,
+      "reading": "설명에서 다음 층위로 이동하는 전이 운동"
+    },
+    {
+      "relation": "question_generation_hint",
+      "count": 412,
+      "reading": "문단이 다음 질문을 직접 발생시키는 운동"
+    },
+    {
+      "relation": "contrast_hint",
+      "count": 167,
+      "reading": "기존 방식과 새 방식의 긴장/대비가 드러나는 운동"
+    },
+    {
+      "relation": "specification_hint",
+      "count": 40,
+      "reading": "막연한 전망이 기준/평가/형식 쪽으로 굳어지는 운동"
+    }
+  ],
+  "top_residue": [
+    {
+      "residue": "discourse_connective_residue",
+      "count": 1708,
+      "reading": "발화 연결어가 의미 층위 opening을 덮는 residue"
+    },
+    {
+      "residue": "conversational_filler_residue",
+      "count": 1019,
+      "reading": "구어 filler가 summary 선두를 흐리는 residue"
+    },
+    {
+      "residue": "generic_abstraction_residue",
+      "count": 149,
+      "reading": "너무 일반적인 추상어가 의미층을 흐리게 하는 residue"
+    },
+    {
+      "residue": "speaker_or_source_residue",
+      "count": 9,
+      "reading": "화자/출처 흔적이 topic signal과 경쟁하는 residue"
+    },
+    {
+      "residue": "quasi_topic_residue",
+      "count": 0,
+      "reading": "주제처럼 보이지만 broad discourse에 가까운 residue"
+    }
+  ],
+  "top_windows": [
+    {
+      "window_id": "515_517",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "AI의 미래",
+        "일의 미래"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, AI의 미래 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "headings": [
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "클로데는 내장된 스킬크리에 플러그인이 있거든요. 스킬 생성에 특화된 플러그인입니다. 클러드에게 스킬"
+        },
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "만들어 줘라고 말하는 순간이 스킬 크리에이터 자동으로 트리됩니다. 이게 바로 스킬의 자동 트리거를 보여주는"
+        }
+      ]
+    },
+    {
+      "window_id": "514_517",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "AI의 미래",
+        "일의 미래"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, AI의 미래 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "headings": [
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "만드는 방법은 일단 두 가지가 있습니다. 수동으로 직접 skill.m를 MD를 작성하는 겁니다. 추천드리지 않습니다. 왜냐면"
+        },
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "클로데는 내장된 스킬크리에 플러그인이 있거든요. 스킬 생성에 특화된 플러그인입니다. 클러드에게 스킬"
+        }
+      ]
+    },
+    {
+      "window_id": "513_517",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "AI의 미래",
+        "일의 미래"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, AI의 미래 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "headings": [
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "있습니다. 이제 실제로 스킬을 같이 생성을 해 보겠습니다. PPT 스킬을 직접 만들어 볼 건데요. 스킬을"
+        },
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "만드는 방법은 일단 두 가지가 있습니다. 수동으로 직접 skill.m를 MD를 작성하는 겁니다. 추천드리지 않습니다. 왜냐면"
+        }
+      ]
+    },
+    {
+      "window_id": "512_517",
+      "repeat_count": 1,
+      "question_intent_score": 7,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "AI의 미래",
+        "일의 미래"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, AI의 미래 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "headings": [
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+        "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "문장에 나와 있는가? 사용자가 실제로 말할 법한 표현이 세 개 이상인가, 비슷한 다른 스킬과 구별되는가 정도"
+        },
+        {
+          "heading": "이유가 뭐냐면 AI한테 정보를 줄 수 있는 공간 즉 컨텍스트 윈도우가",
+          "excerpt": "있습니다. 이제 실제로 스킬을 같이 생성을 해 보겠습니다. PPT 스킬을 직접 만들어 볼 건데요. 스킬을"
+        }
+      ]
+    },
+    {
+      "window_id": "381_386",
+      "repeat_count": 1,
+      "question_intent_score": 4,
+      "objects": [
+        "에이전트 애플리케이션"
+      ],
+      "relation_hints": [
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 전략/방향 층 / 관계 힌트: execution_shift_hint",
+      "headings": [
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+          "excerpt": "이렇게 워크를 명확히 정의하면 나중에 어 삽질를 줄일 수도 있고요. 클러우드가 방향을 잃고 헤매는 그런"
+        },
+        {
+          "heading": "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+          "excerpt": "경우들을 줄일 수 있습니다. 그리고 A 에이전스를 보면 셀프힐링"
+        }
+      ]
+    },
+    {
+      "window_id": "380_387",
+      "repeat_count": 1,
+      "question_intent_score": 4,
+      "objects": [
+        "에이전트 애플리케이션"
+      ],
+      "relation_hints": [
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 전략/방향 층 / 관계 힌트: execution_shift_hint",
+      "headings": [
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+        "tools 어떤 거대한 스크립트보다 작은 단위의 스크립트 여러 개가 훨씬"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+          "excerpt": "2번 마감일 설정 UI 컴포넌트 구현해 줘. 이렇게 해서 각 단계마다 테스트 작성 후에 통과 확인해 줘."
+        },
+        {
+          "heading": "투앱에 마감밀 알림 기능을 추가한다고 한다면 앤 모드에서 워크 4를 어",
+          "excerpt": "이렇게 워크를 명확히 정의하면 나중에 어 삽질를 줄일 수도 있고요. 클러우드가 방향을 잃고 헤매는 그런"
+        }
+      ]
+    }
+  ],
+  "era_questions": [
+    "AI capability가 어디까지 가고 어떤 방향으로 수렴하는가",
+    "인간의 일은 수행자에서 감독자/설계자로 어떻게 이동하는가",
+    "앱과 서비스의 형태는 agent interface 쪽으로 어떻게 재편되는가",
+    "모델 경쟁은 pre-train 이후 evaluation, RLVR, harness 쪽으로 어떻게 이동하는가",
+    "기업과 제품은 moat, bundle/unbundle, 적응 경쟁 속에서 어떻게 살아남는가",
+    "검증과 신뢰는 미래 담론 속에서 어떤 바닥 역할을 맡는가"
+  ],
+  "object_growth_reading": [
+    "이 자산은 모델 능력 경쟁과 agent application 형태 전환을 서로 붙여 키운다",
+    "미래 담론을 추상 전망으로만 두지 않고 인간 역할 변화와 일의 재배치로 끌어내린다",
+    "전략 담론을 실제 구현/운영 자동화와 접속시키며 사업 적응 문제로 내린다",
+    "개발 생산성 변화는 독립 객체라기보다 실행층과 일의 미래를 잇는 중간층으로 자란다"
+  ],
+  "engine_learning_targets": [
+    "질문 유도 문단을 별도 candidate로 승격할 수 있는지 계속 본다",
+    "설명층에서 실행층으로 내려가는 전이 문단을 relation movement로 더 잘 읽게 만든다",
+    "전망 담론을 전략/적응 문제로 번역하는 층을 user-layer opening에 더 직접 연결한다",
+    "interview/dialogue 특유 residue가 summary 선두를 덮지 않게 summary-stage 후순위화를 검토한다"
+  ]
+}

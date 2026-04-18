@@ -1,0 +1,63 @@
+{
+  "schema": "core_promotion_reading_saltlux_goover_v1",
+  "case_name": "saltlux_goover",
+  "source_ref": "external_case_example_saltlux_goover_relation_reading_v0.md",
+  "candidates": [
+    {
+      "candidate_id": "slot_bundle_relation_reading",
+      "label": "relation_kind / relation_reason / user_language_summary",
+      "status": "core_candidate",
+      "reason": "여러 탐색/예시/증류 문서에서 반복되고, 서로 다른 문맥에서도 재등장하며, 설명 축으로서 독립성이 있다.",
+      "repeat_frequency": "high",
+      "cross_context_reappearance": true,
+      "cross_session_or_run_presence": true,
+      "actual_reuse_evidence": "emerging_but_visible",
+      "outer_only_sufficiency": false,
+      "explanatory_axis_role": "independent_relation_reading_axis",
+      "premature_generalization_risk": "low_to_medium",
+      "next_review_hint": "다음 외부 사례 1~2건에서도 동일 슬롯이 반복되는지 재확인"
+    },
+    {
+      "candidate_id": "structure_split_principle",
+      "label": "의미층 / 실행층 분리 원리",
+      "status": "outer_candidate",
+      "reason": "설명력은 크지만 현재 단계에서는 report/guide/observation에서 재사용하는 편이 적절하다.",
+      "repeat_frequency": "medium",
+      "cross_context_reappearance": true,
+      "cross_session_or_run_presence": false,
+      "actual_reuse_evidence": "light",
+      "outer_only_sufficiency": true,
+      "explanatory_axis_role": "strong_explanatory_axis",
+      "premature_generalization_risk": "medium",
+      "next_review_hint": "운영 구조 설명에서 계속 반복되는지 확인"
+    },
+    {
+      "candidate_id": "ontology_hard_locking",
+      "label": "ontology 선고정 방식",
+      "status": "defer",
+      "reason": "우리 엔진의 후 구조화 방향과 다르며 지금 코어로 올리면 과잉 일반화 위험이 크다.",
+      "repeat_frequency": "low",
+      "cross_context_reappearance": false,
+      "cross_session_or_run_presence": false,
+      "actual_reuse_evidence": "none",
+      "outer_only_sufficiency": false,
+      "explanatory_axis_role": "comparison_boundary_case",
+      "premature_generalization_risk": "high",
+      "next_review_hint": "동종 사례가 더 쌓였을 때 다시 비교"
+    },
+    {
+      "candidate_id": "saltlux_product_detail",
+      "label": "Saltlux 상세 제품 및 산업 적용 세부",
+      "status": "observer_only",
+      "reason": "현재는 외곽 비교 자료로만 충분하며 코어 후보 판독 대상으로 보기엔 이르다.",
+      "repeat_frequency": "low",
+      "cross_context_reappearance": false,
+      "cross_session_or_run_presence": false,
+      "actual_reuse_evidence": "none",
+      "outer_only_sufficiency": true,
+      "explanatory_axis_role": "background_only",
+      "premature_generalization_risk": "medium",
+      "next_review_hint": "필요 시 비교 참고로만 재사용"
+    }
+  ]
+}

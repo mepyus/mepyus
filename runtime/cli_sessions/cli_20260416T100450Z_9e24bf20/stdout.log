@@ -1,0 +1,11 @@
+- result summary
+  - Current usable path: `gemini/mock_test` is now the main CLI-on-top UI body; `/vectorfl-engine/vectorfl` remains a validation/control reference.
+
+- important findings / diffs / outputs
+  - Changed: added `CliHostControlPanel.tsx`, mounted it in `VectorFLIntegrationShell.tsx`, and added a Vite `/api` proxy to `http://127.0.0.1:8421`. Build passed, proxy state fetch worked, a real read-only Codex run completed, and marking with `validation_target` succeeded.
+
+- uncertainty or failure notes
+  - Remaining note: validation used `curl` through the mock app proxy path, not automated browser-click testing. Deferred items include browser-click automation, session browsing/history, async runner, Gemini adapter, deposit bridge, and promotion automation.
+
+- suggested next use
+  - validation target: hand-validate the `gemini/mock_test` panel in browser before adding session browsing/history.

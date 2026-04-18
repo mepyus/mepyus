@@ -1,0 +1,494 @@
+{
+  "probe_name": "interview_future_probe_v1",
+  "created_at": "2026-03-28T00:37:07.635265Z",
+  "pattern": "미래|future|automation|자동화|control|deployment|verification|검증|신뢰|security|안보|operator|operators",
+  "matched_source_count": 3,
+  "overall_scene_counts": {
+    "evidence": 3,
+    "review": 40,
+    "spec": 1
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 40
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 3
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 1
+    }
+  ],
+  "overall_flow_counts": {
+    "run": 3,
+    "compare": 39,
+    "break": 2
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 39
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 3
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 2
+    }
+  ],
+  "overall_top_anchor_values": [
+    {
+      "value": "가능한",
+      "count": 6
+    },
+    {
+      "value": "우리가",
+      "count": 4
+    },
+    {
+      "value": "그렇지",
+      "count": 3
+    },
+    {
+      "value": "소프트웨어",
+      "count": 3
+    },
+    {
+      "value": "봅니다",
+      "count": 3
+    },
+    {
+      "value": "미래를",
+      "count": 3
+    },
+    {
+      "value": "결과에",
+      "count": 2
+    },
+    {
+      "value": "틀림을",
+      "count": 2
+    },
+    {
+      "value": "판별할",
+      "count": 2
+    },
+    {
+      "value": "이른바",
+      "count": 2
+    },
+    {
+      "value": "당신이",
+      "count": 2
+    },
+    {
+      "value": "능력이",
+      "count": 2
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "core_topic_anchor": 301,
+    "discourse_residue_anchor": 9,
+    "user_layer_hint_anchor": 2
+  },
+  "overall_user_layer_hints": [
+    {
+      "layer": "구현/실행",
+      "count": 1
+    },
+    {
+      "layer": "구조/연결",
+      "count": 1
+    }
+  ],
+  "overall_opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구현/실행, 구조/연결",
+  "sources": [
+    {
+      "input_path": "inputs/external_cases/dario_amodei_youtube.txt",
+      "matched_segment_count": 27,
+      "scene_counts": {
+        "evidence": 2,
+        "review": 24,
+        "spec": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 24
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 2
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 2,
+        "compare": 24,
+        "break": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 24
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 2
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "가능한",
+          "count": 6
+        },
+        {
+          "value": "그렇지",
+          "count": 3
+        },
+        {
+          "value": "소프트웨어",
+          "count": 3
+        },
+        {
+          "value": "결과에",
+          "count": 2
+        },
+        {
+          "value": "틀림을",
+          "count": 2
+        },
+        {
+          "value": "판별할",
+          "count": 2
+        },
+        {
+          "value": "이른바",
+          "count": 2
+        },
+        {
+          "value": "당신이",
+          "count": 2
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 204,
+        "discourse_residue_anchor": 4
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_aca857be2878_042",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "저는 결과에 맞고 틀림을 즉각 판…",
+          "excerpt": "저는 결과에 맞고 틀림을 즉각 판별할 수 있는 이른바 검증 가능한 과업들에 대해서는 그 성공을 절대적으로 확신합니다."
+        },
+        {
+          "dust_id": "dst_src_aca857be2878_048",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "3:543분 54초아무리 긴 타임…",
+          "excerpt": "3:543분 54초아무리 긴 타임스케일을 두고 지켜봐도 결과에 맞고 틀림을 즉각 판별할 수 없는 이른바 검증 불가능한 과업들에 4:014분 1초대한 의구심이죠."
+        },
+        {
+          "dust_id": "dst_src_aca857be2878_052",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "다만 제 논리 구조에 일만의 불확…",
+          "excerpt": "다만 제 논리 구조에 일만의 불확실성이 4:244분 24초끼어들 여지가 있다면 그건 바로이 지점 즉 검증의 부제가 발생하는 지점이겠죠."
+        },
+        {
+          "dust_id": "dst_src_aca857be2878_053",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "10년이라는 타임라인을 4:314…",
+          "excerpt": "10년이라는 타임라인을 4:314분 31초전제했을 때 제가 산출한 도달 확률은 90%입니다.이 수치는 불확실한 미래에 대해 한 인간이 도달할 수 있는 사실상 최대치의 확신에 4:404분 40초가깝죠.이 거대한 기술적 도약이 2035년까지 일어나지 않는다고 단언하는 건 저로서로 명백한 …"
+        },
+        {
+          "dust_id": "dst_src_aca857be2878_056",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "당신이 그토록 검증이라는 조건에 …",
+          "excerpt": "당신이 그토록 검증이라는 조건에 매달린다는 건 역설적으로이 모델들이 진정으로 5:035분 3초일반화 되었다는 사실을 신뢰하지 못한다는 반증 아닙니까?"
+        },
+        {
+          "dust_id": "dst_src_aca857be2878_058",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "우리는 즉각적으로 검증 가능한 보…",
+          "excerpt": "우리는 즉각적으로 검증 가능한 보상이 주어지는 논리적 5:125분 12초과합은 물론 전혀 그렇지 않은 모한 영역에서도 똑같이 탁월한 능력을 발휘하니까요."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/andrej_karpathy_youtube.txt",
+      "matched_segment_count": 11,
+      "scene_counts": {
+        "review": 10,
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 10
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 10,
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 10
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "봅니다",
+          "count": 2
+        },
+        {
+          "value": "우리가",
+          "count": 2
+        },
+        {
+          "value": "초지능은",
+          "count": 2
+        },
+        {
+          "value": "중간에",
+          "count": 1
+        },
+        {
+          "value": "자동화된",
+          "count": 1
+        },
+        {
+          "value": "방식으로",
+          "count": 1
+        },
+        {
+          "value": "점수를",
+          "count": 1
+        },
+        {
+          "value": "매긴다",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 54,
+        "user_layer_hint_anchor": 2,
+        "discourse_residue_anchor": 4
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구현/실행",
+          "count": 1
+        },
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구현/실행, 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_449f2bc41bb7_105",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "하지만 풀이 과정 중간에 자동화된…",
+          "excerpt": "하지만 풀이 과정 중간에 자동화된 방식으로 부분 점수를 매긴다."
+        },
+        {
+          "dust_id": "dst_src_449f2bc41bb7_214",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "20년 뒤에 미래를.",
+          "excerpt": "20년 뒤에 미래를."
+        },
+        {
+          "dust_id": "dst_src_449f2bc41bb7_219",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "미래의 AI가 고작 10억짜리 1…",
+          "excerpt": "미래의 AI가 고작 10억짜리 14:22 파라미터면 충분하다니 좀 놀라운데요."
+        },
+        {
+          "dust_id": "dst_src_449f2bc41bb7_251",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "사회 전체가 겪고 있는 자동화 진…",
+          "excerpt": "사회 전체가 겪고 있는 자동화 진행 과정으로 봅니다."
+        },
+        {
+          "dust_id": "dst_src_449f2bc41bb7_252",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "지금의 컴퓨팅 16:46 발전 추…",
+          "excerpt": "지금의 컴퓨팅 16:46 발전 추세를 그대로 미래까지 쭉 연장해서 그려보면 답은 명확합니다."
+        },
+        {
+          "dust_id": "dst_src_449f2bc41bb7_253",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "세상에 많은 부분이 점차 자동화될…",
+          "excerpt": "세상에 많은 부분이 점차 자동화될 16:53 테고 우리가 말하는 초지능은 저 그 그래프 연장선 끝에 있는 결과물일 뿐입니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/alexkarp_youtube.txt",
+      "matched_segment_count": 6,
+      "scene_counts": {
+        "review": 6
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 6
+        }
+      ],
+      "flow_counts": {
+        "compare": 5,
+        "break": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 5
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "노동자들을",
+          "count": 1
+        },
+        {
+          "value": "위해선",
+          "count": 1
+        },
+        {
+          "value": "무엇을",
+          "count": 1
+        },
+        {
+          "value": "안보를",
+          "count": 1
+        },
+        {
+          "value": "초무엇을",
+          "count": 1
+        },
+        {
+          "value": "있는가",
+          "count": 1
+        },
+        {
+          "value": "초그리고",
+          "count": 1
+        },
+        {
+          "value": "경제이",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 43,
+        "discourse_residue_anchor": 1
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_024",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "노동자들을 위해선 무엇을 그리고 …",
+          "excerpt": "노동자들을 위해선 무엇을 그리고 국가 안보를 위해선 1:351분 35초무엇을 할 수 있는가?"
+        },
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_031",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "기술, 국가 안보, 2:292분 …",
+          "excerpt": "기술, 국가 안보, 2:292분 29초그리고 실물 경제이 세 가지 거대한 축이 충돌하는 그 교차점에선 리더는 극히 드니다."
+        },
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_311",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "진짜 이유는 23:3923분 39…",
+          "excerpt": "진짜 이유는 23:3923분 39초지금이 AI 시장이 신뢰가 바닥난 상태이기 때문입니다."
+        },
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_481",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "제 34:3334분 33초생각에 …",
+          "excerpt": "제 34:3334분 33초생각에 사람들은 지금 단기가 아닌 AI가 가져올 그 장기적 미래에 대해 그 할인율을 터문이없게 높게 잡고 34:4134분 41초있습니다."
+        },
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_541",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그리고 저것들, 방금 말한 저런 …",
+          "excerpt": "그리고 저것들, 방금 말한 저런 뻔한 수작들은 이제이 문화, 즉 AI와 소프트웨어가 챕터 9: Sector 8: 정직한 혁명과 엔딩 38:5038분 50초검증하는이 두 명한 세상에서는 더 이상 예전처럼 어물쩍 빠져나가기가 훨씬 더 어렵습니다."
+        },
+        {
+          "dust_id": "dst_src_ab3f1b5bdfda_551",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "하지만이 잔인한 검증 과정은 아주…",
+          "excerpt": "하지만이 잔인한 검증 과정은 아주 짧은 기간 동안 39:3539분 35초멈추지 않고 계속해서 몇 번이고 반복될 겁니다."
+        }
+      ]
+    }
+  ]
+}

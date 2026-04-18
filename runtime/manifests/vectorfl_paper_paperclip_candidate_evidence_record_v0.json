@@ -1,0 +1,92 @@
+{
+  "schema_version": "vectorfl_paper_reference_candidate_evidence_record_v0",
+  "record_id": "vectorfl_paper_paperclip_candidate_evidence_record_v0",
+  "source_program": "paperclip",
+  "source_kind": "external_candidate_from_reference_repo",
+  "scenario_scope": "vectorfl_paper_actual_export_only_dry_run",
+  "source_refs": [
+    "references/git_search/paperclip-master/README.md",
+    "references/git_search/paperclip-master/doc/GOAL.md",
+    "references/git_search/paperclip-master/doc/SPEC.md"
+  ],
+  "honesty_note": "Derived from the checked-in Paperclip reference repo and closest to the target host grammar, but still not a live exported Paperclip host record.",
+  "issues_row": {
+    "id": "paperclip-issue-001",
+    "companyId": "paperclip-reference",
+    "projectId": "paperclip-control-plane",
+    "goalId": "autonomous-company-governance",
+    "parentId": null,
+    "title": "Coordinate one agent task through heartbeat and board governance",
+    "description": "Model a Paperclip work item that flows from goal alignment to agent heartbeat execution, result reporting, and human board governance without importing the full company surface.",
+    "status": "ready_for_dry_run",
+    "priority": "high",
+    "assigneeAgentId": "paperclip-agent-001",
+    "issueNumber": 1,
+    "identifier": "PC-1",
+    "originKind": "reference_repo",
+    "originId": "references/git_search/paperclip-master/doc/SPEC.md",
+    "requestDepth": 0,
+    "createdAt": "2026-04-11T08:10:00+09:00",
+    "updatedAt": "2026-04-11T08:10:00+09:00"
+  },
+  "heartbeat_runs_row": {
+    "id": "paperclip-run-001",
+    "companyId": "paperclip-reference",
+    "agentId": "paperclip-agent-001",
+    "invocationSource": "heartbeat_adapter",
+    "triggerDetail": "Agent receives a task context from the control plane and reports status through the heartbeat loop.",
+    "status": "dry_run_candidate",
+    "startedAt": "2026-04-11T08:10:00+09:00",
+    "finishedAt": "2026-04-11T08:15:00+09:00",
+    "error": null,
+    "wakeupRequestId": "paperclip-heartbeat-001",
+    "exitCode": 0,
+    "usageJson": {
+      "adapter_type": "process_or_http",
+      "budget_surface": "token_cost_tracking",
+      "governance_surface": "board_approval_gate"
+    },
+    "resultJson": {
+      "summary": "Task context stayed goal-aware and returned status/cost/governance evidence.",
+      "message": "Use this as a Paperclip-shaped candidate for issue/run/result/governance dry-run.",
+      "error": null
+    },
+    "sessionIdBefore": "paperclip-heartbeat-before",
+    "sessionIdAfter": "paperclip-heartbeat-after",
+    "stdoutExcerpt": "Agent heartbeat completed and reported task result for board-visible review.",
+    "contextSnapshot": {
+      "taskKey": "issue:paperclip-issue-001",
+      "issueFocus": "goal-aware agent task with board-governed outcome",
+      "constraint": "do not import full company/org model"
+    }
+  },
+  "issue_comments_rows": [
+    {
+      "id": "paperclip-comment-001",
+      "companyId": "paperclip-reference",
+      "issueId": "paperclip-issue-001",
+      "authorAgentId": "paperclip-agent-001",
+      "authorUserId": null,
+      "createdByRunId": "paperclip-run-001",
+      "body": "Heartbeat result should remain traceable to the original goal, budget surface, task status, and board governance note.",
+      "createdAt": "2026-04-11T08:15:00+09:00",
+      "updatedAt": "2026-04-11T08:15:00+09:00"
+    }
+  ],
+  "approvals_row": {
+    "id": "paperclip-approval-001",
+    "companyId": "paperclip-reference",
+    "type": "board_governance_gate",
+    "requestedByAgentId": "paperclip-agent-001",
+    "requestedByUserId": null,
+    "status": "hold_for_vectorfl_gate",
+    "payload": {
+      "issueId": "paperclip-issue-001",
+      "runId": "paperclip-run-001",
+      "decision_basis": "Closest reference for issue/run/result/governance but still not a live export artifact."
+    },
+    "decisionNote": "Use as reference-derived candidate evidence only. Do not close actual_export_only until a true host export passes the same validator.",
+    "decidedByUserId": "supervisor",
+    "decidedAt": "2026-04-11T08:16:00+09:00"
+  }
+}

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -12,31 +13,78 @@ if str(REPO_ROOT) not in sys.path:
 
 from app.fragment.schema import FragmentAnchor, FragmentRecord, ProvenanceEntry
 from app.fragment.store import FragmentStore
+from app.core.runtime.line_thickening import RereadObservation, record_reread_observation
 from app.work.processor_compare.observer_engine import run_internal_observers
 
 
 def _usage() -> int:
-    print("usage: apply_internal_observer.py <runtime_root> [fragment_id ...]")
+    print(
+        "usage: apply_internal_observer.py <runtime_root> [fragment_id ...] "
+        "[--record-line-thickening] [--bounded-recurrence-validation]"
+    )
     return 1
+
+
+def _parse_args(argv: List[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Apply the internal observer to stored fragments.")
+    parser.add_argument("runtime_root")
+    parser.add_argument("fragment_id", nargs="*")
+    parser.add_argument(
+        "--record-line-thickening",
+        action="store_true",
+        help="append a bounded grounded line_thickening observation for the fragment reread path",
+    )
+    parser.add_argument(
+        "--bounded-recurrence-validation",
+        action="store_true",
+        help="preserve the supplied fragment order, including duplicates, for recurrence validation",
+    )
+    return parser.parse_args(argv[1:])
 
 
 def main(argv: List[str]) -> int:
     if len(argv) < 2:
         return _usage()
-    runtime_root = Path(argv[1]).resolve()
+    args = _parse_args(argv)
+    runtime_root = Path(args.runtime_root).resolve()
     store = FragmentStore(runtime_root)
-    target_ids = set(argv[2:])
-    fragments = store.read_all()
-    if target_ids:
-        fragments = [fragment for fragment in fragments if fragment.fragment_id in target_ids]
+    if args.bounded_recurrence_validation:
+        if not args.fragment_id:
+            return _usage()
+        fragments = []
+        for fragment_id in args.fragment_id:
+            fragment = store.get(fragment_id)
+            if fragment is None:
+                raise SystemExit(f"fragment not found: {fragment_id}")
+            fragments.append(fragment)
+    else:
+        target_ids = set(args.fragment_id)
+        fragments = store.read_all()
+        if target_ids:
+            fragments = [fragment for fragment in fragments if fragment.fragment_id in target_ids]
 
     updated_ids: List[str] = []
+    thickening_results: List[dict] = []
     for fragment in fragments:
         updated = _apply(fragment)
         store.put(updated)
         updated_ids.append(updated.fragment_id)
+        if args.record_line_thickening:
+            thickening_results.append(_record_line_thickening(runtime_root, updated))
 
-    print(json.dumps({"runtime_root": str(runtime_root), "updated_count": len(updated_ids), "fragment_ids": updated_ids}, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {
+                "runtime_root": str(runtime_root),
+                "updated_count": len(updated_ids),
+                "fragment_ids": updated_ids,
+                "bounded_recurrence_validation": bool(args.bounded_recurrence_validation),
+                "line_thickening_results": thickening_results,
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
     return 0
 
 
@@ -98,6 +146,64 @@ def _apply(fragment: FragmentRecord) -> FragmentRecord:
         metadata=metadata,
         provenance_log=provenance,
     )
+
+
+def _record_line_thickening(runtime_root: Path, fragment: FragmentRecord) -> dict:
+    merged = dict(fragment.metadata.get("internal_observer", {})).get("merged", {})
+    range_start = getattr(fragment.source_range, "start", None)
+    range_end = getattr(fragment.source_range, "end", None)
+    has_direct_span = range_start is not None and range_end is not None
+    has_source_link = bool(fragment.source_path or fragment.page_ref.page_label)
+    evidence_mode = "direct_span" if has_direct_span else "source_linked" if has_source_link else "summary_echo"
+    source_pointer = f"runtime/fragments/{fragment.fragment_id}.json"
+    if has_direct_span:
+        source_pointer = f"{source_pointer}#source_range={range_start}-{range_end}"
+        if fragment.paragraph_index is not None:
+            source_pointer = f"{source_pointer};paragraph_index={fragment.paragraph_index}"
+    elif fragment.paragraph_index is not None:
+        source_pointer = f"{source_pointer}#paragraph_index={fragment.paragraph_index}"
+    elif fragment.page_ref.page_label:
+        source_pointer = f"{source_pointer}#page_ref={fragment.page_ref.page_label}"
+
+    line_name = "input_to_reading_organ"
+    if merged.get("role") == "contrast" and has_direct_span:
+        line_name = "transition_over_surface"
+
+    observation = RereadObservation(
+        run_id=f"internal_observer:{fragment.fragment_id}",
+        asset_or_surface=fragment.source_path or fragment.fragment_id,
+        view_type=str(merged.get("role") or fragment.scene or "observer"),
+        line_name=line_name,
+        evidence=str(merged.get("why_short") or fragment.raw_text[:180]).strip(),
+        grounding_type="direct" if evidence_mode == "direct_span" else "fallback" if evidence_mode == "source_linked" else "inferred",
+        support_points=[
+            f"observer_role={merged.get('role') or fragment.scene or 'unknown'}",
+            f"fragment_source={fragment.fragment_id}",
+            f"source_pointer={source_pointer}",
+        ],
+        weakness_points=[
+            "single fragment reread only",
+            "needs a later reread surface to confirm recurrence",
+        ],
+        contradiction_points=[],
+        caution_points=[
+            "summary-only reread would erase the fragment pointer",
+            "single-run evidence is not recurrence",
+        ],
+        next_probe_surface=source_pointer,
+        thickness_before="thin",
+        thickness_after="thin",
+        observed_at=fragment.created_at,
+        source_kind="raw_surface",
+        source_path_or_ref=fragment.source_path,
+        source_run_id_or_event_id=str(fragment.metadata.get("ingest_batch_id") or fragment.fragment_id),
+        source_pointer=source_pointer,
+        evidence_mode=evidence_mode,
+        validation_path_id="internal_observer",
+        evidence_origin_kind="primary_raw" if evidence_mode == "direct_span" else "primary_structured",
+        independence_class="primary",
+    )
+    return record_reread_observation(runtime_root, observation)
 
 
 def _merge_anchors(existing: List[FragmentAnchor], observer: List[FragmentAnchor]) -> List[FragmentAnchor]:

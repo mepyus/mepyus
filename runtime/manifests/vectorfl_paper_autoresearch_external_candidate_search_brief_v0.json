@@ -1,0 +1,28 @@
+{
+  "schema_version": "vectorfl_paper_autoresearch_external_candidate_search_brief_v0",
+  "source_reference": "references/git_search/autoresearch-master",
+  "source_materials": [
+    "references/git_search/autoresearch-master/README.md",
+    "references/git_search/autoresearch-master/program.md"
+  ],
+  "fixed_operating_materials": {
+    "goal_spec": "Give an AI agent a small real training setup, fix one metric, keep one mutable file, and iterate experiments under a bounded time budget.",
+    "issue_decomposition": "Setup branch and data, run baseline, modify train.py only, run fixed-budget experiment, read metrics, keep/discard, repeat.",
+    "tech_report": "Report val_bpb, memory, status, description, crash/keep/discard evidence, and complexity tradeoff.",
+    "supervisor_decision_record": "Keep lower val_bpb or meaningful simplification; discard worse or crash runs; do not widen the harness."
+  },
+  "vectorfl_translation": {
+    "external_candidate_search_brief": "Use autoresearch as a bounded experiment-harness candidate, not as org/company/agent surface import.",
+    "candidate_evidence_record": "Represent one experiment-loop candidate as issue/run/result/governance surfaces.",
+    "cross_check_review_report": "Check whether the candidate proves shape, mapping, honesty boundary, and gate relevance without broadening VectorFL Paper.",
+    "hold_continue_decision_manifest": "Hold gate close unless the candidate is a true host export and supports reopen/gate evidence."
+  },
+  "forbidden_scope": [
+    "org/company/agent full surface",
+    "multi-cell full architecture",
+    "broad dataset import",
+    "current actual_export slot replacement"
+  ],
+  "immediate_goal": "Create one autoresearch-derived external candidate record and dry-run it through the actual_export_only validator without changing the current SSOT slot.",
+  "created_at": "2026-04-11T07:55:00+09:00"
+}

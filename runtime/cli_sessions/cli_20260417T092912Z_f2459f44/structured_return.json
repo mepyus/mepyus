@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260417T092912Z_f2459f44",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  읽은 문서: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`  \n  현재 기준은 유지된다: `user = 목적/배정/판단`, `VectorFL = 해석/재읽기/중재`, `engine = 처리/반환/예치물`. CLI는 네 번째 면이 아니라 engine 위에 얹힌 on-top 도구층이다.\n\n- important findings / diffs / outputs  \n  1. 직접 조립한 것  \n     사용자가 직접 조립해야 한 것은 “이번 turn의 목적”, “현재 3면 해석 기준”, “출력 형식”, “파일 수정 금지 조건”이다.\n\n  2. 화면이 대신한 것  \n     VectorFL 화면은 bounded context 참조, 요청 출처, 페이지 위치, backend/task type, prompt payload, return format을 묶어 Codex turn으로 전달했다.\n\n  3. 화면에 안 보여서 추론한 것  \n     `app/ui/integrated_engine`가 현재 안정 UI 경로이고, `gemini/mock_test`는 참조/제안 clay로 남는다는 점은 문서에서 읽은 운영 배경이다. 이번 turn 자체에서 새 promotion, ingest, canonicalize는 하면 안 된다.\n\n- uncertainty or failure notes  \n  파일은 수정하지 않았다.  \n  문서상 다음 최소 안전 행동은 브라우저에서 안정 앱 경로의 CLI run을 손으로 확인하는 것이지만, 이 turn에서는 실행 검증을 요구받지 않았다.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate  \n  `reread_target`: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`  \n  `validation_target`: `app/ui/integrated_engine`의 실제 브라우저 CLI run  \n  `implementation_return`: 없음  \n  `deposit_candidate`: 없음  \n  `hold`: promotion / ingest / canonicalize 보류\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-17T09:29:30Z"
+}

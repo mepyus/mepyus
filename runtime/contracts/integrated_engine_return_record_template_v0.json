@@ -1,0 +1,95 @@
+{
+  "return_id": "return_record_candidate_handling_sample_v0",
+  "source_packet_id": "exec_packet_candidate_handling_sample_v0",
+  "process_camera_id": "integrated_engine_candidate_handling_process_camera_v0",
+  "target_type": "review_stage_structuring_asset",
+  "attempted_actions": [
+    {
+      "action": "inspect",
+      "result": "completed",
+      "note": "Read bounded target and supporting evidence bundle."
+    },
+    {
+      "action": "map_evidence",
+      "result": "completed",
+      "note": "Mapped evidence to validation gates."
+    },
+    {
+      "action": "judge_direct_weak_not_yet",
+      "result": "completed",
+      "note": "Kept direct/weak/not-yet distinctions."
+    }
+  ],
+  "evidence_used": [
+    {
+      "evidence_id": "evidence_review_guideline_direct",
+      "source": "docs/reports/integrated_engine_structuring_patch_operational_validation_note_v0.md",
+      "used_for": "review_guideline_reread_support"
+    },
+    {
+      "evidence_id": "evidence_rollback_direct",
+      "source": "docs/reports/integrated_engine_rollback_rule_reread_revalidation_note_v0.md",
+      "used_for": "rollback_rule_reread_support"
+    },
+    {
+      "evidence_id": "evidence_adjacency_weak",
+      "source": "docs/reports/integrated_engine_review_family_repeatability_refinement_note_v0.md",
+      "used_for": "rollout_drift_prevention"
+    }
+  ],
+  "gate_results": [
+    {
+      "gate": "grounding_sufficiency",
+      "result": "directly",
+      "reason": "Original target has explicit source and validation grounding."
+    },
+    {
+      "gate": "rollback_visibility",
+      "result": "directly",
+      "reason": "Bounded rollback cue consolidation makes rollback readable inside review-stage."
+    },
+    {
+      "gate": "rollout_drift_prevention",
+      "result": "weakly",
+      "reason": "Adjacent shadow-fits remained weak, so rollout remains blocked."
+    }
+  ],
+  "insufficiency_or_risk": [
+    "adjacent documents do not yet support direct application",
+    "process portability is demonstrated but not validated as rollout",
+    "implementation lens remains provisional"
+  ],
+  "final_decision": "usable_for_inspection_only",
+  "action_output_or_reference": {
+    "output_type": "process_camera_return_sample",
+    "reference": "docs/specs/integrated_engine_candidate_handling_process_camera_v0.md"
+  },
+  "what_was_not_done": [
+    "camera promotion",
+    "broader schema rollout",
+    "patching adjacent documents",
+    "line reread validation",
+    "axis reread validation",
+    "camera-slot reread validation",
+    "UI implementation",
+    "automation"
+  ],
+  "redeposit_payload": {
+    "summary": "Process camera can shape bounded candidate handling packets, but current evidence supports inspection and packetization only.",
+    "status_to_preserve": "eligible for provisional camera candidate, not promoted",
+    "carry_forward": [
+      "direct/weak/not-yet distinctions",
+      "shadow-fit before patching",
+      "packet before worker execution",
+      "return record before redeposit"
+    ]
+  },
+  "next_valid_use": "try one bounded real packetization on a future live request",
+  "authority_boundary_confirmation": {
+    "promotion_allowed": false,
+    "rollout_allowed": false,
+    "canonical_ingestion_allowed": false,
+    "status_confirmed": "eligible for provisional camera candidate, not promoted"
+  }
+}
+

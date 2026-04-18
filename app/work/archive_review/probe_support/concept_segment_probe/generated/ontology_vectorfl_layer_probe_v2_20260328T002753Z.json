@@ -1,0 +1,2663 @@
+{
+  "probe_name": "ontology_vectorfl_layer_probe_v2",
+  "created_at": "2026-03-28T00:27:52.070191Z",
+  "pattern": "객체|연결|온톨로지|벡터플|vectorfl|ontology|그래프|노드|엣지|메타온톨로지",
+  "matched_source_count": 24,
+  "overall_scene_counts": {
+    "review": 387,
+    "impl": 33,
+    "evidence": 13,
+    "spec": 10
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 387
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 33
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 13
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 10
+    }
+  ],
+  "overall_flow_counts": {
+    "compare": 360,
+    "run": 76,
+    "fix": 2,
+    "break": 5
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 360
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 76
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 5
+    },
+    {
+      "value": "fix",
+      "display_label": "수정/보정 흐름",
+      "count": 2
+    }
+  ],
+  "overall_top_anchor_values": [
+    {
+      "value": "그래서",
+      "count": 54
+    },
+    {
+      "value": "온톨로지",
+      "count": 52
+    },
+    {
+      "value": "온톨로지를",
+      "count": 34
+    },
+    {
+      "value": "그래프",
+      "count": 31
+    },
+    {
+      "value": "온톨로지가",
+      "count": 30
+    },
+    {
+      "value": "이렇게",
+      "count": 25
+    },
+    {
+      "value": "굉장히",
+      "count": 19
+    },
+    {
+      "value": "온톨로지로",
+      "count": 18
+    },
+    {
+      "value": "데이터",
+      "count": 18
+    },
+    {
+      "value": "데이터를",
+      "count": 17
+    },
+    {
+      "value": "연결이",
+      "count": 16
+    },
+    {
+      "value": "어떻게",
+      "count": 14
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "core_topic_anchor": 2833,
+    "user_layer_hint_anchor": 85,
+    "discourse_residue_anchor": 154,
+    "speaker_or_source_residue_anchor": 16
+  },
+  "overall_user_layer_hints": [
+    {
+      "layer": "구조/연결",
+      "count": 83
+    },
+    {
+      "layer": "구현/실행",
+      "count": 1
+    },
+    {
+      "layer": "전망/방향",
+      "count": 1
+    }
+  ],
+  "overall_opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결, 구현/실행, 전망/방향",
+  "sources": [
+    {
+      "input_path": "inputs/external_cases/saltlux.txt",
+      "matched_segment_count": 119,
+      "scene_counts": {
+        "review": 109,
+        "spec": 5,
+        "impl": 5
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 109
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 5
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        }
+      ],
+      "flow_counts": {
+        "compare": 103,
+        "break": 2,
+        "run": 14
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 103
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 14
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "온톨로지",
+          "count": 23
+        },
+        {
+          "value": "온톨로지를",
+          "count": 19
+        },
+        {
+          "value": "온톨로지가",
+          "count": 16
+        },
+        {
+          "value": "LRM",
+          "count": 11
+        },
+        {
+          "value": "온톨로지로",
+          "count": 10
+        },
+        {
+          "value": "그래서",
+          "count": 10
+        },
+        {
+          "value": "어떻게",
+          "count": 6
+        },
+        {
+          "value": "지식을",
+          "count": 6
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 761,
+        "discourse_residue_anchor": 35,
+        "user_layer_hint_anchor": 27,
+        "speaker_or_source_residue_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 27
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_c04ae46bb159_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "예 뭐 말씀드린 것처럼 에이전틱 …",
+          "excerpt": "예 뭐 말씀드린 것처럼 에이전틱 AI 0:22 온톨로지로 완성되다라는 주제로 바로 이야기를 좀 시작해 보도록 하겠습니다.음 0:29 음, 인공지능의 역사는 우리 다 알고 있는 것처럼 굉장히 긴 어, 역사를 0:34 가지고 있습니다."
+        },
+        {
+          "dust_id": "dst_src_c04ae46bb159_013",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그럼에도 불구하고 1:55 다양한…",
+          "excerpt": "그럼에도 불구하고 1:55 다양한 머신 러닝 알고리즘과 함께 온톨로지가 태동을 하기 시작합니다."
+        },
+        {
+          "dust_id": "dst_src_c04ae46bb159_026",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "사실은 머신 러닝을 포함한 트랜스…",
+          "excerpt": "사실은 머신 러닝을 포함한 트랜스포머에 해당이 되는게 3:19 생산성을 갖기도 힘들었고 또 성능을 보이기 힘든 상태였기 때문에 on토로하고닝이라고 3:25 하는 것을 웹이라고 하는 다시해서 지구를 둘러싸고 있는 모든 웹환경을 3:32 온톨로지와 리즈닝을 할 수 있 추론을 할 수 있는 …"
+        },
+        {
+          "dust_id": "dst_src_c04ae46bb159_027",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그리고 그 중심에서는 온톨로지가 …",
+          "excerpt": "그리고 그 중심에서는 온톨로지가 들어가게 되고 그 온톨로지의 표준이 될 수 있는 3:56 RDF나 아울이나 그 외에 디스크립션을 포함을 한 추론을 하기 위한 논리적 구성이 완성도에 이르기 4:04 되는 거죠."
+        },
+        {
+          "dust_id": "dst_src_c04ae46bb159_042",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "지금 이거는 어 그래프가 이미 일…",
+          "excerpt": "지금 이거는 어 그래프가 이미 일부 조금이 깨졌는데요."
+        },
+        {
+          "dust_id": "dst_src_c04ae46bb159_055",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "왜 갑자기 온톨로지인가?",
+          "excerpt": "왜 갑자기 온톨로지인가?"
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/ontology_youtube.txt",
+      "matched_segment_count": 116,
+      "scene_counts": {
+        "review": 110,
+        "evidence": 5,
+        "impl": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 110
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 5
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 107,
+        "run": 8,
+        "fix": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 107
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "온톨로지",
+          "count": 18
+        },
+        {
+          "value": "그래서",
+          "count": 15
+        },
+        {
+          "value": "데이터들이",
+          "count": 12
+        },
+        {
+          "value": "온톨로지를",
+          "count": 10
+        },
+        {
+          "value": "굉장히",
+          "count": 10
+        },
+        {
+          "value": "연결이",
+          "count": 9
+        },
+        {
+          "value": "온톨로지가",
+          "count": 8
+        },
+        {
+          "value": "얘기를",
+          "count": 7
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 703,
+        "discourse_residue_anchor": 42,
+        "user_layer_hint_anchor": 21,
+        "speaker_or_source_residue_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 21
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_934df0ae18b5_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:01 에이전트 다음은 온톨로지…",
+          "excerpt": "0:01 에이전트 다음은 온톨로지의 시대가 올 겁니다."
+        },
+        {
+          "dust_id": "dst_src_934df0ae18b5_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 만족에 부족한 부분, 그 결핍…",
+          "excerpt": "그 만족에 부족한 부분, 그 결핍을 채워 주는 부분이 저는 온톨로지라고 생각합니다."
+        },
+        {
+          "dust_id": "dst_src_934df0ae18b5_010",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "근데 온톨로지 기반에 정제된 데이…",
+          "excerpt": "근데 온톨로지 기반에 정제된 데이터가 정리가 된 1:03 상태에서 에이전트가 꽂힌다면 어떤 세상이 벌 벌어질지 한번 얘기를 해 1:09 보겠습니다."
+        },
+        {
+          "dust_id": "dst_src_934df0ae18b5_022",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "근데 팔란티어에서부터 시작된이 용…",
+          "excerpt": "근데 팔란티어에서부터 시작된이 용어 온톨로지 과거에 이제 2:07 철학으로 철학에서의 용어로 활용되었던이 온톨로지가 AI 시대의 2:12 새로운 트렌드로 각강받고 있습니다."
+        },
+        {
+          "dust_id": "dst_src_934df0ae18b5_023",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "온톨로지는 철학적인 용어입니다.",
+          "excerpt": "온톨로지는 철학적인 용어입니다."
+        },
+        {
+          "dust_id": "dst_src_934df0ae18b5_025",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "2:30 온톨로지 자체는 어 단순…",
+          "excerpt": "2:30 온톨로지 자체는 어 단순한 데이터를 수학적 모델링으로 노드와 엣지로 2:36 나눠서 개념간의 관계를 연결시키는 개념입니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/graphrag_neosh.txt",
+      "matched_segment_count": 79,
+      "scene_counts": {
+        "review": 53,
+        "impl": 21,
+        "spec": 2,
+        "evidence": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 53
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 21
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 3
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 45,
+        "run": 34
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 45
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 34
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "그래프",
+          "count": 18
+        },
+        {
+          "value": "그래서",
+          "count": 17
+        },
+        {
+          "value": "이렇게",
+          "count": 12
+        },
+        {
+          "value": "저희가",
+          "count": 9
+        },
+        {
+          "value": "리트리버를",
+          "count": 8
+        },
+        {
+          "value": "검색을",
+          "count": 8
+        },
+        {
+          "value": "컨텐츠",
+          "count": 8
+        },
+        {
+          "value": "사이퍼",
+          "count": 7
+        }
+      ],
+      "anchor_bucket_counts": {
+        "discourse_residue_anchor": 36,
+        "core_topic_anchor": 560,
+        "user_layer_hint_anchor": 19
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 18
+        },
+        {
+          "layer": "구현/실행",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결, 구현/실행",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_3aec59c8a450_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:06 그래서 이렇게 모든 여섯…",
+          "excerpt": "0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요."
+        },
+        {
+          "dust_id": "dst_src_3aec59c8a450_008",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "오늘은 다양한 위트 시작 0:31…",
+          "excerpt": "오늘은 다양한 위트 시작 0:31 리버를 도구로 선택하는 그래프 레그를 한번 구현해 보려고 하는데요."
+        },
+        {
+          "dust_id": "dst_src_3aec59c8a450_009",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "이게 0:36 무슨 말이냐면 그래…",
+          "excerpt": "이게 0:36 무슨 말이냐면 그래프 레그를 구현하기 위해서는 다양한 검색 방식들을 사용할 0:42 수 있습니다."
+        },
+        {
+          "dust_id": "dst_src_3aec59c8a450_010",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "텍스트투 사이퍼 혹은 벡터 사이퍼…",
+          "excerpt": "텍스트투 사이퍼 혹은 벡터 사이퍼 이렇게 다양한 검색 0:47 방식들을 사용해서 그래프 속에서 적절한 정보를 추출해서 답변에 0:53 활용하게 되는데요."
+        },
+        {
+          "dust_id": "dst_src_3aec59c8a450_012",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 이렇게 리트리버를 각각의 …",
+          "excerpt": "그래서 이렇게 리트리버를 각각의 도구로 선택을 할 수 있도록 네오포제 그래프 1:13 레그 패키지에서는 툴스 리트리버라고 하는 걸 제공하고 있고요."
+        },
+        {
+          "dust_id": "dst_src_3aec59c8a450_013",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "오늘 이걸 1:18 활용해서 실습…",
+          "excerpt": "오늘 이걸 1:18 활용해서 실습을 통해서 지식 그래프를 먼저 만들어 보고이 도구 리트리버를 1:24 가지고 다양한 상황들에서 어떻게 적절한 검색 방식들을 선택하는지를 1:30 한번 확인해 보도록 하겠습니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/saltlux_ai.txt",
+      "matched_segment_count": 49,
+      "scene_counts": {
+        "review": 47,
+        "impl": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 47
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "break": 2,
+        "compare": 40,
+        "run": 7
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 40
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 7
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "온톨로지",
+          "count": 10
+        },
+        {
+          "value": "온톨로지가",
+          "count": 6
+        },
+        {
+          "value": "것들을",
+          "count": 6
+        },
+        {
+          "value": "온톨로지를",
+          "count": 5
+        },
+        {
+          "value": "온톨로지로",
+          "count": 5
+        },
+        {
+          "value": "됩니다",
+          "count": 4
+        },
+        {
+          "value": "기술이",
+          "count": 4
+        },
+        {
+          "value": "것들이",
+          "count": 3
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 306,
+        "discourse_residue_anchor": 13,
+        "user_layer_hint_anchor": 12
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 12
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_010",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "그리고 나서 첫 번째 AI 윈터가…",
+          "excerpt": "그리고 나서 첫 번째 AI 윈터가 오게 됩니다.이 다음 시작은 1:25 일본을 중심으로 해서 로지컬 AI 논리적인 인공지능 특히 보시는 것처럼 1:31 온톨로지나 엑스 시스템 개발하는데 많은 에너지를 쏟아붙게 됩니다.이 1:36 또한 실패를 하게 되죠."
+        },
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_014",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "달주행 자동차를 포함해서 2:41…",
+          "excerpt": "달주행 자동차를 포함해서 2:41 제조업 부분으로 간다면은 물리 세상으로 나오는 거의 모든 AI 연결된 것들이 피지컬 AI라고 보여질 2:48 텐데요.이 모든 것들이 중복 없이 그다음 세상에 어떻게 성장할 수 있을 2:54 것인가에 대한 대단한 투자가 이루어지고 있고 우리는 이게 사실…"
+        },
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_067",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래프도 있을 수 있고 인포그래픽…",
+          "excerpt": "그래프도 있을 수 있고 인포그래픽스와 같은 시각화된 정보도 11:10 있는 거죠."
+        },
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_108",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 무엇보다도 중요한 건이 모…",
+          "excerpt": "그런데 무엇보다도 중요한 건이 모든 것들이 프로세스로 연결되어 있다라는 16:01 것입니다."
+        },
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_145",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "특히 미국에서 온톨로지 등의 활용…",
+          "excerpt": "특히 미국에서 온톨로지 등의 활용과 LLM뿐만 아니라 출업 19:43 및 계획 기술이 결합하고 MCP 체계가 확장되는 유지케이스 겐지 조사하고 분석해 줘."
+        },
+        {
+          "dust_id": "dst_src_92a5a8a0fe2b_159",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "그래서 연방정부의 민원 처리에 대…",
+          "excerpt": "그래서 연방정부의 민원 처리에 대해서 AI 에전트 20:55 MCP 구현 사례가 뭔지 한국 공공 기관 온톨로지 사례는 뭔지 등에 대한 자기 스스로 또 질문하고 또 조사를 21:01 해서 다섯 개를 또 찾습니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/youtube_01_30.md",
+      "matched_segment_count": 12,
+      "scene_counts": {
+        "review": 10,
+        "spec": 1,
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 10
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 1
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 11,
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 11
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "MoE",
+          "count": 3
+        },
+        {
+          "value": "그래프는",
+          "count": 3
+        },
+        {
+          "value": "김성현",
+          "count": 3
+        },
+        {
+          "value": "최승준",
+          "count": 2
+        },
+        {
+          "value": "어떻게",
+          "count": 2
+        },
+        {
+          "value": "굉장히",
+          "count": 2
+        },
+        {
+          "value": "그래프가",
+          "count": 2
+        },
+        {
+          "value": "RLVR",
+          "count": 2
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 65,
+        "user_layer_hint_anchor": 1,
+        "speaker_or_source_residue_anchor": 5,
+        "discourse_residue_anchor": 3
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_0f5732985c8a_041",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## MoE 그래프 해설: den…",
+          "excerpt": "## MoE 그래프 해설: dense vs MoE, 연산 배수 최승준: 이 그래프는 어떻게 읽어야 되는 건가요?"
+        },
+        {
+          "dust_id": "dst_src_0f5732985c8a_042",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "김성현: 사실 이 그래프를 넣을까…",
+          "excerpt": "김성현: 사실 이 그래프를 넣을까 말까 굉장히 고민을 많이 했는데요."
+        },
+        {
+          "dust_id": "dst_src_0f5732985c8a_046",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "이 그래프가 굉장히 중요하고 임팩…",
+          "excerpt": "이 그래프가 굉장히 중요하고 임팩트가 있는 게 밑에 있는 것이 학습 연산량이거든요."
+        },
+        {
+          "dust_id": "dst_src_0f5732985c8a_074",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "소위 엣지 디바이스 같은 사례를 …",
+          "excerpt": "소위 엣지 디바이스 같은 사례를 제외하면 다 MoE 모델이고 GPT-OSS 같은 모델만 해도 상당히 희소한 MoE 모델이었습니다."
+        },
+        {
+          "dust_id": "dst_src_0f5732985c8a_110",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "MoE와 연결돼서.",
+          "excerpt": "MoE와 연결돼서."
+        },
+        {
+          "dust_id": "dst_src_0f5732985c8a_138",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "김성현: 네, RLVR이 에이전트…",
+          "excerpt": "김성현: 네, RLVR이 에이전트로서 어떻게 연결되는지를 얘기하지 않긴 했었죠."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/youtube_01_29.md",
+      "matched_segment_count": 8,
+      "scene_counts": {
+        "review": 8
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 8
+        }
+      ],
+      "flow_counts": {
+        "compare": 8
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 8
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 6
+        },
+        {
+          "value": "이렇게",
+          "count": 2
+        },
+        {
+          "value": "Lean",
+          "count": 2
+        },
+        {
+          "value": "그런데",
+          "count": 1
+        },
+        {
+          "value": "여기에서",
+          "count": 1
+        },
+        {
+          "value": "그림만",
+          "count": 1
+        },
+        {
+          "value": "훑어봤을",
+          "count": 1
+        },
+        {
+          "value": "흥미로운",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "discourse_residue_anchor": 11,
+        "core_topic_anchor": 48,
+        "user_layer_hint_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "전망/방향",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 전망/방향",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_115a2952becc_034",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 여기에서 그냥 그림만 훑어…",
+          "excerpt": "그런데 여기에서 그냥 그림만 훑어봤을 때 흥미로운 부분은 이렇게 실험, 그러니까 실험실하고 연결된 부분이 좀 의미심장한 것 같아요."
+        },
+        {
+          "dust_id": "dst_src_115a2952becc_051",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 이게 연결되는 얘기인 것 …",
+          "excerpt": "그래서 이게 연결되는 얘기인 것 같습니다."
+        },
+        {
+          "dust_id": "dst_src_115a2952becc_063",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 그 AlphaEvolve를…",
+          "excerpt": "그래서 그 AlphaEvolve를 Terence Tao가 쓴 내용이 있고 그다음에 다른 사람들이 deep research를 돌려서 문헌을, 그러니까 사람은 연결시키지 못하는 거나 찾아내는 것까지 문헌 검색을 하는 것들을 통틀어서 문제를 푸는, 그래서 이게 되게 중층적이고 다양한 단위들…"
+        },
+        {
+          "dust_id": "dst_src_115a2952becc_068",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "이게 결론이 ‘협업이 가능한 상태…",
+          "excerpt": "이게 결론이 ‘협업이 가능한 상태다.’ 그래서 이거 이렇게 하고서는 또 Lean 같은 증명 보조 도구와 연결되는 부분 같은 것도 있긴 했었는데 어쨌든 수학적인 문제들이 풀리고 있다는 얘기죠."
+        },
+        {
+          "dust_id": "dst_src_115a2952becc_083",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 이때 증명한 얘기, Lea…",
+          "excerpt": "그래서 이때 증명한 얘기, Lean이랑 연결한 얘기, 그래서 prompt까지 공개를 해서 어떤 수학자분이 그 과정들을 소개한 거를 번역한 거예요."
+        },
+        {
+          "dust_id": "dst_src_115a2952becc_217",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "근데 그 내부적으로 지금 시도하고…",
+          "excerpt": "근데 그 내부적으로 지금 시도하고 있는 게 Genie를 SIMA에 연결해서 즉석에서 세계를 만드는 그런 것들을 하고 있고 제가 지금 논문을 빼먹었는데 그걸 하는 논문도 Google DeepMind에서 공개한 게 있거든요."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/andrewng_stanford.txt",
+      "matched_segment_count": 7,
+      "scene_counts": {
+        "review": 7
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 7
+        }
+      ],
+      "flow_counts": {
+        "compare": 7
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 7
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "조직은",
+          "count": 2
+        },
+        {
+          "value": "성장이",
+          "count": 1
+        },
+        {
+          "value": "멈춘게",
+          "count": 1
+        },
+        {
+          "value": "시험지가",
+          "count": 1
+        },
+        {
+          "value": "쉬워져서",
+          "count": 1
+        },
+        {
+          "value": "그래프가",
+          "count": 1
+        },
+        {
+          "value": "평평해",
+          "count": 1
+        },
+        {
+          "value": "보이는",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 48
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_026",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "즉 성장이 멈춘게 2:12 아니라…",
+          "excerpt": "즉 성장이 멈춘게 2:12 아니라 시험지가 너무 쉬워져서 그래프가 평평해 보이는 착시에 불과합니다."
+        },
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_193",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "우리에겐 그보다 훨씬 더 중요한 …",
+          "excerpt": "우리에겐 그보다 훨씬 더 중요한 우리 모두를 하나로 묶어 주는 연결 조직이 있거든요."
+        },
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_195",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "17:52 처치비T의 두뇌를 설계…",
+          "excerpt": "17:52 처치비T의 두뇌를 설계한 오픈 AI의 주역들부터 테슬라 자율주행의 아버지라 불리는 안드레이 카파시 그리고 구글 17:59 딥 마인드와 오픈 AI를 거쳐 이제는 앤트로픽을 이끄는 다리오 아머데이까지 18:04 그들의 거리어를 거슬러 올라가면 결국 이곳 스탠포드 강의실 혹은 제…"
+        },
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_207",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "연결 조직 그리고 아직 인터넷 어…",
+          "excerpt": "연결 조직 그리고 아직 인터넷 어디에도 공개되지 않은 블리딩 엣지입니다."
+        },
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_213",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그러니 스탠포드에 있는 동안 친구…",
+          "excerpt": "그러니 스탠포드에 있는 동안 친구를 사귀고 그 풍부한 연결 조직을 형성하세요."
+        },
+        {
+          "dust_id": "dst_src_dcbf0bfdfd2f_228",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "스탠포드가 가진이 연결 조직은 솔…",
+          "excerpt": "스탠포드가 가진이 연결 조직은 솔직히 20:48 독보적입니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/AI_bulider_03_05.md",
+      "matched_segment_count": 6,
+      "scene_counts": {
+        "review": 5,
+        "impl": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 5
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 3,
+        "run": 2,
+        "fix": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 3
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 2
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "Press",
+          "count": 2
+        },
+        {
+          "value": "enter",
+          "count": 2
+        },
+        {
+          "value": "click",
+          "count": 2
+        },
+        {
+          "value": "view",
+          "count": 2
+        },
+        {
+          "value": "image",
+          "count": 2
+        },
+        {
+          "value": "full",
+          "count": 2
+        },
+        {
+          "value": "Methii",
+          "count": 1
+        },
+        {
+          "value": "그래프",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 43,
+        "user_layer_hint_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_397e8c0a6c54_019",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "Methii는 그래프 기반 학습 …",
+          "excerpt": "Methii는 그래프 기반 학습 캔버스 서비스입니다."
+        },
+        {
+          "dust_id": "dst_src_397e8c0a6c54_057",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "6개의 컨트롤러(Viewport,…",
+          "excerpt": "6개의 컨트롤러(Viewport, Drag, DropZone, Selection, StepDetach, Keyboard)가 사용자 인터랙션을 처리하고, 6종의 노드 렌더러가 각기 다른 시각적 표현을 가지고 있으며, 엣지 시스템은 베지어 곡선 경로 계산에 스프링 물리 기반의 흔들림(wo…"
+        },
+        {
+          "dust_id": "dst_src_397e8c0a6c54_184",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "Press enter or cli…",
+          "excerpt": "Press enter or click to view image in full size CLAUDE.md MCP 도구: 에이전트와의 접점 Baden은 MCP(Model Context Protocol)를 통해 에이전트와 연결됩니다."
+        },
+        {
+          "dust_id": "dst_src_397e8c0a6c54_188",
+          "scene": "review",
+          "flow": "fix",
+          "short_label": "이후 같은 작업의 모든 보고에 이…",
+          "excerpt": "이후 같은 작업의 모든 보고에 이 taskId가 포함되어, 하나의 지시에서 파생된 모든 행동이 하나의 체인으로 연결됩니다 baden_plan: 코드를 읽거나 수정하지 않더라도, 접근 방식을 결정하거나 계획을 세울 때 호출합니다."
+        },
+        {
+          "dust_id": "dst_src_397e8c0a6c54_220",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "태스크 체인과 갭 압축 Press…",
+          "excerpt": "태스크 체인과 갭 압축 Press enter or click to view image in full size 하나의 사용자 지시에서 시작된 모든 행동은 taskId로 연결됩니다."
+        },
+        {
+          "dust_id": "dst_src_397e8c0a6c54_221",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "타임라인에서는 이 연결이 L자형 …",
+          "excerpt": "타임라인에서는 이 연결이 L자형 연결선으로 시각화되어, 복잡한 작업에서도 인과 관계의 흐름을 놓치지 않습니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/saltlux_ai_summary.txt",
+      "matched_segment_count": 6,
+      "scene_counts": {
+        "review": 5,
+        "impl": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 5
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 4,
+        "break": 1,
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 4
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 1
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "데이터",
+          "count": 3
+        },
+        {
+          "value": "에이전틱",
+          "count": 2
+        },
+        {
+          "value": "LLM",
+          "count": 2
+        },
+        {
+          "value": "데이터를",
+          "count": 2
+        },
+        {
+          "value": "솔트룩스",
+          "count": 1
+        },
+        {
+          "value": "이경일",
+          "count": 1
+        },
+        {
+          "value": "온톨로지로",
+          "count": 1
+        },
+        {
+          "value": "완성되다",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "speaker_or_source_residue_anchor": 3,
+        "core_topic_anchor": 34,
+        "user_layer_hint_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_d10aff4b04be_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "솔트룩스 이경일 대표 강연 정리 …",
+          "excerpt": "솔트룩스 이경일 대표 강연 정리 \"공공 AX(AI 전환)와 에이전틱 AI — 온톨로지로 완성되다\" 1."
+        },
+        {
+          "dust_id": "dst_src_d10aff4b04be_010",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "왜 온톨로지인가?",
+          "excerpt": "왜 온톨로지인가?"
+        },
+        {
+          "dust_id": "dst_src_d10aff4b04be_011",
+          "scene": "impl",
+          "flow": "compare",
+          "short_label": "LLM의 근본적 한계: 벡터 임베…",
+          "excerpt": "LLM의 근본적 한계: 벡터 임베딩(2,000~3,000차원)으로는 숫자·정형 데이터를 정밀하게 표현 불가 확률 통계적 생성 방식 → 수치 데이터 오류 불가피 온톨로지의 역할: 아리스토텔레스의 프레디케이트 로직(2,400년 전)에서 출발한 의미적 지식 그래프 숫자·정형 데이터를 컨텍스…"
+        },
+        {
+          "dust_id": "dst_src_d10aff4b04be_013",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "❌ 기존 빅데이터: 모든 데이터를…",
+          "excerpt": "❌ 기존 빅데이터: 모든 데이터를 하나의 웨어하우스로 통합 → 대부분 실패 ✅ 팔란티어: 각 데이터 사일로를 유지하면서 온톨로지로 의미적 통합 (데이터 패브릭/매시업) 예: 미국 국방부의 위성·드론·항공모함·IoT 센서 데이터를 물리적으로 합치지 않고, 온톨로지 스니펫만 추출해 통합 …"
+        },
+        {
+          "dust_id": "dst_src_d10aff4b04be_015",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "공공 분야 적용 사례 서울 교통서…",
+          "excerpt": "공공 분야 적용 사례 서울 교통서 국민안전 GPT — 안전 법령 학습, 매뉴얼 없는 사고 상황 대응 원전 형상 관리 시스템 — 수만 가지 부품·법령 변경 사항 자동 관리 국립재난안전연구원 DIGPT — 기상·재난 정형 데이터 + 온톨로지 결합, 정확한 재난 분석 연세의료원 등 4개 병…"
+        },
+        {
+          "dust_id": "dst_src_d10aff4b04be_019",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "한 줄 요약: LLM + 온톨로지…",
+          "excerpt": "한 줄 요약: LLM + 온톨로지 + 에이전틱 AI의 결합이 공공 분야 업무 혁신의 핵심이며, 기술 도입보다 문제 정의와 빠른 실증이 먼저다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/basic1.md",
+      "matched_segment_count": 5,
+      "scene_counts": {
+        "evidence": 1,
+        "review": 4
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 4
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1,
+        "compare": 4
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 4
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "Google",
+          "count": 2
+        },
+        {
+          "value": "최승준",
+          "count": 1
+        },
+        {
+          "value": "결국에",
+          "count": 1
+        },
+        {
+          "value": "DeepMind",
+          "count": 1
+        },
+        {
+          "value": "팟캐스트에서",
+          "count": 1
+        },
+        {
+          "value": "하거나",
+          "count": 1
+        },
+        {
+          "value": "블로그",
+          "count": 1
+        },
+        {
+          "value": "포스팅",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "speaker_or_source_residue_anchor": 2,
+        "core_topic_anchor": 36,
+        "discourse_residue_anchor": 2
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_d111d91e8ce6_052",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "최승준: 결국에 이 Google …",
+          "excerpt": "최승준: 결국에 이 Google DeepMind 팟캐스트에서 하거나 블로그 포스팅 했었던 것도, 지금 이 방향이 과학이나 혁신으로 어떻게 연결이 자연스럽게 되느냐의 그 궤적을 좀 짚어주는 것 같아요."
+        },
+        {
+          "dust_id": "dst_src_d111d91e8ce6_097",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "멈추지 말고 만약에 막히면, 아이…",
+          "excerpt": "멈추지 말고 만약에 막히면, 아이디어가 막히면 페이퍼 읽고 오고 이 가설 세우고 실험해보고 저 가설 실험해보고, 나한테 계속 갈 거냐 물어보지 말고 계속해라라는 거가 마지막 주문인 것 같은데 그거를 실제로 성과를 보고 있는 것들이 여기에 그래프로 보이고 있죠."
+        },
+        {
+          "dust_id": "dst_src_d111d91e8ce6_147",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "생명과학하고 연결된 분이고, 그래…",
+          "excerpt": "생명과학하고 연결된 분이고, 그래서 이런 것들이 있었고 거기에서 사람들이, 저 포함하고 뭐 다른 분들도 마찬가지시겠지만 딥러닝을, 진원 님은 딥러닝 어떻게 시작하셨어요?"
+        },
+        {
+          "dust_id": "dst_src_d111d91e8ce6_230",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어쨌든 이런 궤적들은 Chris …",
+          "excerpt": "어쨌든 이런 궤적들은 Chris Olah가 결국에는 Anthropic의 공동 창립자 중에 한 명인데 Anthropic의 해석 가능성 연구에 Transformer Circuits의 포스팅 등으로도 계속 꾸준히 연결이 되고 있다."
+        },
+        {
+          "dust_id": "dst_src_d111d91e8ce6_392",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 Google이 hundre…",
+          "excerpt": "그런데 Google이 hundred million의 데이터, JFT라고 하는 Google이 오픈하지 않은 자기들만의 데이터가 있었는데 그 데이터를 그 정도 데이터를 넣으니까 성능이 올라가는 그래프를 보여줬어요."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/basic5.md",
+      "matched_segment_count": 5,
+      "scene_counts": {
+        "review": 5
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 5
+        }
+      ],
+      "flow_counts": {
+        "compare": 5
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 5
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "MoE",
+          "count": 3
+        },
+        {
+          "value": "굉장히",
+          "count": 2
+        },
+        {
+          "value": "그래프",
+          "count": 1
+        },
+        {
+          "value": "dense",
+          "count": 1
+        },
+        {
+          "value": "최승준",
+          "count": 1
+        },
+        {
+          "value": "그래프는",
+          "count": 1
+        },
+        {
+          "value": "어떻게",
+          "count": 1
+        },
+        {
+          "value": "읽어야",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 25,
+        "user_layer_hint_anchor": 1,
+        "speaker_or_source_residue_anchor": 2,
+        "discourse_residue_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_fda82879c57d_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "MoE 그래프 해설: dense …",
+          "excerpt": "MoE 그래프 해설: dense vs MoE, 연산 배수 04:34 04:34 최승준 이 그래프는 어떻게 읽어야 되는 건가요?"
+        },
+        {
+          "dust_id": "dst_src_fda82879c57d_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "04:40 김성현 사실 이 그래프…",
+          "excerpt": "04:40 김성현 사실 이 그래프를 넣을까 말까 굉장히 고민을 많이 했는데요."
+        },
+        {
+          "dust_id": "dst_src_fda82879c57d_006",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "이 그래프가 굉장히 중요하고 임팩…",
+          "excerpt": "이 그래프가 굉장히 중요하고 임팩트가 있는 게 밑에 있는 것이 학습 연산량이거든요."
+        },
+        {
+          "dust_id": "dst_src_fda82879c57d_034",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "소위 엣지 디바이스 같은 사례를 …",
+          "excerpt": "소위 엣지 디바이스 같은 사례를 제외하면 다 MoE 모델이고 GPT-OSS 같은 모델만 해도 상당히 희소한 MoE 모델이었습니다."
+        },
+        {
+          "dust_id": "dst_src_fda82879c57d_070",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "MoE와 연결돼서.",
+          "excerpt": "MoE와 연결돼서."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/claude_code_index.txt",
+      "matched_segment_count": 5,
+      "scene_counts": {
+        "spec": 2,
+        "review": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 3
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 4,
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 4
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "MCP",
+          "count": 4
+        },
+        {
+          "value": "연결하면",
+          "count": 2
+        },
+        {
+          "value": "서버를",
+          "count": 2
+        },
+        {
+          "value": "설명만으로",
+          "count": 1
+        },
+        {
+          "value": "토큰을",
+          "count": 1
+        },
+        {
+          "value": "소비하거든요",
+          "count": 1
+        },
+        {
+          "value": "마지막",
+          "count": 1
+        },
+        {
+          "value": "데모에서는이",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 34,
+        "discourse_residue_anchor": 1
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_d66188fa8217_308",
+          "scene": "spec",
+          "flow": "compare",
+          "short_label": "MCP를 여러 개를 연결하면 도구…",
+          "excerpt": "MCP를 여러 개를 연결하면 도구 설명만으로 토큰을 크게 35:19 소비하거든요."
+        },
+        {
+          "dust_id": "dst_src_d66188fa8217_446",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그리고 마지막 통합 데모에서는이 …",
+          "excerpt": "그리고 마지막 통합 데모에서는이 모든 것들을 하나의 51:22 워크플로우로 연결하는 걸 보여 드리겠습니다."
+        },
+        {
+          "dust_id": "dst_src_d66188fa8217_521",
+          "scene": "spec",
+          "flow": "compare",
+          "short_label": "MCP 서버를 56:54 연결하면…",
+          "excerpt": "MCP 서버를 56:54 연결하면 거기 있는 모든 도구의 설명이 시작할 때부터 올라갑니다."
+        },
+        {
+          "dust_id": "dst_src_d66188fa8217_525",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 MCP 서버를 많이 연결할…",
+          "excerpt": "그래서 MCP 서버를 많이 연결할수록 컨텍스트 부담이 커집니다."
+        },
+        {
+          "dust_id": "dst_src_d66188fa8217_860",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "1:23:24 코어드에게 책 db…",
+          "excerpt": "1:23:24 코어드에게 책 db 스크립트 실행해라고 하면 MCP 연결 없이 바로 실행이 되고 컨텍스트도 1:23:31 절략됩니다.이 전 섹션에서는 배시스크립트로 간단한 자동화를 봤죠."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/youtube_03_18.md",
+      "matched_segment_count": 5,
+      "scene_counts": {
+        "evidence": 1,
+        "review": 4
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 4
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1,
+        "compare": 4
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 4
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "아니면",
+          "count": 2
+        },
+        {
+          "value": "클라우드",
+          "count": 1
+        },
+        {
+          "value": "연결과",
+          "count": 1
+        },
+        {
+          "value": "라우팅",
+          "count": 1
+        },
+        {
+          "value": "신정규",
+          "count": 1
+        },
+        {
+          "value": "그다음에",
+          "count": 1
+        },
+        {
+          "value": "보시면",
+          "count": 1
+        },
+        {
+          "value": "종류의",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 33,
+        "speaker_or_source_residue_anchor": 1,
+        "discourse_residue_anchor": 3
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_373384e64ca1_078",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "## 클라우드 모델 연결과 분산 …",
+          "excerpt": "## 클라우드 모델 연결과 분산 라우팅 기능 신정규: 그다음에 여기 보시면 다른 종류의 모델들도 많이 있는데, 클라우드 모델들을 연결을 할 수도 있어요."
+        },
+        {
+          "dust_id": "dst_src_373384e64ca1_082",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "여러분들이 OpenAI를 쓰고 있…",
+          "excerpt": "여러분들이 OpenAI를 쓰고 있거나 Gemini나 아니면 Anthropic을 쓰고 있거나 로컬에서 Ollama나 LM Studio를 쓰고 있으면 이런 식으로 다 연결을 해서 쓸 수 있게 되어 있고요."
+        },
+        {
+          "dust_id": "dst_src_373384e64ca1_083",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "이렇게 연결한 게 어떻게 연결돼 …",
+          "excerpt": "이렇게 연결한 게 어떻게 연결돼 있는지 보실 수가 있어요."
+        },
+        {
+          "dust_id": "dst_src_373384e64ca1_089",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "아니면 좋은 컴퓨터나 워크스테이션…",
+          "excerpt": "아니면 좋은 컴퓨터나 워크스테이션을 사서 거기서 돌려서 여기서 연결할 수도 있고."
+        },
+        {
+          "dust_id": "dst_src_373384e64ca1_784",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 도메인에 있는 사람들이 이러한…",
+          "excerpt": "그 도메인에 있는 사람들이 이러한 AI나 그 시스템에 대한 지식을 배우는 것보다 이 AI 시스템과 이런 것들에 대한 지식이 많은 사람들이 도메인을 배우는 게 훨씬 빠를 거다라는 말씀하셔서, 지금 오히려 역설적이지만 컴퓨터 사이언스, CS 하는 게 좋지 않겠는가라는 말씀을 주셨었는데 그…"
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/alexkarp_youtube.txt",
+      "matched_segment_count": 4,
+      "scene_counts": {
+        "review": 3,
+        "impl": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 3
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 3,
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 3
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "당신은",
+          "count": 1
+        },
+        {
+          "value": "네트워크에",
+          "count": 1
+        },
+        {
+          "value": "연결조차",
+          "count": 1
+        },
+        {
+          "value": "않기도",
+          "count": 1
+        },
+        {
+          "value": "연결이",
+          "count": 1
+        },
+        {
+          "value": "완전히",
+          "count": 1
+        },
+        {
+          "value": "재명의",
+          "count": 1
+        },
+        {
+          "value": "지나가면서",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 25,
+        "discourse_residue_anchor": 1
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_d6c1d1eaacf6_074",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "당신은 네트워크에 직접 연결조차 …",
+          "excerpt": "당신은 네트워크에 직접 연결조차 돼 있지 않기도 하죠."
+        },
+        {
+          "dust_id": "dst_src_d6c1d1eaacf6_161",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "이건 연결이 완전히 끊겨 버린 그…",
+          "excerpt": "이건 연결이 완전히 끊겨 버린 그 꽉 막힌 재명의 늪을 뚫고 지나가면서 동시에 우리에게 필요한 13:3713분 37초데이터를 실시간으로 수집해 내야 하는 문제니까요."
+        },
+        {
+          "dust_id": "dst_src_d6c1d1eaacf6_186",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "하지만 그 거대한 하드웨어들이 다…",
+          "excerpt": "하지만 그 거대한 하드웨어들이 다 따로 15:1215분 12초노는게 문제였으니까 유기적으로 연결되어야만 했죠."
+        },
+        {
+          "dust_id": "dst_src_d6c1d1eaacf6_290",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "기업들이 우리가 온톨로지로 구현한…",
+          "excerpt": "기업들이 우리가 온톨로지로 구현한이 시스템을 아마도 일일이 손수 흉내내려 애쓰는 22:3322분 33초모습 말이죠."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/choi_ai_classroom_transformer2.txt",
+      "matched_segment_count": 3,
+      "scene_counts": {
+        "evidence": 1,
+        "review": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 2
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1,
+        "compare": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 2
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "연결이",
+          "count": 3
+        },
+        {
+          "value": "인코더",
+          "count": 1
+        },
+        {
+          "value": "시간에",
+          "count": 1
+        },
+        {
+          "value": "공부했던",
+          "count": 1
+        },
+        {
+          "value": "인코더의",
+          "count": 1
+        },
+        {
+          "value": "출력이",
+          "count": 1
+        },
+        {
+          "value": "디코더에",
+          "count": 1
+        },
+        {
+          "value": "어디론가",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 13,
+        "discourse_residue_anchor": 2
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e3eb90c967db_018",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "인코더 지난 시간에 공부했던 인코…",
+          "excerpt": "인코더 지난 시간에 공부했던 인코더의 최종 출력이 1:45 디코더에 어디론가 연결이 되죠?"
+        },
+        {
+          "dust_id": "dst_src_e3eb90c967db_019",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "예, 여기로 연결이 돼요.",
+          "excerpt": "예, 여기로 연결이 돼요."
+        },
+        {
+          "dust_id": "dst_src_e3eb90c967db_137",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그래서 이렇게 화살표가 연결이 된…",
+          "excerpt": "그래서 이렇게 화살표가 연결이 된 거예요."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/choi_ai_classroom_transformer1.txt",
+      "matched_segment_count": 2,
+      "scene_counts": {
+        "review": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "그림상으로",
+          "count": 1
+        },
+        {
+          "value": "쌓아서",
+          "count": 1
+        },
+        {
+          "value": "그리기가",
+          "count": 1
+        },
+        {
+          "value": "이상해서",
+          "count": 1
+        },
+        {
+          "value": "그렇게",
+          "count": 1
+        },
+        {
+          "value": "곱하기",
+          "count": 1
+        },
+        {
+          "value": "여기서",
+          "count": 1
+        },
+        {
+          "value": "마지막에",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 10,
+        "discourse_residue_anchor": 2
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_fa5563ccbffe_853",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "근데 그림상으로 이걸 쌓아서 그리…",
+          "excerpt": "근데 그림상으로 이걸 쌓아서 그리기가 좀 이상해서 그렇게 곱하기 한 거고 여기서 56:17 맨 마지막에 이렇게 쏙 나와서 이렇게 건너가는 거는 맨 끝끝 끝까지 올라가서 N층을 다 올라가서 디코더로 56:24 연결이 돼요."
+        },
+        {
+          "dust_id": "dst_src_fa5563ccbffe_854",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "중간에 뭐 이렇게 계속 연결되는 …",
+          "excerpt": "중간에 뭐 이렇게 계속 연결되는 거 아닙니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/codex_pipeline.md",
+      "matched_segment_count": 2,
+      "scene_counts": {
+        "review": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "comparison_summary.json",
+          "count": 1
+        },
+        {
+          "value": "comparison_summary.md",
+          "count": 1
+        },
+        {
+          "value": "stable.jsonl",
+          "count": 1
+        },
+        {
+          "value": "split.jsonl",
+          "count": 1
+        },
+        {
+          "value": "hidden_candidate.jsonl",
+          "count": 1
+        },
+        {
+          "value": "broken_link.jsonl",
+          "count": 1
+        },
+        {
+          "value": "broken_link",
+          "count": 1
+        },
+        {
+          "value": "처리자는",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 16
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_0fb74dc7d0cc_017",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "broken_link - 어떤 처…",
+          "excerpt": "broken_link - 어떤 처리자는 연결/anchor를 만들고 어떤 처리자는 못 만듦 리포트: - comparison_summary.json - comparison_summary.md - stable.jsonl - split.jsonl - hidden_candidate.jsonl …"
+        },
+        {
+          "dust_id": "dst_src_0fb74dc7d0cc_029",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "범위 제한 이번 턴에서는 절대 하…",
+          "excerpt": "범위 제한 이번 턴에서는 절대 하지 말 것: - viewer/UI - Replica core schema 변경 - DB 마이그레이션 - visualization - vectorfl_next 삽입 - replica 본 파이프라인 개조 --- ## 10."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/dario_amodei_youtube.txt",
+      "matched_segment_count": 2,
+      "scene_counts": {
+        "impl": 1,
+        "review": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 1
+        },
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1,
+        "compare": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        },
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "초그래프에다가",
+          "count": 1
+        },
+        {
+          "value": "함수선을",
+          "count": 1
+        },
+        {
+          "value": "그리면",
+          "count": 1
+        },
+        {
+          "value": "아니야라고",
+          "count": 1
+        },
+        {
+          "value": "말하는",
+          "count": 1
+        },
+        {
+          "value": "부류죠",
+          "count": 1
+        },
+        {
+          "value": "지점이",
+          "count": 1
+        },
+        {
+          "value": "우리가",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 12,
+        "discourse_residue_anchor": 1
+      },
+      "user_layer_hints": [],
+      "opening_summary": "구현/실행 층 중심, 작동/실행 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_a035180af9c1_131",
+          "scene": "impl",
+          "flow": "run",
+          "short_label": "12:2812분 28초그래프에다가…",
+          "excerpt": "12:2812분 28초그래프에다가 지수 함수선을 그리면 되는 거 아니야라고 말하는 부류죠."
+        },
+        {
+          "dust_id": "dst_src_a035180af9c1_276",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그 지점이 바로 우리가 앞서 이야…",
+          "excerpt": "그 지점이 바로 우리가 앞서 이야기했던 현장 도재식 학습이라는 화도로 다시 연결되는군요."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/openai_02_11.md",
+      "matched_segment_count": 2,
+      "scene_counts": {
+        "review": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "Chrome",
+          "count": 1
+        },
+        {
+          "value": "DevTools",
+          "count": 1
+        },
+        {
+          "value": "Protocol",
+          "count": 1
+        },
+        {
+          "value": "에이전트",
+          "count": 1
+        },
+        {
+          "value": "런타임에",
+          "count": 1
+        },
+        {
+          "value": "연결하고",
+          "count": 1
+        },
+        {
+          "value": "DOM",
+          "count": 1
+        },
+        {
+          "value": "스냅샷",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 16
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_445eaa8e17b3_037",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "또한 Chrome DevTools…",
+          "excerpt": "또한 Chrome DevTools Protocol을 에이전트 런타임에 연결하고 DOM 스냅샷, 스크린샷, 탐색 작업을 위한 스킬을 만들었습니다."
+        },
+        {
+          "dust_id": "dst_src_445eaa8e17b3_063",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "단일 블롭은 기계적 점검(커버리지…",
+          "excerpt": "단일 블롭은 기계적 점검(커버리지, 신선도, 소유권, 교차 연결)에 적합하지 않으므로 드리프트는 불가피합니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/youtube_01_28.md",
+      "matched_segment_count": 2,
+      "scene_counts": {
+        "review": 2
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 2
+        }
+      ],
+      "flow_counts": {
+        "compare": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 2
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "연결이",
+          "count": 1
+        },
+        {
+          "value": "MIDI",
+          "count": 1
+        },
+        {
+          "value": "디바이스를",
+          "count": 1
+        },
+        {
+          "value": "붙여서",
+          "count": 1
+        },
+        {
+          "value": "악보는",
+          "count": 1
+        },
+        {
+          "value": "아니지만",
+          "count": 1
+        },
+        {
+          "value": "비슷한",
+          "count": 1
+        },
+        {
+          "value": "그래픽",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 16
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_633a081b54fc_226",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그리고 또 연결이 되는 게 MID…",
+          "excerpt": "그리고 또 연결이 되는 게 MIDI 디바이스를 붙여서 악보는 아니지만 악보 비슷한 그래픽 스코어, 시각적으로 그거를 보여주는 걸 하면 좋겠다는 선생님의 아이디어가 있어서 제가 바이브 코딩을 해서 지원을 했었던 거죠."
+        },
+        {
+          "dust_id": "dst_src_633a081b54fc_283",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "승준님이 아이들에게 어떤 환경을 …",
+          "excerpt": "승준님이 아이들에게 어떤 환경을 주기 위해서 뭘 해야 된다는 것들을 하시고 예전에 저희가 사실 AI가 극강의 leverage가 되어서 모두가 평등해지는 그런 세상이 오면 얼마나 아름답겠는가 이런 얘기도 하셨고, 네, 이런 것들이 다 연결되어 있는 그런 생각이구나라는 생각이 듭니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/andrej_karpathy_youtube.txt",
+      "matched_segment_count": 1,
+      "scene_counts": {
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "세상에",
+          "count": 1
+        },
+        {
+          "value": "부분이",
+          "count": 1
+        },
+        {
+          "value": "자동화될",
+          "count": 1
+        },
+        {
+          "value": "우리가",
+          "count": 1
+        },
+        {
+          "value": "말하는",
+          "count": 1
+        },
+        {
+          "value": "초지능은",
+          "count": 1
+        },
+        {
+          "value": "그래프",
+          "count": 1
+        },
+        {
+          "value": "연장선",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 6,
+        "discourse_residue_anchor": 1,
+        "user_layer_hint_anchor": 1
+      },
+      "user_layer_hints": [
+        {
+          "layer": "구조/연결",
+          "count": 1
+        }
+      ],
+      "opening_summary": "근거/검증 층 중심, 작동/실행 흐름 우세, 주요 사용자 층위 힌트: 구조/연결",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_3914dec93046_253",
+          "scene": "evidence",
+          "flow": "run",
+          "short_label": "세상에 많은 부분이 점차 자동화될…",
+          "excerpt": "세상에 많은 부분이 점차 자동화될 16:53 테고 우리가 말하는 초지능은 저 그 그래프 연장선 끝에 있는 결과물일 뿐입니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/basic.md",
+      "matched_segment_count": 1,
+      "scene_counts": {
+        "review": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "CLAUDE.md",
+          "count": 1
+        },
+        {
+          "value": "인간과",
+          "count": 1
+        },
+        {
+          "value": "CLAUDE",
+          "count": 1
+        },
+        {
+          "value": "쓴다는",
+          "count": 1
+        },
+        {
+          "value": "인간의",
+          "count": 1
+        },
+        {
+          "value": "심리학적",
+          "count": 1
+        },
+        {
+          "value": "실행력",
+          "count": 1
+        },
+        {
+          "value": "연결하는",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 7,
+        "speaker_or_source_residue_anchor": 1
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 작동/실행 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_51a7f7b8a616_026",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "결론: 인간과 AI의 협업 모델 …",
+          "excerpt": "결론: 인간과 AI의 협업 모델 결국 CLAUDE.md를 잘 쓴다는 것은, 인간의 **'심리학적 통찰'**과 AI의 **'실행력'**을 연결하는 완벽한 인터페이스를 구축하는 일입니다."
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/enterprise.txt",
+      "matched_segment_count": 1,
+      "scene_counts": {
+        "review": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "사이오닉",
+          "count": 1
+        },
+        {
+          "value": "엔터프라이즈",
+          "count": 1
+        },
+        {
+          "value": "도입의",
+          "count": 1
+        },
+        {
+          "value": "사람들의",
+          "count": 1
+        },
+        {
+          "value": "변화시키는",
+          "count": 1
+        },
+        {
+          "value": "특별한",
+          "count": 1
+        },
+        {
+          "value": "방법을",
+          "count": 1
+        },
+        {
+          "value": "탐구하는",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 8
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 작동/실행 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_7d57c5f07c57_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "사이오닉 AI와 엔터프라이즈 AI…",
+          "excerpt": "사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 …"
+        }
+      ]
+    },
+    {
+      "input_path": "inputs/external_cases/youtube_03_22.md",
+      "matched_segment_count": 1,
+      "scene_counts": {
+        "review": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 1
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 1
+        }
+      ],
+      "top_anchor_values": [
+        {
+          "value": "API",
+          "count": 1
+        },
+        {
+          "value": "회사는",
+          "count": 1
+        },
+        {
+          "value": "연결하고",
+          "count": 1
+        },
+        {
+          "value": "CUA",
+          "count": 1
+        },
+        {
+          "value": "Computer",
+          "count": 1
+        },
+        {
+          "value": "Use",
+          "count": 1
+        },
+        {
+          "value": "Agent",
+          "count": 1
+        },
+        {
+          "value": "연결해",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 8
+      },
+      "user_layer_hints": [],
+      "opening_summary": "설명/해석 층 중심, 비교/해석 흐름 우세, 주요 사용자 층위 힌트: 명확한 사용자 층위 힌트 없음",
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_a03977f0adfa_249",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "API가 있는 회사는 API를 연…",
+          "excerpt": "API가 있는 회사는 API를 연결하고, 아닌 회사는 CUA, Computer Use Agent를 연결해 가지고 그냥 에뮬레이션을 하신 것 같아요."
+        }
+      ]
+    }
+  ]
+}

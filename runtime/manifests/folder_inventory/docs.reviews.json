@@ -1,0 +1,674 @@
+{
+  "folder_key": "docs.reviews",
+  "folder_path": "docs/reviews",
+  "parent_folder": "docs",
+  "child_folders": [],
+  "documents": [
+    {
+      "name": "auto_hint_generation_v0.md",
+      "path": "docs/reviews/auto_hint_generation_v0.md",
+      "suffix": ".md",
+      "size": 4817,
+      "mtime_ns": 1775471666860235131,
+      "title": "Auto Hint Generation v0",
+      "summary": "이 문서는 [source_to_family_hints_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/source_to_family_hints_v0.md) 의 수동 hint 예시를 어떤 규칙으로 자동 생성할 수 있는지 정한다."
+    },
+    {
+      "name": "bounded_functional_space_candidates_v0.md",
+      "path": "docs/reviews/bounded_functional_space_candidates_v0.md",
+      "suffix": ".md",
+      "size": 11443,
+      "mtime_ns": 1775469272822792103,
+      "title": "Bounded Functional Space Candidates v0",
+      "summary": "이 문서는 현재 메인 공간 안에서 `bounded functional space` 후보를 1차로 뽑는다."
+    },
+    {
+      "name": "bounded_functional_space_instances_v0.md",
+      "path": "docs/reviews/bounded_functional_space_instances_v0.md",
+      "suffix": ".md",
+      "size": 11746,
+      "mtime_ns": 1775469423537767960,
+      "title": "Bounded Functional Space Instances v0",
+      "summary": "이 문서는 [bounded_functional_space_schema_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/bounded_functional_space_schema_v0.md) 를 기준으로 현재 가장 강한 후보 네 개를 실제 instance처럼 채운다."
+    },
+    {
+      "name": "bounded_functional_space_schema_v0.md",
+      "path": "docs/reviews/bounded_functional_space_schema_v0.md",
+      "suffix": ".md",
+      "size": 5303,
+      "mtime_ns": 1775469423537553680,
+      "title": "Bounded Functional Space Schema v0",
+      "summary": "이 문서는 `bounded functional space` 를 현재 VectorFL 메인 공간 안에서 실제로 기술하기 위한 최소 공통 스키마를 고정한다."
+    },
+    {
+      "name": "classifier_adapter_stub_v0.md",
+      "path": "docs/reviews/classifier_adapter_stub_v0.md",
+      "suffix": ".md",
+      "size": 1672,
+      "mtime_ns": 1775472834169006676,
+      "title": "Classifier Adapter Stub v0",
+      "summary": "이 문서는 saved hint와 optional reentry prebias를 받아 최종 `family / projection / route`를 다시 고르는 최소 classifier adapter를 고정한다."
+    },
+    {
+      "name": "classifier_priority_policy_v0.md",
+      "path": "docs/reviews/classifier_priority_policy_v0.md",
+      "suffix": ".md",
+      "size": 4650,
+      "mtime_ns": 1775470303454121632,
+      "title": "Classifier Priority Policy v0",
+      "summary": "이 문서는 [issue_root_classifier_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/issue_root_classifier_v0.json) 안의 rule이 겹치거나 충돌할 때 무엇을 우선 적용할지 정한다."
+    },
+    {
+      "name": "cleanup_freeze_boundary_v1.md",
+      "path": "docs/reviews/cleanup_freeze_boundary_v1.md",
+      "suffix": ".md",
+      "size": 4726,
+      "mtime_ns": 1775375409632267047,
+      "title": "Cleanup Freeze Boundary v1",
+      "summary": "이 문서는 현재 공간 정리를 어디서 멈출지 잠근다."
+    },
+    {
+      "name": "compare_candidate_enrichment_candidate_boundary_hardening_v2.md",
+      "path": "docs/reviews/compare_candidate_enrichment_candidate_boundary_hardening_v2.md",
+      "suffix": ".md",
+      "size": 4664,
+      "mtime_ns": 1774747998510076186,
+      "title": "compare candidate enrichment candidate boundary hardening v2",
+      "summary": "현재 `compare candidate enrichment`는 여전히 **proposal 이전 단계의 candidate**로만 다루는 것이 맞다."
+    },
+    {
+      "name": "compare_candidate_enrichment_counter_read_review_v1.md",
+      "path": "docs/reviews/compare_candidate_enrichment_counter_read_review_v1.md",
+      "suffix": ".md",
+      "size": 6517,
+      "mtime_ns": 1774749229815552000,
+      "title": "compare candidate enrichment counter-read review v1",
+      "summary": "이번 counter-read 기준에서도 `compare candidate thin relation`은 단순 baseline restraint로만 닫기엔 아쉬움이 남고, 그렇다고 곧바로 proposal 본안으로 올리기엔 아직 보수 검토가 더 필요한 상태다."
+    },
+    {
+      "name": "compare_candidate_enrichment_proposal_precondition_note_v1.md",
+      "path": "docs/reviews/compare_candidate_enrichment_proposal_precondition_note_v1.md",
+      "suffix": ".md",
+      "size": 5328,
+      "mtime_ns": 1774748913570356253,
+      "title": "compare candidate enrichment proposal precondition note v1",
+      "summary": "`compare candidate enrichment`는 아직 proposal 본안으로 넘어가기보다, 그 전에 충족되어야 할 **precondition**을 명시적으로 잠그는 단계가 맞다."
+    },
+    {
+      "name": "compare_candidate_enrichment_proposal_precondition_note_v2.md",
+      "path": "docs/reviews/compare_candidate_enrichment_proposal_precondition_note_v2.md",
+      "suffix": ".md",
+      "size": 5282,
+      "mtime_ns": 1774749109391697061,
+      "title": "compare candidate enrichment proposal precondition note v2",
+      "summary": "`compare candidate enrichment`는 여전히 **proposal precondition 단계에 1회 더 머무는 것이 맞다**."
+    },
+    {
+      "name": "compare_candidate_enrichment_proposal_readiness_memo_v1.md",
+      "path": "docs/reviews/compare_candidate_enrichment_proposal_readiness_memo_v1.md",
+      "suffix": ".md",
+      "size": 5193,
+      "mtime_ns": 1774749386769105609,
+      "title": "compare candidate enrichment proposal readiness memo v1",
+      "summary": "`compare candidate enrichment`는 이제 **proposal 초안 준비 가능** 단계로 본다."
+    },
+    {
+      "name": "compare_candidate_enrichment_track_closure_and_parking_package_v1.md",
+      "path": "docs/reviews/compare_candidate_enrichment_track_closure_and_parking_package_v1.md",
+      "suffix": ".md",
+      "size": 12619,
+      "mtime_ns": 1774752991678824309,
+      "title": "compare candidate enrichment track closure and parking package v1",
+      "summary": "판정: - **park compare candidate enrichment track at current ceiling**"
+    },
+    {
+      "name": "compare_candidate_panel_v1_promotion_judgment.md",
+      "path": "docs/reviews/compare_candidate_panel_v1_promotion_judgment.md",
+      "suffix": ".md",
+      "size": 4585,
+      "mtime_ns": 1774746954819843858,
+      "title": "compare candidate panel v1 promotion judgment",
+      "summary": "아직 guarded extension 유지."
+    },
+    {
+      "name": "dialogue_loop_generated_condensation_candidates_v1.md",
+      "path": "docs/reviews/dialogue_loop_generated_condensation_candidates_v1.md",
+      "suffix": ".md",
+      "size": 4264,
+      "mtime_ns": 1775352206882532682,
+      "title": "Dialogue Loop Generated Condensation Candidates v1",
+      "summary": "이 문서는 [app/work/dialogue_loop_test/generated](/Users/sungsookim/universe/vectorfl_replica/app/work/dialogue_loop_test/generated) 안의 반복 family를"
+    },
+    {
+      "name": "engine_side_compare_candidate_enrichment_candidate_note_v1.md",
+      "path": "docs/reviews/engine_side_compare_candidate_enrichment_candidate_note_v1.md",
+      "suffix": ".md",
+      "size": 5805,
+      "mtime_ns": 1774747886029909177,
+      "title": "engine-side compare candidate enrichment candidate note v1",
+      "summary": "`compare candidate thin relation`은 현재 시점에서 **future proposal 이전 단계의 engine-side candidate**로 정리할 가치가 있다."
+    },
+    {
+      "name": "entry_coverage_check_v0.md",
+      "path": "docs/reviews/entry_coverage_check_v0.md",
+      "suffix": ".md",
+      "size": 6296,
+      "mtime_ns": 1775471533158408638,
+      "title": "Entry Coverage Check v0",
+      "summary": "이 문서는 지금까지 만든 세 demo case를 한 장에서 비교한다."
+    },
+    {
+      "name": "entry_execution_loop_v0.md",
+      "path": "docs/reviews/entry_execution_loop_v0.md",
+      "suffix": ".md",
+      "size": 7731,
+      "mtime_ns": 1775470614078454887,
+      "title": "Entry Execution Loop v0",
+      "summary": "이 문서는 지금까지 만든 구조를 실제 한 번의 운용 루프로 묶는다."
+    },
+    {
+      "name": "entry_prebias_policy_v0.md",
+      "path": "docs/reviews/entry_prebias_policy_v0.md",
+      "suffix": ".md",
+      "size": 4352,
+      "mtime_ns": 1775471135698146446,
+      "title": "Entry Prebias Policy v0",
+      "summary": "이 문서는 classifier 이전 단계에서 `source-to-family hints` 와 `family-rooted alias` 가 어떻게 first entry를 기울이는지 정한다."
+    },
+    {
+      "name": "family_cross_handoff_case_v0.md",
+      "path": "docs/reviews/family_cross_handoff_case_v0.md",
+      "suffix": ".md",
+      "size": 4767,
+      "mtime_ns": 1775472084842617074,
+      "title": "Family Cross Handoff Case v0",
+      "summary": "이 문서는 [family_cross_handoff_demo_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/family_cross_handoff_demo_v0.md) 의 원칙을 실제 사례 하나로 고정한다."
+    },
+    {
+      "name": "family_cross_handoff_demo_v0.md",
+      "path": "docs/reviews/family_cross_handoff_demo_v0.md",
+      "suffix": ".md",
+      "size": 3814,
+      "mtime_ns": 1775471972937183556,
+      "title": "Family Cross Handoff Demo v0",
+      "summary": "이 문서는 각 family 내부 demo를 넘어서 한 family의 residue 또는 question shift가 다음 family entry를 여는 handoff 사례를 적는다."
+    },
+    {
+      "name": "family_invariants_and_routes_v0.md",
+      "path": "docs/reviews/family_invariants_and_routes_v0.md",
+      "suffix": ".md",
+      "size": 8954,
+      "mtime_ns": 1775469646576290178,
+      "title": "Family Invariants And Routes v0",
+      "summary": "이 문서는 현재 상위 family 세 개에 대해 `root invariant` 와 `route signature` 를 실제 값으로 채운다."
+    },
+    {
+      "name": "family_rooted_signal_grammar_v0.md",
+      "path": "docs/reviews/family_rooted_signal_grammar_v0.md",
+      "suffix": ".md",
+      "size": 3629,
+      "mtime_ns": 1775470950208640088,
+      "title": "Family-Rooted Signal Grammar v0",
+      "summary": "이 문서는 [signal_kind_taxonomy_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/signal_kind_taxonomy_v0.md) 의 signal vocabulary를 조금 더 family-rooted하게 바꾸기 위한 중간 단계다."
+    },
+    {
+      "name": "flow_candidate_detection_loop_v0.md",
+      "path": "docs/reviews/flow_candidate_detection_loop_v0.md",
+      "suffix": ".md",
+      "size": 2398,
+      "mtime_ns": 1775473650241753540,
+      "title": "Flow Candidate Detection Loop v0",
+      "summary": "이 문서는 현재 prototype execution spine 위에 bounded flow candidate detection loop를 어떻게 얹는지 정리한다."
+    },
+    {
+      "name": "flow_candidate_first_observation_report_v0.md",
+      "path": "docs/reviews/flow_candidate_first_observation_report_v0.md",
+      "suffix": ".md",
+      "size": 4398,
+      "mtime_ns": 1775473764646955383,
+      "title": "Flow Candidate First Observation Report v0",
+      "summary": "이 문서는 현재 [execution_trace_log_v0.jsonl](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/execution_trace_log_v0.jsonl)를 기준으로 처음 관찰된 repeated pattern을 짧게 정리한다."
+    },
+    {
+      "name": "full_entry_chain_stub_v0.md",
+      "path": "docs/reviews/full_entry_chain_stub_v0.md",
+      "suffix": ".md",
+      "size": 1951,
+      "mtime_ns": 1775472636761024589,
+      "title": "Full Entry Chain Stub v0",
+      "summary": "이 문서는 현재 prototype chain에서 classifier까지 실제로 붙이는 최소 통합 stub를 고정한다."
+    },
+    {
+      "name": "full_entry_reentry_chain_execution_check_v0.md",
+      "path": "docs/reviews/full_entry_reentry_chain_execution_check_v0.md",
+      "suffix": ".md",
+      "size": 2754,
+      "mtime_ns": 1775472872219148908,
+      "title": "Full Entry Reentry Chain Execution Check v0",
+      "summary": "이 문서는 `auto hint -> optional reentry prebias -> classifier` 까지 이어지는 현재 full chain을 실행 결과 기준으로 짧게 정리한다."
+    },
+    {
+      "name": "general_line_vs_flow_candidate_v0.md",
+      "path": "docs/reviews/general_line_vs_flow_candidate_v0.md",
+      "suffix": ".md",
+      "size": 2559,
+      "mtime_ns": 1775473650241646418,
+      "title": "General Line vs Flow Candidate v0",
+      "summary": "이 문서는 현재 VectorFL에서 `general line` 과 `flow candidate` 를 왜 분리해야 하는지 실행 spine 기준으로 실무적으로 정리한다."
+    },
+    {
+      "name": "generated_retention_map_v1.md",
+      "path": "docs/reviews/generated_retention_map_v1.md",
+      "suffix": ".md",
+      "size": 7215,
+      "mtime_ns": 1775375404640457462,
+      "title": "Generated Retention Map v1",
+      "summary": "이 문서는 generated / manifest / log 자산을"
+    },
+    {
+      "name": "git_search_product_registry_v1.md",
+      "path": "docs/reviews/git_search_product_registry_v1.md",
+      "suffix": ".md",
+      "size": 9077,
+      "mtime_ns": 1775384128657351414,
+      "title": "Git Search Product Registry v1",
+      "summary": "이 문서는 `references/git_search/*` 를 폴더 구조가 아니라 제품 기능 기준으로 읽는다."
+    },
+    {
+      "name": "hint_generation_adapter_stub_v0.md",
+      "path": "docs/reviews/hint_generation_adapter_stub_v0.md",
+      "suffix": ".md",
+      "size": 2222,
+      "mtime_ns": 1775471972936926813,
+      "title": "Hint Generation Adapter Stub v0",
+      "summary": "이 문서는 [auto_hint_generation_rules_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/auto_hint_generation_rules_v0.json) 을 실제로 읽어 artifact에서 hint candidate를 뽑는 최소 실행 stub를 고정한다."
+    },
+    {
+      "name": "issue_root_classifier_registry_v0.md",
+      "path": "docs/reviews/issue_root_classifier_registry_v0.md",
+      "suffix": ".md",
+      "size": 2073,
+      "mtime_ns": 1775471135698980957,
+      "title": "Issue Root Classifier Registry v0",
+      "summary": "이 문서는 [issue_root_classifier_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/issue_root_classifier_v0.json) 을 현재 issue-root entry classifier의 첫 registry로 고정한다."
+    },
+    {
+      "name": "issue_root_classifier_v0.md",
+      "path": "docs/reviews/issue_root_classifier_v0.md",
+      "suffix": ".md",
+      "size": 6034,
+      "mtime_ns": 1775470078124896636,
+      "title": "Issue Root Classifier v0",
+      "summary": "이 문서는 새 `issue-root` 또는 입력 신호가 들어왔을 때 처음으로 어느 family / projection / route로 보내야 하는지 정하는 최소 classifier 규칙을 고정한다."
+    },
+    {
+      "name": "line_first_cleanup_map_v1.md",
+      "path": "docs/reviews/line_first_cleanup_map_v1.md",
+      "suffix": ".md",
+      "size": 15925,
+      "mtime_ns": 1775374761017783745,
+      "title": "line_first_cleanup_map_v1",
+      "summary": "이 문서는 공간 정리를 `삭제` 기준이 아니라 `line` 기준으로 다시 시작하기 위한 기준면이다."
+    },
+    {
+      "name": "line_guided_work_packet_manifest_v0.md",
+      "path": "docs/reviews/line_guided_work_packet_manifest_v0.md",
+      "suffix": ".md",
+      "size": 2470,
+      "mtime_ns": 1775385489344965434,
+      "title": "Line-Guided Work Packet Manifest v0",
+      "summary": "이 문서는 [line_guided_work_packets.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_guided_work_packets.json) 을 `translation only` 수준의 첫 manifest로 고정한다."
+    },
+    {
+      "name": "line_guided_work_packet_v1.md",
+      "path": "docs/reviews/line_guided_work_packet_v1.md",
+      "suffix": ".md",
+      "size": 8316,
+      "mtime_ns": 1775385344803469661,
+      "title": "Line-Guided Work Packet v1",
+      "summary": "이 문서는 `line-guided work packet` 을 Ralph overlay, Paperclip line-guided prototype, 그리고 이후 ingress/control-plane 실험이 함께 쓸 수 있는 공통 객체로 정의한다."
+    },
+    {
+      "name": "line_only_traceability_check_v0.md",
+      "path": "docs/reviews/line_only_traceability_check_v0.md",
+      "suffix": ".md",
+      "size": 5930,
+      "mtime_ns": 1775470814884966425,
+      "title": "Line-Only Traceability Check v0",
+      "summary": "이 문서는 [loop_demo_case_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/loop_demo_case_v0.md) 를 기준으로 이번 구조가 정말 `line`만으로 추적 가능한지 점검한다."
+    },
+    {
+      "name": "loop_demo_case_readout_v0.md",
+      "path": "docs/reviews/loop_demo_case_readout_v0.md",
+      "suffix": ".md",
+      "size": 7020,
+      "mtime_ns": 1775471436991269835,
+      "title": "Loop Demo Case Readout v0",
+      "summary": "이 문서는 [entry_execution_loop_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/entry_execution_loop_v0.md) 의 operator/readout 계열 적용 사례를 고정한다."
+    },
+    {
+      "name": "loop_demo_case_transition_v0.md",
+      "path": "docs/reviews/loop_demo_case_transition_v0.md",
+      "suffix": ".md",
+      "size": 7343,
+      "mtime_ns": 1775471300433311380,
+      "title": "Loop Demo Case Transition v0",
+      "summary": "이 문서는 [entry_execution_loop_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/entry_execution_loop_v0.md) 의 transition 계열 적용 사례를 고정한다."
+    },
+    {
+      "name": "loop_demo_case_v0.md",
+      "path": "docs/reviews/loop_demo_case_v0.md",
+      "suffix": ".md",
+      "size": 7597,
+      "mtime_ns": 1775470814884732125,
+      "title": "Loop Demo Case v0",
+      "summary": "이 문서는 [entry_execution_loop_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reviews/entry_execution_loop_v0.md)의 구조를 실제 한 케이스에 통과시켜 본다."
+    },
+    {
+      "name": "natural_live_compare_panel_observation_v1.md",
+      "path": "docs/reviews/natural_live_compare_panel_observation_v1.md",
+      "suffix": ".md",
+      "size": 5044,
+      "mtime_ns": 1774747135995772408,
+      "title": "natural live compare panel observation v1",
+      "summary": "이번 observation 기준에서도 `compare candidate panel v1`은 **guarded extension 유지**가 맞다."
+    },
+    {
+      "name": "operating_ui_compression_pattern_and_exception_package_v1.md",
+      "path": "docs/reviews/operating_ui_compression_pattern_and_exception_package_v1.md",
+      "suffix": ".md",
+      "size": 10162,
+      "mtime_ns": 1774753525425091971,
+      "title": "operating ui compression pattern and exception package v1",
+      "summary": "판정: - **hold compression discipline as working observation pattern**"
+    },
+    {
+      "name": "operating_ui_payload_adapter_adequacy_review_v1.md",
+      "path": "docs/reviews/operating_ui_payload_adapter_adequacy_review_v1.md",
+      "suffix": ".md",
+      "size": 8778,
+      "mtime_ns": 1774747392629713498,
+      "title": "operating ui payload / adapter adequacy review v1",
+      "summary": "현재 `process-console payload -> OperatingUiPayloadAdapter -> read-only operating shell` 경로는 **v1 baseline을 지탱하기에는 충분하다**."
+    },
+    {
+      "name": "operating_ui_payload_model_observation_package_v2.md",
+      "path": "docs/reviews/operating_ui_payload_model_observation_package_v2.md",
+      "suffix": ".md",
+      "size": 13027,
+      "mtime_ns": 1774753340279659000,
+      "title": "operating ui payload/model observation package v2",
+      "summary": "판정: - **keep broader payload/model observation as current main mode**"
+    },
+    {
+      "name": "operating_ui_post_compare_refocus_package_v1.md",
+      "path": "docs/reviews/operating_ui_post_compare_refocus_package_v1.md",
+      "suffix": ".md",
+      "size": 12148,
+      "mtime_ns": 1774753168998022579,
+      "title": "operating ui post compare refocus package v1",
+      "summary": "판정: - **continue broader payload/model observation without promoting a new candidate track yet**"
+    },
+    {
+      "name": "operating_ui_thinness_observation_ledger_v1.md",
+      "path": "docs/reviews/operating_ui_thinness_observation_ledger_v1.md",
+      "suffix": ".md",
+      "size": 5999,
+      "mtime_ns": 1774747545261737117,
+      "title": "operating ui thinness observation ledger v1",
+      "summary": "현재 operating UI의 얇음은 대체로 **baseline 절제로서 건강한 얇음**이 많다."
+    },
+    {
+      "name": "operating_ui_watchpoint_observation_v2.md",
+      "path": "docs/reviews/operating_ui_watchpoint_observation_v2.md",
+      "suffix": ".md",
+      "size": 5176,
+      "mtime_ns": 1774747663810631915,
+      "title": "operating ui watchpoint observation v2",
+      "summary": "이번 natural live observation v2 기준에서도 세 watchpoint 모두를 즉시 enrichment proposal로 올리기보다는 **observation 유지**가 맞다."
+    },
+    {
+      "name": "paperclip_absorption_overlay_v1.md",
+      "path": "docs/reviews/paperclip_absorption_overlay_v1.md",
+      "suffix": ".md",
+      "size": 8516,
+      "mtime_ns": 1775384676410853902,
+      "title": "Paperclip Absorption Overlay v1",
+      "summary": "이 문서는 `paperclip-master` 를 우리 공간 위에 다시 구현하는 문서가 아니다."
+    },
+    {
+      "name": "paperclip_line_guided_prototype_v1.md",
+      "path": "docs/reviews/paperclip_line_guided_prototype_v1.md",
+      "suffix": ".md",
+      "size": 6315,
+      "mtime_ns": 1775385197859476219,
+      "title": "Paperclip Line-Guided Prototype v1",
+      "summary": "이 prototype은 Paperclip를 우리 공간으로 대체하지 않는다."
+    },
+    {
+      "name": "paperclip_structural_fit_for_vectorfl_v0.md",
+      "path": "docs/reviews/paperclip_structural_fit_for_vectorfl_v0.md",
+      "suffix": ".md",
+      "size": 10562,
+      "mtime_ns": 1775552838770463505,
+      "title": "Paperclip Structural Fit for VectorFL v0",
+      "summary": "이 문서는 [paperclip-master](/Users/sungsookim/universe/vectorfl_replica/references/git_search/paperclip-master) 를 기능 / 구조 / 철학 기준으로 다시 읽고, 그 구조를 현재 VectorFL 공간에 `입력기 / 라인생성기 / 라인해석기 / 라인점검기 / 라인추출기`"
+    },
+    {
+      "name": "projection_line_schema_v0.md",
+      "path": "docs/reviews/projection_line_schema_v0.md",
+      "suffix": ".md",
+      "size": 4487,
+      "mtime_ns": 1775469960009121686,
+      "title": "Projection Line Schema v0",
+      "summary": "이 문서는 `projection_line` 을 family invariant와 route signature 사이를 잇는 실제 객체로 정의한다."
+    },
+    {
+      "name": "projection_registry_v0.md",
+      "path": "docs/reviews/projection_registry_v0.md",
+      "suffix": ".md",
+      "size": 2086,
+      "mtime_ns": 1775469960009474176,
+      "title": "Projection Registry v0",
+      "summary": "이 문서는 [projection_registry_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/projection_registry_v0.json) 을 현재 family 기반 projection의 첫 registry로 고정한다."
+    },
+    {
+      "name": "projection_selection_policy_v0.md",
+      "path": "docs/reviews/projection_selection_policy_v0.md",
+      "suffix": ".md",
+      "size": 5512,
+      "mtime_ns": 1775470527256252618,
+      "title": "Projection Selection Policy v0",
+      "summary": "이 문서는 family 안에서 어떤 `projection_line` 을 먼저 볼지에 대한 최소 selection policy를 고정한다."
+    },
+    {
+      "name": "prototype_execution_spine_stub_v0.md",
+      "path": "docs/reviews/prototype_execution_spine_stub_v0.md",
+      "suffix": ".md",
+      "size": 1749,
+      "mtime_ns": 1775472834169209423,
+      "title": "Prototype Execution Spine Stub v0",
+      "summary": "이 문서는 auto hint generation, residue-backed reentry, classifier selection을 한 번의 흐름으로 묶는 최소 실행 stub를 고정한다."
+    },
+    {
+      "name": "prototype_execution_spine_v0.md",
+      "path": "docs/reviews/prototype_execution_spine_v0.md",
+      "suffix": ".md",
+      "size": 5497,
+      "mtime_ns": 1775472507395240025,
+      "title": "Prototype Execution Spine v0",
+      "summary": "이 문서는 지금까지 만든 최소 adapter chain을 한 장의 실행 spine으로 묶는다."
+    },
+    {
+      "name": "ralph_overlay_prototype_v1.md",
+      "path": "docs/reviews/ralph_overlay_prototype_v1.md",
+      "suffix": ".md",
+      "size": 6997,
+      "mtime_ns": 1775384116505121822,
+      "title": "Ralph Overlay Prototype v1",
+      "summary": "이 문서는 `references/git_search/ralph-main` 를 기능 기준으로 읽고, 그 제품 위에 우리 공간을 덧씌우는 것이 아니라 우리 공간을 바닥 커널로 두고 Ralph의 loop shell만 빌려오는 prototype 구성을 정의한다."
+    },
+    {
+      "name": "reentry_prebias_adapter_stub_v0.md",
+      "path": "docs/reviews/reentry_prebias_adapter_stub_v0.md",
+      "suffix": ".md",
+      "size": 1555,
+      "mtime_ns": 1775472273755314095,
+      "title": "Reentry Prebias Adapter Stub v0",
+      "summary": "이 문서는 이전 residue bias와 새 artifact hint를 함께 읽어 reentry prebias를 출력하는 최소 실행 stub를 고정한다."
+    },
+    {
+      "name": "reentry_prebias_execution_check_v0.md",
+      "path": "docs/reviews/reentry_prebias_execution_check_v0.md",
+      "suffix": ".md",
+      "size": 2728,
+      "mtime_ns": 1775472385574376272,
+      "title": "Reentry Prebias Execution Check v0",
+      "summary": "이 문서는 [run_reentry_prebias_stub.py](/Users/sungsookim/universe/vectorfl_replica/scripts/run_reentry_prebias_stub.py) 를 실제로 돌린 두 방향의 결과를 간단히 정리한다."
+    },
+    {
+      "name": "residue_backed_reentry_rule_v0.md",
+      "path": "docs/reviews/residue_backed_reentry_rule_v0.md",
+      "suffix": ".md",
+      "size": 4662,
+      "mtime_ns": 1775472171452071484,
+      "title": "Residue-Backed Reentry Rule v0",
+      "summary": "이 문서는 현재 family에서 남은 residue가 다음 entry에서 어떤 family/projection/route bias를 만들 수 있는지 정한다."
+    },
+    {
+      "name": "root_family_invariant_schema_v0.md",
+      "path": "docs/reviews/root_family_invariant_schema_v0.md",
+      "suffix": ".md",
+      "size": 3917,
+      "mtime_ns": 1775469646575885402,
+      "title": "Root Family Invariant Schema v0",
+      "summary": "이 문서는 `same-root` 판정을 위해 line family가 공통으로 가져야 하는 invariant 스키마를 고정한다."
+    },
+    {
+      "name": "route_registry_v0.md",
+      "path": "docs/reviews/route_registry_v0.md",
+      "suffix": ".md",
+      "size": 1844,
+      "mtime_ns": 1775469767538194766,
+      "title": "Route Registry v0",
+      "summary": "이 문서는 [route_registry_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/route_registry_v0.json) 을 현재 family 기반 route의 첫 registry로 고정한다."
+    },
+    {
+      "name": "route_selection_policy_v0.md",
+      "path": "docs/reviews/route_selection_policy_v0.md",
+      "suffix": ".md",
+      "size": 5452,
+      "mtime_ns": 1775469831964334288,
+      "title": "Route Selection Policy v0",
+      "summary": "이 문서는 [route_registry_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/route_registry_v0.json) 에 들어 있는 route들 중 현재 어떤 route를 먼저 고를지에 대한 최소 selection policy를 고정한다."
+    },
+    {
+      "name": "route_signature_schema_v0.md",
+      "path": "docs/reviews/route_signature_schema_v0.md",
+      "suffix": ".md",
+      "size": 3311,
+      "mtime_ns": 1775469646576062660,
+      "title": "Route Signature Schema v0",
+      "summary": "이 문서는 line family 내부의 route를 기술하기 위한 최소 `route signature` 스키마를 고정한다."
+    },
+    {
+      "name": "signal_generation_sources_registry_v0.md",
+      "path": "docs/reviews/signal_generation_sources_registry_v0.md",
+      "suffix": ".md",
+      "size": 1482,
+      "mtime_ns": 1775470400823126500,
+      "title": "Signal Generation Sources Registry v0",
+      "summary": "이 문서는 [signal_generation_sources_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/signal_generation_sources_v0.json) 을 현재 signal source registry로 고정한다."
+    },
+    {
+      "name": "signal_generation_sources_v0.md",
+      "path": "docs/reviews/signal_generation_sources_v0.md",
+      "suffix": ".md",
+      "size": 4727,
+      "mtime_ns": 1775470400822641782,
+      "title": "Signal Generation Sources v0",
+      "summary": "이 문서는 어떤 runtime/work artifact와 surface가 어떤 `signal_kind` 를 생성하거나 강하게 시사하는지 연결한다."
+    },
+    {
+      "name": "signal_kind_taxonomy_registry_v0.md",
+      "path": "docs/reviews/signal_kind_taxonomy_registry_v0.md",
+      "suffix": ".md",
+      "size": 1538,
+      "mtime_ns": 1775470201073964794,
+      "title": "Signal Kind Taxonomy Registry v0",
+      "summary": "이 문서는 [signal_kind_taxonomy_v0.json](/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/signal_kind_taxonomy_v0.json) 을 현재 classifier 입력 신호의 첫 taxonomy registry로 고정한다."
+    },
+    {
+      "name": "signal_kind_taxonomy_v0.md",
+      "path": "docs/reviews/signal_kind_taxonomy_v0.md",
+      "suffix": ".md",
+      "size": 5766,
+      "mtime_ns": 1775470950209350087,
+      "title": "Signal Kind Taxonomy v0",
+      "summary": "이 문서는 `issue_root_classifier_v0` 가 사용하는 `signal_kind` 를 더 체계적으로 정리한다."
+    },
+    {
+      "name": "source_to_family_hints_v0.md",
+      "path": "docs/reviews/source_to_family_hints_v0.md",
+      "suffix": ".md",
+      "size": 4151,
+      "mtime_ns": 1775470950208829723,
+      "title": "Source-to-Family Hints v0",
+      "summary": "이 문서는 artifact가 classifier 이전에 직접 남길 수 있는 `candidate family/projection/route hints` 최소 구조를 정한다."
+    },
+    {
+      "name": "upper_family_layer_v0.md",
+      "path": "docs/reviews/upper_family_layer_v0.md",
+      "suffix": ".md",
+      "size": 8689,
+      "mtime_ns": 1775469512400813729,
+      "title": "Upper Family Layer v0",
+      "summary": "이 문서는 `bounded functional space` 위에서 line family의 계보, same-root 판정, projection 분화, route grouping을 관리하는 상위 층을 정의한다."
+    },
+    {
+      "name": "vectorfl_gemma4_sidecar_prototype_v0.md",
+      "path": "docs/reviews/vectorfl_gemma4_sidecar_prototype_v0.md",
+      "suffix": ".md",
+      "size": 10285,
+      "mtime_ns": 1775468845817981920,
+      "title": "VectorFL 활용 프로토타입 정리 v0",
+      "summary": "Gemma4를 본체가 아니라 `VectorFL` 옆에 붙는 로컬 `LLM sidecar` 부품으로 두고, VectorFL이 만든 `line 구조`를 바탕으로 업무 앱을 클릭 + 언어 인터페이스로 동시에 운용하는 프로토타입"
+    },
+    {
+      "name": "vectorfl_host_coupled_maturation_strategy_v0.md",
+      "path": "docs/reviews/vectorfl_host_coupled_maturation_strategy_v0.md",
+      "suffix": ".md",
+      "size": 15036,
+      "mtime_ns": 1775469157557109031,
+      "title": "Codex 전달용 정리",
+      "summary": "이번 논의의 핵심은 단순히 아래 질문이 아니다."
+    },
+    {
+      "name": "vectorfl_line_facet_v0.md",
+      "path": "docs/reviews/vectorfl_line_facet_v0.md",
+      "suffix": ".md",
+      "size": 5598,
+      "mtime_ns": 1775468545706119614,
+      "title": "VectorFL Line Facet v0",
+      "summary": "라인은 하나의 살아 있는 해석 단위로 유지한다. 다만 그 안에 들어 있는 의미를 facet로 분리해서 보이게 한다."
+    },
+    {
+      "name": "watchpoint_to_engine_origin_mapping_v1.md",
+      "path": "docs/reviews/watchpoint_to_engine_origin_mapping_v1.md",
+      "suffix": ".md",
+      "size": 7303,
+      "mtime_ns": 1774747783018385492,
+      "title": "watchpoint to engine origin mapping v1",
+      "summary": "현재 watchpoint들은 UI surface 자체의 구현 결함이라기보다, **process-console payload richness / adapter shaping / intentional baseline suppression / current compare model limitation** 중 하나에서 오는 얇음으로 읽는 편이 맞다."
+    }
+  ],
+  "assets": [],
+  "related_status_files": [
+    "docs/reviews/folder_status.md"
+  ],
+  "last_updated": "2026-04-07T18:07:25+09:00",
+  "role_guess": "Folder with mixed project assets; inspect child folders and markdown files for exact role.",
+  "file_type_counts": {
+    ".md": 73
+  }
+}

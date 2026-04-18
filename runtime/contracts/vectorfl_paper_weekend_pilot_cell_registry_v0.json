@@ -1,0 +1,176 @@
+{
+  "registry_id": "vectorfl_paper_weekend_pilot_cell_registry_v0",
+  "scenario_scope": "weekend_pilot_first_loop",
+  "cells": [
+    {
+      "cell_id": "internal_read_cell",
+      "label": "Internal Read Cell",
+      "purpose": "Reread scenario-bearing internal material and extract stable points, unclear points, and line seeds.",
+      "lens": [
+        "repeated pressure",
+        "misunderstanding correction",
+        "line seed formation"
+      ],
+      "managed_internal_functions": [
+        "conversation reread",
+        "casebook reread",
+        "evidence bundle check",
+        "pressure extraction"
+      ],
+      "managing_cli": "gemini-cli",
+      "md_contract": "docs/contracts/vectorfl_paper_internal_read_cell_v0.md",
+      "inputs": [
+        "material_bundle_current",
+        "active_task"
+      ],
+      "outputs": [
+        "stable_points",
+        "unclear_points",
+        "next_questions",
+        "line_seeds"
+      ],
+      "required_evidence": [
+        "3 repeated pressures",
+        "2 misunderstanding corrections",
+        "3 line seeds"
+      ],
+      "handoff_targets": [
+        {
+          "cell_id": "external_resource_cell",
+          "why": "Turn internal gaps into selective external comparison tasks."
+        },
+        {
+          "cell_id": "synthesis_cell",
+          "why": "Provide a partial supervisor-readable checkpoint."
+        }
+      ],
+      "human_report_format": "supervisor_report_v0",
+      "external_pair_team": "external_resource_cell",
+      "governance": {
+        "allowed_actions": [
+          "reread internal materials",
+          "extract line seeds"
+        ],
+        "disallowed_actions": [
+          "finalize product direction",
+          "launch broad external search without shaped questions"
+        ],
+        "needs_human_gate": false,
+        "reopen_conditions": [
+          "line seeds collapse into summaries",
+          "stable unclear split is missing"
+        ]
+      },
+      "return_slot": "line_candidates_latest"
+    },
+    {
+      "cell_id": "external_resource_cell",
+      "label": "External Resource Cell",
+      "purpose": "Translate internal gaps into selective external comparison and propose inject-able references.",
+      "lens": [
+        "selective comparison",
+        "reference usefulness",
+        "injection readiness"
+      ],
+      "managed_internal_functions": [
+        "external comparison prompt shaping",
+        "candidate reference filtering",
+        "injection proposal shaping"
+      ],
+      "managing_cli": "codex-cli",
+      "md_contract": "docs/contracts/vectorfl_paper_external_resource_cell_v0.md",
+      "inputs": [
+        "internal_read_output"
+      ],
+      "outputs": [
+        "candidate_references",
+        "rejection_rules",
+        "internal_injection_candidates"
+      ],
+      "required_evidence": [
+        "line-seed mapping for each candidate",
+        "at least 1 rejection rule"
+      ],
+      "handoff_targets": [
+        {
+          "cell_id": "synthesis_cell",
+          "why": "Bind external comparison back into the current loop judgment."
+        },
+        {
+          "cell_id": "internal_read_cell",
+          "why": "Re-read approved injected references inside internal criteria."
+        }
+      ],
+      "human_report_format": "supervisor_report_v0",
+      "external_pair_team": null,
+      "governance": {
+        "allowed_actions": [
+          "generate selective external prompts",
+          "compare candidate references"
+        ],
+        "disallowed_actions": [
+          "collect broad reading lists without judgment"
+        ],
+        "needs_human_gate": true,
+        "reopen_conditions": [
+          "candidates are interesting but not actionable"
+        ]
+      },
+      "return_slot": "external_candidates_latest"
+    },
+    {
+      "cell_id": "synthesis_cell",
+      "label": "Synthesis Cell",
+      "purpose": "Turn internal and external outputs into confirmed lines, unresolved tensions, and a supervisor decision surface.",
+      "lens": [
+        "binding judgment",
+        "human-readable supervision",
+        "next loop proposal"
+      ],
+      "managed_internal_functions": [
+        "line confirmation",
+        "supervisor report writing",
+        "loop proposal shaping"
+      ],
+      "managing_cli": "codex-cli",
+      "md_contract": "docs/contracts/vectorfl_paper_synthesis_cell_v0.md",
+      "inputs": [
+        "internal_read_output",
+        "external_resource_output"
+      ],
+      "outputs": [
+        "confirmed_lines",
+        "unresolved_tensions",
+        "supervisor_report",
+        "next_loop_proposal"
+      ],
+      "required_evidence": [
+        "evidence-linked confirmed lines",
+        "go/hold/reopen/redirect recommendation"
+      ],
+      "handoff_targets": [
+        {
+          "cell_id": "supervisor",
+          "why": "The loop requires an explicit human decision point."
+        }
+      ],
+      "human_report_format": "supervisor_report_v0",
+      "external_pair_team": null,
+      "governance": {
+        "allowed_actions": [
+          "confirm lines",
+          "surface unresolved tensions",
+          "propose next loop"
+        ],
+        "disallowed_actions": [
+          "hide unresolved tensions for cleaner reporting"
+        ],
+        "needs_human_gate": true,
+        "reopen_conditions": [
+          "recommendation is not actionable"
+        ]
+      },
+      "return_slot": "supervisor_report_latest"
+    }
+  ]
+}

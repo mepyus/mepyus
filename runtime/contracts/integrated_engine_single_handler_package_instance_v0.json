@@ -1,0 +1,131 @@
+{
+  "package_id": "language_handler_loop_pkg_v0",
+  "package_kind": "single_handler_package",
+  "handler": {
+    "handler_id": "language-owner",
+    "handler_label": "언어담당",
+    "surface_home": "user",
+    "automation_status": "not_automatic"
+  },
+  "purpose": "공간 내부 언어를 한국어 운영 언어로 옮기기 위한 자료를 한 번의 handler package로 운용한다.",
+  "scope": {
+    "included": [
+      "single handler package flow",
+      "User / VectorFL / Engine projection",
+      "bounded language-handler operating status",
+      "surface declutter validation"
+    ],
+    "excluded": [
+      "multi-agent orchestration",
+      "automatic packetization",
+      "upper/lower unification",
+      "final glossary",
+      "UI copy lock",
+      "runtime automation"
+    ]
+  },
+  "current_target": "external_analysis lens fragments + lower-input / bridge wording residues",
+  "current_stage": "VectorFL return review",
+  "current_status": "usable_with_hold",
+  "surface_projection": {
+    "user": {
+      "active": [
+        "purpose",
+        "scope",
+        "current_target",
+        "current_status",
+        "next_valid_action"
+      ],
+      "support": [
+        "package_id",
+        "light request history",
+        "team/role configuration"
+      ],
+      "hold": [
+        "full bridge rules",
+        "lower-input trace",
+        "packet origin detail"
+      ]
+    },
+    "vectorfl": {
+      "active": [
+        "package under review",
+        "state",
+        "evidence summary",
+        "blocker",
+        "next route"
+      ],
+      "support": [
+        "selected lens",
+        "lower-derived vs upper-added detail",
+        "bridge diagnostic"
+      ],
+      "hold": [
+        "full line atlas",
+        "full bridge control contract",
+        "raw lower trace"
+      ]
+    },
+    "engine": {
+      "active": [
+        "ingest target",
+        "process stage",
+        "validation state",
+        "return/redeposit state",
+        "output summary"
+      ],
+      "support": [
+        "compact artifacts",
+        "gate result summary",
+        "return record detail"
+      ],
+      "hold": [
+        "full asset inventory",
+        "watcher recommendations",
+        "runtime artifact tree"
+      ]
+    }
+  },
+  "lifecycle": [
+    {
+      "id": "user-purpose",
+      "surface": "user",
+      "status": "done",
+      "summary": "목적과 범위를 사용자면에서 하나의 handler package로 고정"
+    },
+    {
+      "id": "vectorfl-classify",
+      "surface": "vectorfl",
+      "status": "done",
+      "summary": "Envelope / Inbox / Compliance lens fragment로 해석 후보를 정리"
+    },
+    {
+      "id": "engine-process",
+      "surface": "engine",
+      "status": "done",
+      "summary": "산출물은 처리/검증/반환 후보로 남기고 자동 퇴적하지 않음"
+    },
+    {
+      "id": "vectorfl-return",
+      "surface": "vectorfl",
+      "status": "active",
+      "summary": "반환을 usable_with_hold로 읽고 다음 route를 보수적으로 유지"
+    },
+    {
+      "id": "user-next",
+      "surface": "user",
+      "status": "pending",
+      "summary": "사용자면에는 다음 유효 행동만 노출"
+    }
+  ],
+  "evidence_summary": "external_analysis에서 lens fragment를 확보했고, lower-to-upper bridge에서 dependency-heavy 상태를 확인했다.",
+  "validation_status": "bounded flow visible; no automatic bridge or final translation authorized",
+  "next_valid_action": "keep one-handler supervisory mode and demote bridge/team internals to support detail",
+  "authority_boundary": {
+    "multi_agent_allowed": false,
+    "automation_allowed": false,
+    "final_glossary_allowed": false,
+    "canonical_bridge_allowed": false
+  }
+}
+

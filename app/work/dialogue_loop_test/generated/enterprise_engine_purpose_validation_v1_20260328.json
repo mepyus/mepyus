@@ -1,0 +1,369 @@
+{
+  "created_at": "2026-03-28T10:45:27.012133Z",
+  "input_asset": "inputs/external_cases/enterprise.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/enterprise_segmentation_probe_v1_w3_s1_20260328T104511Z.json",
+    "app/work/dialogue_loop_test/generated/enterprise_segmentation_probe_v1_w6_s3_20260328T104511Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/enterprise.txt",
+    "supporting_first_pass_patterns": [
+      "overall_object_candidates",
+      "overall_layer_hints",
+      "overall_relation_hints",
+      "overall_residue_breakdown",
+      "top_question_intent_windows"
+    ],
+    "second_order_reading_type": "purpose_synthesis",
+    "rereading_mode": "cross_run_probe_synthesis",
+    "scope_local_page_comparison": "page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "object_opening_and_question_opening_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "purpose reading is still strongly tied to AI/agent/business transition discourse",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/enterprise_segmentation_probe_v1_w3_s1_20260328T104511Z.json",
+      "app/work/dialogue_loop_test/generated/enterprise_segmentation_probe_v1_w6_s3_20260328T104511Z.json"
+    ]
+  },
+  "top_objects": [
+    {
+      "object": "모델 work",
+      "count": 165,
+      "reading": "모델 경쟁, 학습/평가/검증 축을 여는 객체"
+    },
+    {
+      "object": "생산성/코딩",
+      "count": 123,
+      "reading": "개발 생산성 압축과 작업 방식 변형을 여는 객체"
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 90,
+      "reading": "앱 형태 재편과 인터페이스 전환을 여는 객체"
+    },
+    {
+      "object": "일의 미래",
+      "count": 14,
+      "reading": "인간 역할, 감독 구조, 노동 재배치를 여는 객체"
+    },
+    {
+      "object": "전략/방향성",
+      "count": 10,
+      "reading": "사업 적응, moat, 시장 재편을 여는 객체"
+    },
+    {
+      "object": "구현/자동화",
+      "count": 10,
+      "reading": "실행화, workflow, 운영 자동화를 여는 객체"
+    }
+  ],
+  "top_layers": [
+    {
+      "layer": "구현/실행 층",
+      "count": 539,
+      "reading": "실제 자동화와 operationalization으로 내려가는 층"
+    },
+    {
+      "layer": "설명/해석 층",
+      "count": 415,
+      "reading": "대화가 시대 인식을 설명하고 해석하는 기본 층"
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 263,
+      "reading": "사용자의 다음 탐색 질문을 발생시키는 층"
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 62,
+      "reading": "앱/모델/시장 구조가 어떻게 재편되는지 보는 층"
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 34,
+      "reading": "평가, metric, reward, reliability를 묻는 층"
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 18,
+      "reading": "적응, moat, 신사업, 시장 포지션을 읽는 층"
+    }
+  ],
+  "top_relations": [
+    {
+      "relation": "transition_hint",
+      "count": 397,
+      "reading": "설명에서 다음 층위로 이동하는 전이 운동"
+    },
+    {
+      "relation": "reinforcement_hint",
+      "count": 313,
+      "reading": "같은 문제의식이 다른 문단에서 누적 보강되는 운동"
+    },
+    {
+      "relation": "question_generation_hint",
+      "count": 214,
+      "reading": "문단이 다음 질문을 직접 발생시키는 운동"
+    },
+    {
+      "relation": "specification_hint",
+      "count": 140,
+      "reading": "막연한 전망이 기준/평가/형식 쪽으로 굳어지는 운동"
+    },
+    {
+      "relation": "execution_shift_hint",
+      "count": 102,
+      "reading": "아이디어가 운영/실행 쪽으로 내려가는 운동"
+    },
+    {
+      "relation": "contrast_hint",
+      "count": 53,
+      "reading": "기존 방식과 새 방식의 긴장/대비가 드러나는 운동"
+    }
+  ],
+  "top_residue": [
+    {
+      "residue": "discourse_connective_residue",
+      "count": 1109,
+      "reading": "발화 연결어가 의미 층위 opening을 덮는 residue"
+    },
+    {
+      "residue": "conversational_filler_residue",
+      "count": 803,
+      "reading": "구어 filler가 summary 선두를 흐리는 residue"
+    },
+    {
+      "residue": "generic_abstraction_residue",
+      "count": 200,
+      "reading": "너무 일반적인 추상어가 의미층을 흐리게 하는 residue"
+    },
+    {
+      "residue": "speaker_or_source_residue",
+      "count": 0,
+      "reading": "화자/출처 흔적이 topic signal과 경쟁하는 residue"
+    },
+    {
+      "residue": "quasi_topic_residue",
+      "count": 0,
+      "reading": "주제처럼 보이지만 broad discourse에 가까운 residue"
+    }
+  ],
+  "top_windows": [
+    {
+      "window_id": "297_302",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 구현/실행 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+        "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+        "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+        "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+        "그렇죠 그리고 이 테크 스펙을 바탕으로 너는 뭘 해야 되냐면 이 플랜을 구현하는 데",
+        "그렇죠 그리고 이 테크 스펙을 바탕으로 너는 뭘 해야 되냐면 이 플랜을 구현하는 데"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+          "excerpt": "그래서 이제 이런 작업을 할 때는 이 Claude.md의 역할이 너무나도 중요한데"
+        },
+        {
+          "heading": "저는 그냥 그걸 보고 이제 컨펌을 이제 하는 거죠 갈지 아니면 아닌 건지 그래서 보면은",
+          "excerpt": "이 Claude.md는 여러분이 다 아시는 것처럼 이 현재의 코딩 시에라 에이전트가 어떻게 동작해야 되는지에 대한 지침을"
+        }
+      ]
+    },
+    {
+      "window_id": "289_291",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+          "excerpt": "이 서브 테스크 하나씩 끊게 해도 됩니다 이거에 대한 판단은 결국에는 이제 코딩 시라 에이전트 너가 보고"
+        },
+        {
+          "heading": "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+          "excerpt": "너가 잘 조정해라 이번에 보면 소의 4.5가 내가 스스로 언제 콘텍스트가 끊길 줄 아는 모델이거든요"
+        }
+      ]
+    },
+    {
+      "window_id": "288_290",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+        "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+          "excerpt": "이 정도 사이즈여야 되는 겁니다 그런데 물론 이게 마일스톤 하나가 엄청 클 수도 있는데 그러면은 보면 서브 테스크가 있어요"
+        },
+        {
+          "heading": "지금 보면 8 9개인가가 있어요 9개가 있고 이 마일스톤 9개를 뽑는 게",
+          "excerpt": "이 서브 테스크 하나씩 끊게 해도 됩니다 이거에 대한 판단은 결국에는 이제 코딩 시라 에이전트 너가 보고"
+        }
+      ]
+    },
+    {
+      "window_id": "277_279",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 구현/실행 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "이제 보면은 이게 결국 구현 지침이에요 구현 지침이고 여기서 제가 만든 건 뭐냐면",
+        "이제 보면은 이게 결국 구현 지침이에요 구현 지침이고 여기서 제가 만든 건 뭐냐면",
+        "이제 보면은 이게 결국 구현 지침이에요 구현 지침이고 여기서 제가 만든 건 뭐냐면"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "이제 보면은 이게 결국 구현 지침이에요 구현 지침이고 여기서 제가 만든 건 뭐냐면",
+          "excerpt": "메인 모델로 사용하고 이제 뭐 제미나이 CLI 같은 친구들이 중간중간에 피드백을 주는 방식으로 많이 하는데"
+        },
+        {
+          "heading": "이제 보면은 이게 결국 구현 지침이에요 구현 지침이고 여기서 제가 만든 건 뭐냐면",
+          "excerpt": "예를 들면 클로드 코드 소넷 4.5가 작업을 할 때 이때부터는 더 다른 코딩이 시작된 에이전트가"
+        }
+      ]
+    },
+    {
+      "window_id": "267_272",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "생산성/코딩",
+        "에이전트 애플리케이션",
+        "모델 work",
+        "구현/자동화"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "execution_shift_hint",
+        "specification_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 에이전트 애플리케이션, 모델 work / 주요 층위: 구현/실행 층, 설명/해석 층 / 관계 힌트: reinforcement_hint, execution_shift_hint, specification_hint",
+      "headings": [
+        "더 당위성에 더 가까운 문서라고 보면 되고 당장 그래서 내가 오늘 앉아가지고",
+        "그 방식대로 여러 모델에 물어보고 디스커션 해보고 네 그렇게 하는 편입니다만",
+        "그 방식대로 여러 모델에 물어보고 디스커션 해보고 네 그렇게 하는 편입니다만",
+        "에이전트는 어떤 기능이 있냐면 굉장히 코드를 정확하게 집어내고",
+        "에이전트는 어떤 기능이 있냐면 굉장히 코드를 정확하게 집어내고",
+        "에이전트는 어떤 기능이 있냐면 굉장히 코드를 정확하게 집어내고"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "더 당위성에 더 가까운 문서라고 보면 되고 당장 그래서 내가 오늘 앉아가지고",
+          "excerpt": "말하는 게 필요한 겁니다 주로 저거 todo 를 하실 때도 아까 전에 하셨던 그 테크 스펙을 작성하셨을 때"
+        },
+        {
+          "heading": "그 방식대로 여러 모델에 물어보고 디스커션 해보고 네 그렇게 하는 편입니다만",
+          "excerpt": "테크 스펙 같은 경우에는 사실 사람이 많이 개입을 한다고 생각을 하고 하고 플랜 같은 경우에는 이미 테크 스펙이 탄탄하면"
+        }
+      ]
+    },
+    {
+      "window_id": "130_132",
+      "repeat_count": 1,
+      "question_intent_score": 3,
+      "objects": [
+        "모델 work",
+        "전략/방향성"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "specification_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 모델 work, 전략/방향성 / 주요 층위: 구현/실행 층, 설명/해석 층, 전략/방향 층 / 관계 힌트: reinforcement_hint, transition_hint, specification_hint",
+      "headings": [
+        "물론 AI는 도망가지 않고 한 척하고 이제 다 했다라고 했는데 실제로 안 돌아가겠죠",
+        "문서화의 중요성과 테크 스펙 작성",
+        "문서화의 중요성과 테크 스펙 작성"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "물론 AI는 도망가지 않고 한 척하고 이제 다 했다라고 했는데 실제로 안 돌아가겠죠",
+          "excerpt": "굉장히 이거를 전략적으로 할 필요가 있다는 거죠 그런 관점에서 제가 조금 더 소개를 드리는 거는 뭐냐면"
+        },
+        {
+          "heading": "문서화의 중요성과 테크 스펙 작성",
+          "excerpt": "결국에는 우리는 문서를 잘 써야 됩니다 굉장히 고전적인 이야기고 올드한 이야기일 수도 있는데"
+        }
+      ]
+    }
+  ],
+  "era_questions": [
+    "AI capability가 어디까지 가고 어떤 방향으로 수렴하는가",
+    "인간의 일은 수행자에서 감독자/설계자로 어떻게 이동하는가",
+    "앱과 서비스의 형태는 agent interface 쪽으로 어떻게 재편되는가",
+    "모델 경쟁은 pre-train 이후 evaluation, RLVR, harness 쪽으로 어떻게 이동하는가",
+    "기업과 제품은 moat, bundle/unbundle, 적응 경쟁 속에서 어떻게 살아남는가",
+    "검증과 신뢰는 미래 담론 속에서 어떤 바닥 역할을 맡는가"
+  ],
+  "object_growth_reading": [
+    "이 자산은 모델 능력 경쟁과 agent application 형태 전환을 서로 붙여 키운다",
+    "미래 담론을 추상 전망으로만 두지 않고 인간 역할 변화와 일의 재배치로 끌어내린다",
+    "전략 담론을 실제 구현/운영 자동화와 접속시키며 사업 적응 문제로 내린다",
+    "개발 생산성 변화는 독립 객체라기보다 실행층과 일의 미래를 잇는 중간층으로 자란다"
+  ],
+  "engine_learning_targets": [
+    "질문 유도 문단을 별도 candidate로 승격할 수 있는지 계속 본다",
+    "설명층에서 실행층으로 내려가는 전이 문단을 relation movement로 더 잘 읽게 만든다",
+    "전망 담론을 전략/적응 문제로 번역하는 층을 user-layer opening에 더 직접 연결한다",
+    "interview/dialogue 특유 residue가 summary 선두를 덮지 않게 summary-stage 후순위화를 검토한다"
+  ]
+}

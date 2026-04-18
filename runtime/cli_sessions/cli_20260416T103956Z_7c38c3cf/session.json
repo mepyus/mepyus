@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T103956Z_7c38c3cf",
+  "backend_kind": "codex",
+  "task_type": "validate",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Suggested-next-use explicit tail inference retest.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md"
+  ],
+  "prompt_payload": "Return a compact validation note. Mention deposit candidate as a deferred area in the body, but end exactly with: suggested next use: validation target. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:39:56Z",
+  "ended_at": "2026-04-16T10:40:09Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - PASS_WITH_NOTE for the suggested-next-use explicit tail inference retest.\n  - The referenced report already records a successful smoke test where a Codex return with validation-oriented tail text produced structured `suggested_next_use: validation_target`.\n\n- important findings / diffs / outputs\n  - No files modified.\n  - Prior validation evidence in `docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md` includes session `cli_20260416T102720Z_8e045e9b`, status `done`, exit code `0`, and structured next use `validation_target`.\n  - The same report notes deposit candidate visibility as a deferred/queue-only area: deposit-ready returns are visible, but ingestion, canonicalization, promotion, and engine memory mutation remain intentionally closed.\n\n- uncertainty or failure notes\n  - This validation is report-based and bounded to the referenced context; no live API state or browser-click retest was performed in this run.\n  - Deposit candidate remains a deferred area unless a later bounded package opens explicit deposit ingestion.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:40:13Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:40:13Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

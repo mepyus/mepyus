@@ -1,0 +1,170 @@
+{
+  "packet_id": "exec_packet_live_process_camera_pilot_v0",
+  "process_camera_id": "integrated_engine_candidate_handling_process_camera_v0",
+  "target_type": "engine_process_asset_pilot_request",
+  "current_purpose": "Run one bounded live digestion test to verify whether the process camera can interpret a real request, form an execution packet, support worker-style processing, create a return record, and evaluate redeposit usefulness without full chat reread.",
+  "scope_boundary": {
+    "included": [
+      "current live packetization pilot request",
+      "candidate handling process camera spec",
+      "process lens registry",
+      "process validation gate spec",
+      "execution packet schema and template",
+      "return record schema and template",
+      "process camera closeout note",
+      "bounded worker-style processing",
+      "return record redeposit evaluation"
+    ],
+    "excluded": [
+      "camera promotion",
+      "broader schema rollout",
+      "multi-agent orchestration",
+      "CLI implementation",
+      "automation",
+      "line reread validation",
+      "axis reread validation",
+      "camera-slot reread validation",
+      "validation of all target types",
+      "patching existing process specs"
+    ],
+    "boundedness_rule": "Use this packet to test digestion loop viability only."
+  },
+  "candidate_source_zone": {
+    "primary_sources": [
+      "docs/specs/integrated_engine_candidate_handling_process_camera_v0.md",
+      "docs/specs/integrated_engine_process_lens_registry_v0.md",
+      "docs/specs/integrated_engine_process_validation_gate_v0.md",
+      "docs/specs/integrated_engine_execution_packet_schema_v0.md",
+      "docs/specs/integrated_engine_return_record_schema_v0.md",
+      "runtime/contracts/integrated_engine_execution_packet_template_v0.json",
+      "runtime/contracts/integrated_engine_return_record_template_v0.json",
+      "docs/reports/integrated_engine_process_camera_closeout_note_v0.md"
+    ],
+    "selection_rule": "Use only the current process-camera asset set and this live request; do not reopen the full conversation history.",
+    "broad_scan_allowed": false
+  },
+  "selected_lens_set": {
+    "primary": "implementation_lens",
+    "supporting": [
+      "evidence_lens",
+      "boundary_lens",
+      "rollback_lens"
+    ],
+    "lens_status": {
+      "implementation_lens": "provisional_live_pilot",
+      "evidence_lens": "sample_grounded",
+      "boundary_lens": "sample_grounded",
+      "rollback_lens": "sample_grounded"
+    },
+    "why_selected": "The pilot tests packetization and worker-style consumption, so implementation lens is primary while evidence, boundary, and rollback lenses keep the run bounded."
+  },
+  "candidate_list": [
+    {
+      "candidate_id": "process_camera_live_packetization_path",
+      "candidate_type": "digestion_loop_path",
+      "selection_status": "selected",
+      "reason": "This is the smallest live path that tests interpretation -> packet -> worker-style processing -> return record -> redeposit evaluation."
+    },
+    {
+      "candidate_id": "supervisor_cli_handoff_pilot",
+      "candidate_type": "cli_handoff_path",
+      "selection_status": "rejected_for_now",
+      "reason": "Too aggressive before proving the packet and return record can function without live CLI."
+    },
+    {
+      "candidate_id": "multi_agent_orchestration_path",
+      "candidate_type": "orchestration_path",
+      "selection_status": "forbidden",
+      "reason": "Out of scope for a bounded live packetization pilot."
+    }
+  ],
+  "evidence_bundle": [
+    {
+      "evidence_id": "process_camera_spec",
+      "source": "docs/specs/integrated_engine_candidate_handling_process_camera_v0.md",
+      "support_reason": "Defines the nine-stage process camera and target/process/packet/return separation."
+    },
+    {
+      "evidence_id": "packet_schema",
+      "source": "docs/specs/integrated_engine_execution_packet_schema_v0.md",
+      "support_reason": "Defines required execution packet fields and worker readiness rule."
+    },
+    {
+      "evidence_id": "return_schema",
+      "source": "docs/specs/integrated_engine_return_record_schema_v0.md",
+      "support_reason": "Defines return record fields and redeposit readiness rule."
+    },
+    {
+      "evidence_id": "process_closeout",
+      "source": "docs/reports/integrated_engine_process_camera_closeout_note_v0.md",
+      "support_reason": "Identifies bounded real packetization as the safest next action and preserves non-rollout boundaries."
+    },
+    {
+      "evidence_id": "template_contracts",
+      "source": "runtime/contracts/integrated_engine_execution_packet_template_v0.json and runtime/contracts/integrated_engine_return_record_template_v0.json",
+      "support_reason": "Provides concrete sample shapes for packet and return instances."
+    }
+  ],
+  "validation_criteria": [
+    {
+      "gate": "packet_concreteness",
+      "question": "Can a worker understand the current purpose, scope, lens, evidence, allowed actions, forbidden actions, and expected output from this packet?"
+    },
+    {
+      "gate": "packet_sufficiency_without_full_chat",
+      "question": "Can the worker process the task primarily from this packet and named evidence?"
+    },
+    {
+      "gate": "return_record_redeposit_strength",
+      "question": "Does the return record preserve attempted actions, evidence, gate results, risks, decision, non-actions, redeposit payload, and next use?"
+    },
+    {
+      "gate": "hidden_context_pressure",
+      "question": "Where does the worker still need unstated conversation context?"
+    },
+    {
+      "gate": "authority_boundary",
+      "question": "Does the pilot avoid promotion, rollout, automation, and multi-agent implementation drift?"
+    }
+  ],
+  "allowed_actions": [
+    "interpret_live_request",
+    "validate_packet_sufficiency",
+    "simulate_worker_style_processing",
+    "create_return_record",
+    "evaluate_redeposit_value",
+    "record_hidden_context_pressure"
+  ],
+  "forbidden_actions": [
+    "promote_camera",
+    "approve_schema_rollout",
+    "patch_prior_specs",
+    "implement_CLI",
+    "launch_sub_agent",
+    "start_multi_agent_orchestration",
+    "validate_line_axis_or_camera_slot_paths",
+    "canonical_ingestion"
+  ],
+  "expected_output_shape": {
+    "worker_processing_note": "docs/reports/integrated_engine_live_packet_worker_processing_note_v0.md",
+    "return_record_instance": "runtime/contracts/integrated_engine_live_return_record_instance_v0.json",
+    "evaluation_note": "docs/reports/integrated_engine_live_packetization_pilot_evaluation_note_v0.md",
+    "must_answer": [
+      "was packet-only processing possible",
+      "what hidden context pressure appeared",
+      "were gate results explicit",
+      "is return record redeposit-worthy",
+      "what next bounded action is safest"
+    ]
+  },
+  "authority_boundary": {
+    "camera_status_lock": "eligible for provisional camera candidate, not promoted",
+    "promotion_allowed": false,
+    "rollout_allowed": false,
+    "automation_allowed": false,
+    "multi_agent_allowed": false,
+    "prior_spec_patch_allowed": false
+  },
+  "why_this_path_was_chosen": "The process camera closeout identified bounded real packetization as the safest next action; this pilot tests the digestive loop without jumping to CLI implementation, rollout, or promotion."
+}
+

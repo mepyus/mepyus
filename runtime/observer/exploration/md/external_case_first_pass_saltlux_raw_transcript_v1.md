@@ -1,0 +1,38 @@
+# external_case_first_pass_saltlux_raw_transcript_v1
+
+## context
+- exploration_id: `external_case_first_pass_saltlux_raw_transcript_v1`
+- session_id: `session_20260326_01`
+- run_id: `run_20260326_202420_386321_008f259a_f065ff`
+- observed_at: `2026-03-26T20:35:00+09:00`
+- source_ref: `saltlux.txt`
+- source_type: `external_case_primary_transcript`
+- source_origin: `raw_youtube_talk_transcript`
+- source_status: `primary_transcript_with_asr_noise`
+- observation_type: `pattern_seen`
+
+## readout
+- candidate_slots:
+  - `semantic_interoperability_data_fabric_frame`
+  - `grounding_plus_symbolic_expression_frame`
+  - `agentic_ai_composition_frame`
+  - `strong_claims_and_metrics`
+  - `market_positioning_and_sovereign_ai_framing`
+- kept_as_core_candidate:
+  - 없음
+- kept_as_outer_candidate:
+  - `semantic_interoperability_data_fabric_frame`
+  - `grounding_plus_symbolic_expression_frame`
+  - `agentic_ai_composition_frame`
+- deferred_items:
+  - `strong_claims_and_metrics`
+- deferred_reason:
+  - raw transcript 안의 수치, 제로 주장, 우위 단정은 구조 일반화보다 사실 검증이 먼저 필요한 영역이다.
+
+## next
+- future_use_hint:
+  - raw transcript 기반 외부 사례를 구조/주장/수사로 분리하는 canonical first-pass 예시로 재사용 가능
+- next_action_hint:
+  - 다른 외부 사례 1~2건을 더 넣어 outer_candidate 구조 프레임이 반복되는지 본다.
+- notes:
+  - canonical source는 saltlux.txt이며, secondary summary는 비교 참고로만 두고 raw transcript를 우선 SSOT로 읽었다.

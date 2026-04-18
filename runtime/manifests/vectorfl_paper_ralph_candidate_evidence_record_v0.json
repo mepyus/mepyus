@@ -1,0 +1,99 @@
+{
+  "schema_version": "vectorfl_paper_reference_candidate_evidence_record_v0",
+  "record_id": "vectorfl_paper_ralph_candidate_evidence_record_v0",
+  "source_program": "ralph",
+  "source_kind": "external_candidate_from_reference_repo",
+  "scenario_scope": "vectorfl_paper_actual_export_only_dry_run",
+  "source_refs": [
+    "references/git_search/ralph-main/README.md",
+    "references/git_search/ralph-main/prompt.md"
+  ],
+  "honesty_note": "Derived from a checked-in Ralph reference repo for dry-run validation. It is externally sourced but represents a coding PRD loop, not a Paperclip host export.",
+  "issues_row": {
+    "id": "ralph-issue-001",
+    "companyId": "ralph-reference",
+    "projectId": "ralph-prd-loop",
+    "goalId": "all-stories-pass",
+    "parentId": null,
+    "title": "Complete one highest-priority failing PRD story",
+    "description": "Read prd.json and progress.txt, pick one story where passes=false, implement it, run checks, commit, update prd.json, and append progress.",
+    "status": "ready_for_dry_run",
+    "priority": "medium",
+    "assigneeAgentId": "ralph-agent-001",
+    "issueNumber": 1,
+    "identifier": "RALPH-1",
+    "originKind": "reference_repo",
+    "originId": "references/git_search/ralph-main/prompt.md",
+    "requestDepth": 0,
+    "createdAt": "2026-04-11T08:30:00+09:00",
+    "updatedAt": "2026-04-11T08:30:00+09:00"
+  },
+  "heartbeat_runs_row": {
+    "id": "ralph-run-001",
+    "companyId": "ralph-reference",
+    "agentId": "ralph-agent-001",
+    "invocationSource": "ralph_iteration_loop",
+    "triggerDetail": "A fresh agent instance handles one failing PRD story and exits after commit/progress update.",
+    "status": "dry_run_candidate",
+    "startedAt": "2026-04-11T08:30:00+09:00",
+    "finishedAt": "2026-04-11T08:35:00+09:00",
+    "error": null,
+    "wakeupRequestId": "ralph-iteration-001",
+    "exitCode": 0,
+    "usageJson": {
+      "max_iterations": 1,
+      "memory_sources": [
+        "git history",
+        "progress.txt",
+        "prd.json"
+      ],
+      "quality_checks": [
+        "typecheck",
+        "test",
+        "lint"
+      ]
+    },
+    "resultJson": {
+      "summary": "One story iteration produced a pass/fail decision and reusable progress note.",
+      "message": "Use as reopen-loop candidate for dry-run only.",
+      "error": null
+    },
+    "sessionIdBefore": "ralph-story-before",
+    "sessionIdAfter": "ralph-story-after",
+    "stdoutExcerpt": "Story checks passed; progress.txt appended; prd.json story marked passes=true.",
+    "contextSnapshot": {
+      "taskKey": "issue:ralph-issue-001",
+      "issueFocus": "one-story autonomous coding loop",
+      "constraint": "do not import full Ralph orchestrator"
+    }
+  },
+  "issue_comments_rows": [
+    {
+      "id": "ralph-comment-001",
+      "companyId": "ralph-reference",
+      "issueId": "ralph-issue-001",
+      "authorAgentId": "ralph-agent-001",
+      "authorUserId": null,
+      "createdByRunId": "ralph-run-001",
+      "body": "Append learnings to progress.txt and keep reusable Codebase Patterns visible before the next iteration.",
+      "createdAt": "2026-04-11T08:35:00+09:00",
+      "updatedAt": "2026-04-11T08:35:00+09:00"
+    }
+  ],
+  "approvals_row": {
+    "id": "ralph-approval-001",
+    "companyId": "ralph-reference",
+    "type": "story_pass_gate",
+    "requestedByAgentId": "ralph-agent-001",
+    "requestedByUserId": null,
+    "status": "hold_for_vectorfl_gate",
+    "payload": {
+      "issueId": "ralph-issue-001",
+      "runId": "ralph-run-001",
+      "decision_basis": "One-story pass/fail loop is useful for reopen validation but not host export proof."
+    },
+    "decisionNote": "Use as dry-run evidence only. It can inform reopen-loop checks but cannot close actual_export_only.",
+    "decidedByUserId": "supervisor",
+    "decidedAt": "2026-04-11T08:36:00+09:00"
+  }
+}

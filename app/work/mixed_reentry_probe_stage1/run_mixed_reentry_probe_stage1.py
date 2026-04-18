@@ -6,8 +6,8 @@ import json
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-CLOSE_ROOT = REPO_ROOT / "app" / "work" / "transition_mixed_close_reading" / "generated"
-SURFACE_ROOT = REPO_ROOT / "app" / "work" / "transition_mixed_surface_refine" / "generated"
+CLOSE_ROOT = REPO_ROOT / "app" / "work" / "archive_review" / "transition_support" / "transition_mixed_close_reading" / "generated"
+SURFACE_ROOT = REPO_ROOT / "app" / "work" / "archive_review" / "transition_support" / "transition_mixed_surface_refine" / "generated"
 OUTPUT_ROOT = REPO_ROOT / "app" / "work" / "mixed_reentry_probe_stage1" / "generated"
 
 

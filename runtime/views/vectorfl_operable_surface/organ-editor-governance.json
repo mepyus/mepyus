@@ -1,0 +1,149 @@
+{
+  "organ": {
+    "slug": "governance",
+    "label": "Governance Organ",
+    "current": false,
+    "next_candidate": true,
+    "active_case_count": 5,
+    "summary": "Governance organ은 current-reading, flow reading, trace carry를 받아 무엇을 지금 hold해야 하는지, 무엇을 observer-only로 두어야 하는지, 무엇이 아직 promotion/closure-ready가 아닌지를 명시하는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_governance_organ_role_md_draft_v0.md",
+        "title": "Governance Organ ROLE.md Draft v0",
+        "summary": "Governance organ은 current-reading, flow reading, trace carry를 받아 무엇을 지금 hold해야 하는지, 무엇을 observer-only로 두어야 하는지, 무엇이 아직 promotion/closure-ready가 아닌지를 명시하는 기관이다.",
+        "content": "# Governance Organ ROLE.md Draft v0\n\n## role\n\nGovernance organ은 current-reading, flow reading, trace carry를 받아  \n무엇을 지금 hold해야 하는지, 무엇을 observer-only로 두어야 하는지,  \n무엇이 아직 promotion/closure-ready가 아닌지를 명시하는 기관이다.\n\n이 기관의 일은 흐름을 멈추기 위한 멈춤이 아니라,\npremature closure와 direct action drift를 막으면서\ncurrent-reading을 안전하게 유지하는 것이다.\n\n## reads first\n\n1. current governance state if any\n2. flow reading summary\n3. next hop candidates\n4. current-reading surface\n5. trace / residue / reentry carry\n\n## does\n\n- hold necessity를 판정한다\n- restriction flags를 유지하거나 추가한다\n- release condition과 next check trigger를 만든다\n- direct presentation, promotion, direct action을 지금 열어도 되는지 보수적으로 본다\n- current-reading에 caution이 어떻게 보여야 하는지 좁힌다\n\n## does not do\n\n- line/state 의미를 새로 확정하지 않는다\n- translation이나 flow reading을 대신하지 않는다\n- trace carry를 activity noise로 약화시키지 않는다\n- shell view가 좋게 보이도록 caution을 숨기지 않는다\n\n## output expectation\n\nGovernance organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- governance caution\n- restriction set\n- release condition\n- next check trigger\n- current-reading-ready fragment\n\n## caution\n\n- observer-only와 promotion-forbidden을 쉽게 해제하지 않는다\n- explanation-first bias가 남아 있으면 direct presentation을 서두르지 않는다\n- unresolved edge가 남아 있으면 closure-ready로 쓰지 않는다\n- weak intake나 weak translation이 아직 살아 있으면 그 약함을 carry한다\n\n## final sentence\n\nGovernance organ은 단순 승인 기관이 아니라,  \ncurrent-reading과 다음 handoff가 안전하게 유지되도록 hold, restriction, release condition을 보수적으로 다루는 보호 기관이다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_governance_organ_handoff_md_draft_v0.md",
+        "title": "Governance Organ HANDOFF.md Draft v0",
+        "summary": "- flow reading summary - next hop candidates - current-reading surface - trace/residue/reentry carry - existing governance state",
+        "content": "# Governance Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- flow reading summary\n- next hop candidates\n- current-reading surface\n- trace/residue/reentry carry\n- existing governance state\n\n## required packet fields\n\n- `case_ref`\n- `current_lane_ref`\n- `governance_state or hold_candidate`\n- `flow_summary`\n- `trace_carry_refs`\n- `expected_return_type=governance_caution`\n\n## common triggers\n\n- direct presentation risk detected\n- observer-only or promotion-forbidden needs carry\n- release condition still absent\n- next check trigger must be surfaced\n\n## continuity / carry\n\n- preserve active restriction flags unless explicit release condition is met\n- preserve release condition history when still pending\n- preserve trace-linked caution when unresolved edge remains\n\n## handoff target\n\n주 대상:\n\n- `current-reading return surface`\n\n보조 대상:\n\n- `history / trace surface`\n- `programs / connections surface` when restriction affects external action request\n\n## handoff rule\n\nGovernance organ은 yes/no 승인만 넘기지 않는다.  \nhold, restriction, release condition, next check trigger를 current-reading과 trace에 같이 남겨야 한다.\n\n## final sentence\n\nGovernance organ handoff는 restriction set과 release/next-check 정보를 current-reading, trace, external connection boundary가 함께 읽을 수 있게 넘기는 protection-aware handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_governance_organ_caution_md_draft_v0.md",
+        "title": "Governance Organ CAUTION.md Draft v0",
+        "summary": "Governance organ의 caution 규칙은 current-reading이 읽힌다는 이유만으로 closure, promotion, direct action이 너무 빨리 열리는 것을 막는 데 목적이 있다.",
+        "content": "# Governance Organ CAUTION.md Draft v0\n\n## caution purpose\n\nGovernance organ의 caution 규칙은  \ncurrent-reading이 읽힌다는 이유만으로 closure, promotion, direct action이 너무 빨리 열리는 것을 막는 데 목적이 있다.\n\n## stop / hold conditions\n\n- closure_before_presentation remains active\n- observer_only should still hold\n- promotion_forbidden should still hold\n- release condition is not yet explicit\n\n## preserve-first rules\n\n- hold state를 숨기지 않는다\n- restriction flags를 축소하지 않는다\n- release condition과 next check trigger를 같이 남긴다\n- trace-linked caution을 current-reading에서 끊지 않는다\n\n## avoid\n\n- generic approval wording\n- safe-to-present wording without release condition\n- removing caution for UI neatness\n\n## final sentence\n\nGovernance organ은 막는 기관이기만 한 것이 아니라, premature closure를 막으면서 current-reading과 다음 handoff가 안전하게 유지되도록 caution을 분명히 드러내는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_governance_organ_return_md_draft_v0.md",
+        "title": "Governance Organ RETURN.md Draft v0",
+        "summary": "Governance organ의 반환은 현재 무엇이 보류되고 무엇이 아직 열리지 않아야 하는지, 그리고 언제 다시 확인할 수 있는지를 current-reading과 다음 기관이 같이 읽게 하는 것이다.",
+        "content": "# Governance Organ RETURN.md Draft v0\n\n## return purpose\n\nGovernance organ의 반환은  \n현재 무엇이 보류되고 무엇이 아직 열리지 않아야 하는지,  \n그리고 언제 다시 확인할 수 있는지를 current-reading과 다음 기관이 같이 읽게 하는 것이다.\n\n즉 반환의 목적은:\n\n- hold state를 분명히 하고\n- restriction을 숨기지 않고\n- release condition과 next check trigger를 남기고\n- trace/reentry와 current-reading을 끊지 않는 것이다\n\n## minimum return blocks\n\n### 1. governance caution\n\n- 현재 왜 caution이 필요한지\n- 예:\n  - \"Direct presentation remains held until transition closure is rechecked.\"\n\n### 2. restriction set\n\n- observer_only\n- promotion_forbidden\n- closure_before_presentation\n- direct_action_hold\n\n### 3. release condition\n\n- 무엇이 충족되어야 다음 단계로 넘어갈 수 있는지\n\n### 4. next check trigger\n\n- 언제 다시 reread / review / refresh를 해야 하는지\n\n### 5. current-reading-ready fragment\n\n- current-reading body 옆에 붙일 짧은 caution fragment\n- 예:\n  - \"Readable, but still closure-incomplete.\"\n\n## preferred wording\n\n- \"hold until ...\"\n- \"keep in observer-only ...\"\n- \"do not promote yet ...\"\n- \"recheck when ...\"\n- \"current reading is usable, but ...\"\n\n## avoid wording\n\n- \"approved\"\n- \"fully ready\"\n- \"safe to proceed\" without explicit release condition\n- \"resolved\" when restriction remains\n\n## return example shape\n\n- governance_caution:\n  - \"Direct presentation remains held until transition closure is rechecked.\"\n- restriction_set:\n  - `observer_only`\n  - `promotion_forbidden`\n  - `closure_before_presentation`\n- release_condition:\n  - \"Confirm transition closure or downgrade to residue-backed operator readout.\"\n- next_check_trigger:\n  - \"Re-run transition reread after next surface refresh or linked program state change.\"\n- current_reading_ready_fragment:\n  - \"Readable, but still closure-incomplete.\"\n\n## handoff note\n\n이 반환은 current-reading surface와 trace/history 면에 같이 걸려야 한다.\n\n그래서 최소한 아래는 빠지면 안 된다.\n\n- restriction set\n- release condition\n- next check trigger\n- current-reading-ready fragment\n\n## final sentence\n\nGovernance organ의 반환은 yes/no 승인표가 아니라,  \n지금 무엇이 왜 hold인지, 무엇이 아직 금지 상태인지, 언제 다시 확인할 수 있는지를 current-reading과 다음 handoff에 함께 남기는 protection-aware return이어야 한다."
+      }
+    },
+    "lens": "go / hold / reopen / redirect 판단과 보호 규칙 유지",
+    "managing_cli": "gemini-cli",
+    "managing_lane_slug": "gemini",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "trace-memory",
+      "flow-interpretation"
+    ],
+    "paired_external_team": "external-resource-team",
+    "human_report_format": "무엇이 왜 아직 hold인지와 release condition을 보고",
+    "detail_href": "organ-detail-governance.html",
+    "editor_href": "organ-editor-governance.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper",
+  "mode": "editor"
+}

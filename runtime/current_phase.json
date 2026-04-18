@@ -1,0 +1,46 @@
+{
+  "phase": "thickening",
+  "status": "active",
+  "last_updated": "2026-04-05T07:45:26+00:00",
+  "reading_frame": "binding_closed -> semantic_fidelity -> output-worthiness -> meaning_context_sufficiency -> detector -> widening_trigger",
+  "evaluated_from": "turn_preflight",
+  "phase_source_turn": "preflight_20260405T074526_912614_827bbb",
+  "decision_scope": "mode_scoped",
+  "active_latent_lines": [
+    "pre_read_eye",
+    "raw_return_preservation"
+  ],
+  "signals": {
+    "continuity": "high",
+    "residue": "medium",
+    "tension": "low",
+    "sufficiency": "medium"
+  },
+  "decision": "thickening",
+  "decision_reason": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+  "blocked_by": [],
+  "next_check_trigger": [
+    "same latent line repeats in a future reread",
+    "residue becomes high because a new path cannot be collapsed",
+    "sufficiency moves to high and closure can be reviewed"
+  ],
+  "phase_confidence": "medium",
+  "related_candidate_ids": [
+    "raw_to_first_pass_to_report"
+  ],
+  "related_watch_rules": [
+    "second_candidate_emergence_watch"
+  ],
+  "related_breadcrumb_refs": [
+    "crumb_7045_1977"
+  ],
+  "reopen_hint": [
+    "if residue becomes high with same line repeated twice",
+    "if a new observation cannot collapse back to the current candidate"
+  ],
+  "notes": {
+    "selected_mode": "space_reading",
+    "first_read_ref": "inputs/external_cases/README.md",
+    "requested_artifact_ref": ""
+  }
+}

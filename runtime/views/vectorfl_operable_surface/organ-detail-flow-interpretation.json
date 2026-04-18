@@ -1,0 +1,148 @@
+{
+  "organ": {
+    "slug": "flow-interpretation",
+    "label": "Flow Interpretation Organ",
+    "current": true,
+    "next_candidate": false,
+    "active_case_count": 5,
+    "summary": "Flow interpretation organ은 translated summary와 trace/governance carry를 바탕으로 현재 흐름에서 어떤 next hop이 더 맞는지, 무엇이 아직 unresolved edge로 남아 있는지 읽는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_flow_interpretation_organ_role_md_draft_v0.md",
+        "title": "Flow Interpretation Organ ROLE.md Draft v0",
+        "summary": "Flow interpretation organ은 translated summary와 trace/governance carry를 바탕으로 현재 흐름에서 어떤 next hop이 더 맞는지, 무엇이 아직 unresolved edge로 남아 있는지 읽는 기관이다.",
+        "content": "# Flow Interpretation Organ ROLE.md Draft v0\n\n## role\n\nFlow interpretation organ은 translated summary와 trace/governance carry를 바탕으로  \n현재 흐름에서 어떤 next hop이 더 맞는지, 무엇이 아직 unresolved edge로 남아 있는지 읽는 기관이다.\n\n이 기관의 일은 최종 결론을 내리는 것이 아니라,\n`지금 어디로 이어 읽어야 하는가`\n를 보수적으로 판독하는 것이다.\n\n## reads first\n\n1. translated summary\n2. current lane and lane hint\n3. governance carry\n4. trace / residue / reentry carry\n5. current-reading question\n\n## does\n\n- next hop candidates를 좁힌다\n- unresolved edge를 보존할지, 다시 reread할지 읽는다\n- direct readout과 explanation-first 사이 긴장을 해석한다\n- current 흐름이 transition reread로 더 가야 하는지, operator readout으로 좁혀도 되는지 판독한다\n\n## does not do\n\n- governance release를 결정하지 않는다\n- closure-ready를 쉽게 선언하지 않는다\n- trace carry를 지운 채 clean next step만 남기지 않는다\n- current-reading을 queue/status view로 환원하지 않는다\n\n## output expectation\n\nFlow interpretation organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- flow reading summary\n- next hop candidates\n- unresolved edge note\n- reentry hint\n- caution note\n\n## caution\n\n- governance restriction을 무시하지 않는다\n- next hop은 candidate로 남길 수 있다\n- explanation-first bias가 남아 있으면 direct readout을 서두르지 않는다\n- unresolved edge는 다음 기관이 다시 읽을 수 있게 preserve한다\n\n## final sentence\n\nFlow interpretation organ은 translated material을 보고  \n지금 흐름이 어디로 이어져야 하는지를 읽는 기관이지,  \n그 흐름을 완결 상태로 봉인하는 기관이 아니다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_flow_interpretation_organ_handoff_md_draft_v0.md",
+        "title": "Flow Interpretation Organ HANDOFF.md Draft v0",
+        "summary": "- translation summary - lane hint update - governance carry - trace/residue/reentry carry - current-reading question",
+        "content": "# Flow Interpretation Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- translation summary\n- lane hint update\n- governance carry\n- trace/residue/reentry carry\n- current-reading question\n\n## required packet fields\n\n- `case_ref`\n- `current_lane_ref`\n- `flow_reading_input_summary`\n- `governance_state`\n- `trace_carry_refs`\n- `question_or_trigger`\n- `expected_return_type=flow_reading_summary`\n\n## common triggers\n\n- next hop remains ambiguous\n- direct readout and explanation-first conflict\n- unresolved edge still active\n- reentry hint suggests reread before closure\n\n## continuity / carry\n\n- preserve next hop as candidate if not firm\n- preserve unresolved edge note\n- preserve reentry cue when flow depends on future trigger\n\n## handoff target\n\n주 대상:\n\n- `governance organ`\n\n보조 대상:\n\n- `current-reading return surface`\n- `translation organ` when reread requires grammar revision\n\n## handoff rule\n\nFlow interpretation organ은 단순 다음 단계 이름만 넘기지 않는다.  \n왜 그쪽으로 읽히는지와 무엇이 아직 닫히지 않았는지 같이 넘겨야 한다.\n\n## final sentence\n\nFlow interpretation organ handoff는 next hop candidates, unresolved edge, reentry cue, caution carry를 governance와 current-reading이 바로 이어받을 수 있게 넘기는 progression-aware handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_flow_interpretation_organ_caution_md_draft_v0.md",
+        "title": "Flow Interpretation Organ CAUTION.md Draft v0",
+        "summary": "Flow interpretation organ의 caution 규칙은 next hop을 읽을 때 그것을 final path처럼 확정하거나, unresolved edge를 지운 채 진행 구조만 예쁘게 보이게 만드는 것을 막는 데 목적이 있다.",
+        "content": "# Flow Interpretation Organ CAUTION.md Draft v0\n\n## caution purpose\n\nFlow interpretation organ의 caution 규칙은  \nnext hop을 읽을 때 그것을 final path처럼 확정하거나, unresolved edge를 지운 채 진행 구조만 예쁘게 보이게 만드는 것을 막는 데 목적이 있다.\n\n## stop / hold conditions\n\n- next hop remains ambiguous\n- explanation-first bias still active\n- governance restriction still blocks direct readout\n- reentry trigger is necessary but not surfaced yet\n\n## preserve-first rules\n\n- next hop은 candidate로 남길 수 있다\n- unresolved edge note를 항상 같이 넘긴다\n- reentry hint를 분리하지 않고 flow summary에 연결한다\n- direct readout hold를 무시하지 않는다\n\n## avoid\n\n- final next step wording\n- fully resolved progression wording\n- safe to proceed wording without governance support\n\n## final sentence\n\nFlow interpretation organ은 다음 단계를 확정하는 기관이 아니라, 어디로 읽혀야 하는지와 무엇을 아직 preserve해야 하는지를 보수적으로 남기는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_flow_interpretation_organ_return_md_draft_v0.md",
+        "title": "Flow Interpretation Organ RETURN.md Draft v0",
+        "summary": "Flow interpretation organ의 반환은 현재 흐름이 어떤 next hop으로 읽히는지와 무엇이 아직 unresolved로 남아 있는지를 다음 기관과 current-reading이 읽을 수 있게 넘기는 것이다.",
+        "content": "# Flow Interpretation Organ RETURN.md Draft v0\n\n## return purpose\n\nFlow interpretation organ의 반환은  \n현재 흐름이 어떤 next hop으로 읽히는지와  \n무엇이 아직 unresolved로 남아 있는지를 다음 기관과 current-reading이 읽을 수 있게 넘기는 것이다.\n\n즉 반환의 목적은:\n\n- next hop을 좁히고\n- unresolved edge를 보존하고\n- reread / reentry / caution을 current-reading과 governance가 이어받게 하는 것이다\n\n## minimum return blocks\n\n### 1. flow reading summary\n\n- 현재 흐름을 어떻게 읽는지 한두 문장으로 정리\n- 예:\n  - \"Read this as transition reread first, not direct operator presentation.\"\n\n### 2. next hop candidates\n\n- 다음 기관 / 다음 lane 후보\n- 하나일 수도 있고 둘 이상일 수도 있음\n\n### 3. unresolved edge note\n\n- 아직 closure-ready가 아닌 이유\n- preserve해야 하는 edge가 무엇인지\n\n### 4. reentry hint\n\n- 어떤 질문/트리거에서 다시 이 흐름을 열어야 하는지\n\n### 5. caution note\n\n- direct readout hold\n- explanation-first bias\n- governance-sensitive stop\n\n## preferred wording\n\n- \"route next through ...\"\n- \"keep this in ...\"\n- \"do not collapse into ...\"\n- \"preserve unresolved edge ...\"\n- \"reopen when ...\"\n\n## avoid wording\n\n- \"final next step\"\n- \"resolved path\"\n- \"safe to close\"\n- \"presentation ready\" without governance support\n\n## return example shape\n\n- flow_reading_summary:\n  - \"Keep this in transition reread until closure evidence improves.\"\n- next_hop_candidates:\n  - `lane_transition_preflight_reread`\n  - `lane_operator_readout_review`\n- unresolved_edge_note:\n  - \"Closure-before-presentation remains unresolved.\"\n- reentry_hint:\n  - \"If operator asks for summary first, reopen transition interpretation.\"\n- caution_note:\n  - \"Direct presentation should remain held.\"\n\n## handoff note\n\n이 반환은 주로 governance organ과 current-reading return면으로 넘어간다.\n\n그래서 최소한 아래는 빠지면 안 된다.\n\n- next hop candidates\n- unresolved edge note\n- reentry hint\n- caution carry\n\n## final sentence\n\nFlow interpretation organ의 반환은 다음 단계를 확정하는 명령이 아니라,  \n현재 흐름이 어디로 이어져야 하는지와 무엇을 아직 preserve해야 하는지를 보수적으로 넘기는 progression-aware return이어야 한다."
+      }
+    },
+    "lens": "현재 case의 reading 단계와 다음 handoff 후보를 결정",
+    "managing_cli": "codex-cli",
+    "managing_lane_slug": "chatgpt",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "governance",
+      "trace-memory"
+    ],
+    "paired_external_team": "comparison-team",
+    "human_report_format": "왜 지금 이 팀이 맡고 있고 다음으로 누구에게 넘기는지 보고",
+    "detail_href": "organ-detail-flow-interpretation.html",
+    "editor_href": "organ-editor-flow-interpretation.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper"
+}

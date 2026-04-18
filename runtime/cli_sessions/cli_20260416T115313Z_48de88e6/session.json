@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T115313Z_48de88e6",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "user_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language Koreanization data loop 9: collect Korean operating-language data from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_shared_language_grammar_reread_v0.md",
+    "docs/reports/integrated_engine_cli_on_top_operator_report_grammar_trial_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- source context where it appeared\n- internal meaning / operational role\n- Koreanization candidate, not final UI copy\n- Korean preservation requirement\n- risky Korean flattening to avoid\n- why this helps the user operate\n- what meaning gets lost if shortened\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:53:13Z",
+  "ended_at": "2026-04-16T11:54:03Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T115313Z_48de88e6/prompt.md",
+  "exit_code": 0,
+  "result_summary": " 필요.\n  - next reread question: `재료`가 내부 처리성을 충분히 보존하는가, 아니면 사용자에게 낯선가?\n  - suggested next use: validation target\n\n  - internal phrase or signal observed: `readable report grammar before UI copy`\n  - source context where it appeared: shared grammar reread §5.4, §6; operator report §4, §8, §9\n  - internal meaning / operational role: UI 한국어 copy 전에 Codex 보고 문법을 안정화하고 반복 line/connection/axis를 확인해야 함.\n  - Koreanization candidate, not final UI copy: `화면 번역 전 보고 문법`, `UI copy 전 운영 보고 문법`\n  - Korean preservation requirement: 즉석 번역이 아니라 내부 문법을 보존한 운영 보고라는 점.\n  - risky Korean flattening to avoid: `한국어로 바꾸기`, `번역 작업`, `UI 문구 작성`\n  - why this helps the user operate: 사용자가 구조 상태, 열린 route, 닫힌 route, 다음 작은 단계를 판단 가능하게 됨.\n  - what meaning gets lost if shortened: 내부 language loop가 단순 번역 업무로 축소됨.\n  - repeated connection it belongs to: `reread -> line extraction -> connection -> axis -> shared report -> next reread`\n  - emerging axis candidate: `readable-report-before-UI-copy axis`\n  - surface exposure note: user-readable, vectorfl-mediated, engine-fed-back\n  - external expression support needed, if any: 보고 순서 template 검증 필요.\n  - next reread question: 실제 Codex run 반환 1건에 이 문법을 적용했을 때 사용자가 판단 가능한가?\n  - suggested next use: implementation return or validation target\n\n- uncertainty or failure notes\n  - bounded context 2개 문서만 읽었으므로 실제 UI runtime, session artifacts, mark data는 재검증하지 않음.\n  - Koreanization candidates are internal candidates only, not final UI copy.\n  - `재료/material`, `후보/candidate`, `route/경로`는 보존력이 있지만 사용자 가독성 검증이 아직 필요함.\n\n- suggested next use: validation target\n  - 다음 reread target: 실제 Codex CLI return 1건을 대상으로 `현재 상태 -> 3면별 읽기 -> 열린/닫힌 route -> friction -> 다음 작은 단계` 문법이 유지되는지 확인.\n  - deposit candidate: 이번 수집은 final glossary가 아니라 Koreanization validation seed로만 deposit 후보화 가능.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:54:03Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:54:03Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

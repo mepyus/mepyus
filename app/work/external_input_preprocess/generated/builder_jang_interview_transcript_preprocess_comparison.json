@@ -1,0 +1,269 @@
+{
+  "comparison_name": "transcript_preprocess_comparison_v0",
+  "generated_at": "2026-04-02T22:22:02.901969Z",
+  "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/builder_jang_interview.txt",
+  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_jang_interview_transcript_regroup_compare_20260402T222202Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/builder_jang_interview.txt",
+    "decision": "preprocess_required",
+    "decision_reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+    "format_profile": "raw_transcript_like",
+    "should_preprocess": true,
+    "preprocess_kind": "transcript_aware_regroup",
+    "metrics": {
+      "line_count": 337,
+      "dust_count": 297,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 337,
+      "transcript_marker_density": 1.0,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 58,
+      "short_dust_ratio": 0.195,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 205,
+      "transcript_marker_dust_ratio": 0.69,
+      "avg_chars_per_dust": 83.97,
+      "top_scene_counts": {
+        "review": 276,
+        "evidence": 12,
+        "impl": 5,
+        "spec": 4
+      },
+      "top_flow_counts": {
+        "compare": 270,
+        "run": 26,
+        "fix": 1
+      },
+      "sample_short_labels": [
+        "챕터 1: 하이라이트 및 Bati…",
+        "그런 결과물들이 퀴즈 형태로 나오…",
+        "그래서 0:077초이런 퀴즈들을 …",
+        "0:1414초일단 기본적으로 PP…",
+        "0:2222초뭐 50페이지 넘는 …",
+        "어떤 엑셀 파일이든 업로드를 하면…",
+        "금방 만든 것들을 어 이제 본인이…",
+        "0:3838초네.",
+        "안녕하세요.",
+        "구독자 여러분."
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "preprocess_required",
+        "reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.69,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.195,
+        "avg_chars_per_dust": 83.97,
+        "sample_short_labels": [
+          "챕터 1: 하이라이트 및 Bati…",
+          "그런 결과물들이 퀴즈 형태로 나오…",
+          "그래서 0:077초이런 퀴즈들을 …",
+          "0:1414초일단 기본적으로 PP…",
+          "0:2222초뭐 50페이지 넘는 …",
+          "어떤 엑셀 파일이든 업로드를 하면…",
+          "금방 만든 것들을 어 이제 본인이…",
+          "0:3838초네.",
+          "안녕하세요.",
+          "구독자 여러분."
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_jang_interview_transcript_regroup_compare_20260402T222202Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 105,
+      "dust_count": 270,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 1,
+      "short_line_ratio": 0.01,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 49,
+      "short_dust_ratio": 0.181,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 84.13,
+      "top_scene_counts": {
+        "review": 249,
+        "evidence": 12,
+        "impl": 5,
+        "spec": 4
+      },
+      "top_flow_counts": {
+        "compare": 243,
+        "run": 26,
+        "fix": 1
+      },
+      "sample_short_labels": [
+        "하이라이트 및 BatiAI 류장근…",
+        "그런 결과물들이 퀴즈 형태로 나오…",
+        "그래서 이런 퀴즈들을 보면서이 과…",
+        "일단 기본적으로 PPT 형식으로 …",
+        "뭐 50페이지 넘는 이런 페이지들…",
+        "어떤 엑셀 파일이든 업로드를 하면…",
+        "금방 만든 것들을 어 이제 본인이…",
+        "안녕하세요.",
+        "구독자 여러분.",
+        "오늘 하우와의 팟캐스트에는 바티 …"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.181,
+        "avg_chars_per_dust": 84.13,
+        "sample_short_labels": [
+          "하이라이트 및 BatiAI 류장근…",
+          "그런 결과물들이 퀴즈 형태로 나오…",
+          "그래서 이런 퀴즈들을 보면서이 과…",
+          "일단 기본적으로 PPT 형식으로 …",
+          "뭐 50페이지 넘는 이런 페이지들…",
+          "어떤 엑셀 파일이든 업로드를 하면…",
+          "금방 만든 것들을 어 이제 본인이…",
+          "안녕하세요.",
+          "구독자 여러분.",
+          "오늘 하우와의 팟캐스트에는 바티 …"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "before_probe": {
+    "dust_count": 297,
+    "short_dust_ratio": 0.269,
+    "avg_chars_per_dust": 83.97,
+    "top_scene_counts": {
+      "review": 276,
+      "evidence": 12,
+      "impl": 5,
+      "spec": 4
+    },
+    "top_flow_counts": {
+      "compare": 270,
+      "run": 26,
+      "fix": 1
+    },
+    "sample_short_labels": [
+      "챕터 1: 하이라이트 및 Bati…",
+      "그런 결과물들이 퀴즈 형태로 나오…",
+      "그래서 0:077초이런 퀴즈들을 …",
+      "0:1414초일단 기본적으로 PP…",
+      "0:2222초뭐 50페이지 넘는 …",
+      "어떤 엑셀 파일이든 업로드를 하면…",
+      "금방 만든 것들을 어 이제 본인이…",
+      "0:3838초네."
+    ]
+  },
+  "after_probe": {
+    "dust_count": 270,
+    "short_dust_ratio": 0.222,
+    "avg_chars_per_dust": 84.13,
+    "top_scene_counts": {
+      "review": 249,
+      "evidence": 12,
+      "impl": 5,
+      "spec": 4
+    },
+    "top_flow_counts": {
+      "compare": 243,
+      "run": 26,
+      "fix": 1
+    },
+    "sample_short_labels": [
+      "하이라이트 및 BatiAI 류장근…",
+      "그런 결과물들이 퀴즈 형태로 나오…",
+      "그래서 이런 퀴즈들을 보면서이 과…",
+      "일단 기본적으로 PPT 형식으로 …",
+      "뭐 50페이지 넘는 이런 페이지들…",
+      "어떤 엑셀 파일이든 업로드를 하면…",
+      "금방 만든 것들을 어 이제 본인이…",
+      "안녕하세요."
+    ]
+  },
+  "comparison": {
+    "dust_count_delta": -27,
+    "short_dust_ratio_delta": -0.047,
+    "avg_chars_per_dust_delta": 0.16,
+    "regrouped_chunk_count": 105,
+    "dropped_interjection_count": 27,
+    "readiness_read": {
+      "status": "probe_again_before_ingest",
+      "reason": "preprocess reduced transcript noise, but intake should still be checked before mutation",
+      "before_dust_count": "297",
+      "after_dust_count": "270"
+    },
+    "check_surface": {
+      "what_improved": [
+        "dust count moved down toward larger meaning units",
+        "average chars per dust increased, so each unit carries more local context",
+        "short shard ratio decreased"
+      ],
+      "what_is_still_missing": [
+        "post-preprocess state is still not direct-ingest-safe",
+        "short shard ratio is still high enough to flatten local context"
+      ],
+      "next_checkpoint": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+    }
+  }
+}

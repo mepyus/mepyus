@@ -1,0 +1,1113 @@
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>VectorFL Paper Weekend Pilot</title>
+      <style>
+        :root {
+          --bg: #0b0c0e;
+          --panel: #111317;
+          --soft: #171a20;
+          --line: rgba(255,255,255,0.1);
+          --text: #eef2ff;
+          --muted: #a5adc8;
+          --accent: #818cf8;
+          --radius: 24px;
+        }
+        * { box-sizing: border-box; }
+        body {
+          margin: 0;
+          font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          background: radial-gradient(circle at top, rgba(129,140,248,0.16), transparent 22%), var(--bg);
+          color: var(--text);
+        }
+        .page { max-width: 1360px; margin: 0 auto; padding: 28px; display: grid; gap: 18px; }
+        .hero, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+        .panel.soft { background: var(--soft); }
+        .hero h1, .panel h2, .panel h3 { margin: 0; }
+        .kicker { color: var(--accent); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
+        .meta { color: var(--muted); font-size: 13px; line-height: 1.5; }
+        .body-copy { line-height: 1.6; }
+        .grid { display: grid; gap: 18px; grid-template-columns: 1.15fr 0.85fr; }
+        .stack { display: grid; gap: 18px; }
+        .triple { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .dual { display: grid; gap: 18px; grid-template-columns: 1.1fr 0.9fr; }
+        .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .chip { border: 1px solid rgba(129,140,248,0.35); background: rgba(129,140,248,0.12); border-radius: 999px; padding: 6px 10px; font-size: 12px; }
+        .list-row { border-top: 1px solid var(--line); padding: 12px 0; }
+        .list-row:first-child { border-top: 0; padding-top: 0; }
+        .entity-title { font-weight: 700; margin-bottom: 4px; }
+        .entity-sub { color: var(--text); line-height: 1.5; }
+        .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 10px; }
+        .code { white-space: pre-wrap; background: #0d1015; border: 1px solid var(--line); border-radius: 18px; padding: 14px; line-height: 1.5; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+        @media (max-width: 980px) {
+          .grid, .triple, .dual { grid-template-columns: 1fr; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="page">
+        <section class="hero">
+          <div class="kicker">VectorFL Paper Weekend Pilot</div>
+          <h1>Scenario-Bearing First Loop</h1>
+          <div class="body-copy">This view turns the new contracts and sample packets into one operable pilot surface: material bundle, active task, 3-cell registry, sample outputs, and supervisor report.</div>
+        </section>
+        <div class="dual">
+          
+    <section class="panel">
+      <div class="kicker">Human First</div>
+      <h2>Supervisor Compass</h2>
+      
+    <div class="body-copy"><strong>한 줄 판정:</strong> 지금은 UI를 꾸미는 중이 아니라, 시나리오가 포함된 재료로 첫 숙성 루프가 실제로 닫히는지 증명하는 중입니다.</div>
+    <div class="label">why this pilot exists</div>
+    <div class="chip-row">
+      <span class="chip">scenario-bearing input</span>
+      <span class="chip">internal-first</span>
+      <span class="chip">thin external overlay</span>
+      <span class="chip">supervisor-readable report</span>
+      <span class="chip">runtime return</span>
+    </div>
+    <div class="label">already proven</div>
+    <div class="chip-row"><span class="chip">3-cell loop shape</span><span class="chip">human-readable supervisor report exists</span><span class="chip">runtime write-back exists</span><span class="chip">reopen path exists</span><span class="chip">native-shape source pass exists</span><span class="chip">export-shaped source pass exists</span><span class="chip">actual export swap seam is prepared</span></div>
+    <div class="label">single remaining gate</div>
+    <div class="body-copy">A real exported host record must replace the placeholder slot occupant and be rerun through packet v4.</div>
+    <div class="meta">This is the last realism gate before naming promotion into VectorFL Paper proper.</div>
+    <div class="label">what this is not</div>
+    <div class="chip-row"><span class="chip">copying Paperclip&#x27;s company ontology</span><span class="chip">building a dark-theme task manager for its own sake</span><span class="chip">expanding into many cells or many programs before one loop is proven</span></div>
+    <div class="label">supervisor takeaway</div>
+    <div class="body-copy">The work is not drifting into internal-only closure. The structure is moving in the intended direction, but the reading surface for the human supervisor still needs ongoing simplification.</div>
+    
+    </section>
+    
+          
+    <section class="panel">
+      <div class="kicker">Supervisor Check</div>
+      <h2>Human Direction Readout</h2>
+      
+    <div class="body-copy">We are not building a pretty multi-agent UI. We are proving that scenario-bearing material can close one internal-read -> selective external comparison -> supervisor report -> runtime return loop.</div>
+    <div class="label">current judgment</div>
+    <div class="chip-row"><span class="chip">direction=mostly_correct</span><span class="chip">internal_only=false</span><span class="chip">human_readability=still_thin</span><span class="chip">last_gate=actual_export_only</span></div>
+    <div class="label">what the user should know now</div>
+    <div class="body-copy">The structure is moving in the right direction, but the supervisory reading layer still needs stronger translation so the purpose is immediately obvious without reading manifests.</div>
+    
+    </section>
+    
+        </div>
+        <div class="grid">
+          <div class="stack">
+            
+    <section class="panel">
+      <div class="kicker">Current Target</div>
+      <h2>Active Task</h2>
+      
+    <div class="meta">task_id=vectorfl_paper_weekend_pilot_active_task_v0</div>
+    <div class="body-copy">Use scenario-bearing material to prove that VectorFL Paper can run one internal-to-external maturation loop without making the user the bottleneck.</div>
+    <div class="chip-row"><span class="chip">scenario is preserved as reasoning material</span><span class="chip">internal read emits line seeds</span><span class="chip">external read remains selective</span><span class="chip">synthesis emits human-readable supervisor report</span><span class="chip">supervisor can decide go/hold/reopen/redirect</span><span class="chip">loop outputs can return into Paper memory</span></div>
+    <div class="meta">human_gate_required=true / do_not_flatten_into_todos=true</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Scenario Inputs</div>
+      <h2>Material Bundle</h2>
+      <div class="meta">scenario-included material -&gt; internal read -&gt; line seeds -&gt; selective external comparison -&gt; synthesis report -&gt; supervisor decision -&gt; internal return</div><div><div class="list-row"><div class="entity-title">conversation_bundle_current_turn</div><div class="entity-sub">primary scenario-bearing reasoning flow</div><div class="meta">The conversation carries the pressure, correction, and operating-philosophy formation directly.</div></div><div class="list-row"><div class="entity-title">weekend_pilot_scenario_v0</div><div class="entity-sub">pilot target lock</div><div class="meta">Defines the first loop and the minimum definition of done.</div></div><div class="list-row"><div class="entity-title">operating_cell_schema_v0</div><div class="entity-sub">cell structure lock</div><div class="meta">Prevents team labels from drifting back into vague org metaphors.</div></div><div class="list-row"><div class="entity-title">conversation_to_line_procedure_v0</div><div class="entity-sub">line extraction procedure</div><div class="meta">Turns scenario-bearing conversation into reusable line seeds.</div></div><div class="list-row"><div class="entity-title">paperclip_absorption_overlay_v1</div><div class="entity-sub">control-plane reference</div><div class="meta">Keeps Paperclip as a structural reference rather than a UI imitation target.</div></div><div class="list-row"><div class="entity-title">vectorfl_host_coupled_maturation_strategy_v0</div><div class="entity-sub">maturation strategy reference</div><div class="meta">Anchors the internal-first and maturation-oriented reading posture.</div></div><div class="list-row"><div class="entity-title">human_language_work_surface_readiness_reread_v0</div><div class="entity-sub">supervision language reference</div><div class="meta">Supports the requirement that internal output must rise as human-readable supervision language.</div></div></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Weekend Choice</div>
+      <h2>Live Bundle Selection</h2>
+      <div><div class="list-row"><div class="entity-title">vectorfl_host_coupled_maturation_strategy_v0</div><div class="entity-sub">maturation posture anchor</div><div class="meta">docs/reviews/vectorfl_host_coupled_maturation_strategy_v0.md</div></div><div class="list-row"><div class="entity-title">human_language_work_surface_readiness_reread_v0</div><div class="entity-sub">supervision language anchor</div><div class="meta">docs/reports/human_language_work_surface_readiness_reread_v0.md</div></div><div class="list-row"><div class="entity-title">vectorfl_paper_operating_brief_lock_v0</div><div class="entity-sub">operating flow anchor</div><div class="meta">docs/specs/vectorfl_paper_operating_brief_lock_v0.md</div></div><div class="list-row"><div class="entity-title">vectorfl_paper_surface_as_reading_organs_lock_v0</div><div class="entity-sub">surface translator anchor</div><div class="meta">docs/specs/vectorfl_paper_surface_as_reading_organs_lock_v0.md</div></div><div class="list-row"><div class="entity-title">paperclip_absorption_overlay_v1</div><div class="entity-sub">operational memory overlay anchor</div><div class="meta">docs/reviews/paperclip_absorption_overlay_v1.md</div></div><div class="list-row"><div class="entity-title">paperclip_to_vectorfl_overlay_requirements_v0</div><div class="entity-sub">thin overlay target anchor</div><div class="meta">docs/reviews/paperclip_to_vectorfl_overlay_requirements_v0.md</div></div><div class="list-row"><div class="entity-title">conversation_bundle_current_turn</div><div class="entity-sub">active correction flow</div><div class="meta">conversation_bundle_current_turn</div></div></div>
+    <div class="body-copy">Smallest bundle that preserves maturation posture, supervision language, operating flow, reading-organ surface, and Paperclip overlay grammar together.</div>
+    <div class="label">selected external comparison target</div>
+    <div class="body-copy">Paperclip issue / heartbeat run / result / governance event -&gt; VectorFL intake grammar</div>
+    <div class="chip-row"><span class="chip">It is the thinnest realistic overlay target.</span><span class="chip">It preserves Paperclip as control-plane reference instead of copied ontology.</span><span class="chip">It directly supports the first weekend closed-loop success condition.</span></div>
+    <div class="label">comparison questions</div>
+    <div class="chip-row"><span class="chip">How thin can the first overlay be while still preserving issue, run, result, and governance traces?</span><span class="chip">Which Paperclip surfaces map cleanly into VectorFL line, trace, residue, and advisory-return grammar?</span><span class="chip">What should remain external ontology and what should be translated into VectorFL internal grammar?</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Next Translation Step</div>
+      <h2>Thin Overlay Intake Mapping</h2>
+      <div><div class="list-row"><div class="entity-title">issue</div><div class="entity-sub">source_assignment, line_translation, context_refs, execution_guidance</div><div class="meta">object=line_guided_work_packet / slot=line_guided_work_packets</div></div><div class="list-row"><div class="entity-title">heartbeat_run</div><div class="entity-sub">execution_trace, reentry_hint, residue_capture_candidate, run_state</div><div class="meta">object=append_only_trace_row / slot=execution_trace_log</div></div><div class="list-row"><div class="entity-title">result</div><div class="entity-sub">observed_line_candidate, residue_note, operator_summary, advisory_return_hint</div><div class="meta">object=result_reinjection_stub / slot=reinjection_stubs</div></div><div class="list-row"><div class="entity-title">governance_event</div><div class="entity-sub">route_gate, hold_trace, promotion_gate, caution_note</div><div class="meta">object=governance_gate_note / slot=governance_trace_notes</div></div></div>
+    <div class="label">translated work packet</div>
+    <div class="chip-row"><span class="chip">internal_reading_before_expansion</span><span class="chip">worker_as_paper_manager</span></div>
+    <div class="meta">primary_line=human_readable_supervision_surface</div>
+    <div class="label">translated governance gate</div>
+    <div class="chip-row">
+      <span class="chip">supervisor_decision_required_before_live_pass</span>
+      <span class="chip">do_not_expand_scope_until_first_live_loop_closes</span>
+    </div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">3-Cell Minimum</div>
+      <h2>Cell Registry</h2>
+      <div class="triple">
+            <div class="panel soft">
+              <div class="kicker">internal_read_cell</div>
+              <h3>Internal Read Cell</h3>
+              <div class="body-copy">Reread scenario-bearing internal material and extract stable points, unclear points, and line seeds.</div>
+              <div class="meta">cli=gemini-cli / contract=docs/contracts/vectorfl_paper_internal_read_cell_v0.md</div>
+              <div class="label">lens</div>
+              <div class="chip-row"><span class="chip">repeated pressure</span><span class="chip">misunderstanding correction</span><span class="chip">line seed formation</span></div>
+              <div class="label">outputs</div>
+              <div class="chip-row"><span class="chip">stable_points</span><span class="chip">unclear_points</span><span class="chip">next_questions</span><span class="chip">line_seeds</span></div>
+              <div class="label">handoff targets</div>
+              <div class="chip-row"><span class="chip">external_resource_cell: Turn internal gaps into selective external comparison tasks.</span><span class="chip">synthesis_cell: Provide a partial supervisor-readable checkpoint.</span></div>
+            </div>
+            
+            <div class="panel soft">
+              <div class="kicker">external_resource_cell</div>
+              <h3>External Resource Cell</h3>
+              <div class="body-copy">Translate internal gaps into selective external comparison and propose inject-able references.</div>
+              <div class="meta">cli=codex-cli / contract=docs/contracts/vectorfl_paper_external_resource_cell_v0.md</div>
+              <div class="label">lens</div>
+              <div class="chip-row"><span class="chip">selective comparison</span><span class="chip">reference usefulness</span><span class="chip">injection readiness</span></div>
+              <div class="label">outputs</div>
+              <div class="chip-row"><span class="chip">candidate_references</span><span class="chip">rejection_rules</span><span class="chip">internal_injection_candidates</span></div>
+              <div class="label">handoff targets</div>
+              <div class="chip-row"><span class="chip">synthesis_cell: Bind external comparison back into the current loop judgment.</span><span class="chip">internal_read_cell: Re-read approved injected references inside internal criteria.</span></div>
+            </div>
+            
+            <div class="panel soft">
+              <div class="kicker">synthesis_cell</div>
+              <h3>Synthesis Cell</h3>
+              <div class="body-copy">Turn internal and external outputs into confirmed lines, unresolved tensions, and a supervisor decision surface.</div>
+              <div class="meta">cli=codex-cli / contract=docs/contracts/vectorfl_paper_synthesis_cell_v0.md</div>
+              <div class="label">lens</div>
+              <div class="chip-row"><span class="chip">binding judgment</span><span class="chip">human-readable supervision</span><span class="chip">next loop proposal</span></div>
+              <div class="label">outputs</div>
+              <div class="chip-row"><span class="chip">confirmed_lines</span><span class="chip">unresolved_tensions</span><span class="chip">supervisor_report</span><span class="chip">next_loop_proposal</span></div>
+              <div class="label">handoff targets</div>
+              <div class="chip-row"><span class="chip">supervisor: The loop requires an explicit human decision point.</span></div>
+            </div>
+            </div>
+    </section>
+    
+          </div>
+          <div class="stack">
+            
+    <section class="panel">
+      <div class="kicker">Live Pass</div>
+      <h2>Live Internal Read Output</h2>
+      <div class="label">repeated pressures</div><div class="chip-row"><span class="chip">internal reading must come before broad expansion</span><span class="chip">human-readable supervision is mandatory, not optional polish</span><span class="chip">Paperclip must be absorbed as control-plane grammar rather than copied ontology</span><span class="chip">the first overlay must remain thin and scenario-grounded</span><span class="chip">the user must not become the operational bottleneck again</span></div><div class="label">line seeds</div><div><div class="list-row"><div class="entity-title">maturation_headquarters_not_dashboard</div><div class="entity-sub">VectorFL Paper should be treated as a headquarters for maturation loops rather than as a dashboard for agent activity.</div><div class="meta">resists=dashboard-first implementation, feature-count progress logic</div></div><div class="list-row"><div class="entity-title">supervision_language_as_hard_requirement</div><div class="entity-sub">If the line cannot rise as human-readable work language, the loop is not operational yet.</div><div class="meta">resists=internal jargon dominance, trace-rich but decision-poor output</div></div><div class="list-row"><div class="entity-title">thin_overlay_before_broad_integration</div><div class="entity-sub">The first live bridge should prove translation of issue, run, result, and governance before any broader orchestration ambition.</div><div class="meta">resists=broad integration before proof, company ontology import</div></div><div class="list-row"><div class="entity-title">cli_as_cell_manager</div><div class="entity-sub">Cells become real only when CLI responsibility is explicit at the contract level.</div><div class="meta">resists=tool-button thinking, manual supervisor micromanagement</div></div></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Live Pass</div>
+      <h2>Live External Resource Output</h2>
+      <div class="label">candidate references</div><div><div class="list-row"><div class="entity-title">paperclip_absorption_overlay_v1</div><div class="entity-sub">Supplies the operational-memory interpretation of issue, run, result, decision, and pattern traces.</div><div class="meta">strengthens=thin_overlay_before_broad_integration</div></div><div class="list-row"><div class="entity-title">paperclip_to_vectorfl_overlay_requirements_v0</div><div class="entity-sub">Defines the minimum realistic first test and narrows the bridge to issue/run/result/governance surfaces.</div><div class="meta">strengthens=thin_overlay_before_broad_integration</div></div><div class="list-row"><div class="entity-title">paperclip_structural_fit_for_vectorfl_v0</div><div class="entity-sub">Supplies the structural translation from issue system and heartbeat shell into line-guided packets and line operating loops.</div><div class="meta">strengthens=cli_as_cell_manager</div></div><div class="list-row"><div class="entity-title">line_guided_work_packet_v1</div><div class="entity-sub">Provides the exact internal target object for translated issue surfaces.</div><div class="meta">strengthens=thin_overlay_before_broad_integration</div></div></div><div class="label">rejection rules</div><div class="chip-row"><span class="chip">Reject any comparison path that expands into full company, budget, or org ontology before issue/run/result/governance translation is proven.</span><span class="chip">Reject UI-theme comparisons that do not help line-guided packet, trace, residue, or gate translation.</span><span class="chip">Reject references that make the first loop broader than one scenario-bearing work packet cycle.</span></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Live Pass</div>
+      <h2>Live Synthesis Output</h2>
+      <div class="label">confirmed lines</div><div><div class="list-row"><div class="entity-title">maturation_headquarters_not_dashboard</div><div class="entity-sub">This weekend should prove one real loop, not add more pages that only look operational.</div><div class="meta">next_use=Keep the live pass focused on one translated work packet cycle.</div></div><div class="list-row"><div class="entity-title">supervision_language_as_hard_requirement</div><div class="entity-sub">If you still have to decode the engine manually, the pilot has not really worked.</div><div class="meta">next_use=Judge the live pass by supervisor readability, not by artifact count.</div></div><div class="list-row"><div class="entity-title">thin_overlay_before_broad_integration</div><div class="entity-sub">The first real proof is not a full integration. It is one clean translation cycle.</div><div class="meta">next_use=Use the chosen overlay target as the only live external comparison target for the first run.</div></div><div class="list-row"><div class="entity-title">cli_as_cell_manager</div><div class="entity-sub">The cells should run under owned contracts, not wait for step-by-step hand-holding.</div><div class="meta">next_use=Keep Gemini on reread pressure extraction and Codex on structure, translation, and synthesis.</div></div></div><div class="label">recommendation</div><div class="chip-row"><span class="chip">go</span><span class="chip">The selected live bundle and the thin overlay target now align tightly enough to move into the first stricter live-pass translation.</span></div></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Live Pass</div>
+      <h2>Live Translation Artifacts</h2>
+      
+    <div class="label">issue surface</div>
+    <div class="body-copy">prove first scenario-bearing loop closes with readable supervision</div>
+    <div class="meta">assignee=codex_local / status=assigned</div>
+    <div class="label">translated work packet</div>
+    <div class="chip-row">
+      <span class="chip">primary=supervision_language_as_hard_requirement</span>
+      <span class="chip">support=thin_overlay_before_broad_integration</span><span class="chip">support=cli_as_cell_manager</span>
+    </div>
+    <div class="label">append-only trace</div>
+    <div class="body-copy">The first live issue-shaped sample was translated into packet, trace, reinjection, and governance artifacts without broadening the scope.</div>
+    <div class="meta">residue=truer_external_source_record_still_needed</div>
+    <div class="label">reinjection stub</div>
+    <div class="body-copy">Use the reopened packet path to replace the current issue-like sample with a truer external source record while keeping the overlay thin.</div>
+    <div class="label">governance gate</div>
+    <div class="chip-row">
+      <span class="chip">supervisor_go_after_live_bundle_selection</span>
+      <span class="chip">do_not_expand_beyond_issue_run_result_governance_until_truer_external_source_record_is_selected</span>
+    </div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Goal Check</div>
+      <h2>Pilot Status Board</h2>
+      
+    <div class="label">current state</div>
+    <div class="chip-row"><span class="chip">live_bundle_selected=true</span><span class="chip">external_target_selected=true</span><span class="chip">cell_contracts_locked=true</span><span class="chip">conversation_to_line_procedure_locked=true</span><span class="chip">live_internal_read_output_ready=true</span><span class="chip">live_external_resource_output_ready=true</span><span class="chip">live_synthesis_output_ready=true</span><span class="chip">live_supervisor_report_ready=true</span><span class="chip">thin_overlay_mapping_ready=true</span><span class="chip">issue_like_sample_ready=true</span><span class="chip">translated_work_packet_ready=true</span><span class="chip">append_only_trace_ready=true</span><span class="chip">reinjection_stub_ready=true</span><span class="chip">governance_gate_note_ready=true</span><span class="chip">runtime_write_back_enacted=true</span><span class="chip">reopen_case_exercised=true</span><span class="chip">canonical_pilot_bridge_ready=true</span><span class="chip">native_shape_source_record_ready=true</span><span class="chip">native_shape_overlay_rerun_ready=true</span><span class="chip">export_shaped_source_record_ready=true</span><span class="chip">export_shaped_overlay_rerun_ready=true</span><span class="chip">actual_export_slot_ready=true</span><span class="chip">actual_export_template_ready=true</span><span class="chip">actual_export_packet_stub_ready=true</span><span class="chip">actual_export_swap_ready=true</span><span class="chip">actual_export_swap_stub_ready=true</span><span class="chip">actual_export_v4_preview_ready=true</span><span class="chip">absorption_package_ready=true</span><span class="chip">proper_promotion_stub_ready=true</span><span class="chip">official_readme_alignment_checked=true</span><span class="chip">human_direction_readout_ready=true</span><span class="chip">supervisor_current_board_ready=true</span></div>
+    <div class="label">remaining gaps</div>
+    <div class="chip-row"><span class="chip">replace the export-shaped host record with an actual exported host record when available</span></div>
+    <div class="label">next checks</div>
+    <div class="chip-row"><span class="chip">does the live artifact set still read as one loop instead of a document pile?</span><span class="chip">does the supervisor surface reduce manual decoding burden?</span><span class="chip">do the translated artifacts preserve line-centered meaning rather than task-manager semantics?</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Enactment</div>
+      <h2>Runtime Write-Back</h2>
+      
+    <div class="body-copy">The weekend pilot now has runtime-visible packet, trace, reinjection, and governance slots.</div>
+    <div class="meta">This turns the first live cycle from a document pile into a minimal enacted operating loop.</div>
+    <div class="label">registered slots</div>
+    <div class="chip-row"><span class="chip">line_guided_work_packets: runtime/manifests/vectorfl_paper_weekend_live_line_guided_work_packets_v0.json</span><span class="chip">execution_trace_log: runtime/manifests/vectorfl_paper_weekend_live_execution_trace_log_v0.jsonl</span><span class="chip">reinjection_registry: runtime/manifests/vectorfl_paper_weekend_live_reinjection_registry_v0.json</span><span class="chip">governance_gates: runtime/manifests/vectorfl_paper_weekend_live_governance_gates_v0.json</span></div>
+    <div class="label">write-back actions</div>
+    <div class="chip-row"><span class="chip">registered translated work packet into a weekend-specific runtime packet manifest</span><span class="chip">registered append-only trace row into a weekend-specific runtime trace log</span><span class="chip">registered reinjection stub into a runtime reinjection registry</span><span class="chip">registered governance gate into a runtime governance gate registry</span></div>
+    <div class="label">next action</div>
+    <div class="body-copy">Use the reopened packet path to source a truer external issue-shaped record.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Absorption Path</div>
+      <h2>Canonical Pilot Bridge</h2>
+      
+    <div class="body-copy">The weekend slice is not a side branch. It is the current canonical pilot seam that will be absorbed into general VectorFL Paper runtime objects as soon as the truer external source record pass is done.</div>
+    <div class="label">why scoped first</div>
+    <div class="chip-row"><span class="chip">The weekend scope locked the first loop tightly enough to prevent philosophy drift into broad architecture or UI expansion.</span><span class="chip">The pilot needed one thin issue/run/result/governance proof before any broader merge into general runtime objects.</span></div>
+    <div class="label">absorption order</div>
+    <div class="chip-row"><span class="chip">rerun the same thin overlay loop against the export-shaped host record</span><span class="chip">replace the export-shaped host record with an actual exported host record</span><span class="chip">rename weekend-scoped runtime manifests into general vectorfl_paper_pilot runtime manifests</span><span class="chip">lift the pilot surface from weekend naming into general pilot naming</span></div>
+    <div class="label">merge readiness</div>
+    <div class="chip-row"><span class="chip">thin_overlay_proven=true</span><span class="chip">runtime_write_back_enacted=true</span><span class="chip">reopen_case_exercised=true</span><span class="chip">native_shape_source_selected=true</span><span class="chip">export_shaped_source_selected=true</span><span class="chip">actual_export_slot_ready=true</span><span class="chip">actual_export_packet_stub_ready=true</span><span class="chip">actual_export_swap_stub_ready=true</span><span class="chip">actual_export_v4_preview_ready=true</span><span class="chip">absorption_package_ready=true</span><span class="chip">proper_promotion_stub_ready=true</span><span class="chip">actual_export_still_pending=true</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Enactment</div>
+      <h2>Runtime Slot Registry</h2>
+      
+    <div class="label">packet refs</div>
+    <div class="chip-row"><span class="chip">runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v1.json</span><span class="chip">runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v2.json</span><span class="chip">runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v3.json</span></div>
+    <div class="label">registered packets</div>
+    <div class="chip-row"><span class="chip">lwp_vectorfl_paper_weekend_live_001=superseded_by_native_shape_rerun</span><span class="chip">lwp_vectorfl_paper_weekend_live_002=superseded_by_export_shaped_rerun</span><span class="chip">lwp_vectorfl_paper_weekend_live_003=registered_from_export_shaped_source</span></div>
+    <div class="label">reinjection next probe</div>
+    <div class="chip-row"><span class="chip">replace the current issue-like sample with a truer external source record while preserving the thin overlay</span></div>
+    <div class="label">governance hold</div>
+    <div class="chip-row"><span class="chip">do_not_expand_beyond_issue_run_result_governance_until_truer_external_source_record_is_selected</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Return Loop</div>
+      <h2>Reopen Case</h2>
+      
+    <div class="body-copy">The first weekend packet has been reopened on purpose so the loop proves return, not only first-pass translation.</div>
+    <div class="meta">target_cell=internal_read_cell / handoff_after=external_resource_cell</div>
+    <div class="label">why reopen now</div>
+    <div class="chip-row"><span class="chip">The first runtime write-back is now enacted, so the loop should prove that one concrete reopen path can actually return into the reading flow.</span><span class="chip">The next strongest pressure is to replace the current issue-like sample with a truer external source record without widening scope.</span></div>
+    <div class="label">reopen questions</div>
+    <div class="chip-row"><span class="chip">Which part of the current issue-like sample still feels synthetic rather than truly sourced?</span><span class="chip">What tighter external source shape would preserve the thin overlay while raising realism?</span><span class="chip">What residue should stay visible until the source record is replaced?</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Native-Shape Source Record</h2>
+      
+    <div class="body-copy">summarize current reading residue before next routing change</div>
+    <div class="meta">issue=VFP-17 / assignee=agent_codex_local / run=hb_run_001</div>
+    <div class="label">why truer than v0 sample</div>
+    <div class="chip-row"><span class="chip">It keeps native Paperclip surface boundaries instead of flattening everything into one generic pilot summary.</span><span class="chip">It includes issue placement, wakeup-to-run carry, comment return, and approval note as separate source surfaces.</span><span class="chip">It is still local and controlled, but shaped by extracted native structure rather than by pure synthetic convenience.</span></div>
+    <div class="label">native surfaces preserved</div>
+    <div class="chip-row"><span class="chip">issue</span><span class="chip">assignment/wakeup</span><span class="chip">heartbeat run</span><span class="chip">output artifact</span><span class="chip">governance event</span></div>
+    <div class="label">comment return</div>
+    <div class="body-copy">Current residue should stay visible before any routing change. Keep the next pass narrow and attach the caution to the same issue.</div>
+    <div class="label">governance note</div>
+    <div class="body-copy">Proceed only if the residue note remains attached to the same issue and the next run stays narrow.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Export-Shaped Host Record</h2>
+      
+    <div class="body-copy">summarize current reading residue before next routing change</div>
+    <div class="meta">issue_row=VFP-17 / run_row=2f54b4a2-8570-4f0a-a3ce-010101010017 / approval_row=ef117d6b-ecc8-4f5b-8a10-010101010001</div>
+    <div class="label">schema basis</div>
+    <div class="chip-row"><span class="chip">issues.ts</span><span class="chip">heartbeat_runs.ts</span><span class="chip">issue_comments.ts</span><span class="chip">approvals.ts</span></div>
+    <div class="label">host row boundaries preserved</div>
+    <div class="chip-row"><span class="chip">issues_row</span><span class="chip">heartbeat_runs_row</span><span class="chip">issue_comments_rows</span><span class="chip">approvals_row</span></div>
+    <div class="label">honesty note</div>
+    <div class="body-copy">This is still local fixture data, but it preserves host export field names and boundary shape closely enough to serve as the next canonical thin-overlay source.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Actual Export Slot</h2>
+      
+    <div class="body-copy">Do not widen the pilot when the real export arrives. Swap the source, rerun the same seam, and then promote naming.</div>
+    <div class="meta">state=waiting_for_actual_export</div>
+    <div class="label">placeholder ref</div>
+    <div class="chip-row"><span class="chip">runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json</span></div>
+    <div class="label">required surfaces</div>
+    <div class="chip-row"><span class="chip">issues_row</span><span class="chip">heartbeat_runs_row</span><span class="chip">issue_comments_rows</span><span class="chip">approvals_row</span></div>
+    <div class="label">swap rule</div>
+    <div class="chip-row"><span class="chip">thin issue/run/result/governance overlay</span><span class="chip">line-centered translation categories</span><span class="chip">runtime write-back and reopen seam</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Actual Export Swap Ready</h2>
+      
+    <div class="body-copy">The pilot no longer needs new design work before the actual export arrives. It only needs source replacement and the v4 rerun.</div>
+    <div class="meta">state=swap_ready_waiting_for_actual_export</div>
+    <div class="label">template ref</div>
+    <div class="chip-row"><span class="chip">runtime/contracts/vectorfl_paper_actual_export_host_record_template_v0.json</span></div>
+    <div class="label">next packet stub</div>
+    <div class="chip-row"><span class="chip">lwp_vectorfl_paper_weekend_live_004=waiting_for_actual_export_source</span></div>
+    <div class="label">swap targets</div>
+    <div class="chip-row"><span class="chip">runtime/manifests/vectorfl_paper_pilot_current_v0.json</span><span class="chip">runtime/manifests/vectorfl_paper_weekend_live_line_guided_work_packets_v0.json</span><span class="chip">runtime/contracts/vectorfl_paper_weekend_pilot_status_board_v0.json</span></div>
+    <div class="label">required surface count</div>
+    <div class="chip-row"><span class="chip">4</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Actual Export Swap Stub</h2>
+      
+    <div class="body-copy">scripts/run_vectorfl_paper_actual_export_swap_stub.py validates the slot occupant and previews packet v4 materialization.</div>
+    <div class="meta">dry_run_manifest=runtime/manifests/vectorfl_paper_actual_export_swap_dry_run_v0.json</div>
+    <div class="label">swap-ready state</div>
+    <div class="chip-row"><span class="chip">swap_ready_waiting_for_actual_export</span><span class="chip">next=lwp_vectorfl_paper_weekend_live_004</span></div>
+    <div class="label">dry-run validation</div>
+    <div class="chip-row"><span class="chip">validation_passed=true</span><span class="chip">slot=waiting_for_actual_export</span></div>
+    <div class="label">preview summary</div>
+    <div class="chip-row"><span class="chip">issue=VFP-17</span><span class="chip">run=2f54b4a2-8570-4f0a-a3ce-010101010017</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Read-Only Comparison</div>
+      <h2>Post-Stabilization Merge Test Layer</h2>
+      
+    <div class="body-copy">Read-only merge-test layer only. It attaches the validated comparison reading to this legacy weekend pilot surface without replacing the current slot, promoting a candidate, or declaring gate close.</div>
+    <div class="meta">comparison_manifest=runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json</div>
+    <div class="meta">dry_run_preview_manifest=runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json</div>
+    <div class="label">current anchor summary</div>
+    <div class="chip-row">
+      <span class="chip">source=runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json</span>
+      <span class="chip">validation_status=partial</span>
+      <span class="chip">honesty_class=local_fixture</span>
+      <span class="chip">gate_effect=narrowed_but_still_binding</span>
+      <span class="chip">role=current_ssot_anchor_unchanged</span>
+    </div>
+    <div class="label">dry-run candidate preview</div>
+    <div class="chip-row">
+      <span class="chip">source=runtime/manifests/vectorfl_paper_ralph_candidate_evidence_record_v0.json</span>
+      <span class="chip">validation_status=partial</span>
+      <span class="chip">honesty_class=external_candidate</span>
+      <span class="chip">gate_effect=candidate_for_reopen_validation</span>
+      <span class="chip">gate_effect_change=narrowed_but_still_binding -&gt; candidate_for_reopen_validation</span>
+      <span class="chip">no_gate_close_change=true</span>
+    </div>
+    <div class="label">comparison verdict summary</div>
+    <div>
+        <div class="list-row">
+          <div class="entity-title">autoresearch</div>
+          <div class="entity-sub">partial / external_candidate / candidate_for_reopen_validation</div>
+          <div class="meta">gate_effect_change=narrowed_but_still_binding -&gt; candidate_for_reopen_validation / no_gate_close_change=true</div>
+        </div>
+        
+        <div class="list-row">
+          <div class="entity-title">paperclip</div>
+          <div class="entity-sub">partial / external_candidate / candidate_for_reopen_validation</div>
+          <div class="meta">gate_effect_change=narrowed_but_still_binding -&gt; candidate_for_reopen_validation / no_gate_close_change=true</div>
+        </div>
+        
+        <div class="list-row">
+          <div class="entity-title">opencode</div>
+          <div class="entity-sub">partial / external_candidate / candidate_for_reopen_validation</div>
+          <div class="meta">gate_effect_change=narrowed_but_still_binding -&gt; candidate_for_reopen_validation / no_gate_close_change=true</div>
+        </div>
+        
+        <div class="list-row">
+          <div class="entity-title">ralph</div>
+          <div class="entity-sub">partial / external_candidate / candidate_for_reopen_validation</div>
+          <div class="meta">gate_effect_change=narrowed_but_still_binding -&gt; candidate_for_reopen_validation / no_gate_close_change=true</div>
+        </div>
+        </div>
+    <div class="label">supervisor-safe decision posture</div>
+    <div class="chip-row">
+      <span class="chip">reopen_validation_repeatable=true</span>
+      <span class="chip">gate_close_candidate=false</span>
+      <span class="chip">merge_testing_stable=true</span>
+      <span class="chip">current_slot_replacement=forbidden</span>
+      <span class="chip">surface_redesign=forbidden</span>
+    </div>
+    <div class="body-copy">Decision reading: hold current SSOT, allow bounded read-only reopen validation, and wait for a true host export candidate before any gate-close or slot-replacement test.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Upgrade</div>
+      <h2>Actual Export V4 Preview</h2>
+      
+    <div class="body-copy">The actual-export rerun path has already been simulated against the current export-shaped placeholder, so the only missing ingredient is the real host export payload.</div>
+    <div class="meta">state=preview_ready_waiting_for_actual_export</div>
+    <div class="label">packet path</div>
+    <div class="chip-row"><span class="chip">current=runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v3.json</span><span class="chip">next=runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v4_stub.json</span></div>
+    <div class="label">promotion rule</div>
+    <div class="body-copy">When a real exported host record is placed into the canonical slot, replace the preview with a materialized v4 packet and keep all surrounding seams unchanged.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Promotion Path</div>
+      <h2>Absorption Package</h2>
+      
+    <div class="body-copy">Define which validated weekend-pilot seams should be promoted into VectorFL Paper proper once the actual export swap is complete.</div>
+    <div class="label">absorption targets</div>
+    <div class="chip-row"><span class="chip">operating_cells_and_contracts</span><span class="chip">thin_overlay_intake_grammar</span><span class="chip">runtime_write_back_and_reopen</span><span class="chip">actual_export_swap_seam</span><span class="chip">supervisor_surface_language</span></div>
+    <div class="label">naming rule</div>
+    <div class="chip-row"><span class="chip">line-centered intake grammar</span><span class="chip">runtime write-back</span><span class="chip">reopen as return</span><span class="chip">actual export swap seam</span><span class="chip">supervisor-readable report</span></div>
+    <div class="label">final gate</div>
+    <div class="body-copy">actual exported host record swapped into slot and rerun through v4 packet</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Promotion Path</div>
+      <h2>Proper Promotion Stub</h2>
+      
+    <div class="body-copy">scripts/run_vectorfl_paper_promotion_stub.py assembles the final promotion candidate for VectorFL Paper proper once the actual export gate is passed.</div>
+    <div class="meta">promotion_candidate_manifest=runtime/manifests/vectorfl_paper_proper_promotion_candidate_v0.json</div>
+    <div class="label">promotion note</div>
+    <div class="chip-row"><span class="chip">operational_gate_remaining=actual_export_only</span><span class="chip">redesign_forbidden=true</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Source Check</div>
+      <h2>Official README Alignment</h2>
+      
+    <div class="body-copy">Paperclip's official README still describes it as a company-style orchestration control plane with heartbeats, governance, goal alignment, org charts, and budgets.</div>
+    <div class="label">confirmed takeaways</div>
+    <div class="chip-row"><span class="chip">ticket grammar</span><span class="chip">heartbeat execution trace</span><span class="chip">governance surface</span><span class="chip">goal-linked context</span><span class="chip">auditability</span></div>
+    <div class="label">copy-avoidance</div>
+    <div class="chip-row"><span class="chip">no company ontology import</span><span class="chip">no business-first identity copy</span><span class="chip">no org-chart-as-identity</span></div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Supervisor Check</div>
+      <h2>Supervisor Current Board</h2>
+      
+    <div class="body-copy">VectorFL Paper is proving one maturation loop, not building a decorative agent dashboard.</div>
+    <div class="label">already proven</div>
+    <div class="chip-row"><span class="chip">3-cell loop shape</span><span class="chip">human-readable supervisor report exists</span><span class="chip">runtime write-back exists</span><span class="chip">reopen path exists</span><span class="chip">native-shape source pass exists</span><span class="chip">export-shaped source pass exists</span><span class="chip">actual export swap seam is prepared</span></div>
+    <div class="label">still not proven</div>
+    <div class="chip-row"><span class="chip">actual exported host record rerun</span><span class="chip">final promotion into VectorFL Paper proper</span></div>
+    <div class="label">single remaining gate</div>
+    <div class="body-copy">A real exported host record must replace the placeholder slot occupant and be rerun through packet v4.</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Sample Output</div>
+      <h2>Internal Read Output</h2>
+      <div class="label">stable</div><div class="chip-row"><span class="chip">VectorFL Paper is not a pretty dashboard but a maturation-oriented operating headquarters.</span><span class="chip">Internal-first reading is a precondition for useful external comparison rather than an excuse to avoid external material.</span><span class="chip">A team must be treated as an operating cell that combines lens, function, CLI management, handoff, and human report.</span></div><div class="label">unclear</div><div class="chip-row"><span class="chip">The exact runtime object shape for loop outputs is not fully locked yet.</span><span class="chip">The return path from external injection back into internal memory needs one concrete first implementation.</span><span class="chip">The supervisor report is defined, but its first real sample needs to prove that it reduces user bottleneck.</span></div><div class="label">line seeds</div><div><div class="list-row"><div class="entity-title">internal_reading_before_expansion</div><div class="entity-sub">External comparison becomes useful only after internal reading has separated stable points from unclear pressure.</div><div class="meta">enables: selective external prompt shaping, stronger injection readiness checks</div></div><div class="list-row"><div class="entity-title">worker_as_paper_manager</div><div class="entity-sub">CLI should manage the Paper loop rather than merely execute isolated commands.</div><div class="meta">enables: cell-level contracts, repeatable loop execution</div></div><div class="list-row"><div class="entity-title">human_readable_supervision_surface</div><div class="entity-sub">Internal line and bundle outputs must rise as human-readable decision language.</div><div class="meta">enables: go/hold/reopen/redirect decisions, real supervisory operation</div></div></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Sample Output</div>
+      <h2>External Resource Output</h2>
+      <div class="label">candidate references</div><div><div class="list-row"><div class="entity-title">paperclip_control_plane_reads</div><div class="entity-sub">Helps sharpen the issue/update/handoff/governance grammar without dragging in business-company metaphor literally.</div><div class="meta">strengthens=worker_as_paper_manager / injection=injectable</div></div><div class="list-row"><div class="entity-title">human_language_work_surface_reference</div><div class="entity-sub">Supports the requirement that internal structures must rise as immediate decision language for a supervisor.</div><div class="meta">strengthens=human_readable_supervision_surface / injection=injectable</div></div><div class="list-row"><div class="entity-title">host_coupled_maturation_strategy_reference</div><div class="entity-sub">Supports the claim that maturation depends on deep internal reading before broader expansion.</div><div class="meta">strengthens=internal_reading_before_expansion / injection=injectable</div></div></div><div class="label">rejection rules</div><div class="chip-row"><span class="chip">Reject references that only mimic dark control-plane aesthetics without helping the maturation loop.</span><span class="chip">Reject references that encourage broad external collection before internal pressure shaping.</span><span class="chip">Reject references that rename teams into org charts without defining lens, function, handoff, and report.</span></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Sample Output</div>
+      <h2>Synthesis Output</h2>
+      <div class="label">confirmed lines</div><div><div class="list-row"><div class="entity-title">internal_reading_before_expansion</div><div class="entity-sub">We should search only after we know exactly what is missing inside.</div><div class="meta">next_use=Gate the external resource cell with shaped questions only.</div></div><div class="list-row"><div class="entity-title">worker_as_paper_manager</div><div class="entity-sub">The CLI should run the loop for you, not wait for step-by-step babysitting.</div><div class="meta">next_use=Attach CLI ownership explicitly to each pilot cell.</div></div><div class="list-row"><div class="entity-title">human_readable_supervision_surface</div><div class="entity-sub">You should be able to judge what to do next without decoding the whole internal engine.</div><div class="meta">next_use=Use supervisor report format as mandatory output of synthesis.</div></div></div><div class="label">recommendation</div><div class="chip-row"><span class="chip">go</span><span class="chip">The first weekend pilot is ready to move from contract definition into one real sample loop using the current scenario-bearing bundle.</span></div>
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Decision Gate</div>
+      <h2>Supervisor Decision</h2>
+      
+    <div class="body-copy">The first pilot loop now has explicit cells, sample outputs, and a supervisor-readable report, so it is ready to move into a live pass with real material.</div>
+    <div class="chip-row"><span class="chip">go</span><span class="chip">Do not flatten the live bundle into TODO language.</span><span class="chip">Keep external lookup selective and line-seed grounded.</span><span class="chip">Write back the loop result into an explicit return packet.</span></div>
+    <div class="meta">approved_next_cell=internal_read_cell</div>
+    
+    </section>
+    
+            
+    <section class="panel">
+      <div class="kicker">Return Slot</div>
+      <h2>Internal Return Packet</h2>
+      
+    <div class="label">confirmed lines latest</div>
+    <div class="chip-row"><span class="chip">internal_reading_before_expansion</span><span class="chip">worker_as_paper_manager</span><span class="chip">human_readable_supervision_surface</span></div>
+    <div class="label">reference injection proposal latest</div>
+    <div class="chip-row"><span class="chip">paperclip_control_plane_reads</span><span class="chip">human_language_work_surface_reference</span></div>
+    <div class="label">next probe latest</div>
+    <div class="chip-row"><span class="chip">select the first live external comparison target</span><span class="chip">run the first true injected-reference reread</span><span class="chip">test the first real supervisor reopen condition</span></div>
+    
+    </section>
+    
+          </div>
+        </div>
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Supervisor Report</h2>
+      <div class="code"># Supervisor Report
+
+## Current Status
+- scenario: `weekend_pilot_first_loop`
+- completed cell chain: `internal_read_cell -&gt; external_resource_cell -&gt; synthesis_cell`
+- current recommendation: `go`
+
+## Why This Step Happened
+The current conversation already fixed the goal, the minimum loop shape, and the role of cells and CLI.
+This made it possible to stop arguing about abstract direction and shape the first real pilot loop.
+
+## What Was Produced
+- 3 stable points about the nature of `VectorFL Paper`
+- 3 line seeds confirmed into reusable loop rules
+- 3 external candidate references mapped back to internal line seeds
+- a first next-loop proposal that reaches a real supervisor decision point
+
+## What Changed
+The weekend pilot is no longer only a philosophical target.
+It now has:
+- a cell schema
+- 3 cell contracts
+- a supervision report format
+- a material bundle
+- an active task packet
+- sample outputs for internal read, external comparison, and synthesis
+
+## What Remains Unclear
+- The first live external reference injection is still a sample packet, not a performed runtime write-back.
+- The first supervisor decision has not yet been exercised against a real loop return.
+- The first runtime memory return slot is still represented as a contract object rather than a live surface action.
+
+## Recommendation
+- `go`
+- reason: the 1st weekend objective is to prove one scenario-bearing loop can close, and the current state is strong enough to run that first proof.
+
+## Next Loop Proposal
+- next_cell: `supervisor`
+- carry_forward:
+  - approve the current pilot input bundle
+  - approve the first live external comparison target
+  - approve the first return-slot write shape
+- after supervisor decision:
+  - rerun `internal_read_cell` on the chosen live bundle
+  - run `external_resource_cell` with the shaped question set
+  - regenerate the synthesis report from the live pass
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Live Supervisor Report</h2>
+      <div class="code"># Supervisor Report
+
+## Current Status
+- scenario: `weekend_pilot_first_loop_live_bundle`
+- completed cell chain: `internal_read_cell -&gt; external_resource_cell -&gt; synthesis_cell`
+- current recommendation: `go`
+
+## Why This Step Happened
+The first sample contracts and sample outputs were enough to prove the loop shape, but not enough to prove that the selected live bundle really drives the loop.
+So this pass reread the chosen live bundle directly and re-shaped the outputs around the actual selected materials and the thin overlay target.
+
+## What Was Produced
+- a live-bundle-based internal read output
+- a live-bundle-based external comparison output
+- 4 confirmed lines tied directly to the selected materials
+- a narrower next-loop proposal that keeps the first live pass focused on the issue/run/result/governance overlay
+- a runtime write-back seam with registered packet, trace, reinjection, and governance slots
+- one exercised reopen path that returns the packet into `internal_read_cell`
+
+## What Changed
+- The pilot no longer depends only on generic sample outputs.
+- The live bundle now directly drives repeated pressures, corrected misunderstandings, and confirmed lines.
+- The first external target is no longer merely named; it is linked to an explicit intake mapping and an example translation object.
+- The first translated cycle is no longer stranded as contract-only output; it now lands in runtime-facing manifests.
+- Reopen is no longer theoretical; it is exercised as a return loop step.
+
+## What Remains Unclear
+- The first actual issue-like source record still needs to be chosen or mocked as the live external sample.
+
+## Recommendation
+- `go`
+- reason: the loop now proves translation, runtime write-back, and reopen, so the next pass should improve source realism without broadening the scope.
+
+## Next Loop Proposal
+- next_cell: `internal_read_cell`
+- carry_forward:
+  - selected live bundle
+  - thin overlay intake mapping
+  - line-guided work packet target object
+- after that:
+  - replace the current issue-like sample with a truer external source record
+  - rerun the same thin issue/run/result/governance overlay on that source
+  - compare whether the supervisor surface becomes more convincing without growing broader
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Runtime Write-Back Report</h2>
+      <div class="code"># VectorFL Paper Weekend Live Runtime Write-Back Report v0
+
+## what changed
+- The first live translated work packet is now registered in a weekend-specific runtime packet manifest.
+- The append-only trace row is now registered in a weekend-specific runtime trace log.
+- The reinjection stub and governance gate note are now registered in runtime-facing registries.
+
+## why this matters
+The weekend pilot is no longer only a contract bundle.
+It now has a minimal runtime write-back seam, which means the first scenario-bearing loop is materially closer to an operating loop than a documentation stack.
+
+## what remains open
+- One reopen path still needs to be exercised.
+- The current issue-shaped sample should still be replaced by a truer external source record when available.
+
+## supervision note
+This is still a thin proof.
+It should not be mistaken for a broad orchestration system.
+The value is that the line-centered weekend loop now lands in runtime slots that can be inspected and reopened.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Reopen Report</h2>
+      <div class="code"># VectorFL Paper Weekend Live Reopen Report v0
+
+## why reopen was exercised
+The first runtime write-back is no longer only conceptual.
+Because the packet, trace, reinjection, and governance note now live in runtime-facing manifests, the next honest move is to reopen the case instead of pretending the loop is finished.
+
+## what the reopen proves
+- The loop can return into `internal_read_cell` after a first runtime registration.
+- Reopen is treated as a reading continuation, not a cosmetic status toggle.
+- The next pressure is now narrower: find a truer external issue-shaped source record without widening the overlay.
+
+## what remains open
+- The current source sample is still partly synthetic.
+- The next pass should upgrade realism while preserving the thin issue/run/result/governance overlay.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Source Record Selection</h2>
+      <div class="code"># VectorFL Paper Weekend Live Source Record Selection v1
+
+## selected record
+`runtime/contracts/vectorfl_paper_weekend_live_native_shape_source_record_v1.json`
+
+## why this is better than the earlier sample
+- The earlier sample proved the loop shape but flattened host structure too much.
+- This v1 record keeps `issue`, `assignment/wakeup`, `heartbeat run`, `output artifact`, and `governance event` as separate surfaces.
+- It is still local, but it is shaped from the Paperclip-native readings already extracted inside this space.
+
+## what it still is not
+- It is not yet a raw exported Paperclip runtime record.
+- It is a native-shape extracted source record built from the structural readings already present in the repository.
+
+## why it is enough for the next pass
+It is realistic enough to rerun the thin overlay without widening the problem.
+The next pass can now test whether the same `issue / run / result / governance` translation feels stronger when the source preserves more of the host program&#x27;s native structure.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Native-Shape Overlay Rerun</h2>
+      <div class="code"># VectorFL Paper Weekend Live Native-Shape Overlay Rerun v0
+
+## what changed
+- The thin issue/run/result/governance overlay was rerun against a native-shape host source record.
+- The translated packet now preserves issue placement, heartbeat carry, comment return, and governance note as distinct source surfaces.
+
+## why this matters
+The pilot no longer compares VectorFL only against a flat synthetic sample.
+It now tests the same translation seam against a source that better reflects how Paperclip-native work actually hangs together.
+
+## remaining honesty
+- This is still not an actual exported host record.
+- The next strongest move is to swap this native-shape record for a real exported host record when available, not to widen the overlay.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Export-Shaped Source Upgrade</h2>
+      <div class="code"># VectorFL Paper Weekend Live Export-Shaped Source Upgrade v0
+
+## what changed
+- The pilot now has an export-shaped host record that follows Paperclip schema field grammar closely.
+- The thin overlay was rerun again against that export-shaped record.
+
+## why this matters
+This is the strongest source-realism pass available inside the current repository without requiring a live external export.
+It reduces the remaining honesty gap to one thing only: an actual host export snapshot.
+
+## next implication
+From here, the path to general pilot naming is straightforward.
+Swap in a real exported host record when available, then promote the same seam rather than redesigning it.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Actual Export Slot Readiness</h2>
+      <div class="code"># VectorFL Paper Actual Export Slot Readiness v0
+
+## current status
+The pilot is now ready for an actual exported host record without additional architectural work.
+
+## why
+- The thin overlay is already proven.
+- Runtime write-back and reopen are already exercised.
+- The current export-shaped host record already matches the intended source boundary categories.
+
+## what happens next
+When a real export arrives, it should land in the canonical slot and be rerun through the same packet seam.
+
+## remaining gap
+Only the actual exported host record itself is missing.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Actual Export Swap Ready</h2>
+      <div class="code"># VectorFL Paper Actual Export Swap Ready Report v0
+
+## current claim
+The pilot is now swap-ready for the first actual exported host record.
+
+## what is already fixed
+- canonical slot exists
+- host-record template exists
+- next translated packet stub exists
+- swap targets are named
+
+## what should happen when export arrives
+1. Replace the slot occupant.
+2. Fill the host-record template shape with the real exported surfaces.
+3. Materialize packet `v4`.
+4. Keep the seam identical.
+
+## what should not happen
+No redesign.
+No scope broadening.
+No new ontology import.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Actual Export Swap Stub</h2>
+      <div class="code"># VectorFL Paper Actual Export Swap Stub Note v0
+
+## purpose
+This stub exists so the pilot does not need a new design pass when the first actual exported host record arrives.
+
+## what it does
+- validates the current slot occupant against the canonical export template
+- materializes a `v4` packet preview from the slot occupant
+- writes a dry-run manifest for inspection
+
+## current use
+Right now it runs against the export-shaped placeholder.
+Later it should run against the actual exported host record without changing the seam logic.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Actual Export V4 Preview</h2>
+      <div class="code"># VectorFL Paper Actual Export V4 Preview Report v0
+
+## current state
+The next packet path is no longer hypothetical.
+It has a stub, a template, a dry-run validator, and a preview registry.
+
+## why this matters
+This removes the last design excuse.
+When the real exported host record arrives, the system should only swap the source and materialize the already-prepared `v4` packet path.
+
+## current limitation
+The preview still uses the export-shaped placeholder as its validation source.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Absorption Readiness</h2>
+      <div class="code"># VectorFL Paper Absorption Readiness v0
+
+## current reading
+The pilot is no longer only a validation page.
+It has already produced a promotable seam package for VectorFL Paper proper.
+
+## what is promotable now
+- cell contracts
+- thin overlay intake grammar
+- runtime write-back
+- reopen loop
+- supervisor language surface
+
+## what is still gated
+- the final host-ingestion seam still waits for one actual exported host record
+
+## practical interpretation
+If the real export arrives, the pilot no longer needs another concept phase.
+It only needs the actual swap and then naming promotion.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Proper Promotion Readiness</h2>
+      <div class="code"># VectorFL Paper Proper Promotion Readiness v0
+
+## current reading
+The promotion path into VectorFL Paper proper is already specified.
+
+## what is already ready
+- validated seam package
+- actual export slot
+- swap stub
+- v4 preview path
+- absorption package
+
+## what still blocks promotion
+- the placeholder slot occupant still needs to be replaced by a real exported host record
+
+## conclusion
+The remaining work is operational, not conceptual.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Official README Alignment Note</h2>
+      <div class="code"># Paperclip Official README Alignment Note v0
+
+## source
+- official repository README:
+  - https://github.com/paperclipai/paperclip
+
+## official self-definition confirmed
+The current public README still presents Paperclip as:
+- `Open-source orchestration for zero-human companies`
+- `Node.js server and React UI`
+- a system that `orchestrates a team of AI agents to run a business`
+- a control plane with:
+  - org charts
+  - budgets
+  - governance
+  - goal alignment
+  - agent coordination
+
+It also still foregrounds these features:
+- Bring Your Own Agent
+- Goal Alignment
+- Heartbeats
+- Cost Control
+- Multi-Company
+- Ticket System
+- Governance
+- Org Chart
+
+## why this matters for VectorFL Paper
+This confirms that our earlier reading was not drift.
+Paperclip&#x27;s official self-description is still closer to a company-style operating control plane than to a chat UI or simple agent launcher.
+
+## what VectorFL should keep taking from it
+- explicit work unit / ticket grammar
+- heartbeat-style execution trace
+- governance as an active decision surface
+- goal-linked task context
+- auditability and threaded return
+
+## what VectorFL should still not copy literally
+- company ontology as canonical internal structure
+- business-first wording
+- org chart metaphor as the main identity
+
+## current alignment verdict
+The weekend pilot and the current absorption package are aligned with the official Paperclip README at the right layer:
+- structure and operating grammar are borrowed
+- ontology and product identity are not
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Human Direction Readout Note</h2>
+      <div class="code"># VectorFL Paper Human Direction Readout v0
+
+## 지금 이 작업을 왜 하는가
+우리가 하려는 것은 멀티에이전트 UI를 만드는 것이 아니다.
+핵심은 내부에서 생성되는 line과 판단 기준을 더 깊게 읽고,
+필요한 외부만 선택적으로 받아서,
+그 결과를 다시 내부로 귀속시키는 숙성형 운영 본부를 만드는 것이다.
+
+즉 지금 pilot의 목적은:
+- 예쁜 control plane 만들기
+- 회사 메타포 복제하기
+- 기능 수 늘리기
+
+가 아니라,
+
+- 내부 읽기
+- selective external comparison
+- supervisor-readable report
+- runtime return
+
+이 한 바퀴가 실제로 닫히는지 증명하는 것이다.
+
+## 지금 방향이 맞는가
+대체로 맞다.
+
+이유:
+- scenario-bearing material을 실제 입력으로 삼고 있다
+- internal read / external resource / synthesis 3셀 루프가 고정돼 있다
+- external comparison을 broad search가 아니라 thin overlay로 제한했다
+- 결과를 runtime write-back과 reopen까지 올렸다
+- supervisor language를 별도 표면으로 유지하려고 하고 있다
+
+즉 현재는 내부 수렴만 하고 있는 상태가 아니라,
+`internal-first, external-ready` 루프를 보수적으로 증명하는 단계로 읽힌다.
+
+## 그래도 아직 부족한 점
+사용자가 읽기엔 자료가 아직 너무 기계적이다.
+
+현재 부족점:
+- flag와 manifest가 많아 목적이 한눈에 안 들어온다
+- &quot;왜 이게 중요한가&quot;가 각 artifact마다 다시 번역되어야 한다
+- 실제 export가 오기 전이라 realism gap이 남아 있다
+
+즉 구조는 맞는데,
+감독자 언어 번역은 아직 충분히 두껍지 않다.
+
+## 지금 단계의 가장 정확한 판정
+현재 pilot은 실패한 것이 아니다.
+반대로, 너무 안쪽으로만 수렴한 것도 아니다.
+
+지금 상태는:
+`올바른 방향으로 가고 있지만, 사용자가 읽는 표면은 아직 더 쉽게 번역되어야 하는 상태`
+
+이다.
+
+## 남은 진짜 마지막 관문
+남은 마지막 관문은 하나다.
+
+실제 exported host record를 slot에 넣고,
+같은 thin seam으로 `v4` packet을 materialize하는 것.
+
+이게 통과되면 그다음은 새로운 철학 논의가 아니라,
+`weekend_pilot`에서 검증한 seam을 `VectorFL Paper proper`로 승격하는 일이다.
+
+## 사용자에게 바로 보이는 한 줄
+지금 우리는 길을 잘못 가는 게 아니라,
+맞는 길을 가고 있는데 아직 그 길을 사람이 더 쉽게 읽을 수 있게 번역하는 중이다.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Human Decision Surface</div>
+      <h2>Supervisor Current Board Note</h2>
+      <div class="code"># VectorFL Paper Supervisor Current Board v0
+
+## one-line read
+We are proving one real maturation loop, not decorating a control-plane UI.
+
+## current direction
+- scenario-bearing material is the real input
+- internal read comes before broad external expansion
+- external comparison remains thin
+- results return into runtime write-back and reopen
+- the seam is being prepared for later absorption into VectorFL Paper proper
+
+## what is already proven
+- 3-cell loop
+- supervisor-readable reporting
+- runtime write-back
+- reopen path
+- native-shape source pass
+- export-shaped source pass
+- actual export swap preparation
+
+## what is still missing
+- one actual exported host record rerun
+- final naming promotion into VectorFL Paper proper
+
+## supervisor verdict
+Direction is broadly correct.
+The remaining task is not more philosophy.
+It is one final realism gate plus continued improvement of human-readable translation.
+</div>
+    </section>
+    
+        
+    <section class="panel">
+      <div class="kicker">Append-Only Runtime</div>
+      <h2>Runtime Trace Log</h2>
+      <div class="code">{&quot;schema_version&quot;:&quot;vectorfl_paper_weekend_live_execution_trace_v0&quot;,&quot;trace_id&quot;:&quot;run_weekend_001&quot;,&quot;trace_kind&quot;:&quot;weekend_live_translation_cycle&quot;,&quot;status&quot;:&quot;completed&quot;,&quot;adapter&quot;:&quot;codex-cli&quot;,&quot;started_at&quot;:&quot;2026-04-10T21:10:00+09:00&quot;,&quot;ended_at&quot;:&quot;2026-04-10T21:40:00+09:00&quot;,&quot;selected_line&quot;:&quot;supervision_language_as_hard_requirement&quot;,&quot;bundle_ids&quot;:[&quot;vectorfl_host_coupled_maturation_strategy_v0&quot;,&quot;human_language_work_surface_readiness_reread_v0&quot;,&quot;paperclip_to_vectorfl_overlay_requirements_v0&quot;],&quot;summary&quot;:&quot;The first live issue-shaped sample was translated into packet, trace, reinjection, and governance artifacts without broadening the scope.&quot;,&quot;request_payload&quot;:{&quot;issue_ref&quot;:&quot;issue_weekend_001&quot;,&quot;target_overlay&quot;:&quot;issue_run_result_governance&quot;,&quot;goal&quot;:&quot;prove one live translation cycle closes&quot;},&quot;return_text&quot;:&quot;Supervisor-readable loop proof is now stronger than the earlier generic sample output.&quot;,&quot;reentry_hint&quot;:&quot;Reopen only after selecting a truer external issue-shaped sample or when testing real runtime write-back.&quot;,&quot;residue_note&quot;:&quot;live_write_back_registered_but_reopen_not_yet_exercised&quot;,&quot;artifact_refs&quot;:[&quot;runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v1.json&quot;,&quot;runtime/contracts/vectorfl_paper_weekend_live_result_reinjection_stub_v0.json&quot;,&quot;runtime/contracts/vectorfl_paper_weekend_live_governance_gate_note_v0.json&quot;]}
+{&quot;schema_version&quot;:&quot;vectorfl_paper_weekend_live_execution_trace_v0&quot;,&quot;trace_id&quot;:&quot;reopen_weekend_live_001&quot;,&quot;trace_kind&quot;:&quot;weekend_live_reopen_cycle&quot;,&quot;status&quot;:&quot;reopened&quot;,&quot;adapter&quot;:&quot;codex-cli&quot;,&quot;started_at&quot;:&quot;2026-04-10T22:35:00+09:00&quot;,&quot;ended_at&quot;:&quot;2026-04-10T22:35:00+09:00&quot;,&quot;selected_line&quot;:&quot;supervision_language_as_hard_requirement&quot;,&quot;bundle_ids&quot;:[&quot;vectorfl_host_coupled_maturation_strategy_v0&quot;,&quot;human_language_work_surface_readiness_reread_v0&quot;,&quot;paperclip_to_vectorfl_overlay_requirements_v0&quot;],&quot;summary&quot;:&quot;The registered weekend packet was reopened into internal reread so the first loop proves return, not only translation.&quot;,&quot;request_payload&quot;:{&quot;reopen_case_ref&quot;:&quot;reopen_weekend_live_001&quot;,&quot;target_cell&quot;:&quot;internal_read_cell&quot;,&quot;goal&quot;:&quot;exercise one real reopen path&quot;},&quot;return_text&quot;:&quot;Reopen now points the loop toward replacing the partly synthetic issue-like sample with a truer external source record.&quot;,&quot;reentry_hint&quot;:&quot;Keep the overlay thin while upgrading source realism.&quot;,&quot;residue_note&quot;:&quot;truer_external_source_record_still_needed&quot;,&quot;artifact_refs&quot;:[&quot;runtime/manifests/vectorfl_paper_weekend_live_reopen_case_v0.json&quot;,&quot;docs/reports/vectorfl_paper_weekend_live_reopen_report_v0.md&quot;]}
+</div>
+    </section>
+    
+      </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,30 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T034302Z_ac8bcb8c",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md"
+  ],
+  "prompt_payload": "You are operating as a Codex turn inside the integrated-engine VectorFL surface.\nThe CLI is an on-top tool layer, not a fourth surface.\nThe fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.\n\nCurrent work packet visible in the VectorFL surface:\n- purpose: VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.\n- task lens: summarize\n- internal search gate: thin evidence (not explicitly requested)\n- evidence bundle summary: 1 attached refs: source ref\n- evidence limitation: Evidence bundle is thin; only one ref is attached.\n- active locks: fixed 3-surface body + CLI on-top boundary (inferred)\n- evidence refs: docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md\n- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)\n- expected return shape: bounded operating summary\n- next route candidate: vectorfl_reread\n- internal search usage: thin evidence\n\nCurrent user-facing purpose:\nVectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다.\n\nCurrent message to Codex:\n오늘 작업 내용을 정리해줘\n\nReturn format for this VectorFL CLI conversation turn:\n1. Korean operating summary\n2. Surface reading: user / VectorFL / engine\n3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold\n4. What must not be inferred\n5. Suggested next use\nDo not modify files. Do not promote, ingest, or canonicalize anything.",
+  "status": "done",
+  "started_at": "2026-04-18T03:43:02Z",
+  "ended_at": "2026-04-18T03:43:27Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/prompt.md",
+  "exit_code": 0,
+  "result_summary": " 소스 폴더로 설정됨.\n   - `gemini/mock_test`는 더 이상 실제 운용 UI의 기준 위치가 아니라 Gemini 제안/참조용 clay로 남음.\n   - 앱 이름, 브라우저 타이틀, 셸 라벨이 Integrated Engine 기준으로 조정됨.\n   - `node_modules/`, `dist/`가 프로젝트 신호에 섞이지 않도록 `.gitignore`가 보강됨.\n   - `npm run build`가 `app/ui/integrated_engine`에서 통과함.\n   - 안정 앱 dev server는 `http://127.0.0.1:5173/` 기준으로 동작 확인됨.\n   - 안정 앱에서 API proxy 및 read-only Codex CLI on-top 경로가 동작 확인됨.\n   - 동일 세션을 `validation_target`으로 표시하는 흐름도 성공함.\n\n2. Surface reading  \n   - user: 목적/할당/판단을 제공하는 면. 이번 요청은 “오늘 작업 내용을 정리”하는 운용 판단 요청.\n   - VectorFL: 첨부 ref를 해석하고 reread/mediation하는 면. 현재 thin evidence 상태에서 요약을 요청함.\n   - engine: 처리/반환/deposit material을 만드는 면. 이번 Codex CLI는 engine 위에 얹힌 도구 호출이며, 별도 네 번째 surface가 아님.\n\n3. Route suggestion  \n   - reread_target: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`\n   - validation_target: `app/ui/integrated_engine`에서 브라우저 수동 클릭/사용감 확인\n   - implementation_return: 없음. 이번 턴은 구현 변경이 아니라 요약 반환\n   - deposit_candidate: 안정 폴더 승격 기록으로는 후보 가능하나, 현재 guard상 deposit/promote/ingest 금지\n   - hold: prior docs의 `gemini/mock_test` 언급은 역사적 문맥으로 보류해서 읽어야 함\n\n- uncertainty or failure notes\n\n근거는 첨부된 단일 문서 하나뿐입니다. 따라서 실제 현재 프로세스 상태, dev server 생존 여부, 최신 git diff, 사용자의 브라우저 수동 검증 완료 여부는 이 턴에서 새로 확인하지 않았습니다.\n\n추론하면 안 되는 것:\n- `gemini/mock_test`가 삭제되었거나 폐기되었다고 보면 안 됨.\n- `runtime`으로 React/Vite 소스를 옮겨도 된다고 보면 안 됨.\n- 이 migration을 새 surface, package 2, 또는 네 번째 engine surface로 해석하면 안 됨.\n- Gemini adapter, background runner, session browsing이 이미 허용되었거나 구현 대상이 되었다고 보면 안 됨.\n- 사용자 수동 브라우저 검증이 끝났다고 보면 안 됨.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate\n\n추천 next use는 `validation_target`입니다.  \n다음으로는 `http://127.0.0.1:5173/`의 안정 앱에서 사용자가 브라우저로 VectorFL CLI run을 한 번 직접 실행해, UI 사용감과 실제 클릭 흐름을 확인하는 것이 가장 작고 적절한 다음 판단입니다.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": ""
+}

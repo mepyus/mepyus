@@ -1,0 +1,78 @@
+{
+  "fixture_id": "vectorfl_flow_interpretation_organ_detail_mock_fixture_v0",
+  "fixture_kind": "organ_detail_first_mock",
+  "organ_identity": {
+    "organ_ref": "organ:flow_interpretation",
+    "organ_label": "Flow Interpretation Organ",
+    "current_status": "active_transition_reading",
+    "related_lane_refs": [
+      "lane_transition_reread_001",
+      "lane_transition_preflight_reread"
+    ]
+  },
+  "instruction_bundle_preview": {
+    "role_sentence": "Flow interpretation organ reads transition, next hop, and unresolved edge without flattening the case into premature closure.",
+    "reading_priorities": [
+      "current lane tension",
+      "previous translation carry",
+      "governance restriction carry",
+      "reentry-sensitive trace cues"
+    ],
+    "output_contract": [
+      "flow reading summary",
+      "next candidate ordering",
+      "unresolved edge note",
+      "route caution"
+    ]
+  },
+  "accepted_handoff_preview": {
+    "accepted_input_kinds": [
+      "translation return",
+      "current surface packet",
+      "trace/reentry carry",
+      "governance restriction snapshot"
+    ],
+    "required_packet_fields": [
+      "case_ref",
+      "current_lane_ref",
+      "current_surface_ref",
+      "restriction_flags",
+      "question_or_trigger",
+      "expected_return_type"
+    ],
+    "common_triggers": [
+      "transition-first explanation needed",
+      "next hop remains unresolved",
+      "direct readout feels premature"
+    ]
+  },
+  "caution_profile": {
+    "stop_hold_conditions": [
+      "next hop is asserted without evidence carry",
+      "unresolved edge disappears in summary",
+      "presentation pressure overrides current restrictions"
+    ],
+    "preserve_first_rules": [
+      "keep preferred vs held candidate distinction",
+      "keep observer-only restrictions visible",
+      "keep transition reread route legible"
+    ],
+    "avoid_wording": [
+      "done",
+      "clear to present",
+      "resolved flow"
+    ]
+  },
+  "recent_return_preview": {
+    "summary_return": "Read this case as transition-readable but closure-incomplete; governance review should precede direct operator readout.",
+    "lane_hint_update": [
+      "lane_transition_preflight_reread",
+      "lane_operator_readout_review"
+    ],
+    "recent_trace_carry": [
+      "closure_before_presentation",
+      "transition_condition_to_operator_readability"
+    ],
+    "recent_handoff_target": "organ:governance"
+  }
+}

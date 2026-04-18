@@ -1,0 +1,1477 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "para_001",
+    "end_ref": "para_002",
+    "unit_type": "paragraph",
+    "text_excerpt": "import React, { useEffect, useMemo, useState, useCallback } from 'react';\nimport {\n  ChevronLeft,\n  LayoutGrid,\n  Activity,\n  AlertTriangle,\n  CheckCircle2,\n  Link2Off,\n  Info,\n  Clock,\n  MapPin,\n  Database,\n  X\n} from '",
+    "char_count": 670,
+    "source_segment_ids": [
+      "seg_001",
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "para_003",
+    "end_ref": "para_004",
+    "unit_type": "paragraph",
+    "text_excerpt": "const UI = {\n  blue: '#3b82f6',\n  green: '#10b981',\n  red: '#ef4444',\n  amber: '#f59e0b',\n  violet: '#8b5cf6',\n  slate900: '#0f172a',\n  slate800: '#1e293b',\n  slate700: '#334155',\n  slate500: '#64748b',\n  slate400: '#94a",
+    "char_count": 523,
+    "source_segment_ids": [
+      "seg_003",
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "para_005",
+    "end_ref": "para_006",
+    "unit_type": "paragraph",
+    "text_excerpt": "const BAY_LAYOUT = [\n  { key: 'LEFT_BAY', label: 'LEFT BAY', slots: [1, 2, 3, 4, 5] },\n  { key: 'RIGHT_BAY', label: 'RIGHT BAY', slots: [1, 2, 3, 4, 5] }\n]; /* ============================================================",
+    "char_count": 412,
+    "source_segment_ids": [
+      "seg_005",
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "para_007",
+    "end_ref": "para_008",
+    "unit_type": "paragraph",
+    "text_excerpt": "function upper(value) {\n  return String(value ?? '').trim().toUpperCase();\n} function hasValue(value) {\n  if (Array.isArray(value)) return value.length > 0;\n  if (value === 0) return true;\n  return value !== null && valu",
+    "char_count": 269,
+    "source_segment_ids": [
+      "seg_007",
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "para_009",
+    "end_ref": "para_010",
+    "unit_type": "paragraph",
+    "text_excerpt": "function pickFirst(...values) {\n  for (const value of values) {\n    if (hasValue(value)) return value;\n  }\n  return null;\n} function asText(value, fallback = '-') {\n  if (!hasValue(value)) return fallback;\n  if (Array.is",
+    "char_count": 334,
+    "source_segment_ids": [
+      "seg_009",
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "para_011",
+    "end_ref": "para_012",
+    "unit_type": "paragraph",
+    "text_excerpt": "function normalizeBayName(bayName) {\n  const b = upper(bayName);\n  const match = b.match(/^(LEFT_BAY|RIGHT_BAY)_\\d+$/);\n  if (match) return match[1];\n  return b;\n} function normalizeSlotNo(slotNo) {\n  if (slotNo == null)",
+    "char_count": 382,
+    "source_segment_ids": [
+      "seg_011",
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "para_013",
+    "end_ref": "para_014",
+    "unit_type": "paragraph",
+    "text_excerpt": "function makeSlotKey(bayName, slotNo) {\n  return `${normalizeBayName(bayName)}-${normalizeSlotNo(slotNo)}`;\n} function makeTankKey(tankNumber) {\n  const t = upper(tankNumber);\n  return t ? `TANK:${t}` : null;\n}",
+    "char_count": 210,
+    "source_segment_ids": [
+      "seg_013",
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "para_015",
+    "end_ref": "para_016",
+    "unit_type": "paragraph",
+    "text_excerpt": "function makeAnonymousSpaceKey(slotKey) {\n  return `SPACE_ANON:${slotKey}`;\n} function toArrayStrings(value) {\n  if (Array.isArray(value)) {\n    return value.map((v) => String(v ?? '').trim()).filter(Boolean);\n  }\n  if (",
+    "char_count": 342,
+    "source_segment_ids": [
+      "seg_015",
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "para_017",
+    "end_ref": "para_018",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* =============================================================================\n * [각주-03] 시간 유틸\n * ============================================================================= */\nfunction toMs(dateLike) {\n  if (!dateL",
+    "char_count": 437,
+    "source_segment_ids": [
+      "seg_017",
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "para_019",
+    "end_ref": "para_020",
+    "unit_type": "paragraph",
+    "text_excerpt": "let diffSec = Math.floor((nowTs - startMs) / 1000);\n  if (!Number.isFinite(diffSec)) return '--:--:--';\n  if (diffSec < 0) diffSec = 0; const hh = String(Math.floor(diffSec / 3600)).padStart(2, '0');\n  const mm = String(",
+    "char_count": 356,
+    "source_segment_ids": [
+      "seg_019",
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "para_021",
+    "end_ref": "para_022",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* =============================================================================\n * [각주-04] 데이터 해석\n * ============================================================================= */\nfunction resolveTankNumber(row) {\n  r",
+    "char_count": 491,
+    "source_segment_ids": [
+      "seg_021",
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "para_023",
+    "end_ref": "para_024",
+    "unit_type": "paragraph",
+    "text_excerpt": "function resolveTankInfo(row) {\n  const tankType = pickFirst(row?.tank_type, row?.spec_type, row?.tank?.tank_type, row?.tanks?.tank_type);\n  const capacity = pickFirst(row?.capacity, row?.capacity_liter, row?.tank?.capac",
+    "char_count": 387,
+    "source_segment_ids": [
+      "seg_023",
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "para_025",
+    "end_ref": "para_026",
+    "unit_type": "paragraph",
+    "text_excerpt": "return parts.length ? parts.join(' / ') : '기본 정보 없음';\n} function resolveCargo(row) {\n  return pickFirst(\n    row?.cargo_name,\n    row?.cargo,\n    row?.cargo_info?.cargo_name,\n    row?.tank?.cargo_name,\n    row?.tanks?.ca",
+    "char_count": 235,
+    "source_segment_ids": [
+      "seg_025",
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "para_027",
+    "end_ref": "para_028",
+    "unit_type": "paragraph",
+    "text_excerpt": "function resolvePrevCargo(row) {\n  return pickFirst(\n    row?.previous_cargo_name,\n    row?.prev_cargo_name,\n    row?.last_cargo_name,\n    row?.residue_name,\n    row?.tank?.previous_cargo_name,\n    row?.tanks?.previous_c",
+    "char_count": 409,
+    "source_segment_ids": [
+      "seg_027",
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "para_029",
+    "end_ref": "para_030",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (typeof raw === 'boolean') return raw ? 'REQUIRED' : 'NORMAL';\n  if (!hasValue(raw)) return 'N/A';\n  return String(raw);\n} function resolveHazards(row) {\n  return toArrayStrings(\n    pickFirst(row?.hazards, row?.hazar",
+    "char_count": 275,
+    "source_segment_ids": [
+      "seg_029",
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "para_031",
+    "end_ref": "para_032",
+    "unit_type": "paragraph",
+    "text_excerpt": "function resolveInstruction(row) {\n  return pickFirst(\n    row?.wash_instruction,\n    row?.special_instruction,\n    row?.special_note,\n    row?.remark,\n    row?.notes\n  );\n} /* ===========================================",
+    "char_count": 607,
+    "source_segment_ids": [
+      "seg_031",
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "para_033",
+    "end_ref": "para_034",
+    "unit_type": "paragraph",
+    "text_excerpt": "function deriveSyncState({ job, space }) {\n  if (job && space) return SYNC_STATE.MATCHED;\n  if (job && !space) return SYNC_STATE.JOB_ONLY;\n  if (!job && space) return SYNC_STATE.SPACE_ONLY;\n  return null;\n} function getB",
+    "char_count": 345,
+    "source_segment_ids": [
+      "seg_033",
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "para_035",
+    "end_ref": "para_036",
+    "unit_type": "paragraph",
+    "text_excerpt": "function getDisplayTankNo(record) {\n  if (!record) return '-';\n  if (record.tank_number) return record.tank_number;\n  if (record.sync_state === SYNC_STATE.SPACE_ONLY && record.slot_key) return `UNKNOWN@${record.slot_key}",
+    "char_count": 290,
+    "source_segment_ids": [
+      "seg_035",
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "para_037",
+    "end_ref": "para_038",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (record.sync_state === SYNC_STATE.JOB_ONLY) {\n    issues.push('세척 Job은 있으나 실제 베이 적재가 확인되지 않습니다.');\n  } if (record.sync_state === SYNC_STATE.SPACE_ONLY) {\n    issues.push('베이 점유는 있으나 연결된 WASH Job이 없습니다.');\n  }",
+    "char_count": 211,
+    "source_segment_ids": [
+      "seg_037",
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "para_039",
+    "end_ref": "para_040",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (record.job_status && !['READY', 'IN_PROGRESS', 'DONE'].includes(upper(record.job_status))) {\n    issues.push(`예상 외 job_status 감지: ${record.job_status}`);\n  } if (record.started_at && record.elapsed === '--:--:--') {\n",
+    "char_count": 271,
+    "source_segment_ids": [
+      "seg_039",
+      "seg_040"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "para_041",
+    "end_ref": "para_042",
+    "unit_type": "paragraph",
+    "text_excerpt": "return issues;\n} function sortHybridRecords(a, b) {\n  const syncPriority = {\n    [SYNC_STATE.JOB_ONLY]: 0,\n    [SYNC_STATE.SPACE_ONLY]: 1,\n    [SYNC_STATE.MATCHED]: 2\n  };",
+    "char_count": 171,
+    "source_segment_ids": [
+      "seg_041",
+      "seg_042"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "para_043",
+    "end_ref": "para_044",
+    "unit_type": "paragraph",
+    "text_excerpt": "const ap = syncPriority[a.sync_state] ?? 9;\n  const bp = syncPriority[b.sync_state] ?? 9;\n  if (ap !== bp) return ap - bp; const aStatusPriority = upper(a.job_status) === 'IN_PROGRESS' ? 0 : upper(a.job_status) === 'READ",
+    "char_count": 427,
+    "source_segment_ids": [
+      "seg_043",
+      "seg_044"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "para_045",
+    "end_ref": "para_046",
+    "unit_type": "paragraph",
+    "text_excerpt": "const aTime = toMs(a.started_at) ?? toMs(a.created_at) ?? 0;\n  const bTime = toMs(b.started_at) ?? toMs(b.created_at) ?? 0;\n  if (aTime !== bTime) return bTime - aTime; return String(getDisplayTankNo(a)).localeCompare(St",
+    "char_count": 249,
+    "source_segment_ids": [
+      "seg_045",
+      "seg_046"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "para_047",
+    "end_ref": "para_048",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* =============================================================================\n * [각주-01] WASH PAGE CONTAINER\n * -----------------------------------------------------------------------------\n * 역할\n * - washJobs / washB",
+    "char_count": 611,
+    "source_segment_ids": [
+      "seg_047",
+      "seg_048"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "para_049",
+    "end_ref": "para_050",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ---------------------------------------------------------------------------\n   * [각주-02] 페이지 데이터 재조회\n   * - washJobs: READY / IN_PROGRESS / DONE만 유지\n   * - washBayStatus: wash bay view 그대로 사용\n   * --------------------",
+    "char_count": 605,
+    "source_segment_ids": [
+      "seg_049",
+      "seg_050"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "para_051",
+    "end_ref": "para_052",
+    "unit_type": "paragraph",
+    "text_excerpt": "setWashJobs(normalizedJobs);\n    setWashBayStatus(Array.isArray(bays) ? bays : []);\n  }, []); useEffect(() => {\n    refreshWashPage();\n  }, [refreshWashPage]);",
+    "char_count": 159,
+    "source_segment_ids": [
+      "seg_051",
+      "seg_052"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "para_053",
+    "end_ref": "para_054",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ---------------------------------------------------------------------------\n   * [각주-03] 공통 상태 전이 실행기\n   * - page에서 이미 대상 필터링을 해주지만,\n   *   최종 정합성은 RPC(triggerEvent)가 다시 검증한다.\n   * - 순차 처리로 두는 이유:\n   *   1) 상태 전이 로그 추",
+    "char_count": 607,
+    "source_segment_ids": [
+      "seg_053",
+      "seg_054"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "para_055",
+    "end_ref": "para_056",
+    "unit_type": "paragraph",
+    "text_excerpt": "for (const target of targets) {\n        try {\n          // ✅ 기준선: 상태 전이는 triggerEvent 계열로만 처리\n          await jms.triggerEvent(target.job_id, actionType, actor);\n        } catch (error) {\n          failures.push({\n      ",
+    "char_count": 472,
+    "source_segment_ids": [
+      "seg_055",
+      "seg_056"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "para_057",
+    "end_ref": "para_058",
+    "unit_type": "paragraph",
+    "text_excerpt": "// 일부 실패가 있으면 페이지 쪽에서 message로 보여줄 수 있도록 throw\n      if (failures.length > 0) {\n        const summary = failures\n          .map((item) => `${item.tank_number} (${item.reason})`)\n          .join(', '); throw new Error(\n  ",
+    "char_count": 350,
+    "source_segment_ids": [
+      "seg_057",
+      "seg_058"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "para_059",
+    "end_ref": "para_060",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* ---------------------------------------------------------------------------\n   * [각주-04] 세척 시작: READY -> IN_PROGRESS\n   * --------------------------------------------------------------------------- */\n  const handleBa",
+    "char_count": 848,
+    "source_segment_ids": [
+      "seg_059",
+      "seg_060"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "para_061",
+    "end_ref": "para_062",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n    // WashingWaitingPage 렌더 구간\n<WashingWaitingPage\n  onBack={onBack}\n  washJobs={washJobs}\n  washBayStatus={washBayStatus}\n  onRefresh={refreshWashPage}\n  onBatchStart={handleBatchStart}\n  onBatchComplete={hand",
+    "char_count": 1228,
+    "source_segment_ids": [
+      "seg_061",
+      "seg_062"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "para_063",
+    "end_ref": "para_064",
+    "unit_type": "paragraph",
+    "text_excerpt": "function getJobTone(status) {\n  const s = upper(status);\n  if (s === 'READY') return { bg: `${UI.violet}15`, color: UI.violet, label: 'READY' };\n  if (s === 'IN_PROGRESS') return { bg: `${UI.blue}15`, color: UI.blue, lab",
+    "char_count": 731,
+    "source_segment_ids": [
+      "seg_063",
+      "seg_064"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "para_065",
+    "end_ref": "para_066",
+    "unit_type": "paragraph",
+    "text_excerpt": "const jobByTank = new Map();\n  const spaceByTank = new Map();\n  const spaceBySlot = new Map(); const diagnostics = {\n    jobTankDuplicates: 0,\n    spaceTankDuplicates: 0\n  };",
+    "char_count": 174,
+    "source_segment_ids": [
+      "seg_065",
+      "seg_066"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "para_067",
+    "end_ref": "para_068",
+    "unit_type": "paragraph",
+    "text_excerpt": "for (const row of jobs) {\n    const tankNoKey = upper(resolveTankNumber(row));\n    if (!tankNoKey) continue; if (jobByTank.has(tankNoKey)) {\n      diagnostics.jobTankDuplicates += 1;\n      continue;\n    }",
+    "char_count": 204,
+    "source_segment_ids": [
+      "seg_067",
+      "seg_068"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "para_069",
+    "end_ref": "para_070",
+    "unit_type": "paragraph",
+    "text_excerpt": "jobByTank.set(tankNoKey, row);\n  } for (const row of spaces) {\n    const slotKey = makeSlotKey(row?.bay_name, row?.slot_no);\n    if (slotKey) spaceBySlot.set(slotKey, row);",
+    "char_count": 172,
+    "source_segment_ids": [
+      "seg_069",
+      "seg_070"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "para_071",
+    "end_ref": "para_072",
+    "unit_type": "paragraph",
+    "text_excerpt": "const tankNoKey = upper(row?.tank_number);\n    if (!tankNoKey) continue; if (spaceByTank.has(tankNoKey)) {\n      diagnostics.spaceTankDuplicates += 1;\n      continue;\n    }",
+    "char_count": 172,
+    "source_segment_ids": [
+      "seg_071",
+      "seg_072"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "para_073",
+    "end_ref": "para_074",
+    "unit_type": "paragraph",
+    "text_excerpt": "spaceByTank.set(tankNoKey, row);\n  } const allTankKeys = new Set([...jobByTank.keys(), ...spaceByTank.keys()]);\n  const records = [];",
+    "char_count": 133,
+    "source_segment_ids": [
+      "seg_073",
+      "seg_074"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "para_075",
+    "end_ref": "para_076",
+    "unit_type": "paragraph",
+    "text_excerpt": "for (const tankNoKey of allTankKeys) {\n    const job = jobByTank.get(tankNoKey) || null;\n    const space = spaceByTank.get(tankNoKey) || null; const syncState = deriveSyncState({ job, space });\n    const slotKey = space ",
+    "char_count": 272,
+    "source_segment_ids": [
+      "seg_075",
+      "seg_076"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "para_077",
+    "end_ref": "para_078",
+    "unit_type": "paragraph",
+    "text_excerpt": "const record = {\n      record_key: makeTankKey(tankNoKey),\n      tank_number: resolveTankNumber(job) || space?.tank_number || tankNoKey || null, sync_state: syncState,\n      issues: [],",
+    "char_count": 185,
+    "source_segment_ids": [
+      "seg_077",
+      "seg_078"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "para_079",
+    "end_ref": "para_080",
+    "unit_type": "paragraph",
+    "text_excerpt": "job_id: job?.job_id || job?.id || null,\n      tank_id: resolveTankId(job),\n      job_type: job?.job_type || 'WASH',\n      job_status: job?.job_status || null,\n      created_at: job?.created_at || null,\n      started_at: ",
+    "char_count": 567,
+    "source_segment_ids": [
+      "seg_079",
+      "seg_080"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "para_081",
+    "end_ref": "para_082",
+    "unit_type": "paragraph",
+    "text_excerpt": "tank_info_text: resolveTankInfo(job),\n      cargo_name: resolveCargo(job),\n      previous_cargo_name: resolvePrevCargo(job),\n      msds_status: resolveMsds(job),\n      hazard_labels: resolveHazards(job),\n      special_in",
+    "char_count": 309,
+    "source_segment_ids": [
+      "seg_081",
+      "seg_082"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "para_083",
+    "end_ref": "para_084",
+    "unit_type": "paragraph",
+    "text_excerpt": "record.issues = buildIssues(record);\n    records.push(record);\n  } for (const [slotKey, space] of spaceBySlot.entries()) {\n    const occupied = isSpaceOccupied(space);\n    const tankNoKey = upper(space?.tank_number);",
+    "char_count": 216,
+    "source_segment_ids": [
+      "seg_083",
+      "seg_084"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "para_085",
+    "end_ref": "para_086",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (!occupied) continue;\n    if (tankNoKey && allTankKeys.has(tankNoKey)) continue; const record = {\n      record_key: makeAnonymousSpaceKey(slotKey),\n      tank_number: space?.tank_number || null,",
+    "char_count": 197,
+    "source_segment_ids": [
+      "seg_085",
+      "seg_086"
+    ]
+  },
+  {
+    "unit_id": "unit_044",
+    "start_ref": "para_087",
+    "end_ref": "para_088",
+    "unit_type": "paragraph",
+    "text_excerpt": "sync_state: SYNC_STATE.SPACE_ONLY,\n      issues: [], job_id: null,\n      tank_id: null,\n      job_type: 'WASH',\n      job_status: null,\n      created_at: null,\n      started_at: null,\n      completed_at: null,",
+    "char_count": 209,
+    "source_segment_ids": [
+      "seg_087",
+      "seg_088"
+    ]
+  },
+  {
+    "unit_id": "unit_045",
+    "start_ref": "para_089",
+    "end_ref": "para_090",
+    "unit_type": "paragraph",
+    "text_excerpt": "bay_name: space?.bay_name ?? null,\n      bay_group: normalizeBayName(space?.bay_name),\n      slot_no: space?.slot_no ?? null,\n      slot_status: space?.slot_status ?? null,\n      slot_key: slotKey,\n      bay_info: getBay",
+    "char_count": 427,
+    "source_segment_ids": [
+      "seg_089",
+      "seg_090"
+    ]
+  },
+  {
+    "unit_id": "unit_046",
+    "start_ref": "para_091",
+    "end_ref": "para_092",
+    "unit_type": "paragraph",
+    "text_excerpt": "elapsed: '--:--:--'\n    }; record.issues = buildIssues(record);\n    records.push(record);\n  }",
+    "char_count": 93,
+    "source_segment_ids": [
+      "seg_091",
+      "seg_092"
+    ]
+  },
+  {
+    "unit_id": "unit_047",
+    "start_ref": "para_093",
+    "end_ref": "para_094",
+    "unit_type": "paragraph",
+    "text_excerpt": "records.sort(sortHybridRecords); return {\n    records,\n    indexes: {\n      spaceBySlot\n    },\n    diagnostics\n  };\n}",
+    "char_count": 117,
+    "source_segment_ids": [
+      "seg_093",
+      "seg_094"
+    ]
+  },
+  {
+    "unit_id": "unit_048",
+    "start_ref": "para_095",
+    "end_ref": "para_096",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* =============================================================================\n * [각주-08] 일괄 처리 대상 필터\n * - 시작: MATCHED + READY + 실제 적재 + job_id 존재\n * - 완료: MATCHED + IN_PROGRESS + 실제 적재 + job_id 존재\n * =================",
+    "char_count": 1028,
+    "source_segment_ids": [
+      "seg_095",
+      "seg_096"
+    ]
+  },
+  {
+    "unit_id": "unit_049",
+    "start_ref": "para_097",
+    "end_ref": "para_098",
+    "unit_type": "paragraph",
+    "text_excerpt": "/* =============================================================================\n * [각주-09] 메인 컴포넌트\n * ============================================================================= */\nexport default function WashingWaiti",
+    "char_count": 723,
+    "source_segment_ids": [
+      "seg_097",
+      "seg_098"
+    ]
+  },
+  {
+    "unit_id": "unit_050",
+    "start_ref": "para_099",
+    "end_ref": "para_100",
+    "unit_type": "paragraph",
+    "text_excerpt": "const hybridBundle = useMemo(\n    () => buildHybridRecords(washJobs, washBayStatus, nowTs),\n    [washJobs, washBayStatus, nowTs]\n  ); const hybridData = hybridBundle.records;\n  const spaceBySlot = hybridBundle.indexes.sp",
+    "char_count": 230,
+    "source_segment_ids": [
+      "seg_099",
+      "seg_100"
+    ]
+  },
+  {
+    "unit_id": "unit_051",
+    "start_ref": "para_101",
+    "end_ref": "para_102",
+    "unit_type": "paragraph",
+    "text_excerpt": "const recordByKey = useMemo(() => {\n    const map = new Map();\n    for (const record of hybridData) map.set(record.record_key, record);\n    return map;\n  }, [hybridData]); const recordBySlotKey = useMemo(() => {\n    cons",
+    "char_count": 380,
+    "source_segment_ids": [
+      "seg_101",
+      "seg_102"
+    ]
+  },
+  {
+    "unit_id": "unit_052",
+    "start_ref": "para_103",
+    "end_ref": "para_104",
+    "unit_type": "paragraph",
+    "text_excerpt": "const activeRecords = useMemo(() => {\n    return hybridData.filter((record) => {\n      const status = upper(record.job_status);\n      if (record.sync_state !== SYNC_STATE.MATCHED) return true;\n      return status === 'RE",
+    "char_count": 438,
+    "source_segment_ids": [
+      "seg_103",
+      "seg_104"
+    ]
+  },
+  {
+    "unit_id": "unit_053",
+    "start_ref": "para_105",
+    "end_ref": "para_106",
+    "unit_type": "paragraph",
+    "text_excerpt": "useEffect(() => {\n    if (selectedRecordKey && !recordByKey.has(selectedRecordKey)) {\n      setSelectedRecordKey(null);\n    }\n  }, [selectedRecordKey, recordByKey]); const summary = useMemo(() => {\n    const acc = {\n    ",
+    "char_count": 407,
+    "source_segment_ids": [
+      "seg_105",
+      "seg_106"
+    ]
+  },
+  {
+    "unit_id": "unit_054",
+    "start_ref": "para_107",
+    "end_ref": "para_108",
+    "unit_type": "paragraph",
+    "text_excerpt": "for (const record of hybridData) {\n      if (record.sync_state === SYNC_STATE.MATCHED) acc.matched += 1;\n      if (record.sync_state === SYNC_STATE.JOB_ONLY) acc.jobOnly += 1;\n      if (record.sync_state === SYNC_STATE.S",
+    "char_count": 444,
+    "source_segment_ids": [
+      "seg_107",
+      "seg_108"
+    ]
+  },
+  {
+    "unit_id": "unit_055",
+    "start_ref": "para_109",
+    "end_ref": "para_110",
+    "unit_type": "paragraph",
+    "text_excerpt": "for (const row of safeArray(washBayStatus)) {\n      if (isSpaceOccupied(row)) acc.occupiedSlots += 1;\n      else acc.vacantSlots += 1;\n    } return acc;\n  }, [hybridData, washBayStatus]);",
+    "char_count": 187,
+    "source_segment_ids": [
+      "seg_109",
+      "seg_110"
+    ]
+  },
+  {
+    "unit_id": "unit_056",
+    "start_ref": "para_111",
+    "end_ref": "para_112",
+    "unit_type": "paragraph",
+    "text_excerpt": "const syncRate = useMemo(() => {\n    if (summary.total === 0) return 100;\n    return Math.round((summary.matched / summary.total) * 100);\n  }, [summary]); const batchTargets = useMemo(() => {\n    return {\n      LEFT_BAY:",
+    "char_count": 575,
+    "source_segment_ids": [
+      "seg_111",
+      "seg_112"
+    ]
+  },
+  {
+    "unit_id": "unit_057",
+    "start_ref": "para_113",
+    "end_ref": "para_114",
+    "unit_type": "paragraph",
+    "text_excerpt": "const openDetail = useCallback((recordKey) => {\n    if (!recordKey) return;\n    setSelectedRecordKey(recordKey);\n  }, []); const closeDetail = useCallback(() => {\n    setSelectedRecordKey(null);\n  }, []);",
+    "char_count": 204,
+    "source_segment_ids": [
+      "seg_113",
+      "seg_114"
+    ]
+  },
+  {
+    "unit_id": "unit_058",
+    "start_ref": "para_115",
+    "end_ref": "para_116",
+    "unit_type": "paragraph",
+    "text_excerpt": "const handleSelectSlot = useCallback(\n    (slotKey) => {\n      const record = recordBySlotKey.get(slotKey);\n      if (record) setSelectedRecordKey(record.record_key);\n    },\n    [recordBySlotKey]\n  ); const runBatchActio",
+    "char_count": 420,
+    "source_segment_ids": [
+      "seg_115",
+      "seg_116"
+    ]
+  },
+  {
+    "unit_id": "unit_059",
+    "start_ref": "para_117",
+    "end_ref": "para_118",
+    "unit_type": "paragraph",
+    "text_excerpt": "setMessage('');\n      setErrorMessage(''); if (typeof runner !== 'function') {\n        setErrorMessage(\n          actionType === 'START'\n            ? 'onBatchStart handler가 연결되지 않았습니다.'\n            : 'onBatchComplete ha",
+    "char_count": 274,
+    "source_segment_ids": [
+      "seg_117",
+      "seg_118"
+    ]
+  },
+  {
+    "unit_id": "unit_060",
+    "start_ref": "para_119",
+    "end_ref": "para_120",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (!targets.length) {\n        setErrorMessage(\n          actionType === 'START'\n            ? '처리 가능한 시작 대상이 없습니다.'\n            : '처리 가능한 완료 대상이 없습니다.'\n        );\n        return;\n      } const groupLabel = bayGroup === ",
+    "char_count": 321,
+    "source_segment_ids": [
+      "seg_119",
+      "seg_120"
+    ]
+  },
+  {
+    "unit_id": "unit_061",
+    "start_ref": "para_121",
+    "end_ref": "para_122",
+    "unit_type": "paragraph",
+    "text_excerpt": "const confirmed =\n        typeof window === 'undefined'\n          ? true\n          : window.confirm(`${groupLabel} ${targets.length}대 ${actionLabel} 처리하시겠습니까?`); if (!confirmed) return;",
+    "char_count": 185,
+    "source_segment_ids": [
+      "seg_121",
+      "seg_122"
+    ]
+  },
+  {
+    "unit_id": "unit_062",
+    "start_ref": "para_123",
+    "end_ref": "para_124",
+    "unit_type": "paragraph",
+    "text_excerpt": "const nextBusyKey = `${actionType}:${bayGroup}:${targets.length}`;\n      setBusyKey(nextBusyKey); try {\n        await runner({\n          actionType,\n          bayGroup,\n          targets\n        });",
+    "char_count": 198,
+    "source_segment_ids": [
+      "seg_123",
+      "seg_124"
+    ]
+  },
+  {
+    "unit_id": "unit_063",
+    "start_ref": "para_125",
+    "end_ref": "para_126",
+    "unit_type": "paragraph",
+    "text_excerpt": "setMessage(`${groupLabel} ${targets.length}대 ${actionLabel} 처리 완료`);\n      } catch (error) {\n        setErrorMessage(error?.message || `${actionLabel} 처리 중 오류가 발생했습니다.`);\n      } finally {\n        setBusyKey(null);\n     ",
+    "char_count": 959,
+    "source_segment_ids": [
+      "seg_125",
+      "seg_126"
+    ]
+  },
+  {
+    "unit_id": "unit_064",
+    "start_ref": "para_127",
+    "end_ref": "para_128",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n      <span\n        style={{\n          display: 'inline-flex',\n          alignItems: 'center',\n          minHeight: 24,\n          padding: '0 10px',\n          borderRadius: 999,\n          background: theme.bg,\n ",
+    "char_count": 645,
+    "source_segment_ids": [
+      "seg_127",
+      "seg_128"
+    ]
+  },
+  {
+    "unit_id": "unit_065",
+    "start_ref": "para_129",
+    "end_ref": "para_130",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n      <button\n        key={record.record_key}\n        type=\"button\"\n        onClick={() => openDetail(record.record_key)}\n        style={styles.listItem(selected, record.sync_state)}\n      >\n        <div style={",
+    "char_count": 633,
+    "source_segment_ids": [
+      "seg_129",
+      "seg_130"
+    ]
+  },
+  {
+    "unit_id": "unit_066",
+    "start_ref": "para_131",
+    "end_ref": "para_132",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.badgeRow}>\n          <span style={styles.badge(syncTone.bg, syncTone.color, syncTone.border)}>\n            <SyncIcon size={11} />\n            {syncTone.label}\n          </span> <span style={styles.badg",
+    "char_count": 307,
+    "source_segment_ids": [
+      "seg_131",
+      "seg_132"
+    ]
+  },
+  {
+    "unit_id": "unit_067",
+    "start_ref": "para_133",
+    "end_ref": "para_134",
+    "unit_type": "paragraph",
+    "text_excerpt": "{record.msds_status !== 'N/A' ? renderChip(`MSDS ${record.msds_status}`, 'amber') : null}\n        </div> <div style={styles.infoGrid}>\n          <div style={styles.infoLine}>\n            <span style={styles.infoLabel}>CA",
+    "char_count": 332,
+    "source_segment_ids": [
+      "seg_133",
+      "seg_134"
+    ]
+  },
+  {
+    "unit_id": "unit_068",
+    "start_ref": "para_135",
+    "end_ref": "para_136",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.infoLine}>\n            <span style={styles.infoLabel}>PREV</span>\n            <span style={styles.infoValue}>{asText(record.previous_cargo_name, '미등록')}</span>\n          </div>\n        </div> {record.h",
+    "char_count": 568,
+    "source_segment_ids": [
+      "seg_135",
+      "seg_136"
+    ]
+  },
+  {
+    "unit_id": "unit_069",
+    "start_ref": "para_137",
+    "end_ref": "para_138",
+    "unit_type": "paragraph",
+    "text_excerpt": "const renderBaySlot = (bayName, slotNo) => {\n    const slotKey = makeSlotKey(bayName, slotNo);\n    const space = spaceBySlot.get(slotKey) || null;\n    const occupied = isSpaceOccupied(space);\n    const record = recordByS",
+    "char_count": 725,
+    "source_segment_ids": [
+      "seg_137",
+      "seg_138"
+    ]
+  },
+  {
+    "unit_id": "unit_070",
+    "start_ref": "para_139",
+    "end_ref": "para_140",
+    "unit_type": "paragraph",
+    "text_excerpt": "{occupied ? (\n          <>\n            <div style={styles.slotTankNo}>\n              {getDisplayTankNo(record || { tank_number: space?.tank_number })}\n            </div> {syncTone ? (\n              <span style={styles.sl",
+    "char_count": 516,
+    "source_segment_ids": [
+      "seg_139",
+      "seg_140"
+    ]
+  },
+  {
+    "unit_id": "unit_071",
+    "start_ref": "para_141",
+    "end_ref": "para_142",
+    "unit_type": "paragraph",
+    "text_excerpt": "return (\n    <div style={styles.container}>\n      {/* HEADER */}\n      <header style={styles.header}>\n        <div style={styles.headerLeft}>\n          <button onClick={onBack} style={styles.backBtn}>\n            <Chevro",
+    "char_count": 885,
+    "source_segment_ids": [
+      "seg_141",
+      "seg_142"
+    ]
+  },
+  {
+    "unit_id": "unit_072",
+    "start_ref": "para_143",
+    "end_ref": "para_144",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.headerRight}>\n          {renderChip(`SYNC ${syncRate}%`, 'green')}\n          {renderChip(`JOB_ONLY ${summary.jobOnly}`, summary.jobOnly > 0 ? 'amber' : 'default')}\n          {renderChip(`SPACE_ONLY ${s",
+    "char_count": 1268,
+    "source_segment_ids": [
+      "seg_143",
+      "seg_144"
+    ]
+  },
+  {
+    "unit_id": "unit_073",
+    "start_ref": "para_145",
+    "end_ref": "para_145",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.actionGroup}>\n          <div style={styles.actionGroupTitle}>우측 베이</div>\n          <button\n            type=\"button\"\n            onClick={() => runBatchAction('START', 'RIGHT_BAY')}\n            disable",
+    "char_count": 893,
+    "source_segment_ids": [
+      "seg_145"
+    ]
+  },
+  {
+    "unit_id": "unit_074",
+    "start_ref": "para_146",
+    "end_ref": "para_147",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.messageArea}>\n          {message ? <div style={styles.successMessage}>{message}</div> : null}\n          {errorMessage ? <div style={styles.errorMessage}>{errorMessage}</div> : null}\n        </div>\n    ",
+    "char_count": 556,
+    "source_segment_ids": [
+      "seg_146",
+      "seg_147"
+    ]
+  },
+  {
+    "unit_id": "unit_075",
+    "start_ref": "para_148",
+    "end_ref": "para_149",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.summaryRow}>\n            {renderChip(`TOTAL ${activeRecords.length}`, 'blue')}\n            {renderChip(`READY ${summary.ready}`, 'violet')}\n            {renderChip(`IN_PROGRESS ${summary.inProgress}`, ",
+    "char_count": 589,
+    "source_segment_ids": [
+      "seg_148",
+      "seg_149"
+    ]
+  },
+  {
+    "unit_id": "unit_076",
+    "start_ref": "para_150",
+    "end_ref": "para_151",
+    "unit_type": "paragraph",
+    "text_excerpt": "{/* BAY MONITOR */}\n        <section style={styles.monitorSection}>\n          <div style={styles.sectionHeader}>\n            <div style={styles.sectionTitle}>WASH BAY MONITOR</div>\n            <div style={styles.sectionS",
+    "char_count": 747,
+    "source_segment_ids": [
+      "seg_150",
+      "seg_151"
+    ]
+  },
+  {
+    "unit_id": "unit_077",
+    "start_ref": "para_152",
+    "end_ref": "para_153",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.slotColumn}>\n                  {bay.slots.map((slotNo) => renderBaySlot(bay.key, slotNo))}\n                </div>\n              </div>\n            ))}\n          </div>\n        </section>\n      </main> ",
+    "char_count": 838,
+    "source_segment_ids": [
+      "seg_152",
+      "seg_153"
+    ]
+  },
+  {
+    "unit_id": "unit_078",
+    "start_ref": "para_154",
+    "end_ref": "para_155",
+    "unit_type": "paragraph",
+    "text_excerpt": "{/* DETAIL MODAL */}\n      {selectedRecord ? (\n        <div style={styles.modalOverlay} onClick={closeDetail}>\n          <div style={styles.modalCard} onClick={(e) => e.stopPropagation()}>\n            <div style={styles.",
+    "char_count": 572,
+    "source_segment_ids": [
+      "seg_154",
+      "seg_155"
+    ]
+  },
+  {
+    "unit_id": "unit_079",
+    "start_ref": "para_156",
+    "end_ref": "para_157",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalBadgeRow}>\n              {(() => {\n                const syncTone = getSyncTone(selectedRecord.sync_state);\n                const SyncIcon = syncTone.icon; return (\n                  <span style={",
+    "char_count": 425,
+    "source_segment_ids": [
+      "seg_156",
+      "seg_157"
+    ]
+  },
+  {
+    "unit_id": "unit_080",
+    "start_ref": "para_158",
+    "end_ref": "para_159",
+    "unit_type": "paragraph",
+    "text_excerpt": "{(() => {\n                const jobTone = getJobTone(selectedRecord.job_status);\n                return (\n                  <span style={styles.badge(jobTone.bg, jobTone.color, UI.border)}>\n                    {jobTone.l",
+    "char_count": 624,
+    "source_segment_ids": [
+      "seg_158",
+      "seg_159"
+    ]
+  },
+  {
+    "unit_id": "unit_081",
+    "start_ref": "para_160",
+    "end_ref": "para_161",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalInfoRow}>\n                <MapPin size={15} color={UI.blue} />\n                <span style={styles.modalInfoLabel}>BAY</span>\n                <span style={styles.modalInfoValue}>{selectedRecord.ba",
+    "char_count": 514,
+    "source_segment_ids": [
+      "seg_160",
+      "seg_161"
+    ]
+  },
+  {
+    "unit_id": "unit_082",
+    "start_ref": "para_162",
+    "end_ref": "para_163",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalInfoRow}>\n                <Database size={15} color={UI.violet} />\n                <span style={styles.modalInfoLabel}>JOB_ID</span>\n                <span style={styles.modalMono}>{selectedRecord.",
+    "char_count": 531,
+    "source_segment_ids": [
+      "seg_162",
+      "seg_163"
+    ]
+  },
+  {
+    "unit_id": "unit_083",
+    "start_ref": "para_164",
+    "end_ref": "para_165",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalBlock}>\n                <div style={styles.modalBlockTitle}>CARGO</div>\n                <div style={styles.modalBlockText}>{asText(selectedRecord.cargo_name, '미등록')}</div>\n              </div> <di",
+    "char_count": 451,
+    "source_segment_ids": [
+      "seg_164",
+      "seg_165"
+    ]
+  },
+  {
+    "unit_id": "unit_084",
+    "start_ref": "para_166",
+    "end_ref": "para_167",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalBlock}>\n                <div style={styles.modalBlockTitle}>MSDS / HAZARD</div>\n                <div style={styles.modalBlockText}>MSDS: {asText(selectedRecord.msds_status, 'N/A')}</div> <div styl",
+    "char_count": 741,
+    "source_segment_ids": [
+      "seg_166",
+      "seg_167"
+    ]
+  },
+  {
+    "unit_id": "unit_085",
+    "start_ref": "para_168",
+    "end_ref": "para_169",
+    "unit_type": "paragraph",
+    "text_excerpt": "<div style={styles.modalBlock}>\n                <div style={styles.modalBlockTitle}>WASH INSTRUCTION</div>\n                <div style={styles.modalBlockText}>\n                  {asText(selectedRecord.special_instruction,",
+    "char_count": 524,
+    "source_segment_ids": [
+      "seg_168",
+      "seg_169"
+    ]
+  },
+  {
+    "unit_id": "unit_086",
+    "start_ref": "para_170",
+    "end_ref": "para_171",
+    "unit_type": "paragraph",
+    "text_excerpt": "<ul style={styles.issueList}>\n                    {selectedRecord.issues.map((msg, idx) => (\n                      <li key={`${selectedRecord.record_key}-issue-${idx}`}>{msg}</li>\n                    ))}\n                ",
+    "char_count": 686,
+    "source_segment_ids": [
+      "seg_170",
+      "seg_171"
+    ]
+  },
+  {
+    "unit_id": "unit_087",
+    "start_ref": "para_172",
+    "end_ref": "para_173",
+    "unit_type": "paragraph",
+    "text_excerpt": "header: {\n    minHeight: 72,\n    padding: '12px 20px',\n    background: UI.white,\n    borderBottom: `1px solid ${UI.border}`,\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'space-between',\n    gap: 16",
+    "char_count": 303,
+    "source_segment_ids": [
+      "seg_172",
+      "seg_173"
+    ]
+  },
+  {
+    "unit_id": "unit_088",
+    "start_ref": "para_174",
+    "end_ref": "para_175",
+    "unit_type": "paragraph",
+    "text_excerpt": "headerRight: {\n    display: 'flex',\n    alignItems: 'center',\n    gap: 8,\n    flexWrap: 'wrap'\n  }, backBtn: {\n    width: 42,\n    height: 42,\n    borderRadius: 12,\n    border: `1px solid ${UI.border}`,\n    background: '#",
+    "char_count": 332,
+    "source_segment_ids": [
+      "seg_174",
+      "seg_175"
+    ]
+  },
+  {
+    "unit_id": "unit_089",
+    "start_ref": "para_176",
+    "end_ref": "para_177",
+    "unit_type": "paragraph",
+    "text_excerpt": "title: {\n    margin: 0,\n    fontSize: 20,\n    fontWeight: 950,\n    color: UI.slate900\n  }, headerMeta: {\n    marginTop: 4,\n    display: 'flex',\n    alignItems: 'center',\n    gap: 6,\n    flexWrap: 'wrap',\n    fontSize: 11",
+    "char_count": 266,
+    "source_segment_ids": [
+      "seg_176",
+      "seg_177"
+    ]
+  },
+  {
+    "unit_id": "unit_090",
+    "start_ref": "para_178",
+    "end_ref": "para_179",
+    "unit_type": "paragraph",
+    "text_excerpt": "actionBar: {\n    padding: '12px 20px',\n    borderBottom: `1px solid ${UI.border}`,\n    background: UI.white,\n    display: 'grid',\n    gridTemplateColumns: '1fr 1fr 1.2fr',\n    gap: 12,\n    alignItems: 'stretch'\n  }, acti",
+    "char_count": 438,
+    "source_segment_ids": [
+      "seg_178",
+      "seg_179"
+    ]
+  },
+  {
+    "unit_id": "unit_091",
+    "start_ref": "para_180",
+    "end_ref": "para_181",
+    "unit_type": "paragraph",
+    "text_excerpt": "actionGroupTitle: {\n    fontSize: 13,\n    fontWeight: 900,\n    color: UI.slate900\n  }, startButton: (disabled) => ({\n    minHeight: 40,\n    border: 'none',\n    borderRadius: 12,\n    background: disabled ? '#ddd6fe' : UI.",
+    "char_count": 363,
+    "source_segment_ids": [
+      "seg_180",
+      "seg_181"
+    ]
+  },
+  {
+    "unit_id": "unit_092",
+    "start_ref": "para_182",
+    "end_ref": "para_183",
+    "unit_type": "paragraph",
+    "text_excerpt": "completeButton: (disabled) => ({\n    minHeight: 40,\n    border: 'none',\n    borderRadius: 12,\n    background: disabled ? '#dcfce7' : UI.green,\n    color: disabled ? '#86efac' : '#fff',\n    fontWeight: 900,\n    fontSize: ",
+    "char_count": 389,
+    "source_segment_ids": [
+      "seg_182",
+      "seg_183"
+    ]
+  },
+  {
+    "unit_id": "unit_093",
+    "start_ref": "para_184",
+    "end_ref": "para_185",
+    "unit_type": "paragraph",
+    "text_excerpt": "successMessage: {\n    padding: '10px 12px',\n    borderRadius: 12,\n    background: UI.softGreen,\n    border: `1px solid ${UI.green}30`,\n    color: UI.green,\n    fontSize: 12,\n    fontWeight: 900\n  }, errorMessage: {\n    p",
+    "char_count": 389,
+    "source_segment_ids": [
+      "seg_184",
+      "seg_185"
+    ]
+  },
+  {
+    "unit_id": "unit_094",
+    "start_ref": "para_186",
+    "end_ref": "para_187",
+    "unit_type": "paragraph",
+    "text_excerpt": "main: {\n    flex: 1,\n    display: 'grid',\n    gridTemplateColumns: '1.6fr 1fr',\n    gap: 16,\n    padding: 16,\n    overflow: 'hidden'\n  }, listSection: {\n    minWidth: 0,\n    background: UI.white,\n    border: `1px solid $",
+    "char_count": 350,
+    "source_segment_ids": [
+      "seg_186",
+      "seg_187"
+    ]
+  },
+  {
+    "unit_id": "unit_095",
+    "start_ref": "para_188",
+    "end_ref": "para_189",
+    "unit_type": "paragraph",
+    "text_excerpt": "monitorSection: {\n    minWidth: 0,\n    background: UI.white,\n    border: `1px solid ${UI.border}`,\n    borderRadius: 20,\n    padding: 16,\n    display: 'flex',\n    flexDirection: 'column',\n    overflow: 'hidden'\n  }, sect",
+    "char_count": 258,
+    "source_segment_ids": [
+      "seg_188",
+      "seg_189"
+    ]
+  },
+  {
+    "unit_id": "unit_096",
+    "start_ref": "para_190",
+    "end_ref": "para_191",
+    "unit_type": "paragraph",
+    "text_excerpt": "sectionTitle: {\n    fontSize: 14,\n    fontWeight: 950,\n    color: UI.slate900\n  }, sectionSub: {\n    marginTop: 4,\n    fontSize: 11,\n    color: UI.slate500,\n    fontWeight: 700\n  },",
+    "char_count": 181,
+    "source_segment_ids": [
+      "seg_190",
+      "seg_191"
+    ]
+  },
+  {
+    "unit_id": "unit_097",
+    "start_ref": "para_192",
+    "end_ref": "para_193",
+    "unit_type": "paragraph",
+    "text_excerpt": "summaryRow: {\n    display: 'flex',\n    gap: 8,\n    flexWrap: 'wrap',\n    marginBottom: 12\n  }, listScroll: {\n    flex: 1,\n    minHeight: 0,\n    overflowY: 'auto',\n    display: 'flex',\n    flexDirection: 'column',\n    gap",
+    "char_count": 250,
+    "source_segment_ids": [
+      "seg_192",
+      "seg_193"
+    ]
+  },
+  {
+    "unit_id": "unit_098",
+    "start_ref": "para_194",
+    "end_ref": "para_195",
+    "unit_type": "paragraph",
+    "text_excerpt": "emptyBox: {\n    minHeight: 120,\n    borderRadius: 16,\n    border: `1px dashed ${UI.border}`,\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n    color: UI.slate400,\n    fontWeight: 800\n  }, l",
+    "char_count": 485,
+    "source_segment_ids": [
+      "seg_194",
+      "seg_195"
+    ]
+  },
+  {
+    "unit_id": "unit_099",
+    "start_ref": "para_196",
+    "end_ref": "para_197",
+    "unit_type": "paragraph",
+    "text_excerpt": "return {\n      width: '100%',\n      textAlign: 'left',\n      border: `2px solid ${borderColor}`,\n      background: selected ? UI.softBlue : UI.white,\n      borderRadius: 18,\n      padding: 14,\n      cursor: 'pointer',\n  ",
+    "char_count": 383,
+    "source_segment_ids": [
+      "seg_196",
+      "seg_197"
+    ]
+  },
+  {
+    "unit_id": "unit_100",
+    "start_ref": "para_198",
+    "end_ref": "para_199",
+    "unit_type": "paragraph",
+    "text_excerpt": "listMain: {\n    minWidth: 0,\n    display: 'flex',\n    flexDirection: 'column',\n    gap: 4\n  }, listRight: {\n    minWidth: 120,\n    display: 'flex',\n    flexDirection: 'column',\n    alignItems: 'flex-end',\n    gap: 4\n  },",
+    "char_count": 220,
+    "source_segment_ids": [
+      "seg_198",
+      "seg_199"
+    ]
+  },
+  {
+    "unit_id": "unit_101",
+    "start_ref": "para_200",
+    "end_ref": "para_201",
+    "unit_type": "paragraph",
+    "text_excerpt": "tankNo: {\n    fontSize: 22,\n    fontWeight: 950,\n    color: UI.slate900,\n    lineHeight: 1.1\n  }, tankSub: {\n    fontSize: 12,\n    color: UI.slate500,\n    fontWeight: 700\n  },",
+    "char_count": 175,
+    "source_segment_ids": [
+      "seg_200",
+      "seg_201"
+    ]
+  },
+  {
+    "unit_id": "unit_102",
+    "start_ref": "para_202",
+    "end_ref": "para_203",
+    "unit_type": "paragraph",
+    "text_excerpt": "smallMeta: {\n    fontSize: 11,\n    color: UI.slate700,\n    fontWeight: 800\n  }, badgeRow: {\n    display: 'flex',\n    gap: 8,\n    flexWrap: 'wrap'\n  },",
+    "char_count": 150,
+    "source_segment_ids": [
+      "seg_202",
+      "seg_203"
+    ]
+  },
+  {
+    "unit_id": "unit_103",
+    "start_ref": "para_204",
+    "end_ref": "para_205",
+    "unit_type": "paragraph",
+    "text_excerpt": "badge: (bg, color, borderColor) => ({\n    display: 'inline-flex',\n    alignItems: 'center',\n    gap: 5,\n    minHeight: 24,\n    padding: '0 9px',\n    borderRadius: 999,\n    background: bg,\n    color,\n    border: `1px soli",
+    "char_count": 363,
+    "source_segment_ids": [
+      "seg_204",
+      "seg_205"
+    ]
+  },
+  {
+    "unit_id": "unit_104",
+    "start_ref": "para_206",
+    "end_ref": "para_207",
+    "unit_type": "paragraph",
+    "text_excerpt": "infoLine: {\n    display: 'flex',\n    alignItems: 'center',\n    gap: 8,\n    minWidth: 0\n  }, infoLabel: {\n    minWidth: 48,\n    fontSize: 10,\n    fontWeight: 950,\n    color: UI.slate400\n  },",
+    "char_count": 189,
+    "source_segment_ids": [
+      "seg_206",
+      "seg_207"
+    ]
+  },
+  {
+    "unit_id": "unit_105",
+    "start_ref": "para_208",
+    "end_ref": "para_209",
+    "unit_type": "paragraph",
+    "text_excerpt": "infoValue: {\n    fontSize: 12,\n    fontWeight: 800,\n    color: UI.slate800,\n    overflow: 'hidden',\n    textOverflow: 'ellipsis',\n    whiteSpace: 'nowrap'\n  }, hazardRow: {\n    display: 'flex',\n    gap: 6,\n    flexWrap: ",
+    "char_count": 231,
+    "source_segment_ids": [
+      "seg_208",
+      "seg_209"
+    ]
+  },
+  {
+    "unit_id": "unit_106",
+    "start_ref": "para_210",
+    "end_ref": "para_211",
+    "unit_type": "paragraph",
+    "text_excerpt": "hazardChip: {\n    display: 'inline-flex',\n    alignItems: 'center',\n    minHeight: 24,\n    padding: '0 10px',\n    borderRadius: 999,\n    background: UI.softRed,\n    color: UI.red,\n    border: `1px solid ${UI.red}25`,\n   ",
+    "char_count": 379,
+    "source_segment_ids": [
+      "seg_210",
+      "seg_211"
+    ]
+  },
+  {
+    "unit_id": "unit_107",
+    "start_ref": "para_212",
+    "end_ref": "para_213",
+    "unit_type": "paragraph",
+    "text_excerpt": "monitorColumn: {\n    minWidth: 0,\n    display: 'flex',\n    flexDirection: 'column',\n    gap: 10\n  }, monitorColumnHeader: {\n    borderRadius: 14,\n    border: `1px solid ${UI.border}`,\n    background: '#f8fafc',\n    paddi",
+    "char_count": 231,
+    "source_segment_ids": [
+      "seg_212",
+      "seg_213"
+    ]
+  },
+  {
+    "unit_id": "unit_108",
+    "start_ref": "para_214",
+    "end_ref": "para_215",
+    "unit_type": "paragraph",
+    "text_excerpt": "monitorColumnTitle: {\n    fontSize: 13,\n    fontWeight: 950,\n    color: UI.slate900\n  }, monitorColumnSub: {\n    marginTop: 4,\n    fontSize: 11,\n    color: UI.slate500,\n    fontWeight: 700\n  },",
+    "char_count": 193,
+    "source_segment_ids": [
+      "seg_214",
+      "seg_215"
+    ]
+  },
+  {
+    "unit_id": "unit_109",
+    "start_ref": "para_216",
+    "end_ref": "para_217",
+    "unit_type": "paragraph",
+    "text_excerpt": "slotColumn: {\n    flex: 1,\n    minHeight: 0,\n    display: 'grid',\n    gridTemplateRows: 'repeat(5, 1fr)',\n    gap: 10\n  }, slotCard: ({ occupied, isSelected, syncState }) => {\n    let border = UI.border;\n    let bg = UI.",
+    "char_count": 226,
+    "source_segment_ids": [
+      "seg_216",
+      "seg_217"
+    ]
+  },
+  {
+    "unit_id": "unit_110",
+    "start_ref": "para_218",
+    "end_ref": "para_219",
+    "unit_type": "paragraph",
+    "text_excerpt": "if (!occupied) {\n      border = '#e5e7eb';\n      bg = '#f8fafc';\n    } if (syncState === SYNC_STATE.SPACE_ONLY) border = `${UI.red}70`;\n    if (syncState === SYNC_STATE.JOB_ONLY) border = `${UI.amber}70`;\n    if (isSelec",
+    "char_count": 280,
+    "source_segment_ids": [
+      "seg_218",
+      "seg_219"
+    ]
+  },
+  {
+    "unit_id": "unit_111",
+    "start_ref": "para_220",
+    "end_ref": "para_221",
+    "unit_type": "paragraph",
+    "text_excerpt": "return {\n      position: 'relative',\n      width: '100%',\n      minHeight: 0,\n      borderRadius: 16,\n      border: `2px solid ${border}`,\n      background: bg,\n      padding: 14,\n      display: 'flex',\n      flexDirecti",
+    "char_count": 493,
+    "source_segment_ids": [
+      "seg_220",
+      "seg_221"
+    ]
+  },
+  {
+    "unit_id": "unit_112",
+    "start_ref": "para_222",
+    "end_ref": "para_223",
+    "unit_type": "paragraph",
+    "text_excerpt": "slotTankNo: {\n    fontSize: 19,\n    fontWeight: 950,\n    color: UI.slate900,\n    textAlign: 'center'\n  }, slotPill: (bg, color, borderColor) => ({\n    display: 'inline-flex',\n    alignItems: 'center',\n    gap: 4,\n    min",
+    "char_count": 391,
+    "source_segment_ids": [
+      "seg_222",
+      "seg_223"
+    ]
+  },
+  {
+    "unit_id": "unit_113",
+    "start_ref": "para_224",
+    "end_ref": "para_225",
+    "unit_type": "paragraph",
+    "text_excerpt": "vacantText: {\n    fontSize: 14,\n    fontWeight: 900,\n    color: UI.slate300\n  }, footer: {\n    minHeight: 48,\n    padding: '8px 20px',\n    background: UI.white,\n    borderTop: `1px solid ${UI.border}`,\n    display: 'flex",
+    "char_count": 252,
+    "source_segment_ids": [
+      "seg_224",
+      "seg_225"
+    ]
+  },
+  {
+    "unit_id": "unit_114",
+    "start_ref": "para_226",
+    "end_ref": "para_227",
+    "unit_type": "paragraph",
+    "text_excerpt": "footerText: {\n    fontSize: 11,\n    color: UI.slate400,\n    fontWeight: 700,\n    fontFamily: 'monospace',\n    whiteSpace: 'normal'\n  }, modalOverlay: {\n    position: 'fixed',\n    inset: 0,\n    background: 'rgba(15,23,42,",
+    "char_count": 343,
+    "source_segment_ids": [
+      "seg_226",
+      "seg_227"
+    ]
+  },
+  {
+    "unit_id": "unit_115",
+    "start_ref": "para_228",
+    "end_ref": "para_229",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalCard: {\n    width: 'min(760px, 100%)',\n    maxHeight: '85vh',\n    overflowY: 'auto',\n    background: UI.white,\n    borderRadius: 24,\n    border: `1px solid ${UI.border}`,\n    boxShadow: '0 20px 60px rgba(15,23,42,0.",
+    "char_count": 365,
+    "source_segment_ids": [
+      "seg_228",
+      "seg_229"
+    ]
+  },
+  {
+    "unit_id": "unit_116",
+    "start_ref": "para_230",
+    "end_ref": "para_231",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalLabel: {\n    fontSize: 10,\n    fontWeight: 950,\n    color: UI.slate400,\n    letterSpacing: '0.08em'\n  }, modalTankNo: {\n    marginTop: 4,\n    fontSize: 30,\n    fontWeight: 950,\n    color: UI.slate900\n  },",
+    "char_count": 209,
+    "source_segment_ids": [
+      "seg_230",
+      "seg_231"
+    ]
+  },
+  {
+    "unit_id": "unit_117",
+    "start_ref": "para_232",
+    "end_ref": "para_233",
+    "unit_type": "paragraph",
+    "text_excerpt": "closeBtn: {\n    width: 36,\n    height: 36,\n    borderRadius: 10,\n    border: `1px solid ${UI.border}`,\n    background: '#f8fafc',\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n    cursor: '",
+    "char_count": 328,
+    "source_segment_ids": [
+      "seg_232",
+      "seg_233"
+    ]
+  },
+  {
+    "unit_id": "unit_118",
+    "start_ref": "para_234",
+    "end_ref": "para_235",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalBody: {\n    marginTop: 16,\n    display: 'flex',\n    flexDirection: 'column',\n    gap: 14\n  }, modalInfoRow: {\n    display: 'flex',\n    alignItems: 'flex-start',\n    gap: 10\n  },",
+    "char_count": 182,
+    "source_segment_ids": [
+      "seg_234",
+      "seg_235"
+    ]
+  },
+  {
+    "unit_id": "unit_119",
+    "start_ref": "para_236",
+    "end_ref": "para_237",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalInfoLabel: {\n    minWidth: 86,\n    fontSize: 11,\n    fontWeight: 950,\n    color: UI.slate400\n  }, modalInfoValue: {\n    flex: 1,\n    fontSize: 13,\n    fontWeight: 800,\n    color: UI.slate800,\n    wordBreak: 'break-w",
+    "char_count": 229,
+    "source_segment_ids": [
+      "seg_236",
+      "seg_237"
+    ]
+  },
+  {
+    "unit_id": "unit_120",
+    "start_ref": "para_238",
+    "end_ref": "para_239",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalMono: {\n    flex: 1,\n    fontSize: 11,\n    fontWeight: 700,\n    color: UI.slate800,\n    fontFamily: 'monospace',\n    wordBreak: 'break-all'\n  }, modalBlock: {\n    borderRadius: 14,\n    border: `1px solid ${UI.border",
+    "char_count": 271,
+    "source_segment_ids": [
+      "seg_238",
+      "seg_239"
+    ]
+  },
+  {
+    "unit_id": "unit_121",
+    "start_ref": "para_240",
+    "end_ref": "para_241",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalBlockTitle: {\n    fontSize: 11,\n    fontWeight: 950,\n    color: UI.slate500,\n    marginBottom: 8\n  }, modalBlockText: {\n    fontSize: 12,\n    lineHeight: 1.55,\n    color: UI.slate800,\n    fontWeight: 700,\n    whiteS",
+    "char_count": 241,
+    "source_segment_ids": [
+      "seg_240",
+      "seg_241"
+    ]
+  },
+  {
+    "unit_id": "unit_122",
+    "start_ref": "para_242",
+    "end_ref": "para_243",
+    "unit_type": "paragraph",
+    "text_excerpt": "modalHazardWrap: {\n    marginTop: 10,\n    display: 'flex',\n    gap: 6,\n    flexWrap: 'wrap'\n  }, emptyText: {\n    fontSize: 12,\n    color: UI.slate400,\n    fontWeight: 700\n  },",
+    "char_count": 176,
+    "source_segment_ids": [
+      "seg_242",
+      "seg_243"
+    ]
+  },
+  {
+    "unit_id": "unit_123",
+    "start_ref": "para_244",
+    "end_ref": "para_246",
+    "unit_type": "paragraph",
+    "text_excerpt": "issueBox: {\n    borderRadius: 14,\n    border: `1px solid ${UI.amber}40`,\n    background: UI.softAmber,\n    padding: 12\n  }, issueTitle: {\n    display: 'flex',\n    alignItems: 'center',\n    gap: 6,\n    fontSize: 11,\n    f",
+    "char_count": 400,
+    "source_segment_ids": [
+      "unit_123",
+      "seg_246"
+    ]
+  }
+]

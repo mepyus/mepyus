@@ -1,0 +1,1914 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019da00d-c710-7271-aafb-b70fda03fa44
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: summarize
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+외부 렌즈 재료 읽기: OpenCode / Claude Code 화면 선례는 참고만 하고 아직 자동 확장하지 않음
+
+Bounded context refs:
+- docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md
+
+Prompt payload:
+You are operating as a Codex turn inside the integrated-engine VectorFL surface.
+The CLI is an on-top tool layer, not a fourth surface.
+The fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.
+
+Current work packet visible in the VectorFL surface:
+- purpose: 외부 렌즈 재료 읽기: OpenCode / Claude Code 화면 선례는 참고만 하고 아직 자동 확장하지 않음
+- task lens: summarize
+- internal search gate: thin evidence (not explicitly requested)
+- evidence bundle summary: 1 attached refs: source ref
+- evidence limitation: Evidence bundle is thin; only one ref is attached.
+- active locks: fixed 3-surface body + CLI on-top boundary (inferred)
+- evidence refs: docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md
+- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)
+- expected return shape: bounded operating summary
+- next route candidate: vectorfl_reread
+- internal search usage: thin evidence
+
+Current user-facing purpose:
+외부 렌즈 재료 읽기: OpenCode / Claude Code 화면 선례는 참고만 하고 아직 자동 확장하지 않음
+
+Current message to Codex:
+references/git_search/openharness-main 폴더가 있는데 그거 분석하자. 우리 구조(엔진/통합엔진/패키지 )를 활용해 큰 틀로써 오픈하네스의 내부 구조를  분해/분석해서 자료를 만든다.
+
+Return format for this VectorFL CLI conversation turn:
+1. Korean operating summary
+2. Surface reading: user / VectorFL / engine
+3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold
+4. What must not be inferred
+5. Suggested next use
+Do not modify files. Do not promote, ingest, or canonicalize anything.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+요청 범위가 읽기/요약이고 파일 수정은 금지되어 있으니, 첨부된 기준 노트와 `references/git_search/openharness-main`의 최상위 구조만 확인해 큰 틀의 분석 자료로 반환하겠습니다.
+exec
+/bin/bash -lc "find references/git_search/openharness-main -maxdepth 2 -type f | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main/.github/PULL_REQUEST_TEMPLATE.md
+references/git_search/openharness-main/.gitignore
+references/git_search/openharness-main/CHANGELOG.md
+references/git_search/openharness-main/CONTRIBUTING.md
+references/git_search/openharness-main/LICENSE
+references/git_search/openharness-main/README.md
+references/git_search/openharness-main/README.zh-CN.md
+references/git_search/openharness-main/assets/architecture-comic.png
+references/git_search/openharness-main/assets/cli-typing.gif
+references/git_search/openharness-main/assets/harness-equation.png
+references/git_search/openharness-main/assets/landing.png
+references/git_search/openharness-main/assets/logo.png
+references/git_search/openharness-main/assets/ohmo.png
+references/git_search/openharness-main/assets/scene-agentloop.png
+references/git_search/openharness-main/assets/scene-context.png
+references/git_search/openharness-main/assets/scene-governance.png
+references/git_search/openharness-main/assets/scene-swarm.png
+references/git_search/openharness-main/assets/scene-toolkit.png
+references/git_search/openharness-main/docs/SHOWCASE.md
+references/git_search/openharness-main/ohmo/__init__.py
+references/git_search/openharness-main/ohmo/__main__.py
+references/git_search/openharness-main/ohmo/cli.py
+references/git_search/openharness-main/ohmo/memory.py
+references/git_search/openharness-main/ohmo/prompts.py
+references/git_search/openharness-main/ohmo/runtime.py
+references/git_search/openharness-main/ohmo/session_storage.py
+references/git_search/openharness-main/ohmo/workspace.py
+references/git_search/openharness-main/pyproject.toml
+references/git_search/openharness-main/scripts/e2e_smoke.py
+references/git_search/openharness-main/scripts/install.ps1
+references/git_search/openharness-main/scripts/install.sh
+references/git_search/openharness-main/scripts/install_dev.sh
+references/git_search/openharness-main/scripts/local_system_scenarios.py
+references/git_search/openharness-main/scripts/react_tui_e2e.py
+references/git_search/openharness-main/scripts/sync_nanobot_channels.sh
+references/git_search/openharness-main/scripts/test_cli_flags.py
+references/git_search/openharness-main/scripts/test_docker_sandbox_e2e.py
+references/git_search/openharness-main/scripts/test_harness_features.py
+references/git_search/openharness-main/scripts/test_headless_rendering.py
+references/git_search/openharness-main/scripts/test_react_tui_redesign.py
+references/git_search/openharness-main/scripts/test_real_skills_plugins.py
+references/git_search/openharness-main/scripts/test_tui_interactions.py
+references/git_search/openharness-main/src/__init__.py
+references/git_search/openharness-main/tests/__init__.py
+references/git_search/openharness-main/tests/conftest.py
+references/git_search/openharness-main/tests/test_hooks_skills_plugins_real.py
+references/git_search/openharness-main/tests/test_merged_prs_on_autoagent.py
+references/git_search/openharness-main/tests/test_platforms.py
+references/git_search/openharness-main/tests/test_real_large_tasks.py
+references/git_search/openharness-main/tests/test_untested_features.py
+
+exec
+/bin/bash -lc "find references/git_search/openharness-main -maxdepth 3 -type d | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main
+references/git_search/openharness-main/.agents
+references/git_search/openharness-main/.claude
+references/git_search/openharness-main/.claude/skills
+references/git_search/openharness-main/.claude/skills/harness-eval
+references/git_search/openharness-main/.claude/skills/pr-merge
+references/git_search/openharness-main/.github
+references/git_search/openharness-main/.github/ISSUE_TEMPLATE
+references/git_search/openharness-main/.github/workflows
+references/git_search/openharness-main/assets
+references/git_search/openharness-main/docs
+references/git_search/openharness-main/frontend
+references/git_search/openharness-main/frontend/terminal
+references/git_search/openharness-main/frontend/terminal/src
+references/git_search/openharness-main/ohmo
+references/git_search/openharness-main/ohmo/gateway
+references/git_search/openharness-main/scripts
+references/git_search/openharness-main/src
+references/git_search/openharness-main/src/openharness
+references/git_search/openharness-main/src/openharness/api
+references/git_search/openharness-main/src/openharness/auth
+references/git_search/openharness-main/src/openharness/bridge
+references/git_search/openharness-main/src/openharness/channels
+references/git_search/openharness-main/src/openharness/commands
+references/git_search/openharness-main/src/openharness/config
+references/git_search/openharness-main/src/openharness/coordinator
+references/git_search/openharness-main/src/openharness/engine
+references/git_search/openharness-main/src/openharness/hooks
+references/git_search/openharness-main/src/openharness/keybindings
+references/git_search/openharness-main/src/openharness/mcp
+references/git_search/openharness-main/src/openharness/memory
+references/git_search/openharness-main/src/openharness/output_styles
+references/git_search/openharness-main/src/openharness/permissions
+references/git_search/openharness-main/src/openharness/personalization
+references/git_search/openharness-main/src/openharness/plugins
+references/git_search/openharness-main/src/openharness/prompts
+references/git_search/openharness-main/src/openharness/sandbox
+references/git_search/openharness-main/src/openharness/services
+references/git_search/openharness-main/src/openharness/skills
+references/git_search/openharness-main/src/openharness/state
+references/git_search/openharness-main/src/openharness/swarm
+references/git_search/openharness-main/src/openharness/tasks
+references/git_search/openharness-main/src/openharness/themes
+references/git_search/openharness-main/src/openharness/tools
+references/git_search/openharness-main/src/openharness/ui
+references/git_search/openharness-main/src/openharness/utils
+references/git_search/openharness-main/src/openharness/vim
+references/git_search/openharness-main/src/openharness/voice
+references/git_search/openharness-main/tests
+references/git_search/openharness-main/tests/fixtures
+references/git_search/openharness-main/tests/test_api
+references/git_search/openharness-main/tests/test_auth
+references/git_search/openharness-main/tests/test_bridge
+references/git_search/openharness-main/tests/test_channels
+references/git_search/openharness-main/tests/test_commands
+references/git_search/openharness-main/tests/test_config
+references/git_search/openharness-main/tests/test_coordinator
+references/git_search/openharness-main/tests/test_engine
+references/git_search/openharness-main/tests/test_entrypoints
+references/git_search/openharness-main/tests/test_hooks
+references/git_search/openharness-main/tests/test_install
+references/git_search/openharness-main/tests/test_logging
+references/git_search/openharness-main/tests/test_mcp
+references/git_search/openharness-main/tests/test_memory
+references/git_search/openharness-main/tests/test_ohmo
+references/git_search/openharness-main/tests/test_permissions
+references/git_search/openharness-main/tests/test_personalization
+references/git_search/openharness-main/tests/test_plugins
+references/git_search/openharness-main/tests/test_prompts
+references/git_search/openharness-main/tests/test_sandbox
+references/git_search/openharness-main/tests/test_services
+references/git_search/openharness-main/tests/test_skills
+references/git_search/openharness-main/tests/test_swarm
+references/git_search/openharness-main/tests/test_tasks
+references/git_search/openharness-main/tests/test_tools
+references/git_search/openharness-main/tests/test_ui
+references/git_search/openharness-main/tests/test_utils
+
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine UI Stable Folder Migration Note v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The integrated-engine main operating UI has been promoted from `gemini/mock_test` into `app/ui/integrated_engine`.
+
+The note is that `gemini/mock_test` remains as Gemini proposal/reference clay, while `app/ui/integrated_engine` is now the stable source folder for the actual main UI path. Some old report wording still says `gemini/mock_test`; that wording should be reread as historical context, not the current source location.
+
+## Round Goal
+
+Move the currently usable Gemini mock UI into a stable project folder before further CLI-on-top work makes the source location ambiguous.
+
+## Files Changed
+
+- `.gitignore`
+- `app/ui/integrated_engine/*`
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## What Changed
+
+- Created `app/ui/integrated_engine` as the stable source folder for the current integrated-engine UI.
+- Copied the existing working UI from `gemini/mock_test` into the stable folder.
+- Kept `gemini/mock_test` in place as reference/proposal material.
+- Updated the stable app package name to `vectorfl-integrated-engine-ui`.
+- Updated the stable app browser title to `VectorFL Integrated Engine`.
+- Updated the stable app shell label from `VECTORFL Shell` to `Integrated Engine`.
+- Added broad ignores for `node_modules/` and `dist/` so local dependency/build artifacts do not become the project signal.
+
+## Why This Was Done
+
+- `gemini/mock_test` should not remain the long-term source of the real operating UI.
+- Gemini material is design/proposal clay; the actual integrated-engine UI needs a stable source location.
+- `runtime` should remain for session artifacts, manifests, state, and execution returns, not React/Vite source.
+- The 3-surface engine structure remains fixed; this migration only changes source placement.
+
+## Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- The stable app dev server is running at `http://127.0.0.1:5173/`.
+- The served HTML title is `VectorFL Integrated Engine`, confirming the new source is active.
+- The API proxy from the stable app to `http://127.0.0.1:8421` works.
+- A real read-only Codex session succeeded through the stable app proxy path:
+  - session id: `cli_20260416T101531Z_ba21f03e`
+  - requested_by_surface: `vectorfl_surface`
+  - requested_by_page: `app/ui/integrated_engine`
+  - status: `done`
+  - exit code: `0`
+- Marking the same session as `validation_target` succeeded.
+
+## Pass / Fail
+
+PASS_WITH_NOTE.
+
+The stable folder now runs and can operate the existing CLI on-top path. The only note is that browser-click/user-feel validation still needs the user, and some prior documentation still refers to `gemini/mock_test` because it was written before the stable-folder promotion.
+
+## Watchpoints
+
+- Do not continue feature work against `gemini/mock_test` unless intentionally modifying the reference mock.
+- Do not move React/Vite source into `runtime`.
+- Do not treat this migration as package 2 or as a new surface.
+- Do not add Gemini adapter, background runner, or session browsing until the stable Codex path is hand-used.
+
+## Next Small Step
+
+Use `http://127.0.0.1:5173/` from the stable app and hand-check one VectorFL CLI run from the browser.
+
+codex
+기준 노트상 현재 안정 UI 위치는 `app/ui/integrated_engine`이고, `gemini/mock_test`는 제안/참고 재료로 남는 구조입니다. 이제 OpenHarness 쪽의 패키지 정의와 엔트리포인트를 읽어서 VectorFL의 엔진/통합엔진/패키지 렌즈에 맞춰 분해하겠습니다.
+exec
+/bin/bash -lc "sed -n '1,240p' references/git_search/openharness-main/pyproject.toml" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,260p' references/git_search/openharness-main/README.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openharness-ai"
+version = "0.1.6"
+description = "Open-source Python port of Claude Code - an AI-powered CLI coding assistant"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "novix-science" },
+]
+
+dependencies = [
+    "anthropic>=0.40.0",
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "prompt-toolkit>=3.0.0",
+    "textual>=0.80.0",
+    "typer>=0.12.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.27.0",
+    "websockets>=12.0",
+    "mcp>=1.0.0",
+    "pyperclip>=1.9.0",
+    "pyyaml>=6.0",
+    "questionary>=2.0.1",
+    "watchfiles>=0.20.0",
+    "croniter>=2.0.0",
+    "slack-sdk>=3.0.0",
+    "python-telegram-bot>=21.0.0",
+    "discord.py>=2.0.0",
+    "lark-oapi>=1.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pexpect>=4.9.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+openharness = "openharness.cli:app"
+oh = "openharness.cli:app"
+openh = "openharness.cli:app"
+ohmo = "ohmo.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openharness", "ohmo"]
+
+[tool.hatch.build]
+exclude = [
+    "/.git",
+    "/.venv",
+    "/.openharness-venv",
+    "/.openharness",
+    "/.pytest_cache",
+    "/.mypy_cache",
+    "/.ruff_cache",
+    "/build",
+    "/dist",
+]
+
+[tool.hatch.build.targets.wheel.force-include]
+"frontend/terminal/package.json" = "openharness/_frontend/package.json"
+"frontend/terminal/tsconfig.json" = "openharness/_frontend/tsconfig.json"
+"frontend/terminal/src" = "openharness/_frontend/src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+ succeeded in 0ms:
+<h1 align="center">
+  <img src="assets/logo.png" alt="OpenHarness" width="64" style="vertical-align: middle;">
+  &nbsp;&nbsp;
+  <img src="assets/ohmo.png" alt="ohmo" width="64" style="vertical-align: middle;">
+  <br>
+  <code>oh</code> — OpenHarness &amp; <code>ohmo</code>
+</h1>
+
+<p align="center">
+  <a href="README.md"><strong>English</strong></a> ·
+  <a href="README.zh-CN.md"><strong>简体中文</strong></a>
+</p>
+
+**OpenHarness** delivers core lightweight agent infrastructure: tool-use, skills, memory, and multi-agent coordination.
+
+**ohmo** is a personal AI agent built on OpenHarness — not another chatbot, but an assistant that actually works for you over long sessions. Chat with ohmo in Feishu / Slack / Telegram / Discord, and it forks branches, writes code, runs tests, and opens PRs on its own. ohmo runs on your existing Claude Code or Codex subscription — no extra API key needed.
+
+**Join the community**: contribute **Harness** for open agent development.
+
+<p align="center">
+  <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
+  <a href="#-harness-architecture"><img src="https://img.shields.io/badge/Harness-Architecture-ff69b4?style=for-the-badge" alt="Architecture"></a>
+  <a href="#-features"><img src="https://img.shields.io/badge/Tools-43+-green?style=for-the-badge" alt="Tools"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-114_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/React+Ink-TUI-61DAFB?logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/pytest-114_pass-brightgreen" alt="Pytest">
+  <img src="https://img.shields.io/badge/E2E-6_suites-orange" alt="E2E">
+  <img src="https://img.shields.io/badge/output-text_|_json_|_stream--json-blueviolet" alt="Output">
+  <a href="https://github.com/HKUDS/OpenHarness/actions/workflows/ci.yml"><img src="https://github.com/HKUDS/OpenHarness/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/Feishu-Group-E9DBFC?style=flat&logo=feishu&logoColor=white" alt="Feishu"></a>
+  <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/WeChat-Group-C5EAB4?style=flat&logo=wechat&logoColor=white" alt="WeChat"></a>
+</p>
+
+One Command (**oh**) to Launch **OpenHarness** and Unlock All Agent Harnesses. 
+
+Supports CLI agent integration including OpenClaw, nanobot, Cursor, and more.
+
+<p align="center">
+  <img src="assets/cli-typing.gif" alt="OpenHarness Terminal Demo" width="800">
+</p>
+
+---
+## ✨ OpenHarness's Key Harness Features
+
+<table align="center" width="100%">
+<tr>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🔄 Agent Loop</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Engine-06B6D4?style=for-the-badge&logo=lightning&logoColor=white" alt="Engine" />
+</div>
+
+<img src="assets/scene-agentloop.png" width="140">
+
+<p align="center"><strong>• Streaming Tool-Call Cycle</strong></p>
+<p align="center"><strong>• API Retry with Exponential Backoff</strong></p>
+<p align="center"><strong>• Parallel Tool Execution</strong></p>
+<p align="center"><strong>• Token Counting & Cost Tracking</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🔧 Harness Toolkit</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/43+_Tools-10B981?style=for-the-badge&logo=toolbox&logoColor=white" alt="Toolkit" />
+</div>
+
+<img src="assets/scene-toolkit.png" width="140">
+
+<p align="center"><strong>• 43 Tools (File, Shell, Search, Web, MCP)</strong></p>
+<p align="center"><strong>• On-Demand Skill Loading (.md)</strong></p>
+<p align="center"><strong>• Plugin Ecosystem (Skills + Hooks + Agents)</strong></p>
+<p align="center"><strong>• Compatible with anthropics/skills & plugins</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🧠 Context & Memory</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Persistent-8B5CF6?style=for-the-badge&logo=brain&logoColor=white" alt="Context" />
+</div>
+
+<img src="assets/scene-context.png" width="140">
+
+<p align="center"><strong>• CLAUDE.md Discovery & Injection</strong></p>
+<p align="center"><strong>• Context Compression (Auto-Compact)</strong></p>
+<p align="center"><strong>• MEMORY.md Persistent Memory</strong></p>
+<p align="center"><strong>• Session Resume & History</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🛡️ Governance</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Permissions-F59E0B?style=for-the-badge&logo=shield&logoColor=white" alt="Governance" />
+</div>
+
+<img src="assets/scene-governance.png" width="140">
+
+<p align="center"><strong>• Multi-Level Permission Modes</strong></p>
+<p align="center"><strong>• Path-Level & Command Rules</strong></p>
+<p align="center"><strong>• PreToolUse / PostToolUse Hooks</strong></p>
+<p align="center"><strong>• Interactive Approval Dialogs</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🤝 Swarm Coordination</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Multi--Agent-EC4899?style=for-the-badge&logo=network&logoColor=white" alt="Swarm" />
+</div>
+
+<img src="assets/scene-swarm.png" width="140">
+
+<p align="center"><strong>• Subagent Spawning & Delegation</strong></p>
+<p align="center"><strong>• Team Registry & Task Management</strong></p>
+<p align="center"><strong>• Background Task Lifecycle</strong></p>
+<p align="center"><strong>• <a href="https://github.com/HKUDS/ClawTeam">ClawTeam</a> Integration (Roadmap)</strong></p>
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🤔 What is an Agent Harness?
+
+An **Agent Harness** is the complete infrastructure that wraps around an LLM to make it a functional agent. The model provides intelligence; the harness provides **hands, eyes, memory, and safety boundaries**.
+
+<p align="center">
+  <img src="assets/harness-equation.png" alt="Harness = Tools + Knowledge + Observation + Action + Permissions" width="700">
+</p>
+
+OpenHarness is an open-source Python implementation designed for **researchers, builders, and the community**:
+
+- **Understand** how production AI agents work under the hood
+- **Experiment** with cutting-edge tools, skills, and agent coordination patterns
+- **Extend** the harness with custom plugins, providers, and domain knowledge
+- **Build** specialized agents on top of proven architecture
+
+---
+
+## 📰 What's New
+
+- **2026-04-10** 🧠 **v0.1.6** — Auto-Compaction & Markdown TUI:
+  - Auto-Compaction preserves task state and channel logs across context compression — agents can run multi-day sessions without manual compact/clear
+  - Subprocess teammates run in headless worker mode; agent team creation stabilized
+  - Assistant messages now render full Markdown in the React TUI
+  - `ohmo` gains channel slash commands and multimodal attachment support
+- **2026-04-08** 🔌 **v0.1.5** — MCP HTTP transport & Swarm polling:
+  - MCP protocol adds HTTP transport, auto-reconnect on disconnect, and tool-only server compatibility
+  - JSON Schema types inferred for MCP tool inputs — no manual type mapping needed
+  - `ohmo` channels support file attachments and multimodal gateway messages
+  - Subprocess agents are now pollable in real runs; permission modals serialized to prevent input swallowing
+- **2026-04-08** 🌙 **v0.1.4** — Multi-provider auth & Moonshot/Kimi:
+  - Native Moonshot/Kimi provider with `reasoning_content` support for thinking models
+  - Auth overhaul: fixed provider-switching key mismatch, `OPENAI_BASE_URL` env override, profile-scoped credential priority
+  - MCP gracefully handles disconnected servers in `call_tool` / `read_resource`
+  - Security: built-in sensitive-path protection in PermissionChecker, hardened `web_fetch` URL validation
+  - Stability: EIO crash recovery in Ink TUI, `--debug` logging, Windows cmd flash fix
+- **2026-04-06** 🚀 **v0.1.2** — Unified setup flows and `ohmo` personal-agent app:
+  - `oh setup` now guides provider selection as workflows instead of exposing raw auth/provider internals
+  - Compatible API setup is now profile-scoped, so Anthropic/OpenAI-compatible endpoints can keep separate keys
+  - `ohmo` ships as a packaged app with `~/.ohmo` workspace, gateway, bootstrap prompts, and channel config flow
+- **2026-04-01** 🎨 **v0.1.0** — Initial **OpenHarness** open-source release featuring complete Harness architecture: 
+
+<p align="center">
+  <strong>Start here:</strong>
+  <a href="#-quick-start">Quick Start</a> ·
+  <a href="#-provider-compatibility">Provider Compatibility</a> ·
+  <a href="docs/SHOWCASE.md">Showcase</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install
+
+#### Linux / macOS / WSL
+
+```bash
+# One-click install
+curl -fsSL https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.sh | bash
+
+# Or via pip
+pip install openharness-ai
+```
+
+#### Windows (Native)
+
+```powershell
+# One-click install (PowerShell)
+iex (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.ps1')
+
+# Or via pip
+pip install openharness-ai
+```
+
+**Note**: Windows support is now native. In PowerShell, use `openh` instead of `oh` because `oh` can resolve to the built-in `Out-Host` alias.
+
+### 2. Configure
+
+```bash
+oh setup    # interactive wizard — pick a provider, authenticate, done
+# On Windows PowerShell, use: openh setup
+```
+
+Supports **Claude / OpenAI / Copilot / Codex / Moonshot(Kimi) / GLM / MiniMax** and any compatible endpoint.
+
+### 3. Run
+
+```bash
+oh
+# On Windows PowerShell, use: openh
+```
+
+<p align="center">
+  <img src="assets/landing.png" alt="OpenHarness Landing Screen" width="700">
+</p>
+
+### 4. Set up ohmo (Personal Agent)
+
+Want an AI agent that works for you from Feishu / Slack / Telegram / Discord?
+
+```bash
+ohmo init             # initialize ~/.ohmo workspace
+ohmo config           # configure channels and provider
+ohmo gateway start    # start the gateway — ohmo is now live in your chat app
+```
+
+ohmo runs on your existing **Claude Code subscription** or **Codex subscription** — no extra API key needed.
+
+### Non-Interactive Mode (Pipes & Scripts)
+
+```bash
+# Single prompt → stdout
+oh -p "Explain this codebase"
+
+# JSON output for programmatic use
+oh -p "List all functions in main.py" --output-format json
+
+# Stream JSON events in real-time
+oh -p "Fix the bug" --output-format stream-json
+```
+
+## 🔌 Provider Compatibility
+
+exec
+/bin/bash -lc "find app -maxdepth 4 -type d | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+app
+app/core
+app/core/__pycache__
+app/core/events
+app/core/events/__pycache__
+app/core/formation
+app/core/ingest
+app/core/models
+app/core/models/__pycache__
+app/core/registry
+app/core/registry/__pycache__
+app/core/runtime
+app/core/runtime/__pycache__
+app/core/schemas
+app/core/state
+app/core/state_store
+app/core/state_store/__pycache__
+app/events
+app/events/__pycache__
+app/fragment
+app/fragment/__pycache__
+app/input_layer
+app/input_layer/__pycache__
+app/input_layer/anchorizer
+app/input_layer/anchorizer/__pycache__
+app/input_layer/labeler
+app/input_layer/labeler/__pycache__
+app/input_layer/segmenter
+app/input_layer/source_locator
+app/input_layer/source_locator/__pycache__
+app/measurement
+app/measurement/__pycache__
+app/models
+app/models/__pycache__
+app/runtime
+app/runtime/__pycache__
+app/runtime/bridge_layer
+app/runtime/ingest
+app/runtime/measurement_view
+app/runtime/measurement_view/__pycache__
+app/runtime/process_console_view
+app/runtime/process_console_view/__pycache__
+app/runtime/reporting
+app/runtime/source_view
+app/runtime/source_view/__pycache__
+app/runtime/space_view
+app/ui
+app/ui/integrated_engine
+app/ui/integrated_engine/dist
+app/ui/integrated_engine/dist/assets
+app/ui/integrated_engine/node_modules
+app/ui/integrated_engine/node_modules/.bin
+app/ui/integrated_engine/node_modules/.vite
+app/ui/integrated_engine/node_modules/@babel
+app/ui/integrated_engine/node_modules/@emotion
+app/ui/integrated_engine/node_modules/@esbuild
+app/ui/integrated_engine/node_modules/@jridgewell
+app/ui/integrated_engine/node_modules/@rolldown
+app/ui/integrated_engine/node_modules/@types
+app/ui/integrated_engine/node_modules/@vitejs
+app/ui/integrated_engine/node_modules/baseline-browser-mapping
+app/ui/integrated_engine/node_modules/browserslist
+app/ui/integrated_engine/node_modules/caniuse-lite
+app/ui/integrated_engine/node_modules/clsx
+app/ui/integrated_engine/node_modules/convert-source-map
+app/ui/integrated_engine/node_modules/csstype
+app/ui/integrated_engine/node_modules/debug
+app/ui/integrated_engine/node_modules/electron-to-chromium
+app/ui/integrated_engine/node_modules/esbuild
+app/ui/integrated_engine/node_modules/escalade
+app/ui/integrated_engine/node_modules/framer-motion
+app/ui/integrated_engine/node_modules/gensync
+app/ui/integrated_engine/node_modules/js-tokens
+app/ui/integrated_engine/node_modules/jsesc
+app/ui/integrated_engine/node_modules/json5
+app/ui/integrated_engine/node_modules/loose-envify
+app/ui/integrated_engine/node_modules/lru-cache
+app/ui/integrated_engine/node_modules/lucide-react
+app/ui/integrated_engine/node_modules/ms
+app/ui/integrated_engine/node_modules/nanoid
+app/ui/integrated_engine/node_modules/node-releases
+app/ui/integrated_engine/node_modules/picocolors
+app/ui/integrated_engine/node_modules/postcss
+app/ui/integrated_engine/node_modules/react
+app/ui/integrated_engine/node_modules/react-dom
+app/ui/integrated_engine/node_modules/react-refresh
+app/ui/integrated_engine/node_modules/rollup
+app/ui/integrated_engine/node_modules/scheduler
+app/ui/integrated_engine/node_modules/semver
+app/ui/integrated_engine/node_modules/source-map-js
+app/ui/integrated_engine/node_modules/tailwind-merge
+app/ui/integrated_engine/node_modules/tslib
+app/ui/integrated_engine/node_modules/typescript
+app/ui/integrated_engine/node_modules/undici-types
+app/ui/integrated_engine/node_modules/update-browserslist-db
+app/ui/integrated_engine/node_modules/vite
+app/ui/integrated_engine/node_modules/yallist
+app/work
+app/work/archive_review
+app/work/archive_review/evaluations
+app/work/archive_review/experiments
+app/work/archive_review/external_case_support
+app/work/archive_review/external_case_support/external_case_flowline_sweep
+app/work/archive_review/external_case_support/external_case_folder_sweep
+app/work/archive_review/interview_support
+app/work/archive_review/interview_support/middle_layer_experiments
+app/work/archive_review/probe_support
+app/work/archive_review/probe_support/concept_segment_probe
+app/work/archive_review/probe_support/future_segment_probe
+app/work/archive_review/prompts
+app/work/archive_review/transition_support
+app/work/archive_review/transition_support/result_value_bundle_stage1
+app/work/archive_review/transition_support/transition_mixed_close_reading
+app/work/archive_review/transition_support/transition_mixed_surface_refine
+app/work/archive_review/transition_support/workbench_stage1
+app/work/archive_review/transition_support/youtube_transcript_probe_0322
+app/work/archive_review/transition_support/youtube_transcript_probe_0322_b
+app/work/current_layer_baseline
+app/work/dialogue_loop_test
+app/work/dialogue_loop_test/generated
+app/work/external_input_preprocess
+app/work/external_input_preprocess/generated
+app/work/input_layer
+app/work/input_layer/__pycache__
+app/work/mixed_corridor_boundary_probe_stage3
+app/work/mixed_corridor_boundary_probe_stage3/generated
+app/work/mixed_corridor_format_disentangle_stage4
+app/work/mixed_corridor_format_disentangle_stage4/generated
+app/work/mixed_reentry_observer_stage2
+app/work/mixed_reentry_observer_stage2/generated
+app/work/mixed_reentry_probe_stage1
+app/work/mixed_reentry_probe_stage1/__pycache__
+app/work/mixed_reentry_probe_stage1/generated
+app/work/observer_ingest_min
+app/work/observer_ingest_min/contracts
+app/work/observer_ingest_min/examples
+app/work/observer_ingest_min/generated
+app/work/operating_ui
+app/work/operating_ui/__pycache__
+app/work/operating_ui/components
+app/work/operating_ui/components/__pycache__
+app/work/operating_ui/fixtures
+app/work/operating_ui/generated
+app/work/processor_compare
+app/work/processor_compare/anchor_engine
+app/work/processor_compare/anchor_engine/__pycache__
+app/work/processor_compare/anchor_engine/dictionaries
+app/work/processor_compare/inputs
+app/work/processor_compare/inputs/boundary_cases
+app/work/processor_compare/inputs/source_docs
+app/work/processor_compare/observer_engine
+app/work/processor_compare/observer_engine/__pycache__
+app/work/processor_compare/observer_engine/profiles
+app/work/processor_compare/observer_engine/rules
+app/work/processor_compare/processor_outputs
+app/work/processor_compare/processor_outputs/boundary_labels
+app/work/processor_compare/processor_outputs/normalized
+app/work/processor_compare/processor_outputs/raw
+app/work/processor_compare/processor_outputs/raw_patched
+app/work/processor_compare/reports
+app/work/processor_compare/reports/boundary_cases
+app/work/processor_compare/reports/patched_current
+app/work/processor_compare/scripts
+app/work/processor_compare/standards
+app/work/technical_business_corridor_decompose_stage5
+app/work/technical_business_corridor_decompose_stage5/generated
+
+exec
+/bin/bash -lc "find packages src runtime -maxdepth 3 -type d 2>/dev/null | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+runtime
+runtime/assistant_profile
+runtime/cli_sessions
+runtime/cli_sessions/cli_20260416T093333Z_4c214a52
+runtime/cli_sessions/cli_20260416T094421Z_8b0ef908
+runtime/cli_sessions/cli_20260416T094731Z_97d5f828
+runtime/cli_sessions/cli_20260416T094801Z_ea262a3b
+runtime/cli_sessions/cli_20260416T094830Z_7b2f3fa5
+runtime/cli_sessions/cli_20260416T095505Z_30757cb3
+runtime/cli_sessions/cli_20260416T095745Z_084a7f91
+runtime/cli_sessions/cli_20260416T100450Z_9e24bf20
+runtime/cli_sessions/cli_20260416T101531Z_ba21f03e
+runtime/cli_sessions/cli_20260416T102144Z_d65ce415
+runtime/cli_sessions/cli_20260416T102332Z_300af10e
+runtime/cli_sessions/cli_20260416T102612Z_277b5388
+runtime/cli_sessions/cli_20260416T102720Z_8e045e9b
+runtime/cli_sessions/cli_20260416T102854Z_33211af5
+runtime/cli_sessions/cli_20260416T103344Z_b4acde63
+runtime/cli_sessions/cli_20260416T103857Z_dcf7d364
+runtime/cli_sessions/cli_20260416T103956Z_7c38c3cf
+runtime/cli_sessions/cli_20260416T110824Z_2226c8b1
+runtime/cli_sessions/cli_20260416T111317Z_d57425f1
+runtime/cli_sessions/cli_20260416T111421Z_ab9778e6
+runtime/cli_sessions/cli_20260416T111809Z_528f19c2
+runtime/cli_sessions/cli_20260416T112603Z_95b9a0b7
+runtime/cli_sessions/cli_20260416T112636Z_6f86776b
+runtime/cli_sessions/cli_20260416T112715Z_bed35329
+runtime/cli_sessions/cli_20260416T112750Z_8ea87b3a
+runtime/cli_sessions/cli_20260416T112828Z_deebf140
+runtime/cli_sessions/cli_20260416T112903Z_ff06574b
+runtime/cli_sessions/cli_20260416T112939Z_91f01d19
+runtime/cli_sessions/cli_20260416T113013Z_4e84b4b4
+runtime/cli_sessions/cli_20260416T113044Z_f36fff08
+runtime/cli_sessions/cli_20260416T113118Z_649dc251
+runtime/cli_sessions/cli_20260416T114515Z_125ce536
+runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54
+runtime/cli_sessions/cli_20260416T114724Z_f6aaedcc
+runtime/cli_sessions/cli_20260416T114819Z_3a7e6e4d
+runtime/cli_sessions/cli_20260416T114911Z_63fee852
+runtime/cli_sessions/cli_20260416T115006Z_160a9a36
+runtime/cli_sessions/cli_20260416T115112Z_d1256d58
+runtime/cli_sessions/cli_20260416T115217Z_c9eb3c72
+runtime/cli_sessions/cli_20260416T115313Z_48de88e6
+runtime/cli_sessions/cli_20260416T115405Z_a05be783
+runtime/cli_sessions/cli_20260416T115540Z_b810d8bb
+runtime/cli_sessions/cli_20260416T123507Z_64047d89
+runtime/cli_sessions/cli_20260416T123852Z_1ad257c6
+runtime/cli_sessions/cli_20260417T091220Z_967f55cd
+runtime/cli_sessions/cli_20260417T092802Z_16d56c12
+runtime/cli_sessions/cli_20260417T092912Z_f2459f44
+runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6
+runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c
+runtime/cli_sessions/cli_20260418T034339Z_1a830626
+runtime/cli_sessions/cli_20260418T034632Z_92b7c079
+runtime/cli_sessions/cli_20260418T034757Z_a46720cb
+runtime/cli_sessions/cli_20260418T064056Z_a45748d8
+runtime/cli_sessions/cli_20260418T065505Z_7d2d7f30
+runtime/cli_sessions/cli_20260418T070527Z_e1d97433
+runtime/cli_sessions/cli_20260418T100549Z_b6ef0965
+runtime/commands
+runtime/config
+runtime/contracts
+runtime/core
+runtime/core/bridge_traces
+runtime/core/local_spaces
+runtime/core/materials
+runtime/core/point_seeds
+runtime/core/possibility_bridge_evaluations
+runtime/core/possibility_bridges
+runtime/core/pressure_profiles
+runtime/core/space_cells
+runtime/core/traces
+runtime/decision_lineage
+runtime/events
+runtime/events/folder_activity
+runtime/fragments
+runtime/interpretation_packets
+runtime/language_loops
+runtime/language_loops/language_loop_20260416T111317Z
+runtime/language_loops/language_loop_20260416T111421Z
+runtime/language_loops/language_loop_20260416T112603Z
+runtime/language_loops/language_loop_20260416T114515Z
+runtime/language_loops/language_loop_20260416T115540Z
+runtime/line_thickening_demo
+runtime/line_thickening_demo/logs
+runtime/line_thickening_demo/manifests
+runtime/line_thickening_demo/runtime
+runtime/line_thickening_demo/runtime/logs
+runtime/line_thickening_demo/runtime/manifests
+runtime/line_thickening_demo_v2
+runtime/line_thickening_demo_v2/logs
+runtime/line_thickening_demo_v2/manifests
+runtime/logs
+runtime/logs/corrections
+runtime/logs/ingest
+runtime/logs/labeling
+runtime/logs/linking
+runtime/logs/segmentation
+runtime/logs/work_sessions
+runtime/manifests
+runtime/manifests/bridges
+runtime/manifests/folder_changes
+runtime/manifests/folder_inventory
+runtime/manifests/label_packets
+runtime/manifests/measurement_views
+runtime/manifests/operating_ui_phase1
+runtime/manifests/origin_maps
+runtime/manifests/provenance_compaction
+runtime/manifests/reactive_cells
+runtime/manifests/reactive_spaces
+runtime/manifests/source_views
+runtime/manifests/user_pages
+runtime/measurements
+runtime/memory
+runtime/memory/feedback
+runtime/memory/problem_recognition
+runtime/multi_lens_views
+runtime/observer
+runtime/observer/exploration
+runtime/observer/exploration/json
+runtime/observer/exploration/md
+runtime/observer/gemini
+runtime/observer/gemini/2026-03-25
+runtime/receipts
+runtime/reports
+runtime/review_ledgers
+runtime/sandboxes
+runtime/source_documents
+runtime/state
+runtime/state/engine_state_history
+runtime/tmp
+runtime/validation
+runtime/validation/state_fixture_expected
+runtime/validation/state_fixture_results
+runtime/views
+runtime/views/engine_state_latest
+runtime/views/engine_state_update_events
+runtime/views/multi_lens_document_reading
+runtime/views/reconstruction_supervisor
+runtime/views/state_attention_memory
+runtime/views/state_change_attention_queue
+runtime/views/vectorfl_dual_surface_app
+runtime/views/vectorfl_dual_surface_app/dist
+runtime/views/vectorfl_dual_surface_app/src
+runtime/views/vectorfl_operable_surface
+runtime/views/vectorfl_page
+runtime/views/vectorfl_page_mock
+runtime/views/vectorfl_page_mock/routes
+runtime/views/vectorfl_page_shell
+runtime/views/vectorfl_page_shell/semi_live
+runtime/views/vectorfl_page_shell/semi_live_organ_detail
+runtime/views/vectorfl_page_shell/semi_live_program_detail
+runtime/views/vectorfl_page_shell/semi_live_routes
+runtime/views/vectorfl_page_shell/semi_live_trace_detail
+runtime/views/vectorfl_paper_proper
+runtime/views/vectorfl_paper_weekend_pilot
+
+exec
+/bin/bash -lc "find references/git_search/openharness-main/src/openharness -maxdepth 2 -type f | sort | sed -n '1,260p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "find references/git_search/openharness-main/frontend/terminal/src -maxdepth 3 -type f | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "find references/git_search/openharness-main/ohmo -maxdepth 3 -type f | sort | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main/frontend/terminal/src/App.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/CommandPicker.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Composer.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/ConversationView.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Footer.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/MarkdownText.test.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/MarkdownText.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/ModalHost.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/PromptInput.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SelectModal.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SidePanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Spinner.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/StatusBar.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SwarmPanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/TodoPanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/ToolCallDisplay.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/TranscriptPane.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/WelcomeBanner.tsx
+references/git_search/openharness-main/frontend/terminal/src/hooks/useBackendSession.ts
+references/git_search/openharness-main/frontend/terminal/src/index.tsx
+references/git_search/openharness-main/frontend/terminal/src/theme/ThemeContext.tsx
+references/git_search/openharness-main/frontend/terminal/src/theme/builtinThemes.ts
+references/git_search/openharness-main/frontend/terminal/src/types.ts
+
+ succeeded in 0ms:
+references/git_search/openharness-main/src/openharness/__init__.py
+references/git_search/openharness-main/src/openharness/__main__.py
+references/git_search/openharness-main/src/openharness/api/__init__.py
+references/git_search/openharness-main/src/openharness/api/client.py
+references/git_search/openharness-main/src/openharness/api/codex_client.py
+references/git_search/openharness-main/src/openharness/api/copilot_auth.py
+references/git_search/openharness-main/src/openharness/api/copilot_client.py
+references/git_search/openharness-main/src/openharness/api/errors.py
+references/git_search/openharness-main/src/openharness/api/openai_client.py
+references/git_search/openharness-main/src/openharness/api/provider.py
+references/git_search/openharness-main/src/openharness/api/registry.py
+references/git_search/openharness-main/src/openharness/api/usage.py
+references/git_search/openharness-main/src/openharness/auth/__init__.py
+references/git_search/openharness-main/src/openharness/auth/external.py
+references/git_search/openharness-main/src/openharness/auth/flows.py
+references/git_search/openharness-main/src/openharness/auth/manager.py
+references/git_search/openharness-main/src/openharness/auth/storage.py
+references/git_search/openharness-main/src/openharness/bridge/__init__.py
+references/git_search/openharness-main/src/openharness/bridge/manager.py
+references/git_search/openharness-main/src/openharness/bridge/session_runner.py
+references/git_search/openharness-main/src/openharness/bridge/types.py
+references/git_search/openharness-main/src/openharness/bridge/work_secret.py
+references/git_search/openharness-main/src/openharness/channels/UPSTREAM
+references/git_search/openharness-main/src/openharness/channels/__init__.py
+references/git_search/openharness-main/src/openharness/channels/adapter.py
+references/git_search/openharness-main/src/openharness/cli.py
+references/git_search/openharness-main/src/openharness/commands/__init__.py
+references/git_search/openharness-main/src/openharness/commands/registry.py
+references/git_search/openharness-main/src/openharness/config/__init__.py
+references/git_search/openharness-main/src/openharness/config/paths.py
+references/git_search/openharness-main/src/openharness/config/schema.py
+references/git_search/openharness-main/src/openharness/config/settings.py
+references/git_search/openharness-main/src/openharness/coordinator/__init__.py
+references/git_search/openharness-main/src/openharness/coordinator/agent_definitions.py
+references/git_search/openharness-main/src/openharness/coordinator/coordinator_mode.py
+references/git_search/openharness-main/src/openharness/engine/__init__.py
+references/git_search/openharness-main/src/openharness/engine/cost_tracker.py
+references/git_search/openharness-main/src/openharness/engine/messages.py
+references/git_search/openharness-main/src/openharness/engine/query.py
+references/git_search/openharness-main/src/openharness/engine/query_engine.py
+references/git_search/openharness-main/src/openharness/engine/stream_events.py
+references/git_search/openharness-main/src/openharness/hooks/__init__.py
+references/git_search/openharness-main/src/openharness/hooks/events.py
+references/git_search/openharness-main/src/openharness/hooks/executor.py
+references/git_search/openharness-main/src/openharness/hooks/hot_reload.py
+references/git_search/openharness-main/src/openharness/hooks/loader.py
+references/git_search/openharness-main/src/openharness/hooks/schemas.py
+references/git_search/openharness-main/src/openharness/hooks/types.py
+references/git_search/openharness-main/src/openharness/keybindings/__init__.py
+references/git_search/openharness-main/src/openharness/keybindings/default_bindings.py
+references/git_search/openharness-main/src/openharness/keybindings/loader.py
+references/git_search/openharness-main/src/openharness/keybindings/parser.py
+references/git_search/openharness-main/src/openharness/keybindings/resolver.py
+references/git_search/openharness-main/src/openharness/mcp/__init__.py
+references/git_search/openharness-main/src/openharness/mcp/client.py
+references/git_search/openharness-main/src/openharness/mcp/config.py
+references/git_search/openharness-main/src/openharness/mcp/types.py
+references/git_search/openharness-main/src/openharness/memory/__init__.py
+references/git_search/openharness-main/src/openharness/memory/manager.py
+references/git_search/openharness-main/src/openharness/memory/memdir.py
+references/git_search/openharness-main/src/openharness/memory/paths.py
+references/git_search/openharness-main/src/openharness/memory/scan.py
+references/git_search/openharness-main/src/openharness/memory/search.py
+references/git_search/openharness-main/src/openharness/memory/types.py
+references/git_search/openharness-main/src/openharness/output_styles/__init__.py
+references/git_search/openharness-main/src/openharness/output_styles/loader.py
+references/git_search/openharness-main/src/openharness/permissions/__init__.py
+references/git_search/openharness-main/src/openharness/permissions/checker.py
+references/git_search/openharness-main/src/openharness/permissions/modes.py
+references/git_search/openharness-main/src/openharness/personalization/__init__.py
+references/git_search/openharness-main/src/openharness/personalization/extractor.py
+references/git_search/openharness-main/src/openharness/personalization/rules.py
+references/git_search/openharness-main/src/openharness/personalization/session_hook.py
+references/git_search/openharness-main/src/openharness/platforms.py
+references/git_search/openharness-main/src/openharness/plugins/__init__.py
+references/git_search/openharness-main/src/openharness/plugins/installer.py
+references/git_search/openharness-main/src/openharness/plugins/loader.py
+references/git_search/openharness-main/src/openharness/plugins/schemas.py
+references/git_search/openharness-main/src/openharness/plugins/types.py
+references/git_search/openharness-main/src/openharness/prompts/__init__.py
+references/git_search/openharness-main/src/openharness/prompts/claudemd.py
+references/git_search/openharness-main/src/openharness/prompts/context.py
+references/git_search/openharness-main/src/openharness/prompts/environment.py
+references/git_search/openharness-main/src/openharness/prompts/system_prompt.py
+references/git_search/openharness-main/src/openharness/sandbox/Dockerfile
+references/git_search/openharness-main/src/openharness/sandbox/__init__.py
+references/git_search/openharness-main/src/openharness/sandbox/adapter.py
+references/git_search/openharness-main/src/openharness/sandbox/docker_backend.py
+references/git_search/openharness-main/src/openharness/sandbox/docker_image.py
+references/git_search/openharness-main/src/openharness/sandbox/path_validator.py
+references/git_search/openharness-main/src/openharness/sandbox/session.py
+references/git_search/openharness-main/src/openharness/services/__init__.py
+references/git_search/openharness-main/src/openharness/services/cron.py
+references/git_search/openharness-main/src/openharness/services/cron_scheduler.py
+references/git_search/openharness-main/src/openharness/services/session_backend.py
+references/git_search/openharness-main/src/openharness/services/session_storage.py
+references/git_search/openharness-main/src/openharness/services/token_estimation.py
+references/git_search/openharness-main/src/openharness/skills/__init__.py
+references/git_search/openharness-main/src/openharness/skills/loader.py
+references/git_search/openharness-main/src/openharness/skills/registry.py
+references/git_search/openharness-main/src/openharness/skills/types.py
+references/git_search/openharness-main/src/openharness/state/__init__.py
+references/git_search/openharness-main/src/openharness/state/app_state.py
+references/git_search/openharness-main/src/openharness/state/store.py
+references/git_search/openharness-main/src/openharness/swarm/__init__.py
+references/git_search/openharness-main/src/openharness/swarm/in_process.py
+references/git_search/openharness-main/src/openharness/swarm/lockfile.py
+references/git_search/openharness-main/src/openharness/swarm/mailbox.py
+references/git_search/openharness-main/src/openharness/swarm/permission_sync.py
+references/git_search/openharness-main/src/openharness/swarm/registry.py
+references/git_search/openharness-main/src/openharness/swarm/spawn_utils.py
+references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py
+references/git_search/openharness-main/src/openharness/swarm/team_lifecycle.py
+references/git_search/openharness-main/src/openharness/swarm/types.py
+references/git_search/openharness-main/src/openharness/swarm/worktree.py
+references/git_search/openharness-main/src/openharness/tasks/__init__.py
+references/git_search/openharness-main/src/openharness/tasks/local_agent_task.py
+references/git_search/openharness-main/src/openharness/tasks/local_shell_task.py
+references/git_search/openharness-main/src/openharness/tasks/manager.py
+references/git_search/openharness-main/src/openharness/tasks/stop_task.py
+references/git_search/openharness-main/src/openharness/tasks/types.py
+references/git_search/openharness-main/src/openharness/themes/__init__.py
+references/git_search/openharness-main/src/openharness/themes/builtin.py
+references/git_search/openharness-main/src/openharness/themes/loader.py
+references/git_search/openharness-main/src/openharness/themes/schema.py
+references/git_search/openharness-main/src/openharness/tools/__init__.py
+references/git_search/openharness-main/src/openharness/tools/agent_tool.py
+references/git_search/openharness-main/src/openharness/tools/ask_user_question_tool.py
+references/git_search/openharness-main/src/openharness/tools/base.py
+references/git_search/openharness-main/src/openharness/tools/bash_tool.py
+references/git_search/openharness-main/src/openharness/tools/brief_tool.py
+references/git_search/openharness-main/src/openharness/tools/config_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_delete_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_list_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_toggle_tool.py
+references/git_search/openharness-main/src/openharness/tools/enter_plan_mode_tool.py
+references/git_search/openharness-main/src/openharness/tools/enter_worktree_tool.py
+references/git_search/openharness-main/src/openharness/tools/exit_plan_mode_tool.py
+references/git_search/openharness-main/src/openharness/tools/exit_worktree_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_edit_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_read_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_write_tool.py
+references/git_search/openharness-main/src/openharness/tools/glob_tool.py
+references/git_search/openharness-main/src/openharness/tools/grep_tool.py
+references/git_search/openharness-main/src/openharness/tools/list_mcp_resources_tool.py
+references/git_search/openharness-main/src/openharness/tools/lsp_tool.py
+references/git_search/openharness-main/src/openharness/tools/mcp_auth_tool.py
+references/git_search/openharness-main/src/openharness/tools/mcp_tool.py
+references/git_search/openharness-main/src/openharness/tools/notebook_edit_tool.py
+references/git_search/openharness-main/src/openharness/tools/read_mcp_resource_tool.py
+references/git_search/openharness-main/src/openharness/tools/remote_trigger_tool.py
+references/git_search/openharness-main/src/openharness/tools/send_message_tool.py
+references/git_search/openharness-main/src/openharness/tools/skill_tool.py
+references/git_search/openharness-main/src/openharness/tools/sleep_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_get_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_list_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_output_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_stop_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_update_tool.py
+references/git_search/openharness-main/src/openharness/tools/team_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/team_delete_tool.py
+references/git_search/openharness-main/src/openharness/tools/todo_write_tool.py
+references/git_search/openharness-main/src/openharness/tools/tool_search_tool.py
+references/git_search/openharness-main/src/openharness/tools/web_fetch_tool.py
+references/git_search/openharness-main/src/openharness/tools/web_search_tool.py
+references/git_search/openharness-main/src/openharness/ui/__init__.py
+references/git_search/openharness-main/src/openharness/ui/app.py
+references/git_search/openharness-main/src/openharness/ui/backend_host.py
+references/git_search/openharness-main/src/openharness/ui/input.py
+references/git_search/openharness-main/src/openharness/ui/output.py
+references/git_search/openharness-main/src/openharness/ui/permission_dialog.py
+references/git_search/openharness-main/src/openharness/ui/protocol.py
+references/git_search/openharness-main/src/openharness/ui/react_launcher.py
+references/git_search/openharness-main/src/openharness/ui/runtime.py
+references/git_search/openharness-main/src/openharness/ui/textual_app.py
+references/git_search/openharness-main/src/openharness/utils/__init__.py
+references/git_search/openharness-main/src/openharness/utils/file_lock.py
+references/git_search/openharness-main/src/openharness/utils/fs.py
+references/git_search/openharness-main/src/openharness/utils/network_guard.py
+references/git_search/openharness-main/src/openharness/utils/shell.py
+references/git_search/openharness-main/src/openharness/vim/__init__.py
+references/git_search/openharness-main/src/openharness/vim/transitions.py
+references/git_search/openharness-main/src/openharness/voice/__init__.py
+references/git_search/openharness-main/src/openharness/voice/keyterms.py
+references/git_search/openharness-main/src/openharness/voice/stream_stt.py
+references/git_search/openharness-main/src/openharness/voice/voice_mode.py
+
+ succeeded in 0ms:
+references/git_search/openharness-main/ohmo/__init__.py
+references/git_search/openharness-main/ohmo/__main__.py
+references/git_search/openharness-main/ohmo/cli.py
+references/git_search/openharness-main/ohmo/gateway/__init__.py
+references/git_search/openharness-main/ohmo/gateway/bridge.py
+references/git_search/openharness-main/ohmo/gateway/config.py
+references/git_search/openharness-main/ohmo/gateway/models.py
+references/git_search/openharness-main/ohmo/gateway/router.py
+references/git_search/openharness-main/ohmo/gateway/runtime.py
+references/git_search/openharness-main/ohmo/gateway/service.py
+references/git_search/openharness-main/ohmo/memory.py
+references/git_search/openharness-main/ohmo/prompts.py
+references/git_search/openharness-main/ohmo/runtime.py
+references/git_search/openharness-main/ohmo/session_storage.py
+references/git_search/openharness-main/ohmo/workspace.py
+
+codex
+OpenHarness는 단일 CLI 앱이라기보다 `src/openharness` 핵심 하네스, `frontend/terminal` 터미널 UI, `ohmo` 상위 개인 에이전트 앱을 한 배포 패키지로 묶는 형태입니다. VectorFL에는 이를 그대로 흡수하기보다 “외부 구조 렌즈”로만 두고, 우리 쪽 3-surface/CLI-on-top 경계를 흔들지 않는 비교 자료로 쓰는 게 맞습니다.
+exec
+/bin/bash -lc "sed -n '1,260p' references/git_search/openharness-main/src/openharness/engine/query_engine.py" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,240p' references/git_search/openharness-main/src/openharness/cli.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""CLI entry point using typer."""
+
+from __future__ import annotations
+
+import json
+import os
+import sys
+from pathlib import Path
+from typing import Optional
+
+import typer
+
+__version__ = "0.1.6"
+
+
+def _version_callback(value: bool) -> None:
+    if value:
+        print(f"openharness {__version__}")
+        raise typer.Exit()
+
+
+app = typer.Typer(
+    name="openharness",
+    help=(
+        "Oh my Harness! An AI-powered coding assistant.\n\n"
+        "Starts an interactive session by default, use -p/--print for non-interactive output."
+    ),
+    add_completion=False,
+    rich_markup_mode="rich",
+    invoke_without_command=True,
+)
+
+
+# ---------------------------------------------------------------------------
+# Subcommands
+# ---------------------------------------------------------------------------
+
+mcp_app = typer.Typer(name="mcp", help="Manage MCP servers")
+plugin_app = typer.Typer(name="plugin", help="Manage plugins")
+auth_app = typer.Typer(name="auth", help="Manage authentication")
+provider_app = typer.Typer(name="provider", help="Manage provider profiles")
+cron_app = typer.Typer(name="cron", help="Manage cron scheduler and jobs")
+
+app.add_typer(mcp_app)
+app.add_typer(plugin_app)
+app.add_typer(auth_app)
+app.add_typer(provider_app)
+app.add_typer(cron_app)
+
+
+# ---- mcp subcommands ----
+
+@mcp_app.command("list")
+def mcp_list() -> None:
+    """List configured MCP servers."""
+    from openharness.config import load_settings
+    from openharness.mcp.config import load_mcp_server_configs
+    from openharness.plugins import load_plugins
+
+    settings = load_settings()
+    plugins = load_plugins(settings, str(Path.cwd()))
+    configs = load_mcp_server_configs(settings, plugins)
+    if not configs:
+        print("No MCP servers configured.")
+        return
+    for name, cfg in configs.items():
+        transport = cfg.get("transport", cfg.get("command", "unknown"))
+        print(f"  {name}: {transport}")
+
+
+@mcp_app.command("add")
+def mcp_add(
+    name: str = typer.Argument(..., help="Server name"),
+    config_json: str = typer.Argument(..., help="Server config as JSON string"),
+) -> None:
+    """Add an MCP server configuration."""
+    from openharness.config import load_settings, save_settings
+
+    settings = load_settings()
+    try:
+        cfg = json.loads(config_json)
+    except json.JSONDecodeError as exc:
+        print(f"Invalid JSON: {exc}", file=sys.stderr)
+        raise typer.Exit(1)
+    if not isinstance(settings.mcp_servers, dict):
+        settings.mcp_servers = {}
+    settings.mcp_servers[name] = cfg
+    save_settings(settings)
+    print(f"Added MCP server: {name}")
+
+
+@mcp_app.command("remove")
+def mcp_remove(
+    name: str = typer.Argument(..., help="Server name to remove"),
+) -> None:
+    """Remove an MCP server configuration."""
+    from openharness.config import load_settings, save_settings
+
+    settings = load_settings()
+    if not isinstance(settings.mcp_servers, dict) or name not in settings.mcp_servers:
+        print(f"MCP server not found: {name}", file=sys.stderr)
+        raise typer.Exit(1)
+    del settings.mcp_servers[name]
+    save_settings(settings)
+    print(f"Removed MCP server: {name}")
+
+
+# ---- plugin subcommands ----
+
+@plugin_app.command("list")
+def plugin_list() -> None:
+    """List installed plugins."""
+    from openharness.config import load_settings
+    from openharness.plugins import load_plugins
+
+    settings = load_settings()
+    plugins = load_plugins(settings, str(Path.cwd()))
+    if not plugins:
+        print("No plugins installed.")
+        return
+    for plugin in plugins:
+        status = "enabled" if plugin.enabled else "disabled"
+        print(f"  {plugin.name} [{status}] - {plugin.description or ''}")
+
+
+@plugin_app.command("install")
+def plugin_install(
+    source: str = typer.Argument(..., help="Plugin source (path or URL)"),
+) -> None:
+    """Install a plugin from a source path."""
+    from openharness.plugins.installer import install_plugin_from_path
+
+    result = install_plugin_from_path(source)
+    print(f"Installed plugin: {result}")
+
+
+@plugin_app.command("uninstall")
+def plugin_uninstall(
+    name: str = typer.Argument(..., help="Plugin name to uninstall"),
+) -> None:
+    """Uninstall a plugin."""
+    from openharness.plugins.installer import uninstall_plugin
+
+    uninstall_plugin(name)
+    print(f"Uninstalled plugin: {name}")
+
+
+# ---- cron subcommands ----
+
+@cron_app.command("start")
+def cron_start() -> None:
+    """Start the cron scheduler daemon."""
+    from openharness.services.cron_scheduler import is_scheduler_running, start_daemon
+
+    if is_scheduler_running():
+        print("Cron scheduler is already running.")
+        return
+    pid = start_daemon()
+    print(f"Cron scheduler started (pid={pid})")
+
+
+@cron_app.command("stop")
+def cron_stop() -> None:
+    """Stop the cron scheduler daemon."""
+    from openharness.services.cron_scheduler import stop_scheduler
+
+    if stop_scheduler():
+        print("Cron scheduler stopped.")
+    else:
+        print("Cron scheduler is not running.")
+
+
+@cron_app.command("status")
+def cron_status_cmd() -> None:
+    """Show cron scheduler status and job summary."""
+    from openharness.services.cron_scheduler import scheduler_status
+
+    status = scheduler_status()
+    state = "running" if status["running"] else "stopped"
+    print(f"Scheduler: {state}" + (f" (pid={status['pid']})" if status["pid"] else ""))
+    print(f"Jobs:      {status['enabled_jobs']} enabled / {status['total_jobs']} total")
+    print(f"Log:       {status['log_file']}")
+
+
+@cron_app.command("list")
+def cron_list_cmd() -> None:
+    """List all registered cron jobs with schedule and status."""
+    from openharness.services.cron import load_cron_jobs
+
+    jobs = load_cron_jobs()
+    if not jobs:
+        print("No cron jobs configured.")
+        return
+    for job in jobs:
+        enabled = "on " if job.get("enabled", True) else "off"
+        last = job.get("last_run", "never")
+        if last != "never":
+            last = last[:19]  # trim to readable datetime
+        last_status = job.get("last_status", "")
+        status_indicator = f" [{last_status}]" if last_status else ""
+        print(f"  [{enabled}] {job['name']}  {job.get('schedule', '?')}")
+        print(f"        cmd: {job['command']}")
+        print(f"        last: {last}{status_indicator}  next: {job.get('next_run', 'n/a')[:19]}")
+
+
+@cron_app.command("toggle")
+def cron_toggle_cmd(
+    name: str = typer.Argument(..., help="Cron job name"),
+    enabled: bool = typer.Argument(..., help="true to enable, false to disable"),
+) -> None:
+    """Enable or disable a cron job."""
+    from openharness.services.cron import set_job_enabled
+
+    if not set_job_enabled(name, enabled):
+        print(f"Cron job not found: {name}")
+        raise typer.Exit(1)
+    state = "enabled" if enabled else "disabled"
+    print(f"Cron job '{name}' is now {state}")
+
+
+@cron_app.command("history")
+def cron_history_cmd(
+    name: str | None = typer.Argument(None, help="Filter by job name"),
+    limit: int = typer.Option(20, "--limit", "-n", help="Number of entries"),
+) -> None:
+    """Show cron execution history."""
+    from openharness.services.cron_scheduler import load_history
+
+    entries = load_history(limit=limit, job_name=name)
+    if not entries:
+        print("No execution history.")
+        return
+    for entry in entries:
+        ts = entry.get("started_at", "?")[:19]
+        status = entry.get("status", "?")
+        rc = entry.get("returncode", "?")
+        print(f"  {ts}  {entry.get('name', '?')}  {status} (rc={rc})")
+        stderr = entry.get("stderr", "").strip()
+        if stderr and status != "success":
+            for line in stderr.splitlines()[:3]:
+
+ succeeded in 0ms:
+"""High-level conversation engine."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import AsyncIterator
+
+from openharness.api.client import SupportsStreamingMessages
+from openharness.engine.cost_tracker import CostTracker
+from openharness.coordinator.coordinator_mode import get_coordinator_user_context
+from openharness.engine.messages import ConversationMessage, TextBlock, ToolResultBlock
+from openharness.engine.query import AskUserPrompt, PermissionPrompt, QueryContext, remember_user_goal, run_query
+from openharness.engine.stream_events import AssistantTurnComplete, StreamEvent
+from openharness.hooks import HookExecutor
+from openharness.permissions.checker import PermissionChecker
+from openharness.tools.base import ToolRegistry
+
+
+class QueryEngine:
+    """Owns conversation history and the tool-aware model loop."""
+
+    def __init__(
+        self,
+        *,
+        api_client: SupportsStreamingMessages,
+        tool_registry: ToolRegistry,
+        permission_checker: PermissionChecker,
+        cwd: str | Path,
+        model: str,
+        system_prompt: str,
+        max_tokens: int = 4096,
+        context_window_tokens: int | None = None,
+        auto_compact_threshold_tokens: int | None = None,
+        max_turns: int | None = 8,
+        permission_prompt: PermissionPrompt | None = None,
+        ask_user_prompt: AskUserPrompt | None = None,
+        hook_executor: HookExecutor | None = None,
+        tool_metadata: dict[str, object] | None = None,
+    ) -> None:
+        self._api_client = api_client
+        self._tool_registry = tool_registry
+        self._permission_checker = permission_checker
+        self._cwd = Path(cwd).resolve()
+        self._model = model
+        self._system_prompt = system_prompt
+        self._max_tokens = max_tokens
+        self._context_window_tokens = context_window_tokens
+        self._auto_compact_threshold_tokens = auto_compact_threshold_tokens
+        self._max_turns = max_turns
+        self._permission_prompt = permission_prompt
+        self._ask_user_prompt = ask_user_prompt
+        self._hook_executor = hook_executor
+        self._tool_metadata = tool_metadata or {}
+        self._messages: list[ConversationMessage] = []
+        self._cost_tracker = CostTracker()
+
+    @property
+    def messages(self) -> list[ConversationMessage]:
+        """Return the current conversation history."""
+        return list(self._messages)
+
+    @property
+    def max_turns(self) -> int | None:
+        """Return the maximum number of agentic turns per user input, if capped."""
+        return self._max_turns
+
+    @property
+    def api_client(self) -> SupportsStreamingMessages:
+        """Return the active API client."""
+        return self._api_client
+
+    @property
+    def model(self) -> str:
+        """Return the active model identifier."""
+        return self._model
+
+    @property
+    def system_prompt(self) -> str:
+        """Return the active system prompt."""
+        return self._system_prompt
+
+    @property
+    def tool_metadata(self) -> dict[str, object]:
+        """Return the mutable tool metadata/carry-over state."""
+        return self._tool_metadata
+
+    @property
+    def total_usage(self):
+        """Return the total usage across all turns."""
+        return self._cost_tracker.total
+
+    def clear(self) -> None:
+        """Clear the in-memory conversation history."""
+        self._messages.clear()
+        self._cost_tracker = CostTracker()
+
+    def set_system_prompt(self, prompt: str) -> None:
+        """Update the active system prompt for future turns."""
+        self._system_prompt = prompt
+
+    def set_model(self, model: str) -> None:
+        """Update the active model for future turns."""
+        self._model = model
+
+    def set_api_client(self, api_client: SupportsStreamingMessages) -> None:
+        """Update the active API client for future turns."""
+        self._api_client = api_client
+
+    def set_max_turns(self, max_turns: int | None) -> None:
+        """Update the maximum number of agentic turns per user input."""
+        self._max_turns = None if max_turns is None else max(1, int(max_turns))
+
+    def set_permission_checker(self, checker: PermissionChecker) -> None:
+        """Update the active permission checker for future turns."""
+        self._permission_checker = checker
+
+    def _build_coordinator_context_message(self) -> ConversationMessage | None:
+        """Build a synthetic user message carrying coordinator runtime context."""
+        context = get_coordinator_user_context()
+        worker_tools_context = context.get("workerToolsContext")
+        if not worker_tools_context:
+            return None
+        return ConversationMessage(
+            role="user",
+            content=[TextBlock(text=f"# Coordinator User Context\n\n{worker_tools_context}")],
+        )
+
+    def load_messages(self, messages: list[ConversationMessage]) -> None:
+        """Replace the in-memory conversation history."""
+        self._messages = list(messages)
+
+    def has_pending_continuation(self) -> bool:
+        """Return True when the conversation ends with tool results awaiting a follow-up model turn."""
+        if not self._messages:
+            return False
+        last = self._messages[-1]
+        if last.role != "user":
+            return False
+        if not any(isinstance(block, ToolResultBlock) for block in last.content):
+            return False
+        for msg in reversed(self._messages[:-1]):
+            if msg.role != "assistant":
+                continue
+            return bool(msg.tool_uses)
+        return False
+
+    async def submit_message(self, prompt: str | ConversationMessage) -> AsyncIterator[StreamEvent]:
+        """Append a user message and execute the query loop."""
+        user_message = (
+            prompt
+            if isinstance(prompt, ConversationMessage)
+            else ConversationMessage.from_user_text(prompt)
+        )
+        if user_message.text.strip():
+            remember_user_goal(self._tool_metadata, user_message.text)
+        self._messages.append(user_message)
+        context = QueryContext(
+            api_client=self._api_client,
+            tool_registry=self._tool_registry,
+            permission_checker=self._permission_checker,
+            cwd=self._cwd,
+            model=self._model,
+            system_prompt=self._system_prompt,
+            max_tokens=self._max_tokens,
+            context_window_tokens=self._context_window_tokens,
+            auto_compact_threshold_tokens=self._auto_compact_threshold_tokens,
+            max_turns=self._max_turns,
+            permission_prompt=self._permission_prompt,
+            ask_user_prompt=self._ask_user_prompt,
+            hook_executor=self._hook_executor,
+            tool_metadata=self._tool_metadata,
+        )
+        query_messages = list(self._messages)
+        coordinator_context = self._build_coordinator_context_message()
+        if coordinator_context is not None:
+            query_messages.append(coordinator_context)
+        async for event, usage in run_query(context, query_messages):
+            if isinstance(event, AssistantTurnComplete):
+                self._messages = list(query_messages)
+            if usage is not None:
+                self._cost_tracker.add(usage)
+            yield event
+
+    async def continue_pending(self, *, max_turns: int | None = None) -> AsyncIterator[StreamEvent]:
+        """Continue an interrupted tool loop without appending a new user message."""
+        context = QueryContext(
+            api_client=self._api_client,
+            tool_registry=self._tool_registry,
+            permission_checker=self._permission_checker,
+            cwd=self._cwd,
+            model=self._model,
+            system_prompt=self._system_prompt,
+            max_tokens=self._max_tokens,
+            context_window_tokens=self._context_window_tokens,
+            auto_compact_threshold_tokens=self._auto_compact_threshold_tokens,
+            max_turns=max_turns if max_turns is not None else self._max_turns,
+            permission_prompt=self._permission_prompt,
+            ask_user_prompt=self._ask_user_prompt,
+            hook_executor=self._hook_executor,
+            tool_metadata=self._tool_metadata,
+        )
+        async for event, usage in run_query(context, self._messages):
+            if usage is not None:
+                self._cost_tracker.add(usage)
+            yield event
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/ui/react_launcher.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Launch the default React terminal frontend."""
+
+from __future__ import annotations
+
+import asyncio
+import json
+import os
+import shutil
+import sys
+from pathlib import Path
+
+
+def _resolve_theme() -> str:
+    """Read the theme name from settings, defaulting to 'default'."""
+    try:
+        from openharness.config.settings import load_settings
+        return load_settings().theme or "default"
+    except Exception:
+        return "default"
+
+
+def _resolve_npm() -> str:
+    """Resolve the npm executable (npm.cmd on Windows)."""
+    return shutil.which("npm") or "npm"
+
+
+def _resolve_tsx(frontend_dir: Path) -> tuple[str, ...]:
+    """Resolve the tsx command to invoke directly, bypassing ``npm exec``.
+
+    On Windows / WSL the ``npm exec -- tsx`` wrapper chain often spawns
+    intermediate ``cmd.exe`` / shell processes that break TTY stdin
+    inheritance.  Calling the ``tsx`` binary directly preserves the TTY so
+    that Ink's ``useInput`` (which requires raw-mode stdin) keeps working.
+
+    Returns a tuple of command parts, e.g. ``("path/to/tsx",)`` or
+    ``("npm", "exec", "--", "tsx")`` as last-resort fallback.
+    """
+    # 1. Prefer the locally-installed binary
+    bin_dir = frontend_dir / "node_modules" / ".bin"
+    if sys.platform == "win32":
+        for name in ("tsx.cmd", "tsx.ps1", "tsx"):
+            candidate = bin_dir / name
+            if candidate.exists():
+                return (str(candidate),)
+    else:
+        candidate = bin_dir / "tsx"
+        if candidate.exists():
+            return (str(candidate),)
+
+    # 2. Fall back to a globally-installed tsx
+    global_tsx = shutil.which("tsx")
+    if global_tsx:
+        return (global_tsx,)
+
+    # 3. Last resort — go through npm exec (may break TTY on Windows/WSL)
+    return (_resolve_npm(), "exec", "--", "tsx")
+
+
+def get_frontend_dir() -> Path:
+    """Return the React terminal frontend directory.
+
+    Checks in order:
+    1. Bundled inside the installed package (pip install)
+    2. Development repo layout (source checkout)
+    """
+    # 1. Bundled inside package: openharness/_frontend/
+    pkg_frontend = Path(__file__).resolve().parent.parent / "_frontend"
+    if (pkg_frontend / "package.json").exists():
+        return pkg_frontend
+
+    # 2. Development repo: <repo>/frontend/terminal/
+    repo_root = Path(__file__).resolve().parents[3]
+    dev_frontend = repo_root / "frontend" / "terminal"
+    if (dev_frontend / "package.json").exists():
+        return dev_frontend
+
+    # Fallback to package path (will error with clear message)
+    return pkg_frontend
+
+
+def build_backend_command(
+    *,
+    cwd: str | None = None,
+    model: str | None = None,
+    max_turns: int | None = None,
+    base_url: str | None = None,
+    system_prompt: str | None = None,
+    api_key: str | None = None,
+    api_format: str | None = None,
+    permission_mode: str | None = None,
+) -> list[str]:
+    """Return the command used by the React frontend to spawn the backend host."""
+    command = [sys.executable, "-m", "openharness", "--backend-only"]
+    if cwd:
+        command.extend(["--cwd", cwd])
+    if model:
+        command.extend(["--model", model])
+    if max_turns is not None:
+        command.extend(["--max-turns", str(max_turns)])
+    if base_url:
+        command.extend(["--base-url", base_url])
+    if system_prompt:
+        command.extend(["--system-prompt", system_prompt])
+    if api_key:
+        command.extend(["--api-key", api_key])
+    if api_format:
+        command.extend(["--api-format", api_format])
+    if permission_mode:
+        command.extend(["--permission-mode", permission_mode])
+    return command
+
+
+async def launch_react_tui(
+    *,
+    prompt: str | None = None,
+    cwd: str | None = None,
+    model: str | None = None,
+    max_turns: int | None = None,
+    base_url: str | None = None,
+    system_prompt: str | None = None,
+    api_key: str | None = None,
+    api_format: str | None = None,
+    permission_mode: str | None = None,
+) -> int:
+    """Launch the React terminal frontend as the default UI."""
+    frontend_dir = get_frontend_dir()
+    package_json = frontend_dir / "package.json"
+    if not package_json.exists():
+        raise RuntimeError(f"React terminal frontend is missing: {package_json}")
+
+    npm = _resolve_npm()
+
+    if not (frontend_dir / "node_modules").exists():
+        install = await asyncio.create_subprocess_exec(
+            npm,
+            "install",
+            "--no-fund",
+            "--no-audit",
+            cwd=str(frontend_dir),
+        )
+        if await install.wait() != 0:
+            raise RuntimeError("Failed to install React terminal frontend dependencies")
+
+    env = os.environ.copy()
+    env["OPENHARNESS_FRONTEND_CONFIG"] = json.dumps(
+        {
+            "backend_command": build_backend_command(
+                cwd=cwd or str(Path.cwd()),
+                model=model,
+                max_turns=max_turns,
+                base_url=base_url,
+                system_prompt=system_prompt,
+                api_key=api_key,
+                api_format=api_format,
+                permission_mode=permission_mode,
+            ),
+            "initial_prompt": prompt,
+            "theme": _resolve_theme(),
+        }
+    )
+    tsx_cmd = _resolve_tsx(frontend_dir)
+    process = await asyncio.create_subprocess_exec(
+        *tsx_cmd,
+        "src/index.tsx",
+        cwd=str(frontend_dir),
+        env=env,
+        stdin=None,
+        stdout=None,
+        stderr=None,
+    )
+    return await process.wait()
+
+
+__all__ = ["build_backend_command", "get_frontend_dir", "launch_react_tui"]
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/bridge/session_runner.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Minimal bridge session spawner."""
+
+from __future__ import annotations
+
+import asyncio
+import time
+from dataclasses import dataclass, field
+from pathlib import Path
+
+from openharness.utils.shell import create_shell_subprocess
+
+
+@dataclass
+class SessionHandle:
+    """Handle for a spawned bridge session."""
+
+    session_id: str
+    process: asyncio.subprocess.Process
+    cwd: Path
+    started_at: float = field(default_factory=time.time)
+
+    async def kill(self) -> None:
+        """Terminate the session process."""
+        self.process.terminate()
+        try:
+            await asyncio.wait_for(self.process.wait(), timeout=3)
+        except asyncio.TimeoutError:
+            self.process.kill()
+            await self.process.wait()
+
+
+async def spawn_session(
+    *,
+    session_id: str,
+    command: str,
+    cwd: str | Path,
+) -> SessionHandle:
+    """Spawn a bridge-managed child session."""
+    resolved_cwd = Path(cwd).resolve()
+    process = await create_shell_subprocess(
+        command,
+        cwd=resolved_cwd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    return SessionHandle(session_id=session_id, process=process, cwd=resolved_cwd)
+
+codex
+- result summary
+  - 읽기 전용으로 [integrated_engine_ui_stable_folder_migration_note_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md)와 [openharness-main](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main)을 확인했다.
+  - OpenHarness는 “모델/CLI 자체”라기보다 LLM을 에이전트로 작동시키는 하네스 패키지다. 핵심 구조는 `src/openharness` 엔진/도구/권한/메모리/스웜, `frontend/terminal` React/Ink 터미널 UI, `ohmo` 상위 개인 에이전트 앱으로 나뉜다.
+  - VectorFL 기준으로는 자동 확장/이식 대상이 아니라, “외부 렌즈 재료”로서 엔진/통합엔진/패키지 분해 비교에 쓰는 것이 맞다.
+
+- important findings / diffs / outputs
+  - Surface reading:
+    - user: 목적/과제/결정 표면. 지금 요청은 “OpenHarness 구조를 우리 구조 렌즈로 분해해 자료화”하는 읽기 과제다.
+    - VectorFL: 해석/재읽기/중재 표면. OpenHarness를 직접 도입하지 않고, 외부 선례를 우리 3-surface 구조와 CLI-on-top 경계에 맞춰 재읽어야 한다.
+    - engine: 처리/반환/deposit 재료 표면. 이번 Codex 실행은 파일 수정 없이 구조 관찰값을 반환하는 bounded CLI-on-top 도구 호출이다.
+  - OpenHarness 구조 분해:
+    - 패키지/배포: [pyproject.toml](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main/pyproject.toml)은 `openharness-ai` 패키지로 `openharness`, `oh`, `openh`, `ohmo` 스크립트를 제공한다. Python 패키지와 React 터미널 프론트엔드를 한 wheel에 포함한다.
+    - 엔진: [query_engine.py](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main/src/openharness/engine/query_engine.py)는 대화 히스토리, API client, tool registry, permission checker, hook executor, cost tracking을 묶어 tool-aware model loop를 실행한다.
+    - 통합 UI/프론트: [react_launcher.py](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main/src/openharness/ui/react_launcher.py)는 React terminal frontend를 띄우고, 별도 backend-only 명령을 프론트 설정으로 넘긴다. 즉 UI가 엔진을 직접 품기보다 백엔드 세션 명령을 호출하는 구조다.
+    - 브리지/세션: [session_runner.py](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main/src/openharness/bridge/session_runner.py)는 bridge-managed child session을 spawn/kill하는 얇은 세션 핸들 구조다.
+    - 확장 재료: `tools`, `skills`, `plugins`, `hooks`, `mcp`, `permissions`, `memory`, `swarm`, `tasks`, `sandbox`가 독립 폴더로 분리되어 있다.
+    - 상위 앱: [ohmo](/Users/sungsookim/universe/vectorfl_replica/references/git_search/openharness-main/ohmo)는 OpenHarness 위에 올라가는 개인 에이전트/게이트웨이 앱이다. VectorFL 기준으로는 core engine이 아니라 “패키지 위 응용층”에 가깝다.
+  - VectorFL 대비:
+    - 우리 안정 UI는 [app/ui/integrated_engine](/Users/sungsookim/universe/vectorfl_replica/app/ui/integrated_engine)이며, 기준 노트상 `gemini/mock_test`는 참고/제안 clay다.
+    - 우리 [runtime](/Users/sungsookim/universe/vectorfl_replica/runtime)은 세션 산출물/manifest/state/return 보관 성격이고, OpenHarness의 프론트 소스처럼 취급하면 안 된다.
+    - OpenHarness의 `frontend -> backend-only -> engine/tool loop` 패턴은 참고 가능하지만, VectorFL의 고정 3-surface body와 CLI-on-top boundary를 대체하거나 자동 확장하는 근거는 아니다.
+
+- uncertainty or failure notes
+  - evidence bundle은 여전히 thin evidence다. 실제로 읽은 것은 첨부 노트 1개와 OpenHarness 로컬 참조 폴더의 구조/주요 파일 일부다.
+  - 테스트 실행, 동작 검증, 외부 웹 확인, 파일 수정은 하지 않았다.
+  - OpenHarness의 전체 내부 흐름을 완전 역추적한 것은 아니며, 이번 산출은 큰 틀의 구조 분해용 operating summary다.
+
+- suggested next use
+  - reread target: `OpenHarness external lens reread - engine / integrated engine / package split`
+  - deposit candidate: `docs/reports` 계열에 “외부 렌즈 자료”로 둘 수 있으나, 현재 턴에서는 no promotion / no ingestion / no canonicalization 유지.
+  - validation target: 아직 아님. 먼저 VectorFL이 위 분해를 재읽고 “참고만 할 항목”과 “우리 구조에 비교 가능한 항목”을 분리하는 단계가 필요하다.
+  - implementation return: 아님. 구현 변경이나 자동 확장으로 연결하지 말 것.
+tokens used
+38,535

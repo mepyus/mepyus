@@ -1,0 +1,29 @@
+{
+  "schema_version": "vectorfl_paper_reference_external_candidate_search_brief_v0",
+  "reference_id": "ralph",
+  "source_reference": "references/git_search/ralph-main",
+  "source_materials": [
+    "references/git_search/ralph-main/README.md",
+    "references/git_search/ralph-main/prompt.md",
+    "references/git_search/ralph-main/prd.json.example"
+  ],
+  "fixed_operating_materials": {
+    "goal_spec": "Ralph runs autonomous coding iterations from a PRD until user stories pass.",
+    "issue_decomposition": "Read prd.json and progress.txt, pick one failing story, implement it, run checks, commit, mark passes true, append learnings.",
+    "tech_report": "Report files changed, checks run, reusable learnings, gotchas, and progress log updates.",
+    "supervisor_decision_record": "Continue one-story iteration only if checks pass; otherwise keep story open and preserve learnings."
+  },
+  "vectorfl_translation": {
+    "external_candidate_search_brief": "Use Ralph as a narrow one-story iteration loop reference, not as a full autonomous coding framework import.",
+    "candidate_evidence_record": "Represent one PRD story iteration as issue/run/result/governance surfaces.",
+    "cross_check_review_report": "Check whether story pass/fail and progress logging help reopen validation.",
+    "hold_continue_decision_manifest": "Hold gate close because Ralph is a coding-loop reference, not a host export."
+  },
+  "forbidden_scope": [
+    "full Ralph loop adoption",
+    "fresh-context orchestration import",
+    "AGENTS/progress memory framework import",
+    "current actual_export slot replacement"
+  ],
+  "created_at": "2026-04-11T08:30:00+09:00"
+}

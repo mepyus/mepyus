@@ -1,0 +1,79 @@
+{
+  "state": "loaded",
+  "page_title": "VectorFL Page / Organ Detail Mock",
+  "fixture_id": "vectorfl_translation_organ_detail_mock_fixture_v0",
+  "organ_identity": {
+    "organ_ref": "organ:translation",
+    "organ_label": "Translation Organ",
+    "current_status": "active_candidate_shaping",
+    "related_lane_refs": [
+      "lane_translation_first",
+      "lane_transition_preflight_reread"
+    ]
+  },
+  "instruction_bundle_preview": {
+    "role_sentence": "Translation organ recodes intake or current-reading material into a case-aware operating grammar without closing final meaning.",
+    "reading_priorities": [
+      "current case question",
+      "current lane context",
+      "source/context carry",
+      "weakness/fallback carry"
+    ],
+    "output_contract": [
+      "translation summary",
+      "lane hint update",
+      "supporting evidence refs",
+      "caution note"
+    ]
+  },
+  "accepted_handoff_preview": {
+    "accepted_input_kinds": [
+      "intake packet",
+      "current surface excerpt",
+      "source/context carry",
+      "trace/residue carry"
+    ],
+    "required_packet_fields": [
+      "case_ref",
+      "current_lane_ref",
+      "relevant_input_refs",
+      "weakness_note",
+      "question_or_trigger",
+      "expected_return_type"
+    ],
+    "common_triggers": [
+      "translation_first",
+      "mixed material needs grammar shift",
+      "presentation wording appears too early"
+    ]
+  },
+  "caution_profile": {
+    "stop_hold_conditions": [
+      "translated summary still depends on weak intake",
+      "unresolved edge is being erased",
+      "lane hint looks stronger than evidence supports"
+    ],
+    "preserve_first_rules": [
+      "keep unresolved edge note",
+      "keep weak translation explicit",
+      "keep evidence refs attached"
+    ],
+    "avoid_wording": [
+      "resolved",
+      "final",
+      "presentation-ready"
+    ]
+  },
+  "recent_return_preview": {
+    "summary_return": "Read this case as transition-thickening rather than presentation-ready.",
+    "lane_hint_update": [
+      "lane_transition_preflight_reread",
+      "lane_operator_readout_review"
+    ],
+    "recent_trace_carry": [
+      "closure_before_presentation",
+      "preserve unresolved edge"
+    ],
+    "recent_handoff_target": "organ:flow_interpretation"
+  }
+}

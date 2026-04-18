@@ -1,0 +1,20 @@
+- result summary
+  - verdict: `PASS_WITH_NOTE`
+  - useful-now: Package 1 has a usable bounded CLI host/control path on top of the existing integrated-engine body, visible through `/vectorfl-engine/vectorfl`, with canonical runtime artifacts and mark actions.
+  - deferred: Background process registry, richer polling, subprocess interruption, Gemini/other adapters, multi-agent routing, autonomous planning, page promotion automation, selected-object behavior, and actual deposit ingestion/promotion.
+  - bottleneck: The current Codex adapter path is synchronous, so long tasks block the API request until completion or timeout; actual use also depends on a working local `codex` CLI in the viewer-server environment.
+
+- important findings / diffs / outputs
+  - Session artifacts are standardized under `runtime/cli_sessions/<session_id>/`.
+  - Contract includes `session.json`, `prompt.md`, `stdout.log`, `stderr.log`, `structured_return.json`, and `deposit_candidate.md`.
+  - API/state additions include `cli_host_control`, run action, latest-return marking, and mark types: `reread_target`, `implementation_return`, `validation_target`, `deposit_candidate`.
+  - Verification recorded Python compile success, dry-run session creation, dry-run mark action, and React build success.
+
+- uncertainty or failure notes
+  - No failure found in reread.
+  - Report is a closeout note, not a fresh validation run.
+  - `deposit_candidate.md` is prepared material only; ingestion/promotion remains closed.
+
+- suggested next use
+  - validation target: run an actual short Codex CLI session through the VectorFL panel and verify the resulting `structured_return.json` plus mark flow.
+  - deposit candidate: this report can be used as a package-1 closeout deposit candidate, with the synchronous-execution limitation preserved as a watchpoint.

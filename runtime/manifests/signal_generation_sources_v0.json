@@ -1,0 +1,132 @@
+{
+  "schema_version": "signal_generation_sources_v0",
+  "updated_at": "2026-04-06T13:55:00+09:00",
+  "sources": [
+    {
+      "source_id": "src_raw_input_registry_entry",
+      "source_kind": "artifact_family",
+      "source_ref": "app/work/observer_ingest_min/contracts/input_registry_contract_v1.md",
+      "emitted_signal_kind": "raw_input",
+      "evidence_pattern": [
+        "input_id exists",
+        "source_path exists",
+        "input_kind is transcript/note/memo/article/mixed"
+      ],
+      "confidence": "medium",
+      "family_hint": "fam_input_to_reading",
+      "notes": [
+        "registry-level source indicating fresh entry material"
+      ]
+    },
+    {
+      "source_id": "src_preprocess_comparison_ambiguity",
+      "source_kind": "artifact_file",
+      "source_ref": "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+      "emitted_signal_kind": "preprocess_ambiguity",
+      "evidence_pattern": [
+        "before=preprocess_required",
+        "after=uncertain_needs_probe",
+        "readiness_status=probe_again_before_ingest"
+      ],
+      "confidence": "high",
+      "family_hint": "fam_input_to_reading",
+      "notes": [
+        "strongest current concrete preprocess ambiguity example"
+      ]
+    },
+    {
+      "source_id": "src_phase_decision_active_latent_lines",
+      "source_kind": "surface_field",
+      "source_ref": "runtime/manifests/phase_decision_log.jsonl",
+      "emitted_signal_kind": "transition_blockage",
+      "evidence_pattern": [
+        "active_latent_lines present",
+        "decision=thickening",
+        "next_check_trigger present"
+      ],
+      "confidence": "high",
+      "family_hint": "fam_transition_thickening",
+      "notes": [
+        "field-level evidence is stronger than generic phase log presence"
+      ]
+    },
+    {
+      "source_id": "src_stage_corridor_outputs",
+      "source_kind": "artifact_family",
+      "source_ref": "app/work/mixed_reentry_observer_stage2/generated",
+      "emitted_signal_kind": "boundary_ambiguity",
+      "evidence_pattern": [
+        "corridor boundary note exists",
+        "survivor/nonreinforced cards exist",
+        "stage lineage remains active"
+      ],
+      "confidence": "medium",
+      "family_hint": "fam_transition_thickening",
+      "notes": [
+        "boundary narrowing source through staged validation outputs"
+      ]
+    },
+    {
+      "source_id": "src_engine_state_latest_surface",
+      "source_kind": "runtime_view",
+      "source_ref": "runtime/views/engine_state_latest",
+      "emitted_signal_kind": "operator_overview_request",
+      "evidence_pattern": [
+        "engine_state_latest object available",
+        "broad readout requested or implied",
+        "no narrow query required"
+      ],
+      "confidence": "medium",
+      "family_hint": "fam_operator_readout",
+      "notes": [
+        "broad operator-facing overview source"
+      ]
+    },
+    {
+      "source_id": "src_internal_search_query",
+      "source_kind": "operator_input",
+      "source_ref": "app/work/operating_ui/components/internal_search_panel.py",
+      "emitted_signal_kind": "operator_search_query",
+      "evidence_pattern": [
+        "query text exists",
+        "query is non-empty",
+        "internal search surface available"
+      ],
+      "confidence": "high",
+      "family_hint": "fam_operator_readout",
+      "notes": [
+        "explicit query is a narrow readout signal"
+      ]
+    },
+    {
+      "source_id": "src_operator_summary_family",
+      "source_kind": "artifact_family",
+      "source_ref": "app/work/observer_ingest_min/generated/operator_summary_*",
+      "emitted_signal_kind": "raw_input",
+      "evidence_pattern": [
+        "operator summary exists",
+        "entry material has already been minimally read"
+      ],
+      "confidence": "low",
+      "family_hint": "fam_input_to_reading",
+      "notes": [
+        "weak source; indicates entry activity but not necessarily ambiguity"
+      ]
+    },
+    {
+      "source_id": "src_readable_input_board_family",
+      "source_kind": "artifact_family",
+      "source_ref": "app/work/observer_ingest_min/generated/readable_input_board_*",
+      "emitted_signal_kind": "raw_input",
+      "evidence_pattern": [
+        "readable board exists",
+        "input already split into visible entry form"
+      ],
+      "confidence": "low",
+      "family_hint": "fam_input_to_reading",
+      "notes": [
+        "board existence implies entry route has been or can be opened"
+      ]
+    }
+  ]
+}

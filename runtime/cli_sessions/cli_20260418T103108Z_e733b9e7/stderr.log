@@ -1,0 +1,300 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019da024-f1dd-7cc1-bc55-180abf160db7
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+Continue from Codex turn cli_20260418T101156Z_50189182 inside the VectorFL surface.
+
+Bounded context refs:
+- gemini/external_analysis
+- runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/session.json
+- runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/structured_return.json
+- runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/deposit_candidate.md
+- runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/session.json
+- runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/structured_return.json
+- runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/deposit_candidate.md
+- runtime/cli_sessions/cli_20260418T102410Z_718b1873/session.json
+- runtime/cli_sessions/cli_20260418T102410Z_718b1873/structured_return.json
+- runtime/cli_sessions/cli_20260418T102410Z_718b1873/deposit_candidate.md
+- runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/session.json
+- runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/structured_return.json
+- runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/deposit_candidate.md
+- runtime/cli_sessions/cli_20260418T101522Z_80556982/session.json
+- runtime/cli_sessions/cli_20260418T101522Z_80556982/structured_return.json
+- runtime/cli_sessions/cli_20260418T101522Z_80556982/deposit_candidate.md
+- runtime/cli_sessions/cli_20260418T101156Z_50189182/session.json
+- runtime/cli_sessions/cli_20260418T101156Z_50189182/structured_return.json
+- runtime/cli_sessions/cli_20260418T101156Z_50189182/deposit_candidate.md
+
+Prompt payload:
+You are operating as a Codex turn inside the integrated-engine VectorFL surface.
+The CLI is an on-top tool layer, not a fourth surface.
+The fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.
+
+Current work packet visible in the VectorFL surface:
+- purpose: Continue from Codex turn cli_20260418T101156Z_50189182 inside the VectorFL surface.
+- task lens: reread
+- internal search gate: skipped (not explicitly requested)
+- evidence bundle summary: 19 attached refs: source ref, prior CLI turn
+- evidence limitation: Evidence bundle is usable for a bounded reread, but not an exhaustive search.
+- active locks: fixed 3-surface body + CLI on-top boundary (inferred)
+- evidence refs: gemini/external_analysis; runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/session.json; runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/structured_return.json; runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/deposit_candidate.md; runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/session.json; runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/structured_return.json; runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/deposit_candidate.md; runtime/cli_sessions/cli_20260418T102410Z_718b1873/session.json; runtime/cli_sessions/cli_20260418T102410Z_718b1873/structured_return.json; runtime/cli_sessions/cli_20260418T102410Z_718b1873/deposit_candidate.md; runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/session.json; runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/structured_return.json; runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/deposit_candidate.md; runtime/cli_sessions/cli_20260418T101522Z_80556982/session.json; runtime/cli_sessions/cli_20260418T101522Z_80556982/structured_return.json; runtime/cli_sessions/cli_20260418T101522Z_80556982/deposit_candidate.md; runtime/cli_sessions/cli_20260418T101156Z_50189182/session.json; runtime/cli_sessions/cli_20260418T101156Z_50189182/structured_return.json; runtime/cli_sessions/cli_20260418T101156Z_50189182/deposit_candidate.md
+- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)
+- expected return shape: reread judgment
+- next route candidate: vectorfl_reread
+- internal search usage: skipped
+
+Current user-facing purpose:
+Continue from Codex turn cli_20260418T101156Z_50189182 inside the VectorFL surface.
+
+Current message to Codex:
+웹서치로 claudecode 구조를 가져와. 다만 우리의 카메라/렌즈로 비추어보고.
+
+Return format for this VectorFL CLI conversation turn:
+1. Korean operating summary
+2. Surface reading: user / VectorFL / engine
+3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold
+4. What must not be inferred
+5. Suggested next use
+Do not modify files. Do not promote, ingest, or canonicalize anything.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+bounded reread로 처리하겠습니다. 먼저 지정된 세션 산출물과 외부 분석 ref를 읽고, 별도로 웹에서 Claude Code의 공개 구조 자료를 확인해 우리 3-surface 렌즈에 맞춰 비교하겠습니다.
+exec
+/bin/bash -lc "sed -n '1,220p' runtime/cli_sessions/cli_20260418T101156Z_50189182/structured_return.json" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' runtime/cli_sessions/cli_20260418T101156Z_50189182/deposit_candidate.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T101156Z_50189182",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "dry_run: Codex adapter prepared the prompt and artifact folder without invoking the external CLI.\nThis proves the on-top CLI session contract, not backend model quality.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T10:11:56Z"
+}
+
+ succeeded in 0ms:
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260418T101156Z_50189182`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `/vectorfl-engine/vectorfl`
+- status: `done`
+
+- route_label: `vectorfl_reread`
+- current_marks: `reread_target`
+- user_decision_state: `pending_candidate_review`
+- canonical_deposition_state: `not_ingested`
+
+## Task Purpose
+외부 렌즈 재료 읽기 dry run 검증
+
+## Used Context Refs
+- `gemini/external_analysis`
+
+## Result Summary
+dry_run: Codex adapter prepared the prompt and artifact folder without invoking the external CLI.
+This proves the on-top CLI session contract, not backend model quality.
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+reread_target
+
+## Validation / Decision Boundary
+- This file is a deposition candidate only.
+- It is not canonical memory, not an approved record, and not automatic ingestion.
+- User decision or a later explicit deposition package is still required.
+
+
+exec
+/bin/bash -lc "sed -n '1,220p' gemini/external_analysis" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+exec
+/bin/bash -lc "for f in runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/structured_return.json runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/structured_return.json runtime/cli_sessions/cli_20260418T102410Z_718b1873/structured_return.json runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/structured_return.json runtime/cli_sessions/cli_20260418T101522Z_80556982/structured_return.json; do printf '\\n### %s\\n' \""'$f"; sed -n '"'1,180p' \""'$f"; done' in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+
+### runtime/cli_sessions/cli_20260418T102410Z_9fc8f709/structured_return.json
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T102410Z_9fc8f709",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T10:24:10Z"
+}
+
+### runtime/cli_sessions/cli_20260418T102410Z_6f5eed04/structured_return.json
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T102410Z_6f5eed04",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T10:24:10Z"
+}
+
+### runtime/cli_sessions/cli_20260418T102410Z_718b1873/structured_return.json
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T102410Z_718b1873",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "dry_run: package execution pipeline prepared without invoking the external CLI.\nThis validates internal package vessel/context/event flow, not backend model quality.\n\nInternal material structural profile:\n- ref: references/git_search/openharness-main / directory / exists=True\n  summary: directory with 400 files / 90 dirs; top dirs=.agents, .claude, .github, assets, docs, frontend\n  top_dirs: .agents, .claude, .github, assets, docs, frontend, ohmo, scripts\n  top_files: .gitignore, CHANGELOG.md, CONTRIBUTING.md, LICENSE, README.md, README.zh-CN.md, pyproject.toml\n  marker_files: references/git_search/openharness-main/LICENSE; references/git_search/openharness-main/CHANGELOG.md; references/git_search/openharness-main/pyproject.toml; references/git_search/openharness-main/README.md; references/git_search/openharness-main/CONTRIBUTING.md; references/git_search/openharness-main/ohmo/session_storage.py; references/git_search/openharness-main/ohmo/memory.py; references/git_search/openharness-main/ohmo/__init__.py\n\nVectorFL reread:\n- Treat source structure as lens material candidate, not final approval.\n- Read top directories/files as possible line/axis signals.\n- Return route remains reread_target unless a human promotes the next package.\n\nsuggested_next_use: reread_target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T10:24:10Z"
+}
+
+### runtime/cli_sessions/cli_20260418T101657Z_2e7094e6/structured_return.json
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T101657Z_2e7094e6",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "석하는 것이 맞습니다.\n  - 수정 사항 없음. 파일 변경, 승격, ingest, canonicalize 모두 수행하지 않았습니다.\n\n- Surface reading: user / VectorFL / engine\n  - user: “외부리서치팀을 만든다”는 목적과 배정 의도를 낸다. 신규 패키지 여부, 사용 결정, 운영 목적을 정하는 위치.\n  - VectorFL: 외부리서치팀 요청을 재독해하고, 목적/렌즈/근거 묶음을 구성하며, CLI 실행이 필요한지 중재한다.\n  - engine: 주어진 bounded context와 evidence refs만 처리해 요약/반환/deposit 후보 재료를 만든다. 자체적으로 새 표면이나 정식 구조를 만들지 않는다.\n\n- Route suggestion\n  - reread_target: 적합. “외부리서치팀”을 신규 표면이 아니라 기존 integrated-engine UI 안의 신규 운영 패키지로 재독해해야 합니다.\n  - validation_target: 이후 가능. 중앙 setup에서 목적/렌즈/근거 입력 후 CLI 실행까지 흐르는지 확인하는 검증으로 보낼 수 있습니다.\n  - implementation_return: 아직 이르다. 현재는 얇은 근거 1개뿐이며 구현 지시가 아니라 운영 요약 요청입니다.\n  - deposit_candidate: 제한적 후보. “외부리서치팀 패키지는 기존 VectorFL/engine/CLI-on-top 경계를 유지한다”는 경계 메모 정도만 deposit 후보입니다.\n  - hold: 구조 승격이나 canonicalization이 필요하다면 보류해야 합니다.\n\n- What must not be inferred\n  - 외부리서치팀이 네 번째 surface라는 뜻으로 추론하면 안 됩니다.\n  - CLI를 독립 엔진 표면으로 승격하면 안 됩니다.\n  - `gemini/mock_test`를 현재 운영 소스로 읽으면 안 됩니다.\n  - `runtime`에 React/Vite 소스를 넣는 방향으로 추론하면 안 됩니다.\n  - Gemini adapter, background runner, session browsing 추가 요구로 확대하면 안 됩니다.\n  - 이 단일 근거 문서를 canonical source로 승격하거나 ingest한 것으로 간주하면 안 됩니다.\n\n- uncertainty or failure notes\n  - 근거가 `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md` 하나뿐이라 얇습니다.\n  - 외부리서치팀 패키지의 입력 스키마, 권한 범위, 결과 deposit 규칙은 아직 근거에서 확정되지 않았습니다.\n  - 실제 브라우저 hand-check 여부는 근거 문서상 다음 단계로 남아 있습니다.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate\n  - suggested next use: `reread_target`\n  - reread target: “외부리서치팀 신규 패키지”를 기존 `app/ui/integrated_engine` 안에서 목적/렌즈/근거를 구성해 CLI 실행으로 넘기는 운영 패키지로 재독해.\n  - validation target: 이후 stable UI에서 중앙 setup → CLI 실행 → engine return 흐름을 한 번 검증.\n  - deposit candidate: “외부리서치팀은 새 surface가 아니며 CLI는 on-top layer”라는 경계 메모만 후보.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-18T10:17:24Z"
+}
+
+### runtime/cli_sessions/cli_20260418T101522Z_80556982/structured_return.json
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T101522Z_80556982",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "th를 손으로 써보기 전 Gemini adapter/background runner/session browsing으로 확장하지 말 것\n\n- Surface reading: user / VectorFL / engine\n  - user:\n    - 현재 목적을 부여하고, “외부 렌즈 재료 읽기”를 요청함.\n    - OpenCode / Claude Code 화면 선례는 참고하되, 아직 자동 확장하지 않는다는 판단을 유지함.\n    - 이번 실행이 화면 표시 확인용이기도 하다고 명시함.\n  - VectorFL:\n    - 단일 첨부 문서를 근거로 reread/mediation을 수행하는 위치.\n    - thin evidence 상태를 유지해야 하며, 부족한 근거를 임의로 보강하지 않아야 함.\n    - CLI 반환을 화면에서 읽고 검증 가능한 bounded summary로 정리하는 역할.\n  - engine:\n    - 문서 내용을 처리해 compact return material을 생성하는 위치.\n    - 현재 Codex CLI는 engine 위의 도구 계층으로 관찰되어야 하며, 독립 surface로 승격되면 안 됨.\n    - deposit 가능성은 있지만, 현재 turn에서는 deposit/promotion/ingestion 금지.\n\n- Route suggestion\n  - reread_target: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`\n  - validation_target: VectorFL 화면에서 이 CLI 반환이 의도한 구조로 보이는지 확인\n  - implementation_return: 해당 없음\n  - deposit_candidate: 가능하지만 아직 hold 권장\n  - hold: 외부 렌즈(OpenCode / Claude Code) 비교를 자동 확장 재료로 삼는 것은 보류\n\n- What must not be inferred\n  - OpenCode / Claude Code 화면 선례를 현재 UI 변경 요구로 해석하면 안 됨.\n  - `gemini/mock_test`를 현재 운영 UI의 기준 소스로 되돌려 읽으면 안 됨.\n  - CLI를 user / VectorFL / engine 외의 네 번째 surface로 해석하면 안 됨.\n  - 이 문서 하나만으로 Gemini adapter, background runner, session browsing 구현을 시작하면 안 됨.\n  - thin evidence 상태에서 “외부 렌즈 검토 완료” 또는 “자동 확장 승인”으로 승격하면 안 됨.\n\n- uncertainty or failure notes\n  - 근거는 단일 내부 문서 1개뿐입니다.\n  - 현재 실행에서는 실제 브라우저 화면, OpenCode 화면, Claude Code 화면을 직접 검증하지 않았습니다.\n  - 문서에 적힌 dev server나 proxy 상태가 현재도 살아 있는지는 이 turn에서 재검증하지 않았습니다.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate\n  - suggested next use: `validation_target`\n  - 구체적으로는 VectorFL integrated-engine 화면에서 이 반환이 user / VectorFL / engine 분리, CLI on-top boundary, no promotion/no ingestion guard를 충분히 드러내는지 확인하는 용도로 쓰는 것이 적절합니다.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-18T10:15:50Z"
+}
+
+web search: 
+web search: Claude Code overview Anthropic docs architecture agents memory hooks MCP
+web search: 
+web search: site:docs.anthropic.com/en/docs/claude-code overview Claude Code "agentic coding"
+web search: 
+web search: Claude Agent SDK message types init result Anthropic docs
+codex
+- result summary
+  - bounded reread 완료.
+  - 파일 수정, promotion, ingestion, canonicalization 없음.
+  - `gemini/external_analysis`는 현재 읽기 결과 내용이 비어 있었음.
+  - 이전 Codex turn `cli_20260418T101156Z_50189182`는 실제 외부 CLI 호출이 아니라 dry-run으로 “on-top CLI session contract”만 검증한 기록임.
+  - 이후 102410 계열 세션들은 `references/git_search/openharness-main` 구조를 lens material 후보로 읽었고, route는 계속 `reread_target`로 유지했음.
+
+- important findings / diffs / outputs
+  - Claude Code 공개 구조를 웹서치로 확인한 결과, 우리 렌즈로는 다음 축이 보임:
+    - terminal/REPL layer: `claude`, `claude -p`, resume/continue, JSON/stream JSON 출력 등 CLI가 실행 표면처럼 보이지만 실제로는 작업 호출/관찰 계층임. 우리 구조에서는 CLI를 네 번째 surface로 승격하지 않고 engine 위 on-top tool layer로 읽는 기존 판단과 맞음. Source: https://docs.anthropic.com/en/docs/claude-code/cli-reference
+    - memory/config layer: `CLAUDE.md`, user/project/enterprise settings, `.claude/settings.json`, `.claude/settings.local.json` 등 계층형 instruction/config 저장소가 있음. 우리에게는 canonical memory가 아니라 bounded context/deposit 후보/승인 경계의 참고 패턴임. Source: https://docs.anthropic.com/en/docs/claude-code/memory , https://docs.anthropic.com/en/docs/claude-code/settings
+    - command layer: built-in slash commands, project/user custom commands, MCP-provided commands가 있음. 우리에게는 VectorFL surface의 route/action vocabulary와 engine packet command를 분리해서 읽어야 한다는 참고가 됨. Source: https://docs.anthropic.com/en/docs/claude-code/slash-commands
+    - agent delegation layer: Claude Code subagents는 별도 context window와 tool permission을 가진 task-specialized worker임. 우리 렌즈에서는 “외부리서치팀”을 새 surface로 만들 근거가 아니라, engine이 bounded reread/validation package를 호출하는 보조 실행 단위 후보로만 읽어야 함. Source: https://docs.anthropic.com/en/docs/claude-code/sub-agents
+    - tool/MCP layer: MCP는 외부 도구와 데이터 소스를 붙이고, MCP prompts가 slash command로 노출될 수 있음. 우리 구조에서는 ingestion 권한과 canonicalization 권한을 분리해야 하는 근거로만 사용 가능함. Source: https://docs.anthropic.com/en/docs/claude-code/mcp
+    - hooks/permission layer: hooks는 settings 파일에서 이벤트/도구 matcher 중심으로 구성됨. 우리에게는 “engine event after-return validation” 같은 운영 훅을 설계할 때 참고 가능하지만, 현재 turn에서 구현 대상은 아님. Source: https://docs.anthropic.com/en/docs/claude-code/hooks
+    - SDK/message layer: Agent SDK는 init/system/result/message 타입, session id, tools, MCP server 상태, permissionMode, structured output 등을 노출함. 우리 구조의 `structured_return.json`과 deposit 후보 파일은 이 패턴과 유사하지만, VectorFL 고유 schema를 Claude schema로 대체하면 안 됨. Source: https://docs.claude.com/en/docs/agent-sdk/typescript , https://docs.claude.com/en/docs/agent-sdk/structured-outputs
+
+- Korean operating summary
+  - Claude Code 구조는 “CLI가 중심 표면처럼 보이는 agent harness”이지만, 우리 카메라로 비추면 핵심은 표면 수가 아니라 `bounded session`, `permission envelope`, `memory/config hierarchy`, `tool/MCP exposure`, `structured return`, `delegated subagent`의 분리임.
+  - VectorFL에는 이 구조를 그대로 들여오지 말고, 기존 3-surface 고정 구조 안에서 다음처럼 읽는 것이 맞음:
+    - user: 목적/assignment/decision
+    - VectorFL: reread/mediation/route 판단
+    - engine: bounded processing/return/deposit material 생성
+    - CLI: engine 위에서 관찰되는 on-top backend tool call, 독립 surface 아님
+
+- Surface reading: user / VectorFL / engine
+  - user:
+    - “웹서치로 Claude Code 구조를 가져오라”는 외부 렌즈 수집 목적을 부여함.
+    - 단, “우리의 카메라/렌즈”로 보라고 했으므로 외부 구조를 그대로 모방하라는 지시는 아님.
+  - VectorFL:
+    - Claude Code 자료를 reread material로 중재해야 함.
+    - 외부 agent/subagent/CLI/SDK 개념을 현재 VectorFL의 route, guard, deposit 후보 체계에 맞춰 번역해야 함.
+  - engine:
+    - 공개 자료와 bounded refs를 처리해 compact return material을 생성함.
+    - 현재 turn에서는 읽기와 판단만 수행하며, 파일 생성/수정/ingest/canonicalize를 하지 않음.
+
+- Route suggestion
+  - reread_target: 적합. Claude Code 구조는 외부 구조 lens material로 계속 재독해하는 것이 맞음.
+  - validation_target: 다음 단계로 가능. “Claude Code에서 얻은 축이 VectorFL integrated-engine 화면의 route/guard/structured return에 잘 대응되는지” 검증 가능.
+  - implementation_return: 아직 아님. 구현 요구가 아니라 구조 reread 요청임.
+  - deposit_candidate: 제한적 후보. “Claude Code는 참고 lens이며, CLI/subagent/MCP를 surface로 승격하지 않는다”는 경계 메모 정도만 후보.
+  - hold: Claude Code의 memory/settings/subagents/hooks를 즉시 VectorFL canonical 구조로 채택하는 것은 보류.
+
+- What must not be inferred
+  - Claude Code CLI가 있으므로 VectorFL에도 네 번째 surface가 필요하다고 추론하면 안 됨.
+  - Claude Code subagents를 “외부리서치팀”이라는 정식 신규 표면으로 승격하면 안 됨.
+  - `CLAUDE.md`/settings 구조를 VectorFL canonical memory 설계로 바로 채택하면 안 됨.
+  - MCP 연결 가능성을 ingestion 승인이나 외부 데이터 자동 canonicalization으로 해석하면 안 됨.
+  - Claude Code SDK message schema를 현재 `structured_return.json` schema의 대체물로 간주하면 안 됨.
+  - 이번 웹서치 결과를 구현 지시나 deposit 완료로 읽으면 안 됨.
+
+- uncertainty or failure notes
+  - 웹 자료는 Anthropic/Claude 공식 문서 중심으로 확인했지만, 실제 Claude Code 내부 구현 소스 전체를 분석한 것은 아님.
+  - `gemini/external_analysis`는 현재 로컬 ref에서 내용이 비어 있어 외부 분석 근거로는 사용할 수 없었음.
+  - 현재 작업은 read-only guard 하의 reread이며, 검증 실행이나 UI 변경은 수행하지 않았음.
+
+- suggested next use
+  - suggested next use: `reread_target`
+  - reread target: “Claude Code 구조를 VectorFL 3-surface + CLI on-top boundary 렌즈로 재독해한 외부 lens material”
+  - validation target: “integrated-engine 화면에서 route/guard/structured return/deposit candidate가 Claude Code식 session/tool/permission 분리와 충돌하지 않는지 확인”
+  - deposit candidate: “Claude Code 참고 구조는 surface 확장이 아니라 bounded package, permission, command, memory, tool exposure 설계 참고로만 사용한다”는 경계 메모
+  - implementation return: 보류
+tokens used
+34,910

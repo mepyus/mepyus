@@ -1,0 +1,14 @@
+{
+  "schema": "refinement_trigger_reading_saltlux_secondary_summary_v1",
+  "case_name": "saltlux_agentic_ai_ontology_secondary_summary_v1",
+  "status": "watch",
+  "trigger_results": {
+    "external_case_accumulated_ge_5": false,
+    "repeated_relation_slot_ge_3": true,
+    "observer_readout_confusion": false,
+    "guide_contract_index_relayout_needed": false,
+    "repeated_defer_candidate": false
+  },
+  "reason": "구조 프레임과 defer 분리 패턴은 반복되고 있지만, 아직 secondary summary 1건만으로 refinement를 여는 수준은 아니다.",
+  "next_action_hint": "다른 외부 사례 1~2건을 더 넣어 outer/defer 패턴이 반복되는지 확인"
+}

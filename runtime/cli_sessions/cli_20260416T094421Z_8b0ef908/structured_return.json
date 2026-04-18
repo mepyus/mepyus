@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T094421Z_8b0ef908",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Implemented: Package 1 adds a usable synchronous Codex CLI host/control path with canonical `runtime/cli_sessions/<session_id>/` artifacts, integrated-engine API actions, `cli_host_control` state, and a bounded VectorFL panel with mark actions.\n  - Deferred: long-running background polling, interruption of already-running subprocesses, multi-agent routing, autonomous planning, distributed workers, plugin/skill framework, page promotion automation, selected-object behavior, and actual deposit ingestion/promotion.\n  - CLI posture: the CLI layer stays on top as `on_top_cli_host_control_layer`; it is not a fourth surface.\n\n- important findings / diffs / outputs\n  - Verdict: `PASS_WITH_NOTE`.\n  - No new engine surface was added.\n  - VectorFL remains the primary observation/control surface.\n  - Verification listed Python compile pass, integrated-engine `cli_host_control` exposure, dry-run session artifact creation, dry-run mark action, and React build pass.\n\n- uncertainty or failure notes\n  - Actual Codex runs require a working local `codex` CLI in the viewer-server environment.\n  - Synchronous execution may block API requests for long tasks.\n  - `deposit_candidate.md` is prepared material only, not automatically ingested.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T09:44:35Z"
+}

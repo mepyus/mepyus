@@ -1,0 +1,21 @@
+{
+  "schema_version": "vectorfl_paper_operating_board_sections_v0",
+  "updated_at": "2026-04-11T00:10:00+09:00",
+  "page_id": "operating_board",
+  "role": "supervisor_entrypoint",
+  "section_order": [
+    "current_proof",
+    "decision_queue",
+    "active_cases",
+    "active_cells_and_cli_runs",
+    "latest_returns",
+    "remaining_gates"
+  ],
+  "global_rules": [
+    "start with supervisor-readable sentences before counts",
+    "each section must make clear why this matters now",
+    "active case, active cell, and latest return must share one loop grammar",
+    "avoid company ontology as first-order board language",
+    "artifact refs are secondary to human-readable judgment language"
+  ]
+}

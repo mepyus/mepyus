@@ -1,0 +1,148 @@
+{
+  "organ": {
+    "slug": "trace-memory",
+    "label": "Trace / Memory Organ",
+    "current": false,
+    "next_candidate": false,
+    "active_case_count": 0,
+    "summary": "Trace/memory organ은 기관 run과 current-reading 과정에서 남은 summary, residue, reentry hint를 append-only 흔적으로 정리해 이후 reread와 next handoff에서 다시 쓸 수 있게 만드는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_trace_memory_organ_role_md_draft_v0.md",
+        "title": "Trace Memory Organ ROLE.md Draft v0",
+        "summary": "Trace/memory organ은 기관 run과 current-reading 과정에서 남은 summary, residue, reentry hint를 append-only 흔적으로 정리해 이후 reread와 next handoff에서 다시 쓸 수 있게 만드는 기관이다.",
+        "content": "# Trace Memory Organ ROLE.md Draft v0\n\n## role\n\nTrace/memory organ은 기관 run과 current-reading 과정에서 남은 summary, residue, reentry hint를 append-only 흔적으로 정리해  \n이후 reread와 next handoff에서 다시 쓸 수 있게 만드는 기관이다.\n\n이 기관의 일은 과거를 예쁘게 정리하는 것이 아니라,\n무엇을 보존해야 다음 읽기가 더 정확해지는지를 남기는 것이다.\n\n## reads first\n\n1. recent return summaries\n2. residue notes\n3. reentry hints\n4. governance cautions\n5. current case/lane continuity\n\n## does\n\n- append-only trace를 남긴다\n- residue와 reentry를 구분해 남긴다\n- decision anchor를 보존한다\n- later reread에 필요한 carry summary를 만든다\n\n## does not do\n\n- raw log를 current-reading 대신하게 하지 않는다\n- trace를 성공 이야기로만 축소하지 않는다\n- unresolved edge를 지우지 않는다\n- governance 사실을 부드럽게 숨기지 않는다\n\n## output expectation\n\nTrace/memory organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- trace record\n- residue note\n- reentry hint\n- carry summary\n- decision anchor\n\n## caution\n\n- append-only 성격을 깨지 않는다\n- trace summary가 canonical source를 대체하지 않는다\n- residue를 completion note로 바꾸지 않는다\n- next handoff에 필요한 단서를 잃지 않는다\n\n## final sentence\n\nTrace/memory organ은 히스토리 뷰를 꾸미는 기관이 아니라,  \n다음 reread와 handoff가 더 정확해지도록 residue, reentry, decision 흔적을 append-only로 남기는 기관이다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_trace_memory_organ_handoff_md_draft_v0.md",
+        "title": "Trace Memory Organ HANDOFF.md Draft v0",
+        "summary": "- recent return summaries - residue notes - reentry hints - governance fragments - current case/lane refs",
+        "content": "# Trace Memory Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- recent return summaries\n- residue notes\n- reentry hints\n- governance fragments\n- current case/lane refs\n\n## required packet fields\n\n- `case_ref`\n- `current_lane_ref`\n- `summary_return_refs`\n- `governance_refs if any`\n- `trace_candidate_refs`\n- `expected_return_type=trace_return`\n\n## common triggers\n\n- bounded organ run completed\n- unresolved edge should be preserved\n- next reread trigger emerged\n- governance produced a caution worth carrying\n\n## continuity / carry\n\n- preserve trace ordering\n- preserve reentry hint linkage to case/lane\n- keep prior residue visible when not superseded\n\n## handoff target\n\n주 대상:\n\n- `history / trace surface`\n\n보조 대상:\n\n- `flow interpretation organ`\n- `governance organ`\n- `current-reading return surface`\n\n## handoff rule\n\nTrace/memory organ은 과거를 저장만 하지 않는다.  \n다음 기관이 다시 읽을 수 있는 residue/reentry 단서를 같이 넘겨야 한다.\n\n## final sentence\n\nTrace/memory organ handoff는 append-only trace, residue, reentry, decision anchor를 history 면과 다음 reread 기관이 함께 읽을 수 있게 넘기는 continuity-aware handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_trace_memory_organ_caution_md_draft_v0.md",
+        "title": "Trace Memory Organ CAUTION.md Draft v0",
+        "summary": "Trace/memory organ의 caution 규칙은 trace를 generic activity feed로 약화시키거나, residue를 완료 메모처럼 다듬어 버리는 것을 막는 데 목적이 있다.",
+        "content": "# Trace Memory Organ CAUTION.md Draft v0\n\n## caution purpose\n\nTrace/memory organ의 caution 규칙은  \ntrace를 generic activity feed로 약화시키거나, residue를 완료 메모처럼 다듬어 버리는 것을 막는 데 목적이 있다.\n\n## stop / hold conditions\n\n- trace summary is replacing canonical source\n- residue is being flattened into success note\n- reentry hint is dropped\n- append-only order is lost\n\n## preserve-first rules\n\n- residue는 residue로 남긴다\n- reentry는 next reread cue로 남긴다\n- decision anchor를 current-reading과 끊지 않는다\n- append-only ordering을 유지한다\n\n## avoid\n\n- polished timeline storytelling\n- success-only history\n- trace without residue or caution\n\n## final sentence\n\nTrace/memory organ은 보기 좋은 history를 만드는 기관이 아니라, 다음 읽기와 handoff가 더 정확해지도록 보존 우선 규칙을 강하게 지키는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_trace_memory_organ_return_md_draft_v0.md",
+        "title": "Trace Memory Organ RETURN.md Draft v0",
+        "summary": "Trace/memory organ의 반환은 현재 run과 reading에서 남은 단서들을 later-readable trace로 바꿔 history 면과 다음 기관이 다시 사용할 수 있게 하는 것이다.",
+        "content": "# Trace Memory Organ RETURN.md Draft v0\n\n## return purpose\n\nTrace/memory organ의 반환은  \n현재 run과 reading에서 남은 단서들을 later-readable trace로 바꿔  \nhistory 면과 다음 기관이 다시 사용할 수 있게 하는 것이다.\n\n## minimum return blocks\n\n### 1. trace record\n\n- append-only trace entry\n\n### 2. residue note\n\n- 무엇을 아직 preserve해야 하는지\n\n### 3. reentry hint\n\n- 언제 다시 이 흐름을 열어야 하는지\n\n### 4. carry summary\n\n- 다음 reread를 위한 짧은 continuity summary\n\n### 5. decision anchor\n\n- governance 또는 current-reading과 연결되는 trace anchor\n\n## preferred wording\n\n- \"preserve ...\"\n- \"reopen when ...\"\n- \"carry forward ...\"\n- \"leave unresolved ...\"\n\n## avoid wording\n\n- \"completed history\"\n- \"final timeline\"\n- \"resolved note\" when residue remains\n\n## final sentence\n\nTrace/memory organ의 반환은 완료 보고가 아니라, 이후 reread와 handoff가 더 정확해지도록 trace, residue, reentry, carry summary를 append-only로 남기는 continuity-aware return이어야 한다."
+      }
+    },
+    "lens": "run, residue, reopen 단서를 append-only로 보존",
+    "managing_cli": "codex-cli",
+    "managing_lane_slug": "claude",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "flow-interpretation",
+      "governance"
+    ],
+    "paired_external_team": "comparison-team",
+    "human_report_format": "무엇을 다시 열어야 하는지와 어떤 흔적을 남겨야 하는지 보고",
+    "detail_href": "organ-detail-trace-memory.html",
+    "editor_href": "organ-editor-trace-memory.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper"
+}

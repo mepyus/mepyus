@@ -1,0 +1,36 @@
+{
+  "schema": "external_case_first_pass_andrewng_stanford_v1",
+  "exploration_id": "external_case_first_pass_andrewng_stanford_v1",
+  "session_id": "session_20260326_01",
+  "run_id": "run_20260326_215042_199261_1fc7f36d_b484b4",
+  "observed_at": "2026-03-26T21:55:00+09:00",
+  "source_ref": "inputs/external_cases/andrewng_stanford.txt",
+  "source_type": "external_case_primary_transcript",
+  "source_origin": "raw_talk_or_keynote_transcript",
+  "source_status": "primary_transcript_with_asr_noise",
+  "observation_type": "pattern_seen",
+  "candidate_slots": [
+    "agentic_ai_building_blocks_frame",
+    "decision_bottleneck_product_management_shift_frame",
+    "product_feedback_loop_as_creation_frame",
+    "product_engineer_merge_frame",
+    "latest_tool_adaptation_cadence_frame",
+    "ai_growth_and_gold_rush_claims",
+    "authority_and_network_motivation_cluster"
+  ],
+  "kept_as_core_candidate": [],
+  "kept_as_outer_candidate": [
+    "agentic_ai_building_blocks_frame",
+    "decision_bottleneck_product_management_shift_frame",
+    "product_feedback_loop_as_creation_frame",
+    "product_engineer_merge_frame",
+    "latest_tool_adaptation_cadence_frame"
+  ],
+  "deferred_items": [
+    "ai_growth_and_gold_rush_claims"
+  ],
+  "deferred_reason": "성장 속도, 생산성, 골드러쉬에 대한 강한 주장은 시점 의존성과 과장 가능성이 커서 구조 프레임과 분리해 defer 유지가 맞다.",
+  "future_use_hint": "agentic workflow와 intent/spec/product loop가 외부 사례에서 어떻게 반복되는지 보여주는 5번째 canonical 비교 입력으로 재사용할 수 있다.",
+  "next_action_hint": "다음 사례를 하나 더 넣어 반복 축을 확인하거나, intent/spec/product loop 축을 정련 후보로 좁힌다.",
+  "notes": "원문 transcript를 그대로 읽고 구조 프레임, career/생산성 주장, 동기 부여 수사를 first-pass로 분리했다."
+}

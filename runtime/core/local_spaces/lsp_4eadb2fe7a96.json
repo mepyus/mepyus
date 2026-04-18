@@ -6,30 +6,57 @@
     "brg_3839c09dc414",
     "brg_5a871a8a1570",
     "brg_6736a8344f1f",
+    "brg_7dce28a8b54d",
+    "brg_98c55638f185",
+    "brg_a4170dcc714a",
     "brg_dfdf71484616",
     "brg_e9dab2a60a76",
     "brg_ef86c4c15cc9",
     "brg_f30a3a351a8b"
   ],
+  "canonical_bridge_exposure_count": 10,
   "cell_refs": [
     "cel_c6e68542ed68"
   ],
   "created_at": "2026-03-20T22:50:02.553094+00:00",
   "doc_id": "doc_006",
   "dropped_weak_anchors": [
-    "지식의",
-    "방식에도",
-    "정보의",
-    "문제를",
-    "관계를",
-    "그래프를",
-    "구조를",
-    "기반은",
-    "중심의",
-    "데이터를"
+    "\uc9c0\uc2dd\uc758",
+    "\ubc29\uc2dd\uc5d0\ub3c4",
+    "\uc815\ubcf4\uc758",
+    "\ubb38\uc81c\ub97c",
+    "\uad00\uacc4\ub97c",
+    "\uadf8\ub798\ud504\ub97c",
+    "\uad6c\uc870\ub97c",
+    "\uae30\ubc18\uc740",
+    "\uc911\uc2ec\uc758",
+    "\ub370\uc774\ud130\ub97c"
   ],
   "local_space_id": "lsp_4eadb2fe7a96",
+  "observer_or_ambiguity_trace": {
+    "available": true,
+    "item_count": 0,
+    "items": [],
+    "merged": {
+      "ambiguity": 0.3477,
+      "confidence": 0.7295,
+      "role": "support",
+      "scene": "explanation",
+      "signals": []
+    },
+    "note": "observer compare propagated from material baseline",
+    "unavailable_reason": ""
+  },
+  "possibility_bridge_exposure_count": 0,
+  "possibility_bridge_refs": [],
   "pressure_profile_id": "prs_777042de2fe2",
+  "processing_baseline": {
+    "D": 0.6501,
+    "I": 0.5975,
+    "S": 0.5704,
+    "dominant_flow": "compare",
+    "dominant_scene": "spec"
+  },
   "representative_anchors": [
     {
       "anchor_type": "structural",
@@ -52,48 +79,24 @@
   ],
   "source_label": "doc_006",
   "state": "bridge_exposed",
+  "state_transition_summary": {
+    "available": true,
+    "bridge_exposure_count": 10,
+    "canonical_bridge_exposure_count": 10,
+    "current_state": "bridge_exposed",
+    "inferred_transition": "forming -> bridge_exposed",
+    "material_count": 73,
+    "possibility_bridge_exposure_count": 0,
+    "source_ref_count": 1,
+    "source_refs": [
+      "processor_compare/doc_006.txt"
+    ]
+  },
   "supporting_anchors": [
     "AI",
     "1",
     "RDB",
     "LLM",
     "Knowledge"
-  ],
-  "processing_baseline": {
-    "D": 0.6501,
-    "I": 0.5975,
-    "S": 0.5704,
-    "dominant_scene": "spec",
-    "dominant_flow": "compare"
-  },
-  "state_transition_summary": {
-    "available": true,
-    "current_state": "bridge_exposed",
-    "inferred_transition": "forming -> bridge_exposed",
-    "bridge_exposure_count": 10,
-    "canonical_bridge_exposure_count": 10,
-    "possibility_bridge_exposure_count": 0,
-    "material_count": 73,
-    "source_ref_count": 1,
-    "source_refs": [
-      "processor_compare/doc_006.txt"
-    ]
-  },
-  "observer_or_ambiguity_trace": {
-    "available": true,
-    "merged": {
-      "role": "support",
-      "scene": "explanation",
-      "ambiguity": 0.3477,
-      "confidence": 0.7295,
-      "signals": []
-    },
-    "items": [],
-    "item_count": 0,
-    "unavailable_reason": "",
-    "note": "observer compare propagated from material baseline"
-  },
-  "canonical_bridge_exposure_count": 10,
-  "possibility_bridge_exposure_count": 0,
-  "possibility_bridge_refs": []
+  ]
 }

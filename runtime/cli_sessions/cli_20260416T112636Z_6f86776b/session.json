@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T112636Z_6f86776b",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language translation data loop 2: collect line / connection / axis material from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md",
+    "docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as an internal-language translation data collection loop.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- human-readable line, not final wording\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- what must not be flattened\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:26:36Z",
+  "ended_at": "2026-04-16T11:27:13Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T112636Z_6f86776b/prompt.md",
+  "exit_code": 0,
+  "result_summary": "at terms distinguish anchor from maturation in actual returns? | reread target |\n| `user surface = human-readable shared grammar primary` | User should see current route, status, and decisions without memorizing engine terms | open/closed -> current route -> decision needed | human-operating view | user | User surface must not become governance console or engine trace viewer | What decision states are recurring enough to standardize? | validation target |\n| `high-risk terms require boundary-first exposure` | Some terms need their limits shown before convenience use | hold / carry-forward / reject-conflict / watch keep -> route decision | boundary-first terms | user / vectorfl | Risk terms must not become vague status tags | What boundary sentence is needed before each high-risk term is usable? | reread target |\n| `interface grows from axis` | Fixed interface should come from repeated axes, not imported templates | line evidence -> repeated connection -> axis -> interface candidate | axis-derived interface | vectorfl / user | Interface structure must not be imposed before repetition exists | Which current candidates have enough repetition to become fixed UI structure? | validation target |\n\n- uncertainty or failure notes  \n  No read failure. Main uncertainty is whether the observed phrases are frequent enough across additional reports to promote from `line/connection evidence` into stronger `axis candidate`. This pass only used the two bounded refs provided.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate  \n  Suggested next use: `validation target`  \n  Validation should check whether the axis candidates above are actually repeated across recent CLI returns and surface reports before any implementation or deposit step.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:27:13Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:27:13Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

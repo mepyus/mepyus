@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T094830Z_7b2f3fa5",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "PASS_WITH_NOTE`\n  - useful-now: Package 1 has a usable bounded CLI host/control path on top of the existing integrated-engine body, visible through `/vectorfl-engine/vectorfl`, with canonical runtime artifacts and mark actions.\n  - deferred: Background process registry, richer polling, subprocess interruption, Gemini/other adapters, multi-agent routing, autonomous planning, page promotion automation, selected-object behavior, and actual deposit ingestion/promotion.\n  - bottleneck: The current Codex adapter path is synchronous, so long tasks block the API request until completion or timeout; actual use also depends on a working local `codex` CLI in the viewer-server environment.\n\n- important findings / diffs / outputs\n  - Session artifacts are standardized under `runtime/cli_sessions/<session_id>/`.\n  - Contract includes `session.json`, `prompt.md`, `stdout.log`, `stderr.log`, `structured_return.json`, and `deposit_candidate.md`.\n  - API/state additions include `cli_host_control`, run action, latest-return marking, and mark types: `reread_target`, `implementation_return`, `validation_target`, `deposit_candidate`.\n  - Verification recorded Python compile success, dry-run session creation, dry-run mark action, and React build success.\n\n- uncertainty or failure notes\n  - No failure found in reread.\n  - Report is a closeout note, not a fresh validation run.\n  - `deposit_candidate.md` is prepared material only; ingestion/promotion remains closed.\n\n- suggested next use\n  - validation target: run an actual short Codex CLI session through the VectorFL panel and verify the resulting `structured_return.json` plus mark flow.\n  - deposit candidate: this report can be used as a package-1 closeout deposit candidate, with the synchronous-execution limitation preserved as a watchpoint.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T09:48:46Z"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T102144Z_d65ce415",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary\n\n1. Fixed 3-surface body remains true: the integrated-engine UI is now sourced from `app/ui/integrated_engine`; `gemini/mock_test` remains reference/proposal clay; `runtime` remains for artifacts, manifests, state, and execution returns. This migration does not create package 2, a new surface, or a new engine shape.\n\n2. CLI on-top layer may now operate through the stable app path. The note records a successful read-only Codex session through the stable app proxy, plus successful marking as `validation_target`.\n\n3. Next smallest safe action: hand-check one VectorFL CLI run from the browser at `http://127.0.0.1:5173/`.\n\n- important findings / diffs / outputs\n\nStable source folder: `app/ui/integrated_engine`.\n\nImportant invariants:\n- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.\n- Do not move React/Vite source into `runtime`.\n- Do not add Gemini adapter, background runner, or session browsing before the stable Codex path is hand-used.\n\nValidation already noted:\n- `npm run build` passed in `app/ui/integrated_engine`.\n- served title confirmed as `VectorFL Integrated Engine`.\n- stable app proxy to `127.0.0.1:8421` worked.\n- real read-only Codex session completed with exit code `0`.\n\n- uncertainty or failure notes\n\nNo files were modified. I only reread `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`.\n\nRemaining uncertainty from the note: browser-click/user-feel validation still needs a human hand-check.\n\n- suggested next use\n\nvalidation target: run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T10:21:59Z"
+}

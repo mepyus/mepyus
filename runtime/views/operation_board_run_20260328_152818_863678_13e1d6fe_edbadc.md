@@ -1,0 +1,42 @@
+# operation_board / run_20260328_152818_863678_13e1d6fe_edbadc
+
+## 1. Latest Structured Docs
+- `doc_youtube_03_22_high_density_dialogue_loop_test_review_v1`
+
+## 2. Latest Tickets
+- `not_created`
+
+## 3. Latest Outputs
+- `runtime/manifests/label_packets/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_label_packet.json`
+- `app/work/observer_ingest_min/generated/source_manifest_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.json`
+- `app/work/observer_ingest_min/generated/split_units_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.json`
+- `app/work/observer_ingest_min/generated/processing_trace_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.json`
+- `app/work/observer_ingest_min/generated/readable_input_board_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.md`
+- `app/work/observer_ingest_min/generated/operator_summary_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.md`
+- `runtime/manifests/origin_maps/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_receipt_seed_origin_map.json`
+- `runtime/commands/structured_doc_routing_commands_v1.md`
+- `runtime/commands/structured_doc_routing_commands_run_20260328_152818_863678_13e1d6fe_edbadc.md`
+- `runtime/receipts/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_operation_receipt.md`
+
+## 4. Latest Events
+- `receipt_written` / `runtime/receipts/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_operation_receipt.md` / `2026-03-28T15:28:19+09:00`
+- `file_created` / `runtime/manifests/origin_maps/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_receipt_seed_origin_map.json` / `2026-03-28T15:28:19+09:00`
+- `output_generated` / `app/work/observer_ingest_min/generated/operator_summary_youtube_03_22_high_density_dialogue_loop_test_review_v1_20260328_152818.md` / `2026-03-28T15:28:19+09:00`
+- `routing_normalized` / `docs/reports/youtube_03_22_high_density_dialogue_loop_test_review_v1.md` / `2026-03-28T15:28:18+09:00`
+- `doc_registered` / `docs/reports/youtube_03_22_high_density_dialogue_loop_test_review_v1.md` / `2026-03-28T15:28:18+09:00`
+- `file_created` / `runtime/manifests/label_packets/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_label_packet.json` / `2026-03-28T15:28:18+09:00`
+- `board_updated` / `runtime/views/operation_board_latest.md` / `2026-03-28T15:28:18+09:00`
+- `receipt_written` / `runtime/receipts/doc_template_high_density_dialogue_loop_test_review_v1_operation_receipt.md` / `2026-03-28T15:28:18+09:00`
+
+## 5. Latest Receipts
+- `runtime/receipts/doc_youtube_03_22_high_density_dialogue_loop_test_review_v1_operation_receipt.md`
+
+## 6. Latest Commands
+- `runtime/commands/structured_doc_routing_commands_v1.md`
+
+## 6A. Latest Run
+- `run_20260328_152818_863678_13e1d6fe_edbadc`
+
+## 7. Current Note / Caution
+- `RUNMODE` missing documents should still default to `ingest_only`.
+- This board is a seed surface, not a live dashboard.

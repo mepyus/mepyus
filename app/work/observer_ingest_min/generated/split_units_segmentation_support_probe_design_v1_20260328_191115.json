@@ -1,0 +1,101 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:segmentation_support_probe_design_v1]] [[SEM:minimal_segmentation_assist_design_before_pointer_and_heading]]",
+    "char_count": 120,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "segmentation support probe design v1",
+    "end_ref": "segmentation support probe design v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# segmentation support probe design v1",
+    "char_count": 38,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. purpose",
+    "end_ref": "1. purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. purpose - 이번 설계의 목적은 splitter를 다시 만드는 것이 아니다. - 목적은 `claude_code_index.txt` 같은 입력에서 single block collapse를 완화할 수 있는 최소 segmentation support를 probe 단계에 얇게 추가하는 것이다.",
+    "char_count": 169,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. baseline problem",
+    "end_ref": "2. baseline problem",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. baseline problem - 현재 기본 splitter는 `## ` heading과 빈 줄 위주로 block를 나눈다. - `claude_code_index.txt`는 긴 대화형 markdown이 아니라: - 짧은 제목줄 - 타임스탬프 줄 - 전사 줄 가 반복되는 인덱스형 transcript에 가깝다. - 그 결과 baseline에서는: - block_count: `1` - ",
+    "char_count": 311,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. minimal support hypothesis",
+    "end_ref": "3. minimal support hypothesis",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. minimal support hypothesis - 현재 입력은 완전히 structureless한 텍스트가 아니다. - `타임스탬프 줄`과 `짧은 제목줄`이 이미 segmentation hint로 존재한다. - 따라서 이번 최소 개입은: - 제목줄 + 바로 뒤 타임스탬프를 heading으로 읽고 - 타임스탬프 줄을 block boundary hint로만 쓰는 얇은 assist면 충",
+    "char_count": 231,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. actual support applied",
+    "end_ref": "4. actual support applied",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. actual support applied - changed script: - `scripts/run_dialogue_asset_probe.py` - changed behavior: - `--segment-assist index_support` 옵션 추가 - `^\\d{1,2}:\\d{2}$` 형태의 타임스탬프는 block boundary hint로 처리 - 다음 줄이 타임스탬프인 짧은",
+    "char_count": 355,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. why this still counts as minimal",
+    "end_ref": "5. why this still counts as minimal",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. why this still counts as minimal - 특정 파일 전용 hardcoded heading 목록을 넣지 않았다. - `index-like transcript`라는 형식 단서만 썼다. - 결과가 좋아질 때까지 규칙을 계속 덧붙이지 않았다. - segmentation support를 parser 전체 교체로 밀지 않았다.",
+    "char_count": 195,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "6. expected evaluation points",
+    "end_ref": "6. expected evaluation points",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. expected evaluation points - single block collapse가 완화되는가 - window diversity가 생기는가 - question opening / relation movement / residue priority shift가 더 넓은 입력 범위에서 유지되는가 - context unit / pivot / compression이 segmentat",
+    "char_count": 286,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "7. one-line summary",
+    "end_ref": "7. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. one-line summary > 이번 segmentation support는 splitter 재설계가 아니라, 인덱스형 transcript에 이미 있는 `짧은 제목줄 + 타임스탬프`를 segmentation hint로 읽어 single block collapse를 완화해 보는 최소 probe다.",
+    "char_count": 172,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  }
+]

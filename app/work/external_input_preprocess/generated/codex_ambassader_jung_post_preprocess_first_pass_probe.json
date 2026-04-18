@@ -1,0 +1,78 @@
+{
+  "probe_name": "post_preprocess_first_pass_probe_v0",
+  "generated_at": "2026-04-02T22:19:18.277051Z",
+  "input_path": "inputs/external_cases/codex_ambassader_jung.txt",
+  "preprocessed_path": "app/work/external_input_preprocess/generated/codex_ambassader_jung_post_preprocess_first_pass_20260402T221918Z.txt",
+  "first_pass_read": {
+    "dust_count": 163,
+    "top_scene_counts": {
+      "review": 147,
+      "evidence": 8,
+      "spec": 6,
+      "impl": 2
+    },
+    "top_flow_counts": {
+      "compare": 143,
+      "run": 18,
+      "fix": 2
+    },
+    "scene_flatness_ratio": 0.902,
+    "flow_flatness_ratio": 0.877,
+    "sample_rows": [
+      {
+        "short_label": "아, 안녕하세요.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "아, 안녕하세요."
+      },
+      {
+        "short_label": "반갑습니다.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "반갑습니다."
+      },
+      {
+        "short_label": "정구봉이라고 합니다.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "정구봉이라고 합니다."
+      },
+      {
+        "short_label": "네, 오늘 아는 얼굴이 많아서 정…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "네, 오늘 아는 얼굴이 많아서 정말 반갑습니다."
+      },
+      {
+        "short_label": "아는 얼굴서 너무 반갑고 아까 방…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "아는 얼굴서 너무\n\n반갑고 아까 방금 전에 발표하셨던 황현태 대표님은 제가 직전에 다녔던 회사의 대표님이십니다."
+      },
+      {
+        "short_label": "그래서 굉장히 감계가 무량합니다.",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "그래서 굉장히 감계가 무량합니다."
+      },
+      {
+        "short_label": "오늘 제가 어떤 이야기를 할 거냐…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "오늘 제가 어떤 이야기를 할 거냐면 뭐 되게 복잡한 이름으로 했지만 그냥\n\n코덱스가 오랫동안 돌려면 어떻게 해야될까 이거에 대해서 저희가 여러가지 이벤트를 통해서 많은 분들의 사례를 모았고 그 사례들을 통해서 저희가 배울 수 있었던 거 그리고 일반적으로 이제 보통 뭐 트위터나 X에서 말하는 소프트웨어 팩토리를 만들어 가는 지금이 시기에 진짜로 중요한 건 뭘까?"
+      },
+      {
+        "short_label": "이제 코덱스를 활용해서 어떻게 하…",
+        "scene": "review",
+        "flow": "compare",
+        "preview": "이제 코덱스를 활용해서 어떻게 하면 코드 팩토리까지 만들 수 있냐를 저희가 이제 준비를 했고 아시는 분들 아실 수도 있는데 저희가 랄프톤이라는 해커톤을 지난주?"
+      }
+    ],
+    "human_read_summary": "전처리로 shard 압력은 줄었지만, first pass는 아직 compare 쪽으로 많이 눌린다.",
+    "caution_notes": [
+      "flow flatness가 아직 높아 compare/read review 쪽으로 다시 눌릴 수 있다.",
+      "scene flatness가 높아 case-specific reading으로 바로 올리면 과장될 수 있다."
+    ],
+    "next_read": "전처리된 sidecar를 기준으로 bounded first-pass report를 만들되, 아직 line corroboration보다 case block readability를 먼저 본다."
+  }
+}

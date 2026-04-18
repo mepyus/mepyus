@@ -1,0 +1,758 @@
+{
+  "probe_name": "graphrag_neosh_baseline_probe_v1",
+  "input_path": "inputs/external_cases/graphrag_neosh.txt",
+  "created_at": "2026-03-28T10:44:50.495659Z",
+  "window_size": 3,
+  "stride": 1,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 155,
+    "impl": 31,
+    "evidence": 16,
+    "spec": 3
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 155
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 31
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 16
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 3
+    }
+  ],
+  "overall_flow_counts": {
+    "run": 65,
+    "compare": 140
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 140
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 65
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 2
+    },
+    {
+      "object": "일의 미래",
+      "count": 1
+    },
+    {
+      "object": "생산성/코딩",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "설명/해석 층",
+      "count": 158
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 98
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 16
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 5
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 4
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "discourse_residue_anchor": 33,
+    "core_topic_anchor": 149
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "그래서",
+      "count": 33
+    },
+    {
+      "value": "이렇게",
+      "count": 26
+    },
+    {
+      "value": "그래프",
+      "count": 18
+    },
+    {
+      "value": "카테고리에",
+      "count": 16
+    },
+    {
+      "value": "사이퍼",
+      "count": 16
+    },
+    {
+      "value": "확인을",
+      "count": 16
+    },
+    {
+      "value": "리트리버를",
+      "count": 15
+    },
+    {
+      "value": "저희가",
+      "count": 15
+    },
+    {
+      "value": "검색을",
+      "count": 15
+    },
+    {
+      "value": "보시면",
+      "count": 12
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 5,
+    "speaker_or_source_residue": 0,
+    "conversational_filler_residue": 3,
+    "generic_abstraction_residue": 4,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 155,
+        "impl": 31,
+        "evidence": 16,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 155
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 31
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 16
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "run": 65,
+        "compare": 140
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 140
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 65
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 2
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 158
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 98
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 33
+        },
+        {
+          "value": "이렇게",
+          "count": 26
+        },
+        {
+          "value": "그래프",
+          "count": 18
+        },
+        {
+          "value": "카테고리에",
+          "count": 16
+        },
+        {
+          "value": "사이퍼",
+          "count": 16
+        },
+        {
+          "value": "확인을",
+          "count": 16
+        },
+        {
+          "value": "리트리버를",
+          "count": 15
+        },
+        {
+          "value": "저희가",
+          "count": 15
+        },
+        {
+          "value": "검색을",
+          "count": 15
+        },
+        {
+          "value": "보시면",
+          "count": 12
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1365,
+        "discourse_residue_anchor": 35,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 5,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 3,
+        "generic_abstraction_residue": 4,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 12,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 일의 미래, 생산성/코딩 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다. 먼저 정치 카테고리부터 수집이 되는 모습이고요. 0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요. 어 URL과 […"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e834b44a6f2a_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 0:00 아…",
+          "excerpt": "## untitled 0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "먼저 정치 카테고리부터 수집이 되…",
+          "excerpt": "먼저 정치 카테고리부터 수집이 되는 모습이고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:06 그래서 이렇게 모든 여섯…",
+          "excerpt": "0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 URL과 [음악] 함께이 내용…",
+          "excerpt": "어 URL과 [음악] 함께이 내용을 한 0:18 줄로 요약해서 보여주고 있는 모습이고요."
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 155,
+        "impl": 31,
+        "evidence": 16,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 155
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 31
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 16
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "run": 65,
+        "compare": 140
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 140
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 65
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 2
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 158
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 98
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 33
+        },
+        {
+          "value": "이렇게",
+          "count": 26
+        },
+        {
+          "value": "그래프",
+          "count": 18
+        },
+        {
+          "value": "카테고리에",
+          "count": 16
+        },
+        {
+          "value": "사이퍼",
+          "count": 16
+        },
+        {
+          "value": "확인을",
+          "count": 16
+        },
+        {
+          "value": "리트리버를",
+          "count": 15
+        },
+        {
+          "value": "저희가",
+          "count": 15
+        },
+        {
+          "value": "검색을",
+          "count": 15
+        },
+        {
+          "value": "보시면",
+          "count": 12
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1365,
+        "discourse_residue_anchor": 35,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 5,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 3,
+        "generic_abstraction_residue": 4,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 12,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 일의 미래, 생산성/코딩 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다. 먼저 정치 카테고리부터 수집이 되는 모습이고요. 0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요. 어 URL과 […"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e834b44a6f2a_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 0:00 아…",
+          "excerpt": "## untitled 0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "먼저 정치 카테고리부터 수집이 되…",
+          "excerpt": "먼저 정치 카테고리부터 수집이 되는 모습이고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:06 그래서 이렇게 모든 여섯…",
+          "excerpt": "0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 URL과 [음악] 함께이 내용…",
+          "excerpt": "어 URL과 [음악] 함께이 내용을 한 0:18 줄로 요약해서 보여주고 있는 모습이고요."
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 155,
+        "impl": 31,
+        "evidence": 16,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 155
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 31
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 16
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "run": 65,
+        "compare": 140
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 140
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 65
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 2
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 158
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 98
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 33
+        },
+        {
+          "value": "이렇게",
+          "count": 26
+        },
+        {
+          "value": "그래프",
+          "count": 18
+        },
+        {
+          "value": "카테고리에",
+          "count": 16
+        },
+        {
+          "value": "사이퍼",
+          "count": 16
+        },
+        {
+          "value": "확인을",
+          "count": 16
+        },
+        {
+          "value": "리트리버를",
+          "count": 15
+        },
+        {
+          "value": "저희가",
+          "count": 15
+        },
+        {
+          "value": "검색을",
+          "count": 15
+        },
+        {
+          "value": "보시면",
+          "count": 12
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1365,
+        "discourse_residue_anchor": 35,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 5,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 3,
+        "generic_abstraction_residue": 4,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 12,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 일의 미래, 생산성/코딩 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다. 먼저 정치 카테고리부터 수집이 되는 모습이고요. 0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요. 어 URL과 […"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e834b44a6f2a_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 0:00 아…",
+          "excerpt": "## untitled 0:00 아래에 있는 코드를 실행을 하면 크롤링이 진행이 됩니다."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "먼저 정치 카테고리부터 수집이 되…",
+          "excerpt": "먼저 정치 카테고리부터 수집이 되는 모습이고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:06 그래서 이렇게 모든 여섯…",
+          "excerpt": "0:06 그래서 이렇게 모든 여섯 가지의 카테고리에 대해서 연결되어 있는 기사 제목들 그리고 또 어떤 같은 이런 0:12 언론사와 연결되어 있는지 그런 것들도 함께 확인을 할 수가 있었고요."
+        },
+        {
+          "dust_id": "dst_src_e834b44a6f2a_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 URL과 [음악] 함께이 내용…",
+          "excerpt": "어 URL과 [음악] 함께이 내용을 한 0:18 줄로 요약해서 보여주고 있는 모습이고요."
+        }
+      ]
+    }
+  ]
+}

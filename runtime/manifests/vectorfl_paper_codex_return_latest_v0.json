@@ -1,0 +1,31 @@
+{
+  "schema_version": "vectorfl_paper_codex_return_latest_v0",
+  "source_handoff_artifact": "runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json",
+  "worker": "codex",
+  "status": "completed",
+  "summary": "return_slot: line_candidates_latest\n\n읽기용 구조표로 흐른 문제를 실제 운영 패킷 흐름의 전 단계로 분리했다. 반복 압력은 페이지가 supervisor 입력/선택/지정/확인 흐름이 아니라 구조 설명표처럼 보이는 점, 팀/담당/보고 슬롯이 실제 라우팅 단위로 체감되지 않는 점, worker report가 실제 실행 결과처럼 오해될 위험이 있는 점이다.\n\nLine candidates:\n1. supervisor가 선택할 수 있는 입력 항목을 먼저 노출: team, assignee_cell, return_slot, paperclip_reference_line.\n2. 페이지 본문은 'work packet -> team assignment -> worker report -> supervisor gate' 순서의 운영 패킷 흐름으로 재정렬.\n3. worker report 영역은 bridge read-only 결과임을 명시하고, 실행 완료나 gate close 표현은 배제.\n4. 다음 internal read가 바로 확인할 수 있도록 repeated pressure와 candidate line을 별도 섹션으로 유지.\n\nReview focus: 사용자가 실제로 처리하기 편한 팀/담당/보고 구조인지, fake execution으로 보이지 않는지.",
+  "changed_files": [],
+  "blockers": [
+    "Read-only bridge adapter constraint: files were not changed and current slot was not replaced.",
+    "Gate was not closed and no worker execution beyond the provided bridge result was declared."
+  ],
+  "next_recommendation": "Route this report to the next internal read as line_candidates_latest. Supervisor should choose whether to convert candidate lines into the integrated operating page packet layout, with explicit read-only worker-report labeling retained.",
+  "needs_supervisor_decision": true,
+  "returned_at": "2026-04-11T02:38:23.641762+00:00",
+  "raw_command": [
+    "codex",
+    "exec",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/Users/sungsookim/universe/vectorfl_replica",
+    "--output-schema",
+    "/var/folders/1v/g78rkptn0mngwfxc5jyt54s40000gn/T/tmpcr6cwmvn/codex_bridge_output_schema.json",
+    "--output-last-message",
+    "/var/folders/1v/g78rkptn0mngwfxc5jyt54s40000gn/T/tmpcr6cwmvn/codex_bridge_last_message.json",
+    "-"
+  ],
+  "execution_mode": "codex_exec_read_only",
+  "exit_code": 0
+}

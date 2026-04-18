@@ -1,0 +1,164 @@
+- result summary
+  - bounded context reread completed from:
+    - `integrated_engine_line_connection_axis_to_shared_language_map_v0.md`
+    - `integrated_engine_internal_language_grammar_candidate_v0.md`
+  - no file modification performed
+  - output is Koreanization data only, not final glossary or UI copy
+
+- important findings / diffs / outputs
+
+1. 
+- internal phrase or signal observed: `request / return / reflux`
+- source context where it appeared: shared language map, route grammar
+- internal meaning / operational role: 작업 흐름을 요청-완료가 아니라 요청 입력, 실행 반환, 검증 후 재유입으로 순환시키는 route 신호
+- Koreanization candidate, not final UI copy: `요청 / 반환 / 재유입`
+- Korean preservation requirement: `return`은 완료가 아니라 검증 대상임을 보존해야 함
+- risky Korean flattening to avoid: `요청 / 응답 / 완료`
+- why this helps the user operate: 사용자가 엔진 출력 이후에도 검증, 결정, 재처리 단계가 남아 있음을 알 수 있음
+- what meaning gets lost if shortened: `reflux`가 미래 reread 재료로 돌아가는 성숙 경로라는 의미
+- repeated connection it belongs to: S1 normal loop, protocol, lexicon, friction audit
+- emerging axis candidate: route grammar axis
+- surface exposure note: user / vectorfl / engine 모두 노출 가능
+- external expression support needed, if any: `반환`이 완료가 아님을 설명하는 보조 문맥 필요
+- next reread question: `reflux`를 한국어로 `재유입`이라 할 때 성숙 재료 보존 의미가 충분히 남는가
+- suggested next use: validation target
+
+2.
+- internal phrase or signal observed: `return validation`
+- source context where it appeared: shared language map, validation grammar
+- internal meaning / operational role: engine output을 바로 완료하지 않고 VectorFL이 route, anchor, 다음 이동을 검증하는 단계
+- Koreanization candidate, not final UI copy: `반환 검증`
+- Korean preservation requirement: 검증 권위가 engine이 아니라 VectorFL 쪽에 있음을 보존해야 함
+- risky Korean flattening to avoid: `결과 확인`, `응답 확인`
+- why this helps the user operate: 출력물을 완료물로 오해하지 않고 판단 지점을 분리할 수 있음
+- what meaning gets lost if shortened: execution과 validation ownership 분리
+- repeated connection it belongs to: S1/S3 friction, grammar candidate, bridge seed
+- emerging axis candidate: validation ownership axis
+- surface exposure note: vectorfl 중심, user와 engine에 보조 노출
+- external expression support needed, if any: `검증`이 품질 평가만이 아니라 route 결정임을 설명해야 함
+- next reread question: 사용자는 `반환 검증`을 작업 완료 전 단계로 읽는가
+- suggested next use: validation target
+
+3.
+- internal phrase or signal observed: `anchor drift`
+- source context where it appeared: shared language map, route grammar, validation grammar
+- internal meaning / operational role: 기준 anchor와 어긋나면 다음 단계로 넘기지 않고 제동하거나 되감는 신호
+- Koreanization candidate, not final UI copy: `앵커 이탈`, `기준점 이탈`
+- Korean preservation requirement: 단순 오류가 아니라 route brake임을 보존해야 함
+- risky Korean flattening to avoid: `오류`, `불일치`
+- why this helps the user operate: 계속 진행할지, 멈출지, 재처리할지 판단할 수 있음
+- what meaning gets lost if shortened: anchor가 설명문이 아니라 route를 막는 기준이라는 역할
+- repeated connection it belongs to: S3 drift observation, bridge lexicon, grammar candidate
+- emerging axis candidate: operational brake axis
+- surface exposure note: vectorfl / engine 중심, user에는 결정 차단 신호로 노출 가능
+- external expression support needed, if any: `anchor` 자체의 내부 기준 의미를 함께 유지해야 함
+- next reread question: `앵커`를 그대로 보존할지 `기준점`으로 풀지 결정 필요
+- suggested next use: validation target
+
+4.
+- internal phrase or signal observed: `follow-up / reprocess / rewind`
+- source context where it appeared: shared language map, route grammar
+- internal meaning / operational role: 새 요청처럼 보이는 후속 흐름과 실패가 아닌 구조적 재처리, 되감김을 구분
+- Koreanization candidate, not final UI copy: `후속 / 재처리 / 되감기`
+- Korean preservation requirement: `reprocess/rewind`가 실패 처리가 아니라 구조적 경로 재개방임을 보존해야 함
+- risky Korean flattening to avoid: `다시 하기`, `오류 수정`
+- why this helps the user operate: 후속 요청이 어디서 왔고 왜 다시 열렸는지 추적 가능
+- what meaning gets lost if shortened: maturation signal 또는 drift reason에 의해 route가 다시 열린다는 원인성
+- repeated connection it belongs to: S2 follow-up, S3 drift, protocol reprocess note
+- emerging axis candidate: correction route axis
+- surface exposure note: user / vectorfl / engine 모두 관련
+- external expression support needed, if any: `되감기`가 사용자 실수 취소가 아니라 route 상태 복구임을 보조해야 함
+- next reread question: `rewind`와 `reprocess`를 한국어에서 충분히 분리할 수 있는가
+- suggested next use: validation target
+
+5.
+- internal phrase or signal observed: `hold / watch keep / not promoted`
+- source context where it appeared: shared language map, hold/watch grammar
+- internal meaning / operational role: 보이지만 지금 행동하지 않는 active non-action state
+- Koreanization candidate, not final UI copy: `보류 / 관찰 유지 / 승격 안 됨`
+- Korean preservation requirement: 버림도 patch queue도 아닌 현재 닫힌 상태를 보존해야 함
+- risky Korean flattening to avoid: `대기`, `미완료`, `나중에 수정`
+- why this helps the user operate: 지금 구현하지 않아야 하는 재료를 잃지 않고 추적할 수 있음
+- what meaning gets lost if shortened: 관찰 가능성과 행동 미개방이 동시에 유지되는 상태
+- repeated connection it belongs to: use-state refresh, wording watch, lexicon v1
+- emerging axis candidate: active non-action state axis
+- surface exposure note: user / vectorfl / codex 중심
+- external expression support needed, if any: `watch keep`은 한국어 단일어보다 상태 설명이 필요
+- next reread question: `관찰 유지`가 build mode 비개방을 충분히 막는가
+- suggested next use: deposit candidate
+
+6.
+- internal phrase or signal observed: `proposal-only / needs Codex translation`
+- source context where it appeared: shared language map, authority grammar
+- internal meaning / operational role: Gemini 산출물이 가치가 있어도 core로 직접 들어가지 않고 Codex 기준 번역과 분류를 거쳐야 함
+- Koreanization candidate, not final UI copy: `제안 전용 / Codex 번역 필요`
+- Korean preservation requirement: proposal value와 canonical authority 분리를 보존해야 함
+- risky Korean flattening to avoid: `초안`, `참고`, `수정 필요`
+- why this helps the user operate: 제안물의 시각적 강도와 실제 권위를 혼동하지 않음
+- what meaning gets lost if shortened: direct-to-core 금지와 scoped promotion gate
+- repeated connection it belongs to: handoff artifact, bridge lexicon, guide trial round 2
+- emerging axis candidate: proposal-to-core boundary axis
+- surface exposure note: vectorfl / codex / gemini 중심, user 결정 지점에 노출
+- external expression support needed, if any: `제안 전용`이 낮은 가치가 아니라 권위 제한임을 설명해야 함
+- next reread question: 한국어에서 `전용`이 너무 폐쇄적으로 들려 가치 보존을 약화하는가
+- suggested next use: validation target
+
+7.
+- internal phrase or signal observed: `workspace ownership`
+- source context where it appeared: shared language map, authority grammar
+- internal meaning / operational role: 파일 위치가 artifact authority와 write boundary를 표시
+- Koreanization candidate, not final UI copy: `작업공간 소유권`, `작업공간 권한 경계`
+- Korean preservation requirement: 폴더 위치가 할 수 있는 행동과 연결됨을 보존해야 함
+- risky Korean flattening to avoid: `파일 위치`, `저장 위치`
+- why this helps the user operate: 산출물을 어디에서 읽고 어디까지 수정 가능한지 판단 가능
+- what meaning gets lost if shortened: canonical docs/scaffold와 proposal workspace의 권위 차이
+- repeated connection it belongs to: real handoff retention, guide trial, high-risk note
+- emerging axis candidate: workspace authority axis
+- surface exposure note: codex / gemini / user 중심
+- external expression support needed, if any: `ownership`은 법적 소유가 아니라 운영 권한임을 보조해야 함
+- next reread question: `소유권`보다 `권한 경계`가 내부 의미를 덜 오해시키는가
+- suggested next use: validation target
+
+8.
+- internal phrase or signal observed: `support reread recovery`
+- source context where it appeared: shared language map, reread/support grammar
+- internal meaning / operational role: 첫 읽기가 얇아도 support material 순차 reread로 route, authority, state, boundary를 회복하는 기제
+- Koreanization candidate, not final UI copy: `지원 재읽기 회복`, `보조 재읽기 회복`
+- Korean preservation requirement: patch 근거가 아니라 use-mode recovery임을 보존해야 함
+- risky Korean flattening to avoid: `다시 읽기`, `도움말 확인`
+- why this helps the user operate: 얇은 첫 인상을 즉시 결함으로 처리하지 않고 회복 가능성을 검증함
+- what meaning gets lost if shortened: support panel이 중심 body를 대체하지 않는다는 순서성
+- repeated connection it belongs to: S2 observation, use observation protocol, grammar candidate
+- emerging axis candidate: reread recovery axis
+- surface exposure note: user / vectorfl 중심
+- external expression support needed, if any: 읽기 순서와 patch-before-check 금지 설명 필요
+- next reread question: `지원`과 `보조` 중 어느 쪽이 중심-보조 관계를 더 잘 보존하는가
+- suggested next use: validation target
+
+9.
+- internal phrase or signal observed: `bridge-before-flatten`
+- source context where it appeared: bridge-before-flatten grammar
+- internal meaning / operational role: 쉬운 표현으로 줄이기 전에 route, authority, state, boundary, support 관계를 보존해야 한다는 번역 순서
+- Koreanization candidate, not final UI copy: `평탄화 전 연결`, `단순화 전 브리지`
+- Korean preservation requirement: bridge work가 내부 문법을 대체하지 않고 이후 layer임을 보존해야 함
+- risky Korean flattening to avoid: `쉽게 바꾸기`, `사용자 친화 표현`
+- why this helps the user operate: 쉬워진 말 때문에 운영 권한이나 경로 의미가 사라지는 것을 막음
+- what meaning gets lost if shortened: 내부 movement를 보존한 뒤 외부 표현을 만든다는 단계성
+- repeated connection it belongs to: friction terms collection, bridge wording boundary
+- emerging axis candidate: bridge preservation axis
+- surface exposure note: vectorfl / codex 중심, user-facing 전 단계
+- external expression support needed, if any: later bridge package에서만 외부 표현화 필요
+- next reread question: `평탄화`가 내부 용어로 유지 가능한가, 아니면 `단순화`가 더 읽히는가
+- suggested next use: deposit candidate
+
+- uncertainty or failure notes
+  - `reflux`는 한국어 후보가 아직 약함. `재유입`은 route 의미는 살리지만 성숙 재료 보존의 뉘앙스가 부족할 수 있음.
+  - `anchor`는 `앵커` 보존과 `기준점` 번역 사이에서 결정 필요. 내부 정밀도는 `앵커`, 사용자 즉시 이해는 `기준점` 쪽이 강함.
+  - `watch keep`은 한국어 단일 명사화가 어렵고, 상태 설명형 후보가 필요함.
+  - `bridge-before-flatten`은 최종 외부 표현으로 쓰기보다 내부 번역 원칙명으로 유지하는 편이 안전함.
+
+- suggested next use: validation target
+  - 다음 reread target: `reflux`, `watch keep`, `anchor drift`, `bridge-before-flatten`
+  - implementation return: 없음
+  - validation target: Koreanization 후보가 route / authority / state / boundary / support 의미를 잃지 않는지 검증
+  - deposit candidate: `hold / watch keep / not promoted`, `bridge-before-flatten`, `support reread recovery`

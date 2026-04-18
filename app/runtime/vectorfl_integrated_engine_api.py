@@ -1,0 +1,3649 @@
+from __future__ import annotations
+
+import json
+import hashlib
+import re
+import subprocess
+import sys
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+from app.core.events.event_append_guard import append_jsonl_locked, load_jsonl_with_tail_recovery
+
+CONTRACT_PATHS = {
+    "operating_cell_schema": "docs/contracts/vectorfl_paper_operating_cell_schema_v0.md",
+    "conversation_to_line": "docs/contracts/vectorfl_paper_conversation_to_line_procedure_v0.md",
+    "internal_read_cell": "docs/contracts/vectorfl_paper_internal_read_cell_v0.md",
+    "external_resource_cell": "docs/contracts/vectorfl_paper_external_resource_cell_v0.md",
+    "synthesis_cell": "docs/contracts/vectorfl_paper_synthesis_cell_v0.md",
+    "supervisor_report": "docs/contracts/vectorfl_paper_supervisor_report_format_v0.md",
+}
+
+SOURCE_PACK_PATHS = {
+    "top_layer_lock": "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md",
+    "proper_page_tree": "docs/specs/vectorfl_paper_proper_page_tree_v0.md",
+    "operating_board": "docs/specs/vectorfl_paper_operating_board_sections_v0.md",
+    "case_detail": "docs/specs/vectorfl_paper_case_detail_sections_v0.md",
+    "cell_worker_panel": "docs/specs/vectorfl_paper_cell_worker_panel_sections_v0.md",
+    "paperclip_native_reading": "docs/reports/paperclip_native_product_reading_v0.md",
+    "internal_material_reference_pack": "docs/reports/vectorfl_paper_internal_material_reference_pack_v0.md",
+    "human_direction_readout": "docs/reports/vectorfl_paper_human_direction_readout_v0.md",
+}
+
+LATEST_MANIFEST_PATHS = {
+    "work_packet": "runtime/manifests/vectorfl_integrated_engine_work_packet_latest_v0.json",
+    "assignment": "runtime/manifests/vectorfl_integrated_engine_assignment_latest_v0.json",
+    "codex_run": "runtime/manifests/vectorfl_integrated_engine_codex_run_latest_v0.json",
+    "supervisor_route": "runtime/manifests/vectorfl_integrated_engine_supervisor_route_latest_v0.json",
+    "internal_read_report": "runtime/manifests/vectorfl_integrated_engine_internal_read_report_latest_v0.json",
+    "internal_read_run": "runtime/manifests/vectorfl_integrated_engine_internal_read_run_latest_v0.json",
+    "synthesis_report": "runtime/manifests/vectorfl_integrated_engine_synthesis_report_latest_v0.json",
+    "synthesis_run": "runtime/manifests/vectorfl_integrated_engine_synthesis_run_latest_v0.json",
+    "supervisor_gate": "runtime/manifests/vectorfl_integrated_engine_supervisor_gate_latest_v0.json",
+    "implementation_brief": "runtime/manifests/vectorfl_integrated_engine_implementation_brief_latest_v0.json",
+    "implementation_launch_gate": "runtime/manifests/vectorfl_integrated_engine_implementation_launch_gate_latest_v0.json",
+    "worker_session": "runtime/manifests/vectorfl_integrated_engine_worker_session_latest_v0.json",
+    "operating_dialogue": "runtime/manifests/vectorfl_integrated_engine_operating_dialogue_latest_v0.json",
+    "worker_launch_draft": "runtime/manifests/vectorfl_integrated_engine_worker_launch_draft_latest_v0.json",
+    "worker_execution": "runtime/manifests/vectorfl_integrated_engine_worker_execution_latest_v0.json",
+    "codex_handoff": "runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json",
+    "codex_return": "runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+    "gemini_review": "runtime/manifests/vectorfl_paper_gemini_review_latest_v0.json",
+    "supervisor_decision": "runtime/manifests/vectorfl_paper_supervisor_decision_latest_v0.json",
+    "current_slot": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+    "gate_validation": "runtime/manifests/vectorfl_paper_actual_export_gate_validation_latest_v0.json",
+    "dry_run": "runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json",
+    "comparison": "runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json",
+}
+
+CLI_SESSION_ROOT = "runtime/cli_sessions"
+CLI_SESSION_BACKENDS = {"codex"}
+CLI_SESSION_TASK_TYPES = {"inspect", "implement", "summarize", "validate", "reread"}
+CLI_SESSION_MARKS = {
+    "reread_target",
+    "implementation_return",
+    "validation_target",
+    "deposit_candidate",
+    "user_assignment_candidate",
+    "engine_request_candidate",
+    "hold",
+}
+LANGUAGE_LOOP_ROOT = "runtime/language_loops"
+PACKAGE_RUN_EVENT_LEDGER = "runtime/events/integrated_engine_package_run_events.jsonl"
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def _list_from_text(value: Any) -> List[str]:
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    return [line.strip() for line in str(value or "").splitlines() if line.strip()]
+
+
+def _unique_list(values: List[str]) -> List[str]:
+    seen = set()
+    unique = []
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        unique.append(value)
+    return unique
+
+
+def _read_json(repo_root: Path, rel_path: str) -> Dict[str, Any]:
+    path = repo_root / rel_path
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _path_state(repo_root: Path, rel_path: str) -> Dict[str, Any]:
+    path = repo_root / rel_path
+    return {
+        "path": rel_path,
+        "exists": path.exists(),
+    }
+
+
+def _write_json(repo_root: Path, rel_path: str, payload: Dict[str, Any]) -> None:
+    path = repo_root / rel_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _append_package_run_event(repo_root: Path, event: Dict[str, Any]) -> Dict[str, Any]:
+    payload = {
+        "schema_version": "integrated_engine_package_run_event_v0",
+        "event_id": event.get("event_id") or f"pkg_evt_{_utc_now().replace(':', '').replace('-', '')}_{_fingerprint(event, sorted(event.keys()))[:8]}",
+        "created_at": event.get("created_at") or _utc_now(),
+        "event_type": event.get("event_type") or "event",
+        "package_id": event.get("package_id") or "unknown_package",
+        "package_title": event.get("package_title") or "",
+        "session_id": event.get("session_id") or "",
+        "stage": event.get("stage") or "",
+        "label": event.get("label") or "",
+        "detail": event.get("detail") or "",
+        "signal": event.get("signal") or "",
+        "confidence": event.get("confidence") or "unknown",
+        "receiver": event.get("receiver") or "event_rail",
+        "suggested_action": event.get("suggested_action") or "record_only",
+        "status": event.get("status") or "recorded",
+        "boundary": event.get("boundary") or "event record only; no automation, promotion, or canonical ingestion",
+    }
+    append_jsonl_locked(repo_root / PACKAGE_RUN_EVENT_LEDGER, payload)
+    return payload
+
+
+def _read_package_run_events(repo_root: Path, limit: int = 24) -> List[Dict[str, Any]]:
+    rows, _ = load_jsonl_with_tail_recovery(repo_root / PACKAGE_RUN_EVENT_LEDGER)
+    return list(reversed(rows[-limit:]))
+
+
+PATH_TOKEN_RE = re.compile(r"(?:(?:runtime|docs|app|scripts|references|gemini)/[A-Za-z0-9._@%+=:,/\\-]+)")
+
+
+def _extract_bullets(text: str) -> List[str]:
+    bullets: List[str] = []
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("- ref: runtime/cli_sessions/"):
+            continue
+        if line.startswith(("- ", "* ")):
+            cleaned = line[2:].strip()
+            if cleaned.startswith("ref: runtime/cli_sessions/"):
+                continue
+            if cleaned and cleaned not in bullets:
+                bullets.append(cleaned)
+        elif re.match(r"^\d+[\.)]\s+", line):
+            cleaned = re.sub(r"^\d+[\.)]\s+", "", line).strip()
+            if cleaned and cleaned not in bullets:
+                bullets.append(cleaned)
+    return bullets[:10]
+
+
+def _extract_path_refs(text: str) -> List[str]:
+    refs: List[str] = []
+    for match in PATH_TOKEN_RE.findall(text):
+        cleaned = match.rstrip("`.,);]")
+        if cleaned and cleaned not in refs:
+            refs.append(cleaned)
+    return refs[:16]
+
+
+def _extract_structural_profile_findings(text: str) -> List[str]:
+    findings: List[str] = []
+    source_line = ""
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("- ref: references/") and "/ directory / exists=True" in line and not source_line:
+            source_line = line[2:].replace("ref:", "source:", 1).strip()
+            findings.append(source_line)
+            continue
+        if line.startswith("summary: file: runtime/cli_sessions/"):
+            continue
+        if line.startswith(("summary:", "top_dirs:", "top_files:")):
+            findings.append(line)
+            continue
+        if line.startswith("marker_files:"):
+            markers = [item.strip() for item in line.replace("marker_files:", "", 1).split(";") if item.strip()]
+            if markers:
+                findings.append(f"marker_files: {'; '.join(markers[:4])}")
+            continue
+        if line.startswith("- ") and any(
+            phrase in line
+            for phrase in (
+                "Treat source structure",
+                "Read marker files",
+                "Return route",
+                "Continue with",
+                "Do not treat",
+            )
+        ):
+            findings.append(line[2:].strip())
+    return _unique_list(findings)[:8]
+
+
+def _first_useful_block(text: str) -> str:
+    cleaned = text.strip()
+    if not cleaned:
+        return ""
+    lines = [line.strip() for line in cleaned.splitlines() if line.strip()]
+    structural_lines = _extract_structural_profile_findings(cleaned)
+    if structural_lines:
+        return "\n".join(structural_lines[:5])[:1200]
+    reread_lines = [line[2:].strip() for line in lines if line.startswith("- ") and not line.startswith("- ref: runtime/cli_sessions/")]
+    if reread_lines:
+        return "\n".join(reread_lines[:8])[:1200]
+    blocks = [block.strip() for block in re.split(r"\n\s*\n", cleaned) if block.strip()]
+    if not blocks:
+        return cleaned[:1200]
+    for block in blocks:
+        if not block.lower().startswith(("dry_run:", "this validates", "internal material structural profile")):
+            return block[:1200]
+    return blocks[0][:1200]
+
+
+def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any], *, package_id: str, input_packet_id: str, event_count: int = 0) -> Dict[str, Any]:
+    result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
+    artifact_paths = [
+        session.get("stdout_path") or "",
+        session.get("stderr_path") or "",
+        session.get("prompt_path") or "",
+        session.get("structured_return_path") or "",
+        session.get("deposit_candidate_path") or "",
+        session.get("operator_report_path") or "",
+    ]
+    source_refs = session.get("bounded_context_refs") or []
+    extracted_paths = _extract_path_refs(result_summary)
+    findings = _unique_list(_extract_structural_profile_findings(result_summary) + _extract_bullets(result_summary))
+    if not findings and result_summary:
+        findings = [line.strip() for line in result_summary.splitlines() if line.strip()][:4]
+    risks = []
+    if session.get("dry_run"):
+        risks.append("dry-run validates spine/context carryover, not worker reasoning quality")
+    if not findings:
+        risks.append("no reliable findings extracted from return text")
+    if "reread_target" in result_summary or structured_return.get("suggested_next_use") == "reread_target":
+        risks.append("return remains reread-target; not approval or completion")
+    open_questions = []
+    if "not final approval" in result_summary.lower() or "not approval" in result_summary.lower():
+        open_questions.append("What should be validated before reuse or redeposit?")
+    if not extracted_paths and not artifact_paths:
+        open_questions.append("Which concrete artifact should the next turn use?")
+    next_hint = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
+    if next_hint == "reread_target":
+        next_hint = "Reread the latest answer with its artifact refs and decide the next package-specific question."
+    elif next_hint == "validation_target":
+        next_hint = "Validate the latest run before using it as package material."
+    elif next_hint == "implementation_return":
+        next_hint = "Review implementation output and decide whether a follow-up patch or validation is needed."
+    elif next_hint == "deposit_candidate":
+        next_hint = "Review as deposit candidate; do not ingest automatically."
+    else:
+        next_hint = "Attach latest run artifacts and ask the next package-specific question."
+    return {
+        "run_id": session.get("session_id") or "",
+        "package_id": package_id,
+        "worker": session.get("backend_kind") or "codex",
+        "input_packet_id": input_packet_id,
+        "start_time": session.get("started_at") or "",
+        "end_time": session.get("ended_at") or "",
+        "execution_status": session.get("status") or "",
+        "route_mark": _classify_cli_turn_route(session, structured_return),
+        "result_summary": result_summary[:2400],
+        "answer": _first_useful_block(result_summary),
+        "findings": findings[:8],
+        "files_artifacts": _unique_list([item for item in artifact_paths + extracted_paths if item]),
+        "next_continue_hint": next_hint,
+        "open_questions": open_questions[:6],
+        "risks_or_limits": risks[:6],
+        "source_refs": source_refs,
+        "return_refs": [session.get("structured_return_path") or "", session.get("deposit_candidate_path") or "", session.get("operator_report_path") or ""],
+        "artifact_paths": [session.get("stdout_path") or "", session.get("stderr_path") or "", session.get("prompt_path") or ""],
+        "event_count": event_count,
+    }
+
+
+def _profile_context_ref(repo_root: Path, ref: str) -> Dict[str, Any]:
+    clean = str(ref or "").strip()
+    path = repo_root / clean
+    if not clean or not path.exists():
+        return {"ref": clean, "exists": False, "kind": "missing", "summary": "missing context ref"}
+    if path.is_file():
+        return {
+            "ref": clean,
+            "exists": True,
+            "kind": "file",
+            "summary": f"file: {clean}",
+            "size_bytes": path.stat().st_size,
+        }
+    files = [item for item in path.rglob("*") if item.is_file()]
+    dirs = [item for item in path.rglob("*") if item.is_dir()]
+    top_dirs = sorted([item.name for item in path.iterdir() if item.is_dir()])[:12]
+    top_files = sorted([item.name for item in path.iterdir() if item.is_file()])[:12]
+    important_names = {
+        "README.md",
+        "pyproject.toml",
+        "package.json",
+        "tsconfig.json",
+        "LICENSE",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+    }
+    markers = []
+    for item in files:
+        if item.name in important_names or item.name.endswith((".tsx", ".ts", ".py")) and len(markers) < 18:
+            try:
+                markers.append(str(item.relative_to(repo_root)))
+            except Exception:
+                markers.append(str(item))
+        if len(markers) >= 18:
+            break
+    return {
+        "ref": clean,
+        "exists": True,
+        "kind": "directory",
+        "file_count": len(files),
+        "directory_count": len(dirs),
+        "top_dirs": top_dirs,
+        "top_files": top_files,
+        "marker_files": markers,
+        "summary": f"directory with {len(files)} files / {len(dirs)} dirs; top dirs={', '.join(top_dirs[:6]) or 'none'}",
+    }
+
+
+def _profile_context_refs(repo_root: Path, refs: List[str]) -> List[Dict[str, Any]]:
+    return [_profile_context_ref(repo_root, ref) for ref in refs[:6]]
+
+
+def _read_text_if_exists(path: Path, *, limit: int = 8000) -> str:
+    try:
+        value = path.read_text(encoding="utf-8")
+    except Exception:
+        return ""
+    return value[-limit:] if len(value) > limit else value
+
+
+def _tail_text(value: str, limit: int = 12000) -> str:
+    return value[-limit:] if len(value) > limit else value
+
+
+def _subprocess_text(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return str(value)
+
+
+def _fingerprint(payload: Dict[str, Any], keys: List[str]) -> str:
+    comparable = {key: payload.get(key) for key in keys}
+    encoded = json.dumps(comparable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def _operating_object_id(fingerprint: str) -> str:
+    return f"vectorfl_engine_operating_object_{fingerprint[:16]}"
+
+
+TEAM_VISUALS = {
+    "supervisor_team": {"short": "SV", "tone": "emerald", "rank": "운영 감독"},
+    "line_team": {"short": "LN", "tone": "blue", "rank": "라인 생성"},
+    "internal_space_team": {"short": "IR", "tone": "amber", "rank": "내부 탐색"},
+    "external_reference_team": {"short": "EX", "tone": "rose", "rank": "외부 참조"},
+    "synthesis_team": {"short": "SY", "tone": "cyan", "rank": "종합 번역"},
+    "implementation_team": {"short": "IM", "tone": "violet", "rank": "구현"},
+    "verification_team": {"short": "VF", "tone": "zinc", "rank": "검증"},
+}
+
+
+WORKER_REGISTRY = {
+    "codex": {
+        "label": "Codex CLI",
+        "default_model": "current codex session",
+        "default_role": "structure builder, implementation worker after supervisor-approved brief, operating decision support",
+        "default_authority": "primary_builder",
+        "safe_default": "read/write only after explicit supervisor gate",
+        "command_family": "codex_cli",
+        "default_invocation_preview": "codex exec --cd <repo> --sandbox <mode> -",
+        "input_mode": "stdin_prompt",
+        "execution_default": "manual_supervised",
+    },
+    "gemini": {
+        "label": "Gemini CLI",
+        "default_model": "gemini-cli default",
+        "default_role": "rear-side internal flow reader, line-script candidate checker, translation material producer",
+        "default_authority": "assistant_reader",
+        "safe_default": "read-only / report-only unless supervisor explicitly changes scope",
+        "command_family": "gemini_cli",
+        "default_invocation_preview": "gemini -p <prompt>",
+        "input_mode": "prompt_argument_or_stdin",
+        "execution_default": "manual_report_only",
+    },
+    "claude_code": {
+        "label": "Claude Code",
+        "default_model": "session-selected claude code model",
+        "default_role": "future interchangeable coding/review worker",
+        "default_authority": "optional_worker",
+        "safe_default": "disabled until configured by supervisor",
+        "command_family": "claude_code_cli",
+        "default_invocation_preview": "claude <prompt-or-session-mode>",
+        "input_mode": "session_prompt",
+        "execution_default": "disabled_until_supervisor_configures",
+    },
+}
+
+
+LINE_SCRIPT_CANDIDATE_REGISTRY = [
+    {
+        "path": "scripts/run_line_thickening_sample.py",
+        "role": "sample line-thickening observation writer",
+        "side_effect": "writes to provided runtime root; default runtime/line_thickening_demo",
+        "safe_default": "inspect_first",
+    },
+    {
+        "path": "scripts/run_external_case_flowline_sweep.py",
+        "role": "external-case flowline contact sweep",
+        "side_effect": "writes timestamped generated output under app/work/archive_review",
+        "safe_default": "inspect_first",
+    },
+]
+
+
+TRANSLATION_MATERIAL_BASELINE = [
+    "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+    "docs/reports/paperclip_native_product_reading_v0.md",
+    "docs/reports/vectorfl_paper_human_direction_readout_v0.md",
+    "gemini/vectorfl_core_concepts_and_hierarchical_translation_data.md",
+]
+
+
+def _team_visual(team_id: str) -> Dict[str, str]:
+    return TEAM_VISUALS.get(team_id, {"short": "TM", "tone": "zinc", "rank": "team"})
+
+
+def _cell_registry(repo_root: Path) -> List[Dict[str, Any]]:
+    return [
+        {
+            "cell_id": "conversation_to_line_cell",
+            "label": "Conversation To Line",
+            "purpose": "Turn user input, correction flow, notes, and scenario-bearing material into reusable line candidates.",
+            "lens": ["repeated pressure", "misunderstanding correction", "question structure"],
+            "managing_cli": "hybrid",
+            "md_contract": CONTRACT_PATHS["conversation_to_line"],
+            "contract_exists": (repo_root / CONTRACT_PATHS["conversation_to_line"]).exists(),
+            "inputs": ["user directive", "conversation flow", "locked notes", "failure traces"],
+            "outputs": ["repeated_pressures", "line_candidates", "dual_translation", "line_action_bridge"],
+            "return_slot": "line_candidates_latest",
+            "handoff_targets": ["internal_read_cell", "synthesis_cell"],
+        },
+        {
+            "cell_id": "internal_read_cell",
+            "label": "Internal Read",
+            "purpose": "Reread internal materials deeply enough to produce evidence-backed line seeds.",
+            "lens": ["stable vs unclear split", "internal evidence", "line seed quality"],
+            "managing_cli": "gemini-cli primary / codex-cli secondary",
+            "md_contract": CONTRACT_PATHS["internal_read_cell"],
+            "contract_exists": (repo_root / CONTRACT_PATHS["internal_read_cell"]).exists(),
+            "inputs": ["task_seed", "prior dialogue", "casebook", "evidence bundles", "locked direction notes"],
+            "outputs": ["stable", "unclear", "next_questions", "line_seeds"],
+            "return_slot": "internal_read_report_latest",
+            "handoff_targets": ["external_resource_cell", "synthesis_cell"],
+        },
+        {
+            "cell_id": "external_resource_cell",
+            "label": "External Resource",
+            "purpose": "Translate internal gaps and line seeds into selective external comparison.",
+            "lens": ["external comparison target", "injection readiness", "rejection rule"],
+            "managing_cli": "codex-cli primary / gemini-cli secondary",
+            "md_contract": CONTRACT_PATHS["external_resource_cell"],
+            "contract_exists": (repo_root / CONTRACT_PATHS["external_resource_cell"]).exists(),
+            "inputs": ["stable_unclear_split", "line_seeds", "next_questions", "hold_go_constraints"],
+            "outputs": ["candidate_references", "rejection_rules", "internal_injection_candidates"],
+            "return_slot": "external_candidates_latest",
+            "handoff_targets": ["synthesis_cell", "internal_read_cell"],
+        },
+        {
+            "cell_id": "synthesis_cell",
+            "label": "Synthesis",
+            "purpose": "Bind internal reread and external comparison into supervisor-readable decision material.",
+            "lens": ["confirmed lines", "unresolved tensions", "next loop proposal"],
+            "managing_cli": "codex-cli primary / gemini-cli secondary",
+            "md_contract": CONTRACT_PATHS["synthesis_cell"],
+            "contract_exists": (repo_root / CONTRACT_PATHS["synthesis_cell"]).exists(),
+            "inputs": ["internal_read_outputs", "external_resource_outputs", "governance_state", "task_seed"],
+            "outputs": ["confirmed_lines", "supervisor_report", "next_loop_proposal"],
+            "return_slot": "supervisor_report_latest",
+            "handoff_targets": ["supervisor", "internal_read_cell", "external_resource_cell"],
+        },
+        {
+            "cell_id": "implementation_cell",
+            "label": "Implementation",
+            "purpose": "Turn supervisor-approved design material into code changes or explicit implementation blockers.",
+            "lens": ["implementation brief", "changed files", "resource request"],
+            "managing_cli": "codex-cli",
+            "md_contract": "pending",
+            "contract_exists": False,
+            "inputs": ["implementation_brief", "selected_internal_refs", "external_refs_if_approved"],
+            "outputs": ["patch", "changed_files", "blockers", "resource_requests"],
+            "return_slot": "implementation_return_latest",
+            "handoff_targets": ["verification_cell", "internal_read_cell"],
+        },
+        {
+            "cell_id": "verification_cell",
+            "label": "Verification",
+            "purpose": "Check implementation results and route fixes back to implementation or evidence cells.",
+            "lens": ["behavioral regression", "contract mismatch", "missing tests"],
+            "managing_cli": "gemini-cli or codex-cli",
+            "md_contract": "pending",
+            "contract_exists": False,
+            "inputs": ["implementation_return", "expected_behavior", "verification_commands"],
+            "outputs": ["verification_report", "fix_requests", "release_or_hold_recommendation"],
+            "return_slot": "verification_return_latest",
+            "handoff_targets": ["supervisor", "implementation_cell", "internal_read_cell"],
+        },
+    ]
+
+
+def _team_registry(repo_root: Path) -> List[Dict[str, Any]]:
+    cells = {cell["cell_id"]: cell for cell in _cell_registry(repo_root)}
+    return [
+        {
+            "team_id": "supervisor_team",
+            "label": "Supervisor Team",
+            "visual": _team_visual("supervisor_team"),
+            "purpose": "Interpret user direction, choose posture, and route work without hiding hold/go boundaries.",
+            "primary_cell": "supervisor",
+            "members": ["user_supervisor", "codex_operator"],
+            "current_responsibility": "input interpretation and decision ownership",
+            "report_slot": LATEST_MANIFEST_PATHS["supervisor_decision"],
+        },
+        {
+            "team_id": "line_team",
+            "label": "Line Formation Team",
+            "visual": _team_visual("line_team"),
+            "purpose": "Translate topic, memo, and correction pressure into line candidates before implementation language appears.",
+            "primary_cell": "conversation_to_line_cell",
+            "members": ["conversation_to_line_cell"],
+            "current_responsibility": cells.get("conversation_to_line_cell", {}).get("purpose") or "",
+            "report_slot": "line_candidates_latest",
+        },
+        {
+            "team_id": "internal_space_team",
+            "label": "Internal Space Team",
+            "visual": _team_visual("internal_space_team"),
+            "purpose": "Search VectorFL's internal records, status files, specs, prior mistakes, and code seams for line evidence.",
+            "primary_cell": "internal_read_cell",
+            "members": ["internal_read_cell", "gemini_cli_reader", "codex_cli_reader"],
+            "current_responsibility": cells.get("internal_read_cell", {}).get("purpose") or "",
+            "report_slot": "internal_read_report_latest",
+        },
+        {
+            "team_id": "external_reference_team",
+            "label": "External Reference Team",
+            "visual": _team_visual("external_reference_team"),
+            "purpose": "Use external references only after internal gaps are shaped and reviewable.",
+            "primary_cell": "external_resource_cell",
+            "members": ["external_resource_cell", "codex_cli_searcher", "gemini_cli_reviewer"],
+            "current_responsibility": cells.get("external_resource_cell", {}).get("purpose") or "",
+            "report_slot": "external_candidates_latest",
+        },
+        {
+            "team_id": "synthesis_team",
+            "label": "Synthesis Team",
+            "visual": _team_visual("synthesis_team"),
+            "purpose": "Turn internal/external evidence into human-readable design, structure, method, and purpose material.",
+            "primary_cell": "synthesis_cell",
+            "members": ["synthesis_cell"],
+            "current_responsibility": cells.get("synthesis_cell", {}).get("purpose") or "",
+            "report_slot": "supervisor_report_latest",
+        },
+        {
+            "team_id": "implementation_team",
+            "label": "Implementation Team",
+            "visual": _team_visual("implementation_team"),
+            "purpose": "Build only from supervisor-approved briefs and return changed files, blockers, and resource requests.",
+            "primary_cell": "implementation_cell",
+            "members": ["implementation_cell", "codex_cli_implementer"],
+            "current_responsibility": cells.get("implementation_cell", {}).get("purpose") or "",
+            "report_slot": LATEST_MANIFEST_PATHS["codex_return"],
+        },
+        {
+            "team_id": "verification_team",
+            "label": "Verification Team",
+            "visual": _team_visual("verification_team"),
+            "purpose": "Cross-check implementation output, detect omissions, and route fix requests back to the right team.",
+            "primary_cell": "verification_cell",
+            "members": ["verification_cell", "gemini_cli_crosschecker"],
+            "current_responsibility": cells.get("verification_cell", {}).get("purpose") or "",
+            "report_slot": LATEST_MANIFEST_PATHS["gemini_review"],
+        },
+    ]
+
+
+def _engine_loop(manifests: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+    decision = manifests["supervisor_decision"]
+    codex_return = manifests["codex_return"]
+    gemini_review = manifests["gemini_review"]
+    current_slot = manifests["current_slot"]
+    work_packet = manifests["work_packet"]
+    return [
+        {
+            "stage_id": "input_interpretation",
+            "label": "Input Interpretation",
+            "status": work_packet.get("status") or "ready_for_true_input",
+            "owner": "supervisor",
+            "current_signal": work_packet.get("directive")
+            or (
+                "waiting_for_actual_export"
+                if current_slot.get("current_state") == "waiting_for_actual_export"
+                else current_slot.get("current_state", "unknown")
+            ),
+            "return_target": "work_packet_board",
+        },
+        {
+            "stage_id": "line_generation",
+            "label": "Line Generation",
+            "status": "contract_ready",
+            "owner": "conversation_to_line_cell",
+            "current_signal": "extract repeated pressure before TODO language",
+            "return_target": "line_candidates_latest",
+        },
+        {
+            "stage_id": "internal_space_exploration",
+            "label": "Internal-Space Exploration",
+            "status": "contract_ready",
+            "owner": "internal_read_cell",
+            "current_signal": "deep reread internal docs, locked notes, failure traces, and existing code",
+            "return_target": "internal_read_report_latest",
+        },
+        {
+            "stage_id": "external_reference",
+            "label": "External Reference",
+            "status": "gated_by_internal_line",
+            "owner": "external_resource_cell",
+            "current_signal": "selective external comparison only after internal gaps are shaped",
+            "return_target": "external_candidates_latest",
+        },
+        {
+            "stage_id": "synthesis_translation",
+            "label": "Synthesis / Translation",
+            "status": "contract_ready",
+            "owner": "synthesis_cell",
+            "current_signal": "translate thickened line into supervisor-readable implementation material",
+            "return_target": "supervisor_report_latest",
+        },
+        {
+            "stage_id": "implementation_handoff",
+            "label": "Implementation Handoff",
+            "status": codex_return.get("status", "not_started"),
+            "owner": "implementation_cell / codex",
+            "current_signal": codex_return.get("next_recommendation") or codex_return.get("summary") or "no implementation return yet",
+            "return_target": LATEST_MANIFEST_PATHS["codex_return"],
+        },
+        {
+            "stage_id": "verification_crosscheck",
+            "label": "Verification / Cross-Check",
+            "status": gemini_review.get("review_status", "not_started"),
+            "owner": "verification_cell / gemini",
+            "current_signal": gemini_review.get("recommendation") or "no verification return yet",
+            "return_target": LATEST_MANIFEST_PATHS["gemini_review"],
+        },
+        {
+            "stage_id": "supervisor_decision",
+            "label": "Supervisor Decision",
+            "status": decision.get("decision", "unknown"),
+            "owner": "supervisor",
+            "current_signal": decision.get("rationale") or decision.get("continue_gate") or "decision not available",
+            "return_target": LATEST_MANIFEST_PATHS["supervisor_decision"],
+        },
+    ]
+
+
+def build_vectorfl_integrated_engine_state(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    manifests = {key: _read_json(repo_root, path) for key, path in LATEST_MANIFEST_PATHS.items()}
+    decision = manifests["supervisor_decision"]
+    gate_validation = manifests["gate_validation"]
+    comparison = manifests["comparison"]
+    supervisor_answers = comparison.get("supervisor_answers") or {}
+
+    return {
+        "schema_version": "vectorfl_integrated_engine_state_v0",
+        "surface_role": "engine_level_operating_surface",
+        "route": "/vectorfl-engine",
+        "current_posture": decision.get("decision") or "waiting_for_actual_export",
+        "core_sentence": (
+            "User input becomes a work packet; the supervisor routes it through line generation, "
+            "internal exploration, external comparison, synthesis, implementation, verification, and decision return."
+        ),
+        "guard": {
+            "not_a_substrate_status_page": True,
+            "no_gate_close": True,
+            "no_slot_replacement": True,
+            "no_candidate_promotion": True,
+            "no_fake_execution_controls": True,
+        },
+        "session_worker_policy": {
+            "principle": "Choose the worker/model per session; scripts gather internal material first, CLI workers interpret, synthesize, review, or operate the supervisor loop.",
+            "primary_operator": {
+                "worker": "codex",
+                "session_scope": "current integrated engine session",
+                "role": "interpretation, operating decision support, bounded implementation only after supervisor brief",
+            },
+            "secondary_operator": {
+                "worker": "gemini",
+                "session_scope": "current integrated engine session",
+                "role": "cross-check, omission review, route sanity check, alternative reading",
+            },
+            "script_first_jobs": [
+                "internal file inventory",
+                "manifest/status collection",
+                "candidate evidence extraction",
+                "validation command execution",
+            ],
+            "cli_worker_jobs": [
+                "line interpretation",
+                "supervisor-readable synthesis",
+                "risk/omission review",
+                "implementation only after approved brief",
+            ],
+            "forbidden": [
+                "global model switch without session record",
+                "external search before internal line is shaped",
+                "worker output treated as gate close",
+            ],
+        },
+        "contracts": {key: _path_state(repo_root, value) for key, value in CONTRACT_PATHS.items()},
+        "source_packs": {key: _path_state(repo_root, value) for key, value in SOURCE_PACK_PATHS.items()},
+        "worker_registry": WORKER_REGISTRY,
+        "cli_host_control": build_cli_host_control_state(runtime_root),
+        "language_loop_control": build_language_loop_control_state(runtime_root),
+        "line_script_candidate_registry": [
+            {**candidate, "exists": (repo_root / candidate["path"]).exists()}
+            for candidate in LINE_SCRIPT_CANDIDATE_REGISTRY
+        ],
+        "translation_material_baseline": [
+            {"path": path, "exists": (repo_root / path).exists()}
+            for path in TRANSLATION_MATERIAL_BASELINE
+        ],
+        "latest_manifests": {key: _path_state(repo_root, value) for key, value in LATEST_MANIFEST_PATHS.items()},
+        "latest_work_packet": manifests["work_packet"],
+        "latest_assignment": manifests["assignment"],
+        "latest_codex_run": manifests["codex_run"],
+        "latest_supervisor_route": manifests["supervisor_route"],
+        "latest_internal_read_report": manifests["internal_read_report"],
+        "latest_internal_read_run": manifests["internal_read_run"],
+        "latest_synthesis_report": manifests["synthesis_report"],
+        "latest_synthesis_run": manifests["synthesis_run"],
+        "latest_supervisor_gate": manifests["supervisor_gate"],
+        "latest_implementation_brief": manifests["implementation_brief"],
+        "latest_implementation_launch_gate": manifests["implementation_launch_gate"],
+        "latest_worker_session": manifests["worker_session"],
+        "latest_operating_dialogue": manifests["operating_dialogue"],
+        "latest_worker_launch_draft": manifests["worker_launch_draft"],
+        "latest_worker_execution": manifests["worker_execution"],
+        "cell_registry": _cell_registry(repo_root),
+        "team_registry": _team_registry(repo_root),
+        "engine_loop": _engine_loop(manifests),
+        "operating_board": {
+            "current_proof": "VectorFL Paper must become a supervisor-operated integrated engine, not a status dashboard.",
+            "why_now": "The existing bridge/validator/proper work started the engine but remains substrate-level unless worker routing and reports become commandable responsibilities.",
+            "decision_queue": [
+                {
+                    "decision": decision.get("decision") or "waiting_for_actual_export",
+                    "why_decision_is_needed": decision.get("rationale") or "hold until a true host/export candidate or next supervisor-authorized engine work arrives",
+                    "continue_gate": decision.get("continue_gate") or "continue only after required validation material is available",
+                }
+            ],
+            "active_cases": [
+                {
+                    "case_id": "vectorfl_integrated_engine_startup",
+                    "stage": "engine_shape_lock",
+                    "current_line_pressure": "same material changes meaning depending on the supervisor's reading lens",
+                    "blocked_reason": "must not collapse into tabs/cards/status displays",
+                    "next_move": "build the engine-level state and surface around operating cells and worker handoffs",
+                }
+            ],
+            "remaining_gates": [
+                gate_validation.get("gate_effect") or "actual_export_only gate still binding",
+                "implementation and verification cells need explicit contracts before real launch controls",
+                "true candidate intake must stay separate from current slot",
+            ],
+        },
+        "bridge_substrate": {
+            "codex_handoff_status": manifests["codex_handoff"].get("status", "unknown"),
+            "codex_return_status": manifests["codex_return"].get("status", "unknown"),
+            "codex_return_summary": manifests["codex_return"].get("summary", ""),
+            "codex_next_recommendation": manifests["codex_return"].get("next_recommendation", ""),
+            "codex_return_blockers": manifests["codex_return"].get("blockers", []),
+            "gemini_review_status": manifests["gemini_review"].get("review_status", "unknown"),
+            "gate_validation_status": gate_validation.get("validation_status", "unknown"),
+            "gate_effect": gate_validation.get("gate_effect", "unknown"),
+            "comparison_repeatable": supervisor_answers.get("is_candidate_for_reopen_validation_repeatable_across_references"),
+            "comparison_gate_close": supervisor_answers.get("is_any_candidate_close_to_actual_export_only_gate_close"),
+        },
+        "next_implementation_boundary": {
+            "first_real_object": "work_packet",
+            "first_real_actions": [
+                "draft line-generation handoff from selected input",
+                "record internal-read return",
+                "route synthesis report to supervisor decision",
+                "generate implementation brief only after supervisor gate approval",
+            ],
+            "do_not_build_yet": [
+                "full scheduler",
+                "multi-worker orchestration framework",
+                "slot replacement",
+                "gate close declaration",
+                "generic tabbed dashboard",
+            ],
+        },
+    }
+
+
+def create_vectorfl_integrated_engine_worker_session(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    primary_worker = str(payload.get("primary_worker") or "codex").strip()
+    secondary_worker = str(payload.get("secondary_worker") or "gemini").strip()
+    gemini_model = str(
+        payload.get("gemini_model") or WORKER_REGISTRY["gemini"]["default_model"]
+    ).strip()
+    codex_model = str(
+        payload.get("codex_model") or WORKER_REGISTRY["codex"]["default_model"]
+    ).strip()
+    session_scope = str(payload.get("session_scope") or "current integrated engine session").strip()
+    gemini_role = str(payload.get("gemini_role") or "").strip() or (
+        "Read internal flow, run/inspect line-related scripts when authorized, thicken line material, "
+        "and produce translation material without modifying the repo."
+    )
+    active_task = str(payload.get("active_task") or "").strip()
+    if not active_task:
+        raise ValueError("active_task is required")
+
+    session = {
+        "schema_version": "vectorfl_integrated_engine_worker_session_v0",
+        "session_id": "vectorfl_engine_worker_session_latest",
+        "status": str(payload.get("status") or "configured_not_running").strip(),
+        "updated_at": _utc_now(),
+        "session_scope": session_scope,
+        "primary_worker": primary_worker,
+        "primary_model": codex_model,
+        "secondary_worker": secondary_worker,
+        "secondary_model": gemini_model,
+        "gemini_role": gemini_role,
+        "active_task": active_task,
+        "line_script_candidates": _list_from_text(payload.get("line_script_candidates"))
+        or [candidate["path"] for candidate in LINE_SCRIPT_CANDIDATE_REGISTRY],
+        "translation_material_targets": _list_from_text(payload.get("translation_material_targets"))
+        or TRANSLATION_MATERIAL_BASELINE,
+        "operator_visibility": _list_from_text(payload.get("operator_visibility"))
+        or [
+            "current worker",
+            "chosen model",
+            "active task",
+            "script candidates",
+            "latest return slot",
+            "blocked conditions",
+        ],
+        "return_slot": str(payload.get("return_slot") or "runtime/manifests/vectorfl_integrated_engine_worker_session_latest_v0.json").strip(),
+        "forbidden_scope": _list_from_text(payload.get("forbidden_scope"))
+        or [
+            "do not modify repo without supervisor approval",
+            "do not replace current slot",
+            "do not declare gate close",
+            "do not treat Gemini as primary operating authority",
+        ],
+        "supervisor_note": str(payload.get("supervisor_note") or "").strip(),
+        "guard": {
+            "records_session_config_only": True,
+            "does_not_run_cli": True,
+            "does_not_modify_repo": True,
+            "latest_only": True,
+        },
+    }
+    dedupe_keys = [
+        "session_scope",
+        "primary_worker",
+        "primary_model",
+        "secondary_worker",
+        "secondary_model",
+        "gemini_role",
+        "active_task",
+        "line_script_candidates",
+        "translation_material_targets",
+        "operator_visibility",
+        "return_slot",
+        "forbidden_scope",
+        "supervisor_note",
+    ]
+    session["content_fingerprint"] = _fingerprint(session, dedupe_keys)
+
+    latest = _read_json(repo_root, LATEST_MANIFEST_PATHS["worker_session"])
+    if latest.get("content_fingerprint") == session["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["worker_session"],
+            "worker_session": latest,
+            "message": "unchanged: latest worker session already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["worker_session"], session)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["worker_session"],
+        "worker_session": session,
+    }
+
+
+def create_worker_session_from_current_context(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    work_packet = _read_json(repo_root, LATEST_MANIFEST_PATHS["work_packet"])
+    assignment = _read_json(repo_root, LATEST_MANIFEST_PATHS["assignment"])
+    synthesis_report = _read_json(repo_root, LATEST_MANIFEST_PATHS["synthesis_report"])
+    implementation_brief = _read_json(repo_root, LATEST_MANIFEST_PATHS["implementation_brief"])
+
+    current_topic = (
+        assignment.get("title")
+        or work_packet.get("topic")
+        or implementation_brief.get("implementation_goal")
+        or "VectorFL integrated engine operating session"
+    )
+    confirmed_lines = [
+        str(line.get("line_name") or "").strip()
+        for line in synthesis_report.get("confirmed_lines") or []
+        if str(line.get("line_name") or "").strip()
+    ]
+    reference_md_files = _list_from_text(assignment.get("reference_md_files")) or _list_from_text(
+        work_packet.get("reference_md_files")
+    )
+
+    active_task = (
+        f"현재 통합엔진 작업 '{current_topic}'를 기준으로 내부 흐름을 다시 읽고, "
+        "라인 관련 스크립트 후보를 점검한 뒤, 사용자가 이해할 수 있는 번역 재료와 다음 작업 후보를 보고한다."
+    )
+    if confirmed_lines:
+        active_task += " 확인된 line: " + ", ".join(confirmed_lines) + "."
+
+    return create_vectorfl_integrated_engine_worker_session(
+        runtime_root,
+        {
+            "primary_worker": "codex",
+            "codex_model": WORKER_REGISTRY["codex"]["default_model"],
+            "secondary_worker": "gemini",
+            "gemini_model": WORKER_REGISTRY["gemini"]["default_model"],
+            "session_scope": "current integrated engine session",
+            "gemini_role": (
+                "Codex가 통합엔진 구조와 프로그램 승격 작업에 집중할 수 있게, Gemini CLI는 후단 보조자로 "
+                "내부 흐름을 읽고 라인 관련 스크립트 후보를 점검하며 번역 재료를 생산한다. "
+                "repo 수정은 하지 않고 supervisor가 볼 수 있는 보고 재료를 만든다."
+            ),
+            "active_task": active_task,
+            "line_script_candidates": "\n".join(
+                [candidate["path"] for candidate in LINE_SCRIPT_CANDIDATE_REGISTRY]
+            ),
+            "translation_material_targets": "\n".join(
+                _unique_list(
+                    [
+                    *reference_md_files,
+                    *TRANSLATION_MATERIAL_BASELINE,
+                    ]
+                )
+            ),
+            "operator_visibility": "\n".join(
+                [
+                    "current worker",
+                    "chosen model",
+                    "active task",
+                    "line script candidates",
+                    "translation material targets",
+                    "latest return slot",
+                    "blocked conditions",
+                ]
+            ),
+            "forbidden_scope": "\n".join(
+                [
+                    "do not modify repo without supervisor approval",
+                    "do not replace current slot",
+                    "do not declare gate close",
+                    "do not treat Gemini as primary operating authority",
+                    "do not run broad orchestration",
+                ]
+            ),
+            "supervisor_note": "auto-configured from current integrated engine context",
+        },
+    )
+
+
+def create_vectorfl_integrated_engine_operating_dialogue(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    selected_worker = str(payload.get("selected_worker") or "codex").strip()
+    if selected_worker not in WORKER_REGISTRY:
+        raise ValueError(f"unknown selected_worker: {selected_worker}")
+
+    assistant_worker = str(payload.get("assistant_worker") or ("gemini" if selected_worker != "gemini" else "codex")).strip()
+    if assistant_worker not in WORKER_REGISTRY:
+        raise ValueError(f"unknown assistant_worker: {assistant_worker}")
+
+    selected_model = str(
+        payload.get("selected_model") or WORKER_REGISTRY[selected_worker]["default_model"]
+    ).strip()
+    assistant_model = str(
+        payload.get("assistant_model") or WORKER_REGISTRY[assistant_worker]["default_model"]
+    ).strip()
+    purpose = str(payload.get("purpose") or "").strip()
+    team_name = str(payload.get("team_name") or "").strip()
+    team_purpose = str(payload.get("team_purpose") or "").strip()
+    assignee_role = str(payload.get("assignee_role") or "").strip()
+    operator_message = str(payload.get("operator_message") or payload.get("message") or purpose or "").strip()
+    if not operator_message:
+        raise ValueError("purpose or operator_message is required")
+
+    intent_mode = str(payload.get("intent_mode") or "configure_worker_session").strip()
+    reference_md_files = _unique_list(
+        [
+            *_list_from_text(payload.get("reference_md_files")),
+            *TRANSLATION_MATERIAL_BASELINE,
+        ]
+    )
+    forbidden_scope = _list_from_text(payload.get("forbidden_scope")) or [
+        "do not run CLI from this dialogue action",
+        "do not modify repo beyond latest operating dialogue / worker-session manifests",
+        "do not replace current slot",
+        "do not declare gate close",
+        "do not treat assistant output as supervisor decision",
+    ]
+    line_script_candidates = _list_from_text(payload.get("line_script_candidates")) or [
+        candidate["path"] for candidate in LINE_SCRIPT_CANDIDATE_REGISTRY
+    ]
+    should_update_worker_session = bool(payload.get("should_update_worker_session", True))
+
+    dialogue = {
+        "schema_version": "vectorfl_integrated_engine_operating_dialogue_v0",
+        "dialogue_id": "vectorfl_engine_operating_dialogue_latest",
+        "status": "recorded_config_bridge_not_running",
+        "created_at": _utc_now(),
+        "intent_mode": intent_mode,
+        "selected_worker": selected_worker,
+        "selected_worker_label": WORKER_REGISTRY[selected_worker]["label"],
+        "selected_model": selected_model,
+        "assistant_worker": assistant_worker,
+        "assistant_worker_label": WORKER_REGISTRY[assistant_worker]["label"],
+        "assistant_model": assistant_model,
+        "purpose": purpose or operator_message,
+        "team_name": team_name or "운용 지시 팀",
+        "team_purpose": team_purpose or "사용자 기준면에서 작성한 운용 지시를 수행 가능한 작업자 입력으로 정리한다.",
+        "assignee_role": assignee_role or "지시 정리 담당",
+        "operator_message": operator_message,
+        "reference_md_files": reference_md_files,
+        "line_script_candidates": line_script_candidates,
+        "forbidden_scope": forbidden_scope,
+        "translated_engine_action": {
+            "primary_effect": "records latest operating dialogue and optionally updates worker-session configuration",
+            "next_manual_step": "supervisor may use the configured worker session to run a real CLI outside this action",
+            "does_not_run_cli": True,
+        },
+        "guard": {
+            "records_dialogue_only": True,
+            "may_update_worker_session": should_update_worker_session,
+            "does_not_run_cli": True,
+            "does_not_replace_current_slot": True,
+            "does_not_declare_gate_close": True,
+            "latest_only": True,
+        },
+    }
+    dialogue["content_fingerprint"] = _fingerprint(
+        dialogue,
+        [
+            "intent_mode",
+            "selected_worker",
+            "selected_model",
+            "assistant_worker",
+            "assistant_model",
+            "purpose",
+            "team_name",
+            "team_purpose",
+            "assignee_role",
+            "operator_message",
+            "reference_md_files",
+            "line_script_candidates",
+            "forbidden_scope",
+        ],
+    )
+    dialogue["operating_object_id"] = _operating_object_id(dialogue["content_fingerprint"])
+    dialogue["updated_at"] = dialogue["created_at"]
+
+    latest = _read_json(repo_root, LATEST_MANIFEST_PATHS["operating_dialogue"])
+    created = latest.get("content_fingerprint") != dialogue["content_fingerprint"]
+    if created:
+        _write_json(repo_root, LATEST_MANIFEST_PATHS["operating_dialogue"], dialogue)
+    else:
+        dialogue = latest
+        if not dialogue.get("operating_object_id"):
+            dialogue["operating_object_id"] = _operating_object_id(str(dialogue.get("content_fingerprint") or "missing"))
+        if not dialogue.get("updated_at"):
+            dialogue["updated_at"] = dialogue.get("created_at")
+
+    worker_session_result: Dict[str, Any] | None = None
+    if should_update_worker_session:
+        worker_session_result = create_vectorfl_integrated_engine_worker_session(
+            runtime_root,
+            {
+                "primary_worker": selected_worker,
+                "codex_model": selected_model if selected_worker == "codex" else WORKER_REGISTRY["codex"]["default_model"],
+                "secondary_worker": assistant_worker,
+                "gemini_model": selected_model if selected_worker == "gemini" else assistant_model,
+                "session_scope": "operating dialogue configured session",
+                "gemini_role": (
+                    "후단 보조 작업자로 내부 흐름을 읽고 라인/번역 재료를 생산한다. "
+                    "이 대화 액션에서는 CLI를 실행하거나 repo를 수정하지 않는다."
+                ),
+                "active_task": operator_message,
+                "line_script_candidates": "\n".join(line_script_candidates),
+                "translation_material_targets": "\n".join(reference_md_files),
+                "operator_visibility": "\n".join(
+                    [
+                        "selected worker",
+                        "selected model",
+                        "operator message",
+                        "intent mode",
+                        "reference md files",
+                        "forbidden scope",
+                        "latest operating dialogue",
+                    ]
+                ),
+                "forbidden_scope": "\n".join(forbidden_scope),
+                "supervisor_note": "configured from integrated engine operating dialogue",
+            },
+        )
+
+    operating_object_payload = {
+        "operating_object_id": dialogue.get("operating_object_id"),
+        "source_operating_dialogue_artifact": LATEST_MANIFEST_PATHS["operating_dialogue"],
+        "source_operating_dialogue_id": dialogue.get("dialogue_id"),
+        "source_operating_dialogue_fingerprint": dialogue.get("content_fingerprint"),
+        "operating_team_name": dialogue.get("team_name"),
+        "operating_team_purpose": dialogue.get("team_purpose"),
+        "assignee_text": dialogue.get("assignee_role"),
+        "selected_worker": dialogue.get("selected_worker"),
+        "selected_worker_label": dialogue.get("selected_worker_label"),
+        "selected_model": dialogue.get("selected_model"),
+    }
+    work_packet_result = create_vectorfl_integrated_engine_work_packet(
+        runtime_root,
+        {
+            "topic": dialogue.get("purpose") or dialogue.get("operator_message"),
+            "memo": dialogue.get("team_purpose"),
+            "directive": dialogue.get("operator_message"),
+            "selected_stage": "line_generation",
+            "target_cell": "conversation_to_line_cell",
+            "requested_action": dialogue.get("operator_message"),
+            "expected_output": "\n".join(["summary", "evidence used", "next routing recommendation"]),
+            "reference_md_files": "\n".join(dialogue.get("reference_md_files") or []),
+            "forbidden_scope": "\n".join(dialogue.get("forbidden_scope") or []),
+            "supervisor_note": "bridged from user-facing operating desk",
+            **operating_object_payload,
+        },
+    )
+    assignment_result = create_vectorfl_integrated_engine_assignment(
+        runtime_root,
+        {
+            "team_id": "line_team",
+            "assignee_cell": "conversation_to_line_cell",
+            "title": dialogue.get("team_name") or dialogue.get("purpose") or "운용 지시 팀",
+            "brief": "\n".join(
+                [
+                    f"purpose: {dialogue.get('purpose') or dialogue.get('operator_message')}",
+                    f"team_purpose: {dialogue.get('team_purpose')}",
+                    f"assignee: {dialogue.get('assignee_role')}",
+                    f"selected_worker: {dialogue.get('selected_worker_label') or dialogue.get('selected_worker')}",
+                ]
+            ),
+            "expected_report": "\n".join(["summary", "evidence used", "blockers", "next routing recommendation"]),
+            "reference_md_files": "\n".join(dialogue.get("reference_md_files") or []),
+            "review_focus": "\n".join([dialogue.get("purpose") or dialogue.get("operator_message"), dialogue.get("team_purpose") or ""]),
+            "forbidden_scope": "\n".join(dialogue.get("forbidden_scope") or []),
+            **operating_object_payload,
+        },
+    )
+
+    return {
+        "ok": True,
+        "created": created,
+        "path": LATEST_MANIFEST_PATHS["operating_dialogue"],
+        "operating_dialogue": dialogue,
+        "worker_session_result": worker_session_result,
+        "work_packet_result": work_packet_result,
+        "assignment_result": assignment_result,
+    }
+
+
+def create_vectorfl_integrated_engine_worker_launch_draft(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    dialogue = _read_json(repo_root, LATEST_MANIFEST_PATHS["operating_dialogue"])
+    worker_session = _read_json(repo_root, LATEST_MANIFEST_PATHS["worker_session"])
+    if not dialogue:
+        raise ValueError("latest operating dialogue is required before worker launch draft")
+
+    selected_worker = str(payload.get("selected_worker") or dialogue.get("selected_worker") or "codex").strip()
+    if selected_worker not in WORKER_REGISTRY:
+        raise ValueError(f"unknown selected_worker: {selected_worker}")
+
+    worker_profile = WORKER_REGISTRY[selected_worker]
+    selected_model = str(
+        payload.get("selected_model")
+        or dialogue.get("selected_model")
+        or worker_profile["default_model"]
+    ).strip()
+    operator_message = str(
+        payload.get("operator_message")
+        or dialogue.get("operator_message")
+        or worker_session.get("active_task")
+        or ""
+    ).strip()
+    if not operator_message:
+        raise ValueError("operator_message is required")
+
+    launch_draft = {
+        "schema_version": "vectorfl_integrated_engine_worker_launch_draft_v0",
+        "launch_draft_id": "vectorfl_engine_worker_launch_draft_latest",
+        "status": "drafted_not_executed",
+        "created_at": _utc_now(),
+        "source_operating_dialogue_artifact": LATEST_MANIFEST_PATHS["operating_dialogue"],
+        "source_operating_dialogue_fingerprint": dialogue.get("content_fingerprint"),
+        "operating_object_id": dialogue.get("operating_object_id"),
+        "source_worker_session_artifact": LATEST_MANIFEST_PATHS["worker_session"],
+        "selected_worker": selected_worker,
+        "selected_worker_label": worker_profile["label"],
+        "selected_model": selected_model,
+        "authority": worker_profile.get("default_authority"),
+        "safe_default": worker_profile.get("safe_default"),
+        "execution_mode": str(payload.get("execution_mode") or worker_profile.get("execution_default") or "manual_supervised").strip(),
+        "command_family": worker_profile.get("command_family"),
+        "command_preview": worker_profile.get("default_invocation_preview"),
+        "input_mode": worker_profile.get("input_mode"),
+        "prompt_material": {
+            "operator_message": operator_message,
+            "purpose": dialogue.get("purpose"),
+            "team_name": dialogue.get("team_name"),
+            "team_purpose": dialogue.get("team_purpose"),
+            "assignee_role": dialogue.get("assignee_role"),
+            "intent_mode": dialogue.get("intent_mode"),
+            "reference_md_files": dialogue.get("reference_md_files") or worker_session.get("translation_material_targets") or [],
+            "line_script_candidates": dialogue.get("line_script_candidates") or worker_session.get("line_script_candidates") or [],
+            "forbidden_scope": dialogue.get("forbidden_scope") or worker_session.get("forbidden_scope") or [],
+        },
+        "api_boundary": {
+            "draft_endpoint": "/api/vectorfl-engine/actions/worker-launch-draft",
+            "execute_endpoint": "/api/vectorfl-engine/actions/run-worker-launch-draft",
+            "result_return_slot": LATEST_MANIFEST_PATHS["worker_execution"],
+        },
+        "guard": {
+            "draft_only": True,
+            "does_not_run_cli": True,
+            "does_not_modify_repo": True,
+            "does_not_replace_current_slot": True,
+            "does_not_declare_gate_close": True,
+            "latest_only": True,
+        },
+    }
+    launch_draft["content_fingerprint"] = _fingerprint(
+        launch_draft,
+        [
+            "selected_worker",
+            "selected_model",
+            "execution_mode",
+            "command_family",
+            "command_preview",
+            "input_mode",
+            "prompt_material",
+            "api_boundary",
+        ],
+    )
+
+    latest = _read_json(repo_root, LATEST_MANIFEST_PATHS["worker_launch_draft"])
+    if latest.get("content_fingerprint") == launch_draft["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["worker_launch_draft"],
+            "worker_launch_draft": latest,
+            "message": "unchanged: latest worker launch draft already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["worker_launch_draft"], launch_draft)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["worker_launch_draft"],
+        "worker_launch_draft": launch_draft,
+    }
+
+
+def _worker_launch_prompt(launch_draft: Dict[str, Any]) -> str:
+    prompt_material = launch_draft.get("prompt_material") or {}
+    return (
+        "You are executing a VectorFL Integrated Engine worker launch draft.\n"
+        "Follow the guard scope exactly. Keep the response compact and supervisor-readable.\n"
+        "This current call is the supervisor-authorized read-only CLI execution of the draft.\n"
+        "If the launch draft guard says does_not_run_cli or draft_only, interpret that as a guard on the earlier draft-creation action, not as a ban on this explicitly authorized execution call.\n"
+        "You may inspect referenced repository files in read-only mode. Do not modify the repository unless the launch draft explicitly grants write authority.\n\n"
+        "Launch draft:\n"
+        + json.dumps(
+            {
+                "selected_worker": launch_draft.get("selected_worker"),
+                "selected_model": launch_draft.get("selected_model"),
+                "authority": launch_draft.get("authority"),
+                "safe_default": launch_draft.get("safe_default"),
+                "execution_mode": launch_draft.get("execution_mode"),
+                "prompt_material": prompt_material,
+                "guard": launch_draft.get("guard"),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n\nReturn:\n"
+        "- summary\n"
+        "- evidence/read material used\n"
+        "- blockers\n"
+        "- next recommendation\n"
+        "- whether supervisor action is needed\n"
+    )
+
+
+def _worker_command(repo_root: Path, worker: str, prompt: str) -> Tuple[List[str], Optional[str], List[str]]:
+    if worker == "codex":
+        command = [
+            "codex",
+            "exec",
+            "--skip-git-repo-check",
+            "--sandbox",
+            "read-only",
+            "--cd",
+            str(repo_root),
+            "-",
+        ]
+        return command, prompt, command
+    if worker == "gemini":
+        command = ["gemini", "-p", prompt]
+        redacted = ["gemini", "-p", "<prompt>"]
+        return command, None, redacted
+    raise ValueError(f"worker execution is not enabled for: {worker}")
+
+
+def _cli_session_rel_path(session_id: str, filename: str) -> str:
+    return f"{CLI_SESSION_ROOT}/{session_id}/{filename}"
+
+
+def _cli_session_abs_path(repo_root: Path, session_id: str, filename: str) -> Path:
+    return repo_root / _cli_session_rel_path(session_id, filename)
+
+
+def _cli_session_index_path(repo_root: Path) -> Path:
+    return repo_root / CLI_SESSION_ROOT / "index.json"
+
+
+def _load_cli_session_index(repo_root: Path) -> Dict[str, Any]:
+    path = _cli_session_index_path(repo_root)
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {
+            "schema_version": "integrated_engine_cli_session_index_v0",
+            "sessions": [],
+            "latest_session_id": "",
+            "updated_at": "",
+        }
+
+
+def _write_cli_session_index(repo_root: Path, index: Dict[str, Any]) -> None:
+    path = _cli_session_index_path(repo_root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _update_cli_session_index(repo_root: Path, session: Dict[str, Any]) -> None:
+    index = _load_cli_session_index(repo_root)
+    sessions = [
+        item for item in index.get("sessions", [])
+        if item.get("session_id") != session.get("session_id")
+    ]
+    sessions.insert(
+        0,
+        {
+            "session_id": session.get("session_id"),
+            "backend_kind": session.get("backend_kind"),
+            "task_type": session.get("task_type"),
+            "status": session.get("status"),
+            "purpose_text": session.get("purpose_text"),
+            "started_at": session.get("started_at"),
+            "ended_at": session.get("ended_at"),
+            "session_path": f"{CLI_SESSION_ROOT}/{session.get('session_id')}/session.json",
+        },
+    )
+    index["sessions"] = sessions[:30]
+    index["latest_session_id"] = session.get("session_id") or index.get("latest_session_id") or ""
+    index["updated_at"] = _utc_now()
+    _write_cli_session_index(repo_root, index)
+
+
+def _load_cli_session(repo_root: Path, session_id: str) -> Dict[str, Any]:
+    path = _cli_session_abs_path(repo_root, session_id, "session.json")
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _write_cli_session(repo_root: Path, session: Dict[str, Any]) -> None:
+    session_id = str(session.get("session_id") or "").strip()
+    if not session_id:
+        raise ValueError("session_id is required")
+    _write_json(repo_root, _cli_session_rel_path(session_id, "session.json"), session)
+    _update_cli_session_index(repo_root, session)
+
+
+def _cli_session_prompt(session_spec: Dict[str, Any]) -> str:
+    refs = session_spec.get("bounded_context_refs") or []
+    prompt_payload = session_spec.get("prompt_payload") or ""
+    return (
+        "You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.\n"
+        "This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.\n"
+        "Keep the return compact and structured for engine reread, validation, or deposit.\n\n"
+        f"Backend: {session_spec.get('backend_kind')}\n"
+        f"Task type: {session_spec.get('task_type')}\n"
+        f"Requested by surface: {session_spec.get('requested_by_surface')}\n"
+        f"Requested by page: {session_spec.get('requested_by_page')}\n\n"
+        f"Purpose:\n{session_spec.get('purpose_text') or ''}\n\n"
+        "Bounded context refs:\n"
+        + "\n".join(f"- {ref}" for ref in refs)
+        + "\n\nPrompt payload:\n"
+        + str(prompt_payload)
+        + "\n\nReturn format:\n"
+        "- result summary\n"
+        "- important findings / diffs / outputs\n"
+        "- uncertainty or failure notes\n"
+        "- suggested next use: reread target / implementation return / validation target / deposit candidate\n"
+    )
+
+
+class CodexCliAdapter:
+    backend_kind = "codex"
+
+    def __init__(self, repo_root: Path):
+        self.repo_root = repo_root
+
+    def prepare_run(self, session_spec: Dict[str, Any]) -> Dict[str, Any]:
+        session_id = session_spec["session_id"]
+        session_dir = self.repo_root / CLI_SESSION_ROOT / session_id
+        session_dir.mkdir(parents=True, exist_ok=True)
+        prompt = _cli_session_prompt(session_spec)
+        _cli_session_abs_path(self.repo_root, session_id, "prompt.md").write_text(prompt, encoding="utf-8")
+        session = {
+            **session_spec,
+            "status": "queued",
+            "stdout_path": _cli_session_rel_path(session_id, "stdout.log"),
+            "stderr_path": _cli_session_rel_path(session_id, "stderr.log"),
+            "structured_return_path": _cli_session_rel_path(session_id, "structured_return.json"),
+            "deposit_candidate_path": _cli_session_rel_path(session_id, "deposit_candidate.md"),
+            "operator_report_path": _cli_session_rel_path(session_id, "operator_report.md"),
+            "prompt_path": _cli_session_rel_path(session_id, "prompt.md"),
+        }
+        _cli_session_abs_path(self.repo_root, session_id, "stdout.log").write_text("", encoding="utf-8")
+        _cli_session_abs_path(self.repo_root, session_id, "stderr.log").write_text("", encoding="utf-8")
+        _write_cli_session(self.repo_root, session)
+        return session
+
+    def start_run(self, session_spec: Dict[str, Any]) -> Dict[str, Any]:
+        session = self.prepare_run(session_spec)
+        session["status"] = "running"
+        session["started_at"] = _utc_now()
+        _write_cli_session(self.repo_root, session)
+
+        session_id = session["session_id"]
+        prompt = _cli_session_abs_path(self.repo_root, session_id, "prompt.md").read_text(encoding="utf-8")
+        dry_run = bool(session.get("dry_run"))
+        if dry_run:
+            context_profiles = _profile_context_refs(self.repo_root, session.get("bounded_context_refs") or [])
+            profile_lines = []
+            for profile in context_profiles:
+                profile_lines.append(f"- ref: {profile.get('ref')} / {profile.get('kind')} / exists={profile.get('exists')}")
+                profile_lines.append(f"  summary: {profile.get('summary')}")
+                if profile.get("top_dirs"):
+                    profile_lines.append(f"  top_dirs: {', '.join(profile.get('top_dirs')[:8])}")
+                if profile.get("top_files"):
+                    profile_lines.append(f"  top_files: {', '.join(profile.get('top_files')[:8])}")
+                if profile.get("marker_files"):
+                    profile_lines.append("  marker_files: " + "; ".join(profile.get("marker_files")[:8]))
+            stdout = (
+                "dry_run: package execution pipeline prepared without invoking the external CLI.\n"
+                "This validates internal package vessel/context/event flow, not backend model quality.\n\n"
+                "Internal material structural profile:\n"
+                + ("\n".join(profile_lines) if profile_lines else "- no context refs profiled")
+                + "\n\nVectorFL reread:\n"
+                "- Treat source structure as lens material candidate, not final approval.\n"
+                "- Read top directories/files as possible line/axis signals.\n"
+                "- Return route remains reread_target unless a human promotes the next package.\n\n"
+                "suggested_next_use: reread_target\n"
+            )
+            stderr = ""
+            exit_code: Optional[int] = 0
+            status = "done"
+            error_message = ""
+        else:
+            command = [
+                "codex",
+                "exec",
+                "--skip-git-repo-check",
+                "--sandbox",
+                "read-only",
+                "--cd",
+                str(self.repo_root),
+                "-",
+            ]
+            timeout_seconds = int(session.get("timeout_seconds") or 180)
+            try:
+                completed = subprocess.run(
+                    command,
+                    input=prompt,
+                    text=True,
+                    capture_output=True,
+                    cwd=str(self.repo_root),
+                    timeout=timeout_seconds,
+                )
+                stdout = completed.stdout or ""
+                stderr = completed.stderr or ""
+                exit_code = completed.returncode
+                status = "done" if exit_code == 0 else "failed"
+                error_message = ""
+            except FileNotFoundError as error:
+                stdout = ""
+                stderr = str(error)
+                exit_code = None
+                status = "failed"
+                error_message = "codex CLI not found"
+            except subprocess.TimeoutExpired as error:
+                stdout = _subprocess_text(error.stdout)
+                stderr = _subprocess_text(error.stderr)
+                exit_code = None
+                status = "failed"
+                error_message = f"codex CLI timed out after {timeout_seconds}s"
+
+        _cli_session_abs_path(self.repo_root, session_id, "stdout.log").write_text(stdout, encoding="utf-8")
+        _cli_session_abs_path(self.repo_root, session_id, "stderr.log").write_text(stderr, encoding="utf-8")
+        structured_return = {
+            "schema_version": "integrated_engine_cli_structured_return_v0",
+            "source_session_id": session_id,
+            "backend_kind": self.backend_kind,
+            "task_type": session.get("task_type"),
+            "status": status,
+            "exit_code": exit_code,
+            "result_summary": _tail_text(stdout, 1800) or error_message or _tail_text(stderr, 1800),
+            "important_outputs": [],
+            "uncertainty_or_failure_notes": [error_message] if error_message else [],
+            "suggested_next_use": _infer_cli_suggested_next_use(stdout, status),
+            "created_at": _utc_now(),
+        }
+        _cli_session_abs_path(self.repo_root, session_id, "structured_return.json").write_text(
+            json.dumps(structured_return, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        deposit = _build_cli_deposit_candidate(session, structured_return)
+        _cli_session_abs_path(self.repo_root, session_id, "deposit_candidate.md").write_text(deposit, encoding="utf-8")
+        session.update(
+            {
+                "status": status,
+                "ended_at": _utc_now(),
+                "exit_code": exit_code,
+                "result_summary": structured_return["result_summary"],
+                "suggested_next_use": structured_return["suggested_next_use"],
+                "error_message": error_message,
+            }
+        )
+        operator_report = _build_cli_operator_report(session, structured_return)
+        _cli_session_abs_path(self.repo_root, session_id, "operator_report.md").write_text(operator_report, encoding="utf-8")
+        _write_cli_session(self.repo_root, session)
+        return session
+
+    def poll_run(self, session_id: str) -> Dict[str, Any]:
+        return _load_cli_session(self.repo_root, session_id)
+
+    def collect_result(self, session_id: str) -> Dict[str, Any]:
+        session = self.poll_run(session_id)
+        if not session:
+            raise ValueError(f"unknown cli session: {session_id}")
+        structured_path = self.repo_root / str(session.get("structured_return_path") or "")
+        structured = json.loads(structured_path.read_text(encoding="utf-8")) if structured_path.exists() else {}
+        return {"session": session, "structured_return": structured}
+
+    def interrupt_run(self, session_id: str) -> Dict[str, Any]:
+        session = self.poll_run(session_id)
+        if not session:
+            raise ValueError(f"unknown cli session: {session_id}")
+        if session.get("status") == "running":
+            session["status"] = "interrupted"
+            session["ended_at"] = _utc_now()
+            session["note"] = "interrupt requested; package 1 uses synchronous execution, so this records intent only."
+            _write_cli_session(self.repo_root, session)
+        return session
+
+
+def _build_cli_deposit_candidate(session: Dict[str, Any], structured_return: Dict[str, Any]) -> str:
+    refs = session.get("bounded_context_refs") or []
+    route_label = _classify_cli_turn_route(session, structured_return)
+    marks = session.get("marks") or []
+    mark_line = ", ".join(marks) if marks else "none"
+    return (
+        "# Integrated Engine CLI Deposit Candidate\n\n"
+        f"- source_session_id: `{session.get('session_id')}`\n"
+        f"- backend_kind: `{session.get('backend_kind')}`\n"
+        f"- task_type: `{session.get('task_type')}`\n"
+        f"- requested_by_surface: `{session.get('requested_by_surface')}`\n"
+        f"- requested_by_page: `{session.get('requested_by_page')}`\n"
+        f"- status: `{structured_return.get('status')}`\n\n"
+        f"- route_label: `{route_label}`\n"
+        f"- current_marks: `{mark_line}`\n"
+        f"- user_decision_state: `pending_candidate_review`\n"
+        f"- canonical_deposition_state: `not_ingested`\n\n"
+        "## Task Purpose\n"
+        f"{session.get('purpose_text') or ''}\n\n"
+        "## Used Context Refs\n"
+        + ("\n".join(f"- `{ref}`" for ref in refs) if refs else "- none\n")
+        + "\n\n## Result Summary\n"
+        + str(structured_return.get("result_summary") or "")
+        + "\n\n## Important Diffs / Findings / Outputs\n"
+        + ("\n".join(f"- {item}" for item in structured_return.get("important_outputs") or []) or "- not separated in package 1 return\n")
+        + "\n\n## Uncertainty / Failure Notes\n"
+        + ("\n".join(f"- {item}" for item in structured_return.get("uncertainty_or_failure_notes") or []) or "- none recorded\n")
+        + "\n\n## Suggested Next Use\n"
+        + str(structured_return.get("suggested_next_use") or "reread_target")
+        + "\n\n## Validation / Decision Boundary\n"
+        + "- This file is a deposition candidate only.\n"
+        + "- It is not canonical memory, not an approved record, and not automatic ingestion.\n"
+        + "- User decision or a later explicit deposition package is still required.\n"
+        + "\n"
+    )
+
+
+def _build_cli_operator_report(session: Dict[str, Any], structured_return: Dict[str, Any]) -> str:
+    session_id = session.get("session_id") or ""
+    marks = session.get("marks") or []
+    suggested_next_use = structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "reread_target"
+    route_label = _classify_cli_turn_route(session, structured_return)
+    mark_line = ", ".join(marks) if marks else "none yet"
+    result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
+    bounded_refs = session.get("bounded_context_refs") or []
+    return (
+        "# Integrated Engine CLI Operator Report\n\n"
+        "## Status First\n\n"
+        f"- session_id: `{session_id}`\n"
+        f"- backend_kind: `{session.get('backend_kind') or ''}`\n"
+        f"- task_type: `{session.get('task_type') or ''}`\n"
+        f"- status: `{structured_return.get('status') or session.get('status') or ''}`\n"
+        f"- exit_code: `{structured_return.get('exit_code')}`\n"
+        f"- suggested_next_use: `{suggested_next_use}`\n"
+        f"- route_label: `{route_label}`\n"
+        f"- current_marks: `{mark_line}`\n\n"
+        "한국어 운영 읽기:\n\n"
+        "```text\n"
+        "VectorFL면에서 Codex 실행 반환이 생성되었습니다.\n"
+        f"현재 이 반환은 `{suggested_next_use}` 방향으로 읽을 수 있습니다.\n"
+        "이 값은 완료 선언이 아니라 다음 route를 잡기 위한 신호입니다.\n"
+        "```\n\n"
+        "## Surface Split\n\n"
+        "### User Surface\n\n"
+        "```text\n"
+        "사용자면에서는 이 반환을 업무/결정 후보로 읽습니다.\n"
+        "자동 배정, 자동 승인, 자동 promotion으로 읽지 않습니다.\n"
+        "```\n\n"
+        "### VectorFL Surface\n\n"
+        "```text\n"
+        "VectorFL면에서는 이 반환을 되읽기/검증/후속 route 판단 재료로 읽습니다.\n"
+        "mark는 완료 상태가 아니라 다음 읽기 방향입니다.\n"
+        "```\n\n"
+        "### Engine Surface\n\n"
+        "```text\n"
+        "엔진면에서는 이 반환을 처리 결과와 검증/추출/deposit 후보 재료로 읽습니다.\n"
+        "공식 기록 편입이나 memory deposition은 아직 별도 승인 전입니다.\n"
+        "```\n\n"
+        "## Route And Authority\n\n"
+        "Open route:\n\n"
+        "```text\n"
+        "VectorFL CLI operation\n"
+        "-> Codex run\n"
+        "-> structured return\n"
+        "-> mark / suggested next use / route label\n"
+        "-> User decision candidate or Engine validation material\n"
+        "-> possible VectorFL follow-up\n"
+        "```\n\n"
+        "Closed route:\n\n"
+        "- automatic deposit ingestion\n"
+        "- automatic promotion / canonicalization\n"
+        "- automatic assignment\n"
+        "- route label treated as completion\n"
+        "- Gemini adapter unless separately opened\n"
+        "- UI Korean copy replacement\n\n"
+        "## Friction Reading\n\n"
+        "이 보고서는 화면 문구를 번역한 것이 아니라, 내부 route signal을 사용자 판단 언어로 다시 읽은 것입니다.\n\n"
+        "- `validation_target`은 검증 완료가 아니라 검증 대상으로 읽는 신호입니다.\n"
+        "- `deposit_candidate`는 공식 편입 완료가 아니라 편입 후보입니다.\n"
+        "- `user_assignment_candidate`는 사용자면 업무 배정 후보입니다.\n"
+        "- `engine_request_candidate`는 엔진면 요청 후보입니다.\n"
+        "- `hold`는 보류 또는 추가 reread 필요 신호입니다.\n"
+        "- latest/recent session은 전체 기억이 아니라 최근 판단을 돕는 readable artifact입니다.\n\n"
+        "## Source Material\n\n"
+        f"- purpose_text: {session.get('purpose_text') or ''}\n"
+        + ("\n".join(f"- bounded_context_ref: `{ref}`" for ref in bounded_refs) if bounded_refs else "- bounded_context_ref: none")
+        + "\n\n"
+        "## Result Summary Preview\n\n"
+        "```text\n"
+        + (result_summary[:1800] if result_summary else "no result summary")
+        + "\n```\n\n"
+        "## Next Smallest Action\n\n"
+        "```text\n"
+        "이 반환을 화면 문구로 바로 바꾸지 말고, 먼저 User / VectorFL / Engine 중 어느 면의 다음 판단 재료인지 확인합니다.\n"
+        "필요하면 VectorFL follow-up으로 되읽고, 사용자 승인이 필요한 경우 다음 package를 별도로 엽니다.\n"
+        "```\n"
+    )
+
+
+def _infer_cli_suggested_next_use(stdout: str, status: str) -> str:
+    if status != "done":
+        return "validation_target"
+    text = (stdout or "").lower().replace("-", "_").replace(" ", "_")
+    explicit_tail = text
+    for marker in ("suggested_next_use", "suggested_next", "next_use"):
+        if marker in text:
+            explicit_tail = text.rsplit(marker, 1)[-1][:500]
+            break
+    for candidate, tokens in (
+        ("validation_target", ("validation_target", "validation")),
+        ("deposit_candidate", ("deposit_candidate", "deposit_target", "deposit")),
+        ("implementation_return", ("implementation_return", "implementation_target", "implementation")),
+        ("reread_target", ("reread_target", "reread", "re_read")),
+    ):
+        if any(token in explicit_tail for token in tokens):
+            return candidate
+    if "validation_target" in text or "validation" in text:
+        return "validation_target"
+    if "deposit_candidate" in text or "deposit_target" in text:
+        return "deposit_candidate"
+    if "implementation_return" in text or "implementation_target" in text:
+        return "implementation_return"
+    if "reread_target" in text or "reread" in text or "re_read" in text:
+        return "reread_target"
+    return "reread_target"
+
+
+def _classify_cli_turn_route(session: Dict[str, Any], structured_return: Dict[str, Any]) -> str:
+    marks = set(session.get("marks") or [])
+    suggested = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
+    status = str(structured_return.get("status") or session.get("status") or "").strip()
+    if "hold" in marks or status == "failed":
+        return "hold"
+    if "user_assignment_candidate" in marks:
+        return "user_assignment_candidate"
+    if "deposit_candidate" in marks:
+        return "deposit_candidate"
+    if "engine_request_candidate" in marks or "implementation_return" in marks or "validation_target" in marks:
+        return "engine_request_candidate"
+    if suggested in {"implementation_return", "validation_target"}:
+        return "engine_request_candidate"
+    if suggested == "deposit_candidate":
+        return "deposit_candidate"
+    if suggested == "hold":
+        return "hold"
+    return "vectorfl_reread"
+
+
+def _cli_adapter(repo_root: Path, backend_kind: str) -> CodexCliAdapter:
+    if backend_kind == "codex":
+        return CodexCliAdapter(repo_root)
+    raise ValueError(f"unsupported cli backend_kind for package 1: {backend_kind}")
+
+
+def _normalize_cli_session_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+    backend_kind = str(payload.get("backend_kind") or "codex").strip()
+    task_type = str(payload.get("task_type") or "inspect").strip()
+    purpose_text = str(payload.get("purpose_text") or "").strip()
+    if backend_kind not in CLI_SESSION_BACKENDS:
+        raise ValueError(f"unsupported backend_kind: {backend_kind}")
+    if task_type not in CLI_SESSION_TASK_TYPES:
+        raise ValueError(f"unsupported task_type: {task_type}")
+    if not purpose_text:
+        raise ValueError("purpose_text is required")
+    created_at = _utc_now()
+    fingerprint = _fingerprint(
+        {
+            "backend_kind": backend_kind,
+            "task_type": task_type,
+            "purpose_text": purpose_text,
+            "bounded_context_refs": _list_from_text(payload.get("bounded_context_refs")),
+            "prompt_payload": str(payload.get("prompt_payload") or ""),
+            "created_at": created_at,
+        },
+        ["backend_kind", "task_type", "purpose_text", "bounded_context_refs", "prompt_payload", "created_at"],
+    )
+    return {
+        "schema_version": "integrated_engine_cli_session_spec_v0",
+        "session_id": f"cli_{created_at.replace(':', '').replace('-', '').replace('Z', 'Z')}_{fingerprint[:8]}",
+        "backend_kind": backend_kind,
+        "task_type": task_type,
+        "requested_by_surface": str(payload.get("requested_by_surface") or "vectorfl_surface").strip(),
+        "requested_by_page": str(payload.get("requested_by_page") or "/vectorfl-engine/vectorfl").strip(),
+        "purpose_text": purpose_text,
+        "bounded_context_refs": _list_from_text(payload.get("bounded_context_refs")),
+        "prompt_payload": str(payload.get("prompt_payload") or "").strip(),
+        "active_package": payload.get("active_package") if isinstance(payload.get("active_package"), dict) else {},
+        "status": "queued",
+        "started_at": "",
+        "ended_at": "",
+        "stdout_path": "",
+        "stderr_path": "",
+        "structured_return_path": "",
+        "deposit_candidate_path": "",
+        "operator_report_path": "",
+        "note": str(payload.get("note") or "CLI host/control layer on top of integrated engine; not a fourth surface.").strip(),
+        "timeout_seconds": int(payload.get("timeout_seconds") or 180),
+        "dry_run": bool(payload.get("dry_run")),
+        "marks": [],
+    }
+
+
+def run_integrated_engine_cli_session(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    session_spec = _normalize_cli_session_payload(payload)
+    active_package = session_spec.get("active_package") or {}
+    package_id = str(active_package.get("id") or payload.get("package_id") or "package_1").strip() or "package_1"
+    package_title = str(active_package.get("title") or session_spec.get("purpose_text") or "").strip()
+    package_stage = str(active_package.get("stage") or "cli_session").strip()
+    package_executor = str(active_package.get("executor") or session_spec.get("backend_kind") or "codex").strip()
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "package_intake",
+            "package_id": package_id,
+            "package_title": package_title,
+            "session_id": session_spec["session_id"],
+            "stage": "purpose_scope_intake",
+            "label": "package vessel formed",
+            "detail": session_spec["purpose_text"],
+            "signal": "purpose/scope captured before CLI execution",
+            "confidence": "usable",
+            "receiver": "VectorFL_event_rail",
+            "suggested_action": "record_only",
+            "status": "captured",
+        },
+    )
+    refs = session_spec.get("bounded_context_refs") or []
+    context_profiles = _profile_context_refs(repo_root, refs)
+    existing_profiles = [profile for profile in context_profiles if profile.get("exists")]
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "context_bundle",
+            "package_id": package_id,
+            "package_title": package_title,
+            "session_id": session_spec["session_id"],
+            "stage": "context_refs_loaded",
+            "label": "internal context bundle prepared",
+            "detail": f"{len(refs)} context refs attached; executor={package_executor}; prior_stage={package_stage}; existing={len(existing_profiles)}",
+            "signal": "line/axis reading has support refs but is not validated here",
+            "confidence": "usable" if refs else "weak",
+            "receiver": "setup_control",
+            "suggested_action": "record_only",
+            "status": "prepared",
+        },
+    )
+    for profile in context_profiles:
+        _append_package_run_event(
+            repo_root,
+            {
+                "event_type": "source_structure_scan",
+                "package_id": package_id,
+                "package_title": package_title,
+                "session_id": session_spec["session_id"],
+                "stage": "internal_material_profile",
+                "label": f"source profiled: {profile.get('ref') or 'missing'}",
+                "detail": profile.get("summary") or "",
+                "signal": "internal material structure read before CLI handoff",
+                "confidence": "usable" if profile.get("exists") else "weak",
+                "receiver": "VectorFL_event_rail",
+                "suggested_action": "record_only",
+                "status": "profiled" if profile.get("exists") else "missing",
+                "profile": profile,
+            },
+        )
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "cli_handoff",
+            "package_id": package_id,
+            "package_title": package_title,
+            "session_id": session_spec["session_id"],
+            "stage": "engine_wrapper_to_cli",
+            "label": "CLI handoff started",
+            "detail": "The prompt is wrapped with integrated-engine purpose, boundary, evidence, route, and return contract before Codex execution.",
+            "signal": "processing/digestion started",
+            "confidence": "usable",
+            "receiver": "current_package",
+            "suggested_action": "record_only",
+            "status": "running",
+        },
+    )
+    adapter = _cli_adapter(repo_root, session_spec["backend_kind"])
+    session = adapter.start_run(session_spec)
+    structured_return = {}
+    structured_path = repo_root / str(session.get("structured_return_path") or "")
+    if structured_path.exists():
+        structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+    deposit_preview = _read_text_if_exists(repo_root / str(session.get("deposit_candidate_path") or ""), limit=2200)
+    route = _classify_cli_turn_route(session, structured_return) if session else "vectorfl_reread"
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "cli_return",
+            "package_id": package_id,
+            "package_title": package_title,
+            "session_id": session.get("session_id"),
+            "stage": "raw_return_material",
+            "label": "CLI return received",
+            "detail": str(structured_return.get("result_summary") or session.get("result_summary") or "")[:420],
+            "signal": "raw output became return material, not final approval",
+            "confidence": "usable" if session.get("status") == "done" else "weak",
+            "receiver": "result_modal",
+            "suggested_action": "open_result",
+            "status": session.get("status") or "returned",
+        },
+    )
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "vectorfl_reread",
+            "package_id": package_id,
+            "package_title": package_title,
+            "session_id": session.get("session_id"),
+            "stage": "return_reread",
+            "label": "return reread routed",
+            "detail": f"route={route}; suggested_next_use={structured_return.get('suggested_next_use') or session.get('suggested_next_use') or 'reread_target'}",
+            "signal": "line/axis/redeposit meaning must be reread before reuse",
+            "confidence": "weak" if route == "vectorfl_reread" else "usable",
+            "receiver": "watch_modal",
+            "suggested_action": "open_watch",
+            "status": "reread_needed",
+        },
+    )
+    return {
+        "ok": session.get("status") == "done",
+        "session_id": session.get("session_id"),
+        "session_path": _cli_session_rel_path(str(session.get("session_id")), "session.json"),
+        "session": session,
+        "structured_return": structured_return,
+        "deposit_candidate_preview": deposit_preview,
+        "package_run_events": _read_package_run_events(repo_root, 12),
+    }
+
+
+def mark_integrated_engine_cli_session(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    session_id = str(payload.get("session_id") or "").strip()
+    mark = str(payload.get("mark") or "").strip()
+    if not session_id:
+        raise ValueError("session_id is required")
+    if mark not in CLI_SESSION_MARKS:
+        raise ValueError(f"unsupported mark: {mark}")
+    session = _load_cli_session(repo_root, session_id)
+    if not session:
+        raise ValueError(f"unknown cli session: {session_id}")
+    marks = _unique_list(list(session.get("marks") or []) + [mark])
+    marked_at = _utc_now()
+    session["marks"] = marks
+    session["marked_at"] = marked_at
+    session["mark_history"] = list(session.get("mark_history") or []) + [
+        {
+            "mark": mark,
+            "marked_at": marked_at,
+            "source": "vectorfl_cli_host_control_panel",
+        }
+    ]
+    if mark == "deposit_candidate":
+        session["deposit_ready"] = True
+    structured_return = {}
+    structured_path = repo_root / str(session.get("structured_return_path") or "")
+    if structured_path.exists():
+        try:
+            structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+        except Exception:
+            structured_return = {}
+    operator_report_path = str(session.get("operator_report_path") or _cli_session_rel_path(session_id, "operator_report.md"))
+    session["operator_report_path"] = operator_report_path
+    deposit_candidate_path = str(session.get("deposit_candidate_path") or _cli_session_rel_path(session_id, "deposit_candidate.md"))
+    session["deposit_candidate_path"] = deposit_candidate_path
+    (repo_root / deposit_candidate_path).write_text(_build_cli_deposit_candidate(session, structured_return), encoding="utf-8")
+    (repo_root / operator_report_path).write_text(_build_cli_operator_report(session, structured_return), encoding="utf-8")
+    _write_cli_session(repo_root, session)
+    active_package = session.get("active_package") or {}
+    _append_package_run_event(
+        repo_root,
+        {
+            "event_type": "route_mark",
+            "package_id": str(active_package.get("id") or "package_1"),
+            "package_title": str(active_package.get("title") or session.get("purpose_text") or ""),
+            "session_id": session_id,
+            "stage": "manual_route_mark",
+            "label": f"route mark recorded: {mark}",
+            "detail": "Manual route mark attached to CLI return. This records interpretation only.",
+            "signal": "human route decision / not automatic promotion",
+            "confidence": "usable",
+            "receiver": "engine_memory",
+            "suggested_action": "record_only",
+            "status": "marked",
+        },
+    )
+    return {"ok": True, "session_id": session_id, "mark": mark, "session": session}
+
+
+def _build_cli_package_notebooks(repo_root: Path, index: Dict[str, Any], events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_package: Dict[str, Dict[str, Any]] = {}
+    event_counts: Dict[Tuple[str, str], int] = {}
+    for event in events:
+        key = (str(event.get("package_id") or "package_1"), str(event.get("session_id") or ""))
+        event_counts[key] = event_counts.get(key, 0) + 1
+
+    for item in list(index.get("sessions") or [])[:30]:
+        session_id = str(item.get("session_id") or "").strip()
+        if not session_id:
+            continue
+        session = _load_cli_session(repo_root, session_id)
+        if not session:
+            continue
+        active_package = session.get("active_package") if isinstance(session.get("active_package"), dict) else {}
+        package_id = str(active_package.get("id") or "package_1")
+        package_title = str(active_package.get("title") or session.get("purpose_text") or "Package 1")
+        package_entry = by_package.setdefault(
+            package_id,
+            {
+                "package_id": package_id,
+                "package_title": package_title,
+                "package_summary": active_package.get("summary") or "",
+                "latest_stage": active_package.get("stage") or "",
+                "latest_executor": active_package.get("executor") or session.get("backend_kind") or "",
+                "runs": [],
+                "run_count": 0,
+                "latest_run": {},
+            },
+        )
+        structured_return: Dict[str, Any] = {}
+        structured_path = repo_root / str(session.get("structured_return_path") or "")
+        if structured_path.exists():
+            try:
+                structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+            except Exception:
+                structured_return = {}
+        enriched = _enrich_run_record(
+            session,
+            structured_return,
+            package_id=package_id,
+            input_packet_id=f"handoff_{session_id}",
+            event_count=event_counts.get((package_id, session_id), 0),
+        )
+        run = {
+            "session_id": session_id,
+            "status": session.get("status") or "",
+            "task_type": session.get("task_type") or "",
+            "purpose_text": session.get("purpose_text") or "",
+            "result_summary": str(structured_return.get("result_summary") or session.get("result_summary") or "")[:2400],
+            "answer": enriched["answer"],
+            "findings": enriched["findings"],
+            "files_artifacts": enriched["files_artifacts"],
+            "next_continue_hint": enriched["next_continue_hint"],
+            "open_questions": enriched["open_questions"],
+            "risks_or_limits": enriched["risks_or_limits"],
+            "source_refs": enriched["source_refs"],
+            "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
+            "route_label": _classify_cli_turn_route(session, structured_return),
+            "started_at": session.get("started_at") or "",
+            "ended_at": session.get("ended_at") or "",
+            "event_count": event_counts.get((package_id, session_id), 0),
+            "artifacts": {
+                "session_path": _cli_session_rel_path(session_id, "session.json"),
+                "structured_return_path": session.get("structured_return_path") or "",
+                "deposit_candidate_path": session.get("deposit_candidate_path") or "",
+                "operator_report_path": session.get("operator_report_path") or "",
+            },
+            "bounded_context_refs": session.get("bounded_context_refs") or [],
+        }
+        package_entry["runs"].append(run)
+
+    for entry in by_package.values():
+        entry["runs"] = entry["runs"][:10]
+        entry["run_count"] = len(entry["runs"])
+        entry["latest_run"] = entry["runs"][0] if entry["runs"] else {}
+    return sorted(by_package.values(), key=lambda entry: str((entry.get("latest_run") or {}).get("ended_at") or ""), reverse=True)
+
+
+def _build_operating_spine_contracts(repo_root: Path, index: Dict[str, Any], events: List[Dict[str, Any]], notebooks: List[Dict[str, Any]]) -> Dict[str, Any]:
+    packages: List[Dict[str, Any]] = []
+    handoff_packets: List[Dict[str, Any]] = []
+    run_records: List[Dict[str, Any]] = []
+    normalized_notebooks: List[Dict[str, Any]] = []
+
+    for notebook in notebooks:
+        latest_run = notebook.get("latest_run") or {}
+        runs = notebook.get("runs") or []
+        artifact_refs = []
+        context_refs = []
+        prior_run_ids = []
+        for run in runs:
+            if run.get("session_id"):
+                prior_run_ids.append(run.get("session_id"))
+            context_refs.extend(run.get("bounded_context_refs") or [])
+            for value in (run.get("artifacts") or {}).values():
+                if value:
+                    artifact_refs.append(value)
+        package_id = str(notebook.get("package_id") or "package_1")
+        packages.append(
+            {
+                "id": package_id,
+                "title": notebook.get("package_title") or package_id,
+                "goal": notebook.get("package_summary") or latest_run.get("purpose_text") or "",
+                "scope": "selected package notebook; bounded CLI continuation",
+                "stage": notebook.get("latest_stage") or latest_run.get("task_type") or "",
+                "status": latest_run.get("status") or "not_started",
+                "route_label": latest_run.get("route_label") or "",
+                "active_worker": notebook.get("latest_executor") or "codex",
+                "context_refs": _unique_list(context_refs),
+                "artifact_refs": _unique_list(artifact_refs),
+                "prior_run_ids": prior_run_ids,
+                "notebook_id": f"notebook_{package_id}",
+            }
+        )
+        normalized_notebooks.append(
+            {
+                "notebook_id": f"notebook_{package_id}",
+                "package_id": package_id,
+                "latest_run_id": latest_run.get("session_id") or "",
+                "previous_run_ids": prior_run_ids[1:],
+                "latest_stage": notebook.get("latest_stage") or "",
+                "run_count": notebook.get("run_count") or 0,
+                "result_summary": latest_run.get("result_summary") or "",
+                "artifact_refs": _unique_list(artifact_refs),
+                "bounded_context_refs": _unique_list(context_refs),
+                "next_continue_hint": "Attach latest run artifacts and bounded context refs, then issue the next package-specific instruction.",
+            }
+        )
+
+    event_count_by_session: Dict[str, int] = {}
+    for event in events:
+        sid = str(event.get("session_id") or "")
+        if sid:
+            event_count_by_session[sid] = event_count_by_session.get(sid, 0) + 1
+
+    for item in list(index.get("sessions") or [])[:20]:
+        session_id = str(item.get("session_id") or "").strip()
+        if not session_id:
+            continue
+        session = _load_cli_session(repo_root, session_id)
+        if not session:
+            continue
+        active_package = session.get("active_package") if isinstance(session.get("active_package"), dict) else {}
+        package_id = str(active_package.get("id") or "package_1")
+        packet_id = f"handoff_{session_id}"
+        refs = session.get("bounded_context_refs") or []
+        handoff_packets.append(
+            {
+                "packet_id": packet_id,
+                "package_id": package_id,
+                "worker_role": session.get("backend_kind") or "codex",
+                "task_brief": session.get("purpose_text") or "",
+                "bounded_context_refs": refs,
+                "explicit_inputs": [session.get("prompt_path") or "", session.get("prompt_payload") or ""],
+                "constraints": ["read-only default", "no promotion", "no canonical ingestion", "manual route approval"],
+                "expected_return_shape": "result_summary + suggested_next_use + artifact refs",
+                "escalation_rule": "If output is insufficient or risky, mark hold or validation_target; do not auto-promote.",
+                "stop_rule": "Stop after one bounded CLI run and record return for reread.",
+            }
+        )
+        structured_return: Dict[str, Any] = {}
+        structured_path = repo_root / str(session.get("structured_return_path") or "")
+        if structured_path.exists():
+            try:
+                structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+            except Exception:
+                structured_return = {}
+        run_records.append(
+            _enrich_run_record(
+                session,
+                structured_return,
+                package_id=package_id,
+                input_packet_id=packet_id,
+                event_count=event_count_by_session.get(session_id, 0),
+            )
+        )
+
+    worker_profiles = []
+    for worker_id, profile in WORKER_REGISTRY.items():
+        worker_profiles.append(
+            {
+                "worker_id": worker_id,
+                "type": profile.get("command_family") or "cli_worker",
+                "supported_task_types": sorted(CLI_SESSION_TASK_TYPES) if worker_id == "codex" else ["review", "crosscheck", "read"],
+                "input_contract": profile.get("input_mode") or "",
+                "output_contract": "RunRecord-compatible summary plus route/followup signal",
+                "strengths": [profile.get("default_role") or ""],
+                "limits": [profile.get("safe_default") or "", profile.get("execution_default") or ""],
+                "routing_notes": profile.get("default_invocation_preview") or "",
+            }
+        )
+
+    return {
+        "schema_version": "integrated_engine_operating_spine_contract_projection_v0",
+        "spine_boundary": "request interpretation -> package formation -> worker handoff -> return recording -> reread/reuse continuity",
+        "packages": packages,
+        "handoff_packets": handoff_packets[:20],
+        "run_records": run_records[:20],
+        "notebooks": normalized_notebooks,
+        "worker_profiles": worker_profiles,
+        "guard": {
+            "ui_is_attachable_surface": True,
+            "not_full_multi_agent_orchestration": True,
+            "not_final_all_in_one_app": True,
+        },
+    }
+
+
+def build_cli_host_control_state(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    index = _load_cli_session_index(repo_root)
+    package_run_events = _read_package_run_events(repo_root, 80)
+    package_notebooks = _build_cli_package_notebooks(repo_root, index, package_run_events)
+    latest_session_id = str(index.get("latest_session_id") or "").strip()
+    latest_session = _load_cli_session(repo_root, latest_session_id) if latest_session_id else {}
+    latest_structured_return: Dict[str, Any] = {}
+    latest_deposit_candidate = ""
+    latest_operator_report = ""
+    if latest_session:
+        structured_path = repo_root / str(latest_session.get("structured_return_path") or "")
+        if structured_path.exists():
+            latest_structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+        deposit_path = repo_root / str(latest_session.get("deposit_candidate_path") or "")
+        latest_deposit_candidate = _read_text_if_exists(deposit_path, limit=4000)
+        operator_path = repo_root / str(latest_session.get("operator_report_path") or "")
+        latest_operator_report = _read_text_if_exists(operator_path, limit=4000)
+    latest_readable_return = {
+        "session_id": latest_session.get("session_id") or "",
+        "backend_kind": latest_session.get("backend_kind") or "",
+        "task_type": latest_session.get("task_type") or "",
+        "status": latest_session.get("status") or "",
+        "purpose_text": latest_session.get("purpose_text") or "",
+        "suggested_next_use": latest_structured_return.get("suggested_next_use") or latest_session.get("suggested_next_use") or "",
+        "route_label": _classify_cli_turn_route(latest_session, latest_structured_return) if latest_session else "",
+        "marks": latest_session.get("marks") or [],
+        "mark_history": latest_session.get("mark_history") or [],
+        "structured_return_preview": str(latest_structured_return.get("result_summary") or latest_session.get("result_summary") or "")[:2200],
+        "deposit_candidate_preview": latest_deposit_candidate[:2200],
+        "operator_report_preview": latest_operator_report[:2200],
+        "session_path": _cli_session_rel_path(latest_session.get("session_id") or "", "session.json") if latest_session else "",
+        "structured_return_path": latest_session.get("structured_return_path") or "",
+        "deposit_candidate_path": latest_session.get("deposit_candidate_path") or "",
+        "operator_report_path": latest_session.get("operator_report_path") or "",
+    }
+    recent_readable_returns = []
+    for item in list(index.get("sessions") or [])[:8]:
+        session_id = str(item.get("session_id") or "").strip()
+        if not session_id:
+            continue
+        session = _load_cli_session(repo_root, session_id)
+        if not session:
+            continue
+        structured_return = {}
+        structured_path = repo_root / str(session.get("structured_return_path") or "")
+        if structured_path.exists():
+            try:
+                structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+            except Exception:
+                structured_return = {}
+        deposit_path = repo_root / str(session.get("deposit_candidate_path") or "")
+        deposit_candidate = _read_text_if_exists(deposit_path, limit=1200)
+        operator_path = repo_root / str(session.get("operator_report_path") or "")
+        operator_report = _read_text_if_exists(operator_path, limit=1200)
+        recent_readable_returns.append(
+            {
+                "session_id": session.get("session_id") or "",
+                "backend_kind": session.get("backend_kind") or "",
+                "task_type": session.get("task_type") or "",
+                "status": session.get("status") or "",
+                "purpose_text": session.get("purpose_text") or "",
+                "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
+                "route_label": _classify_cli_turn_route(session, structured_return),
+                "marks": session.get("marks") or [],
+                "mark_history": session.get("mark_history") or [],
+                "structured_return_preview": str(structured_return.get("result_summary") or session.get("result_summary") or "")[:1200],
+                "deposit_candidate_preview": deposit_candidate[:1200],
+                "operator_report_preview": operator_report[:1200],
+                "session_path": _cli_session_rel_path(session.get("session_id") or "", "session.json"),
+                "structured_return_path": session.get("structured_return_path") or "",
+                "deposit_candidate_path": session.get("deposit_candidate_path") or "",
+                "operator_report_path": session.get("operator_report_path") or "",
+                "started_at": session.get("started_at") or "",
+                "ended_at": session.get("ended_at") or "",
+            }
+        )
+    deposit_ready_returns = []
+    for item in list(index.get("sessions") or []):
+        session_id = str(item.get("session_id") or "").strip()
+        if not session_id:
+            continue
+        session = _load_cli_session(repo_root, session_id)
+        marks = session.get("marks") or []
+        if not session.get("deposit_ready") and "deposit_candidate" not in marks:
+            continue
+        structured_return = {}
+        structured_path = repo_root / str(session.get("structured_return_path") or "")
+        if structured_path.exists():
+            try:
+                structured_return = json.loads(structured_path.read_text(encoding="utf-8"))
+            except Exception:
+                structured_return = {}
+        deposit_path = repo_root / str(session.get("deposit_candidate_path") or "")
+        deposit_candidate = _read_text_if_exists(deposit_path, limit=1200)
+        operator_path = repo_root / str(session.get("operator_report_path") or "")
+        operator_report = _read_text_if_exists(operator_path, limit=1200)
+        deposit_ready_returns.append(
+            {
+                "session_id": session.get("session_id") or "",
+                "backend_kind": session.get("backend_kind") or "",
+                "task_type": session.get("task_type") or "",
+                "status": session.get("status") or "",
+                "purpose_text": session.get("purpose_text") or "",
+                "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
+                "route_label": _classify_cli_turn_route(session, structured_return),
+                "marks": marks,
+                "mark_history": session.get("mark_history") or [],
+                "structured_return_preview": str(structured_return.get("result_summary") or session.get("result_summary") or "")[:1200],
+                "deposit_candidate_preview": deposit_candidate[:1200],
+                "operator_report_preview": operator_report[:1200],
+                "session_path": _cli_session_rel_path(session.get("session_id") or "", "session.json"),
+                "structured_return_path": session.get("structured_return_path") or "",
+                "deposit_candidate_path": session.get("deposit_candidate_path") or "",
+                "operator_report_path": session.get("operator_report_path") or "",
+                "started_at": session.get("started_at") or "",
+                "ended_at": session.get("ended_at") or "",
+                "deposit_ready": bool(session.get("deposit_ready") or "deposit_candidate" in marks),
+            }
+        )
+        if len(deposit_ready_returns) >= 6:
+            break
+    return {
+        "schema_version": "integrated_engine_cli_host_control_state_v0",
+        "position": "on_top_cli_host_control_layer",
+        "not_a_surface": True,
+        "primary_observation_surface": "vectorfl_surface",
+        "session_root": CLI_SESSION_ROOT,
+        "adapter_contract": ["prepare_run", "start_run", "poll_run", "collect_result", "interrupt_run"],
+        "available_backends": [{"backend_kind": "codex", "status": "enabled_package_1"}],
+        "available_task_types": sorted(CLI_SESSION_TASK_TYPES),
+        "available_marks": sorted(CLI_SESSION_MARKS),
+        "index": index,
+        "latest_session": latest_session,
+        "latest_structured_return": latest_structured_return,
+        "latest_deposit_candidate_preview": latest_deposit_candidate[:1600],
+        "latest_operator_report_preview": latest_operator_report[:1600],
+        "latest_readable_return": latest_readable_return,
+        "recent_readable_returns": recent_readable_returns,
+        "deposit_ready_returns": deposit_ready_returns,
+        "package_run_events": package_run_events[:24],
+        "package_notebooks": package_notebooks,
+        "spine_contracts": _build_operating_spine_contracts(repo_root, index, package_run_events, package_notebooks),
+        "guard": {
+            "does_not_create_fourth_surface": True,
+            "does_not_change_panel_read_map": True,
+            "does_not_promote_extension": True,
+            "codex_read_only_default": True,
+        },
+    }
+
+
+def _latest_language_loop_dir(repo_root: Path) -> Optional[Path]:
+    root = repo_root / LANGUAGE_LOOP_ROOT
+    try:
+        candidates = [path for path in root.glob("language_loop_*") if path.is_dir()]
+    except Exception:
+        return None
+    if not candidates:
+        return None
+    return sorted(candidates, key=lambda path: path.stat().st_mtime, reverse=True)[0]
+
+
+def _language_loop_summary(loop_dir: Path, repo_root: Path) -> Dict[str, Any]:
+    loop_json = _read_json(repo_root, str(loop_dir.relative_to(repo_root) / "loop.json"))
+    index_preview = _read_text_if_exists(loop_dir / "index.md", limit=2200)
+    harvest_preview = _read_text_if_exists(loop_dir / "harvest.md", limit=2200)
+    return {
+        "loop_id": loop_json.get("loop_id") or loop_dir.name,
+        "status": loop_json.get("status") or "",
+        "requested_count": loop_json.get("requested_count") or 0,
+        "completed_count": loop_json.get("completed_count") or 0,
+        "started_at": loop_json.get("started_at") or "",
+        "ended_at": loop_json.get("ended_at") or "",
+        "loop_path": str(loop_dir.relative_to(repo_root) / "loop.json"),
+        "index_path": str(loop_dir.relative_to(repo_root) / "index.md"),
+        "harvest_path": str(loop_dir.relative_to(repo_root) / "harvest.md") if (loop_dir / "harvest.md").exists() else "",
+        "index_preview": index_preview,
+        "harvest_preview": harvest_preview,
+        "sessions": loop_json.get("sessions") or [],
+    }
+
+
+def build_language_loop_control_state(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    root = repo_root / LANGUAGE_LOOP_ROOT
+    latest_dir = _latest_language_loop_dir(repo_root)
+    recent = []
+    if root.exists():
+        for loop_dir in sorted([path for path in root.glob("language_loop_*") if path.is_dir()], key=lambda path: path.stat().st_mtime, reverse=True)[:6]:
+            recent.append(_language_loop_summary(loop_dir, repo_root))
+    latest = _language_loop_summary(latest_dir, repo_root) if latest_dir else {}
+    return {
+        "schema_version": "integrated_engine_language_loop_control_state_v0",
+        "position": "user_surface_internal_team_language_owner",
+        "not_a_surface": True,
+        "loop_root": LANGUAGE_LOOP_ROOT,
+        "latest_loop": latest,
+        "recent_loops": recent,
+        "available_actions": ["run_loop", "harvest_latest"],
+        "default_recommended_count": 10,
+        "guard": {
+            "koreanization_data_only": True,
+            "no_ui_copy_patch": True,
+            "no_final_glossary": True,
+            "no_auto_ingestion": True,
+            "no_extension_promotion": True,
+        },
+    }
+
+
+def run_integrated_engine_language_loop(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    count = int(payload.get("count") or 10)
+    sleep_seconds = float(payload.get("sleep") or 2)
+    timeout_seconds = int(payload.get("timeout") or 120)
+    if count < 1 or count > 20:
+        raise ValueError("count must be between 1 and 20")
+    command = [
+        sys.executable,
+        "scripts/run_integrated_engine_language_loop.py",
+        "--count",
+        str(count),
+        "--sleep",
+        str(sleep_seconds),
+        "--timeout",
+        str(timeout_seconds),
+    ]
+    if bool(payload.get("background")):
+        loop_id = "language_loop_" + _utc_now().replace(":", "").replace("-", "").replace("+00:00", "Z")
+        loop_dir = repo_root / LANGUAGE_LOOP_ROOT / loop_id
+        loop_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(
+            repo_root,
+            str(loop_dir.relative_to(repo_root) / "loop.json"),
+            {
+                "schema_version": "integrated_engine_internal_language_koreanization_loop_v1",
+                "loop_id": loop_id,
+                "status": "queued",
+                "started_at": _utc_now(),
+                "ended_at": "",
+                "requested_count": count,
+                "completed_count": 0,
+                "sessions": [],
+                "background": True,
+                "boundary": {
+                    "koreanization_data_only": True,
+                    "no_ui_copy_patch": True,
+                    "no_final_glossary": True,
+                    "no_auto_ingestion": True,
+                    "no_extension_promotion": True,
+                },
+            },
+        )
+        command.extend(["--loop-id", loop_id])
+        stdout_handle = (loop_dir / "background_stdout.log").open("w", encoding="utf-8")
+        stderr_handle = (loop_dir / "background_stderr.log").open("w", encoding="utf-8")
+        process = subprocess.Popen(
+            command,
+            cwd=str(repo_root),
+            text=True,
+            stdout=stdout_handle,
+            stderr=stderr_handle,
+        )
+        return {
+            "ok": True,
+            "background": True,
+            "pid": process.pid,
+            "latest_loop": _language_loop_summary(loop_dir, repo_root),
+        }
+    run_timeout = max(120, count * (timeout_seconds + int(sleep_seconds) + 20))
+    completed = subprocess.run(
+        command,
+        cwd=str(repo_root),
+        text=True,
+        capture_output=True,
+        timeout=run_timeout,
+    )
+    latest_dir = _latest_language_loop_dir(repo_root)
+    return {
+        "ok": completed.returncode == 0,
+        "exit_code": completed.returncode,
+        "stdout": _tail_text(completed.stdout or "", 3000),
+        "stderr": _tail_text(completed.stderr or "", 3000),
+        "latest_loop": _language_loop_summary(latest_dir, repo_root) if latest_dir else {},
+    }
+
+
+def harvest_integrated_engine_language_loop(runtime_root: Path, payload: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    payload = payload or {}
+    repo_root = runtime_root.resolve().parent
+    loop_id = str(payload.get("loop_id") or "").strip()
+    command = [sys.executable, "scripts/harvest_integrated_engine_language_loop.py"]
+    if loop_id:
+        command.extend(["--loop-id", loop_id])
+    completed = subprocess.run(
+        command,
+        cwd=str(repo_root),
+        text=True,
+        capture_output=True,
+        timeout=120,
+    )
+    latest_dir = repo_root / LANGUAGE_LOOP_ROOT / loop_id if loop_id else _latest_language_loop_dir(repo_root)
+    latest = _language_loop_summary(latest_dir, repo_root) if latest_dir and latest_dir.exists() else {}
+    return {
+        "ok": completed.returncode == 0,
+        "exit_code": completed.returncode,
+        "stdout": _tail_text(completed.stdout or "", 3000),
+        "stderr": _tail_text(completed.stderr or "", 3000),
+        "latest_loop": latest,
+    }
+
+
+def run_vectorfl_integrated_engine_worker_launch_draft(runtime_root: Path, payload: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    payload = payload or {}
+    repo_root = runtime_root.resolve().parent
+    launch_draft = _read_json(repo_root, LATEST_MANIFEST_PATHS["worker_launch_draft"])
+    if not launch_draft:
+        raise ValueError("latest worker launch draft is required before execution")
+
+    worker = str(payload.get("selected_worker") or launch_draft.get("selected_worker") or "").strip()
+    if worker not in WORKER_REGISTRY:
+        raise ValueError(f"unknown selected_worker: {worker}")
+    if worker == "claude_code":
+        raise ValueError("claude_code execution is not enabled yet; configure and test Codex/Gemini first")
+
+    timeout_seconds = int(payload.get("timeout_seconds") or 180)
+    prompt = _worker_launch_prompt(launch_draft)
+    command, stdin_prompt, redacted_command = _worker_command(repo_root, worker, prompt)
+    started_at = _utc_now()
+
+    try:
+        completed = subprocess.run(
+            command,
+            input=stdin_prompt,
+            text=True,
+            capture_output=True,
+            cwd=str(repo_root),
+            timeout=timeout_seconds,
+        )
+        exit_code = completed.returncode
+        stdout = completed.stdout or ""
+        stderr = completed.stderr or ""
+        status = "completed" if exit_code == 0 else "failed"
+        error_message = ""
+    except FileNotFoundError as error:
+        exit_code = None
+        stdout = ""
+        stderr = str(error)
+        status = "failed"
+        error_message = f"worker CLI not found: {worker}"
+    except subprocess.TimeoutExpired as error:
+        exit_code = None
+        stdout = error.stdout or ""
+        stderr = error.stderr or ""
+        status = "timeout"
+        error_message = f"worker CLI timed out after {timeout_seconds}s"
+
+    finished_at = _utc_now()
+    execution = {
+        "schema_version": "vectorfl_integrated_engine_worker_execution_v0",
+        "execution_id": "vectorfl_engine_worker_execution_latest",
+        "status": status,
+        "started_at": started_at,
+        "finished_at": finished_at,
+        "source_worker_launch_draft_artifact": LATEST_MANIFEST_PATHS["worker_launch_draft"],
+        "source_worker_launch_draft_created_at": launch_draft.get("created_at"),
+        "source_worker_launch_draft_fingerprint": launch_draft.get("content_fingerprint"),
+        "source_operating_dialogue_fingerprint": launch_draft.get("source_operating_dialogue_fingerprint"),
+        "operating_object_id": launch_draft.get("operating_object_id"),
+        "worker": worker,
+        "worker_label": WORKER_REGISTRY[worker]["label"],
+        "selected_model": launch_draft.get("selected_model"),
+        "execution_mode": launch_draft.get("execution_mode"),
+        "command_family": launch_draft.get("command_family"),
+        "command": redacted_command,
+        "exit_code": exit_code,
+        "stdout_tail": _tail_text(stdout),
+        "stderr_tail": _tail_text(stderr),
+        "output_summary": _tail_text(stdout, 1800) or error_message or _tail_text(stderr, 1800),
+        "error_message": error_message,
+        "result_return_slot": LATEST_MANIFEST_PATHS["worker_execution"],
+        "guard": {
+            "actual_cli_invocation": True,
+            "read_only_sandbox_default": True,
+            "does_not_replace_current_slot": True,
+            "does_not_declare_gate_close": True,
+            "latest_only": True,
+        },
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["worker_execution"], execution)
+    return {
+        "ok": status == "completed",
+        "path": LATEST_MANIFEST_PATHS["worker_execution"],
+        "worker_execution": execution,
+    }
+
+
+def create_vectorfl_integrated_engine_work_packet(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    cells = {cell["cell_id"] for cell in _cell_registry(repo_root)}
+    stages = {stage["stage_id"] for stage in _engine_loop({key: _read_json(repo_root, path) for key, path in LATEST_MANIFEST_PATHS.items()})}
+
+    topic = str(payload.get("topic") or "").strip()
+    memo = str(payload.get("memo") or "").strip()
+    directive = str(payload.get("directive") or "").strip()
+    target_cell = str(payload.get("target_cell") or "conversation_to_line_cell").strip()
+    selected_stage = str(payload.get("selected_stage") or "line_generation").strip()
+
+    if not any([topic, memo, directive]):
+        raise ValueError("topic, memo, or directive is required")
+    if target_cell not in cells:
+        raise ValueError(f"unknown target_cell: {target_cell}")
+    if selected_stage not in stages:
+        raise ValueError(f"unknown selected_stage: {selected_stage}")
+
+    dedupe_keys = [
+        "topic",
+        "memo",
+        "directive",
+        "selected_stage",
+        "target_cell",
+        "requested_action",
+        "expected_output",
+        "reference_md_files",
+        "forbidden_scope",
+        "supervisor_note",
+        "operating_object_id",
+        "source_operating_dialogue_fingerprint",
+        "operating_team_name",
+        "operating_team_purpose",
+        "assignee_text",
+        "selected_worker",
+        "selected_model",
+    ]
+    created_at = _utc_now()
+    packet = {
+        "schema_version": "vectorfl_integrated_engine_work_packet_v0",
+        "packet_id": "vectorfl_engine_work_packet_latest",
+        "status": "drafted_for_supervisor_routing",
+        "created_at": created_at,
+        "topic": topic,
+        "memo": memo,
+        "directive": directive,
+        "selected_stage": selected_stage,
+        "target_cell": target_cell,
+        "requested_action": str(payload.get("requested_action") or "").strip()
+        or "translate the supervisor input into the next bounded operating handoff",
+        "expected_output": _list_from_text(payload.get("expected_output"))
+        or ["line candidates", "unclear points", "next routing recommendation"],
+        "reference_md_files": _list_from_text(payload.get("reference_md_files")),
+        "forbidden_scope": _list_from_text(payload.get("forbidden_scope"))
+        or ["do not replace current slot", "do not declare gate close", "do not run fake worker execution"],
+        "supervisor_note": str(payload.get("supervisor_note") or "").strip(),
+        "operating_object_id": str(payload.get("operating_object_id") or "").strip(),
+        "source_operating_dialogue_artifact": str(payload.get("source_operating_dialogue_artifact") or "").strip(),
+        "source_operating_dialogue_id": str(payload.get("source_operating_dialogue_id") or "").strip(),
+        "source_operating_dialogue_fingerprint": str(payload.get("source_operating_dialogue_fingerprint") or "").strip(),
+        "operating_team_name": str(payload.get("operating_team_name") or "").strip(),
+        "operating_team_purpose": str(payload.get("operating_team_purpose") or "").strip(),
+        "assignee_text": str(payload.get("assignee_text") or "").strip(),
+        "selected_worker": str(payload.get("selected_worker") or "").strip(),
+        "selected_worker_label": str(payload.get("selected_worker_label") or "").strip(),
+        "selected_model": str(payload.get("selected_model") or "").strip(),
+        "guard": {
+            "does_not_run_worker": True,
+            "does_not_replace_current_slot": True,
+            "does_not_close_gate": True,
+            "latest_only": True,
+        },
+        "next_allowed_actions": [
+            "review work packet",
+            "convert to line-generation handoff",
+            "route to internal-read cell after supervisor confirmation",
+        ],
+    }
+    packet["content_fingerprint"] = _fingerprint(packet, dedupe_keys)
+
+    latest_packet = _read_json(repo_root, LATEST_MANIFEST_PATHS["work_packet"])
+    if latest_packet.get("content_fingerprint") == packet["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["work_packet"],
+            "work_packet": latest_packet,
+            "message": "unchanged: latest work packet already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["work_packet"], packet)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["work_packet"],
+        "work_packet": packet,
+    }
+
+
+def create_vectorfl_integrated_engine_assignment(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    teams = {team["team_id"]: team for team in _team_registry(repo_root)}
+    cells = {cell["cell_id"] for cell in _cell_registry(repo_root)}
+
+    team_id = str(payload.get("team_id") or "line_team").strip()
+    assignee_cell = str(payload.get("assignee_cell") or teams.get(team_id, {}).get("primary_cell") or "").strip()
+    title = str(payload.get("title") or "").strip()
+    brief = str(payload.get("brief") or "").strip()
+
+    if team_id not in teams:
+        raise ValueError(f"unknown team_id: {team_id}")
+    if assignee_cell not in cells and assignee_cell != "supervisor":
+        raise ValueError(f"unknown assignee_cell: {assignee_cell}")
+    if not any([title, brief]):
+        raise ValueError("title or brief is required")
+
+    work_packet_path = LATEST_MANIFEST_PATHS["work_packet"]
+    work_packet = _read_json(repo_root, work_packet_path)
+    reference_md_files = _list_from_text(payload.get("reference_md_files")) or _list_from_text(
+        work_packet.get("reference_md_files")
+    )
+    created_at = _utc_now()
+    assignment = {
+        "schema_version": "vectorfl_integrated_engine_assignment_v0",
+        "assignment_id": "vectorfl_engine_assignment_latest",
+        "status": "assigned_for_report_return",
+        "created_at": created_at,
+        "team_id": team_id,
+        "team_label": teams[team_id]["label"],
+        "assignee_cell": assignee_cell,
+        "title": title,
+        "brief": brief,
+        "source_work_packet_artifact": work_packet_path if work_packet else None,
+        "source_work_packet_topic": work_packet.get("topic") or "",
+        "expected_report": _list_from_text(payload.get("expected_report"))
+        or ["summary", "evidence used", "blockers", "next routing recommendation"],
+        "reference_md_files": reference_md_files,
+        "review_focus": _list_from_text(payload.get("review_focus")),
+        "forbidden_scope": _list_from_text(payload.get("forbidden_scope"))
+        or ["do not run fake worker execution", "do not replace current slot", "do not declare gate close"],
+        "return_slot": teams[team_id]["report_slot"],
+        "operating_object_id": str(payload.get("operating_object_id") or work_packet.get("operating_object_id") or "").strip(),
+        "source_operating_dialogue_artifact": str(payload.get("source_operating_dialogue_artifact") or work_packet.get("source_operating_dialogue_artifact") or "").strip(),
+        "source_operating_dialogue_id": str(payload.get("source_operating_dialogue_id") or work_packet.get("source_operating_dialogue_id") or "").strip(),
+        "source_operating_dialogue_fingerprint": str(payload.get("source_operating_dialogue_fingerprint") or work_packet.get("source_operating_dialogue_fingerprint") or "").strip(),
+        "operating_team_name": str(payload.get("operating_team_name") or work_packet.get("operating_team_name") or "").strip(),
+        "operating_team_purpose": str(payload.get("operating_team_purpose") or work_packet.get("operating_team_purpose") or "").strip(),
+        "assignee_text": str(payload.get("assignee_text") or work_packet.get("assignee_text") or "").strip(),
+        "selected_worker": str(payload.get("selected_worker") or work_packet.get("selected_worker") or "").strip(),
+        "selected_worker_label": str(payload.get("selected_worker_label") or work_packet.get("selected_worker_label") or "").strip(),
+        "selected_model": str(payload.get("selected_model") or work_packet.get("selected_model") or "").strip(),
+        "guard": {
+            "does_not_run_worker": True,
+            "records_assignment_only": True,
+            "latest_only": True,
+        },
+    }
+    dedupe_keys = [
+        "team_id",
+        "assignee_cell",
+        "title",
+        "brief",
+        "source_work_packet_artifact",
+        "source_work_packet_topic",
+        "expected_report",
+        "reference_md_files",
+        "review_focus",
+        "forbidden_scope",
+        "return_slot",
+        "operating_object_id",
+        "source_operating_dialogue_fingerprint",
+        "operating_team_name",
+        "operating_team_purpose",
+        "assignee_text",
+        "selected_worker",
+        "selected_model",
+    ]
+    assignment["content_fingerprint"] = _fingerprint(assignment, dedupe_keys)
+
+    latest_assignment = _read_json(repo_root, LATEST_MANIFEST_PATHS["assignment"])
+    if latest_assignment.get("content_fingerprint") == assignment["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["assignment"],
+            "assignment": latest_assignment,
+            "message": "unchanged: latest assignment already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["assignment"], assignment)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["assignment"],
+        "assignment": assignment,
+    }
+
+
+def emit_codex_handoff_from_assignment(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    assignment = _read_json(repo_root, LATEST_MANIFEST_PATHS["assignment"])
+    work_packet = _read_json(repo_root, LATEST_MANIFEST_PATHS["work_packet"])
+    if not assignment:
+        raise ValueError("latest assignment is missing")
+    if not work_packet:
+        raise ValueError("latest work packet is missing")
+
+    source_files = [
+        LATEST_MANIFEST_PATHS["work_packet"],
+        LATEST_MANIFEST_PATHS["assignment"],
+        "docs/contracts/vectorfl_paper_conversation_to_line_procedure_v0.md",
+        "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md",
+        "docs/reports/paperclip_native_product_reading_v0.md",
+    ]
+    reference_md_files = _list_from_text(assignment.get("reference_md_files")) or _list_from_text(
+        work_packet.get("reference_md_files")
+    )
+    source_files = source_files + [path for path in reference_md_files if path not in source_files]
+    handoff = {
+        "schema_version": "vectorfl_paper_codex_handoff_latest_v0",
+        "worker_target": "codex",
+        "task": assignment.get("title") or work_packet.get("topic") or "VectorFL integrated engine assignment",
+        "goal": (
+            "Run the latest VectorFL integrated-engine assignment as a read-only Codex worker report. "
+            "Return supervisor-readable output that can be routed to the next team."
+        ),
+        "selected_context_summary": {
+            "working_context": "vectorfl_integrated_engine_team_assignment",
+            "source_work_packet": LATEST_MANIFEST_PATHS["work_packet"],
+            "source_assignment": LATEST_MANIFEST_PATHS["assignment"],
+            "topic": work_packet.get("topic") or "",
+            "directive": work_packet.get("directive") or "",
+            "assignment_brief": assignment.get("brief") or "",
+            "team": assignment.get("team_id") or "",
+            "assignee_cell": assignment.get("assignee_cell") or "",
+            "return_slot": assignment.get("return_slot") or "",
+            "paperclip_reference_line": "work packet -> team assignment -> worker report -> supervisor gate",
+            "reference_md_files": reference_md_files,
+        },
+        "relevant_files": source_files,
+        "codex_top_files": source_files[:4],
+        "constraints": [
+            "run read-only",
+            "do not change files",
+            "do not replace current slot",
+            "do not declare gate close",
+            "do not invent worker execution beyond the bridge result",
+            "keep the report compact and supervisor-readable",
+        ],
+        "requested_action": assignment.get("brief") or assignment.get("title") or work_packet.get("requested_action") or "",
+        "expected_output": {
+            "return_slot": assignment.get("return_slot") or "assignment_return_latest",
+            "deliverables": assignment.get("expected_report") or ["summary", "blockers", "next routing recommendation"],
+            "review_focus": assignment.get("review_focus") or [],
+        },
+        "forbidden_scope": assignment.get("forbidden_scope") or work_packet.get("forbidden_scope") or [],
+        "status": "emitted_from_integrated_engine_assignment",
+        "emitted_at": _utc_now(),
+        "source_surface": "vectorfl_integrated_engine",
+        "source_assignment_artifact": LATEST_MANIFEST_PATHS["assignment"],
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["codex_handoff"], handoff)
+    return {
+        "ok": True,
+        "path": LATEST_MANIFEST_PATHS["codex_handoff"],
+        "handoff": handoff,
+    }
+
+
+def run_codex_assignment_bridge(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    emitted = emit_codex_handoff_from_assignment(runtime_root)
+    command = [sys.executable, "scripts/run_vectorfl_paper_codex_bridge.py"]
+    started_at = _utc_now()
+    try:
+        completed = subprocess.run(
+            command,
+            cwd=str(repo_root),
+            text=True,
+            capture_output=True,
+            timeout=80,
+        )
+        exit_code = completed.returncode
+        stdout_tail = completed.stdout[-4000:]
+        stderr_tail = completed.stderr[-4000:]
+    except subprocess.TimeoutExpired as error:
+        exit_code = 124
+        stdout_tail = (error.stdout or "")[-4000:] if isinstance(error.stdout, str) else ""
+        stderr_tail = (error.stderr or "")[-4000:] if isinstance(error.stderr, str) else "codex assignment bridge timed out"
+    codex_return = _read_json(repo_root, LATEST_MANIFEST_PATHS["codex_return"])
+    run_record = {
+        "schema_version": "vectorfl_integrated_engine_codex_run_latest_v0",
+        "status": "completed" if exit_code == 0 else "failed",
+        "started_at": started_at,
+        "finished_at": _utc_now(),
+        "source_assignment_artifact": LATEST_MANIFEST_PATHS["assignment"],
+        "emitted_handoff_artifact": emitted["path"],
+        "return_artifact": LATEST_MANIFEST_PATHS["codex_return"],
+        "worker": "codex",
+        "command": command,
+        "exit_code": exit_code,
+        "stdout_tail": stdout_tail,
+        "stderr_tail": stderr_tail,
+        "return_status": codex_return.get("status") or "unknown",
+        "return_summary": codex_return.get("summary") or "",
+        "return_blockers": codex_return.get("blockers") or [],
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["codex_run"], run_record)
+    return {
+        "ok": exit_code == 0,
+        "path": LATEST_MANIFEST_PATHS["codex_run"],
+        "run": run_record,
+    }
+
+
+def create_vectorfl_integrated_engine_supervisor_route(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    teams = {team["team_id"]: team for team in _team_registry(repo_root)}
+    allowed_decisions = {"accept_for_internal_read", "hold", "request_revision", "route_to_synthesis"}
+    decision = str(payload.get("decision") or "accept_for_internal_read").strip()
+    target_team = str(payload.get("target_team") or "internal_space_team").strip()
+
+    if decision not in allowed_decisions:
+        raise ValueError(f"unknown decision: {decision}")
+    if target_team not in teams:
+        raise ValueError(f"unknown target_team: {target_team}")
+
+    codex_return = _read_json(repo_root, LATEST_MANIFEST_PATHS["codex_return"])
+    codex_run = _read_json(repo_root, LATEST_MANIFEST_PATHS["codex_run"])
+    route = {
+        "schema_version": "vectorfl_integrated_engine_supervisor_route_v0",
+        "route_id": "vectorfl_engine_supervisor_route_latest",
+        "status": "routed" if decision != "hold" else "held",
+        "decided_at": _utc_now(),
+        "decision": decision,
+        "target_team": target_team,
+        "target_report_slot": teams[target_team]["report_slot"],
+        "source_worker": "codex",
+        "source_codex_run_artifact": LATEST_MANIFEST_PATHS["codex_run"] if codex_run else None,
+        "source_codex_return_artifact": LATEST_MANIFEST_PATHS["codex_return"] if codex_return else None,
+        "worker_return_status": codex_return.get("status") or "unknown",
+        "worker_return_summary": codex_return.get("summary") or "",
+        "rationale": str(payload.get("rationale") or "").strip()
+        or "Route latest Codex line-candidate report to the next supervisor-approved team.",
+        "next_instruction": str(payload.get("next_instruction") or "").strip(),
+        "guard": {
+            "does_not_replace_current_slot": True,
+            "does_not_close_gate": True,
+            "does_not_promote_candidate": True,
+            "records_supervisor_route_only": True,
+        },
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_route"], route)
+    return {
+        "ok": True,
+        "path": LATEST_MANIFEST_PATHS["supervisor_route"],
+        "route": route,
+    }
+
+
+def _internal_read_output_schema() -> Dict[str, Any]:
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "summary": {"type": "string"},
+            "stable": {"type": "array", "items": {"type": "string"}},
+            "unclear": {"type": "array", "items": {"type": "string"}},
+            "next_questions": {"type": "array", "items": {"type": "string"}},
+            "line_seeds": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "properties": {
+                        "line_name": {"type": "string"},
+                        "core_claim": {"type": "string"},
+                        "repeated_evidence": {"type": "array", "items": {"type": "string"}},
+                        "what_it_resists": {"type": "string"},
+                        "what_it_enables": {"type": "string"},
+                    },
+                    "required": ["line_name", "core_claim", "repeated_evidence", "what_it_resists", "what_it_enables"],
+                },
+            },
+            "should_external_lookup_proceed": {"type": "boolean"},
+            "recommended_next_team": {"type": "string"},
+        },
+        "required": [
+            "summary",
+            "stable",
+            "unclear",
+            "next_questions",
+            "line_seeds",
+            "should_external_lookup_proceed",
+            "recommended_next_team",
+        ],
+    }
+
+
+def _synthesis_output_schema() -> Dict[str, Any]:
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "current_status": {"type": "string"},
+            "why_this_step_happened": {"type": "string"},
+            "confirmed_lines": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "properties": {
+                        "line_name": {"type": "string"},
+                        "core_claim": {"type": "string"},
+                        "evidence_basis": {"type": "array", "items": {"type": "string"}},
+                        "human_translation": {"type": "string"},
+                        "next_use": {"type": "string"},
+                    },
+                    "required": ["line_name", "core_claim", "evidence_basis", "human_translation", "next_use"],
+                },
+            },
+            "unresolved_tensions": {"type": "array", "items": {"type": "string"}},
+            "what_changed": {"type": "array", "items": {"type": "string"}},
+            "recommendation": {"type": "string"},
+            "recommendation_reason": {"type": "string"},
+            "next_loop_proposal": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "next_cell": {"type": "string"},
+                    "carry_forward": {"type": "array", "items": {"type": "string"}},
+                    "question": {"type": "string"},
+                },
+                "required": ["next_cell", "carry_forward", "question"],
+            },
+            "should_external_lookup_proceed": {"type": "boolean"},
+        },
+        "required": [
+            "current_status",
+            "why_this_step_happened",
+            "confirmed_lines",
+            "unresolved_tensions",
+            "what_changed",
+            "recommendation",
+            "recommendation_reason",
+            "next_loop_proposal",
+            "should_external_lookup_proceed",
+        ],
+    }
+
+
+def _build_internal_read_prompt(repo_root: Path, supervisor_route: Dict[str, Any], codex_return: Dict[str, Any]) -> str:
+    source_files = [
+        LATEST_MANIFEST_PATHS["supervisor_route"],
+        LATEST_MANIFEST_PATHS["codex_return"],
+        "docs/contracts/vectorfl_paper_internal_read_cell_v0.md",
+        "docs/contracts/vectorfl_paper_conversation_to_line_procedure_v0.md",
+        "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md",
+        "docs/reports/paperclip_native_product_reading_v0.md",
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/runtime/vectorfl_integrated_engine_shell.py",
+    ]
+    source_state = {
+        "supervisor_route": supervisor_route,
+        "codex_return_summary": codex_return.get("summary") or "",
+        "codex_next_recommendation": codex_return.get("next_recommendation") or "",
+        "source_files": source_files,
+    }
+    return f"""You are Codex acting as VectorFL's internal_read_cell secondary worker.
+
+Run a read-only internal reread. Do not edit files. Do not broaden into implementation.
+Use the latest supervisor route and Codex worker report as the task seed.
+
+Read these internal files first:
+{json.dumps(source_files, ensure_ascii=False, indent=2)}
+
+Current source state:
+{json.dumps(source_state, ensure_ascii=False, indent=2)}
+
+Internal read contract:
+- extract stable vs unclear
+- extract next questions
+- produce evidence-backed line seeds
+- do not collapse into TODOs
+- do not request external lookup before internal questions are shaped
+
+Return JSON matching the provided schema only.
+"""
+
+
+def _build_synthesis_prompt(
+    repo_root: Path,
+    internal_read_report: Dict[str, Any],
+    supervisor_route: Dict[str, Any],
+) -> str:
+    source_files = [
+        LATEST_MANIFEST_PATHS["internal_read_report"],
+        LATEST_MANIFEST_PATHS["supervisor_route"],
+        "docs/contracts/vectorfl_paper_synthesis_cell_v0.md",
+        "docs/contracts/vectorfl_paper_supervisor_report_format_v0.md",
+        "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md",
+        "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/runtime/vectorfl_integrated_engine_shell.py",
+    ]
+    source_state = {
+        "internal_read_report": internal_read_report,
+        "supervisor_route": supervisor_route,
+        "source_files": source_files,
+    }
+    return f"""You are Codex acting as VectorFL's synthesis_cell primary worker.
+
+Run a read-only synthesis pass. Do not edit files. Do not broaden into external lookup unless the internal read clearly justifies it.
+Use the latest internal_read_report as the primary input and produce a supervisor-readable report.
+
+Read these internal files first:
+{json.dumps(source_files, ensure_ascii=False, indent=2)}
+
+Current source state:
+{json.dumps(source_state, ensure_ascii=False, indent=2)}
+
+Synthesis contract:
+- confirm or hold line seeds from the internal read
+- translate them into human-readable supervision material
+- name unresolved tensions plainly
+- recommend go / hold / reopen / redirect
+- propose the next cell and the exact carry-forward inputs
+- preserve that this is read-only worker reporting, not implementation completion
+
+Return JSON matching the provided schema only.
+"""
+
+
+def run_internal_read_from_supervisor_route(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    supervisor_route = _read_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_route"])
+    codex_return = _read_json(repo_root, LATEST_MANIFEST_PATHS["codex_return"])
+    if not supervisor_route:
+        raise ValueError("latest supervisor route is missing")
+    if supervisor_route.get("decision") not in {"accept_for_internal_read", "route_to_synthesis"}:
+        raise ValueError(f"supervisor route is not executable for internal read: {supervisor_route.get('decision')}")
+    if not codex_return:
+        raise ValueError("latest codex return is missing")
+
+    started_at = _utc_now()
+    command_base = [
+        "codex",
+        "exec",
+        "--skip-git-repo-check",
+        "--sandbox",
+        "read-only",
+        "--cd",
+        str(repo_root),
+    ]
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_root = Path(temp_dir)
+        schema_path = temp_root / "internal_read_output_schema.json"
+        output_path = temp_root / "internal_read_last_message.json"
+        schema_path.write_text(json.dumps(_internal_read_output_schema(), ensure_ascii=False, indent=2), encoding="utf-8")
+        command = command_base + [
+            "--output-schema",
+            str(schema_path),
+            "--output-last-message",
+            str(output_path),
+            "-",
+        ]
+        prompt = _build_internal_read_prompt(repo_root, supervisor_route, codex_return)
+        try:
+            completed = subprocess.run(
+                command,
+                cwd=str(repo_root),
+                input=prompt,
+                text=True,
+                capture_output=True,
+                timeout=90,
+            )
+            exit_code = completed.returncode
+            stdout_tail = completed.stdout[-4000:]
+            stderr_tail = completed.stderr[-4000:]
+        except subprocess.TimeoutExpired as error:
+            exit_code = 124
+            stdout_tail = (error.stdout or "")[-4000:] if isinstance(error.stdout, str) else ""
+            stderr_tail = (error.stderr or "")[-4000:] if isinstance(error.stderr, str) else "internal read codex run timed out"
+
+        report: Dict[str, Any]
+        if exit_code == 0 and output_path.exists():
+            parsed = json.loads(output_path.read_text(encoding="utf-8"))
+            report = {
+                "schema_version": "vectorfl_integrated_engine_internal_read_report_v0",
+                "status": "completed",
+                "source_supervisor_route_artifact": LATEST_MANIFEST_PATHS["supervisor_route"],
+                "source_codex_return_artifact": LATEST_MANIFEST_PATHS["codex_return"],
+                "worker": "codex",
+                "cell": "internal_read_cell",
+                "summary": parsed["summary"],
+                "stable": parsed["stable"],
+                "unclear": parsed["unclear"],
+                "next_questions": parsed["next_questions"],
+                "line_seeds": parsed["line_seeds"],
+                "should_external_lookup_proceed": bool(parsed["should_external_lookup_proceed"]),
+                "recommended_next_team": parsed["recommended_next_team"],
+                "returned_at": _utc_now(),
+            }
+        else:
+            report = {
+                "schema_version": "vectorfl_integrated_engine_internal_read_report_v0",
+                "status": "failed",
+                "source_supervisor_route_artifact": LATEST_MANIFEST_PATHS["supervisor_route"],
+                "source_codex_return_artifact": LATEST_MANIFEST_PATHS["codex_return"],
+                "worker": "codex",
+                "cell": "internal_read_cell",
+                "summary": "Internal read worker did not return a usable report.",
+                "stable": [],
+                "unclear": [stderr_tail or "internal read run failed before structured output"],
+                "next_questions": ["Should the supervisor rerun internal read after checking the Codex CLI environment?"],
+                "line_seeds": [],
+                "should_external_lookup_proceed": False,
+                "recommended_next_team": "supervisor_team",
+                "returned_at": _utc_now(),
+            }
+
+    run_record = {
+        "schema_version": "vectorfl_integrated_engine_internal_read_run_v0",
+        "status": "completed" if exit_code == 0 else "failed",
+        "started_at": started_at,
+        "finished_at": _utc_now(),
+        "source_supervisor_route_artifact": LATEST_MANIFEST_PATHS["supervisor_route"],
+        "report_artifact": LATEST_MANIFEST_PATHS["internal_read_report"],
+        "worker": "codex",
+        "cell": "internal_read_cell",
+        "command": command,
+        "exit_code": exit_code,
+        "stdout_tail": stdout_tail,
+        "stderr_tail": stderr_tail,
+        "report_status": report.get("status"),
+        "report_summary": report.get("summary"),
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["internal_read_report"], report)
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["internal_read_run"], run_record)
+    return {
+        "ok": exit_code == 0 and report.get("status") == "completed",
+        "path": LATEST_MANIFEST_PATHS["internal_read_run"],
+        "run": run_record,
+        "report_path": LATEST_MANIFEST_PATHS["internal_read_report"],
+        "report": report,
+    }
+
+
+def run_synthesis_from_internal_read(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    internal_read_report = _read_json(repo_root, LATEST_MANIFEST_PATHS["internal_read_report"])
+    supervisor_route = _read_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_route"])
+    if not internal_read_report:
+        raise ValueError("latest internal read report is missing")
+    if internal_read_report.get("status") != "completed":
+        raise ValueError(f"internal read report is not completed: {internal_read_report.get('status')}")
+
+    started_at = _utc_now()
+    command_base = [
+        "codex",
+        "exec",
+        "--skip-git-repo-check",
+        "--sandbox",
+        "read-only",
+        "--cd",
+        str(repo_root),
+    ]
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_root = Path(temp_dir)
+        schema_path = temp_root / "synthesis_output_schema.json"
+        output_path = temp_root / "synthesis_last_message.json"
+        schema_path.write_text(json.dumps(_synthesis_output_schema(), ensure_ascii=False, indent=2), encoding="utf-8")
+        command = command_base + [
+            "--output-schema",
+            str(schema_path),
+            "--output-last-message",
+            str(output_path),
+            "-",
+        ]
+        prompt = _build_synthesis_prompt(repo_root, internal_read_report, supervisor_route)
+        try:
+            completed = subprocess.run(
+                command,
+                cwd=str(repo_root),
+                input=prompt,
+                text=True,
+                capture_output=True,
+                timeout=90,
+            )
+            exit_code = completed.returncode
+            stdout_tail = completed.stdout[-4000:]
+            stderr_tail = completed.stderr[-4000:]
+        except subprocess.TimeoutExpired as error:
+            exit_code = 124
+            stdout_tail = (error.stdout or "")[-4000:] if isinstance(error.stdout, str) else ""
+            stderr_tail = (error.stderr or "")[-4000:] if isinstance(error.stderr, str) else "synthesis codex run timed out"
+
+        if exit_code == 0 and output_path.exists():
+            parsed = json.loads(output_path.read_text(encoding="utf-8"))
+            report = {
+                "schema_version": "vectorfl_integrated_engine_synthesis_report_v0",
+                "status": "completed",
+                "source_internal_read_report_artifact": LATEST_MANIFEST_PATHS["internal_read_report"],
+                "source_supervisor_route_artifact": LATEST_MANIFEST_PATHS["supervisor_route"] if supervisor_route else None,
+                "worker": "codex",
+                "cell": "synthesis_cell",
+                "current_status": parsed["current_status"],
+                "why_this_step_happened": parsed["why_this_step_happened"],
+                "confirmed_lines": parsed["confirmed_lines"],
+                "unresolved_tensions": parsed["unresolved_tensions"],
+                "what_changed": parsed["what_changed"],
+                "recommendation": parsed["recommendation"],
+                "recommendation_reason": parsed["recommendation_reason"],
+                "next_loop_proposal": parsed["next_loop_proposal"],
+                "should_external_lookup_proceed": bool(parsed["should_external_lookup_proceed"]),
+                "returned_at": _utc_now(),
+            }
+        else:
+            report = {
+                "schema_version": "vectorfl_integrated_engine_synthesis_report_v0",
+                "status": "failed",
+                "source_internal_read_report_artifact": LATEST_MANIFEST_PATHS["internal_read_report"],
+                "source_supervisor_route_artifact": LATEST_MANIFEST_PATHS["supervisor_route"] if supervisor_route else None,
+                "worker": "codex",
+                "cell": "synthesis_cell",
+                "current_status": "Synthesis worker did not return a usable report.",
+                "why_this_step_happened": "The engine attempted to convert the latest internal read into supervisor-readable decision material.",
+                "confirmed_lines": [],
+                "unresolved_tensions": [stderr_tail or "synthesis run failed before structured output"],
+                "what_changed": [],
+                "recommendation": "hold",
+                "recommendation_reason": "Rerun synthesis only after checking the Codex CLI environment.",
+                "next_loop_proposal": {
+                    "next_cell": "supervisor",
+                    "carry_forward": [LATEST_MANIFEST_PATHS["internal_read_report"]],
+                    "question": "Should the supervisor rerun synthesis after checking the failed worker run?",
+                },
+                "should_external_lookup_proceed": False,
+                "returned_at": _utc_now(),
+            }
+
+    run_record = {
+        "schema_version": "vectorfl_integrated_engine_synthesis_run_v0",
+        "status": "completed" if exit_code == 0 else "failed",
+        "started_at": started_at,
+        "finished_at": _utc_now(),
+        "source_internal_read_report_artifact": LATEST_MANIFEST_PATHS["internal_read_report"],
+        "report_artifact": LATEST_MANIFEST_PATHS["synthesis_report"],
+        "worker": "codex",
+        "cell": "synthesis_cell",
+        "command": command,
+        "exit_code": exit_code,
+        "stdout_tail": stdout_tail,
+        "stderr_tail": stderr_tail,
+        "report_status": report.get("status"),
+        "recommendation": report.get("recommendation"),
+    }
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["synthesis_report"], report)
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["synthesis_run"], run_record)
+    return {
+        "ok": exit_code == 0 and report.get("status") == "completed",
+        "path": LATEST_MANIFEST_PATHS["synthesis_run"],
+        "run": run_record,
+        "report_path": LATEST_MANIFEST_PATHS["synthesis_report"],
+        "report": report,
+    }
+
+
+def create_supervisor_gate_from_synthesis(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    synthesis_report = _read_json(repo_root, LATEST_MANIFEST_PATHS["synthesis_report"])
+    if not synthesis_report:
+        raise ValueError("latest synthesis report is missing")
+    if synthesis_report.get("status") != "completed":
+        raise ValueError(f"synthesis report is not completed: {synthesis_report.get('status')}")
+
+    allowed_decisions = {"approve_implementation_brief", "hold", "reopen_internal_read", "redirect"}
+    decision = str(payload.get("decision") or "hold").strip()
+    if decision not in allowed_decisions:
+        raise ValueError(f"unknown supervisor gate decision: {decision}")
+
+    target_team = str(payload.get("target_team") or ("implementation_team" if decision == "approve_implementation_brief" else "supervisor_team")).strip()
+    rationale = str(payload.get("rationale") or "").strip() or synthesis_report.get("recommendation_reason") or ""
+    next_instruction = str(payload.get("next_instruction") or "").strip()
+    approved_line_names = _list_from_text(payload.get("approved_line_names")) or [
+        str(line.get("line_name") or "").strip()
+        for line in synthesis_report.get("confirmed_lines") or []
+        if str(line.get("line_name") or "").strip()
+    ]
+    guardrail_overrides = _list_from_text(payload.get("guardrail_overrides"))
+
+    gate = {
+        "schema_version": "vectorfl_integrated_engine_supervisor_gate_v0",
+        "gate_id": "vectorfl_engine_supervisor_gate_latest",
+        "status": "approved" if decision == "approve_implementation_brief" else "held",
+        "decided_at": _utc_now(),
+        "decision": decision,
+        "target_team": target_team,
+        "source_synthesis_report_artifact": LATEST_MANIFEST_PATHS["synthesis_report"],
+        "synthesis_recommendation": synthesis_report.get("recommendation") or "unknown",
+        "approved_line_names": approved_line_names,
+        "rationale": rationale,
+        "next_instruction": next_instruction
+        or "Create a bounded implementation brief from the approved synthesis lines without running implementation yet.",
+        "guardrail_overrides": guardrail_overrides,
+        "guard": {
+            "does_not_replace_current_slot": True,
+            "does_not_close_gate": True,
+            "does_not_promote_candidate": True,
+            "does_not_run_implementation": True,
+            "records_supervisor_gate_only": True,
+        },
+    }
+    gate["content_fingerprint"] = _fingerprint(
+        gate,
+        [
+            "decision",
+            "target_team",
+            "source_synthesis_report_artifact",
+            "synthesis_recommendation",
+            "approved_line_names",
+            "rationale",
+            "next_instruction",
+            "guardrail_overrides",
+        ],
+    )
+
+    latest_gate = _read_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_gate"])
+    if latest_gate.get("content_fingerprint") == gate["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["supervisor_gate"],
+            "gate": latest_gate,
+            "message": "unchanged: latest supervisor gate already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_gate"], gate)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["supervisor_gate"],
+        "gate": gate,
+    }
+
+
+def create_implementation_brief_from_supervisor_gate(runtime_root: Path) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    gate = _read_json(repo_root, LATEST_MANIFEST_PATHS["supervisor_gate"])
+    synthesis_report = _read_json(repo_root, LATEST_MANIFEST_PATHS["synthesis_report"])
+    if not gate:
+        raise ValueError("latest supervisor gate is missing")
+    if gate.get("decision") != "approve_implementation_brief":
+        raise ValueError(f"supervisor gate is not approved for implementation brief: {gate.get('decision')}")
+    if not synthesis_report:
+        raise ValueError("latest synthesis report is missing")
+
+    approved = set(gate.get("approved_line_names") or [])
+    confirmed_lines = [
+        line
+        for line in synthesis_report.get("confirmed_lines") or []
+        if not approved or line.get("line_name") in approved
+    ]
+    brief = {
+        "schema_version": "vectorfl_integrated_engine_implementation_brief_v0",
+        "brief_id": "vectorfl_engine_implementation_brief_latest",
+        "status": "brief_ready_not_executed",
+        "created_at": _utc_now(),
+        "source_supervisor_gate_artifact": LATEST_MANIFEST_PATHS["supervisor_gate"],
+        "source_synthesis_report_artifact": LATEST_MANIFEST_PATHS["synthesis_report"],
+        "target_team": gate.get("target_team") or "implementation_team",
+        "target_worker": "codex",
+        "implementation_goal": "Implement only the supervisor-approved operating-page improvements from the confirmed synthesis lines.",
+        "approved_lines": confirmed_lines,
+        "required_changes": [
+            line.get("next_use") or line.get("core_claim") or line.get("line_name")
+            for line in confirmed_lines
+        ],
+        "reference_md_files": (synthesis_report.get("next_loop_proposal") or {}).get("carry_forward") or [],
+        "forbidden_scope": [
+            "do not replace current slot",
+            "do not declare gate close",
+            "do not launch external search",
+            "do not run broad orchestration",
+            "do not treat worker report return as product completion",
+        ],
+        "expected_output": [
+            "changed files",
+            "behavior summary",
+            "verification commands",
+            "remaining blockers",
+            "next supervisor decision",
+        ],
+        "guard": {
+            "records_brief_only": True,
+            "does_not_run_implementation": True,
+            "requires_separate_worker_run": True,
+        },
+    }
+    brief["content_fingerprint"] = _fingerprint(
+        brief,
+        [
+            "source_supervisor_gate_artifact",
+            "source_synthesis_report_artifact",
+            "target_team",
+            "target_worker",
+            "implementation_goal",
+            "approved_lines",
+            "required_changes",
+            "reference_md_files",
+            "forbidden_scope",
+        ],
+    )
+
+    latest_brief = _read_json(repo_root, LATEST_MANIFEST_PATHS["implementation_brief"])
+    if latest_brief.get("content_fingerprint") == brief["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["implementation_brief"],
+            "brief": latest_brief,
+            "message": "unchanged: latest implementation brief already matches this gate",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["implementation_brief"], brief)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["implementation_brief"],
+        "brief": brief,
+    }
+
+
+def create_implementation_launch_gate(runtime_root: Path, payload: Dict[str, Any]) -> Dict[str, Any]:
+    repo_root = runtime_root.resolve().parent
+    implementation_brief = _read_json(repo_root, LATEST_MANIFEST_PATHS["implementation_brief"])
+    if not implementation_brief:
+        raise ValueError("latest implementation brief is missing")
+    if implementation_brief.get("status") != "brief_ready_not_executed":
+        raise ValueError(f"implementation brief is not ready: {implementation_brief.get('status')}")
+
+    allowed_decisions = {"approve_codex_run", "hold", "reopen_brief", "redirect"}
+    decision = str(payload.get("decision") or "hold").strip()
+    if decision not in allowed_decisions:
+        raise ValueError(f"unknown implementation launch decision: {decision}")
+
+    gate = {
+        "schema_version": "vectorfl_integrated_engine_implementation_launch_gate_v0",
+        "gate_id": "vectorfl_engine_implementation_launch_gate_latest",
+        "status": "approved_to_run" if decision == "approve_codex_run" else "held",
+        "decided_at": _utc_now(),
+        "decision": decision,
+        "source_implementation_brief_artifact": LATEST_MANIFEST_PATHS["implementation_brief"],
+        "target_worker": str(payload.get("target_worker") or implementation_brief.get("target_worker") or "codex").strip(),
+        "execution_mode": str(payload.get("execution_mode") or "separate_supervised_run").strip(),
+        "rationale": str(payload.get("rationale") or "").strip()
+        or "Implementation brief is ready for a separately supervised worker run.",
+        "run_instruction": str(payload.get("run_instruction") or "").strip()
+        or "Use the latest implementation brief as input. Do not replace slots, close gates, or broaden scope.",
+        "preflight_checks": _list_from_text(payload.get("preflight_checks"))
+        or [
+            "read implementation brief",
+            "confirm target files before editing",
+            "preserve current slot",
+            "do not declare gate close",
+            "return changed files and blockers",
+        ],
+        "guard": {
+            "does_not_run_implementation_now": True,
+            "requires_separate_worker_run": True,
+            "does_not_replace_current_slot": True,
+            "does_not_close_gate": True,
+            "records_launch_decision_only": True,
+        },
+    }
+    gate["content_fingerprint"] = _fingerprint(
+        gate,
+        [
+            "decision",
+            "source_implementation_brief_artifact",
+            "target_worker",
+            "execution_mode",
+            "rationale",
+            "run_instruction",
+            "preflight_checks",
+        ],
+    )
+
+    latest_gate = _read_json(repo_root, LATEST_MANIFEST_PATHS["implementation_launch_gate"])
+    if latest_gate.get("content_fingerprint") == gate["content_fingerprint"]:
+        return {
+            "ok": True,
+            "created": False,
+            "path": LATEST_MANIFEST_PATHS["implementation_launch_gate"],
+            "gate": latest_gate,
+            "message": "unchanged: latest implementation launch gate already matches this input",
+        }
+
+    _write_json(repo_root, LATEST_MANIFEST_PATHS["implementation_launch_gate"], gate)
+    return {
+        "ok": True,
+        "created": True,
+        "path": LATEST_MANIFEST_PATHS["implementation_launch_gate"],
+        "gate": gate,
+    }

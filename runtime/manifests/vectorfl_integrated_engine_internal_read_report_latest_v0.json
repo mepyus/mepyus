@@ -1,0 +1,105 @@
+{
+  "schema_version": "vectorfl_integrated_engine_internal_read_report_v0",
+  "status": "completed",
+  "source_supervisor_route_artifact": "runtime/manifests/vectorfl_integrated_engine_supervisor_route_latest_v0.json",
+  "source_codex_return_artifact": "runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+  "worker": "codex",
+  "cell": "internal_read_cell",
+  "summary": "Read-only internal reread completed against the latest supervisor route, Codex return, internal-read contracts, Paperclip/top-layer locks, and integrated-engine API/shell seams. The stable direction is an engine-level operating surface with work packet, team assignment, worker report, supervisor route/gate, internal-read report, and audit/guard boundaries. The unresolved pressure is not whether this should become a TODO list, but how to keep the page feeling like a commandable responsibility chain without letting read-only bridge reports look like completed implementation or gate closure.",
+  "stable": [
+    "The supervisor route is explicitly accepted for internal read and guarded against slot replacement, gate close, and candidate promotion.",
+    "The Codex worker return is a completed read-only bridge report with no changed files, not an implementation result or gate close.",
+    "The internal-read contract requires stable/unclear separation, next questions, and evidence-backed line seeds; it explicitly forbids collapsing line candidates into implementation tasks too early.",
+    "The conversation-to-line procedure locks the method: repeated pressure, misunderstanding corrections, question structures, then line candidates; it prohibits jumping to external search before internal line extraction.",
+    "The top-layer lock is stable: VectorFL must be an engine-level operating surface, not an enlarged substrate/status dashboard.",
+    "The Paperclip reference line is stable as a control-plane translation: triage, work allocation, work detail, right assignment/gate inspector, organ runtime detail, approval/gate, and audit.",
+    "The runtime API already models cell_registry, team_registry, engine_loop, work_packet, assignment, supervisor_route, internal_read_report, and guard flags as separate responsibilities.",
+    "The shell already exposes work packet, team board, supervisor route, internal read report, line seed rendering, and command slots as distinct surfaces."
+  ],
+  "unclear": [
+    "The shell still labels some actions as runnable, such as Run Codex Assignment and Run Internal Read, so the boundary between read-only bridge execution and product-level worker execution may still feel ambiguous to a user.",
+    "Latest Worker Report hardcodes return_slot=line_candidates_latest in the shell display, while the team registry supports several report slots; this may weaken the sense that report slots are real routing units.",
+    "The worker report summary is rendered as a large body of text, so repeated pressure and candidate lines may still blur into one report blob instead of becoming separately reviewable evidence objects.",
+    "The page has a right inspector area, but assignment/gate inspection is still distributed across panels and command slots rather than a single persistent Paperclip-style properties inspector.",
+    "Implementation and verification cells are present in the registry but their contracts are pending, so they should remain visible as future responsibility points rather than treated as launch-ready operating roles.",
+    "The Codex return status and run status use completed language; the guard copy says no gate close, but the visual hierarchy may still allow completed to be misread as actual work completion."
+  ],
+  "next_questions": [
+    "Where should the supervisor choose team, assignee_cell, return_slot, and paperclip_reference_line so they are experienced as routing fields rather than metadata afterthoughts?",
+    "How should the page label read-only bridge reports so completed means report returned, not worker finished the underlying product work?",
+    "Should worker report output be split into repeated pressure, candidate line, review focus, blockers, and next recommendation before supervisor routing?",
+    "What belongs in the persistent right assignment/gate inspector versus the main work packet detail body?",
+    "Should return_slot be derived visibly from selected team/assignee instead of being hardcoded in the Latest Worker Report panel?",
+    "What minimum contracts are needed before implementation_cell and verification_cell can appear as executable rather than pending responsibilities?"
+  ],
+  "line_seeds": [
+    {
+      "line_name": "routing_fields_first",
+      "core_claim": "The supervisor-facing page should surface team, assignee_cell, return_slot, and paperclip_reference_line before showing report prose, because these are the actual operating handles for the next transition.",
+      "repeated_evidence": [
+        "Codex return candidate 1 asks to expose supervisor-selectable inputs first: team, assignee_cell, return_slot, paperclip_reference_line.",
+        "The API team_registry defines team_id, primary_cell, members, current_responsibility, and report_slot for each operating team.",
+        "create_vectorfl_integrated_engine_assignment persists team_id, assignee_cell, expected_report, review_focus, forbidden_scope, return_slot, and guard fields.",
+        "emit_codex_handoff_from_assignment includes selected_context_summary fields for team, assignee_cell, return_slot, and paperclip_reference_line.",
+        "The Paperclip native reading repeatedly identifies IssueProperties/PropertiesPanel as the right-side assignment/properties inspector where assignment stays editable beside the detail surface."
+      ],
+      "what_it_resists": "It resists treating teams and slots as decorative labels under a generic dashboard or report body.",
+      "what_it_enables": "It enables a supervisor route UI where responsibility transition can be checked before any report is accepted or forwarded."
+    },
+    {
+      "line_name": "packet_to_gate_sequence",
+      "core_claim": "The page should preserve the operating order work packet -> team assignment -> worker report -> supervisor gate as the first readable spine of the integrated engine.",
+      "repeated_evidence": [
+        "Codex return candidate 2 names the exact order: work packet -> team assignment -> worker report -> supervisor gate.",
+        "emit_codex_handoff_from_assignment stores paperclip_reference_line as work packet -> team assignment -> worker report -> supervisor gate.",
+        "The shell Team Board renders Current Operating Sequence as 1 work packet, 2 team assignment, 3 codex worker report, 4 supervisor gate.",
+        "The top-layer lock says the user must see and control transitions from input interpretation through worker reports, supervisor decisions, implementation, verification, and audit.",
+        "The API engine_loop separates input_interpretation, line_generation, internal_space_exploration, external_reference, synthesis_translation, implementation_handoff, verification_crosscheck, and supervisor_decision."
+      ],
+      "what_it_resists": "It resists reverting to a static substrate dashboard, tab enumeration, or bridge-card collage.",
+      "what_it_enables": "It enables the user to understand which responsibility has the packet now, what return is expected, and which gate can route or hold it."
+    },
+    {
+      "line_name": "read_only_report_not_execution",
+      "core_claim": "Worker report areas must state that bridge output is read-only evidence return, not actual product execution, implementation completion, slot replacement, or gate closure.",
+      "repeated_evidence": [
+        "The supervisor route guard says does_not_replace_current_slot, does_not_close_gate, does_not_promote_candidate, and records_supervisor_route_only.",
+        "The Codex return blockers explicitly state that files were not changed, the current slot was not replaced, the gate was not closed, and no worker execution beyond the bridge result was declared.",
+        "The API state guard includes no_gate_close, no_slot_replacement, no_candidate_promotion, and no_fake_execution_controls.",
+        "create_vectorfl_integrated_engine_assignment defaults forbidden_scope to no fake worker execution, no slot replacement, and no gate close.",
+        "The shell copy says the Codex bridge is a read-only report return path check, but button labels and completed statuses can still be misread as actual execution completion."
+      ],
+      "what_it_resists": "It resists fake execution language and the false impression that a returned report closes the supervisor gate.",
+      "what_it_enables": "It enables read-only worker reports to be used as evidence inputs while keeping supervisor decision authority intact."
+    },
+    {
+      "line_name": "evidence_sections_before_tasks",
+      "core_claim": "Internal read output should keep repeated pressure, stable/unclear boundaries, next questions, and line seeds visibly separate before any implementation brief is formed.",
+      "repeated_evidence": [
+        "The internal-read contract requires at least repeated pressures, misunderstanding corrections, question structures, and evidence-backed line seeds, and warns against vague summaries.",
+        "The conversation-to-line procedure says the goal is not TODO lists but repeated pressures, corrected misunderstandings, question structures, reusable lines, and action bridges.",
+        "Codex return candidate 4 asks to keep repeated pressure and candidate line as separate sections so the next internal read can inspect them directly.",
+        "The shell internal-read section renders stable, unclear, next questions, and line seed cards as separate report fields.",
+        "The API _internal_read_output_schema requires summary, stable, unclear, next_questions, line_seeds, should_external_lookup_proceed, and recommended_next_team."
+      ],
+      "what_it_resists": "It resists converting the reread into implementation TODOs or a single polished summary before the evidence line is stable.",
+      "what_it_enables": "It enables synthesis to choose confirmed lines and unresolved tensions without losing the pressure that produced them."
+    },
+    {
+      "line_name": "persistent_assignment_gate_inspector",
+      "core_claim": "VectorFL should translate Paperclip's IssueProperties pattern into a persistent assignment/gate inspector for current organ/lane, target worker, forbidden scope, gate posture, and return slot.",
+      "repeated_evidence": [
+        "The top-layer lock names the right inspector as assignment, current organ/lane, handoff, gate, and relevant refs.",
+        "The Paperclip native reading identifies IssueProperties/PropertiesPanel as the persistent assignment/gate inspector beside issue detail.",
+        "The Paperclip-to-VectorFL translation says Right assignment/gate inspector should always hold current organ/lane, target worker, forbidden scope, gate posture, and continue/hold/reopen condition.",
+        "The shell has an inspector column with Contract Readout, Next Boundary, and Command Slots, but assignment/gate fields are still also spread across Team Board and Supervisor Route panels.",
+        "The supervisor route form and assignment form already contain the needed fields, but the line is not yet concentrated into one inspector posture."
+      ],
+      "what_it_resists": "It resists scattering assignment and gate state across panels where the supervisor cannot read the current responsibility at a glance.",
+      "what_it_enables": "It enables a product-level control plane where detail work and routing decisions stay visible together."
+    }
+  ],
+  "should_external_lookup_proceed": false,
+  "recommended_next_team": "synthesis_team",
+  "returned_at": "2026-04-11T02:47:40Z"
+}

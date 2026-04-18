@@ -1,0 +1,61 @@
+- result summary
+  - Bounded reread complete.
+  - No files modified.
+  - Observed material centers on `operator_report.md` as a bridge artifact between raw Codex output and user judgment.
+  - Main axis candidate: run artifacts need user-judgment grammar before UI language patches.
+
+- important findings / diffs / outputs
+  - internal phrase or signal observed: `operator_report.md`
+  - human-readable line, not final wording: a session-level report that lets the user judge a run without reading raw stdout or treating the result as final language
+  - repeated connection it belongs to: `Codex run -> structured return -> operator_report.md -> mark update -> regenerated operator report -> VectorFL latest preview`
+  - emerging axis candidate: run artifact must carry user-judgment grammar before UI language patch
+  - surface exposure note: user sees judgment line; VectorFL exposes preview and route state; engine preserves raw output, structured return, marks, and artifact path
+  - what must not be flattened: report preview must not become final glossary, UI copy replacement, automatic validation, promotion, or deposit ingestion
+  - next reread question: does the report preserve route / authority / state / boundary when marks change?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `validation_target`
+  - human-readable line, not final wording: a mark that says this run is suitable for checking, not that it is complete or canonical
+  - repeated connection it belongs to: mark update changes readable operator report state
+  - emerging axis candidate: marks are route signals, not completion labels
+  - surface exposure note: user can judge next action; VectorFL displays mark context; engine regenerates report from changed session state
+  - what must not be flattened: validation target must not read as approved, promoted, deposited, or assigned
+  - next reread question: does preview language make mark status legible as route signal?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `shared operational language`
+  - human-readable line, not final wording: a middle layer that carries internal meaning into readable operating lines without replacing the three surfaces
+  - repeated connection it belongs to: internal language -> human-readable line -> repeated connection -> emerging axis -> surface exposure rule
+  - emerging axis candidate: shared grammar grows through line / connection / axis, not through final wording
+  - surface exposure note: user receives decision units; VectorFL mediates line and axis growth; engine keeps execution material bounded
+  - what must not be flattened: internal language must not collapse into user-only copy or generic project-management terms
+  - next reread question: which lines are stable enough for operator reports but not stable enough for glossary?
+  - suggested next use: reread target
+
+  - internal phrase or signal observed: `3면 언어`
+  - human-readable line, not final wording: user, VectorFL, and engine each need different language density because they answer different operational questions
+  - repeated connection it belongs to: surface split -> route / authority -> friction -> next smallest action
+  - emerging axis candidate: surface-specific exposure rules are needed before fixed interface wording
+  - surface exposure note: user handles route and decision; VectorFL handles mediation and validation; engine handles shaped input, state, and return material
+  - what must not be flattened: user surface, VectorFL surface, and engine surface must not merge into one explanation layer
+  - next reread question: where does preview density become too high for VectorFL control flow?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `bridge artifact`
+  - human-readable line, not final wording: an artifact that translates run material into operational judgment without becoming canonical source
+  - repeated connection it belongs to: raw output / structured return / deposit candidate / operator report
+  - emerging axis candidate: readable artifact can exist before official ingestion
+  - surface exposure note: user reads first-pass judgment; VectorFL previews it; engine stores artifact and source material
+  - what must not be flattened: bridge must not become deposit, canonical report, UI replacement, or feature promotion
+  - next reread question: what minimum source material is needed for trust without overexposing engine detail?
+  - suggested next use: implementation return
+
+- uncertainty or failure notes
+  - Browser visibility of the VectorFL panel was not validated in this reread.
+  - The bounded notes assert API and build validation, but this loop only reread the two provided docs.
+  - No final glossary or UI wording should be derived from this pass.
+
+- suggested next use
+  - validation target: verify `operator report preview` preserves `validation_target` as route signal, not completion.
+  - reread target: compare a generated `operator_report.md` against the shared operational language growth note for surface-density drift.
+  - deposit candidate: not yet; this pass is collection material, not canonical glossary or official ingestion.

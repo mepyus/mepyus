@@ -1,0 +1,692 @@
+{
+  "state": "loaded",
+  "page_title": "VectorFL Page / Semi-Live / programs-connections",
+  "left_rail": {
+    "enabled": false,
+    "mode": "rail_minimal",
+    "note": "Left rail remains optional at this stage; sidebar and center console stay primary."
+  },
+  "navigation_items": [
+    {
+      "key": "current-reading",
+      "label": "Current Reading",
+      "active": false
+    },
+    {
+      "key": "inputs",
+      "label": "Inputs / Intake",
+      "active": false
+    },
+    {
+      "key": "cases",
+      "label": "Cases / Queue",
+      "active": false
+    },
+    {
+      "key": "history",
+      "label": "History / Trace",
+      "active": false
+    },
+    {
+      "key": "programs",
+      "label": "Programs / Connections",
+      "active": true
+    }
+  ],
+  "navigation_structure": {
+    "primary": [
+      "Current Reading",
+      "Cases / Queue",
+      "Inputs / Intake",
+      "History / Trace",
+      "Programs / Connections"
+    ],
+    "secondary": [
+      "Organ Detail (contextual drill-in only)"
+    ]
+  },
+  "scenario": {
+    "name": "semi_live_runtime_bridge",
+    "intent": "Translate current runtime phase and engine state into current-reading-first shell without losing VectorFL semantics.",
+    "status": "active"
+  },
+  "current_responsibility": {
+    "current_organ_ref": "organ:flow_interpretation",
+    "current_lane_ref": "lane_transition_reread_001",
+    "placement_reason": "Current runtime phase is `thickening` with decision `thickening`. Latent lines: pre_read_eye, raw_return_preservation.",
+    "restriction_flags": [
+      "observer_only",
+      "promotion_forbidden",
+      "closure_before_presentation"
+    ],
+    "next_hop_candidates": [
+      "lane_operator_readout_review",
+      "lane_transition_preflight_reread"
+    ],
+    "detail_entry_target": "organ_detail:flow_interpretation",
+    "detail_href": "../semi_live_organ_detail/current.html"
+  },
+  "progression_preview": {
+    "previous_step": {
+      "organ_ref": "organ:runtime_preflight",
+      "summary": "mode=space_reading / mode_source=default_order / group=raw_external_cases / raw materials should be read before promotion into reports or downstream structures"
+    },
+    "current_step": {
+      "organ_ref": "organ:flow_interpretation",
+      "summary": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready"
+    },
+    "next_candidates": [
+      {
+        "organ_ref": "organ:governance",
+        "lane_ref": "thickening",
+        "status": "preferred_candidate",
+        "detail_entry_target": "organ_detail:governance",
+        "detail_href": "../semi_live_organ_detail/governance.html"
+      }
+    ]
+  },
+  "queue_preview": [
+    {
+      "case_id": "semi_live:choi_ai_classroom_vlm",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "placement_reason_short": "choi_ai_classroom_vlm is being held under thickening reading.",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance",
+      "held_candidate_exists": true,
+      "headline": "choi_ai_classroom_vlm / maturation=weak / trace=traceable",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:50:18.142967+00:00",
+      "saved_connection_count": 5,
+      "attention_flag": true,
+      "attention_pattern_summary": "insufficient_attention_history",
+      "recent_update_reason": null,
+      "detail_href": "../semi_live_organ_detail/current.html",
+      "next_detail_href": "../semi_live_organ_detail/governance.html"
+    },
+    {
+      "case_id": "semi_live:choi_ai_classroom_transformer1",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "placement_reason_short": "choi_ai_classroom_transformer1 is being held under thickening reading.",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance",
+      "held_candidate_exists": true,
+      "headline": "choi_ai_classroom_transformer1 / maturation=weak / trace=traceable",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:50:18.131467+00:00",
+      "saved_connection_count": 2,
+      "attention_flag": true,
+      "attention_pattern_summary": "insufficient_attention_history",
+      "recent_update_reason": null,
+      "detail_href": "../semi_live_organ_detail/current.html",
+      "next_detail_href": "../semi_live_organ_detail/governance.html"
+    },
+    {
+      "case_id": "semi_live:choi_ai_classroom_neural_networks",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "placement_reason_short": "choi_ai_classroom_neural_networks is being held under thickening reading.",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance",
+      "held_candidate_exists": true,
+      "headline": "choi_ai_classroom_neural_networks / maturation=weak / trace=traceable",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:50:18.117571+00:00",
+      "saved_connection_count": 0,
+      "attention_flag": true,
+      "attention_pattern_summary": "insufficient_attention_history",
+      "recent_update_reason": null,
+      "detail_href": "../semi_live_organ_detail/current.html",
+      "next_detail_href": "../semi_live_organ_detail/governance.html"
+    },
+    {
+      "case_id": "semi_live:choi_ai_classroom_cnn",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "placement_reason_short": "choi_ai_classroom_cnn is being held under thickening reading.",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance",
+      "held_candidate_exists": true,
+      "headline": "choi_ai_classroom_cnn / maturation=weak / trace=traceable",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:50:18.101259+00:00",
+      "saved_connection_count": 2,
+      "attention_flag": true,
+      "attention_pattern_summary": "insufficient_attention_history",
+      "recent_update_reason": null,
+      "detail_href": "../semi_live_organ_detail/current.html",
+      "next_detail_href": "../semi_live_organ_detail/governance.html"
+    },
+    {
+      "case_id": "semi_live:turboquant_youtube",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "current_organ_ref": "organ:flow_interpretation",
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "placement_reason_short": "turboquant_youtube is being held under thickening reading.",
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "preferred_next_candidate": "organ:governance",
+      "held_candidate_exists": true,
+      "headline": "turboquant_youtube / maturation=fallback / trace=traceable",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:31:34.399318+00:00",
+      "saved_connection_count": 0,
+      "attention_flag": true,
+      "attention_pattern_summary": "insufficient_attention_history",
+      "recent_update_reason": null,
+      "detail_href": "../semi_live_organ_detail/current.html",
+      "next_detail_href": "../semi_live_organ_detail/governance.html"
+    }
+  ],
+  "drill_in_navigation": {
+    "queue_to_current_reading": {
+      "entry_target": "current_reading:case_transition_surface_reentry_001",
+      "carried_refs": [
+        "case_transition_surface_reentry_001",
+        "lane_transition_reread_001",
+        "surface_current_reading_001",
+        "gov_transition_hold_001"
+      ]
+    },
+    "current_reading_to_organ_detail": {
+      "entry_target": "organ_detail:flow_interpretation",
+      "carried_refs": [
+        "case_transition_surface_reentry_001",
+        "lane_transition_reread_001",
+        "organ:flow_interpretation"
+      ]
+    }
+  },
+  "current_reading": {
+    "case_header": {
+      "case_id": "semi_live:choi_ai_classroom_vlm",
+      "case_kind": "runtime_surface_case",
+      "case_status": "active",
+      "linked_program_refs": [
+        "program:tank_program"
+      ],
+      "updated_at": "2026-03-28T21:50:18.142967+00:00"
+    },
+    "body": {
+      "headline": "choi_ai_classroom_vlm / thickening",
+      "summary_body_text": "Runtime currently reads this surface through phase `thickening`. Decision reason: existing latent lines and pre-read gate are stable, but the path is still not closure-ready. Reading frame: binding_closed -> semantic_fidelity -> output-worthiness -> meaning_context_sufficiency -> detector -> widening_trigger.",
+      "supporting_unit_refs": [
+        "runtime_phase:preflight_20260405T074526_912614_827bbb",
+        "runtime_preflight:preflight_20260405T074526_912614_827bbb",
+        "runtime_asset:choi_ai_classroom_vlm"
+      ]
+    },
+    "lane": {
+      "lane_kind": "thickening",
+      "lane_status": "active",
+      "next_hop_candidates": [
+        "raw_to_first_pass_to_report"
+      ]
+    },
+    "governance": {
+      "hold_state": "mixed_hold",
+      "restriction_flags": [
+        "observer_only",
+        "promotion_forbidden",
+        "closure_before_presentation"
+      ],
+      "reason_summary": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+      "release_condition": "Re-evaluate after next runtime refresh and preflight guard recheck.",
+      "next_check_trigger": [
+        "same latent line repeats in a future reread",
+        "residue becomes high because a new path cannot be collapsed",
+        "sufficiency moves to high and closure can be reviewed"
+      ]
+    },
+    "trace_preview": [
+      {
+        "trace_id": "preflight_20260405T074526_912614_827bbb",
+        "trace_kind": "runtime_preflight_reason",
+        "summary": "mode=space_reading / mode_source=default_order / group=raw_external_cases / raw materials should be read before promotion into reports or downstream structures",
+        "residue_note": "unknown_group",
+        "reentry_hint": "ask which layer this belongs to, record the path that was read",
+        "created_at": "2026-04-05T07:45:26+00:00",
+        "detail_href": "../semi_live_trace_detail/preflight_20260405T074526_912614_827bbb.html"
+      },
+      {
+        "trace_id": "trace:runtime_phase_signals",
+        "trace_kind": "runtime_phase_signal",
+        "summary": "signals={'continuity': 'high', 'residue': 'medium', 'tension': 'low', 'sufficiency': 'medium'}",
+        "residue_note": "pre_read_eye, raw_return_preservation",
+        "reentry_hint": [
+          "same latent line repeats in a future reread",
+          "residue becomes high because a new path cannot be collapsed",
+          "sufficiency moves to high and closure can be reviewed"
+        ],
+        "created_at": "2026-04-05T07:45:26+00:00",
+        "detail_href": "../semi_live_trace_detail/trace-runtime_phase_signals.html"
+      }
+    ]
+  },
+  "inputs_preview": {
+    "source_id": "unknown_group",
+    "source_kind": "runtime_selected_artifact_group",
+    "source_family": "runtime_bridge",
+    "source_subgroup": "thickening",
+    "matched_context_layers": [
+      "runtime:phase=thickening",
+      "runtime:mode=space_reading",
+      "runtime:group=unknown_group"
+    ],
+    "intake_classification": "runtime_surface_bridge",
+    "next_lane_hint": "thickening",
+    "weakness_note": "Semi-live bridge uses runtime summary surfaces rather than canonical case packets.",
+    "fallback_used": true,
+    "readiness_level": "usable_with_caution",
+    "re_read_needed": true,
+    "selected_artifact_refs": [
+      "inputs/external_cases/README.md",
+      "inputs/external_cases/saltlux_ai.txt",
+      "source_assets/external_case_inputs/folder_status.md",
+      "source_assets/external_case_inputs/external_case_first_pass_saltlux_ai_input_v1.md"
+    ],
+    "artifact_roots": [
+      "inputs/external_cases",
+      "source_assets/external_case_inputs"
+    ],
+    "first_read_ref": "inputs/external_cases/README.md",
+    "requested_artifact_ref": "",
+    "phase_source_turn": "preflight_20260405T074526_912614_827bbb",
+    "mode_source": "default_order"
+  },
+  "history_trace_preview": {
+    "latest_trace_list": [
+      {
+        "trace_id": "preflight_20260405T074526_912614_827bbb",
+        "trace_kind": "runtime_preflight_reason",
+        "summary": "mode=space_reading / mode_source=default_order / group=raw_external_cases / raw materials should be read before promotion into reports or downstream structures",
+        "residue_note": "unknown_group",
+        "reentry_hint": "ask which layer this belongs to, record the path that was read",
+        "created_at": "2026-04-05T07:45:26+00:00",
+        "detail_href": "../semi_live_trace_detail/preflight_20260405T074526_912614_827bbb.html"
+      },
+      {
+        "trace_id": "trace:runtime_phase_signals",
+        "trace_kind": "runtime_phase_signal",
+        "summary": "signals={'continuity': 'high', 'residue': 'medium', 'tension': 'low', 'sufficiency': 'medium'}",
+        "residue_note": "pre_read_eye, raw_return_preservation",
+        "reentry_hint": [
+          "same latent line repeats in a future reread",
+          "residue becomes high because a new path cannot be collapsed",
+          "sufficiency moves to high and closure can be reviewed"
+        ],
+        "created_at": "2026-04-05T07:45:26+00:00",
+        "detail_href": "../semi_live_trace_detail/trace-runtime_phase_signals.html"
+      }
+    ],
+    "decision_trace_anchor": "preflight_20260405T074526_912614_827bbb",
+    "residue_emphasis": [
+      "space reading -> immediate solution",
+      "reflection -> implementation jump",
+      "trace reading -> summary only"
+    ],
+    "reentry_cues": [
+      "ask which layer this belongs to",
+      "record the path that was read",
+      "separate binding from fidelity"
+    ]
+  },
+  "programs_connections_preview": {
+    "linked_programs": [
+      "program:runtime_bridge"
+    ],
+    "connection_state": "read_runtime_surfaces_only",
+    "current_linked_surface": [
+      "program:tank_program"
+    ],
+    "action_request_preview": "Semi-live shell is read-only; runtime surfaces are translated into current-reading without live control.",
+    "governance_restriction_summary": [
+      "observer_only",
+      "promotion_forbidden",
+      "closure_before_presentation"
+    ],
+    "saved_connection_preview": [
+      {
+        "id": "conn_choi_ai_classroom_vlm_state_grounding_status_inputs_external_cases_choi_ai_cl",
+        "relation_summary": "choi_ai_classroom_vlm를 partially grounded에서 다시 읽고 breathing contrast를 단서로 삼아 연결로 이어 볼 수 있다.",
+        "value_label": "partially grounded",
+        "source_pointer": "inputs/external_cases/choi_ai_classroom_vlm.txt",
+        "detail_href": "../semi_live_program_detail/saved-connection-conn_choi_ai_classroom_vlm_state_grounding_status_inputs_external_cases_choi_ai_cl.html"
+      },
+      {
+        "id": "conn_choi_ai_classroom_vlm_state_traceability_status_inputs_external_cases_choi_ai_cl",
+        "relation_summary": "choi_ai_classroom_vlm를 traceable에서 다시 읽고 breathing contrast를 단서로 삼아 연결로 이어 볼 수 있다.",
+        "value_label": "traceable",
+        "source_pointer": "inputs/external_cases/choi_ai_classroom_vlm.txt",
+        "detail_href": "../semi_live_program_detail/saved-connection-conn_choi_ai_classroom_vlm_state_traceability_status_inputs_external_cases_choi_ai_cl.html"
+      },
+      {
+        "id": "conn_choi_ai_classroom_vlm_state_packet_texture_inputs_external_cases_choi_ai_cl",
+        "relation_summary": "choi_ai_classroom_vlm를 structured-open / low-emergence에서 다시 읽고 breathing contrast를 단서로 삼아 연결로 이어 볼 수 있다.",
+        "value_label": "structured-open / low-emergence",
+        "source_pointer": "inputs/external_cases/choi_ai_classroom_vlm.txt",
+        "detail_href": "../semi_live_program_detail/saved-connection-conn_choi_ai_classroom_vlm_state_packet_texture_inputs_external_cases_choi_ai_cl.html"
+      }
+    ],
+    "update_event_preview": [],
+    "attention_memory_preview": [
+      {
+        "asset_id": "choi_ai_classroom_vlm",
+        "attention_pattern_summary": "insufficient_attention_history",
+        "active_attention_count": 1,
+        "dominant_attention_reasons": [
+          "no_previous_state_anchor"
+        ],
+        "detail_href": "../semi_live_program_detail/attention-choi_ai_classroom_vlm.html"
+      }
+    ],
+    "reconstruction_preview": []
+  },
+  "contextual_panels": {
+    "active_panel": "organ_detail_current",
+    "available_panels": [
+      {
+        "panel_id": "organ_detail_current",
+        "entry_target": "organ_detail:flow_interpretation",
+        "entry_label": "Current Organ Detail",
+        "source": "current responsibility strip"
+      },
+      {
+        "panel_id": "organ_detail_governance",
+        "entry_target": "organ_detail:governance",
+        "entry_label": "Preferred Next Candidate Detail",
+        "source": "progression strip"
+      }
+    ]
+  },
+  "unified_shell": {
+    "mode": "current_reading_centered_with_contextual_detail",
+    "current_center": "Current Reading",
+    "support_columns": [
+      "Cases / Queue + Inputs / Intake",
+      "Governance + History / Trace + Programs / Connections"
+    ]
+  },
+  "sidebar_sections": [
+    {
+      "section_label": "Read",
+      "items": [
+        "Current Reading",
+        "Cases / Queue",
+        "Inputs / Intake"
+      ]
+    },
+    {
+      "section_label": "Carry",
+      "items": [
+        "History / Trace",
+        "Programs / Connections"
+      ]
+    }
+  ],
+  "route_state_preview": {
+    "active_primary_surface": "programs-connections",
+    "active_nav_key": "programs",
+    "active_contextual_panel": "organ_detail_current",
+    "contextual_entry_targets": [
+      "organ_detail:input",
+      "organ_detail:flow_interpretation",
+      "organ_detail:governance"
+    ],
+    "contextual_link_map": {
+      "organ_detail:input": "../semi_live_organ_detail/input.html",
+      "organ_detail:flow_interpretation": "../semi_live_organ_detail/current.html",
+      "organ_detail:governance": "../semi_live_organ_detail/governance.html"
+    },
+    "breadcrumb_chain": [
+      "VectorFL Page",
+      "semi-live",
+      "programs-connections"
+    ],
+    "route_note": "Semi-live runtime bridge is active; current-reading remains the semantic center even when another surface is primary."
+  },
+  "organ_detail_panels": {
+    "current": {
+      "fixture_id": "vectorfl_flow_interpretation_organ_detail_mock_fixture_v0",
+      "fixture_kind": "organ_detail_first_mock",
+      "organ_identity": {
+        "organ_ref": "organ:flow_interpretation",
+        "organ_label": "Flow Interpretation Organ",
+        "current_status": "active_transition_reading",
+        "related_lane_refs": [
+          "lane_transition_reread_001",
+          "lane_transition_preflight_reread"
+        ]
+      },
+      "instruction_bundle_preview": {
+        "role_sentence": "Flow interpretation organ reads transition, next hop, and unresolved edge without flattening the case into premature closure.",
+        "reading_priorities": [
+          "current lane tension",
+          "previous translation carry",
+          "governance restriction carry",
+          "reentry-sensitive trace cues"
+        ],
+        "output_contract": [
+          "flow reading summary",
+          "next candidate ordering",
+          "unresolved edge note",
+          "route caution"
+        ]
+      },
+      "accepted_handoff_preview": {
+        "accepted_input_kinds": [
+          "translation return",
+          "current surface packet",
+          "trace/reentry carry",
+          "governance restriction snapshot"
+        ],
+        "required_packet_fields": [
+          "case_ref",
+          "current_lane_ref",
+          "current_surface_ref",
+          "restriction_flags",
+          "question_or_trigger",
+          "expected_return_type"
+        ],
+        "common_triggers": [
+          "transition-first explanation needed",
+          "next hop remains unresolved",
+          "direct readout feels premature"
+        ]
+      },
+      "caution_profile": {
+        "stop_hold_conditions": [
+          "next hop is asserted without evidence carry",
+          "unresolved edge disappears in summary",
+          "presentation pressure overrides current restrictions"
+        ],
+        "preserve_first_rules": [
+          "keep preferred vs held candidate distinction",
+          "keep observer-only restrictions visible",
+          "keep transition reread route legible"
+        ],
+        "avoid_wording": [
+          "done",
+          "clear to present",
+          "resolved flow"
+        ]
+      },
+      "recent_return_preview": {
+        "summary_return": "Read this case as transition-readable but closure-incomplete; governance review should precede direct operator readout.",
+        "lane_hint_update": [
+          "lane_transition_preflight_reread",
+          "lane_operator_readout_review"
+        ],
+        "recent_trace_carry": [
+          "closure_before_presentation",
+          "transition_condition_to_operator_readability"
+        ],
+        "recent_handoff_target": "organ:governance"
+      },
+      "semi_live_status": {
+        "phase": "thickening",
+        "decision": "thickening",
+        "restriction_flags": [
+          "observer_only",
+          "promotion_forbidden",
+          "closure_before_presentation"
+        ],
+        "candidate_count": 1,
+        "recent_trace_ids": [
+          "preflight_20260405T074526_912614_827bbb",
+          "trace:runtime_phase_signals"
+        ]
+      }
+    },
+    "governance_candidate": {
+      "fixture_id": "vectorfl_governance_organ_detail_mock_fixture_v0",
+      "fixture_kind": "organ_detail_first_mock",
+      "organ_identity": {
+        "organ_ref": "organ:governance",
+        "organ_label": "Governance Organ",
+        "current_status": "restriction_review_pending",
+        "related_lane_refs": [
+          "lane_transition_preflight_reread",
+          "lane_operator_readout_review"
+        ]
+      },
+      "instruction_bundle_preview": {
+        "role_sentence": "Governance organ preserves restriction, hold, and release conditions so current-reading does not collapse into premature action or presentation.",
+        "reading_priorities": [
+          "active restriction flags",
+          "evidence sufficiency",
+          "release condition clarity",
+          "trace-backed carry obligations"
+        ],
+        "output_contract": [
+          "governance state update",
+          "reason summary",
+          "release condition",
+          "next check trigger"
+        ]
+      },
+      "accepted_handoff_preview": {
+        "accepted_input_kinds": [
+          "flow interpretation return",
+          "trace/residue carry",
+          "linked program caution",
+          "surface packet summary"
+        ],
+        "required_packet_fields": [
+          "case_ref",
+          "current_lane_ref",
+          "restriction_flags",
+          "supporting_evidence_refs",
+          "release_condition_candidate",
+          "expected_return_type"
+        ],
+        "common_triggers": [
+          "mixed hold persists",
+          "direct readout candidate must stay held",
+          "next check trigger needs tightening"
+        ]
+      },
+      "caution_profile": {
+        "stop_hold_conditions": [
+          "release proposed without supporting evidence",
+          "weak intake is being ignored",
+          "promotion pressure exceeds current-reading confidence"
+        ],
+        "preserve_first_rules": [
+          "keep observer-only visible until release condition is satisfied",
+          "keep promotion-forbidden state explicit",
+          "keep decision anchor linked to trace"
+        ],
+        "avoid_wording": [
+          "approved",
+          "safe to execute",
+          "final release"
+        ]
+      },
+      "recent_return_preview": {
+        "summary_return": "Maintain mixed hold; allow explanation-first reread but keep direct operator presentation in held candidate status.",
+        "lane_hint_update": [
+          "lane_transition_preflight_reread"
+        ],
+        "recent_trace_carry": [
+          "observer_only",
+          "promotion_forbidden",
+          "closure_before_presentation"
+        ],
+        "recent_handoff_target": "organ:current_reading_return"
+      },
+      "semi_live_status": {
+        "phase": "thickening",
+        "decision_reason": "existing latent lines and pre-read gate are stable, but the path is still not closure-ready",
+        "release_condition": "Re-evaluate after next runtime refresh and preflight guard recheck.",
+        "next_check_trigger": [
+          "same latent line repeats in a future reread",
+          "residue becomes high because a new path cannot be collapsed",
+          "sufficiency moves to high and closure can be reviewed"
+        ]
+      }
+    }
+  },
+  "active_primary_surface": "programs-connections",
+  "shell_runtime": {
+    "kind": "vectorfl_page_semi_live_shell",
+    "active_surface": "programs-connections",
+    "surface_links": {
+      "current-reading": "current-reading.html",
+      "cases-queue": "cases-queue.html",
+      "inputs-intake": "inputs-intake.html",
+      "history-trace": "history-trace.html",
+      "programs-connections": "programs-connections.html"
+    },
+    "index_href": "index.html"
+  }
+}

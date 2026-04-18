@@ -1,0 +1,534 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d95df-61f7-7e00-abe2-1110281c4d43
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: validate
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+Cross-surface reflection smoke test: verify CLI return can be read as user assignment signal and engine return material.
+
+Bounded context refs:
+- docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md
+- app/ui/integrated_engine/VectorFLIntegrationShell.tsx
+
+Prompt payload:
+Read the bounded context. Return three short sections: user surface assignment signal, VectorFL operating signal, engine return/validation signal. End with suggested next use: validation target. Do not modify files.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll inspect the two bounded files only and return a compact validation summary. No file edits.
+exec
+/bin/bash -lc "sed -n '1,260p' app/ui/integrated_engine/VectorFLIntegrationShell.tsx" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+import React, { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Command, LayoutDashboard, Blocks, BrainCircuit, ArrowRight, Archive, CheckCircle2, GitPullRequest, RefreshCcw } from "lucide-react";
+import { 
+  Tabs, TabsContent, 
+  Card, CardHeader, CardTitle, CardDescription, CardContent 
+} from "./ui-components";
+
+// Surfaces
+import VectorFLEngineSurfaceMock from "./vectorfl_engine_surface_mock";
+import { CommandHeaderPanel } from "./CommandHeaderPanel.tsx";
+import { TeamRoutingPanel } from "./TeamRoutingPanel.tsx";
+import { RoleConfigurationPanel } from "./RoleConfigurationPanel.tsx";
+import { ExecutionRoutePanel } from "./ExecutionRoutePanel.tsx";
+import { OperationLogPanel } from "./OperationLogPanel.tsx";
+import { FlowSummaryPanel } from "./FlowSummaryPanel.tsx";
+import { CliHostControlPanel } from "./CliHostControlPanel.tsx";
+
+// Seeds & Data
+import { initialTeamsSeed, auditLogsSeed, boardStatsSeed, userSurfaceMetaSeed } from "./user-surface.seed";
+import { useUserSurfaceState } from "./useUserSurfaceState";
+import vectorMeta from "./vectorfl_meta.json";
+import jangLines from "./jang_lines.json";
+
+type CliReadableReturn = {
+  session_id?: string;
+  backend_kind?: string;
+  task_type?: string;
+  status?: string;
+  purpose_text?: string;
+  marks?: string[];
+  mark_history?: Array<{ mark: string; marked_at: string; source?: string }>;
+  structured_return_preview?: string;
+  deposit_candidate_preview?: string;
+  session_path?: string;
+  structured_return_path?: string;
+  deposit_candidate_path?: string;
+};
+
+type CliHostState = {
+  latest_readable_return?: CliReadableReturn;
+  recent_readable_returns?: CliReadableReturn[];
+  deposit_ready_returns?: CliReadableReturn[];
+};
+
+function shortId(id?: string) {
+  return id ? id.replace("cli_", "") : "none";
+}
+
+function routeLabel(marks?: string[]) {
+  if (!marks?.length) return "unmarked return";
+  if (marks.includes("deposit_candidate")) return "deposit candidate";
+  if (marks.includes("validation_target")) return "validation target";
+  if (marks.includes("implementation_return")) return "implementation return";
+  if (marks.includes("reread_target")) return "reread target";
+  return marks.join(", ");
+}
+
+function SurfaceCliCard({ title, subtitle, tone = "indigo", children }: any) {
+  const toneClass = tone === "emerald"
+    ? "border-emerald-500/15 bg-emerald-500/[0.03]"
+    : tone === "sky"
+      ? "border-sky-500/15 bg-sky-500/[0.03]"
+      : "border-indigo-500/15 bg-indigo-500/[0.03]";
+  return (
+    <Card className={`rounded-[28px] ${toneClass} text-slate-100 shadow-2xl`}>
+      <CardHeader className="border-b border-white/5 pb-4">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <CardTitle className="text-sm font-bold text-white">{title}</CardTitle>
+            <CardDescription className="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-500">{subtitle}</CardDescription>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-3 pt-5">{children}</CardContent>
+    </Card>
+  );
+}
+
+function UserCliAssignmentPanel({ cli }: { cli: CliHostState }) {
+  const latest = cli.latest_readable_return || {};
+  const deposits = cli.deposit_ready_returns || [];
+  const marks = latest.marks || [];
+  const decisionText = marks.includes("deposit_candidate")
+    ? "deposit 후보를 확인할 수 있음"
+    : marks.includes("validation_target")
+      ? "검증 대상으로 읽을 수 있음"
+      : marks.includes("reread_target")
+        ? "다시 읽기 대상으로 남아 있음"
+        : "아직 사용자 결정 mark가 없음";
+
+  return (
+    <SurfaceCliCard title="CLI Work Assignment Signal" subtitle="VectorFL return -> user decision/work organization" tone="indigo">
+      <div className="grid gap-3 lg:grid-cols-3">
+        <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+          <div className="text-[9px] uppercase tracking-[0.2em] text-slate-500">latest turn</div>
+          <div className="mt-2 font-mono text-[10px] text-indigo-300">{shortId(latest.session_id)}</div>
+          <div className="mt-2 text-xs leading-5 text-slate-300">{latest.purpose_text || "아직 CLI return 없음"}</div>
+        </div>
+        <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+          <div className="text-[9px] uppercase tracking-[0.2em] text-slate-500">user-facing decision</div>
+          <div className="mt-2 text-sm font-bold text-white">{decisionText}</div>
+          <div className="mt-2 text-[10px] leading-5 text-slate-500">이 칸은 자동 배정이 아니라 사용자가 다음 작업을 조직하기 위한 신호다.</div>
+        </div>
+        <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+          <div className="text-[9px] uppercase tracking-[0.2em] text-slate-500">deposit-ready count</div>
+          <div className="mt-2 text-2xl font-black text-emerald-300">{deposits.length}</div>
+          <div className="mt-1 text-[10px] text-slate-500">엔진 기록 후보로 볼 수 있는 반환 수</div>
+        </div>
+      </div>
+    </SurfaceCliCard>
+  );
+}
+
+function EngineCliReturnPanel({ cli }: { cli: CliHostState }) {
+  const latest = cli.latest_readable_return || {};
+  const recent = cli.recent_readable_returns || [];
+  const deposits = cli.deposit_ready_returns || [];
+  return (
+    <SurfaceCliCard title="CLI Return / Validation Feed" subtitle="Codex return -> engine processing material" tone="sky">
+      <div className="grid gap-3 xl:grid-cols-[0.8fr_1.2fr_1fr]">
+        <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+          <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-slate-500">
+            <CheckCircle2 className="h-3.5 w-3.5" /> processing status
+          </div>
+          <div className="mt-3 text-sm font-bold text-white">{latest.status || "none"}</div>
+          <div className="mt-1 font-mono text-[10px] text-slate-500">{shortId(latest.session_id)}</div>
+          <div className="mt-2 text-[10px] text-slate-500">{routeLabel(latest.marks)}</div>
+        </div>
+        <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+          <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-slate-500">
+            <GitPullRequest className="h-3.5 w-3.5" /> latest return material
+          </div>
+          <div className="mt-3 line-clamp-5 whitespace-pre-wrap text-xs leading-6 text-slate-300">
+            {latest.structured_return_preview || "아직 엔진 반환 재료 없음"}
+          </div>
+        </div>
+        <div className="rounded-2xl border border-emerald-500/10 bg-emerald-500/[0.03] p-4">
+          <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-emerald-300">
+            <Archive className="h-3.5 w-3.5" /> extract/deposit candidates
+          </div>
+          <div className="mt-3 text-2xl font-black text-emerald-300">{deposits.length}</div>
+          <div className="mt-2 text-[10px] leading-5 text-slate-500">자동 기록이 아니라 검증/추출 후보로 대기 중</div>
+        </div>
+      </div>
+      <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
+        <div className="mb-3 flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-slate-500">
+          <RefreshCcw className="h-3.5 w-3.5" /> recent processing returns
+        </div>
+        <div className="grid gap-2 md:grid-cols-2">
+          {recent.slice(0, 4).map((turn) => (
+            <div key={turn.session_id} className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-mono text-[10px] text-slate-500">{shortId(turn.session_id)}</span>
+                <span className="text-[10px] text-slate-500">{routeLabel(turn.marks)}</span>
+              </div>
+              <div className="mt-2 line-clamp-2 text-[10px] leading-5 text-slate-400">{turn.purpose_text}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </SurfaceCliCard>
+  );
+}
+
+export default function VectorFLIntegrationShell() {
+  const [active, setActive] = useState<"user" | "vectorfl" | "engine">("vectorfl");
+  const [cliHostState, setCliHostState] = useState<CliHostState>({});
+  const [goal, setGoal] = useState(userSurfaceMetaSeed.initialGoal);
+  const { teams, selectedTeam, selectedTeamId, setSelectedTeamId } = useUserSurfaceState(initialTeamsSeed);
+  const [selectedLineId, setSelectedLineId] = useState<string>(jangLines[0]?.id || "");
+  const selectedLine = jangLines.find((l: any) => l.id === selectedLineId) || jangLines[0];
+  const cliCounts = useMemo(() => ({
+    recent: cliHostState.recent_readable_returns?.length || 0,
+    deposit: cliHostState.deposit_ready_returns?.length || 0,
+  }), [cliHostState]);
+
+  useEffect(() => {
+    fetch("/api/vectorfl-engine/state")
+      .then((response) => response.json())
+      .then((result) => setCliHostState(result.cli_host_control || {}))
+      .catch(() => {});
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#050507] text-slate-100 selection:bg-indigo-500/30">
+      <div className="grid min-h-screen lg:grid-cols-[240px_1fr]">
+        <aside className="border-r border-white/5 bg-[#09090b] p-6">
+          <div className="flex items-center gap-3 px-2 mb-8"><Command className="h-5 w-5 text-slate-400"/><span className="text-sm font-bold tracking-tighter">Integrated Engine</span></div>
+          <nav className="space-y-2">
+            {[ {id: "user", label: "User Surface"}, {id: "vectorfl", label: "VectorFL Surface"}, {id: "engine", label: "Engine Surface"} ].map(tab => (
+              <button key={tab.id} onClick={() => setActive(tab.id as any)} className={`w-full p-3 rounded-xl text-sm transition ${active === tab.id ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300"}`}>{tab.label}</button>
+            ))}
+          </nav>
+        </aside>
+
+        <main className="p-8 overflow-y-auto">
+          {/* Orientation Band */}
+          <div className="mb-8 flex items-center justify-center gap-2 py-3 px-6 rounded-2xl bg-white/[0.03] border border-white/5 text-[9px] uppercase tracking-[0.2em] text-slate-500 font-bold">
+            <span>Goal/Scope/Material</span> <ArrowRight className="h-3 w-3" /> 
+            <span>Line Reading</span> <ArrowRight className="h-3 w-3" /> 
+            <span>Engine Processing</span> <ArrowRight className="h-3 w-3" /> 
+            <span>Return Artifact</span>
+            <span className="ml-3 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2 py-1 text-cyan-300">CLI turns {cliCounts.recent}</span>
+            <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-1 text-emerald-300">deposit {cliCounts.deposit}</span>
+          </div>
+
+          <motion.div key={active} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <Tabs value={active}>
+              {/* User Surface */}
+              <TabsContent value="user" className="space-y-8">
+                <CommandHeaderPanel goal={goal} onGoalChange={setGoal} stats={boardStatsSeed} infoBoxes={userSurfaceMetaSeed.infoBoxes} />
+                <UserCliAssignmentPanel cli={cliHostState} />
+                <section className="pt-8 border-t border-white/5 space-y-4">
+                  <div className="px-2 text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 italic">Operating extension / not body skeleton</div>
+                  <div className="grid gap-6 xl:grid-cols-[1fr_1fr]">
+                    <TeamRoutingPanel teams={teams} selectedId={selectedTeamId} onSelect={setSelectedTeamId} onAdd={() => {}} onRemove={() => {}} />
+                    <RoleConfigurationPanel team={selectedTeam} onEditTeam={() => {}} onAddRole={() => {}} onEditRole={() => {}} />
+                  </div>
+                  <ExecutionRoutePanel teams={teams} />
+                  <OperationLogPanel logs={auditLogsSeed} />
+                </section>
+                <div className="text-[10px] text-slate-600 font-mono italic">This mock is a view draft, not runtime truth. Runtime truth requires latest manifests and freshness gate.</div>
+              </TabsContent>
+
+              {/* VectorFL Surface */}
+              <TabsContent value="vectorfl" className="space-y-8">
+                <FlowSummaryPanel stats={vectorMeta.stats} summary={vectorMeta.summary} />
+                <div className="grid gap-6 xl:grid-cols-[300px_1fr]">
+                  <Card className="rounded-[28px] border-amber-500/10 bg-[#0d0d12] h-[600px] overflow-y-auto">
+                    <CardHeader><CardTitle className="text-amber-400">Line Atlas</CardTitle></CardHeader>
+                    <CardContent className="space-y-3">
+                        {jangLines.map((line: any) => (
+                           <button key={line.id} onClick={() => setSelectedLineId(line.id)} className={`w-full p-4 rounded-xl border text-left transition ${selectedLine?.id === line.id ? "border-amber-500 bg-amber-500/10" : "border-white/5 bg-white/[0.02]"}`}>
+                             <div className="font-bold text-slate-300">{line.name}</div>
+                             <div className="text-[10px] text-slate-500 mt-2 italic">"{line.purpose}"</div>
+                           </button>
+                        ))}
+                    </CardContent>
+                  </Card>
+                  <div className="space-y-6">
+                    <CliHostControlPanel activeSurface={active} onSurfaceChange={setActive} onCliStateChange={setCliHostState} />
+                    <Card className="rounded-[28px] border-amber-500/10 bg-[#0d0d12] p-6 shadow-2xl">
+                        <CardTitle className="text-amber-400 text-sm mb-4">Inspection: {selectedLine?.name}</CardTitle>
+                        {selectedLine ? (
+                            <div className="space-y-4 text-xs text-slate-300">
+                                <p>Health: <span className="text-slate-500 italic">(Mock readability label)</span> {selectedLine.health}</p>
+                                <div className="pt-4 border-t border-white/5"><div className="font-bold mb-2">ConnectedTo</div>{selectedLine.connectedTo.map((c: string) => <div key={c} className="text-slate-500">● {c}</div>)}</div>
+                            </div>
+                        ) : <div className="text-slate-600 italic">라인을 선택하세요</div>}
+                    </Card>
+                  </div>
+                </div>
+                <div className="text-[10px] text-slate-600 font-mono italic">This mock is a view draft, not runtime truth.</div>
+              </TabsContent>
+
+              {/* Engine Surface */}
+              <TabsContent value="engine" className="space-y-8">
+                <EngineCliReturnPanel cli={cliHostState} />
+                <VectorFLEngineSurfaceMock />
+
+ succeeded in 0ms:
+# Integrated Engine VectorFL CLI Conversation Control Round v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The stable integrated-engine UI now supports a first-pass conversation-like Codex operating path inside the VectorFL surface. It also exposes thin 3-surface focus controls without changing the fixed engine body.
+
+The note is that this is still synchronous, latest/recent-session based operation. It is not async background orchestration, a full chat database, a Gemini adapter, or deposit ingestion automation.
+
+## Round Goal
+
+Make the VectorFL surface more like the actual operating place where the user can talk to Codex, reread recent Codex turns, and steer the 3-surface frame without leaving the integrated-engine flow.
+
+## Files Changed
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+- `app/ui/integrated_engine/CliHostControlPanel.tsx`
+- `app/ui/integrated_engine/VectorFLIntegrationShell.tsx`
+- `docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md`
+
+## Why These Changes
+
+- The previous panel could run one Codex task, but it did not yet feel like an operating conversation.
+- The user needed recent turns visible in the same VectorFL flow instead of mentally reconstructing from raw session artifacts.
+- The user also needs to steer User / VectorFL / Engine perspective from the VectorFL operating place without creating a fourth surface.
+
+## What Changed
+
+- Added `recent_readable_returns` to `cli_host_control` state, derived from the existing `runtime/cli_sessions/index.json`.
+- Added a recent Codex turns list to the VectorFL CLI panel.
+- Added 3-surface focus buttons:
+  - user
+  - vectorfl
+  - engine
+- Each focus button switches the visible surface and loads a bounded Codex prompt template for that surface perspective.
+- Updated the panel request source to `requested_by_page: app/ui/integrated_engine`.
+- Kept marks and mark history inside the same panel flow.
+
+## What Was Verified
+
+- Python API syntax check passed with `py_compile`.
+- `npm run build` passed in `app/ui/integrated_engine`.
+- Viewer server was restarted so the updated API state is active.
+- Stable UI API state now includes:
+  - `recent_readable_returns`
+  - latest session id
+  - latest marks
+- A real read-only Codex conversation-mode run succeeded:
+  - session id: `cli_20260416T102144Z_d65ce415`
+  - requested_by_surface: `vectorfl_surface`
+  - requested_by_page: `app/ui/integrated_engine`
+  - status: `done`
+  - exit code: `0`
+- Marking that session as `reread_target` succeeded.
+- The latest session became the first recent readable return.
+
+## Pass / Fail
+
+PASS_WITH_NOTE.
+
+The user can now operate Codex from the VectorFL surface as a sequence of visible recent turns, not only as a raw one-off CLI call. The 3-surface controls steer perspective and prompt shape, but do not redesign or replace the engine surfaces.
+
+## Still Deferred
+
+- Browser-click/user-feel validation.
+- Async/background run support.
+- Session browsing beyond the recent-turn list.
+- Gemini adapter.
+- Deposit ingestion automation.
+- Any new surface or multi-agent orchestration layer.
+
+## Watchpoints
+
+- Recent turns must remain an operating aid, not a full conversation database.
+- Surface focus buttons must remain perspective controls, not new routing authority.
+- Codex returns must remain on-top tool returns until the user marks or deposits them.
+- If repeated use needs older runs, session history is the likely next bounded package.
+
+## Next Small Step
+
+Hand-use the VectorFL CLI panel in the browser and check whether the recent-turn list plus surface focus buttons are enough for actual conversation-style operation.
+
+## Follow-Up Continuation Patch
+
+### Round Goal
+
+Reduce the remaining manual step between reading a recent Codex turn and continuing the conversation from that turn.
+
+### Files Changed
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+- `app/ui/integrated_engine/CliHostControlPanel.tsx`
+- `docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md`
+
+### What Changed
+
+- Added artifact paths to each `recent_readable_returns` item:
+  - `session_path`
+  - `structured_return_path`
+  - `deposit_candidate_path`
+- Added a `Continue latest` action in the VectorFL CLI panel.
+- Selecting a recent Codex turn now loads that turn's artifacts into `bounded_context_refs`.
+- The prompt/purpose fields are rewritten into a bounded follow-up prompt.
+- Added thin `suggested_next_use` inference so Codex returns that say validation/deposit/implementation/reread can set the structured next-use field more accurately.
+
+### Why This Was Changed
+
+- Conversation-like operation should not require the user to open raw files or copy artifact paths manually.
+- Recent turns should be reusable as follow-up context from the VectorFL surface.
+- The structured return should not always default to `reread_target` when the returned text clearly indicates `validation_target` or another next use.
+
+### Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- `py_compile` passed for `app/runtime/vectorfl_integrated_engine_api.py`.
+- Viewer server was restarted so the updated API state is active.
+- API state confirmed recent turns now expose artifact paths.
+- A real follow-up Codex run succeeded using previous session artifacts as bounded context:
+  - session id: `cli_20260416T102612Z_277b5388`
+  - status: `done`
+  - exit code: `0`
+- A suggested-next-use inference smoke test succeeded:
+  - session id: `cli_20260416T102720Z_8e045e9b`
+  - structured `suggested_next_use`: `validation_target`
+- The inference smoke test session was marked as `validation_target`.
+
+### Pass / Fail
+
+PASS_WITH_NOTE.
+
+The VectorFL surface can now continue from a previous Codex turn without raw artifact copying. The note is that this is still a synchronous session-artifact conversation path, not a full chat system or background runner.
+
+### Watchpoints
+
+- Continue-from-turn should remain bounded to explicit session artifacts.
+- Do not infer authority from Codex text alone; marks still represent the operator's route decision.
+- If users need more than the last few turns, session browsing/history becomes the next bounded package.
+
+### Next Small Step
+
+Hand-use `Continue latest` and one recent-turn click in the browser. If it feels sufficient, continue using this mode before adding session browsing/history.
+
+## Deposit-Ready Queue Patch
+
+### Round Goal
+
+Make deposit-candidate returns visible in the VectorFL operating flow without opening automatic ingestion or promotion.
+
+### Files Changed
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+- `app/ui/integrated_engine/CliHostControlPanel.tsx`
+- `docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md`
+
+### What Changed
+
+- Added `deposit_ready_returns` to `cli_host_control` state.
+- The queue is derived from existing CLI sessions marked with `deposit_candidate` or `deposit_ready`.
+- Added a `deposit-ready queue` section to the VectorFL CLI panel.
+- Selecting a deposit-ready item loads it as the current return and prepares follow-up context.
+- The queue explicitly says it is not automatic ingestion or promotion.
+
+### Why This Was Changed
+
+- Marking a return as `deposit_candidate` should create an operating signal the user can see from the VectorFL surface.
+- The user should not need to inspect raw session files to know which returns are ready for possible engine deposition.
+- Actual deposit ingestion remains intentionally closed until it becomes the confirmed bottleneck.
+
+### Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- `py_compile` passed for `app/runtime/vectorfl_integrated_engine_api.py`.
+- Viewer server was restarted so the updated API state is active.
+- API state confirmed `deposit_ready_returns` exists and contains ready items.
+- Session `cli_20260416T102720Z_8e045e9b` was marked with `deposit_candidate`.
+- API state confirmed that session appears in the deposit-ready queue with marks:
+  - `validation_target`
+  - `deposit_candidate`
+
+### Pass / Fail
+
+PASS_WITH_NOTE.
+
+Deposit-ready visibility now exists inside the VectorFL surface. The note is that this is still a queue/readiness signal only; it does not ingest, canonicalize, promote, or mutate engine memory.
+
+### Watchpoints
+
+- Deposit-ready must not be confused with completed ingestion.
+- Queue selection must remain a reread/follow-up aid, not an automatic engine write.
+- If repeated use requires actual deposition, the next package should be a bounded deposit-ingestion bridge with explicit user approval.
+
+### Next Small Step
+
+Hand-check that the deposit-ready queue is visible in the VectorFL panel and that selecting an item loads it as follow-up context.
+
+exec
+/bin/bash -lc "sed -n '261,520p' app/ui/integrated_engine/VectorFLIntegrationShell.tsx" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+              </TabsContent>
+            </Tabs>
+          </motion.div>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+codex
+- result summary
+  - Read bounded context only.
+  - No files modified.
+  - Cross-surface reflection smoke test: PASS_WITH_NOTE.
+
+- important findings / diffs / outputs
+  - user surface assignment signal: latest CLI return is rendered as user-facing work organization material through `UserCliAssignmentPanel`, including latest turn, decision mark state, and deposit-ready count.
+  - VectorFL operating signal: `VectorFLIntegrationShell.tsx` keeps the VectorFL surface as the operating place through `CliHostControlPanel`, recent CLI turn counts, deposit count badges, surface focus switching, and bounded follow-up context flow described in the report.
+  - engine return/validation signal: `EngineCliReturnPanel` exposes latest processing status, route label, structured return preview, recent processing returns, and extract/deposit candidate count as engine-side validation material.
+  - Report confirms current state as synchronous session-artifact conversation control, with recent returns, continue-latest, inferred `suggested_next_use`, and deposit-ready queue visibility.
+
+- uncertainty or failure notes
+  - This validation only reread bounded files; it did not run build, API state checks, browser checks, or a new CLI session.
+  - The report explicitly defers browser-click/user-feel validation, async/background orchestration, full session browsing, Gemini adapter, and automatic deposit ingestion.
+
+- suggested next use: validation target
+  - validation target: hand-check the browser VectorFL panel for `Continue latest`, recent-turn selection, and deposit-ready queue selection to confirm the surface reads as assignment signal plus engine return material.
+tokens used
+7,237

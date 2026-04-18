@@ -1,0 +1,425 @@
+{
+  "doc_ref": "docs/reports/raw_intake_gap_analysis_before_middle_layer_fix_v1.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 15
+      }
+    },
+    "ordering_basis": "input_to_processing_to_result",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "# raw intake gap analysis before middle-layer fix",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "adoption",
+        "function_in_source": "## 1. compared paths - structured document path - front door: [process_structured_doc_with_routing.py](/Users/sungsookim/universe/vectorf...",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "contrast",
+        "function_in_source": "## 2. key differences",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "handoff",
+        "function_in_source": "### input condition - structured document path: - input already arrives role-shaped. - routing markers, doc boundaries, and source class...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "context",
+        "function_in_source": "### source identity preservation - structured document path: - source identity is explicit and strong. - doc id, source path, label packe...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "handoff",
+        "function_in_source": "### anchor quality - structured document path: - anchor quality benefits from already-structured wording and lower discourse noise. - rou...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "adoption",
+        "function_in_source": "### case-level frame extraction - structured document path: - meaning-bearing axes survive because the input already expresses purpose, b...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "### output discipline - structured document path: - receipt / label packet / origin map / board update are produced in a stable way. - ou...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      },
+      {
+        "unit_id": "unit_009",
+        "role_type": "contrast",
+        "function_in_source": "## 3. raw intake failure summary - generic discourse term dominance is real, but it is not the whole problem. - the deeper failure is tha...",
+        "upstream": "unit_008",
+        "downstream": "unit_010"
+      },
+      {
+        "unit_id": "unit_010",
+        "role_type": "context",
+        "function_in_source": "## 4. inferred missing middle-layer functions - generic discourse noise suppression - downweight pronouns, filler, presenter connectors,...",
+        "upstream": "unit_009",
+        "downstream": "unit_011"
+      },
+      {
+        "unit_id": "unit_011",
+        "role_type": "principle",
+        "function_in_source": "## 5. why this is a middle-layer problem - structured docs do not need this layer as much because they arrive partially pre-shaped. - ext...",
+        "upstream": "unit_010",
+        "downstream": "unit_012"
+      },
+      {
+        "unit_id": "unit_012",
+        "role_type": "principle",
+        "function_in_source": "## 6. what not to modify yet - promotion logic - current asset map - shared reality / baseline - core engine - direct `inputter.py` / `la...",
+        "upstream": "unit_011",
+        "downstream": "unit_013"
+      },
+      {
+        "unit_id": "unit_013",
+        "role_type": "handoff",
+        "function_in_source": "## 7. next bounded step - write middle-layer requirement: YES - write verification plan: YES - start code patch now: NO",
+        "upstream": "unit_012",
+        "downstream": "unit_014"
+      },
+      {
+        "unit_id": "unit_014",
+        "role_type": "context",
+        "function_in_source": "## 8. result - status: PASS",
+        "upstream": "unit_013",
+        "downstream": "unit_015"
+      },
+      {
+        "unit_id": "unit_015",
+        "role_type": "context",
+        "function_in_source": "## 9. one-line summary - raw intake weakness is not just noisy anchors; it is the absence of a middle layer that suppresses discourse noi...",
+        "upstream": "unit_014",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "routes_to"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "routes_to"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_007",
+        "to_unit_id": "unit_008",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_008",
+        "to_unit_id": "unit_009",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_009",
+        "to_unit_id": "unit_010",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_010",
+        "to_unit_id": "unit_011",
+        "relation_type": "grounds"
+      },
+      {
+        "from_unit_id": "unit_011",
+        "to_unit_id": "unit_012",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_012",
+        "to_unit_id": "unit_013",
+        "relation_type": "routes_to"
+      },
+      {
+        "from_unit_id": "unit_013",
+        "to_unit_id": "unit_014",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_014",
+        "to_unit_id": "unit_015",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "raw_intake_gap_analysis_before_middle_layer_fix_v1 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as input_to_processing_to_result with 15 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "raw_intake_gap_analysis_before_middle_layer_fix_v1",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "# raw intake gap analysis before middle-layer fix",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "adoption",
+        "function_in_source": "## 1. compared paths - structured document path - front door: [process_structured_doc_with_routing.py](/Users/sungsookim/universe/vectorf...",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "contrast",
+        "function_in_source": "## 2. key differences",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "handoff",
+        "function_in_source": "### input condition - structured document path: - input already arrives role-shaped. - routing markers, doc boundaries, and source class...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "context",
+        "function_in_source": "### source identity preservation - structured document path: - source identity is explicit and strong. - doc id, source path, label packe...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "handoff",
+        "function_in_source": "### anchor quality - structured document path: - anchor quality benefits from already-structured wording and lower discourse noise. - rou...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "adoption",
+        "function_in_source": "### case-level frame extraction - structured document path: - meaning-bearing axes survive because the input already expresses purpose, b...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "### output discipline - structured document path: - receipt / label packet / origin map / board update are produced in a stable way. - ou...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "# raw intake gap analysis before middle-layer fix",
+        "human_gloss": "# raw intake gap analysis before middle-layer fix",
+        "what_it_preserves": [
+          "start_ref=raw intake gap analysis before middle-layer fix",
+          "end_ref=raw intake gap analysis before middle-layer fix",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "## 1. compared paths - structured document path - front door: [process_structured_doc_with_routing.py](/Users/sungsookim/universe/vectorf...",
+        "human_gloss": "## 1. compared paths - structured document path - front door: [process_structured_doc_with_routing.py](/Users/sungsookim/universe/vectorf...",
+        "what_it_preserves": [
+          "start_ref=1. compared paths",
+          "end_ref=1. compared paths",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## 2. key differences",
+        "human_gloss": "## 2. key differences",
+        "what_it_preserves": [
+          "start_ref=2. key differences",
+          "end_ref=2. key differences",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "### input condition - structured document path: - input already arrives role-shaped. - routing markers, doc boundaries, and source class...",
+        "human_gloss": "### input condition - structured document path: - input already arrives role-shaped. - routing markers, doc boundaries, and source class...",
+        "what_it_preserves": [
+          "start_ref=input condition",
+          "end_ref=input condition",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "### source identity preservation - structured document path: - source identity is explicit and strong. - doc id, source path, label packe...",
+        "human_gloss": "### source identity preservation - structured document path: - source identity is explicit and strong. - doc id, source path, label packe...",
+        "what_it_preserves": [
+          "start_ref=source identity preservation",
+          "end_ref=source identity preservation",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "### anchor quality - structured document path: - anchor quality benefits from already-structured wording and lower discourse noise. - rou...",
+        "human_gloss": "### anchor quality - structured document path: - anchor quality benefits from already-structured wording and lower discourse noise. - rou...",
+        "what_it_preserves": [
+          "start_ref=anchor quality",
+          "end_ref=anchor quality",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "### case-level frame extraction - structured document path: - meaning-bearing axes survive because the input already expresses purpose, b...",
+        "human_gloss": "### case-level frame extraction - structured document path: - meaning-bearing axes survive because the input already expresses purpose, b...",
+        "what_it_preserves": [
+          "start_ref=case-level frame extraction",
+          "end_ref=case-level frame extraction",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      },
+      {
+        "unit_id": "unit_008",
+        "provisional_line": "### output discipline - structured document path: - receipt / label packet / origin map / board update are produced in a stable way. - ou...",
+        "human_gloss": "### output discipline - structured document path: - receipt / label packet / origin map / board update are produced in a stable way. - ou...",
+        "what_it_preserves": [
+          "start_ref=output discipline",
+          "end_ref=output discipline",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 7
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007",
+        "unit_008"
+      ],
+      "supporting_records": [
+        "docs/reports/raw_intake_gap_analysis_before_middle_layer_fix_v1.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/docs/reports/raw_intake_gap_analysis_before_middle_layer_fix_v1.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

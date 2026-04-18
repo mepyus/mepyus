@@ -1,0 +1,36 @@
+{
+  "packet_id": "packet_request_axis_followup_001",
+  "packet_kind": "request",
+  "source_surface": "user_surface",
+  "target_surface": "engine_surface",
+  "purpose": "axis candidate internal follow-up",
+  "directionality": "followup",
+  "anchor_refs": [
+    "integrated_engine_3_surface_baseline",
+    "packet_routing_anchor_v0"
+  ],
+  "related_objects": [
+    "maturation_object_axis_candidate_001",
+    "packet_reflux_axis_pattern_001",
+    "axis_candidate_anchor_packet_reflux"
+  ],
+  "current_judgment_state": "followup_requested",
+  "requested_or_next_action": "process_internal_followup",
+  "validation_points": [
+    "internal follow-up value from maturation canvas",
+    "fit against axis candidate open edges",
+    "whether VectorFL recheck is needed after return"
+  ],
+  "reflux_need": "maybe",
+  "packet_status": "created",
+  "request_type": "internal_followup_from_maturation_signal",
+  "requested_team_or_executor": "engine_surface",
+  "input_materials": [
+    "maturation_object_axis_candidate_001",
+    "maturation_object_axis_candidate_001.open_edges",
+    "packet_reflux_axis_pattern_001.maturation_value"
+  ],
+  "expected_output_shape": "internal follow-up note plus user decision options",
+  "external_support_need": "no",
+  "urgency_level": "low"
+}

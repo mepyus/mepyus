@@ -1,0 +1,74 @@
+{
+  "page_title": "VectorFL Page / Semi-Live / organ-detail-input",
+  "detail_kind": "input",
+  "surface_key": "organ-detail-input",
+  "title": "Input Organ Detail",
+  "organ_identity": {
+    "organ_ref": "organ:input",
+    "organ_label": "Input Organ",
+    "current_status": "usable_with_caution"
+  },
+  "instruction_bundle_preview": {
+    "role_sentence": "Register runtime-selected source material, keep context layers intact, and emit a cautious intake contract without pretending closure.",
+    "primary_obligation": "Preserve provenance, context, weakness, and readiness while preparing material for downstream line-aware work.",
+    "expected_return_fields": [
+      "source_ref",
+      "context_layers",
+      "classification",
+      "weakness_note",
+      "next_lane_hint"
+    ]
+  },
+  "accepted_handoff_preview": {
+    "accepted_input_kinds": [
+      "runtime_selected_artifact_group",
+      "surface_snapshot",
+      "trace_artifact"
+    ],
+    "required_carries": [
+      "provenance",
+      "context_layers",
+      "weakness",
+      "fallback"
+    ],
+    "next_preferred_targets": [
+      "organ:translation",
+      "organ:flow_interpretation"
+    ]
+  },
+  "recent_return_preview": {
+    "summary_return": "Input bridge prepared 4 artifact refs under thickening with fallback carry preserved.",
+    "trace_anchor": "preflight_20260405T074526_912614_827bbb",
+    "recommended_handoff_target": "thickening"
+  },
+  "caution_profile": {
+    "do_not": [
+      "Do not flatten runtime-selected artifacts into a fake canonical case packet.",
+      "Do not hide weak intake status or fallback use."
+    ],
+    "escalation_triggers": [
+      "context layers missing",
+      "artifact roots ambiguous",
+      "requested artifact and first read diverge without note"
+    ]
+  },
+  "semi_live_status": {
+    "phase": "thickening",
+    "decision": "thickening",
+    "candidate_count": 4,
+    "restriction_flags": [
+      "weak_intake_visible",
+      "fallback_carry_required"
+    ],
+    "recent_trace_ids": [
+      "preflight_20260405T074526_912614_827bbb"
+    ]
+  },
+  "context_links": {
+    "current_reading": "../semi_live_routes/current-reading.html",
+    "cases_queue": "../semi_live_routes/cases-queue.html",
+    "inputs_intake": "../semi_live_routes/inputs-intake.html",
+    "history_trace": "../semi_live_routes/history-trace.html",
+    "programs_connections": "../semi_live_routes/programs-connections.html"
+  }
+}

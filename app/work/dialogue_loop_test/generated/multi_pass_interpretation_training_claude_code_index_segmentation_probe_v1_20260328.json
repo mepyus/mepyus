@@ -1,0 +1,93 @@
+{
+  "created_at": "2026-03-28T10:09:29.817070Z",
+  "input_asset": "inputs/external_cases/claude_code_index.txt",
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/claude_code_index.txt",
+    "supporting_first_pass_patterns": [
+      "top_objects",
+      "top_layers",
+      "top_relations",
+      "question_inducing_candidates",
+      "summary_stage_deprioritization_candidates"
+    ],
+    "second_order_reading_type": "multi_pass_interpretation",
+    "rereading_mode": "same_asset_multi_layer_rereading",
+    "scope_local_page_comparison": "local_page_comparison",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "context_unit_reconstruction_from_pass_difference",
+    "candidate_status": "collect_only",
+    "hold_reason": "context units are still observed as rereading outputs, not generalized units",
+    "evidence_pointers": {
+      "purpose_json": "app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_claude_code_index_segmentation_probe_v1_20260328.json",
+      "question_json": "app/work/dialogue_loop_test/generated/question_inducing_block_candidates_claude_code_index_segmentation_probe_v1_20260328.json"
+    }
+  },
+  "pass_a": {
+    "name": "object_layer_relation_question_reading",
+    "second_order_reading_type": "object_layer_relation_question",
+    "rereading_mode": "same_asset_reinterpretation",
+    "scope_local_page_comparison": "page",
+    "front_objects": [
+      "에이전트 애플리케이션",
+      "생산성/코딩",
+      "모델 work",
+      "전략/방향성",
+      "구현/자동화",
+      "일의 미래"
+    ],
+    "front_layers": [
+      "설명/해석 층",
+      "구현/실행 층",
+      "질문 유도 층",
+      "구조/연결 층",
+      "검증/근거 층",
+      "전략/방향 층"
+    ],
+    "front_relations": [
+      "reinforcement_hint",
+      "execution_shift_hint",
+      "transition_hint",
+      "question_generation_hint",
+      "contrast_hint",
+      "specification_hint"
+    ],
+    "question_blocks": [],
+    "residue_note": "residue exists but is not the front reading target in pass A",
+    "what_looks_new": [
+      "객체가 단순 키워드가 아니라 AI 시대의 주요 질문 묶음으로 보인다",
+      "질문 유도 블록이 object growth와 함께 잡힌다"
+    ]
+  },
+  "pass_b": {
+    "name": "page_flow_transition_pivot_reading",
+    "second_order_reading_type": "page_flow_transition_pivot",
+    "rereading_mode": "same_asset_reinterpretation",
+    "scope_local_page_comparison": "page_plus_comparison",
+    "pivot_windows": [],
+    "pivot_objects": [],
+    "pivot_relations": [],
+    "pivot_headings": [],
+    "what_looks_new": [
+      "같은 블록이 객체 후보가 아니라 페이지 흐름을 꺾는 pivot로 보인다",
+      "Bundle-Unbundle, UX 마찰, RLVR/CUA 구간이 실행 질문을 발생시키는 전이점으로 보인다"
+    ]
+  },
+  "pass_c": {
+    "name": "summary_opening_residue_priority_reading",
+    "second_order_reading_type": "summary_opening_residue_priority",
+    "rereading_mode": "same_asset_reinterpretation",
+    "scope_local_page_comparison": "summary_opening",
+    "front_residue_types": [],
+    "front_deprioritized_values": [],
+    "candidate_losses": [],
+    "what_looks_new": [
+      "같은 block이 요약 opening에서는 residue 때문에 덜 살아난다",
+      "삭제가 아니라 summary-stage 우선순위 조정이 핵심이라는 점이 보인다"
+    ]
+  },
+  "references": {
+    "purpose_json": "app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_claude_code_index_segmentation_probe_v1_20260328.json",
+    "question_json": "app/work/dialogue_loop_test/generated/question_inducing_block_candidates_claude_code_index_segmentation_probe_v1_20260328.json"
+  }
+}

@@ -1,0 +1,21 @@
+# explore_20260326_200826_validation
+
+## context
+- session_id: `session_20260326_01`
+- run_id: `run_20260326_185718_981304_eacd374e_db43d9`
+- observed_at: `2026-03-26T20:08:26+09:00`
+- source_ref: `thin_operation_rules_lock_v1.md`
+- source_type: `structured_internal_doc`
+- observation_type: `pattern_seen`
+
+## readout
+- candidate_slots:
+- kept_as_core_candidate:
+- kept_as_outer_candidate:
+- deferred_items:
+- deferred_reason:
+
+## next
+- future_use_hint:
+- next_action_hint:
+- notes:

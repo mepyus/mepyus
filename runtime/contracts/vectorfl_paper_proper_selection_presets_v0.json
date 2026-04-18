@@ -1,0 +1,45 @@
+{
+  "schema_version": "vectorfl_paper_proper_selection_presets_v0",
+  "updated_at": "2026-04-11T00:50:00+09:00",
+  "presets": [
+    {
+      "preset_id": "selection_supervision_language",
+      "label": "Supervisor Language Focus",
+      "selected_line": "supervision_language_as_hard_requirement",
+      "selected_bundle": "vectorfl_paper_weekend_live_bundle_v0",
+      "compare_target": "paperclip_issue_run_result_governance_overlay",
+      "worker_target": "internal_read_cell",
+      "cli": "gemini-cli",
+      "requested_action": "extract repeated pressures and sharpen line seeds",
+      "target_return_slot": "line_candidates_latest",
+      "governance_emphasis": "keep supervisor readability as the primary proof condition",
+      "next_move": "stabilize work-facing language before any broader orchestration drift"
+    },
+    {
+      "preset_id": "selection_thin_overlay",
+      "label": "Thin Overlay Focus",
+      "selected_line": "thin_overlay_before_broad_integration",
+      "selected_bundle": "vectorfl_paper_weekend_live_bundle_v0",
+      "compare_target": "paperclip_issue_run_result_governance_overlay",
+      "worker_target": "external_resource_cell",
+      "cli": "codex-cli",
+      "requested_action": "compare issue/run/result/governance mapping and reject broader ontology import",
+      "target_return_slot": "external_candidates_latest",
+      "governance_emphasis": "do not widen beyond issue/run/result/governance until the realism gate passes",
+      "next_move": "rerun the same thin seam against a real exported host record"
+    },
+    {
+      "preset_id": "selection_cli_manager",
+      "label": "CLI Ownership Focus",
+      "selected_line": "cli_as_cell_manager",
+      "selected_bundle": "vectorfl_paper_weekend_live_bundle_v0",
+      "compare_target": "paperclip_issue_run_result_governance_overlay",
+      "worker_target": "synthesis_cell",
+      "cli": "codex-cli",
+      "requested_action": "bind current evidence into a supervisor-readable next-loop report",
+      "target_return_slot": "supervisor_report_latest",
+      "governance_emphasis": "keep explicit cell ownership so the user stays supervisor rather than operator",
+      "next_move": "promote owned-cell handoff clarity before adding more teams"
+    }
+  ]
+}

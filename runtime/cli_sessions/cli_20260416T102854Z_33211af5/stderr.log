@@ -1,0 +1,375 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d95d6-2c92-7e83-9228-2ba3c76277c1
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+Continue from Codex turn cli_20260416T102612Z_277b5388 inside the VectorFL surface.
+
+Bounded context refs:
+- docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md
+- runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/session.json
+- runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/structured_return.json
+- runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md
+- runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json
+- runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json
+- runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md
+
+Prompt payload:
+Continue from the selected Codex turn as a bounded operating conversation. Return: what remains valid, what needs reread or validation, and the next smallest safe action. Do not modify files.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll reread the referenced session artifacts and migration note, then return only the carry-forward state and next safe action. No files will be modified.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,240p' runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine UI Stable Folder Migration Note v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The integrated-engine main operating UI has been promoted from `gemini/mock_test` into `app/ui/integrated_engine`.
+
+The note is that `gemini/mock_test` remains as Gemini proposal/reference clay, while `app/ui/integrated_engine` is now the stable source folder for the actual main UI path. Some old report wording still says `gemini/mock_test`; that wording should be reread as historical context, not the current source location.
+
+## Round Goal
+
+Move the currently usable Gemini mock UI into a stable project folder before further CLI-on-top work makes the source location ambiguous.
+
+## Files Changed
+
+- `.gitignore`
+- `app/ui/integrated_engine/*`
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## What Changed
+
+- Created `app/ui/integrated_engine` as the stable source folder for the current integrated-engine UI.
+- Copied the existing working UI from `gemini/mock_test` into the stable folder.
+- Kept `gemini/mock_test` in place as reference/proposal material.
+- Updated the stable app package name to `vectorfl-integrated-engine-ui`.
+- Updated the stable app browser title to `VectorFL Integrated Engine`.
+- Updated the stable app shell label from `VECTORFL Shell` to `Integrated Engine`.
+- Added broad ignores for `node_modules/` and `dist/` so local dependency/build artifacts do not become the project signal.
+
+## Why This Was Done
+
+- `gemini/mock_test` should not remain the long-term source of the real operating UI.
+- Gemini material is design/proposal clay; the actual integrated-engine UI needs a stable source location.
+- `runtime` should remain for session artifacts, manifests, state, and execution returns, not React/Vite source.
+- The 3-surface engine structure remains fixed; this migration only changes source placement.
+
+## Validation
+
+- `npm run build` passed in `app/ui/integrated_engine`.
+- The stable app dev server is running at `http://127.0.0.1:5173/`.
+- The served HTML title is `VectorFL Integrated Engine`, confirming the new source is active.
+- The API proxy from the stable app to `http://127.0.0.1:8421` works.
+- A real read-only Codex session succeeded through the stable app proxy path:
+  - session id: `cli_20260416T101531Z_ba21f03e`
+  - requested_by_surface: `vectorfl_surface`
+  - requested_by_page: `app/ui/integrated_engine`
+  - status: `done`
+  - exit code: `0`
+- Marking the same session as `validation_target` succeeded.
+
+## Pass / Fail
+
+PASS_WITH_NOTE.
+
+The stable folder now runs and can operate the existing CLI on-top path. The only note is that browser-click/user-feel validation still needs the user, and some prior documentation still refers to `gemini/mock_test` because it was written before the stable-folder promotion.
+
+## Watchpoints
+
+- Do not continue feature work against `gemini/mock_test` unless intentionally modifying the reference mock.
+- Do not move React/Vite source into `runtime`.
+- Do not treat this migration as package 2 or as a new surface.
+- Do not add Gemini adapter, background runner, or session browsing until the stable Codex path is hand-used.
+
+## Next Small Step
+
+Use `http://127.0.0.1:5173/` from the stable app and hand-check one VectorFL CLI run from the browser.
+
+exec
+/bin/bash -lc "sed -n '1,240p' runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T102612Z_277b5388",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "stable UI source: `app/ui/integrated_engine`\n   - reference/proposal clay: `gemini/mock_test`\n   - runtime artifacts/state/returns: `runtime`\n2. The CLI layer remains an on-top host/control path through the VectorFL Integrated Engine, not a fourth surface and not a new engine surface.\n3. Prior validation still stands from the selected turn:\n   - `npm run build` passed in `app/ui/integrated_engine`\n   - served title was confirmed as `VectorFL Integrated Engine`\n   - proxy to `127.0.0.1:8421` worked\n   - real read-only Codex session exited `0`\n\nFollow-up context changed:\n- This turn is a follow-up context smoke test over the prior Codex session artifacts.\n- No implementation or validation was requested here.\n- No files were modified.\n\nNext smallest safe action:\n- Run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.\n\n- important findings / diffs / outputs\n\nImportant invariant still active:\n- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.\n- Do not move React/Vite source into `runtime`.\n- Do not add Gemini adapter, background runner, or session browsing before the stable Codex browser path is hand-used.\n\nNotable metadata mismatch:\n- The embedded result text says the next use should be a `validation target`.\n- The structured field `suggested_next_use` says `reread_target`.\n- The operationally correct next use appears to be `validation target`, because the only remaining uncertainty is browser-click/user-feel validation.\n\n- uncertainty or failure notes\n\nNo fresh browser validation was performed in this turn.\n\nThe remaining uncertainty is unchanged: the stable app path needs one human/browser hand-check through the VectorFL CLI UI.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T10:26:35Z"
+}
+
+ succeeded in 0ms:
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T102720Z_8e045e9b`
+- backend_kind: `codex`
+- task_type: `validate`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+## Task Purpose
+Suggested-next-use inference smoke test for validation target.
+
+## Used Context Refs
+- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json`
+- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json`
+
+## Result Summary
+- result summary  
+  Read the bounded context refs. The suggested next use should be `validation target` because the remaining uncertainty is browser validation of the stable VectorFL CLI UI path.
+
+- important findings / diffs / outputs  
+  No files modified.  
+  Prior context says the stable UI source remains `app/ui/integrated_engine`, runtime artifacts remain under `runtime`, and the CLI layer is an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface.  
+  The bounded context contains a metadata mismatch: embedded result text says `validation target`, while the structured field says `reread_target`.
+
+- uncertainty or failure notes  
+  No fresh browser validation was performed in this turn.  
+  Remaining uncertainty is the browser-click/user-feel validation pass at `http://127.0.0.1:5173/`.
+
+- suggested next use: validation target
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+validation_target
+
+exec
+/bin/bash -lc "sed -n '1,240p' runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/structured_return.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T102720Z_8e045e9b",
+  "backend_kind": "codex",
+  "task_type": "validate",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  Read the bounded context refs. The suggested next use should be `validation target` because the remaining uncertainty is browser validation of the stable VectorFL CLI UI path.\n\n- important findings / diffs / outputs  \n  No files modified.  \n  Prior context says the stable UI source remains `app/ui/integrated_engine`, runtime artifacts remain under `runtime`, and the CLI layer is an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface.  \n  The bounded context contains a metadata mismatch: embedded result text says `validation target`, while the structured field says `reread_target`.\n\n- uncertainty or failure notes  \n  No fresh browser validation was performed in this turn.  \n  Remaining uncertainty is the browser-click/user-feel validation pass at `http://127.0.0.1:5173/`.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-16T10:27:36Z"
+}
+
+exec
+/bin/bash -lc "sed -n '1,240p' runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T102612Z_277b5388`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+## Task Purpose
+Follow-up context smoke test: continue from the previous Codex conversation turn without manually opening raw artifacts.
+
+## Used Context Refs
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/session.json`
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/structured_return.json`
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md`
+
+## Result Summary
+stable UI source: `app/ui/integrated_engine`
+   - reference/proposal clay: `gemini/mock_test`
+   - runtime artifacts/state/returns: `runtime`
+2. The CLI layer remains an on-top host/control path through the VectorFL Integrated Engine, not a fourth surface and not a new engine surface.
+3. Prior validation still stands from the selected turn:
+   - `npm run build` passed in `app/ui/integrated_engine`
+   - served title was confirmed as `VectorFL Integrated Engine`
+   - proxy to `127.0.0.1:8421` worked
+   - real read-only Codex session exited `0`
+
+Follow-up context changed:
+- This turn is a follow-up context smoke test over the prior Codex session artifacts.
+- No implementation or validation was requested here.
+- No files were modified.
+
+Next smallest safe action:
+- Run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.
+
+- important findings / diffs / outputs
+
+Important invariant still active:
+- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.
+- Do not move React/Vite source into `runtime`.
+- Do not add Gemini adapter, background runner, or session browsing before the stable Codex browser path is hand-used.
+
+Notable metadata mismatch:
+- The embedded result text says the next use should be a `validation target`.
+- The structured field `suggested_next_use` says `reread_target`.
+- The operationally correct next use appears to be `validation target`, because the only remaining uncertainty is browser-click/user-feel validation.
+
+- uncertainty or failure notes
+
+No fresh browser validation was performed in this turn.
+
+The remaining uncertainty is unchanged: the stable app path needs one human/browser hand-check through the VectorFL CLI UI.
+
+- suggested next use: validation target
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+reread_target
+
+codex
+The reread confirms the same operational state across the migration note and both structured returns. I’m checking the session envelopes now only for request metadata or contradictions, then I’ll compact the result.
+exec
+/bin/bash -lc "sed -n '1,220p' runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/session.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T102720Z_8e045e9b",
+  "backend_kind": "codex",
+  "task_type": "validate",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Suggested-next-use inference smoke test for validation target.",
+  "bounded_context_refs": [
+    "runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json",
+    "runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json"
+  ],
+  "prompt_payload": "Read the bounded context. Return that the suggested next use should be validation target because the remaining uncertainty is browser validation. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:27:20Z",
+  "ended_at": "2026-04-16T10:27:36Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  Read the bounded context refs. The suggested next use should be `validation target` because the remaining uncertainty is browser validation of the stable VectorFL CLI UI path.\n\n- important findings / diffs / outputs  \n  No files modified.  \n  Prior context says the stable UI source remains `app/ui/integrated_engine`, runtime artifacts remain under `runtime`, and the CLI layer is an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface.  \n  The bounded context contains a metadata mismatch: embedded result text says `validation target`, while the structured field says `reread_target`.\n\n- uncertainty or failure notes  \n  No fresh browser validation was performed in this turn.  \n  Remaining uncertainty is the browser-click/user-feel validation pass at `http://127.0.0.1:5173/`.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:27:42Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:27:42Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}
+
+exec
+/bin/bash -lc "sed -n '1,220p' runtime/cli_sessions/cli_20260416T102612Z_277b5388/session.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T102612Z_277b5388",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Follow-up context smoke test: continue from the previous Codex conversation turn without manually opening raw artifacts.",
+  "bounded_context_refs": [
+    "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/session.json",
+    "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/structured_return.json",
+    "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md"
+  ],
+  "prompt_payload": "Continue from the selected Codex turn as a bounded operating conversation. Return: what remained valid, what follow-up context changed, and the next smallest safe action. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T10:26:12Z",
+  "ended_at": "2026-04-16T10:26:35Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/prompt.md",
+  "exit_code": 0,
+  "result_summary": "stable UI source: `app/ui/integrated_engine`\n   - reference/proposal clay: `gemini/mock_test`\n   - runtime artifacts/state/returns: `runtime`\n2. The CLI layer remains an on-top host/control path through the VectorFL Integrated Engine, not a fourth surface and not a new engine surface.\n3. Prior validation still stands from the selected turn:\n   - `npm run build` passed in `app/ui/integrated_engine`\n   - served title was confirmed as `VectorFL Integrated Engine`\n   - proxy to `127.0.0.1:8421` worked\n   - real read-only Codex session exited `0`\n\nFollow-up context changed:\n- This turn is a follow-up context smoke test over the prior Codex session artifacts.\n- No implementation or validation was requested here.\n- No files were modified.\n\nNext smallest safe action:\n- Run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.\n\n- important findings / diffs / outputs\n\nImportant invariant still active:\n- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.\n- Do not move React/Vite source into `runtime`.\n- Do not add Gemini adapter, background runner, or session browsing before the stable Codex browser path is hand-used.\n\nNotable metadata mismatch:\n- The embedded result text says the next use should be a `validation target`.\n- The structured field `suggested_next_use` says `reread_target`.\n- The operationally correct next use appears to be `validation target`, because the only remaining uncertainty is browser-click/user-feel validation.\n\n- uncertainty or failure notes\n\nNo fresh browser validation was performed in this turn.\n\nThe remaining uncertainty is unchanged: the stable app path needs one human/browser hand-check through the VectorFL CLI UI.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T10:27:02Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T10:27:02Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}
+
+codex
+- result summary  
+  The selected Codex turn remains valid. Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/reference clay; `runtime` remains for session artifacts, state, and returns.  
+  The CLI backend is still an on-top host/control path through the VectorFL Integrated Engine, not a new engine surface or fourth surface.  
+  No files were modified in this reread.
+
+- important findings / diffs / outputs  
+  Prior validation still stands from the bounded context: `npm run build` passed in `app/ui/integrated_engine`, served title was confirmed as `VectorFL Integrated Engine`, API proxy to `127.0.0.1:8421` worked, and a real read-only Codex session exited `0`.  
+  Session `cli_20260416T102720Z_8e045e9b` resolves the earlier metadata mismatch: its structured field and mark both say `validation_target`.  
+  Session `cli_20260416T102612Z_277b5388` still contains the mismatch: embedded result says `validation target`, structured field says `reread_target`, but it was later marked `validation_target`.
+
+- uncertainty or failure notes  
+  No fresh browser validation was performed in this turn.  
+  Remaining uncertainty is still browser-click/user-feel validation of the stable VectorFL CLI UI path at `http://127.0.0.1:5173/`.
+
+- suggested next use: validation target
+tokens used
+7,080

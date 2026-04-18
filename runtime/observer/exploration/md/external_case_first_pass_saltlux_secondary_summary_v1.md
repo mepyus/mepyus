@@ -1,0 +1,37 @@
+# external_case_first_pass_saltlux_secondary_summary_v1
+
+## context
+- exploration_id: `external_case_first_pass_saltlux_secondary_summary_v1`
+- session_id: `session_20260326_01`
+- run_id: `run_20260326_201711_239931_18bf0efa_d52957`
+- observed_at: `2026-03-26T20:28:00+09:00`
+- source_ref: `saltlux_agentic_ai_ontology_secondary_summary_v1`
+- source_type: `external_case_secondary_summary`
+- source_origin: `youtube_talk_based_secondary_summary_by_claude`
+- observation_type: `pattern_seen`
+
+## readout
+- candidate_slots:
+  - `semantic_interoperability_data_fabric_frame`
+  - `grounding_plus_symbolic_expression_frame`
+  - `agentic_ai_composition_frame`
+  - `strong_claims_and_metrics`
+  - `market_positioning_frame`
+- kept_as_core_candidate:
+  - 없음
+- kept_as_outer_candidate:
+  - `semantic_interoperability_data_fabric_frame`
+  - `grounding_plus_symbolic_expression_frame`
+  - `agentic_ai_composition_frame`
+- deferred_items:
+  - `strong_claims_and_metrics`
+- deferred_reason:
+  - secondary summary 기반이며 수치/할루시네이션 제로/소버린 AI 우위 같은 강한 주장은 검증 전 채택하면 위험하다.
+
+## next
+- future_use_hint:
+  - 구조 프레임과 마케팅/강한 주장 분리를 연습하는 외부 사례 판독 예시로 재사용 가능
+- next_action_hint:
+  - 유사 외부 사례 1~2건을 더 넣어 outer_candidate로 남긴 구조 프레임이 반복되는지 본다.
+- notes:
+  - observe_and_separate_before_adopt 전제로 읽었고, 구조 프레임은 outer로 남기고 강한 주장은 defer로 분리했다.

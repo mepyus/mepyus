@@ -1,0 +1,67 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260416T102612Z_277b5388`
+- backend_kind: `codex`
+- task_type: `reread`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+## Task Purpose
+Follow-up context smoke test: continue from the previous Codex conversation turn without manually opening raw artifacts.
+
+## Used Context Refs
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/session.json`
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/structured_return.json`
+- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md`
+
+## Result Summary
+stable UI source: `app/ui/integrated_engine`
+   - reference/proposal clay: `gemini/mock_test`
+   - runtime artifacts/state/returns: `runtime`
+2. The CLI layer remains an on-top host/control path through the VectorFL Integrated Engine, not a fourth surface and not a new engine surface.
+3. Prior validation still stands from the selected turn:
+   - `npm run build` passed in `app/ui/integrated_engine`
+   - served title was confirmed as `VectorFL Integrated Engine`
+   - proxy to `127.0.0.1:8421` worked
+   - real read-only Codex session exited `0`
+
+Follow-up context changed:
+- This turn is a follow-up context smoke test over the prior Codex session artifacts.
+- No implementation or validation was requested here.
+- No files were modified.
+
+Next smallest safe action:
+- Run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.
+
+- important findings / diffs / outputs
+
+Important invariant still active:
+- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.
+- Do not move React/Vite source into `runtime`.
+- Do not add Gemini adapter, background runner, or session browsing before the stable Codex browser path is hand-used.
+
+Notable metadata mismatch:
+- The embedded result text says the next use should be a `validation target`.
+- The structured field `suggested_next_use` says `reread_target`.
+- The operationally correct next use appears to be `validation target`, because the only remaining uncertainty is browser-click/user-feel validation.
+
+- uncertainty or failure notes
+
+No fresh browser validation was performed in this turn.
+
+The remaining uncertainty is unchanged: the stable app path needs one human/browser hand-check through the VectorFL CLI UI.
+
+- suggested next use: validation target
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+reread_target

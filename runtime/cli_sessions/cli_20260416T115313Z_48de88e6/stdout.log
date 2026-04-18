@@ -1,0 +1,105 @@
+- result summary
+  - bounded context 2건 reread 완료.
+  - 파일 수정 없음.
+  - 최종 glossary / UI copy / feature promotion 없음.
+  - 핵심 수집값은 `CLI return이 3면에서 다르게 읽히며, mark는 완료가 아니라 다음 route signal`이라는 운영 언어 축이다.
+
+- important findings / diffs / outputs
+  - internal phrase or signal observed: `CLI on-top layer`
+  - source context where it appeared: shared grammar reread §3, operator report §1
+  - internal meaning / operational role: CLI는 새 4번째 surface가 아니라 VectorFL surface 안에서 다루는 보조 실행층.
+  - Koreanization candidate, not final UI copy: `3면 위 보조 실행층`, `VectorFL 안의 CLI 실행층`
+  - Korean preservation requirement: `새 화면/새 주체`가 아니라 `기존 3면 위에 얹힌 실행 경로`임을 보존.
+  - risky Korean flattening to avoid: `새 채팅창`, `네 번째 화면`, `CLI 화면`
+  - why this helps the user operate: 사용자가 CLI 결과를 별도 시스템 판단으로 오해하지 않고 VectorFL의 운영 흐름 안에서 읽을 수 있음.
+  - what meaning gets lost if shortened: 3면 구조와 권위 경계가 사라짐.
+  - repeated connection it belongs to: `VectorFL operation -> Codex run -> structured return`
+  - emerging axis candidate: `CLI-on-top route axis`
+  - surface exposure note: vectorfl primary, user readable as candidate, engine readable as material
+  - external expression support needed, if any: 필요 시 `on-top`을 직역하지 않고 `얹힌 실행층`으로 설명하는 지원 필요.
+  - next reread question: CLI가 “면”으로 오해되는 표현이 화면/보고 어디에서 반복되는가?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `mark`
+  - source context where it appeared: shared grammar reread §4.2, §7; operator report §2.2, §3
+  - internal meaning / operational role: 완료 선언이 아니라 다음 읽기 방향을 표시하는 route signal.
+  - Koreanization candidate, not final UI copy: `다음 경로 표시`, `다음 읽기 신호`, `route 신호`
+  - Korean preservation requirement: `완료/승인/확정`이 아니라 `다음 처리 방향`임을 보존.
+  - risky Korean flattening to avoid: `완료 상태`, `승인됨`, `처리됨`
+  - why this helps the user operate: validation target, deposit candidate 등을 실제 완료로 착각하지 않게 함.
+  - what meaning gets lost if shortened: 후보성과 다음 route 의미가 사라짐.
+  - repeated connection it belongs to: `Codex return -> mark -> route readability`
+  - emerging axis candidate: `candidate-not-authority axis`
+  - surface exposure note: vectorfl marks, user reads candidate, engine reads validation/extraction material
+  - external expression support needed, if any: mark 종류별 짧은 설명 필요 가능.
+  - next reread question: 각 mark가 사용자 판단에서 어떤 행동을 열고 어떤 행동은 아직 닫는가?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `deposit candidate`
+  - source context where it appeared: shared grammar reread §3, §4.3, §7; operator report §2.1, §2.3, §3
+  - internal meaning / operational role: 공식 편입 전의 보관/재진입/추출 후보.
+  - Koreanization candidate, not final UI copy: `deposit 후보`, `편입 후보`, `보관 후보`
+  - Korean preservation requirement: 자동 ingestion이나 공식 기록 승격이 아님을 보존.
+  - risky Korean flattening to avoid: `저장 완료`, `등록 완료`, `공식 기록`
+  - why this helps the user operate: 사용자가 deposit queue를 승인된 기록으로 오해하지 않고 다음 판단 대상으로 다룸.
+  - what meaning gets lost if shortened: 승인 전 상태, 재검토 가능성, route 후보성이 사라짐.
+  - repeated connection it belongs to: `raw artifact reduction -> readable return -> still-not-ingestion`
+  - emerging axis candidate: `candidate-not-authority axis`
+  - surface exposure note: engine material, vectorfl route, user decision candidate
+  - external expression support needed, if any: `deposit` 자체는 내부어로 보존하되 한국어 보조어 필요.
+  - next reread question: deposit 후보와 validation 후보가 같은 화면에서 섞일 때 어떤 구분어가 필요한가?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `User work / decision candidate`
+  - source context where it appeared: shared grammar reread §3, §4.1; operator report §2.1
+  - internal meaning / operational role: User surface가 CLI return을 직접 실행하지 않고 업무 후보, 결정 후보, route board ticket으로 조직함.
+  - Koreanization candidate, not final UI copy: `업무 후보`, `결정 후보`, `다음 작업 후보`
+  - Korean preservation requirement: 자동 배정이 아니라 사용자가 열 수 있는 판단 재료임을 보존.
+  - risky Korean flattening to avoid: `자동 배정`, `할 일 확정`, `작업 시작됨`
+  - why this helps the user operate: 사용자가 올라온 항목을 바로 수행 명령이 아니라 선택 가능한 작업 신호로 읽음.
+  - what meaning gets lost if shortened: 사용자 권위와 후보 분류의 차이가 사라짐.
+  - repeated connection it belongs to: `VectorFL operation -> User organization -> Engine material`
+  - emerging axis candidate: `surface exposure axis`
+  - surface exposure note: user primary
+  - external expression support needed, if any: route board 상태명과 함께 검증 필요.
+  - next reread question: 사용자면에서 후보가 언제 package opening 판단으로 넘어가는가?
+  - suggested next use: reread target
+
+  - internal phrase or signal observed: `Engine return / validation / extraction material`
+  - source context where it appeared: shared grammar reread §3, §4.1; operator report §2.3
+  - internal meaning / operational role: Engine surface는 CLI 결과를 판단기관처럼 확정하지 않고 처리/반환/검증/추출 재료로 읽음.
+  - Koreanization candidate, not final UI copy: `처리 반환 재료`, `검증 후보`, `추출 재료`
+  - Korean preservation requirement: engine이 최종 판단권을 흡수하지 않음을 보존.
+  - risky Korean flattening to avoid: `최종 결과`, `검증 완료`, `엔진 판단`
+  - why this helps the user operate: engine 화면을 확정 판정 화면이 아니라 다음 처리 재료 화면으로 읽게 함.
+  - what meaning gets lost if shortened: material/candidate/authority 경계가 사라짐.
+  - repeated connection it belongs to: `User work candidate / Engine return material -> user decision or VectorFL follow-up`
+  - emerging axis candidate: `surface exposure axis`, `candidate-not-authority axis`
+  - surface exposure note: engine primary, vectorfl rereads, user decides
+  - external expression support needed, if any: `material`을 `재료`로 보존할지 `자료`로 낮출지 검증 필요.
+  - next reread question: `재료`가 내부 처리성을 충분히 보존하는가, 아니면 사용자에게 낯선가?
+  - suggested next use: validation target
+
+  - internal phrase or signal observed: `readable report grammar before UI copy`
+  - source context where it appeared: shared grammar reread §5.4, §6; operator report §4, §8, §9
+  - internal meaning / operational role: UI 한국어 copy 전에 Codex 보고 문법을 안정화하고 반복 line/connection/axis를 확인해야 함.
+  - Koreanization candidate, not final UI copy: `화면 번역 전 보고 문법`, `UI copy 전 운영 보고 문법`
+  - Korean preservation requirement: 즉석 번역이 아니라 내부 문법을 보존한 운영 보고라는 점.
+  - risky Korean flattening to avoid: `한국어로 바꾸기`, `번역 작업`, `UI 문구 작성`
+  - why this helps the user operate: 사용자가 구조 상태, 열린 route, 닫힌 route, 다음 작은 단계를 판단 가능하게 됨.
+  - what meaning gets lost if shortened: 내부 language loop가 단순 번역 업무로 축소됨.
+  - repeated connection it belongs to: `reread -> line extraction -> connection -> axis -> shared report -> next reread`
+  - emerging axis candidate: `readable-report-before-UI-copy axis`
+  - surface exposure note: user-readable, vectorfl-mediated, engine-fed-back
+  - external expression support needed, if any: 보고 순서 template 검증 필요.
+  - next reread question: 실제 Codex run 반환 1건에 이 문법을 적용했을 때 사용자가 판단 가능한가?
+  - suggested next use: implementation return or validation target
+
+- uncertainty or failure notes
+  - bounded context 2개 문서만 읽었으므로 실제 UI runtime, session artifacts, mark data는 재검증하지 않음.
+  - Koreanization candidates are internal candidates only, not final UI copy.
+  - `재료/material`, `후보/candidate`, `route/경로`는 보존력이 있지만 사용자 가독성 검증이 아직 필요함.
+
+- suggested next use: validation target
+  - 다음 reread target: 실제 Codex CLI return 1건을 대상으로 `현재 상태 -> 3면별 읽기 -> 열린/닫힌 route -> friction -> 다음 작은 단계` 문법이 유지되는지 확인.
+  - deposit candidate: 이번 수집은 final glossary가 아니라 Koreanization validation seed로만 deposit 후보화 가능.

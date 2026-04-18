@@ -1,0 +1,37 @@
+{
+  "history_surface_invariants": {
+    "passed": [
+      "history surface is readable with available runtime data",
+      "reread preview stays available as view-level slice when source exists",
+      "trace entries remain translated/operator-facing units",
+      "sparse root resolves to source_unavailable rather than execution failure",
+      "sparse mode shows honest unavailable wording",
+      "sparse mode keeps reread preview honesty wording"
+    ]
+  },
+  "cross_surface_handoff_invariants": {
+    "passed": [
+      "open from history attaches reread context only",
+      "history handoff does not create saved path selection",
+      "history handoff does not activate seed",
+      "history handoff does not overwrite current path authoring",
+      "history handoff carries summary reference only"
+    ]
+  },
+  "wording_presence_sanity": {
+    "passed": [
+      "history surface title uses reread wording",
+      "phase1 handoff wording uses reread context",
+      "reread preview wording keeps execution boundary explicit",
+      "trace wording stays translated rather than raw",
+      "forbidden replay-in-phase1 wording is absent",
+      "forbidden restore-state wording is absent",
+      "forbidden load-state wording is absent"
+    ]
+  },
+  "manual_governance_only": [
+    "cluster quality still needs periodic manual reading because grouping quality cannot be fully asserted from tokens alone",
+    "translated trace readability is only partially assertable in shell data; final operator-facing nuance still needs manual walkthrough",
+    "degraded honesty tone can still drift visually without failing these token checks"
+  ]
+}

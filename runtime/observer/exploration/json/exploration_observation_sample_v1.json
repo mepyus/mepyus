@@ -1,0 +1,30 @@
+{
+  "schema": "exploration_observation_sample_v1",
+  "exploration_id": "explore_20260326_190500_sample01",
+  "session_id": "session_20260326_01",
+  "run_id": "run_20260326_185718_981304_eacd374e_db43d9",
+  "observed_at": "2026-03-26T19:05:00+09:00",
+  "source_ref": "llm_response_structure_extraction_and_refinement_checkpoint_v0.md",
+  "source_type": "structured_internal_doc",
+  "observation_type": "pattern_seen",
+  "candidate_slots": [
+    "relation_reason",
+    "future_use_hint",
+    "user_language_summary",
+    "next_action_hint"
+  ],
+  "kept_as_core_candidate": [
+    "relation_reason"
+  ],
+  "kept_as_outer_candidate": [
+    "future_use_hint",
+    "user_language_summary"
+  ],
+  "deferred_items": [
+    "translation_candidate_notes"
+  ],
+  "deferred_reason": "정식 translation layer 구축은 아직 이르다.",
+  "future_use_hint": "탐색 observation과 LLM 구조 증류 readout을 연결하는 최소 슬롯으로 재사용 가능",
+  "next_action_hint": "실제 외부 사례 1건을 넣고 같은 형식으로 observation을 남겨본다.",
+  "notes": "코어 대수술 없이 observer sidecar로 반복 기록 가능성을 먼저 잠근다."
+}

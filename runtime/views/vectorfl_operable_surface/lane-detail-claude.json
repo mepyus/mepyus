@@ -1,0 +1,130 @@
+{
+  "lane": {
+    "slug": "claude",
+    "label": "Claude lane",
+    "adapter_type": "claude_local",
+    "provider_model": "anthropic / claude",
+    "provider": "Anthropic",
+    "model": "claude",
+    "owning_cli": "codex-cli",
+    "managed_team_slugs": [
+      "trace-memory"
+    ],
+    "contract_ref": "vectorfl_paper_synthesis_cell_v0.md",
+    "payload_policy": "trace residue와 omission stress test를 비교 lane으로만 실행",
+    "return_route": "lane-runs diff -> trace-memory carry summary",
+    "command": "claude",
+    "args": "--model claude-sonnet",
+    "working_directory": "/workspace/vectorfl_replica",
+    "env_status": "hold",
+    "env_summary": "Adapter is intentionally held until omission stress testing becomes necessary.",
+    "approvals_policy": "manual enable + supervisor approval",
+    "sandbox_policy": "workspace-write only",
+    "search_policy": "no free external widening",
+    "adapter_test": "not_run",
+    "enabled": false,
+    "status": "hold",
+    "timeout": "90s",
+    "budget": "candidate",
+    "role_md": "Alternative omission and uncertainty reading pass.",
+    "task_md": "Stress-test preserve / omit / uncertainty carry after recall.",
+    "caution_md": "No free chat between lanes. Compare only at top.",
+    "output_schema": "lane_run_v0",
+    "notes": "trace와 omission stress test가 필요할 때만 여는 두 번째 비교 lane입니다.",
+    "detail_href": "lane-detail-claude.html",
+    "editor_href": "lane-editor-claude.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper"
+}

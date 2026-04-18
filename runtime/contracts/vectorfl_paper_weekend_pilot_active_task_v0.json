@@ -1,0 +1,26 @@
+{
+  "task_id": "vectorfl_paper_weekend_pilot_active_task_v0",
+  "title": "Close one scenario-bearing maturation loop inside VectorFL Paper",
+  "scenario_scope": "weekend_pilot_first_loop",
+  "user_goal": "Use scenario-bearing material to prove that VectorFL Paper can run one internal-to-external maturation loop without making the user the bottleneck.",
+  "task_seed": {
+    "input_kind": "scenario_bearing_reasoning_bundle",
+    "headline": "Turn current conversation philosophy into the first runnable Paper loop.",
+    "why_now": "The goal, the loop shape, and the minimum cell set are already understood enough to stop debating and run the first loop."
+  },
+  "material_bundle_ref": "vectorfl_paper_weekend_pilot_material_bundle_v0",
+  "success_criteria": [
+    "scenario is preserved as reasoning material",
+    "internal read emits line seeds",
+    "external read remains selective",
+    "synthesis emits human-readable supervisor report",
+    "supervisor can decide go/hold/reopen/redirect",
+    "loop outputs can return into Paper memory"
+  ],
+  "current_governance": {
+    "mode": "pilot",
+    "human_gate_required": true,
+    "do_not_flatten_into_todos": true,
+    "do_not_expand_into_many_cells_yet": true
+  }
+}

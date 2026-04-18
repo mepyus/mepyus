@@ -1,0 +1,78 @@
+{
+  "schema_version": "vectorfl_paper_reference_candidate_validation_comparison_v0",
+  "current_anchor": {
+    "source_record_artifact": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+    "validation_status": "partial",
+    "honesty_class": "local_fixture",
+    "gate_effect": "narrowed_but_still_binding",
+    "role": "current_ssot_anchor_unchanged"
+  },
+  "candidate_results": [
+    {
+      "reference_id": "autoresearch",
+      "source_record_artifact": "runtime/manifests/vectorfl_paper_autoresearch_candidate_evidence_record_v0.json",
+      "validation_status": "partial",
+      "honesty_class": "external_candidate",
+      "gate_effect": "candidate_for_reopen_validation",
+      "gate_effect_change": "narrowed_but_still_binding -> candidate_for_reopen_validation",
+      "no_gate_close_change": true,
+      "shape_preserved": true,
+      "honesty_boundary_improved": true,
+      "notes": "Bounded experiment-loop reference; useful for validation discrimination but not Paperclip host export evidence."
+    },
+    {
+      "reference_id": "paperclip",
+      "source_record_artifact": "runtime/manifests/vectorfl_paper_paperclip_candidate_evidence_record_v0.json",
+      "validation_status": "partial",
+      "honesty_class": "external_candidate",
+      "gate_effect": "candidate_for_reopen_validation",
+      "gate_effect_change": "narrowed_but_still_binding -> candidate_for_reopen_validation",
+      "no_gate_close_change": true,
+      "shape_preserved": true,
+      "honesty_boundary_improved": true,
+      "notes": "Closest reference to the target issue/run/result/governance seam, but still reference-derived rather than a live host export."
+    },
+    {
+      "reference_id": "opencode",
+      "source_record_artifact": "runtime/manifests/vectorfl_paper_opencode_candidate_evidence_record_v0.json",
+      "validation_status": "partial",
+      "honesty_class": "external_candidate",
+      "gate_effect": "candidate_for_reopen_validation",
+      "gate_effect_change": "narrowed_but_still_binding -> candidate_for_reopen_validation",
+      "no_gate_close_change": true,
+      "shape_preserved": true,
+      "honesty_boundary_improved": true,
+      "notes": "Useful for worker-input and hook-event review shape, but not host export evidence."
+    },
+    {
+      "reference_id": "ralph",
+      "source_record_artifact": "runtime/manifests/vectorfl_paper_ralph_candidate_evidence_record_v0.json",
+      "validation_status": "partial",
+      "honesty_class": "external_candidate",
+      "gate_effect": "candidate_for_reopen_validation",
+      "gate_effect_change": "narrowed_but_still_binding -> candidate_for_reopen_validation",
+      "no_gate_close_change": true,
+      "shape_preserved": true,
+      "honesty_boundary_improved": true,
+      "notes": "Useful as a one-story reopen-loop reference, but not host export evidence."
+    }
+  ],
+  "supervisor_answers": {
+    "is_candidate_for_reopen_validation_repeatable_across_references": true,
+    "references_that_preserve_shape_while_improving_honesty_boundary": [
+      "autoresearch",
+      "paperclip",
+      "opencode",
+      "ralph"
+    ],
+    "is_any_candidate_close_to_actual_export_only_gate_close": false,
+    "is_validator_stable_enough_for_post_stabilization_merge_testing": true
+  },
+  "merge_guard": {
+    "current_slot_replacement": "forbidden",
+    "legacy_vectorfl_paper_merge": "forbidden",
+    "surface_redesign": "forbidden",
+    "next_allowed_move": "Use a true host export candidate with --override-record before considering current slot replacement."
+  },
+  "created_at": "2026-04-11T08:45:00+09:00"
+}

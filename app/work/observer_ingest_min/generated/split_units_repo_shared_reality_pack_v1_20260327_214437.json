@@ -1,0 +1,123 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "repo_shared_reality_pack_v1",
+    "end_ref": "repo_shared_reality_pack_v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# repo_shared_reality_pack_v1 - source_asset_group: `baselines` - source_asset_path: `source_assets/baselines/repo_shared_reality_pack_v1.md`",
+    "char_count": 141,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "0. 목적",
+    "end_ref": "0. 목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. 목적 이 문서 묶음의 목적은 하나다. **코덱스는 실제 폴더를 보고 수정하고, 사용자와 어시스턴트는 전체 트리를 매번 직접 보지 못하는 조건에서도 셋이 같은 구조 현실을 보며 작업하게 만드는 것** 즉 이 pack은 “전체 폴더 트리를 매번 덤프하지 않고도” 현재 repo의 구조 상태와 핵심 자산 위치를 공유하기 위한 **공통 현실면(shared reality surface)** ",
+    "char_count": 223,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. 왜 필요한가",
+    "end_ref": "1. 왜 필요한가",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 왜 필요한가 현재 문제는 기능 부족이 아니다. 문제는 다음과 같다. - 코덱스는 실제 폴더를 본다 - 사용자와 어시스턴트는 매번 전체 폴더를 보지 않는다 - 그래서 같은 repo를 두고도 서로 다른 현실을 상상할 수 있다 이 상태가 길어지면: - 기준문은 맞는데 실제 위치가 다르고 - 실제 파일은 이동했는데 대화 기준은 옛 구조에 머물고 - 폴더 역할은 정리됐는데 변경 내역이 공유",
+    "char_count": 323,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. pack의 핵심 구성",
+    "end_ref": "2. pack의 핵심 구성",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. pack의 핵심 구성 이 pack은 최소 5개 문서로 고정한다.",
+    "char_count": 41,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "A. intake 기준문",
+    "end_ref": "A. intake 기준문",
+    "unit_type": "heading_block",
+    "text_excerpt": "### A. intake 기준문 - `docs/policies/engine_input_lane_baseline_v1.md`",
+    "char_count": 68,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "B. workspace 승격 기준문",
+    "end_ref": "B. workspace 승격 기준문",
+    "unit_type": "heading_block",
+    "text_excerpt": "### B. workspace 승격 기준문 - `docs/policies/codex_baseline_program_grade_workspace_upgrade_v1.md`",
+    "char_count": 94,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "C. 폴더 역할표",
+    "end_ref": "C. 폴더 역할표",
+    "unit_type": "heading_block",
+    "text_excerpt": "### C. 폴더 역할표 - `docs/specs/folder_role_table_v1.md`",
+    "char_count": 52,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "D. current asset map",
+    "end_ref": "D. current asset map",
+    "unit_type": "heading_block",
+    "text_excerpt": "### D. current asset map - `runtime/views/current_asset_map_v1.md`",
+    "char_count": 66,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "E. delta log",
+    "end_ref": "E. delta log",
+    "unit_type": "heading_block",
+    "text_excerpt": "### E. delta log - `runtime/views/repo_delta_log_latest_v1.md`",
+    "char_count": 62,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "3. 운영 원칙",
+    "end_ref": "3. 운영 원칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 운영 원칙 - 실제 수정은 코덱스가 한다. - 수정 후 현실 설명은 `current_asset_map` 과 `delta_log` 에 남긴다. - 사용자와 어시스턴트는 full tree 대신 shared reality pack을 우선 현실면으로 본다.",
+    "char_count": 145,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "4. 최종 잠금",
+    "end_ref": "4. 최종 잠금",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 최종 잠금 앞으로는 full tree dump를 공통 현실로 삼지 않는다. 대신 **정책 기준문 + 폴더 역할표 + 현재 자산 지도 + 최근 변경 로그** 이 네 축을 유지해서 코덱스와 사용자와 어시스턴트가 같은 repo 현실을 바라보게 만든다. 한 줄로 잠그면: **repo_shared_reality_pack_v1은 “전체 폴더를 매번 다시 보여주지 않아도 셋이 같은 구조 현실을",
+    "char_count": 243,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  }
+]

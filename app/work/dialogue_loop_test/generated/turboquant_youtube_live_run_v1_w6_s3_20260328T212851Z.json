@@ -1,0 +1,790 @@
+{
+  "probe_name": "turboquant_youtube_live_run_v1",
+  "input_path": "inputs/external_cases/TurboQuant_youtube.txt",
+  "created_at": "2026-03-28T21:28:51.933609Z",
+  "window_size": 6,
+  "stride": 3,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 195,
+    "evidence": 8,
+    "spec": 3,
+    "impl": 7
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 195
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 8
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 7
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 3
+    }
+  ],
+  "overall_flow_counts": {
+    "compare": 174,
+    "break": 10,
+    "run": 25,
+    "fix": 4
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 174
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 25
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 10
+    },
+    {
+      "value": "fix",
+      "display_label": "수정/보정 흐름",
+      "count": 4
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "설명/해석 층",
+      "count": 198
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 33
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 9
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 5
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 4
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 1
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "core_topic_anchor": 80,
+    "discourse_residue_anchor": 18
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "이렇게",
+      "count": 19
+    },
+    {
+      "value": "때문에",
+      "count": 10
+    },
+    {
+      "value": "그래서",
+      "count": 10
+    },
+    {
+      "value": "가지고",
+      "count": 9
+    },
+    {
+      "value": "얘기를",
+      "count": 9
+    },
+    {
+      "value": "있잖아요",
+      "count": 9
+    },
+    {
+      "value": "그러니까",
+      "count": 8
+    },
+    {
+      "value": "굉장히",
+      "count": 8
+    },
+    {
+      "value": "우리가",
+      "count": 8
+    },
+    {
+      "value": "모델에서",
+      "count": 8
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 9,
+    "speaker_or_source_residue": 0,
+    "conversational_filler_residue": 6,
+    "generic_abstraction_residue": 5,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 195,
+        "evidence": 8,
+        "spec": 3,
+        "impl": 7
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 195
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 8
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 7
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 174,
+        "break": 10,
+        "run": 25,
+        "fix": 4
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 174
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 25
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 10
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 4
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 198
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 33
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 9
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 1
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 5,
+      "top_anchor_values": [
+        {
+          "value": "이렇게",
+          "count": 19
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "그래서",
+          "count": 10
+        },
+        {
+          "value": "가지고",
+          "count": 9
+        },
+        {
+          "value": "얘기를",
+          "count": 9
+        },
+        {
+          "value": "있잖아요",
+          "count": 9
+        },
+        {
+          "value": "그러니까",
+          "count": 8
+        },
+        {
+          "value": "굉장히",
+          "count": 8
+        },
+        {
+          "value": "우리가",
+          "count": 8
+        },
+        {
+          "value": "모델에서",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1229,
+        "discourse_residue_anchor": 19,
+        "user_layer_hint_anchor": 1
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 9,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 6,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 20,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠. [음악] 0:099초네, 여러분 반갑습니다. 에러입니다. 0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00그러…",
+          "excerpt": "## untitled 0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "[음악] 0:099초네, 여러분 …",
+          "excerpt": "[음악] 0:099초네, 여러분 반갑습니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_003",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "에러입니다.",
+          "excerpt": "에러입니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:1010초터버컨트 관련해서 굉…",
+          "excerpt": "0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올려 드리고 0:1818초있는데요."
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 195,
+        "evidence": 8,
+        "spec": 3,
+        "impl": 7
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 195
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 8
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 7
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 174,
+        "break": 10,
+        "run": 25,
+        "fix": 4
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 174
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 25
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 10
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 4
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 198
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 33
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 9
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 1
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 5,
+      "top_anchor_values": [
+        {
+          "value": "이렇게",
+          "count": 19
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "그래서",
+          "count": 10
+        },
+        {
+          "value": "가지고",
+          "count": 9
+        },
+        {
+          "value": "얘기를",
+          "count": 9
+        },
+        {
+          "value": "있잖아요",
+          "count": 9
+        },
+        {
+          "value": "그러니까",
+          "count": 8
+        },
+        {
+          "value": "굉장히",
+          "count": 8
+        },
+        {
+          "value": "우리가",
+          "count": 8
+        },
+        {
+          "value": "모델에서",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1229,
+        "discourse_residue_anchor": 19,
+        "user_layer_hint_anchor": 1
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 9,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 6,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 20,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠. [음악] 0:099초네, 여러분 반갑습니다. 에러입니다. 0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00그러…",
+          "excerpt": "## untitled 0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "[음악] 0:099초네, 여러분 …",
+          "excerpt": "[음악] 0:099초네, 여러분 반갑습니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_003",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "에러입니다.",
+          "excerpt": "에러입니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:1010초터버컨트 관련해서 굉…",
+          "excerpt": "0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올려 드리고 0:1818초있는데요."
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 195,
+        "evidence": 8,
+        "spec": 3,
+        "impl": 7
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 195
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 8
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 7
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 174,
+        "break": 10,
+        "run": 25,
+        "fix": 4
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 174
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 25
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 10
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 4
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 198
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 33
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 9
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 5
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 4
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 1
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 5,
+      "top_anchor_values": [
+        {
+          "value": "이렇게",
+          "count": 19
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "그래서",
+          "count": 10
+        },
+        {
+          "value": "가지고",
+          "count": 9
+        },
+        {
+          "value": "얘기를",
+          "count": 9
+        },
+        {
+          "value": "있잖아요",
+          "count": 9
+        },
+        {
+          "value": "그러니까",
+          "count": 8
+        },
+        {
+          "value": "굉장히",
+          "count": 8
+        },
+        {
+          "value": "우리가",
+          "count": 8
+        },
+        {
+          "value": "모델에서",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1229,
+        "discourse_residue_anchor": 19,
+        "user_layer_hint_anchor": 1
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 9,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 6,
+        "generic_abstraction_residue": 5,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 20,
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션, 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠. [음악] 0:099초네, 여러분 반갑습니다. 에러입니다. 0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00그러…",
+          "excerpt": "## untitled 0:00그러니까 KV캐 자체는 줄여야 할 필요성이 훨씬 큰데 동시에 이걸 너무 거칠게 막 줄이면은 문제가 커질 수밖에 없다는 거죠."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "[음악] 0:099초네, 여러분 …",
+          "excerpt": "[음악] 0:099초네, 여러분 반갑습니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_003",
+          "scene": "review",
+          "flow": "break",
+          "short_label": "에러입니다.",
+          "excerpt": "에러입니다."
+        },
+        {
+          "dust_id": "dst_src_2e2c82f83fe9_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:1010초터버컨트 관련해서 굉…",
+          "excerpt": "0:1010초터버컨트 관련해서 굉장히 많은 질문을 해 주셔 가지고 기술적인 내용들이라든가 여러 가지 것들을 좀 살펴보면서 영상을 올려 드리고 0:1818초있는데요."
+        }
+      ]
+    }
+  ]
+}

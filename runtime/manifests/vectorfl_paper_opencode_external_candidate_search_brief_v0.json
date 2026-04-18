@@ -1,0 +1,29 @@
+{
+  "schema_version": "vectorfl_paper_reference_external_candidate_search_brief_v0",
+  "reference_id": "opencode",
+  "source_reference": "references/git_search/everything-claude-code-main/.opencode",
+  "source_materials": [
+    "references/git_search/everything-claude-code-main/.opencode/README.md",
+    "references/git_search/everything-claude-code-main/.opencode/MIGRATION.md",
+    "references/git_search/everything-claude-code-main/.opencode/opencode.json"
+  ],
+  "fixed_operating_materials": {
+    "goal_spec": "Translate ECC agent, command, skill, and hook conventions into OpenCode plugin/config form.",
+    "issue_decomposition": "Install/configure plugin, load agents and instructions, map hooks/events, run command or quality gate.",
+    "tech_report": "Report agent role, command/hook execution, plugin event mapping, quality-gate result, and configuration constraints.",
+    "supervisor_decision_record": "Hold broad orchestration; continue only scoped config/plugin dry-run and review."
+  },
+  "vectorfl_translation": {
+    "external_candidate_search_brief": "Use OpenCode as a worker-input and hook-event reference, not as a full multi-worker architecture.",
+    "candidate_evidence_record": "Represent one OpenCode command/plugin event as issue/run/result/governance surfaces.",
+    "cross_check_review_report": "Check whether plugin/hook evidence helps review readiness without replacing the current anchor.",
+    "hold_continue_decision_manifest": "Hold gate close because the reference is a CLI/config system, not a host export."
+  },
+  "forbidden_scope": [
+    "full agent catalog import",
+    "hook framework import",
+    "multi-worker orchestration",
+    "current actual_export slot replacement"
+  ],
+  "created_at": "2026-04-11T08:20:00+09:00"
+}

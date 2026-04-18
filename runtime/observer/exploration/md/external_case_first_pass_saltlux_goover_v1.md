@@ -1,0 +1,36 @@
+# external_case_first_pass_saltlux_goover_v1
+
+## context
+- exploration_id: `external_case_first_pass_saltlux_goover_v1`
+- session_id: `session_20260326_01`
+- run_id: `run_20260326_182344_695359_db0c11d0_f07e79`
+- observed_at: `2026-03-26T20:18:00+09:00`
+- source_ref: `external_case_example_saltlux_goover_relation_reading_v0.md`
+- source_type: `external_case_reference`
+- observation_type: `reusable_translation`
+
+## readout
+- candidate_slots:
+  - `relation_kind`
+  - `relation_reason`
+  - `user_language_summary`
+  - `structure_borrowable`
+  - `not_adopted_reason`
+- kept_as_core_candidate:
+  - `relation_kind`
+  - `relation_reason`
+  - `user_language_summary`
+- kept_as_outer_candidate:
+  - `structure_borrowable`
+- deferred_items:
+  - `ontology_hard_locking`
+- deferred_reason:
+  - 현재 엔진의 후 구조화 흐름과 다르며 지금 코어에 넣으면 premature generalization risk가 높다.
+
+## next
+- future_use_hint:
+  - 탐색 판독 예시, 차용/분리 유지 판단 예시, 이후 정련 패스 판독 입력
+- next_action_hint:
+  - 외부 사례 1~2건을 더 누적해 repeated relation slot이 실제로 반복되는지 본다.
+- notes:
+  - 외부 사례를 넣어도 엔진이 흔들리지 않고 core/outer/defer/observer_only를 구분할 수 있는지 검증하는 first pass.

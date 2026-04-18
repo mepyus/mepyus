@@ -2,7 +2,20 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
-from app.core.states import BridgeState, CellState, LocalSpaceState, SeedState
+from app.core.states import (
+    BridgeState,
+    CarryoverRisk,
+    CellState,
+    ComparisonMemoryReason,
+    EmergenceStatus,
+    GateBlockerSummary,
+    GroundingStatus,
+    LocalSpaceState,
+    MaturationState,
+    PacketTexture,
+    SeedState,
+    TraceabilityStatus,
+)
 
 
 def utc_now_iso() -> str:
@@ -110,6 +123,25 @@ class BridgeTrace:
     state: BridgeState
     created_at: str
     note: Optional[str] = None
+
+
+@dataclass(frozen=True)
+class EngineStateRecord:
+    asset_id: str
+    asset_name: str
+    source_type: str
+    packet_texture: PacketTexture
+    grounding_status: GroundingStatus
+    emergence_status: EmergenceStatus
+    carryover_risk: CarryoverRisk
+    maturation_state: MaturationState
+    traceability_status: TraceabilityStatus
+    comparison_memory_reason: Tuple[ComparisonMemoryReason, ...] = ()
+    gate_blocker_summary: Tuple[GateBlockerSummary, ...] = ()
+    state_notes: Optional[str] = None
+    evidence_refs: Tuple[SupportRef, ...] = ()
+    updated_at: str = field(default_factory=utc_now_iso)
+    experimental_namespace: Dict[str, Any] = field(default_factory=frozen_dict)
 
 
 def to_record(entity: Any) -> Dict[str, Any]:

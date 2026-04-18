@@ -1,0 +1,18 @@
+- result summary
+  - useful now: real Codex read-only CLI path passed through the VectorFL panel endpoint, produced structured return/deposit artifacts, and latest-return readability is available on the VectorFL page.
+  - deferred: browser-click UI automation, async/background runner, interrupt hardening, Gemini/backend adapters, session explorer/log viewer, ingestion, and promotion automation.
+  - CLI remains on-top: yes. No new engine surface was added; CLI stays a host/control layer observed and steered from VectorFL.
+
+- important findings / diffs / outputs
+  - Verdict: `PASS_WITH_NOTE`
+  - Real run: `cli_20260416T094421Z_8b0ef908`
+  - Outputs captured: `stdout.log`, `stderr.log`, `structured_return.json`, `deposit_candidate.md`
+  - Mark action worked with `validation_target`
+  - `cli_host_control.latest_readable_return` exposes latest session summary/preview state.
+
+- uncertainty or failure notes
+  - Note: validation used the same HTTP endpoint wired to the VectorFL panel, not an automated browser click.
+
+- suggested next use
+  - validation target: browser-click validation of the already-wired UI path.
+  - deposit candidate: Package 1.1 closeout can be deposited as proof that CLI remains on-top.

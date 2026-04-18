@@ -1,0 +1,105 @@
+{
+  "schema_version": "vectorfl_integrated_engine_synthesis_report_v0",
+  "status": "completed",
+  "source_internal_read_report_artifact": "runtime/manifests/vectorfl_integrated_engine_internal_read_report_latest_v0.json",
+  "source_supervisor_route_artifact": "runtime/manifests/vectorfl_integrated_engine_supervisor_route_latest_v0.json",
+  "worker": "codex",
+  "cell": "synthesis_cell",
+  "current_status": "Read-only synthesis pass completed. The latest internal_read_report is strong enough to confirm the five line seeds as supervisor decision material, but not as implementation completion, gate closure, slot replacement, or external lookup authorization.",
+  "why_this_step_happened": "The supervisor route accepted the Codex worker return for internal reread, the internal_read_cell returned evidence-backed line seeds and recommended synthesis_team, and the synthesis contract requires those seeds to be confirmed or held before the next supervisor decision.",
+  "confirmed_lines": [
+    {
+      "line_name": "routing_fields_first",
+      "core_claim": "The supervisor-facing surface should put team, assignee_cell, return_slot, and paperclip_reference_line ahead of report prose because those fields are the operating handles for the next transition.",
+      "evidence_basis": [
+        "internal_read_report line seed routing_fields_first cites Codex candidate 1, API team_registry, assignment persistence, handoff selected_context_summary, and the Paperclip IssueProperties reference line.",
+        "app/runtime/vectorfl_integrated_engine_api.py defines team_registry report slots and create_vectorfl_integrated_engine_assignment persists team_id, assignee_cell, expected_report, forbidden_scope, and return_slot.",
+        "app/runtime/vectorfl_integrated_engine_shell.py exposes team and assignee selection in the assignment form and target team in the supervisor route form."
+      ],
+      "human_translation": "Before a supervisor reads a long report, they need to see who owns the packet, where the return is expected, and which Paperclip-style operating line is being followed.",
+      "next_use": "Use as a UI/order rule for the next supervisor-approved implementation brief: routing fields should be treated as primary controls, not metadata under the report body."
+    },
+    {
+      "line_name": "packet_to_gate_sequence",
+      "core_claim": "The operating spine should remain work packet -> team assignment -> worker report -> supervisor gate.",
+      "evidence_basis": [
+        "internal_read_report line seed packet_to_gate_sequence cites Codex candidate 2, the emitted handoff paperclip_reference_line, the shell Team Board sequence, the top-layer lock, and the API engine_loop.",
+        "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md says the page must expose commandable responsibility transitions across input interpretation, worker reports, synthesis, implementation, verification, supervisor decision, and audit.",
+        "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md names the current loop in the same order and says the next small gate is synthesis before broad orchestration."
+      ],
+      "human_translation": "The page should read like responsibility moving through a chain, not like a collection of status panels.",
+      "next_use": "Use as the main structure for any next page or implementation brief work."
+    },
+    {
+      "line_name": "read_only_report_not_execution",
+      "core_claim": "Worker report areas must keep saying that bridge output is read-only evidence return, not product execution, implementation completion, slot replacement, or gate closure.",
+      "evidence_basis": [
+        "supervisor_route guard preserves does_not_replace_current_slot, does_not_close_gate, does_not_promote_candidate, and records_supervisor_route_only.",
+        "internal_read_report line seed read_only_report_not_execution cites the Codex blockers, API guard fields, assignment forbidden_scope, and shell copy.",
+        "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md says the loop is bounded and read-only at the worker level and is not slot replacement, gate close, or full orchestration."
+      ],
+      "human_translation": "Completed means a report returned. It must not look like the underlying product work is done.",
+      "next_use": "Use as mandatory copy and state semantics for worker report, internal read, and synthesis run areas."
+    },
+    {
+      "line_name": "evidence_sections_before_tasks",
+      "core_claim": "The system should keep repeated pressure, stable/unclear boundaries, next questions, and line seeds separate before forming implementation tasks.",
+      "evidence_basis": [
+        "docs/contracts/vectorfl_paper_synthesis_cell_v0.md forbids claiming confirmation without evidence or collapsing the loop into done too early.",
+        "internal_read_report line seed evidence_sections_before_tasks cites the internal-read contract, conversation-to-line procedure, Codex candidate 4, shell internal-read sections, and API internal_read output schema.",
+        "app/runtime/vectorfl_integrated_engine_shell.py renders stable, unclear, next questions, and line seeds as separate internal-read report fields."
+      ],
+      "human_translation": "Do not turn the reread into a TODO list until the supervisor can inspect what evidence produced each line.",
+      "next_use": "Use as the structure for supervisor_report_latest and any later implementation brief handoff."
+    },
+    {
+      "line_name": "persistent_assignment_gate_inspector",
+      "core_claim": "VectorFL should translate Paperclip's IssueProperties pattern into a persistent assignment/gate inspector holding current organ/lane, target worker, forbidden scope, gate posture, and return slot.",
+      "evidence_basis": [
+        "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md names the right inspector as assignment, current organ/lane, handoff, gate, and relevant refs.",
+        "internal_read_report line seed persistent_assignment_gate_inspector cites the Paperclip IssueProperties/PropertiesPanel pattern and notes that current shell fields are still distributed across Team Board, Supervisor Route, and Command Slots.",
+        "app/runtime/vectorfl_integrated_engine_shell.py has an inspector column, but it currently emphasizes Contract Readout, Next Boundary, and Command Slots rather than one concentrated assignment/gate posture."
+      ],
+      "human_translation": "The supervisor should be able to glance right and know the current responsibility, target worker, return slot, and gate condition.",
+      "next_use": "Use as a design target for the next UI brief; keep it held as implementation work until the supervisor approves the brief."
+    }
+  ],
+  "unresolved_tensions": [
+    "The shell now uses read-only button labels, but run status text still says completed/failed; completed can still be misread as product work completion unless the report-return meaning stays visually explicit.",
+    "Latest Worker Report still hardcodes return_slot=line_candidates_latest while team_registry supports multiple report slots, so slot routing is not fully experienced as dynamic responsibility routing.",
+    "Worker report prose can still become one large blob; repeated pressure, candidate line, review focus, blockers, and next recommendation are not yet consistently separated as reviewable evidence objects.",
+    "The right inspector exists, but assignment/gate posture is still distributed across the Team Board, Supervisor Route, and Command Slots areas rather than concentrated in one persistent Paperclip-style inspector.",
+    "Implementation_cell and verification_cell are present in the registry with pending contracts, so they should remain visible as future responsibility points but not treated as executable product roles.",
+    "No internal evidence justifies external lookup for this pass; broadening now would violate the internal-first line extraction rule."
+  ],
+  "what_changed": [
+    "The synthesis pass upgrades all five internal_read line seeds from candidates to confirmed supervisor material, based on internal evidence only.",
+    "The worker execution loop log records an immediate UI correction: runnable labels were renamed to Run Read-only Codex Report and Run Read-only Internal Read.",
+    "The synthesis route itself is already represented in the API and shell: synthesis_team, synthesis_cell, supervisor_report_latest, run_synthesis_from_internal_read, and the /vectorfl-engine/synthesis surface exist as read-only report return structures.",
+    "The main remaining risk shifted from whether the operating spine is valid to whether its UI semantics prevent read-only report completion from looking like implementation completion or gate closure."
+  ],
+  "recommendation": "go",
+  "recommendation_reason": "Go to the supervisor gate with these confirmed lines as decision material, while holding external lookup and implementation until the supervisor approves a bounded implementation brief and the pending implementation/verification contract gap is addressed.",
+  "next_loop_proposal": {
+    "next_cell": "supervisor",
+    "carry_forward": [
+      "runtime/manifests/vectorfl_integrated_engine_internal_read_report_latest_v0.json",
+      "runtime/manifests/vectorfl_integrated_engine_supervisor_route_latest_v0.json",
+      "docs/contracts/vectorfl_paper_synthesis_cell_v0.md",
+      "docs/contracts/vectorfl_paper_supervisor_report_format_v0.md",
+      "docs/specs/vectorfl_integrated_operating_page_top_layer_lock_v0.md",
+      "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+      "confirmed line: routing_fields_first",
+      "confirmed line: packet_to_gate_sequence",
+      "confirmed line: read_only_report_not_execution",
+      "confirmed line: evidence_sections_before_tasks",
+      "confirmed line: persistent_assignment_gate_inspector",
+      "guard: read-only report return only, no gate close, no slot replacement, no candidate promotion",
+      "hold: no external lookup for this pass",
+      "hold: no implementation_cell execution until supervisor-approved brief and minimum contract boundary"
+    ],
+    "question": "Should the supervisor approve these confirmed lines as the basis for a bounded implementation brief focused on routing fields, packet-to-gate sequence, read-only report semantics, evidence sectioning, and a persistent assignment/gate inspector?"
+  },
+  "should_external_lookup_proceed": false,
+  "returned_at": "2026-04-11T02:55:46Z"
+}

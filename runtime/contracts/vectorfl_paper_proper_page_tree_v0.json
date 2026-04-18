@@ -1,0 +1,147 @@
+{
+  "schema_version": "vectorfl_paper_proper_page_tree_v0",
+  "updated_at": "2026-04-10T23:59:00+09:00",
+  "top_direction": "VectorFL Paper proper should grow as a reading-first integrated engine that closes input, internal read, selective external comparison, cli-managed execution, governance decision, and internal return in one loop grammar.",
+  "first_implementation_cut": [
+    "operating_board",
+    "intake",
+    "case_detail",
+    "cell_worker_panel",
+    "trace_governance"
+  ],
+  "page_tree": [
+    {
+      "page_id": "operating_board",
+      "purpose": "Supervisor entrypoint that shows current proof, active loops, blocked gates, and decision queue.",
+      "key_sections": [
+        "current_proof",
+        "active_cases",
+        "decision_queue",
+        "active_cells_and_cli_runs",
+        "latest_returns",
+        "remaining_gates"
+      ]
+    },
+    {
+      "page_id": "intake",
+      "purpose": "Turn scenario-bearing input into a loop seed instead of flattening it into tasks.",
+      "key_sections": [
+        "scenario_entry",
+        "material_bundle_review",
+        "scenario_bearing_check",
+        "bundle_preview",
+        "intake_route",
+        "launch_hold_preview"
+      ]
+    },
+    {
+      "page_id": "cases",
+      "purpose": "Reading-first case pages that expose source, line seeds, evidence bundles, recall path, and next action.",
+      "children": [
+        "case_list",
+        "case_detail",
+        "inspector",
+        "internal_recall",
+        "evidence_bundles",
+        "loop_history"
+      ]
+    },
+    {
+      "page_id": "cells",
+      "purpose": "Manage operating cells as contract-driven units rather than labels.",
+      "children": [
+        "cell_registry",
+        "cell_detail",
+        "cell_editor",
+        "cell_relation_map",
+        "cell_health"
+      ]
+    },
+    {
+      "page_id": "workers_cli",
+      "purpose": "Bind cli tools and adapters to cells with visible ownership, payload, launch controls, and return slots.",
+      "children": [
+        "worker_registry",
+        "worker_detail",
+        "adapter_config",
+        "launch_panel",
+        "run_console",
+        "payload_preview"
+      ]
+    },
+    {
+      "page_id": "governance",
+      "purpose": "Protect reading quality and expose explicit human decisions.",
+      "children": [
+        "supervisor_board",
+        "decision_queue",
+        "governance_gate",
+        "approval_history",
+        "protection_rules"
+      ]
+    },
+    {
+      "page_id": "trace",
+      "purpose": "Show append-only activity, reopen history, reinjection, and unresolved residue.",
+      "children": [
+        "activity_audit",
+        "run_trace",
+        "reopen_history",
+        "return_reinjection",
+        "residue_unresolved"
+      ]
+    },
+    {
+      "page_id": "external_comparison",
+      "purpose": "Keep external work selective, line-linked, and injection-aware.",
+      "children": [
+        "comparison_targets",
+        "reference_candidates",
+        "injection_review",
+        "overlay_mapping",
+        "external_pair_cells"
+      ]
+    },
+    {
+      "page_id": "teams_expansion",
+      "purpose": "Expose team growth, role assignment, and multi-team board visibility as the engine expands.",
+      "children": [
+        "team_overview",
+        "team_selection",
+        "role_assignment",
+        "multi_team_board",
+        "growth_path"
+      ]
+    },
+    {
+      "page_id": "memory_contracts",
+      "purpose": "Keep contracts, line registry, conversation-to-line procedure, and internal return memory alive as operating assets.",
+      "children": [
+        "contracts",
+        "line_registry",
+        "conversation_to_line",
+        "internal_return_memory",
+        "operating_principles"
+      ]
+    }
+  ],
+  "flow_rule": [
+    "operating_board",
+    "case_detail",
+    "inspector",
+    "cell_worker_panel",
+    "trace_governance",
+    "return",
+    "next_case_loop"
+  ],
+  "paperclip_translation": {
+    "dashboard": "supervisor_board",
+    "issue": "current_case_or_line_guided_work_packet",
+    "issue_detail": "case_detail",
+    "issue_properties": "inspector_and_governance_fields",
+    "agent_detail": "cell_worker_operating_panel",
+    "activity": "trace_audit",
+    "approval": "supervisor_gate",
+    "heartbeat_run": "execution_pass_or_run_trace"
+  }
+}

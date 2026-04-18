@@ -1,0 +1,13 @@
+- result summary
+  - Usable path: real read-only Codex path through the CLI session API used by the VectorFL panel; latest return is readable from the VectorFL page via `cli_host_control.latest_readable_return`.
+  - Remaining deferral: browser-click UI automation, background runner/polling, interrupt hardening, Gemini adapters, session explorer/log viewer, structured ingestion, and promotion automation remain deferred.
+
+- important findings / diffs / outputs
+  - `PASS_WITH_NOTE`: validation used the same HTTP endpoint wired to the panel, not an automated browser click.
+  - Generated artifacts included `stdout.log`, `stderr.log`, `structured_return.json`, and `deposit_candidate.md`; mark action worked with `validation_target`.
+
+- uncertainty or failure notes
+  - No file modifications made.
+  - Main caveat is that UI wiring was validated through endpoint execution rather than browser-click automation.
+
+- suggested next use: validation target

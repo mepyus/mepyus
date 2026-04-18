@@ -1,0 +1,890 @@
+{
+  "folder_key": "docs.notes",
+  "folder_path": "docs/notes",
+  "parent_folder": "docs",
+  "child_folders": [],
+  "documents": [
+    {
+      "name": "build_reconstruction_supervisor_surface_scope_note_v1.md",
+      "path": "docs/notes/build_reconstruction_supervisor_surface_scope_note_v1.md",
+      "suffix": ".md",
+      "size": 574,
+      "mtime_ns": 1775340160147195629,
+      "title": "build_reconstruction_supervisor_surface_scope_note_v1",
+      "summary": "- `scripts/build_reconstruction_supervisor_surface.py` 초안 구현 - `runtime/observer/exploration`, `runtime/receipts`, `runtime/views`를 read-only로 재구성 - `runtime/views/reconstruction_supervisor/` 아래 `json + md`와 `latest pointer` 생성"
+    },
+    {
+      "name": "capability_aware_internal_search_minimum_slice_note_v0.md",
+      "path": "docs/notes/capability_aware_internal_search_minimum_slice_note_v0.md",
+      "suffix": ".md",
+      "size": 2852,
+      "mtime_ns": 1775164931222519519,
+      "title": "Capability-Aware Internal Search Minimum Slice v0",
+      "summary": "Close a minimum operating loop for internal search without widening execution surface:"
+    },
+    {
+      "name": "claude_code_core_scripts_reading_v0.md",
+      "path": "docs/notes/claude_code_core_scripts_reading_v0.md",
+      "suffix": ".md",
+      "size": 7870,
+      "mtime_ns": 1775309107537883693,
+      "title": "Claude Code Core Scripts Reading v0",
+      "summary": "This note focuses on the main executable scripts inside `references/git_search/claude-code-main`."
+    },
+    {
+      "name": "claude_code_md_deep_reading_v0.md",
+      "path": "docs/notes/claude_code_md_deep_reading_v0.md",
+      "suffix": ".md",
+      "size": 12602,
+      "mtime_ns": 1775308811376282653,
+      "title": "Claude Code MD Deep Reading v0",
+      "summary": "This note reads `references/git_search/claude-code-main` through its Markdown and manifest-adjacent surfaces first."
+    },
+    {
+      "name": "claude_vs_everything_code_level_structure_v0.md",
+      "path": "docs/notes/claude_vs_everything_code_level_structure_v0.md",
+      "suffix": ".md",
+      "size": 7937,
+      "mtime_ns": 1775309218338620397,
+      "title": "Claude Code Main vs Everything Claude Code Main",
+      "summary": "This note compares the two repos at the code-structure level."
+    },
+    {
+      "name": "context_linked_segmentation_v0_exception_patch_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_exception_patch_note.md",
+      "suffix": ".md",
+      "size": 2005,
+      "mtime_ns": 1775193714599975972,
+      "title": "context linked segmentation v0 exception patch note",
+      "summary": "이 note는 `answer_completion`과 `causal_chain`의 termination exception만 반영한 최소 patch 범위를 기록한다."
+    },
+    {
+      "name": "context_linked_segmentation_v0_implementation_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_implementation_note.md",
+      "suffix": ".md",
+      "size": 2096,
+      "mtime_ns": 1775191991501356645,
+      "title": "context linked segmentation v0 implementation note",
+      "summary": "이 note는 `context_linked_segmentation_v0`의 첫 구현 범위를 좁게 기록한다."
+    },
+    {
+      "name": "context_linked_segmentation_v0_patch_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_patch_note.md",
+      "suffix": ".md",
+      "size": 2127,
+      "mtime_ns": 1775192971704993610,
+      "title": "context linked segmentation v0 patch note",
+      "summary": "이 note는 `reason priority`와 `chain reset`만 반영한 최소 patch 범위를 기록한다."
+    },
+    {
+      "name": "context_linked_segmentation_v0_regression_guard_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_regression_guard_note.md",
+      "suffix": ".md",
+      "size": 2776,
+      "mtime_ns": 1775193882240914401,
+      "title": "context linked segmentation v0 regression guard note",
+      "summary": "- regression guard is locked as a documentation asset - this turn does not change code - current fully passing fixture state is fixed as the reference baseline"
+    },
+    {
+      "name": "context_linked_segmentation_v0_termination_patch_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_termination_patch_note.md",
+      "suffix": ".md",
+      "size": 2065,
+      "mtime_ns": 1775193422137045644,
+      "title": "context linked segmentation v0 termination patch note",
+      "summary": "이 note는 `answer_completion`과 `causal_chain`의 pair-local termination만 반영한 최소 patch 범위를 기록한다."
+    },
+    {
+      "name": "context_linked_segmentation_v0_validation_note.md",
+      "path": "docs/notes/context_linked_segmentation_v0_validation_note.md",
+      "suffix": ".md",
+      "size": 2557,
+      "mtime_ns": 1775192220125883298,
+      "title": "context linked segmentation v0 validation note",
+      "summary": "이 note는 `context_linked_segmentation_v0` 휴리스틱이 여러 문서 유형에서 얼마나 일반화되는지 얕게 확인한 결과를 남긴다."
+    },
+    {
+      "name": "current_space_reread_operating_summary_v0.md",
+      "path": "docs/notes/current_space_reread_operating_summary_v0.md",
+      "suffix": ".md",
+      "size": 4978,
+      "mtime_ns": 1775276238578724474,
+      "title": "current space reread operating summary v0",
+      "summary": "지금 필요한 것은 새 구조를 또 만드는 일이 아니라, 현재 공간을 어떤 눈으로 보고 어떻게 생활화할지를 짧게 다시 묶는 일이다."
+    },
+    {
+      "name": "everything_claude_code_md_deep_reading_v1.md",
+      "path": "docs/notes/everything_claude_code_md_deep_reading_v1.md",
+      "suffix": ".md",
+      "size": 10873,
+      "mtime_ns": 1775308483565363695,
+      "title": "Everything Claude Code MD Deep Reading v1",
+      "summary": "This note goes one step deeper than the surface map."
+    },
+    {
+      "name": "everything_claude_code_md_surface_map_v0.md",
+      "path": "docs/notes/everything_claude_code_md_surface_map_v0.md",
+      "suffix": ".md",
+      "size": 9424,
+      "mtime_ns": 1775308266516888932,
+      "title": "Everything Claude Code MD Surface Map v0",
+      "summary": "This note reads `references/git_search/everything-claude-code-main` through its Markdown surfaces first."
+    },
+    {
+      "name": "executable_capability_registry_note_v0.md",
+      "path": "docs/notes/executable_capability_registry_note_v0.md",
+      "suffix": ".md",
+      "size": 1895,
+      "mtime_ns": 1775163873262219154,
+      "title": "executable capability registry note v0",
+      "summary": "실행 스크립트가 늘어날수록 폴더 분류만으로는 충분하지 않다."
+    },
+    {
+      "name": "executable_runner_index_v0.md",
+      "path": "docs/notes/executable_runner_index_v0.md",
+      "suffix": ".md",
+      "size": 13829,
+      "mtime_ns": 1775351196371936147,
+      "title": "executable runner index v0",
+      "summary": "이 문서는 현재 repo 안의 실행 가능한 루프 / 스크립트를 `의도 -> 추천 명령 -> 남는 흔적` 기준으로 묶어 둔 빠른 찾기용 색인이다."
+    },
+    {
+      "name": "external_case_flowline_sweep_v0_note.md",
+      "path": "docs/notes/external_case_flowline_sweep_v0_note.md",
+      "suffix": ".md",
+      "size": 879,
+      "mtime_ns": 1775169049487615262,
+      "title": "external case flowline sweep v0",
+      "summary": "이 note는 외부문서 전체를 `맥락 구조화 -> 에이전트 위임/병렬 실행 -> 운영 자동화` 흐름선 기준으로 bounded하게 훑는 read-only sweep를 고정하기 위한 문서다."
+    },
+    {
+      "name": "external_case_folder_sweep_loop_note_v0.md",
+      "path": "docs/notes/external_case_folder_sweep_loop_note_v0.md",
+      "suffix": ".md",
+      "size": 1134,
+      "mtime_ns": 1775136258046027369,
+      "title": "external case folder sweep loop note v0",
+      "summary": "This note locks the bounded loop shape for sweeping `inputs/external_cases` later."
+    },
+    {
+      "name": "external_input_gate_v0_note.md",
+      "path": "docs/notes/external_input_gate_v0_note.md",
+      "suffix": ".md",
+      "size": 1680,
+      "mtime_ns": 1775167448617927792,
+      "title": "external input gate v0",
+      "summary": "이 note는 외부자료가 들어오기 전에 `바로 ingest 가능한지 / 전처리가 먼저 필요한지 / 아직 애매한지` 를 먼저 판정하는 front-door gate를 고정하기 위한 문서다."
+    },
+    {
+      "name": "git_search_connection_spine_deep_reading_v0.md",
+      "path": "docs/notes/git_search_connection_spine_deep_reading_v0.md",
+      "suffix": ".md",
+      "size": 9739,
+      "mtime_ns": 1775339132513211288,
+      "title": "git_search connection spine deep reading v0",
+      "summary": "이번 문서는 앞선 구조 비교보다 한 단계 더 내려가서 각 프로그램의 연결 spine을 본다."
+    },
+    {
+      "name": "git_search_deep_structure_reading_v0.md",
+      "path": "docs/notes/git_search_deep_structure_reading_v0.md",
+      "suffix": ".md",
+      "size": 14073,
+      "mtime_ns": 1775307251790344839,
+      "title": "Git Search Deep Structure Reading v0",
+      "summary": "This note does not extract features first. It records how the reference folders are spatially organized, how files are shaped, and where the connection lines actually run."
+    },
+    {
+      "name": "git_search_program_folder_script_connection_reading_v0.md",
+      "path": "docs/notes/git_search_program_folder_script_connection_reading_v0.md",
+      "suffix": ".md",
+      "size": 11883,
+      "mtime_ns": 1775338983080115668,
+      "title": "git_search program folder script connection reading v0",
+      "summary": "이번 문서는 `references/git_search/`를 폴더 구조 그 자체가 아니라 각 프로그램이 폴더를 어떻게 작동 표면으로 쓰는지, 그리고 스크립트가 그 폴더들을 어떻게 내부 연결로 묶는지 보기 위한 읽기 기록이다."
+    },
+    {
+      "name": "git_search_reference_landscape_v0.md",
+      "path": "docs/notes/git_search_reference_landscape_v0.md",
+      "suffix": ".md",
+      "size": 8441,
+      "mtime_ns": 1775306451818169016,
+      "title": "git_search_reference_landscape_v0",
+      "summary": "이 문서는 `references/git_search` 전체를 다시 훑은 뒤, 각 자료가 어떤 공간/층위의 reference인지와 우리 구조로 가져올 만한 구조적 힌트가 무엇인지 landscape note 형태로 잠가 두는 문서다."
+    },
+    {
+      "name": "git_search_repo_structure_matrix_v0.md",
+      "path": "docs/notes/git_search_repo_structure_matrix_v0.md",
+      "suffix": ".md",
+      "size": 8181,
+      "mtime_ns": 1775338573237748711,
+      "title": "git_search repo structure matrix v0",
+      "summary": "`references/git_search/`를 기능 목록이 아니라 구조 비교 메모리로 다시 읽기 위한 표면이다."
+    },
+    {
+      "name": "hub_centered_line_chronicle_note_ontology_harness_v0.md",
+      "path": "docs/notes/hub_centered_line_chronicle_note_ontology_harness_v0.md",
+      "suffix": ".md",
+      "size": 8166,
+      "mtime_ns": 1775268206719578125,
+      "title": "hub centered line chronicle note ontology harness v0",
+      "summary": "This note shows how a concept should be reread when the goal is not simple explanation, but hub-centered line chronicle."
+    },
+    {
+      "name": "human_language_rereading_trace_note_ontology_harness_v0.md",
+      "path": "docs/notes/human_language_rereading_trace_note_ontology_harness_v0.md",
+      "suffix": ".md",
+      "size": 6499,
+      "mtime_ns": 1775217698366121961,
+      "title": "human language rereading trace note ontology harness v0",
+      "summary": "This note shows how the human-language line synthesis layer should work in practice."
+    },
+    {
+      "name": "input_to_reading_organ_bounded_reader_narrowness_inspection_note_v0.md",
+      "path": "docs/notes/input_to_reading_organ_bounded_reader_narrowness_inspection_note_v0.md",
+      "suffix": ".md",
+      "size": 6764,
+      "mtime_ns": 1775299388271806176,
+      "title": "input_to_reading_organ bounded reader narrowness inspection note v0",
+      "summary": "현재 `line_input_to_reading_organ`은 candidate material이 없어서 `weak/caution`에 머무는 상태가 아니다."
+    },
+    {
+      "name": "internal_autonomous_execution_instruction_guide_v0.md",
+      "path": "docs/notes/internal_autonomous_execution_instruction_guide_v0.md",
+      "suffix": ".md",
+      "size": 4096,
+      "mtime_ns": 1775195594347926262,
+      "title": "internal autonomous execution instruction guide v0",
+      "summary": "이 문서는 내부 자율 실행 지시서를 설계할 때 어떤 경계와 실행 규율을 먼저 잠가야 하는지 정리한다."
+    },
+    {
+      "name": "line_thickening_balanced_broadening_gap_probe_note_v0.md",
+      "path": "docs/notes/line_thickening_balanced_broadening_gap_probe_note_v0.md",
+      "suffix": ".md",
+      "size": 2101,
+      "mtime_ns": 1775127576592442138,
+      "title": "line thickening balanced broadening gap probe note v0",
+      "summary": "이 메모의 목적은 `balanced_broadening_candidate`를 억지로 만드는 것이 아니라, 왜 현재 strong line들이 아직 균형형 broadening으로 가지 못하는지를 현재 basis 축 위에서 정직하게 읽게 만드는 것이다."
+    },
+    {
+      "name": "line_thickening_bounded_recurrence_validation_v0.md",
+      "path": "docs/notes/line_thickening_bounded_recurrence_validation_v0.md",
+      "suffix": ".md",
+      "size": 1804,
+      "mtime_ns": 1775122270025711465,
+      "title": "line thickening bounded recurrence validation note v0",
+      "summary": "This note records the bounded recurrence check on the already-connected grounded path only: `scripts/apply_internal_observer.py`."
+    },
+    {
+      "name": "line_thickening_derived_dependency_probe_note_v0.md",
+      "path": "docs/notes/line_thickening_derived_dependency_probe_note_v0.md",
+      "suffix": ".md",
+      "size": 1986,
+      "mtime_ns": 1775128871734348558,
+      "title": "line thickening derived dependency probe note v0",
+      "summary": "이 메모의 목적은 `mixed_derived_supported`를 더 쪼개어,"
+    },
+    {
+      "name": "line_thickening_derived_reintroduction_sentinel_note_v0.md",
+      "path": "docs/notes/line_thickening_derived_reintroduction_sentinel_note_v0.md",
+      "suffix": ".md",
+      "size": 837,
+      "mtime_ns": 1775130931537154819,
+      "title": "line_thickening derived reintroduction sentinel note v0",
+      "summary": "`decaying`, `persistent_decay`, and `robust_decay` still need one more guard: if derived residue comes back into the active recent window, the current clean-direction read should not be treated as if nothing changed."
+    },
+    {
+      "name": "line_thickening_derived_residue_trend_probe_note_v0.md",
+      "path": "docs/notes/line_thickening_derived_residue_trend_probe_note_v0.md",
+      "suffix": ".md",
+      "size": 1389,
+      "mtime_ns": 1775129271918702883,
+      "title": "line_thickening_derived_residue_trend_probe_note_v0",
+      "summary": "`derived_residue_trend`는 혼합 상태를 고정된 스냅샷으로만 보지 않고, 최근 윈도우에서 derived residue가 줄어드는지/유지되는지/다시 붙는지를 읽는 해석 보조축이다."
+    },
+    {
+      "name": "line_thickening_evidence_independence_note_v0.md",
+      "path": "docs/notes/line_thickening_evidence_independence_note_v0.md",
+      "suffix": ".md",
+      "size": 1616,
+      "mtime_ns": 1775125523787204666,
+      "title": "line thickening evidence independence note v0",
+      "summary": "`line_thickening`에서 path diversity와 evidence independence를 분리하기 위한 기준 노트다."
+    },
+    {
+      "name": "line_thickening_first_grounded_feed_note_v0.md",
+      "path": "docs/notes/line_thickening_first_grounded_feed_note_v0.md",
+      "suffix": ".md",
+      "size": 1886,
+      "mtime_ns": 1775121827811352205,
+      "title": "line thickening first grounded feed note v0",
+      "summary": "This note records the first bounded grounded feed into `line_thickening` from an existing read path that already carries a concrete pointer."
+    },
+    {
+      "name": "line_thickening_forward_persistence_confirmation_note_v0.md",
+      "path": "docs/notes/line_thickening_forward_persistence_confirmation_note_v0.md",
+      "suffix": ".md",
+      "size": 1017,
+      "mtime_ns": 1775130072528330197,
+      "title": "line_thickening forward persistence confirmation note v0",
+      "summary": "`persistent_decay` should not remain a one-shot read. After the first persistence probe, the next question is whether that read still holds when a small amount of new primary-only support is appended."
+    },
+    {
+      "name": "line_thickening_grounding_hardening_v0.md",
+      "path": "docs/notes/line_thickening_grounding_hardening_v0.md",
+      "suffix": ".md",
+      "size": 1783,
+      "mtime_ns": 1775121438844280270,
+      "title": "line thickening grounding hardening v0",
+      "summary": "This note hardens the existing preflight-connected `line_thickening` slice so it does not turn summary echo into thickening fuel."
+    },
+    {
+      "name": "line_thickening_material_independence_note_v0.md",
+      "path": "docs/notes/line_thickening_material_independence_note_v0.md",
+      "suffix": ".md",
+      "size": 1839,
+      "mtime_ns": 1775126584753305516,
+      "title": "line_thickening_material_independence_note_v0",
+      "summary": "- 이번 note의 목적은 route diversity 와 material diversity 를 분리하는 것이다. - 같은 line이 여러 validation path에서 다시 보이더라도, 그 path들이 같은 fragment/material slice를 다시 읽고 있다면 그것은 cross-path corroboration이지 cross-material corroboration은 아니다."
+    },
+    {
+      "name": "line_thickening_preflight_hook_note_v0.md",
+      "path": "docs/notes/line_thickening_preflight_hook_note_v0.md",
+      "suffix": ".md",
+      "size": 2177,
+      "mtime_ns": 1775121012229961346,
+      "title": "line thickening preflight hook note v0",
+      "summary": "This note records the smallest bounded integration from the existing preflight reread path into the `line_thickening` runtime slice."
+    },
+    {
+      "name": "line_thickening_primary_material_breadth_note_v0.md",
+      "path": "docs/notes/line_thickening_primary_material_breadth_note_v0.md",
+      "suffix": ".md",
+      "size": 1471,
+      "mtime_ns": 1775126837707165700,
+      "title": "line_thickening_primary_material_breadth_note_v0",
+      "summary": "- 이번 note의 목적은 new route를 더 붙이는 것이 아니라, 이미 연결된 두 primary route 위에서 `distinct_primary_material_anchor_count`가 실제로 넓어지는지 검증하는 것이다."
+    },
+    {
+      "name": "line_thickening_primary_only_profile_split_note_v0.md",
+      "path": "docs/notes/line_thickening_primary_only_profile_split_note_v0.md",
+      "suffix": ".md",
+      "size": 2255,
+      "mtime_ns": 1775128414007195193,
+      "title": "line thickening primary only profile split note v0",
+      "summary": "이 메모의 목적은 `overall validation profile`과 `primary-only validation profile`을 분리해 읽게 만드는 것이다."
+    },
+    {
+      "name": "line_thickening_promotion_scope_note_v0.md",
+      "path": "docs/notes/line_thickening_promotion_scope_note_v0.md",
+      "suffix": ".md",
+      "size": 1755,
+      "mtime_ns": 1775124691719520979,
+      "title": "Line Thickening Promotion Scope Note v0",
+      "summary": "This note records the scope-hardening step for `line_thickening`."
+    },
+    {
+      "name": "line_thickening_residue_robustness_probe_note_v0.md",
+      "path": "docs/notes/line_thickening_residue_robustness_probe_note_v0.md",
+      "suffix": ".md",
+      "size": 1049,
+      "mtime_ns": 1775130508084150216,
+      "title": "line_thickening residue robustness probe note v0",
+      "summary": "`derived_residue_trend=decaying` and `derived_residue_persistence=persistent_decay` still depend on a chosen recent window."
+    },
+    {
+      "name": "line_thickening_residue_trend_persistence_probe_note_v0.md",
+      "path": "docs/notes/line_thickening_residue_trend_persistence_probe_note_v0.md",
+      "suffix": ".md",
+      "size": 1232,
+      "mtime_ns": 1775129819956305151,
+      "title": "line_thickening residue trend persistence probe note v0",
+      "summary": "`derived_residue_trend=decaying` is not enough by itself. It says the recent window is cleaner, but it does not say whether that cleaning persists when the current line keeps receiving primary-only observations."
+    },
+    {
+      "name": "line_thickening_resistance_semantics_hardening_note_v0.md",
+      "path": "docs/notes/line_thickening_resistance_semantics_hardening_note_v0.md",
+      "suffix": ".md",
+      "size": 1566,
+      "mtime_ns": 1775123908605939012,
+      "title": "Line Thickening Resistance Semantics Hardening Note v0",
+      "summary": "This note records the second-stage hardening of `line_thickening`: split resistance semantics so that \"not enough yet\" evidence no longer inflates contradiction pressure."
+    },
+    {
+      "name": "line_thickening_resistance_semantics_split_v0.md",
+      "path": "docs/notes/line_thickening_resistance_semantics_split_v0.md",
+      "suffix": ".md",
+      "size": 1359,
+      "mtime_ns": 1775123628028682878,
+      "title": "line thickening resistance semantics split note v0",
+      "summary": "This note hardens `line_thickening` so that not every non-promotion signal is treated as resistance."
+    },
+    {
+      "name": "line_thickening_sandbox_recovery_check_note_v0.md",
+      "path": "docs/notes/line_thickening_sandbox_recovery_check_note_v0.md",
+      "suffix": ".md",
+      "size": 907,
+      "mtime_ns": 1775133794896446216,
+      "title": "line_thickening sandbox recovery check note v0",
+      "summary": "The sandbox trip already proved that the derived reintroduction sentinel can flip."
+    },
+    {
+      "name": "line_thickening_sandbox_reintroduction_trip_note_v0.md",
+      "path": "docs/notes/line_thickening_sandbox_reintroduction_trip_note_v0.md",
+      "suffix": ".md",
+      "size": 896,
+      "mtime_ns": 1775131641039597356,
+      "title": "line_thickening sandbox reintroduction trip note v0",
+      "summary": "This check must prove that the derived reintroduction sentinel can actually flip."
+    },
+    {
+      "name": "line_thickening_second_grounded_route_note_v0.md",
+      "path": "docs/notes/line_thickening_second_grounded_route_note_v0.md",
+      "suffix": ".md",
+      "size": 1683,
+      "mtime_ns": 1775125166100304426,
+      "title": "line thickening second grounded route note v0",
+      "summary": "`line_thickening`의 첫 grounded route는 `scripts/apply_internal_observer.py`였다. 이번 노트는 그 다음 단계로, 실제로 다른 validation path 하나를 추가할 때 어떤 경로를 고르고 어떤 anchor를 붙였는지 정리한다."
+    },
+    {
+      "name": "line_thickening_third_primary_route_survey_note_v0.md",
+      "path": "docs/notes/line_thickening_third_primary_route_survey_note_v0.md",
+      "suffix": ".md",
+      "size": 3080,
+      "mtime_ns": 1775126031040216613,
+      "title": "line_thickening_third_primary_route_survey_note_v0",
+      "summary": "- 이번 note의 목적은 existing route 중 genuinely separate third primary route 후보가 있는지 짧게 선별하는 것이다. - 조건은 `existing route + pointer-bearing + primary_raw or primary_structured + observer route와 path-wise distinct + bounded sink 가능`이다."
+    },
+    {
+      "name": "line_thickening_transition_over_surface_sentinel_loop_closeout_note_v0.md",
+      "path": "docs/notes/line_thickening_transition_over_surface_sentinel_loop_closeout_note_v0.md",
+      "suffix": ".md",
+      "size": 3602,
+      "mtime_ns": 1775134125886782266,
+      "title": "line_thickening transition_over_surface sentinel loop close-out note v0",
+      "summary": "This note closes the current sentinel-loop check for `transition_over_surface`."
+    },
+    {
+      "name": "line_thickening_transition_over_surface_targeted_primary_material_note_v0.md",
+      "path": "docs/notes/line_thickening_transition_over_surface_targeted_primary_material_note_v0.md",
+      "suffix": ".md",
+      "size": 1438,
+      "mtime_ns": 1775128030424965653,
+      "title": "line thickening transition_over_surface targeted primary material note v0",
+      "summary": "이번 턴의 목적은 `transition_over_surface` 한 line만 대상으로, 새 route를 더 붙이지 않고 기존 primary routes 안에서 `distinct_primary_material_anchor_count`가 실제로 늘어나는지 확인하는 것이다."
+    },
+    {
+      "name": "line_thickening_validation_profile_note_v0.md",
+      "path": "docs/notes/line_thickening_validation_profile_note_v0.md",
+      "suffix": ".md",
+      "size": 1581,
+      "mtime_ns": 1775127185671643680,
+      "title": "line_thickening_validation_profile_note_v0",
+      "summary": "- 이번 note의 목적은 strong line을 한 종류로 뭉개지 않고, 어떤 basis에서 강해졌는지 따로 읽게 만드는 것이다."
+    },
+    {
+      "name": "minimal_auto_checks_note_v0.md",
+      "path": "docs/notes/minimal_auto_checks_note_v0.md",
+      "suffix": ".md",
+      "size": 1899,
+      "mtime_ns": 1775118927616068309,
+      "title": "minimal auto checks note v0",
+      "summary": "This note records the smallest automatic checks that can be attached immediately without building a new evaluation platform."
+    },
+    {
+      "name": "minimal_soft_layer_separation_note_v0.md",
+      "path": "docs/notes/minimal_soft_layer_separation_note_v0.md",
+      "suffix": ".md",
+      "size": 3574,
+      "mtime_ns": 1775119142893844087,
+      "title": "minimal soft layer separation note v0",
+      "summary": "Now is the time to separate roles softly, not to hard-freeze the whole structure."
+    },
+    {
+      "name": "multi_lens_document_reading_transition_over_surface_evidence_observation_note_v0.md",
+      "path": "docs/notes/multi_lens_document_reading_transition_over_surface_evidence_observation_note_v0.md",
+      "suffix": ".md",
+      "size": 6437,
+      "mtime_ns": 1775196435318652838,
+      "title": "multi lens document reading transition over surface evidence observation note v0",
+      "summary": "- `transition_over_surface` evidence reading is locked as an observation note - this turn does not change implementation code - current fixture set is now documented as evidence-bearing vs evidence-poor for this lens"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_first_descent_alignment_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_first_descent_alignment_note.md",
+      "suffix": ".md",
+      "size": 2615,
+      "mtime_ns": 1775198549287717667,
+      "title": "multi_lens_document_reading_v0 first descent alignment note",
+      "summary": "- first descent package alignment is applied - this turn does not refine heuristics or introduce maturity logic - current code now exposes line definition access, reading execution, and readout surface more explicitly"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_first_flow_integration_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_first_flow_integration_note.md",
+      "suffix": ".md",
+      "size": 1402,
+      "mtime_ns": 1775199088824437006,
+      "title": "multi_lens_document_reading_v0 first flow integration note",
+      "summary": "- first thin runtime invocation is connected - `multi_lens_document_reading_v0` is now called from the broader structured-doc flow - runtime still stops at readout/handoff boundary"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_integrated_close_out_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_integrated_close_out_note.md",
+      "suffix": ".md",
+      "size": 4638,
+      "mtime_ns": 1775199923688655758,
+      "title": "multi_lens_document_reading_v0 integrated close-out note",
+      "summary": "- `multi_lens_document_reading_v0` integrated observation loop is complete at current v0 scope - current v0 identity is locked as an integrated observation pass - this module is not a maturity engine and not a decision engine"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_operating_ui_integration_branch_close_out_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_operating_ui_integration_branch_close_out_note.md",
+      "suffix": ".md",
+      "size": 2379,
+      "mtime_ns": 1775203021165034172,
+      "title": "multi_lens_document_reading_v0_operating_ui_integration_branch_close_out_note",
+      "summary": "- `multi_lens_document_reading_v0` operating-UI integration branch is complete at the current scope - this branch is now closed - any further UI-surface change requires a new bounded spec"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_operating_ui_integration_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_operating_ui_integration_note.md",
+      "suffix": ".md",
+      "size": 925,
+      "mtime_ns": 1775202815231655679,
+      "title": "multi_lens_document_reading_v0_operating_ui_integration_note",
+      "summary": "- multi-lens supervisor surface now appears in the phase1 operating UI observation area - surfaced readout is the primary panel content - raw output remains secondary/reference-only"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_probe_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_probe_note.md",
+      "suffix": ".md",
+      "size": 2840,
+      "mtime_ns": 1775297334535578143,
+      "title": "multi_lens_document_reading_v0 probe note",
+      "summary": "- skeleton은 이미 구현되어 있었다. - [multi_lens_document_reading.py](/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/multi_lens_document_reading.py) - [run_multi_lens_document_reading_probe.py](/Users/sungsookim/universe/vectorfl_replic"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_second_descent_readout_separation_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_second_descent_readout_separation_note.md",
+      "suffix": ".md",
+      "size": 1212,
+      "mtime_ns": 1775198815149053351,
+      "title": "multi_lens_document_reading_v0 second descent readout separation note",
+      "summary": "- readout layer is separated at file level - this turn does not change heuristic behavior or operating-state behavior - separation was applied to make execution vs surface ownership visible before any further extension"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_semantic_flow_gap_inspection_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_semantic_flow_gap_inspection_note.md",
+      "suffix": ".md",
+      "size": 6403,
+      "mtime_ns": 1775298100908540662,
+      "title": "multi_lens_document_reading_v0 semantic-flow gap inspection note",
+      "summary": "현재 stable lens 두 개는 meaning-pattern patch 이후 `caution`까지는 가지만 `strong`까지는 못 간다."
+    },
+    {
+      "name": "multi_lens_document_reading_v0_skeleton_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_skeleton_note.md",
+      "suffix": ".md",
+      "size": 1871,
+      "mtime_ns": 1775194084879716029,
+      "title": "multi lens document reading v0 skeleton note",
+      "summary": "이 note는 `multi_lens_document_reading_v0`의 첫 skeleton 범위를 기록한다."
+    },
+    {
+      "name": "multi_lens_document_reading_v0_strength_heuristic_patch_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_strength_heuristic_patch_note.md",
+      "suffix": ".md",
+      "size": 3181,
+      "mtime_ns": 1775297726397053604,
+      "title": "multi_lens_document_reading_v0 strength heuristic patch note",
+      "summary": "- `line_input_to_reading_organ` - direct `line_name`/seed literal matching 의존을 제거했다 - `input -> processing -> result` 의미 흐름을 얇게 읽는 방식으로 바꿨다 - `line_transition_over_surface` - direct `transition over surface` literal matching 의존을 제거했다"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_strength_patch_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_strength_patch_note.md",
+      "suffix": ".md",
+      "size": 1614,
+      "mtime_ns": 1775195890287018300,
+      "title": "multi lens document reading v0 strength patch note",
+      "summary": "이 note는 stable/thick 두 lens에 한해서 keyword seed와 `reading_basis` 문장을 bounded refinement 한 범위를 기록한다."
+    },
+    {
+      "name": "multi_lens_document_reading_v0_strength_validation_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_strength_validation_note.md",
+      "suffix": ".md",
+      "size": 1747,
+      "mtime_ns": 1775195076327346903,
+      "title": "multi lens document reading v0 strength validation note",
+      "summary": "이 note는 `multi_lens_document_reading_v0` skeleton의 현재 `reading_strength` 휴리스틱이 fixture 기준에서 어떻게 읽히는지 관찰만 남긴다."
+    },
+    {
+      "name": "multi_lens_document_reading_v0_supervisor_surface_branch_close_out_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_supervisor_surface_branch_close_out_note.md",
+      "suffix": ".md",
+      "size": 2378,
+      "mtime_ns": 1775202484758211001,
+      "title": "multi_lens_document_reading_v0_supervisor_surface_branch_close_out_note",
+      "summary": "- `multi_lens_document_reading_v0` supervisor-surface integration branch is complete at the current scope - this branch is now closed - any further change to the supervisor-facing surface requires a new bounded spec"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_supervisor_surface_integration_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_supervisor_surface_integration_note.md",
+      "suffix": ".md",
+      "size": 1038,
+      "mtime_ns": 1775202366073511140,
+      "title": "multi_lens_document_reading_v0_supervisor_surface_integration_note",
+      "summary": "- supervisor-facing multi-lens surface is now exposed as a primary surfaced view - raw observation artifact remains available as a secondary reference - runtime still stops before any decision logic"
+    },
+    {
+      "name": "multi_lens_document_reading_v0_transition_over_surface_patch_note.md",
+      "path": "docs/notes/multi_lens_document_reading_v0_transition_over_surface_patch_note.md",
+      "suffix": ".md",
+      "size": 1441,
+      "mtime_ns": 1775196257988237504,
+      "title": "multi lens document reading v0 transition over surface patch note",
+      "summary": "이 note는 `line_transition_over_surface` 한정 partial-match minimal patch 범위를 기록한다."
+    },
+    {
+      "name": "multi_lens_input_to_reading_organ_basis_quality_branch_close_out_note_v0.md",
+      "path": "docs/notes/multi_lens_input_to_reading_organ_basis_quality_branch_close_out_note_v0.md",
+      "suffix": ".md",
+      "size": 2283,
+      "mtime_ns": 1775200965262906276,
+      "title": "multi_lens_input_to_reading_organ_basis_quality_branch_close_out_note_v0",
+      "summary": "- `input_to_reading_organ` basis-quality refinement branch is complete at the current bounded scope - this branch is now closed - any further runtime patch requires a new bounded spec"
+    },
+    {
+      "name": "multi_lens_input_to_reading_organ_basis_quality_refinement_note_v0.md",
+      "path": "docs/notes/multi_lens_input_to_reading_organ_basis_quality_refinement_note_v0.md",
+      "suffix": ".md",
+      "size": 979,
+      "mtime_ns": 1775200434612986114,
+      "title": "multi_lens_input_to_reading_organ_basis_quality_refinement_note_v0",
+      "summary": "- first bounded basis-quality refinement is applied for `input_to_reading_organ` - this turn changes basis wording only - this turn does not change operating state, architecture, or decision boundaries"
+    },
+    {
+      "name": "operating_ui_phase1_input_readiness_wording_and_data_quality_branch_close_out_note_v0.md",
+      "path": "docs/notes/operating_ui_phase1_input_readiness_wording_and_data_quality_branch_close_out_note_v0.md",
+      "suffix": ".md",
+      "size": 1855,
+      "mtime_ns": 1775206276014066393,
+      "title": "operating_ui_phase1 input readiness wording and data quality branch close out note v0",
+      "summary": "- the bounded `Input Readiness` wording/data-quality branch is complete at the current scope - the first panel is now clearer without changing engine behavior - any future change to readiness semantics must open a new bounded spec"
+    },
+    {
+      "name": "operating_ui_phase1_input_readiness_wording_and_data_quality_refinement_note_v0.md",
+      "path": "docs/notes/operating_ui_phase1_input_readiness_wording_and_data_quality_refinement_note_v0.md",
+      "suffix": ".md",
+      "size": 869,
+      "mtime_ns": 1775206117805944144,
+      "title": "operating_ui_phase1 input readiness wording and data quality refinement note v0",
+      "summary": "- the `Input Readiness` panel wording is now clearer at the current scope - the patch improves readability, not engine intelligence - direct vs proxy readiness signals are now easier to distinguish"
+    },
+    {
+      "name": "operating_ui_phase1_operating_surface_composition_assessment_note_v0.md",
+      "path": "docs/notes/operating_ui_phase1_operating_surface_composition_assessment_note_v0.md",
+      "suffix": ".md",
+      "size": 5394,
+      "mtime_ns": 1775205226572189783,
+      "title": "operating_ui_phase1 operating surface composition assessment note v0",
+      "summary": "- `operating-ui-phase1` is partially aligned with `operating_surface_composition_rule_v0` - the current UI already contains an observation readout panel for `multi_lens_document_reading_v0`"
+    },
+    {
+      "name": "operating_ui_phase1_operating_surface_composition_package_close_out_note_v0.md",
+      "path": "docs/notes/operating_ui_phase1_operating_surface_composition_package_close_out_note_v0.md",
+      "suffix": ".md",
+      "size": 2093,
+      "mtime_ns": 1775205922116583137,
+      "title": "operating_ui_phase1 operating surface composition package close out note v0",
+      "summary": "- the bounded operating-surface composition package is complete at the current scope - the intended operating rhythm now survives across multiple UI data states - future work, if any, should remain narrow wording/data-quality work only"
+    },
+    {
+      "name": "operating_ui_phase1_operating_surface_composition_package_note_v0.md",
+      "path": "docs/notes/operating_ui_phase1_operating_surface_composition_package_note_v0.md",
+      "suffix": ".md",
+      "size": 1714,
+      "mtime_ns": 1775205558046613747,
+      "title": "operating_ui_phase1 operating surface composition package note v0",
+      "summary": "- the bounded composition package is now applied in `operating-ui-phase1` - the `Operating` surface now stages the intended panel chain explicitly - runtime behavior and multi-lens internals remain unchanged"
+    },
+    {
+      "name": "post_preprocess_first_pass_probe_v0_note.md",
+      "path": "docs/notes/post_preprocess_first_pass_probe_v0_note.md",
+      "suffix": ".md",
+      "size": 715,
+      "mtime_ns": 1775168210960938178,
+      "title": "post preprocess first pass probe v0",
+      "summary": "이 note는 transcript-aware regroup 뒤에 정리된 sidecar를 기준으로 bounded first pass를 읽는 마지막 점검면을 고정하기 위한 문서다."
+    },
+    {
+      "name": "reconstruction_supervisor_fixture_check_scope_note_v1.md",
+      "path": "docs/notes/reconstruction_supervisor_fixture_check_scope_note_v1.md",
+      "suffix": ".md",
+      "size": 509,
+      "mtime_ns": 1775345278061924181,
+      "title": "reconstruction_supervisor_fixture_check_scope_note_v1",
+      "summary": "- `scripts/run_reconstruction_supervisor_fixture_check.py`는 reconstruction supervisor builder의 bounded invariant를 확인하는 fixture check다."
+    },
+    {
+      "name": "reconstruction_supervisor_operator_usage_note_v1.md",
+      "path": "docs/notes/reconstruction_supervisor_operator_usage_note_v1.md",
+      "suffix": ".md",
+      "size": 1309,
+      "mtime_ns": 1775346005700247449,
+      "title": "reconstruction_supervisor_operator_usage_note_v1",
+      "summary": "- 이 메모는 reconstruction family를 operator가 어떤 순서로 쓰는지 빠르게 보여주는 usage note다."
+    },
+    {
+      "name": "reconstruction_supervisor_process_line_v1.md",
+      "path": "docs/notes/reconstruction_supervisor_process_line_v1.md",
+      "suffix": ".md",
+      "size": 4769,
+      "mtime_ns": 1775346258576781574,
+      "title": "reconstruction_supervisor_process_line_v1",
+      "summary": "- reconstruction supervisor 작업 과정 자체를 하나의 `line`으로 본다. - 이 line은 일회성 구현 순서가 아니라 반복 가능한 operating line이다. - 앞으로 이 family를 다시 열 때는 개별 스크립트보다 이 line 순서를 먼저 따른다."
+    },
+    {
+      "name": "reference_intake_claude_code_main_first_evaluation_note_v0.md",
+      "path": "docs/notes/reference_intake_claude_code_main_first_evaluation_note_v0.md",
+      "suffix": ".md",
+      "size": 3948,
+      "mtime_ns": 1775278900739524772,
+      "title": "reference intake / claude-code-main first evaluation note v0",
+      "summary": "`references/ralph/claude-code-main`은 지금 당장 도입할 운영 본체가 아니다. 하지만 우리 공간을 선명하게 해주는 비교 재료로는 매우 유효하다."
+    },
+    {
+      "name": "reference_intake_openclaw_first_evaluation_note_v0.md",
+      "path": "docs/notes/reference_intake_openclaw_first_evaluation_note_v0.md",
+      "suffix": ".md",
+      "size": 1903,
+      "mtime_ns": 1775288792438203627,
+      "title": "Reference Intake — OpenClaw First Evaluation Note v0",
+      "summary": "[[DOCROLE:note]] [[RUNMODE:observe_only]] [[PRIORITY:high]] [[A]] [[OBJ:reference_intake_openclaw_first_evaluation_note_v0]] [[SEM:openclaw_as_high_density_runtime_organ_reference]]"
+    },
+    {
+      "name": "reference_intake_ralph_first_evaluation_note_v0.md",
+      "path": "docs/notes/reference_intake_ralph_first_evaluation_note_v0.md",
+      "suffix": ".md",
+      "size": 3682,
+      "mtime_ns": 1775278900739283142,
+      "title": "reference intake / ralph first evaluation note v0",
+      "summary": "`references/ralph`는 도입 대상이 아니라 `selective adoption + deferred memory` 대상으로 남기는 것이 맞다."
+    },
+    {
+      "name": "reference_structure_import_ledger_claw_and_claude_code_v0.md",
+      "path": "docs/notes/reference_structure_import_ledger_claw_and_claude_code_v0.md",
+      "suffix": ".md",
+      "size": 8237,
+      "mtime_ns": 1775303689763790377,
+      "title": "reference_structure_import_ledger_claw_and_claude_code_v0",
+      "summary": "이 문서는 `references/git_search/claw-code-main` 과 `references/git_search/claude-code-main` 에서 우리 구조로 가져올 만한 기능적/구조적 요소를 즉시 구현 제안이 아니라 `import ledger` 형태로 기록해 두는 문서다."
+    },
+    {
+      "name": "reference_to_our_space_translation_map_v0.md",
+      "path": "docs/notes/reference_to_our_space_translation_map_v0.md",
+      "suffix": ".md",
+      "size": 7791,
+      "mtime_ns": 1775309449322785272,
+      "title": "Reference To Our Space Translation Map v0",
+      "summary": "This note maps the reference repo types into our own spaces."
+    },
+    {
+      "name": "run_reconstruction_supervisor_cycle_scope_note_v1.md",
+      "path": "docs/notes/run_reconstruction_supervisor_cycle_scope_note_v1.md",
+      "suffix": ".md",
+      "size": 542,
+      "mtime_ns": 1775346005700457123,
+      "title": "run_reconstruction_supervisor_cycle_scope_note_v1",
+      "summary": "- `scripts/run_reconstruction_supervisor_cycle.sh`는 reconstruction family의 기본 작업 루틴을 한 번에 실행하는 thin runner다."
+    },
+    {
+      "name": "space_detailed_structure_handoff_for_future_agents_v0.md",
+      "path": "docs/notes/space_detailed_structure_handoff_for_future_agents_v0.md",
+      "suffix": ".md",
+      "size": 8108,
+      "mtime_ns": 1775280596091431333,
+      "title": "space detailed structure handoff for future agents v0",
+      "summary": "이 문서는 앞으로 다른 에이전트나 LLM이 붙더라도 현재 `vectorfl_replica` 공간을 빠르게 이해할 수 있게, 공간의 상세 구조와 읽기 순서를 handoff 형태로 정리한 문서다."
+    },
+    {
+      "name": "space_reread_operating_instruction_line_driven_dynamic_reading_v0.md",
+      "path": "docs/notes/space_reread_operating_instruction_line_driven_dynamic_reading_v0.md",
+      "suffix": ".md",
+      "size": 7623,
+      "mtime_ns": 1775296830885095159,
+      "title": "space reread operating instruction / line-driven dynamic reading v0",
+      "summary": "이번 노트는 현재 explicit line들을 동적 판독면으로 다루며 공간 전체를 다시 읽기 위한 실전 작전서다."
+    },
+    {
+      "name": "stable_lens_fixture_candidate_collection_note_v0.md",
+      "path": "docs/notes/stable_lens_fixture_candidate_collection_note_v0.md",
+      "suffix": ".md",
+      "size": 11726,
+      "mtime_ns": 1775298851145615477,
+      "title": "stable lens fixture candidate collection note v0",
+      "summary": "이번 수집은 stable lens 두 개만 다뤘다."
+    },
+    {
+      "name": "sync_reconstruction_supervisor_surfaces_scope_note_v1.md",
+      "path": "docs/notes/sync_reconstruction_supervisor_surfaces_scope_note_v1.md",
+      "suffix": ".md",
+      "size": 610,
+      "mtime_ns": 1775345850955914149,
+      "title": "sync_reconstruction_supervisor_surfaces_scope_note_v1",
+      "summary": "- `scripts/sync_reconstruction_supervisor_surfaces.py`는 existing reconstruction packet 집합을 기준으로 navigation surface를 다시 맞추는 maintenance script다."
+    },
+    {
+      "name": "today_space_structure_and_git_search_pass_v0.md",
+      "path": "docs/notes/today_space_structure_and_git_search_pass_v0.md",
+      "suffix": ".md",
+      "size": 7607,
+      "mtime_ns": 1775338311184969213,
+      "title": "today space structure and git_search pass v0",
+      "summary": "오늘 작업의 시작점으로 현재 저장소를 공간 단위로 다시 읽고, 구조설계가 필요한 지점을 먼저 고른 뒤, `references/git_search/` 재독 순서와 라인 추출 기준을 잠깐 잠그기 위한 메모다."
+    },
+    {
+      "name": "transcript_aware_regroup_v0_note.md",
+      "path": "docs/notes/transcript_aware_regroup_v0_note.md",
+      "suffix": ".md",
+      "size": 823,
+      "mtime_ns": 1775167657152821218,
+      "title": "transcript aware regroup v0",
+      "summary": "이 note는 `preprocess_required`로 판정된 transcript-like raw input을 바로 ingest하지 않고, 먼저 meaning chunk 쪽으로 다시 묶는 bounded preprocessor를 고정하기 위한 문서다."
+    },
+    {
+      "name": "transcript_preprocess_comparison_v0_note.md",
+      "path": "docs/notes/transcript_preprocess_comparison_v0_note.md",
+      "suffix": ".md",
+      "size": 654,
+      "mtime_ns": 1775167874714862060,
+      "title": "transcript preprocess comparison v0",
+      "summary": "이 note는 transcript-aware regroup 전/후를 같은 gate와 같은 probe 언어로 비교하는 점검면을 고정하기 위한 문서다."
+    },
+    {
+      "name": "vectorfl_replica_vs_ecc_and_openclaw_connector_comparison_v0.md",
+      "path": "docs/notes/vectorfl_replica_vs_ecc_and_openclaw_connector_comparison_v0.md",
+      "suffix": ".md",
+      "size": 7353,
+      "mtime_ns": 1775339405797154857,
+      "title": "vectorfl_replica vs ecc and openclaw connector comparison v0",
+      "summary": "이번 문서는 우리 저장소 `vectorfl_replica`를"
+    },
+    {
+      "name": "washtank_structure_line_review_v1.md",
+      "path": "docs/notes/washtank_structure_line_review_v1.md",
+      "suffix": ".md",
+      "size": 8316,
+      "mtime_ns": 1775347198579333464,
+      "title": "washtank_structure_line_review_v1",
+      "summary": "- `references/WashTank`는 React + Vite 프론트엔드 위에 `JMS` 서비스 레이어를 얹은 프로그램이다. - 이 프로그램의 가장 굵은 선은 `main orchestration line`과 `jms service line`이다. - 하지만 실제 코드에는 `direct rpc bypass line`과 `supabase client split line`이 같이 살아 있어서 connector family가 부"
+    }
+  ],
+  "assets": [],
+  "related_status_files": [
+    "docs/notes/folder_status.md"
+  ],
+  "last_updated": "2026-04-05T10:06:45+09:00",
+  "role_guess": "Folder with mixed project assets; inspect child folders and markdown files for exact role.",
+  "file_type_counts": {
+    ".md": 97
+  }
+}

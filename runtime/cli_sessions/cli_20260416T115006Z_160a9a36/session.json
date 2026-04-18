@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T115006Z_160a9a36",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "user_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language Koreanization data loop 6: collect Korean operating-language data from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md",
+    "docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- source context where it appeared\n- internal meaning / operational role\n- Koreanization candidate, not final UI copy\n- Korean preservation requirement\n- risky Korean flattening to avoid\n- why this helps the user operate\n- what meaning gets lost if shortened\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:50:06Z",
+  "ended_at": "2026-04-16T11:51:10Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T115006Z_160a9a36/prompt.md",
+  "exit_code": 0,
+  "result_summary": "oard에서 같은 차원의 상태인가, 서로 다른 차원의 신호인가?\n- suggested next use: reread target\n\n10.  \n- internal phrase or signal observed: `surface identity must remain visible`\n- source context where it appeared: shared language boundary rule 3\n- internal meaning / operational role: shared language가 각 surface의 역할 차이를 무너뜨리면 안 됨\n- Koreanization candidate, not final UI copy: `각 면의 정체성은 계속 보여야 함`\n- Korean preservation requirement: user operation, VectorFL mediation, engine processing 구분 유지\n- risky Korean flattening to avoid: `통합 화면`, `하나의 작업판`\n- why this helps the user operate: 어디서 결정하고 어디서 처리하고 어디서 중재하는지 잃지 않게 함\n- what meaning gets lost if shortened: 공유 언어가 replacement layer가 아니라 controlled exposure layer라는 점\n- repeated connection it belongs to: shared language boundary / surface exposure density\n- emerging axis candidate: `surface-density axis`\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any: `면`과 `surface` 병기 유지 가능\n- next reread question: 각 surface에서 동일 phrase가 다른 밀도로 나타날 때 어떤 표기가 필요한가?\n- suggested next use: deposit candidate\n\n**uncertainty or failure notes**\n\n- No files modified.\n- This is not a final glossary and not UI copy.\n- Korean candidates are operating-language candidates only.\n- Uncertainty: `deposit`, `line`, `axis`, `surface`는 내부 체계성이 강해서 완전 번역보다 병기/보존이 더 안전해 보임.\n- Potential risk: `요약층`이 UI rewrite로 오해될 수 있으므로 “summary/explanation only” boundary가 계속 필요함.\n\n**suggested next use**\n\n- reread target: `hold / watch / carry-forward / reject-conflict` 상태 구분\n- validation target: `return material`, `suggested_next_use`, `deposit-ready queue`\n- deposit candidate: `shared operational language`, `surface identity must remain visible`\n- implementation return: bounded Korean/operator summary layer only, not full translation or glossary replacement\n",
+  "suggested_next_use": "deposit_candidate",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:51:10Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:51:10Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

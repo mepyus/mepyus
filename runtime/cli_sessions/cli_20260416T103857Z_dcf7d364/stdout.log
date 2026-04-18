@@ -1,0 +1,17 @@
+- result summary
+  - Read bounded context only.
+  - No files modified.
+  - Cross-surface reflection smoke test: PASS_WITH_NOTE.
+
+- important findings / diffs / outputs
+  - user surface assignment signal: latest CLI return is rendered as user-facing work organization material through `UserCliAssignmentPanel`, including latest turn, decision mark state, and deposit-ready count.
+  - VectorFL operating signal: `VectorFLIntegrationShell.tsx` keeps the VectorFL surface as the operating place through `CliHostControlPanel`, recent CLI turn counts, deposit count badges, surface focus switching, and bounded follow-up context flow described in the report.
+  - engine return/validation signal: `EngineCliReturnPanel` exposes latest processing status, route label, structured return preview, recent processing returns, and extract/deposit candidate count as engine-side validation material.
+  - Report confirms current state as synchronous session-artifact conversation control, with recent returns, continue-latest, inferred `suggested_next_use`, and deposit-ready queue visibility.
+
+- uncertainty or failure notes
+  - This validation only reread bounded files; it did not run build, API state checks, browser checks, or a new CLI session.
+  - The report explicitly defers browser-click/user-feel validation, async/background orchestration, full session browsing, Gemini adapter, and automatic deposit ingestion.
+
+- suggested next use: validation target
+  - validation target: hand-check the browser VectorFL panel for `Continue latest`, recent-turn selection, and deposit-ready queue selection to confirm the surface reads as assignment signal plus engine return material.

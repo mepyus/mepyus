@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260417T092802Z_16d56c12",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary  \n  bounded context `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`를 읽었다. 핵심은 통합엔진 UI의 실제 안정 소스가 `gemini/mock_test`가 아니라 `app/ui/integrated_engine`로 이동했다는 점이다.\n\n- important findings / diffs / outputs  \n  1. Korean operating summary:  \n  현재 운용 기준은 `app/ui/integrated_engine`이다. `gemini/mock_test`는 제안/참조 재료로 남아 있으며, CLI는 새 표면이 아니라 VectorFL 통합엔진 위에서 관찰되는 on-top 도구 호출로 유지된다.\n\n  2. Surface reading:  \n  user = 목적, 할당, 결정  \n  VectorFL = 해석, reread, 중재  \n  engine = 처리, 반환, deposit material 생성  \n  이 3면 기준은 폴더 이동 후에도 바뀌지 않는다.\n\n  3. Route suggestion:  \n  reread_target: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`  \n  validation_target: stable app에서 브라우저로 VectorFL CLI 1회 hand-check  \n  implementation_return: 없음  \n  deposit_candidate: 없음  \n  hold: canonicalize, ingest, promote 금지\n\n- uncertainty or failure notes  \n  실제 브라우저 클릭/사용감 검증은 아직 사용자 손검증이 필요하다고 문서에 적혀 있다. 이전 문서의 `gemini/mock_test` 언급은 현재 소스 위치가 아니라 역사적 맥락으로만 읽어야 한다.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate  \n  validation_target: `http://127.0.0.1:5173/`에서 안정 앱을 열고 VectorFL CLI 실행을 하나만 손으로 확인한다.\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-17T09:28:17Z"
+}

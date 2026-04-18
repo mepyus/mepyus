@@ -1,0 +1,92 @@
+{
+  "promotion_candidate_id": "vectorfl_paper_proper_promotion_candidate_v0",
+  "promotion_ready": false,
+  "blocking_reason": "actual exported host record has not yet replaced the placeholder slot occupant",
+  "pilot_refs": {
+    "status_board": "runtime/contracts/vectorfl_paper_weekend_pilot_status_board_v0.json",
+    "active_task": "runtime/contracts/vectorfl_paper_weekend_pilot_active_task_v0.json",
+    "live_bundle_selection": "runtime/contracts/vectorfl_paper_weekend_live_bundle_selection_v0.json",
+    "native_shape_source_record": "runtime/contracts/vectorfl_paper_weekend_live_native_shape_source_record_v1.json",
+    "export_shaped_source_record": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+    "actual_export_slot": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+    "actual_export_template": "runtime/contracts/vectorfl_paper_actual_export_host_record_template_v0.json",
+    "next_packet_stub": "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v4_stub.json",
+    "swap_ready_manifest": "runtime/manifests/vectorfl_paper_actual_export_swap_ready_v0.json",
+    "swap_stub_script": "scripts/run_vectorfl_paper_actual_export_swap_stub.py",
+    "v4_preview_registry": "runtime/manifests/vectorfl_paper_actual_export_v4_preview_registry_v0.json",
+    "absorption_package": "runtime/manifests/vectorfl_paper_absorption_package_v0.json",
+    "proper_promotion_stub": "scripts/run_vectorfl_paper_promotion_stub.py",
+    "current_translated_packet": "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v3.json",
+    "runtime_write_back": "runtime/manifests/vectorfl_paper_weekend_live_runtime_write_back_v0.json",
+    "reopen_case": "runtime/manifests/vectorfl_paper_weekend_live_reopen_case_v0.json",
+    "pilot_surface": "runtime/views/vectorfl_paper_weekend_pilot/index.html"
+  },
+  "absorption_targets": [
+    {
+      "target_id": "operating_cells_and_contracts",
+      "source_refs": [
+        "docs/contracts/vectorfl_paper_operating_cell_schema_v0.md",
+        "docs/contracts/vectorfl_paper_internal_read_cell_v0.md",
+        "docs/contracts/vectorfl_paper_external_resource_cell_v0.md",
+        "docs/contracts/vectorfl_paper_synthesis_cell_v0.md",
+        "docs/contracts/vectorfl_paper_supervisor_report_format_v0.md"
+      ],
+      "destination_role": "paper core operating grammar",
+      "promotion_condition": "already validated by current pilot"
+    },
+    {
+      "target_id": "thin_overlay_intake_grammar",
+      "source_refs": [
+        "docs/contracts/vectorfl_paper_issue_run_result_governance_intake_mapping_v0.md",
+        "runtime/contracts/vectorfl_paper_issue_run_result_governance_intake_mapping_v0.json"
+      ],
+      "destination_role": "paper intake adapter seam",
+      "promotion_condition": "already validated by native-shape and export-shaped reruns"
+    },
+    {
+      "target_id": "runtime_write_back_and_reopen",
+      "source_refs": [
+        "runtime/manifests/vectorfl_paper_weekend_live_runtime_write_back_v0.json",
+        "runtime/manifests/vectorfl_paper_weekend_live_reopen_case_v0.json",
+        "runtime/manifests/vectorfl_paper_weekend_live_line_guided_work_packets_v0.json"
+      ],
+      "destination_role": "paper trace-return loop",
+      "promotion_condition": "already validated inside pilot runtime manifests"
+    },
+    {
+      "target_id": "actual_export_swap_seam",
+      "source_refs": [
+        "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+        "runtime/contracts/vectorfl_paper_actual_export_host_record_template_v0.json",
+        "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v4_stub.json",
+        "runtime/manifests/vectorfl_paper_actual_export_swap_ready_v0.json",
+        "scripts/run_vectorfl_paper_actual_export_swap_stub.py"
+      ],
+      "destination_role": "paper host-ingestion seam",
+      "promotion_condition": "promote immediately after first actual export swap succeeds"
+    },
+    {
+      "target_id": "supervisor_surface_language",
+      "source_refs": [
+        "docs/reports/vectorfl_paper_weekend_live_supervisor_report_v1.md",
+        "runtime/views/vectorfl_paper_weekend_pilot/index.html"
+      ],
+      "destination_role": "paper human decision surface",
+      "promotion_condition": "carry wording and panel logic, not weekend naming"
+    }
+  ],
+  "naming_rule": {
+    "drop_after_promotion": [
+      "weekend_pilot",
+      "weekend_live"
+    ],
+    "keep_after_promotion": [
+      "line-centered intake grammar",
+      "runtime write-back",
+      "reopen as return",
+      "actual export swap seam",
+      "supervisor-readable report"
+    ]
+  },
+  "final_gate": "actual exported host record swapped into slot and rerun through v4 packet"
+}

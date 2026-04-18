@@ -1,0 +1,79 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[DOCROLE:directive]] [[RUNMODE:ingest_then_execute]] [[PRIORITY:high]]",
+    "char_count": 77,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "codex_directive_origin_map_minimum_v1",
+    "end_ref": "codex_directive_origin_map_minimum_v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# codex_directive_origin_map_minimum_v1",
+    "char_count": 39,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "0. 목적",
+    "end_ref": "0. 목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. 목적 이번 작업의 목적은 원본 보관층과 파생 운영층을 분리한 상태에서, 파생물(fragment / summary / receipt 후보 등)이 나중에 원본의 어느 위치에서 왔는지 다시 복귀할 수 있도록 **origin map 최소 좌표를 가볍게 도입**하는 것이다. 중요: - origin map은 원본 전체를 다시 저장하는 구조가 아니다. - origin map은 원본 복귀용 최소",
+    "char_count": 293,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. 이번 턴의 고정 기준",
+    "end_ref": "1. 이번 턴의 고정 기준",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 이번 턴의 고정 기준 1. `RUNMODE`가 없으면 기본은 `ingest_only`다. 2. 모든 문서에 full flow를 적용하지 않는다. 3. origin map은 \"입력 순간 필수 수동 입력\"이 아니라 \"파생 시점 자동 부착\"으로 본다. 4. 원본은 archive / source layer에 두고, 운영은 경량 파생물 중심으로 처리한다. 5. 이번 턴에서는 receipt/",
+    "char_count": 241,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "2. 이번 턴 범위",
+    "end_ref": "2. 이번 턴 범위",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. 이번 턴 범위 이번 턴에서 할 일은 아래 3개만 한다. - STEP 1. origin map 최소 스펙 문서 고정 - STEP 2. 파생 시점 자동 부착 helper / mapper 추가 - STEP 3. 샘플 산출물과 최소 검증 추가",
+    "char_count": 137,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "3. origin map 최소 필드 v1",
+    "end_ref": "3. origin map 최소 필드 v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. origin map 최소 필드 v1 필수 필드: - `source_doc_id` - `heading_path` - `source_locator` - `source_preview` - `derived_at` - `derived_from_kind` 세부 규칙: 1. `source_doc_id` 는 원본 문서 안정 식별자 2. `heading_path` 는 원본 내부 섹션 경로 3. `",
+    "char_count": 431,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "4. 실행 전 점검",
+    "end_ref": "4. 실행 전 점검",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 실행 전 점검 실행 하기전에 점검 및 분석 후 실행한다. 문제가 없다면 `RUNMODE=ingest_then_execute`, `DOCROLE=directive` 로 처리한다.",
+    "char_count": 104,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  }
+]

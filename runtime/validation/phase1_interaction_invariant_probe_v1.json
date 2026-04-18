@@ -1,0 +1,88 @@
+{
+  "initial_state": {
+    "passed": [
+      "selected_memory_sticker_id is None",
+      "similar_seed_ref is None",
+      "blank start object is None",
+      "blank start lens is None",
+      "blank start position is None",
+      "blank start preview is None",
+      "quick-start has suggestion object",
+      "quick-start has preview suggestion",
+      "probe state begins blank",
+      "loaded mode shows live provenance summary",
+      "loaded mode shows runtime option provenance",
+      "memory provenance summary uses stored wording"
+    ]
+  },
+  "runtime_fallback_state": {
+    "passed": [
+      "runtime unavailable mode is exposed",
+      "runtime unavailable still keeps blank start",
+      "runtime unavailable does not auto-select memory",
+      "runtime unavailable does not auto-activate seed",
+      "runtime unavailable still resolves object source state safely",
+      "runtime unavailable exposes degraded search note",
+      "runtime unavailable uses degraded operating provenance wording",
+      "runtime unavailable keeps fallback explore provenance wording"
+    ]
+  },
+  "scenario_blank_quickstart_manual": {
+    "passed": [
+      "quick-start imports object into current path",
+      "quick-start does not create memory selection",
+      "quick-start does not activate seed",
+      "quick-start path state is explicit",
+      "manual selection changes path state",
+      "manual selection overrides object"
+    ]
+  },
+  "scenario_search_jump_ownership": {
+    "passed": [
+      "Search open in Explore imports current path object",
+      "Search open in Explore does not select memory",
+      "Search open in Explore does not activate seed",
+      "Search open in Memory selects sticker only",
+      "Search open in Memory does not activate seed",
+      "Search use in Similar activates seed",
+      "Search use in Similar does not clear prior memory selection"
+    ]
+  },
+  "scenario_memory_seed_clear": {
+    "passed": [
+      "Memory selection selects sticker",
+      "Memory selection alone does not auto-activate seed",
+      "explicit seed activation sets seed",
+      "explicit seed activation preserves Memory selection",
+      "clear active seed detaches seed",
+      "clear active seed does not mutate Memory selection"
+    ]
+  },
+  "scenario_residue_vs_blank": {
+    "passed": [
+      "residue restore imports residue object",
+      "residue restore has separate path state",
+      "residue restore does not select memory",
+      "blank reset clears object",
+      "blank reset clears preview",
+      "blank reset returns blank state"
+    ]
+  },
+  "scenario_history_reread_handoff": {
+    "passed": [
+      "history open attaches reread context",
+      "history open does not set saved path",
+      "history open does not activate seed",
+      "history open does not overwrite blank authoring object",
+      "history open keeps current path ownership unchanged",
+      "clear history context detaches reread reference only",
+      "clear history context does not mutate saved path selection",
+      "clear history context does not mutate seed"
+    ]
+  },
+  "manual_walkthrough_only": [
+    "preset != taxonomy is still primarily wording/UI governance rather than pure-state assertion",
+    "similar result != recommendation remains partly wording-bound because result card phrasing is not browser-asserted here",
+    "imported current path != saved interpretation path is asserted by state separation, but surface readability still needs manual walkthrough confirmation"
+  ]
+}

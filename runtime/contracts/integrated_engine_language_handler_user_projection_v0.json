@@ -1,0 +1,32 @@
+{
+  "projection_id": "language_handler_user_projection_v0",
+  "source_package_id": "language_handler_loop_pkg_v0",
+  "source_translation_projection_id": "language_handler_translation_projection_v0",
+  "projection_kind": "user_next_action_meaning_projection",
+  "status": "bounded_user_projection",
+  "user_meaning": {
+    "user_now_meaning": "The current language-handler package is usable as a one-handler operating surface, but it is still a supervised candidate flow rather than automation.",
+    "user_next_action": "Stabilize the current one-handler mode.",
+    "user_next_action_reason": "The package already flows across User, VectorFL, and Engine; the remaining risk is dense support detail and dependency-heavy bridge behavior, so expansion would add noise too early.",
+    "user_warning_summary": "Do not treat this as a second-handler launch, team dashboard, automatic bridge, final glossary, or canonical redeposit."
+  },
+  "visible_front_fields": [
+    "user_now_meaning",
+    "user_next_action",
+    "user_next_action_reason",
+    "user_warning_summary"
+  ],
+  "support_only_fields": [
+    "source_package_id",
+    "source_translation_projection_id",
+    "derivation boundary",
+    "authority boundary"
+  ],
+  "authority_boundary": {
+    "bounded_pilot_only": true,
+    "team_expansion_allowed": false,
+    "automation_allowed": false,
+    "canonical_status": false
+  }
+}
+

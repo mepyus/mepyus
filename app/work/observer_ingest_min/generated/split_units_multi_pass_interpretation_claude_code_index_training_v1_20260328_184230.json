@@ -1,0 +1,112 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:multi_pass_interpretation_and_context_unit_rereading_training_v1]] [[SEM:training_report_for_repeated_reinterpretation_and_context_unit_reconstruction]]",
+    "char_count": 164,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "multi-pass interpretation and context-unit rereading training v1",
+    "end_ref": "multi-pass interpretation and context-unit rereading training v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# multi-pass interpretation and context-unit rereading training v1",
+    "char_count": 66,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. training purpose",
+    "end_ref": "1. training purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. training purpose - input_asset: `inputs/external_cases/claude_code_index.txt` - 이번 훈련의 목적은 같은 자산을 여러 번 요약하는 것이 아니라, 다른 해석 레이어로 다시 읽고 그 차이로 더 살아 있는 맥락 단위를 다시 세우는 것이다.",
+    "char_count": 171,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. pass별 해석 차이",
+    "end_ref": "2. pass별 해석 차이",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. pass별 해석 차이 - Pass A `object_layer_relation_question_reading` - front_objects: 생산성/코딩, 에이전트 애플리케이션, 구현/자동화, 전략/방향성, AI의 미래, 일의 미래 - front_layers: 설명/해석 층, 구현/실행 층, 검증/근거 층, 구조/연결 층, 질문 유도 층, 전략/방향 층 - what_changed:",
+    "char_count": 868,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. 반복 판독으로 더 선명해진 객체",
+    "end_ref": "3. 반복 판독으로 더 선명해진 객체",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 반복 판독으로 더 선명해진 객체 - `에이전트 애플리케이션` - Pass A에서는 주요 객체였다. - Pass B에서는 앱 구조 재편과 workflow 전환을 일으키는 pivot 중심 객체로 바뀌어 보였다. - Pass C에서는 opening summary에서 residue 때문에 덜 살아나는 희생자이기도 하다는 점이 보였다. - `일의 미래` - 미래 담론의 부속 객체가 아니라 ",
+    "char_count": 332,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. 새로 세운 context unit",
+    "end_ref": "4. 새로 세운 context unit",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 새로 세운 context unit - `agent_interface_transition_unit` - present_window_refs: - why_more_alive_than_paragraph: OpenClaw, 앱 대체/대리 조작, bundle-unbundle가 따로가 아니라 하나의 앱 구조 재편 맥락으로 읽히기 때문 - center_objects: 에이전트 애플리케이션, 전",
+    "char_count": 1347,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. 템플릿 기준 재해석",
+    "end_ref": "5. 템플릿 기준 재해석",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. 템플릿 기준 재해석 - 객체 - 맥락 단위는 기존 객체를 더 두껍게 만들었고, 특히 agent app / 미래의 일 / 모델 검증 축을 다시 보강했다. - 층위 - 설명층만 남지 않고 구조/전략/질문 유도/검증 층이 context unit마다 다르게 전면화됐다. - 관계 운동 - transition, execution shift, question generation이 문단보다 co",
+    "char_count": 416,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "6. 학습 포인트",
+    "end_ref": "6. 학습 포인트",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. 학습 포인트 - 같은 자산도 해석 레이어를 바꾸면 완전히 다른 역할이 보인다. - 중요한 것은 정보량보다 전이와 역할일 수 있다. - 문단은 고정 단위가 아니라 재구성 가능한 context unit일 수 있다. - 템플릿은 채우는 양식이 아니라 읽기 장치로 작동할 수 있다. - 좋은 결과는 정답 문장을 뽑는 것이 아니라, 무엇이 새로 보였는지 기록하는 것이다.",
+    "char_count": 208,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "7. 한 줄 판정",
+    "end_ref": "7. 한 줄 판정",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. 한 줄 판정 - status: `PASS_WITH_NOTE` - 이번 훈련은 정답 추출이 아니라 해석 감각 학습으로 실제 작동했다. 다만 context unit 재설정은 아직 `youtube_03_22` 한 자산 중심이므로, 이후 다른 dialogue asset에 같은 방식이 반복되는지 더 봐야 한다.",
+    "char_count": 175,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "8. references",
+    "end_ref": "8. references",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. references - purpose_json: `app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_claude_code_index_v1_20260328.json` - question_json: `app/work/dialogue_loop_test/generated/question_inducing_block",
+    "char_count": 267,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  }
+]

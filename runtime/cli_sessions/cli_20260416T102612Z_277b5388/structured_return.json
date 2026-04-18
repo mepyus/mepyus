@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T102612Z_277b5388",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "stable UI source: `app/ui/integrated_engine`\n   - reference/proposal clay: `gemini/mock_test`\n   - runtime artifacts/state/returns: `runtime`\n2. The CLI layer remains an on-top host/control path through the VectorFL Integrated Engine, not a fourth surface and not a new engine surface.\n3. Prior validation still stands from the selected turn:\n   - `npm run build` passed in `app/ui/integrated_engine`\n   - served title was confirmed as `VectorFL Integrated Engine`\n   - proxy to `127.0.0.1:8421` worked\n   - real read-only Codex session exited `0`\n\nFollow-up context changed:\n- This turn is a follow-up context smoke test over the prior Codex session artifacts.\n- No implementation or validation was requested here.\n- No files were modified.\n\nNext smallest safe action:\n- Run one browser-based VectorFL CLI smoke test from `app/ui/integrated_engine` at `http://127.0.0.1:5173/`.\n\n- important findings / diffs / outputs\n\nImportant invariant still active:\n- Do not continue feature work in `gemini/mock_test` unless intentionally editing reference material.\n- Do not move React/Vite source into `runtime`.\n- Do not add Gemini adapter, background runner, or session browsing before the stable Codex browser path is hand-used.\n\nNotable metadata mismatch:\n- The embedded result text says the next use should be a `validation target`.\n- The structured field `suggested_next_use` says `reread_target`.\n- The operationally correct next use appears to be `validation target`, because the only remaining uncertainty is browser-click/user-feel validation.\n\n- uncertainty or failure notes\n\nNo fresh browser validation was performed in this turn.\n\nThe remaining uncertainty is unchanged: the stable app path needs one human/browser hand-check through the VectorFL CLI UI.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T10:26:35Z"
+}

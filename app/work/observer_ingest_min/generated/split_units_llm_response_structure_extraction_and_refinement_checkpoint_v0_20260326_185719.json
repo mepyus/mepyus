@@ -1,0 +1,497 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[DOCROLE:directive]] [[RUNMODE:ingest_then_execute]] [[PRIORITY:high]] [[A]] [[OBJ:llm_response_structure_extraction]] [[SEM:engine_distillation]]",
+    "char_count": 147,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "LLM 답변 구조 추출 기준문 v0",
+    "end_ref": "LLM 답변 구조 추출 기준문 v0",
+    "unit_type": "heading_block",
+    "text_excerpt": "# LLM 답변 구조 추출 기준문 v0",
+    "char_count": 21,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "목적",
+    "end_ref": "목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 목적 이 문서는 LLM 자체를 엔진에 넣는 것이 아니라, LLM 답변에서 반복적으로 드러나는 판단 구조 / 의미 전개 / 관계 판독 방식을 내 엔진의 값과 기록 형식으로 증류(distill) 하기 위한 기준문이다. 핵심은 단순하다. - 나는 LLM의 거대한 내부 엔진을 갖고 싶지 않다. - 나는 LLM의 답변에서 드러나는 생각의 구조를 내 엔진 언어로 뽑아내고 싶다. - LLM은 외부 ",
+    "char_count": 322,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. 최상위 선언",
+    "end_ref": "1. 최상위 선언",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 최상위 선언",
+    "char_count": 12,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "선언 1",
+    "end_ref": "선언 1",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 선언 1 내가 원하는 것은 LLM을 엔진에 담는 것이 아니라, LLM 답변 구조를 엔진이 견딜 수 있는 값과 기록으로 증류하는 것이다.",
+    "char_count": 79,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "선언 2",
+    "end_ref": "선언 2",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 선언 2 LLM은 내 엔진의 주 판단자나 기억 저장소가 아니다. LLM은 외부에서 - 비교하고 - 검색하고 - 보조 설명을 만들고 - 부족한 맥락을 채운 뒤 다시 공간으로 되돌려주는 보조자다.",
+    "char_count": 111,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "선언 3",
+    "end_ref": "선언 3",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 선언 3 내 엔진은 똑똑하지 않아도 된다. 대신 - 느리더라도 버텨야 하고 - 구조를 유지해야 하고 - 기록을 남겨야 하고 - 다시 회수할 수 있어야 하고 - 반복적으로 증류된 판단 구조를 축적할 수 있어야 한다.",
+    "char_count": 123,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "선언 4",
+    "end_ref": "선언 4",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 선언 4 따라서 지금 필요한 것은 새 부품 설계보다 먼저 LLM 답변에서 반복되는 판단 슬롯을 채굴하는 작업이다.",
+    "char_count": 67,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "2. 내가 추출하려는 것은 무엇인가",
+    "end_ref": "2. 내가 추출하려는 것은 무엇인가",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. 내가 추출하려는 것은 무엇인가 나는 LLM 답변의 문장 자체를 가져오려는 것이 아니다. 나는 답변에서 반복적으로 나타나는 구조적 슬롯을 가져오려는 것이다. 즉 관심 대상은: - 무엇을 먼저 규정하는가 - 어떤 순서로 판단하는가 - 어떤 종류의 관계를 읽는가 - 왜 그렇게 읽었다고 말하는가 - 어디까지 허용하고 어디서 경계를 긋는가 - 다음 행동을 어떻게 제안하는가 같은 판단의 뼈대",
+    "char_count": 222,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "3. LLM 답변에서 반복적으로 채굴할 판단 슬롯",
+    "end_ref": "3. LLM 답변에서 반복적으로 채굴할 판단 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. LLM 답변에서 반복적으로 채굴할 판단 슬롯",
+    "char_count": 30,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "3-1. 대상 규정 슬롯",
+    "end_ref": "3-1. 대상 규정 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-1. 대상 규정 슬롯 - `focus_object` - `input_type` - `material_role` - `scope_note`",
+    "char_count": 82,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "3-2. 현재 상태 판정 슬롯",
+    "end_ref": "3-2. 현재 상태 판정 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-2. 현재 상태 판정 슬롯 - `current_reading` - `maturity_state` - `priority_note` - `overreach_risk`",
+    "char_count": 96,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "3-3. 관계 판독 슬롯",
+    "end_ref": "3-3. 관계 판독 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-3. 관계 판독 슬롯 - `relation_kind` - `same_meaning_hint` - `same_context_hint` - `different_flow_hint` - `structure_borrowable` - `weak_link_note` - `hold_reason` - `separated_reason`",
+    "char_count": 184,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "3-4. 이유 서술 슬롯",
+    "end_ref": "3-4. 이유 서술 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-4. 이유 서술 슬롯 - `relation_reason` - `borrow_reason` - `not_adopted_reason` - `boundary_reason` - `evidence_trace_hint`",
+    "char_count": 122,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "3-5. 사용 가능성 슬롯",
+    "end_ref": "3-5. 사용 가능성 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-5. 사용 가능성 슬롯 - `future_use_hint` - `applicable_layer` - `possible_feature_seed` - `prompt_material_hint` - `engine_refinement_hint`",
+    "char_count": 137,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "3-6. 경계 설정 슬롯",
+    "end_ref": "3-6. 경계 설정 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-6. 경계 설정 슬롯 - `boundary_note` - `do_not_adopt` - `do_not_lock` - `observer_limit`",
+    "char_count": 87,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "3-7. 다음 단계 슬롯",
+    "end_ref": "3-7. 다음 단계 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-7. 다음 단계 슬롯 - `next_action_hint` - `attachment_strategy` - `defer_note` - `bounded_next_step`",
+    "char_count": 99,
+    "source_segment_ids": [
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "3-8. 사용자 언어 번역 슬롯",
+    "end_ref": "3-8. 사용자 언어 번역 슬롯",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3-8. 사용자 언어 번역 슬롯 - `user_language_summary` - `plain_readout` - `interpretation_note`",
+    "char_count": 89,
+    "source_segment_ids": [
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "4. 현재 엔진에 우선 붙여볼 수 있는 값 후보",
+    "end_ref": "4. 현재 엔진에 우선 붙여볼 수 있는 값 후보",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 현재 엔진에 우선 붙여볼 수 있는 값 후보 - `focus_object` - `input_type` - `material_role` - `current_reading` - `relation_kind` - `relation_reason` - `same_meaning_hint` - `same_context_hint` - `different_flow_hint` - `structure_b",
+    "char_count": 362,
+    "source_segment_ids": [
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "5. 현재 엔진에서 먼저 탐색해야 할 질문",
+    "end_ref": "5. 현재 엔진에서 먼저 탐색해야 할 질문",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. 현재 엔진에서 먼저 탐색해야 할 질문 - 위 슬롯 중 무엇이 현재 엔진의 값 / 라벨 / 앵커 / 문서 / observer log / pointer/evidence/provenance 구조로 이미 흡수 가능한가 - 무엇은 sidecar / runtime observation artifact / exploration note / 보고서 문서 형태로는 붙일 수 있는가 - 무엇은 지금은",
+    "char_count": 350,
+    "source_segment_ids": [
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "6. 선언문 / 기준문 / 지시서에서 이미 추출 가능한 구조",
+    "end_ref": "6. 선언문 / 기준문 / 지시서에서 이미 추출 가능한 구조",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. 선언문 / 기준문 / 지시서에서 이미 추출 가능한 구조",
+    "char_count": 36,
+    "source_segment_ids": [
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "선언문",
+    "end_ref": "선언문",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 선언문 - `why_this_exists` - `top_direction` - `what_to_protect` - `what_not_to_become` - `value_axis` - `future_use_orientation`",
+    "char_count": 130,
+    "source_segment_ids": [
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "기준문",
+    "end_ref": "기준문",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 기준문 - `current_state_reading` - `allowed_vs_forbidden` - `relation_rule` - `operation_principle` - `boundary_note` - `lock_level`",
+    "char_count": 133,
+    "source_segment_ids": [
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "지시서",
+    "end_ref": "지시서",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 지시서 - `purpose` - `scope` - `review_questions` - `expected_outputs` - `forbidden_actions` - `success_condition` - `next_action_hint`",
+    "char_count": 136,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "7. LLM의 올바른 역할",
+    "end_ref": "7. LLM의 올바른 역할",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. LLM의 올바른 역할 LLM은 엔진 안의 중심 지능이 아니다.",
+    "char_count": 40,
+    "source_segment_ids": [
+      "seg_025"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "LLM이 할 일",
+    "end_ref": "LLM이 할 일",
+    "unit_type": "heading_block",
+    "text_excerpt": "### LLM이 할 일 - 공간 탐색 결과의 빈칸 보강 - 부족한 비교축 제안 - 외부 기술 검색 / 요약 / 비교 - 관계 이유 서술 보강 - 사용자 언어 요약 - 표준 문서 초안 생성 - 관찰면 설명문 생성",
+    "char_count": 117,
+    "source_segment_ids": [
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "LLM이 하면 안 되는 일",
+    "end_ref": "LLM이 하면 안 되는 일",
+    "unit_type": "heading_block",
+    "text_excerpt": "### LLM이 하면 안 되는 일 - 엔진 코어 대체 - 공간의 주 판단자 - 기억 저장소 자체 - 구조의 최종 소유자 - relation_kind 최종 잠금자 - 코어 의미 체계의 독점 판사",
+    "char_count": 107,
+    "source_segment_ids": [
+      "seg_027"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "8. 현재 추천 접근",
+    "end_ref": "8. 현재 추천 접근",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. 현재 추천 접근 1. 내 답변에서 반복되는 판단 슬롯을 모은다. 2. 사용자가 작성한 선언문/기준문/지시서에서 반복되는 슬롯을 모은다. 3. 두 집합의 겹침 / 차이 / 공백을 정리한다. 4. 현재 엔진의 값/라벨/앵커/문서/observer 구조 중 어디에 어떤 슬롯을 우선 붙일 수 있는지 본다. 5. 코어 변경 없이 붙일 수 없는 것은 sidecar / runtime artifa",
+    "char_count": 250,
+    "source_segment_ids": [
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "9. 초기 산출물 권장 형식",
+    "end_ref": "9. 초기 산출물 권장 형식",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. 초기 산출물 권장 형식 - 답변 구조 슬롯 목록 - 표준 문서 구조 매핑표 - 엔진 부착 가능성 표",
+    "char_count": 61,
+    "source_segment_ids": [
+      "seg_029"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "10. 현재 잠금",
+    "end_ref": "10. 현재 잠금",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. 현재 잠금 1. 나는 LLM 자체를 엔진에 넣고 싶은 것이 아니다. 2. 나는 LLM 답변에서 반복되는 판단 구조를 증류하고 싶다. 3. 증류 대상은 문장 표면이 아니라 판단 슬롯이다. 4. 선언문/기준문/지시서에도 같은 구조가 이미 녹아 있다. 5. 새 부품 설계보다 먼저 현재 엔진에서 흡수 가능한 슬롯을 탐색해야 한다. 6. 코어가 느리고 무거워도 괜찮다. 구조를 견디고 기록",
+    "char_count": 271,
+    "source_segment_ids": [
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "11. 최종 한 줄",
+    "end_ref": "11. 최종 한 줄",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 11. 최종 한 줄 나는 LLM을 엔진에 담고 싶은 것이 아니라, LLM 답변에서 반복적으로 드러나는 판단 구조·의미 전개·관계 판독 방식을 추출해 내 엔진의 값과 기록 형식으로 증류하고 싶다. 내 엔진은 느리고 무거워도 그 구조화를 견디며 성장해야 하고, LLM은 그 구조를 보강해 다시 공간으로 재료를 넣는 외부 보조자여야 한다. --- [[A]] [[OBJ:refinement_che",
+    "char_count": 292,
+    "source_segment_ids": [
+      "seg_031"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "선언문",
+    "end_ref": "선언문",
+    "unit_type": "heading_block",
+    "text_excerpt": "# 선언문",
+    "char_count": 5,
+    "source_segment_ids": [
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "엔진 옆의 참조 점검기와 주기적 정련에 대한 선언",
+    "end_ref": "엔진 옆의 참조 점검기와 주기적 정련에 대한 선언",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 엔진 옆의 참조 점검기와 주기적 정련에 대한 선언 나는 엔진을 무한히 크게 만들고 싶은 것이 아니다. 나는 의미와 맥락과 과정과 기억을 풍부하게 담아낼 수 있는 공간을 만들고 싶지만, 그 풍부함이 매번 코어를 비대하게 만들기를 원하지는 않는다.",
+    "char_count": 139,
+    "source_segment_ids": [
+      "seg_033"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "1. 확장과 정련은 함께 가야 한다",
+    "end_ref": "1. 확장과 정련은 함께 가야 한다",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 확장과 정련은 함께 가야 한다 내 공간은 새로운 재료, 기술, 문서, 연결, 관계 판독이 들어오며 풍부해질 수 있다. 그러나 풍부해진다는 것은 코어가 계속 비대해진다는 뜻이 아니다. 나는 - 확장 패스 - 정련 패스 를 분리해서 본다. 즉 내 엔진은 풍부하게 자라되, 주기적으로 다시 또렷해져야 한다.",
+    "char_count": 174,
+    "source_segment_ids": [
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "2. 선언문/기준문/지시서는 코어를 대신하는 것이 아니라 참조 점검기다",
+    "end_ref": "2. 선언문/기준문/지시서는 코어를 대신하는 것이 아니라 참조 점검기다",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. 선언문/기준문/지시서는 코어를 대신하는 것이 아니라 참조 점검기다 이 문서들은 엔진 옆에 두는 참조 점검기다. 이 점검기의 역할은: - 현재 엔진이 어디까지 벗어났는지 확인 - 무엇이 코어에 남아야 하는지 다시 판독 - 무엇이 외곽층으로 빠져야 하는지 확인 - 무엇이 아직 가능성으로만 남아야 하는지 확인 - 의미는 살리고 구조는 단단하게 재정렬",
+    "char_count": 199,
+    "source_segment_ids": [
+      "seg_035"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "3. 참조 점검기는 상시 통제 장치가 아니라 주기적 정련 장치다",
+    "end_ref": "3. 참조 점검기는 상시 통제 장치가 아니라 주기적 정련 장치다",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 참조 점검기는 상시 통제 장치가 아니라 주기적 정련 장치다 - 평소에는 공간이 자라도록 둔다 - 기록과 기억은 계속 쌓는다 - 일정 시점마다 참조 점검기를 흘려보낸다 - 그때 무엇이 또렷해졌고 무엇이 과해졌는지 점검한다 - 코어와 외곽층을 다시 나눈다",
+    "char_count": 146,
+    "source_segment_ids": [
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "4. 선언문도 구조를 또렷하게 하는 정련 재료다",
+    "end_ref": "4. 선언문도 구조를 또렷하게 하는 정련 재료다",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 선언문도 구조를 또렷하게 하는 정련 재료다 - 백과사전은 의미를 또렷하게 한다 - 선언문은 구조를 또렷하게 한다 - 기준문은 경계를 또렷하게 한다 - 지시서는 다음 행동을 또렷하게 한다",
+    "char_count": 109,
+    "source_segment_ids": [
+      "seg_037"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "5. 정련 패스의 핵심 목적",
+    "end_ref": "5. 정련 패스의 핵심 목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. 정련 패스의 핵심 목적 1. 코어를 다시 작게 만든다 2. 외곽층으로 빼야 할 것을 분리한다 3. 계속 남겨야 할 기록 축을 확인한다 4. 해석은 풍부하게 유지하되 구조는 가볍게 만든다 5. 반복해서 등장하는 판단 구조만 남긴다 6. 일시적 흥분이나 과한 확장은 외곽으로 밀어낸다",
+    "char_count": 162,
+    "source_segment_ids": [
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "6. 코어에 남아야 하는 것과 외곽으로 빠져야 하는 것",
+    "end_ref": "6. 코어에 남아야 하는 것과 외곽으로 빠져야 하는 것",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. 코어에 남아야 하는 것과 외곽으로 빠져야 하는 것",
+    "char_count": 33,
+    "source_segment_ids": [
+      "seg_039"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "코어에 남아야 하는 것",
+    "end_ref": "코어에 남아야 하는 것",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 코어에 남아야 하는 것 - 값 - 라벨 - 앵커 - 기본 관계 축 - 기록의 버팀 구조 - session / run / pointer 같은 회수 구조 - 반복해서 살아남는 최소 판단 슬롯",
+    "char_count": 108,
+    "source_segment_ids": [
+      "seg_040"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "외곽으로 빠져야 하는 것",
+    "end_ref": "외곽으로 빠져야 하는 것",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 외곽으로 빠져야 하는 것 - 긴 해석 문장 - 풍부한 비교 설명 - 외부 기술 사례 상세 분석 - 사용자 언어 브리핑 전체 - 후구조화 보강 기록의 상세본 - observer readout의 장문 결과 - 참조 재료를 통한 의미 강화 상세 로그",
+    "char_count": 140,
+    "source_segment_ids": [
+      "seg_041"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "7. 정련 패스는 삭제가 아니라 재배치다",
+    "end_ref": "7. 정련 패스는 삭제가 아니라 재배치다",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. 정련 패스는 삭제가 아니라 재배치다 정련은 삭제가 아니라 재배치에 의한 경량화다.",
+    "char_count": 51,
+    "source_segment_ids": [
+      "seg_042"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "8. 정기 점검에서 물어야 할 질문",
+    "end_ref": "8. 정기 점검에서 물어야 할 질문",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. 정기 점검에서 물어야 할 질문 - 최근 쌓인 것 중 무엇이 코어에 남을 만큼 반복되었는가 - 무엇은 아직 가능성은 있지만 코어에 넣기엔 이른가 - 무엇은 외곽 observation layer로 빼는 것이 맞는가 - 무엇은 선언문/기준문과 충돌하는가 - 무엇은 실제로 계속 쓰이고 무엇은 일회성 흥분이었는가 - 무엇이 구조를 또렷하게 하고 무엇이 구조를 흐리게 하는가 - 이번 정련 후",
+    "char_count": 246,
+    "source_segment_ids": [
+      "seg_043"
+    ]
+  },
+  {
+    "unit_id": "unit_044",
+    "start_ref": "9. 내가 원하는 엔진의 성장 방식",
+    "end_ref": "9. 내가 원하는 엔진의 성장 방식",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. 내가 원하는 엔진의 성장 방식 상시 강통제가 아니라 축적 -> 참조 점검 -> 정련 -> 재배치 다.",
+    "char_count": 62,
+    "source_segment_ids": [
+      "seg_044"
+    ]
+  },
+  {
+    "unit_id": "unit_045",
+    "start_ref": "10. 최종 선언",
+    "end_ref": "10. 최종 선언",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. 최종 선언 평소에는 공간이 자라게 두고, 기록과 기억과 연결을 축적하게 두며, 정기적으로 이 점검기를 흘려보내 구조를 다시 또렷하게 만들고 코어를 다시 작고 단단하게 정련한다. 즉 내 엔진은 풍부하게 자라되, 주기적 정련을 통해 해석은 외곽에서 풍부하게 유지하고 코어는 계속 작고 단단하게 남는 엔진이어야 한다.",
+    "char_count": 181,
+    "source_segment_ids": [
+      "seg_045"
+    ]
+  }
+]

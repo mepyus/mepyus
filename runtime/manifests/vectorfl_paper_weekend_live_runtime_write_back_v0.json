@@ -1,0 +1,34 @@
+{
+  "schema_version": "vectorfl_paper_weekend_live_runtime_write_back_v0",
+  "updated_at": "2026-04-10T22:10:00+09:00",
+  "scenario_scope": "weekend_pilot_first_loop_live_bundle",
+  "goal": "Make the first live translated cycle visible as runtime state rather than contracts only.",
+  "write_back_state": "enacted",
+  "registered_slots": {
+    "line_guided_work_packets": "runtime/manifests/vectorfl_paper_weekend_live_line_guided_work_packets_v0.json",
+    "execution_trace_log": "runtime/manifests/vectorfl_paper_weekend_live_execution_trace_log_v0.jsonl",
+    "reinjection_registry": "runtime/manifests/vectorfl_paper_weekend_live_reinjection_registry_v0.json",
+    "governance_gates": "runtime/manifests/vectorfl_paper_weekend_live_governance_gates_v0.json"
+  },
+  "registered_artifact_refs": [
+    "runtime/contracts/vectorfl_paper_weekend_live_translated_work_packet_v1.json",
+    "runtime/contracts/vectorfl_paper_weekend_live_append_only_trace_row_v0.json",
+    "runtime/contracts/vectorfl_paper_weekend_live_result_reinjection_stub_v0.json",
+    "runtime/contracts/vectorfl_paper_weekend_live_governance_gate_note_v0.json"
+  ],
+  "write_back_actions": [
+    "registered translated work packet into a weekend-specific runtime packet manifest",
+    "registered append-only trace row into a weekend-specific runtime trace log",
+    "registered reinjection stub into a runtime reinjection registry",
+    "registered governance gate into a runtime governance gate registry"
+  ],
+  "remaining_gaps": [
+    "replace the issue-like source sample with a truer external source record"
+  ],
+  "operator_readout": {
+    "what_changed": "The weekend pilot now has runtime-visible packet, trace, reinjection, and governance slots.",
+    "why_it_matters": "This turns the first live cycle from a document pile into a minimal enacted operating loop.",
+    "next_action": "Use the reopened packet path to source a truer external issue-shaped record."
+  },
+  "reopen_case_ref": "runtime/manifests/vectorfl_paper_weekend_live_reopen_case_v0.json"
+}

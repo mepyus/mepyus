@@ -1,0 +1,123 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:question_inducing_block_promotion_and_summary_stage_deprioritization_review_v1]] [[SEM:bounded_refinement_for_question_inducing_dialogue_blocks_and_summary_priority_shift]]",
+    "char_count": 184,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "question-inducing block promotion and summary-stage deprioritization review v1",
+    "end_ref": "question-inducing block promotion and summary-stage deprioritization review v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# question-inducing block promotion and summary-stage deprioritization review v1",
+    "char_count": 80,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. input",
+    "end_ref": "1. input",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. input - input_asset: `inputs/external_cases/claude_code_index.txt` - probe_files: - `app/work/dialogue_loop_test/generated/claude_code_index_segmentation_probe_v1_w3_s1_20260328T100910Z.json` - `app/work/dialogue_l",
+    "char_count": 527,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. top-level verdict",
+    "end_ref": "2. top-level verdict",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. top-level verdict - status: `HOLD` - one-line verdict: high-score window는 있으나 질문 유도 block candidate 경계가 충분히 선명하지 않다.",
+    "char_count": 122,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. question-inducing block candidates",
+    "end_ref": "3. question-inducing block candidates",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. question-inducing block candidates",
+    "char_count": 40,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. why these are not just high-score summary blocks",
+    "end_ref": "4. why these are not just high-score summary blocks",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. why these are not just high-score summary blocks - 이 블록들은 객체가 2개 이상 같이 살아남고, 질문 생성 힌트와 전이/실행 이동 힌트를 같이 갖는다. - 따라서 단순 요약 density가 아니라 다음 탐색을 여는 응축핵 후보로 읽을 수 있다. - 특히 `Bundle-Unbundle`, `기존 사업자의 UX 마찰`, `적응 경쟁`, `RLV",
+    "char_count": 258,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. summary-stage deprioritization candidates",
+    "end_ref": "5. summary-stage deprioritization candidates",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. summary-stage deprioritization candidates",
+    "char_count": 47,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "6. before / after reading",
+    "end_ref": "6. before / after reading",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. before / after reading",
+    "char_count": 28,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "7. current interpretation",
+    "end_ref": "7. current interpretation",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. current interpretation - 지금 필요한 건 residue 삭제가 아니라 summary 선두 우선순위 재배치다. - 앞으로 올릴 것은 객체 후보, 질문 유도 block, 전략/실행/전이/질문 생성 힌트다. - 뒤로 미룰 것은 connective, filler, 화자 반복 흔적, 너무 일반적인 추상어다.",
+    "char_count": 184,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "8. next bounded step",
+    "end_ref": "8. next bounded step",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. next bounded step - summary generation 단계에서만 residue-aware deprioritization을 시험하는 얇은 patch를 검토한다. - broad concept probe 안정성은 유지한 채 dialogue 자산에만 국한된 surface adjustment로 제한한다. - question-inducing block candidate를 pa",
+    "char_count": 273,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "9. one-line summary",
+    "end_ref": "9. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. one-line summary > `youtube_03_22.md`에서는 단순 high-score window가 아니라 다음 질문을 여는 question-inducing block candidate가 실제로 보였고, residue 문제는 삭제보다 summary-stage 후순위화로 다루는 것이 맞다는 점이 bounded하게 정리됐다.",
+    "char_count": 193,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  }
+]

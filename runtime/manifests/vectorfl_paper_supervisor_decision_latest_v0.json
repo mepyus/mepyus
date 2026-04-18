@@ -1,0 +1,31 @@
+{
+  "schema_version": "vectorfl_paper_supervisor_decision_latest_v0",
+  "source_return_artifact": "runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+  "source_review_artifact": "runtime/manifests/vectorfl_paper_gemini_review_latest_v0.json",
+  "decision": "hold_pending_validations",
+  "rationale": "Codex supports the current thin mapping, and Gemini's review does not identify a new mapping objection. The honest supervisor state is still hold because actual_export_only remains evidenced as an open validation gate.",
+  "followup_action": "Hold broad forward motion. Run one actual external export validation and one supervisor-readable hold/go/reopen check, then revisit continue.",
+  "target_worker": null,
+  "lock_later_note": "Soft lock only. Promote to continue only after the pending validations are evidenced through the same latest return and review path.",
+  "external_record_anchor": {
+    "slot": "runtime/manifests/vectorfl_paper_actual_export_host_record_slot_v0.json",
+    "record": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+    "record_id": "vectorfl_paper_weekend_live_export_shaped_host_record_v2",
+    "current_state": "waiting_for_actual_export",
+    "honesty_note": "This is still local fixture data, but it preserves host export field names and boundary shape closely enough to serve as the next canonical thin-overlay source."
+  },
+  "codex_position_summary": "Codex says the thin overlay is still correct and can now inspect one fixed export-shaped record anchor, but the realism gate remains open until that anchor is actual rather than local fixture data.",
+  "gemini_position_summary": "Gemini mostly agrees with the Codex reading and suggests hold; the supervisor still treats actual_export_only as the binding gate until direct validation lands.",
+  "decision_tension": "codex_gate_open_vs_gemini_hold",
+  "validation_reduced": [
+    "One export-shaped host record anchor is now fixed: runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json.",
+    "The anchor exposes 4/4 required surfaces: issues_row, heartbeat_runs_row, issue_comments_rows, approvals_row."
+  ],
+  "pending_validations": [
+    "Replace the local export-shaped fixture with a truly actual external export while preserving the same thin seam.",
+    "Exercise one real reopen decision path instead of relying on a hypothetical reopen case.",
+    "Directly verify that the actual_export_only gate is closed from observed material rather than inference."
+  ],
+  "continue_gate": "Continue becomes honest only after the fixed export-shaped fixture is replaced by a truly actual external record and one supervisor-readable hold/go/reopen decision is directly verified.",
+  "decided_at": "2026-04-11T00:00:36.597930+00:00"
+}

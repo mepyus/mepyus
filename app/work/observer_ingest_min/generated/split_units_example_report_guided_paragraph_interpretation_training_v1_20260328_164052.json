@@ -1,0 +1,123 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:example_report_guided_paragraph_interpretation_training_v1]] [[SEM:example_for_training_codex_to_read_paragraphs_by_role_not_just_content]]",
+    "char_count": 151,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "예시서 — 리포트 기준 단락 해석 훈련 예시",
+    "end_ref": "예시서 — 리포트 기준 단락 해석 훈련 예시",
+    "unit_type": "heading_block",
+    "text_excerpt": "# 예시서 — 리포트 기준 단락 해석 훈련 예시",
+    "char_count": 26,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "0. 왜 이 예시가 필요한가",
+    "end_ref": "0. 왜 이 예시가 필요한가",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. 왜 이 예시가 필요한가 Codex는 이 작업을 쉽게 “문단별 주석 달기” 혹은 “문단 요약” 으로 오해할 수 있다. 하지만 이번 훈련의 목적은 다르다. 목적은 **단락을 전체 그림 속 역할 단위로 읽는 연습** 을 하게 하는 것이다. ---",
+    "char_count": 140,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. 잘못된 접근 예시",
+    "end_ref": "1. 잘못된 접근 예시",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 잘못된 접근 예시",
+    "char_count": 15,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "잘못된 방식",
+    "end_ref": "잘못된 방식",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 잘못된 방식 - 문단 1: 무슨 내용인지 요약 - 문단 2: 무슨 내용인지 요약 - 문단 3: 무슨 내용인지 요약 이건 정보 정리일 뿐이다. 이번 훈련이 아니다. 왜냐하면 여기엔 - 전체 흐름 - 전환점 - 객체 성장 - 질문 유도 - 비교 맥락 차이 가 없다. ---",
+    "char_count": 154,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "2. 올바른 접근 예시",
+    "end_ref": "2. 올바른 접근 예시",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. 올바른 접근 예시 예를 들어 `Bundle-Unbundle` 관련 블록을 본다고 하자.",
+    "char_count": 54,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "A. 특정 맥락 안에서 읽기",
+    "end_ref": "A. 특정 맥락 안에서 읽기",
+    "unit_type": "heading_block",
+    "text_excerpt": "### A. 특정 맥락 안에서 읽기 이 블록은 - `에이전트 애플리케이션` - `전략/방향성` - `구현/자동화` 를 같이 붙여 준다. 따라서 이 단락은 단순 설명이 아니라 **question_seed_block** 또는 **strategy_pivot_block** 처럼 읽힌다.",
+    "char_count": 156,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "B. 전체 페이지 안에서 읽기",
+    "end_ref": "B. 전체 페이지 안에서 읽기",
+    "unit_type": "heading_block",
+    "text_excerpt": "### B. 전체 페이지 안에서 읽기 전체 페이지 흐름 안에 놓으면 이 단락은 단순 사례 설명이 아니라, 기술 전망을 사업 구조 재편 문제로 끌어내리는 **전환점**처럼 보인다. 즉 단독으로는 사례, 전체에선 pivot이다.",
+    "char_count": 125,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "C. 다른 맥락과 비교하기",
+    "end_ref": "C. 다른 맥락과 비교하기",
+    "unit_type": "heading_block",
+    "text_excerpt": "### C. 다른 맥락과 비교하기 `future_of_work_supervisor_unit` 쪽 단락과 비교하면 이 단락은 노동 역할 변화가 아니라 앱 구조와 moat 변화 쪽에 더 강하게 기운다. 즉 둘은 둘 다 “AI 시대 변화”를 말하지만, 여는 층위와 역할이 다르다. ---",
+    "char_count": 157,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "3. 이 예시가 주는 학습",
+    "end_ref": "3. 이 예시가 주는 학습",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 이 예시가 주는 학습 이 예시는 아래를 보여준다. - 같은 단락도 맥락 안에서 역할이 생긴다 - 전체 흐름 속에 놓이면 전환 의미가 더 강해진다 - 다른 맥락과 비교하면 차이가 더 선명해진다 - 따라서 단락 해석은 내용 요약이 아니라 역할 판독이어야 한다 ---",
+    "char_count": 152,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "4. 한 줄 예시 잠금",
+    "end_ref": "4. 한 줄 예시 잠금",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. 한 줄 예시 잠금 > **단락 해석 훈련의 목적은 문단별 내용을 더 잘 정리하는 것이 아니라, 같은 단락이 특정 맥락, 전체 흐름, 비교 맥락 속에서 어떤 다른 역할과 의미를 가지는지 보는 눈을 Codex에게 익히게 하는 것이다.**",
+    "char_count": 136,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  }
+]

@@ -1,0 +1,141 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d95b0-47a6-7123-8fe8-610a0b75ebb1
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: summarize
+Requested by surface: vectorfl_surface
+Requested by page: /vectorfl-engine/vectorfl
+
+Purpose:
+Stop-and-use run 1: summarize one small closeout note.
+
+Bounded context refs:
+- docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md
+
+Prompt payload:
+Read docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md. Return three short bullets: what passed, what stayed deferred, and the current operating judgment. Do not modify files.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll read the closeout note and return only the requested compact summary.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine CLI On-Top Package 1.1 Closeout Note v0
+
+## Verdict
+PASS_WITH_NOTE
+
+Package 1.1 validated the real read-only Codex path and hardened the latest-return readability layer on the VectorFL page. The note is that the real-path validation used the same HTTP endpoint invoked by the VectorFL panel rather than an automated browser click. The UI path is wired to that endpoint, and the endpoint completed a real `codex exec --sandbox read-only` run.
+
+## Real Run Used
+
+- session id: `cli_20260416T094421Z_8b0ef908`
+- backend kind: `codex`
+- task type: `summarize`
+- requested by surface: `vectorfl_surface`
+- requested by page: `/vectorfl-engine/vectorfl`
+- dry run: `false`
+- source file read by Codex: `docs/reports/integrated_engine_cli_on_top_package1_closeout_note_v0.md`
+- purpose: Package 1.1 real-path validation by reading the Package 1 closeout note and returning a short summary.
+
+## What Passed
+
+- A real Codex read-only run completed through the CLI session API used by the VectorFL panel.
+- Session status moved through the runtime path and ended as `done`.
+- `stdout.log` was captured.
+- `stderr.log` was captured.
+- `structured_return.json` was generated.
+- `deposit_candidate.md` was generated.
+- Mark action worked after the real run with `validation_target`.
+- The latest session is now exposed through `cli_host_control.latest_readable_return`.
+
+## Readability Hardening
+
+The VectorFL CLI Host / Control panel now shows a thin latest-return layer:
+
+- latest session id
+- backend kind
+- task type
+- status
+- purpose text
+- structured return preview
+- deposit candidate preview
+- current marks
+- recent mark history
+- refresh latest return action
+
+This is deliberately not a session explorer or generic log viewer. It only makes the latest return readable enough for first-pass use without opening raw files manually.
+
+## Baseline Protection
+
+- No new surface was added.
+- The CLI layer remains an on-top host/control layer.
+- VectorFL remains the main observation/steering place for CLI operation.
+- No background registry was added.
+- No Gemini adapter was added.
+- No async runner, polling daemon, ingestion pipeline, promotion automation, or multi-agent orchestration was opened.
+- The 3-surface engine interpretation remains intact.
+
+## What Remains Deferred
+
+- Browser-click automation for UI validation.
+- Background runner / async polling.
+- Interrupt hardening for live subprocesses.
+- Gemini or other backend adapters.
+- Session explorer or log viewer.
+- Structured ingestion of deposit candidates.
+- Promotion automation.
+
+## First-Pass Reading Judgment
+
+The VectorFL page now removes the need to manually open raw session artifacts for first-pass understanding of the latest run. Raw artifacts remain available for deeper audit, but the latest return, purpose, mark state, and deposit candidate preview are visible from the VectorFL page itself.
+
+## Review Result
+
+- Fixed 3 surfaces: preserved.
+- CLI on-top: preserved.
+- Real read-only Codex path: passed.
+- Latest result readable from VectorFL page: passed.
+- Raw file inspection still useful for audit but no longer required for first-pass reading.
+
+## One-Line Lock
+
+Package 1.1 proves the first real Codex read-only path and makes the latest return readable from the VectorFL surface without opening a new engine surface or package-2 orchestration.
+
+codex
+- result summary
+  - What passed: real read-only Codex CLI session API path completed, produced captured logs plus `structured_return.json` and `deposit_candidate.md`, mark action worked, and latest return is readable from the VectorFL page.
+  - What stayed deferred: browser-click UI automation, async/background runner, interrupt hardening, Gemini/backend adapters, session explorer/log viewer, structured ingestion, and promotion automation.
+  - Current operating judgment: `PASS_WITH_NOTE`; Package 1.1 validates the on-top CLI path and first-pass latest-return readability while preserving VectorFL as the main steering surface.
+
+- important findings / diffs / outputs
+  - No files modified.
+  - Source read: `docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md`.
+  - Key note: validation used the same HTTP endpoint as the VectorFL panel, not an automated browser click.
+
+- uncertainty or failure notes
+  - Browser-click validation remains unproven by this note.
+  - Raw artifact audit is still available and useful, but no longer required for first-pass reading.
+
+- suggested next use: validation target
+tokens used
+2,611

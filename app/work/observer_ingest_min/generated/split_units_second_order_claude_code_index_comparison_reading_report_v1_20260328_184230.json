@@ -1,0 +1,167 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:second_order_claude_code_index_comparison_reading_report_v1]] [[SEM:comparison_domain_reading_for_second_order_accumulation_validation]]",
+    "char_count": 148,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "second-order claude_code_index comparison reading report v1",
+    "end_ref": "second-order claude_code_index comparison reading report v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# second-order claude_code_index comparison reading report v1",
+    "char_count": 61,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. purpose",
+    "end_ref": "1. purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. purpose - 이번 비교의 목적은 `claude_code_index.txt`를 AI/에이전트 대화처럼 잘 읽히게 만드는 것이 아니다. - 목적은 현재 2차 축적 구조를 그대로 적용했을 때 무엇이 유지되고, 무엇이 붕괴하고, 무엇이 새로 나타나는지 보는 것이다. - 따라서 이번 문서는 `claude_code_index`를 잘 해석했다는 보고서가 아니라, `second_order_",
+    "char_count": 275,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. input and outputs",
+    "end_ref": "2. input and outputs",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. input and outputs - input_asset: `inputs/external_cases/claude_code_index.txt` - generated outputs: - `app/work/dialogue_loop_test/generated/dialogue_asset_purpose_synthesis_claude_code_index_v1_20260328.json` - `a",
+    "char_count": 777,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. what stayed",
+    "end_ref": "3. what stayed",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. what stayed - `object opening` 감각은 부분적으로 유지됐다. - `생산성/코딩`, `구현/자동화`, `전략/방향성` 같은 객체 opening은 여전히 출력되었다. - `question opening`과 `relation movement`를 보려는 태도는 유지됐다. - `transition_hint`, `execution_shift_hint`, `specifi",
+    "char_count": 606,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. what broke",
+    "end_ref": "4. what broke",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. what broke - block/window 분해가 사실상 붕괴했다. - 현재 split 방식에서는 `claude_code_index.txt`가 거의 단일 block, 단일 window로 읽힌다. - 그 결과 `question-inducing candidate`도 `0_0` 하나로 수렴한다. - paragraph role reading은 입력 구조 의존성이 그대로 드러났다. - ",
+    "char_count": 780,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. what newly emerged",
+    "end_ref": "5. what newly emerged",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. what newly emerged - `single operational block collapse`라는 새 비교 패턴이 드러났다. - 긴 대화 자산과 달리, 코드/도구 설명 자산은 현재 split에서 거대한 단일 운영 블록처럼 읽힌다. - `setup / usage / tooling surface`가 하나의 큰 context-preserving block으로 붙는 경향이 보였다.",
+    "char_count": 456,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "6. domain-specific vs reusable clues",
+    "end_ref": "6. domain-specific vs reusable clues",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. domain-specific vs reusable clues",
+    "char_count": 39,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "reusable-looking attitudes",
+    "end_ref": "reusable-looking attitudes",
+    "unit_type": "heading_block",
+    "text_excerpt": "### reusable-looking attitudes - 객체가 여러 개 함께 살아남을 때 question opening을 본다 - relation movement를 설명층 아래의 전이로 읽는다 - residue를 삭제 대신 summary-stage priority 문제로 본다 - 2차 결과를 `collect_only` / `hold` 상태로 남긴다",
+    "char_count": 197,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "domain-specific leaning signals",
+    "end_ref": "domain-specific leaning signals",
+    "unit_type": "heading_block",
+    "text_excerpt": "### domain-specific leaning signals - `생산성/코딩`, `에이전트 애플리케이션`, `AI의 미래`, `일의 미래` 같은 이름은 `claude_code_index`에서도 과하게 전면화됐다 - `pivot`, `question seed`, `compression node`는 그대로 쓰이지만, 이들이 실제로 page flow에서 발생한 것인지 기존 AI dialogu",
+    "char_count": 312,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "7. common accumulation fields review",
+    "end_ref": "7. common accumulation fields review",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. common accumulation fields review - `input_asset_type` - 현재는 `high_density_dialogue`로 남았는데, `claude_code_index`에는 어색하다 - 비교용으로는 유용하지만, asset type 분류 기준은 더 세밀해질 필요가 있다 - `supporting_first_pass_patterns` - 어떤 1차 조건 위",
+    "char_count": 619,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "8. why object lift is still premature",
+    "end_ref": "8. why object lift is still premature",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. why object lift is still premature - `business_power_shift`, `orchestration`, `domain_to_component_reframing` 같은 이름은 이번 비교 도메인에서 반복 재등장하지 않았다. - 오히려 이번 비교는 객체 이름보다 `그런 이름이 떠오르는 조건`을 더 분명하게 만들었다. - 따라서 지금은 object li",
+    "char_count": 355,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "9. implications for pre-object-lift notes",
+    "end_ref": "9. implications for pre-object-lift notes",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. implications for pre-object-lift notes - pattern table에는 `single operational block collapse`와 `AI object vocabulary overfire`를 비교 패턴으로 추가할 수 있다. - split note에는 `이름은 깨져도 태도는 유지되는 경우`와 `태도도 함께 깨지는 경우`를 더 분리해 적을 수 있다.",
+    "char_count": 424,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "10. status",
+    "end_ref": "10. status",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. status - status: `PASS_WITH_NOTE` - one-line verdict: `claude_code_index` 비교 투입은 2차 축적 구조가 완전히 깨지지 않는다는 점과, 동시에 현재 문맥 scaffold와 도메인 투영이 얼마나 강한지도 같이 드러내 주었다.",
+    "char_count": 163,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "11. one-line summary",
+    "end_ref": "11. one-line summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 11. one-line summary > `claude_code_index.txt` 비교 투입 결과, 2차 보정의 재사용 가능한 태도는 일부 유지됐지만 context-unit 재구성과 객체 naming은 여전히 AI dialogue scaffold에 강하게 묶여 있었고, 바로 object lift로 가면 안 되는 이유가 더 선명해졌다.",
+    "char_count": 191,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "schema_version": "vectorfl_paper_reference_crosscheck_review_report_v0",
+  "reference_id": "opencode",
+  "source_record_artifact": "runtime/manifests/vectorfl_paper_opencode_candidate_evidence_record_v0.json",
+  "review_status": "prepared_for_validator",
+  "review_summary": "OpenCode/ECC preserves worker-input, command, hook, and quality-review surfaces but is less close to Paperclip host export grammar.",
+  "agreement_assessment": "partial_agree",
+  "detected_risks": [
+    "Reference is a CLI plugin/config system, not a host work export.",
+    "Full agent/command catalog import would over-expand the current pilot."
+  ],
+  "missing_points": [
+    "No true Paperclip issue/run export provenance.",
+    "No direct reopen decision path."
+  ],
+  "recommendation": "Dry-run as a secondary candidate for validator discrimination only.",
+  "suggested_supervisor_action": "hold",
+  "created_at": "2026-04-11T08:24:00+09:00"
+}

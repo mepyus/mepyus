@@ -1,0 +1,607 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d9620-8539-7db2-ae21-e4e71d701886
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: user_surface
+Requested by page: scripts/run_integrated_engine_language_loop.py
+
+Purpose:
+Internal language Koreanization data loop 6: collect Korean operating-language data from bounded context.
+
+Bounded context refs:
+- docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md
+- docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md
+
+Prompt payload:
+Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.
+
+Do not modify files.
+Do not propose UI copy.
+Do not create a final glossary.
+Do not promote features.
+
+Return compact data in this shape:
+- internal phrase or signal observed
+- source context where it appeared
+- internal meaning / operational role
+- Koreanization candidate, not final UI copy
+- Korean preservation requirement
+- risky Korean flattening to avoid
+- why this helps the user operate
+- what meaning gets lost if shortened
+- repeated connection it belongs to
+- emerging axis candidate
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any
+- next reread question
+- suggested next use: validation target
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll read the two bounded context files and extract only compact Koreanization data. No file edits.
+exec
+/bin/bash -lc "sed -n '1,240p' docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine CLI On-Top Current Operating State v0
+
+## Verdict
+
+PASS_WITH_NOTE
+
+The stable integrated-engine UI can now operate Codex from the VectorFL surface and reflect the resulting CLI returns across all three fixed surfaces.
+
+The note is that the UI language is still mostly internal/spatial language. The system is usable with Codex interpretation, but not yet comfortable as a human-facing Korean operating UI.
+
+## Current Stable UI
+
+- main UI source: `app/ui/integrated_engine`
+- main URL: `http://127.0.0.1:5173/`
+- engine API/reference server: `http://127.0.0.1:8421/`
+- CLI artifact root: `runtime/cli_sessions`
+- Gemini proposal/reference clay: `gemini/mock_test`
+
+## Fixed Interpretation
+
+- User surface: purpose, work organization, decision, assignment candidates
+- VectorFL surface: interpretation, mediation, reread, direct CLI operation
+- Engine surface: processing, return, validation, extraction/deposit material
+- CLI layer: on-top tool/control layer, not a fourth surface
+- Codex backend: local Codex CLI session inherited from the current machine environment
+
+## What Currently Works
+
+### VectorFL Surface
+
+- Run Codex from the UI.
+- Read latest structured return.
+- Read deposit candidate preview.
+- Mark returns as:
+  - `reread_target`
+  - `implementation_return`
+  - `validation_target`
+  - `deposit_candidate`
+- Read recent Codex turns.
+- Continue from latest or selected recent turn without manually copying artifact paths.
+- See deposit-ready queue.
+- Send selected User/Engine candidates back into VectorFL follow-up.
+
+### User Surface
+
+- Shows latest CLI return as a work/decision signal.
+- Shows deposit-ready count.
+- Shows a user work queue derived from recent CLI returns.
+- Execution Route Board includes CLI-derived candidate tickets:
+  - Backlog
+  - Handoff
+  - Review
+- User surface can send selected candidate items back to VectorFL.
+
+### Engine Surface
+
+- Shows latest CLI return as processing/validation material.
+- Shows validation queue.
+- Shows extraction/deposit material queue.
+- Primary Control Pipeline includes `CLI-derived engine material`.
+- Engine surface can send selected validation/extraction material back to VectorFL.
+
+## Validated This Round
+
+- Stable UI build passes.
+- Viewer server API state is readable.
+- Real read-only Codex runs succeed through the stable UI proxy path.
+- `suggested_next_use` inference now handles explicit validation-tail text.
+- User surface route board receives CLI-derived tickets.
+- Engine surface primary pipeline reflects CLI-derived material.
+- Browser hand-checks passed for:
+  - VectorFL direct CLI operation
+  - Continue latest / recent turn follow-up
+  - deposit-ready queue
+  - User surface work queue and route board
+  - Engine surface CLI material reflection
+  - User/Engine `Send to VectorFL` handoff
+
+## Still Closed
+
+- Gemini adapter
+- async/background runner
+- full session browser/history
+- automatic assignment
+- automatic deposit ingestion
+- automatic promotion/canonicalization
+- runtime binding beyond the existing API/session artifact path
+- UI language/readability rewrite
+
+## Current Human-Usability Note
+
+The operating path works, but the UI is still full of English and internal spatial terms. The user can verify structure, but final judgment still requires Codex to explain the state in the user's language.
+
+This should be treated as a known usability gap, not as a blocker to continuing operational wiring.
+
+## Next Bottleneck Candidates
+
+1. Human-readable Korean/operator summary layer for each surface.
+2. Bounded deposit ingestion bridge with explicit user approval.
+3. Session history/browser beyond latest/recent turns.
+4. Gemini adapter as proposal/material generator.
+5. Async/background support for longer CLI runs.
+
+## Recommended Next Step
+
+Next should be a bounded human-readable operating summary layer, not full translation.
+
+Reason:
+
+- The user has already confirmed that the structure works.
+- The user also confirmed that screen judgment is hard because the UI is English/internal-language heavy.
+- Before opening automatic ingestion or Gemini adapter, each surface needs a thin "what this means now" summary so the user can steer without relying entirely on Codex final reports.
+
+This should be summary/explanation only, not UI glossary replacement or final copy translation.
+
+exec
+/bin/bash -lc "sed -n '1,260p' docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Surface Exposure and Shared Language Boundary v0
+
+Date: 2026-04-15
+
+## 0. verdict
+
+PASS_WITH_NOTE
+
+이 문서는 3면 언어와 shared operational language의 관계, 그리고 surface별 노출 밀도 규칙을 정리한다.
+
+이 문서는 final glossary, UI copy, wording patch, scaffold 수정, manifest/read-map 변경, external style guide, 새 기능을 만들지 않는다.
+
+## 1. shared language의 위치
+
+Shared operational language는 user-only language가 아니다.
+
+또한 3면 내부 언어를 덮어쓰는 replacement layer도 아니다.
+
+Shared operational language는:
+
+- engine language를 user language로 단순 변환하지 않는다.
+- VectorFL language를 숨기지 않는다.
+- user language만 예쁘게 만드는 것이 아니다.
+- 3면 언어에서 반복되는 line / connection / axis를 다른 주체들이 함께 쓸 수 있게 응축한 층이다.
+
+## 2. surface별 노출 밀도 규칙
+
+### 2.1 engine surface
+
+Engine surface는 internal language direct exposure가 가장 많이 허용되는 면이다.
+
+허용되는 노출:
+
+- shaped input
+- work input
+- execution state
+- processing step
+- return material
+- reprocess request
+- execution history
+
+주의할 점:
+
+- engine surface는 judgment authority가 아니다.
+- return material은 final completion으로 보이면 안 된다.
+- validation / user decision / reflux route는 engine이 아니라 VectorFL/user route로 올라가야 한다.
+
+노출 규칙:
+
+```text
+engine surface = processing / execution / return material language direct exposure allowed
+but validation authority and route decision must not be absorbed
+```
+
+### 2.2 VectorFL surface
+
+VectorFL surface는 shared grammar 중심 면이다.
+
+허용되는 노출:
+
+- maturation object
+- anchor context
+- validation mediation
+- return validation
+- reflux reason
+- anchor drift
+- reprocess / rewind reason
+- support reread recovery
+- line / connection / axis mediation
+
+주의할 점:
+
+- VectorFL은 engine executor가 아니다.
+- line atlas나 support trace가 maturation body를 대체하면 안 된다.
+- anchor / maturation / operating object는 한 카드 언어로 뭉개면 안 된다.
+
+노출 규칙:
+
+```text
+VectorFL surface = shared grammar and mediation language primary
+internal language partial exposure allowed when it explains anchor, validation, maturation, reflux, or axis growth
+```
+
+### 2.3 user surface
+
+User surface는 human-readable shared grammar 중심 면이다.
+
+허용되는 노출:
+
+- current route
+- request / return / reflux state at operating level
+- what is open
+- what remains closed
+- decision needed
+- hold / watch / carry-forward / reject-conflict as operating state
+- package-opening authority
+
+주의할 점:
+
+- user surface는 engine 내부 언어 전체를 보여주는 면이 아니다.
+- user surface는 team/role/governance console이 아니다.
+- user가 internal engine terms를 모두 외워야 하면 interface 실패다.
+
+노출 규칙:
+
+```text
+user surface = human-readable shared grammar primary
+internal terms appear only when they are needed for decision, route, boundary, or current status
+```
+
+## 3. actor-facing boundary
+
+### User
+
+보여야 하는 것:
+
+- 지금 무엇을 결정해야 하는가
+- 무엇이 open/closed인가
+- 어떤 route가 살아 있는가
+- 어떤 line/axis가 다음 package 후보인가
+
+보이지 않아도 되는 것:
+
+- 모든 engine execution detail
+- 모든 manifest/read-map 내부 언어
+- 모든 trace density
+
+### VectorFL
+
+보여야 하는 것:
+
+- internal record에서 나온 line
+- line 사이의 connection
+- emerging axis
+- validation / anchor / reflux / reprocess reason
+
+보이지 않아도 되는 것:
+
+- engine execution detail 전체
+- user-facing copy 전체
+
+### Engine-side operators
+
+보여야 하는 것:
+
+- shaped input
+- processing state
+- output/return material
+- reprocess request
+
+보이지 않아도 되는 것:
+
+- VectorFL maturation judgment 전체
+- user package-opening deliberation 전체
+
+### Codex
+
+보여야 하는 것:
+
+- baseline constraints
+- current package scope
+- canonical write boundary
+- proposal / hold / carry-forward / reject-conflict classification
+
+보이지 않아도 되는 것:
+
+- Gemini proposal material as direct core truth
+- user-facing final copy unless explicitly opened
+
+### Gemini
+
+보여야 하는 것:
+
+- proposal-only boundary
+- design clay role
+- what kind of material is needed
+- no direct-to-core path
+
+보이지 않아도 되는 것:
+
+- scaffold write authority
+- manifest truth authority
+- final promotion authority
+
+## 4. shared language boundary rules
+
+### Rule 1. shared language does not overwrite internal language
+
+Internal terms remain available where needed.
+
+Shared language makes them usable across actors, not replaced.
+
+### Rule 2. shared language is not user-only
+
+If only the user can use it, it is probably a simplified explanation, not operational language.
+
+Shared language must be reusable by User, VectorFL, Engine-side operators, Codex, Gemini, and internal team with different exposure densities.
+
+### Rule 3. surface identity must remain visible
+
+Shared language must not collapse:
+
+- user operation into governance console
+- VectorFL mediation into line browser or engine execution
+- engine processing into judgment authority
+
+### Rule 4. high-risk terms require boundary-first exposure
+
+The following must be exposed with boundary before convenience:
+
+- `workspace ownership`
+- `carry-forward`
+- `reject / conflict`
+- `collision stop condition`
+- `watch keep`
+- `hold`
+
+### Rule 5. interface grows from axis
+
+User-facing fixed interface should be derived from repeated axes, not imported as an external template.
+
+If there is no repeated axis, keep the material as line/connection evidence.
+
+## 5. current boundary summary
+
+| layer | should expose | should not expose as |
+|---|---|---|
+| engine surface | processing/return internal language | final judgment or validation authority |
+| VectorFL surface | shared grammar, validation, maturation, axis reading | engine executor or list browser center |
+| user surface | human-readable shared grammar for operation/decision | full internal engine language or team governance console |
+| shared operational language | cross-actor route/authority/state/boundary grammar | final glossary, UI copy, or replacement lexicon |
+
+## 6. closeout
+
+Shared operational language is the bridge layer where 3면 언어 continues to grow while becoming usable by multiple actors.
+
+It is not a stop point for internal language and not a final human wording layer. It is a controlled exposure layer.
+
+codex
+**result summary**
+
+Bounded reread completed from:
+
+- `docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md`
+- `docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md`
+
+Observed dominant pattern: current problem is not translation, but controlled Koreanization of internal operating language so the user can steer route, decision, validation, and deposit without losing VectorFL/engine boundaries.
+
+**important findings / diffs / outputs**
+
+1.  
+- internal phrase or signal observed: `CLI layer: on-top tool/control layer, not a fourth surface`
+- source context where it appeared: current operating state / Fixed Interpretation
+- internal meaning / operational role: CLI is an execution/control attachment over existing 3-surface engine, not a new actor surface
+- Koreanization candidate, not final UI copy: `CLI 층은 기존 3면 위에 얹힌 도구/제어층`
+- Korean preservation requirement: `on-top`, `not fourth surface`, `surface boundary` 의미 보존
+- risky Korean flattening to avoid: `CLI도 하나의 화면`, `네 번째 면`
+- why this helps the user operate: 사용자가 Codex 실행 결과를 새 체계가 아니라 기존 VectorFL 경로 안에서 판단하게 함
+- what meaning gets lost if shortened: CLI가 권한/판단 면으로 오해되지 않게 하는 경계
+- repeated connection it belongs to: surface identity / authority boundary
+- emerging axis candidate: `execution attachment vs surface authority`
+- surface exposure note: vectorfl / engine
+- external expression support needed, if any: 한국어에서 `층`, `면`, `경로` 구분 유지 필요
+- next reread question: CLI 반환이 언제 “material”이고 언제 “decision signal”인가?
+- suggested next use: validation target
+
+2.  
+- internal phrase or signal observed: `return material`
+- source context where it appeared: engine surface exposure rule, current operating state
+- internal meaning / operational role: engine/CLI가 돌려준 처리 산출물이며 최종 판단이 아님
+- Koreanization candidate, not final UI copy: `반환 자료`, `돌아온 처리 자료`
+- Korean preservation requirement: final completion이 아니라 validation/deposit 전 단계임을 보존
+- risky Korean flattening to avoid: `완료 결과`, `최종 결과`
+- why this helps the user operate: 사용자가 반환물을 바로 확정하지 않고 검토/검증 대상으로 다루게 함
+- what meaning gets lost if shortened: validation authority가 아직 올라오지 않았다는 상태
+- repeated connection it belongs to: processing → return → validation → deposit
+- emerging axis candidate: `material status axis`
+- surface exposure note: engine primary, vectorfl mediation, user as decision signal
+- external expression support needed, if any: `자료`만으로 약하면 `검증 전 반환 자료` 필요
+- next reread question: 사용자 면에서는 `return material`을 어느 정도까지 노출해야 하는가?
+- suggested next use: validation target
+
+3.  
+- internal phrase or signal observed: `suggested_next_use`
+- source context where it appeared: validated this round, requested return format
+- internal meaning / operational role: 반환물이 다음에 어떤 처리 경로로 가야 하는지 분류하는 신호
+- Koreanization candidate, not final UI copy: `다음 사용처 제안`, `다음 처리 용도`
+- Korean preservation requirement: route/deposit/validation/reread classification 의미 유지
+- risky Korean flattening to avoid: `다음 단계`, `추천`
+- why this helps the user operate: 반환물을 reread, implementation, validation, deposit 중 어디에 둘지 빠르게 판단하게 함
+- what meaning gets lost if shortened: 단순 순서가 아니라 용도 분류라는 점
+- repeated connection it belongs to: CLI return → route assignment
+- emerging axis candidate: `return routing axis`
+- surface exposure note: vectorfl / user / engine
+- external expression support needed, if any: enum 값은 영어 보존 또는 병기 필요
+- next reread question: `suggested_next_use`가 자동 추론일 때 사용자 승인 문구는 필요한가?
+- suggested next use: validation target
+
+4.  
+- internal phrase or signal observed: `shared operational language`
+- source context where it appeared: shared language boundary document
+- internal meaning / operational role: user-only 번역이 아니라 3면/여러 actor가 함께 쓰는 운영 문법층
+- Koreanization candidate, not final UI copy: `공유 운영 언어`, `공유 작동 언어`
+- Korean preservation requirement: shared, operational, cross-actor, not glossary 의미 보존
+- risky Korean flattening to avoid: `사용자용 쉬운 말`, `번역문`, `표준 용어집`
+- why this helps the user operate: 내부 구조를 숨기지 않고도 판단 가능한 수준으로 연결함
+- what meaning gets lost if shortened: 여러 주체가 다른 노출 밀도로 같은 축을 공유한다는 점
+- repeated connection it belongs to: internal language → shared grammar → surface exposure
+- emerging axis candidate: `shared grammar axis`
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any: `운영 언어`와 `UI 문구` 구분 설명 필요
+- next reread question: 어떤 내부어가 공유 운영 언어까지 올라올 반복성을 가졌는가?
+- suggested next use: deposit candidate
+
+5.  
+- internal phrase or signal observed: `line / connection / axis`
+- source context where it appeared: shared language position, VectorFL exposure rule
+- internal meaning / operational role: 개별 기록, 기록 간 연결, 반복되어 자라는 판단축
+- Koreanization candidate, not final UI copy: `선 / 연결 / 축`
+- Korean preservation requirement: line은 단순 목록이 아니고, axis는 외부 템플릿이 아니라 반복에서 생김
+- risky Korean flattening to avoid: `항목 / 관계 / 카테고리`
+- why this helps the user operate: 아직 확정되지 않은 자료를 증거, 연결, 축 후보로 단계화해서 볼 수 있음
+- what meaning gets lost if shortened: axis가 interface 성장 근거라는 점
+- repeated connection it belongs to: evidence accumulation → interface growth
+- emerging axis candidate: `axis-from-repetition`
+- surface exposure note: vectorfl primary, user selective
+- external expression support needed, if any: `line`은 필요 시 영어 병기 유지
+- next reread question: 어떤 line들이 이미 repeated axis로 승격 가능한가?
+- suggested next use: reread target
+
+6.  
+- internal phrase or signal observed: `human-readable Korean/operator summary layer`
+- source context where it appeared: next bottleneck candidates, recommended next step
+- internal meaning / operational role: 전체 번역이 아니라 각 surface의 현재 의미를 얇게 설명하는 운영 요약층
+- Koreanization candidate, not final UI copy: `사람이 읽을 수 있는 한국어 운영 요약층`
+- Korean preservation requirement: summary/explanation only, not glossary replacement
+- risky Korean flattening to avoid: `한국어 UI 전면 번역`, `최종 문구 정리`
+- why this helps the user operate: 화면의 내부어를 Codex 설명 없이도 현재 판단 가능한 신호로 바꿈
+- what meaning gets lost if shortened: 얇은 요약층이라는 범위 제한
+- repeated connection it belongs to: usability gap → bounded operating summary
+- emerging axis candidate: `readability without replacement`
+- surface exposure note: user primary, vectorfl supportive
+- external expression support needed, if any: 각 surface별 요약 밀도 규칙 필요
+- next reread question: surface별 “지금 무엇을 의미하는가” 한 줄 요약 단위는 무엇인가?
+- suggested next use: implementation return
+
+7.  
+- internal phrase or signal observed: `validation authority and route decision must not be absorbed`
+- source context where it appeared: engine surface exposure rule
+- internal meaning / operational role: engine은 처리/반환을 맡지만 검증 권한과 경로 결정은 흡수하면 안 됨
+- Koreanization candidate, not final UI copy: `검증 권한과 경로 결정은 engine에 흡수되지 않아야 함`
+- Korean preservation requirement: authority, route decision, absorbed 경계 유지
+- risky Korean flattening to avoid: `엔진이 검증한다`, `엔진 결과가 확정이다`
+- why this helps the user operate: 자동 처리와 사용자/VectorFL 판단을 분리해서 오판을 막음
+- what meaning gets lost if shortened: 권한 이동 금지
+- repeated connection it belongs to: engine processing vs VectorFL/user validation
+- emerging axis candidate: `authority separation axis`
+- surface exposure note: engine / vectorfl / user
+- external expression support needed, if any: `권한`은 governance처럼 과해 보일 수 있어 `판단 권한` 병기 가능
+- next reread question: validation authority가 user와 VectorFL 사이에서 어떻게 나뉘는가?
+- suggested next use: validation target
+
+8.  
+- internal phrase or signal observed: `deposit-ready queue`
+- source context where it appeared: current works / validated this round
+- internal meaning / operational role: deposit 후보로 모인 반환물 대기열
+- Koreanization candidate, not final UI copy: `deposit 준비 대기열`, `저장/편입 준비 후보열`
+- Korean preservation requirement: deposit은 자동 ingestion이 아니라 후보/준비 상태
+- risky Korean flattening to avoid: `저장 완료 목록`, `자동 반영 목록`
+- why this helps the user operate: 무엇이 core에 들어가기 전 승인 대기 중인지 식별하게 함
+- what meaning gets lost if shortened: approval 전 단계와 후보성
+- repeated connection it belongs to: return → candidate → approval → deposit
+- emerging axis candidate: `bounded ingestion axis`
+- surface exposure note: vectorfl / engine / user
+- external expression support needed, if any: `deposit`은 당분간 영어 병기 필요
+- next reread question: deposit candidate와 validation target의 갈림 기준은 무엇인가?
+- suggested next use: validation target
+
+9.  
+- internal phrase or signal observed: `hold / watch / carry-forward / reject-conflict`
+- source context where it appeared: user surface allowed exposure, high-risk boundary terms
+- internal meaning / operational role: 현재 자료를 유지, 관찰, 다음으로 넘김, 충돌로 거부하는 운영 상태
+- Koreanization candidate, not final UI copy: `보류 / 관찰 유지 / 다음으로 이월 / 충돌 거부`
+- Korean preservation requirement: boundary-first exposure, 단순 감정/상태어로 축소 금지
+- risky Korean flattening to avoid: `보류`, `확인`, `넘김`, `거절`만 단독 사용
+- why this helps the user operate: 열린 판단을 즉시 확정하지 않고 상태별로 다룰 수 있음
+- what meaning gets lost if shortened: conflict, continuity, watch-state, carry-forward의 운영 차이
+- repeated connection it belongs to: decision state taxonomy
+- emerging axis candidate: `decision-state boundary axis`
+- surface exposure note: user primary, vectorfl mediation
+- external expression support needed, if any: 각 상태는 짧은 설명 병기 필요
+- next reread question: 네 상태가 route board에서 같은 차원의 상태인가, 서로 다른 차원의 신호인가?
+- suggested next use: reread target
+
+10.  
+- internal phrase or signal observed: `surface identity must remain visible`
+- source context where it appeared: shared language boundary rule 3
+- internal meaning / operational role: shared language가 각 surface의 역할 차이를 무너뜨리면 안 됨
+- Koreanization candidate, not final UI copy: `각 면의 정체성은 계속 보여야 함`
+- Korean preservation requirement: user operation, VectorFL mediation, engine processing 구분 유지
+- risky Korean flattening to avoid: `통합 화면`, `하나의 작업판`
+- why this helps the user operate: 어디서 결정하고 어디서 처리하고 어디서 중재하는지 잃지 않게 함
+- what meaning gets lost if shortened: 공유 언어가 replacement layer가 아니라 controlled exposure layer라는 점
+- repeated connection it belongs to: shared language boundary / surface exposure density
+- emerging axis candidate: `surface-density axis`
+- surface exposure note: user / vectorfl / engine
+- external expression support needed, if any: `면`과 `surface` 병기 유지 가능
+- next reread question: 각 surface에서 동일 phrase가 다른 밀도로 나타날 때 어떤 표기가 필요한가?
+- suggested next use: deposit candidate
+
+**uncertainty or failure notes**
+
+- No files modified.
+- This is not a final glossary and not UI copy.
+- Korean candidates are operating-language candidates only.
+- Uncertainty: `deposit`, `line`, `axis`, `surface`는 내부 체계성이 강해서 완전 번역보다 병기/보존이 더 안전해 보임.
+- Potential risk: `요약층`이 UI rewrite로 오해될 수 있으므로 “summary/explanation only” boundary가 계속 필요함.
+
+**suggested next use**
+
+- reread target: `hold / watch / carry-forward / reject-conflict` 상태 구분
+- validation target: `return material`, `suggested_next_use`, `deposit-ready queue`
+- deposit candidate: `shared operational language`, `surface identity must remain visible`
+- implementation return: bounded Korean/operator summary layer only, not full translation or glossary replacement
+tokens used
+6,337

@@ -1,0 +1,178 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[A]] [[OBJ:youtube_03_22_high_density_dialogue_loop_test_v1]] [[SEM:report_for_object_layer_relation_question_intent_on_high_density_dialogue_asset]]",
+    "char_count": 150,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "youtube_03_22 high-density dialogue loop test v1",
+    "end_ref": "youtube_03_22 high-density dialogue loop test v1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# youtube_03_22 high-density dialogue loop test v1",
+    "char_count": 50,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "1. test setup",
+    "end_ref": "1. test setup",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. test setup - input: - `inputs/external_cases/youtube_03_22.md` - loop script: - `scripts/run_youtube_03_22_dialogue_loop_test.sh` - helper: - `scripts/run_dialogue_asset_probe.py` - loop conditions: - `window=3 / s",
+    "char_count": 737,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "2. repeated object candidates",
+    "end_ref": "2. repeated object candidates",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. repeated object candidates Across all four loop conditions, the same object-side candidates stayed visible. - strongest repeated objects: - `에이전트 애플리케이션` - `모델 work` - `전략/방향성` - `구현/자동화` - `생산성/코딩` - `AI의 미래` - we",
+    "char_count": 521,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "3. layer reading",
+    "end_ref": "3. layer reading",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. layer reading The loop results were consistent across window sizes. - stable dominant layer: - `설명/해석 층` - repeatedly visible secondary layers: - `전략/방향 층` - `질문 유도 층` - `검증/근거 층` - `구조/연결 층` - `구현/실행 층` Reading: -",
+    "char_count": 457,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "4. relation hint check",
+    "end_ref": "4. relation hint check",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. relation hint check Repeated relation hints were visible in every run. - strongest repeated hints: - `reinforcement_hint` - `transition_hint` - `question_generation_hint` - `execution_shift_hint` - also present: - ",
+    "char_count": 498,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "5. question-intent-fit windows",
+    "end_ref": "5. question-intent-fit windows",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. question-intent-fit windows The most repeatable question-fit windows were not random.",
+    "char_count": 91,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "cluster A. RLVR / CUA / search-problem windows",
+    "end_ref": "cluster A. RLVR / CUA / search-problem windows",
+    "unit_type": "heading_block",
+    "text_excerpt": "### cluster A. RLVR / CUA / search-problem windows Repeated in: - `32_34` - `32_35` - `36_39` - `32_39` Why they matter: - they strongly connect `AI의 미래`, `모델 work`, `에이전트 애플리케이션` - they open future, verification, and ex",
+    "char_count": 365,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "cluster B. bundle-unbundle / UX / OpenClaw strategy windows",
+    "end_ref": "cluster B. bundle-unbundle / UX / OpenClaw strategy windows",
+    "unit_type": "heading_block",
+    "text_excerpt": "### cluster B. bundle-unbundle / UX / OpenClaw strategy windows Repeated in: - `80_87` - `84_87` - `84_89` - `84_91` Why they matter: - they connect `전략/방향성`, `에이전트 애플리케이션`, `구현/자동화`, `일의 미래` - they repeatedly surface us",
+    "char_count": 321,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "cluster C. 10x / AX / organizational transition windows",
+    "end_ref": "cluster C. 10x / AX / organizational transition windows",
+    "unit_type": "heading_block",
+    "text_excerpt": "### cluster C. 10x / AX / organizational transition windows Repeated in: - `89_91` - `90_92` - `90_95` - `92_99` Why they matter: - they link `전략/방향성`, `생산성/코딩`, `모델 work` - they are strong for user questions around labo",
+    "char_count": 299,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "6. residue interference",
+    "end_ref": "6. residue interference",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. residue interference Residue did not erase object reading, but it still interfered.",
+    "char_count": 89,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "strongest repeated residue classes",
+    "end_ref": "strongest repeated residue classes",
+    "unit_type": "heading_block",
+    "text_excerpt": "### strongest repeated residue classes - `discourse_connective_residue` - `conversational_filler_residue` - `speaker_or_source_residue` - `generic_abstraction_residue`",
+    "char_count": 167,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "where residue was strongest",
+    "end_ref": "where residue was strongest",
+    "unit_type": "heading_block",
+    "text_excerpt": "### where residue was strongest - capability-overhang / “모델은 우리 생각보다 훨씬 똑똑하다” area - strategy / `1/10x 효율 vs 10x 신사업` area - adaptation / competitive-response windows",
+    "char_count": 166,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "what the interference looks like",
+    "end_ref": "what the interference looks like",
+    "unit_type": "heading_block",
+    "text_excerpt": "### what the interference looks like - topic-bearing signals are present, but generic abstraction terms such as `방향`, `문제`, `구조`, `의미` compete for summary surface - speaker and dialogue texture remain visible enough to b",
+    "char_count": 492,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "7. verdict",
+    "end_ref": "7. verdict",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. verdict - status: `PASS_WITH_NOTE` Why: - repeated object candidates survived across all loop conditions - multi-layer reading was visible beyond broad review - relation movement hints were repeatedly detectable - ",
+    "char_count": 370,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "8. conclusion",
+    "end_ref": "8. conclusion",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. conclusion `youtube_03_22.md` is a valid high-density dialogue test asset. It works well as a repeatable learning sample because: - it repeatedly grows a small set of objects instead of dispersing into pure chatter",
+    "char_count": 705,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  }
+]

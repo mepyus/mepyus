@@ -1,0 +1,30 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T034757Z_a46720cb",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "smoke_test",
+  "purpose_text": "UI smoke: verify API route only",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_current_translation_gap_note_v0.md"
+  ],
+  "prompt_payload": "Return one short sentence: API route works. Do not modify files.",
+  "status": "failed",
+  "started_at": "2026-04-18T03:47:57Z",
+  "ended_at": "2026-04-18T03:48:02Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 5,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T034757Z_a46720cb/prompt.md",
+  "exit_code": null,
+  "result_summary": "codex CLI timed out after 5s",
+  "suggested_next_use": "validation_target",
+  "error_message": "codex CLI timed out after 5s"
+}

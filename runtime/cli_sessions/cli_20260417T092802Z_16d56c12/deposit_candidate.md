@@ -1,0 +1,64 @@
+# Integrated Engine CLI Deposit Candidate
+
+- source_session_id: `cli_20260417T092802Z_16d56c12`
+- backend_kind: `codex`
+- task_type: `summarize`
+- requested_by_surface: `vectorfl_surface`
+- requested_by_page: `app/ui/integrated_engine`
+- status: `done`
+
+- route_label: `engine_request_candidate`
+- current_marks: `none`
+- user_decision_state: `pending_candidate_review`
+- canonical_deposition_state: `not_ingested`
+
+## Task Purpose
+번역된 언어 예시를 하나만 보여줘
+
+## Used Context Refs
+- `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`
+
+## Result Summary
+- result summary  
+  bounded context `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`를 읽었다. 핵심은 통합엔진 UI의 실제 안정 소스가 `gemini/mock_test`가 아니라 `app/ui/integrated_engine`로 이동했다는 점이다.
+
+- important findings / diffs / outputs  
+  1. Korean operating summary:  
+  현재 운용 기준은 `app/ui/integrated_engine`이다. `gemini/mock_test`는 제안/참조 재료로 남아 있으며, CLI는 새 표면이 아니라 VectorFL 통합엔진 위에서 관찰되는 on-top 도구 호출로 유지된다.
+
+  2. Surface reading:  
+  user = 목적, 할당, 결정  
+  VectorFL = 해석, reread, 중재  
+  engine = 처리, 반환, deposit material 생성  
+  이 3면 기준은 폴더 이동 후에도 바뀌지 않는다.
+
+  3. Route suggestion:  
+  reread_target: `docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md`  
+  validation_target: stable app에서 브라우저로 VectorFL CLI 1회 hand-check  
+  implementation_return: 없음  
+  deposit_candidate: 없음  
+  hold: canonicalize, ingest, promote 금지
+
+- uncertainty or failure notes  
+  실제 브라우저 클릭/사용감 검증은 아직 사용자 손검증이 필요하다고 문서에 적혀 있다. 이전 문서의 `gemini/mock_test` 언급은 현재 소스 위치가 아니라 역사적 맥락으로만 읽어야 한다.
+
+- suggested next use: reread target / implementation return / validation target / deposit candidate  
+  validation_target: `http://127.0.0.1:5173/`에서 안정 앱을 열고 VectorFL CLI 실행을 하나만 손으로 확인한다.
+
+
+## Important Diffs / Findings / Outputs
+- not separated in package 1 return
+
+
+## Uncertainty / Failure Notes
+- none recorded
+
+
+## Suggested Next Use
+validation_target
+
+## Validation / Decision Boundary
+- This file is a deposition candidate only.
+- It is not canonical memory, not an approved record, and not automatic ingestion.
+- User decision or a later explicit deposition package is still required.
+

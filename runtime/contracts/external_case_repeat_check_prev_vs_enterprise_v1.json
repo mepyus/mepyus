@@ -1,0 +1,38 @@
+{
+  "schema": "external_case_repeat_check_prev_vs_enterprise_v1",
+  "base_cases": [
+    "saltlux_agentic_ai_ontology_raw_transcript_v1",
+    "aifrontier_01_28_raw_transcript_v1",
+    "oh_my_opencode_raw_input_v1"
+  ],
+  "compare_case": "enterprise_ai_adoption_and_ultrathink_raw_transcript_v1",
+  "repeated_frames": [
+    {
+      "frame": "agentic_workflow_orchestration_frame",
+      "reading": "네 사례 모두 생성기 자체보다 workflow를 수행하는 agentic 구조를 더 중요하게 읽는다.",
+      "saltlux_side": "reasoning + planning + tool use + multi-agent coordination",
+      "aifrontier_side": "harness, guardrail, agentic tool use, batch/orchestration usability",
+      "oh_my_opencode_side": "멀티모델/멀티에이전트 하네스, 병렬 작업, 역할 분담형 실행",
+      "enterprise_side": "RAG를 도구로 낮추고 agent가 더 넓은 실행을 수행하며 spec/plan/feedback 루프로 일을 조직함"
+    },
+    {
+      "frame": "intent_to_spec_amplification_frame",
+      "reading": "짧은 의도나 추상적 요청을 바로 실행하지 않고 명세/스펙으로 더 구체화해야 한다는 축이 반복된다.",
+      "aifrontier_side": "짧은 본질 설명이 spec으로 증폭되고 generation으로 이어짐",
+      "enterprise_side": "tech spec, 요구 사항, todo plan, 문서-코드 싱크를 통해 구현 범위를 구체화함"
+    }
+  ],
+  "new_outer_frames_in_enterprise": [
+    "enterprise_upside_downside_adoption_frame",
+    "tech_spec_plan_feedback_loop_frame",
+    "multi_model_review_loop_frame",
+    "cost_tiering_for_understanding_vs_execution_frame"
+  ],
+  "weaker_or_missing_compared_to_previous": [
+    "ontology_direct_frame",
+    "semantic_interoperability_data_fabric_frame",
+    "consumer_agentic_ux_barrier_reduction_frame",
+    "named_worldbuilding_or_brand_package_frame"
+  ],
+  "note": "enterprise 사례는 도구 소개보다 enterprise 도입 맥락과 spec/feedback 운영 루프가 더 두드러진다."
+}

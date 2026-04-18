@@ -1,0 +1,49 @@
+{
+  "schema_version": "line_registry_v0",
+  "updated_at": "2026-04-02T09:03:02Z",
+  "lines": [
+    {
+      "line_id": "line_pre_read_eye",
+      "line_name": "pre_read_eye",
+      "status": "candidate",
+      "thickness_level": "thin",
+      "first_seen_at": "2026-04-02T09:03:02Z",
+      "last_seen_at": "2026-04-02T09:03:02Z",
+      "support_count": 2,
+      "resistance_count": 2,
+      "surface_types_seen": [
+        "pre_read_eye:runtime/current_phase.json",
+        "pre_read_eye:runtime/breadcrumbs.jsonl"
+      ],
+      "notes": [
+        "run_id=line_thickening_sample_run_v1",
+        "view_type=pre_read_eye",
+        "grounding=direct",
+        "next_probe=runtime/breadcrumbs.jsonl",
+        "evidence=mode-first gate precedes read; still needs a second surface to confirm repeatability; current state is summary, not truth archive",
+        "next_probe=runtime/manifests/phase_decision_log.jsonl",
+        "evidence=decision movement is append-only; why is preserved in trace; needs cross-surface reread to become operating; breadcrumb alone is a trace, not the source of truth"
+      ]
+    },
+    {
+      "line_id": "line_raw_return_preservation",
+      "line_name": "raw_return_preservation",
+      "status": "candidate",
+      "thickness_level": "thin",
+      "first_seen_at": "2026-04-02T09:03:02Z",
+      "last_seen_at": "2026-04-02T09:03:02Z",
+      "support_count": 1,
+      "resistance_count": 1,
+      "surface_types_seen": [
+        "raw_return_preservation:inputs/external_cases/enterprise.txt"
+      ],
+      "notes": [
+        "run_id=line_thickening_sample_run_v1",
+        "view_type=raw_return_preservation",
+        "grounding=direct",
+        "next_probe=docs/reports/pipeline_candidate_scope_summary_and_enterprise_reflection_anchor_assessment_v1.md",
+        "evidence=raw anchor is retained; report surface does not overwrite source; needs more than one family to stabilize; summary-only reread would erase the return path"
+      ]
+    }
+  ]
+}

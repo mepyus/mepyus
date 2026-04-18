@@ -1,0 +1,16 @@
+- result summary  
+PASS_WITH_NOTE. The bounded note confirms CLI-on-top is not a new engine surface; it is a helper execution layer operated through the VectorFL surface, with returns reread by User and Engine surfaces as candidates/material.
+
+- important findings / diffs / outputs  
+VectorFL is the active operation/control surface for CLI runs, marks, rereads, and follow-ups.  
+User surface reads CLI returns as work or decision candidates, not automatic assignments.  
+Engine surface reads returns as processing, validation, extraction, or deposit material, not final authority.  
+Marks are route signals, not completion declarations.  
+Deposit candidate means possible later ingestion, not official deposit.  
+Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/design clay.  
+Recommended reporting grammar order: status first, surface split second, route/authority third, friction fourth, next smallest action last.
+
+- uncertainty or failure notes  
+No file modifications were made. No failure reading the bounded context. The note explicitly keeps UI copy changes, manifest/read-map changes, Gemini adapter work, automatic assignment, automatic deposit ingestion, and promotion closed.
+
+- suggested next use: validation target

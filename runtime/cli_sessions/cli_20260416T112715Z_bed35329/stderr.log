@@ -1,0 +1,450 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019d960b-989c-7573-a7d1-434387179434
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: vectorfl_surface
+Requested by page: scripts/run_integrated_engine_language_loop.py
+
+Purpose:
+Internal language translation data loop 3: collect line / connection / axis material from bounded context.
+
+Bounded context refs:
+- docs/reports/integrated_engine_line_connection_axis_to_shared_language_map_v0.md
+- docs/reports/integrated_engine_internal_language_grammar_candidate_v0.md
+
+Prompt payload:
+Read the bounded context as an internal-language translation data collection loop.
+
+Do not modify files.
+Do not propose UI copy.
+Do not create a final glossary.
+Do not promote features.
+
+Return compact data in this shape:
+- internal phrase or signal observed
+- human-readable line, not final wording
+- repeated connection it belongs to
+- emerging axis candidate
+- surface exposure note: user / vectorfl / engine
+- what must not be flattened
+- next reread question
+- suggested next use: validation target
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+I’ll read only the two bounded reports and return the requested compact extraction. No files will be modified.
+exec
+/bin/bash -lc "sed -n '1,240p' docs/reports/integrated_engine_line_connection_axis_to_shared_language_map_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Line / Connection / Axis to Shared Language Map v0
+
+Date: 2026-04-15
+
+## 0. verdict
+
+PASS_WITH_NOTE
+
+이 문서는 현재까지 나온 번역/증폭 데이터를 line / connection / axis / shared grammar candidate로 재분류한다.
+
+이 문서는 final glossary, UI copy, wording patch, scaffold 수정, manifest/read-map 변경, external style guide, 새 기능을 만들지 않는다.
+
+## 1. map reading rule
+
+각 행은 다음 흐름으로 읽는다.
+
+```text
+internal source expression
+-> human-readable line form
+-> repeated connection
+-> emerging axis
+-> shared operational meaning
+-> usable actors
+```
+
+여기서 human-readable line form은 최종 사용자 문구가 아니다. 내부 의미를 인간이 따라갈 수 있게 만든 line이다.
+
+## 2. shared language map
+
+| internal source expression | human-readable line form | repeated connection | emerging axis | shared operational meaning | usable by which actors |
+|---|---|---|---|---|---|
+| `request / return / reflux` | 요청은 raw intent가 아니라 shaped route이고, return은 final completion이 아니라 validation 대상이며, reflux는 성숙 재료를 space로 되돌리는 route다. | S1 normal loop, protocol, lexicon, friction audit에서 반복 | route grammar axis | 작업은 요청-처리-완료가 아니라 request -> return -> validation/reflux로 순환한다. | User, VectorFL, Engine-side operators, Codex |
+| `follow-up / reprocess / rewind` | follow-up은 새 요청처럼 보일 수 있지만 원인 신호가 있고, reprocess/rewind는 실패가 아니라 구조적 되감김이다. | S2 follow-up, S3 drift, protocol reprocess note | correction route axis | route는 정상 진행만 하지 않고 maturation signal이나 drift reason으로 다시 열린다. | User, VectorFL, Engine-side operators, Codex |
+| `anchor drift` | anchor와 맞지 않으면 다음 단계로 넘기지 않고 멈추거나 되감는 신호다. | S3 drift observation, bridge lexicon, grammar candidate | operational brake axis | anchor는 설명문이 아니라 route를 제동하는 기준이다. | VectorFL, User, Codex, Engine-side operators |
+| `current_loop_state` | 지금 loop가 어디에 있는지 알려주지만 전체 history는 아니다. | protocol note, render contract, bridge lexicon | minimal state axis | 현재 위치와 전체 이력을 분리해서 읽는다. | User, VectorFL, Engine-side operators, Codex |
+| `return validation` | engine output은 바로 완료가 아니라 VectorFL validation을 거쳐 다음 route가 정해진다. | S1/S3 friction, grammar candidate, bridge seed | validation ownership axis | execution과 validation 권위를 분리한다. | VectorFL, Engine-side operators, User, Codex |
+| `proposal-only / needs Codex translation` | Gemini material은 가치가 있어도 core로 바로 들어가지 않고 Codex baseline translation을 거친다. | handoff artifact, bridge lexicon, guide trial round 2 | proposal-to-core boundary axis | proposal value와 canonical authority를 분리한다. | Gemini, Codex, User, VectorFL |
+| `workspace ownership` | 파일 위치는 단순 폴더가 아니라 artifact authority와 write boundary를 표시한다. | real handoff retention, guide trial, high-risk note | workspace authority axis | 어디에 있느냐는 무엇을 할 수 있느냐와 연결된다. | Codex, Gemini, User, 내부팀 |
+| `hold / watch keep / not promoted` | 보이지만 아직 행동으로 열지 않는다. 버림도 아니고 patch queue도 아니다. | use-state refresh, wording watch, lexicon v1 | active non-action state axis | 현재 닫힌 상태와 미래 관찰 가능성을 동시에 보존한다. | User, VectorFL, Codex, 내부팀 |
+| `collision stop / reject-conflict` | 계속하면 보호 경계를 넘기 때문에 멈추거나 현재 core와 충돌로 분류한다. | handoff artifact, translation bridge, retention check | boundary protection axis | stop/reject는 실패가 아니라 현재 route의 안전 경계다. | Codex, Gemini, User, VectorFL |
+| `support reread recovery` | 첫 읽기가 얇아도 support material을 순서대로 읽으면 route/authority가 회복될 수 있다. | S2 observation, use observation protocol, grammar candidate | reread recovery axis | 모든 얇음이 patch나 feature gap은 아니다. | User, VectorFL, Codex |
+| `central panel gravity` | 각 surface는 다른 중심 질문을 가진다. | visual rounds, render contract, use observation | surface gravity axis | user는 운영, VectorFL은 숙성/중재, engine은 실행/반환 중심을 유지한다. | User, VectorFL, Engine-side operators, Codex |
+| `design clay` | Gemini design output은 바로 구조가 아니라 번역 가능한 raw material이다. | Gemini mock analysis, handoff artifact, explanation trial | proposal material axis | 시각적 강도와 구조 권위를 분리한다. | Gemini, Codex, VectorFL, User |
+
+## 3. strongest repeated connections
+
+가장 강하게 반복된 연결:
+
+1. `request / return / reflux`와 route grammar
+2. `return validation / anchor drift / reprocess`와 validation brake
+3. `proposal-only / needs Codex translation / workspace ownership`과 authority boundary
+4. `hold / watch keep / not promoted`과 active non-action state
+5. `support reread recovery / fixture-scope / trace boundary`와 use-mode reading
+
+## 4. emerging shared grammar candidates
+
+현재 shared grammar 후보:
+
+### 4.1 reasoned route grammar
+
+Route는 source, target, purpose, reason, validation status를 가진다.
+
+### 4.2 scoped authority grammar
+
+Authority는 surface, workspace, user package-opening decision에 의해 결정된다.
+
+### 4.3 active non-action grammar
+
+Hold/watch/not promoted는 아무것도 하지 않는 상태가 아니라, 행동을 열지 않으면서 읽을 수 있게 보존하는 상태다.
+
+### 4.4 operational brake grammar
+
+Anchor drift, collision stop, reject/conflict는 failure가 아니라 protected boundary를 지키는 제동 신호다.
+
+### 4.5 support reread grammar
+
+첫 읽기가 얇은 것은 patch 근거가 아니다. route/authority/state/boundary가 support reread로 회복되는지 먼저 본다.
+
+## 5. actor usability summary
+
+| actor | most usable shared grammar |
+|---|---|
+| User | reasoned route, active non-action, package-opening authority |
+| VectorFL | validation brake, support reread, line/connection/axis mediation |
+| Engine-side operators | shaped input, execution state, return material, reprocess route |
+| Codex | baseline translation, workspace authority, conflict/carry-forward classification |
+| Gemini | proposal-only, design clay, no direct-to-core path |
+| 내부팀 | surface exposure density, shared grammar boundary, interface axis |
+
+## 6. map closeout
+
+이 map은 final glossary가 아니다.
+
+이 map은 내부 source expression이 인간 가독 line으로 올라오고, 반복 연결을 거쳐 axis가 되며, 여러 주체가 같이 쓸 수 있는 shared operational language가 되는 경로를 보여준다.
+
+exec
+/bin/bash -lc "sed -n '1,260p' docs/reports/integrated_engine_internal_language_grammar_candidate_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Internal Language Grammar Candidate v0
+
+Date: 2026-04-15
+
+## 0. verdict
+
+PASS_WITH_NOTE
+
+This document records current candidate grammar rules for internal integrated-engine language.
+
+It is not a final SSOT, schema, enum set, workflow engine, UI wording plan, translation guide, or glossary replacement. It only describes how meaning appears to move in the current records.
+
+## 1. grammar boundary
+
+These rules are candidates because they are repeated across:
+
+- v1 candidate lexicon / protocol / interface
+- manual S1/S2/S3 observations
+- use-state and wording-watch closeouts
+- translation friction records
+- Gemini/Codex collaboration boundary notes
+
+They should be tested against at least one more real use or handoff trial before external style harvest or user-facing bridge wording.
+
+## 2. route grammar
+
+Rule:
+
+- A meaningful route begins when a packet, signal, or state change has a source, target, purpose, and reason for movement.
+
+Starting points:
+
+- user-origin request
+- VectorFL maturation signal
+- engine return material
+- anchor drift signal
+- Gemini proposal material
+
+Transition conditions:
+
+- request enters VectorFL review before execution
+- VectorFL review attaches directionality, anchor context, related objects, validation points, and route judgment
+- engine processing creates return material, not final completion
+- return validation decides user decision, reflux, or reprocess
+- reflux preserves maturation-worthy material for future reread
+- proposal material moves only after Codex translation and user/scoped permission
+
+Brake or hold criteria:
+
+- anti-bypass violation
+- anchor drift
+- missing route reason
+- unsupported promotion
+- fixture or trace expectation leaking into core
+
+Ownership / authority change:
+
+- user intent becomes request packet through user-surface organization
+- engine output becomes return packet through processing
+- return material becomes validation subject on VectorFL surface
+- Gemini material becomes usable only after Codex translation/classification and user decision if promotion is needed
+
+Operational signal:
+
+- `request`, `return`, `reflux`, `follow-up`, `reprocess`, and `rewind` are not just labels. They indicate allowed movement and required reading order.
+
+## 3. authority grammar
+
+Rule:
+
+- Authority is surface- and workspace-scoped; it does not transfer by visual strength, file existence, or agent confidence.
+
+Starting points:
+
+- user surface organizes operating work
+- VectorFL validates and mediates meaning route
+- engine processes shaped input
+- Gemini produces proposal material
+- Codex translates against baseline and writes canonical artifacts when scoped
+
+Transition conditions:
+
+- operating decision stays on user surface unless routed through validation
+- validation stays on VectorFL surface unless user decision is explicitly requested
+- execution stays on engine surface and returns material for validation
+- Gemini output stays proposal-only until translated, classified, and explicitly used
+
+Brake or hold criteria:
+
+- engine begins to look like judgment authority
+- user surface becomes team/role governance console
+- VectorFL becomes engine executor or line browser as center
+- Gemini output requires core edits or runtime/read-map changes to make sense
+
+Ownership / authority change:
+
+- promotion requires user decision or explicitly scoped package
+- canonical docs/scaffold changes are Codex-owned unless separately opened
+- Gemini writes under `gemini/` and remains proposal or review evidence
+
+Operational signal:
+
+- `proposal-only / needs Codex translation`, `workspace ownership`, and `no direct Gemini-to-core path` are authority controls, not process decoration.
+
+## 4. hold / watch grammar
+
+Rule:
+
+- Hold and watch states keep material visible while preventing premature action.
+
+Starting points:
+
+- recoverable wording ambiguity
+- fixture-scope limitation
+- core-support trace thinness
+- selected-object expectation
+- future extension candidate
+
+Transition conditions:
+
+- `not promoted` means no patch planning is active
+- `watch keep` means observe during use, do not implement
+- `hold` means keep out of current core unless a gate opens
+- `closeout` records the current lockback state
+
+Brake or hold criteria:
+
+- S2-only blind ambiguity
+- supported reread recovers intended route
+- no scenario reading blockage
+- issue is fixture scope, trace density, selected-object absence, or runtime binding absence
+
+Ownership / authority change:
+
+- watch can move toward gate review only through official re-entry evidence
+- gate review does not itself create patch wording
+- patch planning remains closed until explicitly opened
+
+Operational signal:
+
+- `not promoted`, `watch keep`, `hold`, and `closeout` are active operating states. They are not passive notes.
+
+## 5. validation grammar
+
+Rule:
+
+- Validation is the point where output, route, and anchor fit are checked before closure or next movement.
+
+Starting points:
+
+- engine return packet
+- follow-up return
+- anchor comparison result
+- Gemini handoff material
+
+Transition conditions:
+
+- engine output goes to VectorFL validation before user decision, reflux, or reprocess
+- anchor drift can prevent user decision and rewind to reprocess
+- Gemini output must be classified before any canonical use
+
+Brake or hold criteria:
+
+- return looks complete but lacks validation
+- anchor mismatch appears
+- proposal material needs baseline translation
+- supported reread fails to recover route or authority separation
+
+Ownership / authority change:
+
+- engine owns processing output
+- VectorFL owns return validation and drift mediation
+- user owns promotion and decision opening
+- Codex owns canonical translation when scoped
+
+Operational signal:
+
+- `return validation`, `anchor drift`, `recheck`, and `reprocess` are route-control signals, not descriptive afterthoughts.
+
+## 6. reread / support grammar
+
+Rule:
+
+- First-pass thinness can be acceptable when supported reread restores the intended route without changing structure.
+
+Starting points:
+
+- blind first-pass ambiguity
+- compact trace
+- first-fixture-centered read map
+- support panel with operational meaning
+
+Transition conditions:
+
+- read central panel first
+- read mapped packet/object next
+- read support panels after center
+- read connection records for route reconstruction
+- classify confusion before patch consideration
+
+Brake or hold criteria:
+
+- support reread fails
+- request / return / reflux remain confused after support
+- support panel becomes central body
+- trace expectation turns into selected-object or runtime-binding demand
+
+Ownership / authority change:
+
+- if reread recovers, item remains watch or non-issue
+- if reread fails across scenarios, gate review may reopen
+
+Operational signal:
+
+- `support reread recovery` is a use-mode mechanism. It is not a replacement for future UI design, and it is not proof that every wording is final.
+
+## 7. bridge-before-flatten grammar
+
+Rule:
+
+- Human-facing bridge work must preserve route, authority, state, boundary, and support relationships before simplifying terms.
+
+Starting points:
+
+- friction terms such as `reflux`, `anchor drift`, `return validation`, `proposal-only`, and `workspace ownership`
+
+Transition conditions:
+
+- collect internal phrase and context
+- identify what the phrase protects
+- identify what flattening would lose
+- only then attempt bridge wording in a later package
+
+Brake or hold criteria:
+
+- easy phrase erases authority ownership
+- easy phrase erases route reason
+- easy phrase turns hold/watch into action
+- easy phrase turns support trace into full runtime truth
+
+Ownership / authority change:
+
+- bridge wording does not change core baseline
+- translation does not promote features
+- bridge candidates require later use evidence and scoped package
+
+Operational signal:
+
+- Bridge work is a layer after internal grammar harvest. It must not replace the internal grammar before the grammar is tested.
+
+## 8. candidate closeout
+
+The strongest grammar candidates to carry forward are:
+
+1. route must carry reason and validation status
+2. authority is scoped by surface, workspace, and promotion gate
+3. hold/watch keeps material visible without opening build mode
+4. validation can brake or rewind a route
+5. supported reread can recover thin first-pass meaning
+6. bridge work must preserve internal movement before simplifying language
+
+codex
+**result summary**
+
+Reread completed on the two bounded context refs. No files modified. Output below is data collection only, not final glossary or UI wording.
+
+**important findings / diffs / outputs**
+
+| internal phrase or signal observed | human-readable line, not final wording | repeated connection it belongs to | emerging axis candidate | surface exposure note | what must not be flattened | next reread question | suggested next use |
+|---|---|---|---|---|---|---|---|
+| `request / return / reflux` | Work moves as shaped request, engine return, then validation or reflux, not simple task completion. | S1 normal loop, protocol, lexicon, friction audit | route grammar axis | user / vectorfl / engine | Return is not final completion; reflux is not retry noise. | Does each observed route carry source, target, purpose, reason, and validation status? | validation target |
+| `follow-up / reprocess / rewind` | A reopened route can be structural correction, not failure. | S2 follow-up, S3 drift, protocol reprocess note | correction route axis | vectorfl / engine | Reprocess/rewind must keep the reason signal attached. | When does follow-up become new request versus same-route correction? | reread target |
+| `anchor drift` | If output no longer fits anchor, route should brake or rewind before user decision. | S3 drift observation, bridge lexicon, grammar candidate | operational brake axis | user / vectorfl / engine | Anchor is route-control, not explanatory label. | What evidence is enough to classify drift before reprocess? | validation target |
+| `current_loop_state` | Current state shows where the loop is now, not the whole history. | protocol note, render contract, bridge lexicon | minimal state axis | vectorfl / engine | Current position must not be mistaken for complete trace. | What minimum state is enough for recovery without over-rendering history? | implementation return |
+| `return validation` | Engine output becomes a validation subject before next movement. | S1/S3 friction, grammar candidate, bridge seed | validation ownership axis | user / vectorfl / engine | Execution authority and validation authority stay separate. | Who owns each validation decision after return: VectorFL or user? | validation target |
+| `proposal-only / needs Codex translation` | Proposal material can have value without direct canonical authority. | handoff artifact, bridge lexicon, guide trial round 2 | proposal-to-core boundary axis | user / vectorfl / engine | Visual strength or agent confidence cannot promote material. | What makes proposal material eligible for Codex translation versus hold? | deposit candidate |
+| `workspace ownership` | File location marks authority and write boundary, not just storage. | real handoff retention, guide trial, high-risk note | workspace authority axis | vectorfl / engine | Workspace path must not be flattened into folder organization. | Which workspace locations imply proposal, evidence, or canonical status? | validation target |
+| `hold / watch keep / not promoted` | Material remains visible while action stays closed. | use-state refresh, wording watch, lexicon v1 | active non-action state axis | user / vectorfl | Hold/watch is active state, not passive backlog or patch queue. | What evidence opens a held item without turning watch into build mode? | reread target |
+| `collision stop / reject-conflict` | Stop/reject protects a boundary when continuing would cross authority or core limits. | handoff artifact, translation bridge, retention check | boundary protection axis | user / vectorfl / engine | Stop is not failure; reject-conflict is not dismissal. | Which collision types are route conflict versus authority conflict? | validation target |
+| `support reread recovery` | Thin first read may recover when support material is read in order. | S2 observation, use observation protocol, grammar candidate | reread recovery axis | user / vectorfl | Thinness must not automatically become patch or feature gap. | What support sequence reliably recovers route/authority/state? | reread target |
+| `central panel gravity` | Each surface has a center: user operates, VectorFL mediates/validates, engine executes/returns. | visual rounds, render contract, use observation | surface gravity axis | user / vectorfl / engine | Surface center must not collapse into one governance or execution panel. | Does any surface start absorbing another surface’s authority? | validation target |
+| `design clay` | Design output is raw material for translation, not structure by itself. | Gemini mock analysis, handoff artifact, explanation trial | proposal material axis | vectorfl / engine | Visual design must not bypass baseline translation or scoped permission. | What design material should be classified as evidence, proposal, or discard? | deposit candidate |
+| `bridge-before-flatten` | Human bridge work should preserve route, authority, state, boundary, and support before simplifying. | grammar candidate, friction terms, bridge work | bridge preservation axis | user / vectorfl | Easy wording must not erase movement, ownership, or brake behavior. | Which terms lose operational meaning fastest when simplified? | validation target |
+
+**uncertainty or failure notes**
+
+- No failure reading the bounded refs.
+- Data is candidate-level only. Both source docs explicitly say this is not a final SSOT, schema, glossary, UI copy, or wording plan.
+- Main uncertainty: which candidates survive another real use or handoff trial without becoming too broad.
+
+**suggested next use**
+
+validation target: test `request / return / reflux`, `return validation`, `anchor drift`, and `hold / watch keep / not promoted` against one real integrated-engine return to see whether route, authority, brake, and non-action states remain distinguishable.
+tokens used
+6,388

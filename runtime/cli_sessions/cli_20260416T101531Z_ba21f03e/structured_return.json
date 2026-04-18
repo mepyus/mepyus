@@ -1,0 +1,13 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260416T101531Z_ba21f03e",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - Stable UI path: `gemini/mock_test`, opening directly on the VectorFL surface.\n  - CLI on-top status: PASS_WITH_NOTE; Codex runs through the existing integrated-engine CLI session API via the mock app proxy.\n  - Remaining note: browser-click and user-feel validation are still deferred.\n\n- important findings / diffs / outputs\n  - CLI panel lives in `gemini/mock_test` as an on-top support/control layer, not a fourth surface.\n  - Build passed in `gemini/mock_test`.\n  - API proxy validated at `http://127.0.0.1:5173/api/vectorfl-engine/state`.\n  - Real read-only Codex run succeeded with status `done`, exit code `0`.\n  - Mark action succeeded with `validation_target`.\n\n- uncertainty or failure notes\n  - End-to-end API path is validated, but browser interaction has not been automated or hand-confirmed in this note.\n  - Session browsing/history, async runner, Gemini adapter, deposit bridge, and promotion automation remain deferred.\n\n- suggested next use: validation target\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-16T10:15:44Z"
+}

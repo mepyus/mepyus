@@ -1,0 +1,149 @@
+{
+  "organ": {
+    "slug": "translation",
+    "label": "Translation Organ",
+    "current": false,
+    "next_candidate": false,
+    "active_case_count": 0,
+    "summary": "Translation organ은 intake 재료나 current-reading 재료를 현재 case와 lane에 맞는 operating grammar로 recode하는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_translation_organ_role_md_draft_v0.md",
+        "title": "Translation Organ ROLE.md Draft v0",
+        "summary": "Translation organ은 intake 재료나 current-reading 재료를 현재 case와 lane에 맞는 operating grammar로 recode하는 기관이다.",
+        "content": "# Translation Organ ROLE.md Draft v0\n\n## role\n\nTranslation organ은 intake 재료나 current-reading 재료를  \n현재 case와 lane에 맞는 operating grammar로 recode하는 기관이다.\n\n이 기관의 일은 최종 의미를 닫는 것이 아니라,\n`지금 이 재료를 어떤 읽기 문법으로 다뤄야 하는가`\n를 더 선명하게 만드는 것이다.\n\n## reads first\n\n1. current case question\n2. current lane context\n3. source/context carry\n4. weakness / fallback carry\n5. relevant trace or residue carry if present\n\n## does\n\n- source/intake/current surface를 현재 case 질문에 맞게 recode한다\n- direct presentation보다 transition-thickening, reread-first, explanation-first 같은 grammar shift를 제안할 수 있다\n- next lane hint 또는 narrowed lane candidates를 만든다\n- supporting evidence ref를 남긴다\n\n## does not do\n\n- final closure를 선언하지 않는다\n- governance release를 결정하지 않는다\n- unresolved edge를 지워서 예쁘게 만들지 않는다\n- queue/status surface를 canonical로 바꾸지 않는다\n\n## output expectation\n\nTranslation organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- translation summary\n- lane hint update\n- supporting evidence refs\n- caution note when grammar shift is still weak\n\n## caution\n\n- weak intake는 약하게 표시한 채 carry한다\n- mixed material은 한 문장으로 flatten하지 않는다\n- unresolved edge가 있으면 다음 기관이 읽을 수 있게 남긴다\n- current-reading first 원칙을 해치지 않는다\n\n## final sentence\n\nTranslation organ은 재료를 더 예쁘게 요약하는 기관이 아니라,  \n현재 case/lane/current-reading에 맞는 operating grammar를 만들어 다음 기관이 더 정확한 흐름 판독을 할 수 있게 하는 기관이다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_translation_organ_handoff_md_draft_v0.md",
+        "title": "Translation Organ HANDOFF.md Draft v0",
+        "summary": "- intake packet - current surface excerpt - source/context carry - weakness/fallback carry - optional trace/residue refs",
+        "content": "# Translation Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- intake packet\n- current surface excerpt\n- source/context carry\n- weakness/fallback carry\n- optional trace/residue refs\n\n## required packet fields\n\n- `case_ref`\n- `current_lane_ref`\n- `current_surface_excerpt` or intake summary\n- `relevant_input_refs`\n- `weakness_note`\n- `question_or_trigger`\n- `expected_return_type=translation_summary`\n\n## common triggers\n\n- intake classified as `translation_first`\n- current reading too raw for direct flow interpretation\n- mixed material needs operating grammar shift\n- presentation-like wording appears too early\n\n## continuity / carry\n\n- preserve prior grammar if still valid\n- preserve unresolved edge when translation remains weak\n- keep source evidence refs attached\n\n## handoff target\n\n주 대상:\n\n- `flow interpretation organ`\n\n보조 대상:\n\n- `governance organ` when direct closure risk is already obvious\n\n## handoff rule\n\nTranslation organ은 멋진 요약만 넘기지 않는다.  \n어떤 grammar로 읽어야 하는지, 무엇이 아직 unresolved인지 같이 넘겨야 한다.\n\n## final sentence\n\nTranslation organ handoff는 translated summary, lane hint, evidence refs, unresolved carry를 다음 기관이 바로 흐름 판독에 쓸 수 있게 넘기는 grammar-aware handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_translation_organ_caution_md_draft_v0.md",
+        "title": "Translation Organ CAUTION.md Draft v0",
+        "summary": "Translation organ의 caution 규칙은 grammar shift를 만들 때 의미를 너무 빨리 닫거나, mixed material을 단일 문장으로 flatten하는 것을 막는 데 목적이 있다.",
+        "content": "# Translation Organ CAUTION.md Draft v0\n\n## caution purpose\n\nTranslation organ의 caution 규칙은  \ngrammar shift를 만들 때 의미를 너무 빨리 닫거나, mixed material을 단일 문장으로 flatten하는 것을 막는 데 목적이 있다.\n\n## stop / hold conditions\n\n- translated summary still depends on weak intake\n- direct presentation wording appears too early\n- unresolved edge is being erased by a clean summary\n- lane hint looks stronger than evidence supports\n\n## preserve-first rules\n\n- unresolved edge note를 남긴다\n- weak translation은 weak로 표시한다\n- evidence refs를 summary와 함께 carry한다\n- next hop은 candidate로 둘 수 있다\n\n## avoid\n\n- final conclusion wording\n- resolved path wording\n- presentation-ready wording without governance support\n\n## final sentence\n\nTranslation organ은 재료를 예쁘게 정리하는 기관이 아니라, 지금 맞는 grammar를 만들되 의미를 과장하거나 closure를 서두르지 않게 스스로 제동하는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_translation_organ_return_md_draft_v0.md",
+        "title": "Translation Organ RETURN.md Draft v0",
+        "summary": "Translation organ의 반환은 raw output이 아니라, 다음 기관과 current-reading이 바로 읽을 수 있는 `grammar-aware return`이어야 한다.",
+        "content": "# Translation Organ RETURN.md Draft v0\n\n## return purpose\n\nTranslation organ의 반환은 raw output이 아니라,  \n다음 기관과 current-reading이 바로 읽을 수 있는 `grammar-aware return`이어야 한다.\n\n즉 반환의 목적은:\n\n- 지금 어떤 문법으로 읽는 것이 맞는지 짧게 밝히고\n- 다음 기관이 이어받을 lane/flow 판단 재료를 남기고\n- 아직 강하지 않은 부분은 caution으로 표시하는 것이다\n\n## minimum return blocks\n\n### 1. translation summary\n\n- 지금 이 case/material/surface를 어떤 grammar로 읽는 것이 맞는지\n- 예:\n  - transition-thickening\n  - explanation-first\n  - reread-before-presentation\n\n### 2. lane hint update\n\n- 다음 기관이 볼 lane candidate\n- current lane 유지 또는 shift suggestion\n\n### 3. supporting evidence refs\n\n- source ref\n- intake packet ref\n- surface ref\n- trace carry ref\n\n### 4. caution note\n\n- weak translation\n- mixed material still unresolved\n- direct readout not safe\n\n## preferred wording\n\n- \"read as ...\"\n- \"treat this as ...\"\n- \"carry forward ...\"\n- \"do not close yet ...\"\n- \"next lane candidate ...\"\n\n## avoid wording\n\n- \"resolved\"\n- \"final\"\n- \"approved\"\n- \"ready for presentation\" without governance support\n- \"this definitively means ...\" when unresolved edge remains\n\n## return example shape\n\n- translation_summary:\n  - \"Read this as transition-thickening rather than presentation-ready.\"\n- lane_hint_update:\n  - `lane_transition_preflight_reread`\n  - `lane_operator_readout_review`\n- supporting_evidence_refs:\n  - intake packet\n  - current surface\n  - residue trace\n- caution_note:\n  - \"Mixed runtime and operator-note material still carries unresolved edge.\"\n\n## handoff note\n\n이 반환은 흐름해석기관이나 governance/current-reading 반환면으로 넘어갈 준비를 해야 한다.\n\n그래서 최소한 아래는 빠지면 안 된다.\n\n- next lane candidate\n- unresolved edge 여부\n- evidence refs\n- caution carry\n\n## final sentence\n\nTranslation organ의 반환은 문장을 멋있게 만드는 요약이 아니라,  \n현재 case를 어떤 문법으로 읽어야 하는지와 그에 따라 다음 기관이 무엇을 이어받아야 하는지를 짧고 보수적으로 넘기는 grammar-aware return이어야 한다."
+      }
+    },
+    "lens": "공간 언어를 감독자 언어와 worker payload 언어로 번역",
+    "managing_cli": "codex-cli",
+    "managing_lane_slug": "chatgpt",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "flow-interpretation",
+      "governance"
+    ],
+    "paired_external_team": "external-program-team",
+    "human_report_format": "무엇을 사람 말로 바꿨고 무엇이 아직 bundle 근거를 더 필요로 하는지 보고",
+    "detail_href": "organ-detail-translation.html",
+    "editor_href": "organ-editor-translation.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper",
+  "mode": "editor"
+}

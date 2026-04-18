@@ -1,0 +1,941 @@
+{
+  "index_name": "provenance_link_index_snapshot_before_apply_v1",
+  "links": [
+    {
+      "source_doc_ref": "codex_declaration_vectorfl_replica_material_and_operation_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "tkt_bootstrap_operation_skeleton_v1",
+      "relationship": "registered_as_structured_internal_doc"
+    },
+    {
+      "source_doc_ref": "codex_baseline_vectorfl_replica_intake_and_operation_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "tkt_bootstrap_operation_skeleton_v1",
+      "relationship": "registered_as_structured_internal_doc"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "docs/policies/codex_material_and_operation_docs_index_v1.md",
+      "ticket_ref": "tkt_bootstrap_operation_skeleton_v1",
+      "relationship": "triggered_bootstrap_index_creation"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "runtime/events/event_schema_v1.md",
+      "ticket_ref": "tkt_bootstrap_operation_skeleton_v1",
+      "relationship": "triggered_event_schema_creation"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "scripts/record_operation_event.py",
+      "ticket_ref": "tkt_bootstrap_operation_skeleton_v1",
+      "relationship": "triggered_event_recording_helper_creation"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "app/folder_status.md",
+      "ticket_ref": "tkt_status_compaction_link_v1",
+      "relationship": "requested_status_compaction_linkage"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "scripts/folder_status.md",
+      "ticket_ref": "tkt_status_compaction_link_v1",
+      "relationship": "requested_status_compaction_linkage"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "runtime/folder_status.md",
+      "ticket_ref": "tkt_status_compaction_link_v1",
+      "relationship": "requested_status_compaction_linkage"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md",
+      "derived_target_ref": "references/folder_status.md",
+      "ticket_ref": "tkt_status_compaction_link_v1",
+      "relationship": "requested_status_compaction_linkage"
+    },
+    {
+      "source_doc_ref": "vectorfl_philosophical_interpretation_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "tkt_register_vectorfl_philosophical_interpretation_v1",
+      "relationship": "registered_as_structured_internal_doc"
+    },
+    {
+      "source_doc_ref": "vectorfl_philosophical_interpretation_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_vectorfl_philosophical_interpretation_v1_20260324_192744.json",
+      "ticket_ref": "tkt_register_vectorfl_philosophical_interpretation_v1",
+      "relationship": "generated_source_manifest"
+    },
+    {
+      "source_doc_ref": "vectorfl_philosophical_interpretation_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_vectorfl_philosophical_interpretation_v1_20260324_192744.md",
+      "ticket_ref": "tkt_register_vectorfl_philosophical_interpretation_v1",
+      "relationship": "generated_operator_summary"
+    },
+    {
+      "source_doc_ref": "vectorfl_philosophical_interpretation_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_vectorfl_philosophical_interpretation_v1_20260324_192744.md",
+      "ticket_ref": "tkt_register_vectorfl_philosophical_interpretation_v1",
+      "relationship": "generated_readable_input_board"
+    },
+    {
+      "source_doc_ref": "vectorfl_philosophical_interpretation_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_vectorfl_philosophical_interpretation_v1_20260324_192744.json",
+      "ticket_ref": "tkt_register_vectorfl_philosophical_interpretation_v1",
+      "relationship": "generated_processing_trace"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_194938.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_194938.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_194938.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_194938.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_194938.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_195003.json",
+      "ticket_ref": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_195003.json",
+      "ticket_ref": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_195003.json",
+      "ticket_ref": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_195003.md",
+      "ticket_ref": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_document_routing_markers_and_operation_receipt_v1_20260324_195003.md",
+      "ticket_ref": "tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_origin_map_minimum_v1_20260324_203621.json",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_origin_map_minimum_v1_20260324_203621.json",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_origin_map_minimum_v1_20260324_203621.json",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_origin_map_minimum_v1_20260324_203621.md",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_origin_map_minimum_v1_20260324_203621.md",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_origin_map_minimum_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_directive_origin_map_minimum_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "tkt_process_codex_directive_origin_map_minimum_v1",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_label_family_separation_contract_v1_20260324_212635.json",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_label_family_separation_contract_v1_20260324_212635.json",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_label_family_separation_contract_v1_20260324_212635.json",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_label_family_separation_contract_v1_20260324_212635.md",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_label_family_separation_contract_v1_20260324_212635.md",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_label_family_separation_contract_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_directive_label_family_separation_contract_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "tkt_process_codex_directive_label_family_separation_contract_v1",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_codex_directive_core_input_layer_labeler_realization_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_core_input_layer_labeler_realization_v1_20260324_213300.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_core_input_layer_labeler_realization_v1_20260324_213300.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_core_input_layer_labeler_realization_v1_20260324_213300.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_core_input_layer_labeler_realization_v1_20260324_213300.md",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_core_input_layer_labeler_realization_v1_20260324_213300.md",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_directive_core_input_layer_labeler_realization_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_smoke_structured_doc_default_case_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_reference_case_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_smoke_structured_doc_reference_case_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_summary_case_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_reference_case_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_smoke_structured_doc_reference_case_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_smoke_structured_doc_default_case_v1_20260324_213932.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_summary_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_smoke_structured_doc_summary_case_v1_20260324_213932.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_summary_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_smoke_structured_doc_summary_case_v1_20260324_213932.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_summary_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_smoke_structured_doc_summary_case_v1_20260324_213932.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_core_input_layer_labeler_realization_v1_20260324_213932.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_core_input_layer_labeler_realization_v1_20260324_213932.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_core_input_layer_labeler_realization_v1_20260324_213932.json",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_core_input_layer_labeler_realization_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_core_input_layer_labeler_realization_v1_20260324_213932.md",
+      "ticket_ref": "tkt_process_codex_directive_core_input_layer_labeler_realization_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_summary_case_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_smoke_structured_doc_summary_case_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_smoke_structured_doc_default_case_v1_20260324_214037.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_smoke_structured_doc_default_case_v1_20260324_214037.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_smoke_structured_doc_default_case_v1_20260324_214037.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_smoke_structured_doc_default_case_v1_20260324_214037.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_smoke_structured_doc_default_case_v1_20260324_214037.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "docs/reports/smoke_structured_doc_default_case_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_smoke_structured_doc_default_case_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_codex_summary_today_session_close_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_summary_today_session_close_v1_20260324_214544.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_summary_today_session_close_v1_20260324_214544.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_summary_today_session_close_v1_20260324_214544.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_summary_today_session_close_v1_20260324_214544.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_summary_today_session_close_v1_20260324_214544.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_summary_today_session_close_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_summary_today_session_close_v1_20260324_214709.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_summary_today_session_close_v1_20260324_214709.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_summary_today_session_close_v1_20260324_214709.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_summary_today_session_close_v1_20260324_214709.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_summary_today_session_close_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_summary_today_session_close_v1_20260324_214709.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_175809.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_175809.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_175809.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_175809.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_175809.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_origin_map_seed"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet",
+      "run_id": "run_20260325_180119_d8ff803a",
+      "idempotency_key": "2124a9bcb19c8522"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry",
+      "run_id": "run_20260325_180119_d8ff803a",
+      "idempotency_key": "d9b4ada5a271a0ca"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "7c2593ef19171b8e"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "e8b2a8540029d515"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "e050b0bc48cebcb3"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "cb73ed6f5741dafd"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "bac6fc4603c3bc8f"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_origin_map_seed",
+      "run_id": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180119",
+      "idempotency_key": "303122d2743b2e2e"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180822.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180822_d8ff803a",
+      "idempotency_key": "57ab8f4ecac212c9"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180822.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180822_d8ff803a",
+      "idempotency_key": "22c39ba4c33262cc"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180822.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180822_d8ff803a",
+      "idempotency_key": "8cf99a67a94ba3ea"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180822.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180822_d8ff803a",
+      "idempotency_key": "e8821f92e3c8bab7"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180822.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180822_d8ff803a",
+      "idempotency_key": "215b4f85cc08c42d"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180903.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180903_d8ff803a",
+      "idempotency_key": "ccb41e1fdf106140"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180903.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180903_d8ff803a",
+      "idempotency_key": "861fff5b725c9294"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180903.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180903_d8ff803a",
+      "idempotency_key": "f0ee240133578be2"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180903.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180903_d8ff803a",
+      "idempotency_key": "5ef33bd573c8ad7d"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_180903.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_180903_d8ff803a",
+      "idempotency_key": "e820e753fa4643b2"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181523.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181523_d8ff803a",
+      "idempotency_key": "87b3dc3630db848b"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181523.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181523_d8ff803a",
+      "idempotency_key": "313e1d30c9da6572"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181523.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181523_d8ff803a",
+      "idempotency_key": "0ede39b683f7f056"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181523.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181523_d8ff803a",
+      "idempotency_key": "deac9452f1012072"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181523.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181523_d8ff803a",
+      "idempotency_key": "0edf5833e501bed6"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181524.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181524_d8ff803a",
+      "idempotency_key": "4f73660227f92091"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181524.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181524_d8ff803a",
+      "idempotency_key": "9f9d884d07ecc796"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181524.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181524_d8ff803a",
+      "idempotency_key": "c3d2b422b0c35cef"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181524.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181524_d8ff803a",
+      "idempotency_key": "74caa672db6503a8"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181524.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181524_d8ff803a",
+      "idempotency_key": "e2478f8505d034a1"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181806.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181806_d8ff803a",
+      "idempotency_key": "f59ea1189893508e"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181806.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181806_d8ff803a",
+      "idempotency_key": "5d040b9e934f6d52"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181806.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181806_d8ff803a",
+      "idempotency_key": "e9c499db2ba6a94d"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181806.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181806_d8ff803a",
+      "idempotency_key": "22736aa14625d0fa"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181806.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181806_d8ff803a",
+      "idempotency_key": "1c2b318d5a284923"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181825.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181825_629281_d8ff803a_a22354",
+      "idempotency_key": "f60e44353f098858"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181825.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181825_629281_d8ff803a_a22354",
+      "idempotency_key": "98fe41d1e885fcdb"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181825.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181825_629281_d8ff803a_a22354",
+      "idempotency_key": "3f6bbde467546c80"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181825.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181825_629281_d8ff803a_a22354",
+      "idempotency_key": "653b09dfc4a6bd5a"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_181825.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_181825_629281_d8ff803a_a22354",
+      "idempotency_key": "ecbb23ce8cced787"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_182050.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_182050_868100_d8ff803a_636216",
+      "idempotency_key": "af2682f4f93646da"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_182050.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_182050_868100_d8ff803a_636216",
+      "idempotency_key": "0a8b019d08759f5d"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_182050.json",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_182050_868100_d8ff803a_636216",
+      "idempotency_key": "34b4fcc55dc4d58c"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_182050.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_182050_868100_d8ff803a_636216",
+      "idempotency_key": "5ea685823be3495b"
+    },
+    {
+      "source_doc_ref": "codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_20260325_182050.md",
+      "ticket_ref": "tkt_process_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_182050_868100_d8ff803a_636216",
+      "idempotency_key": "1cc91bb219835576"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "runtime/manifests/label_packets/doc_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_label_packet.json",
+      "ticket_ref": "",
+      "relationship": "generated_core_label_packet",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "b73c2907ed805458"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "runtime/manifests/structured_internal_docs_registry_v1.json",
+      "ticket_ref": "",
+      "relationship": "registered_in_structured_doc_registry",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "864df70040b22b9a"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/source_manifest_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_20260325_183140.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "13aa086d29dd92ed"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/split_units_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_20260325_183140.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "8b15fe67148ead6f"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/processing_trace_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_20260325_183140.json",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "0615848932ac07c9"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/readable_input_board_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_20260325_183140.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "4a883d20ec7e969e"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "app/work/observer_ingest_min/generated/operator_summary_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_20260325_183140.md",
+      "ticket_ref": "",
+      "relationship": "generated_by_structured_doc_routing",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "f2a35d7fc46c5aa4"
+    },
+    {
+      "source_doc_ref": "codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md",
+      "derived_target_ref": "runtime/manifests/origin_maps/doc_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_receipt_seed_origin_map.json",
+      "ticket_ref": "",
+      "relationship": "generated_origin_map_seed",
+      "run_id": "run_20260325_183140_332620_3e3bcb9c_d32b88",
+      "idempotency_key": "ce6e3a5d756d8e7b"
+    }
+  ]
+}

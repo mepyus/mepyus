@@ -1,0 +1,33 @@
+{
+  "candidate_name": "raw_to_first_pass_to_report",
+  "intended_mode_scope": "space_reading",
+  "valid_artifact_groups": [
+    "raw_external_cases"
+  ],
+  "typical_first_read_refs": [
+    "inputs/external_cases/README.md",
+    "inputs/external_cases/saltlux_ai.txt",
+    "inputs/external_cases/enterprise.txt",
+    "inputs/external_cases/andrej_karpathy_youtube.txt"
+  ],
+  "known_divergent_modes": [
+    "reflection"
+  ],
+  "boundary_notes": [
+    "different_mode_leads_to_different_entry_surface",
+    "same family does not imply same path under reflection"
+  ],
+  "supporting_families": [
+    "saltlux_ai",
+    "ontology_youtube",
+    "choi_ai_classroom_vlm",
+    "enterprise",
+    "andrej_karpathy_youtube"
+  ],
+  "promotion_status": "observation",
+  "not_promoted_reason": "observation only; raw -> first-pass -> report remains a candidate rather than a locked pipeline",
+  "notes": [
+    "This summary compresses the observation registry into a mode-scoped surface.",
+    "Reflection keeps the raw requested anchor as the read anchor while shifting the supporting surface to report/trace material."
+  ]
+}

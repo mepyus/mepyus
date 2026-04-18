@@ -1,0 +1,40 @@
+# external_case_first_pass_aifrontier_01_28_v1
+
+## context
+- exploration_id: `external_case_first_pass_aifrontier_01_28_v1`
+- session_id: `session_20260326_01`
+- run_id: `run_20260326_203800_729630_9ca8594f_fcf5e1`
+- observed_at: `2026-03-26T20:48:00+09:00`
+- source_ref: `docs/guides/aifrontier_01_28.txt`
+- source_type: `external_case_primary_transcript`
+- source_origin: `raw_talk_or_conversation_transcript`
+- source_status: `primary_transcript_with_asr_noise`
+- observation_type: `reusable_translation`
+
+## readout
+- candidate_slots:
+  - `harness_reduction_model_delegation_frame`
+  - `agentic_ux_barrier_reduction_frame`
+  - `intent_to_spec_to_generation_frame`
+  - `ax_champion_path_context_fit_frame`
+  - `model_competition_and_release_speculation`
+  - `speaker_impression_and_market_mood`
+- kept_as_core_candidate:
+  - 없음
+- kept_as_outer_candidate:
+  - `harness_reduction_model_delegation_frame`
+  - `agentic_ux_barrier_reduction_frame`
+  - `intent_to_spec_to_generation_frame`
+  - `ax_champion_path_context_fit_frame`
+- deferred_items:
+  - `model_competition_and_release_speculation`
+- deferred_reason:
+  - 특정 모델 우위/출시 예측/루머/경쟁 구도 해석은 구조 일반화보다 시황성이 큰 주장이다.
+
+## next
+- future_use_hint:
+  - Saltlux와 다른 유형의 외부 사례에서 outer 프레임이 어떻게 반복/비반복 되는지 보여주는 비교 입력으로 재사용 가능
+- next_action_hint:
+  - 3번째 외부 사례 1건을 더 넣어 outer 프레임 반복성을 확인한다.
+- notes:
+  - 이 사례는 ontology 중심보다 운영 감각, harness 축소, agentic UX, intent->spec 증폭 같은 프레임이 더 강하게 떠오른다.

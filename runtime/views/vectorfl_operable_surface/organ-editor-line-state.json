@@ -1,0 +1,149 @@
+{
+  "organ": {
+    "slug": "line-state",
+    "label": "Line / State Organ",
+    "current": false,
+    "next_candidate": false,
+    "active_case_count": 0,
+    "summary": "Line/state organ은 intake 재료와 current-reading 재료를 바탕으로 새 line seed, thickening, reuse, carry 가능성을 읽는 기관이다.",
+    "supported_family": "native_document_sequence",
+    "supported_gap_count": 0,
+    "bundle": {
+      "role": {
+        "path": "docs/specs/vectorfl_line_state_organ_role_md_draft_v0.md",
+        "title": "Line State Organ ROLE.md Draft v0",
+        "summary": "Line/state organ은 intake 재료와 current-reading 재료를 바탕으로 새 line seed, thickening, reuse, carry 가능성을 읽는 기관이다.",
+        "content": "# Line State Organ ROLE.md Draft v0\n\n## role\n\nLine/state organ은 intake 재료와 current-reading 재료를 바탕으로  \n새 line seed, thickening, reuse, carry 가능성을 읽는 기관이다.\n\n이 기관의 일은 line을 무조건 많이 만드는 것이 아니라,\n무엇이 실제로 line/state 형성으로 갈 수 있고\n무엇은 아직 candidate나 carry로 남겨야 하는지를 보수적으로 가르는 것이다.\n\n## reads first\n\n1. source/intake material\n2. existing line/state carry\n3. current case question\n4. residue / trace hints\n5. weak/mixed signals\n\n## does\n\n- line seed 후보를 제안한다\n- thickening / reuse / carry 여부를 읽는다\n- 유사 line/state 후보를 찾는다\n- line-forming 가능성과 비형성 가능성을 같이 표시한다\n\n## does not do\n\n- 최종 line 의미를 쉽게 확정하지 않는다\n- candidate를 승격 사실처럼 쓰지 않는다\n- trace나 phase를 모두 line으로 환원하지 않는다\n- governance release를 대신하지 않는다\n\n## output expectation\n\nLine/state organ은 아래 중 일부를 반환할 수 있어야 한다.\n\n- line seed proposal\n- thickening note\n- reuse/carry note\n- line-forming caution\n\n## caution\n\n- phase/hint/residue 중심 사례를 line으로 과장하지 않는다\n- weak evidence면 line candidate로만 남긴다\n- reuse와 new generation을 혼동하지 않는다\n- promotion-ready language를 피한다\n\n## final sentence\n\nLine/state organ은 line을 생산하는 공장이라기보다,  \n무엇이 line/state 형성으로 갈 수 있는지와 무엇이 아직 carry/candidate 수준에 머물러야 하는지를 보수적으로 판독하는 기관이다."
+      },
+      "handoff": {
+        "path": "docs/specs/vectorfl_line_state_organ_handoff_md_draft_v0.md",
+        "title": "Line State Organ HANDOFF.md Draft v0",
+        "summary": "- intake packet - source/context carry - current surface excerpt - existing line/state refs - trace/residue hints",
+        "content": "# Line State Organ HANDOFF.md Draft v0\n\n## accepted inputs\n\n- intake packet\n- source/context carry\n- current surface excerpt\n- existing line/state refs\n- trace/residue hints\n\n## required packet fields\n\n- `case_ref`\n- `current_lane_ref`\n- `relevant_input_refs`\n- `existing_line_refs if any`\n- `trace_carry_refs`\n- `question_or_trigger`\n- `expected_return_type=line_seed_proposal`\n\n## common triggers\n\n- new material may form a line\n- existing line may thicken or be reused\n- current reading lacks line/state anchor\n- residue suggests recurrence but not closure\n\n## continuity / carry\n\n- preserve previous line refs when reuse is plausible\n- keep candidate-only status when evidence is weak\n- keep trace linkage to support later reread\n\n## handoff target\n\n주 대상:\n\n- `translation organ`\n\n보조 대상:\n\n- `trace/memory organ`\n- `current-reading return surface` for candidate-only visibility\n\n## handoff rule\n\nLine/state organ은 final line set만 넘기지 않는다.  \ncandidate / thickening / reuse / carry 구분을 같이 넘겨야 한다.\n\n## final sentence\n\nLine/state organ handoff는 line seed proposal과 thickening/reuse/carry 판단을 evidence와 함께 넘겨, 다음 기관이 그것을 grammar나 trace 쪽으로 이어받게 하는 formation-aware handoff여야 한다."
+      },
+      "caution": {
+        "path": "docs/specs/vectorfl_line_state_organ_caution_md_draft_v0.md",
+        "title": "Line State Organ CAUTION.md Draft v0",
+        "summary": "Line/state organ의 caution 규칙은 candidate, thickening, reuse, carry를 과장해 모두 `새 line 생성`처럼 보이게 만드는 것을 막는 데 목적이 있다.",
+        "content": "# Line State Organ CAUTION.md Draft v0\n\n## caution purpose\n\nLine/state organ의 caution 규칙은  \ncandidate, thickening, reuse, carry를 과장해 모두 `새 line 생성`처럼 보이게 만드는 것을 막는 데 목적이 있다.\n\n## stop / hold conditions\n\n- evidence too weak for line seed\n- existing line reuse is more plausible than new generation\n- non-line unit dominates the case\n- residue exists without stable recurrence\n\n## preserve-first rules\n\n- candidate-only status를 유지할 수 있다\n- thickening을 new line generation처럼 쓰지 않는다\n- non-line 중심 사례는 non-line으로 남긴다\n- promotion-ready wording을 피한다\n\n## avoid\n\n- explicit strong line wording without evidence\n- stable family wording from one weak cue\n- closure-by-line naming\n\n## final sentence\n\nLine/state organ은 line을 빨리 늘리는 기관이 아니라, line 가능성과 한계를 같이 표시하면서 과잉 생성과 조기 승격을 막는 기관이다."
+      },
+      "return": {
+        "path": "docs/specs/vectorfl_line_state_organ_return_md_draft_v0.md",
+        "title": "Line State Organ RETURN.md Draft v0",
+        "summary": "Line/state organ의 반환은 새로운 의미망이 생길 수 있는지, 기존 line이 더 두꺼워졌는지, 아니면 아직 carry/candidate로만 남아야 하는지를 다음 기관이 읽을 수 있게 넘기는 것이다.",
+        "content": "# Line State Organ RETURN.md Draft v0\n\n## return purpose\n\nLine/state organ의 반환은  \n새로운 의미망이 생길 수 있는지, 기존 line이 더 두꺼워졌는지,\n아니면 아직 carry/candidate로만 남아야 하는지를 다음 기관이 읽을 수 있게 넘기는 것이다.\n\n## minimum return blocks\n\n### 1. line seed proposal\n\n- 새 line candidate 또는 line family hint\n\n### 2. thickening / reuse / carry note\n\n- new generation인지\n- thickening인지\n- reuse인지\n- carry인지\n\n### 3. evidence refs\n\n- source/intake refs\n- current surface refs\n- trace/residue refs\n\n### 4. caution note\n\n- candidate-only\n- non-line dominant\n- weak recurrence\n\n## preferred wording\n\n- \"candidate line ...\"\n- \"treat as thickening ...\"\n- \"carry existing line ...\"\n- \"reuse appears stronger than generation ...\"\n\n## avoid wording\n\n- \"new stable line\" without evidence\n- \"fully formed line\"\n- \"promote now\"\n\n## final sentence\n\nLine/state organ의 반환은 line을 선언하는 선포문이 아니라,  \nline/state 형성 가능성을 evidence와 caution과 함께 다음 기관에 넘기는 formation-aware return이어야 한다."
+      }
+    },
+    "lens": "line seed와 unstable pressure를 분리해 읽기 가능한 work packet으로 고정",
+    "managing_cli": "codex-cli",
+    "managing_lane_slug": "chatgpt",
+    "md_contracts": [
+      "ROLE",
+      "HANDOFF",
+      "CAUTION",
+      "RETURN"
+    ],
+    "handoff_targets": [
+      "translation",
+      "flow-interpretation"
+    ],
+    "paired_external_team": "comparison-team",
+    "human_report_format": "지금 어떤 line이 기준이고 무엇이 아직 불안정한지 보고",
+    "detail_href": "organ-detail-line-state.html",
+    "editor_href": "organ-editor-line-state.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper",
+  "mode": "editor"
+}

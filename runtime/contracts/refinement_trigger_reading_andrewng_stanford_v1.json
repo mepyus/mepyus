@@ -1,0 +1,14 @@
+{
+  "schema": "refinement_trigger_reading_andrewng_stanford_v1",
+  "case_name": "andrewng_stanford_raw_transcript_v1",
+  "status": "refinement_candidate",
+  "trigger_results": {
+    "external_case_accumulated_ge_5": true,
+    "repeated_relation_slot_ge_3": true,
+    "observer_readout_confusion": false,
+    "guide_contract_index_relayout_needed": false,
+    "repeated_defer_candidate": true
+  },
+  "reason": "canonical raw/primary 외부 사례가 5건에 도달했고 agentic workflow, intent/spec, strong-claim defer 패턴이 반복되기 시작했으므로 refinement 후보로 읽을 수 있다. 다만 아직 바로 정련을 열기보다 한 사례 더 보거나 정련 대상을 좁히는 편이 안전하다.",
+  "next_action_hint": "다음 사례를 하나 더 넣어 반복 축을 확인하거나, intent/spec/product loop 축을 정련 후보로 좁힌다."
+}

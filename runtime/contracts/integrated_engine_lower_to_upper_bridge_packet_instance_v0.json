@@ -1,0 +1,217 @@
+{
+  "packet_id": "lower_to_upper_bridge_packet_instance_v0",
+  "process_camera_id": "integrated_engine_candidate_handling_process_camera_v0",
+  "target_type": "lower_input_output_bundle_to_upper_packet_input_bridge_example",
+  "current_purpose": {
+    "value": "Test whether one real lower-input source bundle can be translated into a bounded upper execution packet input without claiming automation, canonical bridge status, line generation, or upper/lower unification.",
+    "origin": "upper_added_supervisory_context"
+  },
+  "scope_boundary": {
+    "included": [
+      "one selected lower source bundle",
+      "source manifest",
+      "split units",
+      "processing trace",
+      "one draft upper packet instance",
+      "bridge viability evaluation"
+    ],
+    "excluded": [
+      "automatic packetization",
+      "upper/lower unification",
+      "code rewrite",
+      "runtime automation",
+      "line generation",
+      "canonical bridge declaration",
+      "treating split units as lines",
+      "treating the lower bundle as a packet by itself"
+    ],
+    "origin": "upper_added_supervisory_context"
+  },
+  "candidate_source_zone": {
+    "primary_zone": "app/work/observer_ingest_min/generated",
+    "selected_lower_bundle": {
+      "bundle_type": "source_manifest_plus_split_units_plus_processing_trace",
+      "run_id": "codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042",
+      "source_manifest_path": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "split_units_path": "app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "processing_trace_path": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json"
+    },
+    "origin": "lower_derived"
+  },
+  "selected_lens_set": {
+    "primary": "bridge_translation_lens",
+    "supporting": [
+      "evidence_lens",
+      "boundary_lens",
+      "readiness_lens",
+      "non_line_overread_guard_lens"
+    ],
+    "lens_status": {
+      "bridge_translation_lens": "upper_added_for_this_pilot",
+      "evidence_lens": "process_camera_compatible",
+      "boundary_lens": "process_camera_compatible",
+      "readiness_lens": "derived_from_lower_input_readiness_package",
+      "non_line_overread_guard_lens": "derived_from_lower_input_to_line_boundary"
+    },
+    "origin": "upper_added_supervisory_context"
+  },
+  "candidate_list": [
+    {
+      "candidate_id": "selected_source_bundle",
+      "selection_status": "selected_for_bridge_example",
+      "bundle_components": [
+        "source_manifest",
+        "split_units",
+        "processing_trace"
+      ],
+      "support_reason": "Provides source identity, segmentation basis, concrete split evidence, and run trace while staying below GMD/multi-lens line-overread pressure.",
+      "origin": "lower_derived_plus_selection_note"
+    },
+    {
+      "candidate_id": "rejected_label_packet_routing_receipt_bundle",
+      "selection_status": "not_selected",
+      "support_reason": "Strong authority/routing evidence but less content-bearing for first evidence-to-packet bridge test.",
+      "origin": "upper_added_selection_reasoning"
+    },
+    {
+      "candidate_id": "deferred_gmd_native_read_bundle",
+      "selection_status": "deferred",
+      "support_reason": "High-value reread support but higher line-overread and maturity-overread risk.",
+      "origin": "upper_added_selection_reasoning"
+    }
+  ],
+  "evidence_bundle": [
+    {
+      "evidence_id": "source_manifest_identity",
+      "source": "app/work/observer_ingest_min/generated/source_manifest_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "lower_fields_used": {
+        "input_id": "codex_directive_document_routing_markers_and_operation_receipt_v1",
+        "source_path": "/Users/sungsookim/universe/vectorfl_replica/source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md",
+        "label": "codex_directive_document_routing_markers_and_operation_receipt_v1",
+        "input_kind": "mixed",
+        "detected_profile": "note",
+        "split_mode_used": "heading",
+        "raw_line_count": 253,
+        "unit_count": 34,
+        "run_id": "codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042"
+      },
+      "support_reason": "Provides source identity and split run root.",
+      "origin": "lower_derived"
+    },
+    {
+      "evidence_id": "split_units_segmentation",
+      "source": "app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "lower_fields_used": {
+        "unit_count": 34,
+        "split_mode": "heading",
+        "sample_units": [
+          {
+            "unit_id": "unit_001",
+            "start_ref": "preamble",
+            "text_excerpt": "[[A]] [[DOCROLE:directive]] [[RUNMODE:ingest_then_execute]] [[PRIORITY:high]]"
+          },
+          {
+            "unit_id": "unit_003",
+            "start_ref": "0. 문서 목적",
+            "text_excerpt": "## 0. 문서 목적 이번 작업의 목적은 아래 4개를 동시에 해결하는 것이다..."
+          },
+          {
+            "unit_id": "unit_013",
+            "start_ref": "3.4 operation receipt 는 단일 조회면이어야 한다",
+            "text_excerpt": "### 3.4 operation receipt 는 단일 조회면이어야 한다..."
+          }
+        ]
+      },
+      "support_reason": "Provides inspectable segmentation and bounded source chunks.",
+      "origin": "lower_derived",
+      "non_line_guard": "These units are evidence chunks only, not line artifacts."
+    },
+    {
+      "evidence_id": "processing_trace_run_context",
+      "source": "app/work/observer_ingest_min/generated/processing_trace_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "lower_fields_used": {
+        "run_id": "codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042",
+        "detected_profile": "note",
+        "split_mode_used": "heading",
+        "source_unit_count": 34,
+        "merged_unit_count": 34,
+        "engine_stage": "summary_written",
+        "notes": "minimal observer ingest path: load -> detect -> split -> summary"
+      },
+      "support_reason": "Provides minimal run trace and processing stage.",
+      "origin": "lower_derived",
+      "semantic_correctness_guard": "Trace proves process path, not semantic correctness."
+    }
+  ],
+  "validation_criteria": [
+    {
+      "criterion": "lower_bundle_grounding",
+      "question": "Are the selected source manifest, split units, and processing trace real lower-input outputs from the same run?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "direct_vs_added_context_separation",
+      "question": "Does the packet preserve which fields came from lower outputs and which were upper-added?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "non_line_overread",
+      "question": "Are split units kept as evidence chunks rather than line artifacts?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "packet_boundary",
+      "question": "Does the packet avoid treating the lower bundle as a packet by itself?",
+      "origin": "upper_added_validation_gate"
+    },
+    {
+      "criterion": "bridge_boundedness",
+      "question": "Does this remain one bridge example rather than a general bridge or automation claim?",
+      "origin": "upper_added_validation_gate"
+    }
+  ],
+  "allowed_actions": [
+    "inspect selected lower bundle",
+    "map lower-derived evidence to upper packet fields",
+    "identify upper-added context",
+    "evaluate bridge viability",
+    "produce bounded bridge notes"
+  ],
+  "forbidden_actions": [
+    "rewrite lower input organ",
+    "unify upper and lower input layers",
+    "declare automatic packetization",
+    "generate lines",
+    "promote split units to line artifacts",
+    "declare canonical bridge path",
+    "modify runtime code",
+    "treat this packet as worker-execution authorization"
+  ],
+  "expected_output_shape": {
+    "format": "bounded_bridge_package",
+    "must_include": [
+      "candidate_selection_note",
+      "bridge_translation_note",
+      "draft_packet_instance",
+      "bridge_evaluation_note",
+      "worklog",
+      "closeout_note"
+    ],
+    "origin": "upper_added_supervisory_context"
+  },
+  "authority_boundary": {
+    "bridge_status": "bounded_example_only",
+    "packet_status": "draft_upper_packet_input_instance",
+    "automation_allowed": false,
+    "canonical_bridge_allowed": false,
+    "upper_lower_unification_allowed": false,
+    "line_generation_allowed": false,
+    "runtime_execution_authorized": false,
+    "origin": "upper_added_supervisory_context"
+  },
+  "why_this_path_was_chosen": {
+    "value": "The source bundle is the strongest conservative first bridge candidate because it carries source identity, segmentation, and trace while avoiding the higher line-overread pressure of GMD/multi-lens bundles.",
+    "origin": "upper_added_selection_reasoning"
+  }
+}
+

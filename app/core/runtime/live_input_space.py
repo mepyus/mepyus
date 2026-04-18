@@ -339,7 +339,7 @@ def _register_live_input_bridges(
                 note=(
                     "canonical shared anchors: " + ", ".join(anchor_hints[:4])
                     if anchor_hints
-                    else f"live input {note} trace"
+                    else "recursive_stage_progression_from_trace"
                 ),
             )
             bridge_record = service.bridges.get(bridge.bridge_id) or {}

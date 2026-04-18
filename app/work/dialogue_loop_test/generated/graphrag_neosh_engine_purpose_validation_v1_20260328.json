@@ -1,0 +1,328 @@
+{
+  "created_at": "2026-03-28T10:45:26.996830Z",
+  "input_asset": "inputs/external_cases/graphrag_neosh.txt",
+  "probe_files": [
+    "app/work/dialogue_loop_test/generated/graphrag_neosh_segmentation_probe_v1_w3_s1_20260328T104511Z.json",
+    "app/work/dialogue_loop_test/generated/graphrag_neosh_segmentation_probe_v1_w6_s3_20260328T104511Z.json"
+  ],
+  "collection_context": {
+    "input_asset_type": "high_density_dialogue",
+    "source_asset_ref": "inputs/external_cases/graphrag_neosh.txt",
+    "supporting_first_pass_patterns": [
+      "overall_object_candidates",
+      "overall_layer_hints",
+      "overall_relation_hints",
+      "overall_residue_breakdown",
+      "top_question_intent_windows"
+    ],
+    "second_order_reading_type": "purpose_synthesis",
+    "rereading_mode": "cross_run_probe_synthesis",
+    "scope_local_page_comparison": "page",
+    "domain_specific_suspicion": "high_ai_agent_product_transition",
+    "reusable_attitude_hint": "object_opening_and_question_opening_collection",
+    "candidate_status": "collect_only",
+    "hold_reason": "purpose reading is still strongly tied to AI/agent/business transition discourse",
+    "evidence_pointers": [
+      "app/work/dialogue_loop_test/generated/graphrag_neosh_segmentation_probe_v1_w3_s1_20260328T104511Z.json",
+      "app/work/dialogue_loop_test/generated/graphrag_neosh_segmentation_probe_v1_w6_s3_20260328T104511Z.json"
+    ]
+  },
+  "top_objects": [
+    {
+      "object": "모델 work",
+      "count": 18,
+      "reading": "모델 경쟁, 학습/평가/검증 축을 여는 객체"
+    },
+    {
+      "object": "생산성/코딩",
+      "count": 15,
+      "reading": "개발 생산성 압축과 작업 방식 변형을 여는 객체"
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 10,
+      "reading": "앱 형태 재편과 인터페이스 전환을 여는 객체"
+    }
+  ],
+  "top_layers": [
+    {
+      "layer": "설명/해석 층",
+      "count": 1046,
+      "reading": "대화가 시대 인식을 설명하고 해석하는 기본 층"
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 658,
+      "reading": "실제 자동화와 operationalization으로 내려가는 층"
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 101,
+      "reading": "앱/모델/시장 구조가 어떻게 재편되는지 보는 층"
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 85,
+      "reading": "사용자의 다음 탐색 질문을 발생시키는 층"
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 83,
+      "reading": "평가, metric, reward, reliability를 묻는 층"
+    }
+  ],
+  "top_relations": [
+    {
+      "relation": "reinforcement_hint",
+      "count": 186,
+      "reading": "같은 문제의식이 다른 문단에서 누적 보강되는 운동"
+    },
+    {
+      "relation": "transition_hint",
+      "count": 102,
+      "reading": "설명에서 다음 층위로 이동하는 전이 운동"
+    },
+    {
+      "relation": "execution_shift_hint",
+      "count": 85,
+      "reading": "아이디어가 운영/실행 쪽으로 내려가는 운동"
+    },
+    {
+      "relation": "question_generation_hint",
+      "count": 37,
+      "reading": "문단이 다음 질문을 직접 발생시키는 운동"
+    },
+    {
+      "relation": "contrast_hint",
+      "count": 5,
+      "reading": "기존 방식과 새 방식의 긴장/대비가 드러나는 운동"
+    }
+  ],
+  "top_residue": [
+    {
+      "residue": "discourse_connective_residue",
+      "count": 363,
+      "reading": "발화 연결어가 의미 층위 opening을 덮는 residue"
+    },
+    {
+      "residue": "conversational_filler_residue",
+      "count": 125,
+      "reading": "구어 filler가 summary 선두를 흐리는 residue"
+    },
+    {
+      "residue": "generic_abstraction_residue",
+      "count": 71,
+      "reading": "너무 일반적인 추상어가 의미층을 흐리게 하는 residue"
+    },
+    {
+      "residue": "speaker_or_source_residue",
+      "count": 0,
+      "reading": "화자/출처 흔적이 topic signal과 경쟁하는 residue"
+    },
+    {
+      "residue": "quasi_topic_residue",
+      "count": 0,
+      "reading": "주제처럼 보이지만 broad discourse에 가까운 residue"
+    }
+  ],
+  "top_windows": [
+    {
+      "window_id": "138_140",
+      "repeat_count": 1,
+      "question_intent_score": 2,
+      "objects": [
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 모델 work / 주요 층위: 구현/실행 층, 설명/해석 층 / 관계 힌트: reinforcement_hint, execution_shift_hint",
+      "headings": [
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "모델에다가 추가로 벡터 리트리버에는 없었던이 그래프 탐색을 추가하기 위한"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+          "excerpt": "기사까지 함께 추출을 해 보려고 합니다. 실행을 해 보시고 동일한"
+        },
+        {
+          "heading": "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+          "excerpt": "방식으로 벡터 사이퍼 리트리버도 구현을 할 수가 있는데 사용하게 될 드라이버와 인덱스 이름 그리고 인베딩"
+        }
+      ]
+    },
+    {
+      "window_id": "138_143",
+      "repeat_count": 1,
+      "question_intent_score": 2,
+      "objects": [
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 모델 work / 주요 층위: 구현/실행 층, 설명/해석 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "모델에다가 추가로 벡터 리트리버에는 없었던이 그래프 탐색을 추가하기 위한",
+        "모델에다가 추가로 벡터 리트리버에는 없었던이 그래프 탐색을 추가하기 위한",
+        "모델에다가 추가로 벡터 리트리버에는 없었던이 그래프 탐색을 추가하기 위한",
+        "그리고이 뉴스 기사는 어떤 카테고리를 가지고 있고 또이 카테고리는 또 어떤"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+          "excerpt": "기사까지 함께 추출을 해 보려고 합니다. 실행을 해 보시고 동일한"
+        },
+        {
+          "heading": "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+          "excerpt": "방식으로 벡터 사이퍼 리트리버도 구현을 할 수가 있는데 사용하게 될 드라이버와 인덱스 이름 그리고 인베딩"
+        }
+      ]
+    },
+    {
+      "window_id": "135_140",
+      "repeat_count": 1,
+      "question_intent_score": 2,
+      "objects": [
+        "모델 work"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "execution_shift_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 모델 work / 주요 층위: 설명/해석 층, 구현/실행 층, 구조/연결 층 / 관계 힌트: reinforcement_hint, execution_shift_hint",
+      "headings": [
+        "있는 다른 그래프들도 함께 추출을 하기 위해서 우리는 리트리벌 퀄리라고",
+        "노드가 추출이 될 거고이 컨텐츠 노드가 어떤 뉴스 기사와 연결되어",
+        "카테고리에 속해 있을 수 있고이 카테고리에 속해 있는 또 다른 뉴스",
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "정보 그리고 그 뉴스 기사와 같은 카테고리를 가지는 또 다른 뉴스",
+        "모델에다가 추가로 벡터 리트리버에는 없었던이 그래프 탐색을 추가하기 위한"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "있는 다른 그래프들도 함께 추출을 하기 위해서 우리는 리트리벌 퀄리라고",
+          "excerpt": "하는 걸 추가를 해 주어야 합니다. 우선은 벡터 검색을 통해서이 컨텐츠"
+        },
+        {
+          "heading": "노드가 추출이 될 거고이 컨텐츠 노드가 어떤 뉴스 기사와 연결되어",
+          "excerpt": "있는지를 추출하겠다는 의미예요. 그리고이 뉴스 기사는 어떤 특정"
+        }
+      ]
+    },
+    {
+      "window_id": "48_53",
+      "repeat_count": 1,
+      "question_intent_score": 2,
+      "objects": [
+        "에이전트 애플리케이션"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "headings": [
+        "에이전트는 그 질문을 해결할 수 있는 적절한 도구를 선택해서 유연한 답변을",
+        "해당 위치에 있는 정보만을 적절하게 추출을 해서 그 정보를 기반으로",
+        "따라서 어떻게 검색 방식이 달라지고 이걸 각각 도구로 사용한다는 것이",
+        "따라서 어떻게 검색 방식이 달라지고 이걸 각각 도구로 사용한다는 것이",
+        "텍스트투 사이퍼 리트리버를 하나의 도구로 활용을 한다면 이러한 질문들에",
+        "추출하면 되는 문제에서는 텍스트투 사이퍼를 유용하게 활용할 수"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "에이전트는 그 질문을 해결할 수 있는 적절한 도구를 선택해서 유연한 답변을",
+          "excerpt": "할 수 있도록 하는 겁니다. 그래서 다시 정리하면 에이전트 그래프 레그.이 이 그래프 레그를 에이전트로"
+        },
+        {
+          "heading": "해당 위치에 있는 정보만을 적절하게 추출을 해서 그 정보를 기반으로",
+          "excerpt": "답변할 수 있도록 다양한 케이스들에 대응하는 그래프 레그를 구현하는 겁니다. 그래서 사용자의 질문에"
+        }
+      ]
+    },
+    {
+      "window_id": "46_48",
+      "repeat_count": 1,
+      "question_intent_score": 1,
+      "objects": [
+        "에이전트 애플리케이션"
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, transition_hint, execution_shift_hint",
+      "headings": [
+        "궁금할 수도 있고 아니면 언론사와 기사와의 관계가 궁금할 수도 있고",
+        "궁금할 수도 있고 아니면 언론사와 기사와의 관계가 궁금할 수도 있고",
+        "에이전트는 그 질문을 해결할 수 있는 적절한 도구를 선택해서 유연한 답변을"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "궁금할 수도 있고 아니면 언론사와 기사와의 관계가 궁금할 수도 있고",
+          "excerpt": "혹은 어떤 특정 카테고리에 있는 기사를 확인을 할 수도 있고이 지식 그래프에서 추출할 수 있는 다양한"
+        },
+        {
+          "heading": "궁금할 수도 있고 아니면 언론사와 기사와의 관계가 궁금할 수도 있고",
+          "excerpt": "케이스들에 대응되는 다양한 형태의 정보들이 있을 수 있는데요. 그런"
+        }
+      ]
+    },
+    {
+      "window_id": "44_46",
+      "repeat_count": 1,
+      "question_intent_score": 1,
+      "objects": [
+        "에이전트 애플리케이션"
+      ],
+      "relation_hints": [
+        "transition_hint",
+        "execution_shift_hint",
+        "question_generation_hint"
+      ],
+      "opening_summary": "주요 객체 후보: 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구조/연결 층, 질문 유도 층 / 관계 힌트: transition_hint, execution_shift_hint, question_generation_hint",
+      "headings": [
+        "위키스에 들어오시면은 툴스 리트리버에 대해서 제가 간략하게 예제를 좀",
+        "그래프 안에서 추출될 수 있는 다양한 케이스들, 다양한 그래프들의 위치가",
+        "궁금할 수도 있고 아니면 언론사와 기사와의 관계가 궁금할 수도 있고"
+      ],
+      "sample_blocks": [
+        {
+          "heading": "위키스에 들어오시면은 툴스 리트리버에 대해서 제가 간략하게 예제를 좀",
+          "excerpt": "정리를 해 두었고요. 다시 돌아와서 그러면 이걸 AI 에이전트와 한번 연결지어 생각해"
+        },
+        {
+          "heading": "그래프 안에서 추출될 수 있는 다양한 케이스들, 다양한 그래프들의 위치가",
+          "excerpt": "있을 수 있습니다. 앞에서 활용한 기사를 예로 든다면이 기사의 내용이"
+        }
+      ]
+    }
+  ],
+  "era_questions": [
+    "앱과 서비스의 형태는 agent interface 쪽으로 어떻게 재편되는가",
+    "모델 경쟁은 pre-train 이후 evaluation, RLVR, harness 쪽으로 어떻게 이동하는가",
+    "검증과 신뢰는 미래 담론 속에서 어떤 바닥 역할을 맡는가"
+  ],
+  "object_growth_reading": [
+    "이 자산은 모델 능력 경쟁과 agent application 형태 전환을 서로 붙여 키운다",
+    "개발 생산성 변화는 독립 객체라기보다 실행층과 일의 미래를 잇는 중간층으로 자란다"
+  ],
+  "engine_learning_targets": [
+    "질문 유도 문단을 별도 candidate로 승격할 수 있는지 계속 본다",
+    "설명층에서 실행층으로 내려가는 전이 문단을 relation movement로 더 잘 읽게 만든다",
+    "interview/dialogue 특유 residue가 summary 선두를 덮지 않게 summary-stage 후순위화를 검토한다"
+  ]
+}

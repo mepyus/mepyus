@@ -1,0 +1,14 @@
+{
+  "schema": "refinement_trigger_reading_saltlux_goover_v1",
+  "case_name": "saltlux_goover",
+  "status": "watch",
+  "trigger_results": {
+    "external_case_accumulated_ge_5": false,
+    "repeated_relation_slot_ge_3": true,
+    "observer_readout_confusion": false,
+    "guide_contract_index_relayout_needed": false,
+    "repeated_defer_candidate": false
+  },
+  "reason": "relation_kind/relation_reason/user_language_summary 계열이 반복되기 시작했지만, 사례 수와 defer 누적이 아직 refinement를 바로 열 수준은 아니다.",
+  "next_action_hint": "외부 사례 1~2건을 더 누적해 repeated pattern이 실제로 살아남는지 본다."
+}

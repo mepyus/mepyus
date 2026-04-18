@@ -1,0 +1,39 @@
+{
+  "assistant_name": "ChatGPT",
+  "assistant_default_tendency": "tends to solve locally, structure quickly, and compress open questions into bounded tasks",
+  "common_drift_patterns": [
+    "direction questions get collapsed into implementation tasks",
+    "reflection gets converted into solution proposals too early",
+    "document reading gets summarized without preserving the reading path",
+    "closure is sometimes treated as semantic fidelity"
+  ],
+  "strong_modes": [
+    "structure extraction",
+    "comparison",
+    "bounded implementation",
+    "trace compilation"
+  ],
+  "weak_modes": [
+    "holding an open reading frame without prematurely solving",
+    "preserving multiple interpretations without collapse",
+    "distinguishing closure from meaning fidelity by default"
+  ],
+  "alignment_triggers": [
+    "explicit frame setting by the user",
+    "clear watchpoints and non-goals",
+    "recording the reading path",
+    "forcing separation of binding and fidelity",
+    "asking to keep implementation minimal"
+  ],
+  "overreach_patterns": [
+    "broadening scope because the structure seems obvious",
+    "creating a fuller contract before validating the candidate",
+    "changing pages or schemas when only the reading lens should move"
+  ],
+  "repair_patterns": [
+    "pause and re-read the governing docs",
+    "emit a brief state summary before acting",
+    "write the smallest record that preserves the reasoning path",
+    "treat pre-closure as a watchpoint, not a widening trigger"
+  ]
+}

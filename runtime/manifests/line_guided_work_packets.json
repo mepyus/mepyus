@@ -1,0 +1,222 @@
+{
+  "schema_version": "line_guided_work_packets_v0",
+  "updated_at": "2026-04-05T19:10:00+09:00",
+  "mode": "translation_only",
+  "notes": [
+    "v0 keeps only source assignment, line translation, context refs, and execution guidance.",
+    "run_state, reinjection, and reuse are intentionally omitted or left minimal until the first prototype loop is attached.",
+    "sample packets are synthetic translations designed to show how Paperclip-style assignments would be converted into vectorfl line-aware work packets."
+  ],
+  "packets": [
+    {
+      "packet_id": "lwp_v0_paperclip_001",
+      "packet_version": "v1",
+      "created_at": "2026-04-05T19:10:00+09:00",
+      "updated_at": "2026-04-05T19:10:00+09:00",
+      "status": "translated",
+      "source_program": "paperclip",
+      "source_assignment": {
+        "assignment_id": "issue_structured_doc_handoff_001",
+        "company_ref": "company_vectorfl_proto",
+        "project_ref": "proj_runtime_stability",
+        "goal_ref": "goal_reduce_routing_residue",
+        "title": "stabilize structured doc routing handoff before next rollout",
+        "description": "Agent should harden the structured-doc handoff path and keep the runtime surface readable.",
+        "assignee_ref": "agent_routing_operator",
+        "priority": 1,
+        "source_status": "assigned"
+      },
+      "line_translation": {
+        "primary_line_id": "line_transition_over_surface",
+        "support_line_ids": [
+          "line_input_to_reading_organ"
+        ],
+        "corridor": "routing_to_surface",
+        "boundary": "runtime",
+        "translation_confidence": "medium",
+        "translation_reason": [
+          "the assignment targets handoff stability at the runtime surface boundary",
+          "existing runtime tickets already cluster around structured-doc routing",
+          "surface readability depends on keeping the transition path stable"
+        ]
+      },
+      "context_refs": {
+        "line_refs": [
+          "runtime/manifests/line_registry.json#line_transition_over_surface",
+          "runtime/manifests/line_registry.json#line_input_to_reading_organ"
+        ],
+        "residue_refs": [
+          "runtime/logs/reread_observation_log.jsonl"
+        ],
+        "promotion_refs": [
+          "runtime/logs/line_promotion_log.jsonl"
+        ],
+        "board_refs": [
+          "app/work/observer_ingest_min/generated/readable_input_board_line_thickening_promotion_scope_v0_20260402_191907.md"
+        ],
+        "evidence_refs": [
+          "runtime/manifests/ticket_registry_v1.json#tkt_process_codex_directive_document_routing_markers_and_operation_receipt_v1"
+        ]
+      },
+      "execution_guidance": {
+        "objective": "reduce handoff ambiguity without widening the assignment into general runtime refactoring",
+        "acceptance_criteria": [
+          "the handoff path is explicit and bounded",
+          "the targeted validation or smoke check passes",
+          "new routing residue is not amplified"
+        ],
+        "execution_hints": [
+          "prefer an edge fix over a broad restructure",
+          "preserve existing runtime ledger behavior",
+          "capture any unresolved ambiguity as residue rather than hiding it"
+        ],
+        "risk_notes": [
+          "runtime/core boundary drift can reappear if the change widens",
+          "surface output can look stable while the underlying handoff remains implicit"
+        ],
+        "promotion_gate": "review_before_complete"
+      }
+    },
+    {
+      "packet_id": "lwp_v0_paperclip_002",
+      "packet_version": "v1",
+      "created_at": "2026-04-05T19:10:00+09:00",
+      "updated_at": "2026-04-05T19:10:00+09:00",
+      "status": "translated",
+      "source_program": "paperclip",
+      "source_assignment": {
+        "assignment_id": "issue_input_preprocess_002",
+        "company_ref": "company_vectorfl_proto",
+        "project_ref": "proj_external_input",
+        "goal_ref": "goal_clean_ingest_entry",
+        "title": "shape transcript preprocess guidance for external input ingest",
+        "description": "Agent should review transcript preprocess cases and tighten the path into readable ingest work.",
+        "assignee_ref": "agent_input_operator",
+        "priority": 2,
+        "source_status": "assigned"
+      },
+      "line_translation": {
+        "primary_line_id": "line_input_to_reading_organ",
+        "support_line_ids": [
+          "line_pre_read_eye",
+          "line_raw_return_preservation"
+        ],
+        "corridor": "external_input_to_reading",
+        "boundary": "app_work",
+        "translation_confidence": "medium",
+        "translation_reason": [
+          "the assignment is about turning raw transcript material into usable reading input",
+          "pre-read and raw-return lines matter because preprocessing can flatten the source too early",
+          "the work should improve entry into the reading organ rather than summarize away the source"
+        ]
+      },
+      "context_refs": {
+        "line_refs": [
+          "runtime/manifests/line_registry.json#line_input_to_reading_organ",
+          "runtime/manifests/line_registry.json#line_pre_read_eye",
+          "runtime/manifests/line_registry.json#line_raw_return_preservation"
+        ],
+        "residue_refs": [
+          "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json"
+        ],
+        "promotion_refs": [
+          "runtime/preflight_last_decision.json"
+        ],
+        "board_refs": [
+          "app/work/external_input_preprocess/README.md"
+        ],
+        "evidence_refs": [
+          "inputs/external_cases/builder_choi_interview.txt"
+        ]
+      },
+      "execution_guidance": {
+        "objective": "improve preprocess guidance without sacrificing raw return and pre-read sensitivity",
+        "acceptance_criteria": [
+          "preprocess guidance names when to stop before over-normalizing",
+          "comparison output remains readable and probe-ready",
+          "the path into input-to-reading stays explicit"
+        ],
+        "execution_hints": [
+          "treat preprocessing as shaping, not compression",
+          "keep raw-return and pre-read warnings visible",
+          "prefer reusable guidance over case-specific patching"
+        ],
+        "risk_notes": [
+          "over-normalization can erase the line before reread begins",
+          "a clean comparison output can still hide source flattening"
+        ],
+        "promotion_gate": "residue_check_before_complete"
+      }
+    },
+    {
+      "packet_id": "lwp_v0_paperclip_003",
+      "packet_version": "v1",
+      "created_at": "2026-04-05T19:10:00+09:00",
+      "updated_at": "2026-04-05T19:10:00+09:00",
+      "status": "translated",
+      "source_program": "paperclip",
+      "source_assignment": {
+        "assignment_id": "issue_transition_validation_003",
+        "company_ref": "company_vectorfl_proto",
+        "project_ref": "proj_transition_validation",
+        "goal_ref": "goal_strengthen_readout_validation",
+        "title": "review transition-over-surface validation outputs for reusable cautions",
+        "description": "Agent should inspect validation results and separate reusable pattern from temporary residue.",
+        "assignee_ref": "agent_validation_operator",
+        "priority": 3,
+        "source_status": "assigned"
+      },
+      "line_translation": {
+        "primary_line_id": "line_transition_over_surface",
+        "support_line_ids": [
+          "line_raw_return_preservation"
+        ],
+        "corridor": "validation_to_surface_readout",
+        "boundary": "runtime",
+        "translation_confidence": "high",
+        "translation_reason": [
+          "the assignment directly reads transition-over-surface validation output",
+          "the work is about deciding what becomes reusable caution and what remains residue",
+          "raw-return preservation remains relevant when validation summaries risk flattening the original path"
+        ]
+      },
+      "context_refs": {
+        "line_refs": [
+          "runtime/manifests/line_registry.json#line_transition_over_surface",
+          "runtime/manifests/line_registry.json#line_raw_return_preservation"
+        ],
+        "residue_refs": [
+          "runtime/manifests/phase_decision_log.jsonl",
+          "runtime/logs/reread_observation_log.jsonl"
+        ],
+        "promotion_refs": [
+          "runtime/logs/line_promotion_log.jsonl"
+        ],
+        "board_refs": [
+          "app/work/operating_ui/generated/internal_search_panel_demo_20260402T212134Z.json"
+        ],
+        "evidence_refs": [
+          "scripts/run_transition_over_surface_residue_robustness_probe.py"
+        ]
+      },
+      "execution_guidance": {
+        "objective": "separate stable reusable caution from transient validation residue",
+        "acceptance_criteria": [
+          "reusable caution is explicitly named",
+          "temporary residue remains visible instead of being collapsed into the summary",
+          "the output can feed a later reinjection step"
+        ],
+        "execution_hints": [
+          "treat validation output as a reading surface, not just a pass/fail report",
+          "promote only patterns that survive reread",
+          "leave unresolved edges as residue candidates"
+        ],
+        "risk_notes": [
+          "validation summaries may hide unstable raw edges",
+          "forcing closure too early can destroy future reuse value"
+        ],
+        "promotion_gate": "pattern_review_before_complete"
+      }
+    }
+  ]
+}

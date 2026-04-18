@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T114609Z_0e7f1b54",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "user_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language Koreanization data loop 2: collect Korean operating-language data from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md",
+    "docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- source context where it appeared\n- internal meaning / operational role\n- Koreanization candidate, not final UI copy\n- Korean preservation requirement\n- risky Korean flattening to avoid\n- why this helps the user operate\n- what meaning gets lost if shortened\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:46:09Z",
+  "ended_at": "2026-04-16T11:47:22Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T114609Z_0e7f1b54/prompt.md",
+  "exit_code": 0,
+  "result_summary": "애매한 후보를 무리하게 확정하지 않고 상태별로 다룸\n   - what meaning gets lost if shortened\n     - 각각의 권한/시간/충돌 처리 차이\n   - repeated connection it belongs to\n     - operating state / boundary-first exposure\n   - emerging axis candidate\n     - `non-final operating states`\n   - surface exposure note: user / vectorfl / engine\n     - user: 결정 상태로 노출 가능\n     - vectorfl: reflux/reprocess reason과 연결\n     - engine: 직접 판단 상태로 흡수하면 안 됨\n   - external expression support needed, if any\n     - 각 상태의 boundary note 필요\n   - next reread question\n     - `hold`와 `watch keep`의 실제 운영 차이는 어디서 드러나는가?\n   - suggested next use: validation target\n     - high-risk term boundary validation\n\n- uncertainty or failure notes\n  - bounded refs 2개만 읽었으므로 실제 UI 코드, runtime artifacts, recent CLI turns는 검토하지 않음\n  - Koreanization candidates are internal candidates only; final UI wording or glossary intentionally not produced\n  - `line`의 한국어 후보 `선`은 의미가 짧게 납작해질 위험이 있어 추가 reread 필요\n  - `deposit`, `promotion`, `canonicalization`은 문맥상 구분되지만 이번 bounded context만으로 한국어 경계명을 확정하지 않음\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate\n  - reread target\n    - `deposit_candidate` vs `deposit-ready` vs `automatic deposit ingestion` boundary\n    - `line / connection / axis` evidence in recent CLI returns\n  - implementation return\n    - bounded Korean/operator summary layer structure, with no final UI copy\n  - validation target\n    - surface identity validation: CLI is control layer, not fourth surface\n    - engine authority boundary: return material is not final judgment\n    - high-risk Korean flattening validation for `hold`, `watch keep`, `carry-forward`, `reject-conflict`\n  - deposit candidate\n    - shared operational language boundary rule: cross-actor shared grammar, not replacement glossary\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:47:22Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:47:22Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

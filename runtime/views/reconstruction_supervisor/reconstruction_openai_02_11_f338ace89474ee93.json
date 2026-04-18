@@ -1,0 +1,108 @@
+{
+  "kind": "bounded_reconstruction_supervisor_surface_v1",
+  "reconstruction_id": "reconstruction_openai_02_11_f338ace89474ee93",
+  "constructed_at": "2026-04-05T08:55:26+09:00",
+  "scope_ref": "openai_02_11",
+  "supervisor_surface_kind": "surfaced_first_pointer_backed_reconstruction",
+  "lineage": {
+    "receipt_ref": "runtime/receipts/doc_process_console_state_wiring_v1_operation_receipt.md",
+    "operation_board_ref": null,
+    "source_doc_ref": "None",
+    "routing_run_id": null,
+    "observer_run_id": null,
+    "related_asset_id": "openai_02_11",
+    "constructed_from_families": [
+      "receipt_lineage_spine",
+      "supervisor_surface_views",
+      "bounded_observation_sidecar"
+    ]
+  },
+  "routing_context": {
+    "latest_receipt_ref": "runtime/receipts/doc_process_console_state_wiring_v1_operation_receipt.md",
+    "operation_board_ref": null,
+    "routing_mode_summary": {
+      "docrole": null,
+      "runmode": null,
+      "priority": null
+    },
+    "generated_artifact_summary": {
+      "generated_file_count": 0,
+      "view_refs": [],
+      "command_refs": [],
+      "manifest_refs": [],
+      "app_refs": []
+    }
+  },
+  "observer_context": {
+    "selected_sidecar_ref": null,
+    "observation_type": null,
+    "core_candidate_count": 0,
+    "outer_candidate_count": 0,
+    "deferred_count": 0,
+    "next_action_hint": null
+  },
+  "state_context": {
+    "engine_state_latest_ref": "runtime/views/engine_state_latest/openai_02_11.json",
+    "engine_state_update_event_ref": "runtime/views/engine_state_update_events/openai_02_11.json",
+    "changed_canonical_fields": [],
+    "latest_maturation_state": "hold",
+    "latest_traceability_status": "traceable"
+  },
+  "primary_readout": {
+    "current_surface_summary": "bounded reconstruction packet for unknown_scope; receipt supplies lineage, views supply surfaced state, sidecar stays supplemental",
+    "what_is_stable_now": "receipt-backed lineage spine available; supervisor view=no_supervisor_view_found; engine_state_latest=openai_02_11",
+    "what_is_only_observed": "no exploration sidecar selected",
+    "what_needs_next_attention": "review linked pointers if deeper artifact reread is needed"
+  },
+  "linked_receipts": [
+    "runtime/receipts/doc_process_console_state_wiring_v1_operation_receipt.md"
+  ],
+  "linked_views": [
+    "runtime/views/engine_state_latest/openai_02_11.json",
+    "runtime/views/engine_state_update_events/openai_02_11.json"
+  ],
+  "linked_sidecars": [],
+  "handoff_boundary": {
+    "summary": "this surface stops at surfaced reconstruction and linked pointers; it does not open governance, promotion, or mutation behavior",
+    "authority_note": "observation handoff only; not a decision surface"
+  },
+  "bounded_next_attention": "follow linked receipt/view/sidecar pointers for any deeper reread",
+  "guards": {
+    "not_decision_surface": true,
+    "not_maturity_surface": true,
+    "not_promotion_signal": true,
+    "not_session_authority_surface": true,
+    "read_only_reconstruction_only": true,
+    "pointer_backed_surface": true,
+    "state_mutation_performed": false,
+    "governing_behavior_present": false
+  },
+  "selection_trace": {
+    "receipt_selection": {
+      "selected_ref": "runtime/receipts/doc_process_console_state_wiring_v1_operation_receipt.md",
+      "selected_score": null,
+      "strategy": "explicit",
+      "reason": "explicit receipt path provided"
+    },
+    "view_selection": {
+      "selected_ref": null,
+      "selected_score": 0,
+      "strategy": "scope_token_overlap",
+      "reason": "no positive-overlap supervisor view found; linked views rely on board only"
+    },
+    "sidecar_selection": {
+      "selected_ref": null,
+      "selected_score": 0,
+      "strategy": "scope_token_overlap",
+      "reason": "no positive-overlap sidecar found; builder leaves sidecar empty instead of falling back loosely"
+    },
+    "state_selection": {
+      "selected_state_ref": "runtime/views/engine_state_latest/openai_02_11.json",
+      "selected_event_ref": "runtime/views/engine_state_update_events/openai_02_11.json",
+      "selected_score": null,
+      "strategy": "explicit",
+      "reason": "explicit engine state/event path provided"
+    },
+    "actor": "codex"
+  }
+}

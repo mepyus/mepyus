@@ -1,0 +1,151 @@
+{
+  "schema_version": "v0",
+  "title": "VectorFL Paper Operating Cell Schema",
+  "description": "Minimum machine-readable structure for a VectorFL Paper operating cell.",
+  "type": "object",
+  "required": [
+    "cell_id",
+    "label",
+    "purpose",
+    "lens",
+    "managed_internal_functions",
+    "managing_cli",
+    "md_contract",
+    "inputs",
+    "outputs",
+    "required_evidence",
+    "handoff_targets",
+    "human_report_format",
+    "governance",
+    "return_slot"
+  ],
+  "properties": {
+    "cell_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "lens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "managed_internal_functions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "managing_cli": {
+      "type": "string",
+      "enum": [
+        "codex-cli",
+        "gemini-cli",
+        "hybrid"
+      ]
+    },
+    "md_contract": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoff_targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cell_id",
+          "why"
+        ],
+        "properties": {
+          "cell_id": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human_report_format": {
+      "type": "string"
+    },
+    "external_pair_team": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "allowed_actions",
+        "disallowed_actions",
+        "needs_human_gate",
+        "reopen_conditions"
+      ],
+      "properties": {
+        "allowed_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disallowed_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "needs_human_gate": {
+          "type": "boolean"
+        },
+        "reopen_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "return_slot": {
+      "type": "string"
+    },
+    "scenario_scope": {
+      "type": "string"
+    },
+    "run_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

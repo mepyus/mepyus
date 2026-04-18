@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-04-02T13:24:28.400531Z",
+  "mode": "plan_only",
+  "runtime_root": "runtime",
+  "input_root": "inputs/external_cases",
+  "file_count": 2,
+  "rows": [
+    {
+      "input_path": "inputs/external_cases/AI_bulider_03_05.md",
+      "stem": "ai_bulider_03_05",
+      "material_profile": "structured_external_markdown",
+      "supports_structured_intake": true,
+      "planned_steps": [
+        "structured_intake",
+        "raw_intake_probe",
+        "first_pass_report_stub",
+        "watchpoint_report_stub",
+        "strong_line_contact_stub"
+      ],
+      "planned_commands": [
+        "python3 scripts/process_structured_doc_with_routing.py --doc inputs/external_cases/AI_bulider_03_05.md",
+        "python3 scripts/run_external_case_raw_intake_probe.py inputs/external_cases/AI_bulider_03_05.md"
+      ],
+      "expected_reports": [
+        "docs/reports/ai_bulider_03_05_transcript_aware_first_pass_v1.md",
+        "docs/reports/ai_bulider_03_05_latent_line_watchpoints_v1.md",
+        "docs/reports/ai_bulider_03_05_strong_line_contact_map_v1.md"
+      ],
+      "status": "planned"
+    },
+    {
+      "input_path": "inputs/external_cases/TurboQuant_youtube.txt",
+      "stem": "turboquant_youtube",
+      "material_profile": "raw_external_transcript",
+      "supports_structured_intake": false,
+      "planned_steps": [
+        "skip_structured_intake",
+        "raw_intake_probe",
+        "first_pass_report_stub",
+        "watchpoint_report_stub",
+        "strong_line_contact_stub"
+      ],
+      "planned_commands": [
+        null,
+        "python3 scripts/run_external_case_raw_intake_probe.py inputs/external_cases/TurboQuant_youtube.txt"
+      ],
+      "expected_reports": [
+        "docs/reports/turboquant_youtube_transcript_aware_first_pass_v1.md",
+        "docs/reports/turboquant_youtube_latent_line_watchpoints_v1.md",
+        "docs/reports/turboquant_youtube_strong_line_contact_map_v1.md"
+      ],
+      "status": "planned"
+    }
+  ]
+}

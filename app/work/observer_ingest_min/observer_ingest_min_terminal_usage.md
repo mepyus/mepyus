@@ -23,12 +23,12 @@ cd /Users/sungsookim/universe/vectorfl_replica
 ## 3. 가장 쉬운 사용법: direct mode
 
 ### 3-1. 기본 명령
-```bash
+bash
 python3 app/work/observer_ingest_min/run_observer_ingest_min.py \
-  --input ./youtube_03_22.md \
-  --label youtube_03_22 \
+  --input ./AI_bulider_03_05.md \
+  --label AI_bulider_03_05 \
   --profile auto
-```
+
 
 설명:
 - `--input`: 넣을 파일 경로

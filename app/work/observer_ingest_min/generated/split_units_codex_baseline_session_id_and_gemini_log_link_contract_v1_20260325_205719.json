@@ -1,0 +1,475 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[DOCROLE:baseline]] [[RUNMODE:ingest_only]] [[PRIORITY:high]] [[A]] [[OBJ:baseline_document]] [[SEM:session_id_and_gemini_log_link_contract]] [[ROLE:baseline]]",
+    "char_count": 160,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "CODEX BASELINE — SESSION ID RULE + GEMINI OBSERVER LOG LINK CONTRACT V1",
+    "end_ref": "CODEX BASELINE — SESSION ID RULE + GEMINI OBSERVER LOG LINK CONTRACT V1",
+    "unit_type": "heading_block",
+    "text_excerpt": "# CODEX BASELINE — SESSION ID RULE + GEMINI OBSERVER LOG LINK CONTRACT V1",
+    "char_count": 73,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "0. 목적",
+    "end_ref": "0. 목적",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 0. 목적 이 기준문의 목적은 현재 잠겨 있는 Codex ↔ Gemini 세션 배치 운영 계약 위에 아래 두 가지를 추가로 고정하는 것이다. 1. session_id 규칙 2. Gemini observer 로그와 Codex 실행 결과를 연결하는 방식 이 기준문은 실행 지시가 아니라 **운영 흐름을 안정적으로 추적하기 위한 기준선 자산**이다. ---",
+    "char_count": 199,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "1. 현재 전제",
+    "end_ref": "1. 현재 전제",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 1. 현재 전제 이미 잠겨 있는 기준은 다음과 같다. - Codex = 앞단 실행 주체 - Gemini = 세션 종료 시 한 번 호출되는 후단 판독기 - Gemini 출력 저장 위치 = `runtime/observer/gemini/` - Gemini 출력은 엔진 데이터가 아니라 observer 로그다 - Gemini는 매 실행마다 호출하지 않고 세션 단위 batch로 호출한다 이 문서는",
+    "char_count": 278,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "2. session_id의 필요성",
+    "end_ref": "2. session_id의 필요성",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 2. session_id의 필요성 session_id는 단순 이름표가 아니다. session_id는 아래를 가능하게 한다. - 여러 Codex 실행을 하나의 작업 세션으로 묶기 - 세션 종료 후 Gemini 판독 결과를 같은 묶음에 연결하기 - 나중에 운영화면에서 “이 세션에서 무슨 일이 있었는지” 보기 - latest / per-run / observer 로그를 사람 기준 흐름으로 재",
+    "char_count": 290,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "3. 식별자 역할 분리",
+    "end_ref": "3. 식별자 역할 분리",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 3. 식별자 역할 분리 아래 역할 분리를 절대 기준으로 고정한다.",
+    "char_count": 39,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "run_id",
+    "end_ref": "run_id",
+    "unit_type": "heading_block",
+    "text_excerpt": "### run_id - 개별 실행 단위 식별자 - routing 실행 / Codex 실행 / receipt / per-run artifact와 연결됨 - 이미 존재하는 실행 추적 단위",
+    "char_count": 102,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "session_id",
+    "end_ref": "session_id",
+    "unit_type": "heading_block",
+    "text_excerpt": "### session_id - 여러 run_id를 묶는 상위 작업 세션 식별자 - Gemini batch review 단위 - 사용자가 “이번 작업 흐름”으로 인식하는 단위 즉: - run_id = 점 - session_id = 점들을 묶는 선/묶음 ---",
+    "char_count": 143,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "4. session_id 규칙 (LOCK)",
+    "end_ref": "4. session_id 규칙 (LOCK)",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 4. session_id 규칙 (LOCK)",
+    "char_count": 26,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "4.1 기본 형식",
+    "end_ref": "4.1 기본 형식",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.1 기본 형식 session_id는 아래 형식으로 생성한다. `session_YYYYMMDD_NN` 예시: - `session_20260325_01` - `session_20260325_02` - `session_20260326_01`",
+    "char_count": 137,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "4.2 생성 원칙",
+    "end_ref": "4.2 생성 원칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.2 생성 원칙 - 날짜 기준으로 관리한다 - 같은 날 여러 세션이 있으면 2자리 순번을 붙인다 - 사람이 읽고 바로 이해 가능해야 한다 - 지나치게 긴 uuid형 session_id는 기본값으로 쓰지 않는다",
+    "char_count": 121,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "4.3 의미",
+    "end_ref": "4.3 의미",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 4.3 의미 - session_id 하나는 “작업 묶음 하나”를 의미한다 - 너무 넓게 잡지 않는다 - 하루 전체를 무조건 한 세션으로 보지 않는다 - 의미 있는 작업 묶음 단위로 자른다 권장 예: - 기능 하나 끝날 때 - 안정화 작업 하나 끝날 때 - 운영 화면 작업 한 덩어리 끝날 때 비권장 예: - 며칠치 작업을 하나의 session_id로 묶기 - 너무 자잘하게 1실행마다 새",
+    "char_count": 239,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "5. session_id 적용 범위",
+    "end_ref": "5. session_id 적용 범위",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 5. session_id 적용 범위 session_id는 아래에 연결될 수 있어야 한다.",
+    "char_count": 52,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "직접 포함 대상",
+    "end_ref": "직접 포함 대상",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 직접 포함 대상 - Gemini observer 로그 - session summary 문서 - session review 문서 - 필요시 Codex handoff 문서",
+    "char_count": 97,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "참조 포함 대상",
+    "end_ref": "참조 포함 대상",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 참조 포함 대상 - 관련 run_id 목록 - latest board / per-run board 참조 - receipt 참조 - provenance compacted latest 참조 중요: **session_id는 개별 엔진 이벤트를 대체하지 않는다.** 기존 run_id / receipt / board 구조 위에 얹히는 상위 묶음이다. ---",
+    "char_count": 199,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "6. Gemini 로그 저장 구조 (LOCK)",
+    "end_ref": "6. Gemini 로그 저장 구조 (LOCK)",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 6. Gemini 로그 저장 구조 (LOCK)",
+    "char_count": 28,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "6.1 기본 저장 위치",
+    "end_ref": "6.1 기본 저장 위치",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.1 기본 저장 위치 Gemini 출력은 반드시 아래에 저장한다. `runtime/observer/gemini/`",
+    "char_count": 68,
+    "source_segment_ids": [
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "6.2 권장 폴더 구조",
+    "end_ref": "6.2 권장 폴더 구조",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.2 권장 폴더 구조 권장 구조는 아래와 같다. `runtime/observer/gemini/YYYY-MM-DD/` 예시: - `runtime/observer/gemini/2026-03-25/` - `runtime/observer/gemini/2026-03-26/`",
+    "char_count": 153,
+    "source_segment_ids": [
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "6.3 권장 파일",
+    "end_ref": "6.3 권장 파일",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 6.3 권장 파일 세션 단위 저장 기본 파일 예시는 아래와 같다. - `session_review_001.md` - `session_pointer_check_001.md` - `session_diff_review_001.md` - `session_summary_001.md` 또는 session_id 중심 네이밍도 허용한다. 예시: - `session_20260325_01_review.",
+    "char_count": 342,
+    "source_segment_ids": [
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "7. Gemini 로그 필수 context 구조 (LOCK)",
+    "end_ref": "7. Gemini 로그 필수 context 구조 (LOCK)",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 7. Gemini 로그 필수 context 구조 (LOCK) 모든 Gemini observer 로그는 아래 context를 반드시 포함한다. ```md",
+    "char_count": 87,
+    "source_segment_ids": [
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "context",
+    "end_ref": "context",
+    "unit_type": "heading_block",
+    "text_excerpt": "## context - session_id: - related_runs: - related_receipts: - related_boards: - input_scope: - command: - timestamp: ```",
+    "char_count": 121,
+    "source_segment_ids": [
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "필드 의미",
+    "end_ref": "필드 의미",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 필드 의미 - `session_id`: 이 로그가 속한 작업 세션 - `related_runs`: 이 세션에서 참고한 run_id 목록 - `related_receipts`: 참조한 receipt 경로 또는 목록 - `related_boards`: 참조한 latest/per-run board 경로 - `input_scope`: 무엇을 읽고 판독했는지 요약 - `command`: Gem",
+    "char_count": 329,
+    "source_segment_ids": [
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "8. Codex ↔ Gemini 연결 방식 (LOCK)",
+    "end_ref": "8. Codex ↔ Gemini 연결 방식 (LOCK)",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 8. Codex ↔ Gemini 연결 방식 (LOCK)",
+    "char_count": 33,
+    "source_segment_ids": [
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "8.1 현재 연결 원칙",
+    "end_ref": "8.1 현재 연결 원칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.1 현재 연결 원칙 현재 구조에서 Codex와 Gemini는 자동 연결되지 않는다. 현재 연결 방식은 아래로 고정한다. 1. Codex가 여러 run을 실행한다 2. 결과가 runtime에 누적된다 3. 사용자가 session_id를 기준으로 작업 묶음을 정한다 4. 세션 종료 시 Gemini를 호출한다 5. Gemini는 해당 session_id 기준으로 batch review를",
+    "char_count": 277,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "8.2 연결의 핵심",
+    "end_ref": "8.2 연결의 핵심",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 8.2 연결의 핵심 - Codex는 현실을 만든다 - Gemini는 그 현실을 나중에 읽는다 - session_id는 그 둘을 사람 기준의 흐름으로 묶는다 ---",
+    "char_count": 94,
+    "source_segment_ids": [
+      "seg_025"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "9. session 단위 입력 묶음 규칙",
+    "end_ref": "9. session 단위 입력 묶음 규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 9. session 단위 입력 묶음 규칙 Gemini는 session_id를 기준으로 아래 유형의 입력 묶음을 받을 수 있다.",
+    "char_count": 73,
+    "source_segment_ids": [
+      "seg_026"
+    ]
+  },
+  {
+    "unit_id": "unit_027",
+    "start_ref": "A. 상태 요약 세션",
+    "end_ref": "A. 상태 요약 세션",
+    "unit_type": "heading_block",
+    "text_excerpt": "### A. 상태 요약 세션 입력 예: - latest board - provenance compacted latest - 최근 receipt 일부 - 관련 per-run board 일부 출력: - session review - session summary",
+    "char_count": 143,
+    "source_segment_ids": [
+      "seg_027"
+    ]
+  },
+  {
+    "unit_id": "unit_028",
+    "start_ref": "B. 구조 점검 세션",
+    "end_ref": "B. 구조 점검 세션",
+    "unit_type": "heading_block",
+    "text_excerpt": "### B. 구조 점검 세션 입력 예: - latest board - latest commands - 관련 per-run board / commands - pointer 관련 파일 출력: - session pointer check",
+    "char_count": 128,
+    "source_segment_ids": [
+      "seg_028"
+    ]
+  },
+  {
+    "unit_id": "unit_029",
+    "start_ref": "C. 변경 리뷰 세션",
+    "end_ref": "C. 변경 리뷰 세션",
+    "unit_type": "heading_block",
+    "text_excerpt": "### C. 변경 리뷰 세션 입력 예: - git diff - changed files - 관련 receipt / board - 필요시 관련 정책/계약 문서 출력: - session diff review 즉 session_id는 하나지만, 그 안의 Gemini 로그는 목적별로 나눌 수 있다. ---",
+    "char_count": 167,
+    "source_segment_ids": [
+      "seg_029"
+    ]
+  },
+  {
+    "unit_id": "unit_030",
+    "start_ref": "10. latest와 session의 관계",
+    "end_ref": "10. latest와 session의 관계",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 10. latest와 session의 관계 latest는 현재 대표 상태를 가리킨다. session은 작업 흐름 묶음을 가리킨다. 둘의 관계는 아래와 같다. - latest = 가장 최근 상태 포인터 - per-run = 실제 실행 근거 - session = 여러 run과 관찰 로그를 묶는 사람 기준 작업 단위 중요: **session은 latest를 대체하지 않고, latest를 사람",
+    "char_count": 245,
+    "source_segment_ids": [
+      "seg_030"
+    ]
+  },
+  {
+    "unit_id": "unit_031",
+    "start_ref": "11. append-only 규칙",
+    "end_ref": "11. append-only 규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 11. append-only 규칙 Gemini observer 로그에도 append-only 감각을 유지한다.",
+    "char_count": 64,
+    "source_segment_ids": [
+      "seg_031"
+    ]
+  },
+  {
+    "unit_id": "unit_032",
+    "start_ref": "규칙",
+    "end_ref": "규칙",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 규칙 - 기존 session 로그 overwrite 금지 - 수정이 필요하면 새 로그를 추가하거나 revision을 남긴다 - latest 성격의 파일이 필요하면 별도 유지 가능하나 원본 로그는 남긴다 예: - `session_20260325_01_review.md` - `session_20260325_01_review_v2.md` 권장: - 최초 로그는 유지 - 추가 판독은 v2, ",
+    "char_count": 234,
+    "source_segment_ids": [
+      "seg_032"
+    ]
+  },
+  {
+    "unit_id": "unit_033",
+    "start_ref": "12. 하지 말아야 할 것",
+    "end_ref": "12. 하지 말아야 할 것",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 12. 하지 말아야 할 것 아래는 금지한다.",
+    "char_count": 27,
+    "source_segment_ids": [
+      "seg_033"
+    ]
+  },
+  {
+    "unit_id": "unit_034",
+    "start_ref": "금지 1",
+    "end_ref": "금지 1",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 금지 1 session_id를 engine core state처럼 사용하지 말 것",
+    "char_count": 49,
+    "source_segment_ids": [
+      "seg_034"
+    ]
+  },
+  {
+    "unit_id": "unit_035",
+    "start_ref": "금지 2",
+    "end_ref": "금지 2",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 금지 2 Gemini observer 로그를 provenance / registry / event로 혼입하지 말 것",
+    "char_count": 68,
+    "source_segment_ids": [
+      "seg_035"
+    ]
+  },
+  {
+    "unit_id": "unit_036",
+    "start_ref": "금지 3",
+    "end_ref": "금지 3",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 금지 3 run_id를 없애고 session_id만 남기는 식으로 단순화하지 말 것",
+    "char_count": 50,
+    "source_segment_ids": [
+      "seg_036"
+    ]
+  },
+  {
+    "unit_id": "unit_037",
+    "start_ref": "금지 4",
+    "end_ref": "금지 4",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 금지 4 1실행마다 무조건 새 session_id를 발급하지 말 것",
+    "char_count": 41,
+    "source_segment_ids": [
+      "seg_037"
+    ]
+  },
+  {
+    "unit_id": "unit_038",
+    "start_ref": "금지 5",
+    "end_ref": "금지 5",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 금지 5 며칠치 전혀 다른 작업을 하나의 session_id로 뭉개지 말 것 ---",
+    "char_count": 50,
+    "source_segment_ids": [
+      "seg_038"
+    ]
+  },
+  {
+    "unit_id": "unit_039",
+    "start_ref": "13. 향후 확장 경로 (PRE-DEFINED)",
+    "end_ref": "13. 향후 확장 경로 (PRE-DEFINED)",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 13. 향후 확장 경로 (PRE-DEFINED) 운영화면이 생기면 아래 확장이 가능하다.",
+    "char_count": 52,
+    "source_segment_ids": [
+      "seg_039"
+    ]
+  },
+  {
+    "unit_id": "unit_040",
+    "start_ref": "현재",
+    "end_ref": "현재",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 현재 - 사용자가 Codex 실행 - 세션 종료 시 Gemini 호출 - observer 로그 저장",
+    "char_count": 59,
+    "source_segment_ids": [
+      "seg_040"
+    ]
+  },
+  {
+    "unit_id": "unit_041",
+    "start_ref": "추후",
+    "end_ref": "추후",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 추후 - 입력 페이지에서 session 시작 - Codex 실행 결과가 session에 자동 연결 - Gemini batch review가 같은 session에 연결 - 운영화면에서 session 단위로 확인 즉 향후에는 아래 구조로 확장 가능하다. `UI Session -> Codex Runs -> Gemini Review -> Session View` 하지만 현재는 아직 자동 편입",
+    "char_count": 263,
+    "source_segment_ids": [
+      "seg_041"
+    ]
+  },
+  {
+    "unit_id": "unit_042",
+    "start_ref": "14. 성공 기준",
+    "end_ref": "14. 성공 기준",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 14. 성공 기준 이 기준문이 올바르게 학습되면 아래가 가능해야 한다. - Codex와 Gemini 모두 run_id와 session_id를 구분해서 이해한다 - Gemini 로그는 반드시 `runtime/observer/gemini/`로 간다 - Gemini는 session 종료 시 batch review만 수행한다 - observer 로그에는 session_id와 related_ru",
+    "char_count": 259,
+    "source_segment_ids": [
+      "seg_042"
+    ]
+  },
+  {
+    "unit_id": "unit_043",
+    "start_ref": "15. 최종 잠금",
+    "end_ref": "15. 최종 잠금",
+    "unit_type": "heading_block",
+    "text_excerpt": "## 15. 최종 잠금 현재 구조에서 가장 중요한 문장은 아래다. **Codex는 run을 만든다. Gemini는 session을 읽는다.** 그리고 저장 규칙은 아래다. **Gemini observer 로그는 `runtime/observer/gemini/`에 남고, 각 로그는 반드시 session_id와 related_runs를 포함한다.** 최종 한 줄: **현재 운영 기준은 run 중심",
+    "char_count": 265,
+    "source_segment_ids": [
+      "seg_043"
+    ]
+  }
+]

@@ -1,0 +1,750 @@
+{
+  "probe_name": "knowledge_editing_youtube_probe_v1_w3_s1",
+  "input_path": "inputs/external_cases/knowledge_editing_youtube.txt",
+  "created_at": "2026-03-28T11:53:00.501276Z",
+  "window_size": 3,
+  "stride": 1,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 132,
+    "spec": 7,
+    "evidence": 1
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 132
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 7
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 1
+    }
+  ],
+  "overall_flow_counts": {
+    "compare": 114,
+    "run": 8,
+    "fix": 11,
+    "break": 7
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 114
+    },
+    {
+      "value": "fix",
+      "display_label": "수정/보정 흐름",
+      "count": 11
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 8
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 7
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "생산성/코딩",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "설명/해석 층",
+      "count": 135
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 8
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 8
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 6
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 2
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "discourse_residue_anchor": 40,
+    "core_topic_anchor": 97
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "그래서",
+      "count": 31
+    },
+    {
+      "value": "대해서",
+      "count": 24
+    },
+    {
+      "value": "LLM",
+      "count": 15
+    },
+    {
+      "value": "만약에",
+      "count": 13
+    },
+    {
+      "value": "때문에",
+      "count": 10
+    },
+    {
+      "value": "있습니다",
+      "count": 9
+    },
+    {
+      "value": "경우에는",
+      "count": 9
+    },
+    {
+      "value": "미국의",
+      "count": 9
+    },
+    {
+      "value": "그러면",
+      "count": 9
+    },
+    {
+      "value": "이렇게",
+      "count": 8
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 8,
+    "speaker_or_source_residue": 0,
+    "conversational_filler_residue": 7,
+    "generic_abstraction_residue": 3,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 132,
+        "spec": 7,
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 132
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 7
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 114,
+        "run": 8,
+        "fix": 11,
+        "break": 7
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 114
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 11
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 7
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 135
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 8
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 8
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 31
+        },
+        {
+          "value": "대해서",
+          "count": 24
+        },
+        {
+          "value": "LLM",
+          "count": 15
+        },
+        {
+          "value": "만약에",
+          "count": 13
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "있습니다",
+          "count": 9
+        },
+        {
+          "value": "경우에는",
+          "count": 9
+        },
+        {
+          "value": "미국의",
+          "count": 9
+        },
+        {
+          "value": "그러면",
+          "count": 9
+        },
+        {
+          "value": "이렇게",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 930,
+        "discourse_residue_anchor": 45,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 3,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 18,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 모델 work / 주요 층위: 설명/해석 층, 구조/연결 층, 구현/실행 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:01 안녕하세요. 2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다. 0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요. 어 발표자인 저는 심세진이고요. 고려대학교 산업 경영 0:16 공학과 현재 대학원 제약 중이고 DMK 김성범 교수님 랩실에서 석박 0:21 통학과정 진행 중입니다. 관심 분야는 뭐…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:01 안…",
+          "excerpt": "## untitled 0:01 안녕하세요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "2026년 2월 13일 DMQ 오…",
+          "excerpt": "2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:08 세미나 발표에 앞서 발표…",
+          "excerpt": "0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 발표자인 저는 심세진이고요.",
+          "excerpt": "어 발표자인 저는 심세진이고요."
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 132,
+        "spec": 7,
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 132
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 7
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 114,
+        "run": 8,
+        "fix": 11,
+        "break": 7
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 114
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 11
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 7
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 135
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 8
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 8
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 31
+        },
+        {
+          "value": "대해서",
+          "count": 24
+        },
+        {
+          "value": "LLM",
+          "count": 15
+        },
+        {
+          "value": "만약에",
+          "count": 13
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "있습니다",
+          "count": 9
+        },
+        {
+          "value": "경우에는",
+          "count": 9
+        },
+        {
+          "value": "미국의",
+          "count": 9
+        },
+        {
+          "value": "그러면",
+          "count": 9
+        },
+        {
+          "value": "이렇게",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 930,
+        "discourse_residue_anchor": 45,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 3,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 18,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 모델 work / 주요 층위: 설명/해석 층, 구조/연결 층, 구현/실행 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:01 안녕하세요. 2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다. 0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요. 어 발표자인 저는 심세진이고요. 고려대학교 산업 경영 0:16 공학과 현재 대학원 제약 중이고 DMK 김성범 교수님 랩실에서 석박 0:21 통학과정 진행 중입니다. 관심 분야는 뭐…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:01 안…",
+          "excerpt": "## untitled 0:01 안녕하세요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "2026년 2월 13일 DMQ 오…",
+          "excerpt": "2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:08 세미나 발표에 앞서 발표…",
+          "excerpt": "0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 발표자인 저는 심세진이고요.",
+          "excerpt": "어 발표자인 저는 심세진이고요."
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 132,
+        "spec": 7,
+        "evidence": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 132
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 7
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "compare": 114,
+        "run": 8,
+        "fix": 11,
+        "break": 7
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 114
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 11
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 7
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 135
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 8
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 8
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 3,
+      "top_anchor_values": [
+        {
+          "value": "그래서",
+          "count": 31
+        },
+        {
+          "value": "대해서",
+          "count": 24
+        },
+        {
+          "value": "LLM",
+          "count": 15
+        },
+        {
+          "value": "만약에",
+          "count": 13
+        },
+        {
+          "value": "때문에",
+          "count": 10
+        },
+        {
+          "value": "있습니다",
+          "count": 9
+        },
+        {
+          "value": "경우에는",
+          "count": 9
+        },
+        {
+          "value": "미국의",
+          "count": 9
+        },
+        {
+          "value": "그러면",
+          "count": 9
+        },
+        {
+          "value": "이렇게",
+          "count": 8
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 930,
+        "discourse_residue_anchor": 45,
+        "user_layer_hint_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 3,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 18,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 모델 work / 주요 층위: 설명/해석 층, 구조/연결 층, 구현/실행 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:01 안녕하세요. 2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다. 0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요. 어 발표자인 저는 심세진이고요. 고려대학교 산업 경영 0:16 공학과 현재 대학원 제약 중이고 DMK 김성범 교수님 랩실에서 석박 0:21 통학과정 진행 중입니다. 관심 분야는 뭐…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:01 안…",
+          "excerpt": "## untitled 0:01 안녕하세요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "2026년 2월 13일 DMQ 오…",
+          "excerpt": "2026년 2월 13일 DMQ 오픈 세미나 시작하겠습니다."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_003",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "0:08 세미나 발표에 앞서 발표…",
+          "excerpt": "0:08 세미나 발표에 앞서 발표자 소개를 하고자 하는데요."
+        },
+        {
+          "dust_id": "dst_src_65ef69ea8ee7_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "어 발표자인 저는 심세진이고요.",
+          "excerpt": "어 발표자인 저는 심세진이고요."
+        }
+      ]
+    }
+  ]
+}

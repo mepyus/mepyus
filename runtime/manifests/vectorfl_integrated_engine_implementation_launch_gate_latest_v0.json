@@ -1,0 +1,27 @@
+{
+  "schema_version": "vectorfl_integrated_engine_implementation_launch_gate_v0",
+  "gate_id": "vectorfl_engine_implementation_launch_gate_latest",
+  "status": "approved_to_run",
+  "decided_at": "2026-04-11T03:43:13Z",
+  "decision": "approve_codex_run",
+  "source_implementation_brief_artifact": "runtime/manifests/vectorfl_integrated_engine_implementation_brief_latest_v0.json",
+  "target_worker": "codex",
+  "execution_mode": "separate_supervised_run",
+  "rationale": "Approve a separately supervised Codex implementation run from the latest implementation brief. This does not run implementation now.",
+  "run_instruction": "Use latest implementation brief; confirm target files before editing; return changed files, blockers, and verification commands.",
+  "preflight_checks": [
+    "read implementation brief",
+    "confirm target files before editing",
+    "preserve current slot",
+    "do not declare gate close",
+    "return changed files and blockers"
+  ],
+  "guard": {
+    "does_not_run_implementation_now": true,
+    "requires_separate_worker_run": true,
+    "does_not_replace_current_slot": true,
+    "does_not_close_gate": true,
+    "records_launch_decision_only": true
+  },
+  "content_fingerprint": "aeb69fafd6722110f1c137c9102628411f9fa941eb363d97ec53de11650e37ff"
+}

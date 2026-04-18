@@ -1,0 +1,41 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T115405Z_a05be783",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "user_surface",
+  "requested_by_page": "scripts/run_integrated_engine_language_loop.py",
+  "purpose_text": "Internal language Koreanization data loop 10: collect Korean operating-language data from bounded context.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_current_operating_state_v0.md",
+    "docs/reports/integrated_engine_surface_exposure_and_shared_language_boundary_v0.md"
+  ],
+  "prompt_payload": "Read the bounded context as a Koreanization data collection loop for integrated-engine internal language.\n\nDo not modify files.\nDo not propose UI copy.\nDo not create a final glossary.\nDo not promote features.\n\nReturn compact data in this shape:\n- internal phrase or signal observed\n- source context where it appeared\n- internal meaning / operational role\n- Koreanization candidate, not final UI copy\n- Korean preservation requirement\n- risky Korean flattening to avoid\n- why this helps the user operate\n- what meaning gets lost if shortened\n- repeated connection it belongs to\n- emerging axis candidate\n- surface exposure note: user / vectorfl / engine\n- external expression support needed, if any\n- next reread question\n- suggested next use: validation target",
+  "status": "done",
+  "started_at": "2026-04-16T11:54:05Z",
+  "ended_at": "2026-04-16T11:55:11Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T115405Z_a05be783/prompt.md",
+  "exit_code": 0,
+  "result_summary": "-forward / reject-conflict`\n  - source context where it appeared: user surface allowed exposure, high-risk terms rule\n  - internal meaning / operational role: user-facing operating state로 노출 가능하지만 boundary-first가 필요한 decision states\n  - Koreanization candidate, not final UI copy: `보류 / 관찰 유지 / 이어 가져감 / 충돌로 거절`\n  - Korean preservation requirement: action과 state를 구분해야 함\n  - risky Korean flattening to avoid: `대기`, `유지`, `거절`만으로 단순화\n  - why this helps the user operate: 당장 결정, 지켜보기, 다음 묶음으로 넘기기, 충돌 차단을 구분함\n  - what meaning gets lost if shortened: 왜 멈췄는지, 무엇을 계속 들고 가는지 사라짐\n  - repeated connection it belongs to: user decision / boundary-first exposure\n  - emerging axis candidate: `decision-state grammar`\n  - surface exposure note: user 노출 가능, VectorFL reason 보존, engine은 처리상태와 분리\n  - external expression support needed, if any: later Korean risk review needed\n  - next reread question: carry-forward와 hold의 실제 운영 차이는 어떤 return에서 드러나는가?\n  - suggested next use: reread target\n\n- uncertainty or failure notes\n  - Files were read only; no modifications made.\n  - This is candidate Koreanization data, not final UI copy or glossary.\n  - Some Korean candidates may need validation against live UI density because the reports describe operating boundaries more than exact screen placement.\n  - `external expression support` is mostly deferred because the prompt forbids UI copy proposal and final glossary creation.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate\n  - Best next use: `validation target`\n  - Suggested validation target: test whether the four high-frequency terms `return material`, `PASS_WITH_NOTE`, `suggested_next_use`, and `shared operational language` can be Koreanized without collapsing authority, finality, or surface identity.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T11:55:11Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T11:55:11Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

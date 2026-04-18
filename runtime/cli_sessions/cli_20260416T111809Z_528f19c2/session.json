@@ -1,0 +1,33 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T111809Z_528f19c2",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "Continue from Codex turn cli_20260416T111421Z_ab9778e6 inside the VectorFL surface.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_ui_stable_folder_migration_note_v0.md",
+    "runtime/cli_sessions/cli_20260416T111421Z_ab9778e6/session.json",
+    "runtime/cli_sessions/cli_20260416T111421Z_ab9778e6/structured_return.json",
+    "runtime/cli_sessions/cli_20260416T111421Z_ab9778e6/deposit_candidate.md"
+  ],
+  "prompt_payload": "Continue from the selected Codex turn as a bounded operating conversation. Return: what remains valid, what needs reread or validation, and the next smallest safe action. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T11:18:09Z",
+  "ended_at": "2026-04-16T11:18:54Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T111809Z_528f19c2/prompt.md",
+  "exit_code": 0,
+  "result_summary": "eview issue, not a failed Codex run, because `stdout.log` has the complete output.\n  - Valid observed lines from the full stdout:\n    - `CLI는 4번째 surface가 아니다`\n    - `mark는 완료 선언이 아니라 route signal이다`\n    - `deposit candidate는 ingestion이 아니다`\n    - `User surface는 실행자가 아니라 조직/결정면이다`\n    - `Engine surface는 판단기관이 아니라 처리/반환면이다`\n    - `한국어 UI copy 전에 Codex 보고 문법`\n  - Preserved boundaries:\n    - `validation_target` means “read as validation target,” not validation complete.\n    - `deposit_candidate` means candidate material, not official ingestion.\n    - User surface reads work/decision candidates, not automatic assignment.\n    - Engine surface reads processing/validation/deposit material, not final authority.\n    - UI Korean copy replacement remains closed.\n\n- uncertainty or failure notes\n  - The selected turn only reread two bounded reports, not a live screen or browser-click observation.\n  - Surface exposure remains the main uncertainty: the reports say the route works, but actual screen/user readability still needs validation.\n  - There is a concrete artifact-quality issue: structured summaries are truncated while raw stdout is complete. Any deposit or validation should prefer `stdout.log` over the truncated `result_summary`.\n\n- suggested next use: validation target\n  - Next smallest safe action: validate one actual current screen observation or one actual Codex CLI return against the preserved authority boundaries: candidate vs completed, mark vs approval, deposit candidate vs ingestion.\n  - Best reread target: `runtime/cli_sessions/cli_20260416T111421Z_ab9778e6/stdout.log`, because it contains the complete selected turn output.\n  - Implementation return: not yet.\n  - Deposit candidate: not yet, unless regenerated from full `stdout.log` rather than the truncated summary.\n",
+  "suggested_next_use": "validation_target",
+  "error_message": ""
+}

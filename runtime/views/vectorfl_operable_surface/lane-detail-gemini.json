@@ -1,0 +1,131 @@
+{
+  "lane": {
+    "slug": "gemini",
+    "label": "Gemini lane",
+    "adapter_type": "gemini_local",
+    "provider_model": "google / gemini",
+    "provider": "Google",
+    "model": "gemini",
+    "owning_cli": "gemini-cli",
+    "managed_team_slugs": [
+      "input",
+      "governance"
+    ],
+    "contract_ref": "vectorfl_paper_external_resource_cell_v0.md",
+    "payload_policy": "보수적 비교 질문과 governance caution을 먼저 강화",
+    "return_route": "governance gate -> supervisor board -> reopen or hold",
+    "command": "gemini",
+    "args": "--model gemini-pro",
+    "working_directory": "/workspace/vectorfl_replica",
+    "env_status": "check_needed",
+    "env_summary": "Provider auth and model discovery should be re-tested before enabling this lane.",
+    "approvals_policy": "hold by default until first-pass comparison is requested",
+    "sandbox_policy": "workspace-write only",
+    "search_policy": "comparison-only until recall gets thicker",
+    "adapter_test": "pending",
+    "enabled": false,
+    "status": "hold",
+    "timeout": "90s",
+    "budget": "candidate",
+    "role_md": "Alternative read emphasis once recall density is thicker.",
+    "task_md": "Compare role-hint weighting without changing fixed pipeline.",
+    "caution_md": "Do not proliferate before first-pass line recall proves stable.",
+    "output_schema": "lane_run_v0",
+    "notes": "내부 재독해가 더 두꺼워졌을 때 켤 비교용 lane입니다.",
+    "detail_href": "lane-detail-gemini.html",
+    "editor_href": "lane-editor-gemini.html"
+  },
+  "navigation": [
+    {
+      "key": "engine-overview",
+      "label": "엔진 개요",
+      "href": "engine-overview.html"
+    },
+    {
+      "key": "cases",
+      "label": "운영 보드",
+      "href": "cases.html"
+    },
+    {
+      "key": "case-detail",
+      "label": "현재 케이스",
+      "href": "case-detail.html"
+    },
+    {
+      "key": "case-inspector",
+      "label": "해석 인스펙터",
+      "href": "case-inspector.html"
+    },
+    {
+      "key": "line-review",
+      "label": "line 검토",
+      "href": "line-review.html"
+    },
+    {
+      "key": "case-routing",
+      "label": "업무 배정",
+      "href": "case-routing.html"
+    },
+    {
+      "key": "internal-recall",
+      "label": "내부 재독해",
+      "href": "internal-recall.html"
+    },
+    {
+      "key": "external-resources",
+      "label": "입력 / 외부 비교",
+      "href": "external-resources.html"
+    },
+    {
+      "key": "lanes",
+      "label": "CLI / 어댑터",
+      "href": "lanes.html"
+    },
+    {
+      "key": "cli-setup",
+      "label": "CLI 설정 작업공간",
+      "href": "cli-setup.html"
+    },
+    {
+      "key": "agent-mcp-control",
+      "label": "에이전트 / MCP 운용",
+      "href": "agent-mcp-control.html"
+    },
+    {
+      "key": "lane-runs",
+      "label": "실행 비교",
+      "href": "lane-runs.html"
+    },
+    {
+      "key": "organs",
+      "label": "팀 / 운영 셀",
+      "href": "organs.html"
+    },
+    {
+      "key": "organ-registry",
+      "label": "팀 계약 / 설정",
+      "href": "organ-registry.html"
+    },
+    {
+      "key": "contracts-workspace",
+      "label": "계약 작업공간",
+      "href": "contracts-workspace.html"
+    },
+    {
+      "key": "program-workspaces",
+      "label": "프로그램 워크스페이스",
+      "href": "program-workspaces.html"
+    },
+    {
+      "key": "trace-audit",
+      "label": "이슈 / 감사",
+      "href": "trace-audit.html"
+    },
+    {
+      "key": "worker-inbox",
+      "label": "결과 회신",
+      "href": "worker-inbox.html"
+    }
+  ],
+  "page_title": "VectorFL Paper"
+}

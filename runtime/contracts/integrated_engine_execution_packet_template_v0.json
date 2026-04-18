@@ -1,0 +1,114 @@
+{
+  "packet_id": "exec_packet_candidate_handling_sample_v0",
+  "process_camera_id": "integrated_engine_candidate_handling_process_camera_v0",
+  "target_type": "review_stage_structuring_asset",
+  "current_purpose": "Evaluate whether a bounded review-stage structuring shape can be inspected without promoting or rolling out the camera.",
+  "scope_boundary": {
+    "included": [
+      "one target document",
+      "selected review-stage evidence",
+      "selected lens set",
+      "bounded validation gates"
+    ],
+    "excluded": [
+      "camera promotion",
+      "broader schema rollout",
+      "line reread validation",
+      "axis reread validation",
+      "camera-slot reread validation",
+      "canonical ingestion",
+      "UI implementation",
+      "automation"
+    ]
+  },
+  "candidate_source_zone": {
+    "primary_zone": "docs/reports",
+    "candidate_selection_rule": "choose one bounded target that matches the requested target type and process lens",
+    "broad_scan_allowed": false
+  },
+  "selected_lens_set": {
+    "primary": "compatibility_lens",
+    "supporting": [
+      "evidence_lens",
+      "boundary_lens",
+      "rollback_lens"
+    ],
+    "lens_status": {
+      "compatibility_lens": "sample_grounded",
+      "evidence_lens": "sample_grounded",
+      "boundary_lens": "sample_grounded",
+      "rollback_lens": "sample_grounded"
+    }
+  },
+  "candidate_list": [
+    {
+      "candidate_id": "candidate_original_review_note",
+      "path": "docs/reports/integrated_engine_provisional_camera_candidate_review_note_v0.md",
+      "selection_status": "selected_sample_reference",
+      "reason": "original strong note with direct review guideline and rollback reread support"
+    }
+  ],
+  "evidence_bundle": [
+    {
+      "evidence_id": "evidence_review_guideline_direct",
+      "source": "docs/reports/integrated_engine_structuring_patch_operational_validation_note_v0.md",
+      "support_reason": "validated review guideline reread as direct inside review-stage"
+    },
+    {
+      "evidence_id": "evidence_rollback_direct",
+      "source": "docs/reports/integrated_engine_rollback_rule_reread_revalidation_note_v0.md",
+      "support_reason": "validated rollback rule reread as direct after bounded cue consolidation"
+    },
+    {
+      "evidence_id": "evidence_adjacency_weak",
+      "source": "docs/reports/integrated_engine_review_family_repeatability_refinement_note_v0.md",
+      "support_reason": "preserved weak adjacency across three shadow-fits"
+    }
+  ],
+  "validation_criteria": [
+    "grounding_sufficiency",
+    "lens_explicitness",
+    "principle_bearing_structure",
+    "boundary_clarity",
+    "rollback_visibility",
+    "action_readiness",
+    "authority_drift_prevention",
+    "rollout_drift_prevention"
+  ],
+  "allowed_actions": [
+    "inspect",
+    "map_evidence",
+    "compare_candidates",
+    "judge_direct_weak_not_yet",
+    "produce_return_record"
+  ],
+  "forbidden_actions": [
+    "promote_camera",
+    "approve_rollout",
+    "patch_adjacent_documents",
+    "create_global_protocol",
+    "canonical_ingestion",
+    "UI_implementation",
+    "automation"
+  ],
+  "expected_output_shape": {
+    "format": "return_record",
+    "must_include": [
+      "attempted_actions",
+      "evidence_used",
+      "gate_results",
+      "final_decision",
+      "what_was_not_done",
+      "next_valid_use",
+      "authority_boundary_confirmation"
+    ]
+  },
+  "authority_boundary": {
+    "current_status": "eligible for provisional camera candidate, not promoted",
+    "promotion_allowed": false,
+    "rollout_allowed": false,
+    "automatic_reuse_allowed": false
+  },
+  "why_this_path_was_chosen": "The camera review cycle proved a bounded process pattern, but adjacent fits stayed weak; therefore the worker receives a process-camera packet rather than a promotion or rollout instruction."
+}
+

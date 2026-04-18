@@ -1,0 +1,10 @@
+{
+  "anchor_id": "integrated_engine_3_surface_baseline",
+  "anchor_name": "통합엔진 3면 기준선",
+  "anchor_scope": "whole_system",
+  "anchor_role": "structure_baseline",
+  "governs_what": "User surface, VectorFL surface, and engine surface role separation.",
+  "locked_boundary": "Do not bypass VectorFL intermediate review by sending user-surface requests directly to engine processing.",
+  "comparison_rule": "Compare whether each packet, panel action, and runtime object moves through the correct surface role before execution or closure.",
+  "change_rule": "explicit_unlock_required + comparative_evidence_required"
+}

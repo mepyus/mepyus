@@ -1,0 +1,13 @@
+{
+  "trigger_panel": "vectorfl_surface/anchor_context_panel",
+  "trigger_action": "detect_anchor_drift",
+  "source_object_or_packet": "packet_return_axis_enrichment_001",
+  "emitted_packet_or_state_change": "packet_request_axis_reprocess_001 created and loop held for VectorFL recheck",
+  "target_surface": "engine_surface",
+  "target_panel": "work_input_panel",
+  "expected_effect": "Stop the returned material from moving directly to user decision, record the anchor mismatch reason, and wake engine reprocessing with VectorFL mediation still active.",
+  "record_written": "anchor drift to reprocess linkage log",
+  "anchor_ref": "integrated_engine_3_surface_baseline",
+  "drift_signal": "return material may be useful but is not yet aligned enough with the three-surface baseline and axis-candidate validation points for user-facing decision",
+  "recheck_route": "vectorfl_validation_to_engine_reprocess"
+}

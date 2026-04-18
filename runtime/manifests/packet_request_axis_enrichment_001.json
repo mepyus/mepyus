@@ -1,0 +1,34 @@
+{
+  "packet_id": "packet_request_axis_enrichment_001",
+  "packet_kind": "request",
+  "source_surface": "user_surface",
+  "target_surface": "vectorfl_surface",
+  "purpose": "axis candidate enrichment",
+  "directionality": "enrichment",
+  "anchor_refs": [
+    "integrated_engine_3_surface_baseline"
+  ],
+  "related_objects": [
+    "axis_candidate_anchor_packet_reflux",
+    "line_candidate_user_vector_engine_loop"
+  ],
+  "current_judgment_state": "candidate",
+  "requested_or_next_action": "inspect_and_route",
+  "validation_points": [
+    "axis candidate evidence density",
+    "external enrichment need",
+    "anchor fit against three-surface baseline"
+  ],
+  "reflux_need": "maybe",
+  "packet_status": "created",
+  "request_type": "external_search_or_engine_reprocess_check",
+  "requested_team_or_executor": "vectorfl_surface",
+  "input_materials": [
+    "axis_candidate_anchor_packet_reflux",
+    "line_candidate_user_vector_engine_loop",
+    "recent_packet_flow_notes"
+  ],
+  "expected_output_shape": "evidence note plus reprocess recommendation",
+  "external_support_need": "yes",
+  "urgency_level": "medium"
+}

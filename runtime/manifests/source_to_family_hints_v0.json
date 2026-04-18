@@ -1,0 +1,104 @@
+{
+  "schema_version": "source_to_family_hints_v0",
+  "updated_at": "2026-04-06T19:39:55+09:00",
+  "hints": [
+    {
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+      "candidate_family_ids": [
+        "fam_input_to_reading"
+      ],
+      "candidate_projection_ids": [
+        "proj_preprocess_shaping"
+      ],
+      "candidate_route_ids": [
+        "route_preprocess_compare_first"
+      ],
+      "hint_confidence": "high",
+      "hint_reason": [
+        "before gate says preprocess_required",
+        "after gate remains uncertain_needs_probe",
+        "entry should preserve future reading quality before flattening"
+      ],
+      "hint_source_fields": [
+        "before_gate.decision",
+        "after_gate.decision",
+        "after_gate.checkpoints.pre_ingest_gate.status"
+      ],
+      "residue_reentry_bias": "preservation_before_flattening"
+    },
+    {
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/preflight_last_decision.json",
+      "candidate_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "candidate_projection_ids": [
+        "proj_transition_preflight_reread"
+      ],
+      "candidate_route_ids": [
+        "route_preflight_reread"
+      ],
+      "hint_confidence": "high",
+      "hint_reason": [
+        "active latent lines are already selected",
+        "decision remains thickening rather than closure",
+        "next_check_trigger keeps reread conditions explicit"
+      ],
+      "hint_source_fields": [
+        "phase_snapshot.active_latent_lines",
+        "phase_snapshot.decision",
+        "phase_snapshot.next_check_trigger"
+      ],
+      "residue_reentry_bias": "closure_before_presentation"
+    },
+    {
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/engine_state_latest/index.json",
+      "candidate_family_ids": [
+        "fam_operator_readout"
+      ],
+      "candidate_projection_ids": [
+        "proj_operator_board_readout"
+      ],
+      "candidate_route_ids": [
+        "route_readonly_board"
+      ],
+      "hint_confidence": "high",
+      "hint_reason": [
+        "engine state latest index already provides broad operator-facing overview",
+        "surface lists assets with current status rather than narrow answer",
+        "board readout is the most conservative first route"
+      ],
+      "hint_source_fields": [
+        "items",
+        "items[].asset_id",
+        "items[].maturation_state",
+        "items[].traceability_status"
+      ],
+      "residue_reentry_bias": "presentation_before_narrow_search"
+    },
+    {
+      "candidate_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "candidate_projection_ids": [
+        "proj_transition_preflight_reread"
+      ],
+      "candidate_route_ids": [
+        "route_preflight_reread"
+      ],
+      "hint_confidence": "high",
+      "residue_reentry_bias": "closure_before_presentation",
+      "artifact_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/current_phase.json",
+      "matched_rule_id": "hint_rule_transition_preflight_reread",
+      "hint_source_fields": [
+        "active_latent_lines",
+        "decision",
+        "next_check_trigger"
+      ],
+      "hint_reason": [
+        "matched active_latent_lines exists",
+        "matched decision=thickening",
+        "matched next_check_trigger exists"
+      ]
+    }
+  ]
+}

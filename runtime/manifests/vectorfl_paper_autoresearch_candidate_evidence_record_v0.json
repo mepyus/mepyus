@@ -1,0 +1,92 @@
+{
+  "schema_version": "vectorfl_paper_autoresearch_candidate_evidence_record_v0",
+  "record_id": "vectorfl_paper_autoresearch_candidate_evidence_record_v0",
+  "source_program": "autoresearch",
+  "source_kind": "external_candidate_from_reference_repo",
+  "scenario_scope": "vectorfl_paper_actual_export_only_dry_run",
+  "source_refs": [
+    "references/git_search/autoresearch-master/README.md",
+    "references/git_search/autoresearch-master/program.md"
+  ],
+  "honesty_note": "Derived from a checked-in external reference repo for dry-run validation. It is externally sourced to the VectorFL Paper pilot but is not a Paperclip host dump.",
+  "issues_row": {
+    "id": "autoresearch-issue-001",
+    "companyId": "autoresearch-reference",
+    "projectId": "autoresearch-master",
+    "goalId": "lowest-val-bpb",
+    "parentId": null,
+    "title": "Run a bounded autonomous training experiment loop",
+    "description": "Use program.md to guide an agent through baseline, one train.py change, fixed 5-minute run, metric readout, and keep/discard decision without widening the harness.",
+    "status": "ready_for_dry_run",
+    "priority": "high",
+    "assigneeAgentId": "single-research-agent",
+    "issueNumber": 1,
+    "identifier": "AR-1",
+    "originKind": "reference_repo",
+    "originId": "references/git_search/autoresearch-master/program.md",
+    "requestDepth": 0,
+    "createdAt": "2026-04-11T07:55:00+09:00",
+    "updatedAt": "2026-04-11T07:55:00+09:00"
+  },
+  "heartbeat_runs_row": {
+    "id": "autoresearch-run-001",
+    "companyId": "autoresearch-reference",
+    "agentId": "single-research-agent",
+    "invocationSource": "program_md_experiment_loop",
+    "triggerDetail": "Run uv run train.py under fixed 5-minute budget after one scoped train.py experiment.",
+    "status": "dry_run_candidate",
+    "startedAt": "2026-04-11T07:55:00+09:00",
+    "finishedAt": "2026-04-11T08:00:00+09:00",
+    "error": null,
+    "wakeupRequestId": "autoresearch-program-loop",
+    "exitCode": 0,
+    "usageJson": {
+      "time_budget_minutes": 5,
+      "metric": "val_bpb",
+      "mutable_file": "train.py",
+      "fixed_file": "prepare.py"
+    },
+    "resultJson": {
+      "summary": "Candidate preserves bounded experiment grammar: one mutable file, fixed metric, fixed runtime, keep/discard rule.",
+      "message": "Use as shape candidate for VectorFL issue/run/result/governance dry-run only.",
+      "error": null
+    },
+    "sessionIdBefore": "autoresearch-branch-start",
+    "sessionIdAfter": "autoresearch-branch-after-run",
+    "stdoutExcerpt": "val_bpb and peak_vram_mb are extracted from run.log before keep/discard.",
+    "contextSnapshot": {
+      "taskKey": "issue:autoresearch-issue-001",
+      "issueFocus": "bounded experiment loop as candidate operational record",
+      "constraint": "do not import full autonomous research organization"
+    }
+  },
+  "issue_comments_rows": [
+    {
+      "id": "autoresearch-comment-001",
+      "companyId": "autoresearch-reference",
+      "issueId": "autoresearch-issue-001",
+      "authorAgentId": "single-research-agent",
+      "authorUserId": null,
+      "createdByRunId": "autoresearch-run-001",
+      "body": "Keep the experiment harness narrow: modify train.py only, keep prepare.py and evaluation fixed, log val_bpb/memory/status/description, and discard changes that do not improve or simplify.",
+      "createdAt": "2026-04-11T08:00:00+09:00",
+      "updatedAt": "2026-04-11T08:00:00+09:00"
+    }
+  ],
+  "approvals_row": {
+    "id": "autoresearch-approval-001",
+    "companyId": "autoresearch-reference",
+    "type": "hold_continue_decision",
+    "requestedByAgentId": "single-research-agent",
+    "requestedByUserId": null,
+    "status": "hold_for_vectorfl_gate",
+    "payload": {
+      "issueId": "autoresearch-issue-001",
+      "runId": "autoresearch-run-001",
+      "decision_basis": "The reference proves bounded experiment-loop shape but is not a Paperclip host export."
+    },
+    "decisionNote": "Use as dry-run evidence only. Do not close actual_export_only unless a true host export candidate passes the same shape and honesty checks.",
+    "decidedByUserId": "supervisor",
+    "decidedAt": "2026-04-11T08:01:00+09:00"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "vectorfl_paper_actual_export_host_record_slot_v0",
+  "updated_at": "2026-04-10T23:55:00+09:00",
+  "slot_id": "vectorfl_paper_actual_export_host_record_slot_v0",
+  "purpose": "Canonical slot for the first real exported host record that should replace the current export-shaped placeholder without changing the thin overlay seam.",
+  "current_state": "waiting_for_actual_export",
+  "current_placeholder_ref": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+  "current_validation_anchor_ref": "runtime/contracts/vectorfl_paper_weekend_live_export_shaped_host_record_v2.json",
+  "validation_anchor_status": "export_shaped_fixture_only",
+  "validation_anchor_note": "Use this single export-shaped host record as the current validation anchor, but do not treat it as proof that actual_export_only is fully closed because it is still local fixture data.",
+  "expected_shape": {
+    "required_surfaces": [
+      "issues_row",
+      "heartbeat_runs_row",
+      "issue_comments_rows",
+      "approvals_row"
+    ],
+    "required_claim": "The record should preserve host export field grammar closely enough that the current v3 thin overlay packet can be rerun without changing translation categories."
+  },
+  "swap_rule": {
+    "replace_ref_in": [
+      "runtime/manifests/vectorfl_paper_pilot_current_v0.json",
+      "runtime/manifests/vectorfl_paper_weekend_live_line_guided_work_packets_v0.json",
+      "runtime/contracts/vectorfl_paper_weekend_pilot_status_board_v0.json"
+    ],
+    "next_packet_version_after_swap": "v4",
+    "must_preserve": [
+      "thin issue/run/result/governance overlay",
+      "line-centered translation categories",
+      "runtime write-back and reopen seam"
+    ]
+  },
+  "operator_note": "Do not widen the pilot when the real export arrives. Swap the source, rerun the same seam, and then promote naming."
+}

@@ -1,0 +1,68 @@
+{
+  "state": "frozen",
+  "frozen_at": "2026-03-29T00:00:00Z",
+  "freeze_version": "engine_operating_layer_freeze_v1",
+  "layers": {
+    "core_authoritative": {
+      "authoritative": true,
+      "includes": [
+        "engine_state_schema_v1",
+        "engine_state_store",
+        "engine_state_history",
+        "engine_state_latest",
+        "engine_state_update_policy_v1",
+        "state_validation_fixture_v1"
+      ]
+    },
+    "derived_operating": {
+      "authoritative": false,
+      "includes": [
+        "state_change_diff_surface_v1",
+        "state_change_interpretation_badge_v1",
+        "history_compaction_policy_v1",
+        "runtime_evidence_priority_router_v1",
+        "state_change_attention_queue_v1",
+        "attention_resolution_loop_v1",
+        "state_attention_memory_v1",
+        "engine_state_update_events"
+      ]
+    },
+    "surface": {
+      "authoritative": false,
+      "includes": [
+        "process_console",
+        "viewer_server",
+        "header_badges",
+        "asset_rail",
+        "state_panel",
+        "history_drilldown",
+        "diff_panel",
+        "attention_strip",
+        "memory_summary"
+      ]
+    },
+    "experimental": {
+      "authoritative": false,
+      "includes": [
+        "experimental_namespace",
+        "context_unit_naming",
+        "paragraph_role_naming",
+        "pivot_compression_naming",
+        "high_level_interpretive_object_naming"
+      ]
+    }
+  },
+  "authoritative_source_hierarchy": [
+    "history_schema_policy",
+    "latest",
+    "derived_operating_surfaces",
+    "ui_presentation",
+    "experimental_namespace"
+  ],
+  "main_surface": "process_console",
+  "secondary_surfaces": [
+    "graph_view",
+    "terrain_view",
+    "distribution_view"
+  ]
+}

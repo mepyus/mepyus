@@ -1,0 +1,293 @@
+{
+  "schema_version": "projection_registry_v0",
+  "updated_at": "2026-04-06T13:05:00+09:00",
+  "projections": [
+    {
+      "projection_id": "proj_input_ingest_visibility",
+      "family_id": "fam_input_to_reading",
+      "projection_name": "input ingest visibility projection",
+      "projection_role": "ingest_visibility",
+      "projection_layer": "entry",
+      "line_type": "reading_line",
+      "changed_facets": [
+        "material_facet",
+        "direction_facet"
+      ],
+      "bounded_spaces": [
+        "input_ingest_space"
+      ],
+      "preferred_routes": [
+        "route_input_direct_ingest"
+      ],
+      "projection_question": "How does this raw input become visible and readable enough to enter the space?",
+      "projection_outputs": [
+        "source_manifest",
+        "split_units",
+        "readable_input_board",
+        "operator_summary"
+      ],
+      "material_sources": [
+        "raw input document",
+        "split units",
+        "processing trace"
+      ],
+      "residue_return_path": "entry residue returns to future input shaping",
+      "related_projections": [
+        "proj_preprocess_shaping"
+      ],
+      "activation_hints": [
+        "new input arrives",
+        "direct ingest is viable"
+      ],
+      "notes": [
+        "emphasizes visible entry over deeper shaping"
+      ]
+    },
+    {
+      "projection_id": "proj_preprocess_shaping",
+      "family_id": "fam_input_to_reading",
+      "projection_name": "preprocess shaping projection",
+      "projection_role": "preprocess_shaping",
+      "projection_layer": "entry",
+      "line_type": "structural_line",
+      "changed_facets": [
+        "distinction_facet",
+        "residue_facet"
+      ],
+      "bounded_spaces": [
+        "external_input_preprocess_space"
+      ],
+      "preferred_routes": [
+        "route_preprocess_compare_first"
+      ],
+      "projection_question": "How should this raw transcript be shaped without flattening the future reading line?",
+      "projection_outputs": [
+        "preprocess comparison result",
+        "regroup output",
+        "post-preprocess probe output"
+      ],
+      "material_sources": [
+        "external transcript",
+        "comparison output",
+        "regroup candidate"
+      ],
+      "residue_return_path": "preprocess ambiguity returns as future entry-shaping residue",
+      "related_projections": [
+        "proj_input_ingest_visibility"
+      ],
+      "activation_hints": [
+        "raw transcript too noisy",
+        "uncertain-needs-probe detected"
+      ],
+      "notes": [
+        "emphasizes preservation before normalization"
+      ]
+    },
+    {
+      "projection_id": "proj_transition_preflight_reread",
+      "family_id": "fam_transition_thickening",
+      "projection_name": "transition preflight reread projection",
+      "projection_role": "latent_reread",
+      "projection_layer": "decision",
+      "line_type": "decision_line",
+      "changed_facets": [
+        "distinction_facet",
+        "direction_facet",
+        "residue_facet"
+      ],
+      "bounded_spaces": [
+        "transition_validation_space"
+      ],
+      "preferred_routes": [
+        "route_preflight_reread"
+      ],
+      "projection_question": "What is the current thickening/closure position of this active transition line?",
+      "projection_outputs": [
+        "phase decision",
+        "reread observation entry",
+        "next check trigger"
+      ],
+      "material_sources": [
+        "active latent lines",
+        "phase decision log",
+        "reread observation log"
+      ],
+      "residue_return_path": "unresolved edges return as thickening residue",
+      "related_projections": [
+        "proj_transition_corridor_validation",
+        "proj_transition_operator_readout"
+      ],
+      "activation_hints": [
+        "same latent line repeats",
+        "phase signal needs reevaluation"
+      ],
+      "notes": [
+        "focuses on active line status rather than broad corridor survey"
+      ]
+    },
+    {
+      "projection_id": "proj_transition_corridor_validation",
+      "family_id": "fam_transition_thickening",
+      "projection_name": "transition corridor validation projection",
+      "projection_role": "corridor_validation",
+      "projection_layer": "validation",
+      "line_type": "residue_line",
+      "changed_facets": [
+        "linkage_facet",
+        "operation_facet",
+        "residue_facet"
+      ],
+      "bounded_spaces": [
+        "transition_validation_space"
+      ],
+      "preferred_routes": [
+        "route_stage_corridor_probe"
+      ],
+      "projection_question": "How should the corridor boundary be narrowed across the staged lineage?",
+      "projection_outputs": [
+        "stage report",
+        "corridor boundary note",
+        "survivor/nonreinforced cards"
+      ],
+      "material_sources": [
+        "stage outputs",
+        "corridor notes",
+        "validation reports"
+      ],
+      "residue_return_path": "nonreinforced and unresolved boundary edges remain as corridor residue",
+      "related_projections": [
+        "proj_transition_preflight_reread"
+      ],
+      "activation_hints": [
+        "boundary ambiguity persists",
+        "stage lineage exists"
+      ],
+      "notes": [
+        "focuses on staged narrowing rather than current-phase status"
+      ]
+    },
+    {
+      "projection_id": "proj_transition_operator_readout",
+      "family_id": "fam_transition_thickening",
+      "projection_name": "transition operator readout projection",
+      "projection_role": "operator_readout",
+      "projection_layer": "readout",
+      "line_type": "reading_line",
+      "changed_facets": [
+        "linkage_facet",
+        "direction_facet",
+        "operation_facet"
+      ],
+      "bounded_spaces": [
+        "operating_readout_space"
+      ],
+      "preferred_routes": [
+        "route_readonly_board",
+        "route_internal_search"
+      ],
+      "projection_question": "How should transition findings become operator-readable explanation or search result?",
+      "projection_outputs": [
+        "board excerpt",
+        "selected detail context",
+        "search result context"
+      ],
+      "material_sources": [
+        "transition findings",
+        "engine state latest",
+        "internal search payloads"
+      ],
+      "residue_return_path": "presentation cautions return to readout residue and transition explanation hints",
+      "related_projections": [
+        "proj_transition_preflight_reread"
+      ],
+      "activation_hints": [
+        "operator needs transition explanation",
+        "readout surface is active"
+      ],
+      "notes": [
+        "bridges transition family into operator-facing surfaces"
+      ]
+    },
+    {
+      "projection_id": "proj_operator_board_readout",
+      "family_id": "fam_operator_readout",
+      "projection_name": "operator board readout projection",
+      "projection_role": "board_readout",
+      "projection_layer": "readout",
+      "line_type": "reading_line",
+      "changed_facets": [
+        "material_facet",
+        "operation_facet"
+      ],
+      "bounded_spaces": [
+        "operating_readout_space"
+      ],
+      "preferred_routes": [
+        "route_readonly_board"
+      ],
+      "projection_question": "How should the current engine state be shown as a broad readable board?",
+      "projection_outputs": [
+        "asset state board",
+        "header badges",
+        "overview readout"
+      ],
+      "material_sources": [
+        "engine state latest",
+        "update events",
+        "adapter model"
+      ],
+      "residue_return_path": "presentation caution returns as readout residue",
+      "related_projections": [
+        "proj_operator_search_readout"
+      ],
+      "activation_hints": [
+        "broad overview requested",
+        "engine state latest available"
+      ],
+      "notes": [
+        "broadest operator-facing projection in the family"
+      ]
+    },
+    {
+      "projection_id": "proj_operator_search_readout",
+      "family_id": "fam_operator_readout",
+      "projection_name": "operator search readout projection",
+      "projection_role": "search_readout",
+      "projection_layer": "readout",
+      "line_type": "decision_line",
+      "changed_facets": [
+        "distinction_facet",
+        "direction_facet",
+        "operation_facet"
+      ],
+      "bounded_spaces": [
+        "operating_readout_space"
+      ],
+      "preferred_routes": [
+        "route_internal_search"
+      ],
+      "projection_question": "Which internal route or surface best answers this operator query right now?",
+      "projection_outputs": [
+        "search result list",
+        "selected result context",
+        "next action hints"
+      ],
+      "material_sources": [
+        "query text",
+        "indexed runtime surfaces",
+        "selected result context"
+      ],
+      "residue_return_path": "query-result mismatch returns as search residue",
+      "related_projections": [
+        "proj_operator_board_readout"
+      ],
+      "activation_hints": [
+        "query exists",
+        "search surface available"
+      ],
+      "notes": [
+        "narrower and more selective than broad board readout"
+      ]
+    }
+  ]
+}

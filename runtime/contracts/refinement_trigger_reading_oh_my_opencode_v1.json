@@ -1,0 +1,14 @@
+{
+  "schema": "refinement_trigger_reading_oh_my_opencode_v1",
+  "case_name": "oh_my_opencode_raw_input_v1",
+  "status": "watch",
+  "trigger_results": {
+    "external_case_accumulated_ge_5": false,
+    "repeated_relation_slot_ge_3": true,
+    "observer_readout_confusion": false,
+    "guide_contract_index_relayout_needed": false,
+    "repeated_defer_candidate": false
+  },
+  "reason": "외부 사례가 3건으로 늘었고 agentic workflow/outer-defer 분리 패턴이 더 또렷해졌지만, 아직 refinement를 여는 수준은 아니다.",
+  "next_action_hint": "4번째 외부 사례를 더 넣거나, 지금까지 나온 outer 후보 중 하나를 정련 패스 후보로 좁힌다."
+}

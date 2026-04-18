@@ -1,0 +1,90 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "Line Thickening Promotion Scope v0",
+    "end_ref": "Line Thickening Promotion Scope v0",
+    "unit_type": "heading_block",
+    "text_excerpt": "# Line Thickening Promotion Scope v0",
+    "char_count": 36,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "Verdict",
+    "end_ref": "Verdict",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Verdict `implemented`",
+    "char_count": 24,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "Summary",
+    "end_ref": "Summary",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Summary `line_thickening` now distinguishes line strength from validation scope.",
+    "char_count": 83,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "Strength",
+    "end_ref": "Strength",
+    "unit_type": "heading_block",
+    "text_excerpt": "### Strength - `status` remains the operational line state - `thickness_level` remains the local strength signal",
+    "char_count": 112,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "Scope",
+    "end_ref": "Scope",
+    "unit_type": "heading_block",
+    "text_excerpt": "### Scope - `promotion_scope` says how broadly the line has actually been validated - `scope_basis_summary` records the evidence basis in a short derived form - `distinct_path_count`, `distinct_source_family_count`, `dis",
+    "char_count": 357,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "Current behavior",
+    "end_ref": "Current behavior",
+    "unit_type": "heading_block",
+    "text_excerpt": "### Current behavior - preflight summary lines remain `path_local` - local grounded lines can become `source_family_local` - stronger grounded recurrence across distinct source families inside one validation route can be",
+    "char_count": 291,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "Verification",
+    "end_ref": "Verification",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Verification The grounded path was rerun through `scripts/apply_internal_observer.py` with bounded recurrence validation. The registry now stores scope alongside thickness and basis axes for the touched lines, and the",
+    "char_count": 618,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "Why this matters",
+    "end_ref": "Why this matters",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Why this matters The system can now say: - strong local line - validated on a bounded path - not yet global That prevents local success from being read as a global operating guarantee.",
+    "char_count": 187,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  }
+]

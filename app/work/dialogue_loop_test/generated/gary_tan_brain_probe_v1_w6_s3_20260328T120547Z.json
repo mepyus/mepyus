@@ -1,0 +1,838 @@
+{
+  "probe_name": "gary_tan_brain_probe_v1",
+  "input_path": "inputs/external_cases/gary_tan_brain.txt",
+  "created_at": "2026-03-28T12:05:47.545417Z",
+  "window_size": 6,
+  "stride": 3,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 314,
+    "impl": 5,
+    "evidence": 15,
+    "spec": 3
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 314
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 15
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 5
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 3
+    }
+  ],
+  "overall_flow_counts": {
+    "compare": 240,
+    "run": 73,
+    "break": 14,
+    "fix": 10
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 240
+    },
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 73
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 14
+    },
+    {
+      "value": "fix",
+      "display_label": "수정/보정 흐름",
+      "count": 10
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "생산성/코딩",
+      "count": 3
+    },
+    {
+      "object": "일의 미래",
+      "count": 1
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    },
+    {
+      "object": "전략/방향성",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "설명/해석 층",
+      "count": 319
+    },
+    {
+      "layer": "구현/실행 층",
+      "count": 80
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 16
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 6
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 5
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 2
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "core_topic_anchor": 193,
+    "discourse_residue_anchor": 51
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "그다음에",
+      "count": 56
+    },
+    {
+      "value": "그래서",
+      "count": 51
+    },
+    {
+      "value": "됩니다",
+      "count": 26
+    },
+    {
+      "value": "되면은",
+      "count": 26
+    },
+    {
+      "value": "있습니다",
+      "count": 22
+    },
+    {
+      "value": "CEO",
+      "count": 14
+    },
+    {
+      "value": "클로드",
+      "count": 14
+    },
+    {
+      "value": "자동으로",
+      "count": 13
+    },
+    {
+      "value": "사용을",
+      "count": 11
+    },
+    {
+      "value": "때문에",
+      "count": 11
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 7,
+    "speaker_or_source_residue": 0,
+    "conversational_filler_residue": 7,
+    "generic_abstraction_residue": 7,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 314,
+        "impl": 5,
+        "evidence": 15,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 314
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 15
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 240,
+        "run": 73,
+        "break": 14,
+        "fix": 10
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 240
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 73
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 14
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 10
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 319
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 80
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 6
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 5
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "그다음에",
+          "count": 56
+        },
+        {
+          "value": "그래서",
+          "count": 51
+        },
+        {
+          "value": "됩니다",
+          "count": 26
+        },
+        {
+          "value": "되면은",
+          "count": 26
+        },
+        {
+          "value": "있습니다",
+          "count": 22
+        },
+        {
+          "value": "CEO",
+          "count": 14
+        },
+        {
+          "value": "클로드",
+          "count": 14
+        },
+        {
+          "value": "자동으로",
+          "count": 13
+        },
+        {
+          "value": "사용을",
+          "count": 11
+        },
+        {
+          "value": "때문에",
+          "count": 11
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1965,
+        "discourse_residue_anchor": 54,
+        "user_layer_hint_anchor": 3
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 7,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 7,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 일의 미래, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다. 그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요. 그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_76eb7f83115e_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00 저…",
+          "excerpt": "## untitled 0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 이런게 0:06 노하우를이…",
+          "excerpt": "그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그다음에이 게리탄 같은 경우에는 …",
+          "excerpt": "그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스킬을 사용을 해 가지고 제가 0:22 그냥 딸깡만으로도 어이 경험을 가져올 수 있고 제가 또 여기에 있는 스킬을 0:28 저의 취향에 맞게 고쳐서 쓸 수 있게 이렇게 공개가 되었다…"
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_004",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그래서 저는이 G스텍 꼭 한 번씩…",
+          "excerpt": "그래서 저는이 G스텍 꼭 한 번씩 사용해 0:39 보시기를 추천을 드립니다."
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 314,
+        "impl": 5,
+        "evidence": 15,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 314
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 15
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 240,
+        "run": 73,
+        "break": 14,
+        "fix": 10
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 240
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 73
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 14
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 10
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 319
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 80
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 6
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 5
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "그다음에",
+          "count": 56
+        },
+        {
+          "value": "그래서",
+          "count": 51
+        },
+        {
+          "value": "됩니다",
+          "count": 26
+        },
+        {
+          "value": "되면은",
+          "count": 26
+        },
+        {
+          "value": "있습니다",
+          "count": 22
+        },
+        {
+          "value": "CEO",
+          "count": 14
+        },
+        {
+          "value": "클로드",
+          "count": 14
+        },
+        {
+          "value": "자동으로",
+          "count": 13
+        },
+        {
+          "value": "사용을",
+          "count": 11
+        },
+        {
+          "value": "때문에",
+          "count": 11
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1965,
+        "discourse_residue_anchor": 54,
+        "user_layer_hint_anchor": 3
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 7,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 7,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 일의 미래, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다. 그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요. 그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_76eb7f83115e_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00 저…",
+          "excerpt": "## untitled 0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 이런게 0:06 노하우를이…",
+          "excerpt": "그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그다음에이 게리탄 같은 경우에는 …",
+          "excerpt": "그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스킬을 사용을 해 가지고 제가 0:22 그냥 딸깡만으로도 어이 경험을 가져올 수 있고 제가 또 여기에 있는 스킬을 0:28 저의 취향에 맞게 고쳐서 쓸 수 있게 이렇게 공개가 되었다…"
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_004",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그래서 저는이 G스텍 꼭 한 번씩…",
+          "excerpt": "그래서 저는이 G스텍 꼭 한 번씩 사용해 0:39 보시기를 추천을 드립니다."
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 314,
+        "impl": 5,
+        "evidence": 15,
+        "spec": 3
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 314
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 15
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 3
+        }
+      ],
+      "flow_counts": {
+        "compare": 240,
+        "run": 73,
+        "break": 14,
+        "fix": 10
+      },
+      "flow_display_counts": [
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 240
+        },
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 73
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 14
+        },
+        {
+          "value": "fix",
+          "display_label": "수정/보정 흐름",
+          "count": 10
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 3
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "설명/해석 층",
+          "count": 319
+        },
+        {
+          "layer": "구현/실행 층",
+          "count": 80
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 16
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 6
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 5
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 2
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "그다음에",
+          "count": 56
+        },
+        {
+          "value": "그래서",
+          "count": 51
+        },
+        {
+          "value": "됩니다",
+          "count": 26
+        },
+        {
+          "value": "되면은",
+          "count": 26
+        },
+        {
+          "value": "있습니다",
+          "count": 22
+        },
+        {
+          "value": "CEO",
+          "count": 14
+        },
+        {
+          "value": "클로드",
+          "count": 14
+        },
+        {
+          "value": "자동으로",
+          "count": 13
+        },
+        {
+          "value": "사용을",
+          "count": 11
+        },
+        {
+          "value": "때문에",
+          "count": 11
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 1965,
+        "discourse_residue_anchor": 54,
+        "user_layer_hint_anchor": 3
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 7,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 7,
+        "generic_abstraction_residue": 7,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 21,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, 일의 미래, 에이전트 애플리케이션 / 주요 층위: 설명/해석 층, 구현/실행 층, 검증/근거 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다. 그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요. 그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_76eb7f83115e_001",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "## untitled 0:00 저…",
+          "excerpt": "## untitled 0:00 저는 프롬프트를 작성할 때 정말 대충 작성을 하게 됩니다."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "그런데 이런게 0:06 노하우를이…",
+          "excerpt": "그런데 이런게 0:06 노하우를이 문서를 통해서 볼 수 있다는 거 자체만으로도 저는 굉장히 0:11 좋았고요."
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그다음에이 게리탄 같은 경우에는 …",
+          "excerpt": "그다음에이 게리탄 같은 경우에는 그 Y이 콤비네이터의 CEO이기도 하고 정말 이제 경험이 0:17 많은 사람인데 이런 사람들의 경험을 이런 스킬을 사용을 해 가지고 제가 0:22 그냥 딸깡만으로도 어이 경험을 가져올 수 있고 제가 또 여기에 있는 스킬을 0:28 저의 취향에 맞게 고쳐서 쓸 수 있게 이렇게 공개가 되었다…"
+        },
+        {
+          "dust_id": "dst_src_76eb7f83115e_004",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "그래서 저는이 G스텍 꼭 한 번씩…",
+          "excerpt": "그래서 저는이 G스텍 꼭 한 번씩 사용해 0:39 보시기를 추천을 드립니다."
+        }
+      ]
+    }
+  ]
+}

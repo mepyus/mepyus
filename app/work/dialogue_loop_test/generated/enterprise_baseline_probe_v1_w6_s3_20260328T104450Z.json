@@ -1,0 +1,846 @@
+{
+  "probe_name": "enterprise_baseline_probe_v1",
+  "input_path": "inputs/external_cases/enterprise.txt",
+  "created_at": "2026-03-28T10:44:50.495906Z",
+  "window_size": 6,
+  "stride": 3,
+  "segment_assist": "none",
+  "block_count": 1,
+  "window_count": 1,
+  "overall_scene_counts": {
+    "review": 9,
+    "evidence": 2,
+    "impl": 5,
+    "spec": 1
+  },
+  "overall_scene_display_counts": [
+    {
+      "value": "review",
+      "display_label": "설명/해석 층",
+      "count": 9
+    },
+    {
+      "value": "impl",
+      "display_label": "구현/실행 층",
+      "count": 5
+    },
+    {
+      "value": "evidence",
+      "display_label": "근거/검증 층",
+      "count": 2
+    },
+    {
+      "value": "spec",
+      "display_label": "규칙/형식 힌트 층",
+      "count": 1
+    }
+  ],
+  "overall_flow_counts": {
+    "run": 8,
+    "compare": 7,
+    "break": 2
+  },
+  "overall_flow_display_counts": [
+    {
+      "value": "run",
+      "display_label": "작동/실행 흐름",
+      "count": 8
+    },
+    {
+      "value": "compare",
+      "display_label": "비교/해석 흐름",
+      "count": 7
+    },
+    {
+      "value": "break",
+      "display_label": "끊김/전환 흐름",
+      "count": 2
+    }
+  ],
+  "overall_object_candidates": [
+    {
+      "object": "생산성/코딩",
+      "count": 4
+    },
+    {
+      "object": "AI의 미래",
+      "count": 1
+    },
+    {
+      "object": "일의 미래",
+      "count": 1
+    },
+    {
+      "object": "에이전트 애플리케이션",
+      "count": 1
+    },
+    {
+      "object": "모델 work",
+      "count": 1
+    },
+    {
+      "object": "구현/자동화",
+      "count": 1
+    },
+    {
+      "object": "전략/방향성",
+      "count": 1
+    }
+  ],
+  "overall_layer_hints": [
+    {
+      "layer": "구현/실행 층",
+      "count": 16
+    },
+    {
+      "layer": "설명/해석 층",
+      "count": 12
+    },
+    {
+      "layer": "질문 유도 층",
+      "count": 6
+    },
+    {
+      "layer": "구조/연결 층",
+      "count": 3
+    },
+    {
+      "layer": "전략/방향 층",
+      "count": 3
+    },
+    {
+      "layer": "검증/근거 층",
+      "count": 3
+    }
+  ],
+  "overall_relation_hints": [
+    {
+      "hint": "reinforcement_hint",
+      "count": 1
+    },
+    {
+      "hint": "contrast_hint",
+      "count": 1
+    },
+    {
+      "hint": "transition_hint",
+      "count": 1
+    },
+    {
+      "hint": "execution_shift_hint",
+      "count": 1
+    },
+    {
+      "hint": "specification_hint",
+      "count": 1
+    },
+    {
+      "hint": "question_generation_hint",
+      "count": 1
+    }
+  ],
+  "overall_anchor_bucket_counts": {
+    "core_topic_anchor": 17,
+    "discourse_residue_anchor": 2
+  },
+  "overall_top_anchor_values": [
+    {
+      "value": "엔터프라이즈",
+      "count": 2
+    },
+    {
+      "value": "입장에서는",
+      "count": 2
+    },
+    {
+      "value": "않을까",
+      "count": 2
+    },
+    {
+      "value": "관점에서",
+      "count": 2
+    },
+    {
+      "value": "그러면",
+      "count": 2
+    },
+    {
+      "value": "우리가",
+      "count": 2
+    },
+    {
+      "value": "얘기를",
+      "count": 2
+    },
+    {
+      "value": "가지고",
+      "count": 2
+    },
+    {
+      "value": "plan.md",
+      "count": 2
+    },
+    {
+      "value": "untitled",
+      "count": 1
+    }
+  ],
+  "overall_residue_breakdown": {
+    "discourse_connective_residue": 8,
+    "speaker_or_source_residue": 0,
+    "conversational_filler_residue": 9,
+    "generic_abstraction_residue": 6,
+    "quasi_topic_residue": 0
+  },
+  "top_question_intent_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 9,
+        "evidence": 2,
+        "impl": 5,
+        "spec": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 9
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 2
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 8,
+        "compare": 7,
+        "break": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 7
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 2
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 4
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "구현/자동화",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "구현/실행 층",
+          "count": 16
+        },
+        {
+          "layer": "설명/해석 층",
+          "count": 12
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 3
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 3
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 3
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "엔터프라이즈",
+          "count": 2
+        },
+        {
+          "value": "입장에서는",
+          "count": 2
+        },
+        {
+          "value": "않을까",
+          "count": 2
+        },
+        {
+          "value": "관점에서",
+          "count": 2
+        },
+        {
+          "value": "그러면",
+          "count": 2
+        },
+        {
+          "value": "우리가",
+          "count": 2
+        },
+        {
+          "value": "얘기를",
+          "count": 2
+        },
+        {
+          "value": "가지고",
+          "count": 2
+        },
+        {
+          "value": "plan.md",
+          "count": 2
+        },
+        {
+          "value": "untitled",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 123,
+        "user_layer_hint_anchor": 1,
+        "discourse_residue_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 9,
+        "generic_abstraction_residue": 6,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 23,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, AI의 미래, 일의 미래 / 주요 층위: 구현/실행 층, 설명/해석 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니어이신 '박진형' 님을…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e4b35c0280e5_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 사이오닉 A…",
+          "excerpt": "## untitled 사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "아무래도 AI 에이전트 관련해서 …",
+          "excerpt": "아무래도 AI 에이전트 관련해서 가장 니즈가 많은 편인가요?"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "2:15 예 맞습니다 결국에는 A…",
+          "excerpt": "2:15 예 맞습니다 결국에는 AI 활용을 하고 싶어 하는 유즈 케이스들은 정말 다양하게 있는데 결국 엔터프라이즈 입장에서는 2:22 이제 상방과 하방을 같이 봐야 되는 것 같습니다 일단 상방이라고 하는 거는 이제 우리 회사의 예를 들면 2:28 뭐 30년 치 20년 치의 회사 문서가 있고 그 문서들에 대해서 잘 AI가…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "혹은 틀린 대답이 나오지 않을까?",
+          "excerpt": "혹은 틀린 대답이 나오지 않을까?"
+        }
+      ]
+    }
+  ],
+  "top_residue_windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 9,
+        "evidence": 2,
+        "impl": 5,
+        "spec": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 9
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 2
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 8,
+        "compare": 7,
+        "break": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 7
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 2
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 4
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "구현/자동화",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "구현/실행 층",
+          "count": 16
+        },
+        {
+          "layer": "설명/해석 층",
+          "count": 12
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 3
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 3
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 3
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "엔터프라이즈",
+          "count": 2
+        },
+        {
+          "value": "입장에서는",
+          "count": 2
+        },
+        {
+          "value": "않을까",
+          "count": 2
+        },
+        {
+          "value": "관점에서",
+          "count": 2
+        },
+        {
+          "value": "그러면",
+          "count": 2
+        },
+        {
+          "value": "우리가",
+          "count": 2
+        },
+        {
+          "value": "얘기를",
+          "count": 2
+        },
+        {
+          "value": "가지고",
+          "count": 2
+        },
+        {
+          "value": "plan.md",
+          "count": 2
+        },
+        {
+          "value": "untitled",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 123,
+        "user_layer_hint_anchor": 1,
+        "discourse_residue_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 9,
+        "generic_abstraction_residue": 6,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 23,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, AI의 미래, 일의 미래 / 주요 층위: 구현/실행 층, 설명/해석 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니어이신 '박진형' 님을…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e4b35c0280e5_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 사이오닉 A…",
+          "excerpt": "## untitled 사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "아무래도 AI 에이전트 관련해서 …",
+          "excerpt": "아무래도 AI 에이전트 관련해서 가장 니즈가 많은 편인가요?"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "2:15 예 맞습니다 결국에는 A…",
+          "excerpt": "2:15 예 맞습니다 결국에는 AI 활용을 하고 싶어 하는 유즈 케이스들은 정말 다양하게 있는데 결국 엔터프라이즈 입장에서는 2:22 이제 상방과 하방을 같이 봐야 되는 것 같습니다 일단 상방이라고 하는 거는 이제 우리 회사의 예를 들면 2:28 뭐 30년 치 20년 치의 회사 문서가 있고 그 문서들에 대해서 잘 AI가…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "혹은 틀린 대답이 나오지 않을까?",
+          "excerpt": "혹은 틀린 대답이 나오지 않을까?"
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "0_0",
+      "start_index": 0,
+      "end_index": 0,
+      "headings": [
+        "untitled"
+      ],
+      "scene_counts": {
+        "review": 9,
+        "evidence": 2,
+        "impl": 5,
+        "spec": 1
+      },
+      "scene_display_counts": [
+        {
+          "value": "review",
+          "display_label": "설명/해석 층",
+          "count": 9
+        },
+        {
+          "value": "impl",
+          "display_label": "구현/실행 층",
+          "count": 5
+        },
+        {
+          "value": "evidence",
+          "display_label": "근거/검증 층",
+          "count": 2
+        },
+        {
+          "value": "spec",
+          "display_label": "규칙/형식 힌트 층",
+          "count": 1
+        }
+      ],
+      "flow_counts": {
+        "run": 8,
+        "compare": 7,
+        "break": 2
+      },
+      "flow_display_counts": [
+        {
+          "value": "run",
+          "display_label": "작동/실행 흐름",
+          "count": 8
+        },
+        {
+          "value": "compare",
+          "display_label": "비교/해석 흐름",
+          "count": 7
+        },
+        {
+          "value": "break",
+          "display_label": "끊김/전환 흐름",
+          "count": 2
+        }
+      ],
+      "object_candidates": [
+        {
+          "object": "생산성/코딩",
+          "count": 4
+        },
+        {
+          "object": "AI의 미래",
+          "count": 1
+        },
+        {
+          "object": "일의 미래",
+          "count": 1
+        },
+        {
+          "object": "에이전트 애플리케이션",
+          "count": 1
+        },
+        {
+          "object": "모델 work",
+          "count": 1
+        },
+        {
+          "object": "구현/자동화",
+          "count": 1
+        },
+        {
+          "object": "전략/방향성",
+          "count": 1
+        }
+      ],
+      "layer_hints": [
+        {
+          "layer": "구현/실행 층",
+          "count": 16
+        },
+        {
+          "layer": "설명/해석 층",
+          "count": 12
+        },
+        {
+          "layer": "질문 유도 층",
+          "count": 6
+        },
+        {
+          "layer": "구조/연결 층",
+          "count": 3
+        },
+        {
+          "layer": "전략/방향 층",
+          "count": 3
+        },
+        {
+          "layer": "검증/근거 층",
+          "count": 3
+        }
+      ],
+      "relation_hints": [
+        "reinforcement_hint",
+        "contrast_hint",
+        "transition_hint",
+        "execution_shift_hint",
+        "specification_hint",
+        "question_generation_hint"
+      ],
+      "question_intent_score": 8,
+      "top_anchor_values": [
+        {
+          "value": "엔터프라이즈",
+          "count": 2
+        },
+        {
+          "value": "입장에서는",
+          "count": 2
+        },
+        {
+          "value": "않을까",
+          "count": 2
+        },
+        {
+          "value": "관점에서",
+          "count": 2
+        },
+        {
+          "value": "그러면",
+          "count": 2
+        },
+        {
+          "value": "우리가",
+          "count": 2
+        },
+        {
+          "value": "얘기를",
+          "count": 2
+        },
+        {
+          "value": "가지고",
+          "count": 2
+        },
+        {
+          "value": "plan.md",
+          "count": 2
+        },
+        {
+          "value": "untitled",
+          "count": 1
+        }
+      ],
+      "anchor_bucket_counts": {
+        "core_topic_anchor": 123,
+        "user_layer_hint_anchor": 1,
+        "discourse_residue_anchor": 2
+      },
+      "residue_breakdown": {
+        "discourse_connective_residue": 8,
+        "speaker_or_source_residue": 0,
+        "conversational_filler_residue": 9,
+        "generic_abstraction_residue": 6,
+        "quasi_topic_residue": 0
+      },
+      "residue_total": 23,
+      "opening_summary": "주요 객체 후보: 생산성/코딩, AI의 미래, 일의 미래 / 주요 층위: 구현/실행 층, 설명/해석 층, 질문 유도 층 / 관계 힌트: reinforcement_hint, contrast_hint, transition_hint",
+      "sample_blocks": [
+        {
+          "heading": "untitled",
+          "excerpt": "사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니어이신 '박진형' 님을…"
+        }
+      ],
+      "sample_segments": [
+        {
+          "dust_id": "dst_src_e4b35c0280e5_001",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "## untitled 사이오닉 A…",
+          "excerpt": "## untitled 사이오닉 AI와 엔터프라이즈 AI 도입의 도전 0:41 AI가 사람들의 삶을 변화시키는 특별한 방법을 탐구하는 팟캐스트 '평범한 사람들'에 오신 것을 환영합니다 0:47 저는 호스트 유튜버 '평범한 사업가'입니다 오늘은 전 세계 클로드 코드 사용량 1위를 기록하신 0:54 '사이오닉 AI'의 엔지니…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_002",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "아무래도 AI 에이전트 관련해서 …",
+          "excerpt": "아무래도 AI 에이전트 관련해서 가장 니즈가 많은 편인가요?"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_003",
+          "scene": "review",
+          "flow": "run",
+          "short_label": "2:15 예 맞습니다 결국에는 A…",
+          "excerpt": "2:15 예 맞습니다 결국에는 AI 활용을 하고 싶어 하는 유즈 케이스들은 정말 다양하게 있는데 결국 엔터프라이즈 입장에서는 2:22 이제 상방과 하방을 같이 봐야 되는 것 같습니다 일단 상방이라고 하는 거는 이제 우리 회사의 예를 들면 2:28 뭐 30년 치 20년 치의 회사 문서가 있고 그 문서들에 대해서 잘 AI가…"
+        },
+        {
+          "dust_id": "dst_src_e4b35c0280e5_004",
+          "scene": "review",
+          "flow": "compare",
+          "short_label": "혹은 틀린 대답이 나오지 않을까?",
+          "excerpt": "혹은 틀린 대답이 나오지 않을까?"
+        }
+      ]
+    }
+  ]
+}

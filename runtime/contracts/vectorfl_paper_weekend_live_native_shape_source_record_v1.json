@@ -1,0 +1,80 @@
+{
+  "record_id": "vectorfl_paper_weekend_live_native_shape_source_record_v1",
+  "source_program": "paperclip",
+  "source_kind": "native_shape_extracted_record",
+  "scenario_scope": "weekend_pilot_first_loop_live_bundle",
+  "source_basis": [
+    "docs/reviews/paperclip_vectorfl_first_overlay_test_v0.md",
+    "docs/specs/paperclip_internal_work_assignment_reading_v0.md",
+    "docs/reviews/paperclip_extractable_structure_v0.md"
+  ],
+  "why_truer_than_v0_sample": [
+    "It keeps native Paperclip surface boundaries instead of flattening everything into one generic pilot summary.",
+    "It includes issue placement, wakeup-to-run carry, comment return, and approval note as separate source surfaces.",
+    "It is still local and controlled, but shaped by extracted native structure rather than by pure synthetic convenience."
+  ],
+  "issue_surface": {
+    "issue_id": "pc_issue_overlay_001",
+    "issue_number": 17,
+    "identifier": "VFP-17",
+    "title": "summarize current reading residue before next routing change",
+    "description": "Review the current reading residue and write a short operator-facing note before the next routing change is attempted.",
+    "status": "in_progress",
+    "priority": 1,
+    "assignee_agent_id": "agent_codex_local",
+    "project_ref": "proj_runtime_readability",
+    "goal_ref": "goal_keep_surface_readable_during_routing_change",
+    "company_ref": "company_vectorfl_proto",
+    "parent_issue_ref": null
+  },
+  "assignment_and_wakeup_surface": {
+    "assignment_state": "assigned_and_woken",
+    "wakeup_request_id": "wake_001",
+    "mutation": "assignment_created",
+    "context_snapshot": {
+      "issue_focus": "current reading residue before routing change",
+      "requested_output": "short operator-facing note",
+      "constraint": "do not broaden into general refactor"
+    }
+  },
+  "heartbeat_run_surface": {
+    "run_id": "hb_run_001",
+    "invocation_source": "issue_assignment_wakeup",
+    "trigger_detail": "assignee active and issue not in backlog",
+    "status": "completed",
+    "started_at": "2026-04-10T21:10:00+09:00",
+    "finished_at": "2026-04-10T21:24:00+09:00",
+    "adapter_type": "codex-cli",
+    "context_snapshot": {
+      "task_key": "issue:pc_issue_overlay_001",
+      "session_display_id": "sess_overlay_001",
+      "carry_mode": "task_keyed_session"
+    },
+    "result_json": {
+      "summary": "Operator-facing residue note drafted and attached back to the issue thread.",
+      "message": "Routing change should wait until the current residue note is carried forward explicitly.",
+      "error": null
+    }
+  },
+  "output_artifact_surface": {
+    "issue_comment": {
+      "comment_id": "comment_overlay_001",
+      "body": "Current residue should stay visible before any routing change. Keep the next pass narrow and attach the caution to the same issue.",
+      "created_by_run_id": "hb_run_001",
+      "author_type": "agent"
+    },
+    "work_product": {
+      "type": "operator_note",
+      "title": "Current reading residue caution",
+      "summary": "A short caution note that keeps routing-change pressure attached to the current reading state.",
+      "status": "produced"
+    }
+  },
+  "governance_event_surface": {
+    "approval_type": "change_review",
+    "requested_by": "agent_codex_local",
+    "decided_by": "supervisor",
+    "status": "approved_with_caution",
+    "decision_note": "Proceed only if the residue note remains attached to the same issue and the next run stays narrow."
+  }
+}

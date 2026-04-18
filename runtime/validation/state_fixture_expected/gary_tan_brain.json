@@ -1,0 +1,25 @@
+{
+  "asset_id": "gary_tan_brain",
+  "expected": {
+    "packet_texture": "overcompressed_breathing",
+    "grounding_status": "fallback_grounded",
+    "emergence_status": "minimal_emergence",
+    "carryover_risk": "high",
+    "maturation_state": "breathing",
+    "traceability_status": "traceable"
+  },
+  "expected_contains": {
+    "comparison_memory_reason": [
+      "same_compressed_family"
+    ],
+    "gate_blocker_summary": [
+      "fallback_grounding_dominance",
+      "scaffold_carryover_risk"
+    ]
+  },
+  "allowable_drift": {
+    "comparison_memory_reason": "subset_or_superset_ok",
+    "gate_blocker_summary": "subset_or_superset_ok"
+  },
+  "notes": "overcompressed but breathing packet with minimal emergence"
+}

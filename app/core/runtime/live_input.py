@@ -19,6 +19,7 @@ from app.core.runtime.runtime_observer_baseline import (
     apply_observer_baseline_to_metadata,
     build_material_observer_baseline,
 )
+from app.core.runtime.stage0_handoff import build_handoff_materials
 from app.work.processor_compare.anchor_engine import run_anchor_pipeline
 
 
@@ -49,6 +50,20 @@ def ingest_live_input(runtime_root: Path, payload: Dict[str, str]) -> Dict[str, 
 
     service = FormationService(runtime_root)
     prior_materials = service.materials.read_all()
+
+    if source_type == "memo":
+        return _ingest_memo_stage0_live_input(
+            runtime_root=runtime_root,
+            raw_payload=raw_payload,
+            source_type=source_type,
+            source_ref=source_ref,
+            session_id=session_id,
+            actor_id=actor_id,
+            family_id=family_id,
+            created_at=created_at,
+            service=service,
+            prior_materials=prior_materials,
+        )
 
     dust_inputs = build_dust_inputs_from_source(
         source_id=source_id,
@@ -200,12 +215,180 @@ def ingest_live_input(runtime_root: Path, payload: Dict[str, str]) -> Dict[str, 
         "dust_count": len(material_rows),
         "edge_events": edge_events[:24],
     }
-    space_result = form_live_input_local_space(runtime_root, result, family_id=family_id or "")
-    result["cell_ids"] = [space_result.get("cell_id", "")]
-    result["local_space_ids"] = [space_result.get("local_space_id", "")]
-    result["bridge_ids"] = [row.get("bridge_id", "") for row in space_result.get("bridge_sync", []) if row.get("bridge_id")]
-    result["space_result"] = space_result
     return result
+
+
+def _ingest_memo_stage0_live_input(
+    *,
+    runtime_root: Path,
+    raw_payload: str,
+    source_type: str,
+    source_ref: str,
+    session_id: str,
+    actor_id: str,
+    family_id: Optional[str],
+    created_at: str,
+    service: FormationService,
+    prior_materials: Sequence[Dict[str, object]],
+) -> Dict[str, object]:
+    handoff_bundle = build_handoff_materials(
+        runtime_root,
+        {
+            "source_type": source_type,
+            "source_ref": source_ref,
+            "raw_payload": raw_payload,
+        },
+    )
+    stage0_output = handoff_bundle["stage0_output"]
+    handoff_materials = list(handoff_bundle["handoff_materials"])
+
+    material_rows: List[Tuple[dict, LabeledDust]] = []
+    material_ids: List[str] = []
+    local_space_ids: List[str] = []
+    cell_ids: List[str] = []
+    bridge_ids: List[str] = []
+    trace_ids: List[str] = []
+
+    for scene_index, handoff in enumerate(handoff_materials, start=1):
+        labeled = _build_labeled_dust_for_text(
+            text=str(handoff.get("candidate_text", "")).strip(),
+            source_id=f"{stage0_output['run_id']}_{scene_index}",
+            source_type=source_type,
+            source_ref=source_ref,
+            created_at=created_at,
+        )
+        convergence = _build_input_convergence_bundle(labeled)
+        material = service.ingest_material_with_role(
+            raw_payload=labeled.text,
+            actor_id=actor_id,
+            session_id=session_id,
+            project_id="vectorfl-next",
+            source_type=source_type,
+            source_ref=source_ref,
+            formation_role=SOURCE_ROLE_MAP.get(source_type, "memo_material"),
+            family_id=family_id,
+            lineage_refs=tuple(labeled.siblings),
+        )
+        persisted = service.materials.get(material.material_id) or {}
+        metadata = dict(persisted.get("metadata", {}))
+        metadata.update(
+            {
+                "source_origin_id": labeled.origin_id,
+                "dust_input_id": labeled.dust_id,
+                "D": labeled.D,
+                "I": labeled.I,
+                "S": labeled.S,
+                "scene": labeled.scene,
+                "flow": labeled.flow,
+                "anchors": convergence["canonical_anchors"],
+                "legacy_anchors": [anchor.__dict__ for anchor in labeled.anchors],
+                "anchor_bundle": convergence["anchor_bundle"],
+                "dropped_weak_anchors": convergence["dropped_weak_anchors"],
+                "processing_values": convergence["processing_values"],
+                "observer_or_ambiguity_trace": convergence["observer_or_ambiguity_trace"],
+                "transformable_handles": convergence["transformable_handles"],
+                "time_in": labeled.time_in,
+                "last_seen": labeled.last_seen,
+                "recurrence_count": labeled.recurrence_count,
+                "short_label": labeled.short_label,
+                "ingest_session_id": session_id,
+                "ingest_input_path": source_ref,
+                "decomposition_kind": str(handoff.get("decomposition_kind", "axis_stage0_bridge_handoff")),
+                "candidate_id": str(handoff.get("candidate_id", "")),
+                "bridge_id": str(handoff.get("bridge_id", "")),
+                "axes": dict(handoff.get("axes", {})),
+                "connectivity_keys": list(handoff.get("connectivity_keys", [])),
+                "scene_index": scene_index,
+                "stage0_run_id": str(stage0_output.get("run_id", "")),
+                "stage0_run_dir": str(stage0_output.get("run_dir", "")),
+            }
+        )
+        metadata = apply_observer_baseline_to_metadata(metadata, convergence["observer_or_ambiguity_trace"])
+        persisted["metadata"] = metadata
+        service.materials.put(material.material_id, persisted)
+        material_rows.append((persisted, labeled))
+        material_ids.append(material.material_id)
+
+    current_records = [row[0] for row in material_rows]
+    for scene_index, record in enumerate(current_records, start=1):
+        support_refs = [
+            SupportRef(ref_kind="material", ref_id=record["material_id"], note="scene_focus"),
+            SupportRef(ref_kind="scene", ref_id=f"scene_{scene_index}", note="scene_index"),
+        ]
+        material_ref_order = [record["material_id"]]
+        if scene_index > 1:
+            support_refs.append(SupportRef(ref_kind="material", ref_id=current_records[scene_index - 2]["material_id"], note="flow_prev"))
+        if scene_index < len(current_records):
+            support_refs.append(SupportRef(ref_kind="material", ref_id=current_records[scene_index]["material_id"], note="flow_next"))
+        for internal in current_records:
+            if internal["material_id"] not in material_ref_order:
+                material_ref_order.append(internal["material_id"])
+
+        external_matches = _select_external_context_candidates(
+            prior_materials=prior_materials,
+            current_record=record,
+            current_session_id=session_id,
+        )
+        for match in external_matches:
+            material_ref_order.append(match["material_id"])
+            support_refs.append(
+                SupportRef(
+                    ref_kind="material",
+                    ref_id=match["material_id"],
+                    note=match["support_note"],
+                )
+            )
+        trace_note = "direct" if len(external_matches) >= 2 else "weak"
+        trace = service.register_trace(
+            material_refs=material_ref_order,
+            evidence_kind="memo_scene_flow_trace",
+            support_refs=support_refs,
+            note=trace_note,
+        )
+        trace_ids.append(trace.trace_id)
+
+    for material_id, trace_id in zip(material_ids, trace_ids):
+        space_result = form_live_input_local_space(
+            runtime_root,
+            {
+                "source_ref": source_ref,
+                "material_ids": [material_id],
+                "trace_ids": [trace_id],
+                "seed_ids": [],
+            },
+            family_id=family_id or "",
+        )
+        cell_id = str(space_result.get("cell_id", "")).strip()
+        local_space_id = str(space_result.get("local_space_id", "")).strip()
+        if cell_id:
+            cell_ids.append(cell_id)
+        if local_space_id:
+            local_space_ids.append(local_space_id)
+        bridge_ids.extend(
+            row.get("bridge_id", "")
+            for row in space_result.get("bridge_sync", [])
+            if row.get("bridge_id")
+        )
+
+    return {
+        "source_ref": source_ref,
+        "source_type": source_type,
+        "source_id": str(stage0_output.get("source_content_hash", "")),
+        "material_ids": material_ids,
+        "trace_ids": trace_ids,
+        "pressure_profile_ids": [],
+        "seed_ids": [],
+        "cell_ids": cell_ids,
+        "local_space_ids": local_space_ids,
+        "bridge_ids": bridge_ids,
+        "material_count": len(material_ids),
+        "trace_count": len(trace_ids),
+        "edge_event_count": 0,
+        "dust_count": len(material_ids),
+        "edge_events": [],
+        "stage0_run_id": str(stage0_output.get("run_id", "")),
+        "stage0_run_dir": str(stage0_output.get("run_dir", "")),
+    }
 
 def _build_relation_candidates(
     prior_materials: Sequence[Dict[str, object]],
@@ -392,3 +575,63 @@ def _build_input_convergence_bundle(labeled: LabeledDust) -> Dict[str, object]:
             "sibling_ids": list(labeled.siblings),
         },
     }
+
+
+def _build_labeled_dust_for_text(
+    *,
+    text: str,
+    source_id: str,
+    source_type: str,
+    source_ref: str,
+    created_at: str,
+) -> LabeledDust:
+    dust_inputs = build_dust_inputs_from_source(
+        source_id=source_id,
+        source_type=source_type,
+        source_ref=source_ref,
+        raw_payload=text,
+        created_at=created_at,
+    )
+    labeled_dusts = label_dust_inputs(dust_inputs)
+    if not labeled_dusts:
+        raise ValueError("no dust units produced")
+    return labeled_dusts[0]
+
+
+def _select_external_context_candidates(
+    *,
+    prior_materials: Sequence[Dict[str, object]],
+    current_record: Dict[str, object],
+    current_session_id: str,
+) -> List[Dict[str, str]]:
+    scored: List[Tuple[float, Dict[str, str]]] = []
+    for prior in prior_materials:
+        profile = _relation_profile(current_record, prior)
+        if profile is None:
+            continue
+        prior_meta = dict(prior.get("metadata", {}))
+        prior_session_id = str(prior_meta.get("ingest_session_id", "")).strip()
+        support_note = "cross_context" if prior_session_id and prior_session_id == current_session_id else "global_field"
+        scored.append(
+            (
+                float(profile["score"]),
+                {
+                    "material_id": str(prior.get("material_id", "")),
+                    "source_ref": str(prior.get("source_ref", "")),
+                    "support_note": support_note,
+                },
+            )
+        )
+    scored.sort(key=lambda row: row[0], reverse=True)
+    selected: List[Dict[str, str]] = []
+    seen_source_refs: Set[str] = set()
+    for _, row in scored:
+        source_ref = row["source_ref"]
+        material_id = row["material_id"]
+        if not material_id or not source_ref or source_ref in seen_source_refs:
+            continue
+        selected.append(row)
+        seen_source_refs.add(source_ref)
+        if len(selected) >= 2:
+            break
+    return selected

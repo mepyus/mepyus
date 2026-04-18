@@ -1,0 +1,29 @@
+{
+  "schema_version": "vectorfl_paper_reference_external_candidate_search_brief_v0",
+  "reference_id": "paperclip",
+  "source_reference": "references/git_search/paperclip-master",
+  "source_materials": [
+    "references/git_search/paperclip-master/README.md",
+    "references/git_search/paperclip-master/doc/GOAL.md",
+    "references/git_search/paperclip-master/doc/SPEC.md"
+  ],
+  "fixed_operating_materials": {
+    "goal_spec": "Paperclip is a control plane for autonomous AI companies: goals, agents, heartbeats, budgets, tasks, and human board governance.",
+    "issue_decomposition": "Goal -> task/project hierarchy, agent assignment, heartbeat execution, result reporting, governance gates, and board intervention.",
+    "tech_report": "Use task state, heartbeat status, cost/budget tracking, logs, and adapter reporting as operational evidence.",
+    "supervisor_decision_record": "Human board can approve, pause, override, reassign, or hold high-impact agent/company actions."
+  },
+  "vectorfl_translation": {
+    "external_candidate_search_brief": "Use Paperclip as the closest issue/run/result/governance reference; avoid importing the full company/org surface.",
+    "candidate_evidence_record": "Represent one Paperclip task heartbeat and approval gate as the external candidate record.",
+    "cross_check_review_report": "Check whether Paperclip preserves the four required surfaces better than local fixture data.",
+    "hold_continue_decision_manifest": "Hold current slot replacement because this is reference-derived evidence, not a live exported host record."
+  },
+  "forbidden_scope": [
+    "full company model import",
+    "multi-agent org chart import",
+    "budget/control-plane expansion",
+    "current actual_export slot replacement"
+  ],
+  "created_at": "2026-04-11T08:10:00+09:00"
+}

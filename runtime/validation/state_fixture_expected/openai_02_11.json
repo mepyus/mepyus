@@ -1,0 +1,25 @@
+{
+  "asset_id": "openai_02_11",
+  "expected": {
+    "packet_texture": "structured_open_low_emergence",
+    "grounding_status": "fallback_grounded",
+    "emergence_status": "low_emergence",
+    "carryover_risk": "medium",
+    "maturation_state": "hold",
+    "traceability_status": "traceable"
+  },
+  "expected_contains": {
+    "comparison_memory_reason": [
+      "same_fallback_dominance"
+    ],
+    "gate_blocker_summary": [
+      "question_inducing_candidate_absence",
+      "fallback_grounding_dominance"
+    ]
+  },
+  "allowable_drift": {
+    "comparison_memory_reason": "subset_or_superset_ok",
+    "gate_blocker_summary": "subset_or_superset_ok"
+  },
+  "notes": "structured-open but low-emergence state with fallback-dominant grounding"
+}

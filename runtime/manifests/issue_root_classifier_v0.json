@@ -1,0 +1,117 @@
+{
+  "schema_version": "issue_root_classifier_v0",
+  "updated_at": "2026-04-06T13:20:00+09:00",
+  "classifier_rules": [
+    {
+      "rule_id": "cls_rule_input_preprocess_ambiguity",
+      "signal_kind": "preprocess_ambiguity",
+      "preferred_family_id": "fam_input_to_reading",
+      "preferred_projection_id": "proj_preprocess_shaping",
+      "initial_route_id": "route_preprocess_compare_first",
+      "confidence": "high",
+      "classification_reason": [
+        "preprocess ambiguity belongs to input shaping before downstream handoff",
+        "projection should preserve raw-return rather than force direct entry"
+      ],
+      "fallback_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_input_raw_entry",
+      "signal_kind": "raw_input",
+      "preferred_family_id": "fam_input_to_reading",
+      "preferred_projection_id": "proj_input_ingest_visibility",
+      "initial_route_id": "route_input_direct_ingest",
+      "confidence": "medium",
+      "classification_reason": [
+        "raw input normally enters through visible ingest first",
+        "direct entry is preferred unless preprocess ambiguity is present"
+      ],
+      "fallback_family_ids": [
+        "fam_input_to_reading"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_transition_blockage",
+      "signal_kind": "transition_blockage",
+      "preferred_family_id": "fam_transition_thickening",
+      "preferred_projection_id": "proj_transition_preflight_reread",
+      "initial_route_id": "route_preflight_reread",
+      "confidence": "high",
+      "classification_reason": [
+        "blockage explanation belongs to transition thickening rather than generic readout",
+        "active-line status should be reread before broader validation"
+      ],
+      "fallback_family_ids": [
+        "fam_operator_readout"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_boundary_ambiguity",
+      "signal_kind": "boundary_ambiguity",
+      "preferred_family_id": "fam_transition_thickening",
+      "preferred_projection_id": "proj_transition_corridor_validation",
+      "initial_route_id": "route_stage_corridor_probe",
+      "confidence": "medium",
+      "classification_reason": [
+        "boundary ambiguity is best handled through staged corridor narrowing",
+        "corridor lineage should be read before closure decisions"
+      ],
+      "fallback_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_operator_overview",
+      "signal_kind": "operator_overview_request",
+      "preferred_family_id": "fam_operator_readout",
+      "preferred_projection_id": "proj_operator_board_readout",
+      "initial_route_id": "route_readonly_board",
+      "confidence": "high",
+      "classification_reason": [
+        "broad overview requests should open the simplest operator-readable board first"
+      ],
+      "fallback_family_ids": [
+        "fam_transition_thickening"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_operator_search",
+      "signal_kind": "operator_search_query",
+      "preferred_family_id": "fam_operator_readout",
+      "preferred_projection_id": "proj_operator_search_readout",
+      "initial_route_id": "route_internal_search",
+      "confidence": "high",
+      "classification_reason": [
+        "explicit query should prefer narrow search route over broad board readout"
+      ],
+      "fallback_family_ids": [
+        "fam_operator_readout"
+      ],
+      "needs_review": false
+    },
+    {
+      "rule_id": "cls_rule_transition_readout_override",
+      "signal_kind": "transition_blockage",
+      "requested_outcome": "operator_explanation",
+      "preferred_family_id": "fam_transition_thickening",
+      "preferred_projection_id": "proj_transition_operator_readout",
+      "initial_route_id": "route_readonly_board",
+      "confidence": "medium",
+      "classification_reason": [
+        "root remains transition family",
+        "projection shifts to operator-facing explanation because requested outcome is readout"
+      ],
+      "fallback_family_ids": [
+        "fam_operator_readout"
+      ],
+      "needs_review": false
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "app/core/schemas/engine_state_schema_v1.json",
+  "title": "engine_state_schema_v1",
+  "description": "Canonical operating-state schema for process-console assets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "asset_id",
+    "asset_name",
+    "source_type",
+    "schema_version",
+    "packet_texture",
+    "grounding_status",
+    "emergence_status",
+    "carryover_risk",
+    "maturation_state",
+    "traceability_status",
+    "comparison_memory_reason",
+    "gate_blocker_summary",
+    "state_notes",
+    "evidence_refs",
+    "updated_at"
+  ],
+  "properties": {
+    "asset_id": {
+      "type": "string"
+    },
+    "asset_name": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "packet_texture": {
+      "type": "string",
+      "enum": [
+        "moderately_open",
+        "structured_open_low_emergence",
+        "overcompressed_closure_heavy",
+        "overcompressed_breathing"
+      ]
+    },
+    "grounding_status": {
+      "type": "string",
+      "enum": [
+        "direct_grounded",
+        "partially_grounded",
+        "fallback_grounded",
+        "empty_ref_risk"
+      ]
+    },
+    "emergence_status": {
+      "type": "string",
+      "enum": [
+        "question_opening_present",
+        "minimal_emergence",
+        "low_emergence",
+        "no_emergence"
+      ]
+    },
+    "carryover_risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "prepared_scaffold_carryover"
+      ]
+    },
+    "maturation_state": {
+      "type": "string",
+      "enum": [
+        "hold",
+        "residue",
+        "weak",
+        "fallback",
+        "blocked",
+        "breathing"
+      ]
+    },
+    "traceability_status": {
+      "type": "string",
+      "enum": [
+        "traceable",
+        "partially_traceable",
+        "not_traceable"
+      ]
+    },
+    "comparison_memory_reason": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "same_compressed_family",
+          "same_fallback_dominance",
+          "breathing_contrast",
+          "similar_carryover_pattern",
+          "similar_grounding_failure_surface"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "gate_blocker_summary": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "question_inducing_candidate_absence",
+          "fallback_grounding_dominance",
+          "weak_role_like_only",
+          "pivot_compression_non_recurrence",
+          "scaffold_carryover_risk"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "state_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ref_kind",
+          "ref_id"
+        ],
+        "properties": {
+          "ref_kind": {
+            "type": "string"
+          },
+          "ref_id": {
+            "type": "string"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "update_trigger_type": {
+      "type": "string",
+      "enum": [
+        "backfill",
+        "runtime_evidence",
+        "recompute",
+        "manual_correction"
+      ]
+    },
+    "update_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "experimental_namespace": {
+      "type": "object",
+      "description": "Optional experimental namespace for context units, paragraph roles, pivot labels, compression labels, and high-level object naming. These values are intentionally kept outside canonical engine state."
+    }
+  }
+}

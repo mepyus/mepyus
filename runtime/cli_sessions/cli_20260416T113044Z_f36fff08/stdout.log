@@ -1,0 +1,34 @@
+- result summary
+  - bounded reread completed
+  - source refs read:
+    - `integrated_engine_cli_on_top_shared_language_grammar_reread_v0`
+    - `integrated_engine_cli_on_top_operator_report_grammar_trial_v0`
+  - no files modified
+  - output type: internal-language translation data collection, not glossary, not UI copy
+
+- important findings / diffs / outputs
+
+| internal phrase or signal observed | human-readable line, not final wording | repeated connection it belongs to | emerging axis candidate | surface exposure note | what must not be flattened | next reread question | suggested next use |
+|---|---|---|---|---|---|---|---|
+| CLI is not the fourth surface | CLI는 새 화면이 아니라 VectorFL 위에서 다루는 보조 실행층이다 | VectorFL request -> Codex run -> structured return | CLI-on-top route axis | vectorfl / user | 새 채팅창, 새 독립 surface로 축소 금지 | 사용자가 CLI를 “어디에 속한 실행”으로 읽는가 | validation target |
+| VectorFL operates CLI | VectorFL이 Codex 실행, 되읽기, mark, follow-up을 잡는다 | Codex return -> VectorFL reread -> mark | surface exposure axis | vectorfl | 단순 명령 입력창으로 축소 금지 | VectorFL의 중재/되읽기 역할이 충분히 드러나는가 | reread target |
+| User surface reads candidates | 사용자면은 Codex 결과를 업무/결정 후보로 정리한다 | CLI return -> User work candidate -> decision/package opening | candidate-not-authority axis | user | 자동 배정 또는 실행 완료로 축소 금지 | 후보와 확정의 차이가 사용자 판단에 충분한가 | validation target |
+| Engine surface reads material | 엔진면은 Codex 결과를 처리/반환/검증/추출 재료로 읽는다 | CLI return -> Engine material -> validation/extraction queue | candidate-not-authority axis | engine | 판단기관, 최종 결과, 승인 완료로 축소 금지 | return material과 validation done이 혼동되는가 | validation target |
+| mark is route signal | mark는 완료 표시가 아니라 다음 읽기 방향이다 | structured return -> mark -> next route | route / authority boundary axis | vectorfl / engine | 완료 상태, 승인 상태로 축소 금지 | 각 mark가 어떤 다음 행동을 여는지 읽히는가 | implementation return |
+| deposit candidate is not ingestion | deposit 후보는 보관/편입 가능성이지 공식 기록 편입이 아니다 | readable return -> deposit candidate -> possible later ingestion | candidate-not-authority axis | engine / vectorfl | 저장 완료, canonical record로 축소 금지 | deposit preview가 승인 전 후보로 보이는가 | validation target |
+| latest/recent return is conversation aid | 최근 반환은 대화를 잇는 readable artifact다 | raw artifact -> readable return -> follow-up context | readable artifact axis | vectorfl / user | 전체 history DB, 완전한 기억으로 축소 금지 | recent turn이 내부 기록 카드처럼만 보이는가 | reread target |
+| readable report before UI copy | 한국어 UI copy 전에 보고 문법으로 반복 line을 확인해야 한다 | internal reread -> report grammar -> user judgment -> engine reread | readable-report-before-visible-translation axis | user / vectorfl | 최종 UI 문구나 glossary로 고정 금지 | 보고만으로 사용자가 현재 상태를 판단할 수 있는가 | validation target |
+| Gemini mock remains proposal clay | Gemini mock은 안정 본체가 아니라 proposal/design material이다 | Gemini mock -> Codex translation -> stable UI folder | proposal boundary axis | engine / vectorfl | 본체, stable source로 축소 금지 | proposal material과 stable source 경계가 유지되는가 | reread target |
+| closed routes stay closed | 자동 deposit, 자동 assignment, promotion, Gemini adapter는 아직 열리지 않았다 | route/authority reading -> closed route list -> next safe step | authority boundary axis | user / engine | “곧 자동화됨” 또는 feature promise로 축소 금지 | 닫힌 route가 화면/보고에서 기대를 만들고 있는가 | validation target |
+
+- uncertainty or failure notes
+  - uncertainty: 실제 화면 관찰 1건 또는 실제 Codex run 1건에 적용한 사용성 검증은 아직 이 reread 안에 없음
+  - uncertainty: 사용자면의 “업무 후보 vs 자동 배정 아님”, 엔진면의 “return material vs 검증 완료 아님”은 반복 검증 필요
+  - failure notes: none from file access; both bounded context refs were readable
+  - intentionally not produced: UI copy, final glossary, feature promotion, implementation patch
+
+- suggested next use
+  - reread target: actual latest CLI return 1건을 같은 shape로 다시 읽기
+  - implementation return: mark semantics / candidate status가 UI state에서 완료 상태처럼 표현되는 지점만 점검
+  - validation target: 사용자가 보고 문법만 보고 “무엇이 열렸고 무엇이 후보인지” 판단 가능한지 확인
+  - deposit candidate: this compact extraction can be deposited only as reread material, not as canonical glossary

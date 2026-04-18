@@ -1,0 +1,39 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260416T094731Z_97d5f828",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "/vectorfl-engine/vectorfl",
+  "purpose_text": "Stop-and-use run 1: summarize one small closeout note.",
+  "bounded_context_refs": [
+    "docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md"
+  ],
+  "prompt_payload": "Read docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md. Return three short bullets: what passed, what stayed deferred, and the current operating judgment. Do not modify files.",
+  "status": "done",
+  "started_at": "2026-04-16T09:47:31Z",
+  "ended_at": "2026-04-16T09:47:44Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260416T094731Z_97d5f828/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260416T094731Z_97d5f828/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260416T094731Z_97d5f828/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260416T094731Z_97d5f828/deposit_candidate.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [
+    "validation_target"
+  ],
+  "prompt_path": "runtime/cli_sessions/cli_20260416T094731Z_97d5f828/prompt.md",
+  "exit_code": 0,
+  "result_summary": "- result summary\n  - What passed: real read-only Codex CLI session API path completed, produced captured logs plus `structured_return.json` and `deposit_candidate.md`, mark action worked, and latest return is readable from the VectorFL page.\n  - What stayed deferred: browser-click UI automation, async/background runner, interrupt hardening, Gemini/backend adapters, session explorer/log viewer, structured ingestion, and promotion automation.\n  - Current operating judgment: `PASS_WITH_NOTE`; Package 1.1 validates the on-top CLI path and first-pass latest-return readability while preserving VectorFL as the main steering surface.\n\n- important findings / diffs / outputs\n  - No files modified.\n  - Source read: `docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md`.\n  - Key note: validation used the same HTTP endpoint as the VectorFL panel, not an automated browser click.\n\n- uncertainty or failure notes\n  - Browser-click validation remains unproven by this note.\n  - Raw artifact audit is still available and useful, but no longer required for first-pass reading.\n\n- suggested next use: validation target\n",
+  "suggested_next_use": "reread_target",
+  "error_message": "",
+  "marked_at": "2026-04-16T09:47:55Z",
+  "mark_history": [
+    {
+      "mark": "validation_target",
+      "marked_at": "2026-04-16T09:47:55Z",
+      "source": "vectorfl_cli_host_control_panel"
+    }
+  ]
+}

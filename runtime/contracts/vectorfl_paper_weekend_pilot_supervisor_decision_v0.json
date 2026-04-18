@@ -1,0 +1,17 @@
+{
+  "decision_id": "vectorfl_paper_weekend_pilot_supervisor_decision_v0",
+  "scenario_scope": "weekend_pilot_first_loop",
+  "decision": "go",
+  "reason": "The first pilot loop now has explicit cells, sample outputs, and a supervisor-readable report, so it is ready to move into a live pass with real material.",
+  "approved_next_cell": "internal_read_cell",
+  "approved_inputs": [
+    "conversation_bundle_current_turn",
+    "vectorfl_paper_weekend_pilot_material_bundle_v0"
+  ],
+  "conditions": [
+    "Do not flatten the live bundle into TODO language.",
+    "Keep external lookup selective and line-seed grounded.",
+    "Write back the loop result into an explicit return packet."
+  ],
+  "timestamp_kind": "manual_supervisor_gate"
+}
