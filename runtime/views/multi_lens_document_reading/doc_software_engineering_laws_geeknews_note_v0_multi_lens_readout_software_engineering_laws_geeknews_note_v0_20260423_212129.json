@@ -1,0 +1,998 @@
+{
+  "kind": "multi_lens_document_reading_v0_observation_flow",
+  "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+  "observer_run_id": "software_engineering_laws_geeknews_note_v0_20260423_212129",
+  "split_units_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_software_engineering_laws_geeknews_note_v0_20260423_212129.json",
+  "invocation_stage": "after_context_linked_segmentation_v0",
+  "linked_segments": [
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_001"
+      ],
+      "linked_text": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_001"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_002"
+      ],
+      "linked_text": "# Software engineering laws GeekNews note v0",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_002"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_003"
+      ],
+      "linked_text": "## source metadata - source_url: `https://news.hada.io/topic?id=28760` - source_title: `소프트웨어 공학의 법칙들` - source_author: `GeekNews summary linking to lawsofsoftwareengineering.com` - source_type: `external article summary",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_003"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_004"
+      ],
+      "linked_text": "## why this source matters This source matters because it gathers many software engineering laws into one operating summary. It is useful for our space not as a direct architecture order, but as a compact source of recur",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_004"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_005"
+      ],
+      "linked_text": "## what the source is The page is a summary collection of software engineering laws and patterns. The visible sections include: - teams - planning - architecture Each item gives a short principle and operating implicatio",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_005"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_006"
+      ],
+      "linked_text": "## core signal groups",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_006"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_007"
+      ],
+      "linked_text": "## 1. team and coordination limits The source repeatedly says software structure is shaped by communication limits and team boundaries. Main signals: - communication structure affects architecture - adding people can inc",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_007"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_008"
+      ],
+      "linked_text": "## 2. planning and schedule distortion The source also gathers laws that warn against naive planning. Main signals: - work expands to fill available time - final polishing takes much longer than expected - even buffered",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_008"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_009"
+      ],
+      "linked_text": "## 3. architecture and complexity discipline The strongest architectural signals on the page are about complexity boundaries. Main signals: - complex systems should evolve from working simple systems - abstractions alway",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_009"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_010"
+      ],
+      "linked_text": "## bounded relevance to our current space This source is broad and should not be treated as a direct design spec. Current bounded relevance: - useful as a reference summary of recurring engineering pressures - especially",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_010"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    },
+    {
+      "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+      "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+      "segment_ids": [
+        "unit_011"
+      ],
+      "linked_text": "## current bounded judgment - useful as broad operating reference - stronger for repeated boundary and complexity reminders than for direct implementation guidance - keep as thin external ingest material - no promotion f",
+      "linkage_reason": "unfinished_claim",
+      "linkage_confidence": "low",
+      "provenance": {
+        "kind": "context_linked_segmentation_v0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "segment_count": 1,
+        "input_segment_ids": [
+          "unit_011"
+        ],
+        "linkage_reason": "unfinished_claim"
+      }
+    }
+  ],
+  "raw_reading_result": {
+    "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+    "readings": [
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        },
+        "caution_reason": "low_linkage_confidence"
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition-like movement is hinted, but linkage confidence is low; surface, layer, runtime, or boundary is named; primary stable/thick lens; operating_state=parked",
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        },
+        "caution_reason": "low_linkage_confidence"
+      }
+    ],
+    "lens_ids_used": [
+      "line_input_to_reading_organ",
+      "line_transition_over_surface"
+    ],
+    "is_stable_lens_only": true
+  },
+  "surfaced_readout": {
+    "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+    "lens_ids_used": [
+      "line_input_to_reading_organ",
+      "line_transition_over_surface"
+    ],
+    "is_stable_lens_only": true,
+    "line_states": {
+      "line_input_to_reading_organ": "active",
+      "line_transition_over_surface": "parked"
+    },
+    "readings": [
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:0-0",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:1-1",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:2-2",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:3-3",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:4-4",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:5-5",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:6-6",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:7-7",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is unclear and linkage confidence is low; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:8-8",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition pattern is unclear and linkage confidence is low; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:9-9",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_input_to_reading_organ",
+        "line_name": "input_to_reading_organ",
+        "reading_strength": "caution",
+        "reading_basis": "input-processing flow is hinted, but linkage confidence is low; input material enters the reading path; primary stable/thick lens; operating_state=active",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "active",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+          "line_id": "line_input_to_reading_organ",
+          "operating_state": "active"
+        }
+      },
+      {
+        "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+        "source_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md",
+        "line_id": "line_transition_over_surface",
+        "line_name": "transition_over_surface",
+        "reading_strength": "caution",
+        "reading_basis": "transition-like movement is hinted, but linkage confidence is low; surface, layer, runtime, or boundary is named; primary stable/thick lens; operating_state=parked",
+        "caution_reason": "low_linkage_confidence",
+        "operating_state": "parked",
+        "is_primary_lens": true,
+        "provenance": {
+          "kind": "multi_lens_document_reading_v0",
+          "registry_path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json",
+          "linked_segment_id": "inputs/external_cases/software_engineering_laws_geeknews_note_v0.md:10-10",
+          "line_id": "line_transition_over_surface",
+          "operating_state": "parked"
+        }
+      }
+    ]
+  },
+  "parked_axes": [
+    "line_transition_over_surface"
+  ],
+  "handoff_boundary": {
+    "runtime_stops_after": "surfaced_readout",
+    "next_owner": "supervisor_docs_operating_loop",
+    "decision_logic_in_runtime": false
+  }
+}

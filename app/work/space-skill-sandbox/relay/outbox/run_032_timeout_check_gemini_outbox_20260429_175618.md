@@ -1,0 +1,96 @@
+# Gemini Run Result
+
+- packet: app/work/space-skill-sandbox/outputs/next_gemini_task_packet_run_032_tool_affordance_v0.md
+- run_id: run_032_timeout_check
+- timestamp: 20260429_175618
+- dry_run: true
+- output_format: json
+- timeout_seconds: 5
+- raw_result: app/work/space-skill-sandbox/outputs/gemini_raw_results/run_032_timeout_check_gemini_raw_20260429_175618.json
+
+## Result
+
+Dry run completed. Gemini CLI was not invoked.
+
+Packet preview:
+
+# Run 032 - Tool Affordance / Caller Shift Lens v0
+
+## Mode
+GEMINI / SANDBOX ONLY / LENS DRAFT / NO PROMOTION / NO AUTOMATION
+
+## Purpose
+외부 자료와 기존 sandbox 운영 질서를 바탕으로, 도구 / skill / 기존 프로그램 / relay / session role이 어떤 호출자를 전제로 설계되었는지 판독하는 렌즈를 작성한다.
+
+핵심 질문:
+
+- 이 도구는 인간 호출자를 전제로 하는가?
+- LLM 호출자를 전제로 하는가?
+- Codex/Gemini 같은 worker session을 전제로 하는가?
+- 어떤 상황에서 사용하면 안 되는가?
+- 어떤 stop point가 필요한가?
+- source-space를 직접 건드릴 위험이 있는가?
+
+## Created Files
+- `app/work/space-skill-sandbox/outputs/tool_affordance_caller_shift_lens_v0.md`
+- `app/work/space-skill-sandbox/runs/run_032_tool_affordance_caller_shift_lens.md`
+- `app/work/space-skill-sandbox/review/validation_round_32.md`
+
+## Input References
+- `app/work/space-skill-sandbox/outputs/operating_order_principles_v0.md`
+- `app/work/space-skill-sandbox/outputs/operating_order_source_map_v0.md`
+- `app/work/space-skill-sandbox/outputs/sandbox_promotion_pipeline_v0.md`
+- `app/work/space-skill-sandbox/outputs/session_role_map_v0.md`
+- `app/work/space-skill-sandbox/outputs/sandbox_execution_chain_v0.md`
+
+## Required Structure for `tool_affordance_caller_shift_lens_v0.md`
+
+```markdown
+# Tool Affordance / Caller Shift Lens v0
+
+## 0. Status
+
+- status: sandbox candidate
+- source_space_rule: false
+- baseline: false
+- automation: false
+
+## 1. Purpose
+
+이 렌즈는 도구, skill, 기존 프로그램, relay packet, session role이 어떤 호출자를 전제로 설계되었는지 판독하기 위한 sandbox candidate lens다.
+
+## 2. Core Idea
+
+Function signature만으로는 부족하다.
+LLM 또는 agent가 도구를 호출할 때는 다음 정보가 필요하다.
+
+- when to use
+- when not to use
+- who is the caller
+- what context is required
+- what output is expected
+- what must be stopped
+- what requires user judgment
+
+## 3. Caller Types
+
+다음 caller type을 정의한다.
+
+1. Human Caller
+2. LLM Caller
+3. Codex Worker Session
+4. Gemini Analysis Session
+5. Validation Session
+6. Relay Session
+7. Future Agent Session
+8. Existing Program Caller
+
+각 caller마다 다음 항목을 작성한다.
+
+- caller description
+- likely intent
+- risk
+- required affordance
+- required stop point
+- allowed output
+- forbidden output

@@ -1,0 +1,94 @@
+{
+  "session_id": "a04989ce-0b2f-4873-83f7-5534bdfd9114",
+  "response": "# Package 001 / Session 01 - Agent Harness Engineering Lens Analysis\n\n## main_lens\nHarness Engineering is not a destination for automation, but a methodology for making the **surrounding system** of an agent visible and rigorous. It treats the shift from \"Prompt\" (what to say) to \"Context\" (what to see) to \"Harness\" (what surrounds) as a response to specific failure modes. In the Codex-Gemini loop, the harness is the set of boundaries, scripts, and package structures that capture tool judgment as observable data.\n\n## borrow\n- **Layered Failure Diagnosis**: Separating transport failures (auth, CLI, timeout) from logic failures (misinterpretation, boundary breach).\n- **Minimal Brief Discipline**: Using five core items (Intent, References, Forbidden, Expected Output, Review Questions) to define the task without over-specifying the internal structure.\n- **Outbox Evidence Capture**: Requiring that even failed runs leave raw traces (stdout/stderr/JSON) for the next validation phase.\n\n## hold\n- **Automated Routing/Controllers**: Full implementation of \"Harness Engineering\" as an autonomous system (routers, hooks, MCP controllers) should be held as comparison material to avoid \"automation drift.\"\n- **Full-Space Indexing**: Avoid treating harness engineering as an excuse for whole-space context visibility, which leads to context contamination.\n\n## package_loop_implication\nFeedback must shift from \"Session Correction\" (fixing a single prompt) to \"Package Adjustment\" (modifying the next brief based on the previous package's closeout). The package acts as the \"visible harness\" boundary, aggregating intent, execution, and validation into a single unit of learning.\n\n## scriptable_handoff_implication\nThe handoff layer is strictly for **transport, not judgment**. It preserves failure as a signal. By using manual-triggered scripts, we ensure that the \"harness\" provides evidence of execution state (exit codes, timestamps) without automatically deciding the next step.\n\n## small_execution_unit_implication\nBounded packages allow \"Tool Judgment\" to be tested. If the unit is too small, it is just prompt engineering. By creating a package-scale execution unit, we can observe whether the agent interprets principles or simply mimics templates.\n\n## over_interpretation_risk\n- **Over-specification**: Providing too much structure (Case A in Minimal Brief) turns the tool into a \"copy-paste relay,\" hiding where it actually fails to understand the space.\n- **Invisibility Risk**: If rigor moves into an invisible automation harness, the space becomes powerful but ungovernable. Rigor must stay at the \"User Decision Surface.\"\n\n## next_package_adjustment\nThe next package should focus on **\"Signal Readability\"**: adjusting the `package_closeout.md` to ensure that failures captured in the `raw/` folder are directly addressable in the subsequent `package_brief.md` without requiring a full manual re-read of the session.",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 6,
+          "totalErrors": 2,
+          "totalLatencyMs": 23168
+        },
+        "tokens": {
+          "input": 29890,
+          "prompt": 80643,
+          "candidates": 1089,
+          "total": 83227,
+          "cached": 50753,
+          "thoughts": 1495,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 6,
+            "totalErrors": 2,
+            "totalLatencyMs": 23168,
+            "tokens": {
+              "input": 29890,
+              "prompt": 80643,
+              "candidates": 1089,
+              "total": 83227,
+              "cached": 50753,
+              "thoughts": 1495,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 8,
+      "totalSuccess": 8,
+      "totalFail": 0,
+      "totalDurationMs": 83,
+      "totalDecisions": {
+        "accept": 8,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 11,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 33,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 39,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

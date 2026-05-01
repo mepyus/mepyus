@@ -35,7 +35,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/app.work.observer_ingest_min.json`
 - parent_folder: `app/work`
 - related_status_files: `app/work/observer_ingest_min/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:10+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

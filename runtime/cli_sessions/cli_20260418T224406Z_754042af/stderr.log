@@ -1,0 +1,3000 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019da2c3-fb63-7de3-bfb5-2a60e9cabadb
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: inspect
+Requested by surface: vectorfl_surface
+Requested by page: package3_step_a_real_openharness_structure_profile
+
+Purpose:
+Package 3 Step A: real bounded OpenHarness structure profiling for existing continuity package.
+
+Bounded context refs:
+- references/git_search/openharness-main
+- references/git_search/openharness-main/README.md
+- references/git_search/openharness-main/pyproject.toml
+- docs/reports/integrated_engine_real_worker_boundary_audit_v0.md
+- docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md
+
+Prompt payload:
+Perform a real bounded structural profile of references/git_search/openharness-main for our integrated-engine package notebook. Do not modify files. Focus only on: 1) what this repo appears to be, 2) top-level areas worth treating as internal lens material, 3) concrete files/dirs that should be inspected next, 4) one specific next_continue_hint for continuing this same package. Include the required WORKER_RETURN_JSON block on its own delimiter lines.
+
+Return format:
+- result summary
+- answer: direct answer or main response body
+- findings: key observations as bullets
+- files_artifacts: concrete file paths or generated outputs
+- next_continue_hint: specific next step for this same package
+- open_questions: unresolved blockers
+- risks_or_limits: uncertainty, weak spots, dry-run limits, or blocked areas
+- source_refs: bounded context refs actually used
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+You must also include one machine-readable block near the end of the answer.
+Use exactly this delimiter format and valid JSON. Keep arrays as arrays of strings.
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "<package id if known>",
+  "run_kind": "inspect",
+  "answer": "<direct answer or main response>",
+  "findings": ["<key observation>"],
+  "files_artifacts": ["<path or artifact ref>"],
+  "next_continue_hint": "<specific next step for this same package>",
+  "open_questions": ["<unresolved blocker>"],
+  "risks_or_limits": ["<uncertainty or limit>"],
+  "source_refs": ["<bounded context ref actually used>"]
+}
+END_WORKER_RETURN_JSON
+
+codex
+I’ll inspect the bounded repo and referenced docs only, without modifying files, then return the compact structure profile with the required JSON block.
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/README.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+<h1 align="center">
+  <img src="assets/logo.png" alt="OpenHarness" width="64" style="vertical-align: middle;">
+  &nbsp;&nbsp;
+  <img src="assets/ohmo.png" alt="ohmo" width="64" style="vertical-align: middle;">
+  <br>
+  <code>oh</code> — OpenHarness &amp; <code>ohmo</code>
+</h1>
+
+<p align="center">
+  <a href="README.md"><strong>English</strong></a> ·
+  <a href="README.zh-CN.md"><strong>简体中文</strong></a>
+</p>
+
+**OpenHarness** delivers core lightweight agent infrastructure: tool-use, skills, memory, and multi-agent coordination.
+
+**ohmo** is a personal AI agent built on OpenHarness — not another chatbot, but an assistant that actually works for you over long sessions. Chat with ohmo in Feishu / Slack / Telegram / Discord, and it forks branches, writes code, runs tests, and opens PRs on its own. ohmo runs on your existing Claude Code or Codex subscription — no extra API key needed.
+
+**Join the community**: contribute **Harness** for open agent development.
+
+<p align="center">
+  <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
+  <a href="#-harness-architecture"><img src="https://img.shields.io/badge/Harness-Architecture-ff69b4?style=for-the-badge" alt="Architecture"></a>
+  <a href="#-features"><img src="https://img.shields.io/badge/Tools-43+-green?style=for-the-badge" alt="Tools"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-114_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-≥3.10-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/React+Ink-TUI-61DAFB?logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/pytest-114_pass-brightgreen" alt="Pytest">
+  <img src="https://img.shields.io/badge/E2E-6_suites-orange" alt="E2E">
+  <img src="https://img.shields.io/badge/output-text_|_json_|_stream--json-blueviolet" alt="Output">
+  <a href="https://github.com/HKUDS/OpenHarness/actions/workflows/ci.yml"><img src="https://github.com/HKUDS/OpenHarness/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/Feishu-Group-E9DBFC?style=flat&logo=feishu&logoColor=white" alt="Feishu"></a>
+  <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/WeChat-Group-C5EAB4?style=flat&logo=wechat&logoColor=white" alt="WeChat"></a>
+</p>
+
+One Command (**oh**) to Launch **OpenHarness** and Unlock All Agent Harnesses. 
+
+Supports CLI agent integration including OpenClaw, nanobot, Cursor, and more.
+
+<p align="center">
+  <img src="assets/cli-typing.gif" alt="OpenHarness Terminal Demo" width="800">
+</p>
+
+---
+## ✨ OpenHarness's Key Harness Features
+
+<table align="center" width="100%">
+<tr>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🔄 Agent Loop</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Engine-06B6D4?style=for-the-badge&logo=lightning&logoColor=white" alt="Engine" />
+</div>
+
+<img src="assets/scene-agentloop.png" width="140">
+
+<p align="center"><strong>• Streaming Tool-Call Cycle</strong></p>
+<p align="center"><strong>• API Retry with Exponential Backoff</strong></p>
+<p align="center"><strong>• Parallel Tool Execution</strong></p>
+<p align="center"><strong>• Token Counting & Cost Tracking</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🔧 Harness Toolkit</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/43+_Tools-10B981?style=for-the-badge&logo=toolbox&logoColor=white" alt="Toolkit" />
+</div>
+
+<img src="assets/scene-toolkit.png" width="140">
+
+<p align="center"><strong>• 43 Tools (File, Shell, Search, Web, MCP)</strong></p>
+<p align="center"><strong>• On-Demand Skill Loading (.md)</strong></p>
+<p align="center"><strong>• Plugin Ecosystem (Skills + Hooks + Agents)</strong></p>
+<p align="center"><strong>• Compatible with anthropics/skills & plugins</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🧠 Context & Memory</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Persistent-8B5CF6?style=for-the-badge&logo=brain&logoColor=white" alt="Context" />
+</div>
+
+<img src="assets/scene-context.png" width="140">
+
+<p align="center"><strong>• CLAUDE.md Discovery & Injection</strong></p>
+<p align="center"><strong>• Context Compression (Auto-Compact)</strong></p>
+<p align="center"><strong>• MEMORY.md Persistent Memory</strong></p>
+<p align="center"><strong>• Session Resume & History</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🛡️ Governance</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Permissions-F59E0B?style=for-the-badge&logo=shield&logoColor=white" alt="Governance" />
+</div>
+
+<img src="assets/scene-governance.png" width="140">
+
+<p align="center"><strong>• Multi-Level Permission Modes</strong></p>
+<p align="center"><strong>• Path-Level & Command Rules</strong></p>
+<p align="center"><strong>• PreToolUse / PostToolUse Hooks</strong></p>
+<p align="center"><strong>• Interactive Approval Dialogs</strong></p>
+
+</td>
+<td width="20%" align="center" style="vertical-align: top; padding: 15px;">
+
+<h3>🤝 Swarm Coordination</h3>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Multi--Agent-EC4899?style=for-the-badge&logo=network&logoColor=white" alt="Swarm" />
+</div>
+
+<img src="assets/scene-swarm.png" width="140">
+
+<p align="center"><strong>• Subagent Spawning & Delegation</strong></p>
+<p align="center"><strong>• Team Registry & Task Management</strong></p>
+<p align="center"><strong>• Background Task Lifecycle</strong></p>
+<p align="center"><strong>• <a href="https://github.com/HKUDS/ClawTeam">ClawTeam</a> Integration (Roadmap)</strong></p>
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🤔 What is an Agent Harness?
+
+An **Agent Harness** is the complete infrastructure that wraps around an LLM to make it a functional agent. The model provides intelligence; the harness provides **hands, eyes, memory, and safety boundaries**.
+
+<p align="center">
+  <img src="assets/harness-equation.png" alt="Harness = Tools + Knowledge + Observation + Action + Permissions" width="700">
+</p>
+
+OpenHarness is an open-source Python implementation designed for **researchers, builders, and the community**:
+
+- **Understand** how production AI agents work under the hood
+- **Experiment** with cutting-edge tools, skills, and agent coordination patterns
+- **Extend** the harness with custom plugins, providers, and domain knowledge
+- **Build** specialized agents on top of proven architecture
+
+---
+
+## 📰 What's New
+
+- **2026-04-10** 🧠 **v0.1.6** — Auto-Compaction & Markdown TUI:
+  - Auto-Compaction preserves task state and channel logs across context compression — agents can run multi-day sessions without manual compact/clear
+  - Subprocess teammates run in headless worker mode; agent team creation stabilized
+  - Assistant messages now render full Markdown in the React TUI
+  - `ohmo` gains channel slash commands and multimodal attachment support
+- **2026-04-08** 🔌 **v0.1.5** — MCP HTTP transport & Swarm polling:
+  - MCP protocol adds HTTP transport, auto-reconnect on disconnect, and tool-only server compatibility
+  - JSON Schema types inferred for MCP tool inputs — no manual type mapping needed
+  - `ohmo` channels support file attachments and multimodal gateway messages
+  - Subprocess agents are now pollable in real runs; permission modals serialized to prevent input swallowing
+- **2026-04-08** 🌙 **v0.1.4** — Multi-provider auth & Moonshot/Kimi:
+  - Native Moonshot/Kimi provider with `reasoning_content` support for thinking models
+  - Auth overhaul: fixed provider-switching key mismatch, `OPENAI_BASE_URL` env override, profile-scoped credential priority
+  - MCP gracefully handles disconnected servers in `call_tool` / `read_resource`
+  - Security: built-in sensitive-path protection in PermissionChecker, hardened `web_fetch` URL validation
+  - Stability: EIO crash recovery in Ink TUI, `--debug` logging, Windows cmd flash fix
+- **2026-04-06** 🚀 **v0.1.2** — Unified setup flows and `ohmo` personal-agent app:
+  - `oh setup` now guides provider selection as workflows instead of exposing raw auth/provider internals
+  - Compatible API setup is now profile-scoped, so Anthropic/OpenAI-compatible endpoints can keep separate keys
+  - `ohmo` ships as a packaged app with `~/.ohmo` workspace, gateway, bootstrap prompts, and channel config flow
+- **2026-04-01** 🎨 **v0.1.0** — Initial **OpenHarness** open-source release featuring complete Harness architecture: 
+
+<p align="center">
+  <strong>Start here:</strong>
+  <a href="#-quick-start">Quick Start</a> ·
+  <a href="#-provider-compatibility">Provider Compatibility</a> ·
+  <a href="docs/SHOWCASE.md">Showcase</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
+</p>
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install
+
+#### Linux / macOS / WSL
+
+```bash
+# One-click install
+curl -fsSL https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.sh | bash
+
+# Or via pip
+pip install openharness-ai
+```
+
+#### Windows (Native)
+
+```powershell
+# One-click install (PowerShell)
+iex (Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/HKUDS/OpenHarness/main/scripts/install.ps1')
+
+# Or via pip
+pip install openharness-ai
+```
+
+**Note**: Windows support is now native. In PowerShell, use `openh` instead of `oh` because `oh` can resolve to the built-in `Out-Host` alias.
+
+### 2. Configure
+
+```bash
+oh setup    # interactive wizard — pick a provider, authenticate, done
+# On Windows PowerShell, use: openh setup
+```
+
+exec
+/bin/bash -lc "pwd && rg --files references/git_search/openharness-main | sed -n '1,160p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+/Users/sungsookim/universe/vectorfl_replica
+references/git_search/openharness-main/src/openharness/channels/UPSTREAM
+references/git_search/openharness-main/src/openharness/channels/bus/__init__.py
+references/git_search/openharness-main/src/openharness/channels/bus/events.py
+references/git_search/openharness-main/src/openharness/channels/bus/queue.py
+references/git_search/openharness-main/src/openharness/channels/__init__.py
+references/git_search/openharness-main/src/openharness/channels/adapter.py
+references/git_search/openharness-main/src/__init__.py
+references/git_search/openharness-main/src/openharness/channels/impl/slack.py
+references/git_search/openharness-main/src/openharness/channels/impl/base.py
+references/git_search/openharness-main/src/openharness/channels/impl/manager.py
+references/git_search/openharness-main/src/openharness/channels/impl/feishu.py
+references/git_search/openharness-main/src/openharness/channels/impl/email.py
+references/git_search/openharness-main/src/openharness/channels/impl/qq.py
+references/git_search/openharness-main/src/openharness/channels/impl/__init__.py
+references/git_search/openharness-main/src/openharness/channels/impl/mochat.py
+references/git_search/openharness-main/src/openharness/channels/impl/discord.py
+references/git_search/openharness-main/src/openharness/channels/impl/telegram.py
+references/git_search/openharness-main/src/openharness/channels/impl/whatsapp.py
+references/git_search/openharness-main/src/openharness/channels/impl/dingtalk.py
+references/git_search/openharness-main/src/openharness/channels/impl/matrix.py
+references/git_search/openharness-main/src/openharness/services/token_estimation.py
+references/git_search/openharness-main/src/openharness/services/cron_scheduler.py
+references/git_search/openharness-main/src/openharness/services/session_backend.py
+references/git_search/openharness-main/src/openharness/sandbox/path_validator.py
+references/git_search/openharness-main/src/openharness/sandbox/__init__.py
+references/git_search/openharness-main/src/openharness/sandbox/session.py
+references/git_search/openharness-main/src/openharness/sandbox/docker_image.py
+references/git_search/openharness-main/src/openharness/sandbox/adapter.py
+references/git_search/openharness-main/src/openharness/sandbox/Dockerfile
+references/git_search/openharness-main/src/openharness/sandbox/docker_backend.py
+references/git_search/openharness-main/assets/scene-governance.png
+references/git_search/openharness-main/assets/architecture-comic.png
+references/git_search/openharness-main/assets/scene-context.png
+references/git_search/openharness-main/assets/logo.png
+references/git_search/openharness-main/assets/harness-equation.png
+references/git_search/openharness-main/assets/landing.png
+references/git_search/openharness-main/assets/scene-swarm.png
+references/git_search/openharness-main/assets/scene-toolkit.png
+references/git_search/openharness-main/assets/scene-agentloop.png
+references/git_search/openharness-main/assets/cli-typing.gif
+references/git_search/openharness-main/assets/ohmo.png
+references/git_search/openharness-main/README.zh-CN.md
+references/git_search/openharness-main/src/openharness/services/lsp/__init__.py
+references/git_search/openharness-main/src/openharness/services/__init__.py
+references/git_search/openharness-main/src/openharness/services/cron.py
+references/git_search/openharness-main/ohmo/gateway/router.py
+references/git_search/openharness-main/ohmo/gateway/runtime.py
+references/git_search/openharness-main/ohmo/gateway/__init__.py
+references/git_search/openharness-main/ohmo/gateway/bridge.py
+references/git_search/openharness-main/ohmo/gateway/models.py
+references/git_search/openharness-main/ohmo/gateway/config.py
+references/git_search/openharness-main/ohmo/gateway/service.py
+references/git_search/openharness-main/ohmo/__main__.py
+references/git_search/openharness-main/ohmo/workspace.py
+references/git_search/openharness-main/ohmo/cli.py
+references/git_search/openharness-main/ohmo/prompts.py
+references/git_search/openharness-main/ohmo/runtime.py
+references/git_search/openharness-main/ohmo/__init__.py
+references/git_search/openharness-main/ohmo/memory.py
+references/git_search/openharness-main/ohmo/session_storage.py
+references/git_search/openharness-main/src/openharness/tools/exit_worktree_tool.py
+references/git_search/openharness-main/src/openharness/tools/enter_plan_mode_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_update_tool.py
+references/git_search/openharness-main/src/openharness/tools/send_message_tool.py
+references/git_search/openharness-main/src/openharness/tools/base.py
+references/git_search/openharness-main/src/openharness/tools/ask_user_question_tool.py
+references/git_search/openharness-main/src/openharness/tools/web_fetch_tool.py
+references/git_search/openharness-main/src/openharness/tools/tool_search_tool.py
+references/git_search/openharness-main/src/openharness/tools/exit_plan_mode_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_write_tool.py
+references/git_search/openharness-main/src/openharness/tools/mcp_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_stop_tool.py
+references/git_search/openharness-main/src/openharness/tools/web_search_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_list_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_read_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_output_tool.py
+references/git_search/openharness-main/src/openharness/tools/glob_tool.py
+references/git_search/openharness-main/src/openharness/tools/team_delete_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_delete_tool.py
+references/git_search/openharness-main/src/openharness/tools/read_mcp_resource_tool.py
+references/git_search/openharness-main/src/openharness/tools/sleep_tool.py
+references/git_search/openharness-main/src/openharness/tools/config_tool.py
+references/git_search/openharness-main/src/openharness/tools/enter_worktree_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_toggle_tool.py
+references/git_search/openharness-main/src/openharness/tools/__init__.py
+references/git_search/openharness-main/src/openharness/tools/brief_tool.py
+references/git_search/openharness-main/src/openharness/tools/bash_tool.py
+references/git_search/openharness-main/src/openharness/tools/todo_write_tool.py
+references/git_search/openharness-main/src/openharness/tools/remote_trigger_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_list_tool.py
+references/git_search/openharness-main/src/openharness/tools/file_edit_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/task_get_tool.py
+references/git_search/openharness-main/src/openharness/tools/list_mcp_resources_tool.py
+references/git_search/openharness-main/src/openharness/tools/grep_tool.py
+references/git_search/openharness-main/src/openharness/tools/skill_tool.py
+references/git_search/openharness-main/src/openharness/tools/team_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/cron_create_tool.py
+references/git_search/openharness-main/src/openharness/tools/mcp_auth_tool.py
+references/git_search/openharness-main/src/openharness/tools/lsp_tool.py
+references/git_search/openharness-main/src/openharness/tools/notebook_edit_tool.py
+references/git_search/openharness-main/src/openharness/tools/agent_tool.py
+references/git_search/openharness-main/src/openharness/voice/stream_stt.py
+references/git_search/openharness-main/src/openharness/voice/keyterms.py
+references/git_search/openharness-main/src/openharness/voice/__init__.py
+references/git_search/openharness-main/src/openharness/voice/voice_mode.py
+references/git_search/openharness-main/src/openharness/cli.py
+references/git_search/openharness-main/src/openharness/services/oauth/__init__.py
+references/git_search/openharness-main/src/openharness/services/session_storage.py
+references/git_search/openharness-main/scripts/test_headless_rendering.py
+references/git_search/openharness-main/scripts/react_tui_e2e.py
+references/git_search/openharness-main/scripts/test_docker_sandbox_e2e.py
+references/git_search/openharness-main/scripts/install.ps1
+references/git_search/openharness-main/scripts/test_cli_flags.py
+references/git_search/openharness-main/scripts/test_tui_interactions.py
+references/git_search/openharness-main/scripts/test_react_tui_redesign.py
+references/git_search/openharness-main/scripts/e2e_smoke.py
+references/git_search/openharness-main/scripts/install.sh
+references/git_search/openharness-main/scripts/test_real_skills_plugins.py
+references/git_search/openharness-main/scripts/sync_nanobot_channels.sh
+references/git_search/openharness-main/scripts/local_system_scenarios.py
+references/git_search/openharness-main/scripts/install_dev.sh
+references/git_search/openharness-main/scripts/test_harness_features.py
+references/git_search/openharness-main/CONTRIBUTING.md
+references/git_search/openharness-main/README.md
+references/git_search/openharness-main/src/openharness/mcp/types.py
+references/git_search/openharness-main/src/openharness/mcp/__init__.py
+references/git_search/openharness-main/src/openharness/mcp/client.py
+references/git_search/openharness-main/src/openharness/mcp/config.py
+references/git_search/openharness-main/src/openharness/permissions/checker.py
+references/git_search/openharness-main/src/openharness/permissions/modes.py
+references/git_search/openharness-main/src/openharness/permissions/__init__.py
+references/git_search/openharness-main/src/openharness/tasks/local_agent_task.py
+references/git_search/openharness-main/src/openharness/tasks/manager.py
+references/git_search/openharness-main/src/openharness/tasks/stop_task.py
+references/git_search/openharness-main/src/openharness/tasks/types.py
+references/git_search/openharness-main/src/openharness/tasks/__init__.py
+references/git_search/openharness-main/src/openharness/tasks/local_shell_task.py
+references/git_search/openharness-main/src/openharness/services/compact/__init__.py
+references/git_search/openharness-main/src/openharness/__main__.py
+references/git_search/openharness-main/docs/SHOWCASE.md
+references/git_search/openharness-main/src/openharness/state/app_state.py
+references/git_search/openharness-main/src/openharness/state/__init__.py
+references/git_search/openharness-main/src/openharness/state/store.py
+references/git_search/openharness-main/frontend/terminal/package.json
+references/git_search/openharness-main/frontend/terminal/package-lock.json
+references/git_search/openharness-main/frontend/terminal/tsconfig.json
+references/git_search/openharness-main/src/openharness/swarm/spawn_utils.py
+references/git_search/openharness-main/src/openharness/swarm/worktree.py
+references/git_search/openharness-main/src/openharness/swarm/mailbox.py
+references/git_search/openharness-main/src/openharness/swarm/permission_sync.py
+references/git_search/openharness-main/src/openharness/swarm/in_process.py
+references/git_search/openharness-main/src/openharness/swarm/types.py
+references/git_search/openharness-main/src/openharness/swarm/__init__.py
+references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py
+references/git_search/openharness-main/src/openharness/swarm/registry.py
+references/git_search/openharness-main/src/openharness/swarm/lockfile.py
+references/git_search/openharness-main/src/openharness/swarm/team_lifecycle.py
+references/git_search/openharness-main/src/openharness/themes/schema.py
+references/git_search/openharness-main/src/openharness/themes/builtin.py
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/pyproject.toml" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openharness-ai"
+version = "0.1.6"
+description = "Open-source Python port of Claude Code - an AI-powered CLI coding assistant"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "novix-science" },
+]
+
+dependencies = [
+    "anthropic>=0.40.0",
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "prompt-toolkit>=3.0.0",
+    "textual>=0.80.0",
+    "typer>=0.12.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.27.0",
+    "websockets>=12.0",
+    "mcp>=1.0.0",
+    "pyperclip>=1.9.0",
+    "pyyaml>=6.0",
+    "questionary>=2.0.1",
+    "watchfiles>=0.20.0",
+    "croniter>=2.0.0",
+    "slack-sdk>=3.0.0",
+    "python-telegram-bot>=21.0.0",
+    "discord.py>=2.0.0",
+    "lark-oapi>=1.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pexpect>=4.9.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[project.scripts]
+openharness = "openharness.cli:app"
+oh = "openharness.cli:app"
+openh = "openharness.cli:app"
+ohmo = "ohmo.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openharness", "ohmo"]
+
+[tool.hatch.build]
+exclude = [
+    "/.git",
+    "/.venv",
+    "/.openharness-venv",
+    "/.openharness",
+    "/.pytest_cache",
+    "/.mypy_cache",
+    "/.ruff_cache",
+    "/build",
+    "/dist",
+]
+
+[tool.hatch.build.targets.wheel.force-include]
+"frontend/terminal/package.json" = "openharness/_frontend/package.json"
+"frontend/terminal/tsconfig.json" = "openharness/_frontend/tsconfig.json"
+"frontend/terminal/src" = "openharness/_frontend/src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_real_worker_boundary_audit_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Real Worker Boundary Audit v0
+
+## 1. Verdict
+
+PASS
+
+## 2. Scope
+
+This audit covers Package 1 only.
+
+Goal:
+
+- separate the dry-run path from the actual external worker path
+- identify where real worker output enters runtime storage
+- lock the thinnest insertion point for `structured_return.worker_return`
+
+No UI expansion, orchestration expansion, or redesign was performed.
+
+## 3. Current Runtime Boundary
+
+The current CLI package path is concentrated in:
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+
+Primary entry:
+
+- `run_integrated_engine_cli_session(runtime_root, payload)`
+
+Adapter:
+
+- `CodexCliAdapter`
+
+Important runtime artifacts:
+
+- `runtime/cli_sessions/<session_id>/prompt.md`
+- `runtime/cli_sessions/<session_id>/stdout.log`
+- `runtime/cli_sessions/<session_id>/stderr.log`
+- `runtime/cli_sessions/<session_id>/structured_return.json`
+- `runtime/cli_sessions/<session_id>/deposit_candidate.md`
+- `runtime/cli_sessions/<session_id>/operator_report.md`
+- `runtime/events/integrated_engine_package_run_events.jsonl`
+
+Notebook read path:
+
+- `_build_cli_package_notebooks(...)`
+- `_enrich_run_record(...)`
+- `_normalize_worker_return(...)`
+
+## 4. Dry-Run Path
+
+Dry-run path is selected by:
+
+- `dry_run = bool(session.get("dry_run"))`
+
+When `dry_run` is true:
+
+1. runtime profiles bounded context refs with `_profile_context_refs(...)`
+2. runtime synthesizes deterministic profile text into `stdout`
+3. no external CLI is invoked
+4. `structured_return.worker_return` is produced from controlled runtime material
+5. session artifacts are written under `runtime/cli_sessions/<session_id>/`
+
+Dry-run validates:
+
+- package vessel formation
+- context refs carryover
+- event ledger recording
+- structured return projection
+- notebook continuity path
+
+Dry-run does not validate:
+
+- real external worker compliance
+- real worker prose variability
+- actual worker ability to follow the return contract
+- external CLI runtime failure behavior beyond simulated storage
+
+## 5. Actual Worker Path
+
+Actual worker path is selected when:
+
+- `dry_run` is false
+
+In that path, `CodexCliAdapter.start_run(...)` builds and runs:
+
+```text
+codex exec --skip-git-repo-check --sandbox read-only --cd <repo> -
+```
+
+The prompt is passed through stdin.
+
+Actual worker output enters runtime as:
+
+- `completed.stdout`
+- `completed.stderr`
+- `completed.returncode`
+
+Failure variants currently handled:
+
+- `FileNotFoundError`
+- `subprocess.TimeoutExpired`
+- non-zero exit code
+
+The immediate runtime write points are:
+
+- `stdout.log`
+- `stderr.log`
+- `structured_return.json`
+
+This is the real external worker boundary.
+
+## 6. Structured Return Insertion Point
+
+The narrowest insertion point is inside `CodexCliAdapter.start_run(...)`, after:
+
+```text
+stdout/stderr/exit_code/status/error_message are known
+```
+
+and before:
+
+```text
+structured_return.json is written
+```
+
+Current sequence:
+
+1. external worker returns `stdout`, `stderr`, `exit_code`
+2. runtime computes `raw_result_summary`
+3. runtime builds top-level `structured_return`
+4. runtime writes `structured_return["worker_return"] = _normalize_worker_return(...)`
+5. runtime writes `structured_return.json`
+6. deposit candidate and operator report are derived
+7. session index is updated
+8. event ledger records return and reread route
+9. notebook projects the run through `_enrich_run_record(...)`
+
+This is sufficiently narrow for Package 2 adapter prompt work.
+
+## 7. Actual vs Dry-Run Difference
+
+| Area | Dry-run | Actual worker |
+| --- | --- | --- |
+| Source of output | runtime-generated profile text | external CLI stdout/stderr |
+| Context profiles | directly available to normalizer | available before handoff, but actual worker may ignore refs |
+| Worker compliance | not tested | must be tested |
+| Structured return | deterministic normalization | normalization from actual worker output |
+| Main risk | false confidence | prose drift / missing fields |
+
+## 8. Patch Point Summary
+
+Patch point for Package 2:
+
+- `_cli_session_prompt(session_spec)`
+- `CodexCliAdapter.start_run(...)`
+- `_normalize_worker_return(...)`
+
+Minimal next patch shape:
+
+1. strengthen `_cli_session_prompt(...)` to request an explicit `WORKER_RETURN_JSON` or equivalent bounded block
+2. add a small extractor that attempts to parse that block from stdout
+3. pass parsed fields into `_normalize_worker_return(...)`
+4. keep current parser fallback if no valid block is found
+
+This avoids changing:
+
+- session directory layout
+- event ledger
+- package notebook shape
+- UI surfaces
+- worker registry
+- multi-agent routing
+
+## 9. Risks / Ambiguity
+
+Known risks:
+
+- Actual Codex CLI may return helpful prose but not the requested structured block.
+- The prompt currently asks for structured fields but does not yet require a machine-readable block.
+- `context_profiles` are only directly available in dry-run normalization; actual worker normalization mainly sees stdout/stderr and session refs.
+- `structured_return.worker_return` can exist even when the worker did not truly emit the structure, because runtime normalization can synthesize it from raw output.
+
+Remaining ambiguity:
+
+- Whether actual worker compliance should be validated by requiring a parseable JSON block, or by accepting markdown headings. Package 2 should choose the smallest reliable form.
+
+## 10. Package 2 Readiness
+
+Package 2 is ready.
+
+Reason:
+
+- actual worker entry is concretely identified
+- dry-run and actual-run paths are separated
+- the structured return insertion point is narrow
+- current storage/notebook/event flow does not require rewrite
+
+Recommended Package 2 focus:
+
+- define the actual adapter prompt block
+- parse worker-emitted structure before fallback normalization
+- record whether the structured block was worker-emitted or runtime-normalized
+
+exec
+/bin/bash -lc "sed -n '1,220p' docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Worker Adapter Prompt Contract v0
+
+## 1. Purpose
+
+This contract makes actual worker returns less dependent on post-hoc parsing.
+
+Package 1 identified the narrow boundary:
+
+`CodexCliAdapter.start_run(...)` after stdout/stderr/exit status are known and before `structured_return.json` is written.
+
+Package 2 adds the minimal actual-worker prompt contract for that boundary.
+
+## 2. Required Worker-Emitted Block
+
+Actual workers should include one parseable block near the end of stdout.
+
+The delimiter must appear on its own lines:
+
+```text
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "<package id if known>",
+  "run_kind": "<task type>",
+  "answer": "<direct answer or main response>",
+  "findings": ["<key observation>"],
+  "files_artifacts": ["<path or artifact ref>"],
+  "next_continue_hint": "<specific next step for this same package>",
+  "open_questions": ["<unresolved blocker>"],
+  "risks_or_limits": ["<uncertainty or limit>"],
+  "source_refs": ["<bounded context ref actually used>"]
+}
+END_WORKER_RETURN_JSON
+```
+
+Arrays must remain JSON arrays of strings.
+
+## 3. Prompt Boundary
+
+The current adapter prompt is formed in:
+
+- `_cli_session_prompt(session_spec)`
+
+The prompt asks for:
+
+- a short human-readable return
+- the bounded structured block
+- no file modification unless explicitly requested elsewhere
+
+This does not create a new worker system. It only makes the existing actual worker return boundary more inspectable.
+
+## 4. Extraction Rule
+
+The runtime extracts only a delimiter block where:
+
+- `WORKER_RETURN_JSON` appears alone on a line
+- `END_WORKER_RETURN_JSON` appears alone on a later line
+- the body parses as JSON object
+
+Mentions of `WORKER_RETURN_JSON` inside prose or inside JSON strings are ignored as delimiters.
+
+## 5. Return Source Labels
+
+`worker_return_source` is recorded as one of:
+
+- `worker_emitted`: a valid delimiter JSON block was found in actual stdout
+- `runtime_normalized`: runtime generated or normalized structured return from controlled material
+- `parser_fallback`: structure was inferred from raw text bullets/profile cues
+- `raw_fallback`: only raw answer text could be preserved
+
+The supervisor should prefer `worker_emitted` for actual worker validation.
+
+## 6. Fallback Rule
+
+If the worker block is missing or invalid:
+
+1. preserve stdout/stderr artifacts
+2. preserve top-level `result_summary`
+3. normalize through `_normalize_worker_return(...)`
+4. label the source as `runtime_normalized`, `parser_fallback`, or `raw_fallback`
+
+Old sessions remain readable.
+
+## 7. Non-Goals
+
+This contract does not implement:
+
+- multi-agent orchestration
+- worker switching UX
+- dashboard expansion
+- artifact viewer
+- streaming terminal
+- automatic line / axis detection
+- broad schema growth beyond the current worker return need
+
+## 8. Package 3 Readiness Condition
+
+Package 3 may proceed when:
+
+- one actual worker run writes `worker_return_source = worker_emitted`
+- package notebook can read that run as latest package material
+- fallback behavior remains intact for missing block cases
+
+codex
+The first pass shows this is a packaged Python agent harness with a React/Ink terminal frontend and a separate `ohmo` app. I’m checking the top-level layout and a few entry-point modules so the “inspect next” list is grounded in actual structure, not just the README.
+exec
+/bin/bash -lc 'find references/git_search/openharness-main -maxdepth 3 -type d | sort' in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main
+references/git_search/openharness-main/.agents
+references/git_search/openharness-main/.claude
+references/git_search/openharness-main/.claude/skills
+references/git_search/openharness-main/.claude/skills/harness-eval
+references/git_search/openharness-main/.claude/skills/pr-merge
+references/git_search/openharness-main/.github
+references/git_search/openharness-main/.github/ISSUE_TEMPLATE
+references/git_search/openharness-main/.github/workflows
+references/git_search/openharness-main/assets
+references/git_search/openharness-main/docs
+references/git_search/openharness-main/frontend
+references/git_search/openharness-main/frontend/terminal
+references/git_search/openharness-main/frontend/terminal/src
+references/git_search/openharness-main/ohmo
+references/git_search/openharness-main/ohmo/gateway
+references/git_search/openharness-main/scripts
+references/git_search/openharness-main/src
+references/git_search/openharness-main/src/openharness
+references/git_search/openharness-main/src/openharness/api
+references/git_search/openharness-main/src/openharness/auth
+references/git_search/openharness-main/src/openharness/bridge
+references/git_search/openharness-main/src/openharness/channels
+references/git_search/openharness-main/src/openharness/commands
+references/git_search/openharness-main/src/openharness/config
+references/git_search/openharness-main/src/openharness/coordinator
+references/git_search/openharness-main/src/openharness/engine
+references/git_search/openharness-main/src/openharness/hooks
+references/git_search/openharness-main/src/openharness/keybindings
+references/git_search/openharness-main/src/openharness/mcp
+references/git_search/openharness-main/src/openharness/memory
+references/git_search/openharness-main/src/openharness/output_styles
+references/git_search/openharness-main/src/openharness/permissions
+references/git_search/openharness-main/src/openharness/personalization
+references/git_search/openharness-main/src/openharness/plugins
+references/git_search/openharness-main/src/openharness/prompts
+references/git_search/openharness-main/src/openharness/sandbox
+references/git_search/openharness-main/src/openharness/services
+references/git_search/openharness-main/src/openharness/skills
+references/git_search/openharness-main/src/openharness/state
+references/git_search/openharness-main/src/openharness/swarm
+references/git_search/openharness-main/src/openharness/tasks
+references/git_search/openharness-main/src/openharness/themes
+references/git_search/openharness-main/src/openharness/tools
+references/git_search/openharness-main/src/openharness/ui
+references/git_search/openharness-main/src/openharness/utils
+references/git_search/openharness-main/src/openharness/vim
+references/git_search/openharness-main/src/openharness/voice
+references/git_search/openharness-main/tests
+references/git_search/openharness-main/tests/fixtures
+references/git_search/openharness-main/tests/test_api
+references/git_search/openharness-main/tests/test_auth
+references/git_search/openharness-main/tests/test_bridge
+references/git_search/openharness-main/tests/test_channels
+references/git_search/openharness-main/tests/test_commands
+references/git_search/openharness-main/tests/test_config
+references/git_search/openharness-main/tests/test_coordinator
+references/git_search/openharness-main/tests/test_engine
+references/git_search/openharness-main/tests/test_entrypoints
+references/git_search/openharness-main/tests/test_hooks
+references/git_search/openharness-main/tests/test_install
+references/git_search/openharness-main/tests/test_logging
+references/git_search/openharness-main/tests/test_mcp
+references/git_search/openharness-main/tests/test_memory
+references/git_search/openharness-main/tests/test_ohmo
+references/git_search/openharness-main/tests/test_permissions
+references/git_search/openharness-main/tests/test_personalization
+references/git_search/openharness-main/tests/test_plugins
+references/git_search/openharness-main/tests/test_prompts
+references/git_search/openharness-main/tests/test_sandbox
+references/git_search/openharness-main/tests/test_services
+references/git_search/openharness-main/tests/test_skills
+references/git_search/openharness-main/tests/test_swarm
+references/git_search/openharness-main/tests/test_tasks
+references/git_search/openharness-main/tests/test_tools
+references/git_search/openharness-main/tests/test_ui
+references/git_search/openharness-main/tests/test_utils
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/cli.py" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/tasks/manager.py" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/tools/agent_tool.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Tool for spawning local agent tasks."""
+
+from __future__ import annotations
+
+import logging
+
+from pydantic import BaseModel, Field
+
+from openharness.coordinator.agent_definitions import get_agent_definition
+from openharness.coordinator.coordinator_mode import get_team_registry
+from openharness.swarm.registry import get_backend_registry
+from openharness.swarm.types import TeammateSpawnConfig
+from openharness.tools.base import BaseTool, ToolExecutionContext, ToolResult
+
+logger = logging.getLogger(__name__)
+
+
+class AgentToolInput(BaseModel):
+    """Arguments for local agent spawning."""
+
+    description: str = Field(description="Short description of the delegated work")
+    prompt: str = Field(description="Full prompt for the local agent")
+    subagent_type: str | None = Field(
+        default=None,
+        description="Agent type for definition lookup (e.g. 'general-purpose', 'Explore', 'worker')",
+    )
+    model: str | None = Field(default=None)
+    command: str | None = Field(default=None, description="Override spawn command")
+    team: str | None = Field(default=None, description="Optional team to attach the agent to")
+    mode: str = Field(
+        default="local_agent",
+        description="Agent mode: local_agent, remote_agent, or in_process_teammate",
+    )
+
+
+class AgentTool(BaseTool):
+    """Spawn a local agent subprocess."""
+
+    name = "agent"
+    description = "Spawn a local background agent task."
+    input_model = AgentToolInput
+
+    async def execute(self, arguments: AgentToolInput, context: ToolExecutionContext) -> ToolResult:
+        if arguments.mode not in {"local_agent", "remote_agent", "in_process_teammate"}:
+            return ToolResult(
+                output="Invalid mode. Use local_agent, remote_agent, or in_process_teammate.",
+                is_error=True,
+            )
+
+        # Look up agent definition if subagent_type is specified
+        agent_def = None
+        if arguments.subagent_type:
+            agent_def = get_agent_definition(arguments.subagent_type)
+
+        # Resolve team and agent name for the swarm backend
+        team = arguments.team or "default"
+        agent_name = arguments.subagent_type or "agent"
+
+        # Use subprocess backend so spawned agents are registered in
+        # BackgroundTaskManager and are pollable by the task tools.
+        # in_process tasks return asyncio-internal IDs that task tools
+        # cannot query, and subprocess is always available on all platforms.
+        registry = get_backend_registry()
+        executor = registry.get_executor("subprocess")
+
+        config = TeammateSpawnConfig(
+            name=agent_name,
+            team=team,
+            prompt=arguments.prompt,
+            cwd=str(context.cwd),
+            parent_session_id="main",
+            model=arguments.model or (agent_def.model if agent_def else None),
+            system_prompt=agent_def.system_prompt if agent_def else None,
+            permissions=agent_def.permissions if agent_def else [],
+        )
+
+        try:
+            result = await executor.spawn(config)
+        except Exception as exc:
+            logger.error("Failed to spawn agent: %s", exc)
+            return ToolResult(output=str(exc), is_error=True)
+
+        if not result.success:
+            return ToolResult(output=result.error or "Failed to spawn agent", is_error=True)
+
+        if arguments.team:
+            registry = get_team_registry()
+            try:
+                registry.add_agent(arguments.team, result.task_id)
+            except ValueError:
+                registry.create_team(arguments.team)
+                registry.add_agent(arguments.team, result.task_id)
+
+        return ToolResult(
+            output=(
+                f"Spawned agent {result.agent_id} "
+                f"(task_id={result.task_id}, backend={result.backend_type})"
+            )
+        )
+
+ succeeded in 0ms:
+"""Background task manager."""
+
+from __future__ import annotations
+
+import asyncio
+import os
+import shlex
+import time
+from dataclasses import replace
+from pathlib import Path
+from uuid import uuid4
+
+from openharness.config.paths import get_tasks_dir
+from openharness.tasks.types import TaskRecord, TaskStatus, TaskType
+from openharness.utils.shell import create_shell_subprocess
+
+
+class BackgroundTaskManager:
+    """Manage shell and agent subprocess tasks."""
+
+    def __init__(self) -> None:
+        self._tasks: dict[str, TaskRecord] = {}
+        self._processes: dict[str, asyncio.subprocess.Process] = {}
+        self._waiters: dict[str, asyncio.Task[None]] = {}
+        self._output_locks: dict[str, asyncio.Lock] = {}
+        self._input_locks: dict[str, asyncio.Lock] = {}
+        self._generations: dict[str, int] = {}
+
+    async def create_shell_task(
+        self,
+        *,
+        command: str,
+        description: str,
+        cwd: str | Path,
+        task_type: TaskType = "local_bash",
+    ) -> TaskRecord:
+        """Start a background shell command."""
+        task_id = _task_id(task_type)
+        output_path = get_tasks_dir() / f"{task_id}.log"
+        record = TaskRecord(
+            id=task_id,
+            type=task_type,
+            status="running",
+            description=description,
+            cwd=str(Path(cwd).resolve()),
+            output_file=output_path,
+            command=command,
+            created_at=time.time(),
+            started_at=time.time(),
+        )
+        output_path.write_text("", encoding="utf-8")
+        self._tasks[task_id] = record
+        self._output_locks[task_id] = asyncio.Lock()
+        self._input_locks[task_id] = asyncio.Lock()
+        await self._start_process(task_id)
+        return record
+
+    async def create_agent_task(
+        self,
+        *,
+        prompt: str,
+        description: str,
+        cwd: str | Path,
+        task_type: TaskType = "local_agent",
+        model: str | None = None,
+        api_key: str | None = None,
+        command: str | None = None,
+    ) -> TaskRecord:
+        """Start a local agent task as a subprocess."""
+        if command is None:
+            effective_api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
+            if not effective_api_key:
+                raise ValueError(
+                    "Local agent tasks require ANTHROPIC_API_KEY or an explicit command override"
+                )
+            cmd = ["python", "-m", "openharness", "--api-key", effective_api_key]
+            if model:
+                cmd.extend(["--model", model])
+            command = " ".join(shlex.quote(part) for part in cmd)
+
+        record = await self.create_shell_task(
+            command=command,
+            description=description,
+            cwd=cwd,
+            task_type=task_type,
+        )
+        updated = replace(record, prompt=prompt)
+        if task_type != "local_agent":
+            updated.metadata["agent_mode"] = task_type
+        self._tasks[record.id] = updated
+        await self.write_to_task(record.id, prompt)
+        return updated
+
+    def get_task(self, task_id: str) -> TaskRecord | None:
+        """Return one task record."""
+        return self._tasks.get(task_id)
+
+    def list_tasks(self, *, status: TaskStatus | None = None) -> list[TaskRecord]:
+        """Return all tasks, optionally filtered by status."""
+        tasks = list(self._tasks.values())
+        if status is not None:
+            tasks = [task for task in tasks if task.status == status]
+        return sorted(tasks, key=lambda item: item.created_at, reverse=True)
+
+    def update_task(
+        self,
+        task_id: str,
+        *,
+        description: str | None = None,
+        progress: int | None = None,
+        status_note: str | None = None,
+    ) -> TaskRecord:
+        """Update mutable task metadata used for coordination and UI display."""
+        task = self._require_task(task_id)
+        if description is not None and description.strip():
+            task.description = description.strip()
+        if progress is not None:
+            task.metadata["progress"] = str(progress)
+        if status_note is not None:
+            note = status_note.strip()
+            if note:
+                task.metadata["status_note"] = note
+            else:
+                task.metadata.pop("status_note", None)
+        return task
+
+    async def stop_task(self, task_id: str) -> TaskRecord:
+        """Terminate a running task."""
+        task = self._require_task(task_id)
+        process = self._processes.get(task_id)
+        if process is None:
+            if task.status in {"completed", "failed", "killed"}:
+                return task
+            raise ValueError(f"Task {task_id} is not running")
+
+        process.terminate()
+        try:
+            await asyncio.wait_for(process.wait(), timeout=3)
+        except asyncio.TimeoutError:
+            process.kill()
+            await process.wait()
+
+        task.status = "killed"
+        task.ended_at = time.time()
+        return task
+
+    async def write_to_task(self, task_id: str, data: str) -> None:
+        """Write one line to task stdin, auto-resuming local agents when needed."""
+        task = self._require_task(task_id)
+        async with self._input_locks[task_id]:
+            process = await self._ensure_writable_process(task)
+            process.stdin.write((data.rstrip("\n") + "\n").encode("utf-8"))
+            try:
+                await process.stdin.drain()
+            except (BrokenPipeError, ConnectionResetError):
+                if task.type not in {"local_agent", "remote_agent", "in_process_teammate"}:
+                    raise ValueError(f"Task {task_id} does not accept input") from None
+                process = await self._restart_agent_task(task)
+                process.stdin.write((data.rstrip("\n") + "\n").encode("utf-8"))
+                await process.stdin.drain()
+
+    def read_task_output(self, task_id: str, *, max_bytes: int = 12000) -> str:
+        """Return the tail of a task's output file."""
+        task = self._require_task(task_id)
+        content = task.output_file.read_text(encoding="utf-8", errors="replace")
+        if len(content) > max_bytes:
+            return content[-max_bytes:]
+        return content
+
+    async def _watch_process(
+        self,
+        task_id: str,
+        process: asyncio.subprocess.Process,
+        generation: int,
+    ) -> None:
+        reader = asyncio.create_task(self._copy_output(task_id, process))
+        return_code = await process.wait()
+        await reader
+
+        current_generation = self._generations.get(task_id)
+        if current_generation != generation:
+            return
+
+        task = self._tasks[task_id]
+        task.return_code = return_code
+        if task.status != "killed":
+            task.status = "completed" if return_code == 0 else "failed"
+        task.ended_at = time.time()
+        self._processes.pop(task_id, None)
+        self._waiters.pop(task_id, None)
+
+    async def _copy_output(self, task_id: str, process: asyncio.subprocess.Process) -> None:
+        if process.stdout is None:
+            return
+        while True:
+            chunk = await process.stdout.read(4096)
+            if not chunk:
+                return
+            async with self._output_locks[task_id]:
+                with self._tasks[task_id].output_file.open("ab") as handle:
+                    handle.write(chunk)
+
+    def _require_task(self, task_id: str) -> TaskRecord:
+        task = self._tasks.get(task_id)
+        if task is None:
+            raise ValueError(f"No task found with ID: {task_id}")
+        return task
+
+    async def _start_process(self, task_id: str) -> asyncio.subprocess.Process:
+        task = self._require_task(task_id)
+        if task.command is None:
+            raise ValueError(f"Task {task_id} does not have a command to run")
+
+        generation = self._generations.get(task_id, 0) + 1
+        self._generations[task_id] = generation
+        process = await create_shell_subprocess(
+            task.command,
+            cwd=task.cwd,
+            stdin=asyncio.subprocess.PIPE,
+            stdout=asyncio.subprocess.PIPE,
+
+ succeeded in 0ms:
+"""CLI entry point using typer."""
+
+from __future__ import annotations
+
+import json
+import os
+import sys
+from pathlib import Path
+from typing import Optional
+
+import typer
+
+__version__ = "0.1.6"
+
+
+def _version_callback(value: bool) -> None:
+    if value:
+        print(f"openharness {__version__}")
+        raise typer.Exit()
+
+
+app = typer.Typer(
+    name="openharness",
+    help=(
+        "Oh my Harness! An AI-powered coding assistant.\n\n"
+        "Starts an interactive session by default, use -p/--print for non-interactive output."
+    ),
+    add_completion=False,
+    rich_markup_mode="rich",
+    invoke_without_command=True,
+)
+
+
+# ---------------------------------------------------------------------------
+# Subcommands
+# ---------------------------------------------------------------------------
+
+mcp_app = typer.Typer(name="mcp", help="Manage MCP servers")
+plugin_app = typer.Typer(name="plugin", help="Manage plugins")
+auth_app = typer.Typer(name="auth", help="Manage authentication")
+provider_app = typer.Typer(name="provider", help="Manage provider profiles")
+cron_app = typer.Typer(name="cron", help="Manage cron scheduler and jobs")
+
+app.add_typer(mcp_app)
+app.add_typer(plugin_app)
+app.add_typer(auth_app)
+app.add_typer(provider_app)
+app.add_typer(cron_app)
+
+
+# ---- mcp subcommands ----
+
+@mcp_app.command("list")
+def mcp_list() -> None:
+    """List configured MCP servers."""
+    from openharness.config import load_settings
+    from openharness.mcp.config import load_mcp_server_configs
+    from openharness.plugins import load_plugins
+
+    settings = load_settings()
+    plugins = load_plugins(settings, str(Path.cwd()))
+    configs = load_mcp_server_configs(settings, plugins)
+    if not configs:
+        print("No MCP servers configured.")
+        return
+    for name, cfg in configs.items():
+        transport = cfg.get("transport", cfg.get("command", "unknown"))
+        print(f"  {name}: {transport}")
+
+
+@mcp_app.command("add")
+def mcp_add(
+    name: str = typer.Argument(..., help="Server name"),
+    config_json: str = typer.Argument(..., help="Server config as JSON string"),
+) -> None:
+    """Add an MCP server configuration."""
+    from openharness.config import load_settings, save_settings
+
+    settings = load_settings()
+    try:
+        cfg = json.loads(config_json)
+    except json.JSONDecodeError as exc:
+        print(f"Invalid JSON: {exc}", file=sys.stderr)
+        raise typer.Exit(1)
+    if not isinstance(settings.mcp_servers, dict):
+        settings.mcp_servers = {}
+    settings.mcp_servers[name] = cfg
+    save_settings(settings)
+    print(f"Added MCP server: {name}")
+
+
+@mcp_app.command("remove")
+def mcp_remove(
+    name: str = typer.Argument(..., help="Server name to remove"),
+) -> None:
+    """Remove an MCP server configuration."""
+    from openharness.config import load_settings, save_settings
+
+    settings = load_settings()
+    if not isinstance(settings.mcp_servers, dict) or name not in settings.mcp_servers:
+        print(f"MCP server not found: {name}", file=sys.stderr)
+        raise typer.Exit(1)
+    del settings.mcp_servers[name]
+    save_settings(settings)
+    print(f"Removed MCP server: {name}")
+
+
+# ---- plugin subcommands ----
+
+@plugin_app.command("list")
+def plugin_list() -> None:
+    """List installed plugins."""
+    from openharness.config import load_settings
+    from openharness.plugins import load_plugins
+
+    settings = load_settings()
+    plugins = load_plugins(settings, str(Path.cwd()))
+    if not plugins:
+        print("No plugins installed.")
+        return
+    for plugin in plugins:
+        status = "enabled" if plugin.enabled else "disabled"
+        print(f"  {plugin.name} [{status}] - {plugin.description or ''}")
+
+
+@plugin_app.command("install")
+def plugin_install(
+    source: str = typer.Argument(..., help="Plugin source (path or URL)"),
+) -> None:
+    """Install a plugin from a source path."""
+    from openharness.plugins.installer import install_plugin_from_path
+
+    result = install_plugin_from_path(source)
+    print(f"Installed plugin: {result}")
+
+
+@plugin_app.command("uninstall")
+def plugin_uninstall(
+    name: str = typer.Argument(..., help="Plugin name to uninstall"),
+) -> None:
+    """Uninstall a plugin."""
+    from openharness.plugins.installer import uninstall_plugin
+
+    uninstall_plugin(name)
+    print(f"Uninstalled plugin: {name}")
+
+
+# ---- cron subcommands ----
+
+@cron_app.command("start")
+def cron_start() -> None:
+    """Start the cron scheduler daemon."""
+    from openharness.services.cron_scheduler import is_scheduler_running, start_daemon
+
+    if is_scheduler_running():
+        print("Cron scheduler is already running.")
+        return
+    pid = start_daemon()
+    print(f"Cron scheduler started (pid={pid})")
+
+
+@cron_app.command("stop")
+def cron_stop() -> None:
+    """Stop the cron scheduler daemon."""
+    from openharness.services.cron_scheduler import stop_scheduler
+
+    if stop_scheduler():
+        print("Cron scheduler stopped.")
+    else:
+        print("Cron scheduler is not running.")
+
+
+@cron_app.command("status")
+def cron_status_cmd() -> None:
+    """Show cron scheduler status and job summary."""
+    from openharness.services.cron_scheduler import scheduler_status
+
+    status = scheduler_status()
+    state = "running" if status["running"] else "stopped"
+    print(f"Scheduler: {state}" + (f" (pid={status['pid']})" if status["pid"] else ""))
+    print(f"Jobs:      {status['enabled_jobs']} enabled / {status['total_jobs']} total")
+    print(f"Log:       {status['log_file']}")
+
+
+@cron_app.command("list")
+def cron_list_cmd() -> None:
+    """List all registered cron jobs with schedule and status."""
+    from openharness.services.cron import load_cron_jobs
+
+    jobs = load_cron_jobs()
+    if not jobs:
+        print("No cron jobs configured.")
+        return
+    for job in jobs:
+        enabled = "on " if job.get("enabled", True) else "off"
+        last = job.get("last_run", "never")
+        if last != "never":
+            last = last[:19]  # trim to readable datetime
+        last_status = job.get("last_status", "")
+        status_indicator = f" [{last_status}]" if last_status else ""
+        print(f"  [{enabled}] {job['name']}  {job.get('schedule', '?')}")
+        print(f"        cmd: {job['command']}")
+        print(f"        last: {last}{status_indicator}  next: {job.get('next_run', 'n/a')[:19]}")
+
+
+@cron_app.command("toggle")
+def cron_toggle_cmd(
+    name: str = typer.Argument(..., help="Cron job name"),
+    enabled: bool = typer.Argument(..., help="true to enable, false to disable"),
+) -> None:
+    """Enable or disable a cron job."""
+    from openharness.services.cron import set_job_enabled
+
+    if not set_job_enabled(name, enabled):
+        print(f"Cron job not found: {name}")
+        raise typer.Exit(1)
+    state = "enabled" if enabled else "disabled"
+    print(f"Cron job '{name}' is now {state}")
+
+
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Subprocess-based TeammateExecutor implementation."""
+
+from __future__ import annotations
+
+import json
+import logging
+from typing import TYPE_CHECKING
+
+from openharness.swarm.spawn_utils import (
+    build_inherited_cli_flags,
+    build_inherited_env_vars,
+    get_teammate_command,
+)
+from openharness.swarm.types import (
+    BackendType,
+    SpawnResult,
+    TeammateMessage,
+    TeammateSpawnConfig,
+)
+from openharness.tasks.manager import get_task_manager
+
+if TYPE_CHECKING:
+    pass
+
+logger = logging.getLogger(__name__)
+
+
+class SubprocessBackend:
+    """TeammateExecutor that runs each teammate as a separate subprocess.
+
+    Uses the existing :class:`~openharness.tasks.manager.BackgroundTaskManager`
+    to create and manage the child processes, communicating via stdin/stdout.
+    """
+
+    type: BackendType = "subprocess"
+
+    # Maps agent_id -> task_id for tracking live agents
+    _agent_tasks: dict[str, str]
+
+    def __init__(self) -> None:
+        self._agent_tasks = {}
+
+    def is_available(self) -> bool:
+        """Subprocess backend is always available."""
+        return True
+
+    async def spawn(self, config: TeammateSpawnConfig) -> SpawnResult:
+        """Spawn a new teammate as a subprocess via the task manager.
+
+        Builds the appropriate CLI command and creates a ``local_agent`` task
+        that accepts the initial prompt via stdin.
+        """
+        agent_id = f"{config.name}@{config.team}"
+
+        flags = build_inherited_cli_flags(
+            model=config.model,
+            plan_mode_required=config.plan_mode_required,
+        )
+        extra_env = build_inherited_env_vars()
+
+        # Build environment export prefix for shell invocation
+        env_prefix = " ".join(f"{k}={v!r}" for k, v in extra_env.items())
+
+        teammate_cmd = get_teammate_command()
+        if teammate_cmd.endswith("python") or teammate_cmd.endswith("python3") or "/python" in teammate_cmd:
+            cmd_parts = [teammate_cmd, "-m", "openharness", "--task-worker"] + flags
+        else:
+            cmd_parts = [teammate_cmd, "--task-worker"] + flags
+        command = f"{env_prefix} {' '.join(cmd_parts)}" if env_prefix else " ".join(cmd_parts)
+
+        manager = get_task_manager()
+        try:
+            record = await manager.create_agent_task(
+                prompt=config.prompt,
+                description=f"Teammate: {agent_id}",
+                cwd=config.cwd,
+                task_type="in_process_teammate",
+                model=config.model,
+                command=command,
+            )
+        except Exception as exc:
+            logger.error("Failed to spawn teammate %s: %s", agent_id, exc)
+            return SpawnResult(
+                task_id="",
+                agent_id=agent_id,
+                backend_type=self.type,
+                success=False,
+                error=str(exc),
+            )
+
+        self._agent_tasks[agent_id] = record.id
+        logger.debug("Spawned teammate %s as task %s", agent_id, record.id)
+        return SpawnResult(
+            task_id=record.id,
+            agent_id=agent_id,
+            backend_type=self.type,
+        )
+
+    async def send_message(self, agent_id: str, message: TeammateMessage) -> None:
+        """Send a message to a running teammate via its stdin pipe.
+
+        The message is serialised as a single JSON line so the teammate can
+        distinguish structured messages from plain prompts.
+        """
+        task_id = self._agent_tasks.get(agent_id)
+        if task_id is None:
+            raise ValueError(f"No active subprocess for agent {agent_id!r}")
+
+        payload = {
+            "text": message.text,
+            "from": message.from_agent,
+            "timestamp": message.timestamp,
+        }
+        if message.color:
+            payload["color"] = message.color
+        if message.summary:
+            payload["summary"] = message.summary
+
+        manager = get_task_manager()
+        await manager.write_to_task(task_id, json.dumps(payload))
+        logger.debug("Sent message to %s (task %s)", agent_id, task_id)
+
+    async def shutdown(self, agent_id: str, *, force: bool = False) -> bool:
+        """Terminate a subprocess teammate.
+
+        Args:
+            agent_id: The agent to terminate.
+            force: Ignored for subprocess backend; always sends SIGTERM then
+                   SIGKILL after a brief wait (handled by the task manager).
+
+        Returns:
+            True if the task was found and terminated.
+        """
+        task_id = self._agent_tasks.get(agent_id)
+        if task_id is None:
+            logger.warning("shutdown() called for unknown agent %s", agent_id)
+            return False
+
+        manager = get_task_manager()
+        try:
+            await manager.stop_task(task_id)
+        except ValueError as exc:
+            logger.debug("stop_task for %s: %s", task_id, exc)
+            # Task may have already finished — still clean up mapping
+        finally:
+            self._agent_tasks.pop(agent_id, None)
+
+        logger.debug("Shut down teammate %s (task %s)", agent_id, task_id)
+        return True
+
+    def get_task_id(self, agent_id: str) -> str | None:
+        """Return the task manager task ID for a given agent, if known."""
+        return self._agent_tasks.get(agent_id)
+
+exec
+/bin/bash -lc "sed -n '1,180p' references/git_search/openharness-main/ohmo/cli.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""CLI entry point for the ohmo personal-agent app."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import sys
+from pathlib import Path
+
+import typer
+
+from openharness.auth.manager import AuthManager
+from openharness.config import load_settings
+
+from ohmo.gateway.config import load_gateway_config, save_gateway_config
+from ohmo.gateway.models import GatewayConfig
+from ohmo.gateway.service import (
+    OhmoGatewayService,
+    gateway_status,
+    start_gateway_process,
+    stop_gateway_process,
+)
+from ohmo.memory import add_memory_entry, list_memory_files, remove_memory_entry
+from ohmo.runtime import launch_ohmo_react_tui, run_ohmo_backend, run_ohmo_print_mode
+from ohmo.session_storage import OhmoSessionBackend
+from ohmo.workspace import (
+    get_gateway_config_path,
+    get_workspace_root,
+    get_soul_path,
+    get_state_path,
+    get_user_path,
+    initialize_workspace,
+    workspace_health,
+)
+
+
+app = typer.Typer(
+    name="ohmo",
+    help="ohmo: a personal-agent app built on top of OpenHarness.",
+    invoke_without_command=True,
+    add_completion=False,
+)
+memory_app = typer.Typer(name="memory", help="Manage .ohmo memory")
+soul_app = typer.Typer(name="soul", help="Inspect or edit soul.md")
+user_app = typer.Typer(name="user", help="Inspect or edit user.md")
+gateway_app = typer.Typer(name="gateway", help="Run the ohmo gateway")
+
+app.add_typer(memory_app)
+app.add_typer(soul_app)
+app.add_typer(user_app)
+app.add_typer(gateway_app)
+
+_INTERACTIVE_CHANNELS = ("telegram", "slack", "discord", "feishu")
+_WORKSPACE_HELP = "Path to the ohmo workspace (defaults to ~/.ohmo)"
+
+
+def _can_use_questionary() -> bool:
+    """Return True when a real interactive terminal is available."""
+    if not (sys.stdin.isatty() and sys.stdout.isatty()):
+        return False
+    if sys.stdin is not sys.__stdin__ or sys.stdout is not sys.__stdout__:
+        return False
+    try:
+        import questionary  # noqa: F401
+    except ImportError:
+        return False
+    return True
+
+
+def _select_with_questionary(
+    title: str,
+    options: list[tuple[str, str]],
+    *,
+    default_value: str | None = None,
+) -> str:
+    import questionary
+
+    choices = [
+        questionary.Choice(
+            title=label,
+            value=value,
+            checked=(value == default_value),
+        )
+        for value, label in options
+    ]
+    result = questionary.select(title, choices=choices, default=default_value).ask()
+    if result is None:
+        raise typer.Abort()
+    return str(result)
+
+
+def _confirm_prompt(message: str, *, default: bool = False) -> bool:
+    """Ask for confirmation, preferring questionary in a real TTY."""
+    if _can_use_questionary():
+        import questionary
+
+        result = questionary.confirm(message, default=default).ask()
+        if result is None:
+            raise typer.Abort()
+        return bool(result)
+    return typer.confirm(message, default=default)
+
+
+def _text_prompt(message: str, *, default: str = "") -> str:
+    """Prompt for text input, preferring questionary in a real TTY."""
+    if _can_use_questionary():
+        import questionary
+
+        result = questionary.text(message, default=default).ask()
+        if result is None:
+            raise typer.Abort()
+        return str(result)
+    return typer.prompt(message, default=default)
+
+
+def _select_from_menu(
+    title: str,
+    options: list[tuple[str, str]],
+    *,
+    default_value: str | None = None,
+) -> str:
+    """Render a simple numbered picker and return the selected value."""
+    if _can_use_questionary():
+        return _select_with_questionary(title, options, default_value=default_value)
+    print(title)
+    default_index = 1
+    for index, (value, label) in enumerate(options, 1):
+        marker = " (default)" if value == default_value else ""
+        if value == default_value:
+            default_index = index
+        print(f"  {index}. {label}{marker}")
+    raw = typer.prompt("Choose", default=str(default_index))
+    try:
+        selected = options[int(raw) - 1]
+    except (ValueError, IndexError):
+        raise typer.BadParameter(f"Invalid selection: {raw}") from None
+    return selected[0]
+
+
+def _format_provider_profile_label(info: dict[str, object]) -> str:
+    label = str(info["label"])
+    if bool(info["configured"]):
+        return label
+    return f"{label} (missing)"
+
+
+def _prompt_provider_profile(workspace: str | Path) -> str:
+    settings = load_settings()
+    statuses = AuthManager(settings).get_profile_statuses()
+    default_value = load_gateway_config(workspace).provider_profile
+    hints = {
+        "claude-api": ("Claude / Kimi / GLM / MiniMax", "fg:#7aa2f7"),
+        "openai-compatible": ("OpenAI / OpenRouter", "fg:#9ece6a"),
+    }
+
+    if _can_use_questionary():
+        import questionary
+
+        choices = []
+        for name, info in statuses.items():
+            label = str(info["label"])
+            missing = "" if bool(info["configured"]) else " (missing)"
+            hint = hints.get(name)
+            if hint is None:
+                title = label if not missing else [("", label), ("fg:#d3869b", missing)]
+            else:
+                hint_text, hint_style = hint
+                title = [
+                    ("", f"{label}  "),
+                    (hint_style, hint_text),
+                ]
+                if missing:
+                    title.extend([("", "  "), ("fg:#d3869b", missing.strip())])
+            choices.append(questionary.Choice(title=title, value=name, checked=(name == default_value)))
+        result = questionary.select("Choose provider profile for ohmo:", choices=choices, default=default_value).ask()
+        if result is None:
+            raise typer.Abort()
+        return str(result)
+
+    options = []
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/engine/agent_loop.py" in /Users/sungsookim/universe/vectorfl_replica
+ exited 1 in 0ms:
+sed: references/git_search/openharness-main/src/openharness/engine/agent_loop.py: No such file or directory
+
+exec
+/bin/bash -lc "rg --files references/git_search/openharness-main/src/openharness/engine references/git_search/openharness-main/src/openharness/api references/git_search/openharness-main/src/openharness/bridge references/git_search/openharness-main/src/openharness/coordinator references/git_search/openharness-main/src/openharness/config references/git_search/openharness-main/src/openharness/prompts references/git_search/openharness-main/frontend/terminal/src | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main/src/openharness/config/schema.py
+references/git_search/openharness-main/src/openharness/config/settings.py
+references/git_search/openharness-main/src/openharness/config/__init__.py
+references/git_search/openharness-main/src/openharness/config/paths.py
+references/git_search/openharness-main/src/openharness/engine/stream_events.py
+references/git_search/openharness-main/src/openharness/engine/messages.py
+references/git_search/openharness-main/src/openharness/engine/__init__.py
+references/git_search/openharness-main/src/openharness/engine/query.py
+references/git_search/openharness-main/src/openharness/engine/cost_tracker.py
+references/git_search/openharness-main/src/openharness/engine/query_engine.py
+references/git_search/openharness-main/src/openharness/api/client.py
+references/git_search/openharness-main/src/openharness/api/registry.py
+references/git_search/openharness-main/src/openharness/api/provider.py
+references/git_search/openharness-main/src/openharness/api/__init__.py
+references/git_search/openharness-main/src/openharness/api/codex_client.py
+references/git_search/openharness-main/src/openharness/api/copilot_client.py
+references/git_search/openharness-main/src/openharness/api/usage.py
+references/git_search/openharness-main/src/openharness/api/openai_client.py
+references/git_search/openharness-main/src/openharness/api/errors.py
+references/git_search/openharness-main/src/openharness/api/copilot_auth.py
+references/git_search/openharness-main/src/openharness/bridge/__init__.py
+references/git_search/openharness-main/src/openharness/bridge/session_runner.py
+references/git_search/openharness-main/src/openharness/bridge/work_secret.py
+references/git_search/openharness-main/src/openharness/bridge/types.py
+references/git_search/openharness-main/frontend/terminal/src/index.tsx
+references/git_search/openharness-main/src/openharness/bridge/manager.py
+references/git_search/openharness-main/frontend/terminal/src/types.ts
+references/git_search/openharness-main/frontend/terminal/src/App.tsx
+references/git_search/openharness-main/src/openharness/prompts/environment.py
+references/git_search/openharness-main/src/openharness/coordinator/agent_definitions.py
+references/git_search/openharness-main/src/openharness/coordinator/coordinator_mode.py
+references/git_search/openharness-main/src/openharness/coordinator/__init__.py
+references/git_search/openharness-main/src/openharness/prompts/context.py
+references/git_search/openharness-main/src/openharness/prompts/__init__.py
+references/git_search/openharness-main/src/openharness/prompts/system_prompt.py
+references/git_search/openharness-main/src/openharness/prompts/claudemd.py
+references/git_search/openharness-main/frontend/terminal/src/hooks/useBackendSession.ts
+references/git_search/openharness-main/frontend/terminal/src/components/ModalHost.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/MarkdownText.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SwarmPanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/CommandPicker.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SelectModal.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/SidePanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/TodoPanel.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/MarkdownText.test.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Footer.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Spinner.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/ConversationView.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/PromptInput.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/Composer.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/StatusBar.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/WelcomeBanner.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/TranscriptPane.tsx
+references/git_search/openharness-main/frontend/terminal/src/components/ToolCallDisplay.tsx
+references/git_search/openharness-main/frontend/terminal/src/theme/ThemeContext.tsx
+references/git_search/openharness-main/frontend/terminal/src/theme/builtinThemes.ts
+
+exec
+/bin/bash -lc "sed -n '1,180p' references/git_search/openharness-main/src/openharness/tools/base.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Tool abstractions."""
+
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+from pydantic import BaseModel
+
+
+@dataclass
+class ToolExecutionContext:
+    """Shared execution context for tool invocations."""
+
+    cwd: Path
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class ToolResult:
+    """Normalized tool execution result."""
+
+    output: str
+    is_error: bool = False
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+
+class BaseTool(ABC):
+    """Base class for all OpenHarness tools."""
+
+    name: str
+    description: str
+    input_model: type[BaseModel]
+
+    @abstractmethod
+    async def execute(self, arguments: BaseModel, context: ToolExecutionContext) -> ToolResult:
+        """Execute the tool."""
+
+    def is_read_only(self, arguments: BaseModel) -> bool:
+        """Return whether the invocation is read-only."""
+        del arguments
+        return False
+
+    def to_api_schema(self) -> dict[str, Any]:
+        """Return the tool schema expected by the Anthropic Messages API."""
+        return {
+            "name": self.name,
+            "description": self.description,
+            "input_schema": self.input_model.model_json_schema(),
+        }
+
+
+class ToolRegistry:
+    """Map tool names to implementations."""
+
+    def __init__(self) -> None:
+        self._tools: dict[str, BaseTool] = {}
+
+    def register(self, tool: BaseTool) -> None:
+        """Register a tool instance."""
+        self._tools[tool.name] = tool
+
+    def get(self, name: str) -> BaseTool | None:
+        """Return a registered tool by name."""
+        return self._tools.get(name)
+
+    def list_tools(self) -> list[BaseTool]:
+        """Return all registered tools."""
+        return list(self._tools.values())
+
+    def to_api_schema(self) -> list[dict[str, Any]]:
+        """Return all tool schemas in API format."""
+        return [tool.to_api_schema() for tool in self._tools.values()]
+
+exec
+/bin/bash -lc "sed -n '1,160p' references/git_search/openharness-main/frontend/terminal/package.json" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,180p' references/git_search/openharness-main/src/openharness/permissions/checker.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "name": "@openharness/terminal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.tsx"
+  },
+  "dependencies": {
+    "ink": "^5.1.0",
+    "ink-text-input": "^6.0.0",
+    "marked": "^18.0.0",
+    "react": "^18.3.1",
+    "string-width": "^7.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.12",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
+
+ succeeded in 0ms:
+"""Permission checking for tool execution."""
+
+from __future__ import annotations
+
+import fnmatch
+import logging
+from dataclasses import dataclass
+
+from openharness.config.settings import PermissionSettings
+from openharness.permissions.modes import PermissionMode
+
+log = logging.getLogger(__name__)
+
+# Paths that are always denied regardless of permission mode or user config.
+# These protect high-value credential and key material from LLM-directed access
+# (including via prompt injection).  Patterns use fnmatch syntax and are matched
+# against the fully-resolved absolute path produced by the query engine.
+SENSITIVE_PATH_PATTERNS: tuple[str, ...] = (
+    # SSH keys and config
+    "*/.ssh/*",
+    # AWS credentials
+    "*/.aws/credentials",
+    "*/.aws/config",
+    # GCP credentials
+    "*/.config/gcloud/*",
+    # Azure credentials
+    "*/.azure/*",
+    # GPG keys
+    "*/.gnupg/*",
+    # Docker credentials
+    "*/.docker/config.json",
+    # Kubernetes credentials
+    "*/.kube/config",
+    # OpenHarness own credential stores
+    "*/.openharness/credentials.json",
+    "*/.openharness/copilot_auth.json",
+)
+
+
+@dataclass(frozen=True)
+class PermissionDecision:
+    """Result of checking whether a tool invocation may run."""
+
+    allowed: bool
+    requires_confirmation: bool = False
+    reason: str = ""
+
+
+@dataclass(frozen=True)
+class PathRule:
+    """A glob-based path permission rule."""
+
+    pattern: str
+    allow: bool  # True = allow, False = deny
+
+
+class PermissionChecker:
+    """Evaluate tool usage against the configured permission mode and rules."""
+
+    def __init__(self, settings: PermissionSettings) -> None:
+        self._settings = settings
+        # Parse path rules from settings
+        self._path_rules: list[PathRule] = []
+        for rule in getattr(settings, "path_rules", []):
+            pattern = getattr(rule, "pattern", None) or (rule.get("pattern") if isinstance(rule, dict) else None)
+            allow = getattr(rule, "allow", True) if not isinstance(rule, dict) else rule.get("allow", True)
+            if isinstance(pattern, str) and pattern.strip():
+                self._path_rules.append(PathRule(pattern=pattern.strip(), allow=allow))
+            else:
+                log.warning(
+                    "Skipping path rule with missing, empty, or non-string 'pattern' field: %r",
+                    rule,
+                )
+
+    def evaluate(
+        self,
+        tool_name: str,
+        *,
+        is_read_only: bool,
+        file_path: str | None = None,
+        command: str | None = None,
+    ) -> PermissionDecision:
+        """Return whether the tool may run immediately."""
+        # Built-in sensitive path protection — always active, cannot be
+        # overridden by user settings or permission mode.  This is a
+        # defence-in-depth measure against LLM-directed or prompt-injection
+        # driven access to credential files.
+        if file_path:
+            for candidate_path in _policy_match_paths(file_path):
+                for pattern in SENSITIVE_PATH_PATTERNS:
+                    if fnmatch.fnmatch(candidate_path, pattern):
+                        return PermissionDecision(
+                            allowed=False,
+                            reason=(
+                                f"Access denied: {file_path} is a sensitive credential path "
+                                f"(matched built-in pattern '{pattern}')"
+                            ),
+                        )
+
+        # Explicit tool deny list
+        if tool_name in self._settings.denied_tools:
+            return PermissionDecision(allowed=False, reason=f"{tool_name} is explicitly denied")
+
+        # Explicit tool allow list
+        if tool_name in self._settings.allowed_tools:
+            return PermissionDecision(allowed=True, reason=f"{tool_name} is explicitly allowed")
+
+        # Check path-level rules
+        if file_path and self._path_rules:
+            for candidate_path in _policy_match_paths(file_path):
+                for rule in self._path_rules:
+                    if fnmatch.fnmatch(candidate_path, rule.pattern):
+                        if not rule.allow:
+                            return PermissionDecision(
+                                allowed=False,
+                                reason=f"Path {file_path} matches deny rule: {rule.pattern}",
+                            )
+
+        # Check command deny patterns (e.g. deny "rm -rf /")
+        if command:
+            for pattern in getattr(self._settings, "denied_commands", []):
+                if isinstance(pattern, str) and fnmatch.fnmatch(command, pattern):
+                    return PermissionDecision(
+                        allowed=False,
+                        reason=f"Command matches deny pattern: {pattern}",
+                    )
+
+        # Full auto: allow everything
+        if self._settings.mode == PermissionMode.FULL_AUTO:
+            return PermissionDecision(allowed=True, reason="Auto mode allows all tools")
+
+        # Read-only tools always allowed
+        if is_read_only:
+            return PermissionDecision(allowed=True, reason="read-only tools are allowed")
+
+        # Plan mode: block mutating tools
+        if self._settings.mode == PermissionMode.PLAN:
+            return PermissionDecision(
+                allowed=False,
+                reason="Plan mode blocks mutating tools until the user exits plan mode",
+            )
+
+        # Default mode: require confirmation for mutating tools
+        bash_hint = _bash_permission_hint(command)
+        reason = (
+            "Mutating tools require user confirmation in default mode. "
+            "Approve the prompt when asked, or run /permissions full_auto "
+            "if you want to allow them for this session."
+        )
+        if bash_hint:
+            reason = f"{reason} {bash_hint}"
+        return PermissionDecision(
+            allowed=False,
+            requires_confirmation=True,
+            reason=reason,
+        )
+
+
+def _policy_match_paths(file_path: str) -> tuple[str, ...]:
+    """Return path forms that should participate in policy matching.
+
+    Directory-scoped tools like ``grep`` and ``glob`` may operate on a root such
+    as ``/home/user/.ssh``. Appending a trailing slash lets glob-style deny
+    patterns like ``*/.ssh/*`` and ``/etc/*`` match the directory root itself.
+    """
+    normalized = file_path.rstrip("/")
+    if not normalized:
+        return (file_path,)
+    return (normalized, normalized + "/")
+
+
+def _bash_permission_hint(command: str | None) -> str:
+    if not command:
+        return ""
+    lowered = command.lower()
+    install_markers = (
+        "npm install",
+        "pnpm install",
+        "yarn install",
+        "bun install",
+
+exec
+/bin/bash -lc "sed -n '1,220p' references/git_search/openharness-main/src/openharness/engine/query.py" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,240p' references/git_search/openharness-main/src/openharness/engine/query_engine.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Core tool-aware query loop."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import time
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, AsyncIterator, Awaitable, Callable
+
+from openharness.api.client import (
+    ApiMessageCompleteEvent,
+    ApiMessageRequest,
+    ApiRetryEvent,
+    ApiTextDeltaEvent,
+    SupportsStreamingMessages,
+)
+from openharness.api.usage import UsageSnapshot
+from openharness.engine.messages import ConversationMessage, ToolResultBlock
+from openharness.engine.stream_events import (
+    AssistantTextDelta,
+    AssistantTurnComplete,
+    CompactProgressEvent,
+    ErrorEvent,
+    StatusEvent,
+    StreamEvent,
+    ToolExecutionCompleted,
+    ToolExecutionStarted,
+)
+from openharness.hooks import HookEvent, HookExecutor
+from openharness.permissions.checker import PermissionChecker
+from openharness.tools.base import ToolExecutionContext
+from openharness.tools.base import ToolRegistry
+
+AUTO_COMPACT_STATUS_MESSAGE = "Auto-compacting conversation memory to keep things fast and focused."
+REACTIVE_COMPACT_STATUS_MESSAGE = "Prompt too long; compacting conversation memory and retrying."
+
+log = logging.getLogger(__name__)
+
+
+PermissionPrompt = Callable[[str, str], Awaitable[bool]]
+AskUserPrompt = Callable[[str], Awaitable[str]]
+
+MAX_TRACKED_READ_FILES = 6
+MAX_TRACKED_SKILLS = 8
+MAX_TRACKED_ASYNC_AGENT_EVENTS = 8
+MAX_TRACKED_WORK_LOG = 10
+MAX_TRACKED_USER_GOALS = 5
+MAX_TRACKED_ACTIVE_ARTIFACTS = 8
+MAX_TRACKED_VERIFIED_WORK = 10
+
+
+def _is_prompt_too_long_error(exc: Exception) -> bool:
+    text = str(exc).lower()
+    return any(
+        needle in text
+        for needle in (
+            "prompt too long",
+            "context length",
+            "maximum context",
+            "context window",
+            "too many tokens",
+            "too large for the model",
+            "maximum context length",
+        )
+    )
+
+
+class MaxTurnsExceeded(RuntimeError):
+    """Raised when the agent exceeds the configured max_turns for one user prompt."""
+
+    def __init__(self, max_turns: int) -> None:
+        super().__init__(f"Exceeded maximum turn limit ({max_turns})")
+        self.max_turns = max_turns
+
+
+@dataclass
+class QueryContext:
+    """Context shared across a query run."""
+
+    api_client: SupportsStreamingMessages
+    tool_registry: ToolRegistry
+    permission_checker: PermissionChecker
+    cwd: Path
+    model: str
+    system_prompt: str
+    max_tokens: int
+    context_window_tokens: int | None = None
+    auto_compact_threshold_tokens: int | None = None
+    permission_prompt: PermissionPrompt | None = None
+    ask_user_prompt: AskUserPrompt | None = None
+    max_turns: int | None = 200
+    hook_executor: HookExecutor | None = None
+    tool_metadata: dict[str, object] | None = None
+
+
+def _append_capped_unique(bucket: list[Any], value: Any, *, limit: int) -> None:
+    if value in bucket:
+        bucket.remove(value)
+    bucket.append(value)
+    if len(bucket) > limit:
+        del bucket[:-limit]
+
+
+def _task_focus_state(tool_metadata: dict[str, object] | None) -> dict[str, object]:
+    if tool_metadata is None:
+        return {}
+    value = tool_metadata.setdefault(
+        "task_focus_state",
+        {
+            "goal": "",
+            "recent_goals": [],
+            "active_artifacts": [],
+            "verified_state": [],
+            "next_step": "",
+        },
+    )
+    if isinstance(value, dict):
+        value.setdefault("goal", "")
+        value.setdefault("recent_goals", [])
+        value.setdefault("active_artifacts", [])
+        value.setdefault("verified_state", [])
+        value.setdefault("next_step", "")
+        return value
+    replacement = {
+        "goal": "",
+        "recent_goals": [],
+        "active_artifacts": [],
+        "verified_state": [],
+        "next_step": "",
+    }
+    tool_metadata["task_focus_state"] = replacement
+    return replacement
+
+
+def _summarize_focus_text(text: str) -> str:
+    normalized = " ".join(text.split())
+    if not normalized:
+        return ""
+    return normalized[:240]
+
+
+def remember_user_goal(
+    tool_metadata: dict[str, object] | None,
+    prompt: str,
+) -> None:
+    state = _task_focus_state(tool_metadata)
+    summary = _summarize_focus_text(prompt)
+    if not summary:
+        return
+    recent_goals = state.setdefault("recent_goals", [])
+    if isinstance(recent_goals, list):
+        _append_capped_unique(recent_goals, summary, limit=MAX_TRACKED_USER_GOALS)
+    state["goal"] = summary
+
+
+def _remember_active_artifact(
+    tool_metadata: dict[str, object] | None,
+    artifact: str,
+) -> None:
+    normalized = artifact.strip()
+    if not normalized:
+        return
+    state = _task_focus_state(tool_metadata)
+    artifacts = state.setdefault("active_artifacts", [])
+    if isinstance(artifacts, list):
+        _append_capped_unique(artifacts, normalized[:240], limit=MAX_TRACKED_ACTIVE_ARTIFACTS)
+
+
+def _remember_verified_work(
+    tool_metadata: dict[str, object] | None,
+    entry: str,
+) -> None:
+    normalized = entry.strip()
+    if not normalized:
+        return
+    bucket = _tool_metadata_bucket(tool_metadata, "recent_verified_work")
+    _append_capped_unique(bucket, normalized[:320], limit=MAX_TRACKED_VERIFIED_WORK)
+    state = _task_focus_state(tool_metadata)
+    verified_state = state.setdefault("verified_state", [])
+    if isinstance(verified_state, list):
+        _append_capped_unique(verified_state, normalized[:320], limit=MAX_TRACKED_VERIFIED_WORK)
+
+
+def _tool_metadata_bucket(
+    tool_metadata: dict[str, object] | None,
+    key: str,
+) -> list[Any]:
+    if tool_metadata is None:
+        return []
+    value = tool_metadata.setdefault(key, [])
+    if isinstance(value, list):
+        return value
+    replacement: list[Any] = []
+    tool_metadata[key] = replacement
+    return replacement
+
+
+def _remember_read_file(
+    tool_metadata: dict[str, object] | None,
+    *,
+    path: str,
+    offset: int,
+    limit: int,
+    output: str,
+) -> None:
+    bucket = _tool_metadata_bucket(tool_metadata, "read_file_state")
+    preview_lines = [line.strip() for line in output.splitlines()[:6] if line.strip()]
+    entry = {
+        "path": path,
+        "span": f"lines {offset + 1}-{offset + limit}",
+        "preview": " | ".join(preview_lines)[:320],
+        "timestamp": time.time(),
+    }
+    if isinstance(bucket, list):
+        bucket[:] = [
+            existing
+            for existing in bucket
+            if not isinstance(existing, dict) or str(existing.get("path") or "") != path
+
+ succeeded in 0ms:
+"""High-level conversation engine."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import AsyncIterator
+
+from openharness.api.client import SupportsStreamingMessages
+from openharness.engine.cost_tracker import CostTracker
+from openharness.coordinator.coordinator_mode import get_coordinator_user_context
+from openharness.engine.messages import ConversationMessage, TextBlock, ToolResultBlock
+from openharness.engine.query import AskUserPrompt, PermissionPrompt, QueryContext, remember_user_goal, run_query
+from openharness.engine.stream_events import AssistantTurnComplete, StreamEvent
+from openharness.hooks import HookExecutor
+from openharness.permissions.checker import PermissionChecker
+from openharness.tools.base import ToolRegistry
+
+
+class QueryEngine:
+    """Owns conversation history and the tool-aware model loop."""
+
+    def __init__(
+        self,
+        *,
+        api_client: SupportsStreamingMessages,
+        tool_registry: ToolRegistry,
+        permission_checker: PermissionChecker,
+        cwd: str | Path,
+        model: str,
+        system_prompt: str,
+        max_tokens: int = 4096,
+        context_window_tokens: int | None = None,
+        auto_compact_threshold_tokens: int | None = None,
+        max_turns: int | None = 8,
+        permission_prompt: PermissionPrompt | None = None,
+        ask_user_prompt: AskUserPrompt | None = None,
+        hook_executor: HookExecutor | None = None,
+        tool_metadata: dict[str, object] | None = None,
+    ) -> None:
+        self._api_client = api_client
+        self._tool_registry = tool_registry
+        self._permission_checker = permission_checker
+        self._cwd = Path(cwd).resolve()
+        self._model = model
+        self._system_prompt = system_prompt
+        self._max_tokens = max_tokens
+        self._context_window_tokens = context_window_tokens
+        self._auto_compact_threshold_tokens = auto_compact_threshold_tokens
+        self._max_turns = max_turns
+        self._permission_prompt = permission_prompt
+        self._ask_user_prompt = ask_user_prompt
+        self._hook_executor = hook_executor
+        self._tool_metadata = tool_metadata or {}
+        self._messages: list[ConversationMessage] = []
+        self._cost_tracker = CostTracker()
+
+    @property
+    def messages(self) -> list[ConversationMessage]:
+        """Return the current conversation history."""
+        return list(self._messages)
+
+    @property
+    def max_turns(self) -> int | None:
+        """Return the maximum number of agentic turns per user input, if capped."""
+        return self._max_turns
+
+    @property
+    def api_client(self) -> SupportsStreamingMessages:
+        """Return the active API client."""
+        return self._api_client
+
+    @property
+    def model(self) -> str:
+        """Return the active model identifier."""
+        return self._model
+
+    @property
+    def system_prompt(self) -> str:
+        """Return the active system prompt."""
+        return self._system_prompt
+
+    @property
+    def tool_metadata(self) -> dict[str, object]:
+        """Return the mutable tool metadata/carry-over state."""
+        return self._tool_metadata
+
+    @property
+    def total_usage(self):
+        """Return the total usage across all turns."""
+        return self._cost_tracker.total
+
+    def clear(self) -> None:
+        """Clear the in-memory conversation history."""
+        self._messages.clear()
+        self._cost_tracker = CostTracker()
+
+    def set_system_prompt(self, prompt: str) -> None:
+        """Update the active system prompt for future turns."""
+        self._system_prompt = prompt
+
+    def set_model(self, model: str) -> None:
+        """Update the active model for future turns."""
+        self._model = model
+
+    def set_api_client(self, api_client: SupportsStreamingMessages) -> None:
+        """Update the active API client for future turns."""
+        self._api_client = api_client
+
+    def set_max_turns(self, max_turns: int | None) -> None:
+        """Update the maximum number of agentic turns per user input."""
+        self._max_turns = None if max_turns is None else max(1, int(max_turns))
+
+    def set_permission_checker(self, checker: PermissionChecker) -> None:
+        """Update the active permission checker for future turns."""
+        self._permission_checker = checker
+
+    def _build_coordinator_context_message(self) -> ConversationMessage | None:
+        """Build a synthetic user message carrying coordinator runtime context."""
+        context = get_coordinator_user_context()
+        worker_tools_context = context.get("workerToolsContext")
+        if not worker_tools_context:
+            return None
+        return ConversationMessage(
+            role="user",
+            content=[TextBlock(text=f"# Coordinator User Context\n\n{worker_tools_context}")],
+        )
+
+    def load_messages(self, messages: list[ConversationMessage]) -> None:
+        """Replace the in-memory conversation history."""
+        self._messages = list(messages)
+
+    def has_pending_continuation(self) -> bool:
+        """Return True when the conversation ends with tool results awaiting a follow-up model turn."""
+        if not self._messages:
+            return False
+        last = self._messages[-1]
+        if last.role != "user":
+            return False
+        if not any(isinstance(block, ToolResultBlock) for block in last.content):
+            return False
+        for msg in reversed(self._messages[:-1]):
+            if msg.role != "assistant":
+                continue
+            return bool(msg.tool_uses)
+        return False
+
+    async def submit_message(self, prompt: str | ConversationMessage) -> AsyncIterator[StreamEvent]:
+        """Append a user message and execute the query loop."""
+        user_message = (
+            prompt
+            if isinstance(prompt, ConversationMessage)
+            else ConversationMessage.from_user_text(prompt)
+        )
+        if user_message.text.strip():
+            remember_user_goal(self._tool_metadata, user_message.text)
+        self._messages.append(user_message)
+        context = QueryContext(
+            api_client=self._api_client,
+            tool_registry=self._tool_registry,
+            permission_checker=self._permission_checker,
+            cwd=self._cwd,
+            model=self._model,
+            system_prompt=self._system_prompt,
+            max_tokens=self._max_tokens,
+            context_window_tokens=self._context_window_tokens,
+            auto_compact_threshold_tokens=self._auto_compact_threshold_tokens,
+            max_turns=self._max_turns,
+            permission_prompt=self._permission_prompt,
+            ask_user_prompt=self._ask_user_prompt,
+            hook_executor=self._hook_executor,
+            tool_metadata=self._tool_metadata,
+        )
+        query_messages = list(self._messages)
+        coordinator_context = self._build_coordinator_context_message()
+        if coordinator_context is not None:
+            query_messages.append(coordinator_context)
+        async for event, usage in run_query(context, query_messages):
+            if isinstance(event, AssistantTurnComplete):
+                self._messages = list(query_messages)
+            if usage is not None:
+                self._cost_tracker.add(usage)
+            yield event
+
+    async def continue_pending(self, *, max_turns: int | None = None) -> AsyncIterator[StreamEvent]:
+        """Continue an interrupted tool loop without appending a new user message."""
+        context = QueryContext(
+            api_client=self._api_client,
+            tool_registry=self._tool_registry,
+            permission_checker=self._permission_checker,
+            cwd=self._cwd,
+            model=self._model,
+            system_prompt=self._system_prompt,
+            max_tokens=self._max_tokens,
+            context_window_tokens=self._context_window_tokens,
+            auto_compact_threshold_tokens=self._auto_compact_threshold_tokens,
+            max_turns=max_turns if max_turns is not None else self._max_turns,
+            permission_prompt=self._permission_prompt,
+            ask_user_prompt=self._ask_user_prompt,
+            hook_executor=self._hook_executor,
+            tool_metadata=self._tool_metadata,
+        )
+        async for event, usage in run_query(context, self._messages):
+            if usage is not None:
+                self._cost_tracker.add(usage)
+            yield event
+
+exec
+/bin/bash -lc "sed -n '1,180p' references/git_search/openharness-main/src/openharness/bridge/session_runner.py" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+"""Minimal bridge session spawner."""
+
+from __future__ import annotations
+
+import asyncio
+import time
+from dataclasses import dataclass, field
+from pathlib import Path
+
+from openharness.utils.shell import create_shell_subprocess
+
+
+@dataclass
+class SessionHandle:
+    """Handle for a spawned bridge session."""
+
+    session_id: str
+    process: asyncio.subprocess.Process
+    cwd: Path
+    started_at: float = field(default_factory=time.time)
+
+    async def kill(self) -> None:
+        """Terminate the session process."""
+        self.process.terminate()
+        try:
+            await asyncio.wait_for(self.process.wait(), timeout=3)
+        except asyncio.TimeoutError:
+            self.process.kill()
+            await self.process.wait()
+
+
+async def spawn_session(
+    *,
+    session_id: str,
+    command: str,
+    cwd: str | Path,
+) -> SessionHandle:
+    """Spawn a bridge-managed child session."""
+    resolved_cwd = Path(cwd).resolve()
+    process = await create_shell_subprocess(
+        command,
+        cwd=resolved_cwd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    return SessionHandle(session_id=session_id, process=process, cwd=resolved_cwd)
+
+exec
+/bin/bash -lc "rg -n \"task-worker|print|stream-json|QueryEngine|ToolRegistry|PermissionChecker|task_worker\" references/git_search/openharness-main/src/openharness/cli.py references/git_search/openharness-main/src/openharness -g '*.py' | sed -n '1,220p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+references/git_search/openharness-main/src/openharness/cli.py:18:        print(f"openharness {__version__}")
+references/git_search/openharness-main/src/openharness/cli.py:26:        "Starts an interactive session by default, use -p/--print for non-interactive output."
+references/git_search/openharness-main/src/openharness/cli.py:64:        print("No MCP servers configured.")
+references/git_search/openharness-main/src/openharness/cli.py:68:        print(f"  {name}: {transport}")
+references/git_search/openharness-main/src/openharness/cli.py:83:        print(f"Invalid JSON: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:89:    print(f"Added MCP server: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:101:        print(f"MCP server not found: {name}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:105:    print(f"Removed MCP server: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:119:        print("No plugins installed.")
+references/git_search/openharness-main/src/openharness/cli.py:123:        print(f"  {plugin.name} [{status}] - {plugin.description or ''}")
+references/git_search/openharness-main/src/openharness/cli.py:134:    print(f"Installed plugin: {result}")
+references/git_search/openharness-main/src/openharness/cli.py:145:    print(f"Uninstalled plugin: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:156:        print("Cron scheduler is already running.")
+references/git_search/openharness-main/src/openharness/cli.py:159:    print(f"Cron scheduler started (pid={pid})")
+references/git_search/openharness-main/src/openharness/cli.py:168:        print("Cron scheduler stopped.")
+references/git_search/openharness-main/src/openharness/cli.py:170:        print("Cron scheduler is not running.")
+references/git_search/openharness-main/src/openharness/cli.py:180:    print(f"Scheduler: {state}" + (f" (pid={status['pid']})" if status["pid"] else ""))
+references/git_search/openharness-main/src/openharness/cli.py:181:    print(f"Jobs:      {status['enabled_jobs']} enabled / {status['total_jobs']} total")
+references/git_search/openharness-main/src/openharness/cli.py:182:    print(f"Log:       {status['log_file']}")
+references/git_search/openharness-main/src/openharness/cli.py:192:        print("No cron jobs configured.")
+references/git_search/openharness-main/src/openharness/cli.py:201:        print(f"  [{enabled}] {job['name']}  {job.get('schedule', '?')}")
+references/git_search/openharness-main/src/openharness/cli.py:202:        print(f"        cmd: {job['command']}")
+references/git_search/openharness-main/src/openharness/cli.py:203:        print(f"        last: {last}{status_indicator}  next: {job.get('next_run', 'n/a')[:19]}")
+references/git_search/openharness-main/src/openharness/cli.py:215:        print(f"Cron job not found: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:218:    print(f"Cron job '{name}' is now {state}")
+references/git_search/openharness-main/src/openharness/cli.py:231:        print("No execution history.")
+references/git_search/openharness-main/src/openharness/cli.py:237:        print(f"  {ts}  {entry.get('name', '?')}  {status} (rc={rc})")
+references/git_search/openharness-main/src/openharness/cli.py:241:                print(f"    stderr: {line}")
+references/git_search/openharness-main/src/openharness/cli.py:253:        print("No scheduler log found. Start the scheduler with: oh cron start")
+references/git_search/openharness-main/src/openharness/cli.py:258:        print(line)
+references/git_search/openharness-main/src/openharness/cli.py:359:    print(title, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:365:        print(f"  {index}. {label}{marker}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:648:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:651:    print(f"{profile.label} API key saved.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:689:        print(f"Error: {exc}", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:709:    print(f"{label} bound from {credential.source_path}.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:710:    print(f"Use `oh provider use {profile_name}` to activate it.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:735:            print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:742:        print(f"{label} API key saved.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:745:    print(f"Unknown provider: {provider!r}. Known: {', '.join(_PROVIDER_LABELS)}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:760:        print("No provider profiles available.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:775:        print(f"Unknown provider profile: {target!r}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:781:        print(f"{info['label']} requires {source_label}.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:794:    print(
+references/git_search/openharness-main/src/openharness/cli.py:814:        print("Select a provider to authenticate:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:817:            print(f"  {i}. {label} [{name}]", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:824:                print("Invalid selection.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:842:    print("Auth sources:")
+references/git_search/openharness-main/src/openharness/cli.py:843:    print(f"{'Source':<24} {'State':<14} {'Origin':<10} Active")
+references/git_search/openharness-main/src/openharness/cli.py:844:    print("-" * 60)
+references/git_search/openharness-main/src/openharness/cli.py:848:        print(f"{label:<24} {info['state']:<14} {info['source']:<10} {active_str}")
+references/git_search/openharness-main/src/openharness/cli.py:850:            print(f"  detail: {info['detail']}")
+references/git_search/openharness-main/src/openharness/cli.py:852:    print()
+references/git_search/openharness-main/src/openharness/cli.py:853:    print("Provider profiles:")
+references/git_search/openharness-main/src/openharness/cli.py:854:    print(f"{'Profile':<20} {'Provider':<18} {'Auth source':<22} {'State':<12} Active")
+references/git_search/openharness-main/src/openharness/cli.py:855:    print("-" * 92)
+references/git_search/openharness-main/src/openharness/cli.py:859:        print(f"{name:<20} {info['provider']:<18} {info['auth_source']:<22} {status_str:<12} {active_str}")
+references/git_search/openharness-main/src/openharness/cli.py:873:        print(f"Authentication cleared for profile: {target}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:876:    print(f"Authentication cleared for provider: {provider}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:890:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:892:    print(f"Switched auth/profile to: {provider}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:905:    print("Select GitHub deployment type:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:906:    print("  1. GitHub.com (public)", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:907:    print("  2. GitHub Enterprise (data residency / self-hosted)", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:917:            print("Error: domain cannot be empty.", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:922:    print(flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:927:        print(f"Error: {exc}", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:931:    print("GitHub Copilot authenticated successfully.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:933:        print(f"  Enterprise domain: {enterprise_url}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:934:    print(flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:935:    print("To use Copilot as the provider, run:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:936:    print("  oh provider use copilot", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:963:    print("Copilot authentication cleared.")
+references/git_search/openharness-main/src/openharness/cli.py:979:        print(f"{marker} {name}: {info['label']} [{configured}]")
+references/git_search/openharness-main/src/openharness/cli.py:980:        print(f"    auth={info['auth_source']} model={info['model']} base_url={base}")
+references/git_search/openharness-main/src/openharness/cli.py:994:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:996:    print(f"Activated provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1034:    print(f"Saved provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1071:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1073:    print(f"Updated provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1087:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1089:    print(f"Removed provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1151:        help="Maximum number of agentic turns (enforced by default in --print; optional cap for interactive mode)",
+references/git_search/openharness-main/src/openharness/cli.py:1155:    print_mode: str | None = typer.Option(
+references/git_search/openharness-main/src/openharness/cli.py:1157:        "--print",
+references/git_search/openharness-main/src/openharness/cli.py:1165:        help="Output format with --print: text (default), json, or stream-json",
+references/git_search/openharness-main/src/openharness/cli.py:1270:    task_worker: bool = typer.Option(
+references/git_search/openharness-main/src/openharness/cli.py:1272:        "--task-worker",
+references/git_search/openharness-main/src/openharness/cli.py:1306:    from openharness.ui.app import run_print_mode, run_repl, run_task_worker
+references/git_search/openharness-main/src/openharness/cli.py:1320:                print("No previous session found in this directory.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1322:            print(f"Continuing session: {session_data.get('summary', '(untitled)')[:60]}")
+references/git_search/openharness-main/src/openharness/cli.py:1327:                print("No saved sessions found.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1329:            print("Saved sessions:")
+references/git_search/openharness-main/src/openharness/cli.py:1331:                print(f"  {i}. [{s['session_id']}] {s.get('summary', '?')[:50]} ({s['message_count']} msgs)")
+references/git_search/openharness-main/src/openharness/cli.py:1338:                    print("Invalid selection.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1343:                print(f"Session not found: {choice}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1348:                print(f"Session not found: {resume}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1369:    if print_mode is not None:
+references/git_search/openharness-main/src/openharness/cli.py:1370:        prompt = print_mode.strip()
+references/git_search/openharness-main/src/openharness/cli.py:1372:            print("Error: -p/--print requires a prompt value, e.g. -p 'your prompt'", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1375:            run_print_mode(
+references/git_search/openharness-main/src/openharness/cli.py:1391:    if task_worker:
+references/git_search/openharness-main/src/openharness/cli.py:1393:            run_task_worker(
+references/git_search/openharness-main/src/openharness/auth/flows.py:109:        print("Starting GitHub device flow...", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:112:        print(flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:113:        print(f"  Open: {dc.verification_uri}", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:114:        print(f"  Code: {dc.user_code}", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:115:        print(flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:119:            print("(Browser opened — enter the code shown above.)", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:121:            print("Open the URL above in your browser and enter the code.", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:122:        print(flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:129:                print(f"\r  Polling... ({mins}m {secs:02d}s elapsed)", end="", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:133:        print("Waiting for authorisation...", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:143:            print(flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:144:            print(f"Error: {exc}", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:147:        print(flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:170:        print(f"Opening browser for authentication: {self.auth_url}", flush=True)
+references/git_search/openharness-main/src/openharness/auth/flows.py:173:            print(f"Could not open browser automatically. Visit: {self.auth_url}", flush=True)
+references/git_search/openharness-main/src/openharness/channels/adapter.py:1:"""ChannelBridge: connects the MessageBus to a QueryEngine instance.
+references/git_search/openharness-main/src/openharness/channels/adapter.py:9:to QueryEngine.submit_message(), and publishes the assembled reply as an
+references/git_search/openharness-main/src/openharness/channels/adapter.py:24:    from openharness.engine.query_engine import QueryEngine
+references/git_search/openharness-main/src/openharness/channels/adapter.py:30:    """Bridges inbound channel messages to the QueryEngine and routes replies back.
+references/git_search/openharness-main/src/openharness/channels/adapter.py:32:    One bridge instance should be created per QueryEngine.  It owns the asyncio
+references/git_search/openharness-main/src/openharness/channels/adapter.py:36:    def __init__(self, *, engine: "QueryEngine", bus: MessageBus) -> None:
+references/git_search/openharness-main/src/openharness/engine/__init__.py:15:    from openharness.engine.query_engine import QueryEngine
+references/git_search/openharness-main/src/openharness/engine/__init__.py:28:    "QueryEngine",
+references/git_search/openharness-main/src/openharness/engine/__init__.py:55:    if name == "QueryEngine":
+references/git_search/openharness-main/src/openharness/engine/__init__.py:56:        from openharness.engine.query_engine import QueryEngine
+references/git_search/openharness-main/src/openharness/engine/__init__.py:58:        return QueryEngine
+references/git_search/openharness-main/src/openharness/engine/query.py:32:from openharness.permissions.checker import PermissionChecker
+references/git_search/openharness-main/src/openharness/engine/query.py:34:from openharness.tools.base import ToolRegistry
+references/git_search/openharness-main/src/openharness/engine/query.py:83:    tool_registry: ToolRegistry
+references/git_search/openharness-main/src/openharness/engine/query.py:84:    permission_checker: PermissionChecker
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:15:from openharness.permissions.checker import PermissionChecker
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:16:from openharness.tools.base import ToolRegistry
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:19:class QueryEngine:
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:26:        tool_registry: ToolRegistry,
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:27:        permission_checker: PermissionChecker,
+references/git_search/openharness-main/src/openharness/engine/query_engine.py:113:    def set_permission_checker(self, checker: PermissionChecker) -> None:
+references/git_search/openharness-main/src/openharness/coordinator/agent_definitions.py:395:4. When using ANSI color codes, be sure to use `printf`. Do not remove colors. Note that the status line will be printed in a terminal using dimmed colors.
+references/git_search/openharness-main/src/openharness/cli.py:18:        print(f"openharness {__version__}")
+references/git_search/openharness-main/src/openharness/cli.py:26:        "Starts an interactive session by default, use -p/--print for non-interactive output."
+references/git_search/openharness-main/src/openharness/cli.py:64:        print("No MCP servers configured.")
+references/git_search/openharness-main/src/openharness/cli.py:68:        print(f"  {name}: {transport}")
+references/git_search/openharness-main/src/openharness/cli.py:83:        print(f"Invalid JSON: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:89:    print(f"Added MCP server: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:101:        print(f"MCP server not found: {name}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:105:    print(f"Removed MCP server: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:119:        print("No plugins installed.")
+references/git_search/openharness-main/src/openharness/cli.py:123:        print(f"  {plugin.name} [{status}] - {plugin.description or ''}")
+references/git_search/openharness-main/src/openharness/cli.py:134:    print(f"Installed plugin: {result}")
+references/git_search/openharness-main/src/openharness/cli.py:145:    print(f"Uninstalled plugin: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:156:        print("Cron scheduler is already running.")
+references/git_search/openharness-main/src/openharness/cli.py:159:    print(f"Cron scheduler started (pid={pid})")
+references/git_search/openharness-main/src/openharness/cli.py:168:        print("Cron scheduler stopped.")
+references/git_search/openharness-main/src/openharness/cli.py:170:        print("Cron scheduler is not running.")
+references/git_search/openharness-main/src/openharness/cli.py:180:    print(f"Scheduler: {state}" + (f" (pid={status['pid']})" if status["pid"] else ""))
+references/git_search/openharness-main/src/openharness/cli.py:181:    print(f"Jobs:      {status['enabled_jobs']} enabled / {status['total_jobs']} total")
+references/git_search/openharness-main/src/openharness/cli.py:182:    print(f"Log:       {status['log_file']}")
+references/git_search/openharness-main/src/openharness/cli.py:192:        print("No cron jobs configured.")
+references/git_search/openharness-main/src/openharness/cli.py:201:        print(f"  [{enabled}] {job['name']}  {job.get('schedule', '?')}")
+references/git_search/openharness-main/src/openharness/cli.py:202:        print(f"        cmd: {job['command']}")
+references/git_search/openharness-main/src/openharness/cli.py:203:        print(f"        last: {last}{status_indicator}  next: {job.get('next_run', 'n/a')[:19]}")
+references/git_search/openharness-main/src/openharness/cli.py:215:        print(f"Cron job not found: {name}")
+references/git_search/openharness-main/src/openharness/cli.py:218:    print(f"Cron job '{name}' is now {state}")
+references/git_search/openharness-main/src/openharness/cli.py:231:        print("No execution history.")
+references/git_search/openharness-main/src/openharness/cli.py:237:        print(f"  {ts}  {entry.get('name', '?')}  {status} (rc={rc})")
+references/git_search/openharness-main/src/openharness/cli.py:241:                print(f"    stderr: {line}")
+references/git_search/openharness-main/src/openharness/cli.py:253:        print("No scheduler log found. Start the scheduler with: oh cron start")
+references/git_search/openharness-main/src/openharness/cli.py:258:        print(line)
+references/git_search/openharness-main/src/openharness/cli.py:359:    print(title, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:365:        print(f"  {index}. {label}{marker}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:648:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:651:    print(f"{profile.label} API key saved.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:689:        print(f"Error: {exc}", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:709:    print(f"{label} bound from {credential.source_path}.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:710:    print(f"Use `oh provider use {profile_name}` to activate it.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:735:            print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:742:        print(f"{label} API key saved.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:745:    print(f"Unknown provider: {provider!r}. Known: {', '.join(_PROVIDER_LABELS)}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:760:        print("No provider profiles available.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:775:        print(f"Unknown provider profile: {target!r}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:781:        print(f"{info['label']} requires {source_label}.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:794:    print(
+references/git_search/openharness-main/src/openharness/cli.py:814:        print("Select a provider to authenticate:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:817:            print(f"  {i}. {label} [{name}]", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:824:                print("Invalid selection.", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:842:    print("Auth sources:")
+references/git_search/openharness-main/src/openharness/cli.py:843:    print(f"{'Source':<24} {'State':<14} {'Origin':<10} Active")
+references/git_search/openharness-main/src/openharness/cli.py:844:    print("-" * 60)
+references/git_search/openharness-main/src/openharness/cli.py:848:        print(f"{label:<24} {info['state']:<14} {info['source']:<10} {active_str}")
+references/git_search/openharness-main/src/openharness/cli.py:850:            print(f"  detail: {info['detail']}")
+references/git_search/openharness-main/src/openharness/cli.py:852:    print()
+references/git_search/openharness-main/src/openharness/cli.py:853:    print("Provider profiles:")
+references/git_search/openharness-main/src/openharness/cli.py:854:    print(f"{'Profile':<20} {'Provider':<18} {'Auth source':<22} {'State':<12} Active")
+references/git_search/openharness-main/src/openharness/cli.py:855:    print("-" * 92)
+references/git_search/openharness-main/src/openharness/cli.py:859:        print(f"{name:<20} {info['provider']:<18} {info['auth_source']:<22} {status_str:<12} {active_str}")
+references/git_search/openharness-main/src/openharness/cli.py:873:        print(f"Authentication cleared for profile: {target}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:876:    print(f"Authentication cleared for provider: {provider}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:890:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:892:    print(f"Switched auth/profile to: {provider}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:905:    print("Select GitHub deployment type:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:906:    print("  1. GitHub.com (public)", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:907:    print("  2. GitHub Enterprise (data residency / self-hosted)", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:917:            print("Error: domain cannot be empty.", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:922:    print(flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:927:        print(f"Error: {exc}", file=sys.stderr, flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:931:    print("GitHub Copilot authenticated successfully.", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:933:        print(f"  Enterprise domain: {enterprise_url}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:934:    print(flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:935:    print("To use Copilot as the provider, run:", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:936:    print("  oh provider use copilot", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:963:    print("Copilot authentication cleared.")
+references/git_search/openharness-main/src/openharness/cli.py:979:        print(f"{marker} {name}: {info['label']} [{configured}]")
+references/git_search/openharness-main/src/openharness/cli.py:980:        print(f"    auth={info['auth_source']} model={info['model']} base_url={base}")
+references/git_search/openharness-main/src/openharness/cli.py:994:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:996:    print(f"Activated provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1034:    print(f"Saved provider profile: {name}", flush=True)
+references/git_search/openharness-main/src/openharness/cli.py:1071:        print(f"Error: {exc}", file=sys.stderr)
+references/git_search/openharness-main/src/openharness/cli.py:1073:    print(f"Updated provider profile: {name}", flush=True)
+
+codex
+result summary: Bounded read-only structural profile completed for `references/git_search/openharness-main`. No files were modified.
+
+answer: `openharness-main` appears to be an open-source Python agent harness package plus a bundled personal-agent app. The core `openharness` package provides CLI entrypoints, provider/auth plumbing, streaming query execution, tool registry, permissions, MCP, skills/plugins, memory/context, sandboxing, background tasks, and swarm/subagent coordination. The separate `ohmo` package is a personal-agent layer on top of OpenHarness with channel/gateway integrations. The repo is suitable internal lens material for integrated-engine continuity because it exposes a concrete external-worker architecture: CLI invocation, prompt/session flow, tool execution boundary, permission boundary, task/subprocess worker handling, and structured frontend/backend surfaces.
+
+findings:
+- The package is distributed as `openharness-ai` version `0.1.6`, with console scripts `openharness`, `oh`, `openh`, and `ohmo`.
+- Primary internal lens areas are `src/openharness/engine`, `tools`, `permissions`, `tasks`, `swarm`, `bridge`, `api`, `prompts`, `config`, `mcp`, `plugins`, `skills`, and `frontend/terminal`.
+- `QueryEngine` and `run_query` are the central model/tool loop surfaces; they bind API streaming, tool registry, permission checking, hooks, context compaction, and conversation state.
+- `BaseTool`, `ToolRegistry`, and concrete files under `src/openharness/tools` are useful for comparing VectorFL tool-call shape, read/write boundary, and worker-return contracts.
+- `PermissionChecker` is strong internal lens material for policy boundaries: sensitive-path deny patterns, explicit allow/deny lists, read-only allowance, plan mode blocking, and default confirmation behavior.
+- `BackgroundTaskManager`, `AgentTool`, and `SubprocessBackend` are the most relevant areas for real-worker/subagent lifecycle profiling.
+- `frontend/terminal` is a React/Ink TUI, so the repo has a real split between Python runtime/backend and terminal UI.
+- The bounded integrated-engine docs identify the VectorFL-side narrow insertion point as `CodexCliAdapter.start_run(...)` after stdout/stderr/exit status and before `structured_return.json`; this OpenHarness profile should feed the next package by inspecting analogous CLI/task/session boundaries.
+
+files_artifacts:
+- `references/git_search/openharness-main/README.md`
+- `references/git_search/openharness-main/pyproject.toml`
+- `references/git_search/openharness-main/src/openharness/cli.py`
+- `references/git_search/openharness-main/src/openharness/engine/query_engine.py`
+- `references/git_search/openharness-main/src/openharness/engine/query.py`
+- `references/git_search/openharness-main/src/openharness/tools/base.py`
+- `references/git_search/openharness-main/src/openharness/tools/agent_tool.py`
+- `references/git_search/openharness-main/src/openharness/permissions/checker.py`
+- `references/git_search/openharness-main/src/openharness/tasks/manager.py`
+- `references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py`
+- `references/git_search/openharness-main/src/openharness/bridge/session_runner.py`
+- `references/git_search/openharness-main/ohmo/cli.py`
+- `references/git_search/openharness-main/frontend/terminal/package.json`
+
+next_continue_hint: Continue Package 3 by inspecting the OpenHarness execution path from `src/openharness/cli.py` print/task-worker entrypoints into `src/openharness/ui/app.py`, `src/openharness/engine/query_engine.py`, `src/openharness/engine/query.py`, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to `CodexCliAdapter.start_run(...)` and `structured_return.worker_return`.
+
+open_questions:
+- Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.
+- `src/openharness/ui/app.py` was identified by CLI references but not opened yet.
+- The concrete print-mode and task-worker output contracts still need line-level inspection.
+- Tests were not run because this was an inspect-only structural profile.
+
+risks_or_limits:
+- This is a structural profile, not a behavioral execution trace.
+- README claims and current code shape were sampled, not exhaustively validated across the entire repo.
+- Some directory areas, especially `auth`, `plugins`, `skills`, `hooks`, `ui`, and full frontend flow, remain uninspected.
+- No network or package installation was used.
+
+source_refs:
+- `references/git_search/openharness-main`
+- `references/git_search/openharness-main/README.md`
+- `references/git_search/openharness-main/pyproject.toml`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+- `docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md`
+
+suggested next use: reread target
+
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "package3_step_a_real_openharness_structure_profile",
+  "run_kind": "inspect",
+  "answer": "OpenHarness is a Python agent-harness package with CLI entrypoints, provider/auth plumbing, streaming query execution, tool registry, permissions, MCP, skills/plugins, memory/context, sandboxing, background tasks, swarm/subagent coordination, a React/Ink terminal frontend, and a separate ohmo personal-agent app. For integrated-engine continuity, the most useful internal lens material is the real worker/session boundary around CLI print/task-worker modes, QueryEngine/run_query, tool execution, permission checking, BackgroundTaskManager, AgentTool, and SubprocessBackend.",
+  "findings": [
+    "The package is distributed as openharness-ai version 0.1.6 with console scripts openharness, oh, openh, and ohmo.",
+    "README frames OpenHarness as lightweight agent infrastructure for tool use, skills, memory, governance, and multi-agent coordination.",
+    "QueryEngine and run_query are central model/tool loop surfaces binding API streaming, tools, permissions, hooks, compaction, and message state.",
+    "BaseTool and ToolRegistry define the normalized tool abstraction and API schema projection.",
+    "PermissionChecker is relevant boundary material because it combines sensitive-path hard denies, allow/deny lists, read-only allowance, plan mode blocking, and default confirmation.",
+    "BackgroundTaskManager, AgentTool, and SubprocessBackend are the strongest next inspection targets for real worker and subagent lifecycle comparison.",
+    "ohmo is a separate personal-agent layer with gateway/channel integrations built on OpenHarness.",
+    "The integrated-engine docs identify VectorFL's narrow actual-worker insertion point as CodexCliAdapter.start_run(...) before structured_return.json is written."
+  ],
+  "files_artifacts": [
+    "references/git_search/openharness-main/README.md",
+    "references/git_search/openharness-main/pyproject.toml",
+    "references/git_search/openharness-main/src/openharness/cli.py",
+    "references/git_search/openharness-main/src/openharness/engine/query_engine.py",
+    "references/git_search/openharness-main/src/openharness/engine/query.py",
+    "references/git_search/openharness-main/src/openharness/tools/base.py",
+    "references/git_search/openharness-main/src/openharness/tools/agent_tool.py",
+    "references/git_search/openharness-main/src/openharness/permissions/checker.py",
+    "references/git_search/openharness-main/src/openharness/tasks/manager.py",
+    "references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py",
+    "references/git_search/openharness-main/src/openharness/bridge/session_runner.py",
+    "references/git_search/openharness-main/ohmo/cli.py",
+    "references/git_search/openharness-main/frontend/terminal/package.json"
+  ],
+  "next_continue_hint": "Continue Package 3 by inspecting the OpenHarness execution path from src/openharness/cli.py print/task-worker entrypoints into src/openharness/ui/app.py, src/openharness/engine/query_engine.py, src/openharness/engine/query.py, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to CodexCliAdapter.start_run(...) and structured_return.worker_return.",
+  "open_questions": [
+    "Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.",
+    "src/openharness/ui/app.py was identified by CLI references but not opened yet.",
+    "The concrete print-mode and task-worker output contracts still need line-level inspection.",
+    "Tests were not run because this was an inspect-only structural profile."
+  ],
+  "risks_or_limits": [
+    "This is a structural profile, not a behavioral execution trace.",
+    "README claims and current code shape were sampled, not exhaustively validated across the entire repo.",
+    "Some directory areas, especially auth, plugins, skills, hooks, ui, and full frontend flow, remain uninspected.",
+    "No files were modified."
+  ],
+  "source_refs": [
+    "references/git_search/openharness-main",
+    "references/git_search/openharness-main/README.md",
+    "references/git_search/openharness-main/pyproject.toml",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md",
+    "docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md"
+  ]
+}
+END_WORKER_RETURN_JSON
+tokens used
+38,489

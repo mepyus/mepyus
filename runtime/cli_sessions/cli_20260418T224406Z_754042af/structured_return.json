@@ -1,0 +1,77 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T224406Z_754042af",
+  "backend_kind": "codex",
+  "task_type": "inspect",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "arness/swarm/subprocess_backend.py\",\n    \"references/git_search/openharness-main/src/openharness/bridge/session_runner.py\",\n    \"references/git_search/openharness-main/ohmo/cli.py\",\n    \"references/git_search/openharness-main/frontend/terminal/package.json\"\n  ],\n  \"next_continue_hint\": \"Continue Package 3 by inspecting the OpenHarness execution path from src/openharness/cli.py print/task-worker entrypoints into src/openharness/ui/app.py, src/openharness/engine/query_engine.py, src/openharness/engine/query.py, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to CodexCliAdapter.start_run(...) and structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.\",\n    \"src/openharness/ui/app.py was identified by CLI references but not opened yet.\",\n    \"The concrete print-mode and task-worker output contracts still need line-level inspection.\",\n    \"Tests were not run because this was an inspect-only structural profile.\"\n  ],\n  \"risks_or_limits\": [\n    \"This is a structural profile, not a behavioral execution trace.\",\n    \"README claims and current code shape were sampled, not exhaustively validated across the entire repo.\",\n    \"Some directory areas, especially auth, plugins, skills, hooks, ui, and full frontend flow, remain uninspected.\",\n    \"No files were modified.\"\n  ],\n  \"source_refs\": [\n    \"references/git_search/openharness-main\",\n    \"references/git_search/openharness-main/README.md\",\n    \"references/git_search/openharness-main/pyproject.toml\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\",\n    \"docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "reread_target",
+  "created_at": "2026-04-18T22:45:25Z",
+  "worker_return": {
+    "schema_version": "integrated_engine_worker_return_v0",
+    "worker_return_source": "worker_emitted",
+    "worker_id": "codex",
+    "package_id": "package3_step_a_real_openharness_structure_profile",
+    "run_kind": "inspect",
+    "answer": "OpenHarness is a Python agent-harness package with CLI entrypoints, provider/auth plumbing, streaming query execution, tool registry, permissions, MCP, skills/plugins, memory/context, sandboxing, background tasks, swarm/subagent coordination, a React/Ink terminal frontend, and a separate ohmo personal-agent app. For integrated-engine continuity, the most useful internal lens material is the real worker/session boundary around CLI print/task-worker modes, QueryEngine/run_query, tool execution, permission checking, BackgroundTaskManager, AgentTool, and SubprocessBackend.",
+    "findings": [
+      "The package is distributed as openharness-ai version 0.1.6 with console scripts openharness, oh, openh, and ohmo.",
+      "README frames OpenHarness as lightweight agent infrastructure for tool use, skills, memory, governance, and multi-agent coordination.",
+      "QueryEngine and run_query are central model/tool loop surfaces binding API streaming, tools, permissions, hooks, compaction, and message state.",
+      "BaseTool and ToolRegistry define the normalized tool abstraction and API schema projection.",
+      "PermissionChecker is relevant boundary material because it combines sensitive-path hard denies, allow/deny lists, read-only allowance, plan mode blocking, and default confirmation.",
+      "BackgroundTaskManager, AgentTool, and SubprocessBackend are the strongest next inspection targets for real worker and subagent lifecycle comparison.",
+      "ohmo is a separate personal-agent layer with gateway/channel integrations built on OpenHarness.",
+      "The integrated-engine docs identify VectorFL's narrow actual-worker insertion point as CodexCliAdapter.start_run(...) before structured_return.json is written."
+    ],
+    "files_artifacts": [
+      "references/git_search/openharness-main/README.md",
+      "references/git_search/openharness-main/pyproject.toml",
+      "references/git_search/openharness-main/src/openharness/cli.py",
+      "references/git_search/openharness-main/src/openharness/engine/query_engine.py",
+      "references/git_search/openharness-main/src/openharness/engine/query.py",
+      "references/git_search/openharness-main/src/openharness/tools/base.py",
+      "references/git_search/openharness-main/src/openharness/tools/agent_tool.py",
+      "references/git_search/openharness-main/src/openharness/permissions/checker.py",
+      "references/git_search/openharness-main/src/openharness/tasks/manager.py",
+      "references/git_search/openharness-main/src/openharness/swarm/subprocess_backend.py",
+      "references/git_search/openharness-main/src/openharness/bridge/session_runner.py",
+      "references/git_search/openharness-main/ohmo/cli.py",
+      "references/git_search/openharness-main/frontend/terminal/package.json",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/stderr.log",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/prompt.md",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/deposit_candidate.md",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md",
+      "references/git_search/openharness-main",
+      "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md",
+      "docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md"
+    ],
+    "next_continue_hint": "Continue Package 3 by inspecting the OpenHarness execution path from src/openharness/cli.py print/task-worker entrypoints into src/openharness/ui/app.py, src/openharness/engine/query_engine.py, src/openharness/engine/query.py, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to CodexCliAdapter.start_run(...) and structured_return.worker_return.",
+    "open_questions": [
+      "Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.",
+      "src/openharness/ui/app.py was identified by CLI references but not opened yet.",
+      "The concrete print-mode and task-worker output contracts still need line-level inspection.",
+      "Tests were not run because this was an inspect-only structural profile."
+    ],
+    "risks_or_limits": [
+      "This is a structural profile, not a behavioral execution trace.",
+      "README claims and current code shape were sampled, not exhaustively validated across the entire repo.",
+      "Some directory areas, especially auth, plugins, skills, hooks, ui, and full frontend flow, remain uninspected.",
+      "No files were modified.",
+      "return remains reread-target; not approval or completion"
+    ],
+    "source_refs": [
+      "references/git_search/openharness-main",
+      "references/git_search/openharness-main/README.md",
+      "references/git_search/openharness-main/pyproject.toml",
+      "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md",
+      "docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md"
+    ],
+    "raw_fallback_text": "arness/swarm/subprocess_backend.py\",\n    \"references/git_search/openharness-main/src/openharness/bridge/session_runner.py\",\n    \"references/git_search/openharness-main/ohmo/cli.py\",\n    \"references/git_search/openharness-main/frontend/terminal/package.json\"\n  ],\n  \"next_continue_hint\": \"Continue Package 3 by inspecting the OpenHarness execution path from src/openharness/cli.py print/task-worker entrypoints into src/openharness/ui/app.py, src/openharness/engine/query_engine.py, src/openharness/engine/query.py, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to CodexCliAdapter.start_run(...) and structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.\",\n    \"src/openharness/ui/app.py was identified by CLI references but not opened yet.\",\n    \"The concrete print-mode and task-worker output contracts still need line-level inspection.\",\n    \"Tests were not run because this was an inspect-only structural profile.\"\n  ],\n  \"risks_or_limits\": [\n    \"This is a structural profile, not a behavioral execution trace.\",\n    \"README claims and current code shape were sampled, not exhaustively validated across the entire repo.\",\n    \"Some directory areas, especially auth, plugins, skills, hooks, ui, and full frontend flow, remain uninspected.\",\n    \"No files were modified.\"\n  ],\n  \"source_refs\": [\n    \"references/git_search/openharness-main\",\n    \"references/git_search/openharness-main/README.md\",\n    \"references/git_search/openharness-main/pyproject.toml\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\",\n    \"docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n"
+  }
+}

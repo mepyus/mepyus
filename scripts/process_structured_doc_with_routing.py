@@ -246,6 +246,9 @@ def run_observer_ingest(doc_path: Path, label: str) -> tuple[str, list[str], lis
         f"app/work/observer_ingest_min/generated/processing_trace_{run_id}.json",
         f"app/work/observer_ingest_min/generated/readable_input_board_{run_id}.md",
         f"app/work/observer_ingest_min/generated/operator_summary_{run_id}.md",
+        f"app/work/observer_ingest_min/generated/content_role_tags_{run_id}.json",
+        f"app/work/observer_ingest_min/generated/line_seed_bundles_{run_id}.json",
+        f"app/work/observer_ingest_min/generated/camera_support_bundles_{run_id}.json",
     ]
     commands = [" ".join(cmd)]
     return run_id, generated, commands, proc.stdout.strip().splitlines()

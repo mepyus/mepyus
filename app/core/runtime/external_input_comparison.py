@@ -10,6 +10,7 @@ from app.core.runtime.external_input_gate import assess_external_input_gate
 from app.core.runtime.external_transcript_preprocess import preprocess_transcript_file
 from app.core.runtime.inputter import build_dust_inputs_from_source
 from app.core.runtime.labeler import label_dust_inputs
+from app.core.runtime.lower_support_layers import build_support_layers_for_preprocess_comparison
 
 
 def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object]:
@@ -44,7 +45,7 @@ def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object
         },
     }
 
-    return {
+    payload = {
         "comparison_name": "transcript_preprocess_comparison_v0",
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "input_path": str(input_path).replace("\\", "/"),
@@ -55,6 +56,8 @@ def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object
         "after_probe": after_probe,
         "comparison": comparison,
     }
+    payload["support_layers"] = build_support_layers_for_preprocess_comparison(payload)
+    return payload
 
 
 def _build_probe_summary(input_path: Path) -> Dict[str, object]:

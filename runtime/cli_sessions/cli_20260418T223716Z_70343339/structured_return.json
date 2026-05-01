@@ -1,0 +1,40 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T223716Z_70343339",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "failed",
+  "exit_code": 1,
+  "result_summary": "WARNING: proceeding, even though we could not update PATH: Operation not permitted (os error 1)\n2026-04-18T22:37:17.147801Z ERROR codex_core::codex: Failed to create session: Operation not permitted (os error 1)\nError: thread/start: thread/start failed: error creating thread: Fatal error: Codex cannot access session files at /Users/sungsookim/.codex/sessions (permission denied). If sessions were created using sudo, fix ownership: sudo chown -R $(whoami) /Users/sungsookim/.codex (underlying error: Operation not permitted (os error 1))\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-18T22:37:17Z",
+  "worker_return": {
+    "schema_version": "integrated_engine_worker_return_v0",
+    "worker_return_source": "raw_fallback",
+    "worker_id": "codex",
+    "package_id": "pkg_worker_adapter_contract_smoke",
+    "run_kind": "summarize",
+    "answer": "WARNING: proceeding, even though we could not update PATH: Operation not permitted (os error 1)\n2026-04-18T22:37:17.147801Z ERROR codex_core::codex: Failed to create session: Operation not permitted (os error 1)\nError: thread/start: thread/start failed: error creating thread: Fatal error: Codex cannot access session files at /Users/sungsookim/.codex/sessions (permission denied). If sessions were created using sudo, fix ownership: sudo chown -R $(whoami) /Users/sungsookim/.codex (underlying error: Operation not permitted (os error 1))",
+    "findings": [],
+    "files_artifacts": [
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/stdout.log",
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/stderr.log",
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/prompt.md",
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/deposit_candidate.md",
+      "runtime/cli_sessions/cli_20260418T223716Z_70343339/operator_report.md"
+    ],
+    "next_continue_hint": "Validate the latest run before using it as package material.",
+    "open_questions": [],
+    "risks_or_limits": [
+      "no reliable findings extracted from return text"
+    ],
+    "source_refs": [
+      "docs/specs/integrated_engine_worker_return_contract_v0.md",
+      "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+    ],
+    "raw_fallback_text": "WARNING: proceeding, even though we could not update PATH: Operation not permitted (os error 1)\n2026-04-18T22:37:17.147801Z ERROR codex_core::codex: Failed to create session: Operation not permitted (os error 1)\nError: thread/start: thread/start failed: error creating thread: Fatal error: Codex cannot access session files at /Users/sungsookim/.codex/sessions (permission denied). If sessions were created using sudo, fix ownership: sudo chown -R $(whoami) /Users/sungsookim/.codex (underlying error: Operation not permitted (os error 1))\n"
+  }
+}

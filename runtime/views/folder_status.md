@@ -6,9 +6,9 @@
 - status_mode: `rendered_from_inventory`
 
 ## 2. Snapshot
-- immediate_child_dirs: `10`
-- immediate_child_files: `271`
-- file_types: `.md` x 266, `.json` x 4, `<no_ext>` x 1
+- immediate_child_dirs: `13`
+- immediate_child_files: `289`
+- file_types: `.md` x 280, `.json` x 4, `.tsx` x 4, `<no_ext>` x 1
 
 ## 3. Child Folders
 - `engine_state_latest`
@@ -17,10 +17,13 @@
 - `reconstruction_supervisor` -> `runtime/views/reconstruction_supervisor/folder_status.md`
 - `state_attention_memory`
 - `state_change_attention_queue`
+- `vectorfl_dual_surface_app`
 - `vectorfl_operable_surface`
 - `vectorfl_page`
 - `vectorfl_page_mock`
 - `vectorfl_page_shell`
+- `vectorfl_paper_proper`
+- `vectorfl_paper_weekend_pilot`
 
 ## 4. Markdown Files
 - `current_asset_map_v1.md`
@@ -31,7 +34,7 @@
   summary: - `doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1`
 - `operation_board_latest.md`
   title: operation_board_latest
-  summary: - run_id: `run_20260409_184529_282317_68d83e36_b9cec6` - timestamp: `2026-04-09T18:45:29+09:00`
+  summary: - run_id: `run_20260423_214309_053881_741e1f40_9d336b` - timestamp: `2026-04-23T21:43:09+09:00`
 - `operation_board_run_20260325_180822_d8ff803a.md`
   title: operation_board_latest
   summary: - `doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1`
@@ -98,7 +101,7 @@
 
 ## 5. Code / Data Files
 - json: `engine_memory_spine_v1.json`, `engine_operating_layer_manifest_v1.json`, `lecture_transcript_cohort_compare_v1.json`, `reconstruction_supervisor_latest.json`
-- other: `.DS_Store`
+- other: `.DS_Store`, `engine_surface_scaffold_v0.tsx`, `user_surface_scaffold_v0.tsx`, `vectorfl_dual_surface.tsx`, `vectorfl_surface_scaffold_v0.tsx`
 
 ## 6. Current Use Hint
 - 변화가 생기면 먼저 change log 와 inventory 를 갱신하고, 이 문서는 그 결과를 얇게 렌더한다.
@@ -109,7 +112,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.views.json`
 - parent_folder: `runtime`
 - related_status_files: `runtime/views/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:10+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

@@ -1,0 +1,444 @@
+{
+  "comparison_name": "transcript_preprocess_comparison_v0",
+  "generated_at": "2026-04-23T06:30:12.062044Z",
+  "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/openai_02_11_transcript_regroup_compare_20260423T063011Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 167,
+      "dust_count": 176,
+      "timestamp_line_count": 1,
+      "timestamp_density": 0.006,
+      "timestamp_token_count": 1,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 1,
+      "transcript_marker_density": 0.006,
+      "short_line_count": 49,
+      "short_line_ratio": 0.293,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 2,
+      "short_dust_ratio": 0.011,
+      "timestamp_dust_count": 1,
+      "timestamp_dust_ratio": 0.006,
+      "transcript_marker_dust_count": 1,
+      "transcript_marker_dust_ratio": 0.006,
+      "avg_chars_per_dust": 65.69,
+      "top_scene_counts": {
+        "review": 146,
+        "spec": 11,
+        "evidence": 11,
+        "impl": 8
+      },
+      "top_flow_counts": {
+        "compare": 121,
+        "run": 43,
+        "fix": 9,
+        "break": 3
+      },
+      "sample_short_labels": [
+        "2026년 2월 11일 엔지니어링…",
+        "이 제품에는 내부 일일 사용자와 …",
+        "다른 점은 애플리케이션 로직, 테…",
+        "수작업으로 코드를 작성했을 때 걸…",
+        "사람이 조정하고, 에이전트가 수행…",
+        "결국 백만 개 라인에 달하는 코드…",
+        "이를 위해 우리는 소프트웨어 엔지…",
+        "이 글에서는 에이전트 팀과 함께 …",
+        "빈 git 리포지터리로 시작함 빈…",
+        "초기 스캐폴드(리포지터리 구조, …"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.006,
+        "timestamp_dust_ratio": 0.006,
+        "transcript_marker_dust_ratio": 0.006,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.011,
+        "avg_chars_per_dust": 65.69,
+        "sample_short_labels": [
+          "2026년 2월 11일 엔지니어링…",
+          "이 제품에는 내부 일일 사용자와 …",
+          "다른 점은 애플리케이션 로직, 테…",
+          "수작업으로 코드를 작성했을 때 걸…",
+          "사람이 조정하고, 에이전트가 수행…",
+          "결국 백만 개 라인에 달하는 코드…",
+          "이를 위해 우리는 소프트웨어 엔지…",
+          "이 글에서는 에이전트 팀과 함께 …",
+          "빈 git 리포지터리로 시작함 빈…",
+          "초기 스캐폴드(리포지터리 구조, …"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/openai_02_11_transcript_regroup_compare_20260423T063011Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 55,
+      "dust_count": 176,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 2,
+      "short_dust_ratio": 0.011,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 65.49,
+      "top_scene_counts": {
+        "review": 146,
+        "spec": 11,
+        "evidence": 11,
+        "impl": 8
+      },
+      "top_flow_counts": {
+        "compare": 121,
+        "run": 43,
+        "fix": 9,
+        "break": 3
+      },
+      "sample_short_labels": [
+        "2026년 2월 11일 엔지니어링…",
+        "이 제품에는 내부 일일 사용자와 …",
+        "다른 점은 애플리케이션 로직, 테…",
+        "수작업으로 코드를 작성했을 때 걸…",
+        "사람이 조정하고, 에이전트가 수행…",
+        "결국 백만 개 라인에 달하는 코드…",
+        "이를 위해 우리는 소프트웨어 엔지…",
+        "이 글에서는 에이전트 팀과 함께 …",
+        "빈 git 리포지터리로 시작함 빈…",
+        "초기 스캐폴드(리포지터리 구조, …"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.011,
+        "avg_chars_per_dust": 65.49,
+        "sample_short_labels": [
+          "2026년 2월 11일 엔지니어링…",
+          "이 제품에는 내부 일일 사용자와 …",
+          "다른 점은 애플리케이션 로직, 테…",
+          "수작업으로 코드를 작성했을 때 걸…",
+          "사람이 조정하고, 에이전트가 수행…",
+          "결국 백만 개 라인에 달하는 코드…",
+          "이를 위해 우리는 소프트웨어 엔지…",
+          "이 글에서는 에이전트 팀과 함께 …",
+          "빈 git 리포지터리로 시작함 빈…",
+          "초기 스캐폴드(리포지터리 구조, …"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "before_probe": {
+    "dust_count": 176,
+    "short_dust_ratio": 0.023,
+    "avg_chars_per_dust": 65.72,
+    "top_scene_counts": {
+      "review": 146,
+      "spec": 11,
+      "evidence": 11,
+      "impl": 8
+    },
+    "top_flow_counts": {
+      "compare": 121,
+      "run": 43,
+      "fix": 9,
+      "break": 3
+    },
+    "sample_short_labels": [
+      "2026년 2월 11일 엔지니어링…",
+      "이 제품에는 내부 일일 사용자와 …",
+      "다른 점은 애플리케이션 로직, 테…",
+      "수작업으로 코드를 작성했을 때 걸…",
+      "사람이 조정하고, 에이전트가 수행…",
+      "결국 백만 개 라인에 달하는 코드…",
+      "이를 위해 우리는 소프트웨어 엔지…",
+      "이 글에서는 에이전트 팀과 함께 …"
+    ]
+  },
+  "after_probe": {
+    "dust_count": 176,
+    "short_dust_ratio": 0.023,
+    "avg_chars_per_dust": 65.49,
+    "top_scene_counts": {
+      "review": 146,
+      "spec": 11,
+      "evidence": 11,
+      "impl": 8
+    },
+    "top_flow_counts": {
+      "compare": 121,
+      "run": 43,
+      "fix": 9,
+      "break": 3
+    },
+    "sample_short_labels": [
+      "2026년 2월 11일 엔지니어링…",
+      "이 제품에는 내부 일일 사용자와 …",
+      "다른 점은 애플리케이션 로직, 테…",
+      "수작업으로 코드를 작성했을 때 걸…",
+      "사람이 조정하고, 에이전트가 수행…",
+      "결국 백만 개 라인에 달하는 코드…",
+      "이를 위해 우리는 소프트웨어 엔지…",
+      "이 글에서는 에이전트 팀과 함께 …"
+    ]
+  },
+  "comparison": {
+    "dust_count_delta": 0,
+    "short_dust_ratio_delta": 0.0,
+    "avg_chars_per_dust_delta": -0.23,
+    "regrouped_chunk_count": 55,
+    "dropped_interjection_count": 0,
+    "readiness_read": {
+      "status": "probe_again_before_ingest",
+      "reason": "preprocess reduced transcript noise, but intake should still be checked before mutation",
+      "before_dust_count": "176",
+      "after_dust_count": "176"
+    },
+    "check_surface": {
+      "what_improved": [
+        "no clear improvement signal at probe level"
+      ],
+      "what_is_still_missing": [
+        "post-preprocess state is still not direct-ingest-safe"
+      ],
+      "next_checkpoint": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+    }
+  },
+  "support_layers": {
+    "content_role_tags": [
+      {
+        "tag_id": "role_before_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "before_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "main_claim",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed"
+      },
+      {
+        "tag_id": "role_after_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "after_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "main_claim",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed"
+      },
+      {
+        "tag_id": "role_comparison_readiness_read_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "comparison.readiness_read.reason",
+        "content_role": "transition",
+        "secondary_role": "objection",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "preprocess reduced transcript noise, but intake should still be checked before mutation"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_improved",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "comparison.check_surface.what_improved",
+        "content_role": "unknown",
+        "secondary_role": "",
+        "role_confidence": "low",
+        "role_status": "weak",
+        "role_basis_note": "No bounded lexical role signal was strong enough.",
+        "why_this_role": "The chunk is still readable, but role should remain honest and weak.",
+        "excerpt_preview": "no clear improvement signal at probe level"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_is_still_missing",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "comparison.check_surface.what_is_still_missing",
+        "content_role": "main_claim",
+        "secondary_role": "",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=main_claim:1",
+        "why_this_role": "The chunk pushes a dominant gap, need, or claim-like pressure.",
+        "excerpt_preview": "post-preprocess state is still not direct-ingest-safe"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_next_checkpoint",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_ref": "comparison.check_surface.next_checkpoint",
+        "content_role": "transition",
+        "secondary_role": "",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+      }
+    ],
+    "line_seed_bundles": [
+      {
+        "bundle_id": "line_seed_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "split_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "repeated_pressure_note": "Preprocess comparison keeps returning: probe, shape, mixed.",
+        "linkage_hint": "Gate reason, readiness read, and next checkpoint form one bounded support chain.",
+        "question_inducement": "What local meaning pressure survives regroup strongly enough to support later evidence use?",
+        "misunderstanding_correction": "The comparison is explicitly correcting a too-flat direct-ingest reading.",
+        "tension_marker": "The artifact keeps the risk of over-flat ingest visible even after regroup.",
+        "provisional_role_mix": [
+          "transition",
+          "transition",
+          "transition",
+          "main_claim",
+          "transition"
+        ],
+        "why_line_seed": "This comparison carries repeated correction pressure and a next-step question before any packet use.",
+        "not_yet_axis_reason": "Preprocess comparison remains a lower support artifact and does not justify axis or packet promotion by itself.",
+        "seed_confidence": "medium"
+      }
+    ],
+    "camera_support_bundles": [
+      {
+        "camera_support_id": "camera_support_preprocess_001",
+        "artifact_id": "camera_support_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/openai_02_11.md",
+        "source_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "upstream_artifact_refs": [
+          "line_seed_preprocess_001"
+        ],
+        "classification": "evidence_only",
+        "camera_signal_summary": "Lower support suggests change + boundary reread potential.",
+        "change_support": {
+          "strength": "has_signal",
+          "summary": "Local shift or before-after support is visible.",
+          "matched_cues": [
+            "regroup",
+            "reduced"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "boundary_support": {
+          "strength": "has_signal",
+          "summary": "Hold or thinness support is visible.",
+          "matched_cues": [
+            "still not",
+            "should still be checked",
+            "not direct-ingest-safe",
+            "before mutation"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "flow_support": {
+          "strength": "insufficient",
+          "summary": "Flow-like support is insufficient.",
+          "matched_cues": [],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "insufficiency_or_gap": "Signals are local and still need broader reread before any stronger organization.",
+        "carry_forward_handle": {
+          "reread_hint": "Use gate reason, readiness read, and seed support for bounded upper reread.",
+          "upstream_seed_ref": "line_seed_preprocess_001",
+          "source_unit_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        }
+      }
+    ],
+    "support_layer_note": "These support layers are additive and do not change lower readiness or upper admission."
+  }
+}

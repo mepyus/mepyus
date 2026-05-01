@@ -1,0 +1,123 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+    "char_count": 60,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "Andrej process supervision note v0",
+    "end_ref": "Andrej process supervision note v0",
+    "unit_type": "heading_block",
+    "text_excerpt": "# Andrej process supervision note v0",
+    "char_count": 36,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "source metadata",
+    "end_ref": "source metadata",
+    "unit_type": "heading_block",
+    "text_excerpt": "## source metadata - source_title: `Andrej Karpathy youtube discussion on LLM cognitive deficits and RL limits` - source_author: `Andrej Karpathy discussion transcript` - source_type: `external transcript` - source_captu",
+    "char_count": 381,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "why this source matters",
+    "end_ref": "why this source matters",
+    "unit_type": "heading_block",
+    "text_excerpt": "## why this source matters This source matters because it questions whether end-result reward alone is an efficient supervision signal and argues for richer process-aware feedback. It overlaps with our space around: - st",
+    "char_count": 392,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "core claim",
+    "end_ref": "core claim",
+    "unit_type": "heading_block",
+    "text_excerpt": "## core claim The source argues that current reinforcement-style approaches are inefficient when they try to learn from a long trajectory using only a final result signal. The implied preference is for stronger process s",
+    "char_count": 337,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "structural pattern",
+    "end_ref": "structural pattern",
+    "unit_type": "heading_block",
+    "text_excerpt": "## structural pattern",
+    "char_count": 21,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "1. final-result-only guidance is too weak",
+    "end_ref": "1. final-result-only guidance is too weak",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 1. final-result-only guidance is too weak A single final reward leaks too little usable supervision into a long trajectory.",
+    "char_count": 127,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "2. blind latent exploration is noisy",
+    "end_ref": "2. blind latent exploration is noisy",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 2. blind latent exploration is noisy If the system keeps trying many paths and only rewards the ending, the learning signal is sparse and contaminated.",
+    "char_count": 155,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "3. process-aware checking is needed",
+    "end_ref": "3. process-aware checking is needed",
+    "unit_type": "heading_block",
+    "text_excerpt": "### 3. process-aware checking is needed A better pattern would include intermediate review or supervision rather than only terminal scoring.",
+    "char_count": 140,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "relevance to our current space",
+    "end_ref": "relevance to our current space",
+    "unit_type": "heading_block",
+    "text_excerpt": "## relevance to our current space This source does not directly map onto our runtime. It is useful because it reinforces: - structure before free-form agent improvisation - bounded intermediate checks - caution against r",
+    "char_count": 284,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "bounded judgment",
+    "end_ref": "bounded judgment",
+    "unit_type": "heading_block",
+    "text_excerpt": "## bounded judgment Current bounded judgment: - useful as a process-supervision reference - relevant to recurrence around structure-before-freeform behavior - not a direct operating rule - keep as thin external reread ma",
+    "char_count": 244,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  }
+]

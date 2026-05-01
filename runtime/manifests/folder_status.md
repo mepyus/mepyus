@@ -7,8 +7,8 @@
 
 ## 2. Snapshot
 - immediate_child_dirs: `12`
-- immediate_child_files: `30`
-- file_types: `.json` x 24, `.jsonl` x 3, `.lock` x 3
+- immediate_child_files: `116`
+- file_types: `.json` x 106, `.jsonl` x 4, `.lock` x 3, `.md` x 3
 
 ## 3. Child Folders
 - `bridges` -> `runtime/manifests/bridges/folder_status.md`
@@ -25,11 +25,19 @@
 - `user_pages` -> `runtime/manifests/user_pages/folder_status.md`
 
 ## 4. Markdown Files
-- none
+- `vectorfl_paper_external_resource_cell_draft_v0.md`
+  title: External Resource Draft
+  summary: - source_contract: `docs/contracts/vectorfl_paper_external_resource_cell_v0.md` - purpose: 외부 비교 지시와 주입 기준을 바꾸기 전에 임시 draft로 검토하는 slot
+- `vectorfl_paper_internal_read_cell_draft_v0.md`
+  title: Internal Read Draft
+  summary: - source_contract: `docs/contracts/vectorfl_paper_internal_read_cell_v0.md` - purpose: internal_read 셀 수정 실험을 본 계약과 분리해서 먼저 적어보는 draft slot
+- `vectorfl_paper_synthesis_cell_draft_v0.md`
+  title: Synthesis Draft
+  summary: - source_contract: `docs/contracts/vectorfl_paper_synthesis_cell_v0.md` - purpose: 감독 보고 형식과 종합 규칙을 수정할 때 먼저 써 보는 slot
 
 ## 5. Code / Data Files
-- json: `auto_hint_generation_rules_v0.json`, `document_routing_alias_map_v1.json`, `entry_prebias_examples_v0.json`, `executable_capability_registry_v0.json`, `issue_root_classifier_v0.json`, `latent_line_registry_v1.json`, `line_guided_work_packets.json`, `line_registry.json`, `pipeline_candidate_scope_summary.json`, `projection_registry_v0.json`, `provenance_link_index_v1.json`, `reference_intake_memory_v0.json`, `residue_reentry_rules_v0.json`, `route_registry_v0.json`, `second_candidate_watch_rules.json`, `signal_generation_sources_v0.json`, `signal_kind_taxonomy_v0.json`, `source_to_family_hints_v0.json`, `structured_internal_docs_registry_v1.json`, `ticket_registry_v1.json`
-- other: `execution_trace_log_v0.jsonl`, `phase_decision_log.jsonl`, `pipeline_observation_registry.jsonl`, `provenance_link_index_v1.json.lock`, `structured_internal_docs_registry_v1.json.lock`, `ticket_registry_v1.json.lock`
+- json: `active_anchor_integrated_engine_3_surface.json`, `auto_hint_generation_rules_v0.json`, `current_loop_state_axis_drift_recheck_001.json`, `current_loop_state_axis_enrichment_001.json`, `document_routing_alias_map_v1.json`, `entry_prebias_examples_v0.json`, `executable_capability_registry_v0.json`, `issue_root_classifier_v0.json`, `latent_line_registry_v1.json`, `line_guided_work_packets.json`, `line_registry.json`, `maturation_object_axis_candidate_001.json`, `packet_reflux_axis_pattern_001.json`, `packet_request_axis_enrichment_001.json`, `packet_request_axis_followup_001.json`, `packet_request_axis_reprocess_001.json`, `packet_return_axis_enrichment_001.json`, `packet_return_axis_followup_001.json`, `panel_connection_record_axis_enrichment_001.json`, `panel_connection_record_engine_return_to_vectorfl_validation_001.json`
+- other: `execution_trace_log_v0.jsonl`, `phase_decision_log.jsonl`, `pipeline_observation_registry.jsonl`, `provenance_link_index_v1.json.lock`, `structured_internal_docs_registry_v1.json.lock`, `ticket_registry_v1.json.lock`, `vectorfl_paper_weekend_live_execution_trace_log_v0.jsonl`
 
 ## 6. Current Use Hint
 - 변화가 생기면 먼저 change log 와 inventory 를 갱신하고, 이 문서는 그 결과를 얇게 렌더한다.
@@ -40,7 +48,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.manifests.json`
 - parent_folder: `runtime`
 - related_status_files: `runtime/manifests/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

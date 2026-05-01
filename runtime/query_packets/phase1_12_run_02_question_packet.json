@@ -1,0 +1,221 @@
+{
+  "contract_id": "question_interpretation_packet_v0",
+  "contract_status": "draft_instance",
+  "user_request_raw": "Phase 1.12 legacy backfill old vs new same family comparison: compare phase1_10 pairing-era run 03 merge report with phase1_11 identity-era run 03 merge report and verify legacy backfill identity is read.",
+  "interpreted_goal": "Translate the user request into a Phase 1.5 CLI usage-loop artifact set and handle it as comparison.",
+  "task_mode": "comparison",
+  "scope": {
+    "repo_paths": [],
+    "time_boundary": "",
+    "phase_boundary": "phase1_5_usage_loop_binding",
+    "non_goals": [
+      "ui_work",
+      "react_vite",
+      "multi_agent_orchestration",
+      "baseline_promotion",
+      "final_naming_lock",
+      "destructive_migration",
+      "deep_automation"
+    ]
+  },
+  "constraints": {
+    "must_not_do": [
+      "change_existing_baseline_meaning",
+      "move_canonical_paths"
+    ],
+    "must_preserve": [
+      "existing_authority_structure",
+      "canonical_paths"
+    ],
+    "stop_conditions": []
+  },
+  "expected_output_shape": {
+    "primary": "artifact_set",
+    "required_sections": [
+      "question_packet",
+      "exploration_result",
+      "merge_diff_report",
+      "reingress_record"
+    ]
+  },
+  "search_targets": [
+    {
+      "path": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "reason": "Phase 1 goal and non-goal boundary.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/space_reading_order_for_codex_v0.md",
+      "reason": "Default first-entry reading order.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/source_authority_ladder_v0.md",
+      "reason": "Authority resolution before merge/diff/hold.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "reason": "Mode and comparison contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "reason": "Grounded evidence fields and pointer fallback.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+      "reason": "Evidence depth rules for merge/diff/hold.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/diff_evidence_contract_v0.md",
+      "reason": "Before/after changed path diff evidence contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/diff_aware_merge_hold_rules_v0.md",
+      "reason": "Diff salience rules for merge/diff/hold.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json",
+      "reason": "Before generated diff-heavy merge report sample.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+      "reason": "After structured diff-heavy merge report sample.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "docs/specs/artifact_family_pairing_contract_v0.md",
+      "reason": "Artifact family and pair confidence contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/pairing_aware_diff_rules_v0.md",
+      "reason": "Pair confidence rules for diff and hold judgment.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+      "reason": "Before same-family generated merge report candidate.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json",
+      "reason": "After same-family generated merge report candidate.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "docs/specs/artifact_identity_anchor_contract_v0.md",
+      "reason": "Artifact identity anchor contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/identity_aware_pairing_rules_v0.md",
+      "reason": "Identity-aware pairing and comparison rules.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_10_run_01_merge_diff_report.json",
+      "reason": "Prior pairing-aware generated report sample.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_10_run_02_merge_diff_report.json",
+      "reason": "Prior pairing-aware generated report sample for lineage comparison.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_11_run_01_merge_diff_report.json",
+      "reason": "Current identity-aware generated report sample when available.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_11_run_02_merge_diff_report.json",
+      "reason": "Current identity-aware generated report sample when available.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "docs/specs/legacy_artifact_identity_backfill_contract_v0.md",
+      "reason": "Legacy identity backfill mode and confidence ceiling contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/indexes/legacy_artifact_family_identity_map_v0.json",
+      "reason": "Machine-readable bounded legacy identity backfill map.",
+      "authority_expectation": "guide_or_index"
+    },
+    {
+      "path": "docs/specs/lower_to_upper_bridge_minimum_v0.md",
+      "reason": "Pre-1.12B bridge guardrail for readiness and upper admission.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+      "reason": "Legacy old merge/diff report from pre-identity spine.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json",
+      "reason": "Legacy old merge/diff report from same normalized run family.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_10_run_03_merge_diff_report.json",
+      "reason": "Pairing-era report before inline identity emission.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json",
+      "reason": "Identity-era report for old/new mixed comparison.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+      "reason": "Legacy lower packet-candidate comparison artifact for bridge guardrail check.",
+      "authority_expectation": "runtime_artifact"
+    },
+    {
+      "path": "app/work/external_input_preprocess/generated/builder_jang_interview_transcript_preprocess_comparison.json",
+      "reason": "Legacy external preprocess comparison artifact for ambiguous family checks.",
+      "authority_expectation": "runtime_artifact"
+    }
+  ],
+  "external_reasoning_needed": false,
+  "merge_mode_candidate": "diff",
+  "ambiguity_notes": [
+    {
+      "kind": "provisional",
+      "note": "Rule-based inference; operator may refine after reading selected assets.",
+      "handling": "proceed"
+    }
+  ],
+  "hold_reason_if_any": "",
+  "packet_validation": {
+    "ready_for_exploration": true,
+    "validation_notes": [
+      "Phase 1.5 rule-based packet is ready for bounded exploration."
+    ]
+  },
+  "artifact_identity": {
+    "artifact_id": "phase1_12_run_02_question_packet",
+    "artifact_role": "question_packet",
+    "family_key": "runtime/query_packets::phase1_x_run_02::question_packet",
+    "lineage_hint": "phase1_12:phase1_12_run_02:question_packet",
+    "run_stem": "phase1_12_run_02",
+    "phase_label": "phase1_12",
+    "artifact_slot": "run artifact slot",
+    "generated_from_ref": "",
+    "prior_artifact_ref": "",
+    "comparison_ready": false,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role"
+    ],
+    "identity_anchor_source": "emitted"
+  }
+}

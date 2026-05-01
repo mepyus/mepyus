@@ -1,0 +1,187 @@
+{
+  "contract_id": "merge_diff_report_v4",
+  "contract_status": "draft_instance",
+  "extends": "merge_diff_report_v3",
+  "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_10_run_05_question_packet.json",
+  "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_10_run_05_exploration_result.json",
+  "space_position": {
+    "summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+    "basis_refs": [
+      "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "docs/specs/space_reading_order_for_codex_v0.md",
+      "docs/specs/source_authority_ladder_v0.md",
+      "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+      "docs/specs/structured_evidence_contract_v0.md",
+      "docs/specs/structured_merge_diff_rules_v0.md",
+      "docs/specs/diff_evidence_contract_v0.md",
+      "docs/specs/diff_aware_merge_hold_rules_v0.md",
+      "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json",
+      "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+      "docs/specs/artifact_family_pairing_contract_v0.md",
+      "docs/specs/pairing_aware_diff_rules_v0.md",
+      "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+      "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json"
+    ]
+  },
+  "codex_position": {
+    "summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+    "basis": "rule_based_phase1_5_entrypoint_reasoning"
+  },
+  "alignment_points": [
+    "No UI work is required.",
+    "Existing authority structure is preserved.",
+    "Artifacts are written to the Phase 1 runtime lanes."
+  ],
+  "difference_points": [
+    "Generated artifacts may still need human refinement for deep semantic claims."
+  ],
+  "unresolved_tensions": [],
+  "chosen_mode": "merge",
+  "final_reasoning_basis": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+    "docs/specs/structured_evidence_contract_v0.md",
+    "docs/specs/structured_merge_diff_rules_v0.md",
+    "docs/specs/diff_evidence_contract_v0.md",
+    "docs/specs/diff_aware_merge_hold_rules_v0.md",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+    "docs/specs/artifact_family_pairing_contract_v0.md",
+    "docs/specs/pairing_aware_diff_rules_v0.md",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json"
+  ],
+  "user_decision_required": false,
+  "user_decision_reason_if_any": "",
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 0,
+    "cross_supported": 16,
+    "total": 16
+  },
+  "confidence_distribution": {
+    "low": 0,
+    "medium": 8,
+    "high": 8
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 8,
+    "strong": 8,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 16
+  },
+  "structured_evidence_summary": {
+    "identity_only": 0,
+    "shape_only": 0,
+    "salient_path": 24,
+    "structured_fallback": 0,
+    "total": 24
+  },
+  "salient_paths": [
+    "$.chosen_mode",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only",
+    "$.evidence_depth_summary.total",
+    "$.evidence_depth_summary.weak_grounded",
+    "$.chosen_mode",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only"
+  ],
+  "strongest_structured_support_refs": [
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json:$.chosen_mode",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json:$.evidence_depth_summary.cross_supported",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json:$.evidence_depth_summary.direct_grounded",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json:$.evidence_depth_summary.pointer_only",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json:$.evidence_depth_summary.total"
+  ],
+  "strongest_structured_tension_refs": [],
+  "shape_vs_meaning_note": "Structured evidence includes salient field paths.",
+  "structured_merge_risk_note": "",
+  "diff_salience_summary": {
+    "added": 5,
+    "removed": 0,
+    "modified": 0,
+    "mode_shift": 0,
+    "count_change": 0,
+    "status_change": 0,
+    "evidence_depth_change": 3,
+    "trivial": 0,
+    "comparison_fallback": 0,
+    "salient_diff": 8,
+    "total": 8
+  },
+  "salient_diff_paths": [
+    "$.changed_mode_or_status_note",
+    "$.evidence_depth_summary",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.total",
+    "$.validation.diff_evidence_considered",
+    "$.comparison_risk_note",
+    "$.diff_salience_summary.evidence_depth_change",
+    "$.diff_salience_summary.mode_shift"
+  ],
+  "strongest_diff_support_refs": [
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.changed_mode_or_status_note",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary.cross_supported",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary.total",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.validation.diff_evidence_considered"
+  ],
+  "strongest_diff_tension_refs": [
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary.cross_supported",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json:$.evidence_depth_summary.total"
+  ],
+  "comparison_risk_note": "Salient changed paths found; diff evidence can inform judgment.",
+  "changed_mode_or_status_note": "",
+  "pair_confidence": "strong_pair",
+  "family_key": [
+    "runtime/merge_diff_reports::phase1_x_run_03_merge_diff_report"
+  ],
+  "pairing_basis": [
+    "shared_run_stem"
+  ],
+  "pairing_risk_note": "Pairing has explicit lineage markers and can support stronger comparison claims.",
+  "strongest_pair_support_refs": [
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json (strong_pair)"
+  ],
+  "comparison_candidate_count": 1,
+  "rejected_pair_candidates_summary": [
+    {
+      "pair": "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json",
+      "rejected": [
+        "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json"
+      ]
+    }
+  ],
+  "strongest_support_refs": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md:L3-L9",
+    "docs/specs/space_reading_order_for_codex_v0.md:L7-L18",
+    "docs/specs/source_authority_ladder_v0.md:L3-L6",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md:L1-L4",
+    "docs/specs/evidence_unit_grounding_contract_v0.md:L9-L20"
+  ],
+  "strongest_tension_refs": [],
+  "merge_risk_note": "",
+  "hold_trigger_reason": "",
+  "validation": {
+    "authority_ladder_applied": true,
+    "hold_not_overused": true,
+    "differences_preserved": true,
+    "evidence_depth_considered": true,
+    "structured_evidence_considered": true,
+    "diff_evidence_considered": true,
+    "pairing_evidence_considered": true
+  }
+}

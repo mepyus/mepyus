@@ -1,0 +1,262 @@
+{
+  "contract_id": "space_reingress_record_v5",
+  "contract_status": "draft_instance",
+  "extends": "space_reingress_record_v4",
+  "artifact_identity": {
+    "artifact_id": "phase1_12_run_05_reingress_record",
+    "artifact_role": "reingress_record",
+    "family_key": "runtime/reingress_records::phase1_x_run_05::reingress_record",
+    "lineage_hint": "phase1_12:phase1_12_run_05:reingress_record",
+    "run_stem": "phase1_12_run_05",
+    "phase_label": "phase1_12",
+    "artifact_slot": "run artifact slot",
+    "generated_from_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_12_run_05_merge_diff_report.json",
+    "prior_artifact_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_12_run_05_merge_diff_report.json",
+    "comparison_ready": true,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role",
+      "generated_from_chain",
+      "explicit_prior_ref"
+    ],
+    "identity_anchor_source": "emitted"
+  },
+  "record_id": "phase1_12_run_05_reingress_record",
+  "created_at": "2026-04-20T11:17:11.504545+00:00",
+  "original_user_request": "Phase 1.12 mixed prose plus legacy structured comparison: read legacy raw intake observer bundle with backfill identity, compare it with Pre-1.12 bridge reports, and keep evidence-ready as evidence_only.",
+  "interpreted_goal": "Translate the user request into a Phase 1.5 CLI usage-loop artifact set and handle it as comparison.",
+  "searched_assets_summary": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+    "docs/specs/structured_evidence_contract_v0.md",
+    "docs/specs/structured_merge_diff_rules_v0.md",
+    "docs/specs/diff_evidence_contract_v0.md",
+    "docs/specs/diff_aware_merge_hold_rules_v0.md",
+    "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+    "docs/specs/artifact_identity_anchor_contract_v0.md",
+    "docs/specs/identity_aware_pairing_rules_v0.md",
+    "runtime/merge_diff_reports/phase1_10_run_01_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_02_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_11_run_01_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_11_run_02_merge_diff_report.json",
+    "docs/specs/legacy_artifact_identity_backfill_contract_v0.md",
+    "docs/indexes/legacy_artifact_family_identity_map_v0.json",
+    "docs/specs/lower_to_upper_bridge_minimum_v0.md",
+    "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json",
+    "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+    "app/work/external_input_preprocess/generated/builder_jang_interview_transcript_preprocess_comparison.json"
+  ],
+  "space_position_summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+  "codex_position_summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+  "chosen_mode": "diff",
+  "final_return_summary": "Phase 1.5 usage-loop artifacts generated. Chosen mode: diff.",
+  "unresolved_notes": [],
+  "new_line_or_axis_candidate": "phase1_5_usage_loop_binding",
+  "future_probe_note": "Use repeated real questions to decide what deserves automation or promotion later.",
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 0,
+    "cross_supported": 27,
+    "total": 27
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 7,
+    "strong": 20,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 27
+  },
+  "useful_excerpt_modes": [
+    "bullet_cluster",
+    "heading_plus_block",
+    "line_window"
+  ],
+  "weak_grounding_areas": [],
+  "next_probe_hint": "Prefer reuse_candidate_assets first; inspect weak_grounding_areas when the claim depends on them.",
+  "reuse_candidate_assets": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md"
+  ],
+  "unresolved_grounding_note": "Grounded excerpts were available for selected evidence units.",
+  "merge_risk_summary": "",
+  "future_validation_hint": "Compare future runs by pointer_only ratio and strongest_support_refs.",
+  "structured_evidence_summary": {
+    "identity_only": 0,
+    "shape_only": 0,
+    "salient_path": 78,
+    "structured_fallback": 0,
+    "total": 78
+  },
+  "useful_structured_modes": [
+    "config_json",
+    "runtime_artifact"
+  ],
+  "salient_paths_summary": [
+    "$.chosen_mode",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only",
+    "$.evidence_depth_summary.total",
+    "$.evidence_depth_summary.weak_grounded",
+    "$.chosen_mode",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only"
+  ],
+  "weak_structured_areas": [],
+  "shape_only_warning": "",
+  "next_structured_probe_hint": "Prefer salient_paths_summary; inspect weak_structured_areas when structured claims depend on them.",
+  "reusable_structured_assets": [
+    "app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json",
+    "app/work/external_input_preprocess/generated/builder_jang_interview_transcript_preprocess_comparison.json",
+    "docs/indexes/legacy_artifact_family_identity_map_v0.json",
+    "runtime/merge_diff_reports/phase1_10_run_01_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_02_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_03_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_11_run_01_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_11_run_02_merge_diff_report.json"
+  ],
+  "generated_asset_reading_note": "Structured evidence includes salient field paths.",
+  "diff_salience_summary": {
+    "added": 11,
+    "removed": 0,
+    "modified": 3,
+    "mode_shift": 0,
+    "count_change": 2,
+    "status_change": 0,
+    "evidence_depth_change": 8,
+    "trivial": 0,
+    "comparison_fallback": 0,
+    "salient_diff": 24,
+    "total": 24
+  },
+  "useful_diff_modes": [
+    "added",
+    "count_change",
+    "evidence_depth_change",
+    "modified"
+  ],
+  "salient_diff_paths_summary": [
+    "$.diff_salience_summary.evidence_depth_change",
+    "$.evidence_depth_summary",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.total",
+    "$.identity_risk_note",
+    "$.validation.identity_anchors_considered",
+    "$.excerpt_quality_summary",
+    "$.excerpt_quality_summary.strong",
+    "$.diff_salience_summary.evidence_depth_change",
+    "$.evidence_depth_summary"
+  ],
+  "weak_diff_areas": [],
+  "trivial_diff_warning": "",
+  "next_diff_probe_hint": "Prefer salient_diff_paths_summary and compare generated records from the same artifact family.",
+  "reusable_comparison_pairs": [
+    "runtime/merge_diff_reports/phase1_10_run_01_merge_diff_report.json -> runtime/merge_diff_reports/phase1_11_run_01_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_02_merge_diff_report.json -> runtime/merge_diff_reports/phase1_11_run_02_merge_diff_report.json",
+    "runtime/merge_diff_reports/phase1_10_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json"
+  ],
+  "generated_diff_note": "Salient changed paths found; diff evidence can inform judgment.",
+  "useful_pairing_modes": [
+    "shared_run_stem"
+  ],
+  "family_key_summary": [
+    "runtime/merge_diff_reports::phase1_x_run_01_merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_02_merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_03_merge_diff_report"
+  ],
+  "weak_pair_areas": [],
+  "rejected_pair_summary": [
+    {
+      "pair": "runtime/merge_diff_reports/phase1_10_run_03_merge_diff_report.json -> runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json",
+      "rejected": [
+        "runtime/merge_diff_reports/phase1_7_run_03_merge_diff_report.json",
+        "runtime/merge_diff_reports/phase1_8_run_03_merge_diff_report.json",
+        "runtime/merge_diff_reports/phase1_9_run_03_merge_diff_report.json"
+      ]
+    }
+  ],
+  "next_pairing_probe_hint": "Prefer same family_key and explicit phase/version lineage before reading diff salience.",
+  "reusable_family_groups": [
+    "runtime/merge_diff_reports::phase1_x_run_01_merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_02_merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_03_merge_diff_report"
+  ],
+  "pairing_risk_summary": "Pairing has explicit lineage markers and can support stronger comparison claims.",
+  "identity_anchor_summary": {
+    "strong_identity": 3,
+    "plausible_identity": 10,
+    "weak_identity": 0,
+    "family_keys": [
+      "docs/indexes::legacy_artifact_family_identity_map_vx",
+      "external_input_preprocess::builder_choi_interview::transcript_preprocess_comparison",
+      "external_input_preprocess::builder_jang_interview::transcript_preprocess_comparison",
+      "runtime/merge_diff_reports::phase1_x_run_01::merge_diff_report",
+      "runtime/merge_diff_reports::phase1_x_run_02::merge_diff_report",
+      "runtime/merge_diff_reports::phase1_x_run_03::merge_diff_report"
+    ],
+    "identity_basis": [
+      "embedded_input_path",
+      "explicit_prior_ref",
+      "generated_from_chain",
+      "mapping_table_family_backfill",
+      "path_plus_role",
+      "phase_run_marker",
+      "sidecar_identity_note"
+    ],
+    "total": 13
+  },
+  "useful_identity_modes": [
+    "embedded_input_path",
+    "explicit_prior_ref",
+    "generated_from_chain",
+    "mapping_table_family_backfill",
+    "path_plus_role",
+    "phase_run_marker",
+    "sidecar_identity_note"
+  ],
+  "weak_identity_areas": [],
+  "generated_from_chain_summary": [
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_12_run_05_question_packet.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_12_run_05_exploration_result.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_12_run_05_merge_diff_report.json"
+  ],
+  "next_identity_probe_hint": "Prefer artifacts with embedded artifact_identity before relying on path/stem inference.",
+  "reusable_identity_groups": [
+    "docs/indexes::legacy_artifact_family_identity_map_vx",
+    "external_input_preprocess::builder_choi_interview::transcript_preprocess_comparison",
+    "external_input_preprocess::builder_jang_interview::transcript_preprocess_comparison",
+    "runtime/merge_diff_reports::phase1_x_run_01::merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_02::merge_diff_report",
+    "runtime/merge_diff_reports::phase1_x_run_03::merge_diff_report"
+  ],
+  "identity_risk_summary": "Identity anchors are present and usable for comparison context.",
+  "artifact_refs": {
+    "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_12_run_05_question_packet.json",
+    "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_12_run_05_exploration_result.json",
+    "merge_diff_report_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_12_run_05_merge_diff_report.json"
+  },
+  "validation": {
+    "reusable_for_next_question": true,
+    "reasoning_trace_present": true,
+    "unresolved_preserved": true,
+    "learning_fields_present": true,
+    "structured_learning_fields_present": true,
+    "diff_learning_fields_present": true,
+    "pairing_learning_fields_present": true,
+    "identity_learning_fields_present": true
+  }
+}

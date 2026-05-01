@@ -15,6 +15,28 @@
 - `sandbox-only` runner는 main runtime를 건드리지 않는다.
 - `line_thickening` 계열은 해석 보조축 검증용이지 승격 엔진이 아니다.
 
+## 0. space-boundary lookup / context packet
+
+### A. 사용자 입력을 공간 lookup packet으로 얇게 변환한다
+
+- when:
+  - URL, report path, 대화 조각, runtime artifact가 들어왔을 때 관련 공간 자산과 후보 렌즈를 먼저 얇게 찾고 싶을 때
+  - Codex가 큰 문서 여러 개를 다시 읽기 전에 compact context packet을 만들고 싶을 때
+- runner:
+  - [space_boundary_lookup_packet.py](/Users/sungsookim/universe/vectorfl_replica/scripts/cli/space_boundary_lookup_packet.py)
+- command:
+  - `python3 scripts/cli/space_boundary_lookup_packet.py '<input text or path>'`
+  - `python3 scripts/cli/space_boundary_lookup_packet.py --input-file <file>`
+- leaves:
+  - stdout JSON only
+  - no file writes
+  - no runtime mutation
+- note:
+  - read-only
+  - suggestion-only
+  - suggests source surface, candidate assets, microspace cluster, lenses, guardrails, and card template
+  - does not decide final state, promotion, execution, or index update
+
 ## 1. external material intake / sweep
 
 ### A. 외부문서 전체를 공통 흐름선 기준으로 bounded sweep 한다

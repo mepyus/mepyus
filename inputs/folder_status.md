@@ -7,8 +7,8 @@
 
 ## 2. Snapshot
 - immediate_child_dirs: `3`
-- immediate_child_files: `2`
-- file_types: `.md` x 1, `<no_ext>` x 1
+- immediate_child_files: `3`
+- file_types: `.md` x 1, `.txt` x 1, `<no_ext>` x 1
 
 ## 3. Child Folders
 - `external_cases` -> `inputs/external_cases/folder_status.md`
@@ -21,7 +21,7 @@
   summary: 이 폴더는 사람이 넣는 입력 재료의 기본 드롭존이다.
 
 ## 5. Code / Data Files
-- other: `.DS_Store`
+- other: `.DS_Store`, `builder_jang_interview.txt`
 
 ## 6. Current Use Hint
 - 변화가 생기면 먼저 change log 와 inventory 를 갱신하고, 이 문서는 그 결과를 얇게 렌더한다.
@@ -32,7 +32,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/inputs.json`
 - parent_folder: `.`
 - related_status_files: `inputs/folder_status.md`
-- last_updated: `2026-04-02T21:59:12+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

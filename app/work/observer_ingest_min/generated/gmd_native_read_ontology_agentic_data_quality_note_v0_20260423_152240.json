@@ -1,0 +1,389 @@
+{
+  "doc_ref": "inputs/external_cases/ontology_agentic_data_quality_note_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 12
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Ontology agentic data quality note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_title: `Ontology and agentic AI data quality discussion` - source_author: `unknown video speaker` - source_ty...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it argues that agentic systems need structured and curated data foundations, not j...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The source argues that an agent ecosystem built on LLMs alone remains unstable because hallucination and poor data quality...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## structural pattern The source emphasizes several ideas:",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "context",
+        "function_in_source": "### 1. agents need curated foundations Agent outputs are only as reliable as the quality and structure of the data underneath them.",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "contrast",
+        "function_in_source": "### 2. ontology is dynamic, not static The source pushes toward an active ontology model where entities, relations, and updates remain li...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      },
+      {
+        "unit_id": "unit_009",
+        "role_type": "contrast",
+        "function_in_source": "### 3. data quality is a bottleneck Even a strong structural model fails if: - source data is incomplete - authority or reference quality...",
+        "upstream": "unit_008",
+        "downstream": "unit_010"
+      },
+      {
+        "unit_id": "unit_010",
+        "role_type": "context",
+        "function_in_source": "### 4. structure can reduce downstream burden If the data layer is better organized, downstream search, response, and cost pressure can d...",
+        "upstream": "unit_009",
+        "downstream": "unit_011"
+      },
+      {
+        "unit_id": "unit_011",
+        "role_type": "adoption",
+        "function_in_source": "## relevance to our current space This is not a direct architecture replacement. It is useful because it reinforces several active pressu...",
+        "upstream": "unit_010",
+        "downstream": "unit_012"
+      },
+      {
+        "unit_id": "unit_012",
+        "role_type": "adoption",
+        "function_in_source": "## bounded judgment Current bounded judgment: - useful as a data quality and relation-structure reference - relevant for recurrence aroun...",
+        "upstream": "unit_011",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "grounds"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_007",
+        "to_unit_id": "unit_008",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_008",
+        "to_unit_id": "unit_009",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_009",
+        "to_unit_id": "unit_010",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_010",
+        "to_unit_id": "unit_011",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_011",
+        "to_unit_id": "unit_012",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "ontology_agentic_data_quality_note_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 12 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "ontology_agentic_data_quality_note_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Ontology agentic data quality note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_title: `Ontology and agentic AI data quality discussion` - source_author: `unknown video speaker` - source_ty...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it argues that agentic systems need structured and curated data foundations, not j...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The source argues that an agent ecosystem built on LLMs alone remains unstable because hallucination and poor data quality...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## structural pattern The source emphasizes several ideas:",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "context",
+        "function_in_source": "### 1. agents need curated foundations Agent outputs are only as reliable as the quality and structure of the data underneath them.",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "contrast",
+        "function_in_source": "### 2. ontology is dynamic, not static The source pushes toward an active ontology model where entities, relations, and updates remain li...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# Ontology agentic data quality note v0",
+        "human_gloss": "# Ontology agentic data quality note v0",
+        "what_it_preserves": [
+          "start_ref=Ontology agentic data quality note v0",
+          "end_ref=Ontology agentic data quality note v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## source metadata - source_title: `Ontology and agentic AI data quality discussion` - source_author: `unknown video speaker` - source_ty...",
+        "human_gloss": "## source metadata - source_title: `Ontology and agentic AI data quality discussion` - source_author: `unknown video speaker` - source_ty...",
+        "what_it_preserves": [
+          "start_ref=source metadata",
+          "end_ref=source metadata",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## why this source matters This source matters because it argues that agentic systems need structured and curated data foundations, not j...",
+        "human_gloss": "## why this source matters This source matters because it argues that agentic systems need structured and curated data foundations, not j...",
+        "what_it_preserves": [
+          "start_ref=why this source matters",
+          "end_ref=why this source matters",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## core claim The source argues that an agent ecosystem built on LLMs alone remains unstable because hallucination and poor data quality...",
+        "human_gloss": "## core claim The source argues that an agent ecosystem built on LLMs alone remains unstable because hallucination and poor data quality...",
+        "what_it_preserves": [
+          "start_ref=core claim",
+          "end_ref=core claim",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## structural pattern The source emphasizes several ideas:",
+        "human_gloss": "## structural pattern The source emphasizes several ideas:",
+        "what_it_preserves": [
+          "start_ref=structural pattern",
+          "end_ref=structural pattern",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "### 1. agents need curated foundations Agent outputs are only as reliable as the quality and structure of the data underneath them.",
+        "human_gloss": "### 1. agents need curated foundations Agent outputs are only as reliable as the quality and structure of the data underneath them.",
+        "what_it_preserves": [
+          "start_ref=1. agents need curated foundations",
+          "end_ref=1. agents need curated foundations",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      },
+      {
+        "unit_id": "unit_008",
+        "provisional_line": "### 2. ontology is dynamic, not static The source pushes toward an active ontology model where entities, relations, and updates remain li...",
+        "human_gloss": "### 2. ontology is dynamic, not static The source pushes toward an active ontology model where entities, relations, and updates remain li...",
+        "what_it_preserves": [
+          "start_ref=2. ontology is dynamic, not static",
+          "end_ref=2. ontology is dynamic, not static",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 7
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007",
+        "unit_008"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/ontology_agentic_data_quality_note_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_agentic_data_quality_note_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

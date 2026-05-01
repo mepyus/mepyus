@@ -1,0 +1,42 @@
+{
+  "contract_id": "merge_diff_report_v0",
+  "contract_status": "draft_instance",
+  "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_5_run_03_question_packet.json",
+  "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_5_run_03_exploration_result.json",
+  "space_position": {
+    "summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+    "basis_refs": [
+      "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "docs/specs/space_reading_order_for_codex_v0.md",
+      "docs/specs/source_authority_ladder_v0.md",
+      "docs/specs/evidence_merge_diff_hold_contract_v0.md"
+    ]
+  },
+  "codex_position": {
+    "summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+    "basis": "rule_based_phase1_5_entrypoint_reasoning"
+  },
+  "alignment_points": [
+    "No UI work is required.",
+    "Existing authority structure is preserved.",
+    "Artifacts are written to the Phase 1 runtime lanes."
+  ],
+  "difference_points": [
+    "Generated artifacts are pointer-level drafts and may need human refinement for deep evidence."
+  ],
+  "unresolved_tensions": [],
+  "chosen_mode": "diff",
+  "final_reasoning_basis": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md"
+  ],
+  "user_decision_required": false,
+  "user_decision_reason_if_any": "",
+  "validation": {
+    "authority_ladder_applied": true,
+    "hold_not_overused": true,
+    "differences_preserved": true
+  }
+}

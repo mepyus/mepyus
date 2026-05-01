@@ -1,0 +1,105 @@
+{
+  "trial_label": "compact_default_sel",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_replica/source_assets/directives/middle_layer_thickening_program_instruction_v1.md",
+  "inputs": {
+    "content_role_path": "app/work/observer_ingest_min/generated/content_role_tags_middle_layer_thickening_program_instruction_v1_camera_guard_20260422_183238.json",
+    "line_seed_path": "app/work/observer_ingest_min/generated/line_seed_bundles_middle_layer_thickening_program_instruction_v1_camera_guard_20260422_183238.json",
+    "camera_support_path": "app/work/observer_ingest_min/generated/camera_support_bundles_middle_layer_thickening_program_instruction_v1_camera_guard_20260422_183238.json"
+  },
+  "variant_a_role_seed": {
+    "selected_seed_ref": "line_seed_fallback_reader_001",
+    "reread_focus": "Re-read the local pressure that keeps the selected units worth grouping together.",
+    "role_mix": [
+      "unknown"
+    ],
+    "repeated_pressure_note": "No bounded line seed bundle was emitted; keep only a minimal reread trace.",
+    "linkage_hint": "The local material is too compact for a stronger seed grouping.",
+    "question_inducement": "Which nearby unit should be reread first if more context becomes available?",
+    "insufficiency": "Role and seed preserve local pressure, but camera-facing support is still unchecked.",
+    "reread_refs": [
+      "unit_001",
+      "unit_002"
+    ],
+    "role_refs": [
+      "role_unit_001",
+      "role_unit_002"
+    ]
+  },
+  "variant_b_role_seed_camera": {
+    "selected_seed_ref": "line_seed_fallback_reader_001",
+    "reread_focus": "Re-read the local pressure that keeps the selected units worth grouping together.",
+    "role_mix": [
+      "unknown"
+    ],
+    "repeated_pressure_note": "No bounded line seed bundle was emitted; keep only a minimal reread trace.",
+    "linkage_hint": "The local material is too compact for a stronger seed grouping.",
+    "question_inducement": "Which nearby unit should be reread first if more context becomes available?",
+    "insufficiency": "Support remains sparse; keep this as local traceable context only.",
+    "reread_refs": [
+      "unit_001",
+      "unit_002"
+    ],
+    "role_refs": [
+      "role_unit_001",
+      "role_unit_002"
+    ],
+    "selected_camera_ref": "camera_support_001",
+    "camera_signal_summary": "Lower support remains too thin for camera-oriented reread beyond traceable context.",
+    "signal_recap": {
+      "change": "insufficient",
+      "boundary": "insufficient",
+      "flow": "insufficient"
+    },
+    "carry_forward_refs": [
+      "unit_001",
+      "unit_002"
+    ]
+  },
+  "variant_c_role_seed_flow": {
+    "selected_seed_ref": "line_seed_fallback_reader_001",
+    "reread_focus": "Re-read the local pressure that keeps the selected units worth grouping together.",
+    "role_mix": [
+      "unknown"
+    ],
+    "repeated_pressure_note": "No bounded line seed bundle was emitted; keep only a minimal reread trace.",
+    "linkage_hint": "The local material is too compact for a stronger seed grouping.",
+    "question_inducement": "Which nearby unit should be reread first if more context becomes available?",
+    "insufficiency": "Flow support did not narrow reread beyond role+seed.",
+    "reread_refs": [
+      "unit_001",
+      "unit_002"
+    ],
+    "role_refs": [
+      "role_unit_001",
+      "role_unit_002"
+    ],
+    "selected_camera_ref": "camera_support_001",
+    "camera_signal_summary": "Lower support remains too thin for camera-oriented reread beyond traceable context.",
+    "signal_recap": {
+      "change": "insufficient",
+      "boundary": "insufficient",
+      "flow": "insufficient"
+    },
+    "carry_forward_refs": [
+      "unit_001",
+      "unit_002"
+    ]
+  },
+  "comparison_note_ab": {
+    "result": "noise 가능성 있음",
+    "why": "Camera support did not add enough bounded signal beyond role+seed.",
+    "camera_added_value": "none",
+    "still_thin": "Support remains sparse; keep this as local traceable context only."
+  },
+  "comparison_note_ac": {
+    "result": "noise 가능성 있음",
+    "why": "Camera support did not add enough bounded signal beyond role+seed.",
+    "camera_added_value": "none",
+    "still_thin": "Flow support did not narrow reread beyond role+seed."
+  },
+  "flow_judgment": {
+    "result": "no clear added value",
+    "flow_strength": "insufficient",
+    "why": "Flow did not add bounded reread value beyond role+seed in this trial."
+  }
+}

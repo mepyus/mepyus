@@ -11,6 +11,7 @@ The operating spine already stores CLI sessions, event ledger entries, package n
 The bounded worker return payload is:
 
 - `schema_version`
+- `worker_return_source`
 - `worker_id`
 - `package_id`
 - `run_kind`
@@ -26,6 +27,13 @@ The bounded worker return payload is:
 Current schema version:
 
 - `integrated_engine_worker_return_v0`
+
+Current source labels:
+
+- `worker_emitted`
+- `runtime_normalized`
+- `parser_fallback`
+- `raw_fallback`
 
 ## 3. Runtime Boundary
 

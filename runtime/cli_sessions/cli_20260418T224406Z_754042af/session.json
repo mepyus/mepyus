@@ -1,0 +1,42 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T224406Z_754042af",
+  "backend_kind": "codex",
+  "task_type": "inspect",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "package3_step_a_real_openharness_structure_profile",
+  "purpose_text": "Package 3 Step A: real bounded OpenHarness structure profiling for existing continuity package.",
+  "bounded_context_refs": [
+    "references/git_search/openharness-main",
+    "references/git_search/openharness-main/README.md",
+    "references/git_search/openharness-main/pyproject.toml",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md",
+    "docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md"
+  ],
+  "prompt_payload": "Perform a real bounded structural profile of references/git_search/openharness-main for our integrated-engine package notebook. Do not modify files. Focus only on: 1) what this repo appears to be, 2) top-level areas worth treating as internal lens material, 3) concrete files/dirs that should be inspected next, 4) one specific next_continue_hint for continuing this same package. Include the required WORKER_RETURN_JSON block on its own delimiter lines.",
+  "active_package": {
+    "id": "pkg_openharness_structure_probe",
+    "title": "OpenHarness 구조 분석",
+    "summary": "references/git_search/openharness-main 구조를 내부 재료로 읽는 패키지",
+    "stage": "real_worker_structure_profile",
+    "status": "active",
+    "executor": "codex"
+  },
+  "status": "done",
+  "started_at": "2026-04-18T22:44:06Z",
+  "ended_at": "2026-04-18T22:45:25Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 180,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T224406Z_754042af/prompt.md",
+  "exit_code": 0,
+  "result_summary": "arness/swarm/subprocess_backend.py\",\n    \"references/git_search/openharness-main/src/openharness/bridge/session_runner.py\",\n    \"references/git_search/openharness-main/ohmo/cli.py\",\n    \"references/git_search/openharness-main/frontend/terminal/package.json\"\n  ],\n  \"next_continue_hint\": \"Continue Package 3 by inspecting the OpenHarness execution path from src/openharness/cli.py print/task-worker entrypoints into src/openharness/ui/app.py, src/openharness/engine/query_engine.py, src/openharness/engine/query.py, and the tool registration/bootstrap code, then map the smallest analogous VectorFL worker-boundary lessons back to CodexCliAdapter.start_run(...) and structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Exact OpenHarness tool registration/bootstrap file was not fully traced in this bounded pass.\",\n    \"src/openharness/ui/app.py was identified by CLI references but not opened yet.\",\n    \"The concrete print-mode and task-worker output contracts still need line-level inspection.\",\n    \"Tests were not run because this was an inspect-only structural profile.\"\n  ],\n  \"risks_or_limits\": [\n    \"This is a structural profile, not a behavioral execution trace.\",\n    \"README claims and current code shape were sampled, not exhaustively validated across the entire repo.\",\n    \"Some directory areas, especially auth, plugins, skills, hooks, ui, and full frontend flow, remain uninspected.\",\n    \"No files were modified.\"\n  ],\n  \"source_refs\": [\n    \"references/git_search/openharness-main\",\n    \"references/git_search/openharness-main/README.md\",\n    \"references/git_search/openharness-main/pyproject.toml\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\",\n    \"docs/specs/integrated_engine_worker_adapter_prompt_contract_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n",
+  "suggested_next_use": "reread_target",
+  "error_message": ""
+}

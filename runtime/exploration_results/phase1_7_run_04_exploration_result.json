@@ -1,0 +1,279 @@
+{
+  "contract_id": "space_exploration_result_v1",
+  "contract_status": "draft_instance",
+  "extends": "space_exploration_result_v0",
+  "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_7_run_04_question_packet.json",
+  "searched_paths": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+    "docs/specs/phase1_5_decision_gate_rules_v0.md"
+  ],
+  "selected_assets": [
+    {
+      "path": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Phase 1 goal and non-goal boundary."
+    },
+    {
+      "path": "docs/specs/space_reading_order_for_codex_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Default first-entry reading order."
+    },
+    {
+      "path": "docs/specs/source_authority_ladder_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Authority resolution before merge/diff/hold."
+    },
+    {
+      "path": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Mode and comparison contract."
+    },
+    {
+      "path": "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Grounded evidence fields and pointer fallback."
+    },
+    {
+      "path": "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Evidence depth rules for merge/diff/hold."
+    },
+    {
+      "path": "docs/specs/phase1_5_decision_gate_rules_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Phase 1.5 stop and decision gate rules."
+    }
+  ],
+  "selected_asset_reasons": [
+    "Phase 1 goal and non-goal boundary.",
+    "Default first-entry reading order.",
+    "Authority resolution before merge/diff/hold.",
+    "Mode and comparison contract.",
+    "Grounded evidence fields and pointer fallback.",
+    "Evidence depth rules for merge/diff/hold.",
+    "Phase 1.5 stop and decision gate rules."
+  ],
+  "discarded_assets": [
+    {
+      "path": "runtime/cli_sessions/*",
+      "reason": "Too detailed for bounded usage-loop run unless a specific session is referenced."
+    },
+    {
+      "path": "runtime/views/* UI surface files",
+      "reason": "Phase 1.5 non-goal: no UI or surface work."
+    }
+  ],
+  "evidence_units": [
+    {
+      "source_ref": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "excerpt_or_pointer": "## Status\n\n- phase: `phase1_cli_space_enablement`\n- authority: `working_spec`\n- relation_to_existing_baseline: 이 문서는 기존 baseline을 대체하지 않고, Codex CLI가 기존 공간을 같은 질서로 읽기 위한 얇은 운영 고정 문서다.\n- created_for: 질문 해석 -> 공간 탐색 -> Codex 판단 -> merge/diff/hold -> 재유입 루프",
+      "pointer": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md:L3-L9",
+      "excerpt_window": "## Status\n\n- phase: `phase1_cli_space_enablement`\n- authority: `working_spec`\n- relation_to_existing_baseline: 이 문서는 기존 baseline을 대체하지 않고, Codex CLI가 기존 공간을 같은 질서로 읽기 위한 얇은 운영 고정 문서다.\n- created_for: 질문 해석 -> 공간 탐색 -> Codex 판단 -> merge/diff/hold -> 재유입 루프",
+      "excerpt_mode": "heading_plus_block",
+      "why_it_matters": "Phase 1 goal and non-goal boundary.",
+      "relation_type": "direct_support",
+      "confidence": "medium",
+      "local_confidence": "medium",
+      "excerpt_quality": "usable",
+      "excerpt_retry_count": 0,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/source_authority_ladder_v0.md",
+        "docs/specs/evidence_merge_diff_hold_contract_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/space_reading_order_for_codex_v0.md",
+      "excerpt_or_pointer": "## Execution\n\nDefault first-read order:\n\n1. `CURRENT.md`\n   - 현재 fragment 중심 baseline과 runtime 방향 확인.\n2. `vectorfl_status.md`\n   - 현재 통합 엔진 포인터, 주요 자산 지도, 현재 priority 확인.\n3. `source_assets/baselines/folder_status.md`\n   - 상위 baseline 후보 목록 확인.\n4. `source_assets/baselines/repo_shared_reality_pack_v1.md`\n   - 사용자/어시스턴트/Codex가 같은 repo 현실을 보는 방식 확인.",
+      "pointer": "docs/specs/space_reading_order_for_codex_v0.md:L7-L18",
+      "excerpt_window": "## Execution\n\nDefault first-read order:\n\n1. `CURRENT.md`\n   - 현재 fragment 중심 baseline과 runtime 방향 확인.\n2. `vectorfl_status.md`\n   - 현재 통합 엔진 포인터, 주요 자산 지도, 현재 priority 확인.\n3. `source_assets/baselines/folder_status.md`\n   - 상위 baseline 후보 목록 확인.\n4. `source_assets/baselines/repo_shared_reality_pack_v1.md`\n   - 사용자/어시스턴트/Codex가 같은 repo 현실을 보는 방식 확인.",
+      "excerpt_mode": "heading_plus_block",
+      "why_it_matters": "Default first-entry reading order.",
+      "relation_type": "direct_support",
+      "confidence": "high",
+      "local_confidence": "high",
+      "excerpt_quality": "strong",
+      "excerpt_retry_count": 0,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/source_authority_ladder_v0.md",
+        "docs/specs/evidence_merge_diff_hold_contract_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/source_authority_ladder_v0.md",
+      "excerpt_or_pointer": "## Purpose\n\nmerge/diff/hold 전에 공간 근거의 권위 순서를 고정한다. 이 ladder는 existing baseline을 뒤집지 않고, Codex가 비교할 때의 기본 판단 순서를 제공한다.",
+      "pointer": "docs/specs/source_authority_ladder_v0.md:L3-L6",
+      "excerpt_window": "## Purpose\n\nmerge/diff/hold 전에 공간 근거의 권위 순서를 고정한다. 이 ladder는 existing baseline을 뒤집지 않고, Codex가 비교할 때의 기본 판단 순서를 제공한다.",
+      "excerpt_mode": "heading_plus_block",
+      "why_it_matters": "Authority resolution before merge/diff/hold.",
+      "relation_type": "direct_support",
+      "confidence": "high",
+      "local_confidence": "high",
+      "excerpt_quality": "strong",
+      "excerpt_retry_count": 0,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/evidence_merge_diff_hold_contract_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "excerpt_or_pointer": "# Evidence Merge Diff Hold Contract v0\n\n## Purpose",
+      "pointer": "docs/specs/evidence_merge_diff_hold_contract_v0.md:L1-L4",
+      "excerpt_window": "# Evidence Merge Diff Hold Contract v0\n\n## Purpose",
+      "excerpt_mode": "line_window",
+      "why_it_matters": "Mode and comparison contract.",
+      "relation_type": "direct_support",
+      "confidence": "medium",
+      "local_confidence": "medium",
+      "excerpt_quality": "usable",
+      "excerpt_retry_count": 1,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/source_authority_ladder_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "excerpt_or_pointer": "## Execution\n\nGrounded evidence unit minimum fields:\n\n- `source_ref`: source path or artifact ref.\n- `pointer`: stable pointer, usually path plus line range or section hint.\n- `excerpt_window`: bounded local text used as evidence.\n- `excerpt_mode`: how the excerpt was selected.\n- `why_it_matters`: relation between excerpt and interpreted goal.\n- `relation_type`: evidence relation.\n- `local_confidence`: confidence in this local evidence unit.\n- `cross_support_refs`: other evidence refs that support this evidence.",
+      "pointer": "docs/specs/evidence_unit_grounding_contract_v0.md:L9-L20",
+      "excerpt_window": "## Execution\n\nGrounded evidence unit minimum fields:\n\n- `source_ref`: source path or artifact ref.\n- `pointer`: stable pointer, usually path plus line range or section hint.\n- `excerpt_window`: bounded local text used as evidence.\n- `excerpt_mode`: how the excerpt was selected.\n- `why_it_matters`: relation between excerpt and interpreted goal.\n- `relation_type`: evidence relation.\n- `local_confidence`: confidence in this local evidence unit.\n- `cross_support_refs`: other evidence refs that support this evidence.",
+      "excerpt_mode": "heading_plus_block",
+      "why_it_matters": "Grounded evidence fields and pointer fallback.",
+      "relation_type": "direct_support",
+      "confidence": "high",
+      "local_confidence": "high",
+      "excerpt_quality": "strong",
+      "excerpt_retry_count": 0,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/source_authority_ladder_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+      "excerpt_or_pointer": "## Status\n\n- phase: `phase1_6_evidence_grounding_hardening`\n- authority: `working_spec`\n\n## Execution",
+      "pointer": "docs/specs/merge_diff_hold_grounding_rules_v0.md:L2-L8",
+      "excerpt_window": "## Status\n\n- phase: `phase1_6_evidence_grounding_hardening`\n- authority: `working_spec`\n\n## Execution",
+      "excerpt_mode": "line_window",
+      "why_it_matters": "Evidence depth rules for merge/diff/hold.",
+      "relation_type": "direct_support",
+      "confidence": "medium",
+      "local_confidence": "medium",
+      "excerpt_quality": "usable",
+      "excerpt_retry_count": 1,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/source_authority_ladder_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    },
+    {
+      "source_ref": "docs/specs/phase1_5_decision_gate_rules_v0.md",
+      "excerpt_or_pointer": "## Status\n\n- phase: `phase1_5_usage_loop_binding`\n- authority: `working_spec`\n- baseline_promotion: none",
+      "pointer": "docs/specs/phase1_5_decision_gate_rules_v0.md:L3-L8",
+      "excerpt_window": "## Status\n\n- phase: `phase1_5_usage_loop_binding`\n- authority: `working_spec`\n- baseline_promotion: none",
+      "excerpt_mode": "heading_plus_block",
+      "why_it_matters": "Phase 1.5 stop and decision gate rules.",
+      "relation_type": "direct_support",
+      "confidence": "medium",
+      "local_confidence": "medium",
+      "excerpt_quality": "usable",
+      "excerpt_retry_count": 0,
+      "fallback_reason": "",
+      "tuning_note": "",
+      "cross_support_refs": [
+        "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+        "docs/specs/space_reading_order_for_codex_v0.md",
+        "docs/specs/source_authority_ladder_v0.md"
+      ],
+      "contradiction_note": "",
+      "grounding_status": "cross_supported"
+    }
+  ],
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 0,
+    "cross_supported": 7,
+    "total": 7
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 4,
+    "strong": 3,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 7
+  },
+  "supporting_links": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+    "docs/specs/phase1_5_decision_gate_rules_v0.md"
+  ],
+  "tension_or_conflict_assets": [
+    {
+      "reason": "authority_conflict",
+      "matched_terms": [
+        "replace the grounded contract",
+        "contract meaning"
+      ]
+    },
+    {
+      "reason": "final_naming_lock_required",
+      "matched_terms": [
+        "final-lock"
+      ]
+    }
+  ],
+  "missing_gaps": [
+    "Some evidence may still require human reading for semantic claims."
+  ],
+  "confidence": "high",
+  "next_probe_candidates": [],
+  "exploration_validation": {
+    "is_evidence_bundle": true,
+    "selected_and_discarded_separated": true,
+    "gaps_recorded": true,
+    "grounded_fields_present": true,
+    "pointer_fallback_preserved": true,
+    "excerpt_quality_present": true
+  }
+}

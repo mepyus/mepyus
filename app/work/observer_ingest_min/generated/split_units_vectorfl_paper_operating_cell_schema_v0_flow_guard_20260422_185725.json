@@ -1,0 +1,288 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "VectorFL Paper Operating Cell Schema v0",
+    "end_ref": "VectorFL Paper Operating Cell Schema v0",
+    "unit_type": "heading_block",
+    "text_excerpt": "# VectorFL Paper Operating Cell Schema v0",
+    "char_count": 41,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "Purpose",
+    "end_ref": "Purpose",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Purpose This schema defines the minimum structure of an operating cell inside `VectorFL Paper`. A cell is not a label or dashboard tab. A cell is a working unit that combines: - a lens - managed internal functions - a",
+    "char_count": 318,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "Core Rule",
+    "end_ref": "Core Rule",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Core Rule Every cell must help close the loop: `input -> internal reread -> line formation -> selective external lookup -> internal return -> next judgment` If a proposed cell does not help this loop, it is not an ope",
+    "char_count": 236,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "Required Fields",
+    "end_ref": "Required Fields",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Required Fields",
+    "char_count": 18,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "`cell_id`",
+    "end_ref": "`cell_id`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `cell_id` - Stable unique identifier. - Example: `internal_read_cell`",
+    "char_count": 73,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "`label`",
+    "end_ref": "`label`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `label` - Human-readable name for the cell. - Example: `Internal Read Cell`",
+    "char_count": 79,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "`purpose`",
+    "end_ref": "`purpose`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `purpose` - One sentence explaining why this cell exists. - It must describe a function, not a department identity.",
+    "char_count": 119,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "`lens`",
+    "end_ref": "`lens`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `lens` - What this cell is optimized to notice first. - Example: - repeated pressure - unclear structure - reusable line seed - external comparison target",
+    "char_count": 158,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "`managed_internal_functions`",
+    "end_ref": "`managed_internal_functions`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `managed_internal_functions` - Concrete internal functions, scripts, records, or reading assets this cell is allowed to touch. - These should be expressed as actual managed materials, not vague intentions.",
+    "char_count": 209,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "`managing_cli`",
+    "end_ref": "`managing_cli`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `managing_cli` - The CLI primarily responsible for managing this cell. - Initial allowed values: - `codex-cli` - `gemini-cli` - `hybrid`",
+    "char_count": 140,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "`md_contract`",
+    "end_ref": "`md_contract`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `md_contract` - Path to the md contract this cell must read before acting. - This is the behavioral contract, not a note.",
+    "char_count": 125,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "`inputs`",
+    "end_ref": "`inputs`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `inputs` - Inputs this cell expects to receive. - Examples: - current task seed - prior line candidates - recall bundles - unresolved tensions - external candidate references",
+    "char_count": 178,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "`outputs`",
+    "end_ref": "`outputs`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `outputs` - Outputs this cell is expected to emit. - Examples: - stable / unclear split - line seed set - candidate reference set - human report - next loop proposal",
+    "char_count": 169,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "`required_evidence`",
+    "end_ref": "`required_evidence`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `required_evidence` - Minimum evidence required before this cell can claim completion. - Example: - at least 3 repeated pressures - at least 2 explicit misunderstandings corrected - at least 1 internal-to-external br",
+    "char_count": 233,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "`handoff_targets`",
+    "end_ref": "`handoff_targets`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `handoff_targets` - Which cells can receive this cell's output. - Each target should also say why the handoff exists.",
+    "char_count": 121,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "`human_report_format`",
+    "end_ref": "`human_report_format`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `human_report_format` - The supervision format this cell must produce for a human decision-maker. - This should point to a named report format rather than ad hoc prose.",
+    "char_count": 172,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  },
+  {
+    "unit_id": "unit_017",
+    "start_ref": "`external_pair_team`",
+    "end_ref": "`external_pair_team`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `external_pair_team` - External-facing paired cell or `null`. - Internal cells that affect expansion should usually have an external pair.",
+    "char_count": 142,
+    "source_segment_ids": [
+      "seg_017"
+    ]
+  },
+  {
+    "unit_id": "unit_018",
+    "start_ref": "`governance`",
+    "end_ref": "`governance`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `governance` - Constraints and escalation rules. - Minimum fields: - `allowed_actions` - `disallowed_actions` - `needs_human_gate` - `reopen_conditions`",
+    "char_count": 156,
+    "source_segment_ids": [
+      "seg_018"
+    ]
+  },
+  {
+    "unit_id": "unit_019",
+    "start_ref": "`return_slot`",
+    "end_ref": "`return_slot`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `return_slot` - Where the result returns to inside `VectorFL Paper`. - Example: - `line_candidates_latest` - `external_candidates_latest` - `supervisor_report_latest`",
+    "char_count": 170,
+    "source_segment_ids": [
+      "seg_019"
+    ]
+  },
+  {
+    "unit_id": "unit_020",
+    "start_ref": "Optional Fields",
+    "end_ref": "Optional Fields",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Optional Fields",
+    "char_count": 18,
+    "source_segment_ids": [
+      "seg_020"
+    ]
+  },
+  {
+    "unit_id": "unit_021",
+    "start_ref": "`scenario_scope`",
+    "end_ref": "`scenario_scope`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `scenario_scope` - Which scenario or pilot this cell currently serves.",
+    "char_count": 74,
+    "source_segment_ids": [
+      "seg_021"
+    ]
+  },
+  {
+    "unit_id": "unit_022",
+    "start_ref": "`run_notes`",
+    "end_ref": "`run_notes`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `run_notes` - Temporary runtime notes for the current loop only.",
+    "char_count": 68,
+    "source_segment_ids": [
+      "seg_022"
+    ]
+  },
+  {
+    "unit_id": "unit_023",
+    "start_ref": "`quality_checks`",
+    "end_ref": "`quality_checks`",
+    "unit_type": "heading_block",
+    "text_excerpt": "### `quality_checks` - Lightweight completion checks that can be machine-checked or reviewer-checked.",
+    "char_count": 101,
+    "source_segment_ids": [
+      "seg_023"
+    ]
+  },
+  {
+    "unit_id": "unit_024",
+    "start_ref": "Minimum Example",
+    "end_ref": "Minimum Example",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Minimum Example ```yaml cell_id: internal_read_cell label: Internal Read Cell purpose: Reread internal materials deeply enough to separate stable signals from unclear pressure. lens: - repeated pressure - misunderstan",
+    "char_count": 1225,
+    "source_segment_ids": [
+      "seg_024"
+    ]
+  },
+  {
+    "unit_id": "unit_025",
+    "start_ref": "Validation Questions",
+    "end_ref": "Validation Questions",
+    "unit_type": "heading_block",
+    "text_excerpt": "## Validation Questions - Does this cell describe a working function rather than a role label? - Can a CLI manage it without fresh human re-instruction each time? - Does it emit evidence-backed outputs rather than summar",
+    "char_count": 323,
+    "source_segment_ids": [
+      "seg_025"
+    ]
+  },
+  {
+    "unit_id": "unit_026",
+    "start_ref": "v0 Initial Cells",
+    "end_ref": "v0 Initial Cells",
+    "unit_type": "heading_block",
+    "text_excerpt": "## v0 Initial Cells - `internal_read_cell` - `external_resource_cell` - `synthesis_cell` These three are the minimum 1st-loop cell set.",
+    "char_count": 135,
+    "source_segment_ids": [
+      "seg_026"
+    ]
+  }
+]

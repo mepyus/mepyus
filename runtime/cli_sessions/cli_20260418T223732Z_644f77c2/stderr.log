@@ -1,0 +1,414 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019da2bd-fb36-7712-8354-2797afe34dad
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: summarize
+Requested by surface: vectorfl_surface
+Requested by page: package2_worker_adapter_contract_validation_escalated
+
+Purpose:
+Actual worker contract smoke: return only a minimal bounded structured worker return for package continuity validation.
+
+Bounded context refs:
+- docs/specs/integrated_engine_worker_return_contract_v0.md
+- docs/reports/integrated_engine_real_worker_boundary_audit_v0.md
+
+Prompt payload:
+Read the bounded contract refs if available. Keep the prose short. The most important requirement is to include the WORKER_RETURN_JSON block exactly as requested by the adapter prompt. Do not modify files.
+
+Return format:
+- result summary
+- answer: direct answer or main response body
+- findings: key observations as bullets
+- files_artifacts: concrete file paths or generated outputs
+- next_continue_hint: specific next step for this same package
+- open_questions: unresolved blockers
+- risks_or_limits: uncertainty, weak spots, dry-run limits, or blocked areas
+- source_refs: bounded context refs actually used
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+You must also include one machine-readable block near the end of the answer.
+Use exactly this delimiter format and valid JSON. Keep arrays as arrays of strings.
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "<package id if known>",
+  "run_kind": "summarize",
+  "answer": "<direct answer or main response>",
+  "findings": ["<key observation>"],
+  "files_artifacts": ["<path or artifact ref>"],
+  "next_continue_hint": "<specific next step for this same package>",
+  "open_questions": ["<unresolved blocker>"],
+  "risks_or_limits": ["<uncertainty or limit>"],
+  "source_refs": ["<bounded context ref actually used>"]
+}
+END_WORKER_RETURN_JSON
+
+codex
+I’ll read the two bounded refs and return only the structured smoke result without modifying files.
+exec
+/bin/bash -lc "sed -n '1,220p' docs/specs/integrated_engine_worker_return_contract_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Worker Return Contract v0
+
+## 1. Purpose
+
+This contract reduces dependence on post-hoc parsing.
+
+The operating spine already stores CLI sessions, event ledger entries, package notebooks, and enriched RunRecords. The remaining weak point is that RunRecord enrichment has to recover meaning from raw worker text. This note defines the stable worker return shape that the runtime should prefer when available.
+
+## 2. Contract Shape
+
+The bounded worker return payload is:
+
+- `schema_version`
+- `worker_id`
+- `package_id`
+- `run_kind`
+- `answer`
+- `findings[]`
+- `files_artifacts[]`
+- `next_continue_hint`
+- `open_questions[]`
+- `risks_or_limits[]`
+- `source_refs[]`
+- `raw_fallback_text`
+
+Current schema version:
+
+- `integrated_engine_worker_return_v0`
+
+## 3. Runtime Boundary
+
+Current path:
+
+`worker stdout/stderr -> structured_return.json -> RunRecord enrichment -> package notebook`
+
+Target path:
+
+`worker return payload -> structured_return.worker_return -> RunRecord enrichment -> package notebook`
+
+The parser remains only as compatibility fallback for older or raw-only runs.
+
+## 4. Primary / Fallback Rule
+
+RunRecord projection should read in this order:
+
+1. `structured_return.worker_return`
+2. compatible top-level structured return fields if present
+3. fallback extraction from `result_summary`
+4. raw summary fallback
+
+This keeps old sessions readable while making new sessions less format-sensitive.
+
+## 5. What This Does Not Solve
+
+This contract does not implement:
+
+- multi-agent orchestration
+- worker switching UX
+- streaming terminal
+- artifact viewer
+- automatic line / axis detection
+- cross-package automation
+- universal schema for every future tool
+
+## 6. Validation Standard
+
+PASS requires:
+
+- new worker/session returns include `worker_return`
+- package notebook uses `answer/findings/files_artifacts/next_continue_hint`
+- old runs without `worker_return` still read through fallback projection
+
+PASS_WITH_NOTE is appropriate if real external worker output still needs normalization before it can emit the contract directly.
+
+exec
+/bin/bash -lc "sed -n '1,220p' docs/reports/integrated_engine_real_worker_boundary_audit_v0.md" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+# Integrated Engine Real Worker Boundary Audit v0
+
+## 1. Verdict
+
+PASS
+
+## 2. Scope
+
+This audit covers Package 1 only.
+
+Goal:
+
+- separate the dry-run path from the actual external worker path
+- identify where real worker output enters runtime storage
+- lock the thinnest insertion point for `structured_return.worker_return`
+
+No UI expansion, orchestration expansion, or redesign was performed.
+
+## 3. Current Runtime Boundary
+
+The current CLI package path is concentrated in:
+
+- `app/runtime/vectorfl_integrated_engine_api.py`
+
+Primary entry:
+
+- `run_integrated_engine_cli_session(runtime_root, payload)`
+
+Adapter:
+
+- `CodexCliAdapter`
+
+Important runtime artifacts:
+
+- `runtime/cli_sessions/<session_id>/prompt.md`
+- `runtime/cli_sessions/<session_id>/stdout.log`
+- `runtime/cli_sessions/<session_id>/stderr.log`
+- `runtime/cli_sessions/<session_id>/structured_return.json`
+- `runtime/cli_sessions/<session_id>/deposit_candidate.md`
+- `runtime/cli_sessions/<session_id>/operator_report.md`
+- `runtime/events/integrated_engine_package_run_events.jsonl`
+
+Notebook read path:
+
+- `_build_cli_package_notebooks(...)`
+- `_enrich_run_record(...)`
+- `_normalize_worker_return(...)`
+
+## 4. Dry-Run Path
+
+Dry-run path is selected by:
+
+- `dry_run = bool(session.get("dry_run"))`
+
+When `dry_run` is true:
+
+1. runtime profiles bounded context refs with `_profile_context_refs(...)`
+2. runtime synthesizes deterministic profile text into `stdout`
+3. no external CLI is invoked
+4. `structured_return.worker_return` is produced from controlled runtime material
+5. session artifacts are written under `runtime/cli_sessions/<session_id>/`
+
+Dry-run validates:
+
+- package vessel formation
+- context refs carryover
+- event ledger recording
+- structured return projection
+- notebook continuity path
+
+Dry-run does not validate:
+
+- real external worker compliance
+- real worker prose variability
+- actual worker ability to follow the return contract
+- external CLI runtime failure behavior beyond simulated storage
+
+## 5. Actual Worker Path
+
+Actual worker path is selected when:
+
+- `dry_run` is false
+
+In that path, `CodexCliAdapter.start_run(...)` builds and runs:
+
+```text
+codex exec --skip-git-repo-check --sandbox read-only --cd <repo> -
+```
+
+The prompt is passed through stdin.
+
+Actual worker output enters runtime as:
+
+- `completed.stdout`
+- `completed.stderr`
+- `completed.returncode`
+
+Failure variants currently handled:
+
+- `FileNotFoundError`
+- `subprocess.TimeoutExpired`
+- non-zero exit code
+
+The immediate runtime write points are:
+
+- `stdout.log`
+- `stderr.log`
+- `structured_return.json`
+
+This is the real external worker boundary.
+
+## 6. Structured Return Insertion Point
+
+The narrowest insertion point is inside `CodexCliAdapter.start_run(...)`, after:
+
+```text
+stdout/stderr/exit_code/status/error_message are known
+```
+
+and before:
+
+```text
+structured_return.json is written
+```
+
+Current sequence:
+
+1. external worker returns `stdout`, `stderr`, `exit_code`
+2. runtime computes `raw_result_summary`
+3. runtime builds top-level `structured_return`
+4. runtime writes `structured_return["worker_return"] = _normalize_worker_return(...)`
+5. runtime writes `structured_return.json`
+6. deposit candidate and operator report are derived
+7. session index is updated
+8. event ledger records return and reread route
+9. notebook projects the run through `_enrich_run_record(...)`
+
+This is sufficiently narrow for Package 2 adapter prompt work.
+
+## 7. Actual vs Dry-Run Difference
+
+| Area | Dry-run | Actual worker |
+| --- | --- | --- |
+| Source of output | runtime-generated profile text | external CLI stdout/stderr |
+| Context profiles | directly available to normalizer | available before handoff, but actual worker may ignore refs |
+| Worker compliance | not tested | must be tested |
+| Structured return | deterministic normalization | normalization from actual worker output |
+| Main risk | false confidence | prose drift / missing fields |
+
+## 8. Patch Point Summary
+
+Patch point for Package 2:
+
+- `_cli_session_prompt(session_spec)`
+- `CodexCliAdapter.start_run(...)`
+- `_normalize_worker_return(...)`
+
+Minimal next patch shape:
+
+1. strengthen `_cli_session_prompt(...)` to request an explicit `WORKER_RETURN_JSON` or equivalent bounded block
+2. add a small extractor that attempts to parse that block from stdout
+3. pass parsed fields into `_normalize_worker_return(...)`
+4. keep current parser fallback if no valid block is found
+
+This avoids changing:
+
+- session directory layout
+- event ledger
+- package notebook shape
+- UI surfaces
+- worker registry
+- multi-agent routing
+
+## 9. Risks / Ambiguity
+
+Known risks:
+
+- Actual Codex CLI may return helpful prose but not the requested structured block.
+- The prompt currently asks for structured fields but does not yet require a machine-readable block.
+- `context_profiles` are only directly available in dry-run normalization; actual worker normalization mainly sees stdout/stderr and session refs.
+- `structured_return.worker_return` can exist even when the worker did not truly emit the structure, because runtime normalization can synthesize it from raw output.
+
+Remaining ambiguity:
+
+- Whether actual worker compliance should be validated by requiring a parseable JSON block, or by accepting markdown headings. Package 2 should choose the smallest reliable form.
+
+## 10. Package 2 Readiness
+
+Package 2 is ready.
+
+Reason:
+
+- actual worker entry is concretely identified
+- dry-run and actual-run paths are separated
+- the structured return insertion point is narrow
+- current storage/notebook/event flow does not require rewrite
+
+Recommended Package 2 focus:
+
+- define the actual adapter prompt block
+- parse worker-emitted structure before fallback normalization
+- record whether the structured block was worker-emitted or runtime-normalized
+
+codex
+result summary:
+Actual worker contract smoke completed. The bounded refs support a minimal machine-readable `WORKER_RETURN_JSON` block for Package 2 continuity validation.
+
+answer:
+Use the worker-emitted block as the primary adapter validation target. The contract expects `structured_return.worker_return` to carry stable fields, while the audit identifies the actual worker boundary and the narrow patch point for extracting a parseable block from stdout before fallback normalization.
+
+findings:
+- Worker return schema version is `integrated_engine_worker_return_v0`.
+- Runtime should prefer `structured_return.worker_return` before fallback parsing.
+- Actual worker output enters through `CodexCliAdapter.start_run(...)` stdout/stderr/returncode.
+- Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization.
+
+files_artifacts:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+next_continue_hint:
+Validate that the adapter can extract this `WORKER_RETURN_JSON` block from actual worker stdout and project it into `structured_return.worker_return`.
+
+open_questions:
+- Package id was not provided in the prompt.
+- Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision.
+
+risks_or_limits:
+- This was a read-only smoke response; no files were modified.
+- Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone.
+
+source_refs:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+suggested next use:
+validation target
+
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "unknown",
+  "run_kind": "summarize",
+  "answer": "Actual worker contract smoke completed. Use the worker-emitted block as the primary adapter validation target for projecting structured_return.worker_return.",
+  "findings": [
+    "Worker return schema version is integrated_engine_worker_return_v0.",
+    "Runtime should prefer structured_return.worker_return before fallback parsing.",
+    "Actual worker output enters through CodexCliAdapter.start_run(...) stdout/stderr/returncode.",
+    "Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization."
+  ],
+  "files_artifacts": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ],
+  "next_continue_hint": "Validate that the adapter can extract this WORKER_RETURN_JSON block from actual worker stdout and project it into structured_return.worker_return.",
+  "open_questions": [
+    "Package id was not provided in the prompt.",
+    "Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision."
+  ],
+  "risks_or_limits": [
+    "This was a read-only smoke response; no files were modified.",
+    "Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone."
+  ],
+  "source_refs": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ]
+}
+END_WORKER_RETURN_JSON
+tokens used
+4,777

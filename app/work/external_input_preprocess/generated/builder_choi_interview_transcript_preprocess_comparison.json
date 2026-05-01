@@ -1,8 +1,8 @@
 {
   "comparison_name": "transcript_preprocess_comparison_v0",
-  "generated_at": "2026-04-05T07:45:27.241556Z",
+  "generated_at": "2026-04-22T09:32:45.276565Z",
   "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
-  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_compare_20260405T074527Z.txt",
+  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_compare_20260422T093245Z.txt",
   "before_gate": {
     "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
     "decision": "preprocess_required",
@@ -97,7 +97,7 @@
     }
   },
   "after_gate": {
-    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_compare_20260405T074527Z.txt",
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_compare_20260422T093245Z.txt",
     "decision": "uncertain_needs_probe",
     "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
     "format_profile": "mixed_or_unclear",
@@ -265,5 +265,182 @@
       ],
       "next_checkpoint": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
     }
+  },
+  "support_layers": {
+    "content_role_tags": [
+      {
+        "tag_id": "role_before_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "before_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "correction",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks"
+      },
+      {
+        "tag_id": "role_after_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "after_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "main_claim",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed"
+      },
+      {
+        "tag_id": "role_comparison_readiness_read_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "comparison.readiness_read.reason",
+        "content_role": "transition",
+        "secondary_role": "objection",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "preprocess reduced transcript noise, but intake should still be checked before mutation"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_improved",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "comparison.check_surface.what_improved",
+        "content_role": "background",
+        "secondary_role": "",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=background:1",
+        "why_this_role": "The chunk situates source context or provenance-adjacent explanation.",
+        "excerpt_preview": "dust count moved down toward larger meaning units average chars per dust increased, so each unit carries more local context short shard ratio decreased"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_is_still_missing",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "comparison.check_surface.what_is_still_missing",
+        "content_role": "main_claim",
+        "secondary_role": "background",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=main_claim:1",
+        "why_this_role": "The chunk pushes a dominant gap, need, or claim-like pressure.",
+        "excerpt_preview": "post-preprocess state is still not direct-ingest-safe short shard ratio is still high enough to flatten local context"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_next_checkpoint",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_ref": "comparison.check_surface.next_checkpoint",
+        "content_role": "transition",
+        "secondary_role": "",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+      }
+    ],
+    "line_seed_bundles": [
+      {
+        "bundle_id": "line_seed_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "split_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "repeated_pressure_note": "Preprocess comparison keeps returning: dust, still, units.",
+        "linkage_hint": "Gate reason, readiness read, and next checkpoint form one bounded support chain.",
+        "question_inducement": "What local meaning pressure survives regroup strongly enough to support later evidence use?",
+        "misunderstanding_correction": "The comparison is explicitly correcting a too-flat direct-ingest reading.",
+        "tension_marker": "The artifact keeps the risk of over-flat ingest visible even after regroup.",
+        "provisional_role_mix": [
+          "transition",
+          "transition",
+          "transition",
+          "background",
+          "main_claim",
+          "transition"
+        ],
+        "why_line_seed": "This comparison carries repeated correction pressure and a next-step question before any packet use.",
+        "not_yet_axis_reason": "Preprocess comparison remains a lower support artifact and does not justify axis or packet promotion by itself.",
+        "seed_confidence": "medium"
+      }
+    ],
+    "camera_support_bundles": [
+      {
+        "camera_support_id": "camera_support_preprocess_001",
+        "artifact_id": "camera_support_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/builder_choi_interview.txt",
+        "source_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "upstream_artifact_refs": [
+          "line_seed_preprocess_001"
+        ],
+        "classification": "evidence_only",
+        "camera_signal_summary": "Lower support suggests change + boundary reread potential.",
+        "change_support": {
+          "strength": "has_signal",
+          "summary": "Local shift or before-after support is visible.",
+          "matched_cues": [
+            "move",
+            "moved",
+            "regroup",
+            "reduced"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "boundary_support": {
+          "strength": "has_signal",
+          "summary": "Hold or thinness support is visible.",
+          "matched_cues": [
+            "still not",
+            "should still be checked",
+            "not direct-ingest-safe",
+            "before mutation"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "flow_support": {
+          "strength": "insufficient",
+          "summary": "Flow-like support is insufficient.",
+          "matched_cues": [],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "insufficiency_or_gap": "Signals are local and still need broader reread before any stronger organization.",
+        "carry_forward_handle": {
+          "reread_hint": "Use gate reason, readiness read, and seed support for bounded upper reread.",
+          "upstream_seed_ref": "line_seed_preprocess_001",
+          "source_unit_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        }
+      }
+    ],
+    "support_layer_note": "These support layers are additive and do not change lower readiness or upper admission."
   }
 }

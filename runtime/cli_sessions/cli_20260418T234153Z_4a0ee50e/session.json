@@ -1,0 +1,30 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T234153Z_4a0ee50e",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "app/ui/integrated_engine",
+  "purpose_text": "내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음",
+  "bounded_context_refs": [
+    "gemini/external_analysis"
+  ],
+  "prompt_payload": "You are operating as a Codex turn inside the integrated-engine VectorFL surface.\nThe CLI is an on-top tool layer, not a fourth surface.\nThe fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.\n\nCurrent work packet visible in the VectorFL surface:\n- purpose: 내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음\n- task lens: reread\n- internal search gate: thin evidence (not explicitly requested)\n- evidence bundle summary: 1 attached refs: source ref\n- evidence limitation: Evidence bundle is thin; only one ref is attached.\n- active locks: fixed 3-surface body + CLI on-top boundary (inferred)\n- evidence refs: gemini/external_analysis\n- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)\n- expected return shape: reread judgment\n- next route candidate: vectorfl_reread\n- internal search usage: thin evidence\n\nCurrent user-facing purpose:\n내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음\n\nCurrent message to Codex:\n그럼 니가 참조한 라인과 축을 알려줘\n\nReturn format for this VectorFL CLI conversation turn:\n1. Korean operating summary\n2. Surface reading: user / VectorFL / engine\n3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold\n4. What must not be inferred\n5. Suggested next use\nDo not modify files. Do not promote, ingest, or canonicalize anything.",
+  "status": "done",
+  "started_at": "2026-04-18T23:41:53Z",
+  "ended_at": "2026-04-18T23:42:48Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 90,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T234153Z_4a0ee50e/prompt.md",
+  "exit_code": 0,
+  "result_summary": "surface와 CLI host/provider boundary.\n    - `docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:190-192`  \n      - 축: no promotion / no canonicalization / hold-before-stronger-use.\n\n- surface reading: user / VectorFL / engine  \n  - user: 목적/assignment/decision을 잡는 자리. 여기서는 “내부 설계 증명: 신규 패키지”와 “참조 라인과 축 확인”이 user-side 요청입니다.\n  - VectorFL: interpretation/reread/mediation 자리. 중앙 setup에서 목적/렌즈/근거를 묶고 CLI 실행으로 넘기는 조정면입니다.\n  - engine: processing/return/deposit material 자리. Codex CLI는 이 engine 처리층 위의 backend/tool call로 관찰되어야 하며 별도 제4 surface가 아닙니다.\n\n- route suggestion  \n  - reread_target: `fixed 3-surface body + CLI on-top boundary` 재확인.\n  - validation_target: `paperclip LF07`, `openclaw LF01/LF02`, `openharness LF09`, `agent_skills gated setup`이 현재 목적에 과잉 적용 없이 맞는지 검증.\n  - implementation_return: 아직 아님. evidence가 thin이고 guards가 active입니다.\n  - deposit_candidate: “CLI는 새 surface가 아니라 engine backend/tool layer”라는 경계 문장만 deposit 후보.\n  - hold: 렌즈 승격, canonical registry화, 신규 패키지 구현 착수는 hold.\n\n- what must not be inferred  \n  - CLI를 fourth surface로 보면 안 됩니다.\n  - `gemini/external_analysis`를 canonical 설계 원본으로 보면 안 됩니다.\n  - external project 구조를 VectorFL에 직접 이식한다고 추론하면 안 됩니다.\n  - 신규 패키지 구현 승인으로 읽으면 안 됩니다.\n  - ingest, promotion, canonicalization이 발생했다고 보면 안 됩니다.\n\n- uncertainty or failure notes  \n  - evidence bundle은 thin합니다. 직접 근거는 `gemini/external_analysis` 내부 분석 파일 중심이고, inventory 문서는 그 분석을 재분류한 보조 근거입니다.\n  - 현재 판단은 설계 reread 수준이며 implementation authority는 없습니다.\n\n- suggested next use: reread target / implementation return / validation target / deposit candidate  \n  - suggested next use: `validation_target`\n  - 권장 검증 문장: “중앙 setup은 user 목적/렌즈/근거를 packet으로 묶고, Codex/Gemini CLI는 VectorFL engine surface가 호출한 backend provider로만 실행된다. 이 실행층은 surface split을 늘리지 않는다.”\n",
+  "suggested_next_use": "validation_target",
+  "error_message": ""
+}

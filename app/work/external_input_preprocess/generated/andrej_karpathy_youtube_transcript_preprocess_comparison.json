@@ -1,0 +1,443 @@
+{
+  "comparison_name": "transcript_preprocess_comparison_v0",
+  "generated_at": "2026-04-23T06:30:12.256318Z",
+  "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+  "preprocessed_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/andrej_karpathy_youtube_transcript_regroup_compare_20260423T063012Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+    "decision": "preprocess_required",
+    "decision_reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+    "format_profile": "raw_transcript_like",
+    "should_preprocess": true,
+    "preprocess_kind": "transcript_aware_regroup",
+    "metrics": {
+      "line_count": 645,
+      "dust_count": 483,
+      "timestamp_line_count": 320,
+      "timestamp_density": 0.496,
+      "timestamp_token_count": 320,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 320,
+      "transcript_marker_density": 0.496,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 53,
+      "short_dust_ratio": 0.11,
+      "timestamp_dust_count": 284,
+      "timestamp_dust_ratio": 0.588,
+      "transcript_marker_dust_count": 284,
+      "transcript_marker_dust_ratio": 0.588,
+      "avg_chars_per_dust": 36.48,
+      "top_scene_counts": {
+        "review": 466,
+        "evidence": 8,
+        "impl": 6,
+        "spec": 3
+      },
+      "top_flow_counts": {
+        "compare": 466,
+        "run": 16,
+        "break": 1
+      },
+      "sample_short_labels": [
+        "Opening: 유령의 기원 (L…",
+        "우리가 하는 작업은 생물학적인 0…",
+        "자, 얼룩말을 한번 볼까요?이 이…",
+        "이건 엔지니어링 관점에서 보면 말…",
+        "생존을 위한 거대한 하드웨어가 모…",
+        "이건 얼룩말이 태어나서 강화 학습…",
+        "0:30 수학년에 걸친 진화 과정…",
+        "초기값 자체가 이미 생존에 맞게 …",
+        "하지만 인간은 그런 0:43 진화…",
+        "제 블로그에도 썼지만 우리가 만드…"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "preprocess_required",
+        "reason": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.496,
+        "timestamp_dust_ratio": 0.588,
+        "transcript_marker_dust_ratio": 0.588,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.11,
+        "avg_chars_per_dust": 36.48,
+        "sample_short_labels": [
+          "Opening: 유령의 기원 (L…",
+          "우리가 하는 작업은 생물학적인 0…",
+          "자, 얼룩말을 한번 볼까요?이 이…",
+          "이건 엔지니어링 관점에서 보면 말…",
+          "생존을 위한 거대한 하드웨어가 모…",
+          "이건 얼룩말이 태어나서 강화 학습…",
+          "0:30 수학년에 걸친 진화 과정…",
+          "초기값 자체가 이미 생존에 맞게 …",
+          "하지만 인간은 그런 0:43 진화…",
+          "제 블로그에도 썼지만 우리가 만드…"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/andrej_karpathy_youtube_transcript_regroup_compare_20260423T063012Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 154,
+      "dust_count": 480,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 51,
+      "short_dust_ratio": 0.106,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 36.19,
+      "top_scene_counts": {
+        "review": 463,
+        "evidence": 8,
+        "impl": 6,
+        "spec": 3
+      },
+      "top_flow_counts": {
+        "compare": 463,
+        "run": 16,
+        "break": 1
+      },
+      "sample_short_labels": [
+        "유령의 기원 (LLM cognit…",
+        "우리가 하는 작업은 생물학적인 동…",
+        "자, 얼룩말을 한번 볼까요?이 이…",
+        "이건 엔지니어링 관점에서 보면 말…",
+        "생존을 위한 거대한 하드웨어가 모…",
+        "이건 얼룩말이 태어나서 강화 학습…",
+        "수학년에 걸친 진화 과정이 그 복…",
+        "초기값 자체가 이미 생존에 맞게 …",
+        "하지만 인간은 그런 진화를 하고 …",
+        "제 블로그에도 썼지만 우리가 만드…"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.106,
+        "avg_chars_per_dust": 36.19,
+        "sample_short_labels": [
+          "유령의 기원 (LLM cognit…",
+          "우리가 하는 작업은 생물학적인 동…",
+          "자, 얼룩말을 한번 볼까요?이 이…",
+          "이건 엔지니어링 관점에서 보면 말…",
+          "생존을 위한 거대한 하드웨어가 모…",
+          "이건 얼룩말이 태어나서 강화 학습…",
+          "수학년에 걸친 진화 과정이 그 복…",
+          "초기값 자체가 이미 생존에 맞게 …",
+          "하지만 인간은 그런 진화를 하고 …",
+          "제 블로그에도 썼지만 우리가 만드…"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "before_probe": {
+    "dust_count": 483,
+    "short_dust_ratio": 0.199,
+    "avg_chars_per_dust": 39.67,
+    "top_scene_counts": {
+      "review": 466,
+      "evidence": 8,
+      "impl": 6,
+      "spec": 3
+    },
+    "top_flow_counts": {
+      "compare": 466,
+      "run": 16,
+      "break": 1
+    },
+    "sample_short_labels": [
+      "Opening: 유령의 기원 (L…",
+      "우리가 하는 작업은 생물학적인 0…",
+      "자, 얼룩말을 한번 볼까요?이 이…",
+      "이건 엔지니어링 관점에서 보면 말…",
+      "생존을 위한 거대한 하드웨어가 모…",
+      "이건 얼룩말이 태어나서 강화 학습…",
+      "0:30 수학년에 걸친 진화 과정…",
+      "초기값 자체가 이미 생존에 맞게 …"
+    ]
+  },
+  "after_probe": {
+    "dust_count": 480,
+    "short_dust_ratio": 0.212,
+    "avg_chars_per_dust": 36.19,
+    "top_scene_counts": {
+      "review": 463,
+      "evidence": 8,
+      "impl": 6,
+      "spec": 3
+    },
+    "top_flow_counts": {
+      "compare": 463,
+      "run": 16,
+      "break": 1
+    },
+    "sample_short_labels": [
+      "유령의 기원 (LLM cognit…",
+      "우리가 하는 작업은 생물학적인 동…",
+      "자, 얼룩말을 한번 볼까요?이 이…",
+      "이건 엔지니어링 관점에서 보면 말…",
+      "생존을 위한 거대한 하드웨어가 모…",
+      "이건 얼룩말이 태어나서 강화 학습…",
+      "수학년에 걸친 진화 과정이 그 복…",
+      "초기값 자체가 이미 생존에 맞게 …"
+    ]
+  },
+  "comparison": {
+    "dust_count_delta": -3,
+    "short_dust_ratio_delta": 0.013,
+    "avg_chars_per_dust_delta": -3.48,
+    "regrouped_chunk_count": 154,
+    "dropped_interjection_count": 3,
+    "readiness_read": {
+      "status": "probe_again_before_ingest",
+      "reason": "preprocess reduced transcript noise, but intake should still be checked before mutation",
+      "before_dust_count": "483",
+      "after_dust_count": "480"
+    },
+    "check_surface": {
+      "what_improved": [
+        "dust count moved down toward larger meaning units"
+      ],
+      "what_is_still_missing": [
+        "post-preprocess state is still not direct-ingest-safe",
+        "short shard ratio is still high enough to flatten local context"
+      ],
+      "next_checkpoint": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+    }
+  },
+  "support_layers": {
+    "content_role_tags": [
+      {
+        "tag_id": "role_before_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "before_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "correction",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks"
+      },
+      {
+        "tag_id": "role_after_gate_decision_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "after_gate.decision_reason",
+        "content_role": "transition",
+        "secondary_role": "main_claim",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed"
+      },
+      {
+        "tag_id": "role_comparison_readiness_read_reason",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "comparison.readiness_read.reason",
+        "content_role": "transition",
+        "secondary_role": "objection",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "preprocess reduced transcript noise, but intake should still be checked before mutation"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_improved",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "comparison.check_surface.what_improved",
+        "content_role": "unknown",
+        "secondary_role": "",
+        "role_confidence": "low",
+        "role_status": "weak",
+        "role_basis_note": "No bounded lexical role signal was strong enough.",
+        "why_this_role": "The chunk is still readable, but role should remain honest and weak.",
+        "excerpt_preview": "dust count moved down toward larger meaning units"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_what_is_still_missing",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "comparison.check_surface.what_is_still_missing",
+        "content_role": "main_claim",
+        "secondary_role": "background",
+        "role_confidence": "medium",
+        "role_status": "mixed",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=main_claim:1",
+        "why_this_role": "The chunk pushes a dominant gap, need, or claim-like pressure.",
+        "excerpt_preview": "post-preprocess state is still not direct-ingest-safe short shard ratio is still high enough to flatten local context"
+      },
+      {
+        "tag_id": "role_comparison_check_surface_next_checkpoint",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_ref": "comparison.check_surface.next_checkpoint",
+        "content_role": "transition",
+        "secondary_role": "",
+        "role_confidence": "medium",
+        "role_status": "bounded",
+        "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+        "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+        "excerpt_preview": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+      }
+    ],
+    "line_seed_bundles": [
+      {
+        "bundle_id": "line_seed_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "split_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "repeated_pressure_note": "Preprocess comparison keeps returning: still, dust, units.",
+        "linkage_hint": "Gate reason, readiness read, and next checkpoint form one bounded support chain.",
+        "question_inducement": "What local meaning pressure survives regroup strongly enough to support later evidence use?",
+        "misunderstanding_correction": "The comparison is explicitly correcting a too-flat direct-ingest reading.",
+        "tension_marker": "The artifact keeps the risk of over-flat ingest visible even after regroup.",
+        "provisional_role_mix": [
+          "transition",
+          "transition",
+          "transition",
+          "main_claim",
+          "transition"
+        ],
+        "why_line_seed": "This comparison carries repeated correction pressure and a next-step question before any packet use.",
+        "not_yet_axis_reason": "Preprocess comparison remains a lower support artifact and does not justify axis or packet promotion by itself.",
+        "seed_confidence": "medium"
+      }
+    ],
+    "camera_support_bundles": [
+      {
+        "camera_support_id": "camera_support_preprocess_001",
+        "artifact_id": "camera_support_preprocess_001",
+        "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_youtube.txt",
+        "source_unit_refs": [
+          "before_gate.decision_reason",
+          "after_gate.decision_reason",
+          "comparison.readiness_read.reason",
+          "comparison.check_surface.what_improved"
+        ],
+        "upstream_artifact_refs": [
+          "line_seed_preprocess_001"
+        ],
+        "classification": "evidence_only",
+        "camera_signal_summary": "Lower support suggests change + boundary reread potential.",
+        "change_support": {
+          "strength": "has_signal",
+          "summary": "Local shift or before-after support is visible.",
+          "matched_cues": [
+            "move",
+            "moved",
+            "regroup",
+            "reduced"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "boundary_support": {
+          "strength": "has_signal",
+          "summary": "Hold or thinness support is visible.",
+          "matched_cues": [
+            "still not",
+            "should still be checked",
+            "not direct-ingest-safe",
+            "before mutation"
+          ],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "flow_support": {
+          "strength": "insufficient",
+          "summary": "Flow-like support is insufficient.",
+          "matched_cues": [],
+          "support_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        },
+        "insufficiency_or_gap": "Signals are local and still need broader reread before any stronger organization.",
+        "carry_forward_handle": {
+          "reread_hint": "Use gate reason, readiness read, and seed support for bounded upper reread.",
+          "upstream_seed_ref": "line_seed_preprocess_001",
+          "source_unit_refs": [
+            "before_gate.decision_reason",
+            "after_gate.decision_reason",
+            "comparison.readiness_read.reason",
+            "comparison.check_surface.what_improved"
+          ]
+        }
+      }
+    ],
+    "support_layer_note": "These support layers are additive and do not change lower readiness or upper admission."
+  }
+}

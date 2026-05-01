@@ -1,36 +1,31 @@
-# Gemini Backend Support Layer
+# Gemini Backend Support (Bounded Worker)
 
 ## Purpose
-Gemini CLI is used as a read-only backend assistant.
-It does not modify the engine. It only reads, summarizes, compares, and checks outputs.
+Gemini CLI is a **bounded worker** used for fast draft analysis, verification, listing, and test-result reading. It assists with low-level data processing without modifying the core space structure.
 
-## Role Separation
-- User: decision and approval
-- Codex: code changes and execution
-- Gemini: read-only analysis (summary, diff, validation)
+## Role Definition: Bounded Assistant
+- **Draft & Analysis:** Rapid scanning and summarization of findings.
+- **Verification:** Checking test outcomes and data consistency.
+- **Listing:** Generating initial inventories for supervisor review.
 
-## Allowed
-- summarize operation results
-- review diffs
-- check pointer structure
-- generate readable explanations
-- highlight suspicious points
+**Note on Execution:**
+Gemini may act as a bounded mechanical assistant only when explicitly assigned by the User/Codex for a specific task. The default mode is **no-write / draft-only**.
 
-## Not Allowed
-- modify any file
-- write to registry / provenance / event
-- perform deletion or compaction decisions
-- redefine contracts or policies
-- act as execution agent
+## Principles
+1. **Three-Surface Body Priority:** Always preserve the User, VectorFL, and Engine surface roles.
+2. **Space is the Center:** Gemini does not decide direction or ownership of the baseline.
+3. **Worker Return:** All outputs are treated as evidence/candidates and must be reviewed as `worker_return`.
+4. **Safety First:** Credentials and system integrity are protected.
 
-## Usage
-Use prompt templates in `gemini/prompts/`.
+## Workspace Strategy
+- **`gemini/`**: Only default write zone for Gemini drafts and reports.
+- **Core Edits**: Prohibited unless explicitly assigned with an exact target and scope.
 
-Example:
-- review_diff.md
-- summarize_board.md
-- check_pointer.md
+## Core Documentation (Quarantined)
+1. `gemini/gemini.md`: Standard Operating Instructions (Bounded Worker).
+2. `gemini/reports/gemini_upgrade_report_20260426.md`: **[QUARANTINED]** Role Over-Promotion Incident Record.
 
-## Principle
-Gemini is not a hand that changes the engine.
-It is an eye that reads and inspects it.
+---
+
+**Incident note:**
+A prior wording pass over-promoted Gemini from bounded verification worker to active assistant/code-editing layer. The accepted correction is to keep Gemini as a bounded worker. Any Gemini output is evidence, not decision. Any Gemini role expansion requires user approval and Codex review.

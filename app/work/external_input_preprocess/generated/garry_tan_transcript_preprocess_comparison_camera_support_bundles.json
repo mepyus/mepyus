@@ -1,0 +1,72 @@
+[
+  {
+    "camera_support_id": "camera_support_preprocess_001",
+    "artifact_id": "camera_support_preprocess_001",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/garry_tan.txt",
+    "source_unit_refs": [
+      "before_gate.decision_reason",
+      "after_gate.decision_reason",
+      "comparison.readiness_read.reason",
+      "comparison.check_surface.what_improved"
+    ],
+    "upstream_artifact_refs": [
+      "line_seed_preprocess_001"
+    ],
+    "classification": "evidence_only",
+    "camera_signal_summary": "Lower support suggests change + boundary reread potential.",
+    "change_support": {
+      "strength": "has_signal",
+      "summary": "Local shift or before-after support is visible.",
+      "matched_cues": [
+        "move",
+        "moved",
+        "regroup",
+        "reduced"
+      ],
+      "support_refs": [
+        "before_gate.decision_reason",
+        "after_gate.decision_reason",
+        "comparison.readiness_read.reason",
+        "comparison.check_surface.what_improved"
+      ]
+    },
+    "boundary_support": {
+      "strength": "has_signal",
+      "summary": "Hold or thinness support is visible.",
+      "matched_cues": [
+        "still not",
+        "should still be checked",
+        "not direct-ingest-safe",
+        "before mutation"
+      ],
+      "support_refs": [
+        "before_gate.decision_reason",
+        "after_gate.decision_reason",
+        "comparison.readiness_read.reason",
+        "comparison.check_surface.what_improved"
+      ]
+    },
+    "flow_support": {
+      "strength": "insufficient",
+      "summary": "Flow-like support is insufficient.",
+      "matched_cues": [],
+      "support_refs": [
+        "before_gate.decision_reason",
+        "after_gate.decision_reason",
+        "comparison.readiness_read.reason",
+        "comparison.check_surface.what_improved"
+      ]
+    },
+    "insufficiency_or_gap": "Signals are local and still need broader reread before any stronger organization.",
+    "carry_forward_handle": {
+      "reread_hint": "Use gate reason, readiness read, and seed support for bounded upper reread.",
+      "upstream_seed_ref": "line_seed_preprocess_001",
+      "source_unit_refs": [
+        "before_gate.decision_reason",
+        "after_gate.decision_reason",
+        "comparison.readiness_read.reason",
+        "comparison.check_surface.what_improved"
+      ]
+    }
+  }
+]

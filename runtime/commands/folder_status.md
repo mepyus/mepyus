@@ -7,8 +7,8 @@
 
 ## 2. Snapshot
 - immediate_child_dirs: `0`
-- immediate_child_files: `261`
-- file_types: `.md` x 261
+- immediate_child_files: `275`
+- file_types: `.md` x 275
 
 ## 3. Child Folders
 - none
@@ -99,7 +99,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.commands.json`
 - parent_folder: `runtime`
 - related_status_files: `runtime/commands/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

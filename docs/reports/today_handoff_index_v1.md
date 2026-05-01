@@ -233,3 +233,4 @@
 - `executable_capability_registry_note_v0.md`
 - `capability_aware_internal_search_minimum_slice_note_v0.md`
 - `capability_aware_internal_search_minimum_slice_v0.md`
+- `today_work_closeout_2026_04_23_v0.md`

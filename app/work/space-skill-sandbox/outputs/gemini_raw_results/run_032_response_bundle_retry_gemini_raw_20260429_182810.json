@@ -1,0 +1,94 @@
+{
+  "session_id": "fe5b61b9-630c-46b6-8e4a-9d12ab775e07",
+  "response": "Based on the research into the existing sandbox operating principles, promotion pipelines, and session role maps, I have drafted the **Tool Affordance / Caller Shift Lens v0** as a sandbox candidate. \n\nThis lens provides a structured method for evaluating how tools, skills, and existing programs assume a specific \"caller\" (Human vs. LLM vs. Agent) and how that assumption creates operational risks when the caller shifts.\n\nThis work is returned as a response bundle only. No files were written to the repository, no source-space modification was performed, and no automation or agent implementation was created.\n\n```text\nFILE_BUNDLE_BEGIN\nFILE: app/work/space-skill-sandbox/outputs/tool_affordance_caller_shift_lens_v0.md\nCONTENT_BEGIN\n# Tool Affordance / Caller Shift Lens v0\n\n## 0. Status\n\n- status: sandbox candidate\n- source_space_rule: false\n- baseline: false\n- automation: false\n\n## 1. Purpose\n\nThis lens is a sandbox candidate for reading which caller a tool, skill, existing program, relay packet, or session role assumes. \n\n도구는 만든 사람이 의도한 호출자(Caller)의 능력을 가정한다. 호출자가 인간에서 LLM으로 바뀔 때(Caller Shift), 도구의 시그니처가 같더라도 운영상 의미와 리스크는 완전히 달라진다. 이 렌즈는 그 차이를 포착하기 위해 사용된다.\n\n## 2. Core Idea\n\nFunction signature is not enough. For LLM or agent use, the context must identify:\n\n- when to use (trigger)\n- when not to use (forbidden use)\n- who is the caller (assumed capability)\n- what context is required (pre-requisite)\n- what output is expected (post-condition)\n- what must be stopped (stop point)\n- what requires user judgment (escalation)\n\n## 3. Caller Types\n\n### 1. Human Caller\n- caller description: A human user interacting via terminal, chat, or UI.\n- likely intent: High-level goal achievement; exploratory search; creative problem solving.\n- risk: Fatigue; inconsistency; command injection; manual error.\n- required affordance: Readable help; interactive feedback; confirmation dialogues.\n- required stop point: Accidental deletion; high-cost operations.\n- allowed output: Formatted text; rich UI; complex reports.\n- forbidden output: Machine-only binary blobs (unless requested).\n\n### 2. LLM Caller\n- caller description: A large language model invoking a tool via function calling or script execution.\n- likely intent: Task completion; data transformation; logic execution.\n- risk: Hallucination; loop; over-execution; context window overflow; tool misuse.\n- required affordance: Strict JSON/Schema definition; clear error signals; compact context.\n- required stop point: Recursive tool calls; source-space modification without approval.\n- allowed output: Structured data; clear success/failure signals; small text fragments.\n- forbidden output: Ambiguous conversational filler inside tool results.\n\n### 3. Codex Worker Session\n- caller description: A specialized coding session focusing on file edits and codebase maintenance.\n- likely intent: Refactoring; bug fixing; linting; documentation updates.\n- risk: Breaking builds; deleting critical comments; logic regression.\n- required affordance: File read/write boundaries; git status awareness; validation gates.\n- required stop point: Modification of protected source-space without unlock.\n- allowed output: Diff reports; validation results; file operation logs.\n- forbidden output: Arbitrary logic changes outside task scope.\n\n### 4. Gemini Analysis Session\n- caller description: An analysis-heavy session reading materials and synthesizing reports.\n- likely intent: Research; root cause analysis; documentation drafting; architecture mapping.\n- risk: Over-synthesis; losing source provenance; ignoring constraints.\n- required affordance: Read-only access to core; structured outbox for reports; source anchors.\n- required stop point: Modifying codebase logic; starting implementation.\n- allowed output: Markdown reports; analysis matrices; provenance maps.\n- forbidden output: Code modification or execution.\n\n### 5. Validation Session\n- caller description: A session dedicated to verifying the correctness of a run or asset.\n- likely intent: Checksum verification; rule compliance; boundary check.\n- risk: False positives; shallow checks; ignoring subtle drift.\n- required affordance: Required artifact list; status check tools; comparison logic.\n- required stop point: Attempting to \"fix\" the source material during validation.\n- allowed output: PASS/FAIL verdicts; validation notes.\n- forbidden output: Modifying the files being validated.\n\n### 6. Relay Session\n- caller description: A handoff session managing inbox/outbox file-based communication.\n- likely intent: Packaging results; preparing task packets; managing status updates.\n- risk: Handoff loss; status mismatch; context corruption.\n- required affordance: Atomic file move/copy; footer templates; directory listing.\n- required stop point: Automated execution of inbox requests.\n- allowed output: Task packets; outbox bundles; status footers.\n- forbidden output: Logic execution or material analysis.\n\n### 7. Future Agent Session\n- caller description: An autonomous agent role attached to a specific pipeline stage.\n- likely intent: Autonomous execution of defined workflows within boundaries.\n- risk: Drift; out-of-boundary write; unmonitored automation.\n- required affordance: Hard-coded stop points; preflight gates; sandbox-only write permissions.\n- required stop point: Any action requiring user judgment (baseline, promotion).\n- allowed output: Process logs; candidate artifacts; signal bundles.\n- forbidden output: Direct source-space modification or Relay v1.0 declaration.\n\n### 8. Existing Program Caller\n- caller description: A legacy program, script, or binary being analyzed as \"material\".\n- likely intent: Execution of its internal logic.\n- risk: Hidden side effects; arbitrary file writes; network calls.\n- required affordance: Sandboxed environment; IO capture; adapter/wrapper candidate.\n- required stop point: Direct execution on production host or source-space.\n- allowed output: Stdout/Stderr logs; exit codes; captured state changes.\n- forbidden output: Direct modification of host system outside sandbox.\n\n## 4. Affordance Reading Checklist\n\n- What does it appear to do? (Surface Function)\n- Who is expected to call it? (Original Caller Assumption)\n- What hidden assumption does it make about the caller? (e.g., assumes user has read GEMINI.md)\n- Does it expect human judgment before action? (e.g., \"Review the diff before committing\")\n- Can an LLM misuse it? (e.g., infinite loop if error is not clear)\n- Does it change files? (Write Risk)\n- Does it change source-space? (Promotion Risk)\n- Does it install tools? (Dependency Risk)\n- Does it create automation? (Control Risk)\n- Does it require preflight? (Safety Requirement)\n- Is it reversible? (Recovery Capability)\n- What output should be captured? (Trace Requirement)\n\n## 5. Caller Shift Risk\n\nWhen a tool designed for a Human Caller is used by an LLM Caller, several risks emerge:\n\n- **Insufficient Instruction Surface:** LLM lacks the \"intuition\" a human uses to fill gaps in vague instructions.\n- **Over-execution:** LLM may execute a command 100 times in a loop if the success signal is ambiguous.\n- **Wrong File Modification:** Human understands \"src/\" generally; LLM might overwrite critical files if path regex is weak.\n- **Source-Space Contamination:** LLM may promote a candidate to baseline prematurely if the status flag is just text.\n- **Automation Misread:** LLM might interpret a manual template as an automatic script.\n- **Skipped Validation:** LLM may assume \"it worked\" without checking the exit code or side effects.\n- **Readiness/Promotion Confusion:** LLM collapses the boundary between \"ready for review\" and \"actually done\".\n- **Failure-to-Rule Confusion:** LLM turns a single runtime error into a global rule without cross-review.\n\n## 6. Lens Output Format\n\n- target: [tool/skill/program path or name]\n- original caller assumption: [Human/LLM/etc.]\n- possible LLM caller: [Yes/No + Risk]\n- required affordance: [e.g., added JSON schema, explicit stop point]\n- required preflight: [Specific check needed]\n- may read: [Allowed read paths]\n- may write: [Allowed write paths]\n- must not: [Forbidden actions]\n- expected output: [Format and content]\n- stop point: [Explicit condition to halt]\n- user judgment required: [Escalation trigger]\n- candidate status: [sandbox candidate]\n\n## 7. Relationship to Existing Principles\n\nThis lens implements several **Operating Order Principles v0**:\n\n- **Function보다 Affordance:** The lens shifts focus from signature to usage handle.\n- **Conversation보다 Agent-readable Context:** Affordance must be in the tool definition, not just chat.\n- **Plan before Execution:** Caller analysis is a prerequisite for planning.\n- **Definition before Prompt:** Define the caller assumption before prompting for use.\n- **User as Judge:** Identify stop points that escalate to the user.\n- **Core보다 Workspace:** Protect source-space from caller shift errors.\n\n## 8. Non-Promotion Note\n\nThis lens is a sandbox candidate only. \nIt does not create a tool. \nIt does not install a tool. \nIt does not modify source-space. \nIt does not create automation. \nIt does not declare Relay v1.0. \nIt does not create a baseline.\nIt is a conceptual reading tool for analyzing existing programs and skills within the sandbox.\n\nCONTENT_END\n\nFILE: app/work/space-skill-sandbox/runs/run_032_tool_affordance_caller_shift_lens.md\nCONTENT_BEGIN\n# Run 032: Tool Affordance / Caller Shift Lens\n\n- mode: GEMINI / SANDBOX ONLY / RESPONSE BUNDLE DRAFT / NO FILE WRITE\n- purpose: Create the Tool Affordance / Caller Shift Lens v0 as a sandbox candidate.\n- input references:\n    - `app/work/space-skill-sandbox/outputs/operating_order_principles_v0.md`\n    - `app/work/space-skill-sandbox/outputs/operating_order_source_map_v0.md`\n    - `app/work/space-skill-sandbox/outputs/sandbox_promotion_pipeline_v0.md`\n    - `app/work/space-skill-sandbox/outputs/session_role_map_v0.md`\n    - `app/work/space-skill-sandbox/outputs/sandbox_execution_chain_v0.md`\n- target output files (bundle only):\n    - `app/work/space-skill-sandbox/outputs/tool_affordance_caller_shift_lens_v0.md`\n    - `app/work/space-skill-sandbox/runs/run_032_tool_affordance_caller_shift_lens.md`\n    - `app/work/space-skill-sandbox/review/validation_round_32.md`\n\n## Summary\nRun 032 successfully drafted the Tool Affordance / Caller Shift Lens. This lens allows for reading the \"caller assumption\" of tools and programs, identifying risks when the caller shifts from human to LLM. \n\nThe work followed the \"Harness before Model\" principle, focusing on the interface and boundaries of tool use rather than execution.\n\n## Flags\n- source-space modification: false\n- baseline created: false\n- Relay v1 declared: false\n- automation created: false\n- tool installed: false\n- agent implementation created: false\n\n## Note\nThis retry returned a response bundle. Codex materialization is required for repository file creation.\n\nCONTENT_END\n\nFILE: app/work/space-skill-sandbox/review/validation_round_32.md\nCONTENT_BEGIN\n# Validation Round 32: Tool Affordance / Caller Shift Lens\n\n## Checklist\n\n- [",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 6,
+          "totalErrors": 2,
+          "totalLatencyMs": 713690
+        },
+        "tokens": {
+          "input": 46641,
+          "prompt": 98721,
+          "candidates": 3055,
+          "total": 103194,
+          "cached": 52080,
+          "thoughts": 1418,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 6,
+            "totalErrors": 2,
+            "totalLatencyMs": 713690,
+            "tokens": {
+              "input": 46641,
+              "prompt": 98721,
+              "candidates": 3055,
+              "total": 103194,
+              "cached": 52080,
+              "thoughts": 1418,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 6,
+      "totalSuccess": 6,
+      "totalFail": 0,
+      "totalDurationMs": 59,
+      "totalDecisions": {
+        "accept": 6,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 8,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 13,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 38,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

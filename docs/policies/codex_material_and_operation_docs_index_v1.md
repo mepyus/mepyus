@@ -102,6 +102,20 @@
   - 코어 승격 기준, 탐색 observation sidecar, 정련 trigger를 얇은 운영 규칙으로 잠금
   - 코어 대수술 없이 반복 가능한 observer/runtime 기록 슬롯을 확보
   - 다음 탐색 사례와 정련 사례를 같은 형식으로 누적할 수 있는 최소 표면 제공
+
+### I. Flow-Aware Operating Entry Set
+- [phase1_25_flow_aware_operating_entrypoint_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_25_flow_aware_operating_entrypoint_v0.md)
+- [phase1_25_flow_aware_reader_operator_index_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_25_flow_aware_reader_operator_index_v0.md)
+- [phase1_25_flow_aware_trigger_checklist_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_25_flow_aware_trigger_checklist_v0.md)
+- [phase1_26_flow_aware_reopen_path_map_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_26_flow_aware_reopen_path_map_v0.md)
+- [phase1_27_flow_aware_evidence_log_template_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_27_flow_aware_evidence_log_template_v0.md)
+- [phase1_27_flow_aware_reopen_permission_boundary_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_27_flow_aware_reopen_permission_boundary_v0.md)
+- [phase1_28_flow_aware_evidence_log_storage_convention_v0.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/phase1_28_flow_aware_evidence_log_storage_convention_v0.md)
+- [runtime/reopen_evidence_logs/flow_aware/README.md](/Users/sungsookim/universe/vectorfl_replica/runtime/reopen_evidence_logs/flow_aware/README.md)
+- 역할:
+  - global default 유지 위에서 bounded flow-aware selection을 운용하는 reader/operator entry set
+  - allow-list / block-list / protected default / unresolved hold를 한 번에 참조하게 함
+  - trigger-based reopen만 허용하고, evidence log 저장 위치와 기록 형식까지 실제 파일 경로 기준으로 고정
 ## 4. 현재 읽기 순서
 1. 선언문
 2. 기준문
@@ -114,6 +128,7 @@
 9. 변화분 inventory 운용 가이드 / 리뷰
 10. LLM 답변 구조 증류 / 정련 기준
 11. Thin Operation Rules Lock
+12. Flow-Aware Operating Entry Set
 ## 5. 운영 연결점
 이 문서군은 아래 운영 구조와 직접 연결된다.
 
@@ -127,6 +142,8 @@
   - folder current-state inventory
 - `*_status.md`
   - inventory 기반 읽기면
+- `runtime/reopen_evidence_logs/flow_aware/`
+  - trigger-based bounded reopen evidence log landing spot
 ## 6. 현재 판정
 - 이 문서들은 단순 prompt archive 가 아니라 `structured_internal_doc` 로 읽는다.
 - material grade 는 기본적으로 `grade_a`

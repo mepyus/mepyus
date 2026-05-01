@@ -47,6 +47,12 @@ type PackageCard = {
 
 type ModalKind = "setup" | "result" | "watch" | null;
 
+type DashboardRefreshState = {
+  status: "idle" | "refreshing" | "live" | "error";
+  lastUpdated: string;
+  error: string;
+};
+
 const pkg: any = packageInstance;
 const vectorflMeaning: any = (translationProjection as any).vectorfl_meaning;
 const engineMeaning: any = (translationProjection as any).engine_meaning;
@@ -546,12 +552,39 @@ export default function VectorFLIntegrationShell() {
   const [packages, setPackages] = useState<PackageCard[]>(() => loadPackageStack());
   const [selectedPackageId, setSelectedPackageId] = useState(() => loadSelectedPackageId());
   const [modal, setModal] = useState<{ kind: ModalKind; packageId: string }>({ kind: null, packageId: "" });
+  const [dashboardRefresh, setDashboardRefresh] = useState<DashboardRefreshState>({
+    status: "idle",
+    lastUpdated: "",
+    error: "",
+  });
+
+  async function refreshDashboardState(silent = false) {
+    if (!silent) {
+      setDashboardRefresh((current) => ({ ...current, status: "refreshing", error: "" }));
+    }
+    try {
+      const response = await fetch("/api/vectorfl-engine/state");
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "failed to refresh engine state");
+      setCliHostState(result.cli_host_control || {});
+      setDashboardRefresh({
+        status: "live",
+        lastUpdated: new Date().toLocaleTimeString(),
+        error: "",
+      });
+    } catch (error: any) {
+      setDashboardRefresh({
+        status: "error",
+        lastUpdated: new Date().toLocaleTimeString(),
+        error: error?.message || "failed to refresh",
+      });
+    }
+  }
 
   useEffect(() => {
-    fetch("/api/vectorfl-engine/state")
-      .then((response) => response.json())
-      .then((result) => setCliHostState(result.cli_host_control || {}))
-      .catch(() => {});
+    refreshDashboardState(true);
+    const intervalId = window.setInterval(() => refreshDashboardState(true), 5000);
+    return () => window.clearInterval(intervalId);
   }, []);
 
   const latestTurn = cliHostState.latest_readable_return || cliHostState.recent_readable_returns?.[0];
@@ -608,11 +641,35 @@ export default function VectorFLIntegrationShell() {
         <main className="min-h-0 overflow-y-auto bg-slate-900 p-5">
           <div className="mx-auto max-w-5xl">
             <header className="mb-4 rounded-xl border border-white/10 bg-white/[0.04] p-4">
-        <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">Active Package Workbench</div>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">Active Package Workbench</div>
+                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                    terminal conversation mirror / runtime poll
+                  </div>
+                </div>
+                <button
+                  onClick={() => refreshDashboardState(false)}
+                  className="rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-cyan-100"
+                >
+                  {dashboardRefresh.status === "refreshing" ? "refreshing" : "refresh now"}
+                </button>
+              </div>
               <h2 className="mt-2 text-2xl font-black tracking-tight">{selectedPackage.title}</h2>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
                 {selectedPackage.summary} 선택된 패키지 하나를 그릇으로 보고, 내부 라인/축 후보를 읽은 뒤 처리 결과를 재투입 가능한 재료로 다시 읽는다.
               </p>
+              <div className="mt-3 rounded-lg border border-white/10 bg-slate-950 px-3 py-2 text-[10px] leading-4 text-slate-400">
+                <span className="font-black uppercase tracking-[0.16em] text-cyan-300">live source</span>
+                <span className="ml-2">
+                  `/api/vectorfl-engine/state`를 5초마다 읽어 `runtime/cli_sessions`, package run events, latest return을 화면에 반영한다.
+                </span>
+                <span className="ml-2 text-slate-500">
+                  status={dashboardRefresh.status}
+                  {dashboardRefresh.lastUpdated ? ` · last=${dashboardRefresh.lastUpdated}` : ""}
+                  {dashboardRefresh.error ? ` · error=${dashboardRefresh.error}` : ""}
+                </span>
+              </div>
               <div className="mt-3 grid gap-2 md:grid-cols-3">
                 <SmallStat label="stage" value={selectedPackage.stage} />
                 <SmallStat label="executor" value={selectedPackage.executor} />

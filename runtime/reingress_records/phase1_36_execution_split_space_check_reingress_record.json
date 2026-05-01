@@ -1,0 +1,148 @@
+{
+  "contract_id": "space_reingress_record_v5",
+  "contract_status": "draft_instance",
+  "extends": "space_reingress_record_v4",
+  "artifact_identity": {
+    "artifact_id": "phase1_36_execution_split_space_check_reingress_record",
+    "artifact_role": "reingress_record",
+    "family_key": "runtime/reingress_records::phase1_x_execution_split_space_check::reingress_record",
+    "lineage_hint": "phase1_36:phase1_36_execution_split_space_check:reingress_record",
+    "run_stem": "phase1_36_execution_split_space_check",
+    "phase_label": "phase1_36",
+    "artifact_slot": "run artifact slot",
+    "generated_from_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_36_execution_split_space_check_merge_diff_report.json",
+    "prior_artifact_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_36_execution_split_space_check_merge_diff_report.json",
+    "comparison_ready": true,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role",
+      "generated_from_chain",
+      "explicit_prior_ref"
+    ],
+    "identity_anchor_source": "emitted"
+  },
+  "record_id": "phase1_36_execution_split_space_check_reingress_record",
+  "created_at": "2026-04-23T05:16:40.726534+00:00",
+  "original_user_request": "execution split package를 기존 자산과 연결해 점검하고 검증한 뒤 문제없으면 실행\nRequested task mode: verification.",
+  "interpreted_goal": "Translate the user request into a Phase 1.5 CLI usage-loop artifact set and handle it as verification.",
+  "searched_assets_summary": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md"
+  ],
+  "space_position_summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+  "codex_position_summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+  "chosen_mode": "merge",
+  "final_return_summary": "Phase 1.5 usage-loop artifacts generated. Chosen mode: merge.",
+  "unresolved_notes": [],
+  "new_line_or_axis_candidate": "phase1_5_usage_loop_binding",
+  "future_probe_note": "Use repeated real questions to decide what deserves automation or promotion later.",
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 0,
+    "cross_supported": 6,
+    "total": 6
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 3,
+    "strong": 3,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 6
+  },
+  "useful_excerpt_modes": [
+    "heading_plus_block",
+    "line_window"
+  ],
+  "weak_grounding_areas": [],
+  "next_probe_hint": "Prefer reuse_candidate_assets first; inspect weak_grounding_areas when the claim depends on them.",
+  "reuse_candidate_assets": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md"
+  ],
+  "unresolved_grounding_note": "Grounded excerpts were available for selected evidence units.",
+  "merge_risk_summary": "",
+  "future_validation_hint": "Compare future runs by pointer_only ratio and strongest_support_refs.",
+  "structured_evidence_summary": {
+    "identity_only": 0,
+    "shape_only": 0,
+    "salient_path": 0,
+    "structured_fallback": 0,
+    "total": 0
+  },
+  "useful_structured_modes": [],
+  "salient_paths_summary": [],
+  "weak_structured_areas": [],
+  "shape_only_warning": "",
+  "next_structured_probe_hint": "Prefer salient_paths_summary; inspect weak_structured_areas when structured claims depend on them.",
+  "reusable_structured_assets": [],
+  "generated_asset_reading_note": "Structured evidence is identity/shape-level only.",
+  "diff_salience_summary": {
+    "added": 0,
+    "removed": 0,
+    "modified": 0,
+    "mode_shift": 0,
+    "count_change": 0,
+    "status_change": 0,
+    "evidence_depth_change": 0,
+    "trivial": 0,
+    "comparison_fallback": 0,
+    "salient_diff": 0,
+    "total": 0
+  },
+  "useful_diff_modes": [],
+  "salient_diff_paths_summary": [],
+  "weak_diff_areas": [],
+  "trivial_diff_warning": "",
+  "next_diff_probe_hint": "Prefer salient_diff_paths_summary and compare generated records from the same artifact family.",
+  "reusable_comparison_pairs": [],
+  "generated_diff_note": "",
+  "useful_pairing_modes": [],
+  "family_key_summary": [],
+  "weak_pair_areas": [],
+  "rejected_pair_summary": [],
+  "next_pairing_probe_hint": "Prefer same family_key and explicit phase/version lineage before reading diff salience.",
+  "reusable_family_groups": [],
+  "pairing_risk_summary": "",
+  "identity_anchor_summary": {
+    "strong_identity": 0,
+    "plausible_identity": 0,
+    "weak_identity": 0,
+    "family_keys": [],
+    "identity_basis": [],
+    "total": 0
+  },
+  "useful_identity_modes": [],
+  "weak_identity_areas": [],
+  "generated_from_chain_summary": [
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_36_execution_split_space_check_question_packet.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_36_execution_split_space_check_exploration_result.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_36_execution_split_space_check_merge_diff_report.json"
+  ],
+  "next_identity_probe_hint": "Prefer artifacts with embedded artifact_identity before relying on path/stem inference.",
+  "reusable_identity_groups": [],
+  "identity_risk_summary": "",
+  "artifact_refs": {
+    "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_36_execution_split_space_check_question_packet.json",
+    "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_36_execution_split_space_check_exploration_result.json",
+    "merge_diff_report_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_36_execution_split_space_check_merge_diff_report.json"
+  },
+  "validation": {
+    "reusable_for_next_question": true,
+    "reasoning_trace_present": true,
+    "unresolved_preserved": true,
+    "learning_fields_present": true,
+    "structured_learning_fields_present": true,
+    "diff_learning_fields_present": true,
+    "pairing_learning_fields_present": true,
+    "identity_learning_fields_present": true
+  }
+}

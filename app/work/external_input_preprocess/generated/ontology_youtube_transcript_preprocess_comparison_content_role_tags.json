@@ -1,0 +1,74 @@
+[
+  {
+    "tag_id": "role_before_gate_decision_reason",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "before_gate.decision_reason",
+    "content_role": "transition",
+    "secondary_role": "correction",
+    "role_confidence": "medium",
+    "role_status": "mixed",
+    "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+    "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+    "excerpt_preview": "timestamp/interjection-heavy transcript-like input; direct dust split is likely to produce subtitle-like units rather than meaning chunks"
+  },
+  {
+    "tag_id": "role_after_gate_decision_reason",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "after_gate.decision_reason",
+    "content_role": "transition",
+    "secondary_role": "main_claim",
+    "role_confidence": "medium",
+    "role_status": "bounded",
+    "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+    "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+    "excerpt_preview": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed"
+  },
+  {
+    "tag_id": "role_comparison_readiness_read_reason",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "comparison.readiness_read.reason",
+    "content_role": "transition",
+    "secondary_role": "objection",
+    "role_confidence": "medium",
+    "role_status": "mixed",
+    "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:1",
+    "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+    "excerpt_preview": "preprocess reduced transcript noise, but intake should still be checked before mutation"
+  },
+  {
+    "tag_id": "role_comparison_check_surface_what_improved",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "comparison.check_surface.what_improved",
+    "content_role": "unknown",
+    "secondary_role": "",
+    "role_confidence": "low",
+    "role_status": "weak",
+    "role_basis_note": "No bounded lexical role signal was strong enough.",
+    "why_this_role": "The chunk is still readable, but role should remain honest and weak.",
+    "excerpt_preview": "no clear improvement signal at probe level"
+  },
+  {
+    "tag_id": "role_comparison_check_surface_what_is_still_missing",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "comparison.check_surface.what_is_still_missing",
+    "content_role": "main_claim",
+    "secondary_role": "",
+    "role_confidence": "medium",
+    "role_status": "bounded",
+    "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=main_claim:1",
+    "why_this_role": "The chunk pushes a dominant gap, need, or claim-like pressure.",
+    "excerpt_preview": "post-preprocess state is still not direct-ingest-safe"
+  },
+  {
+    "tag_id": "role_comparison_check_surface_next_checkpoint",
+    "source_ref": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/ontology_youtube.txt",
+    "split_unit_ref": "comparison.check_surface.next_checkpoint",
+    "content_role": "transition",
+    "secondary_role": "",
+    "role_confidence": "medium",
+    "role_status": "bounded",
+    "role_basis_note": "Keyword-weighted lower role inference from local text and ref hint. top=transition:2",
+    "why_this_role": "The chunk moves the reader into a next stage or adjacent step.",
+    "excerpt_preview": "use the preprocessed sidecar for bounded first-pass/probe before runtime mutation"
+  }
+]

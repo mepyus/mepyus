@@ -1,0 +1,21 @@
+# Codex Review Bundle
+
+- package_dir: app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker
+- run_id: session_02_tool_lives_beyond_maker_handoff
+- collected_at: 20260430_175442
+- outbox_files_collected: 1
+- raw_files_collected: 2
+
+## Package Files
+
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/codex_review_bundle.md
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/gemini_packet.md
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/handoff_log.md
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/outbox/session_02_tool_lives_beyond_maker_handoff_gemini_outbox_20260430_175353.md
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/package_brief.md
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/raw/session_02_tool_lives_beyond_maker_handoff_gemini_raw_20260430_175353.json
+app/work/space-skill-sandbox/packages/package_001_external_lens_reread/session_02_tool_lives_beyond_maker/raw/session_02_tool_lives_beyond_maker_handoff_gemini_stderr_20260430_175353.log
+
+## Review Note
+
+This bundle is transport evidence only. Codex must validate content and boundaries separately.

@@ -5,9 +5,17 @@ from datetime import datetime
 import json
 import re
 from pathlib import Path
-
+import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from app.core.runtime.lower_support_layers import (
+    build_camera_support_bundles_for_split_units,
+    build_content_role_tags_for_split_units,
+    build_line_seed_bundles_for_split_units,
+)
 OUTPUT_ROOT = REPO_ROOT / "app" / "work" / "observer_ingest_min" / "generated"
 
 TIMESTAMP_LINE_RE = re.compile(
@@ -339,11 +347,23 @@ def write_operator_summary(manifest: dict, split_units: list[dict], processing_t
 
 def write_outputs(run_id: str, manifest: dict, split_units: list[dict], processing_trace: dict, readable_board: str, operator_summary: str) -> None:
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    source_ref = manifest["source_path"]
+    content_role_tags = build_content_role_tags_for_split_units(source_ref, split_units)
+    line_seed_bundles = build_line_seed_bundles_for_split_units(source_ref, split_units, content_role_tags)
+    camera_support_bundles = build_camera_support_bundles_for_split_units(
+        source_ref,
+        split_units,
+        content_role_tags,
+        line_seed_bundles,
+    )
     (OUTPUT_ROOT / f"source_manifest_{run_id}.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (OUTPUT_ROOT / f"split_units_{run_id}.json").write_text(json.dumps(split_units, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (OUTPUT_ROOT / f"processing_trace_{run_id}.json").write_text(json.dumps(processing_trace, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (OUTPUT_ROOT / f"readable_input_board_{run_id}.md").write_text(readable_board + "\n", encoding="utf-8")
     (OUTPUT_ROOT / f"operator_summary_{run_id}.md").write_text(operator_summary + "\n", encoding="utf-8")
+    (OUTPUT_ROOT / f"content_role_tags_{run_id}.json").write_text(json.dumps(content_role_tags, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUTPUT_ROOT / f"line_seed_bundles_{run_id}.json").write_text(json.dumps(line_seed_bundles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUTPUT_ROOT / f"camera_support_bundles_{run_id}.json").write_text(json.dumps(camera_support_bundles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def run_single(input_row: dict, requested_profile: str) -> str:

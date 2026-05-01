@@ -1,0 +1,152 @@
+{
+  "contract_id": "merge_diff_report_v5",
+  "contract_status": "draft_instance",
+  "extends": "merge_diff_report_v4",
+  "artifact_identity": {
+    "artifact_id": "phase1_14_wrapper_run_01_merge_diff_report",
+    "artifact_role": "merge_diff_report",
+    "family_key": "runtime/merge_diff_reports::phase1_x_wrapper_run_01::merge_diff_report",
+    "lineage_hint": "phase1_14:phase1_14_wrapper_run_01:merge_diff_report",
+    "run_stem": "phase1_14_wrapper_run_01",
+    "phase_label": "phase1_14",
+    "artifact_slot": "report family slot",
+    "generated_from_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_14_wrapper_run_01_exploration_result.json",
+    "prior_artifact_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_14_wrapper_run_01_exploration_result.json",
+    "comparison_ready": true,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role",
+      "generated_from_chain",
+      "explicit_prior_ref"
+    ],
+    "identity_anchor_source": "emitted"
+  },
+  "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_14_wrapper_run_01_question_packet.json",
+  "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_14_wrapper_run_01_exploration_result.json",
+  "space_position": {
+    "summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+    "basis_refs": [
+      "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "docs/specs/space_reading_order_for_codex_v0.md",
+      "docs/specs/source_authority_ladder_v0.md",
+      "docs/guides/question_type_to_search_path_map_v0.md",
+      "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "docs/specs/merge_diff_hold_grounding_rules_v0.md"
+    ]
+  },
+  "codex_position": {
+    "summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+    "basis": "rule_based_phase1_5_entrypoint_reasoning"
+  },
+  "alignment_points": [
+    "No UI work is required.",
+    "Existing authority structure is preserved.",
+    "Artifacts are written to the Phase 1 runtime lanes."
+  ],
+  "difference_points": [
+    "Generated artifacts may still need human refinement for deep semantic claims."
+  ],
+  "unresolved_tensions": [],
+  "chosen_mode": "merge",
+  "final_reasoning_basis": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/guides/question_type_to_search_path_map_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md"
+  ],
+  "user_decision_required": false,
+  "user_decision_reason_if_any": "",
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 1,
+    "cross_supported": 5,
+    "total": 6
+  },
+  "confidence_distribution": {
+    "low": 0,
+    "medium": 2,
+    "high": 4
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 2,
+    "strong": 4,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 6
+  },
+  "structured_evidence_summary": {
+    "identity_only": 0,
+    "shape_only": 0,
+    "salient_path": 0,
+    "structured_fallback": 0,
+    "total": 0
+  },
+  "salient_paths": [],
+  "strongest_structured_support_refs": [],
+  "strongest_structured_tension_refs": [],
+  "shape_vs_meaning_note": "Structured evidence is identity/shape-level only.",
+  "structured_merge_risk_note": "",
+  "diff_salience_summary": {
+    "added": 0,
+    "removed": 0,
+    "modified": 0,
+    "mode_shift": 0,
+    "count_change": 0,
+    "status_change": 0,
+    "evidence_depth_change": 0,
+    "trivial": 0,
+    "comparison_fallback": 0,
+    "salient_diff": 0,
+    "total": 0
+  },
+  "salient_diff_paths": [],
+  "strongest_diff_support_refs": [],
+  "strongest_diff_tension_refs": [],
+  "comparison_risk_note": "",
+  "changed_mode_or_status_note": "",
+  "pair_confidence": "none",
+  "family_key": [],
+  "pairing_basis": [],
+  "pairing_risk_note": "",
+  "identity_anchor_summary": {
+    "strong_identity": 0,
+    "plausible_identity": 0,
+    "weak_identity": 0,
+    "family_keys": [],
+    "identity_basis": [],
+    "total": 0
+  },
+  "identity_confidence_before": [],
+  "identity_confidence_after": [],
+  "shared_family_confirmed": false,
+  "lineage_link_type": [],
+  "identity_risk_note": "",
+  "pairing_identity_support_refs": [],
+  "strongest_pair_support_refs": [],
+  "comparison_candidate_count": 0,
+  "rejected_pair_candidates_summary": [],
+  "strongest_support_refs": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md:L3-L9",
+    "docs/specs/space_reading_order_for_codex_v0.md:L7-L18",
+    "docs/specs/source_authority_ladder_v0.md:L3-L6",
+    "docs/guides/question_type_to_search_path_map_v0.md:L1-L4",
+    "docs/specs/evidence_unit_grounding_contract_v0.md:L9-L20"
+  ],
+  "strongest_tension_refs": [],
+  "merge_risk_note": "",
+  "hold_trigger_reason": "",
+  "validation": {
+    "authority_ladder_applied": true,
+    "hold_not_overused": true,
+    "differences_preserved": true,
+    "evidence_depth_considered": true,
+    "structured_evidence_considered": true,
+    "diff_evidence_considered": true,
+    "pairing_evidence_considered": true,
+    "identity_anchors_considered": true
+  }
+}

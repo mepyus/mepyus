@@ -1,0 +1,38 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T223716Z_70343339",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "package2_worker_adapter_contract_validation",
+  "purpose_text": "Actual worker contract smoke: return only a minimal bounded structured worker return for package continuity validation.",
+  "bounded_context_refs": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ],
+  "prompt_payload": "Read the bounded contract refs if available. Keep the prose short. The most important requirement is to include the WORKER_RETURN_JSON block exactly as requested by the adapter prompt. Do not modify files.",
+  "active_package": {
+    "id": "pkg_worker_adapter_contract_smoke",
+    "title": "Worker Adapter Contract Smoke",
+    "summary": "Actual worker structured return block smoke test",
+    "stage": "adapter_contract",
+    "status": "active"
+  },
+  "status": "failed",
+  "started_at": "2026-04-18T22:37:16Z",
+  "ended_at": "2026-04-18T22:37:17Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T223716Z_70343339/prompt.md",
+  "exit_code": 1,
+  "result_summary": "WARNING: proceeding, even though we could not update PATH: Operation not permitted (os error 1)\n2026-04-18T22:37:17.147801Z ERROR codex_core::codex: Failed to create session: Operation not permitted (os error 1)\nError: thread/start: thread/start failed: error creating thread: Fatal error: Codex cannot access session files at /Users/sungsookim/.codex/sessions (permission denied). If sessions were created using sudo, fix ownership: sudo chown -R $(whoami) /Users/sungsookim/.codex (underlying error: Operation not permitted (os error 1))\n",
+  "suggested_next_use": "validation_target",
+  "error_message": ""
+}

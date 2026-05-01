@@ -1,0 +1,213 @@
+{
+  "runner": "transcript_aware_regroup_v0",
+  "input_path": "inputs/external_cases/garry_tan.txt",
+  "preprocessed_path": "app/work/external_input_preprocess/generated/garry_tan_transcript_regroup_20260423T054927Z.txt",
+  "before_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/garry_tan.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 169,
+      "dust_count": 302,
+      "timestamp_line_count": 1,
+      "timestamp_density": 0.006,
+      "timestamp_token_count": 2,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 1,
+      "transcript_marker_density": 0.006,
+      "short_line_count": 4,
+      "short_line_ratio": 0.024,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 14,
+      "short_dust_ratio": 0.046,
+      "timestamp_dust_count": 1,
+      "timestamp_dust_ratio": 0.003,
+      "transcript_marker_dust_count": 1,
+      "transcript_marker_dust_ratio": 0.003,
+      "avg_chars_per_dust": 71.01,
+      "top_scene_counts": {
+        "review": 297,
+        "spec": 4,
+        "evidence": 1
+      },
+      "top_flow_counts": {
+        "compare": 273,
+        "run": 16,
+        "fix": 12,
+        "break": 1
+      },
+      "sample_short_labels": [
+        "How to really stop…",
+        "Three years of dev…",
+        "A billion-dollar v…",
+        "LangSmith, their t…",
+        "They have the piec…",
+        "Credit where it's …",
+        "But pieces aren't …",
+        "LangChain gives yo…",
+        "It never tells you…",
+        "There's no opinion…"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.006,
+        "timestamp_dust_ratio": 0.003,
+        "transcript_marker_dust_ratio": 0.003,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.046,
+        "avg_chars_per_dust": 71.01,
+        "sample_short_labels": [
+          "How to really stop…",
+          "Three years of dev…",
+          "A billion-dollar v…",
+          "LangSmith, their t…",
+          "They have the piec…",
+          "Credit where it's …",
+          "But pieces aren't …",
+          "LangChain gives yo…",
+          "It never tells you…",
+          "There's no opinion…"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "after_gate": {
+    "input_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/external_input_preprocess/generated/garry_tan_transcript_regroup_20260423T054927Z.txt",
+    "decision": "uncertain_needs_probe",
+    "decision_reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+    "format_profile": "mixed_or_unclear",
+    "should_preprocess": false,
+    "preprocess_kind": null,
+    "metrics": {
+      "line_count": 80,
+      "dust_count": 301,
+      "timestamp_line_count": 0,
+      "timestamp_density": 0.0,
+      "timestamp_token_count": 0,
+      "markdown_heading_count": 0,
+      "transcript_marker_count": 0,
+      "transcript_marker_density": 0.0,
+      "short_line_count": 0,
+      "short_line_ratio": 0.0,
+      "interjection_count": 0,
+      "interjection_ratio": 0.0,
+      "short_dust_count": 14,
+      "short_dust_ratio": 0.047,
+      "timestamp_dust_count": 0,
+      "timestamp_dust_ratio": 0.0,
+      "transcript_marker_dust_count": 0,
+      "transcript_marker_dust_ratio": 0.0,
+      "avg_chars_per_dust": 70.19,
+      "top_scene_counts": {
+        "review": 296,
+        "spec": 4,
+        "evidence": 1
+      },
+      "top_flow_counts": {
+        "compare": 273,
+        "run": 17,
+        "fix": 10,
+        "break": 1
+      },
+      "sample_short_labels": [
+        "How to really stop…",
+        "Three years of dev…",
+        "A billion-dollar v…",
+        "LangSmith, their t…",
+        "They have the piec…",
+        "Credit where it's …",
+        "But pieces aren't …",
+        "LangChain gives yo…",
+        "It never tells you…",
+        "There's no opinion…"
+      ]
+    },
+    "checkpoints": {
+      "pre_ingest_gate": {
+        "status": "uncertain_needs_probe",
+        "reason": "input shape is mixed; raw probe is useful first, then decide whether transcript-aware regroup is needed",
+        "focus": "decide direct ingest vs preprocess before mutating runtime"
+      },
+      "preprocess_signals": {
+        "timestamp_density": 0.0,
+        "timestamp_dust_ratio": 0.0,
+        "transcript_marker_dust_ratio": 0.0,
+        "interjection_ratio": 0.0,
+        "short_dust_ratio": 0.047,
+        "avg_chars_per_dust": 70.19,
+        "sample_short_labels": [
+          "How to really stop…",
+          "Three years of dev…",
+          "A billion-dollar v…",
+          "LangSmith, their t…",
+          "They have the piec…",
+          "Credit where it's …",
+          "But pieces aren't …",
+          "LangChain gives yo…",
+          "It never tells you…",
+          "There's no opinion…"
+        ]
+      },
+      "post_preprocess_checkpoints": [
+        "dust count should fall toward meaning-sized units, not subtitle shards",
+        "short interjection rows should be absorbed when they are only response tails",
+        "timestamp tokens should stop dominating unit starts"
+      ],
+      "post_ingest_checkpoints": [
+        "trace/cell formation should look like semantic regroup, not one coarse cell swallowing all rows",
+        "scene/flow distribution should become less flat if segmentation quality improves",
+        "sample material text should preserve a local claim + context together"
+      ],
+      "line_readiness_checkpoints": [
+        "only after input quality stabilizes should line corroboration be read as meaningful",
+        "path or breadth claims should not be made from subtitle-like shard accumulation"
+      ]
+    }
+  },
+  "preprocess_summary": {
+    "original_line_count": 169,
+    "normalized_sentence_count": 385,
+    "regrouped_chunk_count": 80,
+    "dropped_interjection_count": 0,
+    "sample_chunks": [
+      "How to really stop your agents from making the same mistakes LangChain has raised $160 million. Three years of development. A billion-dollar valuation. LangSmith, their testing platform, is genuinely sophisticated: trajectory evals, trace-to-dataset pipelines, LLM-as-judge, regression suites, unit test frameworks for tools.",
+      "They have the pieces. Credit where it's due. But pieces aren't a practice. LangChain gives you testing tools. It never tells you what to test, in what order, or when you're done.",
+      "There's no opinionated workflow that says, in order: this failure happened now write a skill now write the deterministic code now write unit tests",
+      "now write LLM evals now add a resolver trigger now eval the resolver now audit for duplicates now smoke test",
+      "now file correctly That loop doesn't exist. You have to invent it yourself from scattered primitives. A great many users of AI still don't test their agents at all, because the framework they chose probably gave them a gym membership without a workout plan. Most AI agent \"reliability\" is vibes-based."
+    ]
+  },
+  "checkpoints": {
+    "preprocess_objective": "move from subtitle-like shards toward bounded meaning chunks",
+    "verification_points": [
+      "timestamp markers should stop dominating chunk starts",
+      "short response tails should be absorbed or dropped when they carry no local claim",
+      "chunk count should be materially lower than raw dust shard count",
+      "result should still remain traceable to source text family"
+    ]
+  }
+}

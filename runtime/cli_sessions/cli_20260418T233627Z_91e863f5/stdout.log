@@ -1,0 +1,73 @@
+- result summary
+  - 파일 수정 없음. 읽기 전용으로 내부 구조 자료를 확인했다.
+  - 현재 작업은 “신규 패키지를 중앙 setup에서 목적/렌즈/근거로 정리한 뒤 CLI 실행으로 보낼 수 있는가”를 증명하려는 내부 설계 reread로 읽힌다.
+  - 판정: 구조 후보는 이미 존재한다. 다만 이는 final schema / canonical package system 이 아니라 `app/ui/integrated_engine` 안의 현재 운용 후보이자 3-surface body 위의 CLI on-top 흐름이다.
+
+- Korean operating summary
+  - 현재 통합엔진 본체는 `User / VectorFL / Engine` 3면으로 고정되어 있다.
+  - CLI는 네 번째 표면이 아니라 VectorFL면 위에 얹힌 실행 도구층이다.
+  - `app/ui/integrated_engine/folder_status.md` 기준으로 이 폴더는 현재 main integrated-engine UI implementation area이며, 신규 package stack / central setup / CLI handoff 흐름이 구현 중인 공간이다.
+  - `VectorFLIntegrationShell.tsx` 안에 `PackageStack`, `WorkPacketDraft`, `packageStackSeed`가 있고, “새 패키지는 먼저 목적/업무 지시를 받고, 이후 중앙 setup에서 lens/context를 잡아 CLI에 넘긴다”는 UI 문장이 직접 존재한다.
+  - `runtime/contracts/integrated_engine_single_handler_package_instance_v0.json`은 단일 handler package가 User / VectorFL / Engine projection density를 달리하며 이동하는 예시 계약으로 읽힌다.
+
+- Surface reading: user / VectorFL / engine
+  - User surface
+    - 역할: 목적, 범위, 재료 문맥, 작업 묶음 선택, 사용자 결정.
+    - 현재 증거: `CommandHeaderPanel`, `PackageStack`, `WorkPacketDraft`, `packageStackSeed`.
+    - 이번 purpose intake에서는 “내부 설계 증명: 신규 패키지”가 User면의 목적/작업 묶음으로 들어온 상태.
+  - VectorFL surface
+    - 역할: 바로 실행하지 않고 reread / mediation / validation / route sorting.
+    - 현재 증거: `CliHostControlPanel`, `VectorFLValidationQueuePanel` 언급, route marks `vectorfl_reread`, `engine_request_candidate`, `deposit_candidate`, `hold`.
+    - 이번 작업은 `reread` lens이므로 VectorFL면에서 내부 구조 자료를 더 모아 판단하는 단계가 맞다.
+  - Engine surface
+    - 역할: processing return, validation feed, extraction/deposit candidate material.
+    - 현재 증거: `vectorfl_engine_surface_mock.tsx`, `live_manifest.json`, engine return/deposit candidate 관련 상태.
+    - 아직 이 작업은 engine processing으로 넘길 정도로 충분히 닫히지 않았다. 먼저 reread target을 좁히는 것이 맞다.
+
+- important findings / diffs / outputs
+  - 구조 기준 문서:
+    - `vectorfl_status.md`: 현재 통합엔진 포인터와 읽기 순서 제공.
+    - `docs/reports/vectorfl_integrated_engine_3_surface_cli_handoff_lock_v1.md`: 3면 body lock 및 CLI on-top boundary 명시.
+    - `docs/reports/integrated_engine_current_reading_order_note_v1.md`: 읽기 순서와 anti-bypass 경계.
+    - `docs/reports/integrated_engine_gemini_cli_orientation_v1.md`: CLI/agent가 본체를 대체하지 않는다는 규칙.
+  - 현재 UI 구현 공간:
+    - `app/ui/integrated_engine/folder_status.md`: 이 폴더가 현재 main UI implementation area이며 신규 패키지/CLI 운용 경로가 구현 중이라고 기록.
+    - `app/ui/integrated_engine/VectorFLIntegrationShell.tsx`: package stack, work packet draft, 중앙 setup, CLI 반환/퇴적 후보 표시 흐름이 있음.
+  - 계약/프로젝션 자료:
+    - `runtime/contracts/integrated_engine_single_handler_package_instance_v0.json`: 단일 handler package의 3면 projection 예시.
+    - `runtime/contracts/integrated_engine_language_handler_translation_projection_v0.json`: engine result를 VectorFL meaning으로 번역하는 bounded projection.
+    - `runtime/contracts/integrated_engine_language_handler_user_projection_v0.json`: user next action으로 압축하는 projection.
+  - 외부/첨부 ref:
+    - `gemini/external_analysis/openharness_structural_dna_20260415.md` 등은 비교 렌즈로 존재하지만, 이번 evidence bundle은 thin evidence로 유지해야 한다. 외부 분석을 구조 확정 근거로 승격하면 안 된다.
+  - diffs:
+    - 없음. 파일 수정 없음.
+
+- Route suggestion
+  - reread_target: `app/ui/integrated_engine/VectorFLIntegrationShell.tsx`
+  - reread_target: `app/ui/integrated_engine/folder_status.md`
+  - reread_target: `runtime/contracts/integrated_engine_single_handler_package_instance_v0.json`
+  - validation_target: 이후에 `PackageStack -> central setup -> CliHostControlPanel -> readable return/deposit candidate`가 실제 한 패킷으로 이어지는지 화면/상태 기준 검증.
+  - implementation_return: 아직 아님.
+  - deposit_candidate: 아직 아님.
+  - hold: 외부 분석 ref를 설계 근거로 과확장하는 해석은 hold.
+
+- What must not be inferred
+  - 신규 패키지 구조가 final schema로 확정되었다고 보면 안 된다.
+  - CLI를 네 번째 surface로 보면 안 된다.
+  - User surface에서 Engine surface로 직접 우회한다고 보면 안 된다.
+  - `packageStackSeed`나 현재 TSX type을 canonical package DB / enum / state machine으로 보면 안 된다.
+  - `gemini/external_analysis`를 canonical source나 ingest된 내부 지식으로 보면 안 된다.
+  - deposit candidate가 실제 ingest/deposit 완료를 뜻한다고 보면 안 된다.
+
+- uncertainty or failure notes
+  - 문서 기준은 일부 시차가 있다. 04-14 문서들은 `runtime/views/vectorfl_dual_surface_app`를 current React surface로 말하고, 04-16/04-17 `app/ui/integrated_engine/folder_status.md`는 `app/ui/integrated_engine`를 현재 main implementation area로 재지정한다. 최신 폴더 상태 기준으로는 `app/ui/integrated_engine`를 우선 읽는 것이 타당하다.
+  - attached evidence ref는 thin evidence다. 내부 구조 판단은 repo 내부 문서와 코드 읽기에서 보강했지만, promotion / ingestion / canonicalization은 수행하지 않았다.
+
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+  - suggested next use: reread target
+  - next reread packet:
+    - target: `app/ui/integrated_engine/VectorFLIntegrationShell.tsx`
+    - lens: “신규 package intake가 central setup을 거쳐 CLI host turn payload로 변환되는가”
+    - evidence: `WorkPacketDraft`, `PackageStack`, `CliHostControlPanel` props/state 연결부, contract imports
+    - expected return: “구조 연결 판정 + 빠진 연결부 목록”
+  - 그 다음 단계는 validation target이 적절하다. Implementation return이나 deposit candidate는 아직 이르다.

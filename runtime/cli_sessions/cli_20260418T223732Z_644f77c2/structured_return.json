@@ -1,0 +1,42 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T223732Z_644f77c2",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "orker_return_contract_v0.md`\n- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`\n\nsuggested next use:\nvalidation target\n\nWORKER_RETURN_JSON\n{\n  \"schema_version\": \"integrated_engine_worker_return_v0\",\n  \"worker_id\": \"codex\",\n  \"package_id\": \"unknown\",\n  \"run_kind\": \"summarize\",\n  \"answer\": \"Actual worker contract smoke completed. Use the worker-emitted block as the primary adapter validation target for projecting structured_return.worker_return.\",\n  \"findings\": [\n    \"Worker return schema version is integrated_engine_worker_return_v0.\",\n    \"Runtime should prefer structured_return.worker_return before fallback parsing.\",\n    \"Actual worker output enters through CodexCliAdapter.start_run(...) stdout/stderr/returncode.\",\n    \"Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization.\"\n  ],\n  \"files_artifacts\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ],\n  \"next_continue_hint\": \"Validate that the adapter can extract this WORKER_RETURN_JSON block from actual worker stdout and project it into structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Package id was not provided in the prompt.\",\n    \"Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision.\"\n  ],\n  \"risks_or_limits\": [\n    \"This was a read-only smoke response; no files were modified.\",\n    \"Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone.\"\n  ],\n  \"source_refs\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-18T22:37:57Z",
+  "worker_return": {
+    "schema_version": "integrated_engine_worker_return_v0",
+    "worker_return_source": "parser_fallback",
+    "worker_id": "codex",
+    "package_id": "pkg_worker_adapter_contract_smoke",
+    "run_kind": "summarize",
+    "answer": "`docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`",
+    "findings": [
+      "`docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`"
+    ],
+    "files_artifacts": [
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/stdout.log",
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/stderr.log",
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/prompt.md",
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/deposit_candidate.md",
+      "runtime/cli_sessions/cli_20260418T223732Z_644f77c2/operator_report.md",
+      "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md",
+      "docs/specs/integrated_engine_worker_return_contract_v0.md"
+    ],
+    "next_continue_hint": "Validate the latest run before using it as package material.",
+    "open_questions": [],
+    "risks_or_limits": [],
+    "source_refs": [
+      "docs/specs/integrated_engine_worker_return_contract_v0.md",
+      "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+    ],
+    "raw_fallback_text": "orker_return_contract_v0.md`\n- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`\n\nsuggested next use:\nvalidation target\n\nWORKER_RETURN_JSON\n{\n  \"schema_version\": \"integrated_engine_worker_return_v0\",\n  \"worker_id\": \"codex\",\n  \"package_id\": \"unknown\",\n  \"run_kind\": \"summarize\",\n  \"answer\": \"Actual worker contract smoke completed. Use the worker-emitted block as the primary adapter validation target for projecting structured_return.worker_return.\",\n  \"findings\": [\n    \"Worker return schema version is integrated_engine_worker_return_v0.\",\n    \"Runtime should prefer structured_return.worker_return before fallback parsing.\",\n    \"Actual worker output enters through CodexCliAdapter.start_run(...) stdout/stderr/returncode.\",\n    \"Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization.\"\n  ],\n  \"files_artifacts\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ],\n  \"next_continue_hint\": \"Validate that the adapter can extract this WORKER_RETURN_JSON block from actual worker stdout and project it into structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Package id was not provided in the prompt.\",\n    \"Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision.\"\n  ],\n  \"risks_or_limits\": [\n    \"This was a read-only smoke response; no files were modified.\",\n    \"Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone.\"\n  ],\n  \"source_refs\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n"
+  }
+}

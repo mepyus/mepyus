@@ -7,8 +7,8 @@
 
 ## 2. Snapshot
 - immediate_child_dirs: `0`
-- immediate_child_files: `157`
-- file_types: `.json` x 157
+- immediate_child_files: `171`
+- file_types: `.json` x 171
 
 ## 3. Child Folders
 - none
@@ -17,7 +17,7 @@
 - none
 
 ## 5. Code / Data Files
-- json: `doc_ai_future_segment_probe_v1_label_packet.json`, `doc_choi_ai_classroom_transformer1_input_v1_label_packet.json`, `doc_choi_ai_classroom_transformer2_input_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_pointer_probe_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_segmentation_probe_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_v1_label_packet.json`, `doc_claude_code_label_packet.json`, `doc_codex_baseline_program_grade_workspace_upgrade_v1_label_packet.json`, `doc_codex_baseline_session_id_and_gemini_log_link_contract_v1_label_packet.json`, `doc_codex_directive_core_input_layer_labeler_realization_v1_label_packet.json`, `doc_codex_directive_document_routing_markers_and_operation_receipt_v1_label_packet.json`, `doc_codex_directive_program_level_upgrade_delta_based_program_operation_v1_label_packet.json`, `doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_label_packet.json`, `doc_codex_future_scaling_guardrails_directive_v1_label_packet.json`, `doc_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_label_packet.json`, `doc_codex_reusable_internal_hardening_process_directive_v1_label_packet.json`, `doc_codex_summary_today_session_close_v1_label_packet.json`, `doc_connection_meaning_and_user_layer_translation_baseline_v1_label_packet.json`, `doc_current_asset_map_v1_label_packet.json`, `doc_delta_society_label_packet.json`
+- json: `doc_ai_future_segment_probe_v1_label_packet.json`, `doc_andrej_karpathy_llm_wiki_medium_note_v0_label_packet.json`, `doc_andrej_process_supervision_note_v0_label_packet.json`, `doc_choi_ai_classroom_transformer1_input_v1_label_packet.json`, `doc_choi_ai_classroom_transformer2_input_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_pointer_probe_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_segmentation_probe_v1_label_packet.json`, `doc_claude_code_index_engine_purpose_reset_reading_v1_label_packet.json`, `doc_claude_code_label_packet.json`, `doc_claude_code_source_analysis_note_v0_label_packet.json`, `doc_codex_baseline_program_grade_workspace_upgrade_v1_label_packet.json`, `doc_codex_baseline_session_id_and_gemini_log_link_contract_v1_label_packet.json`, `doc_codex_directive_core_input_layer_labeler_realization_v1_label_packet.json`, `doc_codex_directive_document_routing_markers_and_operation_receipt_v1_label_packet.json`, `doc_codex_directive_program_level_upgrade_delta_based_program_operation_v1_label_packet.json`, `doc_codex_directive_vectorfl_engine_lock_preset_setup_bundle_v1_label_packet.json`, `doc_codex_future_scaling_guardrails_directive_v1_label_packet.json`, `doc_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_label_packet.json`, `doc_codex_reusable_internal_hardening_process_directive_v1_label_packet.json`, `doc_codex_summary_today_session_close_v1_label_packet.json`
 
 ## 6. Current Use Hint
 - 변화가 생기면 먼저 change log 와 inventory 를 갱신하고, 이 문서는 그 결과를 얇게 렌더한다.
@@ -28,7 +28,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.manifests.label_packets.json`
 - parent_folder: `runtime/manifests`
 - related_status_files: `runtime/manifests/label_packets/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:10+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

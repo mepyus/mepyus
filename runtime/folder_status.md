@@ -6,30 +6,40 @@
 - status_mode: `rendered_from_inventory`
 
 ## 2. Snapshot
-- immediate_child_dirs: `26`
+- immediate_child_dirs: `36`
 - immediate_child_files: `4`
 - file_types: `.json` x 2, `.jsonl` x 1, `<no_ext>` x 1
 
 ## 3. Child Folders
 - `assistant_profile` -> `runtime/assistant_profile/folder_status.md`
+- `bridge`
+- `cli_sessions`
 - `commands` -> `runtime/commands/folder_status.md`
 - `config` -> `runtime/config/folder_status.md`
 - `contracts` -> `runtime/contracts/folder_status.md`
 - `core` -> `runtime/core/folder_status.md`
 - `decision_lineage` -> `runtime/decision_lineage/folder_status.md`
 - `events` -> `runtime/events/folder_status.md`
+- `exploration_results`
 - `fragments` -> `runtime/fragments/folder_status.md`
 - `interpretation_packets` -> `runtime/interpretation_packets/folder_status.md`
+- `language_loops`
 - `line_thickening_demo` -> `runtime/line_thickening_demo/folder_status.md`
 - `line_thickening_demo_v2` -> `runtime/line_thickening_demo_v2/folder_status.md`
 - `logs` -> `runtime/logs/folder_status.md`
 - `manifests` -> `runtime/manifests/folder_status.md`
 - `measurements` -> `runtime/measurements/folder_status.md`
 - `memory` -> `runtime/memory/folder_status.md`
+- `merge_diff_reports`
 - `multi_lens_views` -> `runtime/multi_lens_views/folder_status.md`
 - `observer` -> `runtime/observer/folder_status.md`
+- `omx-runtime`
+- `query_packets`
 - `receipts` -> `runtime/receipts/folder_status.md`
+- `reingress_records`
+- `reopen_evidence_logs`
 - `reports` -> `runtime/reports/folder_status.md`
+- `reread_trials`
 - `review_ledgers` -> `runtime/review_ledgers/folder_status.md`
 - `sandboxes` -> `runtime/sandboxes/folder_status.md`
 - `source_documents` -> `runtime/source_documents/folder_status.md`
@@ -54,7 +64,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.json`
 - parent_folder: `.`
 - related_status_files: `runtime/folder_status.md`
-- last_updated: `2026-04-09T18:45:29+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

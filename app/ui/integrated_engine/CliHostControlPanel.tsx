@@ -91,8 +91,10 @@ type PackageNotebookRun = {
   open_questions?: string[];
   risks_or_limits?: string[];
   source_refs?: string[];
+  worker_return_source?: string;
   worker_return?: {
     schema_version?: string;
+    worker_return_source?: string;
     worker_id?: string;
     package_id?: string;
     run_kind?: string;
@@ -643,9 +645,12 @@ function PackageNotebookPanel({
             이 패키지의 이전 실행을 붙잡고 계속 작업한다. 결과/산출물/맥락은 여기에 누적되고, 다음 지시는 아래 입력창에서 이어간다.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
           <Badge className="border-cyan-500/20 bg-cyan-500/10 text-cyan-100">{runs.length} runs</Badge>
           <Badge className="border-white/10 bg-slate-950 text-slate-300">{notebook?.latest_stage || activePackage?.stage || "not started"}</Badge>
+          {latestRun?.worker_return_source ? (
+            <Badge className="border-white/10 bg-slate-950 text-slate-300">return: {latestRun.worker_return_source}</Badge>
+          ) : null}
         </div>
       </div>
 

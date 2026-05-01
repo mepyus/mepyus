@@ -1,0 +1,28 @@
+Ripgrep is not available. Falling back to GrepTool.
+Error when talking to Gemini API Full report available at: /var/folders/1v/g78rkptn0mngwfxc5jyt54s40000gn/T/gemini-client-error-Turn.run-sendMessageStream-2026-05-01T00-12-35-521Z.json TerminalQuotaError: You have exhausted your capacity on this model. Your quota will reset after 8h56m34s.
+    at classifyGoogleError (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:269741:18)
+    at retryWithBackoff (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:270345:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:292938:28)
+    at async GeminiChat.streamWithRetries (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:292776:29)
+    at async Turn.run (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:293269:24)
+    at async GeminiClient.processTurn (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:303563:22)
+    at async GeminiClient.sendMessageStream (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-SZYCJREE.js:303676:14)
+    at async file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/gemini-LSLMD4HG.js:10923:26
+    at async main (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/gemini-LSLMD4HG.js:15980:5) {
+  cause: {
+    code: 429,
+    message: 'You have exhausted your capacity on this model. Your quota will reset after 8h56m34s.',
+    details: [ [Object], [Object] ]
+  },
+  retryDelayMs: 32194517.001591,
+  reason: 'QUOTA_EXHAUSTED'
+}
+{
+  "session_id": "40c94704-f9f6-4d6b-847c-6042cd2f2443",
+  "error": {
+    "type": "Error",
+    "message": "You have exhausted your capacity on this model. Your quota will reset after 8h56m34s.",
+    "code": 1
+  }
+}

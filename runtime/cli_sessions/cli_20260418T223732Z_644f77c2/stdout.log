@@ -1,0 +1,66 @@
+result summary:
+Actual worker contract smoke completed. The bounded refs support a minimal machine-readable `WORKER_RETURN_JSON` block for Package 2 continuity validation.
+
+answer:
+Use the worker-emitted block as the primary adapter validation target. The contract expects `structured_return.worker_return` to carry stable fields, while the audit identifies the actual worker boundary and the narrow patch point for extracting a parseable block from stdout before fallback normalization.
+
+findings:
+- Worker return schema version is `integrated_engine_worker_return_v0`.
+- Runtime should prefer `structured_return.worker_return` before fallback parsing.
+- Actual worker output enters through `CodexCliAdapter.start_run(...)` stdout/stderr/returncode.
+- Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization.
+
+files_artifacts:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+next_continue_hint:
+Validate that the adapter can extract this `WORKER_RETURN_JSON` block from actual worker stdout and project it into `structured_return.worker_return`.
+
+open_questions:
+- Package id was not provided in the prompt.
+- Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision.
+
+risks_or_limits:
+- This was a read-only smoke response; no files were modified.
+- Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone.
+
+source_refs:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+suggested next use:
+validation target
+
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "unknown",
+  "run_kind": "summarize",
+  "answer": "Actual worker contract smoke completed. Use the worker-emitted block as the primary adapter validation target for projecting structured_return.worker_return.",
+  "findings": [
+    "Worker return schema version is integrated_engine_worker_return_v0.",
+    "Runtime should prefer structured_return.worker_return before fallback parsing.",
+    "Actual worker output enters through CodexCliAdapter.start_run(...) stdout/stderr/returncode.",
+    "Package 2 should validate a parseable worker-emitted block, not only runtime-synthesized normalization."
+  ],
+  "files_artifacts": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ],
+  "next_continue_hint": "Validate that the adapter can extract this WORKER_RETURN_JSON block from actual worker stdout and project it into structured_return.worker_return.",
+  "open_questions": [
+    "Package id was not provided in the prompt.",
+    "Whether validation should require strict JSON parse success or allow markdown fallback remains a package decision."
+  ],
+  "risks_or_limits": [
+    "This was a read-only smoke response; no files were modified.",
+    "Actual external worker compliance is only validated if the adapter parses the emitted block, not by this response alone."
+  ],
+  "source_refs": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ]
+}
+END_WORKER_RETURN_JSON

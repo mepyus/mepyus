@@ -1,0 +1,401 @@
+{
+  "doc_ref": "inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 13
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Token efficiency Claude Codex stdy note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://www.stdy.blog/increasing-token-efficiency-by-setting-adjustment-in-claude-and-codex/` - source_...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it is not a generic AI essay. It is a concrete operational article about where cod...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The article's core claim is that token waste in coding agents comes less from one abstract cause and more from repeated ope...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "directive",
+        "function_in_source": "## Claude Code section The article lists several Claude Code levers: - turning off git instruction injection if it is not needed - keepin...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "contrast",
+        "function_in_source": "## Codex section The Codex part says there are fewer obvious token levers, but a few still matter: - disable ChatGPT-connected apps/conne...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "## strongest structural signals This source reinforces several signals that already appear in our space.",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      },
+      {
+        "unit_id": "unit_009",
+        "role_type": "context",
+        "function_in_source": "### 1. structure before free-form agenting The article repeatedly argues for: - setting the mode first - deciding which connectors/tools...",
+        "upstream": "unit_008",
+        "downstream": "unit_010"
+      },
+      {
+        "unit_id": "unit_010",
+        "role_type": "context",
+        "function_in_source": "### 2. bounded surface over universal agent freedom The article does not celebrate maximum tool freedom. It prefers: - only the tools nee...",
+        "upstream": "unit_009",
+        "downstream": "unit_011"
+      },
+      {
+        "unit_id": "unit_011",
+        "role_type": "validation",
+        "function_in_source": "### 3. maintenance and validation discipline The article also warns that aggressive caps or stripped settings can backfire: - the model m...",
+        "upstream": "unit_010",
+        "downstream": "unit_012"
+      },
+      {
+        "unit_id": "unit_012",
+        "role_type": "contrast",
+        "function_in_source": "## bounded relevance to our current space This source is especially relevant to our space because we already care about: - script-first v...",
+        "upstream": "unit_011",
+        "downstream": "unit_013"
+      },
+      {
+        "unit_id": "unit_013",
+        "role_type": "principle",
+        "function_in_source": "## current bounded judgment - useful as a strong external operating note - more concrete than a broad philosophy article because it names...",
+        "upstream": "unit_012",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "grounds"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_007",
+        "to_unit_id": "unit_008",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_008",
+        "to_unit_id": "unit_009",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_009",
+        "to_unit_id": "unit_010",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_010",
+        "to_unit_id": "unit_011",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_011",
+        "to_unit_id": "unit_012",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_012",
+        "to_unit_id": "unit_013",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "token_efficiency_claude_codex_stdy_note_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 13 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "token_efficiency_claude_codex_stdy_note_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Token efficiency Claude Codex stdy note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://www.stdy.blog/increasing-token-efficiency-by-setting-adjustment-in-claude-and-codex/` - source_...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it is not a generic AI essay. It is a concrete operational article about where cod...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The article's core claim is that token waste in coding agents comes less from one abstract cause and more from repeated ope...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "directive",
+        "function_in_source": "## Claude Code section The article lists several Claude Code levers: - turning off git instruction injection if it is not needed - keepin...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "contrast",
+        "function_in_source": "## Codex section The Codex part says there are fewer obvious token levers, but a few still matter: - disable ChatGPT-connected apps/conne...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "## strongest structural signals This source reinforces several signals that already appear in our space.",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# Token efficiency Claude Codex stdy note v0",
+        "human_gloss": "# Token efficiency Claude Codex stdy note v0",
+        "what_it_preserves": [
+          "start_ref=Token efficiency Claude Codex stdy note v0",
+          "end_ref=Token efficiency Claude Codex stdy note v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## source metadata - source_url: `https://www.stdy.blog/increasing-token-efficiency-by-setting-adjustment-in-claude-and-codex/` - source_...",
+        "human_gloss": "## source metadata - source_url: `https://www.stdy.blog/increasing-token-efficiency-by-setting-adjustment-in-claude-and-codex/` - source_...",
+        "what_it_preserves": [
+          "start_ref=source metadata",
+          "end_ref=source metadata",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## why this source matters This source matters because it is not a generic AI essay. It is a concrete operational article about where cod...",
+        "human_gloss": "## why this source matters This source matters because it is not a generic AI essay. It is a concrete operational article about where cod...",
+        "what_it_preserves": [
+          "start_ref=why this source matters",
+          "end_ref=why this source matters",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## core claim The article's core claim is that token waste in coding agents comes less from one abstract cause and more from repeated ope...",
+        "human_gloss": "## core claim The article's core claim is that token waste in coding agents comes less from one abstract cause and more from repeated ope...",
+        "what_it_preserves": [
+          "start_ref=core claim",
+          "end_ref=core claim",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## Claude Code section The article lists several Claude Code levers: - turning off git instruction injection if it is not needed - keepin...",
+        "human_gloss": "## Claude Code section The article lists several Claude Code levers: - turning off git instruction injection if it is not needed - keepin...",
+        "what_it_preserves": [
+          "start_ref=Claude Code section",
+          "end_ref=Claude Code section",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "## Codex section The Codex part says there are fewer obvious token levers, but a few still matter: - disable ChatGPT-connected apps/conne...",
+        "human_gloss": "## Codex section The Codex part says there are fewer obvious token levers, but a few still matter: - disable ChatGPT-connected apps/conne...",
+        "what_it_preserves": [
+          "start_ref=Codex section",
+          "end_ref=Codex section",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      },
+      {
+        "unit_id": "unit_008",
+        "provisional_line": "## strongest structural signals This source reinforces several signals that already appear in our space.",
+        "human_gloss": "## strongest structural signals This source reinforces several signals that already appear in our space.",
+        "what_it_preserves": [
+          "start_ref=strongest structural signals",
+          "end_ref=strongest structural signals",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 7
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007",
+        "unit_008"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

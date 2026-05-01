@@ -73,6 +73,8 @@ CLI_SESSION_MARKS = {
 LANGUAGE_LOOP_ROOT = "runtime/language_loops"
 PACKAGE_RUN_EVENT_LEDGER = "runtime/events/integrated_engine_package_run_events.jsonl"
 WORKER_RETURN_SCHEMA_VERSION = "integrated_engine_worker_return_v0"
+WORKER_RETURN_BLOCK_START = "WORKER_RETURN_JSON"
+WORKER_RETURN_BLOCK_END = "END_WORKER_RETURN_JSON"
 
 
 def _utc_now() -> str:
@@ -242,6 +244,39 @@ def _list_from_worker_return(value: Any) -> List[str]:
     return []
 
 
+def _extract_worker_emitted_return_with_status(stdout: str) -> Tuple[Dict[str, Any], str]:
+    text = str(stdout or "")
+    if WORKER_RETURN_BLOCK_START not in text or WORKER_RETURN_BLOCK_END not in text:
+        return {}, "missing_block"
+    start_match = None
+    end_match = None
+    for match in re.finditer(rf"(?m)^\s*{re.escape(WORKER_RETURN_BLOCK_START)}\s*$", text):
+        start_match = match
+    if not start_match:
+        return {}, "missing_delimiter"
+    for match in re.finditer(rf"(?m)^\s*{re.escape(WORKER_RETURN_BLOCK_END)}\s*$", text[start_match.end():]):
+        end_match = match
+        break
+    if not end_match:
+        return {}, "missing_end_delimiter"
+    body = text[start_match.end():start_match.end() + end_match.start()].strip()
+    if body.startswith("```"):
+        body = re.sub(r"^```(?:json)?\s*", "", body, flags=re.IGNORECASE).strip()
+        body = re.sub(r"\s*```$", "", body).strip()
+    try:
+        parsed = json.loads(body)
+    except Exception:
+        return {}, "invalid_json"
+    if not isinstance(parsed, dict):
+        return {}, "invalid_shape"
+    return parsed, "valid"
+
+
+def _extract_worker_emitted_return(stdout: str) -> Dict[str, Any]:
+    parsed, status = _extract_worker_emitted_return_with_status(stdout)
+    return parsed if status == "valid" else {}
+
+
 def _profile_findings_from_context_profiles(context_profiles: List[Dict[str, Any]]) -> List[str]:
     findings: List[str] = []
     for profile in context_profiles:
@@ -285,10 +320,20 @@ def _normalize_worker_return(
     active_package = session.get("active_package") if isinstance(session.get("active_package"), dict) else {}
     package_id = str(active_package.get("id") or "package_1")
     existing = structured_return.get("worker_return") if isinstance(structured_return.get("worker_return"), dict) else {}
+    worker_return_source = str(existing.get("worker_return_source") or structured_return.get("worker_return_source") or "").strip()
     top_level_answer = structured_return.get("answer") or existing.get("answer")
     profile_findings = _profile_findings_from_context_profiles(context_profiles or [])
     fallback_findings = _unique_list(_extract_structural_profile_findings(raw_text) + _extract_bullets(raw_text))
     findings = _list_from_worker_return(existing.get("findings") or structured_return.get("findings")) or profile_findings or fallback_findings
+    if not worker_return_source:
+        if existing:
+            worker_return_source = "runtime_normalized"
+        elif profile_findings:
+            worker_return_source = "runtime_normalized"
+        elif fallback_findings:
+            worker_return_source = "parser_fallback"
+        else:
+            worker_return_source = "raw_fallback"
     answer = str(top_level_answer or "").strip() or _first_useful_block(raw_text)
     if not answer and findings:
         answer = "\n".join(findings[:5])[:1200]
@@ -307,6 +352,20 @@ def _normalize_worker_return(
             next_hint = "Attach latest run artifacts and ask the next package-specific question."
     risks = _list_from_worker_return(existing.get("risks_or_limits") or structured_return.get("risks_or_limits"))
     risks.extend(_list_from_worker_return(structured_return.get("uncertainty_or_failure_notes")))
+    extraction_status = str(structured_return.get("worker_return_extraction_status") or "").strip()
+    if extraction_status and extraction_status != "valid":
+        risks.append(f"worker return block extraction status: {extraction_status}")
+    if existing and worker_return_source == "worker_emitted":
+        required_fields = ["answer", "findings", "files_artifacts", "next_continue_hint", "source_refs"]
+        missing_fields = [field for field in required_fields if not existing.get(field)]
+        if missing_fields:
+            risks.append("worker-emitted return missing fields normalized by runtime: " + ", ".join(missing_fields))
+    execution_status = str(structured_return.get("status") or session.get("status") or "").strip()
+    exit_code = structured_return.get("exit_code", session.get("exit_code"))
+    if execution_status and execution_status not in {"done", "queued", "running"}:
+        risks.append(f"worker execution status: {execution_status}")
+    if exit_code not in (None, "", 0):
+        risks.append(f"worker exit code: {exit_code}")
     if session.get("dry_run") and "dry-run validates spine/context carryover, not worker reasoning quality" not in risks:
         risks.append("dry-run validates spine/context carryover, not worker reasoning quality")
     if error_message:
@@ -315,6 +374,12 @@ def _normalize_worker_return(
         risks.append("no reliable findings extracted from return text")
     if suggested == "reread_target" and "return remains reread-target; not approval or completion" not in risks:
         risks.append("return remains reread-target; not approval or completion")
+    if suggested == "deposit_candidate" and "deposit candidate requires supervisor review; not automatic ingestion" not in risks:
+        risks.append("deposit candidate requires supervisor review; not automatic ingestion")
+    if not answer and execution_status == "failed":
+        answer = error_message or _tail_text(str(structured_return.get("result_summary") or raw_text or ""), 1200) or "Worker run failed before a readable answer was returned."
+    if not findings and execution_status == "failed":
+        findings = ["worker run failed; inspect stderr/session artifacts before continuation"]
     open_questions = _list_from_worker_return(existing.get("open_questions") or structured_return.get("open_questions"))
     if ("not final approval" in raw_text.lower() or "not approval" in raw_text.lower()) and not open_questions:
         open_questions.append("What should be validated before reuse or redeposit?")
@@ -324,8 +389,11 @@ def _normalize_worker_return(
         + _extract_path_refs(raw_text)
     )
     source_refs = _list_from_worker_return(existing.get("source_refs") or structured_return.get("source_refs")) or _list_from_worker_return(session.get("bounded_context_refs"))
+    if not source_refs and files_artifacts:
+        source_refs = [ref for ref in files_artifacts if ref.endswith((".md", ".json", ".log", ".py", ".tsx", ".ts", ".txt"))][:6]
     return {
         "schema_version": existing.get("schema_version") or WORKER_RETURN_SCHEMA_VERSION,
+        "worker_return_source": worker_return_source,
         "worker_id": existing.get("worker_id") or session.get("backend_kind") or "codex",
         "package_id": existing.get("package_id") or package_id,
         "run_kind": existing.get("run_kind") or session.get("task_type") or "",
@@ -343,8 +411,11 @@ def _normalize_worker_return(
 def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any], *, package_id: str, input_packet_id: str, event_count: int = 0) -> Dict[str, Any]:
     result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
     worker_return = _normalize_worker_return(session, structured_return, result_summary)
+    worker_hint = str(worker_return.get("next_continue_hint") or "").strip()
     next_hint = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
-    if next_hint == "reread_target":
+    if worker_hint:
+        next_hint = worker_hint
+    elif next_hint == "reread_target":
         next_hint = "Reread the latest answer with its artifact refs and decide the next package-specific question."
     elif next_hint == "validation_target":
         next_hint = "Validate the latest run before using it as package material."
@@ -371,6 +442,7 @@ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any
         "open_questions": worker_return["open_questions"][:6],
         "risks_or_limits": worker_return["risks_or_limits"][:6],
         "source_refs": worker_return["source_refs"],
+        "worker_return_source": worker_return["worker_return_source"],
         "worker_return": worker_return,
         "return_refs": [session.get("structured_return_path") or "", session.get("deposit_candidate_path") or "", session.get("operator_report_path") or ""],
         "artifact_paths": [session.get("stdout_path") or "", session.get("stderr_path") or "", session.get("prompt_path") or ""],
@@ -1545,6 +1617,23 @@ def _cli_session_prompt(session_spec: Dict[str, Any]) -> str:
         "- risks_or_limits: uncertainty, weak spots, dry-run limits, or blocked areas\n"
         "- source_refs: bounded context refs actually used\n"
         "- suggested next use: reread target / implementation return / validation target / deposit candidate\n"
+        "\nYou must also include one machine-readable block near the end of the answer.\n"
+        "Use exactly this delimiter format and valid JSON. Keep arrays as arrays of strings.\n"
+        f"{WORKER_RETURN_BLOCK_START}\n"
+        "{\n"
+        f"  \"schema_version\": \"{WORKER_RETURN_SCHEMA_VERSION}\",\n"
+        f"  \"worker_id\": \"{session_spec.get('backend_kind') or 'codex'}\",\n"
+        "  \"package_id\": \"<package id if known>\",\n"
+        f"  \"run_kind\": \"{session_spec.get('task_type') or 'inspect'}\",\n"
+        "  \"answer\": \"<direct answer or main response>\",\n"
+        "  \"findings\": [\"<key observation>\"],\n"
+        "  \"files_artifacts\": [\"<path or artifact ref>\"],\n"
+        "  \"next_continue_hint\": \"<specific next step for this same package>\",\n"
+        "  \"open_questions\": [\"<unresolved blocker>\"],\n"
+        "  \"risks_or_limits\": [\"<uncertainty or limit>\"],\n"
+        "  \"source_refs\": [\"<bounded context ref actually used>\"]\n"
+        "}\n"
+        f"{WORKER_RETURN_BLOCK_END}\n"
     )
 
 
@@ -1667,6 +1756,13 @@ class CodexCliAdapter:
             "suggested_next_use": _infer_cli_suggested_next_use(stdout, status),
             "created_at": _utc_now(),
         }
+        worker_emitted_return, extraction_status = _extract_worker_emitted_return_with_status(stdout)
+        structured_return["worker_return_extraction_status"] = extraction_status
+        if worker_emitted_return:
+            structured_return["worker_return"] = {
+                **worker_emitted_return,
+                "worker_return_source": "worker_emitted",
+            }
         structured_return["worker_return"] = _normalize_worker_return(
             session,
             structured_return,
@@ -2190,6 +2286,7 @@ def _build_cli_package_notebooks(repo_root: Path, index: Dict[str, Any], events:
             "open_questions": enriched["open_questions"],
             "risks_or_limits": enriched["risks_or_limits"],
             "source_refs": enriched["source_refs"],
+            "worker_return_source": enriched["worker_return_source"],
             "worker_return": enriched["worker_return"],
             "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
             "route_label": _classify_cli_turn_route(session, structured_return),

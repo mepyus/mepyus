@@ -1,0 +1,38 @@
+# Codex Review Bundle
+
+- package_dir: app/work/space-skill-sandbox/packages/package_000_smoke
+- run_id: package_000_smoke_handoff
+- collected_at: 20260430_174916
+- outbox_files_collected: 7
+- raw_files_collected: 13
+
+## Package Files
+
+app/work/space-skill-sandbox/packages/package_000_smoke/codex_review_bundle.md
+app/work/space-skill-sandbox/packages/package_000_smoke/gemini_packet.md
+app/work/space-skill-sandbox/packages/package_000_smoke/handoff_log.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_173421.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_173755.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_174354.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_174639.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_174725.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_174744.md
+app/work/space-skill-sandbox/packages/package_000_smoke/outbox/package_000_smoke_handoff_gemini_outbox_20260430_174854.md
+app/work/space-skill-sandbox/packages/package_000_smoke/package_brief.md
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_173421.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_173755.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_174354.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_174639.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_174725.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_174744.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_raw_20260430_174854.json
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_173755.log
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_174354.log
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_174639.log
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_174725.log
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_174744.log
+app/work/space-skill-sandbox/packages/package_000_smoke/raw/package_000_smoke_handoff_gemini_stderr_20260430_174854.log
+
+## Review Note
+
+This bundle is transport evidence only. Codex must validate content and boundaries separately.

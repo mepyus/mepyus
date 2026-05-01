@@ -1,0 +1,271 @@
+{
+  "doc_ref": "inputs/external_cases/garrytan_x_status_2046876981711769720_note_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 6
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Garry Tan X status 2046876981711769720 note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://x.com/garrytan/status/2046876981711769720` - source_title: `Garry Tan X status 2046876981711769...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "validation",
+        "function_in_source": "## capture status The target source was checked through: - direct X page open - search-based lookup - non-JavaScript fetch The post body...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## why this note still matters This note is still useful as an external source pointer because it records: - the target URL - the source...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "directive",
+        "function_in_source": "## bounded judgment Current bounded judgment: - keep as an unresolved external social pointer - do not infer the post's claim from shell...",
+        "upstream": "unit_005",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "garrytan_x_status_2046876981711769720_note_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 6 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "garrytan_x_status_2046876981711769720_note_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Garry Tan X status 2046876981711769720 note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://x.com/garrytan/status/2046876981711769720` - source_title: `Garry Tan X status 2046876981711769...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "validation",
+        "function_in_source": "## capture status The target source was checked through: - direct X page open - search-based lookup - non-JavaScript fetch The post body...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## why this note still matters This note is still useful as an external source pointer because it records: - the target URL - the source...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "directive",
+        "function_in_source": "## bounded judgment Current bounded judgment: - keep as an unresolved external social pointer - do not infer the post's claim from shell...",
+        "upstream": "unit_005",
+        "downstream": null
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# Garry Tan X status 2046876981711769720 note v0",
+        "human_gloss": "# Garry Tan X status 2046876981711769720 note v0",
+        "what_it_preserves": [
+          "start_ref=Garry Tan X status 2046876981711769720 note v0",
+          "end_ref=Garry Tan X status 2046876981711769720 note v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## source metadata - source_url: `https://x.com/garrytan/status/2046876981711769720` - source_title: `Garry Tan X status 2046876981711769...",
+        "human_gloss": "## source metadata - source_url: `https://x.com/garrytan/status/2046876981711769720` - source_title: `Garry Tan X status 2046876981711769...",
+        "what_it_preserves": [
+          "start_ref=source metadata",
+          "end_ref=source metadata",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## capture status The target source was checked through: - direct X page open - search-based lookup - non-JavaScript fetch The post body...",
+        "human_gloss": "## capture status The target source was checked through: - direct X page open - search-based lookup - non-JavaScript fetch The post body...",
+        "what_it_preserves": [
+          "start_ref=capture status",
+          "end_ref=capture status",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## why this note still matters This note is still useful as an external source pointer because it records: - the target URL - the source...",
+        "human_gloss": "## why this note still matters This note is still useful as an external source pointer because it records: - the target URL - the source...",
+        "what_it_preserves": [
+          "start_ref=why this note still matters",
+          "end_ref=why this note still matters",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## bounded judgment Current bounded judgment: - keep as an unresolved external social pointer - do not infer the post's claim from shell...",
+        "human_gloss": "## bounded judgment Current bounded judgment: - keep as an unresolved external social pointer - do not infer the post's claim from shell...",
+        "what_it_preserves": [
+          "start_ref=bounded judgment",
+          "end_ref=bounded judgment",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/garrytan_x_status_2046876981711769720_note_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/garrytan_x_status_2046876981711769720_note_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

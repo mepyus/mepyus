@@ -1,0 +1,216 @@
+{
+  "contract_id": "space_reingress_record_v5",
+  "contract_status": "draft_instance",
+  "extends": "space_reingress_record_v4",
+  "artifact_identity": {
+    "artifact_id": "phase1_11_run_03_reingress_record",
+    "artifact_role": "reingress_record",
+    "family_key": "runtime/reingress_records::phase1_x_run_03::reingress_record",
+    "lineage_hint": "phase1_11:phase1_11_run_03:reingress_record",
+    "run_stem": "phase1_11_run_03",
+    "phase_label": "phase1_11",
+    "artifact_slot": "run artifact slot",
+    "generated_from_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json",
+    "prior_artifact_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json",
+    "comparison_ready": true,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role",
+      "generated_from_chain",
+      "explicit_prior_ref"
+    ],
+    "identity_anchor_source": "emitted"
+  },
+  "record_id": "phase1_11_run_03_reingress_record",
+  "created_at": "2026-04-20T10:24:19.579227+00:00",
+  "original_user_request": "Compare ambiguous unrelated generated runtime JSON artifacts with weak identity and preserve identity risk instead of trusting path stems.",
+  "interpreted_goal": "Translate the user request into a Phase 1.5 CLI usage-loop artifact set and handle it as comparison.",
+  "searched_assets_summary": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md",
+    "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+    "docs/specs/structured_evidence_contract_v0.md",
+    "docs/specs/structured_merge_diff_rules_v0.md",
+    "docs/specs/diff_evidence_contract_v0.md",
+    "docs/specs/diff_aware_merge_hold_rules_v0.md",
+    "docs/specs/artifact_identity_anchor_contract_v0.md",
+    "docs/specs/identity_aware_pairing_rules_v0.md",
+    "runtime/contracts/space_exploration_result_v1.json",
+    "runtime/contracts/merge_diff_report_v1.json",
+    "runtime/contracts/space_reingress_record_v1.json"
+  ],
+  "space_position_summary": "Use Phase 1/1.5 working specs as an operating layer below existing baselines.",
+  "codex_position_summary": "Proceed with bounded CLI usage-loop artifacts without baseline promotion or path migration.",
+  "chosen_mode": "diff",
+  "final_return_summary": "Phase 1.5 usage-loop artifacts generated. Chosen mode: diff.",
+  "unresolved_notes": [],
+  "new_line_or_axis_candidate": "phase1_5_usage_loop_binding",
+  "future_probe_note": "Use repeated real questions to decide what deserves automation or promotion later.",
+  "evidence_depth_summary": {
+    "pointer_only": 0,
+    "weak_grounded": 0,
+    "direct_grounded": 0,
+    "cross_supported": 15,
+    "total": 15
+  },
+  "excerpt_quality_summary": {
+    "poor": 0,
+    "usable": 5,
+    "strong": 10,
+    "title_or_metadata_issues": 0,
+    "retried": 2,
+    "total": 15
+  },
+  "useful_excerpt_modes": [
+    "bullet_cluster",
+    "heading_plus_block",
+    "line_window"
+  ],
+  "weak_grounding_areas": [],
+  "next_probe_hint": "Prefer reuse_candidate_assets first; inspect weak_grounding_areas when the claim depends on them.",
+  "reuse_candidate_assets": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/evidence_unit_grounding_contract_v0.md"
+  ],
+  "unresolved_grounding_note": "Grounded excerpts were available for selected evidence units.",
+  "merge_risk_summary": "",
+  "future_validation_hint": "Compare future runs by pointer_only ratio and strongest_support_refs.",
+  "structured_evidence_summary": {
+    "identity_only": 0,
+    "shape_only": 0,
+    "salient_path": 18,
+    "structured_fallback": 0,
+    "total": 18
+  },
+  "useful_structured_modes": [
+    "runtime_contract"
+  ],
+  "salient_paths_summary": [
+    "$.evidence_units[0].grounding_status",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only",
+    "$.evidence_depth_summary.total",
+    "$.evidence_depth_summary.weak_grounded",
+    "$.chosen_mode",
+    "$.evidence_depth_summary.cross_supported",
+    "$.evidence_depth_summary.direct_grounded",
+    "$.evidence_depth_summary.pointer_only"
+  ],
+  "weak_structured_areas": [],
+  "shape_only_warning": "",
+  "next_structured_probe_hint": "Prefer salient_paths_summary; inspect weak_structured_areas when structured claims depend on them.",
+  "reusable_structured_assets": [
+    "runtime/contracts/merge_diff_report_v1.json",
+    "runtime/contracts/space_exploration_result_v1.json",
+    "runtime/contracts/space_reingress_record_v1.json"
+  ],
+  "generated_asset_reading_note": "Structured evidence includes salient field paths.",
+  "diff_salience_summary": {
+    "added": 5,
+    "removed": 3,
+    "modified": 0,
+    "mode_shift": 0,
+    "count_change": 0,
+    "status_change": 0,
+    "evidence_depth_change": 0,
+    "trivial": 0,
+    "comparison_fallback": 0,
+    "salient_diff": 8,
+    "total": 8
+  },
+  "useful_diff_modes": [
+    "added",
+    "removed"
+  ],
+  "salient_diff_paths_summary": [
+    "$.chosen_mode",
+    "$.evidence_units[0].grounding_status",
+    "$.validation.evidence_depth_considered",
+    "$.validation.hold_not_overused",
+    "$.evidence_units[0].excerpt_mode",
+    "$.exploration_validation",
+    "$.exploration_validation.gaps_recorded",
+    "$.exploration_validation.grounded_fields_present"
+  ],
+  "weak_diff_areas": [],
+  "trivial_diff_warning": "",
+  "next_diff_probe_hint": "Prefer salient_diff_paths_summary and compare generated records from the same artifact family.",
+  "reusable_comparison_pairs": [
+    "runtime/contracts/merge_diff_report_v1.json -> runtime/contracts/space_exploration_result_v1.json"
+  ],
+  "generated_diff_note": "Salient changed paths found; diff evidence can inform judgment. At least one comparison rests on a weak pair; treat diff claims as cautious.",
+  "useful_pairing_modes": [
+    "selected_order_fallback"
+  ],
+  "family_key_summary": [
+    "fallback:selected_json_order"
+  ],
+  "weak_pair_areas": [
+    "runtime/contracts/merge_diff_report_v1.json -> runtime/contracts/space_exploration_result_v1.json"
+  ],
+  "rejected_pair_summary": [
+    {
+      "pair": "runtime/contracts/merge_diff_report_v1.json -> runtime/contracts/space_exploration_result_v1.json",
+      "rejected": [
+        "runtime/contracts/space_reingress_record_v1.json"
+      ]
+    }
+  ],
+  "next_pairing_probe_hint": "Prefer same family_key and explicit phase/version lineage before reading diff salience.",
+  "reusable_family_groups": [
+    "fallback:selected_json_order"
+  ],
+  "pairing_risk_summary": "Pair confidence is weak; diff salience should not be treated as fully decisive.",
+  "identity_anchor_summary": {
+    "strong_identity": 0,
+    "plausible_identity": 3,
+    "weak_identity": 0,
+    "family_keys": [
+      "runtime/contracts::merge_diff_report_vx::merge_diff_report",
+      "runtime/contracts::space_exploration_result_vx::exploration_result",
+      "runtime/contracts::space_reingress_record_vx::reingress_record"
+    ],
+    "identity_basis": [
+      "path_plus_role"
+    ],
+    "total": 3
+  },
+  "useful_identity_modes": [
+    "path_plus_role"
+  ],
+  "weak_identity_areas": [],
+  "generated_from_chain_summary": [
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_11_run_03_question_packet.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_11_run_03_exploration_result.json",
+    "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json"
+  ],
+  "next_identity_probe_hint": "Prefer artifacts with embedded artifact_identity before relying on path/stem inference.",
+  "reusable_identity_groups": [
+    "runtime/contracts::merge_diff_report_vx::merge_diff_report",
+    "runtime/contracts::space_exploration_result_vx::exploration_result",
+    "runtime/contracts::space_reingress_record_vx::reingress_record"
+  ],
+  "identity_risk_summary": "Identity is path-inferred rather than self-described; keep comparison claims cautious.",
+  "artifact_refs": {
+    "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_11_run_03_question_packet.json",
+    "exploration_result_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/exploration_results/phase1_11_run_03_exploration_result.json",
+    "merge_diff_report_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/merge_diff_reports/phase1_11_run_03_merge_diff_report.json"
+  },
+  "validation": {
+    "reusable_for_next_question": true,
+    "reasoning_trace_present": true,
+    "unresolved_preserved": true,
+    "learning_fields_present": true,
+    "structured_learning_fields_present": true,
+    "diff_learning_fields_present": true,
+    "pairing_learning_fields_present": true,
+    "identity_learning_fields_present": true
+  }
+}

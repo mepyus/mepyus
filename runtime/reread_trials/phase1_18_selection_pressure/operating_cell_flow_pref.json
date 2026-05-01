@@ -1,0 +1,108 @@
+{
+  "trial_label": "operating_cell_flow_pref_sel",
+  "source_ref": "/Users/sungsookim/universe/vectorfl_replica/docs/contracts/vectorfl_paper_operating_cell_schema_v0.md",
+  "inputs": {
+    "content_role_path": "app/work/observer_ingest_min/generated/content_role_tags_vectorfl_paper_operating_cell_schema_v0_flow_guard_20260422_185725.json",
+    "line_seed_path": "app/work/observer_ingest_min/generated/line_seed_bundles_vectorfl_paper_operating_cell_schema_v0_flow_guard_20260422_185725.json",
+    "camera_support_path": "app/work/observer_ingest_min/generated/camera_support_bundles_vectorfl_paper_operating_cell_schema_v0_flow_guard_20260422_185725.json"
+  },
+  "variant_a_role_seed": {
+    "selected_seed_ref": "line_seed_014",
+    "reread_focus": "Re-read the adjacent units where local handoff pressure stays visible.",
+    "role_mix": [
+      "transition",
+      "main_claim"
+    ],
+    "repeated_pressure_note": "Repeated local pressure around: least, cell, can.",
+    "linkage_hint": "Adjacent split units share local role pressure and should be reread together before upper evidence use.",
+    "question_inducement": "What repeated local pressure makes these adjacent units worth rereading together?",
+    "insufficiency": "Role and seed preserve local pressure, but camera-facing support is still unchecked.",
+    "reread_refs": [
+      "unit_014",
+      "unit_015"
+    ],
+    "role_refs": [
+      "role_unit_014",
+      "role_unit_015"
+    ]
+  },
+  "variant_b_role_seed_camera": {
+    "selected_seed_ref": "line_seed_014",
+    "reread_focus": "Re-read the local sequence or handoff wording around the selected units.",
+    "role_mix": [
+      "transition",
+      "main_claim"
+    ],
+    "repeated_pressure_note": "Repeated local pressure around: least, cell, can.",
+    "linkage_hint": "Adjacent split units share local role pressure and should be reread together before upper evidence use.",
+    "question_inducement": "What repeated local pressure makes these adjacent units worth rereading together?",
+    "insufficiency": "Signals are local and still need broader reread before any stronger organization.",
+    "reread_refs": [
+      "unit_014",
+      "unit_015"
+    ],
+    "role_refs": [
+      "role_unit_014",
+      "role_unit_015"
+    ],
+    "selected_camera_ref": "camera_support_006",
+    "camera_signal_summary": "Lower support suggests flow reread potential.",
+    "signal_recap": {
+      "change": "insufficient",
+      "boundary": "insufficient",
+      "flow": "has_signal"
+    },
+    "carry_forward_refs": [
+      "unit_014",
+      "unit_015"
+    ]
+  },
+  "variant_c_role_seed_flow": {
+    "selected_seed_ref": "line_seed_014",
+    "reread_focus": "Re-read the local sequence or handoff wording around the selected units.",
+    "role_mix": [
+      "transition",
+      "main_claim"
+    ],
+    "repeated_pressure_note": "Repeated local pressure around: least, cell, can.",
+    "linkage_hint": "Adjacent split units share local role pressure and should be reread together before upper evidence use.",
+    "question_inducement": "What repeated local pressure makes these adjacent units worth rereading together?",
+    "insufficiency": "Signals are local and still need broader reread before any stronger organization.",
+    "reread_refs": [
+      "unit_014",
+      "unit_015"
+    ],
+    "role_refs": [
+      "role_unit_014",
+      "role_unit_015"
+    ],
+    "selected_camera_ref": "camera_support_006",
+    "camera_signal_summary": "Lower support suggests flow reread potential.",
+    "signal_recap": {
+      "change": "insufficient",
+      "boundary": "insufficient",
+      "flow": "has_signal"
+    },
+    "carry_forward_refs": [
+      "unit_014",
+      "unit_015"
+    ]
+  },
+  "comparison_note_ab": {
+    "result": "도움 됨",
+    "why": "Camera support narrowed the reread focus with explicit signal recap.",
+    "camera_added_value": "flow",
+    "still_thin": "Signals are local and still need broader reread before any stronger organization."
+  },
+  "comparison_note_ac": {
+    "result": "도움 됨",
+    "why": "Camera support narrowed the reread focus with explicit signal recap.",
+    "camera_added_value": "flow",
+    "still_thin": "Signals are local and still need broader reread before any stronger organization."
+  },
+  "flow_judgment": {
+    "result": "independent value",
+    "flow_strength": "has_signal",
+    "why": "Flow-focused reread narrowed focus beyond role+seed."
+  }
+}

@@ -1,0 +1,572 @@
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019da2f8-e2de-75f2-aaf3-5ab8c053b519
+--------
+user
+You are running as a bounded CLI backend on top of the VectorFL Integrated Engine.
+This is not a new engine surface. Treat the run as a tool call observed through the VectorFL surface.
+Keep the return compact and structured for engine reread, validation, or deposit.
+
+Backend: codex
+Task type: reread
+Requested by surface: vectorfl_surface
+Requested by page: app/ui/integrated_engine
+
+Purpose:
+내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음
+
+Bounded context refs:
+- gemini/external_analysis
+
+Prompt payload:
+You are operating as a Codex turn inside the integrated-engine VectorFL surface.
+The CLI is an on-top tool layer, not a fourth surface.
+The fixed surface split is: user = purpose/assignment/decision, VectorFL = interpretation/reread/mediation, engine = processing/return/deposit material.
+
+Current work packet visible in the VectorFL surface:
+- purpose: 내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음
+- task lens: reread
+- internal search gate: thin evidence (not explicitly requested)
+- evidence bundle summary: 1 attached refs: source ref
+- evidence limitation: Evidence bundle is thin; only one ref is attached.
+- active locks: fixed 3-surface body + CLI on-top boundary (inferred)
+- evidence refs: gemini/external_analysis
+- guards: read-only (guard-active); no promotion (guard-active); no ingestion (guard-active); no canonicalization (guard-active)
+- expected return shape: reread judgment
+- next route candidate: vectorfl_reread
+- internal search usage: thin evidence
+
+Current user-facing purpose:
+내부 설계 증명: 신규 패키지. 중앙 setup에서 목적/렌즈/근거를 잡은 뒤 CLI 실행으로 보낼 수 있음
+
+Current message to Codex:
+그럼 니가 참조한 라인과 축을 알려줘
+
+Return format for this VectorFL CLI conversation turn:
+1. Korean operating summary
+2. Surface reading: user / VectorFL / engine
+3. Route suggestion: reread_target / validation_target / implementation_return / deposit_candidate / hold
+4. What must not be inferred
+5. Suggested next use
+Do not modify files. Do not promote, ingest, or canonicalize anything.
+
+Return format:
+- result summary
+- important findings / diffs / outputs
+- uncertainty or failure notes
+- suggested next use: reread target / implementation return / validation target / deposit candidate
+
+codex
+참조 근거를 확인하기 위해 로컬 작업공간에서 `gemini/external_analysis`가 어떤 형태로 제공되어 있는지 먼저 찾겠습니다. 읽기 전용으로만 확인합니다.
+exec
+/bin/bash -lc "rg --files | rg '("'^|/)gemini(/|$)|external_analysis'"'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 111ms:
+gemini/final_integration_strategy_20260415.md
+gemini/folder_status.md
+gemini/protocols/integrated_engine_parallel_agent_operating_lock_v0.md
+gemini/protocols/agent_collaboration_protocol_v1.md
+gemini/protocols/gemini_cli_codex_collaboration_scope_v0.md
+gemini/protocols/vectorfl_ui_blueprint_20260415.md
+gemini/protocols/gemini_task_dispatch_policy_v1.md
+gemini/protocols/gemini_task_assignment_checklist_v1.md
+gemini/analysis/folder_structure_analysis_20260415.md
+gemini/analysis/constitutional_ground_analysis_20260415.md
+gemini/outputs/line_interpretation_report_20260411.md
+gemini/session_logs/session_update_20260415.md
+gemini/session_logs/session_summary_20260325.md
+gemini/session_logs/design_refinement_log.md
+gemini/map/repo_map.md
+gemini/map/folder_structure.txt
+gemini/readme.md
+gemini/core_docs/line_contract_axes_v0.md
+gemini/core_docs/vectorfl_core_concepts_and_hierarchical_translation_data.md
+gemini/external_analysis/paperclip_dna_20260415.md
+gemini/core_docs/resource_capability_boundary_memory_v1.md
+gemini/external_analysis/openharness_structural_dna_20260415.md
+gemini/core_docs/gemini_cli_integrated_engine_boot_packet_v0.md
+gemini/external_analysis/스크린샷 2026-04-18 오후 3.31.32.png
+gemini/core_docs/line_contracts_consolidated_draft_v0.md
+gemini/external_analysis/스크린샷 2026-04-18 오후 3.32.05.png
+gemini/core_docs/vectorfl_structure_summary_for_gemini.md
+gemini/external_analysis/qmd_dna_20260415.md
+gemini/core_docs/operational_rule_memory_storage.md
+gemini/external_analysis/agent_skills_dna_20260415.md
+gemini/external_analysis/스크린샷 2026-04-18 오후 3.32.16.png
+gemini/external_analysis/ralph_dna_20260415.md
+gemini/external_analysis/스크린샷 2026-04-18 오후 3.30.18.png
+gemini/external_analysis/스크린샷 2026-04-18 오후 3.30.30.png
+gemini/external_analysis/openharness_study_20260415.md
+gemini/external_analysis/openclaw_dna_20260415.md
+gemini/external_analysis/claude_code_dna_20260415.md
+gemini/external_analysis/autoresearch_dna_20260415.md
+gemini/external_analysis/claude_code_v2_dna_20260415.md
+gemini/gemini.md
+gemini/prompts/check_pointer.md
+gemini/prompts/summarize_board.md
+gemini/prompts/review_diff.md
+gemini/mock_test/CommandHeaderPanel.tsx
+gemini/mock_test/VectorFLIntegrationShell.tsx
+gemini/mock_test/vectorfl_dual_surface_ui_mock_v_1.tsx
+gemini/mock_test/index.html
+gemini/mock_test/CliHostControlPanel.tsx
+gemini/mock_test/OperationLogPanel.tsx
+gemini/mock_test/main.tsx
+gemini/mock_test/WatchpointRegistryPanel.tsx
+gemini/mock_test/App.tsx
+gemini/mock_test/jang_lines.json
+gemini/mock_test/useEngineSurfaceMockFilters.ts
+gemini/mock_test/vectorfl_engine_surface_mock.tsx
+gemini/mock_test/ui-components.tsx
+gemini/mock_test/useUserSurfaceState.ts
+gemini/mock_test/TeamRoutingPanel.tsx
+gemini/mock_test/vectorfl_meta.json
+gemini/mock_test/live_manifest.json
+gemini/mock_test/OperationConsolePanel.tsx
+gemini/mock_test/BridgePanel.tsx
+gemini/mock_test/SpaceHealthPanel.tsx
+gemini/mock_test/MaterialContextPanel.tsx
+gemini/mock_test/EventConsolePanel.tsx
+gemini/mock_test/SupervisorQueuePanel.tsx
+gemini/mock_test/engine-surface.seed.ts
+gemini/mock_test/vite.config.ts
+gemini/mock_test/RoleConfigurationPanel.tsx
+gemini/mock_test/AssetInventoryPanel.tsx
+gemini/mock_test/tsconfig.json
+gemini/mock_test/FlowSummaryPanel.tsx
+gemini/mock_test/integration_report_20260411.md
+gemini/mock_test/user-surface.types.ts
+gemini/mock_test/useEngineSurfaceMockState.ts
+gemini/mock_test/AssetInspectorPanel.tsx
+gemini/mock_test/package.json
+gemini/mock_test/package-lock.json
+gemini/mock_test/WORK_REFLUX_LOG.md
+gemini/mock_test/user-surface.seed.ts
+gemini/mock_test/FilterBarPanel.tsx
+gemini/mock_test/engine-surface.types.ts
+gemini/mock_test/ExecutionRoutePanel.tsx
+runtime/observer/gemini/2026-03-25/session_20260325_01_pointer_check.md
+runtime/observer/gemini/2026-03-25/session_20260325_01_summary.md
+runtime/observer/gemini/2026-03-25/folder_status.md
+runtime/observer/gemini/folder_status.md
+app/work/processor_compare/inputs/boundary_cases/raw_generations/gemini/boundary_cases_v1.json
+app/work/processor_compare/inputs/boundary_cases/raw_generations/gemini/boundary_cases_v1_01.json
+app/work/processor_compare/processor_outputs/raw/gemini/sample_outputs.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_002.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_006.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_004.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_003.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_001.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_005.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_007.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_009.jsonl
+app/work/processor_compare/processor_outputs/raw/gemini/doc_008.jsonl
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_002.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_006.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_004.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_003.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_001.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_005.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_007.jsonl
+app/work/processor_compare/processor_outputs/raw_patched/gemini/doc_008.jsonl
+app/work/processor_compare/processor_outputs/normalized/gemini/normalized.jsonl
+app/work/processor_compare/processor_outputs/normalized/gemini/patched_normalized.jsonl
+app/work/processor_compare/processor_outputs/boundary_labels/raw/gemini/boundary_cases_v1_01.jsonl
+app/work/processor_compare/processor_outputs/boundary_labels/raw/gemini/boundary_cases_v1_03.jsonl
+app/work/processor_compare/processor_outputs/boundary_labels/raw/gemini/boundary_cases_v1_02.jsonl
+references/git_search/openclaw-main/skills/gemini/SKILL.md
+
+codex
+`gemini/external_analysis`는 단일 파일이 아니라 여러 분석 파일이 있는 디렉터리입니다. 이제 “CLI on-top”, “surface”, “integrated engine” 축을 직접 언급하는 라인을 좁혀 보겠습니다.
+exec
+/bin/bash -lc 'rg -n "CLI|on-top|surface|Integrated Engine|integrated engine|VectorFL|engine" gemini/external_analysis docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md' in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+gemini/external_analysis/paperclip_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/paperclip_dna_20260415.md:20:  - `ui/src/adapters/adapter-display-registry.ts`: Maps internal engine types (`claude_local`, `gemini_local`) to visual metadata (Icons, Labels).
+gemini/external_analysis/paperclip_dna_20260415.md:22:- **Meaning**: The UI remains engine-agnostic; agents are just providers of a specific interface.
+gemini/external_analysis/qmd_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/claude_code_v2_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/claude_code_v2_dna_20260415.md:12:- **Meaning**: The same engine, multiple distinct agent faces (e.g., Architect, Reviewer, Planner).
+gemini/external_analysis/claude_code_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/openharness_structural_dna_20260415.md:4:Actor: Gemini-CLI
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:1:# Integrated Engine External Analysis Lens Fragment Inventory v0
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:55:| LF01 | Contract Lens | `openclaw_dna`, `openharness_structural_dna` | What contract an object must satisfy before it can touch engine/packet/control layers | bridge contract, CLI adapter, process camera, packet readiness | hold / usable fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:56:| LF02 | Envelope Lens | `openclaw_dna` | How raw input becomes normalized engine-readable material | lower input organ, source manifest, label packet, upper packet input | hold / strong fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:61:| LF07 | Inbox / Decision Surface Lens | `paperclip_dna` | What belongs on user decision surface vs internal trace surface | User surface, internal team assignment, pending work, approval/hold | hold / strong fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:62:| LF08 | Adapter / Provider Lens | `paperclip_dna`, `openclaw_dna` | Whether tools/backends sit behind a stable interface | Codex/Gemini CLI adapter, provider registry, VectorFL host | hold / usable fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:113:- Strong fit: User surface redesign, internal team/담당 assignment, pending decisions.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:115:- Hold reason: should be applied with surface separation rules.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:120:- Strong fit: Codex/Gemini CLI host and provider boundary.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:122:- Hold reason: useful after first bounded CLI-host path stabilizes.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:136:- Hold reason: should be tied to task routing / surface projection.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:148:These directly match current lower-input, bridge, and surface-division work.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:170:- canonical engine language
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:185:- both can be tested against existing lower input / surface assets
+gemini/external_analysis/autoresearch_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/agent_skills_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/openclaw_dna_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/openclaw_dna_20260415.md:22:- **Meaning**: The engine never sees "raw" external data; it only sees normalized envelopes.
+gemini/external_analysis/openclaw_dna_20260415.md:27:  - `src/plugin-sdk/channel-reply-pipeline.ts`: Manages the flow from engine result back to user-facing output.
+gemini/external_analysis/openharness_study_20260415.md:4:Actor: Gemini-CLI
+gemini/external_analysis/openharness_study_20260415.md:6:Reason: Analyzing OpenHarness architecture for potential application to VECTORFL engine design.
+gemini/external_analysis/openharness_study_20260415.md:51:2. **Markdown-Based Memory Index**: Consider implementing a `MEMORY.md` index in `runtime/memory/` to allow human-readable audits of what the engine "remembers".
+gemini/external_analysis/ralph_dna_20260415.md:4:Actor: Gemini-CLI
+
+exec
+/bin/bash -lc 'rg -n "목적|렌즈|근거|setup|dispatch|reread|ingest|canonical|surface" gemini/external_analysis docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md' in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:14:not canonical
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:59:| LF05 | Bounded Loop Lens | `autoresearch_dna`, `ralph_dna`, `qmd_dna` | Whether iteration has budget, checkpoint, stop condition, and completion signal | language loop, probe loop, bridge maturation, internal reread loop | hold / usable fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:61:| LF07 | Inbox / Decision Surface Lens | `paperclip_dna` | What belongs on user decision surface vs internal trace surface | User surface, internal team assignment, pending work, approval/hold | hold / strong fragment |
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:113:- Strong fit: User surface redesign, internal team/담당 assignment, pending decisions.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:115:- Hold reason: should be applied with surface separation rules.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:127:- Strong fit: authority state, protected baseline, no-canonicalization, no-promotion.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:136:- Hold reason: should be tied to task routing / surface projection.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:148:These directly match current lower-input, bridge, and surface-division work.
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:170:- canonical engine language
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:185:- both can be tested against existing lower input / surface assets
+docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:191:- Lens promotion block: passed. No lens is marked final or canonical.
+gemini/external_analysis/claude_code_v2_dna_20260415.md:26:Everything-Claude Code의 핵심은 **"역할에 따른 프롬프트 최적화"**입니다. 우리는 엔진의 정합성을 지키면서도, 사용자의 작업 목적에 따라 '건설적 모드', '분석적 모드', '검증적 모드'로 에이전트 인격을 전환하는 구조를 도입해야 합니다.
+
+exec
+/bin/bash -lc "nl -ba docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md | sed -n '50,65p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "nl -ba docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md | sed -n '1,35p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+    50	
+    51	## 4. Lens Fragment Inventory
+    52	
+    53	| id | working lens fragment | source files | what it reads | useful for | current status |
+    54	| --- | --- | --- | --- | --- | --- |
+    55	| LF01 | Contract Lens | `openclaw_dna`, `openharness_structural_dna` | What contract an object must satisfy before it can touch engine/packet/control layers | bridge contract, CLI adapter, process camera, packet readiness | hold / usable fragment |
+    56	| LF02 | Envelope Lens | `openclaw_dna` | How raw input becomes normalized engine-readable material | lower input organ, source manifest, label packet, upper packet input | hold / strong fragment |
+    57	| LF03 | Compliance Lens | `claude_code_dna`, `agent_skills_dna` | Whether a rule is testable and followed, not just stated | stop rules, checklist, camera review validation, anti-pattern control | hold / strong fragment |
+    58	| LF04 | Memory / Progress Lens | `ralph_dna`, `openharness_study`, `autoresearch_dna` | What is retained from attempts, failures, and decisions | worklog, return record, redeposit, local wisdom | hold / strong fragment |
+    59	| LF05 | Bounded Loop Lens | `autoresearch_dna`, `ralph_dna`, `qmd_dna` | Whether iteration has budget, checkpoint, stop condition, and completion signal | language loop, probe loop, bridge maturation, internal reread loop | hold / usable fragment |
+    60	| LF06 | Segmentation / Chunking Lens | `qmd_dna` | Where input should be cut by semantic structure rather than token count | lower split units, line evidence, reading segment structure | hold / strong fragment |
+    61	| LF07 | Inbox / Decision Surface Lens | `paperclip_dna` | What belongs on user decision surface vs internal trace surface | User surface, internal team assignment, pending work, approval/hold | hold / strong fragment |
+    62	| LF08 | Adapter / Provider Lens | `paperclip_dna`, `openclaw_dna` | Whether tools/backends sit behind a stable interface | Codex/Gemini CLI adapter, provider registry, VectorFL host | hold / usable fragment |
+    63	| LF09 | Permission / Governance Lens | `openharness_structural_dna`, `agent_skills_dna` | What action is allowed, denied, or requires confirmation, and why | authority boundary, user decision, protected zones, no-promotion guards | hold / strong fragment |
+    64	| LF10 | Persona / Role Lens | `claude_code_v2_dna`, `ralph_dna`, `paperclip_dna` | Which role/camera should read a task and with what responsibility | internal teams, language 담당, reviewer/executor split, handoff | hold / usable fragment |
+    65	
+
+ succeeded in 0ms:
+     1	# Integrated Engine External Analysis Lens Fragment Inventory v0
+     2	
+     3	## 1. Verdict
+     4	
+     5	PASS_WITH_NOTE
+     6	
+     7	`gemini/external_analysis` contains useful lens material, but it should be treated as a precedent pool, not an implementation source and not a final lens registry.
+     8	
+     9	Current status:
+    10	
+    11	```text
+    12	lens fragments identified
+    13	not promoted
+    14	not canonical
+    15	not implementation-authorizing
+    16	```
+    17	
+    18	## 2. Source Scope
+    19	
+    20	Read source folder:
+    21	
+    22	- `gemini/external_analysis/`
+    23	
+    24	Files read:
+    25	
+    26	- `agent_skills_dna_20260415.md`
+    27	- `autoresearch_dna_20260415.md`
+    28	- `claude_code_dna_20260415.md`
+    29	- `claude_code_v2_dna_20260415.md`
+    30	- `openclaw_dna_20260415.md`
+    31	- `openharness_structural_dna_20260415.md`
+    32	- `openharness_study_20260415.md`
+    33	- `paperclip_dna_20260415.md`
+    34	- `qmd_dna_20260415.md`
+    35	- `ralph_dna_20260415.md`
+
+exec
+/bin/bash -lc "nl -ba docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md | sed -n '184,193p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "nl -ba docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md | sed -n '108,125p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+   184	- both have immediate relevance
+   185	- both can be tested against existing lower input / surface assets
+   186	- neither requires implementation or external adoption
+   187	
+   188	## 9. Validation
+   189	
+   190	- External adoption block: passed. Source patterns are kept as fragments.
+   191	- Lens promotion block: passed. No lens is marked final or canonical.
+   192	- Internal fit requirement: passed. Each fragment requires hold/reuse/variation decision before stronger use.
+   193	
+
+ succeeded in 0ms:
+   108	- Hold reason: ready as reading lens, not as line-promotion lens.
+   109	
+   110	### LF07 Inbox / Decision Surface Lens
+   111	
+   112	- Core question: What does the user actually need to decide?
+   113	- Strong fit: User surface redesign, internal team/담당 assignment, pending decisions.
+   114	- Misread risk: making another dashboard of everything.
+   115	- Hold reason: should be applied with surface separation rules.
+   116	
+   117	### LF08 Adapter / Provider Lens
+   118	
+   119	- Core question: Is this backend hidden behind a stable interface?
+   120	- Strong fit: Codex/Gemini CLI host and provider boundary.
+   121	- Misread risk: generic plugin framework too early.
+   122	- Hold reason: useful after first bounded CLI-host path stabilizes.
+   123	
+   124	### LF09 Permission / Governance Lens
+   125	
+
+exec
+/bin/bash -lc "nl -ba gemini/external_analysis/openclaw_dna_20260415.md | sed -n '1,40p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "nl -ba gemini/external_analysis/paperclip_dna_20260415.md | sed -n '1,45p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+     1	# Paperclip Structural DNA & Axis Analysis
+     2	
+     3	Date: 2026-04-15
+     4	Actor: Gemini-CLI
+     5	Source: `references/git_search/paperclip-master/ui/`
+     6	Reason: Structural decomposition of Paperclip for selective adoption into VECTORFL User Surface.
+     7	
+     8	## 1. Taxonomic Objects of Paperclip
+     9	
+    10	### A. The "Inbox" Object (Axis of Triage)
+    11	- **DNA**: `Centralized Inbound Management`.
+    12	- **Structural Setting**:
+    13	  - `ui/src/pages/Inbox.tsx`: Aggregates `approvals`, `issues`, `alerts`, and `failed_runs`.
+    14	  - Uses `InboxCategoryFilter` to switch between different types of "Pending Work".
+    15	- **Meaning**: The UI is a "Command Center" where raw requests are turned into actionable tickets.
+    16	
+    17	### B. The "Adapter" Object (Axis of Engine Unification)
+    18	- **DNA**: `Pluggable Agent Interface`.
+    19	- **Structural Setting**:
+    20	  - `ui/src/adapters/adapter-display-registry.ts`: Maps internal engine types (`claude_local`, `gemini_local`) to visual metadata (Icons, Labels).
+    21	  - `ui/src/adapters/registry.ts`: Manages dynamic loading of these connectors.
+    22	- **Meaning**: The UI remains engine-agnostic; agents are just providers of a specific interface.
+    23	
+    24	### C. The "Design System" Object (Axis of Visual Integrity)
+    25	- **DNA**: `Constraint-based Visual Grammar`.
+    26	- **Structural Setting**:
+    27	  - `ui/src/pages/DesignGuide.tsx`: A live document of all UI atoms.
+    28	  - `ui/src/components/StatusBadge.tsx`: Enforces consistent state representation.
+    29	- **Meaning**: Information density is managed through a strict visual token system.
+    30	
+    31	## 2. Structural Patterns for Potential Adoption (Filtering)
+    32	
+    33	| Paperclip Pattern | Structural Axis | Recommended VECTORFL Application |
+    34	| :--- | :--- | :--- |
+    35	| **Inbox Pattern** | Operating Flow | Structure the `User Surface` as an Inbox for matured fragments needing human decision. |
+    36	| **Adapter Display Registry** | Multi-Agent Sync | Use a registry to define how `Gemini` and `Codex` outputs are styled differently in the `Engine Surface`. |
+    37	| **Breadcrumb Navigation** | Deep Context | Adopt the complex breadcrumb logic for navigating from a `Matured Line` back to its `Source Fragment`. |
+    38	| **Identity Component** | Provenance | Reuse the `Identity` component pattern to show who (User/Gemini/Codex) last touched a fragment. |
+    39	
+    40	## 3. Gemini's Judgment
+    41	Paperclip에서 가장 가져와야 할 핵심 구조는 **"복잡한 상태(Status)를 시각적 아이콘과 배지(Badge)로 정량화하여 한눈에 파악하게 만드는 '인박스 운영 철학'"**입니다. 이는 VECTORFL의 사용자면이 단순한 리포트 뷰어가 아닌, 실제 **'판단과 제어의 표면'**으로 기능하게 만드는 핵심 DNA가 될 것입니다.
+    42	
+    43	---
+    44	*Note: This analysis is stored in `gemini/external_analysis/` as per the current session protocol. No files outside `gemini/` were modified.*
+
+ succeeded in 0ms:
+     1	# OpenClaw Structural DNA & Axis Analysis
+     2	
+     3	Date: 2026-04-15
+     4	Actor: Gemini-CLI
+     5	Source: `references/git_search/openclaw-main/src/`
+     6	Reason: Structural decomposition of OpenClaw for selective adoption into VECTORFL.
+     7	
+     8	## 1. Taxonomic Objects of OpenClaw
+     9	
+    10	### A. The "Contract" Object (Axis of Capability Abstraction)
+    11	- **DNA**: `API-Baseline + Channel-Contract`.
+    12	- **Structural Setting**:
+    13	  - `src/plugin-sdk/api-baseline.ts`: Defines the minimum viable interface for all plugins.
+    14	  - `src/plugin-sdk/channel-contract.ts`: Standardizes how different messaging platforms talk to the core.
+    15	- **Meaning**: Capability is not a feature; it's a fulfilled contract.
+    16	
+    17	### B. The "Envelope" Object (Axis of Inbound Normalization)
+    18	- **DNA**: `Inbound-Envelope + Account-Resolution`.
+    19	- **Structural Setting**:
+    20	  - `src/plugin-sdk/inbound-envelope.ts`: Wraps raw external requests into a standard data structure.
+    21	  - `src/plugin-sdk/account-lookup.ts`: Maps platform-specific IDs to a universal identity.
+    22	- **Meaning**: The engine never sees "raw" external data; it only sees normalized envelopes.
+    23	
+    24	### C. The "Pipeline" Object (Axis of Response Flow)
+    25	- **DNA**: `Channel-Reply-Pipeline + Sequential Transformation`.
+    26	- **Structural Setting**:
+    27	  - `src/plugin-sdk/channel-reply-pipeline.ts`: Manages the flow from engine result back to user-facing output.
+    28	- **Meaning**: Output is a controlled process, not a direct side-effect.
+    29	
+    30	## 2. Structural Patterns for Potential Adoption (Filtering)
+    31	
+    32	| OpenClaw Pattern | Structural Axis | Recommended VECTORFL Application |
+    33	| :--- | :--- | :--- |
+    34	| **Contract-First SDK** | Plugin Isolation | Define a `FragmentOperatorContract` that all internal/external tools must implement to touch Fragments. |
+    35	| **Inbound Normalization** | Request Standard | Use an `Envelope` structure for any external input (e.g., WashTank logs, interview transcripts) before it hits the Ingest Layer. |
+    36	| **Universal Identity** | Provenance Axis | Map all actors (Gemini, Codex, User) to a single `UniversalActorID` to track provenance consistently. |
+    37	| **Activation Boundary** | Security/Integrity | Implement a `Boundary` object that prevents external scripts from modifying the `Constitution` or `Baseline`. |
+    38	
+    39	## 3. Gemini's Judgment
+    40	OpenClaw에서 우리가 가져와야 할 가장 가치 있는 구조는 **"복잡한 외부 세계와 엔진 사이에 '계약(Contract)'과 '봉투(Envelope)'라는 두 개의 완충 지대를 두는 것"**입니다. 이는 VECTORFL의 안정성을 확보하면서도 무한한 확장성을 가질 수 있게 하는 핵심 설계 축이 될 것입니다.
+
+exec
+/bin/bash -lc "nl -ba gemini/external_analysis/openharness_structural_dna_20260415.md | sed -n '1,35p'" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "nl -ba gemini/external_analysis/agent_skills_dna_20260415.md | sed -n '1,35p'" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+     1	# OpenHarness Structural DNA & Axis Analysis
+     2	
+     3	Date: 2026-04-15
+     4	Actor: Gemini-CLI
+     5	Source: `references/git_search/openharness-main/src/openharness/`
+     6	Reason: Structural decomposition of OpenHarness for selective adoption into VECTORFL.
+     7	
+     8	## 1. Taxonomic Objects of OpenHarness
+     9	
+    10	### A. The "Skill" Object (Axis of Knowledge Maturation)
+    11	- **DNA**: `Frontmatter (Metadata) + Markdown (Tactics)`.
+    12	- **Structural Setting**:
+    13	  - `loader.py`: Parses YAML for `name` and `description`.
+    14	  - `registry.py`: Holds these as singleton-like objects for the agent context.
+    15	- **Meaning**: Knowledge is not just text; it's a registered capability with a clear "Why" and "How".
+    16	
+    17	### B. The "Memory" Object (Axis of Persistent Indexing)
+    18	- **DNA**: `Atomic Files + Central Entrypoint (MEMORY.md)`.
+    19	- **Structural Setting**:
+    20	  - `manager.py`: Implements `atomic_write_text` and `exclusive_file_lock` to prevent memory corruption.
+    21	  - `scan.py`: Injects these fragments into the system prompt.
+    22	- **Meaning**: Memory is a searchable atlas, not a single monolithic log.
+    23	
+    24	### C. The "Decision" Object (Axis of Governance)
+    25	- **DNA**: `PermissionDecision(allowed, requires_confirmation, reason)`.
+    26	- **Structural Setting**:
+    27	  - `checker.py`: Matches `SENSITIVE_PATH_PATTERNS` before any logic.
+    28	  - `modes.py`: Defines states like `PLAN` and `FULL_AUTO`.
+    29	- **Meaning**: Every action must have a justified "Reason" string, even if denied.
+    30	
+    31	## 2. Structural Patterns for Potential Adoption (Filtering)
+    32	
+    33	| OpenHarness Pattern | Structural Axis | Recommended VECTORFL Application |
+    34	| :--- | :--- | :--- |
+    35	| **Frontmatter Parsing** | Knowledge Schema | Automate loading of `vectorfl/skills/` into an active agent registry. |
+
+ succeeded in 0ms:
+     1	# Agent Skills (Agent-Skills-Main) Structural DNA Analysis
+     2	
+     3	Date: 2026-04-15
+     4	Actor: Gemini-CLI
+     5	Source: `references/git_search/agent-skills-main/`
+     6	Reason: Structural decomposition of Agent-Skills for selective adoption into VECTORFL.
+     7	
+     8	## 1. Taxonomic Objects of Agent Skills
+     9	
+    10	### A. The "Spec-Driven" Object (Axis of Maturation)
+    11	- **DNA**: `Objective -> Plan -> Tasks -> Implementation -> Review`.
+    12	- **Structural Setting**:
+    13	  - `skills/spec-driven-development/SKILL.md`: Forces a 4-phase gated workflow.
+    14	  - **Meaning**: Code is only allowed to exist as a byproduct of a validated specification.
+    15	- **Adoption Value**: Implement a "Gated Implementation Flow" for all VECTORFL core logic promotion.
+    16	
+    17	### B. The "Ignore-Ignore" Object (Axis of Governance)
+    18	- **DNA**: `Placeholder Tokenization (BLOCK_<hash>)`.
+    19	- **Structural Setting**:
+    20	  - `hooks/simplify-ignore.sh`: Replaces sensitive code blocks with placeholders *before* the agent reads the file.
+    21	- **Meaning**: Hiding code is a form of permission control; if they can't see it, they can't break it.
+    22	- **Adoption Value**: Protect `baseline/` and `Constitution` components by "virtualizing" their content to AI.
+    23	
+    24	## 2. Proposed Adoptions for VECTORFL
+    25	
+    26	| Pattern | Structural Axis | Recommended VECTORFL Application |
+    27	| :--- | :--- | :--- |
+    28	| **Gated Workflow** | Maturation | Enforce `SPEC -> PLAN -> TASK` sequence for any `scripts/` promotion. |
+    29	| **Placeholder Virtualization** | Governance | Apply `simplify-ignore` logic to the `baseline/` directory. |
+    30	| **Meta-Skill Injection** | Knowledge Activation | Auto-inject current `Constitution` state on session startup. |
+    31	
+    32	## 3. Gemini's Judgment
+    33	`Agent Skills` 프로젝트에서 가장 차용해야 할 것은 **'보이지 않으면 수정할 수 없다'**는 단순하지만 강력한 가드레일입니다. 우리가 헌법을 지키려는 노력을 할 필요 없이, `simplify-ignore` 기법을 사용하면 헌법 파일들이 에이전트 눈에 띄지 않게 처리할 수 있습니다.
+    34	
+    35	---
+
+codex
+- result summary  
+  - 읽은 축은 `surface 분리`, `adapter/provider 경계`, `contract/envelope`, `governance/guard`, `gated setup`입니다.
+  - 핵심 판단: CLI는 새 surface가 아니라 `engine processing`을 실행하는 on-top backend/tool layer로 읽는 것이 맞습니다.
+  - 파일 수정, 승격, 수집, 정규화는 하지 않았습니다.
+
+- important findings / diffs / outputs  
+  - 참조 라인:
+    - `gemini/external_analysis/paperclip_dna_20260415.md:10-15`  
+      - 축: Inbox / triage axis  
+      - 근거: raw requests를 actionable tickets로 바꾸는 command center 구조.
+    - `gemini/external_analysis/paperclip_dna_20260415.md:17-22`  
+      - 축: Adapter / engine unification axis  
+      - 근거: UI는 engine-agnostic이고 agent는 stable interface의 provider로 취급됨.
+    - `gemini/external_analysis/paperclip_dna_20260415.md:33-38`  
+      - 축: user surface / engine surface / provenance  
+      - 근거: User Surface는 판단 대기 fragment의 inbox, Engine Surface는 Gemini/Codex output 구분, provenance 추적.
+    - `gemini/external_analysis/openclaw_dna_20260415.md:10-15`  
+      - 축: Contract / capability abstraction  
+      - 근거: engine/packet/control에 닿기 전 capability는 fulfilled contract여야 함.
+    - `gemini/external_analysis/openclaw_dna_20260415.md:17-22`  
+      - 축: Envelope / inbound normalization  
+      - 근거: engine은 raw external data가 아니라 normalized envelope만 봄.
+    - `gemini/external_analysis/openclaw_dna_20260415.md:24-28`  
+      - 축: controlled output pipeline  
+      - 근거: output은 direct side-effect가 아니라 controlled process.
+    - `gemini/external_analysis/openharness_structural_dna_20260415.md:24-29`  
+      - 축: Permission / governance  
+      - 근거: 모든 action은 allowed / requires_confirmation / reason 판단을 가져야 함.
+    - `gemini/external_analysis/agent_skills_dna_20260415.md:10-15`  
+      - 축: Spec-driven / gated implementation  
+      - 근거: code는 validated specification의 부산물이어야 함.
+  - 보조로 확인한 inventory 라인:
+    - `docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:7-16`  
+      - 축: external_analysis는 precedent pool이며 implementation source / final lens registry가 아님.
+    - `docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:55-63`  
+      - 축: Contract, Envelope, Inbox/Decision Surface, Adapter/Provider, Permission/Governance lens 목록.
+    - `docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:110-122`  
+      - 축: user decision surface와 CLI host/provider boundary.
+    - `docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md:190-192`  
+      - 축: no promotion / no canonicalization / hold-before-stronger-use.
+
+- surface reading: user / VectorFL / engine  
+  - user: 목적/assignment/decision을 잡는 자리. 여기서는 “내부 설계 증명: 신규 패키지”와 “참조 라인과 축 확인”이 user-side 요청입니다.
+  - VectorFL: interpretation/reread/mediation 자리. 중앙 setup에서 목적/렌즈/근거를 묶고 CLI 실행으로 넘기는 조정면입니다.
+  - engine: processing/return/deposit material 자리. Codex CLI는 이 engine 처리층 위의 backend/tool call로 관찰되어야 하며 별도 제4 surface가 아닙니다.
+
+- route suggestion  
+  - reread_target: `fixed 3-surface body + CLI on-top boundary` 재확인.
+  - validation_target: `paperclip LF07`, `openclaw LF01/LF02`, `openharness LF09`, `agent_skills gated setup`이 현재 목적에 과잉 적용 없이 맞는지 검증.
+  - implementation_return: 아직 아님. evidence가 thin이고 guards가 active입니다.
+  - deposit_candidate: “CLI는 새 surface가 아니라 engine backend/tool layer”라는 경계 문장만 deposit 후보.
+  - hold: 렌즈 승격, canonical registry화, 신규 패키지 구현 착수는 hold.
+
+- what must not be inferred  
+  - CLI를 fourth surface로 보면 안 됩니다.
+  - `gemini/external_analysis`를 canonical 설계 원본으로 보면 안 됩니다.
+  - external project 구조를 VectorFL에 직접 이식한다고 추론하면 안 됩니다.
+  - 신규 패키지 구현 승인으로 읽으면 안 됩니다.
+  - ingest, promotion, canonicalization이 발생했다고 보면 안 됩니다.
+
+- uncertainty or failure notes  
+  - evidence bundle은 thin합니다. 직접 근거는 `gemini/external_analysis` 내부 분석 파일 중심이고, inventory 문서는 그 분석을 재분류한 보조 근거입니다.
+  - 현재 판단은 설계 reread 수준이며 implementation authority는 없습니다.
+
+- suggested next use: reread target / implementation return / validation target / deposit candidate  
+  - suggested next use: `validation_target`
+  - 권장 검증 문장: “중앙 setup은 user 목적/렌즈/근거를 packet으로 묶고, Codex/Gemini CLI는 VectorFL engine surface가 호출한 backend provider로만 실행된다. 이 실행층은 surface split을 늘리지 않는다.”
+tokens used
+13,325

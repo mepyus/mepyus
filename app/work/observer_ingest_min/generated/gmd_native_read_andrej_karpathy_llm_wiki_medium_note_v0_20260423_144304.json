@@ -1,0 +1,437 @@
+{
+  "doc_ref": "inputs/external_cases/andrej_karpathy_llm_wiki_medium_note_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 16
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Andrej Karpathy LLM Wiki medium note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5` - s...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This article explains the \"LLM wiki\" pattern around Andrej Karpathy's recent post and gist. The pattern is rel...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core idea The article's main claim is that knowledge work with LLMs should not depend only on repeated retrieval from raw source docum...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## three-layer structure The article presents a three-layer structure:",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "context",
+        "function_in_source": "### layer 1. raw sources - PDFs - notes - articles - images These remain immutable and are treated as source truth.",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "### layer 2. wiki - concept pages - entity pages - overview pages - index and log This layer is rewritten and cross-linked by the LLM.",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      },
+      {
+        "unit_id": "unit_009",
+        "role_type": "context",
+        "function_in_source": "### layer 3. schema - `CLAUDE.md` - `AGENTS.md` This layer tells the agent how to ingest, maintain, and answer from the wiki.",
+        "upstream": "unit_008",
+        "downstream": "unit_010"
+      },
+      {
+        "unit_id": "unit_010",
+        "role_type": "context",
+        "function_in_source": "## three operations The article reduces the operating pattern to:",
+        "upstream": "unit_009",
+        "downstream": "unit_011"
+      },
+      {
+        "unit_id": "unit_011",
+        "role_type": "context",
+        "function_in_source": "### ingest New source arrives. The agent reads it, summarizes it, updates linked pages, and records new connections.",
+        "upstream": "unit_010",
+        "downstream": "unit_012"
+      },
+      {
+        "unit_id": "unit_012",
+        "role_type": "adoption",
+        "function_in_source": "### query The user asks questions against the maintained wiki rather than reopening all raw documents each time.",
+        "upstream": "unit_011",
+        "downstream": "unit_013"
+      },
+      {
+        "unit_id": "unit_013",
+        "role_type": "context",
+        "function_in_source": "### lint The agent audits the wiki for: - contradictions - orphan pages - missing concepts - stale areas",
+        "upstream": "unit_012",
+        "downstream": "unit_014"
+      },
+      {
+        "unit_id": "unit_014",
+        "role_type": "context",
+        "function_in_source": "## article's comparison with rag The article does not say LLM wiki replaces RAG universally. Its distinction is roughly: - RAG is better...",
+        "upstream": "unit_013",
+        "downstream": "unit_015"
+      },
+      {
+        "unit_id": "unit_015",
+        "role_type": "directive",
+        "function_in_source": "## relevance to our current space This source is not a direct adoption instruction. But it is structurally relevant because it reinforces...",
+        "upstream": "unit_014",
+        "downstream": "unit_016"
+      },
+      {
+        "unit_id": "unit_016",
+        "role_type": "directive",
+        "function_in_source": "## bounded judgment Current bounded judgment: - useful as a conceptual and structural reference - especially relevant for source / wiki /...",
+        "upstream": "unit_015",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "grounds"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_007",
+        "to_unit_id": "unit_008",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_008",
+        "to_unit_id": "unit_009",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_009",
+        "to_unit_id": "unit_010",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_010",
+        "to_unit_id": "unit_011",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_011",
+        "to_unit_id": "unit_012",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_012",
+        "to_unit_id": "unit_013",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_013",
+        "to_unit_id": "unit_014",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_014",
+        "to_unit_id": "unit_015",
+        "relation_type": "grounds"
+      },
+      {
+        "from_unit_id": "unit_015",
+        "to_unit_id": "unit_016",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "andrej_karpathy_llm_wiki_medium_note_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 16 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "andrej_karpathy_llm_wiki_medium_note_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Andrej Karpathy LLM Wiki medium note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "context",
+        "function_in_source": "## source metadata - source_url: `https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5` - s...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This article explains the \"LLM wiki\" pattern around Andrej Karpathy's recent post and gist. The pattern is rel...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core idea The article's main claim is that knowledge work with LLMs should not depend only on repeated retrieval from raw source docum...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## three-layer structure The article presents a three-layer structure:",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "context",
+        "function_in_source": "### layer 1. raw sources - PDFs - notes - articles - images These remain immutable and are treated as source truth.",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "context",
+        "function_in_source": "### layer 2. wiki - concept pages - entity pages - overview pages - index and log This layer is rewritten and cross-linked by the LLM.",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# Andrej Karpathy LLM Wiki medium note v0",
+        "human_gloss": "# Andrej Karpathy LLM Wiki medium note v0",
+        "what_it_preserves": [
+          "start_ref=Andrej Karpathy LLM Wiki medium note v0",
+          "end_ref=Andrej Karpathy LLM Wiki medium note v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## source metadata - source_url: `https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5` - s...",
+        "human_gloss": "## source metadata - source_url: `https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5` - s...",
+        "what_it_preserves": [
+          "start_ref=source metadata",
+          "end_ref=source metadata",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## why this source matters This article explains the \"LLM wiki\" pattern around Andrej Karpathy's recent post and gist. The pattern is rel...",
+        "human_gloss": "## why this source matters This article explains the \"LLM wiki\" pattern around Andrej Karpathy's recent post and gist. The pattern is rel...",
+        "what_it_preserves": [
+          "start_ref=why this source matters",
+          "end_ref=why this source matters",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## core idea The article's main claim is that knowledge work with LLMs should not depend only on repeated retrieval from raw source docum...",
+        "human_gloss": "## core idea The article's main claim is that knowledge work with LLMs should not depend only on repeated retrieval from raw source docum...",
+        "what_it_preserves": [
+          "start_ref=core idea",
+          "end_ref=core idea",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## three-layer structure The article presents a three-layer structure:",
+        "human_gloss": "## three-layer structure The article presents a three-layer structure:",
+        "what_it_preserves": [
+          "start_ref=three-layer structure",
+          "end_ref=three-layer structure",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "### layer 1. raw sources - PDFs - notes - articles - images These remain immutable and are treated as source truth.",
+        "human_gloss": "### layer 1. raw sources - PDFs - notes - articles - images These remain immutable and are treated as source truth.",
+        "what_it_preserves": [
+          "start_ref=layer 1. raw sources",
+          "end_ref=layer 1. raw sources",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      },
+      {
+        "unit_id": "unit_008",
+        "provisional_line": "### layer 2. wiki - concept pages - entity pages - overview pages - index and log This layer is rewritten and cross-linked by the LLM.",
+        "human_gloss": "### layer 2. wiki - concept pages - entity pages - overview pages - index and log This layer is rewritten and cross-linked by the LLM.",
+        "what_it_preserves": [
+          "start_ref=layer 2. wiki",
+          "end_ref=layer 2. wiki",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 7
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007",
+        "unit_008"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/andrej_karpathy_llm_wiki_medium_note_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_llm_wiki_medium_note_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

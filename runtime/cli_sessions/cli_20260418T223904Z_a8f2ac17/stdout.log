@@ -1,0 +1,60 @@
+result summary: Completed bounded reread of the worker return contract and real worker boundary audit. No files modified.
+
+answer: The contract expects actual workers to emit a parseable structured return, preferably as `structured_return.worker_return`, with fallback parsing retained for older/raw sessions. For this smoke run, the required `WORKER_RETURN_JSON` block is emitted below for package continuity validation.
+
+findings:
+- Worker return schema version is `integrated_engine_worker_return_v0`.
+- Required projected fields are `answer`, `findings`, `files_artifacts`, `next_continue_hint`, `open_questions`, `risks_or_limits`, and `source_refs`.
+- Actual worker output enters through `CodexCliAdapter.start_run(...)` before `structured_return.json` is written.
+- Package 2 should validate actual worker compliance by extracting a parseable bounded JSON block before fallback normalization.
+
+files_artifacts:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+next_continue_hint: Validate that the VectorFL runtime can extract this `WORKER_RETURN_JSON` block from actual Codex stdout and project it into `structured_return.worker_return`.
+
+open_questions:
+- Whether runtime should require the bounded JSON block for PASS or allow markdown-heading fallback as PASS_WITH_NOTE.
+
+risks_or_limits:
+- This was a read-only smoke emission, not a runtime parser execution.
+- Compliance is demonstrated by emitted stdout shape only; ingestion must be validated by the engine.
+
+source_refs:
+- `docs/specs/integrated_engine_worker_return_contract_v0.md`
+- `docs/reports/integrated_engine_real_worker_boundary_audit_v0.md`
+
+suggested next use: validation target
+
+WORKER_RETURN_JSON
+{
+  "schema_version": "integrated_engine_worker_return_v0",
+  "worker_id": "codex",
+  "package_id": "package2_worker_adapter_contract_validation_emitted",
+  "run_kind": "summarize",
+  "answer": "Bounded contract refs were read. This run emits a parseable WORKER_RETURN_JSON block for actual worker contract continuity validation.",
+  "findings": [
+    "Worker return contract defines schema_version integrated_engine_worker_return_v0 and stable projection fields.",
+    "Runtime should prefer structured_return.worker_return before compatible top-level fields and fallback extraction.",
+    "Actual worker boundary is CodexCliAdapter.start_run(...) after stdout, stderr, exit code, status, and error message are known.",
+    "Package 2 focus is prompting for a bounded parseable block, extracting it from stdout, and preserving fallback normalization."
+  ],
+  "files_artifacts": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ],
+  "next_continue_hint": "Run the package continuity validator against this actual worker stdout and confirm the JSON block is deposited into structured_return.worker_return.",
+  "open_questions": [
+    "Should actual worker compliance require the JSON block for PASS, or allow markdown fallback as PASS_WITH_NOTE?"
+  ],
+  "risks_or_limits": [
+    "Read-only smoke run only; no runtime parser or notebook projection was executed here.",
+    "Actual ingestion may still fail if the surface parser expects a different delimiter position or stricter field set."
+  ],
+  "source_refs": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ]
+}
+END_WORKER_RETURN_JSON

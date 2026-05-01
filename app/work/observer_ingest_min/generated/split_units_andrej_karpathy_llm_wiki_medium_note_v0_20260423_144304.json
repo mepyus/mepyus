@@ -1,0 +1,178 @@
+[
+  {
+    "unit_id": "unit_001",
+    "start_ref": "preamble",
+    "end_ref": "preamble",
+    "unit_type": "heading_block",
+    "text_excerpt": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+    "char_count": 60,
+    "source_segment_ids": [
+      "seg_001"
+    ]
+  },
+  {
+    "unit_id": "unit_002",
+    "start_ref": "Andrej Karpathy LLM Wiki medium note v0",
+    "end_ref": "Andrej Karpathy LLM Wiki medium note v0",
+    "unit_type": "heading_block",
+    "text_excerpt": "# Andrej Karpathy LLM Wiki medium note v0",
+    "char_count": 41,
+    "source_segment_ids": [
+      "seg_002"
+    ]
+  },
+  {
+    "unit_id": "unit_003",
+    "start_ref": "source metadata",
+    "end_ref": "source metadata",
+    "unit_type": "heading_block",
+    "text_excerpt": "## source metadata - source_url: `https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5` - source_title: `Andrej Karpathy’s LLM Wiki: Create your own knowledge base` - source_",
+    "char_count": 357,
+    "source_segment_ids": [
+      "seg_003"
+    ]
+  },
+  {
+    "unit_id": "unit_004",
+    "start_ref": "why this source matters",
+    "end_ref": "why this source matters",
+    "unit_type": "heading_block",
+    "text_excerpt": "## why this source matters This article explains the \"LLM wiki\" pattern around Andrej Karpathy's recent post and gist. The pattern is relevant to our space because it argues for: - keeping raw sources immutable - compili",
+    "char_count": 524,
+    "source_segment_ids": [
+      "seg_004"
+    ]
+  },
+  {
+    "unit_id": "unit_005",
+    "start_ref": "core idea",
+    "end_ref": "core idea",
+    "unit_type": "heading_block",
+    "text_excerpt": "## core idea The article's main claim is that knowledge work with LLMs should not depend only on repeated retrieval from raw source documents. Instead, the system should: 1. keep raw source material as ground truth 2. le",
+    "char_count": 530,
+    "source_segment_ids": [
+      "seg_005"
+    ]
+  },
+  {
+    "unit_id": "unit_006",
+    "start_ref": "three-layer structure",
+    "end_ref": "three-layer structure",
+    "unit_type": "heading_block",
+    "text_excerpt": "## three-layer structure The article presents a three-layer structure:",
+    "char_count": 70,
+    "source_segment_ids": [
+      "seg_006"
+    ]
+  },
+  {
+    "unit_id": "unit_007",
+    "start_ref": "layer 1. raw sources",
+    "end_ref": "layer 1. raw sources",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 1. raw sources - PDFs - notes - articles - images These remain immutable and are treated as source truth.",
+    "char_count": 115,
+    "source_segment_ids": [
+      "seg_007"
+    ]
+  },
+  {
+    "unit_id": "unit_008",
+    "start_ref": "layer 2. wiki",
+    "end_ref": "layer 2. wiki",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 2. wiki - concept pages - entity pages - overview pages - index and log This layer is rewritten and cross-linked by the LLM.",
+    "char_count": 134,
+    "source_segment_ids": [
+      "seg_008"
+    ]
+  },
+  {
+    "unit_id": "unit_009",
+    "start_ref": "layer 3. schema",
+    "end_ref": "layer 3. schema",
+    "unit_type": "heading_block",
+    "text_excerpt": "### layer 3. schema - `CLAUDE.md` - `AGENTS.md` This layer tells the agent how to ingest, maintain, and answer from the wiki.",
+    "char_count": 125,
+    "source_segment_ids": [
+      "seg_009"
+    ]
+  },
+  {
+    "unit_id": "unit_010",
+    "start_ref": "three operations",
+    "end_ref": "three operations",
+    "unit_type": "heading_block",
+    "text_excerpt": "## three operations The article reduces the operating pattern to:",
+    "char_count": 65,
+    "source_segment_ids": [
+      "seg_010"
+    ]
+  },
+  {
+    "unit_id": "unit_011",
+    "start_ref": "ingest",
+    "end_ref": "ingest",
+    "unit_type": "heading_block",
+    "text_excerpt": "### ingest New source arrives. The agent reads it, summarizes it, updates linked pages, and records new connections.",
+    "char_count": 116,
+    "source_segment_ids": [
+      "seg_011"
+    ]
+  },
+  {
+    "unit_id": "unit_012",
+    "start_ref": "query",
+    "end_ref": "query",
+    "unit_type": "heading_block",
+    "text_excerpt": "### query The user asks questions against the maintained wiki rather than reopening all raw documents each time.",
+    "char_count": 112,
+    "source_segment_ids": [
+      "seg_012"
+    ]
+  },
+  {
+    "unit_id": "unit_013",
+    "start_ref": "lint",
+    "end_ref": "lint",
+    "unit_type": "heading_block",
+    "text_excerpt": "### lint The agent audits the wiki for: - contradictions - orphan pages - missing concepts - stale areas",
+    "char_count": 104,
+    "source_segment_ids": [
+      "seg_013"
+    ]
+  },
+  {
+    "unit_id": "unit_014",
+    "start_ref": "article's comparison with rag",
+    "end_ref": "article's comparison with rag",
+    "unit_type": "heading_block",
+    "text_excerpt": "## article's comparison with rag The article does not say LLM wiki replaces RAG universally. Its distinction is roughly: - RAG is better for large, changing corpora and precise chunk traceability - LLM wiki is better for",
+    "char_count": 489,
+    "source_segment_ids": [
+      "seg_014"
+    ]
+  },
+  {
+    "unit_id": "unit_015",
+    "start_ref": "relevance to our current space",
+    "end_ref": "relevance to our current space",
+    "unit_type": "heading_block",
+    "text_excerpt": "## relevance to our current space This source is not a direct adoption instruction. But it is structurally relevant because it reinforces several already-active pressures in our space: - raw source and derived layer sepa",
+    "char_count": 707,
+    "source_segment_ids": [
+      "seg_015"
+    ]
+  },
+  {
+    "unit_id": "unit_016",
+    "start_ref": "bounded judgment",
+    "end_ref": "bounded judgment",
+    "unit_type": "heading_block",
+    "text_excerpt": "## bounded judgment Current bounded judgment: - useful as a conceptual and structural reference - especially relevant for source / wiki / schema separation - not a direct instruction to replace our current runtime with a",
+    "char_count": 338,
+    "source_segment_ids": [
+      "seg_016"
+    ]
+  }
+]

@@ -1,0 +1,401 @@
+{
+  "doc_ref": "inputs/external_cases/gemini_deep_research_api_note_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 13
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Gemini deep research API note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "adoption",
+        "function_in_source": "## source metadata - source_title: `How to use Deep Research with the Gemini API` - source_type: `external API/product documentation exce...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it describes a concrete long-horizon research agent surface with: - asynchronous b...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The source presents Gemini Deep Research not as a normal single-response model call, but as a background research agent run...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## operating structure",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "adoption",
+        "function_in_source": "### 1. background interaction, not one-shot content generation The source is explicit that deep research uses the `interactions` API and...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "directive",
+        "function_in_source": "### 2. collaborative planning before execution The most important operating rule in the source is the planning gate: - `collaborative_pla...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      },
+      {
+        "unit_id": "unit_009",
+        "role_type": "adoption",
+        "function_in_source": "### 3. tool surface is configurable and broad The source says the research agent can use: - Google Search - URL Context - Code Execution...",
+        "upstream": "unit_008",
+        "downstream": "unit_010"
+      },
+      {
+        "unit_id": "unit_010",
+        "role_type": "adoption",
+        "function_in_source": "### 4. multimodal and visualization support The source also frames the agent as able to: - ground on PDFs and documents - use images and...",
+        "upstream": "unit_009",
+        "downstream": "unit_011"
+      },
+      {
+        "unit_id": "unit_011",
+        "role_type": "contrast",
+        "function_in_source": "## bounded relevance to our current space This is not a direct adoption order. But it is strongly relevant as a reference for: - plan-fir...",
+        "upstream": "unit_010",
+        "downstream": "unit_012"
+      },
+      {
+        "unit_id": "unit_012",
+        "role_type": "directive",
+        "function_in_source": "## important boundary This source should not be overread as: - “just turn our current space into Gemini Deep Research” - “tool access mea...",
+        "upstream": "unit_011",
+        "downstream": "unit_013"
+      },
+      {
+        "unit_id": "unit_013",
+        "role_type": "principle",
+        "function_in_source": "## current bounded judgment - useful as a strong external operating reference - especially relevant to planning/execution separation and...",
+        "upstream": "unit_012",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_007",
+        "to_unit_id": "unit_008",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_008",
+        "to_unit_id": "unit_009",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_009",
+        "to_unit_id": "unit_010",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_010",
+        "to_unit_id": "unit_011",
+        "relation_type": "contrasted_by"
+      },
+      {
+        "from_unit_id": "unit_011",
+        "to_unit_id": "unit_012",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_012",
+        "to_unit_id": "unit_013",
+        "relation_type": "follows"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "gemini_deep_research_api_note_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 13 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "gemini_deep_research_api_note_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "context",
+        "function_in_source": "# Gemini deep research API note v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "adoption",
+        "function_in_source": "## source metadata - source_title: `How to use Deep Research with the Gemini API` - source_type: `external API/product documentation exce...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "principle",
+        "function_in_source": "## why this source matters This source matters because it describes a concrete long-horizon research agent surface with: - asynchronous b...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "principle",
+        "function_in_source": "## core claim The source presents Gemini Deep Research not as a normal single-response model call, but as a background research agent run...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "context",
+        "function_in_source": "## operating structure",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "adoption",
+        "function_in_source": "### 1. background interaction, not one-shot content generation The source is explicit that deep research uses the `interactions` API and...",
+        "upstream": "unit_006",
+        "downstream": "unit_008"
+      },
+      {
+        "unit_id": "unit_008",
+        "role_type": "directive",
+        "function_in_source": "### 2. collaborative planning before execution The most important operating rule in the source is the planning gate: - `collaborative_pla...",
+        "upstream": "unit_007",
+        "downstream": "unit_009"
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# Gemini deep research API note v0",
+        "human_gloss": "# Gemini deep research API note v0",
+        "what_it_preserves": [
+          "start_ref=Gemini deep research API note v0",
+          "end_ref=Gemini deep research API note v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## source metadata - source_title: `How to use Deep Research with the Gemini API` - source_type: `external API/product documentation exce...",
+        "human_gloss": "## source metadata - source_title: `How to use Deep Research with the Gemini API` - source_type: `external API/product documentation exce...",
+        "what_it_preserves": [
+          "start_ref=source metadata",
+          "end_ref=source metadata",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## why this source matters This source matters because it describes a concrete long-horizon research agent surface with: - asynchronous b...",
+        "human_gloss": "## why this source matters This source matters because it describes a concrete long-horizon research agent surface with: - asynchronous b...",
+        "what_it_preserves": [
+          "start_ref=why this source matters",
+          "end_ref=why this source matters",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## core claim The source presents Gemini Deep Research not as a normal single-response model call, but as a background research agent run...",
+        "human_gloss": "## core claim The source presents Gemini Deep Research not as a normal single-response model call, but as a background research agent run...",
+        "what_it_preserves": [
+          "start_ref=core claim",
+          "end_ref=core claim",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## operating structure",
+        "human_gloss": "## operating structure",
+        "what_it_preserves": [
+          "start_ref=operating structure",
+          "end_ref=operating structure",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "### 1. background interaction, not one-shot content generation The source is explicit that deep research uses the `interactions` API and...",
+        "human_gloss": "### 1. background interaction, not one-shot content generation The source is explicit that deep research uses the `interactions` API and...",
+        "what_it_preserves": [
+          "start_ref=1. background interaction, not one-shot content generation",
+          "end_ref=1. background interaction, not one-shot content generation",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      },
+      {
+        "unit_id": "unit_008",
+        "provisional_line": "### 2. collaborative planning before execution The most important operating rule in the source is the planning gate: - `collaborative_pla...",
+        "human_gloss": "### 2. collaborative planning before execution The most important operating rule in the source is the planning gate: - `collaborative_pla...",
+        "what_it_preserves": [
+          "start_ref=2. collaborative planning before execution",
+          "end_ref=2. collaborative planning before execution",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 7
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007",
+        "unit_008"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/gemini_deep_research_api_note_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/gemini_deep_research_api_note_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

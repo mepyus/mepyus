@@ -1,0 +1,40 @@
+{
+  "contract_id": "question_interpretation_packet_v0",
+  "contract_status": "draft_instance",
+  "user_request_raw": "Phase 1 CLI space enablement smoke question",
+  "interpreted_goal": "",
+  "task_mode": "exploration",
+  "scope": {
+    "repo_paths": [],
+    "time_boundary": "",
+    "phase_boundary": "phase1_cli_space_enablement",
+    "non_goals": [
+      "ui_work",
+      "ontology_redesign",
+      "destructive_migration"
+    ]
+  },
+  "constraints": {
+    "must_not_do": [],
+    "must_preserve": [
+      "existing_authority_structure",
+      "canonical_paths"
+    ],
+    "stop_conditions": []
+  },
+  "expected_output_shape": {
+    "primary": "report",
+    "required_sections": []
+  },
+  "search_targets": [],
+  "external_reasoning_needed": false,
+  "merge_mode_candidate": "merge",
+  "ambiguity_notes": [],
+  "hold_reason_if_any": "",
+  "packet_validation": {
+    "ready_for_exploration": false,
+    "validation_notes": [
+      "Fill interpreted_goal and search_targets before exploration."
+    ]
+  }
+}

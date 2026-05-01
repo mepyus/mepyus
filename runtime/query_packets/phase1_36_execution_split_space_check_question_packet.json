@@ -1,0 +1,106 @@
+{
+  "contract_id": "question_interpretation_packet_v0",
+  "contract_status": "draft_instance",
+  "user_request_raw": "execution split package를 기존 자산과 연결해 점검하고 검증한 뒤 문제없으면 실행\nRequested task mode: verification.",
+  "interpreted_goal": "Translate the user request into a Phase 1.5 CLI usage-loop artifact set and handle it as verification.",
+  "task_mode": "verification",
+  "scope": {
+    "repo_paths": [],
+    "time_boundary": "",
+    "phase_boundary": "phase1_5_usage_loop_binding",
+    "non_goals": [
+      "ui_work",
+      "react_vite",
+      "multi_agent_orchestration",
+      "baseline_promotion",
+      "final_naming_lock",
+      "destructive_migration",
+      "deep_automation"
+    ]
+  },
+  "constraints": {
+    "must_not_do": [
+      "change_existing_baseline_meaning",
+      "move_canonical_paths"
+    ],
+    "must_preserve": [
+      "existing_authority_structure",
+      "canonical_paths"
+    ],
+    "stop_conditions": []
+  },
+  "expected_output_shape": {
+    "primary": "artifact_set",
+    "required_sections": [
+      "question_packet",
+      "exploration_result",
+      "merge_diff_report",
+      "reingress_record"
+    ]
+  },
+  "search_targets": [
+    {
+      "path": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "reason": "Phase 1 goal and non-goal boundary.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/space_reading_order_for_codex_v0.md",
+      "reason": "Default first-entry reading order.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/source_authority_ladder_v0.md",
+      "reason": "Authority resolution before merge/diff/hold.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "reason": "Mode and comparison contract.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/evidence_unit_grounding_contract_v0.md",
+      "reason": "Grounded evidence fields and pointer fallback.",
+      "authority_expectation": "policy_or_contract"
+    },
+    {
+      "path": "docs/specs/merge_diff_hold_grounding_rules_v0.md",
+      "reason": "Evidence depth rules for merge/diff/hold.",
+      "authority_expectation": "policy_or_contract"
+    }
+  ],
+  "external_reasoning_needed": false,
+  "merge_mode_candidate": "merge",
+  "ambiguity_notes": [
+    {
+      "kind": "provisional",
+      "note": "Rule-based inference; operator may refine after reading selected assets.",
+      "handling": "proceed"
+    }
+  ],
+  "hold_reason_if_any": "",
+  "packet_validation": {
+    "ready_for_exploration": true,
+    "validation_notes": [
+      "Phase 1.5 rule-based packet is ready for bounded exploration."
+    ]
+  },
+  "artifact_identity": {
+    "artifact_id": "phase1_36_execution_split_space_check_question_packet",
+    "artifact_role": "question_packet",
+    "family_key": "runtime/query_packets::phase1_x_execution_split_space_check::question_packet",
+    "lineage_hint": "phase1_36:phase1_36_execution_split_space_check:question_packet",
+    "run_stem": "phase1_36_execution_split_space_check",
+    "phase_label": "phase1_36",
+    "artifact_slot": "run artifact slot",
+    "generated_from_ref": "",
+    "prior_artifact_ref": "",
+    "comparison_ready": false,
+    "identity_confidence": "strong_identity",
+    "identity_basis": [
+      "path_plus_role"
+    ],
+    "identity_anchor_source": "emitted"
+  }
+}

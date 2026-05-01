@@ -1,0 +1,38 @@
+{
+  "schema_version": "integrated_engine_cli_session_spec_v0",
+  "session_id": "cli_20260418T223904Z_a8f2ac17",
+  "backend_kind": "codex",
+  "task_type": "summarize",
+  "requested_by_surface": "vectorfl_surface",
+  "requested_by_page": "package2_worker_adapter_contract_validation_emitted",
+  "purpose_text": "Actual worker contract smoke 2: emit parseable WORKER_RETURN_JSON for package continuity validation.",
+  "bounded_context_refs": [
+    "docs/specs/integrated_engine_worker_return_contract_v0.md",
+    "docs/reports/integrated_engine_real_worker_boundary_audit_v0.md"
+  ],
+  "prompt_payload": "Read the bounded contract refs if available. Keep prose short. Include the required WORKER_RETURN_JSON block on its own delimiter lines. Do not modify files.",
+  "active_package": {
+    "id": "pkg_worker_adapter_contract_smoke",
+    "title": "Worker Adapter Contract Smoke",
+    "summary": "Actual worker structured return block smoke test",
+    "stage": "adapter_contract",
+    "status": "active"
+  },
+  "status": "done",
+  "started_at": "2026-04-18T22:39:04Z",
+  "ended_at": "2026-04-18T22:39:28Z",
+  "stdout_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/stdout.log",
+  "stderr_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/stderr.log",
+  "structured_return_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/structured_return.json",
+  "deposit_candidate_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/deposit_candidate.md",
+  "operator_report_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/operator_report.md",
+  "note": "CLI host/control layer on top of integrated engine; not a fourth surface.",
+  "timeout_seconds": 120,
+  "dry_run": false,
+  "marks": [],
+  "prompt_path": "runtime/cli_sessions/cli_20260418T223904Z_a8f2ac17/prompt.md",
+  "exit_code": 0,
+  "result_summary": "ation target\n\nWORKER_RETURN_JSON\n{\n  \"schema_version\": \"integrated_engine_worker_return_v0\",\n  \"worker_id\": \"codex\",\n  \"package_id\": \"package2_worker_adapter_contract_validation_emitted\",\n  \"run_kind\": \"summarize\",\n  \"answer\": \"Bounded contract refs were read. This run emits a parseable WORKER_RETURN_JSON block for actual worker contract continuity validation.\",\n  \"findings\": [\n    \"Worker return contract defines schema_version integrated_engine_worker_return_v0 and stable projection fields.\",\n    \"Runtime should prefer structured_return.worker_return before compatible top-level fields and fallback extraction.\",\n    \"Actual worker boundary is CodexCliAdapter.start_run(...) after stdout, stderr, exit code, status, and error message are known.\",\n    \"Package 2 focus is prompting for a bounded parseable block, extracting it from stdout, and preserving fallback normalization.\"\n  ],\n  \"files_artifacts\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ],\n  \"next_continue_hint\": \"Run the package continuity validator against this actual worker stdout and confirm the JSON block is deposited into structured_return.worker_return.\",\n  \"open_questions\": [\n    \"Should actual worker compliance require the JSON block for PASS, or allow markdown fallback as PASS_WITH_NOTE?\"\n  ],\n  \"risks_or_limits\": [\n    \"Read-only smoke run only; no runtime parser or notebook projection was executed here.\",\n    \"Actual ingestion may still fail if the surface parser expects a different delimiter position or stricter field set.\"\n  ],\n  \"source_refs\": [\n    \"docs/specs/integrated_engine_worker_return_contract_v0.md\",\n    \"docs/reports/integrated_engine_real_worker_boundary_audit_v0.md\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n",
+  "suggested_next_use": "validation_target",
+  "error_message": ""
+}

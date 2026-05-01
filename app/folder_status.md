@@ -6,7 +6,7 @@
 - status_mode: `rendered_from_inventory`
 
 ## 2. Snapshot
-- immediate_child_dirs: `8`
+- immediate_child_dirs: `9`
 - immediate_child_files: `2`
 - file_types: `.py` x 1, `<no_ext>` x 1
 
@@ -18,6 +18,7 @@
 - `measurement` -> `app/measurement/folder_status.md`
 - `models` -> `app/models/folder_status.md`
 - `runtime` -> `app/runtime/folder_status.md`
+- `ui`
 - `work` -> `app/work/folder_status.md`
 
 ## 4. Markdown Files
@@ -36,7 +37,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/app.json`
 - parent_folder: `.`
 - related_status_files: `app/folder_status.md`
-- last_updated: `2026-04-09T18:45:29+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.

@@ -1,0 +1,306 @@
+{
+  "doc_ref": "inputs/external_cases/omx_team_ralph_attach_space_check_v0.md",
+  "gmd_native_read": {
+    "segmentation_basis": {
+      "split_mode_used": "heading",
+      "dominant_unit_type": "heading_block",
+      "unit_type_distribution": {
+        "heading_block": 7
+      }
+    },
+    "ordering_basis": "progressive_document_order",
+    "grouping_logic": "adjacent_units_in_native_document_order",
+    "unit_role_hints": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "validation",
+        "function_in_source": "# OMX team/ralph attach space check v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "directive",
+        "function_in_source": "## request frame This document records a bounded judgment about whether OMX team/ralph should be attached to our current space. The quest...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "handoff",
+        "function_in_source": "## external reading summary The OMX material shows a stable distinction: - `team` is coordinated parallel execution with durable tmux/wor...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "handoff",
+        "function_in_source": "## current space mapping Our current space already has: - role / operator / tool framing - package continuity - actual worker run precede...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "adoption",
+        "function_in_source": "## bounded judgment Current judgment: - full OMX team/ralph runtime import: no - linked `team -> ralph` lifecycle import: no - `team` pat...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "handoff",
+        "function_in_source": "## safest next interpretation The safest attach path is pattern-level only: 1. leader / worker authority split 2. team verification lane...",
+        "upstream": "unit_006",
+        "downstream": null
+      }
+    ],
+    "relation_clues": [
+      {
+        "from_unit_id": "unit_001",
+        "to_unit_id": "unit_002",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_002",
+        "to_unit_id": "unit_003",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_003",
+        "to_unit_id": "unit_004",
+        "relation_type": "routes_to"
+      },
+      {
+        "from_unit_id": "unit_004",
+        "to_unit_id": "unit_005",
+        "relation_type": "routes_to"
+      },
+      {
+        "from_unit_id": "unit_005",
+        "to_unit_id": "unit_006",
+        "relation_type": "follows"
+      },
+      {
+        "from_unit_id": "unit_006",
+        "to_unit_id": "unit_007",
+        "relation_type": "routes_to"
+      }
+    ],
+    "unresolved_structure": []
+  },
+  "semantic_commentary": {
+    "source_summary": "omx_team_ralph_attach_space_check_v0 is being preserved as a structured source before VectorFL-specific line completion.",
+    "structure_summary": "The document currently reads as progressive_document_order with 7 units, dominated by heading_block.",
+    "why_this_structure_matters": "This native read keeps segmentation basis, role hints, and relation clues available before line translation and internal recall.",
+    "processing_context": "minimal observer ingest path: load -> detect -> split -> summary"
+  },
+  "translation_ready_material": {
+    "source_block": {
+      "source_type": "mixed",
+      "source_name": "omx_team_ralph_attach_space_check_v0",
+      "source_unit": "heading_block",
+      "source_context": "note",
+      "why_this_unit_matters": "It preserves native document structure before VectorFL mapping."
+    },
+    "role_block": [
+      {
+        "unit_id": "unit_001",
+        "role_type": "context",
+        "function_in_source": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "upstream": null,
+        "downstream": "unit_002"
+      },
+      {
+        "unit_id": "unit_002",
+        "role_type": "validation",
+        "function_in_source": "# OMX team/ralph attach space check v0",
+        "upstream": "unit_001",
+        "downstream": "unit_003"
+      },
+      {
+        "unit_id": "unit_003",
+        "role_type": "directive",
+        "function_in_source": "## request frame This document records a bounded judgment about whether OMX team/ralph should be attached to our current space. The quest...",
+        "upstream": "unit_002",
+        "downstream": "unit_004"
+      },
+      {
+        "unit_id": "unit_004",
+        "role_type": "handoff",
+        "function_in_source": "## external reading summary The OMX material shows a stable distinction: - `team` is coordinated parallel execution with durable tmux/wor...",
+        "upstream": "unit_003",
+        "downstream": "unit_005"
+      },
+      {
+        "unit_id": "unit_005",
+        "role_type": "handoff",
+        "function_in_source": "## current space mapping Our current space already has: - role / operator / tool framing - package continuity - actual worker run precede...",
+        "upstream": "unit_004",
+        "downstream": "unit_006"
+      },
+      {
+        "unit_id": "unit_006",
+        "role_type": "adoption",
+        "function_in_source": "## bounded judgment Current judgment: - full OMX team/ralph runtime import: no - linked `team -> ralph` lifecycle import: no - `team` pat...",
+        "upstream": "unit_005",
+        "downstream": "unit_007"
+      },
+      {
+        "unit_id": "unit_007",
+        "role_type": "handoff",
+        "function_in_source": "## safest next interpretation The safest attach path is pattern-level only: 1. leader / worker authority split 2. team verification lane...",
+        "upstream": "unit_006",
+        "downstream": null
+      }
+    ],
+    "provisional_line_block": [
+      {
+        "unit_id": "unit_001",
+        "provisional_line": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "human_gloss": "[[DOCROLE:memo]] [[RUNMODE:ingest_only]] [[PRIORITY:normal]]",
+        "what_it_preserves": [
+          "start_ref=preamble",
+          "end_ref=preamble",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 0
+      },
+      {
+        "unit_id": "unit_002",
+        "provisional_line": "# OMX team/ralph attach space check v0",
+        "human_gloss": "# OMX team/ralph attach space check v0",
+        "what_it_preserves": [
+          "start_ref=OMX team/ralph attach space check v0",
+          "end_ref=OMX team/ralph attach space check v0",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 1
+      },
+      {
+        "unit_id": "unit_003",
+        "provisional_line": "## request frame This document records a bounded judgment about whether OMX team/ralph should be attached to our current space. The quest...",
+        "human_gloss": "## request frame This document records a bounded judgment about whether OMX team/ralph should be attached to our current space. The quest...",
+        "what_it_preserves": [
+          "start_ref=request frame",
+          "end_ref=request frame",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 2
+      },
+      {
+        "unit_id": "unit_004",
+        "provisional_line": "## external reading summary The OMX material shows a stable distinction: - `team` is coordinated parallel execution with durable tmux/wor...",
+        "human_gloss": "## external reading summary The OMX material shows a stable distinction: - `team` is coordinated parallel execution with durable tmux/wor...",
+        "what_it_preserves": [
+          "start_ref=external reading summary",
+          "end_ref=external reading summary",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 3
+      },
+      {
+        "unit_id": "unit_005",
+        "provisional_line": "## current space mapping Our current space already has: - role / operator / tool framing - package continuity - actual worker run precede...",
+        "human_gloss": "## current space mapping Our current space already has: - role / operator / tool framing - package continuity - actual worker run precede...",
+        "what_it_preserves": [
+          "start_ref=current space mapping",
+          "end_ref=current space mapping",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 4
+      },
+      {
+        "unit_id": "unit_006",
+        "provisional_line": "## bounded judgment Current judgment: - full OMX team/ralph runtime import: no - linked `team -> ralph` lifecycle import: no - `team` pat...",
+        "human_gloss": "## bounded judgment Current judgment: - full OMX team/ralph runtime import: no - linked `team -> ralph` lifecycle import: no - `team` pat...",
+        "what_it_preserves": [
+          "start_ref=bounded judgment",
+          "end_ref=bounded judgment",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 5
+      },
+      {
+        "unit_id": "unit_007",
+        "provisional_line": "## safest next interpretation The safest attach path is pattern-level only: 1. leader / worker authority split 2. team verification lane...",
+        "human_gloss": "## safest next interpretation The safest attach path is pattern-level only: 1. leader / worker authority split 2. team verification lane...",
+        "what_it_preserves": [
+          "start_ref=safest next interpretation",
+          "end_ref=safest next interpretation",
+          "source_segments=1"
+        ],
+        "what_it_omits": [
+          "full paragraph-level nuance omitted",
+          "cross-unit relation must be read with adjacent units"
+        ],
+        "family_position": 6
+      }
+    ],
+    "family_block": {
+      "related_lines": [
+        "unit_001",
+        "unit_002",
+        "unit_003",
+        "unit_004",
+        "unit_005",
+        "unit_006",
+        "unit_007"
+      ],
+      "supporting_records": [
+        "inputs/external_cases/omx_team_ralph_attach_space_check_v0.md"
+      ],
+      "conflicting_records": [],
+      "expandable_records": [
+        "/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/omx_team_ralph_attach_space_check_v0.md"
+      ],
+      "family_position": "native_document_sequence"
+    },
+    "use_block": {
+      "usable_for_search": true,
+      "usable_for_adoption": true,
+      "usable_for_page_design": true,
+      "usable_for_handoff": true,
+      "next_team_or_lane": "translation_first"
+    },
+    "uncertainty_block": []
+  },
+  "uncertainty_loss_log": {
+    "ambiguity_count": 0,
+    "forced_mapping_count": 0,
+    "dropped_nuance": [
+      "cross-paragraph rhetorical nuance is not fully preserved in single-unit glosses"
+    ],
+    "pending_interpretation": []
+  }
+}

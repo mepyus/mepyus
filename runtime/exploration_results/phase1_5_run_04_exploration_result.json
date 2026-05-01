@@ -1,0 +1,125 @@
+{
+  "contract_id": "space_exploration_result_v0",
+  "contract_status": "draft_instance",
+  "question_packet_ref": "/Users/sungsookim/universe/vectorfl_replica/runtime/query_packets/phase1_5_run_04_question_packet.json",
+  "searched_paths": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/phase1_5_decision_gate_rules_v0.md"
+  ],
+  "selected_assets": [
+    {
+      "path": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Phase 1 goal and non-goal boundary."
+    },
+    {
+      "path": "docs/specs/space_reading_order_for_codex_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Default first-entry reading order."
+    },
+    {
+      "path": "docs/specs/source_authority_ladder_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Authority resolution before merge/diff/hold."
+    },
+    {
+      "path": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Mode and comparison contract."
+    },
+    {
+      "path": "docs/specs/phase1_5_decision_gate_rules_v0.md",
+      "authority_level": "policy_or_contract",
+      "reason": "Phase 1.5 stop and decision gate rules."
+    }
+  ],
+  "selected_asset_reasons": [
+    "Phase 1 goal and non-goal boundary.",
+    "Default first-entry reading order.",
+    "Authority resolution before merge/diff/hold.",
+    "Mode and comparison contract.",
+    "Phase 1.5 stop and decision gate rules."
+  ],
+  "discarded_assets": [
+    {
+      "path": "runtime/cli_sessions/*",
+      "reason": "Too detailed for bounded usage-loop run unless a specific session is referenced."
+    },
+    {
+      "path": "runtime/views/* UI surface files",
+      "reason": "Phase 1.5 non-goal: no UI or surface work."
+    }
+  ],
+  "evidence_units": [
+    {
+      "source_ref": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "excerpt_or_pointer": "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+      "why_it_matters": "Phase 1 goal and non-goal boundary.",
+      "relation_type": "direct_support",
+      "confidence": "medium"
+    },
+    {
+      "source_ref": "docs/specs/space_reading_order_for_codex_v0.md",
+      "excerpt_or_pointer": "docs/specs/space_reading_order_for_codex_v0.md",
+      "why_it_matters": "Default first-entry reading order.",
+      "relation_type": "direct_support",
+      "confidence": "medium"
+    },
+    {
+      "source_ref": "docs/specs/source_authority_ladder_v0.md",
+      "excerpt_or_pointer": "docs/specs/source_authority_ladder_v0.md",
+      "why_it_matters": "Authority resolution before merge/diff/hold.",
+      "relation_type": "direct_support",
+      "confidence": "medium"
+    },
+    {
+      "source_ref": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "excerpt_or_pointer": "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+      "why_it_matters": "Mode and comparison contract.",
+      "relation_type": "direct_support",
+      "confidence": "medium"
+    },
+    {
+      "source_ref": "docs/specs/phase1_5_decision_gate_rules_v0.md",
+      "excerpt_or_pointer": "docs/specs/phase1_5_decision_gate_rules_v0.md",
+      "why_it_matters": "Phase 1.5 stop and decision gate rules.",
+      "relation_type": "direct_support",
+      "confidence": "medium"
+    }
+  ],
+  "supporting_links": [
+    "docs/specs/space_cli_phase1_goal_and_non_goal_v0.md",
+    "docs/specs/space_reading_order_for_codex_v0.md",
+    "docs/specs/source_authority_ladder_v0.md",
+    "docs/specs/evidence_merge_diff_hold_contract_v0.md",
+    "docs/specs/phase1_5_decision_gate_rules_v0.md"
+  ],
+  "tension_or_conflict_assets": [
+    {
+      "reason": "authority_conflict",
+      "matched_terms": [
+        "replace baseline",
+        "authority"
+      ]
+    },
+    {
+      "reason": "final_naming_lock_required",
+      "matched_terms": [
+        "naming lock"
+      ]
+    }
+  ],
+  "missing_gaps": [
+    "Evidence excerpts are pointer-level only; human reading is still required for deep claims."
+  ],
+  "confidence": "medium",
+  "next_probe_candidates": [],
+  "exploration_validation": {
+    "is_evidence_bundle": true,
+    "selected_and_discarded_separated": true,
+    "gaps_recorded": true
+  }
+}

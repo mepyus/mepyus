@@ -1,0 +1,72 @@
+{
+  "schema_version": "integrated_engine_cli_structured_return_v0",
+  "source_session_id": "cli_20260418T224608Z_681737e8",
+  "backend_kind": "codex",
+  "task_type": "reread",
+  "status": "done",
+  "exit_code": 0,
+  "result_summary": "ns/checker.py\",\n    \"app/runtime/vectorfl_integrated_engine_api.py\"\n  ],\n  \"next_continue_hint\": \"Package 4 should validate VectorFL worker-return handling with valid worker-emitted JSON, missing block fallback, invalid JSON fallback, suggested_next_use classification, failed/timeout routing, and deposit-candidate non-ingestion checks.\",\n  \"open_questions\": [\n    \"Whether Package 4 should remain read-only validation or add tests once write access is available.\",\n    \"Whether OpenHarness run_print_mode and run_task_worker internals should be inspected in a later bounded package.\",\n    \"Whether VectorFL wants stricter schema validation for unknown package_id, run_kind, or extra worker-return keys.\"\n  ],\n  \"risks_or_limits\": [\n    \"Reread-only pass; no tests were added or run.\",\n    \"OpenHarness UI app internals were not inspected because they were outside the listed bounded refs.\",\n    \"Boundary lessons are from source inspection, not behavioral execution traces.\",\n    \"Package 4 validation may need write-enabled execution to add regression tests or fixtures.\"\n  ],\n  \"source_refs\": [\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json\",\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md\",\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log\",\n    \"references/git_search/openharness-main/src/openharness/cli.py\",\n    \"references/git_search/openharness-main/src/openharness/engine/query_engine.py\",\n    \"references/git_search/openharness-main/src/openharness/engine/query.py\",\n    \"references/git_search/openharness-main/src/openharness/tools/base.py\",\n    \"references/git_search/openharness-main/src/openharness/permissions/checker.py\",\n    \"app/runtime/vectorfl_integrated_engine_api.py\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n",
+  "important_outputs": [],
+  "uncertainty_or_failure_notes": [],
+  "suggested_next_use": "validation_target",
+  "created_at": "2026-04-18T22:47:28Z",
+  "worker_return": {
+    "schema_version": "integrated_engine_worker_return_v0",
+    "worker_return_source": "worker_emitted",
+    "worker_id": "codex",
+    "package_id": "package3_step_b_real_openharness_continuation",
+    "run_kind": "reread",
+    "answer": "Step A established OpenHarness as useful internal lens material for VectorFL because its real boundaries are CLI entrypoint selection, session/query loop state, tool schema/normalization, permission decisions, streamed execution events, and post-run return normalization. Step B’s most relevant lesson is that VectorFL worker return handling should preserve the split between raw stdout/stderr evidence, preferred worker-emitted structured blocks, runtime normalization fallback, and route labels as next-use signals rather than approval or completion. Package 4 should validate parser and route behavior against real and malformed worker outputs.",
+    "findings": [
+      "Step A identified the correct continuation target: concrete worker/session boundary, not broad repo overview.",
+      "OpenHarness CLI routes print, task-worker, and interactive modes through explicit entrypoint branches.",
+      "QueryEngine.submit_message builds QueryContext and delegates the model/tool loop to run_query.",
+      "run_query streams assistant events, executes tools, normalizes tool results, and appends tool-result user messages.",
+      "Tool execution validates inputs before permission evaluation and execution.",
+      "PermissionChecker separates hard sensitive-path denies, explicit rules, read-only allowance, plan-mode blocking, and default confirmation.",
+      "VectorFL CodexCliAdapter.start_run captures stdout/stderr/exit status before extracting and normalizing worker returns.",
+      "VectorFL reports encode that route labels and suggested next use are not approval, assignment, canonical ingestion, or completion."
+    ],
+    "files_artifacts": [
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log",
+      "references/git_search/openharness-main/src/openharness/cli.py",
+      "references/git_search/openharness-main/src/openharness/engine/query_engine.py",
+      "references/git_search/openharness-main/src/openharness/engine/query.py",
+      "references/git_search/openharness-main/src/openharness/tools/base.py",
+      "references/git_search/openharness-main/src/openharness/permissions/checker.py",
+      "app/runtime/vectorfl_integrated_engine_api.py",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/stdout.log",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/stderr.log",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/prompt.md",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/deposit_candidate.md",
+      "runtime/cli_sessions/cli_20260418T224608Z_681737e8/operator_report.md"
+    ],
+    "next_continue_hint": "Package 4 should validate VectorFL worker-return handling with valid worker-emitted JSON, missing block fallback, invalid JSON fallback, suggested_next_use classification, failed/timeout routing, and deposit-candidate non-ingestion checks.",
+    "open_questions": [
+      "Whether Package 4 should remain read-only validation or add tests once write access is available.",
+      "Whether OpenHarness run_print_mode and run_task_worker internals should be inspected in a later bounded package.",
+      "Whether VectorFL wants stricter schema validation for unknown package_id, run_kind, or extra worker-return keys."
+    ],
+    "risks_or_limits": [
+      "Reread-only pass; no tests were added or run.",
+      "OpenHarness UI app internals were not inspected because they were outside the listed bounded refs.",
+      "Boundary lessons are from source inspection, not behavioral execution traces.",
+      "Package 4 validation may need write-enabled execution to add regression tests or fixtures."
+    ],
+    "source_refs": [
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md",
+      "runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log",
+      "references/git_search/openharness-main/src/openharness/cli.py",
+      "references/git_search/openharness-main/src/openharness/engine/query_engine.py",
+      "references/git_search/openharness-main/src/openharness/engine/query.py",
+      "references/git_search/openharness-main/src/openharness/tools/base.py",
+      "references/git_search/openharness-main/src/openharness/permissions/checker.py",
+      "app/runtime/vectorfl_integrated_engine_api.py"
+    ],
+    "raw_fallback_text": "ns/checker.py\",\n    \"app/runtime/vectorfl_integrated_engine_api.py\"\n  ],\n  \"next_continue_hint\": \"Package 4 should validate VectorFL worker-return handling with valid worker-emitted JSON, missing block fallback, invalid JSON fallback, suggested_next_use classification, failed/timeout routing, and deposit-candidate non-ingestion checks.\",\n  \"open_questions\": [\n    \"Whether Package 4 should remain read-only validation or add tests once write access is available.\",\n    \"Whether OpenHarness run_print_mode and run_task_worker internals should be inspected in a later bounded package.\",\n    \"Whether VectorFL wants stricter schema validation for unknown package_id, run_kind, or extra worker-return keys.\"\n  ],\n  \"risks_or_limits\": [\n    \"Reread-only pass; no tests were added or run.\",\n    \"OpenHarness UI app internals were not inspected because they were outside the listed bounded refs.\",\n    \"Boundary lessons are from source inspection, not behavioral execution traces.\",\n    \"Package 4 validation may need write-enabled execution to add regression tests or fixtures.\"\n  ],\n  \"source_refs\": [\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/structured_return.json\",\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/operator_report.md\",\n    \"runtime/cli_sessions/cli_20260418T224406Z_754042af/stdout.log\",\n    \"references/git_search/openharness-main/src/openharness/cli.py\",\n    \"references/git_search/openharness-main/src/openharness/engine/query_engine.py\",\n    \"references/git_search/openharness-main/src/openharness/engine/query.py\",\n    \"references/git_search/openharness-main/src/openharness/tools/base.py\",\n    \"references/git_search/openharness-main/src/openharness/permissions/checker.py\",\n    \"app/runtime/vectorfl_integrated_engine_api.py\"\n  ]\n}\nEND_WORKER_RETURN_JSON\n"
+  }
+}

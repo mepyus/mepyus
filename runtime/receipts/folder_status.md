@@ -7,8 +7,8 @@
 
 ## 2. Snapshot
 - immediate_child_dirs: `0`
-- immediate_child_files: `189`
-- file_types: `.md` x 189
+- immediate_child_files: `203`
+- file_types: `.md` x 203
 
 ## 3. Child Folders
 - none
@@ -17,6 +17,12 @@
 - `doc_ai_future_segment_probe_v1_operation_receipt.md`
   title: operation receipt / doc_ai_future_segment_probe_v1
   summary: - doc_id: `doc_ai_future_segment_probe_v1` - source_path: `/Users/sungsookim/universe/vectorfl_replica/docs/reports/ai_future_segment_probe_v1.md`
+- `doc_andrej_karpathy_llm_wiki_medium_note_v0_operation_receipt.md`
+  title: operation receipt / doc_andrej_karpathy_llm_wiki_medium_note_v0
+  summary: - doc_id: `doc_andrej_karpathy_llm_wiki_medium_note_v0` - source_path: `/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_karpathy_llm_wiki_medium_note_v0.md`
+- `doc_andrej_process_supervision_note_v0_operation_receipt.md`
+  title: operation receipt / doc_andrej_process_supervision_note_v0
+  summary: - doc_id: `doc_andrej_process_supervision_note_v0` - source_path: `/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/andrej_process_supervision_note_v0.md`
 - `doc_attention_resolution_loop_v1_operation_receipt.md`
   title: doc_attention_resolution_loop_v1_operation_receipt.md
   summary: - operation_date: 2026-03-28 - operation_scope: attention item lifecycle lock over derived state change attention queue - prepared_by: Codex
@@ -38,6 +44,9 @@
 - `doc_claude_code_operation_receipt.md`
   title: operation receipt / doc_claude_code
   summary: - doc_id: `doc_claude_code` - source_path: `/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/claude_code.txt`
+- `doc_claude_code_source_analysis_note_v0_operation_receipt.md`
+  title: operation receipt / doc_claude_code_source_analysis_note_v0
+  summary: - doc_id: `doc_claude_code_source_analysis_note_v0` - source_path: `/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/claude_code_source_analysis_note_v0.md`
 - `doc_codex_baseline_program_grade_workspace_upgrade_v1_operation_receipt.md`
   title: operation receipt / doc_codex_baseline_program_grade_workspace_upgrade_v1
   summary: - doc_id: `doc_codex_baseline_program_grade_workspace_upgrade_v1` - source_path: `/Users/sungsookim/universe/vectorfl_replica/docs/policies/codex_baseline_program_grade_workspace_upgrade_v1.md`
@@ -77,15 +86,6 @@
 - `doc_connection_meaning_and_user_layer_translation_baseline_v1_operation_receipt.md`
   title: operation receipt / doc_connection_meaning_and_user_layer_translation_baseline_v1
   summary: - doc_id: `doc_connection_meaning_and_user_layer_translation_baseline_v1` - source_path: `/Users/sungsookim/universe/vectorfl_replica/source_assets/baselines/connection_meaning_and_user_layer_translation_baseline_v1.md`
-- `doc_current_asset_map_v1_operation_receipt.md`
-  title: operation receipt / doc_current_asset_map_v1
-  summary: - doc_id: `doc_current_asset_map_v1` - source_path: `/Users/sungsookim/universe/vectorfl_replica/runtime/views/current_asset_map_v1.md`
-- `doc_current_space_meaning_reset_and_bridge_redefinition_v1_operation_receipt.md`
-  title: doc_current_space_meaning_reset_and_bridge_redefinition_v1_operation_receipt
-  summary: - created: - [current_space_meaning_reset_v1.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/current_space_meaning_reset_v1.md) - [recent_second_order_assets_as_memory_and_possibility_v1.md](/Users/sungsookim/universe/vectorfl_
-- `doc_delta_society_operation_receipt.md`
-  title: operation receipt / doc_delta_society
-  summary: - doc_id: `doc_delta_society` - source_path: `/Users/sungsookim/universe/vectorfl_replica/inputs/external_cases/delta_society.md`
 
 ## 5. Code / Data Files
 - no immediate code/data files
@@ -99,7 +99,7 @@
 - inventory_manifest: `runtime/manifests/folder_inventory/runtime.receipts.json`
 - parent_folder: `runtime`
 - related_status_files: `runtime/receipts/folder_status.md`
-- last_updated: `2026-04-09T18:45:30+09:00`
+- last_updated: `2026-04-23T21:43:09+09:00`
 
 ## 8. Render Rule
 - 변화 이력은 `runtime/manifests/folder_changes/folder_change_log.jsonl` 에 append-only 로 남긴다.
