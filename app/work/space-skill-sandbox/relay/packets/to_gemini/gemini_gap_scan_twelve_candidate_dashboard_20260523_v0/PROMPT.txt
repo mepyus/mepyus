@@ -1,0 +1,29 @@
+Read the Gemini gap-scan packet and listed files/folders if available, then return exploration-only findings.
+
+Packet:
+/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/packets/to_gemini/gemini_gap_scan_twelve_candidate_dashboard_20260523_v0/PACKET.md
+
+Hard constraints:
+- broad gap scan only
+- do not edit files
+- do not patch files
+- do not mutate repo or Obsidian
+- do not claim truth/approval/promotion/authority
+- do not call Codex/network/MCP/browser
+- classify every finding as READY_FOR_CONTRACT, CANDIDATE_MATERIAL, WATCH, STOP, or OUT_OF_SCOPE
+- if a path is unavailable, report it under assets_read as unavailable; do not invent file contents
+
+Return exactly these sections:
+
+verdict:
+assets_read:
+finding_table:
+best_mappings:
+missing_guards:
+weak_boundaries:
+user_surface_suggestions:
+candidate_only_material:
+STOP:
+WATCH:
+HOLD:
+recommended_next_smallest_action:

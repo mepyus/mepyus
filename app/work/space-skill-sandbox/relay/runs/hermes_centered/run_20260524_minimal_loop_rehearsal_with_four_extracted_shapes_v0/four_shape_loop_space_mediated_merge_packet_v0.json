@@ -1,0 +1,29 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_space_mediated_merge_four_shape_loop_no_authority_mutation",
+  "guard_status": "PASS_WITH_HOLD",
+  "hold_boundaries": [
+    "no API",
+    "no local endpoint replay",
+    "no server start",
+    "no real model/Codex/Gemini execution",
+    "no authority mutation",
+    "no registry mutation",
+    "no promotion"
+  ],
+  "inputs": {
+    "model_fixture_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/local_model_fixture_for_four_shape_loop_v0.md",
+    "original_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_original_intake_packet_v0.json",
+    "space_reading_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_space_reading_packet_v0.json"
+  },
+  "merge_decisions": [
+    "original intake supplies immutable user source",
+    "space reading supplies actual current/guard/lens/material anchors",
+    "model fixture supplies no-execution interpretation",
+    "receipt writer records validators and boundaries as evidence only"
+  ],
+  "merged_directive": "Run the minimal no-call VectorFL loop with four extracted shapes and emit receipt-backed PASS/HOLD evidence.",
+  "packet_id": "four_shape_loop_space_mediated_merge_packet_v0",
+  "promotion_status": "HOLD",
+  "source_layer": "review_guard_layer"
+}

@@ -1,0 +1,42 @@
+# REENTRY_COMPRESSION_TEMPLATE
+
+status: REENTRY_COMPRESSION_TEMPLATE_WITH_HOLD
+
+## Source
+
+model_lane:
+raw_output_path:
+lite_summary_path:
+receipt_path:
+hold_review_path:
+
+## Re-entry Payload
+
+classification: <CANDIDATE_MATERIAL | WATCH | STOP | OUT_OF_SCOPE>
+summary:
+allowed_next_smallest_action:
+not_authority: yes
+not_promotion: yes
+not_implementation_permission: yes
+
+## HOLD
+
+promotion_status: HOLD
+program_alpha_status: NOT_READY
+vectorfl_authority_mutation: no
+model_execution: approved_single_lane_only
+real_gemini_execution: depends_on_selected_lane
+real_codex_execution: depends_on_selected_lane
+approval_applied: explicit_user_approval_required
+live_db_intake: HOLD
+schema_mutation: no
+snapshot_mutation: no
+router_runner_claim: no
+write_ui: no
+authority_database: no
+shared_db_mutation: no
+v1_snapshot_creation: no
+m4_reusable_module: no
+module_promotion: no
+program_alpha_ready: no
+

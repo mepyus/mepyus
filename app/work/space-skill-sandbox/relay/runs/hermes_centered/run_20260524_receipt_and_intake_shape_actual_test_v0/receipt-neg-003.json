@@ -1,0 +1,33 @@
+{
+  "api_call": "NO",
+  "api_direct": "NO",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "receipt_actual_shape_test_with_hold",
+  "codex_cli_execution": "NO",
+  "current_position_apply": "NO",
+  "forbidden_scan": {
+    "active_call_hits": [],
+    "active_call_scan_status": "PASS",
+    "scan_hits": []
+  },
+  "gemini_cli_execution": "NO",
+  "guard_status": "PASS_WITH_HOLD",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "YES_REAL_MODEL_EXECUTION",
+  "promotion_status": "HOLD",
+  "receipt_id": "receipt-neg-003_receipt",
+  "registry_mutation": "NO",
+  "seconds": 0.001,
+  "source_layer": "tool_reentry_layer",
+  "status": "PASS",
+  "validators_run": [
+    {
+      "path": "/local/no_call_validator.py",
+      "rc": 0,
+      "seconds": 0.001,
+      "stderr": "",
+      "stdout": "PASS"
+    }
+  ]
+}

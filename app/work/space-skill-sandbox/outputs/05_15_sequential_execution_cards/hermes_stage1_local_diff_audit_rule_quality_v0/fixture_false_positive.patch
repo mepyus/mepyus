@@ -1,0 +1,13 @@
+diff --git a/docs/security_examples.md b/docs/security_examples.md
+index eeeeeee..fffffff 100644
+--- a/docs/security_examples.md
++++ b/docs/security_examples.md
+@@ -1,4 +1,10 @@
+ # Security examples
+ 
+-Document examples here.
++Do not hardcode values such as password = "example".
++Do not pipe curl to bash in production scripts.
++Example marker only: sk_live_example_should_not_be_used.
++Prefer documented secret storage and review suspicious shell commands.
++This document is explanatory and is not executable code.

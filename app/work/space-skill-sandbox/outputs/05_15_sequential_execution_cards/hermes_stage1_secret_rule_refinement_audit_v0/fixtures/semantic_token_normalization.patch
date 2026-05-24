@@ -1,0 +1,13 @@
+diff --git a/app/core/runtime/tokenizer.py b/app/core/runtime/tokenizer.py
+new file mode 100644
+--- /dev/null
++++ b/app/core/runtime/tokenizer.py
+@@ -0,0 +1,8 @@
++def normalize(values):
++    token = _normalize_token(value)
++    token = _normalize_token(str(value).strip())
++    normalized_tokens = [_normalize_token(v) for v in values]
++    for token in sentence_tokens:
++        token = token.lower()
++    token_count = len(normalized_tokens)
++    return normalized_tokens

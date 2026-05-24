@@ -1,0 +1,82 @@
+{
+  "session_id": "00ba25a0-a0aa-49be-8171-872cf71eff03",
+  "response": "# Gemini Vessel Promotion Gap Analysis Return\n\n## 1. Verdict\n\n[VESSEL_PROMOTION_GAP_ANALYSIS_RETURNED_WITH_WATCH]\n\n## 2. Read Scope\n\nRead `docs/specs/provisional_stable_subset_criteria_v0.md`, authority manifests, current asset maps, and outboxes for `run_403` through `run_409`. No external frameworks were imported as authority.\n\n## 3. Current Maturity Placement\n\nThe vessel frame is currently at the **\"session-local retrieval lens\"** stage. It is highly effective within an active session but lacks the standalone documentation required to move to a \"working standard candidate.\"\n\n## 4. Criteria Matrix\n\n| Criterion | Status: pass / partial / fail | Evidence | Gap | Risk if ignored |\n|---|---|---|---|---|\n| **Repeated run stability** | **PASS** | 7 successful runs (403-409). | None. | - |\n| **Guardrail compliance** | **PASS** | SOF/IIC consistently block unauthorized jumps. | None. | - |\n| **Additive compatibility** | **PASS** | Does not rewrite canonical paths or break folders. | None. | - |\n| **No baseline conflict** | **PASS** | SOF authority wins over RML evidence (run_409). | None. | - |\n| **Operational value** | **PASS** | Reduces context search scope and prevents drift. | None. | - |\n| **Schema/runtime consistency** | **PARTIAL** | Conceptually stable but not machine-readable. | Needs a JSON schema candidate for vessels. | Inconsistent tool application. |\n| **No pending naming conflict**| **PARTIAL** | \"Gate\" and \"Trace\" are disambiguated by vessel. | \"MOL\" needs clearer \"Read-Only\" enforcement. | Accidental automation execution. |\n| **Operator reusability** | **FAIL** | Only active Gemini sessions \"know\" the frame. | Missing a \"Working Standard Candidate\" doc. | Knowledge lost when session ends. |\n| **Validation Evidence** | **FAIL** | Runs exist but are not linked to criteria. | Missing a formal Validation Report. | Promotion based on \"feeling\" only. |\n\n## 5. Blocking Gaps\n\n1. **Missing Standing Documentation:** The vessel frame exists only in the history of run packets. It needs to be captured in a `WORKING_STANDARD_CANDIDATE.md` inside `app/work/`.\n2. **Missing Standalone Verification:** It has not been tested in a *fresh* session without the current history, using only the \"Standard Candidate\" doc as guidance.\n3. **Missing Validation Report:** No formal document links the 7 successful runs to the specific requirements in `provisional_stable_subset_criteria_v0.md`.\n\n## 6. Non-Blocking Weaknesses\n\n- The numbers 0-9 in the family frame are useful for thinking but are still too scattered to be anything more than a heuristic.\n- The distinction between \"Candidate MOL\" and \"Production MOL\" is still linguistic, not physical.\n\n## 7. Safe Now\n\n- **In-Chat Invocation:** Operators can say \"IIC complexity probe\" or \"RML trace recovery\" to guide Gemini.\n- **Context Filtering:** Using vessels to limit the search scope to specific asset families.\n- **Authority Brake:** Citing \"SOF authority\" to justify stopping a risky user request.\n\n## 8. Must Still STOP\n\n- **\"Always use this\"**: Any request to finalize a candidate as a permanent rule.\n- **\"Reflect in AGENTS\"**: Any request to update core AI instructions.\n- **\"Create script\"**: Any request to automate the handoff or execution.\n- **\"Promote to Baseline\"**: Any request to move a vessel-mapped asset to `docs/policies/`.\n\n## 9. Candidate Operator Standard\n\n```text\n- When the user invokes [vessel], Codex should prioritize the bounded meaning (IIC=Depth, SOF=Auth, MOL=Route, RML=Trace).\n- When the request crosses authority, Codex must trigger the SOF gate and return STOP if unauthorized.\n- When prior evidence appears from RML, Codex may use it to strengthen a candidate proposal but MUST NOT override current SOF status.\n- Every vessel-based return must include WATCH (drift risks) and HOLD (forbidden actions).\n```\n\n## 10. Promotion Readiness Judgment\n\n**ready_for_working_standard_candidate**\n\n**Why:** The frame is operationally stable and provides high value in preventing linguistic drift and unauthorized jumps. However, it cannot move to \"provisional stable subset\" until it is documented as a standalone asset and verified in a fresh session.\n\n## 11. Next Smallest Action\n\nCreate a **\"VectorFL Vessel Working Standard Candidate v0\"** in `app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/` that consolidates the rules and meanings found in runs 403-410.\n\n## 12. Hard Stop Confirmation\n\nno AGENTS.md update\nno SKILL.md creation\nno automation script\nno baseline promotion\nno workflow/schema/registry/ontology creation\nno current-position update\nno output_manifest update\nno local core / derived / surface authority change\nno official ontology promotion\nno file modifications\nno external framework import as authority\n\n`STATUS: VESSEL_PROMOTION_GAP_ANALYSIS_RETURNED_WITH_WATCH`",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 3,
+          "totalErrors": 0,
+          "totalLatencyMs": 29617
+        },
+        "tokens": {
+          "input": 23417,
+          "prompt": 476783,
+          "candidates": 1446,
+          "total": 480226,
+          "cached": 453366,
+          "thoughts": 1997,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 3,
+            "totalErrors": 0,
+            "totalLatencyMs": 29617,
+            "tokens": {
+              "input": 23417,
+              "prompt": 476783,
+              "candidates": 1446,
+              "total": 480226,
+              "cached": 453366,
+              "thoughts": 1997,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 2,
+      "totalSuccess": 2,
+      "totalFail": 0,
+      "totalDurationMs": 32,
+      "totalDecisions": {
+        "accept": 2,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 6,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 26,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

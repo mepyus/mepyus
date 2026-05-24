@@ -1,0 +1,47 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_fields_present",
+      "pass": true
+    },
+    {
+      "check": "space_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "space_reference_delta_non_decorative",
+      "pass": true
+    },
+    {
+      "check": "not_model_only",
+      "pass": true
+    },
+    {
+      "check": "codex_and_gemini_fields_present_without_new_calls",
+      "pass": true
+    },
+    {
+      "check": "lens_results_cover_5",
+      "pass": true
+    },
+    {
+      "check": "negative_cases_cover_6",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "mind_sized_pass",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_PHASE2_PACKET_SHAPE_ACTUAL_TEST_WITH_HOLD"
+}

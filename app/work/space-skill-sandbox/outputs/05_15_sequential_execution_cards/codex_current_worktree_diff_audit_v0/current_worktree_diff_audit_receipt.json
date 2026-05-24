@@ -1,0 +1,157 @@
+{
+  "verdict": "[CODEX_CURRENT_WORKTREE_DIFF_AUDIT_RECEIPT]",
+  "timestamp": "2026-05-16T08:30:09.972416+00:00",
+  "commands": [
+    "git diff --cached --no-ext-diff -- <bounded paths>",
+    "git diff --no-ext-diff -- <bounded paths>",
+    "git diff --cached --name-only -- <bounded paths>",
+    "git diff --name-only -- <bounded paths>",
+    "git status --short"
+  ],
+  "bounded_paths": [
+    "app/ui",
+    "app/core",
+    "app/runtime",
+    "scripts",
+    "config",
+    "package.json",
+    "vite.config.js",
+    "vite.config.ts",
+    "vite.config.mjs"
+  ],
+  "staged_files": [
+    "app/ui/integrated_engine/App.tsx",
+    "app/ui/integrated_engine/CliHostControlPanel.tsx",
+    "app/ui/integrated_engine/PromptIntakeCardBuilder.tsx",
+    "app/ui/integrated_engine/VectorFLIntegrationShell.tsx",
+    "scripts/run_obsidian_date_folder_space_intake.py",
+    "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+    "scripts/sandbox/run_gemini_packet.sh"
+  ],
+  "unstaged_files": [
+    "scripts/sandbox/run_gemini_packet.sh"
+  ],
+  "untracked_status_entries_count": 165,
+  "exit_codes": {
+    "staged_diff": 0,
+    "unstaged_diff": 0,
+    "staged_names": 0,
+    "unstaged_names": 0,
+    "status": 0
+  },
+  "total_hard_findings": 0,
+  "total_review_notes": 7,
+  "results": [
+    {
+      "label": "staged",
+      "files_touched_count": 7,
+      "sample_files_touched": [
+        "app/ui/integrated_engine/App.tsx",
+        "app/ui/integrated_engine/CliHostControlPanel.tsx",
+        "app/ui/integrated_engine/PromptIntakeCardBuilder.tsx",
+        "app/ui/integrated_engine/VectorFLIntegrationShell.tsx",
+        "scripts/run_obsidian_date_folder_space_intake.py",
+        "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+        "scripts/sandbox/run_gemini_packet.sh"
+      ],
+      "added_lines_seen": 1267,
+      "deleted_lines_seen": 9,
+      "contexts": {
+        "app_source": 4,
+        "scripts_or_deploy": 3
+      },
+      "hard_findings": 0,
+      "review_notes": 7,
+      "rows": [
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_obsidian_date_folder_space_intake.py",
+          "line_no": 399,
+          "context": "scripts_or_deploy",
+          "line": "print(f\"date folder not found: {date_folder}\", file=sys.stderr)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_obsidian_date_folder_space_intake.py",
+          "line_no": 404,
+          "context": "scripts_or_deploy",
+          "line": "print(f\"no markdown files found: {date_folder}\", file=sys.stderr)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_obsidian_date_folder_space_intake.py",
+          "line_no": 421,
+          "context": "scripts_or_deploy",
+          "line": "print(json.dumps(payload, ensure_ascii=False, indent=2))"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_obsidian_date_folder_space_intake.py",
+          "line_no": 437,
+          "context": "scripts_or_deploy",
+          "line": "print("
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+          "line_no": 899,
+          "context": "scripts_or_deploy",
+          "line": "print(f\"repo seed not found: {repo_seed}\", file=sys.stderr)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+          "line_no": 904,
+          "context": "scripts_or_deploy",
+          "line": "print(json.dumps(payload, ensure_ascii=False, indent=2))"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+          "line_no": 921,
+          "context": "scripts_or_deploy",
+          "line": "print("
+        }
+      ]
+    },
+    {
+      "label": "unstaged",
+      "files_touched_count": 1,
+      "sample_files_touched": [
+        "scripts/sandbox/run_gemini_packet.sh"
+      ],
+      "added_lines_seen": 55,
+      "deleted_lines_seen": 4,
+      "contexts": {
+        "scripts_or_deploy": 1
+      },
+      "hard_findings": 0,
+      "review_notes": 0,
+      "rows": []
+    }
+  ],
+  "network_used": false,
+  "packages_installed": false,
+  "git_mutation_used": false,
+  "source_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false
+}

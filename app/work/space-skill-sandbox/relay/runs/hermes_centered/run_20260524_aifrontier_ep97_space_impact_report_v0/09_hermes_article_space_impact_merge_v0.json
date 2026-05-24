@@ -1,0 +1,106 @@
+{
+  "article_meta": {
+    "char_count": 31855,
+    "extracted_at_epoch": 1779587627.545506,
+    "line_count": 162,
+    "sha256_html": "abaae6e8f803c6742f628f5424099f06d98a028c8d27fc806bf18872a2a09028",
+    "sha256_text": "1992a3327e7bf6d4eee9ad38355770aab4b43243b40d7bfd0320cf1b498c28a5",
+    "title": "EP 97: AI Psychosis 시대의 사람들 | AI Frontier"
+  },
+  "codex_space_impact": {
+    "agent": "Codex",
+    "article_core_claims": [
+      "AI coding agents and harnesses have moved from engineer-only coding tools into general knowledge-work workflow infrastructure.",
+      "Model and harness improvement cycles are compressing; frontier capability, cheaper inference, inference-chip diversity, and productized fast modes increase the amount of work that can be delegated.",
+      "The new AI application form is less a traditional app or UX surface and more a workflow/task-completion harness driven by user intent.",
+      "Vertical AI products will differentiate through exclusive customer data, proprietary tool combinations, and control layers that general agents such as Codex or Claude cannot fully access.",
+      "AI-native workflows differ from AI-assisted workflows: AI-native means the workflow completes with minimal human intervention, while many enterprise efforts merely patch AI onto unchanged human processes.",
+      "The relevant talent bar is rising from basic Claude Code/Codex usage to domain judgment, infrastructure awareness, meta-optimization, and the ability to decide under uncertainty.",
+      "High-speed delegation creates human bottlenecks: T_brain, bio-token depletion, context switching, burnout, FOMO, shallow learning, and AI-psychosis-like overdelegation.",
+      "Mitchell Hashimoto and Mario Zechner-style concerns pressure the assumption that test-passing AI output is enough; architecture, maintainability, and hidden debt can degrade while surface behavior passes.",
+      "Slow AI and mind-sized bites are emerging as a counterpressure: work and learning should be sized to what the human operator can actually absorb.",
+      "As building becomes commoditized, brand, distribution, positioning, and subculture/world creation become more important."
+    ],
+    "confidence": 0.86,
+    "recommended_changes_to_space_reading": [
+      "Add a T_brain/operator-load note to future space-impact readings: expected review burden, context switches, and whether the next action is absorbable by the operator.",
+      "Extend heavy-trigger language to include maintainability/architecture pressure even when local tests or agent consensus pass.",
+      "When post-review is skipped by budget gate, include an explicit residual-risk line for hidden architecture debt and human comprehension debt.",
+      "Add a slow-AI/mind-sized-bite recommendation field or rubric for recovery cards: the next safe lane should be not only safe from authority mutation, but also small enough to review.",
+      "Treat AI-native versus AI-assisted as a recurring classification in VectorFL readings: is the process actually completing a workflow, or merely producing assistive artifacts?",
+      "Preserve the current no-call/read-only lane for article impact reads unless the article introduces concrete architectural ambiguity or promotion pressure."
+    ],
+    "risks": [
+      "Over-indexing on actual multi-agent participation could recreate the article's overdelegation problem and increase operator fatigue.",
+      "Agent agreement may be mistaken for correctness if maintainability and architecture coherence are not separately reviewed.",
+      "Budget gates based mostly on elapsed seconds can miss human cognitive cost.",
+      "Vertical/control-layer language could pressure premature promotion of VectorFL artifacts into authority; this should remain blocked under HOLD.",
+      "The article is conversational and partly speculative, so it should pressure heuristics and reading posture rather than directly update authoritative space state."
+    ],
+    "role": "budgeted read-only VectorFL space-impact reader",
+    "should_escalate_post_review": false,
+    "space_impact": {
+      "authority_effect": "No authority, registry, endpoint, current-position, or promotion change is warranted from this article alone.",
+      "change_type": "PRESSURE_AND_EXTENSION",
+      "hold_status": "Remain HOLD; use as evidence/reading pressure only.",
+      "impacted_space": [
+        "budget gate",
+        "operator recovery surface",
+        "multi-agent post-review criteria",
+        "four-shape loop reading",
+        "current-position interpretation"
+      ],
+      "net_effect": "VectorFL should keep FAST_NO_CALL_LOCAL_VALIDATION as default and heavy actual multi-agent mode as gated, but space readings should now explicitly score T_brain, mind-sizedness, and hidden maintainability risk alongside drift, trace, and authority boundaries.",
+      "summary": "The article does not overturn VectorFL's current direction; it strengthens it while adding a human-load and maintainability pressure layer."
+    },
+    "vectorfl_alignment_points": [
+      "The article strongly aligns with VectorFL's move from content-only processing to actual process/harness behavior: VectorFL evidence already distinguishes VectorFL-as-content from actual Hermes/Codex/Gemini participation.",
+      "The article's harness-as-control-layer thesis aligns with VectorFL's four-shape loop, safe entrypoints, receipts, trace rows, and HOLD boundaries as a control surface rather than a passive report.",
+      "The article's T_brain and bio-token bottleneck maps directly onto VectorFL's budget gate: fast local validation should remain default, while heavy multi-agent calls should be reserved for ambiguity, architecture pressure, drift, or explicit user request.",
+      "The article's maintainability warning reinforces VectorFL's repeatability and drift posture: pass/fail outputs are insufficient unless traceability, receipt integrity, and layer rereading remain visible.",
+      "The article's distinction between AI-native and AI-assisted workflows supports VectorFL's pressure to make Hermes processing itself VectorFL-like, not merely to produce artifacts about VectorFL.",
+      "The article's slow-AI/mind-sized-bites frame supports operator-facing recovery cards and compact handoff packets as first-class artifacts."
+    ],
+    "vectorfl_pressure_points": [
+      "Current VectorFL evidence is strong on process validation, but the article pressures it to account explicitly for human operator load, not only external agent seconds and validation checks.",
+      "The budget gate measures Codex/Gemini/Hermes time well, but it does not yet expose T_brain cost: review burden, context-switch count, decision fatigue, and whether a result is mind-sized.",
+      "The heavy-trigger list includes architecture and drift pressure, but the article suggests another trigger class: maintainability/hidden-debt pressure when outputs pass locally but architecture may be degrading.",
+      "The operator surface is display-only and safe, but the article implies recovery surfaces should also help the operator choose slower, smaller, more absorbable next actions.",
+      "VectorFL's current framing of AI readiness as actual agent participation may underweight the article's warning that stronger delegation can create shallow understanding and false completion.",
+      "Post-review is currently skipped when agents agree and no drift appears; the article pressures this rule because agent agreement can still miss architectural incoherence or overdelegation risk."
+    ]
+  },
+  "gemini_layer_impact": {
+    "agent": "Gemini",
+    "ai_psychosis_guard_implication": "The psychosis guard is implemented via the 'Validator Gate' and the refusal to allow agents to self-promote artifacts to 'Authority'. By treating agent output as 'Raw Trace' until human-inspected, VectorFL prevents the 'slot machine' dopamine loop of unverified task completion.",
+    "confidence": 0.95,
+    "layer_reading": "The article's projection of 'AI Surface' replacing traditional apps aligns with VectorFL's 'Operator Surface' (Evidence 3), where interaction is via hardened artifacts rather than UI widgets. The shift toward 'Meta-Optimizers' validates the Hermes-centered interpretation loop, where the agent discovers paths (Logic Layer) while the space provides the 'unbundled Oracle' (Data/Reference Layer).",
+    "role": "Layer Reading",
+    "slow_ai_implication": "VectorFL's 'mind-sized bites' approach—breaking work into Intent, Packet, and Receipt—is the architectural implementation of 'Slow AI'. It forces a 'T_brain' break-even point where the operator can digest and validate the model's 'elite sprint' before it manifests in the space.",
+    "spatial_effect_on_vectorfl": "VectorFL transitions from a content-management system to a 'Slow AI' regulator. The 'Budget Gate' (Evidence 2) specifically addresses the T_brain bottleneck by determining when to use expensive multi-agent heavy reading versus fast local validation. The 'HOLD' boundary becomes the primary defense against the 'AI Psychosis' of blind model-driven mutation.",
+    "tension_map": "Acceleration vs. Rot: 2-month release cycles (GPT-5.6) create a 'T_brain' bottleneck, where human judgment cannot scale with model speed. Delegation vs. Mastery: 'AI Psychosis' (Karpathy's total delegation) tensions against Mitchell Hashimoto's warning that AI-generated architectures can look correct while being fundamentally broken.",
+    "what_becomes_more_important": "Hardened receipts and repeatability reports (3/3 pass in Evidence 3) become the only way to verify 'jagged' model performance. Vertical tool-combination (Unbundling) becomes the primary differentiator for space-resident skills over general model capabilities.",
+    "what_should_not_change": "The hierarchy of authority (Constitution > Baseline) must remain absolute. Evidence reinsertion must stay in the 'HOLD' lane (Evidence 1) to prevent the acceleration loops described in the article from eroding the space's structural integrity."
+  },
+  "hermes_merged_space_impact": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "classification": "PRESSURE_AND_EXTENSION",
+    "primary_new_lens": [
+      "T_brain/operator-load",
+      "mind-sized bite check",
+      "maintainability debt watch",
+      "AI-native vs AI-assisted classification",
+      "slow-AI guard"
+    ],
+    "promotion_status": "HOLD",
+    "recommended_next": "create a compact candidate lens card for T_brain + mind-sizedness + maintainability debt, still HOLD.",
+    "space_effect": "Strengthens VectorFL as harness/control layer and adds human-load/maintainability pressure to budget gate and operator surfaces."
+  },
+  "packet_id": "09_hermes_article_space_impact_merge_v0",
+  "timings": {
+    "codex_space_impact_seconds": 56.81,
+    "gemini_layer_impact_seconds": 24.18,
+    "web_fetch_seconds": 0.201832
+  },
+  "verdict": "PASS_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_WITH_HOLD"
+}

@@ -1,0 +1,80 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "HOLD_CANDIDATE_LENS_CARD",
+  "lenses": [
+    {
+      "default_action": "keep next lane smaller if load is high",
+      "lens": "T_brain_operator_load",
+      "question": "What review/decision burden does this lane impose on the human operator?",
+      "signals": [
+        "reading volume",
+        "number of competing artifacts",
+        "context switches",
+        "decision ambiguity",
+        "need for human approval"
+      ]
+    },
+    {
+      "default_action": "split lane if not mind-sized",
+      "lens": "mind_sized_bite",
+      "question": "Is the next output small enough to be absorbed and acted on?",
+      "signals": [
+        "single purpose",
+        "bounded files",
+        "clear DONE/verdict",
+        "one next safe lane",
+        "no hidden promotion"
+      ]
+    },
+    {
+      "default_action": "add architecture coherence note, not automatic post-review",
+      "lens": "maintainability_debt_watch",
+      "question": "Could this pass locally while degrading architecture or space coherence?",
+      "signals": [
+        "test-only pass",
+        "duplicated surface cards",
+        "unclear routing consumption",
+        "trace not reused",
+        "agreement without structural check"
+      ]
+    },
+    {
+      "default_action": "label assisted if only artifact production",
+      "lens": "ai_native_vs_assisted",
+      "question": "Is this actually completing a workflow or merely assisting with reports/artifacts?",
+      "signals": [
+        "Hermes process changes",
+        "Codex/Gemini comparison used",
+        "result reinsertion observed",
+        "operator can reenter"
+      ]
+    },
+    {
+      "default_action": "prefer fast/local unless heavy trigger is real",
+      "lens": "slow_ai_guard",
+      "question": "Does the lane preserve learning/understanding instead of dopamine delegation?",
+      "signals": [
+        "budget gate used",
+        "post-review justified",
+        "residual risk recorded",
+        "HOLD explicit"
+      ]
+    }
+  ],
+  "not_authority": [
+    "not schema",
+    "not registry",
+    "not current-position",
+    "not promotion",
+    "not universal rule for trivial questions"
+  ],
+  "packet_id": "03_t_brain_mind_sized_maintainability_lens_card_v0",
+  "promotion_status": "HOLD",
+  "purpose": "Prevent Phase 2 internal-detail work from collapsing into model-only or artifact-only processing by adding human-load and maintainability lenses to space-referenced execution.",
+  "source_basis": [
+    "AIFRONTIER_EP97_SPACE_IMPACT_REPORT",
+    "actual_multi_agent_budget_gate",
+    "user_phase2_original"
+  ],
+  "space_principle": "Space is not the answer; it is a layered record of memory, trace, mistakes, failures, successes, extension, and prior answer-bearing strata. Model reasoning must reference it when the task affects space."
+}

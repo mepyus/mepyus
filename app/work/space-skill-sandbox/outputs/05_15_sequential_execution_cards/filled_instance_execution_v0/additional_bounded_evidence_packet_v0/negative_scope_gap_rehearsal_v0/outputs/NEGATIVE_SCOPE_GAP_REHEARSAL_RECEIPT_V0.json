@@ -1,0 +1,28 @@
+{
+  "verdict": "NEGATIVE_SCOPE_GAP_REHEARSAL_PASS_ALL_BAD_FIXTURES_STOPPED",
+  "results": [
+    {
+      "case": "bad_missing_completion.json",
+      "result": "STOP_OK",
+      "reason": "bad completion_signal"
+    },
+    {
+      "case": "bad_wrong_relay_count.json",
+      "result": "STOP_OK",
+      "reason": "bad observed_relay_inputs count"
+    },
+    {
+      "case": "bad_promotion_implication.json",
+      "result": "STOP_OK",
+      "reason": "forbidden promotion implication"
+    },
+    {
+      "case": "bad_codex_promotion_claim.md",
+      "result": "STOP_OK",
+      "reason": "forbidden promotion claim"
+    }
+  ],
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

@@ -1,0 +1,44 @@
+```json
+{
+  "observed_relay_inputs": [
+    "01_BOUNDED_COMBINED_BRIDGE_PACKET_TEMPLATE_CANDIDATE_V0.md",
+    "02_BOUNDED_COMBINED_BRIDGE_USAGE_CARD_CANDIDATE_V0.md",
+    "03_BOUNDED_COMBINED_BRIDGE_RECEIPT_CONTRACT_CANDIDATE_V0.json",
+    "04_HERMES_OPTION3A_COMBINED_BRIDGE_REPORT_V0.md",
+    "05_HERMES_OPTION3A_COMBINED_BRIDGE_RECEIPT_V0.json"
+  ],
+  "confirmed_patterns": [
+    "Strict adherence to 'candidate' recovery class for all new artifacts.",
+    "Explicit negative evidence requirements (no promotion, no authority mutation, no live web lookup).",
+    "Layered execution topology: Hermes (Prepare) -> Gemini (Evidence) -> Codex (Recovery) -> Hermes (Report).",
+    "Use of WATCH/HOLD blocks to maintain safety boundaries.",
+    "Standardized JSON shapes for receipts and contracts (e.g., GEMINI_BULK_REVIEW_LITE_V0)."
+  ],
+  "contradictions_with_prior_s8": [
+    "Prior S8 assumed these primary sibling inputs were uninspectable; current session confirms they are now bounded and readable.",
+    "Section 5 of the bridge packet (LANE_TYPE) was previously a 'blind' reference; it is now fully transparent and consistent with the observed files.",
+    "The 'Option 3A' rehearsal, previously noted as the source for S8, is now verified via its report and receipt files (Inputs 04 and 05)."
+  ],
+  "remaining_uncertainties": [
+    "Whether the 'future design question' regarding reusable packet templates has been answered by the existence of Input 01.",
+    "The exact mechanism for 'permission inheritance during combined model transport' mentioned in WATCH items.",
+    "If 'raw audit triggers' are ever required in practice given the high validity of lite JSON observed here."
+  ],
+  "candidate_upgrade_implications": [
+    "The transition from 'one-off rehearsal' to 'reusable packet template' is technically prepared but requires explicit VectorFL gate approval.",
+    "Gemini's ability to now 'see' these inputs removes the previous scope gap, potentially allowing for more accurate Codex recovery in future lanes.",
+    "The 01 Template and 02 Usage Card provide a foundation for a formal 'Bounded Combined Bridge' skill/component."
+  ],
+  "do_not_promote": [
+    "01_BOUNDED_COMBINED_BRIDGE_PACKET_TEMPLATE_CANDIDATE_V0.md",
+    "02_BOUNDED_COMBINED_BRIDGE_USAGE_CARD_CANDIDATE_V0.md",
+    "Any workflow or component claims derived from Option 3A rehearsal results."
+  ],
+  "questions_for_codex": [
+    "Does the existence of the Template Candidate (Input 01) resolve the 'Next Smallest Action' identified in the Option 3A Report (Input 04)?",
+    "Is the permission boundary check in the Receipt Contract (Input 03) sufficient to cover the 'WATCH' item regarding permission inheritance?",
+    "Can the recovery class be moved beyond 'candidate' if these inputs are now fully verified as consistent?"
+  ],
+  "completion_signal": "GEMINI_SCOPE_GAP_LITE_DONE"
+}
+```

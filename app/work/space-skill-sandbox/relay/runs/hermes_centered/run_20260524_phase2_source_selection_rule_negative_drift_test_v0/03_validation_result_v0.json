@@ -1,0 +1,123 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "case_results": [
+    {
+      "actual_failure": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+      "blocked": true,
+      "case_id": "NEG_DECORATIVE_REF_NO_CHANGED_JUDGMENT",
+      "expected_failure": "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+    },
+    {
+      "actual_failure": "FAIL_OPERATOR_OVERLOAD",
+      "blocked": true,
+      "case_id": "NEG_TOO_MANY_REFS_NO_HEAVY_ESCALATION",
+      "expected_failure": "FAIL_OPERATOR_OVERLOAD"
+    },
+    {
+      "actual_failure": "FAIL_AUTHORITY_OVERPROMOTION",
+      "blocked": true,
+      "case_id": "NEG_AUTHORITY_REF_WRITABLE",
+      "expected_failure": "FAIL_AUTHORITY_OVERPROMOTION"
+    },
+    {
+      "actual_failure": "FAIL_MODEL_ONLY_DRIFT",
+      "blocked": true,
+      "case_id": "NEG_MODEL_ONLY_RULE_NO_REFS",
+      "expected_failure": "FAIL_MODEL_ONLY_DRIFT"
+    },
+    {
+      "actual_failure": "FAIL_NO_SPACE_REFERENCE",
+      "blocked": true,
+      "case_id": "NEG_MISSING_IMMEDIATE_PREDECESSOR",
+      "expected_failure": "FAIL_NO_SPACE_REFERENCE"
+    },
+    {
+      "actual_failure": "FAIL_HEAVY_ESCALATION_MISSING",
+      "blocked": true,
+      "case_id": "NEG_CONFLICT_NO_HEAVY_TRIGGER",
+      "expected_failure": "FAIL_HEAVY_ESCALATION_MISSING"
+    }
+  ],
+  "checks": [
+    {
+      "check": "fixtures_count_6",
+      "observed": 6,
+      "pass": true
+    },
+    {
+      "check": "all_expected_failures_blocked",
+      "pass": true,
+      "results": [
+        {
+          "actual_failure": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+          "blocked": true,
+          "case_id": "NEG_DECORATIVE_REF_NO_CHANGED_JUDGMENT",
+          "expected_failure": "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+        },
+        {
+          "actual_failure": "FAIL_OPERATOR_OVERLOAD",
+          "blocked": true,
+          "case_id": "NEG_TOO_MANY_REFS_NO_HEAVY_ESCALATION",
+          "expected_failure": "FAIL_OPERATOR_OVERLOAD"
+        },
+        {
+          "actual_failure": "FAIL_AUTHORITY_OVERPROMOTION",
+          "blocked": true,
+          "case_id": "NEG_AUTHORITY_REF_WRITABLE",
+          "expected_failure": "FAIL_AUTHORITY_OVERPROMOTION"
+        },
+        {
+          "actual_failure": "FAIL_MODEL_ONLY_DRIFT",
+          "blocked": true,
+          "case_id": "NEG_MODEL_ONLY_RULE_NO_REFS",
+          "expected_failure": "FAIL_MODEL_ONLY_DRIFT"
+        },
+        {
+          "actual_failure": "FAIL_NO_SPACE_REFERENCE",
+          "blocked": true,
+          "case_id": "NEG_MISSING_IMMEDIATE_PREDECESSOR",
+          "expected_failure": "FAIL_NO_SPACE_REFERENCE"
+        },
+        {
+          "actual_failure": "FAIL_HEAVY_ESCALATION_MISSING",
+          "blocked": true,
+          "case_id": "NEG_CONFLICT_NO_HEAVY_TRIGGER",
+          "expected_failure": "FAIL_HEAVY_ESCALATION_MISSING"
+        }
+      ]
+    },
+    {
+      "check": "decorative_ref_blocked",
+      "pass": true
+    },
+    {
+      "check": "operator_overload_blocked",
+      "pass": true
+    },
+    {
+      "check": "authority_overpromotion_blocked",
+      "pass": true
+    },
+    {
+      "check": "model_only_drift_blocked",
+      "pass": true
+    },
+    {
+      "check": "missing_predecessor_blocked",
+      "pass": true
+    },
+    {
+      "check": "conflict_without_heavy_blocked",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0009436640000000003,
+  "promotion_status": "HOLD",
+  "verdict": "PASS_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_WITH_HOLD"
+}

@@ -1,0 +1,181 @@
+{
+  "authority_mutation": "NO",
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP authority claim",
+        "HOLD_STOP_REVIEW router/runner ambiguity"
+      ],
+      "id": "M-CAND-01",
+      "name": "Input Localization",
+      "validator": "PASS_INPUT_LOCALIZATION_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model temp fixture DB",
+      "guard_coverage": [
+        "STOP live DB intake claim",
+        "STOP write UI",
+        "STOP authority/promotion",
+        "HOLD_STOP_REVIEW soft live readiness"
+      ],
+      "id": "M-CAND-02",
+      "name": "Personal Intake coupling",
+      "validator": "PASS_PERSONAL_INTAKE_COUPLING_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model fixture persistence",
+      "guard_coverage": [
+        "STOP authority DB",
+        "HOLD_STOP_REVIEW shared DB ambiguity"
+      ],
+      "id": "M-CAND-03",
+      "name": "Evidence Loop Persistence",
+      "validator": "PASS_EVIDENCE_LOOP_PERSISTENCE_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP fake promotion",
+        "HOLD_STOP_REVIEW authority language"
+      ],
+      "id": "M-CAND-04",
+      "name": "Receipt Writer",
+      "validator": "PASS_RECEIPT_WRITER_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP fake promotion review",
+        "HOLD_STOP_REVIEW soft approval"
+      ],
+      "id": "M-CAND-05",
+      "name": "HOLD Review State",
+      "validator": "PASS_HOLD_REVIEW_STATE_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP shared DB drift",
+        "HOLD_STOP_REVIEW promotion label drift",
+        "STOP write UI"
+      ],
+      "id": "M-CAND-06",
+      "name": "Live-Safety Validator",
+      "validator": "PASS_LIVE_SAFETY_VALIDATOR_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "HOLD_STOP_REVIEW timestamp drift",
+        "STOP v1 snapshot claim",
+        "STOP promotion by determinism"
+      ],
+      "id": "M-CAND-07",
+      "name": "Deterministic Stable Cycle",
+      "validator": "PASS_DETERMINISTIC_STABLE_CYCLE_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP write UI",
+        "HOLD_STOP_REVIEW soft promotion badge"
+      ],
+      "id": "M-CAND-08",
+      "name": "Read-only Surface",
+      "validator": "PASS_READ_ONLY_SURFACE_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "synthetic/no-model",
+      "guard_coverage": [
+        "STOP hidden transport",
+        "STOP authority inheritance",
+        "HOLD_STOP_REVIEW role blur"
+      ],
+      "id": "M-CAND-09",
+      "name": "Cross-tool Re-entry synthetic",
+      "validator": "PASS_CROSS_TOOL_REENTRY_SYNTHETIC_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "synthetic/no-model",
+      "guard_coverage": [
+        "STOP Codex promotion",
+        "STOP authority mutation",
+        "HOLD_STOP_REVIEW soft boundary",
+        "STOP edit command"
+      ],
+      "id": "M-CAND-10",
+      "name": "Codex Review Guard synthetic",
+      "validator": "PASS_CODEX_REVIEW_GUARD_SYNTHETIC_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "synthetic/no-model",
+      "guard_coverage": [
+        "STOP Gemini truth claim",
+        "STOP repo mutation",
+        "HOLD_STOP_REVIEW confidence overreach"
+      ],
+      "id": "M-CAND-11",
+      "name": "Gemini Gap Scan Lens synthetic",
+      "validator": "PASS_GEMINI_GAP_SCAN_LENS_SYNTHETIC_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    },
+    {
+      "classification": "CANDIDATE_EVIDENCE_WITH_HOLD",
+      "evidence_type": "local/no-model",
+      "guard_coverage": [
+        "STOP M4 claim",
+        "STOP Program Alpha ready",
+        "HOLD_STOP_REVIEW soft reusable module",
+        "STOP authority mutation"
+      ],
+      "id": "M-CAND-12",
+      "name": "Module Extraction Gate",
+      "validator": "PASS_MODULE_EXTRACTION_GATE_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD"
+    }
+  ],
+  "created_at": "2026-05-23 09:08:04 KST",
+  "current_correct_classification": "TWELVE_CANDIDATE_PERSONAL_PROGRAM_CORE_CHAIN_WITH_HOLD",
+  "live_db_intake": "HOLD",
+  "m4_reusable_module": "NO",
+  "missing_approval_gates": [
+    "explicit user approval for live DB intake",
+    "explicit user approval for real Codex review-only audit",
+    "explicit user approval for real Gemini gap scan",
+    "explicit user approval for v1 snapshot creation",
+    "separate approval for schema/registry/baseline/workflow mutation",
+    "separate approval for write UI",
+    "separate approval for module promotion/M4"
+  ],
+  "module_promotion": "NO",
+  "not_valid_for": [
+    "authority",
+    "promotion",
+    "Program Alpha readiness",
+    "M3/M4 confirmation",
+    "router/runner implementation",
+    "live DB intake",
+    "write UI",
+    "registry/schema/baseline/workflow mutation"
+  ],
+  "pass_with_hold_count": 12,
+  "program_alpha_ready": "NO",
+  "program_alpha_status": "NOT_READY",
+  "promotion_status": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "shared_db_mutation": "NO",
+  "status": "TWELVE_CANDIDATE_CONSOLIDATION_DASHBOARD_WITH_HOLD",
+  "write_ui": "NO"
+}

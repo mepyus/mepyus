@@ -1,0 +1,34 @@
+{
+  "card_id": "02_phase3_backlog_deferred_validator_checklist_work_v0",
+  "classification": "PHASE3_BACKLOG_HOLD",
+  "deferred_items": [
+    {
+      "from_next_lane": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_NEGATIVE_CASES_NO_AUTHORITY_MUTATION_V0",
+      "item": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_NEGATIVE_CASES",
+      "phase": "PHASE3_CANDIDATE",
+      "why_defer": "Negative checklist cases harden an internal guard but do not expand Phase2 big-frame task selection."
+    },
+    {
+      "item": "DECISION_TABLE_APPLIED_VALIDATOR_HARDENING",
+      "phase": "PHASE3_CANDIDATE",
+      "why_defer": "Useful when packet validators become repeatedly used; premature now."
+    },
+    {
+      "item": "CHECKLIST_PROMOTION_OR_SCHEMA_DISCUSSION",
+      "phase": "NOT_NOW_HOLD",
+      "why_defer": "Would create authority pressure; must remain candidate until broader loop is proven."
+    }
+  ],
+  "do_not_do_now": [
+    "do not continue checklist negative cases immediately",
+    "do not promote validator/checklist to schema/router/authority",
+    "do not mutate current-position"
+  ],
+  "promotion_status": "HOLD",
+  "reason": "The checklist/negative-case/applied-validator chain is valid but too inward for current Phase2. It should be returned to after broader Phase2 work selection/evaluation is complete.",
+  "return_when": [
+    "Phase2 has a mapped list of actual big-frame work lanes",
+    "at least one non-validator real task has used space_reference_delta",
+    "operator workload shows checklist failures are recurring, not hypothetical"
+  ]
+}

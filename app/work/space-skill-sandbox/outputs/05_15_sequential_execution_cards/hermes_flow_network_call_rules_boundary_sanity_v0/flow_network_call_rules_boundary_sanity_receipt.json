@@ -1,0 +1,43 @@
+{
+  "verdict": "HERMES_FLOW_NETWORK_CALL_RULES_BOUNDARY_SANITY_RETURNED_WITH_WATCH",
+  "timestamp": "2026-05-16T08:58:56Z",
+  "input_files": [
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CALL_RULES_DRY_RUN_CURRENT_INPUT_V0.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CALL_RULES_DRY_RUN_HERMES_SURFACE_REQUEST_V0.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_ATTACHMENT_MODEL_V0.md"
+  ],
+  "output_files": [
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_flow_network_call_rules_boundary_sanity_v0/flow_network_call_rules_boundary_sanity_report.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_flow_network_call_rules_boundary_sanity_v0/flow_network_call_rules_boundary_sanity_receipt.json"
+  ],
+  "network_used": false,
+  "git_used": false,
+  "packages_installed": false,
+  "source_files_modified": false,
+  "prior_documents_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "hard_stop_confirmation": {
+    "no_hermes_execution_beyond_read_only_review": true,
+    "no_source_files_modified": true,
+    "no_prior_documents_modified": true,
+    "no_git_used": true,
+    "no_package_install": true,
+    "no_network_browser_mcp": true,
+    "no_hermes_memory_skill_cron_config_edit": true,
+    "no_agents_md_skill_md_update": true,
+    "no_vectorfl_authority_update": true,
+    "no_current_position_output_manifest_update": true,
+    "no_baseline_workflow_schema_registry_ontology_promotion": true,
+    "no_declared_output_directory_outside_write": true
+  },
+  "watch": "Hermes boundary sanity can strengthen call rules but does not authorize execution/promotion",
+  "weakest_boundary": "Packet draft -> Hermes dispatch; packet draft can create execution pressure unless a separate explicit dispatch approval line is required."
+}

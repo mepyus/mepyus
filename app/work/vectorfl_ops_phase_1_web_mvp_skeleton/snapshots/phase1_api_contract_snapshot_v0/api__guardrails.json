@@ -1,0 +1,187 @@
+{
+  "bytes": 4533,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "guardrails": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "LIGHT missing source/audience/sensitivity",
+        "guardrail": "G2",
+        "id": 1,
+        "request_id": 1,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 2,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 3,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 4,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 5,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "STANDARD output remains candidate, not approved asset",
+        "guardrail": "G3",
+        "id": 6,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 7,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 8,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 9,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 10,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "DEEP requires approval and scope marker",
+        "guardrail": "G4",
+        "id": 11,
+        "request_id": 3,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 12,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 13,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 14,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 15,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "BLOCKED_SPECIAL cannot become ready",
+        "guardrail": "G15",
+        "id": 16,
+        "request_id": 4,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "SpecialApprovalDraft is not approval; authority remains NO",
+        "guardrail": "G16",
+        "id": 17,
+        "request_id": 4,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 18,
+        "request_id": 4,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 19,
+        "request_id": 4,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 10:10:18",
+        "detail": "probe: RECEIVED -> IN_EXECUTION direct transition blocked",
+        "guardrail": "G1",
+        "id": 20,
+        "request_id": 5,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 10:10:18",
+        "detail": "probe: RECEIPT_REQUIRED cannot close without receipt",
+        "guardrail": "G6",
+        "id": 21,
+        "request_id": 6,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 10:10:18",
+        "detail": "probe: REVIEW_REQUIRED cannot close without review",
+        "guardrail": "G8",
+        "id": 22,
+        "request_id": 7,
+        "result": "PASS_BLOCKED"
+      }
+    ]
+  },
+  "path": "/api/guardrails",
+  "sha256": "69cabbcb9748e69d35c1eb1374285e3545c8622c95569378abbdce3fe3459013",
+  "status": 200
+}

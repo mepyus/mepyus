@@ -1,0 +1,100 @@
+{
+  "candidate_status": "FUNCTION_SHAPE_CANDIDATE_WITH_HOLD",
+  "classification": "function_shape_candidate_space_mediated_merge_actual_materials_no_authority_mutation",
+  "derived_from": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0/actual_space_mediated_merge_packet_v0.json",
+  "forbidden": [
+    "merge without original",
+    "merge without space reading",
+    "model-only merge",
+    "real model execution overclaim",
+    "authority mutation",
+    "promotion"
+  ],
+  "minimal_fixture": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "classification": "candidate_packet_space_mediated_merge_actual_materials_no_authority_mutation",
+    "guard_status": "PASS_WITH_HOLD",
+    "hold_boundaries": [
+      "mutate root current-position pointer without explicit approval",
+      "run endpoint replay scripts",
+      "start local server",
+      "call external API",
+      "use API-direct",
+      "create registry",
+      "promote Program Alpha",
+      "treat as authority",
+      "real model execution",
+      "authority mutation",
+      "promotion"
+    ],
+    "inputs": {
+      "model_fixture_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0/actual_model_fixture_material_v0.md",
+      "original_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0/actual_user_original_material_v0.md",
+      "space_reading_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0/actual_space_reading_packet_v0.json"
+    },
+    "merge_decisions": [
+      "current-position is mandatory anchor",
+      "space-wide reread packet supplies broad reading lens",
+      "guard matrix supplies boundary labels",
+      "customer response merge doc proves candidate-only merge handling",
+      "model fixture remains NO_FIXTURE_ONLY"
+    ],
+    "merged_directive": "Use real local space materials to validate space reading and merge handling; keep no-call/HOLD; produce timed part checks and negative tests.",
+    "packet_id": "actual_space_mediated_merge_packet_v0",
+    "promotion_status": "HOLD",
+    "source_layer": "review_guard_layer"
+  },
+  "negative_cases": [
+    "FAIL_MISSING_ORIGINAL_REF",
+    "FAIL_MODEL_ONLY_MERGE",
+    "FAIL_AUTHORITY_OR_PROMOTION_DRIFT"
+  ],
+  "purpose": "Merge user original, actual space reading packet, and local model fixture into a guarded directive while preserving boundaries and preventing model-only/authority drift.",
+  "required_fields": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "classification": "candidate_packet_space_mediated_merge_*_no_authority_mutation",
+    "guard_status": "PASS_WITH_HOLD|WATCH|HOLD_STOP_REVIEW|STOP",
+    "hold_boundaries": "list of forbidden actions/boundaries carried forward",
+    "inputs": "dict with original_ref, space_reading_ref, model_fixture_ref",
+    "merge_decisions": "list of decisions linking original/space/model inputs",
+    "merged_directive": "merged action directive",
+    "packet_id": "stable packet id",
+    "promotion_status": "HOLD",
+    "source_layer": "review_guard_layer"
+  },
+  "required_processing_checks": [
+    "has_original_ref",
+    "has_space_reading_ref",
+    "has_model_fixture_ref",
+    "not_model_only",
+    "promotion_hold"
+  ],
+  "shape_id": "vectorfl_space_mediated_merge_packet_shape_candidate_from_actual_test_v0",
+  "timing_source": {
+    "checks": [
+      {
+        "check": "has_original_ref",
+        "pass": true
+      },
+      {
+        "check": "has_space_reading_ref",
+        "pass": true
+      },
+      {
+        "check": "has_model_fixture_ref",
+        "pass": true
+      },
+      {
+        "check": "not_model_only",
+        "pass": true
+      },
+      {
+        "check": "promotion_hold",
+        "pass": true
+      }
+    ],
+    "method": "merge actual original material + actual space reading packet + local model fixture into directive",
+    "part": "P3_space_mediated_merge_actual_materials",
+    "seconds": 0.000973
+  }
+}

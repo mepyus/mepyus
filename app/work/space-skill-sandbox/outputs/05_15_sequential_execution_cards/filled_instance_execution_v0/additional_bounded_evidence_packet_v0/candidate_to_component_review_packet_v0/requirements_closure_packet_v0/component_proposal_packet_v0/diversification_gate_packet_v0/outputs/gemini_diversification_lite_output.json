@@ -1,0 +1,73 @@
+{
+  "observed_inputs": [
+    "DIVERSIFICATION_GATE_PACKET_V0.md",
+    "DIVERSIFICATION_INPUT_MANIFEST_V0.json",
+    "review_inputs/01_PROPOSAL_S8_CLASSIFICATION_RECEIPT_V0.json",
+    "review_inputs/02_PROPOSAL_S8_CLASSIFICATION_REPORT_V0.md",
+    "review_inputs/03_COMPONENT_PROPOSAL_RECEIPT_V0.json",
+    "review_inputs/04_COMPONENT_PROPOSAL_REPORT_V0.md",
+    "review_inputs/05_codex_proposal_recovery_return.md",
+    "review_inputs/06_gemini_proposal_lite_output.json"
+  ],
+  "current_candidate": "bounded_combined_bridge_component_proposal_candidate_v0",
+  "alternative_shapes": [
+    {
+      "shape_id": "SHAPE_MONOLITHIC_BRIDGE",
+      "description": "A single monolithic bounded combined bridge component that encapsulates both permission inheritance logic and raw audit trigger execution.",
+      "pros": "Lower orchestration overhead; simplified evidence mapping.",
+      "cons": "Potential over-coupling of permission and audit concerns; harder to evolve independently."
+    },
+    {
+      "shape_id": "SHAPE_SPLIT_MICRO_COMPONENTS",
+      "description": "Two distinct micro-components: a 'Permission Inheritance Bridge' and a 'Raw Audit Trigger Bridge', each with independent contracts.",
+      "pros": "Strict separation of concerns; independent testing and validation paths.",
+      "cons": "Higher token and file management overhead; requires shared context for audit correlation."
+    },
+    {
+      "shape_id": "SHAPE_POLICY_CONTRACT_WRAPPER",
+      "description": "A policy-first contract layer that wraps existing runners with new requirements without creating a physical 'bridge' component structure.",
+      "pros": "Minimal structural mutation; leverages existing runner authority.",
+      "cons": "May hide the 'bridge' intent; could lead to fragmented policy enforcement across multiple runners."
+    }
+  ],
+  "reject_or_defer_option": {
+    "option": "DEFER_PATH_COUPLING_RISK",
+    "criteria": "Defer componentization if the 'audit registry' requirement cannot be satisfied without creating new unapproved file structures or if authority boundaries remain too coupled.",
+    "trigger": "Audit-registry implementation implies a new registry file outside of RUNLOG.jsonl."
+  },
+  "anti_convergence_checks": [
+    "Is the 'combined' bridge designation masking a lack of modularity in the underlying requirements?",
+    "Are we favoring a monolithic structure solely because it was the first candidate described?",
+    "Does the 'audit registry' requirement force a specific schema that hasn't been policy-gated?"
+  ],
+  "shared_requirements_preserved": [
+    "Permission inheritance must be explicit and testable.",
+    "Raw audit trigger must be explicit and testable.",
+    "Promotion remains false.",
+    "VectorFL authority mutation remains false.",
+    "Registry/schema/workflow integration remains false."
+  ],
+  "discriminating_tests": [
+    "Can the Permission Inheritance logic be validated while the Audit Trigger is disabled?",
+    "Does the Split shape require duplicate boilerplate for boundary enforcement?",
+    "Can the Policy-First shape satisfy the Audit Trigger requirement by extending RUNLOG.jsonl alone?"
+  ],
+  "watch_items": [
+    "Coupling between permission inheritance and audit logic in 'combined' designs.",
+    "Hidden authority mutation in 'audit-registry' implementations.",
+    "Mistaking 'breadth-ready' for 'final-structure-selection'."
+  ],
+  "hold_items": [
+    "promotion",
+    "VectorFL authority mutation",
+    "baseline/workflow/schema/registry/ontology/current-position/output_manifest edits"
+  ],
+  "recommended_classification_one_of_breadth_insufficient_breadth_candidate_ready_diversified_proposal_set_ready_STOP": "diversified_proposal_set_ready",
+  "do_not_promote": "bounded_combined_bridge_component_proposal_candidate_v0",
+  "next_review_questions": [
+    "Which shape provides the lowest coupling for future extensions to the audit trail?",
+    "Can the split-component shape be managed without increasing orchestration complexity beyond acceptable bounds?",
+    "Is the 'bridge' abstraction necessary if a 'policy-first contract' can achieve the same safety results?"
+  ],
+  "completion_signal": "GEMINI_DIVERSIFICATION_LITE_DONE"
+}

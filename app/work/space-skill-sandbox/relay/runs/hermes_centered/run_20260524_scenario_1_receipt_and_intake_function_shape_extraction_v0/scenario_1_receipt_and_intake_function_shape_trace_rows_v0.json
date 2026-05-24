@@ -1,0 +1,43 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "packet_id": "scenario_1_receipt_and_intake_function_shape_trace_rows_v0",
+  "promotion_status": "HOLD",
+  "rows": [
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_original_input_v0.json",
+      "next_action": "validate shape fixture",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/fixture_original_intake_packet_v0.json",
+      "promotion_status": "HOLD",
+      "receipt_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_original_input_v0.json",
+      "reentry_ref": null,
+      "source_artifact": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_original_intake_packet_shape_candidate_v0.json",
+      "source_layer": "input_layer",
+      "surface_label": "original intake shape candidate only",
+      "trace_id": "SHAPE-INTAKE-001",
+      "watch_notes": [
+        "not implementation",
+        "raw original must stay verbatim"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_hermes_execution_receipt_v0.json",
+      "next_action": "validate receipt fixture",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/fixture_receipt_writer_receipt_v0.json",
+      "promotion_status": "HOLD",
+      "receipt_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/fixture_receipt_writer_receipt_v0.json",
+      "reentry_ref": null,
+      "source_artifact": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_receipt_writer_shape_candidate_v0.json",
+      "source_layer": "evidence_layer",
+      "surface_label": "receipt writer shape candidate only",
+      "trace_id": "SHAPE-RECEIPT-001",
+      "watch_notes": [
+        "receipt is evidence only",
+        "not authority writer"
+      ]
+    }
+  ]
+}

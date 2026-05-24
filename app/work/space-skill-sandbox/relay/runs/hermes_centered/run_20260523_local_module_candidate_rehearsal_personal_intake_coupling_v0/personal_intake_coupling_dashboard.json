@@ -1,0 +1,62 @@
+{
+  "actual_cli_fixture_run": "yes",
+  "approval_applied": "no",
+  "authority_database": "no",
+  "candidate_id": "M-CAND-02",
+  "cases": [
+    {
+      "case_id": "PIC-POS-001",
+      "expected": "INTAKE_CAPTURED_WITH_HOLD",
+      "observed": "INTAKE_CAPTURED_WITH_HOLD"
+    },
+    {
+      "case_id": "PIC-NEG-STOP-001",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "PIC-NEG-STOP-002",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "PIC-NEG-STOP-003",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "PIC-NEG-HOLD-001",
+      "expected": "HOLD_STOP_REVIEW",
+      "observed": "HOLD_STOP_REVIEW"
+    }
+  ],
+  "created_at": "2026-05-23 09:04:47 KST",
+  "fixture_db_mutation": "yes",
+  "function_pattern": "Personal Intake",
+  "live_db_intake": "HOLD",
+  "m4_reusable_module": "no",
+  "model_execution": "no",
+  "module_promotion": "no",
+  "personal_intake_min": "app/work/vectorfl_ops_phase_0_5/tools/personal_intake_min.py",
+  "program_alpha_ready": "no",
+  "program_alpha_status": "NOT_READY",
+  "promotion_status": "HOLD",
+  "real_codex_execution": "no",
+  "real_gemini_execution": "no",
+  "router_runner_claim": "no",
+  "schema_mutation": "no",
+  "shared_db_mutation": "no",
+  "snapshot_mutation": "no",
+  "source_chain": "eleven-candidate chain",
+  "status": "LOCAL_NO_MODEL_PERSONAL_INTAKE_COUPLING_REHEARSAL_WITH_HOLD",
+  "summary": {
+    "hold_stop_review": 1,
+    "positive": 1,
+    "problem_count": 0,
+    "stop": 3,
+    "total": 5
+  },
+  "v1_snapshot_creation": "no",
+  "vectorfl_authority_mutation": "no",
+  "write_ui": "no"
+}

@@ -1,0 +1,265 @@
+commit 4601f7c18ab8ec72a500d36927600d05424ae958
+Author: mepyus <mepyus24@naver.com>
+Date:   Sun Apr 19 07:18:01 2026 +0900
+
+    Add integrated engine operating spine workbench updates
+
+diff --git a/app/runtime/vectorfl_integrated_engine_api.py b/app/runtime/vectorfl_integrated_engine_api.py
+index f25f72180..48b433e82 100644
+--- a/app/runtime/vectorfl_integrated_engine_api.py
++++ b/app/runtime/vectorfl_integrated_engine_api.py
+@@ -72,6 +72,7 @@ CLI_SESSION_MARKS = {
+ }
+ LANGUAGE_LOOP_ROOT = "runtime/language_loops"
+ PACKAGE_RUN_EVENT_LEDGER = "runtime/events/integrated_engine_package_run_events.jsonl"
++WORKER_RETURN_SCHEMA_VERSION = "integrated_engine_worker_return_v0"
+ 
+ 
+ def _utc_now() -> str:
+@@ -233,9 +234,37 @@ def _first_useful_block(text: str) -> str:
+     return blocks[0][:1200]
+ 
+ 
+-def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any], *, package_id: str, input_packet_id: str, event_count: int = 0) -> Dict[str, Any]:
+-    result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
+-    artifact_paths = [
++def _list_from_worker_return(value: Any) -> List[str]:
++    if isinstance(value, list):
++        return [str(item).strip() for item in value if str(item).strip()]
++    if isinstance(value, str):
++        return [line.strip("- ").strip() for line in value.splitlines() if line.strip("- ").strip()]
++    return []
++
++
++def _profile_findings_from_context_profiles(context_profiles: List[Dict[str, Any]]) -> List[str]:
++    findings: List[str] = []
++    for profile in context_profiles:
++        if not profile:
++            continue
++        ref = profile.get("ref") or ""
++        kind = profile.get("kind") or ""
++        exists = profile.get("exists")
++        if ref:
++            findings.append(f"source: {ref} / {kind} / exists={exists}")
++        if profile.get("summary"):
++            findings.append(f"summary: {profile.get('summary')}")
++        if profile.get("top_dirs"):
++            findings.append(f"top_dirs: {', '.join(profile.get('top_dirs')[:8])}")
++        if profile.get("top_files"):
++            findings.append(f"top_files: {', '.join(profile.get('top_files')[:8])}")
++        if profile.get("marker_files"):
++            findings.append("marker_files: " + "; ".join(profile.get("marker_files")[:4]))
++    return _unique_list(findings)[:8]
++
++
++def _session_artifact_paths(session: Dict[str, Any]) -> List[str]:
++    return [
+         session.get("stdout_path") or "",
+         session.get("stderr_path") or "",
+         session.get("prompt_path") or "",
+@@ -243,23 +272,77 @@ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any
+         session.get("deposit_candidate_path") or "",
+         session.get("operator_report_path") or "",
+     ]
+-    source_refs = session.get("bounded_context_refs") or []
+-    extracted_paths = _extract_path_refs(result_summary)
+-    findings = _unique_list(_extract_structural_profile_findings(result_summary) + _extract_bullets(result_summary))
+-    if not findings and result_summary:
+-        findings = [line.strip() for line in result_summary.splitlines() if line.strip()][:4]
+-    risks = []
+-    if session.get("dry_run"):
++
++
++def _normalize_worker_return(
++    session: Dict[str, Any],
++    structured_return: Dict[str, Any],
++    raw_text: str,
++    *,
++    context_profiles: Optional[List[Dict[str, Any]]] = None,
++    error_message: str = "",
++) -> Dict[str, Any]:
++    active_package = session.get("active_package") if isinstance(session.get("active_package"), dict) else {}
++    package_id = str(active_package.get("id") or "package_1")
++    existing = structured_return.get("worker_return") if isinstance(structured_return.get("worker_return"), dict) else {}
++    top_level_answer = structured_return.get("answer") or existing.get("answer")
++    profile_findings = _profile_findings_from_context_profiles(context_profiles or [])
++    fallback_findings = _unique_list(_extract_structural_profile_findings(raw_text) + _extract_bullets(raw_text))
++    findings = _list_from_worker_return(existing.get("findings") or structured_return.get("findings")) or profile_findings or fallback_findings
++    answer = str(top_level_answer or "").strip() or _first_useful_block(raw_text)
++    if not answer and findings:
++        answer = "\n".join(findings[:5])[:1200]
++    suggested = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
++    next_hint = str(existing.get("next_continue_hint") or structured_return.get("next_continue_hint") or "").strip()
++    if not next_hint:
++        if suggested == "validation_target":
++            next_hint = "Validate the latest run before using it as package material."
++        elif suggested == "implementation_return":
++            next_hint = "Review implementation output and decide whether a follow-up patch or validation is needed."
++        elif suggested == "deposit_candidate":
++            next_hint = "Review as deposit candidate; do not ingest automatically."
++        elif suggested == "reread_target":
++            next_hint = "Reread the latest answer with its artifact refs and decide the next package-specific question."
++        else:
++            next_hint = "Attach latest run artifacts and ask the next package-specific question."
++    risks = _list_from_worker_return(existing.get("risks_or_limits") or structured_return.get("risks_or_limits"))
++    risks.extend(_list_from_worker_return(structured_return.get("uncertainty_or_failure_notes")))
++    if session.get("dry_run") and "dry-run validates spine/context carryover, not worker reasoning quality" not in risks:
+         risks.append("dry-run validates spine/context carryover, not worker reasoning quality")
++    if error_message:
++        risks.append(error_message)
+     if not findings:
+         risks.append("no reliable findings extracted from return text")
+-    if "reread_target" in result_summary or structured_return.get("suggested_next_use") == "reread_target":
++    if suggested == "reread_target" and "return remains reread-target; not approval or completion" not in risks:
+         risks.append("return remains reread-target; not approval or completion")
+-    open_questions = []
+-    if "not final approval" in result_summary.lower() or "not approval" in result_summary.lower():
++    open_questions = _list_from_worker_return(existing.get("open_questions") or structured_return.get("open_questions"))
++    if ("not final approval" in raw_text.lower() or "not approval" in raw_text.lower()) and not open_questions:
+         open_questions.append("What should be validated before reuse or redeposit?")
+-    if not extracted_paths and not artifact_paths:
+-        open_questions.append("Which concrete artifact should the next turn use?")
++    files_artifacts = _unique_list(
++        _list_from_worker_return(existing.get("files_artifacts") or structured_return.get("files_artifacts"))
++        + _session_artifact_paths(session)
++        + _extract_path_refs(raw_text)
++    )
++    source_refs = _list_from_worker_return(existing.get("source_refs") or structured_return.get("source_refs")) or _list_from_worker_return(session.get("bounded_context_refs"))
++    return {
++        "schema_version": existing.get("schema_version") or WORKER_RETURN_SCHEMA_VERSION,
++        "worker_id": existing.get("worker_id") or session.get("backend_kind") or "codex",
++        "package_id": existing.get("package_id") or package_id,
++        "run_kind": existing.get("run_kind") or session.get("task_type") or "",
++        "answer": answer[:2400],
++        "findings": _unique_list(findings)[:10],
++        "files_artifacts": files_artifacts[:24],
++        "next_continue_hint": next_hint,
++        "open_questions": _unique_list(open_questions)[:8],
++        "risks_or_limits": _unique_list([item for item in risks if item])[:8],
++        "source_refs": _unique_list(source_refs)[:12],
++        "raw_fallback_text": raw_text[:2400],
++    }
++
++
++def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any], *, package_id: str, input_packet_id: str, event_count: int = 0) -> Dict[str, Any]:
++    result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
++    worker_return = _normalize_worker_return(session, structured_return, result_summary)
+     next_hint = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
+     if next_hint == "reread_target":
+         next_hint = "Reread the latest answer with its artifact refs and decide the next package-specific question."
+@@ -270,7 +353,7 @@ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any
+     elif next_hint == "deposit_candidate":
+         next_hint = "Review as deposit candidate; do not ingest automatically."
+     else:
+-        next_hint = "Attach latest run artifacts and ask the next package-specific question."
++        next_hint = worker_return.get("next_continue_hint") or "Attach latest run artifacts and ask the next package-specific question."
+     return {
+         "run_id": session.get("session_id") or "",
+         "package_id": package_id,
+@@ -281,13 +364,14 @@ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any
+         "execution_status": session.get("status") or "",
+         "route_mark": _classify_cli_turn_route(session, structured_return),
+         "result_summary": result_summary[:2400],
+-        "answer": _first_useful_block(result_summary),
+-        "findings": findings[:8],
+-        "files_artifacts": _unique_list([item for item in artifact_paths + extracted_paths if item]),
++        "answer": worker_return["answer"],
++        "findings": worker_return["findings"][:8],
++        "files_artifacts": worker_return["files_artifacts"],
+         "next_continue_hint": next_hint,
+-        "open_questions": open_questions[:6],
+-        "risks_or_limits": risks[:6],
+-        "source_refs": source_refs,
++        "open_questions": worker_return["open_questions"][:6],
++        "risks_or_limits": worker_return["risks_or_limits"][:6],
++        "source_refs": worker_return["source_refs"],
++        "worker_return": worker_return,
+         "return_refs": [session.get("structured_return_path") or "", session.get("deposit_candidate_path") or "", session.get("operator_report_path") or ""],
+         "artifact_paths": [session.get("stdout_path") or "", session.get("stderr_path") or "", session.get("prompt_path") or ""],
+         "event_count": event_count,
+@@ -1453,8 +1537,13 @@ def _cli_session_prompt(session_spec: Dict[str, Any]) -> str:
+         + str(prompt_payload)
+         + "\n\nReturn format:\n"
+         "- result summary\n"
+-        "- important findings / diffs / outputs\n"
+-        "- uncertainty or failure notes\n"
++        "- answer: direct answer or main response body\n"
++        "- findings: key observations as bullets\n"
++        "- files_artifacts: concrete file paths or generated outputs\n"
++        "- next_continue_hint: specific next step for this same package\n"
++        "- open_questions: unresolved blockers\n"
++        "- risks_or_limits: uncertainty, weak spots, dry-run limits, or blocked areas\n"
++        "- source_refs: bounded context refs actually used\n"
+         "- suggested next use: reread target / implementation return / validation target / deposit candidate\n"
+     )
+ 
+@@ -1495,6 +1584,7 @@ class CodexCliAdapter:
+         session_id = session["session_id"]
+         prompt = _cli_session_abs_path(self.repo_root, session_id, "prompt.md").read_text(encoding="utf-8")
+         dry_run = bool(session.get("dry_run"))
++        context_profiles: List[Dict[str, Any]] = []
+         if dry_run:
+             context_profiles = _profile_context_refs(self.repo_root, session.get("bounded_context_refs") or [])
+             profile_lines = []
+@@ -1563,6 +1653,7 @@ class CodexCliAdapter:
+ 
+         _cli_session_abs_path(self.repo_root, session_id, "stdout.log").write_text(stdout, encoding="utf-8")
+         _cli_session_abs_path(self.repo_root, session_id, "stderr.log").write_text(stderr, encoding="utf-8")
++        raw_result_summary = _tail_text(stdout, 1800) or error_message or _tail_text(stderr, 1800)
+         structured_return = {
+             "schema_version": "integrated_engine_cli_structured_return_v0",
+             "source_session_id": session_id,
+@@ -1570,12 +1661,19 @@ class CodexCliAdapter:
+             "task_type": session.get("task_type"),
+             "status": status,
+             "exit_code": exit_code,
+-            "result_summary": _tail_text(stdout, 1800) or error_message or _tail_text(stderr, 1800),
++            "result_summary": raw_result_summary,
+             "important_outputs": [],
+             "uncertainty_or_failure_notes": [error_message] if error_message else [],
+             "suggested_next_use": _infer_cli_suggested_next_use(stdout, status),
+             "created_at": _utc_now(),
+         }
++        structured_return["worker_return"] = _normalize_worker_return(
++            session,
++            structured_return,
++            raw_result_summary,
++            context_profiles=context_profiles,
++            error_message=error_message,
++        )
+         _cli_session_abs_path(self.repo_root, session_id, "structured_return.json").write_text(
+             json.dumps(structured_return, ensure_ascii=False, indent=2) + "\n",
+             encoding="utf-8",
+@@ -2092,6 +2190,7 @@ def _build_cli_package_notebooks(repo_root: Path, index: Dict[str, Any], events:
+             "open_questions": enriched["open_questions"],
+             "risks_or_limits": enriched["risks_or_limits"],
+             "source_refs": enriched["source_refs"],
++            "worker_return": enriched["worker_return"],
+             "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
+             "route_label": _classify_cli_turn_route(session, structured_return),
+             "started_at": session.get("started_at") or "",
+diff --git a/app/ui/integrated_engine/CliHostControlPanel.tsx b/app/ui/integrated_engine/CliHostControlPanel.tsx
+index 407c18b72..1b37cbec6 100644
+--- a/app/ui/integrated_engine/CliHostControlPanel.tsx
++++ b/app/ui/integrated_engine/CliHostControlPanel.tsx
+@@ -91,6 +91,20 @@ type PackageNotebookRun = {
+   open_questions?: string[];
+   risks_or_limits?: string[];
+   source_refs?: string[];
++  worker_return?: {
++    schema_version?: string;
++    worker_id?: string;
++    package_id?: string;
++    run_kind?: string;
++    answer?: string;
++    findings?: string[];
++    files_artifacts?: string[];
++    next_continue_hint?: string;
++    open_questions?: string[];
++    risks_or_limits?: string[];
++    source_refs?: string[];
++    raw_fallback_text?: string;
++  };
+   suggested_next_use?: string;
+   route_label?: string;
+   started_at?: string;

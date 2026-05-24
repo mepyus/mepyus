@@ -1,0 +1,174 @@
+{
+  "blueprint_id": "SPACE_RELAYERING_BLUEPRINT_FROM_PHASE1_PHASE2_ASSETS_V0",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "codex_gemini_early_attach_candidates": [
+    {
+      "candidate": "CG1_SPACE_ASSET_CLUSTERING_BEFORE_SOURCE_SELECTION",
+      "codex_role": "cluster existing assets by reentry/usefulness/duplicate pressure",
+      "gemini_role": "name layers and detect semantic flattening",
+      "stage": "between S1 and S2",
+      "why_earlier_than_before": "S4/S5 only after Hermes output may be too late for space design."
+    },
+    {
+      "candidate": "CG2_FOLDER_TREE_PRESSURE_SCAN_AFTER_S2",
+      "codex_role": "turn selected/rejected refs into asset organization pressure",
+      "gemini_role": "judge whether tree reflects whole-flow layers",
+      "stage": "after S2 source/rejected refs",
+      "why_earlier_than_before": "S2 already exposes asset sprawl and archaeology risk."
+    },
+    {
+      "candidate": "CG3_SPACE_REENTRY_SURFACE_DESIGN_AFTER_S3",
+      "codex_role": "ensure output can be reinserted into space with handles",
+      "gemini_role": "ensure output carries structural layer delta",
+      "stage": "after S3 merge trace",
+      "why_earlier_than_before": "prevents status-card-only artifacts from accumulating."
+    }
+  ],
+  "next_test_candidate": "SPACE_RELAYERING_BLUEPRINT_ASSET_SAMPLE_TEST_WITH_CODEX_GEMINI_OPTIONAL_BUDGET_GATE_V0",
+  "packet_id": "03_space_relayering_blueprint_seed_v0",
+  "phase1_big_frame_layers": [
+    {
+      "attached_functions": [
+        "S1 intake",
+        "R2 next-lane lookup"
+      ],
+      "layer": "L0_USER_ORIGINAL_AND_CONTINUATION",
+      "purpose": "raw user request/original input preservation; continuation disambiguation"
+    },
+    {
+      "attached_functions": [
+        "S2 source selection",
+        "R3 rejected-ref log"
+      ],
+      "codex_attach": "early: asset archaeology, reentry anchors, spatial delta review",
+      "gemini_attach": "early: layer questions, over-internalization watch",
+      "layer": "L1_SPACE_READING_AND_ASSET_SELECTION",
+      "purpose": "select space refs, rejected refs, changed_judgment, archaeology control"
+    },
+    {
+      "attached_functions": [
+        "S3 merge trace",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L2_MODEL_MERGE_AND_EXECUTION",
+      "purpose": "Hermes merges original + space + model reasoning into concrete output"
+    },
+    {
+      "attached_functions": [
+        "S4 Codex evaluation",
+        "S5 Gemini layer judgment",
+        "R4 unique_delta metric"
+      ],
+      "codex_attach": "spatial composition/reentry surface review",
+      "gemini_attach": "structural/layer pressure and folder-tree implications",
+      "layer": "L3_CROSS_AGENT_SPACE_EVALUATION",
+      "purpose": "Codex/Gemini evaluate the produced output against space and layer structure"
+    },
+    {
+      "attached_functions": [
+        "S6 operator surface",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L4_OPERATOR_REENTRY_SURFACE",
+      "purpose": "mind-sized status, HOLD receipt, evidence handles"
+    },
+    {
+      "attached_functions": [
+        "S7 budget gate",
+        "authority separation"
+      ],
+      "layer": "L5_BUDGET_AND_GOVERNANCE",
+      "purpose": "fast/heavy gate, post-review skip, HOLD/approval separation"
+    },
+    {
+      "attached_functions": [
+        "new blueprint lane",
+        "space relayering",
+        "asset index normalization"
+      ],
+      "layer": "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT",
+      "purpose": "future folder-tree/spec/program setup based on asset roles, not current artifact sprawl"
+    }
+  ],
+  "phase2_function_connection_map": [
+    {
+      "connects_to": [
+        "L0",
+        "L1",
+        "L5"
+      ],
+      "function": "S1/R2 intake-next lookup",
+      "meaning": "continuation creates a need to read space before intent classification"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L6"
+      ],
+      "function": "S2/R3 source selection/rejected refs",
+      "meaning": "selection/rejection is the first real folder-tree and asset-index design pressure"
+    },
+    {
+      "connects_to": [
+        "L2",
+        "L4",
+        "L6"
+      ],
+      "function": "S3/R1 merge trace/minimal delta",
+      "meaning": "outputs must carry enough structure to be refiled/reentered later"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L3",
+        "L6"
+      ],
+      "function": "S4/S5/R4 role handoff",
+      "meaning": "Codex/Gemini should help design space organization, not only review finished cards"
+    },
+    {
+      "connects_to": [
+        "L4",
+        "L6"
+      ],
+      "function": "S6 operator surface",
+      "meaning": "status cards become navigation surfaces into the future space tree"
+    },
+    {
+      "connects_to": [
+        "L5",
+        "L6"
+      ],
+      "function": "S7 budget gate",
+      "meaning": "space operations decide whether to stay local or invoke Codex/Gemini"
+    }
+  ],
+  "proposed_future_space_tree_candidate": [
+    "00_user_originals_and_continuations/",
+    "10_phase1_whole_flow_rehearsals/",
+    "20_phase2_function_tests/S1_intake/",
+    "20_phase2_function_tests/S2_space_selection/",
+    "20_phase2_function_tests/S3_merge_trace/",
+    "20_phase2_function_tests/S4_codex_space_review/",
+    "20_phase2_function_tests/S5_gemini_layer_review/",
+    "20_phase2_function_tests/S6_operator_reentry/",
+    "20_phase2_function_tests/S7_budget_gate/",
+    "30_phase3_revision_groups/R1_minimal_space_delta/",
+    "30_phase3_revision_groups/R2_continuation_next_lane/",
+    "30_phase3_revision_groups/R3_rejected_ref_log/",
+    "30_phase3_revision_groups/R4_role_unique_delta/",
+    "30_phase3_revision_groups/R5_validator_wording_watch/",
+    "40_agent_space_roles/codex_space_exploration/",
+    "40_agent_space_roles/gemini_layer_design/",
+    "50_programization_candidates/"
+  ],
+  "purpose": "Set up a future folder-tree/spec organization that can hold the 1차 whole-flow process and 2차 function findings before programization.",
+  "status": "BLUEPRINT_SEED_HOLD_NO_TREE_MUTATION"
+}

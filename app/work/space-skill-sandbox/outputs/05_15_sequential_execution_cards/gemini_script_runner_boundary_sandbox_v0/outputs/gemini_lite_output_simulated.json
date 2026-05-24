@@ -1,0 +1,77 @@
+{
+  "format": "GEMINI_BULK_REVIEW_LITE_SIMULATED",
+  "observed_files": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/gemini_script_runner_boundary_sandbox_v0/inputs/input_a.md",
+      "chars": 210,
+      "lines": 6
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/gemini_script_runner_boundary_sandbox_v0/inputs/input_b.md",
+      "chars": 259,
+      "lines": 6
+    }
+  ],
+  "repeated_patterns": [
+    {
+      "pattern": "hermes",
+      "count": 1
+    },
+    {
+      "pattern": "codex",
+      "count": 2
+    },
+    {
+      "pattern": "gemini",
+      "count": 1
+    },
+    {
+      "pattern": "receipt",
+      "count": 1
+    },
+    {
+      "pattern": "authority",
+      "count": 2
+    },
+    {
+      "pattern": "promotion",
+      "count": 1
+    },
+    {
+      "pattern": "runner",
+      "count": 2
+    },
+    {
+      "pattern": "lite output",
+      "count": 2
+    }
+  ],
+  "candidate_items": [
+    "script lens can reduce Codex runtime burden by producing bounded lite output",
+    "raw/lite output split supports Codex reading lite by default",
+    "runner ownership must remain tool/lens executor, not judge"
+  ],
+  "uncertainties": [
+    "real Gemini CLI/API latency and output stability not tested",
+    "model API transport boundary remains design-only in this simulation"
+  ],
+  "possible_risks": [
+    "runner output being treated as truth",
+    "script runner becoming automation bridge",
+    "Codex recovery check being skipped"
+  ],
+  "do_not_promote": [
+    "do not promote this simulation to component/workflow/schema/registry/ontology/baseline",
+    "do not treat simulated runner success as Gemini runtime validation"
+  ],
+  "questions_for_codex": [
+    "Is lite output sufficient for recovery check without raw reread?",
+    "What exact fields should CODEX_WORKER_REQUEST_V0 require?"
+  ],
+  "raw_limits": [
+    "local simulation only",
+    "no real Gemini execution",
+    "no model API transport",
+    "no live web/source lookup"
+  ]
+}

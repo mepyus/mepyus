@@ -1,0 +1,16 @@
+diff --git a/app/payment_webhook.py b/app/payment_webhook.py
+index 111aaaa..222bbbb 100644
+--- a/app/payment_webhook.py
++++ b/app/payment_webhook.py
+@@ -1,7 +1,15 @@
+ def handle_webhook(payload):
+-    return {"ok": True}
++    print("DEBUG payload=", payload)
++    stripe_secret = "sk_live_realish_fixture_only"
++    try:
++        process_payment(payload)
++    except:
++        pass
++    return {"ok": True}
++
++# FIXME: add signature verification before production

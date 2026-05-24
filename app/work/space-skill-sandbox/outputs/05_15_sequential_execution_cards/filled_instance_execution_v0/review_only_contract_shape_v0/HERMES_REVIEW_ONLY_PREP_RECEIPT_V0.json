@@ -1,0 +1,31 @@
+{
+  "verdict": "FILLED_INSTANCE_EXECUTION_V0_REVIEW_ONLY_PACKET_PREPARED",
+  "status": "review_only_prompt_prepared",
+  "target_packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+  "review_prompt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/review_only_contract_shape_v0/CODEX_CONTRACT_SHAPE_REVIEW_ONLY_PROMPT_V0.md",
+  "real_gemini_execution": false,
+  "real_codex_recovery_execution": false,
+  "hermes_dispatch": false,
+  "model_api_transport_for_bridge_execution": false,
+  "live_web_lookup": false,
+  "external_connector": false,
+  "vectorfl_authority_mutation": false,
+  "promotion": false,
+  "files_modified": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/review_only_contract_shape_v0/CODEX_CONTRACT_SHAPE_REVIEW_ONLY_PROMPT_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/review_only_contract_shape_v0/HERMES_REVIEW_ONLY_PREP_RECEIPT_V0.json"
+  ],
+  "watch": [
+    "review-only prompt mistaken as Codex execution approval",
+    "contract shape review mistaken as real execution",
+    "proposed commands mistaken as approved commands"
+  ],
+  "hold": [
+    "Gemini execution",
+    "Codex recovery execution",
+    "Hermes dispatch",
+    "promotion",
+    "VectorFL authority mutation"
+  ],
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

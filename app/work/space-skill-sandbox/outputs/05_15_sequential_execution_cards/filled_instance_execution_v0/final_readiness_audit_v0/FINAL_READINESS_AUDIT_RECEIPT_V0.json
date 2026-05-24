@@ -1,0 +1,426 @@
+{
+  "verdict": "FINAL_READINESS_AUDIT_PASS_S4_APPROVAL_GATE_WAITING",
+  "status": "final_readiness_audit_complete",
+  "failed_count": 0,
+  "passed_count": 61,
+  "checks": [
+    {
+      "check": "exists:packet",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md"
+    },
+    {
+      "check": "exists:gemini_prompt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/GEMINI_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "exists:codex_prompt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "exists:receipt_contract",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_CONTRACT_V0.json"
+    },
+    {
+      "check": "exists:report_contract",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_REPORT_CONTRACT_V0.md"
+    },
+    {
+      "check": "exists:runner",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "exists:static_validator",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_execution_contract_v0.py"
+    },
+    {
+      "check": "exists:materializer",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/materialize_gemini_lite_v0.py"
+    },
+    {
+      "check": "exists:codex_return_validator",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_codex_recovery_return_v0.py"
+    },
+    {
+      "check": "exists:closeout_writer",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/write_hermes_execution_closeout_v0.py"
+    },
+    {
+      "check": "exists:state_json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/space_model_boundary_v0/CURRENT_EXECUTION_LANE_STATE_V0.json"
+    },
+    {
+      "check": "exists:s8_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s8_vectorfl_gate_rehearsal_v0/outputs/S8_VECTORFL_GATE_REHEARSAL_RECEIPT_V0.json"
+    },
+    {
+      "check": "exists:route_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s0_s8_route_map_v0/S0_S8_ROUTE_MAP_RECEIPT_V0.json"
+    },
+    {
+      "check": "exists:positive_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/no_model_rehearsal_v0/outputs/synthetic_hermes_execution_receipt_v0.json"
+    },
+    {
+      "check": "exists:negative_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/negative_rehearsal_v0/NEGATIVE_REHEARSAL_RECEIPT_V0.json"
+    },
+    {
+      "check": "exists:operator_handoff",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/operator_handoff_bundle_v0/OPERATOR_HANDOFF_MANIFEST_V0.json"
+    },
+    {
+      "check": "exists:external_steward",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/external_steward_handoff_v0/EXTERNAL_STEWARD_REVIEW_MANIFEST_V0.json"
+    },
+    {
+      "check": "text:packet:EXECUTION_APPROVAL_GRANTED_FOR_THIS_PACKET: no",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:packet:APPROVED_PROMOTION: no",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:packet:outputs/gemini_raw_output.txt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:packet:outputs/gemini_lite_output.json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:codex_prompt:FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:codex_prompt:outputs/gemini_lite_output.json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:codex_prompt:outputs/gemini_raw_output.txt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:codex_prompt:HERMES_EXECUTION_RECEIPT_CONTRACT_V0.json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md"
+    },
+    {
+      "check": "text:runner:require_explicit_approval",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "text:runner:validate-static",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "text:runner:run-gemini-after-approval",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "text:runner:run-codex-after-approval",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "text:runner:write-closeout-after-approval",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+    },
+    {
+      "check": "real_output_absent:gemini_raw_output.txt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_raw_output.txt"
+    },
+    {
+      "check": "real_output_absent:gemini_lite_output.json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_lite_output.json"
+    },
+    {
+      "check": "real_output_absent:codex_combined_bridge_recovery_return.md",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/codex_combined_bridge_recovery_return.md"
+    },
+    {
+      "check": "real_output_absent:HERMES_EXECUTION_RECEIPT_V0.json",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_V0.json"
+    },
+    {
+      "check": "real_output_absent:HERMES_EXECUTION_REPORT_V0.md",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_REPORT_V0.md"
+    },
+    {
+      "check": "state_is_S4",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/space_model_boundary_v0/CURRENT_EXECUTION_LANE_STATE_V0.json"
+    },
+    {
+      "check": "json_parse:s8_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s8_vectorfl_gate_rehearsal_v0/outputs/S8_VECTORFL_GATE_REHEARSAL_RECEIPT_V0.json"
+    },
+    {
+      "check": "flag_false:s8_receipt:real_gemini_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:s8_receipt:real_codex_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:s8_receipt:promotion_performed",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:s8_receipt:vectorfl_authority_modified",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "json_parse:route_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s0_s8_route_map_v0/S0_S8_ROUTE_MAP_RECEIPT_V0.json"
+    },
+    {
+      "check": "flag_false:route_receipt:promotion",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:route_receipt:vectorfl_authority_mutation",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "json_parse:positive_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/no_model_rehearsal_v0/outputs/synthetic_hermes_execution_receipt_v0.json"
+    },
+    {
+      "check": "flag_false:positive_receipt:real_gemini_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:positive_receipt:real_codex_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:positive_receipt:promotion_performed",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:positive_receipt:vectorfl_authority_modified",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "json_parse:negative_receipt",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/negative_rehearsal_v0/NEGATIVE_REHEARSAL_RECEIPT_V0.json"
+    },
+    {
+      "check": "flag_false:negative_receipt:real_gemini_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:negative_receipt:real_codex_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:negative_receipt:promotion_performed",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:negative_receipt:vectorfl_authority_modified",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "json_parse:operator_handoff",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/operator_handoff_bundle_v0/OPERATOR_HANDOFF_MANIFEST_V0.json"
+    },
+    {
+      "check": "flag_false:operator_handoff:promotion",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "json_parse:external_steward",
+      "ok": true,
+      "detail": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/external_steward_handoff_v0/EXTERNAL_STEWARD_REVIEW_MANIFEST_V0.json"
+    },
+    {
+      "check": "flag_false:external_steward:real_gemini_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:external_steward:real_codex_execution",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:external_steward:promotion",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "check": "flag_false:external_steward:vectorfl_authority_mutation",
+      "ok": true,
+      "detail": "False"
+    }
+  ],
+  "inventory": [
+    {
+      "key": "packet",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+      "sha256": "e34349e8de751232b8abacad17600e62b3faaf7bb734bf745d906189df9aa280",
+      "bytes": 11568
+    },
+    {
+      "key": "gemini_prompt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/GEMINI_PROMPT_EXECUTION_V0.md",
+      "sha256": "90f83a9b3ac612f77cb6180d0115d459ac2346d811bd04a3f648a5087767a560",
+      "bytes": 1930
+    },
+    {
+      "key": "codex_prompt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md",
+      "sha256": "a2d4b2eb35f0986fd9b4effdbd17c106f6ffe4a137d3ab7ea5cb5c1b14cac14d",
+      "bytes": 2627
+    },
+    {
+      "key": "receipt_contract",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_CONTRACT_V0.json",
+      "sha256": "da7dda12b66120f0a05d0277b8694e04d154281d1d84f797ddb56d802c6ca168",
+      "bytes": 5231
+    },
+    {
+      "key": "report_contract",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_REPORT_CONTRACT_V0.md",
+      "sha256": "38d8b550b22494d9d1bb10b6a6c21d320b14617226e90c828f4445b32b0dbf13",
+      "bytes": 2652
+    },
+    {
+      "key": "runner",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh",
+      "sha256": "d19f36ae31451412b33e9b236a76594a160de8bbb265f8a8a9a0a6fc16d3e747",
+      "bytes": 2754
+    },
+    {
+      "key": "static_validator",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_execution_contract_v0.py",
+      "sha256": "6281bb87202e8adda68b16f196a76dc106ff568642c0cd67444973851cfd213a",
+      "bytes": 3022
+    },
+    {
+      "key": "materializer",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/materialize_gemini_lite_v0.py",
+      "sha256": "205748173b895a8300580a64f49dc98377e82e73123803295d5007d933c2cefa",
+      "bytes": 2424
+    },
+    {
+      "key": "codex_return_validator",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_codex_recovery_return_v0.py",
+      "sha256": "f2a573c4032bfd42428817d07207f8e5f63b4683a1a2488a1640ae8d572e5c4b",
+      "bytes": 1292
+    },
+    {
+      "key": "closeout_writer",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/write_hermes_execution_closeout_v0.py",
+      "sha256": "98b2985972c0cfe36b04d91ec015361db9477f0272217ddb368429541a0238f2",
+      "bytes": 3263
+    },
+    {
+      "key": "state_json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/space_model_boundary_v0/CURRENT_EXECUTION_LANE_STATE_V0.json",
+      "sha256": "019d3e300591010966544d4dba500e0bd7b94edb440882793f8f1c349e89cbb3",
+      "bytes": 938
+    },
+    {
+      "key": "s8_receipt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s8_vectorfl_gate_rehearsal_v0/outputs/S8_VECTORFL_GATE_REHEARSAL_RECEIPT_V0.json",
+      "sha256": "2fe4df6beba9c5c30fb7b3645132ace416cffb4f9496b6278f2f57b7586efafe",
+      "bytes": 1321
+    },
+    {
+      "key": "route_receipt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s0_s8_route_map_v0/S0_S8_ROUTE_MAP_RECEIPT_V0.json",
+      "sha256": "b1fe449f0005c9af060ee87466a4bfcb1942f91b1eda654538a321c552a1009f",
+      "bytes": 1988
+    },
+    {
+      "key": "positive_receipt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/no_model_rehearsal_v0/outputs/synthetic_hermes_execution_receipt_v0.json",
+      "sha256": "cc4fcf4b8be7332351bc9f321361dd62cfb1b4ba8bd7873cd4106d183f585c12",
+      "bytes": 1284
+    },
+    {
+      "key": "negative_receipt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/negative_rehearsal_v0/NEGATIVE_REHEARSAL_RECEIPT_V0.json",
+      "sha256": "ceaff0713cfae4caad492b075ba094b44a914335d106d53c8202b8684ced8922",
+      "bytes": 1183
+    },
+    {
+      "key": "operator_handoff",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/operator_handoff_bundle_v0/OPERATOR_HANDOFF_MANIFEST_V0.json",
+      "sha256": "98f519a8829149c9536302eb18d66d825f0a802a33e0eac075be8b4396f2c471",
+      "bytes": 8870
+    },
+    {
+      "key": "external_steward",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/external_steward_handoff_v0/EXTERNAL_STEWARD_REVIEW_MANIFEST_V0.json",
+      "sha256": "b96ec2381a9b277a445bd0617d72cff1fbf3fb27bcca026f087f5b42f53ecec1",
+      "bytes": 3832
+    }
+  ],
+  "real_lane_active_state": "S4_APPROVAL_GATE_WAITING",
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "hermes_dispatch": false,
+  "model_api_transport_for_bridge_execution": false,
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "next_smallest_action": "prepare approval-change micro-patch packet but do not apply it",
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

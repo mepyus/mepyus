@@ -1,0 +1,76 @@
+{
+  "active_hits": [],
+  "asset_index_items": 12,
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "script_only_no_live_agent",
+      "pass": true
+    },
+    {
+      "check": "draft_files_exist_and_hashed",
+      "pass": true
+    },
+    {
+      "check": "codex_minimum_lte_7",
+      "pass": true
+    },
+    {
+      "check": "gemini_minimum_lte_5",
+      "pass": true
+    },
+    {
+      "check": "readability_pass",
+      "pass": true
+    },
+    {
+      "check": "asset_index_has_12_items",
+      "pass": true
+    },
+    {
+      "check": "schema_codex_gemini_present",
+      "pass": true
+    },
+    {
+      "check": "codex_instruction_has_boundaries",
+      "pass": true
+    },
+    {
+      "check": "codex_instruction_has_read_order",
+      "pass": true
+    },
+    {
+      "check": "codex_instruction_has_packet_fields",
+      "pass": true
+    },
+    {
+      "check": "gemini_instruction_present",
+      "pass": true
+    },
+    {
+      "check": "no_mutation_boundary",
+      "pass": true
+    },
+    {
+      "check": "next_optional_codex_or_hold",
+      "pass": true
+    },
+    {
+      "check": "forbidden_endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 15,
+  "codex_input_minimum_count": 6,
+  "elapsed_seconds": 0.0017193109999999977,
+  "folder_tree_mutation": "NO",
+  "gemini_input_minimum_count": 4,
+  "next_safe_lane": "OPTIONAL_BOUNDED_CODEX_SPACE_STEWARD_DRY_RUN_OR_HOLD_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_SPACE_MATURATION_HANDOFF_FILES_VALIDATION_WITH_CODEX_INSTRUCTIONS_HOLD"
+}

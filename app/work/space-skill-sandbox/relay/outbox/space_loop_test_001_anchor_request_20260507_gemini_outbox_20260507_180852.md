@@ -1,0 +1,55 @@
+# Gemini Run Result
+
+- packet: app/work/space-skill-sandbox/relay/prompts/gemini_space_aware_external_loop_test_001_anchor_request_20260507_v0.md
+- run_id: space_loop_test_001_anchor_request_20260507
+- timestamp: 20260507_180852
+- dry_run: false
+- smoke_text: false
+- output_format: text
+- timeout_seconds: 60
+- raw_result: app/work/space-skill-sandbox/outputs/gemini_raw_results/space_loop_test_001_anchor_request_20260507_gemini_raw_20260507_180852.txt
+- stderr_result: app/work/space-skill-sandbox/outputs/gemini_raw_results/space_loop_test_001_anchor_request_20260507_gemini_stderr_20260507_180852.log
+
+## Result
+
+
+## Invocation Status
+
+- gemini_exit_code: 0
+- likely_state: no_known_issue
+- stderr_nonempty: true
+
+```text
+EXTERNAL_TOOL_INTERPRETATION
+```
+
+- **User Purpose Understanding:** The user intends to establish a grounded connection between external execution tools (Hermes, OmX, OpenClaw) and the VectorFL space. The goal is to design a "minimal operating loop" where execution is driven by space-memory references and results are recovered as structured `MOVEMENT_RECORD` assets.
+- **Design Expansion vs. Operating-Loop Entry:** This task is a **design-phase operating-loop entry**. While it involves architectural design, it is being executed as a live test of the "Space-Aware" protocol itself. It serves as a prototype for how external tools should handshake with the VectorFL anchor stack.
+- **Pre-Anchor Constraints:** I must not propose a specific technical implementation, select a default workflow, or draft a step-by-step execution plan before grounding the task in the active Space Anchors. Specifically, I must avoid "model-default" task decomposition until a `PLAN_BASIS` is established.
+
+```text
+ANCHOR_REQUEST
+```
+
+- **Needed Material Families:**
+    - **Stable Operating Anchors:** Specifically `docs/specs/stable_space_operating_anchor_v0.md` to define the baseline movement rules.
+    - **Position Maps:** `docs/indexes/plan_from_space_position_map_seed_v0.md` to identify the correct PVs for this test.
+    - **Line Asset Maps:** `docs/indexes/plan_from_space_line_asset_map_v0.md` to understand the lineage of "External Tool Boundary" or "Session Convergence Prevention".
+- **Needed Route / PV / LACL Signals:**
+    - **Position Values:** `PV_PLAN_BASIS_GATE` (grounding), `PV_BROAD_BOUNDED_PACKAGE` (sizing), and `PV_RETURN_TO_SPACE_CLOSEOUT` (recovery).
+    - **LACL Signals:** 
+        - **Line:** `Plan from Space / External Tool Loop Design`
+        - **Axis:** `Model-Default Planning vs. Space-Grounded Planning`
+        - **Camera:** `External Tool Execution Carrier`
+        - **Lens:** `Operating Loop Integrity`
+- **Expected Active Surfaces:** I expect Codex to provide a **Session Space Anchor** that locks these signals and points to the specific candidate records for this test.
+- **Evidence / Return Shape:** The output must be compatible with the `docs/specs/movement_record_template_v0.md` structure, ensuring "Return-to-Space Value" is prioritized over raw tool logs.
+- **Unsafe Inferences:** Without anchors, it is unsafe to infer the "Authority State" of the resulting design (whether it is a candidate or a baseline) or the specific "Handshake Protocol" between the external tool and the internal VectorFL event/log system.
+
+```text
+STOP_BEFORE_EXECUTION
+```
+
+- **Confirmation:** I am stopping here. I will not proceed to the execution plan or design drafting.
+- **Next Step Expectation:** I am waiting for Codex to provide an **Anchor Packet** (specifically a Session Space Anchor and any necessary Line Asset Map updates) to authorize the transition to the `PLAN_BASIS_GATE`.
+```

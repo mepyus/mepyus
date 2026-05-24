@@ -1,0 +1,10 @@
+diff --git a/app/logging.py b/app/logging.py
+index ccccccc..ddddddd 100644
+--- a/app/logging.py
++++ b/app/logging.py
+@@ -1,6 +1,9 @@
+ def log_export_attempt(logger, export_id, user_id):
+-    logger.info("export started")
++    logger.info("export started", extra={"export_id": export_id, "user_id": user_id})
++    # TODO: replace user_id with stable audit-safe identifier after privacy review
++    return True

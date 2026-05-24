@@ -1,0 +1,121 @@
+{
+  "cross_link_rule": "Each asset has one primary_layer and zero-or-more secondary_links. Physical folder move is not allowed in this draft.",
+  "function_links": [
+    {
+      "connects_to": [
+        "L0",
+        "L1",
+        "L5"
+      ],
+      "function": "S1/R2 intake-next lookup",
+      "meaning": "continuation creates a need to read space before intent classification"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L6"
+      ],
+      "function": "S2/R3 source selection/rejected refs",
+      "meaning": "selection/rejection is the first real folder-tree and asset-index design pressure"
+    },
+    {
+      "connects_to": [
+        "L2",
+        "L4",
+        "L6"
+      ],
+      "function": "S3/R1 merge trace/minimal delta",
+      "meaning": "outputs must carry enough structure to be refiled/reentered later"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L3",
+        "L6"
+      ],
+      "function": "S4/S5/R4 role handoff",
+      "meaning": "Codex/Gemini should help design space organization, not only review finished cards"
+    },
+    {
+      "connects_to": [
+        "L4",
+        "L6"
+      ],
+      "function": "S6 operator surface",
+      "meaning": "status cards become navigation surfaces into the future space tree"
+    },
+    {
+      "connects_to": [
+        "L5",
+        "L6"
+      ],
+      "function": "S7 budget gate",
+      "meaning": "space operations decide whether to stay local or invoke Codex/Gemini"
+    }
+  ],
+  "layers": [
+    {
+      "attached_functions": [
+        "S1 intake",
+        "R2 next-lane lookup"
+      ],
+      "layer": "L0_USER_ORIGINAL_AND_CONTINUATION",
+      "purpose": "raw user request/original input preservation; continuation disambiguation"
+    },
+    {
+      "attached_functions": [
+        "S2 source selection",
+        "R3 rejected-ref log"
+      ],
+      "codex_attach": "early: asset archaeology, reentry anchors, spatial delta review",
+      "gemini_attach": "early: layer questions, over-internalization watch",
+      "layer": "L1_SPACE_READING_AND_ASSET_SELECTION",
+      "purpose": "select space refs, rejected refs, changed_judgment, archaeology control"
+    },
+    {
+      "attached_functions": [
+        "S3 merge trace",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L2_MODEL_MERGE_AND_EXECUTION",
+      "purpose": "Hermes merges original + space + model reasoning into concrete output"
+    },
+    {
+      "attached_functions": [
+        "S4 Codex evaluation",
+        "S5 Gemini layer judgment",
+        "R4 unique_delta metric"
+      ],
+      "codex_attach": "spatial composition/reentry surface review",
+      "gemini_attach": "structural/layer pressure and folder-tree implications",
+      "layer": "L3_CROSS_AGENT_SPACE_EVALUATION",
+      "purpose": "Codex/Gemini evaluate the produced output against space and layer structure"
+    },
+    {
+      "attached_functions": [
+        "S6 operator surface",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L4_OPERATOR_REENTRY_SURFACE",
+      "purpose": "mind-sized status, HOLD receipt, evidence handles"
+    },
+    {
+      "attached_functions": [
+        "S7 budget gate",
+        "authority separation"
+      ],
+      "layer": "L5_BUDGET_AND_GOVERNANCE",
+      "purpose": "fast/heavy gate, post-review skip, HOLD/approval separation"
+    },
+    {
+      "attached_functions": [
+        "new blueprint lane",
+        "space relayering",
+        "asset index normalization"
+      ],
+      "layer": "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT",
+      "purpose": "future folder-tree/spec/program setup based on asset roles, not current artifact sprawl"
+    }
+  ],
+  "map_id": "VECTORFL_SPACE_LAYER_MAP_DRAFT_20260524_V0"
+}

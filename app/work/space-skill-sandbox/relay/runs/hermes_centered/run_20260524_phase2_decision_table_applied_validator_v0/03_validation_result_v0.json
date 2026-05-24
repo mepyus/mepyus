@@ -1,0 +1,54 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "applied_result_pass",
+      "pass": true
+    },
+    {
+      "check": "priority_order_exact",
+      "observed": [
+        "FAIL_AUTHORITY_OVERPROMOTION",
+        "FAIL_OPERATOR_OVERLOAD",
+        "FAIL_HEAVY_ESCALATION_MISSING",
+        "FAIL_MODEL_ONLY_DRIFT",
+        "FAIL_NO_SPACE_REFERENCE",
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ],
+      "pass": true
+    },
+    {
+      "check": "six_cases_blocked",
+      "pass": true
+    },
+    {
+      "check": "authority_not_masked",
+      "pass": true
+    },
+    {
+      "check": "operator_not_masked",
+      "pass": true
+    },
+    {
+      "check": "conflict_not_masked",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0010449880000000002,
+  "promotion_status": "HOLD",
+  "verdict": "PASS_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_META_WITH_HOLD"
+}

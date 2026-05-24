@@ -1,0 +1,39 @@
+{
+  "request_id": "CODEX_AUTHORED_GEMINI_SCRIPT_LENS_SANDBOX_REQUEST_V0",
+  "purpose": "Simulate whether a Codex-authored Gemini request can be executed by a bounded script runner while Codex remains recovery judge and Hermes remains workbench.",
+  "owner": "Codex-space-steward-simulated",
+  "runner": "Hermes-local-script-runner-simulated",
+  "lens": "Gemini-script-lens-simulated",
+  "recovery_by": "Codex-required-after-run",
+  "approval_by": "User-required-for-real-run",
+  "input_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/gemini_script_runner_boundary_sandbox_v0/inputs/input_a.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/gemini_script_runner_boundary_sandbox_v0/inputs/input_b.md"
+  ],
+  "output_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/gemini_script_runner_boundary_sandbox_v0/outputs",
+  "desired_lite_output_fields": [
+    "observed_files",
+    "repeated_patterns",
+    "candidate_items",
+    "uncertainties",
+    "possible_risks",
+    "do_not_promote",
+    "questions_for_codex",
+    "raw_limits"
+  ],
+  "forbidden": [
+    "network",
+    "live_web_lookup",
+    "external_connector",
+    "memory_write",
+    "skill_update",
+    "cron",
+    "config_mutation",
+    "authority_mutation",
+    "promotion"
+  ],
+  "model_api_transport": "simulated_no",
+  "live_web_source_lookup": "no",
+  "external_side_effects": "no",
+  "promotion": "no"
+}

@@ -1,0 +1,34 @@
+{
+  "packet_id": "CODEX_SPACE_CHECK_RETURN_SCHEMA_20260524_V0",
+  "role": "CODEX_SPACE_CHECK",
+  "required_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "space_snapshot",
+    "active_controls",
+    "relevant_assets",
+    "hold_or_authority_boundary",
+    "missing_handles",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "field_meanings": {
+    "space_snapshot": "Short statement of current usable space surface, not authority.",
+    "active_controls": "Layer map, compact asset index, no-mutation boundary, and router/contract files used.",
+    "relevant_assets": "Bounded list of files relevant to the user's current instruction.",
+    "hold_or_authority_boundary": "Explicit statement that HOLD/proposal is not authority/current-position/registry.",
+    "missing_handles": "Any task packet, reentry record, validation, or index handle needed before execution.",
+    "next_safe_lane": "The next HOLD-safe action.",
+    "promotion_status": "Usually HOLD unless user explicitly approves a bounded apply lane."
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  }
+}
+

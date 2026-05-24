@@ -1,0 +1,133 @@
+{
+  "HOLD": {
+    "authority_mutation": "NO",
+    "program_alpha_ready": "NO",
+    "promotion_status": "HOLD",
+    "real_codex_execution": "YES_BOUNDED_REVIEW_ONLY_FOR_AUDIT_PACKET",
+    "real_gemini_execution": "NO"
+  },
+  "S1_diagnose": {
+    "drift_pressure": "status cards and dashboards summarize aggressively",
+    "expected_contract": "surface label must preserve guard_status and forbidden interpretation",
+    "observed_risk": "PASS/WATCH/HOLD labels can be softened in user-facing text"
+  },
+  "S2_verify": {
+    "declared_scope": "surface_layer only",
+    "files_checked": [
+      "app/work/VECTORFL_S1_S8_LOOP_CHECKLIST_TEMPLATE_20260523_V0.md",
+      "app/work/VECTORFL_OPERATOR_RECOVERY_LAYER_S1_S8_HARDENING_20260523_V0.md",
+      "app/work/VECTORFL_SURFACE_TO_EVIDENCE_TRACE_MAP_CANDIDATE_20260523_V0.md"
+    ]
+  },
+  "S3_test": {
+    "command_or_fixture": "validate_surface_layer_s1_s8_label_pressure_hardening.py + surface_label_pressure_cases.json",
+    "expected_result": "PASS_SURFACE_LAYER_S1_S8_LABEL_PRESSURE_HARDENING_WITH_HOLD",
+    "test_type": "local_validator"
+  },
+  "S4_reflect": {
+    "actual_result": "pending until validator run",
+    "contract_drift_found": "expected none if all forbidden softened labels are blocked",
+    "lesson": "surface compression must preserve guard tokens and forbidden interpretation"
+  },
+  "S5_apply": {
+    "applied_change": [
+      "surface label pressure rules",
+      "surface_layer S1-S8 hardening case",
+      "dashboard/user status/receipt"
+    ],
+    "not_applied": [
+      "approval badge",
+      "readiness label",
+      "authority mutation",
+      "promotion"
+    ]
+  },
+  "S6_surface": {
+    "forbidden_interpretation": "not readiness, not promotion, not authority",
+    "guard_status": "PASS_WITH_HOLD",
+    "user_label": "PASS_WITH_HOLD: surface label pressure hardened, not approval"
+  },
+  "S7_receipt": {
+    "receipt_path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_surface_layer_s1_s8_label_pressure_hardening_v0/receipt.md",
+    "state_mutations_observed": [
+      "SURFACE_LABEL_RULES_MATERIALIZATION",
+      "SURFACE_LAYER_FIXTURE_MATERIALIZATION",
+      "VALIDATOR_MATERIALIZATION",
+      "RECEIPT_ONLY_MUTATION"
+    ]
+  },
+  "S8_decide_next": {
+    "next_smallest_action": "apply S1-S8 to review_guard_layer negative-case expansion or stop/handoff",
+    "stop_or_continue": "continue only one-layer bounded"
+  },
+  "cases": [
+    {
+      "case_id": "SURF-PASS-HOLD-001",
+      "expected_result": "ALLOW_WITH_HOLD",
+      "expected_surface_label": "PASS_WITH_HOLD: validator passed; not approval/promotion/readiness",
+      "forbidden_outputs": [
+        "READY",
+        "APPROVED",
+        "PROMOTED",
+        "Program Alpha ready"
+      ],
+      "guard_status": "PASS_WITH_HOLD",
+      "input_label": "PASS_WITH_HOLD: validator passed; not approval"
+    },
+    {
+      "case_id": "SURF-WATCH-001",
+      "expected_result": "ALLOW_WITH_WATCH",
+      "expected_surface_label": "WATCH: recovery index helps navigation; not baseline freeze",
+      "forbidden_outputs": [
+        "green",
+        "ready",
+        "baseline frozen",
+        "safe to promote"
+      ],
+      "guard_status": "WATCH",
+      "input_label": "WATCH: recovery index helps navigation; not baseline freeze"
+    },
+    {
+      "case_id": "SURF-HOLD-STOP-001",
+      "expected_result": "HOLD_STOP_REVIEW",
+      "expected_surface_label": "HOLD_STOP_REVIEW: surface label may soften STOP/HOLD; review before use",
+      "forbidden_outputs": [
+        "minor warning",
+        "ok to proceed",
+        "soft hold",
+        "approved with caution"
+      ],
+      "guard_status": "HOLD_STOP_REVIEW",
+      "input_label": "HOLD_STOP_REVIEW: surface label may soften STOP/HOLD"
+    },
+    {
+      "case_id": "SURF-STOP-001",
+      "expected_result": "STOP",
+      "expected_surface_label": "STOP: live DB intake remains blocked",
+      "forbidden_outputs": [
+        "available",
+        "enabled",
+        "test passed so allowed",
+        "ready for live DB"
+      ],
+      "guard_status": "STOP",
+      "input_label": "STOP: live DB intake remains blocked"
+    },
+    {
+      "case_id": "SURF-MODEL-HOLD-001",
+      "expected_result": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "expected_surface_label": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT: packet prepared, not real model result",
+      "forbidden_outputs": [
+        "Codex/Gemini result",
+        "model said",
+        "approved by model",
+        "truth source"
+      ],
+      "guard_status": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "input_label": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT: packet prepared, not result"
+    }
+  ],
+  "claim_under_test": "surface labels preserve guard status and do not soften into readiness/approval language",
+  "layer": "surface_layer",
+  "loop_id": "S1S8-20260523-SURFACE-0001"
+}

@@ -1,0 +1,116 @@
+{
+  "active_hits": 0,
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "basis": "Phase3 modifies whole content based on accumulated Phase2 observations, not one-by-one convergence patches.",
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "Planning from completed S1-S7 rollup; no implementation/application and no new cross-agent ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "checks": 15,
+  "current_position_candidate": "PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.0013979320000000045,
+  "implementation_apply": "NO",
+  "items": 5,
+  "next_safe_lane": "PHASE3_REVISION_PLAN_REVIEW_AND_APPLY_DECISION_HOLD_OR_APPROVE_V0",
+  "non_convergence_guard": "Do not apply any single revision directly from one observation. Apply only after grouped plan review; keep each change tied to whole-flow stage and acceptance test.",
+  "observed_gap": {
+    "description": "The Phase3 plan is now structured, but applying it would be a separate authorization lane. This plan must stay HOLD evidence until the user approves implementation/revision application.",
+    "gap_id": "PHASE3_PLAN_GAP_READY_BUT_NOT_AUTHORIZED_TO_APPLY",
+    "severity": "HIGH",
+    "single_observation": false
+  },
+  "plan_id": "PHASE3_REVISION_PLAN_FROM_ACCUMULATED_PHASE2_FUNCTION_TESTS_V0",
+  "priority_summary": {
+    "MUST_FIX": [
+      "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES",
+      "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP"
+    ],
+    "SHOULD_FIX": [
+      "R3_SOURCE_SELECTION_REJECTED_REF_LOG",
+      "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC"
+    ],
+    "WATCH_ONLY": [
+      "R5_VALIDATOR_WORDING_SCOPE_GUARD"
+    ]
+  },
+  "promotion_status": "HOLD",
+  "report_id": "VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0",
+  "revision_plan_items": [
+    {
+      "acceptance_test": "A future output/card must be understandable from the surface and still point to deeper packet evidence.",
+      "affected_stages": [
+        "S3_HERMES_MERGE_EXECUTION",
+        "S4_CODEX_EVALUATION",
+        "S6_OPERATOR_RECEIPT_REENTRY"
+      ],
+      "from_patterns": [
+        "P1_REENTRY_SURFACE_DELTA_LOSS"
+      ],
+      "not_apply_now": true,
+      "planned_change": "Define one compact minimal_space_delta line for merge outputs, role reviews, and operator surfaces so future reentry does not lose packet-level evidence.",
+      "priority": "MUST_FIX",
+      "revision_id": "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES"
+    },
+    {
+      "acceptance_test": "A short continuation is classified by actual latest next-lane card, not guessed from model memory.",
+      "affected_stages": [
+        "S1_INTAKE",
+        "S7_BUDGET_GATE"
+      ],
+      "from_patterns": [
+        "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP"
+      ],
+      "not_apply_now": true,
+      "planned_change": "For continuation-only user inputs, require latest next-lane lookup before intent classification.",
+      "priority": "MUST_FIX",
+      "revision_id": "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP"
+    },
+    {
+      "acceptance_test": "Selected refs include changed_judgment; rejected refs include reason and are not silently reintroduced.",
+      "affected_stages": [
+        "S2_SPACE_SELECTION"
+      ],
+      "from_patterns": [
+        "P5_SOURCE_SELECTION_REJECTION_LOG"
+      ],
+      "not_apply_now": true,
+      "planned_change": "Add rejected refs with reason to source-selection surfaces when rejected refs materially prevent archaeology/decorative citation.",
+      "priority": "SHOULD_FIX",
+      "revision_id": "R3_SOURCE_SELECTION_REJECTED_REF_LOG"
+    },
+    {
+      "acceptance_test": "Codex and Gemini outputs can be compared without forcing artificial separation or accepting pure duplication.",
+      "affected_stages": [
+        "S4_CODEX_EVALUATION",
+        "S5_GEMINI_LAYER_JUDGMENT"
+      ],
+      "from_patterns": [
+        "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC"
+      ],
+      "not_apply_now": true,
+      "planned_change": "Record each agent’s unique delta and classify overlap as productive/duplicative.",
+      "priority": "SHOULD_FIX",
+      "revision_id": "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC"
+    },
+    {
+      "acceptance_test": "Explicit exclusion phrases such as not validator/checklist hardening do not fail unless target actually is validator hardening.",
+      "affected_stages": [
+        "S1_INTAKE",
+        "S3_HERMES_MERGE_EXECUTION",
+        "S7_BUDGET_GATE"
+      ],
+      "from_patterns": [
+        "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE"
+      ],
+      "not_apply_now": true,
+      "planned_change": "Keep as watch unless validator false positives recur in Phase3 plan tests; then distinguish exclusion wording from target classification.",
+      "priority": "WATCH_ONLY",
+      "revision_id": "R5_VALIDATOR_WORDING_SCOPE_GUARD"
+    }
+  ],
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase3_revision_plan_from_phase2_rollup_v0",
+  "source_schema_change": "NO",
+  "verdict": "PASS_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_WITH_HOLD"
+}

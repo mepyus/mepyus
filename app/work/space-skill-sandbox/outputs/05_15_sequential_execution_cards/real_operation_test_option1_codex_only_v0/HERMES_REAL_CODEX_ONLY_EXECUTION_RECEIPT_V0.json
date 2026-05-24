@@ -1,0 +1,62 @@
+{
+  "verdict": "REAL_OPERATION_TEST_OPTION1_CODEX_ONLY_RETURNED_WITH_WATCH",
+  "status": "execution_complete",
+  "packet_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/REAL_OPERATION_TEST_GATE_PACKET_V0.md",
+  "request_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/CODEX_ONLY_RECOVERY_TEST_REQUEST_V0.md",
+  "output_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs",
+  "command_executed": "codex exec \"Read only the declared files in /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/CODEX_ONLY_RECOVERY_TEST_REQUEST_V0.md. Do not modify source or authority files. Do not run Gemini. Do not use browser, web/source lookup, MCP, external connectors, memory, skill, cron, or config. Write only one file: /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs/codex_recovery_return.md. Return a bounded Codex recovery check with verdict, scope_validity, contract_gaps, WATCH, HOLD, recovery_class_hint, and next_smallest_action. No promotion.\"",
+  "exit_code": 0,
+  "files_read_observed_from_codex_log": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/CODEX_ONLY_RECOVERY_TEST_REQUEST_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/CODEX_WORKER_REQUEST_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/REAL_OPERATION_TEST_GATE_PACKET_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/HERMES_RUNNER_RECEIPT_CONTRACT_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/GEMINI_LITE_OUTPUT_CONTRACT_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/GEMINI_INTERNAL_EXPLORATION_LITE_SIMULATED_V0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_ONLY_BRIDGE_REHEARSAL_RECEIPT_V0.json"
+  ],
+  "files_written_observed": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs/codex_recovery_return.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/HERMES_REAL_CODEX_ONLY_EXECUTION_REPORT_V0.md"
+  ],
+  "real_codex_executed": true,
+  "real_gemini_executed": false,
+  "simulated_codex_only": false,
+  "simulated_gemini_only": false,
+  "network_used": true,
+  "model_api_transport_used": true,
+  "live_web_lookup_used": false,
+  "external_source_fetch_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "external_connector_used": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_modified": false,
+  "promotion_performed": false,
+  "recovery_required_by_codex": true,
+  "recovery_completed_by_codex": true,
+  "recovery_class_hint": "candidate",
+  "codex_return_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs/codex_recovery_return.md",
+  "codex_return_verdict": "CODEX_ONLY_RECOVERY_RETURNED_WITH_WATCH_NO_PROMOTION",
+  "watch": [
+    "Codex used model API transport as expected for Codex CLI execution.",
+    "Codex-only success is not Gemini bridge validation.",
+    "Codex return is recovery evidence, not promotion.",
+    "Git status shows these sandbox output directories are untracked candidate artifacts."
+  ],
+  "hold": [
+    "real Gemini execution",
+    "Hermes runner execution beyond this approved Codex command",
+    "live web/source lookup",
+    "external connector",
+    "memory/skill/cron/config mutation",
+    "VectorFL authority mutation",
+    "baseline/workflow/schema/registry/ontology/component promotion"
+  ],
+  "timestamp": "2026-05-17T05:02:58Z"
+}

@@ -1,0 +1,12 @@
+diff --git a/app/export_status.py b/app/export_status.py
+index aaaaaaa..bbbbbbb 100644
+--- a/app/export_status.py
++++ b/app/export_status.py
+@@ -1,5 +1,8 @@
+ def export_status(job):
+-    return {"state": job.state}
++    return {
++        "state": job.state,
++        "completed_at": job.completed_at,
++        "row_count": job.row_count,
++    }

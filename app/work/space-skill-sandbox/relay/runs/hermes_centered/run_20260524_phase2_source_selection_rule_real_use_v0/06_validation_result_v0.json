@@ -1,0 +1,51 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "phase2_packet_fields_present",
+      "pass": true
+    },
+    {
+      "check": "space_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "rule_requires_changed_judgment",
+      "pass": true
+    },
+    {
+      "check": "rule_limits_default_refs",
+      "pass": true
+    },
+    {
+      "check": "rule_has_heavy_escalation",
+      "pass": true
+    },
+    {
+      "check": "not_model_only",
+      "pass": true
+    },
+    {
+      "check": "codex_gemini_no_new_call_recorded",
+      "pass": true
+    },
+    {
+      "check": "negative_cases_cover_required",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_WITH_HOLD"
+}

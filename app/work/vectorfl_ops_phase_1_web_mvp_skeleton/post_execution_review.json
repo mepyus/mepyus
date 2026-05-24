@@ -1,0 +1,66 @@
+{
+  "classification": "PIPELINE_PHASE1_POST_EXECUTION_REVIEW_V0",
+  "verdict": "PASS_POST_EXECUTION_REVIEW_READY_WITH_WATCH",
+  "created_at": "2026-05-20T10:51:02Z",
+  "test_rerun_returncode": 0,
+  "test_rerun_pass": true,
+  "implemented": [
+    "stdlib local HTTP server",
+    "HTML dashboard",
+    "JSON APIs",
+    "request detail page",
+    "unit/server tests",
+    "localhost smoke checker",
+    "Obsidian execution card and validator"
+  ],
+  "actually_working": [
+    "/health boundary endpoint",
+    "/api/summary aggregate counters",
+    "/api/requests list",
+    "/api/guardrails raw guardrail events",
+    "/api/request/1 structured detail",
+    "/ HTML dashboard"
+  ],
+  "still_skeleton": [
+    "no write UI",
+    "no authenticated user model",
+    "no persistent Phase 1 DB separate from Phase 0.5 evidence",
+    "no charts beyond simple cards/tables",
+    "no packaging/launch script",
+    "no automated long-running service management"
+  ],
+  "patch_now_candidates": [
+    "read-only server mode guard",
+    "API contract snapshot tests",
+    "dashboard visual/section completeness",
+    "request detail coverage for all 7 requests",
+    "server launch/stop script with receipt capture"
+  ],
+  "decision_needed_later": [
+    "whether Phase 1 stays read-only or gains write actions",
+    "whether to archive intentional probe residue",
+    "whether to separate Phase 1 DB from Phase 0.5 DB",
+    "whether any external/browser/network scope is ever approved"
+  ],
+  "recommended_next": "PIPELINE_PHASE1_READONLY_CONTRACT_HARDENING_V0",
+  "db_facts": {
+    "requests": 7,
+    "executions": 3,
+    "receipts": 4,
+    "reviews": 4,
+    "maturation_entries": 4,
+    "guardrail_events": 22,
+    "fail_events": 0,
+    "authority_mutations": 0,
+    "non_hold_reviews": 0,
+    "receipts_without_reviews": 1
+  },
+  "hold": {
+    "promotion": "HOLD",
+    "authority_mutation": "NO",
+    "program_alpha": "NO",
+    "external_model_tool_network_execution": "NO",
+    "real_company_data": "NO",
+    "production_deployment": "NO"
+  }
+}

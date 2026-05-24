@@ -1,0 +1,72 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "default_codex_exec_for_tests": "NO",
+    "default_gemini_exec_for_tests": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "inferred_codex_to_gemini_chain": [
+    "Hermes executes/merges and writes Codex-readable reentry.",
+    "Codex reads reentry and decides whether layer/space ambiguity requires Gemini.",
+    "If required, Codex authors a Gemini request packet with input_files, output_dir, desired lite fields, forbidden scope, and promotion=no.",
+    "A Codex-side Gemini bridge/runner consumes the request. For local tests use gemini_lens_runner_sim.py; for real model review use a bounded provider-backed Gemini CLI bridge only after explicit approval.",
+    "Gemini output is split into raw + lite + receipt.",
+    "Codex reads lite first, raw only if needed, and returns a maturation judgment to Hermes.",
+    "Hermes merges Codex judgment as evidence/HOLD unless user separately approves apply."
+  ],
+  "packet_id": "02_codex_to_gemini_script_chain_structure_analysis_v0",
+  "recommended_use": {
+    "how_to_reduce_timeout": "Keep first-pass refs compact; Codex decides Gemini necessity; use lite output; avoid repeated provider-backed calls.",
+    "now": "Do not run Codex/Gemini. Preserve this as HOLD structure and use local simulated runner shape only if testing is needed.",
+    "when_codex_needs_gemini": "Use codex_authored_gemini_request.json shape + gemini_lens_runner_sim.py for dry-run; replace runner with real Gemini bridge only with explicit user approval."
+  },
+  "scripts": [
+    {
+      "fit": "Useful only as optional fresh-space/worker bridge; not default local test path.",
+      "kind": "Codex provider-backed CLI bridge",
+      "observed_structure": [
+        "loads runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json",
+        "builds compact prompt from handoff",
+        "runs codex exec read-only with output schema",
+        "writes runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+        "timeout=45s in script, but Codex CLI itself can still use provider layer"
+      ],
+      "risk": "Provider-backed Codex CLI can time out or consume time; not needed for inventory/repeatability when return packet already exists.",
+      "script": "scripts/run_vectorfl_paper_codex_bridge.py"
+    },
+    {
+      "fit": "Good candidate pattern for Codex→Gemini script-chain after Codex has a return and needs layer/cross-check review.",
+      "kind": "Gemini provider-backed CLI crosscheck bridge",
+      "observed_structure": [
+        "reads latest Codex return from runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+        "builds Gemini prompt",
+        "runs Gemini CLI with prompt/output-format arguments (provider-backed; on-demand only)",
+        "parses JSON object from Gemini stdout",
+        "writes runtime/manifests/vectorfl_paper_gemini_review_latest_v0.json",
+        "timeout=45s in script"
+      ],
+      "risk": "Should not be invoked by Hermes directly as default; provider-backed Gemini CLI only when Codex-side policy triggers it.",
+      "script": "scripts/run_vectorfl_paper_gemini_crosscheck_bridge.py"
+    },
+    {
+      "fit": "Best immediate local-only test pattern for Codex-authored Gemini request without provider call.",
+      "kind": "No-network simulated Gemini lens runner",
+      "observed_structure": [
+        "reads codex_authored_gemini_request.json",
+        "reads only declared input_files",
+        "writes raw_output, lite_output, runner_receipt, sandbox report",
+        "declares codex_executed=false, gemini_executed=false, network_used=false, model_api_transport_used=false"
+      ],
+      "risk": "Simulation only; cannot be treated as real Gemini validation.",
+      "script": "app/work/.../gemini_script_runner_boundary_sandbox_v0/scripts/gemini_lens_runner_sim.py"
+    }
+  ],
+  "status": "ANALYZED_HOLD_NO_EXECUTION"
+}

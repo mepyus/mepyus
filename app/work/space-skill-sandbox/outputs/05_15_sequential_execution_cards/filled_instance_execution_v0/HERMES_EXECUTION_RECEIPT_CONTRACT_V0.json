@@ -1,0 +1,88 @@
+{
+  "contract_id": "HERMES_EXECUTION_RECEIPT_CONTRACT_V0",
+  "status": "execution_prep_only",
+  "required_verdict_after_prep": "FILLED_INSTANCE_EXECUTION_V0_PREPARED_WITH_EXECUTION_HOLD",
+  "required_verdict_after_approved_execution": "HERMES_EXECUTION_RECEIPT_DONE",
+  "packet_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+  "gemini_prompt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/GEMINI_PROMPT_EXECUTION_V0.md",
+  "codex_prompt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/CODEX_RECOVERY_PROMPT_EXECUTION_V0.md",
+  "output_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs",
+  "future_outputs": {
+    "gemini_raw_output": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_raw_output.txt",
+    "gemini_lite_output": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_lite_output.json",
+    "codex_recovery_return": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/codex_combined_bridge_recovery_return.md",
+    "hermes_execution_receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_V0.json",
+    "hermes_execution_report": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_REPORT_V0.md"
+  },
+  "approval_defaults": {
+    "execution_approval_granted": false,
+    "approved_promotion": "no",
+    "approved_live_web_source_lookup": "no",
+    "approved_external_connector": "no",
+    "approved_browser_mcp": "no",
+    "approved_memory_skill_cron_config_mutation": "no",
+    "approved_vectorfl_authority_mutation": "no"
+  },
+  "gemini_lite_required_keys": [
+    "observed_scope",
+    "repeated_patterns",
+    "candidate_items",
+    "uncertainties",
+    "possible_risks",
+    "do_not_promote",
+    "questions_for_codex",
+    "completion_signal"
+  ],
+  "gemini_lite_completion_signal": "GEMINI_LITE_OUTPUT_DONE",
+  "codex_required_inputs": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_lite_output.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_raw_output.txt",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_CONTRACT_V0.json"
+  ],
+  "codex_completion_signal": "CODEX_RECOVERY_DONE",
+  "hermes_completion_signal": "HERMES_EXECUTION_RECEIPT_DONE",
+  "negative_evidence_required": {
+    "real_gemini_executed_before_approval": false,
+    "real_codex_executed_before_approval": false,
+    "model_api_transport_used_before_approval": false,
+    "live_web_lookup_used": false,
+    "external_connector_used": false,
+    "browser_used": false,
+    "mcp_used": false,
+    "memory_modified": false,
+    "skill_modified": false,
+    "cron_modified": false,
+    "config_modified": false,
+    "vectorfl_authority_modified": false,
+    "promotion_performed": false,
+    "dry_run_directory_modified": false
+  },
+  "watch": [
+    "filled packet mistaken for dispatch approval",
+    "command in packet mistaken for execution",
+    "Gemini stdout not materialized",
+    "Gemini lite JSON not validated",
+    "Codex recovery prompt missing declared inputs",
+    "Gemini conclusion treated as truth",
+    "Codex recovery treated as authority update",
+    "Hermes receipt treated as approval",
+    "dry-run directory modified",
+    "execution_v0 prep mistaken as real run"
+  ],
+  "hold": [
+    "real Gemini execution before approval",
+    "real Codex execution before approval",
+    "model API transport before approval",
+    "live web/source lookup",
+    "external connector",
+    "browser/MCP",
+    "memory/skill/cron/config mutation",
+    "VectorFL authority mutation",
+    "promotion",
+    "component/workflow/schema/registry/ontology/baseline",
+    "AGENTS.md / SKILL.md",
+    "current-position / output_manifest"
+  ],
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

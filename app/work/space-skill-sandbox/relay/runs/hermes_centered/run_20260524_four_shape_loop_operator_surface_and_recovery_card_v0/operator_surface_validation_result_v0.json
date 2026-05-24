@@ -1,0 +1,39 @@
+{
+  "active_call_hits": [],
+  "checks": [
+    {
+      "check": "required_fields",
+      "pass": true
+    },
+    {
+      "check": "safe_entrypoints_exist",
+      "pass": true
+    },
+    {
+      "check": "entrypoint_count>=5",
+      "pass": true
+    },
+    {
+      "check": "display_only_no_authority",
+      "pass": true
+    },
+    {
+      "check": "no_call_boundaries",
+      "pass": true
+    },
+    {
+      "check": "repeatability_summary_present",
+      "pass": true
+    },
+    {
+      "check": "trace_rows_present",
+      "pass": true
+    },
+    {
+      "check": "active_call_hits==0",
+      "pass": true
+    }
+  ],
+  "safe_entrypoints": 5,
+  "verdict": "PASS_OPERATOR_SURFACE_AND_RECOVERY_CARD_WITH_HOLD"
+}

@@ -1,0 +1,104 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s7",
+      "pass": true
+    },
+    {
+      "check": "source_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "fast_heavy_distribution",
+      "pass": true
+    },
+    {
+      "check": "external_runs_count",
+      "pass": true
+    },
+    {
+      "check": "rollup_contains_s1_s6",
+      "pass": true
+    },
+    {
+      "check": "all_prior_pass_hold",
+      "pass": true
+    },
+    {
+      "check": "patterns_present",
+      "pass": true
+    },
+    {
+      "check": "phase3_ready_not_applied",
+      "pass": true
+    },
+    {
+      "check": "no_phase3_fix_applied",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_high_rollup_warning",
+      "pass": true
+    },
+    {
+      "check": "next_phase3_plan_hold",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "budget_source_fast_no_call",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0019269820000000007,
+  "fast_stages": [
+    "S1",
+    "S2",
+    "S3",
+    "S6",
+    "S7"
+  ],
+  "heavy_stages": [
+    "S4/S5"
+  ],
+  "next_safe_lane": "PHASE2_TO_PHASE3_REVISION_PLAN_FROM_ACCUMULATED_FUNCTION_TESTS_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "The rollup reveals several good Phase3 candidates, but applying them now would violate the user’s rule against one-by-one convergence. S7 should separate repeated-pattern evidence from actual Phase3 revision work.",
+    "gap_id": "S7_GAP_ROLLUP_CAN_BECOME_PREMATURE_PHASE3_FIX_LIST",
+    "severity": "HIGH",
+    "single_observation": false
+  },
+  "patterns_count": 5,
+  "phase3_backlog_delta": {
+    "candidate": "PHASE3_REVISION_SHOULD_USE_S1_S7_ROLLUP_NOT_SINGLE_FIXES",
+    "pattern_ids": [
+      "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "P5_SOURCE_SELECTION_REJECTION_LOG"
+    ],
+    "reason": "S1-S7 evidence now supplies a whole-flow basis for Phase3 revision; fixes should be batched by repeated pattern, not patched immediately.",
+    "status": "READY_FOR_PHASE3_PLANNING_HOLD_NOT_APPLIED"
+  },
+  "promotion_status": "HOLD",
+  "verdict": "PASS_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_WITH_HOLD"
+}

@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VectorFL Operating Board v0</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #070809;
+        --paper: #111317;
+        --ink: #f4f7fb;
+        --muted: #9ba4b1;
+        --line: #2a3038;
+        --soft: #191d23;
+        --green: #79c895;
+        --blue: #68a7ff;
+        --amber: #e9bc63;
+        --red: #ef8f86;
+        --shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(135deg, rgba(104, 167, 255, 0.12), transparent 22rem),
+          linear-gradient(180deg, #11151a 0%, var(--bg) 42%);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      button,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+
+      .top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .eyebrow {
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 6px;
+        font-size: clamp(30px, 5vw, 58px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        max-width: 720px;
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        border: 1px solid rgba(233, 188, 99, 0.5);
+        border-radius: 999px;
+        padding: 8px 14px;
+        background: rgba(233, 188, 99, 0.11);
+        color: var(--amber);
+        font-size: 13px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.35fr);
+        gap: 18px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: linear-gradient(180deg, #141820, var(--paper));
+        box-shadow: var(--shadow);
+      }
+
+      .panel header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 16px;
+      }
+
+      .panel h2 {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+
+      .body {
+        padding: 16px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 140px;
+        resize: vertical;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 13px;
+        background: #090b0f;
+        color: var(--ink);
+        line-height: 1.55;
+        outline: none;
+      }
+
+      textarea:focus {
+        border-color: #8fb0d7;
+        box-shadow: 0 0 0 3px rgba(49, 95, 145, 0.12);
+      }
+
+      .quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .quick button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #151922;
+        color: #d5dae3;
+        padding: 7px 10px;
+        cursor: pointer;
+      }
+
+      .quick button:hover {
+        border-color: rgba(104, 167, 255, 0.6);
+      }
+
+      .facts {
+        display: grid;
+        gap: 9px;
+      }
+
+      .fact {
+        display: grid;
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 9px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .fact:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .fact b {
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .step {
+        min-height: 92px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #0d1016;
+        padding: 12px;
+      }
+
+      .step.active {
+        border-color: rgba(104, 167, 255, 0.62);
+        background: rgba(104, 167, 255, 0.11);
+      }
+
+      .step.hold {
+        border-color: rgba(233, 188, 99, 0.55);
+        background: rgba(233, 188, 99, 0.11);
+      }
+
+      .step small {
+        display: block;
+        color: var(--muted);
+        margin-top: 7px;
+        line-height: 1.45;
+      }
+
+      .label {
+        display: inline-flex;
+        border-radius: 999px;
+        padding: 4px 8px;
+        background: var(--soft);
+        color: #d7dde6;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .label.green {
+        background: rgba(121, 200, 149, 0.12);
+        color: var(--green);
+      }
+
+      .label.blue {
+        background: rgba(104, 167, 255, 0.13);
+        color: var(--blue);
+      }
+
+      .label.amber {
+        background: rgba(233, 188, 99, 0.13);
+        color: var(--amber);
+      }
+
+      .label.red {
+        background: rgba(239, 143, 134, 0.13);
+        color: var(--red);
+      }
+
+      .items {
+        display: grid;
+        gap: 10px;
+      }
+
+      .item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #0d1016;
+        padding: 12px;
+      }
+
+      .item-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .item-title h3 {
+        font-size: 15px;
+      }
+
+      .item p,
+      .note p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .pause-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 11px;
+      }
+
+      .pause-field {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #090b0f;
+        padding: 10px;
+      }
+
+      .pause-field b {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--ink);
+        font-size: 12px;
+      }
+
+      .pause-field span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .judgment {
+        border-left: 4px solid var(--blue);
+        border-radius: 8px;
+        background: linear-gradient(90deg, rgba(104, 167, 255, 0.15), rgba(121, 200, 149, 0.08));
+        padding: 15px;
+      }
+
+      .judgment p {
+        color: #edf4ff;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 7px 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .human-actions {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .action {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbf7ed;
+        padding: 11px;
+      }
+
+      .action strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .action span {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .footer-note {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      @media (max-width: 920px) {
+        .top,
+        .board,
+        .split,
+        .human-actions {
+          grid-template-columns: 1fr;
+        }
+
+        .flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pause-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          padding: 16px;
+        }
+
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .fact {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="top">
+        <div>
+          <div class="eyebrow">Manual Operating Surface / Precision Style Test</div>
+          <h1>VectorFL Operating Board</h1>
+          <p class="subtitle">
+            입력 하나의 trace, 멈춤 이유, 사람 판단 지점, 회수된 판단, 다음 행동만 보여주는 가벼운 운영판.
+            웹에서 확인한 AgentOps / HITL 흐름과 BMW design.md의 dark premium / precise engineering 감각을 참고하되,
+            이 화면은 자동화 시스템이나 레포 대시보드가 아니다.
+          </p>
+        </div>
+        <div class="status-pill">현재 상태: WATCH_ONLY / TEMPORARY_HOLD</div>
+      </section>
+
+      <section class="board">
+        <div class="stack">
+          <section class="panel">
+            <header>
+              <h2>1. Input Intake</h2>
+              <span class="label blue">manual</span>
+            </header>
+            <div class="body">
+              <textarea id="inputBox">GeekNews - Agent Skills를 VectorFL 공간 기준으로 읽고, 새 구조가 필요한지 판단해줘.</textarea>
+              <div class="quick">
+                <button type="button" data-fill="외부 글 하나를 공간 기준으로 읽어줘.">외부자료</button>
+                <button type="button" data-fill="이 반환 결과를 WATCH / HOLD 기준으로 접어줘.">결과 회수</button>
+                <button type="button" data-fill="보존된 re-entry path로 돌아갈 수 있는지 확인해줘.">재진입 확인</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <header>
+              <h2>2. Reading</h2>
+              <span class="label green">role first</span>
+            </header>
+            <div class="body facts">
+              <div class="fact">
+                <b>입력 종류</b>
+                <span>외부자료 / 운영 원칙 비교 재료</span>
+              </div>
+              <div class="fact">
+                <b>읽는 목적</b>
+                <span>새 컵인지, 기존 컵 안의 내용물 / 관찰 trace / 처리 보조인지 판단</span>
+              </div>
+              <div class="fact">
+                <b>분류</b>
+                <span>Content + Autonomy Support</span>
+              </div>
+              <div class="fact">
+                <b>주의</b>
+                <span>observability, HITL, workflow 같은 웹 용어도 역할어로 먼저 낮춰 읽음</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <header>
+              <h2>3. Human Gate</h2>
+              <span class="label amber">pause point</span>
+            </header>
+            <div class="body human-actions">
+              <div class="action">
+                <strong>Continue with watch</strong>
+                <span>같은 trace / re-entry pointer에서 재개</span>
+              </div>
+              <div class="action">
+                <strong>Hold for now</strong>
+                <span>새 구조를 만들지 않고 멈춤 보존</span>
+              </div>
+              <div class="action">
+                <strong>Return as judgment</strong>
+                <span>실행 로그가 아니라 회수 판단만 공간에 둠</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="stack">
+          <section class="panel">
+            <header>
+              <h2>Current Movement</h2>
+              <span class="label amber">not running</span>
+            </header>
+            <div class="body">
+              <div class="flow">
+                <div class="step">
+                  <strong>Input</strong>
+                  <small>One material enters. The board keeps the item small.</small>
+                </div>
+                <div class="step">
+                  <strong>Trace</strong>
+                  <small>Show what happened and why, not every internal detail.</small>
+                </div>
+                <div class="step">
+                  <strong>Interrupt</strong>
+                  <small>Pause when tool availability or authority is unclear.</small>
+                </div>
+                <div class="step hold">
+                  <strong>Recover</strong>
+                  <small>Return usable judgment, WATCH, HOLD, and next action.</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <header>
+              <h2>Work Items</h2>
+              <span class="label">owner view</span>
+            </header>
+            <div class="body items">
+              <article class="item">
+                <div class="item-title">
+                  <h3>Agent Skills material intake</h3>
+                  <span class="label green">Returned</span>
+                </div>
+                <p>Owner: Gemini observation, Supervisor review, Codex closeout. Result: accepted as Content + Autonomy Support, not a workflow import.</p>
+              </article>
+              <article class="item">
+                <div class="item-title">
+                  <h3>Human-in-the-loop pause</h3>
+                  <span class="label amber">HOLD</span>
+                </div>
+                <p>Owner: User / ChatGPT. Reason: quota hold. This is an execution availability block, not a structural failure or hidden approval.</p>
+                <div class="pause-grid" aria-label="Pause and resume fields">
+                  <div class="pause-field">
+                    <b>Pause Reason</b>
+                    <span>Gemini availability / quota hold</span>
+                  </div>
+                  <div class="pause-field">
+                    <b>Waiting On</b>
+                    <span>Gemini execution availability</span>
+                  </div>
+                  <div class="pause-field">
+                    <b>Resume Condition</b>
+                    <span>Return to the same re-entry path when availability returns</span>
+                  </div>
+                </div>
+              </article>
+              <article class="item">
+                <div class="item-title">
+                  <h3>Trace-first board reading</h3>
+                  <span class="label blue">Usable</span>
+                </div>
+                <p>Trace, session, interrupt, approval, and workflow are useful web terms, but VectorFL reads them as roles before structures.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel">
+            <header>
+              <h2>Recovered Judgment</h2>
+              <span class="label green">return</span>
+            </header>
+            <div class="body">
+              <div class="judgment">
+                <p>
+                  웹 검색 후에도 결론은 더 큰 시스템이 아니라 더 얇은 운영 표면이다.
+                  VectorFL Board는 agent dashboard를 복제하지 않고, trace와 pause를 사람 판단으로 회수하는 표면이어야 한다.
+                </p>
+              </div>
+              <div class="split" style="margin-top: 14px">
+                <div class="note">
+                  <h3>Usable</h3>
+                  <ul>
+                    <li>Trace / run / session 개념은 movement log의 근거가 됨</li>
+                    <li>Interrupt / resume 개념은 Human Gate의 근거가 됨</li>
+                    <li>Pause Reason / Waiting On / Resume Condition은 얕은 표시 필드로 충분함</li>
+                    <li>Agent Skills는 autonomy support 비교 재료로 유지 가능함</li>
+                  </ul>
+                </div>
+                <div class="note">
+                  <h3>WATCH / HOLD</h3>
+                  <ul>
+                    <li>WATCH: observability가 full dashboard 요구로 커지는 위험</li>
+                    <li>WATCH: HITL이 approval machine으로 오해되는 위험</li>
+                    <li>WATCH: resume이 automatic retry로 오해되는 위험</li>
+                    <li>HOLD: automation, registry, schema, live agent wiring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <header>
+              <h2>Boundary</h2>
+              <span class="label red">do not promote</span>
+            </header>
+            <div class="body split">
+              <div>
+                <h3>Keep light</h3>
+                <ul>
+                  <li>이 화면은 standalone preview</li>
+                  <li>실행 엔진 아님</li>
+                  <li>production observability 아님</li>
+                  <li>현재 입력 하나를 보는 trace surface</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Do not create</h3>
+                <ul>
+                  <li>workflow / registry / schema</li>
+                  <li>automation / approval machine</li>
+                  <li>current-position / output_manifest update</li>
+                  <li>new vessel-level structure</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <p class="footer-note">
+        Web references checked: LangSmith observability, LangGraph interrupts, OpenAI Agents HITL, AgentOps sessions.
+        Preserved target reference: app/work/space-skill-sandbox/relay/cycles/cycle_004_bounded_material_intake_thread_002/gemini_work_order.md.
+        웹 근거와 내부 경로는 화면의 중심이 아니라, 판단을 보정하기 위한 단서다.
+      </p>
+    </main>
+
+    <script>
+      const inputBox = document.getElementById("inputBox");
+      document.querySelectorAll("[data-fill]").forEach((button) => {
+        button.addEventListener("click", () => {
+          inputBox.value = button.getAttribute("data-fill");
+          inputBox.focus();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# Codex Candidate-to-Component Recovery Prompt v0
+
+Read exactly:
+1. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/CANDIDATE_TO_COMPONENT_REVIEW_PACKET_V0.md
+2. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/outputs/gemini_c2c_lite_output.json
+3. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/outputs/gemini_c2c_raw_output.txt
+4. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/C2C_REVIEW_RECEIPT_CONTRACT_V0.json
+
+Write only:
+/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/outputs/codex_c2c_recovery_return.md
+
+Task:
+Recover Gemini C2C evidence into VectorFL-safe classification evidence.
+Remove or downgrade premature promotion/component claims.
+Classify as one of: candidate_locked, candidate_upgrade_review_needed, component_proposal_ready, STOP.
+Preserve WATCH/HOLD.
+End with completion_signal: CODEX_C2C_RECOVERY_DONE
+
+No promotion. No authority mutation.

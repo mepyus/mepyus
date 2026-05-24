@@ -1,0 +1,56 @@
+{
+  "observed_inputs": [
+    "COMPONENT_PROPOSAL_PACKET_V0.md",
+    "PROPOSAL_REVIEW_INPUT_MANIFEST_V0.json",
+    "review_inputs/01_REQUIREMENTS_S8_CLASSIFICATION_RECEIPT_V0.json",
+    "review_inputs/02_REQUIREMENTS_S8_CLASSIFICATION_REPORT_V0.md",
+    "review_inputs/03_REQUIREMENTS_CLOSURE_RECEIPT_V0.json",
+    "review_inputs/04_REQUIREMENTS_CLOSURE_REPORT_V0.md",
+    "review_inputs/05_codex_requirements_recovery_return.md",
+    "review_inputs/06_gemini_requirements_lite_output.json"
+  ],
+  "proposal_candidate_name": "bounded_combined_bridge_component_proposal_candidate_v0",
+  "proposal_supporting_evidence": {
+    "requirements_classification": "component_proposal_requirements_ready",
+    "permission_inheritance_recovered": true,
+    "raw_audit_trigger_recovered": true,
+    "codex_recovery_validated": true,
+    "gemini_lite_output_matched": true
+  },
+  "required_conditions": [
+    "requirements closure classification must be component_proposal_requirements_ready",
+    "permission inheritance requirement is explicit and testable",
+    "raw audit trigger requirement is explicit and testable",
+    "promotion remains false",
+    "VectorFL authority mutation remains false",
+    "registry/schema/workflow integration remains false"
+  ],
+  "unresolved_blockers": [
+    "Promotion not approved",
+    "Authority mutation not approved",
+    "Component proposal packet not yet finalized into proposal_review_ready",
+    "Registry/schema/workflow integration not authorized"
+  ],
+  "watch_items": [
+    "requirements-ready can be mistaken for component-ready",
+    "component proposal packet still must be separate",
+    "registry/schema/workflow integration remains unapproved",
+    "Transition from one-off rehearsal to reusable packet template requires explicit gate approval"
+  ],
+  "hold_items": [
+    "promotion",
+    "VectorFL authority mutation",
+    "baseline/workflow/schema/registry/ontology/current-position/output_manifest edits"
+  ],
+  "recommended_classification_one_of_proposal_incomplete_proposal_candidate_ready_proposal_review_ready_STOP": "proposal_candidate_ready",
+  "do_not_promote": [
+    "bounded_combined_bridge_component_proposal_candidate_v0",
+    "01_BOUNDED_COMBINED_BRIDGE_PACKET_TEMPLATE_CANDIDATE_V0.md",
+    "02_BOUNDED_COMBINED_BRIDGE_USAGE_CARD_CANDIDATE_V0.md"
+  ],
+  "next_review_questions": [
+    "Do these explicit requirements adequately address the 'Safe Next Review Requirements' identified in input 05?",
+    "Can the Raw Audit Trigger requirement be satisfied by extending the RUNLOG.jsonl schema, or does 'audit-registry' imply a new file structure?"
+  ],
+  "completion_signal": "GEMINI_PROPOSAL_LITE_DONE"
+}

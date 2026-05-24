@@ -1,0 +1,82 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s6",
+      "pass": true
+    },
+    {
+      "check": "space_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "minimal_space_delta_present",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_complete",
+      "pass": true
+    },
+    {
+      "check": "reentry_handles_present",
+      "pass": true
+    },
+    {
+      "check": "carry_forward_observations_s1_s5",
+      "pass": true
+    },
+    {
+      "check": "mind_sized_operator_surface",
+      "pass": true
+    },
+    {
+      "check": "function_results_pass",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_phase3_backlog",
+      "pass": true
+    },
+    {
+      "check": "next_is_s7_budget_rollup",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0012557070000000017,
+  "next_safe_lane": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "A mind-sized operator surface is useful for reentry, but if it over-compresses the actual space delta it can become safe yet uninformative. It should preserve one minimal delta line and handles to deeper evidence.",
+    "gap_id": "S6_GAP_OPERATOR_SURFACE_CAN_BE_SAFE_BUT_TOO_SUMMARY",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S6_OPERATOR_SURFACE_REQUIRES_MINIMAL_SPACE_DELTA_AND_EVIDENCE_HANDLES",
+    "reason": "If repeated, Phase3 should require operator surfaces to include one compact delta line plus evidence handles to prevent reentry loss.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "verdict": "PASS_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_WITH_HOLD"
+}

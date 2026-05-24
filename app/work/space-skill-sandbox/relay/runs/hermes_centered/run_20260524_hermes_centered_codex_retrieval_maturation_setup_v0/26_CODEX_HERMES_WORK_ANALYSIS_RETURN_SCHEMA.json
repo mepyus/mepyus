@@ -1,0 +1,42 @@
+{
+  "packet_id": "CODEX_HERMES_WORK_ANALYSIS_RETURN_SCHEMA_20260524_V0",
+  "role": "CODEX_HERMES_WORK_ANALYSIS",
+  "required_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "hermes_inputs",
+    "space_refs_used",
+    "model_merge_judgment",
+    "execution_decision",
+    "execution_trace",
+    "codex_reentry_record",
+    "space_reinsertion_candidates",
+    "risks",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "field_meanings": {
+    "hermes_inputs": "Files Hermes used, including Codex retrieval return and user original.",
+    "space_refs_used": "Space materials Hermes actually carried into merge.",
+    "model_merge_judgment": "Hermes interpretation of original + retrieved space + model reasoning.",
+    "execution_decision": "What Hermes executed, skipped, or held, with reason.",
+    "execution_trace": "Handle to trace/receipt/reentry evidence.",
+    "codex_reentry_record": "The record Codex should read for maturation.",
+    "space_reinsertion_candidates": "HOLD-only candidates that may be indexed later with explicit approval.",
+    "risks": "Stale lane, direct API confusion, authority confusion, missing handles.",
+    "next_safe_lane": "The next HOLD-safe action.",
+    "promotion_status": "Usually HOLD unless user explicitly approves a bounded apply lane."
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  }
+}

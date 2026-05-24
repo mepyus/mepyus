@@ -1,0 +1,21 @@
+# VECTORFL_S1_S8_HARDENING_BUNDLE_QUICKSTART_20260523_V0
+
+status: S1_S8_HARDENING_BUNDLE_QUICKSTART_WITH_HOLD
+created_at: 2026-05-23 11:29:09 KST
+
+## Read order for hardened loop work
+
+```text
+1. app/work/VECTORFL_S1_S8_LOOP_CHECKLIST_TEMPLATE_20260523_V0.md
+2. app/work/VECTORFL_OPERATOR_RECOVERY_LAYER_S1_S8_HARDENING_20260523_V0.md
+3. app/work/VECTORFL_SURFACE_LAYER_S1_S8_LABEL_PRESSURE_HARDENING_20260523_V0.md
+4. app/work/VECTORFL_REVIEW_GUARD_LAYER_S1_S8_NEGATIVE_CASE_EXPANSION_20260523_V0.md
+5. app/work/VECTORFL_COMPACT_RECOVERY_BUNDLE_INDEX_20260523_V0.md#BUNDLE-09
+```
+
+## Boundary
+
+```text
+This is recovery/navigation for S1-S8 hardening artifacts only.
+Not authority. Not promotion. Not runtime enforcement. Not Program Alpha readiness.
+```

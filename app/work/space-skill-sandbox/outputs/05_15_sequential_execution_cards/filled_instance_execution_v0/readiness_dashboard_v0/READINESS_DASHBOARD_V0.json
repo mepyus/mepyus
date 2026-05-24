@@ -1,0 +1,26 @@
+{
+  "verdict": "READINESS_DASHBOARD_GREEN_AT_S4_WITH_EXECUTION_HOLD",
+  "current_state": "S4_APPROVAL_GATE_WAITING",
+  "receipt_count": 8,
+  "missing_receipts": [],
+  "real_outputs_absent": true,
+  "packet_approval_no": 1,
+  "packet_approval_yes": 0,
+  "promotion_no": 1,
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "hermes_dispatch": false,
+  "model_api_transport_for_bridge_execution": false,
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "green_checks": [
+    "final audit pass",
+    "safe regression pass",
+    "S8 no-authority rehearsal pass",
+    "approval patch prepared not applied",
+    "real outputs absent under HOLD",
+    "packet approval remains no"
+  ],
+  "next_smallest_action": "continue with immutable evidence index / checksum lockfile, or explicit approval gate if user decides",
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

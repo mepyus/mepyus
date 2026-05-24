@@ -1,0 +1,118 @@
+{
+  "bytes": 2851,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "decision": "ROUTE_STANDARD",
+        "id": 2,
+        "reason": "route before execution",
+        "request_id": 2
+      }
+    ],
+    "executions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "execution_type": "STANDARD_CONTENT_DRAFT",
+        "id": 2,
+        "output_classification": "CONTENT_DRAFT_CANDIDATE_NOT_PUBLISH_READY",
+        "request_id": 2,
+        "status": "COMPLETED",
+        "updated_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "STANDARD output remains candidate, not approved asset",
+        "guardrail": "G3",
+        "id": 6,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 7,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 8,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 9,
+        "request_id": 2,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 10,
+        "request_id": 2,
+        "result": "PASS"
+      }
+    ],
+    "maturation": [
+      {
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 2,
+        "next_work_easier_value": "routing and recovery path verified for STANDARD",
+        "request_id": 2,
+        "summary": "sample recovered into local maturation record"
+      }
+    ],
+    "next_actions": [],
+    "receipts": [
+      {
+        "content": "synthetic local receipt; no external tool; no real company data",
+        "created_at": "2026-05-20 09:57:38",
+        "execution_id": 2,
+        "id": 2,
+        "request_id": 2
+      }
+    ],
+    "request": {
+      "approval_marker": "",
+      "audience_known": 0,
+      "authority_status": "NO",
+      "body": "VectorFL을 소개하는 30초 쇼츠 대본 초안을 만들어줘.",
+      "created_at": "2026-05-20 09:57:38",
+      "depth": "STANDARD",
+      "id": 2,
+      "promotion_status": "HOLD",
+      "scope_marker": "",
+      "sensitivity_known": 0,
+      "source_known": 0,
+      "state": "MATURED_OR_HELD",
+      "title": "Run 002 STANDARD shorts script"
+    },
+    "reviews": [
+      {
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 2,
+        "next_smallest_action": "review sample recovery and keep promotion HOLD",
+        "promotion_status": "HOLD",
+        "request_id": 2,
+        "verdict": "LOCAL_SAMPLE_PASS_WITH_HOLD"
+      }
+    ]
+  },
+  "path": "/api/request/2",
+  "sha256": "06000b10898eac24a3dbf54447bfc9f254f63558e28952c030c49e0c0697ab68",
+  "status": 200
+}

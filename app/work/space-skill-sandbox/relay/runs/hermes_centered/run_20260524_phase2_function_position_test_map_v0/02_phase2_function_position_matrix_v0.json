@@ -1,0 +1,87 @@
+{
+  "anti_convergence_rule": "If a function test turns into validator/checklist hardening without showing its Phase1 stage attachment, stop and backlog it for Phase3.",
+  "packet_id": "02_phase2_function_position_matrix_v0",
+  "phase2_session_rule": "Every Phase2 function test must output: tested_function, attached_phase1_stage, observed_gap, proposed_fix_or_watch, phase3_backlog_delta, next_test_candidate.",
+  "principle": "Phase1 = whole-flow rehearsal. Phase2 = function placement/testing against whole-flow stages. Phase3 = revise using accumulated Phase2 observations, not one-by-one patches.",
+  "promotion_status": "HOLD",
+  "whole_flow_stages": [
+    {
+      "phase1_evidence": "Hermes recognized user correction and preserved raw original.",
+      "phase2_function_tests": [
+        "original preservation",
+        "intent classification",
+        "space-affecting vs light-task gate"
+      ],
+      "phase3_revision_basis": "If repeated failures appear, revise intake gate globally.",
+      "stage": "User original intake",
+      "stage_id": "S1_INTAKE"
+    },
+    {
+      "phase1_evidence": "Codex added stable anchors/current-position as orientation/repeatability/drift evidence.",
+      "phase2_function_tests": [
+        "source-selection rule",
+        "space refs max/default",
+        "changed_judgment required"
+      ],
+      "phase3_revision_basis": "Revise source policy only after multiple function tests show missing/ref overload/conflict patterns.",
+      "stage": "Space evidence selection",
+      "stage_id": "S2_SPACE_SELECTION"
+    },
+    {
+      "phase1_evidence": "Hermes merge moved from internal fixture to actual VectorFL-like processing.",
+      "phase2_function_tests": [
+        "merge trace",
+        "space_reference_delta",
+        "why_not_model_only",
+        "execution receipt"
+      ],
+      "phase3_revision_basis": "Revise merge contract based on accumulated deltas and failure classes.",
+      "stage": "Hermes original + space + model merge execution",
+      "stage_id": "S3_HERMES_MERGE_EXECUTION"
+    },
+    {
+      "phase1_evidence": "Codex evaluated spatial delta/reentry artifacts and guard matrix values.",
+      "phase2_function_tests": [
+        "Codex assessment field",
+        "spatial delta review",
+        "reentry effect watch"
+      ],
+      "phase3_revision_basis": "Revise Codex role if assessments repeatedly duplicate Hermes or miss deltas.",
+      "stage": "Codex evaluates space refs + Hermes output",
+      "stage_id": "S4_CODEX_EVALUATION"
+    },
+    {
+      "phase1_evidence": "Gemini added layer reading and speed-vs-depth tension.",
+      "phase2_function_tests": [
+        "Gemini layer questions",
+        "big-frame alignment",
+        "inward-collapse watch"
+      ],
+      "phase3_revision_basis": "Revise Gemini role if layer questions become generic or too internal.",
+      "stage": "Gemini evaluates structural/layer pressure",
+      "stage_id": "S5_GEMINI_LAYER_JUDGMENT"
+    },
+    {
+      "phase1_evidence": "Receipts remained evidence only; no authority/promotion.",
+      "phase2_function_tests": [
+        "HOLD receipt",
+        "operator status card",
+        "mind-sized output"
+      ],
+      "phase3_revision_basis": "Revise operator surface if overload or unclear next lanes recur.",
+      "stage": "Operator receipt/reentry and HOLD",
+      "stage_id": "S6_OPERATOR_RECEIPT_REENTRY"
+    },
+    {
+      "phase1_evidence": "Full heavy worked but was slow; later fast-first applied.",
+      "phase2_function_tests": [
+        "heavy trigger detection",
+        "fast continuation",
+        "post-review skip gate"
+      ],
+      "phase3_revision_basis": "Revise budget thresholds after session log shows under/over-escalation.",
+      "stage": "Fast/heavy budget gate",
+      "stage_id": "S7_BUDGET_GATE"
+    }
+  ]
+}

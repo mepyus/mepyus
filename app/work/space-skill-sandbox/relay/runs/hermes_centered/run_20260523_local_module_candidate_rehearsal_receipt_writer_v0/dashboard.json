@@ -1,0 +1,37 @@
+{
+  "status": "LOCAL_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD",
+  "candidate_id": "M-CAND-04",
+  "function_pattern": "Receipt Writer",
+  "created_at": "2026-05-23 07:50:38 KST",
+  "cases": [
+    {
+      "case_id": "RW-POS-001",
+      "expected": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "observed": "CANDIDATE_MATERIAL_WITH_HOLD"
+    },
+    {
+      "case_id": "RW-NEG-STOP-001",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "RW-NEG-HOLD-001",
+      "expected": "HOLD_STOP_REVIEW",
+      "observed": "HOLD_STOP_REVIEW"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "candidate": 1,
+    "stop": 1,
+    "hold_stop_review": 1,
+    "problem_count": 0
+  },
+  "promotion_status": "HOLD",
+  "program_alpha_status": "NOT_READY",
+  "vectorfl_authority_mutation": "no",
+  "model_execution": "no",
+  "real_gemini_execution": "no",
+  "real_codex_execution": "no",
+  "approval_applied": "no"
+}

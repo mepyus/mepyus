@@ -1,0 +1,123 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_tool_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "cli_template": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/10_run_codex_space_retrieval_cli_TEMPLATE.sh",
+  "codex_read_first_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/04_CODEX_READ_FIRST_FOR_SPACE_RETRIEVAL.md",
+  "codex_reentry_instruction": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/09_CODEX_REENTRY_AFTER_HERMES_MERGE_AND_EXECUTION.md",
+  "codex_reference_path_index": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/03_codex_reference_path_index_v0.json",
+  "codex_return_placeholder": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/07_CODEX_SPACE_RETRIEVAL_RETURN_PACKET_PLACEHOLDER.json",
+  "codex_task_packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/05_codex_space_retrieval_task_packet_v0.json",
+  "current_position_candidate": "HERMES_CENTERED_CODEX_RETRIEVAL_MATURATION_SETUP_PASSED_WITH_HOLD",
+  "flow": [
+    "USER_ORIGINAL_TO_HERMES",
+    "HERMES_ORIGINAL_INTERPRETATION",
+    "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL_VIA_CLI_SCRIPT",
+    "HERMES_MODEL_MERGE_ORIGINAL_SPACE_MODEL",
+    "HERMES_EXECUTION_AND_TRACE",
+    "CODEX_READABLE_REENTRY_RECORD",
+    "CODEX_SPACE_MATURATION_DECISION",
+    "OPTIONAL_GEMINI_VIA_CODEX_SCRIPT_CHAIN",
+    "CODEX_MATURATION_PACKET_TO_HERMES"
+  ],
+  "hermes_merge_template": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/08_hermes_model_merge_packet_template_v0.json",
+  "next_safe_lane": "USER_RUN_CODEX_SPACE_RETRIEVAL_CLI_OR_HOLD_V0",
+  "principle": "Hermes remains execution/merge center. Codex first retrieves original-related space material for Hermes; after Hermes execution, Codex handles space maturation from Codex-readable reentry records. Gemini is used only inside Codex-linked script-chain if Codex needs layer/space analysis.",
+  "report_id": "VECTORFL_HERMES_CENTERED_CODEX_RETRIEVAL_MATURATION_SETUP_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0",
+  "validation": {
+    "active_hits": [],
+    "boundary": {
+      "authority_mutation": "NO",
+      "codex_direct_api_invocation": "NO",
+      "current_position_apply": "NO",
+      "external_tool_api_direct_server_replay": "NO",
+      "folder_tree_mutation": "NO",
+      "gemini_direct_api_invocation": "NO",
+      "hermes_direct_gemini_invocation": "NO",
+      "promotion": "HOLD",
+      "registry_mutation": "NO",
+      "source_code_mutation": "NO"
+    },
+    "checks": [
+      {
+        "check": "user_original_preserved",
+        "pass": true
+      },
+      {
+        "check": "hermes_centered_principle",
+        "pass": true
+      },
+      {
+        "check": "codex_two_phase_role",
+        "pass": true
+      },
+      {
+        "check": "gemini_only_via_codex_script_chain",
+        "pass": true
+      },
+      {
+        "check": "no_direct_agent_api_boundary",
+        "pass": true
+      },
+      {
+        "check": "reference_index_read_first_lte_6",
+        "pass": true
+      },
+      {
+        "check": "task_packet_handle_explicit",
+        "pass": true
+      },
+      {
+        "check": "codex_return_placeholder_exists",
+        "pass": true
+      },
+      {
+        "check": "schema_has_required_fields",
+        "pass": true
+      },
+      {
+        "check": "hermes_merge_template_has_original_space_model",
+        "pass": true
+      },
+      {
+        "check": "codex_reentry_file_points_to_maturation",
+        "pass": true
+      },
+      {
+        "check": "cli_template_only_no_execution",
+        "pass": true
+      },
+      {
+        "check": "no_folder_source_authority_mutation",
+        "pass": true
+      },
+      {
+        "check": "forbidden_api_endpoint_replay_hits_0",
+        "observed": 0,
+        "pass": true
+      },
+      {
+        "check": "source_refs_exist",
+        "pass": true
+      }
+    ],
+    "checks_count": 15,
+    "elapsed_seconds": 0.004825611999999993,
+    "next_safe_lane": "USER_RUN_CODEX_SPACE_RETRIEVAL_CLI_OR_HOLD_V0",
+    "promotion_status": "HOLD",
+    "read_first_count": 6,
+    "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0",
+    "verdict": "PASS_HERMES_CENTERED_CODEX_RETRIEVAL_MATURATION_SETUP_NO_DIRECT_API_WITH_HOLD"
+  },
+  "verdict": "PASS_HERMES_CENTERED_CODEX_RETRIEVAL_MATURATION_SETUP_NO_DIRECT_API_WITH_HOLD"
+}

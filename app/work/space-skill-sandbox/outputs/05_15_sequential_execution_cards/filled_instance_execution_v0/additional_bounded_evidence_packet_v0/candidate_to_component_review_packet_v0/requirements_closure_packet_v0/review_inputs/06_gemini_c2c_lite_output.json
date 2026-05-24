@@ -1,0 +1,50 @@
+{
+  "observed_inputs": [
+    "CANDIDATE_TO_COMPONENT_REVIEW_PACKET_V0.md",
+    "C2C_REVIEW_INPUT_MANIFEST_V0.json",
+    "review_inputs/01_S8_SCOPE_GAP_RECOVERY_GATE_RECEIPT_V0.json",
+    "review_inputs/02_S8_SCOPE_GAP_RECOVERY_GATE_REPORT_V0.md",
+    "review_inputs/03_HERMES_SCOPE_GAP_EVIDENCE_RECEIPT_V0.json",
+    "review_inputs/04_HERMES_SCOPE_GAP_EVIDENCE_REPORT_V0.md",
+    "review_inputs/05_gemini_scope_gap_lite_output.json",
+    "review_inputs/06_codex_scope_gap_recovery_return.md"
+  ],
+  "blocker_status": "S8 visibility blocker narrowed/closed; component promotion/authority blockers remain active per manual HOLD/WATCH constraints.",
+  "component_proposal_supporting_evidence": [
+    "Gemini reported direct visibility into all five relay inputs (01-05) in input 05.",
+    "Gemini confirmed pattern consistency for 'candidate' recovery class and negative safety evidence (input 05).",
+    "Codex (input 06) recovered this visibility as valid candidate evidence for future review.",
+    "The 01 Template and 02 Usage Card identified in input 05 provide a structural foundation for a future 'Bounded Combined Bridge' component.",
+    "Both Gemini and Codex completion signals are present and valid (GEMINI_SCOPE_GAP_LITE_DONE, CODEX_SCOPE_GAP_RECOVERY_DONE)."
+  ],
+  "component_proposal_blockers": [
+    "Promotion remains explicitly unapproved across all inputs.",
+    "VectorFL authority mutation remains explicitly unapproved.",
+    "Permission inheritance during combined model transport remains unresolved (WATCH item).",
+    "Raw audit trigger policy remains unresolved (WATCH item).",
+    "Codex (input 06) explicitly rejected moving beyond 'candidate' in the current pass."
+  ],
+  "watch_items": [
+    "Permission inheritance during combined model transport.",
+    "Raw audit trigger policy.",
+    "Transition from 'one-off rehearsal' to 'reusable packet template' requires explicit gate approval.",
+    "Template existence is evidence, not established authority."
+  ],
+  "hold_items": [
+    "Promotion",
+    "VectorFL authority mutation",
+    "Modification of baseline, workflow, schema, registry, ontology, or current-position files."
+  ],
+  "recommended_classification_one_of_candidate_locked_candidate_upgrade_review_needed_component_proposal_ready_STOP": "component_proposal_ready",
+  "do_not_promote": [
+    "01_BOUNDED_COMBINED_BRIDGE_PACKET_TEMPLATE_CANDIDATE_V0.md",
+    "02_BOUNDED_COMBINED_BRIDGE_USAGE_CARD_CANDIDATE_V0.md",
+    "Any workflow or component claims derived from Option 3A rehearsal results."
+  ],
+  "questions_for_codex": [
+    "Can the WATCH item regarding 'permission inheritance' be converted into a component requirement for the next pass?",
+    "Is the 'Bounded Combined Bridge' ontology sufficiently stable for component-level registration in the next review?",
+    "Does the current evidence packet satisfy the requirements for a 'VectorFL recovery review' mentioned in input 02?"
+  ],
+  "completion_signal": "GEMINI_C2C_LITE_DONE"
+}

@@ -1,0 +1,11 @@
+diff --git a/config/release.env b/config/release.env
+index 555aaaa..666bbbb 100644
+--- a/config/release.env
++++ b/config/release.env
+@@ -1,4 +1,8 @@
+ APP_ENV=production
+-LOG_LEVEL=info
++LOG_LEVEL=debug
++API_TOKEN=token = "release-token-placeholder"
++PASSWORD=password = "temporary"
++# TODO: rotate before launch

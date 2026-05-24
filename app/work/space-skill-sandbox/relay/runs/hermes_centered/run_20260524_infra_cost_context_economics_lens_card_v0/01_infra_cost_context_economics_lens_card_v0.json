@@ -1,0 +1,133 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "card_id": "INFRA_COST_CONTEXT_ECONOMICS_LENS_CARD_HOLD_ONLY_V0",
+  "decision_rule": [
+    "If fresh_space_reference_needed=NO and layer_ambiguity_requires_codex_or_gemini=NONE, use Hermes local deterministic validation only.",
+    "If fresh_space_reference_needed=YES, prepare Codex retrieval packet; execute Codex only with explicit need/approval.",
+    "If Codex maturation finds layer ambiguity, Codex may author Gemini request; Hermes does not call Gemini directly.",
+    "If context_footprint_class=L/XL, create read-first/lite-output/index before any provider-backed call.",
+    "If operator_load_delta=INCREASES and no fresh-space ambiguity exists, provider-backed call is rejected."
+  ],
+  "lens_definition": {
+    "name": "infra-cost/context-economics lens",
+    "opposite_failure": "Codex/Gemini를 default로 부르며 context/prefill/tool-call 비용과 operator-load를 동시에 증가시키는 것",
+    "primary_layer": "L5_budget_governance",
+    "question": "이 작업은 fresh space reference 또는 layer ambiguity를 해소할 만큼 provider-backed model/context cost를 정당화하는가?",
+    "secondary_layers": [
+      "L2_inference_infra_budget",
+      "L3_harness_control_layer",
+      "L4_operator_surface_tbrain"
+    ]
+  },
+  "problem_statement": "VectorFL budget gate가 human/operator-load만 보면 provider-backed Codex/Gemini calls의 실제 infra/context-cost를 놓친다. EP96는 context가 KV cache/HBM/TTL/200K tier를 점유하는 물리·경제 자원임을 보여준다.",
+  "promotion_status": "HOLD",
+  "required_observations": [
+    {
+      "field": "fresh_space_reference_needed",
+      "meaning": "현재 Hermes만으로 공간 자료 선택이 가능한지",
+      "values": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "layer_ambiguity_requires_codex_or_gemini",
+      "meaning": "모델 호출 필요성이 어느 단계에서 생기는지",
+      "values": [
+        "NONE",
+        "CODEX_RETRIEVAL",
+        "CODEX_MATURATION",
+        "CODEX_SIDE_GEMINI"
+      ]
+    },
+    {
+      "field": "context_footprint_class",
+      "meaning": "읽힐 first-pass material과 raw corpus의 context 부담",
+      "values": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "field": "expected_prefill_pressure",
+      "meaning": "대량 파일/원문/trace를 모델에게 넣어야 하는 정도",
+      "values": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    {
+      "field": "operator_load_delta",
+      "meaning": "heavy call이 사람 판단 부담을 줄이는지 늘리는지",
+      "values": [
+        "REDUCES",
+        "NEUTRAL",
+        "INCREASES"
+      ]
+    },
+    {
+      "field": "on_demand_reason",
+      "meaning": "Codex/Gemini 호출의 정당화 이유",
+      "values": [
+        "fresh_space_reference",
+        "layer_ambiguity",
+        "explicit_user_approval",
+        "not_needed"
+      ]
+    }
+  ],
+  "source_basis": [
+    "AI Frontier EP96: LLM 추론 인프라와 토큰 경제학",
+    "AI Frontier EP97: AI Psychosis 시대의 사람들",
+    "VectorFL on-demand Codex/Gemini policy correction"
+  ],
+  "space_reference_delta": [
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "heavy/provider-backed call을 줄이라는 판단이 단순 운영 취향이 아니라 inference cost/context economics에 의해 구조적으로 강화된다.",
+      "delta_id": "DELTA_EP96_INFRA_COST_CAUSALITY",
+      "description": "EP97의 T_brain/budget gate 압력 뒤에 있는 실제 추론 인프라 원인(KV cache, prefill/decode, memory-bound, batching, 200K tier)을 EP96가 설명한다.",
+      "kind": "new_causal_underlay"
+    },
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L3_harness_control_layer",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "VectorFL의 context compaction/read-first 최소화가 편의가 아니라 서빙 경제학과 맞닿는 제약으로 재해석된다.",
+      "delta_id": "DELTA_CONTEXT_AS_PHYSICAL_RESOURCE",
+      "description": "EP96는 context가 추상 텍스트가 아니라 HBM/KV cache/TTL 비용을 점유하는 물리 자원임을 보여준다.",
+      "kind": "layer_overlap_plus_lack"
+    },
+    {
+      "affected_layers": [
+        "L3_harness_control_layer",
+        "L4_operator_surface_tbrain"
+      ],
+      "changed_judgment": "Codex/Gemini default call 금지는 timeout 회피만이 아니라 model workload와 human workload를 함께 줄이는 guard로 강화된다.",
+      "delta_id": "DELTA_AGENT_WORKLOAD_PREFILL_TOOLCALL_PRESSURE",
+      "description": "Claude Code/Codex/tool call은 대량 prefill/context reload를 발생시키며 EP97의 operator-load와 결합해 model-load/operator-load 동시 압력을 만든다.",
+      "kind": "overlap_with_ep97_operator_load"
+    },
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L4_operator_surface_tbrain",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "현재 공간에는 EP97의 human-load lens는 있으나 EP96의 infra-cost causal lens가 별도 카드로 부족하다. Proposed HOLD card가 필요하다.",
+      "delta_id": "DELTA_LACL_LAYER_COLLISION",
+      "description": "EP96가 들어오면 L2 infra-budget이 L5 governance를 강하게 밀고, EP97의 L4/T_brain 렌즈와 충돌/결합한다. 부족한 것은 infra-cost lens를 budget gate에 명시적으로 연결하는 카드다.",
+      "kind": "lacl_or_lack_detected"
+    }
+  ],
+  "verdict": "PROPOSED_LENS_CARD_WITH_HOLD"
+}

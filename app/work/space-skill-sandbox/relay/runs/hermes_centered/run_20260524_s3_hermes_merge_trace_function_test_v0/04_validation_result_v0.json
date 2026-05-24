@@ -1,0 +1,79 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s3",
+      "pass": true
+    },
+    {
+      "check": "merge_has_original_space_model",
+      "pass": true
+    },
+    {
+      "check": "selected_refs_count_4",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "why_not_model_only_sufficient",
+      "pass": true
+    },
+    {
+      "check": "merge_trace_step_effects",
+      "pass": true
+    },
+    {
+      "check": "small_real_output_not_validator_hardening",
+      "pass": true
+    },
+    {
+      "check": "function_results_pass",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_and_phase3_backlog",
+      "pass": true
+    },
+    {
+      "check": "next_is_s4_s5_role_handoff",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0012911550000000022,
+  "next_safe_lane": "S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0",
+  "observed_gap": {
+    "description": "A small operator-facing output is useful only if the merge trace explicitly shows how space refs changed the decision; otherwise S3 can degrade into a generic status card.",
+    "gap_id": "S3_GAP_MERGE_TRACE_CAN_BECOME_STATUS_CARD_ONLY_IF_DELTA_IS_EXPLICIT",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S3_MERGE_OUTPUT_REQUIRES_TRACE_STEP_EFFECTS_AND_WHY_NOT_MODEL_ONLY",
+    "reason": "If repeated, Phase3 should add trace-step effect and why_not_model_only as required merge contract fields.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "trace_steps": 5,
+  "verdict": "PASS_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_WITH_HOLD"
+}

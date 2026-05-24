@@ -1,0 +1,106 @@
+{
+  "layer": "evidence_layer",
+  "schema_status": "CANDIDATE_WITH_HOLD",
+  "required_fields": [
+    "receipt_id",
+    "source_contact",
+    "classification",
+    "valid_for",
+    "not_valid_for",
+    "evidence_refs",
+    "guard_status",
+    "hold_boundaries",
+    "validator_ref",
+    "decision_surface_ref",
+    "next_safe_action",
+    "forbidden_actions"
+  ],
+  "allowed_guard_statuses": [
+    "PASS_WITH_HOLD",
+    "WATCH",
+    "HOLD_STOP_REVIEW",
+    "STOP",
+    "HOLD_UNTIL_APPROVED_MODEL_OUTPUT"
+  ],
+  "cases": [
+    {
+      "case_id": "ELR-POS-001",
+      "expected_result": "PASS_WITH_HOLD",
+      "receipt": {
+        "receipt_id": "receipt:phase1_deterministic_stable_cycle:v0",
+        "source_contact": "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/receipts/phase1_deterministic_stable_cycle_receipt.md",
+        "classification": "RUNTIME_EVIDENCE_CANDIDATE_WITH_HOLD",
+        "valid_for": ["stable local replay evidence", "no-model validator evidence"],
+        "not_valid_for": ["Program Alpha", "authority mutation", "v1 snapshot creation"],
+        "evidence_refs": ["app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/phase1_deterministic_stable_cycle.py"],
+        "guard_status": "PASS_WITH_HOLD",
+        "hold_boundaries": ["promotion_status: HOLD", "program_alpha_status: NOT_READY"],
+        "validator_ref": "phase1_deterministic_stable_cycle.py",
+        "decision_surface_ref": "app/work/VECTORFL_PROGRAM_SPINE_STATUS_CARD_20260523_V0.md",
+        "next_safe_action": "field-fill rehearsal only",
+        "forbidden_actions": ["module promotion", "create snapshot", "mutate authority"]
+      }
+    },
+    {
+      "case_id": "ELR-NEG-HOLD-001",
+      "expected_result": "HOLD_STOP_REVIEW",
+      "receipt": {
+        "receipt_id": "receipt:missing:not_valid_for",
+        "source_contact": "synthetic receipt",
+        "classification": "CANDIDATE_MATERIAL",
+        "valid_for": ["summary review"],
+        "not_valid_for": [],
+        "evidence_refs": ["synthetic/path.md"],
+        "guard_status": "PASS_WITH_HOLD",
+        "hold_boundaries": ["promotion_status: HOLD"],
+        "validator_ref": "NOT_RUN",
+        "decision_surface_ref": "synthetic/surface.md",
+        "next_safe_action": "add explicit not_valid_for before reuse",
+        "forbidden_actions": ["promotion"]
+      }
+    },
+    {
+      "case_id": "ELR-NEG-STOP-001",
+      "expected_result": "STOP",
+      "receipt": {
+        "receipt_id": "receipt:bad:authority",
+        "source_contact": "synthetic receipt",
+        "classification": "USER_APPROVED_PROGRAM_COMPONENT",
+        "valid_for": ["authority update"],
+        "not_valid_for": ["HOLD"],
+        "evidence_refs": ["synthetic/path.md"],
+        "guard_status": "PASS_WITH_HOLD",
+        "hold_boundaries": ["promotion_status: HOLD"],
+        "validator_ref": "NOT_RUN",
+        "decision_surface_ref": "synthetic/surface.md",
+        "next_safe_action": "promote component",
+        "forbidden_actions": []
+      }
+    },
+    {
+      "case_id": "ELR-NEG-WATCH-001",
+      "expected_result": "WATCH",
+      "receipt": {
+        "receipt_id": "receipt:watch:model_packet",
+        "source_contact": "prepared model packet",
+        "classification": "CANDIDATE_MATERIAL_WITH_HOLD",
+        "valid_for": ["future review preparation"],
+        "not_valid_for": ["model execution evidence", "approval"],
+        "evidence_refs": ["app/work/space-skill-sandbox/relay/packets/to_gemini/gemini_gap_scan_twelve_candidate_dashboard_20260523_v0/PACKET.md"],
+        "guard_status": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+        "hold_boundaries": ["real_gemini_execution: no", "approval_applied: no"],
+        "validator_ref": "packet template validator",
+        "decision_surface_ref": "app/work/VECTORFL_MODEL_EXECUTION_DECISION_CARD_20260523_V0.md",
+        "next_safe_action": "wait for explicit approval or keep no-model continuation",
+        "forbidden_actions": ["treat packet as executed", "summarize as Gemini finding"]
+      }
+    }
+  ],
+  "promotion": "HOLD",
+  "authority_mutation": "NO",
+  "model_execution": "NO",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "schema_registry_mutation": "NO",
+  "shared_db_mutation": "NO"
+}

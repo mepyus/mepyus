@@ -1,0 +1,51 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "ep96_fetched",
+      "pass": true
+    },
+    {
+      "check": "ep97_space_ref_read",
+      "pass": true
+    },
+    {
+      "check": "overlap_detected",
+      "observed": 5,
+      "pass": true
+    },
+    {
+      "check": "lack_lacl_detected",
+      "observed": 4,
+      "pass": true
+    },
+    {
+      "check": "space_reference_delta_present",
+      "pass": true
+    },
+    {
+      "check": "codex_gemini_not_executed",
+      "pass": true
+    },
+    {
+      "check": "no_authority_mutation",
+      "pass": true
+    },
+    {
+      "check": "forbidden_active_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "elapsed_marker": 147388.317144869,
+  "hashes": {
+    "02_ep96_source_and_space_reference_index_v0.json": "a618db3dbccb8c623e0184153fd7d9e996553dbdb329e7d40d7cac073be1a36a",
+    "03_ep96_ep97_overlap_lacl_analysis_v0.json": "49b87fdee0539cd30ea7b90b868e200b7f18b745a4abda606906dd1addcd7e29",
+    "04_ep96_overlap_lacl_test_trace_v0.json": "7327e91ee50bac4745af5968f9adfc2c5ead668402bdc591c380dbde3d3206a2",
+    "05_ep96_overlap_lacl_receipt_v0.json": "d0ba0204e9dda6f6c46549ad20734eaea159600504c6d8e8a99dc48d3ee8a843",
+    "06_aifrontier_ep96_overlap_lacl_report_v0.md": "48fb7ec6d952b4388e81a7cd3cb38b1a6e1d7b3d7789eec5a791550a093ad468",
+    "VECTORFL_AIFRONTIER_EP96_OVERLAP_LACL_TEST_20260524_V0.json": "9380a034d0ed91c859948180ba36483d91eb3581f84f05cd9d391c7b5d98317b"
+  },
+  "verdict": "PASS_AIFRONTIER_EP96_OVERLAP_LACL_TEST_WITH_HOLD"
+}

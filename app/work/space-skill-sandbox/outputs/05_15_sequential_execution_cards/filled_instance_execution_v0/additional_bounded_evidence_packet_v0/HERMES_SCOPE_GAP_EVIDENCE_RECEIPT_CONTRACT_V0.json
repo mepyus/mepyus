@@ -1,0 +1,38 @@
+{
+  "verdict": "HERMES_SCOPE_GAP_EVIDENCE_RECEIPT_CONTRACT_PREPARED_WITH_EXECUTION_HOLD",
+  "required_fields": [
+    "verdict",
+    "status",
+    "packet_path",
+    "relay_manifest",
+    "gemini_scope_gap_raw_output",
+    "gemini_scope_gap_lite_output",
+    "codex_scope_gap_recovery_return",
+    "gemini_lite_completion_signal_valid",
+    "codex_completion_signal_valid",
+    "real_gemini_executed",
+    "real_codex_executed",
+    "promotion_performed",
+    "vectorfl_authority_modified",
+    "recovery_class_hint",
+    "completion_signal",
+    "required_final_line"
+  ],
+  "required_completion_signal": "HERMES_SCOPE_GAP_EVIDENCE_RECEIPT_DONE",
+  "forbidden_true_fields": [
+    "promotion_performed",
+    "vectorfl_authority_modified",
+    "live_web_lookup_used",
+    "external_connector_used",
+    "browser_used",
+    "mcp_used",
+    "memory_modified",
+    "skill_modified",
+    "cron_modified",
+    "config_modified"
+  ],
+  "expected_recovery_class_hint": "candidate_or_candidate_upgrade_review_needed",
+  "promotion_approved": false,
+  "vectorfl_authority_mutation_approved": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

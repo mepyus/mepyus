@@ -1,0 +1,32 @@
+{
+  "api_call": "NO",
+  "api_direct": "NO",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "receipt_repeatability_loop_with_hold",
+  "codex_cli_execution": "NO",
+  "current_position_apply": "NO",
+  "forbidden_scan": {
+    "active_call_hits": [],
+    "active_call_scan_status": "PASS"
+  },
+  "gemini_cli_execution": "NO",
+  "guard_status": "PASS_WITH_HOLD",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO_FIXTURE_ONLY",
+  "promotion_status": "HOLD",
+  "receipt_id": "positive_1_receipt",
+  "registry_mutation": "NO",
+  "seconds": 0.001012,
+  "source_layer": "tool_reentry_layer",
+  "status": "PASS",
+  "validators_run": [
+    {
+      "path": "repeatability_inline",
+      "rc": 0,
+      "seconds": 0.001012,
+      "stderr": "",
+      "stdout": "PASS"
+    }
+  ]
+}

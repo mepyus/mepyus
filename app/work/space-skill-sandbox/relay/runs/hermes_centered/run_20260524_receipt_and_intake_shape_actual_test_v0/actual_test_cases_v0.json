@@ -1,0 +1,53 @@
+{
+  "negative_cases": [
+    {
+      "case_id": "INTAKE-NEG-001",
+      "declared_original": "외부자료 A를 기준으로 현재 공간을 읽고 실행 가능 여부를 판단해줘.",
+      "expected": "FAIL_RAW_MUTATION_DETECTED",
+      "kind": "original_intake_mutated_raw",
+      "raw_user_original": "요약된 요청: 공간 판단"
+    },
+    {
+      "authority_effect": "AUTHORITY_ACCEPTED",
+      "case_id": "INTAKE-NEG-002",
+      "expected": "FAIL_AUTHORITY_DRIFT",
+      "kind": "original_intake_authority_claim"
+    },
+    {
+      "case_id": "RECEIPT-NEG-001",
+      "expected": "FAIL_BOUNDARY_FIELD_MISSING",
+      "kind": "receipt_writer_missing_boundary",
+      "missing_boundary": "local_http_endpoint_replay"
+    },
+    {
+      "case_id": "RECEIPT-NEG-002",
+      "expected": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+      "kind": "receipt_writer_hidden_validator_failure",
+      "status": "PASS",
+      "validator_rc": 1
+    },
+    {
+      "case_id": "RECEIPT-NEG-003",
+      "expected": "FAIL_MODEL_EXECUTION_DRIFT",
+      "kind": "receipt_writer_model_fixture_overclaim",
+      "model_execution": "YES_REAL_MODEL_EXECUTION"
+    }
+  ],
+  "positive_cases": [
+    {
+      "case_id": "INTAKE-POS-001",
+      "expected": "PASS",
+      "kind": "original_intake",
+      "raw_user_original": "외부자료 A를 기준으로 현재 공간을 읽고 실행 가능 여부를 판단해줘."
+    },
+    {
+      "active_call_scan_status": "PASS",
+      "case_id": "RECEIPT-POS-001",
+      "expected": "PASS",
+      "kind": "receipt_writer",
+      "status": "PASS",
+      "validator_rc": 0
+    }
+  ],
+  "test_case_set_id": "receipt_and_intake_shape_actual_test_cases_v0"
+}

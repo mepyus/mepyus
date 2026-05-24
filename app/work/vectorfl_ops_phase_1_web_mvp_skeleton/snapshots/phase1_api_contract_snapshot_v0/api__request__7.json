@@ -1,0 +1,49 @@
+{
+  "bytes": 1005,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [],
+    "executions": [],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 10:10:18",
+        "detail": "probe: REVIEW_REQUIRED cannot close without review",
+        "guardrail": "G8",
+        "id": 22,
+        "request_id": 7,
+        "result": "PASS_BLOCKED"
+      }
+    ],
+    "maturation": [],
+    "next_actions": [],
+    "receipts": [
+      {
+        "content": "probe receipt exists; review intentionally absent",
+        "created_at": "2026-05-20 10:10:18",
+        "execution_id": null,
+        "id": 4,
+        "request_id": 7
+      }
+    ],
+    "request": {
+      "approval_marker": "",
+      "audience_known": 0,
+      "authority_status": "NO",
+      "body": "Try to close from REVIEW_REQUIRED without review",
+      "created_at": "2026-05-20 10:10:18",
+      "depth": "STANDARD",
+      "id": 7,
+      "promotion_status": "HOLD",
+      "scope_marker": "",
+      "sensitivity_known": 0,
+      "source_known": 0,
+      "state": "REVIEW_REQUIRED",
+      "title": "Probe G8 close without review"
+    },
+    "reviews": []
+  },
+  "path": "/api/request/7",
+  "sha256": "4412d179f586f6c8ff53e94b0d8fe02590e1cba9cfdeeab144c847397111ce4f",
+  "status": 200
+}

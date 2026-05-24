@@ -1,0 +1,46 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "S6 is operator surface/receipt generation from known PASS/HOLD S1-S5 observations; no new cross-agent ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_s6_operator_surface_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s6_operator_receipt_reentry_hold_surface_function_test_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s4_s5_predecessor",
+      "sha256": "cbdf99a0df430a36e91a96a8bc605767377c15b52a3078be8acbe271df02e3c3",
+      "used_for": "confirms S6 next and carries role handoff/minimal reentry delta observation"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S4_S5_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "6ece421c46cf5a248aeab2fbadcdddf99d6305da29891fd6c7933d6cfd045d30",
+      "used_for": "declares S6 operator receipt/reentry rules"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s3_root",
+      "sha256": "6704d0bf3926881025cc9dd254994e59be6e4cf8768c796a94d4d199b5629537",
+      "used_for": "carries merge-trace and why_not_model_only observation for reentry surface"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "attaches test to S6 operator receipt/reentry stage"
+    }
+  ]
+}

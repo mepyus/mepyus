@@ -1,0 +1,48 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "implementation_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_schema_change": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "Planning from completed S1-S7 rollup; no implementation/application and no new cross-agent ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_phase3_revision_plan_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase3_revision_plan_from_phase2_rollup_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S7_BUDGET_ROLLUP_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "157c32365cdc6f565256d938bcb1b3b763a8967687f9e3d0bf92f22fff90b27c",
+      "used_for": "declares Phase3 plan lane and no-apply rules"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0.json",
+      "ref_id": "s7_root",
+      "sha256": "d06f7200b3c9899544c9fc4e4ba237a61e38f282c4f645e70fb44818e3159b01",
+      "used_for": "root summary of S1-S7 completion and pattern IDs"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s7_budget_gate_phase2_rollup_v0/02_s7_budget_gate_phase2_rollup_v0.json",
+      "ref_id": "s7_packet",
+      "sha256": "d85ba2a24f8e2c387074efa35bcc01d8052caed91cc40b9e967939b9a3d25624",
+      "used_for": "detailed function-test rollup and observed gaps"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "user principle: Phase3 revises from accumulated Phase2 observations"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ usage() {
   cat <<'USAGE'
 Usage:
   bash scripts/sandbox/run_gemini_packet.sh --preflight
-  bash scripts/sandbox/run_gemini_packet.sh [--dry-run] [--smoke-text] [--output-format json|text] [--timeout-seconds N] [PACKET_PATH] RUN_ID
+  bash scripts/sandbox/run_gemini_packet.sh [--dry-run] [--smoke-text] [--model MODEL] [--output-format json|text|stream-json] [--timeout-seconds N] [PACKET_PATH] RUN_ID
 
 Examples:
   bash scripts/sandbox/run_gemini_packet.sh --preflight
@@ -21,6 +21,7 @@ USAGE
 DRY_RUN=0
 PREFLIGHT=0
 SMOKE_TEXT=0
+MODEL=""
 OUTPUT_FORMAT="json"
 TIMEOUT_SECONDS=120
 OUT_DIR="app/work/space-skill-sandbox/relay/outbox"
@@ -118,6 +119,15 @@ while [[ $# -gt 0 ]]; do
       SMOKE_TEXT=1
       shift
       ;;
+    --model)
+      if [[ $# -lt 2 ]]; then
+        echo "Missing value for --model" >&2
+        usage >&2
+        exit 2
+      fi
+      MODEL="$2"
+      shift 2
+      ;;
     --output-format)
       if [[ $# -lt 2 ]]; then
         echo "Missing value for --output-format" >&2
@@ -181,7 +191,7 @@ else
 fi
 
 case "$OUTPUT_FORMAT" in
-  json|text) ;;
+  json|text|stream-json) ;;
   *)
     echo "Unsupported --output-format: $OUTPUT_FORMAT" >&2
     echo "Use json or text." >&2
@@ -212,6 +222,8 @@ ERR_FILE="$RAW_DIR/${RUN_ID}_gemini_stderr_${TIMESTAMP}.log"
 
 if [[ "$OUTPUT_FORMAT" == "json" ]]; then
   RAW_FILE="$RAW_DIR/${RUN_ID}_gemini_raw_${TIMESTAMP}.json"
+elif [[ "$OUTPUT_FORMAT" == "stream-json" ]]; then
+  RAW_FILE="$RAW_DIR/${RUN_ID}_gemini_raw_${TIMESTAMP}.jsonl"
 else
   RAW_FILE="$RAW_DIR/${RUN_ID}_gemini_raw_${TIMESTAMP}.txt"
 fi
@@ -224,6 +236,7 @@ fi
   echo "- timestamp: $TIMESTAMP"
   echo "- dry_run: $([[ "$DRY_RUN" -eq 1 ]] && echo true || echo false)"
   echo "- smoke_text: $([[ "$SMOKE_TEXT" -eq 1 ]] && echo true || echo false)"
+  echo "- requested_model: ${MODEL:-default}"
   echo "- output_format: $OUTPUT_FORMAT"
   echo "- timeout_seconds: $TIMEOUT_SECONDS"
   echo "- raw_result: $RAW_FILE"
@@ -267,12 +280,16 @@ else
   else
     PROMPT="$(cat "$PACKET_PATH")"
   fi
-
-  if [[ "$OUTPUT_FORMAT" == "json" ]]; then
-    gemini -p "$PROMPT" --output-format json > "$RAW_FILE" 2> "$ERR_FILE" &
-  else
-    gemini -p "$PROMPT" > "$RAW_FILE" 2> "$ERR_FILE" &
+  PROMPT_BYTES="$(printf '%s' "$PROMPT" | wc -c | tr -d ' ')"
+  GEMINI_CMD=(gemini -p "$PROMPT")
+  if [[ -n "$MODEL" ]]; then
+    GEMINI_CMD+=(--model "$MODEL")
   fi
+  if [[ "$OUTPUT_FORMAT" == "json" || "$OUTPUT_FORMAT" == "stream-json" ]]; then
+    GEMINI_CMD+=(--output-format "$OUTPUT_FORMAT")
+  fi
+
+  "${GEMINI_CMD[@]}" > "$RAW_FILE" 2> "$ERR_FILE" &
 
   GEMINI_PID=$!
   START_SECONDS="$(date +%s)"
@@ -287,9 +304,11 @@ else
         echo "Gemini CLI timed out after ${TIMEOUT_SECONDS} seconds."
         echo
         echo "- timeout_seconds: ${TIMEOUT_SECONDS}"
-        echo "- command_attempted: gemini -p \"<prompt redacted>\"$([[ "$OUTPUT_FORMAT" == "json" ]] && echo " --output-format json")"
+        echo "- command_attempted: gemini -p \"<prompt redacted>\"$([[ -n "$MODEL" ]] && echo " --model $MODEL")$([[ "$OUTPUT_FORMAT" != "text" ]] && echo " --output-format $OUTPUT_FORMAT")"
+        echo "- requested_model: ${MODEL:-default}"
         echo "- gemini_path: ${GEMINI_BIN:-missing}"
         echo "- gemini_version: ${GEMINI_VERSION}"
+        echo "- prompt_bytes: ${PROMPT_BYTES}"
         echo "- stderr_result: $ERR_FILE"
         echo "- likely_state: $LIKELY_STATE"
         echo "- next_manual_check: gemini -p \"Reply with exactly: GEMINI_SMOKE_OK\" --output-format json"
@@ -322,6 +341,10 @@ else
   wait "$GEMINI_PID"
   GEMINI_EXIT=$?
   set -e
+  END_SECONDS="$(date +%s)"
+  DURATION_SECONDS=$((END_SECONDS - START_SECONDS))
+  RAW_BYTES="$(wc -c < "$RAW_FILE" | tr -d ' ')"
+  STDERR_BYTES="$(wc -c < "$ERR_FILE" | tr -d ' ')"
 
   {
     echo
@@ -329,6 +352,14 @@ else
     echo
     echo "- gemini_exit_code: $GEMINI_EXIT"
     echo "- likely_state: $(detect_likely_state "$RAW_FILE" "$ERR_FILE")"
+    echo "- requested_model: ${MODEL:-default}"
+    echo "- gemini_path: ${GEMINI_BIN:-missing}"
+    echo "- gemini_version: ${GEMINI_VERSION}"
+    echo "- duration_seconds: ${DURATION_SECONDS}"
+    echo "- prompt_bytes: ${PROMPT_BYTES}"
+    echo "- raw_bytes: ${RAW_BYTES}"
+    echo "- stderr_bytes: ${STDERR_BYTES}"
+    echo "- command_summary: gemini -p \"<prompt redacted>\"$([[ -n "$MODEL" ]] && echo " --model $MODEL")$([[ "$OUTPUT_FORMAT" != "text" ]] && echo " --output-format $OUTPUT_FORMAT")"
     if [[ -s "$ERR_FILE" ]]; then
       echo "- stderr_nonempty: true"
     else
@@ -341,6 +372,15 @@ else
     extract_json_response "$RAW_FILE" >> "$OUT_FILE"
   else
     cat "$RAW_FILE" >> "$OUT_FILE"
+  fi
+
+  if [[ -s "$ERR_FILE" ]]; then
+    {
+      echo
+      echo "## Stderr Tail"
+      echo
+      tail -40 "$ERR_FILE"
+    } >> "$OUT_FILE"
   fi
 
   if [[ "$GEMINI_EXIT" -ne 0 ]]; then

@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/00_user_original_verbatim.md",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/03_t_brain_mind_sized_maintainability_lens_card_v0.json",
+      "source_layer": "input_to_hermes_merge",
+      "trace_id": "user_original_to_hermes_lens"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/03_t_brain_mind_sized_maintainability_lens_card_v0.json",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/05_codex_phase2_space_evaluation_output_v0.txt",
+      "source_layer": "codex_validation_layer",
+      "trace_id": "hermes_lens_to_codex_space_eval"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/05_codex_phase2_space_evaluation_output_v0.txt",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/07_gemini_phase2_structure_output_v0.txt",
+      "source_layer": "gemini_alignment_layer",
+      "trace_id": "codex_eval_to_gemini_structure"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/05_codex_phase2_space_evaluation_output_v0.txt + /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/07_gemini_phase2_structure_output_v0.txt",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_internal_structure_space_referenced_v0/08_phase2_internal_exploration_structure_merge_v0.json",
+      "source_layer": "hermes_final_merge",
+      "trace_id": "agent_outputs_to_phase2_structure_merge"
+    }
+  ],
+  "trace_id": "11_phase2_internal_structure_space_referenced_trace_v0"
+}

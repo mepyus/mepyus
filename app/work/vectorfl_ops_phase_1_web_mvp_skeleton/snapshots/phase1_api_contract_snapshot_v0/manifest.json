@@ -1,0 +1,572 @@
+{
+  "base_url": "http://127.0.0.1:8878",
+  "boundary": {
+    "authority_mutation": "NO",
+    "classification": "PIPELINE_PHASE1_LOCAL_WEB_MVP_SKELETON_V0",
+    "external_model_tool_network_execution": "NO",
+    "local_only": true,
+    "program_alpha_evidence": "NO",
+    "promotion": "HOLD",
+    "real_company_data": "NO",
+    "source_db": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/data/vectorfl_ops_phase_0_5.sqlite"
+  },
+  "captured_count": 13,
+  "classification": "PIPELINE_PHASE1_API_CONTRACT_SNAPSHOT_V0",
+  "counts": {
+    "authority_mutations": 0,
+    "executions": 3,
+    "fail_events": 0,
+    "guardrail_events": 22,
+    "maturation_entries": 4,
+    "non_hold_reviews": 0,
+    "probe_requests": 3,
+    "receipts": 4,
+    "receipts_without_reviews": 1,
+    "requests": 7,
+    "reviews": 4
+  },
+  "created_at": "2026-05-20T11:23:32Z",
+  "endpoints": [
+    "/health",
+    "/api/summary",
+    "/api/requests",
+    "/api/guardrails",
+    "/api/ui-surface",
+    "/",
+    "/api/request/1",
+    "/api/request/2",
+    "/api/request/3",
+    "/api/request/4",
+    "/api/request/5",
+    "/api/request/6",
+    "/api/request/7"
+  ],
+  "hold": {
+    "authority_mutation": "NO",
+    "external_model_tool_network_execution": "NO",
+    "production_deployment": "NO",
+    "program_alpha": "NO",
+    "promotion": "HOLD",
+    "real_company_data": "NO"
+  },
+  "next_lane": "PIPELINE_PHASE1_API_DRIFT_REPLAY_VALIDATOR_V0",
+  "problems": [],
+  "response_hashes": {
+    "/": "3d394a9569c8037bfd1def47b6046d10f1f9dc47ce8f4a0d15beb282f2329fae",
+    "/api/guardrails": "69cabbcb9748e69d35c1eb1374285e3545c8622c95569378abbdce3fe3459013",
+    "/api/request/1": "a743e274ba5fbf2d3a428d8bb72e9875ac746d806591f44f439ff3f14c090878",
+    "/api/request/2": "06000b10898eac24a3dbf54447bfc9f254f63558e28952c030c49e0c0697ab68",
+    "/api/request/3": "7719382e3161c5394bad13019cb6b0230e44e87dc1cd4640e6ca96b33c81b5df",
+    "/api/request/4": "111b3a5a8f133c171e223ba88b17b985f55ef5dafd32ad9e5bae17d6b8475c1c",
+    "/api/request/5": "f1619f153a33b671d0745a0e1e6c7338e37ca2ca153f5145244f87d5832418f8",
+    "/api/request/6": "ce7b16394579f98660bdb1b5259e69bf375b3ae6abfa55efd9378cfd4ac9426a",
+    "/api/request/7": "4412d179f586f6c8ff53e94b0d8fe02590e1cba9cfdeeab144c847397111ce4f",
+    "/api/requests": "1bbdf20deb19228abc5ffd9db593a82038295f8a3451d046304d54b63b86b5fd",
+    "/api/summary": "6a6e9e659644678a1a4fa6f7e86fb8b7526bbc73dd3a376a429b789a6b006fa6",
+    "/api/ui-surface": "94714894635a34cae4f67b2bb2931c796d6ddd63cdc51b5c5c2d3f1add29dc1d",
+    "/health": "6f2776b6be7dfe78c2d7269203a1c0c6002e2f878a70c6954d14f5c5d850533b"
+  },
+  "schemas": {
+    "/api/guardrails": {
+      "guardrails": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ]
+    },
+    "/api/request/1": {
+      "assets": [],
+      "decisions": [
+        {
+          "created_at": "str",
+          "decision": "str",
+          "id": "int",
+          "reason": "str",
+          "request_id": "int"
+        }
+      ],
+      "executions": [
+        {
+          "created_at": "str",
+          "execution_type": "str",
+          "id": "int",
+          "output_classification": "str",
+          "request_id": "int",
+          "status": "str",
+          "updated_at": "str"
+        }
+      ],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [
+        {
+          "authority_mutation": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_work_easier_value": "str",
+          "request_id": "int",
+          "summary": "str"
+        }
+      ],
+      "next_actions": [],
+      "receipts": [
+        {
+          "content": "str",
+          "created_at": "str",
+          "execution_id": "int",
+          "id": "int",
+          "request_id": "int"
+        }
+      ],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": [
+        {
+          "authority_status": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_smallest_action": "str",
+          "promotion_status": "str",
+          "request_id": "int",
+          "verdict": "str"
+        }
+      ]
+    },
+    "/api/request/2": {
+      "assets": [],
+      "decisions": [
+        {
+          "created_at": "str",
+          "decision": "str",
+          "id": "int",
+          "reason": "str",
+          "request_id": "int"
+        }
+      ],
+      "executions": [
+        {
+          "created_at": "str",
+          "execution_type": "str",
+          "id": "int",
+          "output_classification": "str",
+          "request_id": "int",
+          "status": "str",
+          "updated_at": "str"
+        }
+      ],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [
+        {
+          "authority_mutation": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_work_easier_value": "str",
+          "request_id": "int",
+          "summary": "str"
+        }
+      ],
+      "next_actions": [],
+      "receipts": [
+        {
+          "content": "str",
+          "created_at": "str",
+          "execution_id": "int",
+          "id": "int",
+          "request_id": "int"
+        }
+      ],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": [
+        {
+          "authority_status": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_smallest_action": "str",
+          "promotion_status": "str",
+          "request_id": "int",
+          "verdict": "str"
+        }
+      ]
+    },
+    "/api/request/3": {
+      "assets": [],
+      "decisions": [
+        {
+          "created_at": "str",
+          "decision": "str",
+          "id": "int",
+          "reason": "str",
+          "request_id": "int"
+        }
+      ],
+      "executions": [
+        {
+          "created_at": "str",
+          "execution_type": "str",
+          "id": "int",
+          "output_classification": "str",
+          "request_id": "int",
+          "status": "str",
+          "updated_at": "str"
+        }
+      ],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [
+        {
+          "authority_mutation": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_work_easier_value": "str",
+          "request_id": "int",
+          "summary": "str"
+        }
+      ],
+      "next_actions": [],
+      "receipts": [
+        {
+          "content": "str",
+          "created_at": "str",
+          "execution_id": "int",
+          "id": "int",
+          "request_id": "int"
+        }
+      ],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": [
+        {
+          "authority_status": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_smallest_action": "str",
+          "promotion_status": "str",
+          "request_id": "int",
+          "verdict": "str"
+        }
+      ]
+    },
+    "/api/request/4": {
+      "assets": [],
+      "decisions": [
+        {
+          "created_at": "str",
+          "decision": "str",
+          "id": "int",
+          "reason": "str",
+          "request_id": "int"
+        }
+      ],
+      "executions": [],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [
+        {
+          "authority_mutation": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_work_easier_value": "str",
+          "request_id": "int",
+          "summary": "str"
+        }
+      ],
+      "next_actions": [],
+      "receipts": [],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": [
+        {
+          "authority_status": "str",
+          "created_at": "str",
+          "id": "int",
+          "next_smallest_action": "str",
+          "promotion_status": "str",
+          "request_id": "int",
+          "verdict": "str"
+        }
+      ]
+    },
+    "/api/request/5": {
+      "assets": [],
+      "decisions": [],
+      "executions": [],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [],
+      "next_actions": [],
+      "receipts": [],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": []
+    },
+    "/api/request/6": {
+      "assets": [],
+      "decisions": [],
+      "executions": [],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [],
+      "next_actions": [],
+      "receipts": [],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": []
+    },
+    "/api/request/7": {
+      "assets": [],
+      "decisions": [],
+      "executions": [],
+      "guardrail_events": [
+        {
+          "created_at": "str",
+          "detail": "str",
+          "guardrail": "str",
+          "id": "int",
+          "request_id": "int",
+          "result": "str"
+        }
+      ],
+      "maturation": [],
+      "next_actions": [],
+      "receipts": [
+        {
+          "content": "str",
+          "created_at": "str",
+          "execution_id": "NoneType",
+          "id": "int",
+          "request_id": "int"
+        }
+      ],
+      "request": {
+        "approval_marker": "str",
+        "audience_known": "int",
+        "authority_status": "str",
+        "body": "str",
+        "created_at": "str",
+        "depth": "str",
+        "id": "int",
+        "promotion_status": "str",
+        "scope_marker": "str",
+        "sensitivity_known": "int",
+        "source_known": "int",
+        "state": "str",
+        "title": "str"
+      },
+      "reviews": []
+    },
+    "/api/requests": {
+      "requests": [
+        {
+          "authority_status": "str",
+          "body": "str",
+          "created_at": "str",
+          "depth": "str",
+          "id": "int",
+          "promotion_status": "str",
+          "state": "str",
+          "title": "str"
+        }
+      ]
+    },
+    "/api/summary": {
+      "boundary": {
+        "authority_mutation": "str",
+        "classification": "str",
+        "external_model_tool_network_execution": "str",
+        "local_only": "bool",
+        "program_alpha_evidence": "str",
+        "promotion": "str",
+        "real_company_data": "str",
+        "source_db": "str"
+      },
+      "counts": {
+        "authority_mutations": "int",
+        "executions": "int",
+        "fail_events": "int",
+        "guardrail_events": "int",
+        "maturation_entries": "int",
+        "non_hold_reviews": "int",
+        "probe_requests": "int",
+        "receipts": "int",
+        "receipts_without_reviews": "int",
+        "requests": "int",
+        "reviews": "int"
+      }
+    },
+    "/api/ui-surface": {
+      "boundary_banner": [
+        "str"
+      ],
+      "hold": {
+        "authority_mutation": "str",
+        "external_model_tool_network_execution": "str",
+        "production_deployment": "str",
+        "program_alpha": "str",
+        "promotion": "str",
+        "real_company_data": "str",
+        "write_ui": "str"
+      },
+      "intentional_residue": {
+        "interpretation": "str",
+        "probe_requests": "int",
+        "receipts_without_reviews": "int"
+      },
+      "minimum_sections": [
+        "str"
+      ],
+      "source_note_watch": {
+        "duplicate_notes": [
+          "str"
+        ],
+        "missing_notes": [
+          "int"
+        ]
+      }
+    },
+    "/health": {
+      "authority_mutation": "str",
+      "classification": "str",
+      "external_model_tool_network_execution": "str",
+      "local_only": "bool",
+      "ok": "bool",
+      "program_alpha_evidence": "str",
+      "promotion": "str",
+      "real_company_data": "str",
+      "source_db": "str"
+    }
+  },
+  "verdict": "PASS_API_CONTRACT_SNAPSHOT_CAPTURED"
+}

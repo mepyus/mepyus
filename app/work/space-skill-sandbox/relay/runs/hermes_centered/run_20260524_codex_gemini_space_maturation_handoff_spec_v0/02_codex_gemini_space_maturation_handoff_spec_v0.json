@@ -1,0 +1,328 @@
+{
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "core_loop": [
+    "Hermes preserves raw original and reads bounded space refs",
+    "Hermes creates execution output + receipt + minimal_space_delta",
+    "Codex Space Steward reads referenced_material + reinserted_material + lacl/layer resources",
+    "Codex produces spatial recovery/index/cross-link findings, not authority changes",
+    "Gemini Layer Reader re-reads Codex findings for layer pressure, semantic flattening, and programization candidates",
+    "Hermes merges returned packets into next safe lane as HOLD evidence"
+  ],
+  "early_attach_points": [
+    {
+      "candidate": "CG1_SPACE_ASSET_CLUSTERING_BEFORE_SOURCE_SELECTION",
+      "codex_role": "cluster existing assets by reentry/usefulness/duplicate pressure",
+      "gemini_role": "name layers and detect semantic flattening",
+      "stage": "between S1 and S2",
+      "why_earlier_than_before": "S4/S5 only after Hermes output may be too late for space design."
+    },
+    {
+      "candidate": "CG2_FOLDER_TREE_PRESSURE_SCAN_AFTER_S2",
+      "codex_role": "turn selected/rejected refs into asset organization pressure",
+      "gemini_role": "judge whether tree reflects whole-flow layers",
+      "stage": "after S2 source/rejected refs",
+      "why_earlier_than_before": "S2 already exposes asset sprawl and archaeology risk."
+    },
+    {
+      "candidate": "CG3_SPACE_REENTRY_SURFACE_DESIGN_AFTER_S3",
+      "codex_role": "ensure output can be reinserted into space with handles",
+      "gemini_role": "ensure output carries structural layer delta",
+      "stage": "after S3 merge trace",
+      "why_earlier_than_before": "prevents status-card-only artifacts from accumulating."
+    }
+  ],
+  "function_links": [
+    {
+      "connects_to": [
+        "L0",
+        "L1",
+        "L5"
+      ],
+      "function": "S1/R2 intake-next lookup",
+      "meaning": "continuation creates a need to read space before intent classification"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L6"
+      ],
+      "function": "S2/R3 source selection/rejected refs",
+      "meaning": "selection/rejection is the first real folder-tree and asset-index design pressure"
+    },
+    {
+      "connects_to": [
+        "L2",
+        "L4",
+        "L6"
+      ],
+      "function": "S3/R1 merge trace/minimal delta",
+      "meaning": "outputs must carry enough structure to be refiled/reentered later"
+    },
+    {
+      "connects_to": [
+        "L1",
+        "L3",
+        "L6"
+      ],
+      "function": "S4/S5/R4 role handoff",
+      "meaning": "Codex/Gemini should help design space organization, not only review finished cards"
+    },
+    {
+      "connects_to": [
+        "L4",
+        "L6"
+      ],
+      "function": "S6 operator surface",
+      "meaning": "status cards become navigation surfaces into the future space tree"
+    },
+    {
+      "connects_to": [
+        "L5",
+        "L6"
+      ],
+      "function": "S7 budget gate",
+      "meaning": "space operations decide whether to stay local or invoke Codex/Gemini"
+    }
+  ],
+  "handoff_files_to_generate": [
+    "VECTORFL_CURRENT_SPACE_HANDOFF.md",
+    "VECTORFL_SPACE_LAYER_MAP.md",
+    "VECTORFL_ASSET_INDEX_DRAFT.json",
+    "VECTORFL_CODEX_SPACE_STEWARD_GUIDE.md",
+    "VECTORFL_GEMINI_LAYER_READER_GUIDE.md",
+    "VECTORFL_SPACE_MATURATION_PACKET_SCHEMA.json",
+    "VECTORFL_NO_MUTATION_BOUNDARY.md"
+  ],
+  "input_minimum_for_codex": [
+    "current_space_handoff",
+    "asset_index_draft",
+    "space_layer_map",
+    "no_mutation_boundary",
+    "specific task packet"
+  ],
+  "input_minimum_for_gemini": [
+    "codex_return_packet",
+    "space_layer_map",
+    "gemini_layer_reader_guide",
+    "no_mutation_boundary"
+  ],
+  "layer_model": [
+    {
+      "attached_functions": [
+        "S1 intake",
+        "R2 next-lane lookup"
+      ],
+      "layer": "L0_USER_ORIGINAL_AND_CONTINUATION",
+      "purpose": "raw user request/original input preservation; continuation disambiguation"
+    },
+    {
+      "attached_functions": [
+        "S2 source selection",
+        "R3 rejected-ref log"
+      ],
+      "codex_attach": "early: asset archaeology, reentry anchors, spatial delta review",
+      "gemini_attach": "early: layer questions, over-internalization watch",
+      "layer": "L1_SPACE_READING_AND_ASSET_SELECTION",
+      "purpose": "select space refs, rejected refs, changed_judgment, archaeology control"
+    },
+    {
+      "attached_functions": [
+        "S3 merge trace",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L2_MODEL_MERGE_AND_EXECUTION",
+      "purpose": "Hermes merges original + space + model reasoning into concrete output"
+    },
+    {
+      "attached_functions": [
+        "S4 Codex evaluation",
+        "S5 Gemini layer judgment",
+        "R4 unique_delta metric"
+      ],
+      "codex_attach": "spatial composition/reentry surface review",
+      "gemini_attach": "structural/layer pressure and folder-tree implications",
+      "layer": "L3_CROSS_AGENT_SPACE_EVALUATION",
+      "purpose": "Codex/Gemini evaluate the produced output against space and layer structure"
+    },
+    {
+      "attached_functions": [
+        "S6 operator surface",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L4_OPERATOR_REENTRY_SURFACE",
+      "purpose": "mind-sized status, HOLD receipt, evidence handles"
+    },
+    {
+      "attached_functions": [
+        "S7 budget gate",
+        "authority separation"
+      ],
+      "layer": "L5_BUDGET_AND_GOVERNANCE",
+      "purpose": "fast/heavy gate, post-review skip, HOLD/approval separation"
+    },
+    {
+      "attached_functions": [
+        "new blueprint lane",
+        "space relayering",
+        "asset index normalization"
+      ],
+      "layer": "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT",
+      "purpose": "future folder-tree/spec/program setup based on asset roles, not current artifact sprawl"
+    }
+  ],
+  "maturation_success_criteria": [
+    "Codex can read <=7 files and understand current position",
+    "Codex returns primary_layer plus secondary_links without moving files",
+    "Gemini can judge layer pressure from Codex packet without reading whole history",
+    "Hermes can merge both packets into next safe lane with minimal provider context",
+    "Each loop creates fewer-but-denser handoff assets, not artifact sprawl"
+  ],
+  "next_safe_lane": "SPACE_MATURATION_HANDOFF_FILES_DRAFT_VALIDATION_NO_FOLDER_MOVE_V0",
+  "phase2_patterns_to_preserve": [
+    {
+      "evidence": [
+        "S3 status card can lose explicit delta",
+        "S4 Codex reentry surface can lose packet-level evidence",
+        "S6 surface can be safe but too summary"
+      ],
+      "pattern_id": "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "phase3_revision_basis": "If repeated after S7, require minimal space delta line across merge/output/operator surfaces.",
+      "seen_in": [
+        "S3",
+        "S4/S5",
+        "S6"
+      ]
+    },
+    {
+      "evidence": [
+        "short continuation carries little content",
+        "latest next-lane card disambiguates each step"
+      ],
+      "pattern_id": "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "phase3_revision_basis": "If repeated, intake gate should require latest next-lane lookup for continuation-only prompts.",
+      "seen_in": [
+        "S1",
+        "S6/S7 continuation chain"
+      ]
+    },
+    {
+      "evidence": [
+        "NON_VALIDATOR_TARGET substring false positive",
+        "not validator/checklist hardening exclusion phrase false positive"
+      ],
+      "pattern_id": "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "phase3_revision_basis": "If repeated, validator/string scans must distinguish exclusion wording from target classification.",
+      "seen_in": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "evidence": [
+        "Codex/Gemini were complementary but had minor overlap around generic status-card risk"
+      ],
+      "pattern_id": "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "phase3_revision_basis": "If repeated, add role-handoff value metric to separate productive overlap from duplication.",
+      "seen_in": [
+        "S4/S5"
+      ]
+    },
+    {
+      "evidence": [
+        "selected refs alone are insufficient; rejected refs with reasons prevent archaeology/decorative refs"
+      ],
+      "pattern_id": "P5_SOURCE_SELECTION_REJECTION_LOG",
+      "phase3_revision_basis": "If repeated, source-selection policy should require rejected-ref logging.",
+      "seen_in": [
+        "S2"
+      ]
+    }
+  ],
+  "purpose": "Make Hermes execution outputs re-enter space in a form that Codex can steward and Gemini can re-read as layers, enabling repeated spatial maturation without relying on long conversation context.",
+  "roles": {
+    "CODEX_SPACE_STEWARD": {
+      "must_not": [
+        "move folders",
+        "promote authority",
+        "mutate current-position",
+        "call API/server/replay",
+        "treat proposal as source of truth"
+      ],
+      "responsibility": [
+        "read handoff first",
+        "map referenced_material vs reinserted_material",
+        "classify assets primary_layer plus secondary_links",
+        "detect duplicate/archaeology pressure",
+        "prepare Gemini layer questions",
+        "return spatial packet only"
+      ]
+    },
+    "GEMINI_LAYER_READER": {
+      "must_not": [
+        "override authority",
+        "turn watch-only issues into fixes",
+        "replace Codex file-grounded findings with abstract opinion"
+      ],
+      "responsibility": [
+        "read Codex spatial packet",
+        "detect layer flattening and over-internalization",
+        "judge whether space design reflects Phase1 whole-flow",
+        "identify function strengthening opportunities",
+        "return layer packet only"
+      ]
+    },
+    "HERMES_EXECUTION_WORKBENCH": {
+      "must_output": [
+        "raw_original_handle",
+        "used_space_refs",
+        "space_reference_delta",
+        "receipt",
+        "next_safe_lane"
+      ],
+      "responsibility": [
+        "preserve original",
+        "select bounded refs",
+        "execute local scripts or bounded approved commands",
+        "write receipts/reports",
+        "avoid authority mutation unless separately approved"
+      ]
+    }
+  },
+  "sample_evidence_summary": {
+    "all_layers_covered": true,
+    "early_attach_candidates_detected": 3,
+    "layer_coverage": {
+      "L0_USER_ORIGINAL_AND_CONTINUATION": 1,
+      "L1_SPACE_READING_AND_ASSET_SELECTION": 2,
+      "L2_MODEL_MERGE_AND_EXECUTION": 2,
+      "L3_CROSS_AGENT_SPACE_EVALUATION": 1,
+      "L4_OPERATOR_REENTRY_SURFACE": 1,
+      "L5_BUDGET_AND_GOVERNANCE": 2,
+      "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT": 5
+    },
+    "multi_layer_assets_count": 2,
+    "observed_gaps": [
+      {
+        "description": "Several generated assets are both evidence and programization-prep structure, so future tree needs index/cross-link rather than one physical move only.",
+        "gap_id": "GAP_ASSET_CAN_BELONG_TO_MULTIPLE_LAYERS"
+      },
+      {
+        "description": "Source-selection and structure assets already expose space-organization pressure before S4/S5 review.",
+        "gap_id": "GAP_CODEX_GEMINI_CAN_ATTACH_BEFORE_S4_S5"
+      }
+    ],
+    "sample_count": 12
+  },
+  "spec_id": "CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_V0",
+  "status": "HOLD_SPEC_ONLY_NO_FOLDER_MOVE_NO_AUTHORITY_MUTATION"
+}

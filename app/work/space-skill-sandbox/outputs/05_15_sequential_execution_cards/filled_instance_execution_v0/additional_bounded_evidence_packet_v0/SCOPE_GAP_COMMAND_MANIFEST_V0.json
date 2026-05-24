@@ -1,0 +1,34 @@
+{
+  "verdict": "SCOPE_GAP_COMMAND_MANIFEST_PREPARED_WITH_EXECUTION_HOLD",
+  "created_at_utc": "2026-05-17T11:22:39Z",
+  "execution_approval_granted_for_this_packet": "no",
+  "approved_promotion": "no",
+  "approved_vectorfl_authority_mutation": "no",
+  "approved_live_web_source_lookup": "no",
+  "approved_external_connector": "no",
+  "approved_browser_mcp": "no",
+  "approved_memory_skill_cron_config_mutation": "no",
+  "paths": {
+    "packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/GEMINI_SCOPE_GAP_BOUNDED_EVIDENCE_PACKET_V0.md",
+    "prompt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/GEMINI_SCOPE_GAP_REVIEW_PROMPT_V0.md",
+    "relay_manifest": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/PRIMARY_INPUT_RELAY_MANIFEST_V0.json",
+    "output_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/outputs",
+    "gemini_raw": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/outputs/gemini_scope_gap_raw_output.txt",
+    "gemini_lite": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/outputs/gemini_scope_gap_lite_output.json",
+    "codex_return": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/outputs/codex_scope_gap_recovery_return.md",
+    "hermes_receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/HERMES_SCOPE_GAP_EVIDENCE_RECEIPT_V0.json",
+    "hermes_report": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/HERMES_SCOPE_GAP_EVIDENCE_REPORT_V0.md"
+  },
+  "future_commands_if_separately_approved": {
+    "validate_static": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/run_scope_gap_execution_v0.sh validate-static",
+    "run_gemini_after_approval": "I_UNDERSTAND_THIS_RUNS_SCOPE_GAP_GEMINI_CODEX=yes /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/run_scope_gap_execution_v0.sh run-gemini-after-approval",
+    "materialize_lite": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/run_scope_gap_execution_v0.sh materialize-lite",
+    "run_codex_after_approval": "I_UNDERSTAND_THIS_RUNS_SCOPE_GAP_GEMINI_CODEX=yes /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/run_scope_gap_execution_v0.sh run-codex-after-approval",
+    "write_closeout_after_approval": "I_UNDERSTAND_THIS_RUNS_SCOPE_GAP_GEMINI_CODEX=yes /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/run_scope_gap_execution_v0.sh write-closeout-after-approval"
+  },
+  "current_allowed_commands": [
+    "validate-static",
+    "guard-stop-probe"
+  ],
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

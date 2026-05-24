@@ -1,0 +1,41 @@
+{
+  "request_id": 6,
+  "title": "Probe G6 close without receipt",
+  "classification": "STRUCTURED_LOCAL_RUN_EXPORT",
+  "data": {
+    "request": [
+      {
+        "id": 6,
+        "title": "Probe G6 close without receipt",
+        "body": "Try to close from RECEIPT_REQUIRED without receipt",
+        "depth": "STANDARD",
+        "state": "RECEIPT_REQUIRED",
+        "source_known": 0,
+        "audience_known": 0,
+        "sensitivity_known": 0,
+        "approval_marker": "",
+        "scope_marker": "",
+        "promotion_status": "HOLD",
+        "authority_status": "NO",
+        "created_at": "2026-05-20 10:10:18"
+      }
+    ],
+    "assets": [],
+    "decisions": [],
+    "executions": [],
+    "receipts": [],
+    "reviews": [],
+    "maturation": [],
+    "next_actions": [],
+    "guardrail_events": [
+      {
+        "id": 21,
+        "guardrail": "G6",
+        "result": "PASS_BLOCKED",
+        "detail": "probe: RECEIPT_REQUIRED cannot close without receipt",
+        "created_at": "2026-05-20 10:10:18"
+      }
+    ]
+  },
+  "boundary_ok": true
+}

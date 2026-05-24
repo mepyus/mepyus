@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>Phase 1 deterministic stable cycle</title>
+<style>body{font-family:system-ui;margin:24px;background:#0b1020;color:#e9edf7}.card{border:1px solid #394566;border-radius:12px;padding:18px;max-width:900px}.badge{display:inline-block;background:#735f00;color:#fff0a6;border:1px solid #b89a18;border-radius:999px;padding:4px 10px}code{color:#9fd3ff}li{margin:4px 0}.no{color:#93f0b1}</style></head>
+<body><main class='card'>
+<h1>Phase 1 deterministic stable cycle</h1>
+<p><strong>verdict:</strong> PASS_WITH_HOLD <span class='badge'>HOLD</span></p>
+<p>Stable local replay evidence exists for the Phase 1 deterministic cycle, but it remains candidate evidence under HOLD.</p>
+<h2>Evidence links</h2>
+<p>trace_ref: <code>app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_surface_to_evidence_trace_rehearsal_v0/program_spine_phase1_stable_cycle_surface_to_evidence_trace_v0.json</code></p>
+<p>evidence_receipt_ref: <code>app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_evidence_layer_field_fill_rehearsal_v0/phase1_deterministic_stable_cycle_evidence_layer_receipt_filled_v0.json</code></p>
+<h2>Not valid for</h2><ul><li>Program Alpha</li><li>authority mutation</li><li>schema registry mutation</li><li>baseline/snapshot creation</li><li>promotion</li><li>live DB intake</li><li>model execution evidence</li><li>write UI readiness</li></ul>
+<h2>HOLD boundaries</h2><ul><li>promotion_status: HOLD</li><li>program_alpha_status: NOT_READY</li><li>authority_mutation: NO</li><li>schema_registry_mutation: NO</li><li>model_execution: NO</li><li>live_db_intake: HOLD</li><li>write_ui: NO</li><li>snapshot_refresh: NO</li><li>v1_checkpoint_creation: NO</li></ul>
+<h2>Execution policy</h2>
+<ul><li class='no'>static only</li><li class='no'>no network</li><li class='no'>no API call</li><li class='no'>no local server start</li><li class='no'>no subprocess runner</li></ul>
+</main></body></html>

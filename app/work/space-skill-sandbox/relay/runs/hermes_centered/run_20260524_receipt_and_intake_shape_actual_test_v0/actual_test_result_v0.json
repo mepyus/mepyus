@@ -1,0 +1,61 @@
+{
+  "active_call_hits": [],
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "promotion": "HOLD"
+  },
+  "failed_cases": [],
+  "negative_count": 5,
+  "passed_cases": 7,
+  "positive_count": 2,
+  "results": [
+    {
+      "actual": "PASS",
+      "case_id": "INTAKE-POS-001",
+      "expected": "PASS",
+      "ok": true
+    },
+    {
+      "actual": "PASS",
+      "case_id": "RECEIPT-POS-001",
+      "expected": "PASS",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_RAW_MUTATION_DETECTED",
+      "case_id": "INTAKE-NEG-001",
+      "expected": "FAIL_RAW_MUTATION_DETECTED",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_AUTHORITY_DRIFT",
+      "case_id": "INTAKE-NEG-002",
+      "expected": "FAIL_AUTHORITY_DRIFT",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_BOUNDARY_FIELD_MISSING_local_http_endpoint_replay",
+      "case_id": "RECEIPT-NEG-001",
+      "expected": "FAIL_BOUNDARY_FIELD_MISSING",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+      "case_id": "RECEIPT-NEG-002",
+      "expected": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_MODEL_EXECUTION_DRIFT",
+      "case_id": "RECEIPT-NEG-003",
+      "expected": "FAIL_MODEL_EXECUTION_DRIFT",
+      "ok": true
+    }
+  ],
+  "test_id": "receipt_and_intake_shape_actual_test_v0",
+  "verdict": "PASS"
+}

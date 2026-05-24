@@ -1,0 +1,122 @@
+{
+  "apply_order": [
+    "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP",
+    "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES",
+    "R3_SOURCE_SELECTION_REJECTED_REF_LOG",
+    "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC",
+    "R5_VALIDATOR_WORDING_SCOPE_GUARD_WATCH_ONLY"
+  ],
+  "approval_received": "YES",
+  "approval_scope": "Bounded apply of reviewed structure into app/work evidence/spec artifacts only; no authority/current-position/registry/source-code/schema mutation.",
+  "boundary": {
+    "approval_granted": "YES_FOR_BOUNDED_APP_WORK_SPEC_ARTIFACTS",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "implementation_apply": "YES_BOUNDED_SPEC_ARTIFACTS_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO",
+    "source_schema_change": "NO"
+  },
+  "bounded_revision_items": [
+    {
+      "acceptance_test": "A future output/card must be understandable from the surface and still point to deeper packet evidence.",
+      "affected_stages": [
+        "S3_HERMES_MERGE_EXECUTION",
+        "S4_CODEX_EVALUATION",
+        "S6_OPERATOR_RECEIPT_REENTRY"
+      ],
+      "apply_status": "BOUNDED_APPLY_NOW_TO_SPEC_ARTIFACTS",
+      "apply_target": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+      "from_patterns": [
+        "P1_REENTRY_SURFACE_DELTA_LOSS"
+      ],
+      "not_apply_now": false,
+      "planned_change": "Define one compact minimal_space_delta line for merge outputs, role reviews, and operator surfaces so future reentry does not lose packet-level evidence.",
+      "priority": "MUST_FIX",
+      "revision_id": "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES"
+    },
+    {
+      "acceptance_test": "A short continuation is classified by actual latest next-lane card, not guessed from model memory.",
+      "affected_stages": [
+        "S1_INTAKE",
+        "S7_BUDGET_GATE"
+      ],
+      "apply_status": "BOUNDED_APPLY_NOW_TO_SPEC_ARTIFACTS",
+      "apply_target": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+      "from_patterns": [
+        "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP"
+      ],
+      "not_apply_now": false,
+      "planned_change": "For continuation-only user inputs, require latest next-lane lookup before intent classification.",
+      "priority": "MUST_FIX",
+      "revision_id": "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP"
+    },
+    {
+      "acceptance_test": "Selected refs include changed_judgment; rejected refs include reason and are not silently reintroduced.",
+      "affected_stages": [
+        "S2_SPACE_SELECTION"
+      ],
+      "apply_status": "BOUNDED_APPLY_NOW_TO_SPEC_ARTIFACTS",
+      "apply_target": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+      "from_patterns": [
+        "P5_SOURCE_SELECTION_REJECTION_LOG"
+      ],
+      "not_apply_now": false,
+      "planned_change": "Add rejected refs with reason to source-selection surfaces when rejected refs materially prevent archaeology/decorative citation.",
+      "priority": "SHOULD_FIX",
+      "revision_id": "R3_SOURCE_SELECTION_REJECTED_REF_LOG"
+    },
+    {
+      "acceptance_test": "Codex and Gemini outputs can be compared without forcing artificial separation or accepting pure duplication.",
+      "affected_stages": [
+        "S4_CODEX_EVALUATION",
+        "S5_GEMINI_LAYER_JUDGMENT"
+      ],
+      "apply_status": "BOUNDED_APPLY_NOW_TO_SPEC_ARTIFACTS",
+      "apply_target": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+      "from_patterns": [
+        "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC"
+      ],
+      "not_apply_now": false,
+      "planned_change": "Record each agent’s unique delta and classify overlap as productive/duplicative.",
+      "priority": "SHOULD_FIX",
+      "revision_id": "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC"
+    },
+    {
+      "acceptance_test": "Explicit exclusion phrases such as not validator/checklist hardening do not fail unless target actually is validator hardening.",
+      "affected_stages": [
+        "S1_INTAKE",
+        "S3_HERMES_MERGE_EXECUTION",
+        "S7_BUDGET_GATE"
+      ],
+      "apply_status": "WATCH_ONLY_NOT_APPLIED",
+      "apply_target": "future watch only",
+      "from_patterns": [
+        "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE"
+      ],
+      "not_apply_now": true,
+      "planned_change": "Keep as watch unless validator false positives recur in Phase3 plan tests; then distinguish exclusion wording from target classification.",
+      "priority": "WATCH_ONLY",
+      "revision_id": "R5_VALIDATOR_WORDING_SCOPE_GUARD"
+    }
+  ],
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "User approved bounded plan execution, but scope is document/spec application from reviewed local evidence; no new cross-agent ambiguity or external-agent need.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "modification_from_previous_plan": [
+    "Inserted pre-approval reviewed structure spec as apply baseline.",
+    "Changed not_apply_now flags to bounded_apply_now for R1-R4 within spec-artifact scope.",
+    "Kept R5 validator wording scope as watch-only unless future test repeats.",
+    "Added exact no-authority/no-registry/no-current-position/no-source-code boundary.",
+    "Added acceptance receipts for each revision group."
+  ],
+  "packet_id": "02_phase3_revised_apply_plan_v0",
+  "plan_id": "PHASE3_REVISED_BOUNDED_APPLY_PLAN_FROM_REVIEWED_STRUCTURE_SPEC_V0",
+  "reviewed_spec_id": "VECTORFL_PRE_APPROVAL_REVIEWED_STRUCTURE_SPEC_V0",
+  "source_plan_id": "PHASE3_REVISION_PLAN_FROM_ACCUMULATED_PHASE2_FUNCTION_TESTS_V0",
+  "user_original_verbatim": "승인!  그리고 플랜 수정해서 실행!!"
+}

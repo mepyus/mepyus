@@ -1,0 +1,92 @@
+{
+  "bytes": 2152,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "decision": "ROUTE_BLOCKED_SPECIAL",
+        "id": 4,
+        "reason": "route before execution",
+        "request_id": 4
+      }
+    ],
+    "executions": [],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "BLOCKED_SPECIAL cannot become ready",
+        "guardrail": "G15",
+        "id": 16,
+        "request_id": 4,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "SpecialApprovalDraft is not approval; authority remains NO",
+        "guardrail": "G16",
+        "id": 17,
+        "request_id": 4,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 18,
+        "request_id": 4,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 19,
+        "request_id": 4,
+        "result": "PASS"
+      }
+    ],
+    "maturation": [
+      {
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 4,
+        "next_work_easier_value": "blocked authority path visible",
+        "request_id": 4,
+        "summary": "authority request blocked and held"
+      }
+    ],
+    "next_actions": [],
+    "receipts": [],
+    "request": {
+      "approval_marker": "",
+      "audience_known": 0,
+      "authority_status": "NO",
+      "body": "이 기준을 공식 운영 원칙으로 삼자.",
+      "created_at": "2026-05-20 09:57:38",
+      "depth": "BLOCKED_SPECIAL",
+      "id": 4,
+      "promotion_status": "HOLD",
+      "scope_marker": "",
+      "sensitivity_known": 0,
+      "source_known": 0,
+      "state": "MATURED_OR_HELD",
+      "title": "Run 004 BLOCKED authority request"
+    },
+    "reviews": [
+      {
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 4,
+        "next_smallest_action": "special approval packet required if continuing",
+        "promotion_status": "HOLD",
+        "request_id": 4,
+        "verdict": "BLOCKED_SPECIAL_HOLD"
+      }
+    ]
+  },
+  "path": "/api/request/4",
+  "sha256": "111b3a5a8f133c171e223ba88b17b985f55ef5dafd32ad9e5bae17d6b8475c1c",
+  "status": 200
+}

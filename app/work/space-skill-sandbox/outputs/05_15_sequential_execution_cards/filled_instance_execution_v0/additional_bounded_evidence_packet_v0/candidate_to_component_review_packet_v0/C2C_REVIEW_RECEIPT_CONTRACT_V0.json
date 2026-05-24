@@ -1,0 +1,27 @@
+{
+  "verdict": "C2C_REVIEW_RECEIPT_CONTRACT_PREPARED",
+  "required_fields": [
+    "verdict",
+    "status",
+    "gemini_c2c_raw_output",
+    "gemini_c2c_lite_output",
+    "codex_c2c_recovery_return",
+    "real_gemini_executed",
+    "real_codex_executed",
+    "promotion_performed",
+    "vectorfl_authority_modified",
+    "classification_hint",
+    "completion_signal",
+    "required_final_line"
+  ],
+  "required_completion_signal": "C2C_REVIEW_RECEIPT_DONE",
+  "allowed_classification_hints": [
+    "candidate_locked",
+    "candidate_upgrade_review_needed",
+    "component_proposal_ready",
+    "STOP"
+  ],
+  "promotion_approved": false,
+  "vectorfl_authority_mutation_approved": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

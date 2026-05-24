@@ -1,0 +1,39 @@
+{
+  "review_id": "review_or_hold:current_position_proposal:no_call_reuse_chain:v0",
+  "review_status": "REVIEWED_HOLD_NO_AUTO_APPLY",
+  "reviewed_proposal_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_no_call_current_position_proposal_for_reuse_chain_v0/no_call_current_position_proposal_for_reuse_chain_v0.json",
+  "proposal_status_seen": "PROPOSAL_ONLY_WITH_HOLD",
+  "proposed_current_position_seen": "NO_CALL_OPERATOR_HANDOFF_ENTRYPOINT_REALIZED_WITH_HOLD",
+  "review_verdict": "HOLD_AND_REVIEW_PASS_NO_AUTO_APPLY",
+  "acceptance_assessment": {
+    "position_summary_clear": true,
+    "lineage_all_pass": true,
+    "safe_entry_points_present": true,
+    "no_call_boundaries_present": true,
+    "root_pointer_mutation_blocked": true,
+    "authority_mutation_blocked": true,
+    "promotion_blocked": true
+  },
+  "decision": "HOLD_BY_DEFAULT",
+  "why_hold": "User said continue, not explicit approve/apply. Therefore review is recorded but root pointer remains unchanged.",
+  "revision_needed": "NO_IMMEDIATE_REVISION_REQUIRED",
+  "optional_next_if_user_approves": "create pointer-apply proposal with backup plan; still no-call/no-endpoint/no-model unless separately approved",
+  "blocked_without_explicit_approval": [
+    "root current-position pointer apply",
+    "authority mutation",
+    "registry creation",
+    "Program Alpha promotion",
+    "endpoint replay evidence refresh"
+  ],
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "root_pointer_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "program_alpha_status": "NOT_READY"
+}

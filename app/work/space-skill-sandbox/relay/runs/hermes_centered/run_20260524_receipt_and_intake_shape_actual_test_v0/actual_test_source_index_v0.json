@@ -1,0 +1,26 @@
+{
+  "actual_test_scope": "Generate new positive and negative local fixtures from the shape definitions, validate they pass/fail as expected, and verify no API/local endpoint/server/model/Codex/Gemini execution occurs.",
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "source_shapes": {
+    "original_intake_shape": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_original_intake_packet_shape_candidate_v0.json",
+      "sha256": "1202689df0f0f4848786172ca6f9a3276c10c217bd98491228b228c5d5628858"
+    },
+    "receipt_writer_shape": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_receipt_writer_shape_candidate_v0.json",
+      "sha256": "8ea7db06272857ea2624040642f64692c6453e789d9737b5a347937003bf1edd"
+    }
+  },
+  "status": "ACTUAL_LOCAL_SHAPE_TEST_PREPARED_WITH_HOLD",
+  "test_id": "receipt_and_intake_shape_actual_test_v0"
+}

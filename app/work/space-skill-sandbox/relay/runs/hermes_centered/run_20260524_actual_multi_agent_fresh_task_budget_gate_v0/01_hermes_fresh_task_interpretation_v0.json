@@ -1,0 +1,40 @@
+{
+  "agent": "Hermes",
+  "boundary": {
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "YES_EXPLICIT_USER_REQUEST",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "YES_EXPLICIT_USER_REQUEST",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate_for_this_run": {
+    "codex_calls_max": 1,
+    "gemini_calls_max": 1,
+    "post_review_calls_max": 1,
+    "skip_post_review_if": "Codex/Gemini agree and no STOP/HOLD_STOP_REVIEW drift",
+    "target_seconds": "60-90 if no quota retry"
+  },
+  "interpretation": {
+    "output_needed": "operator-usable budget gate and decision policy",
+    "required_inputs": [
+      "recent actual multi-agent timing",
+      "repeatability/drift evidence",
+      "operator surface/recovery context",
+      "guard/HOLD boundary"
+    ],
+    "success_criteria": [
+      "Codex explores timing/evidence anchors once",
+      "Gemini reads layer/pressure once",
+      "Hermes compares/merges and executes policy",
+      "no post-review if no drift/high-risk conflict detected",
+      "measure total time"
+    ],
+    "why_this_task": "User just proved full heavy mode is aligned but slow; next concrete operational need is deciding when to use heavy mode."
+  },
+  "packet_id": "01_hermes_fresh_task_interpretation_v0",
+  "task": "budget_gate_for_heavy_vs_fast_vectorfl_processing"
+}

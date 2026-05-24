@@ -1,0 +1,47 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "file_mutation_by_external_agents": "FORBIDDEN",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "YES_PLANNED_READ_ONLY",
+    "gemini_cli_execution": "YES_PLANNED_PLAN_MODE",
+    "reason": "This Phase2 lane explicitly tests Codex vs Gemini role distinction; cross-agent comparison is the function under test.",
+    "selected_mode": "HEAVY_BUDGETED"
+  },
+  "packet_id": "01_s4_s5_role_handoff_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s4_s5_codex_gemini_role_handoff_function_test_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s3_predecessor",
+      "sha256": "6704d0bf3926881025cc9dd254994e59be6e4cf8768c796a94d4d199b5629537",
+      "used_for": "confirms S4/S5 next and carries S3 merge observations"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "f2821bb9cb73d08077ce68209fb0cf593a3012fc45ac7d351e75dccc527d112b",
+      "used_for": "declares S4/S5 role handoff rules and heavy possibility"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s3_hermes_merge_trace_function_test_v0/02_s3_hermes_merge_trace_function_test_v0.json",
+      "ref_id": "s3_packet",
+      "sha256": "63dbb840434a3d30630dd3594ed86f608d599a53346c6766a68175a449c3ae78",
+      "used_for": "bounded Hermes output to evaluate"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "attaches tests to S4 Codex and S5 Gemini roles"
+    }
+  ]
+}

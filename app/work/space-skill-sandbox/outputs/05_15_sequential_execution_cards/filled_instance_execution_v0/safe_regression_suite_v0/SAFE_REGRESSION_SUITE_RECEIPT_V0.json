@@ -1,0 +1,23 @@
+{
+  "verdict": "ALL_SAFE_REGRESSION_PASS_WITH_EVIDENCE_INDEX_V2_AND_EXECUTION_HOLD",
+  "status": "safe_regression_suite_executed_after_v2_lock",
+  "tests": [
+    "static validator",
+    "positive no-model rehearsal",
+    "negative bad-fixture rehearsal",
+    "S8 no-authority gate rehearsal",
+    "post S5/S6 failure response rehearsal",
+    "immutable evidence index v2 verification",
+    "guarded real Gemini command blocked"
+  ],
+  "guard_exit_code": 2,
+  "evidence_index_verdict": "EVIDENCE_INDEX_V2_VERIFY_PASS_UNCHANGED_WITH_EXECUTION_HOLD",
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "hermes_dispatch": false,
+  "model_api_transport_for_bridge_execution": false,
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "safe_regression_script": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_all_safe_regression_v0.sh",
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

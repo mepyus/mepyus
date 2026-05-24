@@ -1,0 +1,38 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_tool_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "expected_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "selected_space_material",
+    "rejected_space_material",
+    "original_to_space_fit",
+    "changed_judgment_for_hermes",
+    "risks",
+    "recommended_hermes_merge_inputs",
+    "next_for_hermes",
+    "promotion_status"
+  ],
+  "first_pass_limit": {
+    "optional_verification_refs_allowed": true,
+    "record_expansion_as_optional_verification": true,
+    "required_files_max": 6
+  },
+  "hermes_interpretation": "Hermes is the execution/merge center; Codex retrieves original-related space material first and later handles maturation from Hermes reentry record.",
+  "packet_id": "05_codex_space_retrieval_task_packet_v0",
+  "retrieval_question": "Which existing VectorFL space materials are most relevant to the corrected Hermes-centered role split and no-direct-API CLI/script bridge?",
+  "return_schema_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/06_expected_codex_space_retrieval_return_schema_v0.json",
+  "task_type": "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL",
+  "user_original_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/00_user_original_verbatim.md"
+}

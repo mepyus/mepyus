@@ -1,0 +1,122 @@
+{
+  "format": "GEMINI_BULK_REVIEW_LITE_V0",
+  "status": "returned_with_watch",
+  "request_id": "REAL_GEMINI_ONLY_LITE_TEST_V0",
+  "source_scope": "declared files only; no live web/source lookup; model_api_transport_only",
+  "observed_files": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/GEMINI_LITE_OUTPUT_CONTRACT_V0.md",
+      "chars": 2686,
+      "lines": 141,
+      "role": "contract"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md",
+      "chars": 6128,
+      "lines": 268,
+      "role": "packet"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_ONLY_BRIDGE_REHEARSAL_RECEIPT_V0.json",
+      "chars": 1042,
+      "lines": 23,
+      "role": "receipt"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs/codex_recovery_return.md",
+      "chars": 3530,
+      "lines": 89,
+      "role": "prior_report"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json",
+      "chars": 2963,
+      "lines": 55,
+      "role": "receipt"
+    }
+  ],
+  "repeated_patterns": [
+    {
+      "pattern": "CODEX_OWNED_HERMES_RUN_GEMINI_LITE_BRIDGE_V0",
+      "evidence": [
+        "ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md:6.1",
+        "ASSET_ONLY_BRIDGE_REHEARSAL_RECEIPT_V0.json:selected_pattern"
+      ],
+      "confidence": "high"
+    },
+    {
+      "pattern": "real_gemini_executed: false",
+      "evidence": [
+        "ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md:2",
+        "ASSET_ONLY_BRIDGE_REHEARSAL_RECEIPT_V0.json",
+        "codex_recovery_return.md:scope_validity",
+        "HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json"
+      ],
+      "confidence": "high"
+    },
+    {
+      "pattern": "no promotion / candidate-only status",
+      "evidence": [
+        "ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md:2",
+        "codex_recovery_return.md:verdict",
+        "HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json:promotion_performed"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "candidate_items": [
+    {
+      "item": "CODEX_OWNED_HERMES_RUN_GEMINI_LITE_BRIDGE_V0 topology",
+      "why_candidate": "structural rehearsal pattern identified as workable split",
+      "not_component_because": "requires user promotion decision and real Gemini validation"
+    },
+    {
+      "item": "GEMINI_LITE_OUTPUT_CONTRACT_V0",
+      "why_candidate": "defines required shape for Codex recovery path",
+      "not_component_because": "draft template without real bridge validation"
+    }
+  ],
+  "uncertainties": [
+    "Real Gemini execution remains unverified in all observed receipts",
+    "Transitive dispatch approval risks if contracts are misinterpreted"
+  ],
+  "possible_risks": [
+    "Over-promotion of candidate bridge patterns to baseline status",
+    "Skipping Codex recovery check by treating lite output as truth",
+    "Confusing model API transport with live web lookup in receipts"
+  ],
+  "questions_for_codex": [
+    "Does the recovery_class_hint 'candidate' in codex_recovery_return.md sufficiently block unintended promotion?",
+    "Is the conflict between rehearsal simulated_codex_only and real execution receipts handled by existing contracts?"
+  ],
+  "do_not_promote": [
+    "Bridge topology pattern CODEX_OWNED_HERMES_RUN_GEMINI_LITE_BRIDGE_V0",
+    "GEMINI_LITE_OUTPUT_CONTRACT_V0 as authority/truth",
+    "Simulated Gemini output as validation of real bridge capabilities"
+  ],
+  "negative_evidence": {
+    "promotion_claimed": false,
+    "component_approval_claimed": false,
+    "workflow_schema_registry_ontology_baseline_claimed": false,
+    "truth_claimed": false,
+    "live_web_source_lookup_used": false,
+    "external_connector_used": false,
+    "memory_skill_cron_config_instruction_present": false
+  },
+  "receipt_conflict_check": {
+    "receipt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json",
+    "conflicts_with_receipt": false,
+    "conflict_items": [],
+    "conflict_resolution_required_by_codex": false
+  },
+  "raw_audit_trigger": {
+    "required": false,
+    "reasons": []
+  },
+  "raw_limits": [
+    "declared files only",
+    "no live web lookup",
+    "model_api_transport_only for Codex CLI"
+  ],
+  "stop_flags": []
+}

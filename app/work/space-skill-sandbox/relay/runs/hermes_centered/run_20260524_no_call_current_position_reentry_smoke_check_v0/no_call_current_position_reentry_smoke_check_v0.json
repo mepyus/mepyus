@@ -1,0 +1,112 @@
+{
+  "smoke_check_id": "no_call_current_position_reentry_smoke_check:v0",
+  "smoke_status": "PASS_NO_CALL_CURRENT_POSITION_REENTRY_SMOKE_CHECK_WITH_HOLD",
+  "created_at": "2026-05-24T00:37:00+0900",
+  "entry_ref": "app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.json",
+  "entry_md_ref": "app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.md",
+  "entry_position": "NO_CALL_OPERATOR_HANDOFF_ENTRYPOINT_REALIZED_WITH_HOLD",
+  "reentry_path_seen": [
+    "current-position entry",
+    "safe operator entry points",
+    "scrubbed no-call static operator card",
+    "no-call reuse chain consistency rollup"
+  ],
+  "safe_entry_reads": [
+    {
+      "label": "Scrubbed no-call static operator card",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_scrubbed_static_operator_card_copy_v0/single_row_static_operator_card_scrubbed_no_call_v0.json",
+      "exists": true,
+      "sha256": "c39fa4d72bae91fbfab2631782735b18ca92eb7974ff40904e8fa9bd7d8d7e43",
+      "keys": [
+        "api_call",
+        "api_direct",
+        "authority_mutation",
+        "card_id",
+        "card_status",
+        "dashboard_registry_mutation",
+        "evidence_receipt_ref",
+        "forbidden_actions",
+        "guard_badge",
+        "hold_boundaries",
+        "legacy_endpoint_replay_labels_visible",
+        "live_connector",
+        "local_http_endpoint_replay",
+        "local_server_start",
+        "model_execution",
+        "not_valid_for",
+        "operator_note",
+        "program_alpha_status",
+        "promotion",
+        "render_policy"
+      ]
+    },
+    {
+      "label": "No-call reuse chain consistency rollup",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_reuse_chain_consistency_rollup_v0/no_call_reuse_chain_consistency_rollup_v0.json",
+      "exists": true,
+      "sha256": "90bd262330415eac308ca401095d94733223f316b47c4dfa7aa7210277df2c8f",
+      "keys": [
+        "api_call",
+        "api_direct",
+        "authority_mutation",
+        "chain",
+        "consistent_boundaries",
+        "forbidden_actions",
+        "layers",
+        "lineage_all_pass",
+        "lineage_checks",
+        "local_http_endpoint_replay",
+        "local_server_start",
+        "model_execution",
+        "not_valid_for",
+        "promotion",
+        "registry_mutation",
+        "rollup_id",
+        "rollup_status",
+        "source_mutation",
+        "valid_for",
+        "watch"
+      ]
+    }
+  ],
+  "safe_entry_count": 2,
+  "old_endpoint_scripts_referenced_as_forbidden_only": true,
+  "reentry_does_not_point_to_endpoint_replay_as_action": true,
+  "lineage_all_pass": true,
+  "operator_reentry_verdict": "SAFE_REENTRY_POINTS_PRESENT_NO_CALL",
+  "watch": [
+    "filled_receipt and trace still contain archived legacy endpoint replay source refs; scrubbed card quarantines them as display-only/no-call",
+    "static_card is pre-scrub copy; prefer scrubbed_card for operator-facing display",
+    "root current-position pointer is not mutated by this proposal",
+    "codex_/root pointer may remain stale relative to this vectorfl_replica no-call reuse chain"
+  ],
+  "not_valid_for": [
+    "root pointer mutation",
+    "authority mutation",
+    "Program Alpha",
+    "registry creation",
+    "bulk conversion",
+    "endpoint replay evidence refresh",
+    "model execution evidence"
+  ],
+  "forbidden_actions": [
+    "mutate root current-position pointer without explicit approval",
+    "run endpoint replay scripts",
+    "start local server",
+    "call external API",
+    "use API-direct",
+    "create registry",
+    "promote Program Alpha",
+    "treat as authority"
+  ],
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "program_alpha_status": "NOT_READY"
+}

@@ -1,0 +1,149 @@
+{
+  "active_call_hits": 0,
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "loop": "new user original -> original intake -> actual space reading -> model fixture -> merge -> receipt writer -> trace/operator status",
+  "meaning": "First minimal VectorFL loop rehearsal using all four extracted shapes passed with actual local space refs and receipt-backed HOLD evidence.",
+  "negative_cases": 4,
+  "negative_passed_cases": 4,
+  "next_safe_lane": "FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+  "parts": [
+    {
+      "checks": [
+        {
+          "check": "all_required_intake_fields_present",
+          "pass": true
+        },
+        {
+          "check": "raw_original_preserved",
+          "pass": true
+        },
+        {
+          "check": "source_layer_input",
+          "pass": true
+        }
+      ],
+      "method": "build intake packet from new raw original using original-intake shape",
+      "part": "P1_original_intake_shape",
+      "seconds": 0.000404
+    },
+    {
+      "checks": [
+        {
+          "check": "current_position_anchor_present",
+          "pass": true
+        },
+        {
+          "check": "material_refs>=7",
+          "observed": 7,
+          "pass": true
+        },
+        {
+          "check": "safe_entry_points>=2",
+          "pass": true
+        },
+        {
+          "check": "guard_counts_ok",
+          "pass": true
+        },
+        {
+          "check": "no_authority",
+          "pass": true
+        }
+      ],
+      "method": "reuse actual-material space reading shape with current/guard/lens refs",
+      "part": "P2_space_reading_shape",
+      "seconds": 0.000299
+    },
+    {
+      "checks": [
+        {
+          "check": "has_original_ref",
+          "pass": true
+        },
+        {
+          "check": "has_space_reading_ref",
+          "pass": true
+        },
+        {
+          "check": "has_model_fixture_ref",
+          "pass": true
+        },
+        {
+          "check": "not_model_only",
+          "pass": true
+        },
+        {
+          "check": "hold",
+          "pass": true
+        }
+      ],
+      "method": "merge original packet + space reading packet + local model fixture",
+      "part": "P3_space_mediated_merge_shape",
+      "seconds": 0.000318
+    },
+    {
+      "checks": [
+        {
+          "actual": "DETECT_RAW_MUTATION",
+          "case_id": "LOOP-NEG-INTAKE-MUTATION",
+          "expected": "DETECT_RAW_MUTATION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MISSING_CURRENT_POSITION",
+          "case_id": "LOOP-NEG-SPACE-MISSING-CURRENT",
+          "expected": "FAIL_MISSING_CURRENT_POSITION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MODEL_ONLY_MERGE",
+          "case_id": "LOOP-NEG-MERGE-MODEL-ONLY",
+          "expected": "FAIL_MODEL_ONLY_MERGE",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+          "case_id": "LOOP-NEG-RECEIPT-HIDDEN-FAILURE",
+          "expected": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+          "ok": true
+        }
+      ],
+      "method": "check loop-level failure classes for intake/space/merge/receipt",
+      "part": "P4_loop_negative_checks",
+      "seconds": 0.000295
+    },
+    {
+      "checks": [
+        {
+          "check": "active_call_hits==0",
+          "observed": 0,
+          "pass": true
+        }
+      ],
+      "method": "scan generated data artifacts for active API/local endpoint primitives",
+      "part": "P5_forbidden_active_call_scan",
+      "seconds": 0.001332
+    }
+  ],
+  "receipt_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_receipt_v0.json",
+  "report_id": "VECTORFL_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_WITH_HOLD\nparts=5 total_measured_seconds=0.002648 negative_cases=4 active_call_hits=0\nP1_original_intake_shape seconds=0.000404 method=build intake packet from new raw original using original-intake shape\nP2_space_reading_shape seconds=0.000299 method=reuse actual-material space reading shape with current/guard/lens refs\nP3_space_mediated_merge_shape seconds=0.000318 method=merge original packet + space reading packet + local model fixture\nP4_loop_negative_checks seconds=0.000295 method=check loop-level failure classes for intake/space/merge/receipt\nP5_forbidden_active_call_scan seconds=0.001332 method=scan generated data artifacts for active API/local endpoint primitives",
+  "total_measured_seconds": 0.002648,
+  "trace_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_trace_rows_v0.json",
+  "verdict": "PASS_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_WITH_HOLD"
+}

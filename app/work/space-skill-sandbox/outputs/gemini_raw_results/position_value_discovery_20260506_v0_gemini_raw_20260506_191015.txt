@@ -1,0 +1,195 @@
+# Gemini Position Value Discovery Packet - Plan from Space
+
+## 1. Position Candidates
+
+### PV_PLAN_BASIS_GATE
+```yaml
+position_id: PV_PLAN_BASIS_GATE
+asset_family: line / axis / lens / camera reference
+authority_state: candidate_reference
+maturity_state: operating_anchor_candidate
+active_line: Plan from Space / Session Convergence Prevention
+axis_tension: model-default planning vs space-grounded planning
+camera_position: external tool plan mode
+lens_gate: Plan Basis present
+worker_boundary: external tool must not plan first
+return_shape: Plan Basis + bounded plan + Return-to-Space
+watch_signal: decorative_lacl_watch
+reentry_trigger: tool returns a plan without space grounding
+do_not_infer: no baseline, no universal workflow
+evidence_pointer: docs/indexes/plan_from_space_position_map_seed_v0.md
+```
+
+### PV_BROAD_BOUNDED_PACKAGE
+```yaml
+position_id: PV_BROAD_BOUNDED_PACKAGE
+asset_family: package / candidate reference context
+authority_state: candidate_reference
+maturity_state: reusable_setting_candidate
+active_line: Plan from Space / Session Convergence Prevention
+axis_tension: small split vs broad-but-bounded package
+camera_position: user relay burden
+lens_gate: package sizing justified
+worker_boundary: worker must not multiply sessions by default
+return_shape: bounded package with issue log and movement record
+watch_signal: session_convergence_watch
+reentry_trigger: model-default analysis/design/execution split appears
+do_not_infer: no permission to expand scope or skip hard boundary
+evidence_pointer: docs/indexes/plan_from_space_position_map_seed_v0.md
+```
+
+### PV_RAW_TRACE_BOUNDARY
+```yaml
+position_id: PV_RAW_TRACE_BOUNDARY
+asset_family: worker evidence / Gemini process record
+authority_state: raw_trace
+maturity_state: raw_record
+active_line: External Tool Boundary / Raw Trace
+axis_tension: raw trace vs interpreted memory
+camera_position: provenance integrity
+lens_gate: Return-to-Space Value present
+worker_boundary: worker logs are not VectorFL memory
+return_shape: movement record after interpretation
+watch_signal: raw_trace_promotion_watch
+reentry_trigger: worker output claims finality or looks polished
+do_not_infer: no tool authority, no verified truth
+evidence_pointer: docs/indexes/plan_from_space_position_map_seed_v0.md
+```
+
+### PV_MANUAL_RELAY_BRIDGE
+```yaml
+position_id: PV_MANUAL_RELAY_BRIDGE
+asset_family: worker evidence / Gemini process record
+authority_state: watch_only
+maturity_state: hold_signal
+active_line: User Relay Burden Reduction
+axis_tension: runner instability vs user relay burden
+camera_position: user relay burden
+lens_gate: manual relay packaged immediately
+worker_boundary: user is temporary bridge, not steady dispatcher
+return_shape: manual worker return packaging
+watch_signal: user_relay_burden_watch
+reentry_trigger: user manually brings external tool result
+do_not_infer: no permanent relay workflow
+evidence_pointer: docs/specs/manual_external_tool_relay_bridge_note_v0.md
+```
+
+### PV_NON_INSPECTED_DISCLOSURE
+```yaml
+position_id: PV_NON_INSPECTED_DISCLOSURE
+asset_family: role and authority boundary
+authority_state: candidate_reference
+maturity_state: process_asset_candidate
+active_line: Plan from Space / Session Convergence Prevention
+axis_tension: evidence confidence vs overclaim
+camera_position: provenance integrity
+lens_gate: non-inspected evidence disclosed
+worker_boundary: worker must say what it did not inspect
+return_shape: evidence pointers + not-inspected scope
+watch_signal: evidence_overclaim_watch
+reentry_trigger: worker reports conclusions from partial read
+do_not_infer: no full-space read claim, no final verification
+evidence_pointer: docs/indexes/plan_from_space_position_map_seed_v0.md
+```
+
+### PV_RETURN_TO_SPACE_CLOSEOUT
+```yaml
+position_id: PV_RETURN_TO_SPACE_CLOSEOUT
+asset_family: current-position / anchor state
+authority_state: candidate_reference
+maturity_state: process_asset_candidate
+active_line: Return-to-Space Recovery
+axis_tension: output completion vs recovery
+camera_position: space recovery
+lens_gate: reusable judgment present
+worker_boundary: space/Codex judges memory value
+return_shape: Movement Record
+watch_signal: done_without_memory_watch
+reentry_trigger: closeout says done but leaves no reusable value
+do_not_infer: no automatic memory promotion
+evidence_pointer: docs/indexes/plan_from_space_position_map_seed_v0.md
+```
+
+### PV_CURRENT_POSITION_ENTRY
+```yaml
+position_id: PV_CURRENT_POSITION_ENTRY
+asset_family: current-position / anchor state
+authority_state: current_position_entry
+maturity_state: reusable_setting_candidate
+active_line: Return-to-Space Recovery
+axis_tension: session-loss drift vs re-entry memory
+camera_position: program continuity
+lens_gate: next safe position stated
+worker_boundary: current work should not auto-continue
+return_shape: current_position_entry_v0.md
+watch_signal: session_loss_watch
+reentry_trigger: session may be lost or next session needs recovery
+do_not_infer: no official session protocol, no baseline
+evidence_pointer: app/work/space-skill-sandbox/outputs/reusable_operating_settings_catalog_v0.md
+```
+
+### PV_BOUNDED_REREAD_UNIT
+```yaml
+position_id: PV_BOUNDED_REREAD_UNIT
+asset_family: docs/reports thought asset
+authority_state: candidate_reference
+maturity_state: process_asset_candidate
+active_line: Plan from Space / Session Convergence Prevention
+axis_tension: reread vs rewrite
+camera_position: token budget
+lens_gate: retrieval_scope_boundary applied
+worker_boundary: Gemini as bounded reader
+return_shape: evidence inventory / structural observation
+watch_signal: broad_scan_watch
+reentry_trigger: need to applying one lens to one internal artifact
+do_not_infer: no content revision, no promotion review
+evidence_pointer: docs/reports/whole_space_deep_reread_pipeline_setup_v0.md
+```
+
+## 2. Map Position Families
+
+### Current-Position & Recovery
+- **Families:** `current-position / anchor state`
+- **States:** `current_position_entry`, `candidate_reference`
+- **Candidates:** `PV_RETURN_TO_SPACE_CLOSEOUT`, `PV_CURRENT_POSITION_ENTRY`
+
+### Reference & Maturation
+- **Families:** `line / axis / lens / camera reference`, `docs/reports thought asset`
+- **States:** `candidate_reference`, `candidate_only`, `watch_only`
+- **Candidates:** `PV_PLAN_BASIS_GATE`, `PV_LINE_MATURITY_CAUTION`, `PV_BOUNDED_REREAD_UNIT`
+
+### Worker Process & Evidence
+- **Families:** `worker evidence / Gemini process record`, `role and authority boundary`, `package / candidate reference context`
+- **States:** `raw_trace`, `watch_only`, `candidate_reference`
+- **Candidates:** `PV_RAW_TRACE_BOUNDARY`, `PV_MANUAL_RELAY_BRIDGE`, `PV_NON_INSPECTED_DISCLOSURE`, `PV_BROAD_BOUNDED_PACKAGE`
+
+## 3. Best Positions For Small Anchors
+
+These 4 should travel in the next Session Space Anchor to prevent session convergence and user relay burden:
+
+1. **PV_PLAN_BASIS_GATE**: Forces space-grounding before accepting a plan.
+2. **PV_BROAD_BOUNDED_PACKAGE**: Prevents unnecessary session splitting.
+3. **PV_NON_INSPECTED_DISCLOSURE**: Maintains provenance integrity during bounded reads.
+4. **PV_RETURN_TO_SPACE_CLOSEOUT**: Ensures reusable memory is captured before exit.
+
+## 4. Missing / Unclear Map Areas
+
+- **Useful Shape vs Reusable Setting**: Boundary between a "good example" and a "setting to copy" remains judgmental.
+- **Latent Line Mapping**: Mapping older `latent_line` folders to current `line / axis / camera / lens` references is pending.
+- **Active vs Residue Markers**: Older reports (April 2026) lack clear markers to distinguish active principles from historical residue.
+- **Package 034 Source**: Origin and context of Package 034 remains unclear.
+
+## 5. HOLD / Do Not Promote
+
+- **Baseline/Official Workflow**: None of these positions are baseline; do not promote without user gate.
+- **Automation/Router/Controller**: Do not use these values to build autonomous execution logic.
+- **Registry/Index/Ledger**: These are compact values, not a database or exhaustive inventory.
+- **Unified Ontology**: Do not merge these into a single global graph or law.
+- **Plan Mode Adoption**: Do not normalize "Manual Relay" as a steady-state workflow.
+
+## 6. Return-to-Space Value
+
+- **Discovery:** Compact position values exist across `docs/indexes/`, `docs/reports/`, and `app/work/space-skill-sandbox/outputs/`.
+- **Reusable Finding:** The `position_id` PV-001 through PV-007 are already coherent with the current `Plan from Space` line.
+- **For Codex Synthesis:** Use the field set `position_id`, `asset_family`, `authority_state`, etc. as the standard for future anchor position mapping.
+- **Future Reuse:** Small anchors should carry only 1-3 relevant `position_id`s to remain compact while enforcing boundaries.

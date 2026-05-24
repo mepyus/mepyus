@@ -1,0 +1,272 @@
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "drift_cases": [
+    {
+      "actual": "FAIL_RAW_MUTATION",
+      "case_id": "DRIFT-RAW-MUTATION",
+      "expected": "FAIL_RAW_MUTATION",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_MISSING_CURRENT_POSITION",
+      "case_id": "DRIFT-MISSING-CURRENT",
+      "expected": "FAIL_MISSING_CURRENT_POSITION",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_MODEL_ONLY_MERGE",
+      "case_id": "DRIFT-MODEL-ONLY-MERGE",
+      "expected": "FAIL_MODEL_ONLY_MERGE",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+      "case_id": "DRIFT-HIDDEN-RECEIPT-FAILURE",
+      "expected": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+      "ok": true
+    },
+    {
+      "actual": "FAIL_ACTIVE_CALL_LITERAL",
+      "case_id": "DRIFT-ACTIVE-CALL-LITERAL",
+      "expected": "FAIL_ACTIVE_CALL_LITERAL",
+      "ok": true
+    }
+  ],
+  "drift_count": 5,
+  "drift_passed": 5,
+  "field_stability": {
+    "all_positive_required_fields_pass": true,
+    "case_count": 3,
+    "stable_parts": [
+      "intake",
+      "space_reading",
+      "merge",
+      "receipt"
+    ]
+  },
+  "final_clean_active_call_hits": [],
+  "intentional_active_literal_hits": [
+    {
+      "file": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/drift_active_call_literal_case.md",
+      "pattern": "requests\\.(get|post|put|delete)"
+    }
+  ],
+  "part_time_stats": {
+    "intake": {
+      "max": 0.000295,
+      "mean": 0.00026,
+      "min": 0.000207,
+      "spread": 8.8e-05
+    },
+    "merge": {
+      "max": 0.00048,
+      "mean": 0.000455,
+      "min": 0.000407,
+      "spread": 7.3e-05
+    },
+    "receipt": {
+      "max": 0.000329,
+      "mean": 0.000264,
+      "min": 0.000228,
+      "spread": 0.000101
+    },
+    "space_reading": {
+      "max": 0.000324,
+      "mean": 0.000313,
+      "min": 0.000305,
+      "spread": 1.9e-05
+    }
+  },
+  "positive_cases": [
+    {
+      "case_id": "positive_1",
+      "field_checks": [
+        {
+          "check": "positive_1_intake_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_1_space_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_1_merge_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_1_receipt_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_1_raw_preserved",
+          "pass": true
+        },
+        {
+          "check": "positive_1_space_current_present",
+          "pass": true
+        },
+        {
+          "check": "positive_1_merge_three_inputs",
+          "pass": true
+        },
+        {
+          "check": "positive_1_receipt_hold",
+          "pass": true
+        }
+      ],
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/repeat_input_1_space_review.md",
+      "parts": [
+        {
+          "part": "intake",
+          "seconds": 0.000295
+        },
+        {
+          "part": "space_reading",
+          "seconds": 0.00031
+        },
+        {
+          "part": "merge",
+          "seconds": 0.000407
+        },
+        {
+          "part": "receipt",
+          "seconds": 0.000236
+        }
+      ],
+      "total_seconds": 0.001248,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "positive_2",
+      "field_checks": [
+        {
+          "check": "positive_2_intake_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_2_space_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_2_merge_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_2_receipt_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_2_raw_preserved",
+          "pass": true
+        },
+        {
+          "check": "positive_2_space_current_present",
+          "pass": true
+        },
+        {
+          "check": "positive_2_merge_three_inputs",
+          "pass": true
+        },
+        {
+          "check": "positive_2_receipt_hold",
+          "pass": true
+        }
+      ],
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/repeat_input_2_operator_handoff.md",
+      "parts": [
+        {
+          "part": "intake",
+          "seconds": 0.000207
+        },
+        {
+          "part": "space_reading",
+          "seconds": 0.000305
+        },
+        {
+          "part": "merge",
+          "seconds": 0.000477
+        },
+        {
+          "part": "receipt",
+          "seconds": 0.000329
+        }
+      ],
+      "total_seconds": 0.001318,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "positive_3",
+      "field_checks": [
+        {
+          "check": "positive_3_intake_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_3_space_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_3_merge_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_3_receipt_required_fields",
+          "pass": true
+        },
+        {
+          "check": "positive_3_raw_preserved",
+          "pass": true
+        },
+        {
+          "check": "positive_3_space_current_present",
+          "pass": true
+        },
+        {
+          "check": "positive_3_merge_three_inputs",
+          "pass": true
+        },
+        {
+          "check": "positive_3_receipt_hold",
+          "pass": true
+        }
+      ],
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/repeat_input_3_receipt_boundary.md",
+      "parts": [
+        {
+          "part": "intake",
+          "seconds": 0.000279
+        },
+        {
+          "part": "space_reading",
+          "seconds": 0.000324
+        },
+        {
+          "part": "merge",
+          "seconds": 0.00048
+        },
+        {
+          "part": "receipt",
+          "seconds": 0.000228
+        }
+      ],
+      "total_seconds": 0.001311,
+      "verdict": "PASS"
+    }
+  ],
+  "positive_count": 3,
+  "positive_passed": 3,
+  "test_id": "four_shape_loop_repeatability_and_drift_test_v0",
+  "verdict": "PASS_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_WITH_HOLD"
+}

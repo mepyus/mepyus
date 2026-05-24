@@ -1,0 +1,68 @@
+{
+  "approval_applied": "no",
+  "authority_database": "no",
+  "candidate_id": "M-CAND-10",
+  "cases": [
+    {
+      "case_id": "CRG-POS-001",
+      "expected": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "observed": "CANDIDATE_MATERIAL_WITH_HOLD"
+    },
+    {
+      "case_id": "CRG-NEG-STOP-001",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "CRG-NEG-STOP-002",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "CRG-NEG-HOLD-001",
+      "expected": "HOLD_STOP_REVIEW",
+      "observed": "HOLD_STOP_REVIEW"
+    },
+    {
+      "case_id": "CRG-NEG-STOP-003",
+      "expected": "STOP",
+      "observed": "STOP"
+    }
+  ],
+  "created_at": "2026-05-23 08:41:52 KST",
+  "function_pattern": "Codex Review Guard",
+  "live_db_mutation": "no",
+  "m4_reusable_module": "no",
+  "model_execution": "no",
+  "module_promotion": "no",
+  "program_alpha_ready": "no",
+  "program_alpha_status": "NOT_READY",
+  "promotion_status": "HOLD",
+  "real_codex_execution": "no",
+  "router_runner_claim": "no",
+  "schema_mutation": "no",
+  "shared_db_mutation": "no",
+  "snapshot_mutation": "no",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface",
+    "M-CAND-03 Evidence Loop Persistence",
+    "M-CAND-06 Live-Safety Validator",
+    "M-CAND-07 Deterministic Stable Cycle",
+    "M-CAND-12 Module Extraction Gate"
+  ],
+  "status": "LOCAL_NO_MODEL_SYNTHETIC_REVIEW_GUARD_REHEARSAL_WITH_HOLD",
+  "summary": {
+    "candidate": 1,
+    "hold_stop_review": 1,
+    "problem_count": 0,
+    "stop": 3,
+    "total": 5
+  },
+  "synthetic_codex_output": "yes",
+  "v1_snapshot_creation": "no",
+  "vectorfl_authority_mutation": "no",
+  "write_ui": "no"
+}

@@ -1,0 +1,54 @@
+{
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "provider_api_note": "Hermes conversation uses provider API separately; VectorFL-internal execution here is script-only.",
+    "reason": "User approved work, but task is local spec/handoff generation from existing space assets; no live Codex/Gemini needed.",
+    "selected_mode": "FAST_NO_CALL_SCRIPT_ONLY_SPEC_DRAFT"
+  },
+  "packet_id": "01_space_maturation_handoff_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_SPACE_RELAYERING_ASSET_SAMPLE_TEST_20260524_V0.md",
+      "ref_id": "next_after_asset_sample",
+      "sha256": "e8787f15e334bc894958864e5a16e081185f233a403ab5239795cc52db014b8a",
+      "used_for": "scope and no-tree-move rule"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_SPACE_RELAYERING_BLUEPRINT_ASSET_SAMPLE_TEST_20260524_V0.json",
+      "ref_id": "asset_sample",
+      "sha256": "732d5084f672b657bba554ccab77a11e13bbb2e2083ccdebf297aa48723d7303",
+      "used_for": "sample classification, multi-layer gap, early attach evidence"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_STRUCTURE_SPEC_INTENT_CORRECTION_SPACE_RELAYERING_20260524_V0.json",
+      "ref_id": "space_relayering_blueprint",
+      "sha256": "36fad1aba7325046c797380141d971e91c09565698b55267048dfa0459c0adb5",
+      "used_for": "L0-L6 layers and Codex/Gemini early attach candidates"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0.json",
+      "ref_id": "s7_rollup",
+      "sha256": "d06f7200b3c9899544c9fc4e4ba237a61e38f282c4f645e70fb44818e3159b01",
+      "used_for": "S1-S7 repeated patterns and budget split"
+    }
+  ],
+  "user_original_verbatim_sha256": "5d4fa24edd31dc265a801245d5bcfa78650b90daca75f49c5193514a11c7f05a"
+}

@@ -1,0 +1,125 @@
+{
+  "authority_mutation": "NO",
+  "created_at": "2026-05-23 10:09:57 KST",
+  "model_execution": "NO",
+  "promotion": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "row_count": 6,
+  "rows": [
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "app/work/VECTORFL_PROGRAM_UNIT_STRUCTURE_GAP_REVIEW_20260523_V0.md",
+      "next_action": "continue no-model trace rehearsal",
+      "output_ref": "app/work/VECTORFL_PROGRAM_UNIT_TRACE_LEDGER_FIXTURE_REHEARSAL_20260523_V0.md",
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/VECTORFL_PROGRAM_UNIT_TRACE_LEDGER_SCHEMA_CANDIDATE_20260523_V0.md",
+      "source_layer": "input_layer",
+      "surface_label": "input trace fixture accepted with HOLD",
+      "trace_id": "TRACE-20260523-INPUT-0001",
+      "watch_notes": [
+        "fixture row only",
+        "no live intake"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "PASS_WITH_HOLD",
+      "input_ref": "app/work/VECTORFL_PROGRAM_UNIT_TRACE_LEDGER_SCHEMA_CANDIDATE_20260523_V0.json",
+      "next_action": "map receipts into trace rows",
+      "output_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/fixtures/six_layer_trace_ledger_fixture.json",
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/VECTORFL_TRACE_LEDGER_EXAMPLE_ROW_CANDIDATES_20260523_V0.md",
+      "source_layer": "evidence_layer",
+      "surface_label": "evidence row linked to receipt with HOLD",
+      "trace_id": "TRACE-20260523-EVIDENCE-0001",
+      "watch_notes": [
+        "receipt is not authority"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "HOLD_STOP_REVIEW",
+      "input_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/fixtures/six_layer_trace_ledger_fixture.json",
+      "next_action": "create cross-layer guard matrix candidate",
+      "output_ref": "app/work/VECTORFL_TRACE_LEDGER_FIXTURE_REHEARSAL_DASHBOARD_20260523_V0.json",
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/VECTORFL_PROGRAM_UNIT_STRUCTURE_GAP_REVIEW_20260523_V0.md",
+      "source_layer": "review_guard_layer",
+      "surface_label": "HOLD_STOP_REVIEW remains visible and not softened",
+      "trace_id": "TRACE-20260523-GUARD-0001",
+      "watch_notes": [
+        "label must preserve HOLD_STOP_REVIEW"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "WATCH",
+      "input_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/fixtures/six_layer_trace_ledger_fixture.json",
+      "next_action": "build surface-to-evidence trace map",
+      "output_ref": "app/work/VECTORFL_TRACE_LEDGER_FIXTURE_REHEARSAL_USER_STATUS_CARD_20260523_V0.md",
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/VECTORFL_TRACE_LEDGER_FIXTURE_REHEARSAL_USER_STATUS_CARD_20260523_V0.md",
+      "source_layer": "surface_layer",
+      "surface_label": "WATCH: dashboard label is evidence-coupled, not approval",
+      "trace_id": "TRACE-20260523-SURFACE-0001",
+      "watch_notes": [
+        "avoid green approval badge"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "input_ref": "app/work/VECTORFL_MODEL_EXECUTION_DECISION_CARD_20260523_V0.md",
+      "next_action": "do not ingest model output without explicit approval",
+      "output_ref": null,
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_gemini_gap_scan_real_run_packet_template_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/space-skill-sandbox/relay/packets/to_gemini/gemini_gap_scan_twelve_candidate_dashboard_20260523_v0/PACKET.md",
+      "source_layer": "tool_reentry_layer",
+      "surface_label": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT: packet prepared, not executed",
+      "trace_id": "TRACE-20260523-REENTRY-0001",
+      "watch_notes": [
+        "no real Gemini execution",
+        "no reentry_ref yet"
+      ]
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "created_at": "2026-05-23 10:09:57 KST",
+      "guard_status": "WATCH",
+      "input_ref": "app/work/VECTORFL_END_OF_DAY_OPERATOR_RECOVERY_INDEX_20260523_V0.md",
+      "next_action": "consider compact recovery bundle only if artifact growth continues",
+      "output_ref": "app/work/VECTORFL_NEXT_WORK_AFTER_TRACE_LEDGER_FIXTURE_REHEARSAL_20260523_V0.md",
+      "promotion_status": "HOLD",
+      "receipt_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_trace_ledger_fixture_rehearsal_v0/receipt.md",
+      "reentry_ref": null,
+      "source_artifact": "app/work/VECTORFL_HANDOFF_RECOVERY_INTEGRITY_CHECKSUM_INDEX_20260523_V0.md",
+      "source_layer": "operator_recovery_layer",
+      "surface_label": "WATCH: recovery index helps navigation but is not baseline freeze",
+      "trace_id": "TRACE-20260523-RECOVERY-0001",
+      "watch_notes": [
+        "checksum is not v1 snapshot",
+        "navigation only"
+      ]
+    }
+  ],
+  "schema_mutation": "NO",
+  "shared_db_mutation": "NO",
+  "status": "TRACE_LEDGER_FIXTURE_REHEARSAL_ROWS_WITH_HOLD"
+}

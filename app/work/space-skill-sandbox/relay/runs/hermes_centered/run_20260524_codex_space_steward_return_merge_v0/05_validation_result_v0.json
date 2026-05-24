@@ -1,0 +1,81 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "codex_packet_exists",
+      "pass": true
+    },
+    {
+      "check": "script_only_no_live_gemini",
+      "pass": true
+    },
+    {
+      "check": "required_fields_present",
+      "pass": true
+    },
+    {
+      "check": "referenced_material_4",
+      "pass": true
+    },
+    {
+      "check": "reinserted_material_8",
+      "pass": true
+    },
+    {
+      "check": "boundary_all_no_or_hold",
+      "pass": true
+    },
+    {
+      "check": "codex_read_expansion_recorded",
+      "pass": true
+    },
+    {
+      "check": "observed_gaps_recorded",
+      "pass": true
+    },
+    {
+      "check": "task_packet_gap_detected",
+      "pass": true
+    },
+    {
+      "check": "compact_index_gap_detected",
+      "pass": true
+    },
+    {
+      "check": "hermes_merge_delta_present",
+      "pass": true
+    },
+    {
+      "check": "gemini_prompt_created",
+      "pass": true
+    },
+    {
+      "check": "gemini_prompt_has_codex_packet",
+      "pass": true
+    },
+    {
+      "check": "next_gemini_or_hold",
+      "pass": true
+    },
+    {
+      "check": "no_mutation_boundary",
+      "pass": true
+    },
+    {
+      "check": "forbidden_endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 16,
+  "codex_read_files_count": 11,
+  "elapsed_seconds": 0.003066415000000003,
+  "folder_tree_mutation": "NO",
+  "next_safe_lane": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+  "observed_gaps_count": 3,
+  "promotion_status": "HOLD",
+  "referenced_material_count": 4,
+  "reinserted_material_count": 8,
+  "verdict": "PASS_CODEX_SPACE_STEWARD_RETURN_MERGED_FOR_GEMINI_WITH_HOLD"
+}

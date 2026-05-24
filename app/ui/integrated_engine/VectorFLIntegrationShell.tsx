@@ -669,6 +669,9 @@ export default function VectorFLIntegrationShell() {
                   {dashboardRefresh.lastUpdated ? ` · last=${dashboardRefresh.lastUpdated}` : ""}
                   {dashboardRefresh.error ? ` · error=${dashboardRefresh.error}` : ""}
                 </span>
+                <div className="mt-1 text-slate-500">
+                  Shell auto-refreshes runtime state every 5s. Control panel refreshes on load/manual/action and owns run/mark controls.
+                </div>
               </div>
               <div className="mt-3 grid gap-2 md:grid-cols-3">
                 <SmallStat label="stage" value={selectedPackage.stage} />

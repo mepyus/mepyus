@@ -1,0 +1,195 @@
+{
+  "active_call_hits": 0,
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "materials_used": {
+    "current_position": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.json",
+      "sha256": "ab8be7a567a1eb4bd154f8339c4655373ad82b570bee58730ff37b456594608b"
+    },
+    "customer_response_merge_doc": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/CUSTOMER_RESPONSE_REVIEW_DISCOVERY_MERGE_V0.md",
+      "sha256": "700a6011c22ab44f32a7612ba9518fa1b835d2b09a03964717a7bcfd78f1353d"
+    },
+    "guard_matrix": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.json",
+      "sha256": "e1e148b51fa3f88a19d554ec898e623ad40265f6350409591f267ca291846c63"
+    },
+    "intake_shape_actual_test": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_RECEIPT_AND_INTAKE_SHAPE_ACTUAL_TEST_20260524_V0.json",
+      "sha256": "63df2713e804faf75e756966ceff235802b63e400a89150de3f951c8e30cdc30"
+    },
+    "scenario_1_merge": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_mediated_merge_packet_v0.json",
+      "sha256": "09b2619e1d26f880f09f35dc392485600ad736a6af0472eb9ad2e75f524f1bf5"
+    },
+    "scenario_1_space_reading": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_packet_v0.json",
+      "sha256": "62271ee30f80c6b2eb598f3b2512aca3bb47add71e43fc4f8739d4a26770bbbb"
+    },
+    "space_wide_reread_packet": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/GEMINI_VECTORFL_SPACE_WIDE_FUNCTION_FAMILY_REREAD_PACKET_V0.md",
+      "sha256": "484bb317e445035ff71a8f0630f60c0e50c90463540b03a2c1e5e0486d4fede5"
+    }
+  },
+  "negative_cases": 5,
+  "negative_passed_cases": 5,
+  "next_safe_lane": "SPACE_READING_AND_MERGE_SHAPE_EXTRACTION_FROM_ACTUAL_TEST_NO_AUTHORITY_MUTATION_V0",
+  "parts": [
+    {
+      "checks": [
+        {
+          "check": "existing_materials>=7",
+          "observed": 7,
+          "pass": true
+        },
+        {
+          "check": "contains_current_position",
+          "pass": true
+        },
+        {
+          "check": "contains_space_wide_reread_packet",
+          "pass": true
+        },
+        {
+          "check": "contains_merge_doc",
+          "pass": true
+        }
+      ],
+      "method": "file material index verification by sha256/path existence, no broad mutation",
+      "part": "P1_material_discovery",
+      "seconds": 1.1e-05
+    },
+    {
+      "checks": [
+        {
+          "check": "current_position_present",
+          "pass": true
+        },
+        {
+          "check": "safe_entry_points>=2",
+          "observed": 2,
+          "pass": true
+        },
+        {
+          "check": "guard_matrix_present",
+          "pass": true
+        },
+        {
+          "check": "space_wide_frame_detected",
+          "pass": true
+        },
+        {
+          "check": "candidate_only_merge_boundary_detected",
+          "pass": true
+        }
+      ],
+      "method": "read actual local files -> extract current/safe/guard/lens/boundary facts -> write packet",
+      "part": "P2_space_reading_actual_materials",
+      "seconds": 0.001506
+    },
+    {
+      "checks": [
+        {
+          "check": "has_original_ref",
+          "pass": true
+        },
+        {
+          "check": "has_space_reading_ref",
+          "pass": true
+        },
+        {
+          "check": "has_model_fixture_ref",
+          "pass": true
+        },
+        {
+          "check": "not_model_only",
+          "pass": true
+        },
+        {
+          "check": "promotion_hold",
+          "pass": true
+        }
+      ],
+      "method": "merge actual original material + actual space reading packet + local model fixture into directive",
+      "part": "P3_space_mediated_merge_actual_materials",
+      "seconds": 0.000973
+    },
+    {
+      "checks": [
+        {
+          "actual": "FAIL_MISSING_CURRENT_POSITION",
+          "case_id": "SPACE-NEG-001",
+          "expected": "FAIL_MISSING_CURRENT_POSITION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_INSUFFICIENT_SPACE_REFS",
+          "case_id": "SPACE-NEG-002",
+          "expected": "FAIL_INSUFFICIENT_SPACE_REFS",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MISSING_ORIGINAL_REF",
+          "case_id": "MERGE-NEG-001",
+          "expected": "FAIL_MISSING_ORIGINAL_REF",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MODEL_ONLY_MERGE",
+          "case_id": "MERGE-NEG-002",
+          "expected": "FAIL_MODEL_ONLY_MERGE",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_AUTHORITY_OR_PROMOTION_DRIFT",
+          "case_id": "MERGE-NEG-003",
+          "expected": "FAIL_AUTHORITY_OR_PROMOTION_DRIFT",
+          "ok": true
+        }
+      ],
+      "method": "programmatic negative validation of required anchors and merge inputs",
+      "part": "P4_negative_processing_checks",
+      "seconds": 0.000331
+    },
+    {
+      "checks": [
+        {
+          "check": "active_call_hits==0",
+          "observed": 0,
+          "pass": true
+        }
+      ],
+      "method": "scan generated artifacts for active network/local endpoint primitives",
+      "part": "P5_forbidden_active_call_scan",
+      "seconds": 0.001409
+    }
+  ],
+  "processing_review": {
+    "merge_method": "original material + space reading + model fixture -> merged directive",
+    "space_reading_method": "actual file refs -> extract anchors/lens/guard/boundary -> packet",
+    "validation_method": "positive structural checks + negative required-anchor/merge-input checks + forbidden primitive scan"
+  },
+  "repair_note": "First run exposed two validator-order issues and a self-scan issue: SPACE-NEG-002 was classified as missing current-position because empty dict was treated as absent; MERGE-NEG-002 was classified as missing original before model-only; scan included runner script literals. Patched validator ordering/presence semantics and scanned generated data artifacts excluding control script. Re-run PASS.",
+  "report_id": "VECTORFL_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_WITH_HOLD\nparts=5 total_measured_seconds=0.004230 negative_cases=5 active_call_hits=0\nP1_material_discovery seconds=0.000011 method=file material index verification by sha256/path existence, no broad mutation\nP2_space_reading_actual_materials seconds=0.001506 method=read actual local files -> extract current/safe/guard/lens/boundary facts -> write packet\nP3_space_mediated_merge_actual_materials seconds=0.000973 method=merge actual original material + actual space reading packet + local model fixture into directive\nP4_negative_processing_checks seconds=0.000331 method=programmatic negative validation of required anchors and merge inputs\nP5_forbidden_active_call_scan seconds=0.001409 method=scan generated artifacts for active network/local endpoint primitives",
+  "total_measured_seconds": 0.00423,
+  "verdict": "PASS_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_WITH_HOLD"
+}

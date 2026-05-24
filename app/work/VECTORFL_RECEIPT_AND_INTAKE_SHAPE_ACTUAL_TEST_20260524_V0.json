@@ -1,0 +1,23 @@
+{
+  "active_call_hits": 0,
+  "actual_test_meaning": "The extracted original-intake and receipt-writer shapes were exercised on new positive and negative fixtures, not merely existence-checked. They preserved raw original, detected raw mutation/authority drift/missing boundary/hidden validator failure/model execution overclaim, and kept no-call/HOLD boundaries.",
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "promotion": "HOLD"
+  },
+  "first_run_issue_repaired": "Expected label mismatch for INTAKE-NEG-002 repaired from FAIL_AUTHORITY_DRIFT_DETECTED to FAIL_AUTHORITY_DRIFT; no product boundary changed.",
+  "negative_cases": 5,
+  "next_safe_lane": "SCENARIO_1_SPACE_READING_AND_MERGE_FUNCTION_SHAPE_EXTRACTION_NO_AUTHORITY_MUTATION_V0",
+  "passed_cases": 7,
+  "positive_cases": 2,
+  "report_id": "VECTORFL_RECEIPT_AND_INTAKE_SHAPE_ACTUAL_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_receipt_and_intake_shape_actual_test_v0",
+  "validator_rc": 0,
+  "validator_stderr": "",
+  "validator_stdout": "PASS_RECEIPT_AND_INTAKE_SHAPE_ACTUAL_TEST_WITH_HOLD\npositive=2 negative=5 passed_cases=7 active_call_hits=0",
+  "verdict": "PASS_RECEIPT_AND_INTAKE_SHAPE_ACTUAL_TEST_WITH_HOLD"
+}

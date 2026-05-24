@@ -1,0 +1,80 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s2",
+      "pass": true
+    },
+    {
+      "check": "non_validator_target",
+      "pass": true
+    },
+    {
+      "check": "selected_refs_max_4",
+      "pass": true
+    },
+    {
+      "check": "selected_refs_exist_and_sha",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_selected_ref",
+      "pass": true
+    },
+    {
+      "check": "each_delta_sufficient",
+      "pass": true
+    },
+    {
+      "check": "rejected_refs_logged",
+      "pass": true
+    },
+    {
+      "check": "conflict_no_heavy_needed",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_and_phase3_backlog",
+      "pass": true
+    },
+    {
+      "check": "next_is_s3_merge_not_validator",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.001518514999999998,
+  "next_safe_lane": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "S2 source selection is not complete when selected refs are listed; rejected refs and rejection reasons are needed to prove the agent did not silently over-read or decorate citations.",
+    "gap_id": "S2_GAP_REJECTION_RATIONALE_REQUIRED_TO_AVOID_ARCHAEOLOGY",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S2_SOURCE_SELECTION_SHOULD_LOG_REJECTED_REFS_WITH_REASON",
+    "reason": "If repeated, Phase3 should add rejected-ref logging to source policy so archaeology/decorative refs are visible.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "rejected_count": 3,
+  "selected_count": 4,
+  "verdict": "PASS_S2_SOURCE_SELECTION_FUNCTION_TEST_WITH_HOLD"
+}

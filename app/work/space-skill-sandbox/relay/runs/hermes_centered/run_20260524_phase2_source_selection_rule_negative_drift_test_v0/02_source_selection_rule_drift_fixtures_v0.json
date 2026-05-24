@@ -1,0 +1,633 @@
+[
+  {
+    "case_id": "NEG_DECORATIVE_REF_NO_CHANGED_JUDGMENT",
+    "expected_failure": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+    "mutation": "keep ref path/used_for but blank changed_judgment",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "NO",
+        "promotion_status": "HOLD",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Rule fields and limits come directly from prior Phase2 packet test, Phase2 structure, and AI Frontier impact space reports."
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "PASS: default max 4 refs and reject load without decision change.",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [
+        {
+          "changed_judgment": "",
+          "ref_id": "packet_shape_actual_test"
+        },
+        {
+          "changed_judgment": "The target should be a candidate source-selection rule, not a broad router/schema, because next work must be small and non-authoritative.",
+          "ref_id": "phase2_next"
+        },
+        {
+          "changed_judgment": "The rule must output space_references_used and space_reference_delta before Hermes merge, then feed Codex/Gemini assessment fields; this preserves the adopted Phase2 loop.",
+          "ref_id": "phase2_structure"
+        },
+        {
+          "changed_judgment": "The rule must include selection limits for T_brain and mind-sizedness so space reference does not become unlimited archaeology.",
+          "ref_id": "aifrontier_impact"
+        }
+      ],
+      "space_references_used": [
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+          "ref_id": "packet_shape_actual_test",
+          "used_for": "space_reference_delta must be mandatory and decorative citation must fail"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.md",
+          "ref_id": "phase2_next",
+          "used_for": "select one real small space-affecting target and keep HOLD boundary"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+          "ref_id": "phase2_structure",
+          "used_for": "adopt Phase2 fields and loop"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+          "ref_id": "aifrontier_impact",
+          "used_for": "include operator-load/mind-sized/maintainability lens"
+        }
+      ],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  },
+  {
+    "case_id": "NEG_TOO_MANY_REFS_NO_HEAVY_ESCALATION",
+    "expected_failure": "FAIL_OPERATOR_OVERLOAD",
+    "mutation": "add five extra refs while staying FAST/no heavy escalation",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "NO",
+        "promotion_status": "HOLD",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Rule fields and limits come directly from prior Phase2 packet test, Phase2 structure, and AI Frontier impact space reports."
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "FAIL: too many refs",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [
+        {
+          "changed_judgment": "The source-selection rule must require a changed_judgment field for every cited reference; existence/path/checksum alone is insufficient.",
+          "ref_id": "packet_shape_actual_test"
+        },
+        {
+          "changed_judgment": "The target should be a candidate source-selection rule, not a broad router/schema, because next work must be small and non-authoritative.",
+          "ref_id": "phase2_next"
+        },
+        {
+          "changed_judgment": "The rule must output space_references_used and space_reference_delta before Hermes merge, then feed Codex/Gemini assessment fields; this preserves the adopted Phase2 loop.",
+          "ref_id": "phase2_structure"
+        },
+        {
+          "changed_judgment": "The rule must include selection limits for T_brain and mind-sizedness so space reference does not become unlimited archaeology.",
+          "ref_id": "aifrontier_impact"
+        }
+      ],
+      "space_references_used": [
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+          "ref_id": "packet_shape_actual_test",
+          "used_for": "space_reference_delta must be mandatory and decorative citation must fail"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.md",
+          "ref_id": "phase2_next",
+          "used_for": "select one real small space-affecting target and keep HOLD boundary"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+          "ref_id": "phase2_structure",
+          "used_for": "adopt Phase2 fields and loop"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+          "ref_id": "aifrontier_impact",
+          "used_for": "include operator-load/mind-sized/maintainability lens"
+        },
+        {
+          "path": "/tmp/non_authority_extra.md",
+          "ref_id": "extra_0",
+          "used_for": "extra context without decision change"
+        },
+        {
+          "path": "/tmp/non_authority_extra.md",
+          "ref_id": "extra_1",
+          "used_for": "extra context without decision change"
+        },
+        {
+          "path": "/tmp/non_authority_extra.md",
+          "ref_id": "extra_2",
+          "used_for": "extra context without decision change"
+        },
+        {
+          "path": "/tmp/non_authority_extra.md",
+          "ref_id": "extra_3",
+          "used_for": "extra context without decision change"
+        },
+        {
+          "path": "/tmp/non_authority_extra.md",
+          "ref_id": "extra_4",
+          "used_for": "extra context without decision change"
+        }
+      ],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  },
+  {
+    "case_id": "NEG_AUTHORITY_REF_WRITABLE",
+    "expected_failure": "FAIL_AUTHORITY_OVERPROMOTION",
+    "mutation": "treat current-position/authority ref as writable authority",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "YES",
+        "promotion_status": "APPROVED",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Rule fields and limits come directly from prior Phase2 packet test, Phase2 structure, and AI Frontier impact space reports."
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "PASS: default max 4 refs and reject load without decision change.",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [
+        {
+          "changed_judgment": "The source-selection rule must require a changed_judgment field for every cited reference; existence/path/checksum alone is insufficient.",
+          "ref_id": "packet_shape_actual_test"
+        },
+        {
+          "changed_judgment": "The target should be a candidate source-selection rule, not a broad router/schema, because next work must be small and non-authoritative.",
+          "ref_id": "phase2_next"
+        },
+        {
+          "changed_judgment": "The rule must output space_references_used and space_reference_delta before Hermes merge, then feed Codex/Gemini assessment fields; this preserves the adopted Phase2 loop.",
+          "ref_id": "phase2_structure"
+        },
+        {
+          "changed_judgment": "The rule must include selection limits for T_brain and mind-sizedness so space reference does not become unlimited archaeology.",
+          "ref_id": "aifrontier_impact"
+        }
+      ],
+      "space_references_used": [
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+          "ref_id": "packet_shape_actual_test",
+          "used_for": "space_reference_delta must be mandatory and decorative citation must fail"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.md",
+          "ref_id": "phase2_next",
+          "used_for": "select one real small space-affecting target and keep HOLD boundary"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+          "ref_id": "phase2_structure",
+          "used_for": "adopt Phase2 fields and loop"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+          "ref_id": "aifrontier_impact",
+          "used_for": "include operator-load/mind-sized/maintainability lens"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/CURRENT_VECTORFL_POSITION.md",
+          "ref_id": "current_position_authority",
+          "used_for": "apply authority update"
+        }
+      ],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  },
+  {
+    "case_id": "NEG_MODEL_ONLY_RULE_NO_REFS",
+    "expected_failure": "FAIL_MODEL_ONLY_DRIFT",
+    "mutation": "remove refs and deltas while claiming model-only rule",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "NO",
+        "promotion_status": "HOLD",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Generated from model reasoning only"
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "PASS: default max 4 refs and reject load without decision change.",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [],
+      "space_references_used": [],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  },
+  {
+    "case_id": "NEG_MISSING_IMMEDIATE_PREDECESSOR",
+    "expected_failure": "FAIL_NO_SPACE_REFERENCE",
+    "mutation": "remove immediate predecessor / latest next-work ref",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "NO",
+        "promotion_status": "HOLD",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Rule fields and limits come directly from prior Phase2 packet test, Phase2 structure, and AI Frontier impact space reports."
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "PASS: default max 4 refs and reject load without decision change.",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [
+        {
+          "changed_judgment": "The source-selection rule must require a changed_judgment field for every cited reference; existence/path/checksum alone is insufficient.",
+          "ref_id": "packet_shape_actual_test"
+        },
+        {
+          "changed_judgment": "The rule must output space_references_used and space_reference_delta before Hermes merge, then feed Codex/Gemini assessment fields; this preserves the adopted Phase2 loop.",
+          "ref_id": "phase2_structure"
+        },
+        {
+          "changed_judgment": "The rule must include selection limits for T_brain and mind-sizedness so space reference does not become unlimited archaeology.",
+          "ref_id": "aifrontier_impact"
+        }
+      ],
+      "space_references_used": [
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+          "ref_id": "packet_shape_actual_test",
+          "used_for": "space_reference_delta must be mandatory and decorative citation must fail"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+          "ref_id": "phase2_structure",
+          "used_for": "adopt Phase2 fields and loop"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+          "ref_id": "aifrontier_impact",
+          "used_for": "include operator-load/mind-sized/maintainability lens"
+        }
+      ],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  },
+  {
+    "case_id": "NEG_CONFLICT_NO_HEAVY_TRIGGER",
+    "expected_failure": "FAIL_HEAVY_ESCALATION_MISSING",
+    "mutation": "introduce conflicting refs but keep fast/no escalation",
+    "packet": {
+      "HOLD_receipt": {
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "current_position_apply": "NO",
+        "promotion_status": "HOLD",
+        "registry_mutation": "NO"
+      },
+      "codex_assessment": {
+        "assessment": "PASS_AS_FAST_REAL_USE: source-selection rule directly uses prior Codex-derived requirement that cited references must change judgment; WATCH that it remains candidate not schema.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "conflict_detected": true,
+      "gemini_layer_assessment": {
+        "assessment": "PASS_WITH_LAYER_ANCHOR: rule links SPACE_EVIDENCE_LAYER to HERMES_MERGE_LAYER and keeps OPERATOR_REENTRY mind-sized.",
+        "mode": "NO_NEW_CALL_BUDGET_GATE"
+      },
+      "gemini_layer_questions": [
+        "Does max_default_refs prevent T_brain overload?",
+        "Does changed_judgment prevent decorative citation?",
+        "Does candidate status prevent authority overpromotion?"
+      ],
+      "heavy_escalation_triggered": false,
+      "hermes_merge_or_execution_result": {
+        "artifact_type": "HOLD_CANDIDATE_SOURCE_SELECTION_RULE",
+        "rule": {
+          "escalate_to_heavy_when": [
+            "source refs conflict",
+            "space_reference_delta unclear",
+            "architecture/principle pressure appears",
+            "Codex/Gemini disagreement is needed",
+            "authority/promotion pressure appears"
+          ],
+          "max_default_refs": 4,
+          "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+          "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+          "reject_ref_when": [
+            "no changed_judgment",
+            "citation is only decorative",
+            "reference increases operator load without changing decision",
+            "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+          ],
+          "required_for_each_ref": [
+            "absolute_path",
+            "exists",
+            "sha256",
+            "used_for",
+            "changed_judgment"
+          ],
+          "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+        },
+        "rule_id": "PHASE2_SOURCE_SELECTION_RULE_CANDIDATE_V0",
+        "why_not_model_only": "Rule fields and limits come directly from prior Phase2 packet test, Phase2 structure, and AI Frontier impact space reports."
+      },
+      "lens_card_results": {
+        "T_brain_operator_load": "PASS: default max 4 refs and reject load without decision change.",
+        "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP: not full workflow yet but required for native execution later.",
+        "maintainability_debt_watch": "PASS_WITH_WATCH: source selection now has reject criteria; future actual use must prove it catches drift.",
+        "mind_sized_bite": "PASS: one internal detail target only.",
+        "slow_ai_guard": "PASS: avoids unnecessary heavy calls and limits archaeology."
+      },
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "packet_id": "02_phase2_source_selection_rule_packet_v0",
+      "space_reference_delta": [
+        {
+          "changed_judgment": "The source-selection rule must require a changed_judgment field for every cited reference; existence/path/checksum alone is insufficient.",
+          "ref_id": "packet_shape_actual_test"
+        },
+        {
+          "changed_judgment": "The target should be a candidate source-selection rule, not a broad router/schema, because next work must be small and non-authoritative.",
+          "ref_id": "phase2_next"
+        },
+        {
+          "changed_judgment": "The rule must output space_references_used and space_reference_delta before Hermes merge, then feed Codex/Gemini assessment fields; this preserves the adopted Phase2 loop.",
+          "ref_id": "phase2_structure"
+        },
+        {
+          "changed_judgment": "The rule must include selection limits for T_brain and mind-sizedness so space reference does not become unlimited archaeology.",
+          "ref_id": "aifrontier_impact"
+        },
+        {
+          "changed_judgment": "CONFLICT: This contradicts the source-selection rule but no heavy escalation was triggered.",
+          "ref_id": "conflict_ref"
+        }
+      ],
+      "space_references_used": [
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+          "ref_id": "packet_shape_actual_test",
+          "used_for": "space_reference_delta must be mandatory and decorative citation must fail"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.md",
+          "ref_id": "phase2_next",
+          "used_for": "select one real small space-affecting target and keep HOLD boundary"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+          "ref_id": "phase2_structure",
+          "used_for": "adopt Phase2 fields and loop"
+        },
+        {
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+          "ref_id": "aifrontier_impact",
+          "used_for": "include operator-load/mind-sized/maintainability lens"
+        }
+      ],
+      "user_intent_verbatim_or_digest": "Continue from Phase2 packet shape actual test into a real small space-affecting target."
+    }
+  }
+]

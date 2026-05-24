@@ -1,0 +1,137 @@
+{
+  "allowed_guard_status": [
+    "PASS_WITH_HOLD",
+    "WATCH",
+    "HOLD_STOP_REVIEW",
+    "STOP",
+    "HOLD_UNTIL_APPROVED_MODEL_OUTPUT"
+  ],
+  "allowed_source_layers": [
+    "input_layer",
+    "evidence_layer",
+    "review_guard_layer",
+    "surface_layer",
+    "tool_reentry_layer",
+    "operator_recovery_layer"
+  ],
+  "authority_effect_allowed": [
+    "NO_AUTHORITY_MUTATION"
+  ],
+  "authority_mutation": "NO",
+  "baseline_mutation": "NO",
+  "classification": "CANDIDATE_SCHEMA_NOT_AUTHORITY",
+  "created_at": "2026-05-23 10:00:06 KST",
+  "field_count": 14,
+  "fields": [
+    {
+      "boundary": "not authority id",
+      "meaning": "stable local identifier for one candidate trace row",
+      "name": "trace_id",
+      "requirement": "required",
+      "type": "string"
+    },
+    {
+      "boundary": "not baseline timestamp",
+      "meaning": "creation timestamp for evidence row",
+      "name": "created_at",
+      "requirement": "required",
+      "type": "datetime/string"
+    },
+    {
+      "boundary": "must be one of six layers",
+      "meaning": "input_layer/evidence_layer/review_guard_layer/surface_layer/tool_reentry_layer/operator_recovery_layer",
+      "name": "source_layer",
+      "requirement": "required",
+      "type": "enum"
+    },
+    {
+      "boundary": "local path only",
+      "meaning": "local artifact that produced or justified row",
+      "name": "source_artifact",
+      "requirement": "required",
+      "type": "path/string"
+    },
+    {
+      "boundary": "no secret/live connector",
+      "meaning": "declared input fixture/source reference",
+      "name": "input_ref",
+      "requirement": "optional",
+      "type": "path/string/null"
+    },
+    {
+      "boundary": "local artifact only",
+      "meaning": "declared output artifact reference",
+      "name": "output_ref",
+      "requirement": "optional",
+      "type": "path/string/null"
+    },
+    {
+      "boundary": "receipt is not authority",
+      "meaning": "receipt evidence path",
+      "name": "receipt_ref",
+      "requirement": "required",
+      "type": "path/string"
+    },
+    {
+      "boundary": "no APPROVED/PROMOTED",
+      "meaning": "PASS_WITH_HOLD/WATCH/HOLD_STOP_REVIEW/STOP/HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "name": "guard_status",
+      "requirement": "required",
+      "type": "enum"
+    },
+    {
+      "boundary": "must not soften STOP/HOLD",
+      "meaning": "user-facing status label coupled to guard_status",
+      "name": "surface_label",
+      "requirement": "required",
+      "type": "string"
+    },
+    {
+      "boundary": "only after approved lane or synthetic fixture",
+      "meaning": "raw/lite/receipt/re-entry reference if tool/model output exists",
+      "name": "reentry_ref",
+      "requirement": "optional",
+      "type": "path/string/null"
+    },
+    {
+      "boundary": "single allowed value for now",
+      "meaning": "NO_AUTHORITY_MUTATION",
+      "name": "authority_effect",
+      "requirement": "required",
+      "type": "enum"
+    },
+    {
+      "boundary": "single allowed value for now",
+      "meaning": "HOLD",
+      "name": "promotion_status",
+      "requirement": "required",
+      "type": "enum"
+    },
+    {
+      "boundary": "must preserve HOLD",
+      "meaning": "next smallest bounded action",
+      "name": "next_action",
+      "requirement": "required",
+      "type": "string"
+    },
+    {
+      "boundary": "candidate evidence only",
+      "meaning": "risks or interpretation notes",
+      "name": "watch_notes",
+      "requirement": "optional",
+      "type": "list/string"
+    }
+  ],
+  "layer_count": 6,
+  "model_execution": "NO",
+  "next_smallest_action": "app/work/VECTORFL_PROGRAM_UNIT_TRACE_LEDGER_FIXTURE_REHEARSAL_20260523_V0.md",
+  "promotion": "HOLD",
+  "promotion_status_allowed": [
+    "HOLD"
+  ],
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "registry_mutation": "NO",
+  "schema_mutation": "NO",
+  "status": "TRACE_LEDGER_SCHEMA_CANDIDATE_WITH_HOLD"
+}

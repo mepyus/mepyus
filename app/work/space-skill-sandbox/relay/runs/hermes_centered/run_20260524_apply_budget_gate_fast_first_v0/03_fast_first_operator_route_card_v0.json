@@ -1,0 +1,69 @@
+{
+  "boundary": {
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "classification": "operator_route_card_display_only",
+  "escalation_conditions": [
+    "user explicitly asks for actual Hermes/Codex/Gemini participation",
+    "task changes VectorFL operating principle or architecture",
+    "space interpretation is ambiguous across layers",
+    "drift/risk class appears: model-only merge, missing current-position, authority drift, hidden receipt failure, endpoint/API drift",
+    "promotion/authority pressure exists but must remain HOLD",
+    "fresh task requires cross-agent comparison not just artifact validation"
+  ],
+  "fast_mode_now": {
+    "expected_seconds": "<5s",
+    "selected": true,
+    "why": [
+      "small continuation from known safe lane",
+      "operator needs quick status/recovery surface",
+      "no fresh spatial ambiguity and no external agent insight needed"
+    ]
+  },
+  "next_operator_action": "Use this route for the next concrete VectorFL task; escalate only if heavy trigger hits.",
+  "packet_id": "03_fast_first_operator_route_card_v0",
+  "route_steps": [
+    "1 preserve user original",
+    "2 read budget gate policy and latest operator surface",
+    "3 check heavy triggers before invoking Codex/Gemini",
+    "4 if no heavy trigger, run fast no-call local validation",
+    "5 if drift/ambiguity appears, escalate to HEAVY_BUDGETED",
+    "6 write receipt/trace as evidence only"
+  ],
+  "safe_entrypoints": {
+    "loop_receipt": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_receipt_v0.json",
+      "sha256": "09a2d9f4e9850d1aa2c9303adbfcab09c7c8cedb88cc8858ba8d0cce268c04fa"
+    },
+    "loop_result": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_result_v0.json",
+      "sha256": "fcfcd274f5fec998054662d51c61566599799d315d0af5c4734b93a60bca1be4"
+    },
+    "loop_trace": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_trace_rows_v0.json",
+      "sha256": "8fb4f71b0a2967861570219f4c53cd1cee7b7542b2e52bae0db90f23086d8e74"
+    },
+    "repeatability_report": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0.json",
+      "sha256": "c04d67f5106d886c22e118d4697a50cab76d03bc6b7d8a32bac35355d0eb64a0"
+    },
+    "repeatability_result": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/repeatability_and_drift_result_v0.json",
+      "sha256": "dc38806993db5be2e7d3e27db4e60c2da85b5b53b77cc491e932d035b106e320"
+    }
+  },
+  "verdict": "FAST_FIRST_MODE_SELECTED_WITH_HOLD"
+}

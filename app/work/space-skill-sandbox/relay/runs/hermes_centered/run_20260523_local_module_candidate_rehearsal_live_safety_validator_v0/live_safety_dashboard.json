@@ -1,0 +1,83 @@
+{
+  "approval_applied": "no",
+  "authority_database": "no",
+  "candidate_id": "M-CAND-06",
+  "cases": [
+    {
+      "case_id": "LSV-POS-001",
+      "expected": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "observed": "CANDIDATE_MATERIAL_WITH_HOLD"
+    },
+    {
+      "case_id": "LSV-NEG-STOP-001",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "LSV-NEG-HOLD-001",
+      "expected": "HOLD_STOP_REVIEW",
+      "observed": "HOLD_STOP_REVIEW"
+    },
+    {
+      "case_id": "LSV-NEG-STOP-002",
+      "expected": "STOP",
+      "observed": "STOP"
+    }
+  ],
+  "created_at": "2026-05-23 08:26:43 KST",
+  "function_pattern": "Live-Safety Validator",
+  "live_db_mutation": "no",
+  "model_execution": "no",
+  "program_alpha_status": "NOT_READY",
+  "promotion_status": "HOLD",
+  "real_codex_execution": "no",
+  "real_gemini_execution": "no",
+  "router_runner_claim": "no",
+  "schema_mutation": "no",
+  "shared_db_counts_after": {
+    "assets": 0,
+    "decisions": 4,
+    "executions": 3,
+    "guardrail_events": 25,
+    "maturation_entries": 4,
+    "next_actions": 0,
+    "receipts": 5,
+    "request_assets": 0,
+    "requests": 10,
+    "reviews": 4,
+    "sqlite_sequence": 7
+  },
+  "shared_db_counts_before": {
+    "assets": 0,
+    "decisions": 4,
+    "executions": 3,
+    "guardrail_events": 25,
+    "maturation_entries": 4,
+    "next_actions": 0,
+    "receipts": 5,
+    "request_assets": 0,
+    "requests": 10,
+    "reviews": 4,
+    "sqlite_sequence": 7
+  },
+  "shared_db_mutation": "no",
+  "shared_db_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/data/vectorfl_ops_phase_0_5.sqlite",
+  "snapshot_mutation": "no",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface",
+    "M-CAND-03 Evidence Loop Persistence"
+  ],
+  "status": "LOCAL_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD",
+  "summary": {
+    "candidate": 1,
+    "hold_stop_review": 1,
+    "problem_count": 0,
+    "stop": 2,
+    "total": 4
+  },
+  "vectorfl_authority_mutation": "no",
+  "write_ui": "no"
+}

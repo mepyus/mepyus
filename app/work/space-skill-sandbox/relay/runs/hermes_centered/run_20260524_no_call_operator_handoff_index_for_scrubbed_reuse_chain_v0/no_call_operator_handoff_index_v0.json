@@ -1,0 +1,68 @@
+{
+  "index_id": "operator_handoff_index:no_call_scrubbed_reuse_chain:v0",
+  "index_status": "NO_CALL_OPERATOR_HANDOFF_INDEX_WITH_HOLD",
+  "title": "No-call operator handoff: Phase 1 stable-cycle evidence reuse chain",
+  "safe_entry_points": [
+    {
+      "label": "Scrubbed no-call static operator card",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_scrubbed_static_operator_card_copy_v0/single_row_static_operator_card_scrubbed_no_call_v0.json",
+      "purpose": "operator-facing safe view; display-only archived evidence; no endpoint replay"
+    },
+    {
+      "label": "No-call reuse chain consistency rollup",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_reuse_chain_consistency_rollup_v0/no_call_reuse_chain_consistency_rollup_v0.json",
+      "purpose": "lineage/boundary verification; no replay scripts"
+    }
+  ],
+  "do_not_open_as_next_action": [
+    "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_contract_replay.py",
+    "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_drift_replay_gate.py",
+    "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/phase1_deterministic_stable_cycle.py"
+  ],
+  "operator_summary": "Archived no-call local evidence exists for the Phase 1 deterministic cycle, but it remains candidate evidence under HOLD.",
+  "operator_verdict": "PASS_WITH_HOLD",
+  "guard_badge": "HOLD",
+  "lineage_all_pass": true,
+  "layer_count": 5,
+  "watch": [
+    "filled_receipt and trace still contain archived legacy endpoint replay source refs; scrubbed card quarantines them as display-only/no-call",
+    "static_card is pre-scrub copy; prefer scrubbed_card for operator-facing display"
+  ],
+  "not_valid_for": [
+    "Program Alpha",
+    "authority mutation",
+    "schema registry mutation",
+    "baseline/snapshot creation",
+    "promotion",
+    "live DB intake",
+    "model execution evidence",
+    "write UI readiness"
+  ],
+  "forbidden_actions": [
+    "run endpoint replay scripts",
+    "start local server",
+    "call external API",
+    "use API-direct",
+    "mutate original receipt/row/card",
+    "create registry",
+    "promote Program Alpha",
+    "treat as authority"
+  ],
+  "handoff_policy": {
+    "prefer_scrubbed_card": true,
+    "prefer_rollup_for_verification": true,
+    "do_not_link_legacy_replay_scripts_as_actions": true,
+    "display_only_archived_evidence": true,
+    "no_call_file_read_only": true
+  },
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "program_alpha_status": "NOT_READY"
+}

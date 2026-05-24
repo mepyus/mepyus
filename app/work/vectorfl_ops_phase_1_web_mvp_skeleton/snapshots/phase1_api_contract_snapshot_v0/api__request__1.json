@@ -1,0 +1,118 @@
+{
+  "bytes": 2828,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "decision": "ROUTE_LIGHT",
+        "id": 1,
+        "reason": "route before execution",
+        "request_id": 1
+      }
+    ],
+    "executions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "execution_type": "LIGHT_LOCAL_DRAFT",
+        "id": 1,
+        "output_classification": "INTERNAL_SUMMARY_DRAFT_NOT_OFFICIAL_RECORD",
+        "request_id": 1,
+        "status": "COMPLETED",
+        "updated_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "LIGHT missing source/audience/sensitivity",
+        "guardrail": "G2",
+        "id": 1,
+        "request_id": 1,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 2,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 3,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 4,
+        "request_id": 1,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 5,
+        "request_id": 1,
+        "result": "PASS"
+      }
+    ],
+    "maturation": [
+      {
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 1,
+        "next_work_easier_value": "routing and recovery path verified for LIGHT",
+        "request_id": 1,
+        "summary": "sample recovered into local maturation record"
+      }
+    ],
+    "next_actions": [],
+    "receipts": [
+      {
+        "content": "synthetic local receipt; no external tool; no real company data",
+        "created_at": "2026-05-20 09:57:38",
+        "execution_id": 1,
+        "id": 1,
+        "request_id": 1
+      }
+    ],
+    "request": {
+      "approval_marker": "",
+      "audience_known": 1,
+      "authority_status": "NO",
+      "body": "이번 주 회의록을 내부 팀 공유용으로 요약해줘.",
+      "created_at": "2026-05-20 09:57:38",
+      "depth": "LIGHT",
+      "id": 1,
+      "promotion_status": "HOLD",
+      "scope_marker": "",
+      "sensitivity_known": 1,
+      "source_known": 1,
+      "state": "MATURED_OR_HELD",
+      "title": "Run 001 LIGHT meeting summary"
+    },
+    "reviews": [
+      {
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 1,
+        "next_smallest_action": "review sample recovery and keep promotion HOLD",
+        "promotion_status": "HOLD",
+        "request_id": 1,
+        "verdict": "LOCAL_SAMPLE_PASS_WITH_HOLD"
+      }
+    ]
+  },
+  "path": "/api/request/1",
+  "sha256": "a743e274ba5fbf2d3a428d8bb72e9875ac746d806591f44f439ff3f14c090878",
+  "status": 200
+}

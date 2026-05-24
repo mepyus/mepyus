@@ -1,0 +1,38 @@
+{
+  "verdict": "NEGATIVE_REHEARSAL_PASS_ALL_BAD_FIXTURES_STOPPED",
+  "status": "negative_fixture_rehearsal_complete",
+  "results": [
+    {
+      "case": "bad_gemini_missing_completion",
+      "stopped": true,
+      "reason": "missing keys: completion_signal"
+    },
+    {
+      "case": "bad_gemini_wrong_completion",
+      "stopped": true,
+      "reason": "bad completion_signal"
+    },
+    {
+      "case": "bad_gemini_wrong_type",
+      "stopped": true,
+      "reason": "observed_scope not array"
+    },
+    {
+      "case": "bad_codex_missing_completion",
+      "stopped": true,
+      "reason": "missing sections/signals: actual_gemini_scope,premature_claims_removed,completion_signal,CODEX_RECOVERY_DONE"
+    },
+    {
+      "case": "bad_codex_promotion_claim",
+      "stopped": true,
+      "reason": "forbidden language: promotion_performed: true"
+    }
+  ],
+  "unexpected_passes": [],
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "model_api_transport_used": false,
+  "promotion_performed": false,
+  "vectorfl_authority_modified": false,
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

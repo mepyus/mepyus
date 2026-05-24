@@ -1,0 +1,318 @@
+{
+  "HOLD_receipt": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "current_position_apply": "NO",
+    "promotion_status": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "attached_phase1_stage": "S7_BUDGET_GATE",
+  "budget_session_log": {
+    "FAST_NO_CALL_LOCAL_VALIDATION": [
+      "S1",
+      "S2",
+      "S3",
+      "S6",
+      "S7"
+    ],
+    "HEAVY_BUDGETED": [
+      "S4/S5"
+    ],
+    "codex_actual_runs": 1,
+    "gemini_actual_runs": 1,
+    "post_review_runs": 0,
+    "post_review_skip_reason": "S4/S5 outputs were complementary and non-conflicting; no STOP/HOLD_STOP_REVIEW or unclear reinsertion effect."
+  },
+  "function_test_result": {
+    "fast_continuation": "PASS",
+    "heavy_trigger_detection": "PASS",
+    "no_phase3_fix_applied": "PASS",
+    "phase2_rollup": "PASS",
+    "post_review_skip_gate": "PASS"
+  },
+  "next_test_candidate": "PHASE2_TO_PHASE3_REVISION_PLAN_FROM_ACCUMULATED_FUNCTION_TESTS_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "The rollup reveals several good Phase3 candidates, but applying them now would violate the user’s rule against one-by-one convergence. S7 should separate repeated-pattern evidence from actual Phase3 revision work.",
+    "gap_id": "S7_GAP_ROLLUP_CAN_BECOME_PREMATURE_PHASE3_FIX_LIST",
+    "severity": "HIGH",
+    "single_observation": false
+  },
+  "packet_id": "02_s7_budget_gate_phase2_rollup_v0",
+  "phase2_completion_status": "S1_S2_S3_S4_S5_S6_S7_PLACEMENT_TESTS_COMPLETED_WITH_HOLD",
+  "phase2_function_test_rollup": [
+    {
+      "active_hits": 0,
+      "budget_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+      "checks": 12,
+      "codex_cli_execution": "NO",
+      "elapsed_seconds": 0.001348690999999999,
+      "gemini_cli_execution": "NO",
+      "next_safe_lane": "S2_SOURCE_SELECTION_REAL_NON_VALIDATOR_TARGET_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "observed_gap": {
+        "description": "A short continuation such as 응 계속해봐 carries little content by itself. Correct handling depends on reading the latest next-lane space card; otherwise Hermes may guess or drift into generic/internal work.",
+        "gap_id": "S1_GAP_CONTINUATION_IS_UNDERSPECIFIED_BUT_SPACE_CAN_DISAMBIGUATE",
+        "severity": "MEDIUM",
+        "single_observation": true
+      },
+      "phase3_backlog_delta": {
+        "candidate": "S1_CONTINUATION_INPUT_REQUIRES_LATEST_NEXT_LANE_LOOKUP",
+        "reason": "If repeated across Phase2 function tests, add global intake rule for continuation-only inputs.",
+        "status": "ACCUMULATE_NOT_FIX_NOW"
+      },
+      "stage": "S1",
+      "tested_function": "S1_INTAKE_ORIGINAL_PRESERVATION_TASK_CLASSIFICATION",
+      "verdict": "PASS_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_WITH_HOLD"
+    },
+    {
+      "active_hits": 0,
+      "budget_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+      "checks": 14,
+      "codex_cli_execution": "NO",
+      "elapsed_seconds": 0.001518514999999998,
+      "gemini_cli_execution": "NO",
+      "next_safe_lane": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "observed_gap": {
+        "description": "S2 source selection is not complete when selected refs are listed; rejected refs and rejection reasons are needed to prove the agent did not silently over-read or decorate citations.",
+        "gap_id": "S2_GAP_REJECTION_RATIONALE_REQUIRED_TO_AVOID_ARCHAEOLOGY",
+        "severity": "MEDIUM",
+        "single_observation": true
+      },
+      "phase3_backlog_delta": {
+        "candidate": "S2_SOURCE_SELECTION_SHOULD_LOG_REJECTED_REFS_WITH_REASON",
+        "reason": "If repeated, Phase3 should add rejected-ref logging to source policy so archaeology/decorative refs are visible.",
+        "status": "ACCUMULATE_NOT_FIX_NOW"
+      },
+      "stage": "S2",
+      "tested_function": "S2_SPACE_EVIDENCE_SELECTION",
+      "verdict": "PASS_S2_SOURCE_SELECTION_FUNCTION_TEST_WITH_HOLD"
+    },
+    {
+      "active_hits": 0,
+      "budget_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+      "checks": 14,
+      "codex_cli_execution": "NO",
+      "elapsed_seconds": 0.0012911550000000022,
+      "gemini_cli_execution": "NO",
+      "next_safe_lane": "S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0",
+      "observed_gap": {
+        "description": "A small operator-facing output is useful only if the merge trace explicitly shows how space refs changed the decision; otherwise S3 can degrade into a generic status card.",
+        "gap_id": "S3_GAP_MERGE_TRACE_CAN_BECOME_STATUS_CARD_ONLY_IF_DELTA_IS_EXPLICIT",
+        "severity": "MEDIUM",
+        "single_observation": true
+      },
+      "phase3_backlog_delta": {
+        "candidate": "S3_MERGE_OUTPUT_REQUIRES_TRACE_STEP_EFFECTS_AND_WHY_NOT_MODEL_ONLY",
+        "reason": "If repeated, Phase3 should add trace-step effect and why_not_model_only as required merge contract fields.",
+        "status": "ACCUMULATE_NOT_FIX_NOW"
+      },
+      "stage": "S3",
+      "tested_function": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT",
+      "verdict": "PASS_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_WITH_HOLD"
+    },
+    {
+      "active_hits": 0,
+      "budget_mode": "HEAVY_BUDGETED",
+      "checks": 14,
+      "codex_cli_execution": "NO",
+      "elapsed_seconds": 0.00448826699999999,
+      "gemini_cli_execution": "NO",
+      "next_safe_lane": "S6_OPERATOR_RECEIPT_REENTRY_AND_HOLD_SURFACE_FUNCTION_TEST_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "observed_gap": {
+        "description": "Actual Codex and Gemini outputs were complementary, but both touched the generic-status-card risk. Phase3 may need a role-handoff value metric to separate productive overlap from duplication.",
+        "gap_id": "S4_S5_GAP_ROLE_VALUE_IS_REAL_BUT_OVERLAP_NEEDS_METRIC",
+        "severity": "MEDIUM",
+        "single_observation": true
+      },
+      "phase3_backlog_delta": {
+        "candidate": "S4_S5_ROLE_HANDOFF_VALUE_METRIC_AND_MINIMAL_REENTRY_DELTA",
+        "children": [
+          "S4_REENTRY_SURFACE_MUST_PRESERVE_MINIMAL_SPACE_DELTA",
+          "S3_STRUCTURAL_DELTA_BY_LAYER",
+          "ROLE_HANDOFF_VALUE_METRIC"
+        ],
+        "reason": "If repeated, Phase3 should require role handoff tests to record each agent’s unique delta and whether overlap is productive or duplicative.",
+        "status": "ACCUMULATE_NOT_FIX_NOW"
+      },
+      "stage": "S4/S5",
+      "tested_function": "S4_CODEX_EVALUATION_AND_S5_GEMINI_LAYER_JUDGMENT_ROLE_HANDOFF",
+      "verdict": "PASS_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_WITH_HOLD"
+    },
+    {
+      "active_hits": 0,
+      "budget_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+      "checks": 15,
+      "codex_cli_execution": "NO",
+      "elapsed_seconds": 0.0012557070000000017,
+      "gemini_cli_execution": "NO",
+      "next_safe_lane": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP_NO_AUTHORITY_MUTATION_V0",
+      "observed_gap": {
+        "description": "A mind-sized operator surface is useful for reentry, but if it over-compresses the actual space delta it can become safe yet uninformative. It should preserve one minimal delta line and handles to deeper evidence.",
+        "gap_id": "S6_GAP_OPERATOR_SURFACE_CAN_BE_SAFE_BUT_TOO_SUMMARY",
+        "severity": "MEDIUM",
+        "single_observation": true
+      },
+      "phase3_backlog_delta": {
+        "candidate": "S6_OPERATOR_SURFACE_REQUIRES_MINIMAL_SPACE_DELTA_AND_EVIDENCE_HANDLES",
+        "reason": "If repeated, Phase3 should require operator surfaces to include one compact delta line plus evidence handles to prevent reentry loss.",
+        "status": "ACCUMULATE_NOT_FIX_NOW"
+      },
+      "stage": "S6",
+      "tested_function": "S6_OPERATOR_RECEIPT_REENTRY_AND_HOLD_SURFACE",
+      "verdict": "PASS_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_WITH_HOLD"
+    }
+  ],
+  "phase3_backlog_delta": {
+    "candidate": "PHASE3_REVISION_SHOULD_USE_S1_S7_ROLLUP_NOT_SINGLE_FIXES",
+    "pattern_ids": [
+      "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "P5_SOURCE_SELECTION_REJECTION_LOG"
+    ],
+    "reason": "S1-S7 evidence now supplies a whole-flow basis for Phase3 revision; fixes should be batched by repeated pattern, not patched immediately.",
+    "status": "READY_FOR_PHASE3_PLANNING_HOLD_NOT_APPLIED"
+  },
+  "repeated_patterns_and_phase3_basis": [
+    {
+      "evidence": [
+        "S3 status card can lose explicit delta",
+        "S4 Codex reentry surface can lose packet-level evidence",
+        "S6 surface can be safe but too summary"
+      ],
+      "pattern_id": "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "phase3_revision_basis": "If repeated after S7, require minimal space delta line across merge/output/operator surfaces.",
+      "seen_in": [
+        "S3",
+        "S4/S5",
+        "S6"
+      ]
+    },
+    {
+      "evidence": [
+        "short continuation carries little content",
+        "latest next-lane card disambiguates each step"
+      ],
+      "pattern_id": "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "phase3_revision_basis": "If repeated, intake gate should require latest next-lane lookup for continuation-only prompts.",
+      "seen_in": [
+        "S1",
+        "S6/S7 continuation chain"
+      ]
+    },
+    {
+      "evidence": [
+        "NON_VALIDATOR_TARGET substring false positive",
+        "not validator/checklist hardening exclusion phrase false positive"
+      ],
+      "pattern_id": "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "phase3_revision_basis": "If repeated, validator/string scans must distinguish exclusion wording from target classification.",
+      "seen_in": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "evidence": [
+        "Codex/Gemini were complementary but had minor overlap around generic status-card risk"
+      ],
+      "pattern_id": "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "phase3_revision_basis": "If repeated, add role-handoff value metric to separate productive overlap from duplication.",
+      "seen_in": [
+        "S4/S5"
+      ]
+    },
+    {
+      "evidence": [
+        "selected refs alone are insufficient; rejected refs with reasons prevent archaeology/decorative refs"
+      ],
+      "pattern_id": "P5_SOURCE_SELECTION_REJECTION_LOG",
+      "phase3_revision_basis": "If repeated, source-selection policy should require rejected-ref logging.",
+      "seen_in": [
+        "S2"
+      ]
+    }
+  ],
+  "space_reference_delta": [
+    {
+      "changed_judgment": "S7 must roll up completed S1-S6 evidence and identify repeated Phase3 candidates without fixing them now.",
+      "ref_id": "latest_next_lane"
+    },
+    {
+      "changed_judgment": "Continuation-only intake is a repeated context-dependency risk, but still handled via space next-lane lookup.",
+      "ref_id": "s1_root"
+    },
+    {
+      "changed_judgment": "Source-selection rollup must account for rejected-ref rationale, not only selected refs.",
+      "ref_id": "s2_root"
+    },
+    {
+      "changed_judgment": "Budget/rollup must carry merge delta-loss and validator wording false-positive observations.",
+      "ref_id": "s3_root"
+    },
+    {
+      "changed_judgment": "Only S4/S5 justified HEAVY_BUDGETED because cross-agent role distinction was the tested function.",
+      "ref_id": "s4_s5_root"
+    },
+    {
+      "changed_judgment": "Operator surface confirms S7 should evaluate whether fast/heavy decisions preserved reentry usability.",
+      "ref_id": "s6_root"
+    },
+    {
+      "changed_judgment": "S7 scope is heavy trigger detection, fast continuation, and post-review skip gate; not Phase3 fixes.",
+      "ref_id": "phase2_matrix"
+    }
+  ],
+  "space_references_used": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S6_OPERATOR_SURFACE_FUNCTION_TEST_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "4aa65aa5d888c7e22353995b24ebe151becda7225d18d765eb78a21528d40cb3",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s1_root",
+      "sha256": "b4cb37aff0b0d955ce03c8b07d55fb2c43427193f13e003c73010e941a2f999d",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s2_root",
+      "sha256": "cd00aa4856d4083f80eed36ebbe0f6c3d677afb475a993c146028c296dafbd45",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s3_root",
+      "sha256": "6704d0bf3926881025cc9dd254994e59be6e4cf8768c796a94d4d199b5629537",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s4_s5_root",
+      "sha256": "cbdf99a0df430a36e91a96a8bc605767377c15b52a3078be8acbe271df02e3c3",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s6_root",
+      "sha256": "0ac54e232f6c82c8966c488f47facbb6d350b31df57a14c1bf776a490618c34b",
+      "used_for": "S7 budget/Phase2 rollup input"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "S7 budget/Phase2 rollup input"
+    }
+  ],
+  "tested_function": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP",
+  "user_original_verbatim": "응 계속해봐"
+}

@@ -1,0 +1,100 @@
+{
+  "approval_applied": "NO",
+  "authority_mutation": "NO",
+  "candidate_count": 12,
+  "classification": "TWELVE_CANDIDATE_PERSONAL_PROGRAM_CORE_CHAIN_WITH_MODEL_SAFE_REENTRY_PREPARED_AND_HOLD",
+  "created_at": "2026-05-23 09:50:36 KST",
+  "default_next": "no-model structure gap review across six internal layers",
+  "hold": {
+    "approval_applied": "no",
+    "live_db_intake": "HOLD",
+    "m4_reusable_module": "no",
+    "model_execution": "no",
+    "module_promotion": "no",
+    "program_alpha_ready": "no",
+    "program_alpha_status": "NOT_READY",
+    "promotion_status": "HOLD",
+    "real_codex_execution": "no",
+    "real_gemini_execution": "no",
+    "router_runner_claim": "no",
+    "schema_mutation": "no",
+    "shared_db_mutation": "no",
+    "snapshot_mutation": "no",
+    "v1_snapshot_creation": "no",
+    "vectorfl_authority_mutation": "no",
+    "write_ui": "no"
+  },
+  "layer_count": 6,
+  "layers": [
+    {
+      "boundary": "live DB intake/write UI는 HOLD",
+      "id": "input_layer",
+      "members": [
+        "M-CAND-01 Input Localization",
+        "M-CAND-02 Personal Intake coupling"
+      ],
+      "purpose": "외부/개인 입력을 fixture/local 경계 안에서 위치시키는 층",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    },
+    {
+      "boundary": "receipt는 authority 아님",
+      "id": "evidence_layer",
+      "members": [
+        "M-CAND-04 Receipt Writer",
+        "M-CAND-03 Evidence Loop Persistence"
+      ],
+      "purpose": "모든 작업을 receipt/evidence loop로 남기는 층",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    },
+    {
+      "boundary": "M4/Program Alpha 승격 금지",
+      "id": "review_guard_layer",
+      "members": [
+        "M-CAND-05 HOLD Review State",
+        "M-CAND-06 Live-Safety Validator",
+        "M-CAND-12 Module Extraction Gate"
+      ],
+      "purpose": "promotion/authority/live drift를 STOP/HOLD로 잡는 층",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    },
+    {
+      "boundary": "write UI/v1 snapshot 아님",
+      "id": "surface_layer",
+      "members": [
+        "M-CAND-08 Read-only Surface",
+        "M-CAND-07 Deterministic Stable Cycle"
+      ],
+      "purpose": "사람이 읽고 재현할 수 있는 read-only/status/replay 층",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    },
+    {
+      "boundary": "실제 모델 실행/권한 상속 아님",
+      "id": "tool_reentry_layer",
+      "members": [
+        "M-CAND-09 Cross-tool Re-entry synthetic",
+        "M-CAND-10 Codex Review Guard synthetic",
+        "M-CAND-11 Gemini Gap Scan Lens synthetic"
+      ],
+      "purpose": "Codex/Gemini/ChatGPT 결과를 raw/lite/receipt/re-entry로만 받아들이는 층",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    },
+    {
+      "boundary": "baseline freeze/authority registry 아님",
+      "id": "operator_recovery_layer",
+      "members": [
+        "handoff",
+        "operator dashboard",
+        "checksum index",
+        "quickstart card"
+      ],
+      "purpose": "다음 세션/다른 도구가 이어받게 하는 회수 표면",
+      "status": "CANDIDATE_STRUCTURE_WITH_HOLD"
+    }
+  ],
+  "model_execution": "NO",
+  "next_artifact": "app/work/VECTORFL_PROGRAM_UNIT_STRUCTURE_GAP_REVIEW_20260523_V0.md",
+  "promotion": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "status": "PROGRAM_UNIT_INTERNAL_STRUCTURE_DASHBOARD_WITH_HOLD"
+}

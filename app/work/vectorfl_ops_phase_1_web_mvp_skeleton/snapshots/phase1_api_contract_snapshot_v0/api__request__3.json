@@ -1,0 +1,118 @@
+{
+  "bytes": 2875,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "decision": "ROUTE_DEEP",
+        "id": 3,
+        "reason": "route before execution",
+        "request_id": 3
+      }
+    ],
+    "executions": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "execution_type": "DEEP_PATCH_CANDIDATE_RECORD_ONLY",
+        "id": 3,
+        "output_classification": "FUTURE_PATCH_CANDIDATE_ONLY_NOT_PROGRAM_ALPHA_EVIDENCE",
+        "request_id": 3,
+        "status": "COMPLETED",
+        "updated_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "DEEP requires approval and scope marker",
+        "guardrail": "G4",
+        "id": 11,
+        "request_id": 3,
+        "result": "PASS_BLOCKED"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "guardrail": "G5",
+        "id": 12,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "guardrail": "G7",
+        "id": 13,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "guardrail": "G8_G9_G10_G11",
+        "id": 14,
+        "request_id": 3,
+        "result": "PASS"
+      },
+      {
+        "created_at": "2026-05-20 09:57:38",
+        "detail": "no authority mutation",
+        "guardrail": "G12",
+        "id": 15,
+        "request_id": 3,
+        "result": "PASS"
+      }
+    ],
+    "maturation": [
+      {
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 3,
+        "next_work_easier_value": "routing and recovery path verified for DEEP",
+        "request_id": 3,
+        "summary": "sample recovered into local maturation record"
+      }
+    ],
+    "next_actions": [],
+    "receipts": [
+      {
+        "content": "synthetic local receipt; no external tool; no real company data",
+        "created_at": "2026-05-20 09:57:38",
+        "execution_id": 3,
+        "id": 3,
+        "request_id": 3
+      }
+    ],
+    "request": {
+      "approval_marker": "SAMPLE_LOCAL_APPROVAL_MARKER",
+      "audience_known": 0,
+      "authority_status": "NO",
+      "body": "이 기능을 repo에 구현해줘.",
+      "created_at": "2026-05-20 09:57:38",
+      "depth": "DEEP",
+      "id": 3,
+      "promotion_status": "HOLD",
+      "scope_marker": "SAMPLE_LOCAL_SCOPE_MARKER",
+      "sensitivity_known": 0,
+      "source_known": 0,
+      "state": "MATURED_OR_HELD",
+      "title": "Run 003 DEEP repo feature"
+    },
+    "reviews": [
+      {
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38",
+        "id": 3,
+        "next_smallest_action": "review sample recovery and keep promotion HOLD",
+        "promotion_status": "HOLD",
+        "request_id": 3,
+        "verdict": "LOCAL_SAMPLE_PASS_WITH_HOLD"
+      }
+    ]
+  },
+  "path": "/api/request/3",
+  "sha256": "7719382e3161c5394bad13019cb6b0230e44e87dc1cd4640e6ca96b33c81b5df",
+  "status": 200
+}

@@ -1,0 +1,155 @@
+{
+  "HOLD": {
+    "authority_mutation": "NO",
+    "program_alpha_ready": "NO",
+    "promotion_status": "HOLD",
+    "real_codex_execution": "YES_BOUNDED_REVIEW_ONLY_FOR_AUDIT_PACKET",
+    "real_gemini_execution": "NO"
+  },
+  "S1_diagnose": {
+    "drift_pressure": "successful validators and real audit evidence can be overclaimed",
+    "expected_contract": "negative cases must map triggers to STOP/HOLD_STOP_REVIEW/WATCH/HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+    "observed_risk": "upstream guard gaps allow drift to reach surface labels"
+  },
+  "S2_verify": {
+    "declared_scope": "review_guard_layer only",
+    "files_checked": [
+      "app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+      "app/work/VECTORFL_SURFACE_LAYER_S1_S8_LABEL_PRESSURE_HARDENING_20260523_V0.md",
+      "app/work/VECTORFL_S1_S8_LOOP_CHECKLIST_TEMPLATE_20260523_V0.md"
+    ]
+  },
+  "S3_test": {
+    "command_or_fixture": "validate_review_guard_s1_s8_negative_case_expansion.py + review_guard_negative_cases.json",
+    "expected_result": "PASS_REVIEW_GUARD_S1_S8_NEGATIVE_CASE_EXPANSION_WITH_HOLD",
+    "test_type": "local_validator"
+  },
+  "S4_reflect": {
+    "actual_result": "pending until validator run",
+    "contract_drift_found": "expected none if all critical drift classes map to blocking guard states",
+    "lesson": "guard layer must prevent downstream surface and recovery overclaim"
+  },
+  "S5_apply": {
+    "applied_change": [
+      "review guard negative case rules",
+      "8 negative case fixture rows",
+      "dashboard/user status/receipt"
+    ],
+    "not_applied": [
+      "authority mutation",
+      "promotion",
+      "live DB intake",
+      "model truth claim"
+    ]
+  },
+  "S6_surface": {
+    "forbidden_interpretation": "not router/runner, not authority, not promotion",
+    "guard_status": "PASS_WITH_HOLD",
+    "user_label": "PASS_WITH_HOLD: review guard negative cases expanded, not enforcement engine"
+  },
+  "S7_receipt": {
+    "receipt_path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_review_guard_s1_s8_negative_case_expansion_v0/receipt.md",
+    "state_mutations_observed": [
+      "REVIEW_GUARD_NEGATIVE_CASE_MATERIALIZATION",
+      "VALIDATOR_MATERIALIZATION",
+      "RECEIPT_ONLY_MUTATION"
+    ]
+  },
+  "S8_decide_next": {
+    "next_smallest_action": "integrate S1-S8 hardening status into compact recovery bundle index or stop/handoff",
+    "stop_or_continue": "continue only maintenance/index update"
+  },
+  "cases": [
+    {
+      "blocked_claims": [
+        "M4 reusable module",
+        "Program Alpha ready",
+        "promotion complete"
+      ],
+      "case_id": "RG-PROMOTION-001",
+      "expected_action": "isolate language, require review receipt before surface use",
+      "expected_guard_status": "HOLD_STOP_REVIEW",
+      "trigger": "candidate evidence described as M4 reusable module or Program Alpha ready"
+    },
+    {
+      "blocked_claims": [
+        "authority mutation applied",
+        "schema updated",
+        "baseline mutated",
+        "workflow promoted"
+      ],
+      "case_id": "RG-AUTHORITY-STOP-001",
+      "expected_action": "block and require separate authority process",
+      "expected_guard_status": "STOP",
+      "trigger": "schema/registry/baseline/workflow/current-position mutation requested or claimed"
+    },
+    {
+      "blocked_claims": [
+        "live DB intake enabled",
+        "write UI ready",
+        "fixture pass allows live write"
+      ],
+      "case_id": "RG-LIVE-DB-STOP-001",
+      "expected_action": "block live/write path and preserve fixture-only boundary",
+      "expected_guard_status": "STOP",
+      "trigger": "fixture/temp DB evidence is generalized into live DB intake or write UI permission"
+    },
+    {
+      "blocked_claims": [
+        "Codex result exists",
+        "Gemini scanned it",
+        "model approved it"
+      ],
+      "case_id": "RG-MODEL-RESULT-HOLD-001",
+      "expected_action": "require approved raw/lite/receipt output before model-result language",
+      "expected_guard_status": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "trigger": "Codex/Gemini packet prepared is described as actual model result"
+    },
+    {
+      "blocked_claims": [
+        "template command verified by docs alone",
+        "dry-run proves CLI contract"
+      ],
+      "case_id": "RG-REAL-TEST-DRIFT-001",
+      "expected_action": "schedule bounded real test or local validator before relying on command",
+      "expected_guard_status": "WATCH",
+      "trigger": "command template assumes CLI behavior that has not been recently tested"
+    },
+    {
+      "blocked_claims": [
+        "minor warning",
+        "approved with caution",
+        "green despite WATCH"
+      ],
+      "case_id": "RG-SURFACE-SOFTEN-001",
+      "expected_action": "restore exact guard label and forbidden interpretation",
+      "expected_guard_status": "HOLD_STOP_REVIEW",
+      "trigger": "surface label softens STOP/HOLD_STOP_REVIEW into warning/green label"
+    },
+    {
+      "blocked_claims": [
+        "credential included",
+        "network connector allowed",
+        "MCP enabled implicitly"
+      ],
+      "case_id": "RG-SECRET-CONNECTOR-STOP-001",
+      "expected_action": "redact/block and do not execute external lane",
+      "expected_guard_status": "STOP",
+      "trigger": "credential/API key/network/MCP/live connector included in packet or prompt"
+    },
+    {
+      "blocked_claims": [
+        "checksum is baseline freeze",
+        "receipt is authority",
+        "recovery index is source of truth"
+      ],
+      "case_id": "RG-RECEIPT-AUTHORITY-001",
+      "expected_action": "downgrade to evidence/navigation surface and require authority separation",
+      "expected_guard_status": "HOLD_STOP_REVIEW",
+      "trigger": "receipt/checksum/recovery index treated as baseline freeze or authority database"
+    }
+  ],
+  "claim_under_test": "review guard negative cases catch promotion/authority/live/model/surface drift before user surface or recovery index uses them",
+  "layer": "review_guard_layer",
+  "loop_id": "S1S8-20260523-REVIEW-GUARD-0001"
+}

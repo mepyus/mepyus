@@ -1,0 +1,43 @@
+{
+  "approval_applied": "no",
+  "authority_database": "no",
+  "case_id": "LSV-NEG-STOP-002",
+  "db_after_counts": {
+    "assets": 0,
+    "decisions": 4,
+    "executions": 3,
+    "guardrail_events": 25,
+    "maturation_entries": 4,
+    "next_actions": 0,
+    "receipts": 5,
+    "request_assets": 0,
+    "requests": 10,
+    "reviews": 4,
+    "sqlite_sequence": 7
+  },
+  "db_before_counts": {
+    "assets": 0,
+    "decisions": 4,
+    "executions": 3,
+    "guardrail_events": 25,
+    "maturation_entries": 4,
+    "next_actions": 0,
+    "receipts": 5,
+    "request_assets": 0,
+    "requests": 10,
+    "reviews": 4,
+    "sqlite_sequence": 7
+  },
+  "expected": "STOP_WRITE_UI",
+  "expected_recovery": "STOP",
+  "model_execution": "no",
+  "promotion_label": "HOLD",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface",
+    "M-CAND-03 Evidence Loop Persistence"
+  ],
+  "write_ui": "yes"
+}

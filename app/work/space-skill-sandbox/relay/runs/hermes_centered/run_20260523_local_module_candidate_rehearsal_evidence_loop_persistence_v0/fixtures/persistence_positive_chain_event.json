@@ -1,0 +1,15 @@
+{
+  "case_id": "ELP-POS-001",
+  "event_type": "candidate_chain_visible_state",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface"
+  ],
+  "expected_record": "PERSISTED_FIXTURE_RECORD_WITH_HOLD",
+  "expected_replay": "REPLAY_MATCH_WITH_HOLD",
+  "expected_recovery": "CANDIDATE_MATERIAL_WITH_HOLD",
+  "target_store": "fixture_local_jsonl",
+  "approval_applied": "no"
+}

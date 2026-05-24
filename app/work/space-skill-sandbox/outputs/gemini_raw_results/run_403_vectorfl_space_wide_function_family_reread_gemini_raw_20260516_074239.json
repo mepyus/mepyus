@@ -1,0 +1,94 @@
+{
+  "session_id": "00ba25a0-a0aa-49be-8171-872cf71eff03",
+  "response": "# Gemini VectorFL Space-Wide Function Family Reread Return\n\n## 1. Verdict\n\n[SPACE_WIDE_FUNCTION_FAMILY_REREAD_RETURNED_WITH_WATCH]\n\n## 2. Read Scope\n\nThe scan encompassed the following major VectorFL directories:\n- **Broad Read:** `app/`, `scripts/`, `docs/`, `runtime/`, `source_assets/`, `inputs/`, `space/`.\n- **Sampled Read:** `gemini/`, `gpt_run/`, `control/`, `data/`, `tests/`.\n- **Excluded:** `.git/`, `__pycache__`, and temporary local artifacts to maintain structural focus.\n- **Reference Read:** `references/` was used only as a comparison layer for \"external-material\" logic.\n\n## 3. Current Frame Fit\n\nThe 0-9 function family frame fits the VectorFL workspace **very strongly as a mapping lens**, but would be **distorting if used as a physical folder reorganization**.\n\n- **Strong Fit:** The \"Authority Gate (4)\", \"Memory/Residue (8)\", and \"Surface Return (7)\" families align perfectly with the existing `control/`, `runtime/logs/`, and `runtime/views/` structures.\n- **Distortion Risk:** Grouping all \"Organ Components (6)\" into one vessel might mask the distinction between \"core engine organs\" and \"experimental sandbox organs\". The frame is best used for **retrieval and conceptual grouping**, not for renaming folders.\n\n## 4. 0-9 Family Coverage Map\n\n| Family | Workspace evidence | Strong folders/files | Maturity | Gaps | WATCH |\n|---|---|---|---|---|---|\n| 0 (`space_frame`) | Strong structural definition | `docs/specs/folder_role_table_v1.md`, `runtime/views/current_asset_map_v1.md` | Active Surface | Gap in machine-readable space state | Ontology drift |\n| 1 (`source_basis`) | Rich baseline/policy layers | `source_assets/baselines/`, `docs/policies/` | Locked Source | Some baselines are \"active_guidance\" only | Mixing drafts with baselines |\n| 2 (`input_gate`) | Emerging intake logic | `scripts/process_structured_doc_with_routing.py`, `app/input_layer/` | Candidate | Needs better lane-selection automation | Over-blocking inputs |\n| 3 (`lens_reader`) | Established re-reading paths | `docs/indexes/space_boundary_material_flow_map_v0.md`, `runtime/multi_lens_views/` | Active Guidance | Lens rack is not yet unified | Over-interpreting simple text |\n| 4 (`authority_gate`) | High-authority boundaries | `control/`, `docs/specs/folder_role_table_v1.md`, `docs/specs/engine_operating_layer_freeze_v1.md` | Locked Source | Missing clear \"7_topic\" discussion space | Blocking necessary discussion |\n| 5 (`pipeline_family`) | Scattered flow definitions | `space/packages/`, `scripts/run_reservoir_pipeline_repo_seed_audit.py` | Candidate | Lacks a \"Pipeline Registry\" | Premature automation |\n| 6 (`organ_component`) | High volume of helper scripts | `app/core/`, `scripts/` (many `run_...py` files) | Active Guidance | Organs are often just \"one-off scripts\" | Sandbox scripts entering core |\n| 7 (`surface_return`) | Robust reading surfaces | `runtime/views/`, `runtime/receipts/`, `runtime/reports/` | Active Surface | Needs \"reflux\" and \"validation_return\" markers | Treating surface as source |\n| 8 (`memory_residue`) | Deep trace and log layers | `runtime/logs/`, `runtime/receipts/`, `runtime/memory/` | Active Surface | Provenance needs better cross-linkage | Log bloat without meaning |\n| 9 (`promotion_boundary`) | Clear candidate/baseline gates | `runtime/views/current_asset_map_v1.md`, `docs/specs/provisional_stable_subset_criteria_v0.md` | Active Guidance | \"Candidate\" marker visibility is inconsistent | Utility mistaken for authority |\n\n## 5. Scattered Asset Recovery\n\n- **The \"Candidate Standard\" Cluster:** Scattered across `app/work/`, `source_assets/templates/`, and `docs/proposals/`. Should be read together as `promotion_boundary (9)`.\n- **The \"Input Maturation\" Cluster:** Scattered across `scripts/` (e.g., `ingest_fragments.py`) and `app/input_layer/`. Should be read together as `input_gate (2)`.\n- **The \"Reading Lens\" Cluster:** Scattered across `runtime/multi_lens_views/` and various `docs/indexes/`. Should be read together as `lens_reader (3)`.\n\n## 6. Upper Vessel Candidates\n\n| Vessel candidate | Plain Korean name | Contains families | What it holds | Evidence | Maturity | Promotion risk |\n|---|---|---|---|---|---|---|\n| **Space Operating Frame** | 공간 운영 프레임 | 0, 1, 4, 9 | Constitution, policies, folder roles, authority gates, current asset map | `docs/policies/`, `docs/specs/folder_role_table_v1.md`, `runtime/views/current_asset_map_v1.md` | Active Surface | Global baseline drift |\n| **Intake & Interpretation Cockpit** | 인입 및 해석 콕핏 | 2, 3, 4 | Input lanes, lens rack, layer-shift detection, authority-depth selection | `app/input_layer/`, `docs/indexes/space_boundary_material_flow_map_v0.md`, 05-15 work | Candidate | Over-interpretation of inputs |\n| **Organ & Pipeline Machinery** | 기관 및 파이프라인 기구 | 5, 6 | Core modules, scripts, tools, repeat movement routes | `app/core/`, `scripts/`, `space/` | Active Guidance | Sandbox scripts entering core |\n| **Trace & Memory Spine** | 기록 및 기억 중추 | 7, 8 | Logs, receipts, provenance, memory spine, reflux material | `runtime/logs/`, `runtime/receipts/`, `runtime/memory/`, `runtime/views/engine_memory_spine_v1.json` | Active Surface | Evidence bloat / loss of meaning |\n\n## 7. Vessel Detail Cards\n\n### Space Operating Frame\n\ncandidate_name: `space_operating_frame`\nplain_korean_name: 공간 운영 프레임\ncontained_families: 0, 1, 4, 9\nwhat_it_does: Maintains the \"rules of the game\", workspace boundaries, and current structural reality.\nwhat_it_does_not_do: It does not execute tasks; it provides the authority to execute.\nscattered_assets: `docs/policies/`, `docs/specs/`, `runtime/views/current_asset_map_v1.md`, `source_assets/baselines/`.\nsmall_vessels_to_grow: `authority_gate`, `promotion_gate`, `baseline_repository`.\npipeline_attachment: Authority Gate (pre-execution)\nretrieval_rule: Read this first when structure, policy, or \"where to put things\" is questioned.\nmaturity: Active Surface\nWATCH: Baseline drift when new candidates are added.\nHOLD: Direct modification of `docs/policies/` or `docs/specs/` without explicit permission.\n\n### Intake & Interpretation Cockpit\n\ncandidate_name: `intake_interpretation_cockpit`\nplain_korean_name: 인입 및 해석 콕핏\ncontained_families: 2, 3, 4\nwhat_it_does: Handles the front door of the space; decides how deeply to read and what lens to use.\nwhat_it_does_not_do: It does not store material long-term; it \"ships\" it to memory or processing.\nscattered_assets: `app/input_layer/`, `scripts/process_structured_doc_with_routing.py`, `docs/indexes/space_boundary_material_flow_map_v0.md`.\nsmall_vessels_to_grow: `mode_selector`, `layer_shift_reader`, `lane_picker`.\npipeline_attachment: Input Gate (start of flow)\nretrieval_rule: Read this when new material (URL, text, file) enters the space.\nmaturity: Candidate\nWATCH: Forcing a \"full review\" mode on every simple chat input.\nHOLD: Moving material from \"unclassified\" to \"source\" without lane validation.\n\n## 8. Suggested Invocation Language\n\n- **\"공간 운영 프레임(SOF) 기준으로 읽어줘\"**: Read the current maps, roles, and policies first.\n- **\"인입 해석 콕핏(IIC)으로 입력 판독해줘\"**: Use the mode selector and lens rack on this new material.\n- **\"기관/파이프라인(MOL)에서 처리해줘\"**: Use the core scripts/modules to transform or move the data.\n- **\"기억 중추(RML)에서 흔적 찾아줘\"**: Look through logs, receipts, and provenance.\n\n## 9. Names To Avoid\n\n- **`master_engine`**: Too broad; the engine is actually composed of scattered organs.\n- **`official_workflow`**: The space uses \"routes\" and \"movement\", not fixed workflows.\n- **`global_ontology`**: The families are conceptual vessels, not a fixed hierarchy.\n\n## 10. Revised Big Frame\n\n**VectorFL은 '공간 운영 프레임'이 경계를 잡고, '인입 해석 콕핏'이 들어온 재료의 깊이와 의미를 판독하며, '기관/파이프라인 기구'가 이를 처리하고, '기록 및 기억 중추'가 그 흔적과 기억을 바닥으로 유지하는 동적 공간이다.**\n\n## 11. Small-Vessel Growth Plan\n\n- **SOF:** Grow the `authority_gate` (vessel for STOP/HOLD logic).\n- **IIC:** Grow the `layer_shift_reader` (vessel for meaning-delta detection).\n- **MOL:** Grow the `organ_chain_registry` (vessel for mapping how scripts connect).\n- **RML:** Grow the `reflux_engine` (vessel for moving residue back into reread status).\n\n## 12. Promotion Boundary\n\n- **Usable Now:** The Vessel names can be used in instructions to group context retrieval.\n- **Must Not Be Promoted:** Do not create `SOF/`, `IIC/`, `MOL/`, `RML/` folders. Do not update `AGENTS.md` with these names yet.\n\n## 13. Recovered Judgment\n\nThe VectorFL space has shifted from **\"Building the Engine (v0)\"** to **\"Operating the Space (v1)\"**. The 05-15 work recovered the missing **\"Input Gate\"** and **\"Authority Gate\"** logic that now allows the scattered organs (scripts) to be called safely by conceptually grouping them into upper vessels.\n\n## 14. Next Smallest Action\n\nTest a \"Vessel-Based Retrieval\" task: Ask Gemini to perform a task by naming only the Vessel (e.g., \"Use the IIC lens rack on this input\") to see if it retrieves the correct scattered assets.\n\n## 15. Hard Stop Confirmation\n\nno AGENTS.md update\nno SKILL.md creation\nno automation script\nno baseline promotion\nno workflow/schema/registry/ontology creation\nno current-position update\nno output_manifest update\nno local core / derived / surface authority change\nno official ontology promotion\nno file modifications\n\n`STATUS: SPACE_WIDE_FUNCTION_FAMILY_REREAD_RETURNED_WITH_WATCH`",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 9,
+          "totalErrors": 4,
+          "totalLatencyMs": 40350
+        },
+        "tokens": {
+          "input": 85758,
+          "prompt": 352924,
+          "candidates": 3451,
+          "total": 358815,
+          "cached": 267166,
+          "thoughts": 2440,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 9,
+            "totalErrors": 4,
+            "totalLatencyMs": 40350,
+            "tokens": {
+              "input": 85758,
+              "prompt": 352924,
+              "candidates": 3451,
+              "total": 358815,
+              "cached": 267166,
+              "thoughts": 2440,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 23,
+      "totalSuccess": 23,
+      "totalFail": 0,
+      "totalDurationMs": 637,
+      "totalDecisions": {
+        "accept": 23,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 6,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 9,
+          "success": 9,
+          "fail": 0,
+          "durationMs": 133,
+          "decisions": {
+            "accept": 9,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "list_directory": {
+          "count": 13,
+          "success": 13,
+          "fail": 0,
+          "durationMs": 498,
+          "decisions": {
+            "accept": 13,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

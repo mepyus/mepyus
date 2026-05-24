@@ -1,0 +1,59 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "six_rows_present",
+      "observed": 6,
+      "pass": true
+    },
+    {
+      "check": "priority_order_expected",
+      "observed": [
+        "FAIL_AUTHORITY_OVERPROMOTION",
+        "FAIL_OPERATOR_OVERLOAD",
+        "FAIL_HEAVY_ESCALATION_MISSING",
+        "FAIL_MODEL_ONLY_DRIFT",
+        "FAIL_NO_SPACE_REFERENCE",
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ],
+      "pass": true
+    },
+    {
+      "check": "authority_first",
+      "pass": true
+    },
+    {
+      "check": "decorative_last",
+      "pass": true
+    },
+    {
+      "check": "operator_before_decorative",
+      "pass": true
+    },
+    {
+      "check": "conflict_before_no_space",
+      "pass": true
+    },
+    {
+      "check": "model_only_before_no_space",
+      "pass": true
+    },
+    {
+      "check": "masking_repair_recorded",
+      "pass": true
+    },
+    {
+      "check": "hold_candidate_not_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0013191760000000018,
+  "promotion_status": "HOLD",
+  "verdict": "PASS_PHASE2_GUARD_PRIORITY_DECISION_TABLE_WITH_HOLD"
+}

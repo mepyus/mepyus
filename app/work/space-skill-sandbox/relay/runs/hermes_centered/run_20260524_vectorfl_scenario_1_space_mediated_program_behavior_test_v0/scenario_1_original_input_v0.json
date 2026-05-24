@@ -1,0 +1,20 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_input_layer_no_authority_mutation",
+  "guard_status": "PASS_WITH_HOLD",
+  "interpreted_constraints": [
+    "Do not rely on assistant private model/memory only.",
+    "Behave like intended VectorFL: read space, merge original+space+model-like fixture, route roles, execute/validate/test.",
+    "Reuse existing assets sufficiently.",
+    "Push until Scenario 1 program behavior test passes."
+  ],
+  "packet_id": "scenario_1_original_input_v0",
+  "promotion_status": "HOLD",
+  "raw_user_original": "자! 이제 실행하는데 이 실행 역시도 너의 모델만 사용하지 말고 지금 구현하고자 하는 벡터플 처럼 생각하고 판단해서 작업을 시작해! 니가 만들면서 벡터플처럼 동작하면서 1차 테스트가동작할때까지 실행해주길 바래. /goal 로 동작해도 무관해! 일단은 우리가 만든 자산을 충분히 활용해서 벡터플이 프로그램으로 1차 테스트를 통과시키는지 실행/검증/테스트 를 하면서 작업해! 시작해!",
+  "source_layer": "input_layer",
+  "watch_notes": [
+    "summary-only response would fail",
+    "space evidence refs are mandatory",
+    "internal no-call chain is substrate, not the whole front-end"
+  ]
+}

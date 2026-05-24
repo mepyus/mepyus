@@ -1,0 +1,27 @@
+{
+  "verdict": "REQUIREMENTS_S8_CLASSIFIED_COMPONENT_PROPOSAL_REQUIREMENTS_READY_WITH_PROMOTION_HOLD",
+  "status": "classification_only_no_authority_mutation",
+  "created_at_utc": "2026-05-17T12:02:34Z",
+  "classification": "component_proposal_requirements_ready",
+  "meaning": "requirements are ready for a future component proposal packet, not a promoted component",
+  "conditions": {
+    "real_requirements_gemini_executed": true,
+    "real_requirements_codex_executed": true,
+    "gemini_completion": true,
+    "codex_completion": true,
+    "permission_requirement_recovered": true,
+    "raw_audit_requirement_recovered": true,
+    "promotion_false": true,
+    "authority_false": true
+  },
+  "still_not_promoted_because": [
+    "promotion not approved",
+    "authority mutation not approved",
+    "component proposal packet not yet created",
+    "registry/schema/workflow integration not authorized"
+  ],
+  "next_smallest_action": "prepare component proposal packet with these requirements as proposal criteria; keep promotion/authority HOLD",
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

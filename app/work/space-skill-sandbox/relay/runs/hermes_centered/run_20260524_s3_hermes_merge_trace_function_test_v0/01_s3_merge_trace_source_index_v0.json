@@ -1,0 +1,46 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "S3 small real output/merge trace on known PASS/HOLD lane; no conflict or external-agent judgment required.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_s3_merge_trace_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s3_hermes_merge_trace_function_test_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+      "ref_id": "s2_predecessor",
+      "sha256": "cd00aa4856d4083f80eed36ebbe0f6c3d677afb475a993c146028c296dafbd45",
+      "used_for": "confirm S2 PASS and selected/rejected ref counts"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "5d238530a6893685c5d35f44109c8e78159b4dc43b5c2f1f0046156257747ee0",
+      "used_for": "declare S3 merge trace rules"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s2_source_selection_function_test_v0/02_s2_source_selection_function_test_v0.json",
+      "ref_id": "s2_packet",
+      "sha256": "f8a949a1e06d6912ea83516863ccbb2c8976403b16c06f640a05771ab040cb0a",
+      "used_for": "reuse selected refs and carry forward S2 rejected-ref observation"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "attach test to whole-flow stage S3 and limit scope"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "classification": "PIPELINE_PHASE1_DETERMINISTIC_STABLE_CYCLE_V0",
+  "created_at": "2026-05-22T22:29:28Z",
+  "hold": {
+    "authority_mutation": "NO",
+    "external_model_tool_network_execution": "NO",
+    "m3_m4_claim": "NO",
+    "program_alpha": "NO",
+    "promotion": "HOLD",
+    "router_runner_claim": "NO",
+    "snapshot_refresh": "NO",
+    "v1_checkpoint_creation": "NO"
+  },
+  "problem_count": 0,
+  "problems": [],
+  "results": [
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "-m",
+        "py_compile",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/fixture_db.py",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_phase1_server.py",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_readonly_contract.py",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_ui_surface_completeness.py",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_contract_replay.py",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_drift_replay_gate.py"
+      ],
+      "name": "py_compile_phase1_deterministic_files",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_phase1_server.py"
+      ],
+      "name": "phase1_server_tests",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "test_guardrail_probe_presence (__main__.Phase1ServerTests) ... ok\ntest_health_boundaries (__main__.Phase1ServerTests) ... ok\ntest_html_dashboard (__main__.Phase1ServerTests) ... ok\ntest_requests_and_detail (__main__.Phase1ServerTests) ... ok\ntest_summary_counts_and_safety (__main__.Phase1ServerTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.163s\n\nOK",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_readonly_contract.py"
+      ],
+      "name": "phase1_readonly_contract_tests",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "test_api_summary_schema (__main__.ReadOnlyContractTests) ... ok\ntest_guardrail_schema_contains_probe_blocks (__main__.ReadOnlyContractTests) ... ok\ntest_mutating_methods_are_not_supported (__main__.ReadOnlyContractTests) ... ok\ntest_requests_schema_and_all_details (__main__.ReadOnlyContractTests) ... ok\ntest_unknown_routes_404 (__main__.ReadOnlyContractTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.185s\n\nOK",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tests/test_ui_surface_completeness.py"
+      ],
+      "name": "phase1_ui_surface_tests",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "test_html_surface_contains_required_sections (__main__.UISurfaceCompletenessTests) ... ok\ntest_ui_surface_api_contract (__main__.UISurfaceCompletenessTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.197s\n\nOK",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_contract_replay.py"
+      ],
+      "name": "phase1_api_contract_replay",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "API_CONTRACT_REPLAY_PASS"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_drift_replay_gate.py"
+      ],
+      "name": "phase1_api_drift_replay_gate",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "PASS_API_DRIFT_REPLAY_MATCH\nendpoint_count=13\nproblem_count=0\nwatch_count=12"
+    },
+    {
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+        "app/work/vectorfl_ops_phase_0_5/tools/baseline_replay_validator.py",
+        "--mode",
+        "live-safety"
+      ],
+      "name": "phase0_5_live_safety",
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "BASELINE_LIVE_SAFETY_PASS\nverdict=PASS_LIVE_SAFETY_INVARIANTS_WITH_HOLD\nproblem_count=0\nreceipt=/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/receipts/pipeline_baseline_live_safety_validator_receipt.md\nexport=/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/exports/pipeline_baseline_live_safety_validator_export.md"
+    }
+  ],
+  "verdict": "PASS_PHASE1_DETERMINISTIC_STABLE_CYCLE_WITH_HOLD"
+}

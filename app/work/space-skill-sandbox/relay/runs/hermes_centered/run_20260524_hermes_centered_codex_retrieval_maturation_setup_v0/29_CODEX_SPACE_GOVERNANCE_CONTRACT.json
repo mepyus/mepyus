@@ -1,0 +1,179 @@
+{
+  "packet_id": "29_CODEX_SPACE_GOVERNANCE_CONTRACT_20260524_V0",
+  "status": "HOLD_SPACE_GOVERNANCE_CONTRACT",
+  "purpose": "Codify how Codex governs VectorFL space while Hermes carries execution, merge, and trace responsibility.",
+  "role_split": {
+    "HERMES": {
+      "primary_function": "execution_workbench",
+      "responsibilities": [
+        "preserve_user_original",
+        "interpret_user_original",
+        "request_codex_space_retrieval_via_cli_script_bridge",
+        "merge_original_space_model_reasoning",
+        "execute_inside_boundary",
+        "write_trace_receipt_and_codex_reentry_record"
+      ]
+    },
+    "CODEX": {
+      "primary_function": "space_operator",
+      "responsibilities": [
+        "classify_new_input",
+        "retrieve_space_before_hermes_execution",
+        "analyze_hermes_execution_after_reentry",
+        "judge_space_delta",
+        "validate_handles_and_boundaries",
+        "decide_whether_gemini_exploration_is_needed",
+        "produce_hold_only_maturation_proposals"
+      ]
+    },
+    "GEMINI": {
+      "primary_function": "optional_wide_space_lens_inside_codex",
+      "responsibilities": [
+        "layer_pressure_analysis",
+        "semantic_flattening_detection",
+        "hidden_link_and_missing_material_scan",
+        "cross_layer_risk_observation"
+      ],
+      "constraints": [
+        "not_invoked_directly_by_hermes",
+        "not_authority",
+        "not_a_promotion_gate",
+        "used_only_when_codex_file_grounded_evidence_is_insufficient"
+      ]
+    }
+  },
+  "governance_loop": [
+    {
+      "step": "NEW_INPUT_CLASSIFICATION",
+      "codex_questions": [
+        "is_original_continuation_correction_status_or_reentry_analysis",
+        "does_hermes_need_pre_execution_space_retrieval",
+        "is_there_a_hermes_reentry_record_waiting",
+        "which_router_route_applies"
+      ],
+      "output": "input_classification"
+    },
+    {
+      "step": "PRE_EXECUTION_SPACE_RETRIEVAL",
+      "codex_questions": [
+        "which_space_material_is_highest_fit",
+        "which_refs_should_be_rejected",
+        "what_should_hermes_merge",
+        "what_boundary_risks_exist"
+      ],
+      "output": "codex_retrieval_return_for_hermes"
+    },
+    {
+      "step": "HERMES_EXECUTION_OBSERVATION",
+      "codex_questions": [
+        "what_space_refs_did_hermes_use",
+        "what_model_reasoning_did_hermes_add",
+        "what_execution_or_hold_decision_was_made",
+        "what_trace_and_reentry_record_exist"
+      ],
+      "output": "hermes_work_analysis"
+    },
+    {
+      "step": "SPACE_DELTA_JUDGMENT",
+      "codex_questions": [
+        "did_this_create_a_reusable_space_pattern",
+        "did_this_expose_missing_handles",
+        "did_this_supersede_or_stale_prior_material",
+        "does_this_need_proposed_index_or_layer_update"
+      ],
+      "output": "space_delta"
+    },
+    {
+      "step": "GEMINI_EXPLORATION_DECISION",
+      "codex_questions": [
+        "are_layer_boundaries_unclear",
+        "is_semantic_flattening_suspected",
+        "is_wide_cluster_scan_needed",
+        "can_bounded_files_already_decide"
+      ],
+      "output": "gemini_use_yes_no_with_reason"
+    },
+    {
+      "step": "HOLD_MATURATION_PROPOSAL",
+      "codex_questions": [
+        "what_should_space_remember",
+        "what_should_remain_rejected",
+        "what_should_be_indexed_later_only_with_approval",
+        "what_next_safe_lane_preserves_boundary"
+      ],
+      "output": "maturation_packet"
+    }
+  ],
+  "gemini_use_policy": {
+    "use_when": [
+      "layer_boundaries_unclear",
+      "semantic_flattening_suspected",
+      "many_nearby_artifacts_require_cluster_scan",
+      "hermes_trace_conflicts_with_asset_index_or_prior_report",
+      "maturation_candidate_crosses_multiple_layers"
+    ],
+    "do_not_use_when": [
+      "required_records_already_decide_issue",
+      "user_only_requested_simple_status",
+      "gemini_would_restate_codex_findings",
+      "use_would_reintroduce_direct_api_server_replay_pressure"
+    ],
+    "result_status": "analysis_input_not_authority"
+  },
+  "maturation_outputs_allowed": [
+    "proposed_index_addition",
+    "proposed_layer_assignment",
+    "proposed_task_packet_rule",
+    "proposed_reentry_record_schema",
+    "proposed_stale_or_superseded_note",
+    "proposed_missing_handle_fix",
+    "hold_validation_packet"
+  ],
+  "maturation_outputs_forbidden_without_explicit_approval": [
+    "current_position_apply",
+    "authority_mutation",
+    "registry_mutation",
+    "folder_move",
+    "source_code_mutation",
+    "direct_api_server_replay_execution",
+    "promotion"
+  ],
+  "space_health_risks_to_watch": [
+    "hermes_execution_without_reentry_handle",
+    "codex_retrieval_expands_into_broad_archaeology",
+    "gemini_treated_as_authority",
+    "old_live_call_framing_reappears",
+    "compact_index_stale",
+    "hold_proposal_mistaken_for_applied_authority",
+    "operator_status_loses_space_delta",
+    "execution_output_cannot_reenter_space"
+  ],
+  "minimal_return_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "input_classification",
+    "space_state_before",
+    "hermes_execution_links",
+    "space_delta",
+    "gemini_exploration_decision",
+    "maturation_decision",
+    "risks",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "next_safe_lane": "USE_CODEX_SPACE_GOVERNANCE_FOR_INPUT_SPACE_DELTA_AND_MATURATION_WITH_HOLD_V0"
+}
+

@@ -1,0 +1,40 @@
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "loop": "new user original -> original intake -> actual space reading -> model fixture -> space-mediated merge -> receipt writer -> loop result/trace",
+  "shapes": {
+    "original_intake_shape": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_original_intake_packet_shape_candidate_v0.json",
+      "sha256": "1202689df0f0f4848786172ca6f9a3276c10c217bd98491228b228c5d5628858"
+    },
+    "receipt_writer_shape": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_receipt_writer_shape_candidate_v0.json",
+      "sha256": "8ea7db06272857ea2624040642f64692c6453e789d9737b5a347937003bf1edd"
+    },
+    "space_mediated_merge_shape": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_shape_extraction_from_actual_test_v0/vectorfl_space_mediated_merge_packet_shape_candidate_from_actual_test_v0.json",
+      "sha256": "07dec444c0f181f4bf1aae5dafd9bccf58790607c414a9f288e71a81bd8a0e93"
+    },
+    "space_reading_shape": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_shape_extraction_from_actual_test_v0/vectorfl_space_reading_packet_shape_candidate_from_actual_test_v0.json",
+      "sha256": "45e55d46a5629a1edaf27b2fe3b82299e70bbffe55c0ddb59546a7e9f2b012bb"
+    }
+  },
+  "status": "FOUR_SHAPE_LOOP_SOURCE_INDEX_WITH_HOLD",
+  "test_id": "minimal_loop_rehearsal_with_four_extracted_shapes_v0"
+}

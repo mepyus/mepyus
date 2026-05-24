@@ -1,0 +1,57 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "codex_return_json_valid",
+      "pass": true
+    },
+    {
+      "check": "required_fields_present",
+      "pass": true
+    },
+    {
+      "check": "promotion_hold",
+      "pass": true
+    },
+    {
+      "check": "selected_material_present",
+      "pass": true
+    },
+    {
+      "check": "rejected_material_present",
+      "pass": true
+    },
+    {
+      "check": "hermes_merge_created",
+      "pass": true
+    },
+    {
+      "check": "codex_reentry_created",
+      "pass": true
+    },
+    {
+      "check": "no_direct_codex_gemini_api",
+      "pass": true
+    },
+    {
+      "check": "no_mutation_boundary",
+      "pass": true
+    },
+    {
+      "check": "forbidden_endpoint_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "codex_rejected_count": 7,
+  "codex_selected_count": 10,
+  "elapsed_seconds": 0.003103279013885185,
+  "hashes": {
+    "codex_return": "0880bc8fdc6ef913863c05141c00a5b43e47fa6e4fb1ee414acd10ccd48bef02",
+    "hermes_merge": "0a9a546479f3002aaec05a9747279085dd6840f579b3bc54b38706fb4283c599",
+    "reentry_record": "c3143579ad1c9db2353e988c661d4bb6d0c766301113a5f55ae8f83a4dbbe68c"
+  },
+  "next_safe_lane": "USER_RUN_CODEX_SPACE_MATURATION_FROM_REENTRY_OR_HOLD_V0",
+  "verdict": "PASS_HERMES_MERGE_FROM_CODEX_SPACE_RETRIEVAL_WITH_HOLD"
+}

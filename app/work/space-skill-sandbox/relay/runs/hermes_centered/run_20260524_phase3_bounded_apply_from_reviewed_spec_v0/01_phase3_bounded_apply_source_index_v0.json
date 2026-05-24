@@ -1,0 +1,62 @@
+{
+  "boundary": {
+    "approval_granted": "YES_FOR_BOUNDED_APP_WORK_SPEC_ARTIFACTS",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "implementation_apply": "YES_BOUNDED_SPEC_ARTIFACTS_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO",
+    "source_schema_change": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "User approved bounded plan execution, but scope is document/spec application from reviewed local evidence; no new cross-agent ambiguity or external-agent need.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_phase3_bounded_apply_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase3_bounded_apply_from_reviewed_spec_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PRE_APPROVAL_STRUCTURE_SPEC_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "cdfe55c63a7f30acc4c14ec89807dd781d49c138073f5f9c9bc2cd70bf65b624",
+      "used_for": "defines HOLD/spec/revise/approve decision lane and exact-scope warning"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PRE_APPROVAL_REVIEWED_STRUCTURE_SPEC_20260524_V0.json",
+      "ref_id": "pre_approval_spec",
+      "sha256": "a6f44fd22579991ef21b0026a569d023b54fb8552bf1141fa486a7ae2df4aa69",
+      "used_for": "freezes reviewed structure to apply from"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0.json",
+      "ref_id": "phase3_plan",
+      "sha256": "38b15139e9aec38bf93b0f4fd0de9fe76e0bf14358e89795710d0930978c7967",
+      "used_for": "original plan to modify before execution"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0.json",
+      "ref_id": "s7_rollup",
+      "sha256": "d06f7200b3c9899544c9fc4e4ba237a61e38f282c4f645e70fb44818e3159b01",
+      "used_for": "pattern evidence and phase2 completion"
+    }
+  ],
+  "user_approval_interpretation": {
+    "approval_received": "YES",
+    "bounded_scope": "apply reviewed-structure spec into new HOLD operating contract artifacts under app/work only",
+    "explicitly_not_authorized": [
+      "authority/current-position mutation",
+      "registry update",
+      "source code mutation",
+      "schema registry mutation",
+      "API/direct/server/replay",
+      "promotion"
+    ]
+  }
+}

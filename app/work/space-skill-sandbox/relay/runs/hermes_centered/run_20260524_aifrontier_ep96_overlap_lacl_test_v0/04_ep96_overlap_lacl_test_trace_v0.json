@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_WITH_USER_REQUESTED_WEB_FETCH",
+      "input_ref": "https://aifrontier.kr/ko/episodes/ep96/",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/00_ep96_source_page.html",
+      "promotion_status": "HOLD",
+      "trace_id": "fetch_ep96_url"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_LOCAL_ONLY",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/00_ep96_source_page.html",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/01_ep96_article_text_extracted_v0.txt",
+      "promotion_status": "HOLD",
+      "trace_id": "extract_ep96_article"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_SPACE_REFERENCE_READ_ONLY",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/02_ep96_source_and_space_reference_index_v0.json",
+      "promotion_status": "HOLD",
+      "trace_id": "read_existing_ep97_space_material"
+    },
+    {
+      "authority_effect": "NO_AUTHORITY_MUTATION",
+      "guard_status": "PASS_HERMES_LOCAL_ONLY_NO_CODEX_NO_GEMINI",
+      "input_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/01_ep96_article_text_extracted_v0.txt",
+      "output_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_aifrontier_ep96_overlap_lacl_test_v0/03_ep96_ep97_overlap_lacl_analysis_v0.json",
+      "promotion_status": "HOLD",
+      "trace_id": "hermes_overlap_lacl_analysis"
+    }
+  ],
+  "trace_id": "04_ep96_overlap_lacl_test_trace_v0"
+}

@@ -1,0 +1,86 @@
+{
+  "request_id": 4,
+  "title": "Run 004 BLOCKED authority request",
+  "classification": "STRUCTURED_LOCAL_RUN_EXPORT",
+  "data": {
+    "request": [
+      {
+        "id": 4,
+        "title": "Run 004 BLOCKED authority request",
+        "body": "이 기준을 공식 운영 원칙으로 삼자.",
+        "depth": "BLOCKED_SPECIAL",
+        "state": "MATURED_OR_HELD",
+        "source_known": 0,
+        "audience_known": 0,
+        "sensitivity_known": 0,
+        "approval_marker": "",
+        "scope_marker": "",
+        "promotion_status": "HOLD",
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "assets": [],
+    "decisions": [
+      {
+        "id": 4,
+        "decision": "ROUTE_BLOCKED_SPECIAL",
+        "reason": "route before execution",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "executions": [],
+    "receipts": [],
+    "reviews": [
+      {
+        "id": 4,
+        "verdict": "BLOCKED_SPECIAL_HOLD",
+        "next_smallest_action": "special approval packet required if continuing",
+        "promotion_status": "HOLD",
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "maturation": [
+      {
+        "id": 4,
+        "summary": "authority request blocked and held",
+        "next_work_easier_value": "blocked authority path visible",
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "next_actions": [],
+    "guardrail_events": [
+      {
+        "id": 16,
+        "guardrail": "G15",
+        "result": "PASS_BLOCKED",
+        "detail": "BLOCKED_SPECIAL cannot become ready",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 17,
+        "guardrail": "G16",
+        "result": "PASS",
+        "detail": "SpecialApprovalDraft is not approval; authority remains NO",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 18,
+        "guardrail": "G8_G9_G10_G11",
+        "result": "PASS",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 19,
+        "guardrail": "G12",
+        "result": "PASS",
+        "detail": "no authority mutation",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ]
+  },
+  "boundary_ok": true
+}

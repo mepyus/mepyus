@@ -1,0 +1,280 @@
+{
+  "verdict": "[HERMES_STAGE1_HISTORICAL_CODE_DIFF_SAMPLE_AUDIT_RECEIPT]",
+  "timestamp": "2026-05-16T07:35:39.388999+00:00",
+  "selection_commands": [
+    "git log --oneline -- app/core app/ui scripts config package.json vite.config.js vite.config.ts vite.config.mjs '*.json' '*.toml' '*.yaml' '*.yml' ':(exclude)app/work/*.md' ':(exclude)app/work/**' ':(exclude)**/*.md'",
+    "git diff-tree --no-commit-id --name-only -r <sha>",
+    "git show --stat --oneline --no-renames a998543da",
+    "git show --no-ext-diff --no-renames --format=medium <sha> -- <selected_code_paths> > patches/<short_sha>.patch"
+  ],
+  "selected_commits": [
+    {
+      "sha": "a542716f3",
+      "subject": "Align whole-space orientation and Package 033 candidate-evidence closeout",
+      "selection_reason": "Touches app/core runtime Python, app/runtime Python, app/ui TSX/package surfaces, plus generated JSON."
+    },
+    {
+      "sha": "4601f7c18",
+      "subject": "Add integrated engine operating spine workbench updates",
+      "selection_reason": "Touches app/runtime Python, integrated engine TSX/package surfaces, runtime session JSON/log surfaces."
+    },
+    {
+      "sha": "4e0389a4d",
+      "subject": "Initial commit: Initialize vectorfl_replica repository",
+      "selection_reason": "Large initial code/config/script surface commit; selected despite size to pressure path-context handling."
+    },
+    {
+      "sha": "a998543da",
+      "subject": "m",
+      "selection_reason": "Large historical code/script/config seed commit with app/runtime, scripts, tests, JSON and UI surfaces."
+    }
+  ],
+  "selection_limits": [
+    "Read-only git only for selection/extraction; no git mutation commands used.",
+    "Only 4 qualifying non-doc-only historical commits were found under the bounded pathspec; packet allowed continuing with fewer than 5.",
+    "Initial/seed commits are large and include generated/binary/report surfaces; audit keeps path-context notes rather than semantic claims.",
+    "First audit attempt timed out because the script kept too many finding objects from very large seed patches; the script was rewritten inside the declared output directory to stream counts/examples only, then rerun."
+  ],
+  "input_patch_files": [
+    "patches/4601f7c18.patch",
+    "patches/4e0389a4d.patch",
+    "patches/a542716f3.patch",
+    "patches/a998543da.patch"
+  ],
+  "output_files": [
+    "patches/a542716f3.patch",
+    "patches/4601f7c18.patch",
+    "patches/4e0389a4d.patch",
+    "patches/a998543da.patch",
+    "audit_historical_code_diffs.py",
+    "historical_code_diff_audit_report.md",
+    "historical_code_diff_audit_receipt.json"
+  ],
+  "audit_command": "python3 audit_historical_code_diffs.py",
+  "actual_audit_command_from_repo_root": "python3 app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_historical_code_diff_sample_audit_v0/audit_historical_code_diffs.py",
+  "exit_code": 0,
+  "prior_audit_attempt_timed_out": true,
+  "network_used": false,
+  "packages_installed": false,
+  "subprocess_used_by_audit_script": false,
+  "git_used_for_patch_selection_only": true,
+  "git_mutation_used": false,
+  "source_files_modified": false,
+  "patches_applied": false,
+  "input_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "patch_count": 4,
+  "total_hard_findings": 5,
+  "total_review_notes": 3,
+  "rule_hits": {
+    "unresolved_todo": {
+      "hard_finding": 0,
+      "review_note": 1
+    },
+    "debug_print_js": {
+      "hard_finding": 1,
+      "review_note": 0
+    },
+    "secret_token_assignment": {
+      "hard_finding": 4,
+      "review_note": 0
+    },
+    "debug_print_python": {
+      "hard_finding": 0,
+      "review_note": 2
+    }
+  },
+  "per_patch_summary": [
+    {
+      "patch": "4601f7c18.patch",
+      "files_touched_count": 2,
+      "sample_files_touched": [
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/CliHostControlPanel.tsx"
+      ],
+      "added_lines_seen": 138,
+      "deleted_lines_seen": 25,
+      "contexts": {
+        "app_source": 2
+      },
+      "hard_findings": 0,
+      "review_notes": 0,
+      "rule_hits": {},
+      "hard_examples": [],
+      "review_examples": []
+    },
+    {
+      "patch": "4e0389a4d.patch",
+      "files_touched_count": 5,
+      "sample_files_touched": [
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/App.tsx",
+        "app/ui/integrated_engine/main.tsx",
+        "app/ui/integrated_engine/package.json",
+        "app/ui/integrated_engine/vite.config.ts"
+      ],
+      "added_lines_seen": 3714,
+      "deleted_lines_seen": 0,
+      "contexts": {
+        "app_source": 4,
+        "config_or_env_like": 1
+      },
+      "hard_findings": 1,
+      "review_notes": 1,
+      "rule_hits": {
+        "unresolved_todo": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "debug_print_js": {
+          "hard_finding": 1,
+          "review_note": 0
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "debug_print_js",
+          "file": "app/ui/integrated_engine/main.tsx",
+          "line_no": 3686,
+          "context": "app_source",
+          "excerpt": "console.log(\"VectorFL Sandbox: Starting Boot Sequence...\");"
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "unresolved_todo",
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "line_no": 651,
+          "context": "app_source",
+          "excerpt": "\"current_signal\": \"extract repeated pressure before TODO language\","
+        }
+      ]
+    },
+    {
+      "patch": "a542716f3.patch",
+      "files_touched_count": 7,
+      "sample_files_touched": [
+        "app/core/runtime/external_input_comparison.py",
+        "app/core/runtime/lower_support_layers.py",
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/App.tsx",
+        "app/ui/integrated_engine/CliHostControlPanel.tsx",
+        "app/ui/integrated_engine/EngineStateDashboard.tsx",
+        "app/ui/integrated_engine/VectorFLIntegrationShell.tsx"
+      ],
+      "added_lines_seen": 1333,
+      "deleted_lines_seen": 8,
+      "contexts": {
+        "app_source": 7
+      },
+      "hard_findings": 0,
+      "review_notes": 0,
+      "rule_hits": {},
+      "hard_examples": [],
+      "review_examples": []
+    },
+    {
+      "patch": "a998543da.patch",
+      "files_touched_count": 6,
+      "sample_files_touched": [
+        "app/core/runtime/dust_field.py",
+        "app/core/runtime/graph_view.py",
+        "app/core/runtime/live_input_space.py",
+        "scripts/ingest_fragments.py",
+        "scripts/run_review_fixture_check.py",
+        "tests/unit/test_formation_service.py"
+      ],
+      "added_lines_seen": 11322,
+      "deleted_lines_seen": 0,
+      "contexts": {
+        "app_source": 3,
+        "scripts_or_deploy": 1,
+        "tests_or_fixtures": 2
+      },
+      "hard_findings": 4,
+      "review_notes": 2,
+      "rule_hits": {
+        "secret_token_assignment": {
+          "hard_finding": 4,
+          "review_note": 0
+        },
+        "debug_print_python": {
+          "hard_finding": 0,
+          "review_note": 2
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "secret_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5292,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(value)"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5296,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5979,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(value)"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5983,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(str(value).strip())"
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "file": "scripts/ingest_fragments.py",
+          "line_no": 6112,
+          "context": "scripts_or_deploy",
+          "excerpt": "print(\"usage: ingest_fragments.py <runtime_root> <fragments.json> [--project]\")"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "file": "scripts/ingest_fragments.py",
+          "line_no": 6308,
+          "context": "scripts_or_deploy",
+          "excerpt": "print(json.dumps(result, ensure_ascii=False, indent=2))"
+        }
+      ]
+    }
+  ],
+  "non_actions": [
+    "no source files modified",
+    "no patches applied",
+    "no git add/commit/reset/checkout",
+    "no package install",
+    "no network/browser/MCP",
+    "no Hermes memory/skill/cron/config edit",
+    "no VectorFL authority update",
+    "no current-position/output_manifest update",
+    "no baseline/workflow/schema/registry/ontology promotion"
+  ]
+}

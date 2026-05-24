@@ -1,0 +1,106 @@
+{
+  "HOLD_receipt": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "current_position_apply": "NO",
+    "promotion_status": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "attached_phase1_stage": "S2_SPACE_SELECTION",
+  "next_test_candidate": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "S2 source selection is not complete when selected refs are listed; rejected refs and rejection reasons are needed to prove the agent did not silently over-read or decorate citations.",
+    "gap_id": "S2_GAP_REJECTION_RATIONALE_REQUIRED_TO_AVOID_ARCHAEOLOGY",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "packet_id": "02_s2_source_selection_function_test_v0",
+  "phase1_stage_role": "Select evidence before Hermes merge; prevent model-only drift and excessive archaeology.",
+  "phase3_backlog_delta": {
+    "candidate": "S2_SOURCE_SELECTION_SHOULD_LOG_REJECTED_REFS_WITH_REASON",
+    "reason": "If repeated, Phase3 should add rejected-ref logging to source policy so archaeology/decorative refs are visible.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "proposed_fix_or_watch": "WATCH: require rejected-ref rationale in Phase2 S2 tests. Do not globally revise source policy until repeated across more function tests.",
+  "rejected_space_references": [
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_ACTUAL_MULTI_AGENT_SCENARIO1_PROCESS_TEST_20260524_V0.json",
+      "exists": true,
+      "ref_id": "phase1_whole_flow",
+      "rejected_because": "broader orientation already represented through matrix; would add load without changing S2 target",
+      "sha256": "cd5edadb0258afa87916125ae45152b1655673dacbc0d5d00e536c74e13580cf"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "exists": true,
+      "ref_id": "aifrontier_impact",
+      "rejected_because": "valuable pressure lens but not needed for this narrow S2 source-selection test; would be decorative here",
+      "sha256": "613724ad6011a923815f201f321b2ad9cded0e9c9cffb5e3b0842c70ace398c7"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0.json",
+      "exists": true,
+      "ref_id": "checklist_negative_backlog",
+      "rejected_because": "validator/checklist hardening is Phase3 backlog, not current S2 target",
+      "sha256": "d13268da3c48cde221992e46026df55d92099bdea6b6a5ef15061f14ea447de7"
+    }
+  ],
+  "selected_space_references": [
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0.json",
+      "exists": true,
+      "ref_id": "s1_predecessor",
+      "sha256": "b4cb37aff0b0d955ce03c8b07d55fb2c43427193f13e003c73010e941a2f999d",
+      "used_for": "immediate predecessor; confirms S2 is next and carries S1 continuation observation"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S1_INTAKE_FUNCTION_TEST_20260524_V0.md",
+      "exists": true,
+      "ref_id": "latest_next_lane",
+      "sha256": "5bd270998e9161c9f7493546d3c8df0ed2ba911eae022136fbc4d3df28d5677a",
+      "used_for": "declares S2 rules and non-validator target requirement"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "exists": true,
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "attaches function to whole-flow stage S2 and limits scope"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0.json",
+      "exists": true,
+      "ref_id": "source_selection_rule",
+      "sha256": "1166cd4ef756af219d57f24bdc2d8bfed6448ace7eefe2e5b00f5a2d81c984c1",
+      "used_for": "provides max-ref/changed_judgment/reject-ref criteria"
+    }
+  ],
+  "source_selection_result": {
+    "conflict_detected": false,
+    "heavy_escalation_triggered": false,
+    "max_default_refs": 4,
+    "rejected_count": 3,
+    "result": "PASS",
+    "selected_count": 4
+  },
+  "space_reference_delta": [
+    {
+      "changed_judgment": "Continuation input should be resolved through the immediate predecessor; S2 begins only because S1 PASS named S2 as next.",
+      "ref_id": "s1_predecessor"
+    },
+    {
+      "changed_judgment": "The target must be non-validator source-selection, so checklist/validator hardening is excluded even if related.",
+      "ref_id": "latest_next_lane"
+    },
+    {
+      "changed_judgment": "S2 is limited to source-selection rule/ref cap/changed_judgment testing, not merge or Codex/Gemini role tests.",
+      "ref_id": "phase2_matrix"
+    },
+    {
+      "changed_judgment": "Selected refs are capped at four and each rejected ref must be justified to prevent archaeology and decorative citations.",
+      "ref_id": "source_selection_rule"
+    }
+  ],
+  "target": "Choose source refs for next Phase2 function test without returning to validator/checklist hardening.",
+  "tested_function": "S2_SPACE_EVIDENCE_SELECTION",
+  "user_original_verbatim": "응 계속해봐"
+}

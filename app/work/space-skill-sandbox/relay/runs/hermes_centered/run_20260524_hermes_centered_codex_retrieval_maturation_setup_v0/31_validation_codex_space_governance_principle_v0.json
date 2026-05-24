@@ -1,0 +1,76 @@
+{
+  "packet_id": "31_validation_codex_space_governance_principle_v0",
+  "verdict": "PASS_CODEX_SPACE_GOVERNANCE_PRINCIPLE_WITH_HOLD",
+  "checks": [
+    {
+      "check": "governance_principle_created",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/28_CODEX_SPACE_GOVERNANCE_PRINCIPLE.md"
+    },
+    {
+      "check": "governance_contract_json_valid",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/29_CODEX_SPACE_GOVERNANCE_CONTRACT.json"
+    },
+    {
+      "check": "governance_return_schema_json_valid",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/30_CODEX_SPACE_GOVERNANCE_RETURN_SCHEMA.json"
+    },
+    {
+      "check": "hermes_execution_workbench_role_defined",
+      "pass": true
+    },
+    {
+      "check": "codex_space_operator_role_defined",
+      "pass": true
+    },
+    {
+      "check": "gemini_optional_codex_internal_lens_defined",
+      "pass": true
+    },
+    {
+      "check": "governance_loop_has_6_steps",
+      "pass": true,
+      "count": 6
+    },
+    {
+      "check": "gemini_use_and_do_not_use_policy_present",
+      "pass": true
+    },
+    {
+      "check": "maturation_allowed_and_forbidden_outputs_present",
+      "pass": true
+    },
+    {
+      "check": "minimal_return_fields_present",
+      "pass": true
+    },
+    {
+      "check": "promotion_hold",
+      "pass": true
+    },
+    {
+      "check": "no_authority_current_position_registry_source_folder_mutation",
+      "pass": true
+    },
+    {
+      "check": "no_direct_api_or_server_replay_boundary",
+      "pass": true
+    }
+  ],
+  "checks_count": 13,
+  "hashes": {
+    "governance_principle": "4386513a501a0fbca3a112afc414baa6c49295a6061c74b253fcecb052143dfe",
+    "governance_contract": "66a62663318d8e50672ea830d7ac350381405c36dba227e1790da313ea9e5b0a",
+    "governance_return_schema": "492f83da9188b194b60aeba66bcb6cb13236fd675d3374ec0912a172be07e801"
+  },
+  "structured_principle_summary": [
+    "Hermes connects space to execution and writes trace/reentry records.",
+    "Codex operates the space by classifying new inputs, retrieving pre-execution space, analyzing Hermes execution, judging space delta, deciding Gemini exploration need, and producing HOLD-only maturation proposals.",
+    "Gemini is optional and internal to Codex script-chain; Gemini findings are analysis input, not authority.",
+    "Space maturation means proposing how the space should remember execution, not mutating authority or registry."
+  ],
+  "next_safe_lane": "USE_CODEX_SPACE_GOVERNANCE_FOR_INPUT_SPACE_DELTA_AND_MATURATION_WITH_HOLD_V0",
+  "promotion_status": "HOLD"
+}

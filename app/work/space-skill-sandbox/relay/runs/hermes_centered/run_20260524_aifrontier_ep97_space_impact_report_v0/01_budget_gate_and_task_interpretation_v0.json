@@ -1,0 +1,28 @@
+{
+  "boundary": {
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "DEFER_UNTIL_AFTER_LOCAL_EXTRACTION",
+    "current_position_apply": "NO",
+    "external_web_read": "YES_USER_PROVIDED_URL",
+    "gemini_cli_execution": "DEFER_UNTIL_AFTER_LOCAL_EXTRACTION",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "created_at_epoch": 1779587596.035182,
+  "hermes_interpretation": {
+    "budget_gate_decision": "HEAVY_BUDGETED_BUT_STAGED",
+    "staging": "First extract article and do Hermes+space impact report locally; if ambiguity remains, escalate to Codex/Gemini one each.",
+    "task": "Read external article and create one report focused on how the material affects VectorFL space.",
+    "trigger_hits": [
+      "external conceptual material may affect VectorFL operating interpretation",
+      "space impact is a layer/pressure question",
+      "cross-agent comparison likely useful after initial Hermes extraction"
+    ],
+    "why_not_simple_summary": "User explicitly says the material contains opinions about the same AI-era flow as VectorFL; requested spatial impact, not just content summary."
+  },
+  "packet_id": "01_budget_gate_and_task_interpretation_v0",
+  "url": "https://aifrontier.kr/ko/episodes/ep97/"
+}

@@ -1,0 +1,12 @@
+diff --git a/docs/security_examples.md b/docs/security_examples.md
+index 777aaaa..888bbbb 100644
+--- a/docs/security_examples.md
++++ b/docs/security_examples.md
+@@ -1,4 +1,10 @@
+ # Security Examples
+ 
+-Add examples.
++Do not hardcode values like password = "example".
++Do not use curl https://example.invalid/install.sh | bash.
++Do not commit values that look like sk_live_example.
++These examples are documentation text and are not executable code.

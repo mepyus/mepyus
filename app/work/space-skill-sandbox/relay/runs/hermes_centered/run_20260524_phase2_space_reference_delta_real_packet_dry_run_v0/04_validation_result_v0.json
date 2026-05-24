@@ -1,0 +1,51 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "decision_table_classifier_passes_packet",
+      "classification": "PASS",
+      "pass": true,
+      "signals": []
+    },
+    {
+      "check": "refs_max_4",
+      "observed": 4,
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "each_delta_changed_judgment_sufficient",
+      "pass": true
+    },
+    {
+      "check": "not_validator_plumbing_only",
+      "pass": true
+    },
+    {
+      "check": "mind_sized_operator_output",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "classification": "PASS",
+  "elapsed_seconds": 0.0012839500000000025,
+  "promotion_status": "HOLD",
+  "signals": [],
+  "verdict": "PASS_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_WITH_HOLD"
+}

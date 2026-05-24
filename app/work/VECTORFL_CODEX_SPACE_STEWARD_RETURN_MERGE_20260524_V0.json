@@ -1,0 +1,186 @@
+{
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call_from_hermes": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO_ALREADY_SUPPLIED_BY_USER",
+    "gemini_cli_execution": "NO",
+    "reason": "User supplied Codex output; Hermes only validates/merges locally and prepares Gemini input.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "codex_packet_review": {
+    "boundary_all_no_or_hold": true,
+    "codex_packet_id": "CODEX_SPACE_STEWARD_RETURN_PACKET_DRY_RUN_20260524_V0",
+    "expected_minimum_files": 6,
+    "extra_read_files_count": 5,
+    "gemini_questions_count": 3,
+    "hermes_changed_judgment": "Codex result validates the handoff concept, but strengthens the need for explicit task_packet handle and stricter first-pass/optional-read separation before live loops.",
+    "missing_required_fields": [],
+    "next_safe_lane_from_codex": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+    "observed_gaps": [
+      {
+        "description": "Instruction asked Codex to first read 6 files, but return packet lists 11 read_files. This is not a boundary violation, but future prompt should distinguish first-pass required files from optional verification refs.",
+        "gap_id": "GAP_CODEX_READ_EXPANDED_BEYOND_6_FIRST_PASS",
+        "severity": "MEDIUM"
+      },
+      {
+        "description": "Codex confirmed that future runs need a separately named task packet handle.",
+        "gap_id": "GAP_EXPLICIT_TASK_PACKET_HANDLE_MISSING",
+        "severity": "HIGH"
+      },
+      {
+        "description": "Codex found a referenced source file absent from compact index.",
+        "gap_id": "GAP_COMPACT_INDEX_MISSING_NEXT_AFTER_ASSET_SAMPLE",
+        "severity": "MEDIUM"
+      }
+    ],
+    "observed_good": [
+      "Codex separated referenced_material and reinserted_material.",
+      "Codex preserved primary_layer plus secondary_links.",
+      "Codex identified task-packet handle gap.",
+      "Codex surfaced compact-index missing entry for next-after-asset-sample.",
+      "Codex returned concrete Gemini questions."
+    ],
+    "packet_id": "02_codex_return_shape_review_v0",
+    "read_files_count": 11,
+    "referenced_material_count": 4,
+    "reinserted_material_count": 8,
+    "required_fields_present": true,
+    "role": "CODEX_SPACE_STEWARD",
+    "status": "PASS_WITH_HOLD"
+  },
+  "current_position_candidate": "CODEX_SPACE_STEWARD_RETURN_MERGED_FOR_GEMINI_WITH_HOLD",
+  "gemini_instruction_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_space_steward_return_merge_v0/04_USER_INSTRUCTION_FOR_GEMINI_LAYER_READER_DRY_RUN.md",
+  "hermes_merge": {
+    "boundary": {
+      "api_direct_server_replay": "NO",
+      "authority_mutation": "NO",
+      "codex_live_call_from_hermes": "NO",
+      "current_position_apply": "NO",
+      "folder_tree_mutation": "NO",
+      "gemini_live_call": "NO",
+      "promotion": "HOLD",
+      "registry_mutation": "NO",
+      "source_code_mutation": "NO"
+    },
+    "codex_return_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/08_CODEX_SPACE_STEWARD_RETURN_PACKET_DRY_RUN.json",
+    "codex_return_sha256": "7e62f73111c7f8e4759f62bbe193e84a271dde6887154112eca6a151dc44ccab",
+    "gemini_questions_from_codex": [
+      "Does the L6 blueprint layer carry too much governance pressure, or should schema/boundary assets be split more strongly between L5 and L6?",
+      "Is the compact asset index sufficiently layer-preserving, or did compression flatten evidence needed to judge S1-S7 function pressure?",
+      "Should VECTORFL_NEXT_WORK_AFTER_SPACE_RELAYERING_ASSET_SAMPLE_TEST_20260524_V0.md be added to the next compact index as L5 primary with L6 secondary, or remain source-index-only?"
+    ],
+    "merge_decision": "PROCEED_TO_OPTIONAL_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD",
+    "next_safe_lane": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+    "packet_id": "03_hermes_merge_from_codex_space_steward_return_v0",
+    "space_reference_delta": [
+      {
+        "changed_judgment": "Handoff files are usable by Codex, but Codex naturally expanded beyond the compact six-file set; future prompt must mark optional refs separately.",
+        "ref": "codex_return_packet"
+      },
+      {
+        "changed_judgment": "A specific task packet should become a standard handoff artifact, not implicit in source index/user instruction.",
+        "ref": "codex_missing_material"
+      },
+      {
+        "changed_judgment": "Compact index should include referenced next-lane/source files or explicitly label them source-index-only.",
+        "ref": "compact_index_gap"
+      }
+    ],
+    "status": "HOLD_MERGE_NOTE_NO_AUTHORITY_MUTATION"
+  },
+  "next_safe_lane": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+  "report_id": "VECTORFL_CODEX_SPACE_STEWARD_RETURN_MERGE_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_space_steward_return_merge_v0",
+  "validation": {
+    "active_hits": [],
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "checks": [
+      {
+        "check": "codex_packet_exists",
+        "pass": true
+      },
+      {
+        "check": "script_only_no_live_gemini",
+        "pass": true
+      },
+      {
+        "check": "required_fields_present",
+        "pass": true
+      },
+      {
+        "check": "referenced_material_4",
+        "pass": true
+      },
+      {
+        "check": "reinserted_material_8",
+        "pass": true
+      },
+      {
+        "check": "boundary_all_no_or_hold",
+        "pass": true
+      },
+      {
+        "check": "codex_read_expansion_recorded",
+        "pass": true
+      },
+      {
+        "check": "observed_gaps_recorded",
+        "pass": true
+      },
+      {
+        "check": "task_packet_gap_detected",
+        "pass": true
+      },
+      {
+        "check": "compact_index_gap_detected",
+        "pass": true
+      },
+      {
+        "check": "hermes_merge_delta_present",
+        "pass": true
+      },
+      {
+        "check": "gemini_prompt_created",
+        "pass": true
+      },
+      {
+        "check": "gemini_prompt_has_codex_packet",
+        "pass": true
+      },
+      {
+        "check": "next_gemini_or_hold",
+        "pass": true
+      },
+      {
+        "check": "no_mutation_boundary",
+        "pass": true
+      },
+      {
+        "check": "forbidden_endpoint_replay_hits_0",
+        "observed": 0,
+        "pass": true
+      }
+    ],
+    "checks_count": 16,
+    "codex_read_files_count": 11,
+    "elapsed_seconds": 0.003066415000000003,
+    "folder_tree_mutation": "NO",
+    "next_safe_lane": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+    "observed_gaps_count": 3,
+    "promotion_status": "HOLD",
+    "referenced_material_count": 4,
+    "reinserted_material_count": 8,
+    "verdict": "PASS_CODEX_SPACE_STEWARD_RETURN_MERGED_FOR_GEMINI_WITH_HOLD"
+  },
+  "verdict": "PASS_CODEX_SPACE_STEWARD_RETURN_MERGED_FOR_GEMINI_WITH_HOLD"
+}

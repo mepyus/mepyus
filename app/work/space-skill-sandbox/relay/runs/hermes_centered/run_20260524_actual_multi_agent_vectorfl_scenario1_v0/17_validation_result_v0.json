@@ -1,0 +1,47 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_artifacts_exist",
+      "pass": true
+    },
+    {
+      "check": "actual_agents_present",
+      "pass": true
+    },
+    {
+      "check": "codex_and_gemini_cli_marked_yes",
+      "pass": true
+    },
+    {
+      "check": "trace_rows>=8",
+      "observed": 8,
+      "pass": true
+    },
+    {
+      "check": "timings_present",
+      "observed": {
+        "codex_reinsertion_effect_real_seconds": 29.07,
+        "codex_space_exploration_real_seconds": 41.49,
+        "gemini_layer_reading_real_seconds": 40.41,
+        "gemini_post_merge_layer_real_seconds": 24.05
+      },
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "comparison_includes_merge_improvement",
+      "pass": true
+    },
+    {
+      "check": "active_endpoint_or_replay_hits==0",
+      "hits": [],
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_ACTUAL_MULTI_AGENT_VECTORFL_SCENARIO1_WITH_HOLD"
+}

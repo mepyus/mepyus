@@ -1,0 +1,41 @@
+{
+  "boundary_all_no_or_hold": true,
+  "codex_packet_id": "CODEX_SPACE_STEWARD_RETURN_PACKET_DRY_RUN_20260524_V0",
+  "expected_minimum_files": 6,
+  "extra_read_files_count": 5,
+  "gemini_questions_count": 3,
+  "hermes_changed_judgment": "Codex result validates the handoff concept, but strengthens the need for explicit task_packet handle and stricter first-pass/optional-read separation before live loops.",
+  "missing_required_fields": [],
+  "next_safe_lane_from_codex": "OPTIONAL_BOUNDED_GEMINI_LAYER_READER_DRY_RUN_OR_HOLD_V0",
+  "observed_gaps": [
+    {
+      "description": "Instruction asked Codex to first read 6 files, but return packet lists 11 read_files. This is not a boundary violation, but future prompt should distinguish first-pass required files from optional verification refs.",
+      "gap_id": "GAP_CODEX_READ_EXPANDED_BEYOND_6_FIRST_PASS",
+      "severity": "MEDIUM"
+    },
+    {
+      "description": "Codex confirmed that future runs need a separately named task packet handle.",
+      "gap_id": "GAP_EXPLICIT_TASK_PACKET_HANDLE_MISSING",
+      "severity": "HIGH"
+    },
+    {
+      "description": "Codex found a referenced source file absent from compact index.",
+      "gap_id": "GAP_COMPACT_INDEX_MISSING_NEXT_AFTER_ASSET_SAMPLE",
+      "severity": "MEDIUM"
+    }
+  ],
+  "observed_good": [
+    "Codex separated referenced_material and reinserted_material.",
+    "Codex preserved primary_layer plus secondary_links.",
+    "Codex identified task-packet handle gap.",
+    "Codex surfaced compact-index missing entry for next-after-asset-sample.",
+    "Codex returned concrete Gemini questions."
+  ],
+  "packet_id": "02_codex_return_shape_review_v0",
+  "read_files_count": 11,
+  "referenced_material_count": 4,
+  "reinserted_material_count": 8,
+  "required_fields_present": true,
+  "role": "CODEX_SPACE_STEWARD",
+  "status": "PASS_WITH_HOLD"
+}

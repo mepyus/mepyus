@@ -1,0 +1,752 @@
+Reading additional input from stdin...
+OpenAI Codex v0.133.0
+--------
+workdir: /Users/sungsookim/universe/vectorfl_replica
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 019e5791-6869-7990-9b30-13866dc6f382
+--------
+user
+You are Codex participating in an ACTUAL VectorFL Scenario 1 test, not a fixture. Work read-only except writing exactly one output file already requested by Hermes.
+
+Task: For the instruction "space exploration flow / loop design", explore the existing local VectorFL space evidence and return what spatial values/anchors should be used by Hermes for a real loop design.
+
+Boundaries:
+- Do NOT mutate source files, registries, current-position pointers, or authority files.
+- Do NOT start servers or local HTTP endpoint replays.
+- Do NOT call external APIs beyond your own CLI model operation.
+- Read only these paths if needed:
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_20260524_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_20260524_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_20260524_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_20260524_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.json
+  /Users/sungsookim/universe/vectorfl_replica/app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.json
+
+Return concise Korean/English mixed JSON only with fields:
+agent, role, spatial_findings, loop_design_recommendation, reinsertion_targets, risks, stop_conditions, confidence, compared_to_user_intent.
+No markdown fences.
+codex
+지정된 evidence 파일만 읽어서 공간 앵커와 loop 설계에 필요한 값을 추출하겠습니다. Source나 registry는 건드리지 않습니다.
+exec
+/bin/bash -lc "sed -n '1,220p' app/work/VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' app/work/VECTORFL_FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_20260524_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "drift_count": 5,
+  "drift_passed": 5,
+  "field_stability": {
+    "all_positive_required_fields_pass": true,
+    "case_count": 3,
+    "stable_parts": [
+      "intake",
+      "space_reading",
+      "merge",
+      "receipt"
+    ]
+  },
+  "final_clean_active_call_hits": 0,
+  "intentional_active_literal_detection_count": 1,
+  "meaning": "Four-shape minimal loop stayed stable across 3 varied positive inputs and detected 5 drift classes, with final generated artifacts clean and HOLD boundaries preserved.",
+  "next_safe_lane": "FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_NO_AUTHORITY_MUTATION_V0",
+  "part_time_stats": {
+    "intake": {
+      "max": 0.000295,
+      "mean": 0.00026,
+      "min": 0.000207,
+      "spread": 8.8e-05
+    },
+    "merge": {
+      "max": 0.00048,
+      "mean": 0.000455,
+      "min": 0.000407,
+      "spread": 7.3e-05
+    },
+    "receipt": {
+      "max": 0.000329,
+      "mean": 0.000264,
+      "min": 0.000228,
+      "spread": 0.000101
+    },
+    "space_reading": {
+      "max": 0.000324,
+      "mean": 0.000313,
+      "min": 0.000305,
+      "spread": 1.9e-05
+    }
+  },
+  "positive_count": 3,
+  "positive_passed": 3,
+  "report_id": "VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_WITH_HOLD\npositive=3/3 drift=5/5 final_active_call_hits=0\nintake mean=0.000260 spread=0.000088 min=0.000207 max=0.000295\nspace_reading mean=0.000313 spread=0.000019 min=0.000305 max=0.000324\nmerge mean=0.000455 spread=0.000073 min=0.000407 max=0.000480\nreceipt mean=0.000264 spread=0.000101 min=0.000228 max=0.000329",
+  "verdict": "PASS_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_WITH_HOLD"
+}
+ succeeded in 0ms:
+{
+  "active_call_hits": 0,
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "meaning": "Operator-facing display-only recovery surface now exists for the stable four-shape loop, with safe entrypoints and HOLD boundaries.",
+  "next_safe_lane": "FOUR_SHAPE_LOOP_COMPACT_HANDOFF_PACKET_NO_AUTHORITY_MUTATION_V0",
+  "report_id": "VECTORFL_FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_operator_surface_and_recovery_card_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_OPERATOR_SURFACE_AND_RECOVERY_CARD_WITH_HOLD\nsafe_entrypoints=5 active_call_hits=0 checks=8",
+  "safe_entrypoint_count": 5,
+  "safe_entrypoints": {
+    "loop_receipt": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_receipt_v0.json",
+      "sha256": "09a2d9f4e9850d1aa2c9303adbfcab09c7c8cedb88cc8858ba8d0cce268c04fa"
+    },
+    "loop_result": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_result_v0.json",
+      "sha256": "fcfcd274f5fec998054662d51c61566599799d315d0af5c4734b93a60bca1be4"
+    },
+    "loop_trace": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_trace_rows_v0.json",
+      "sha256": "8fb4f71b0a2967861570219f4c53cd1cee7b7542b2e52bae0db90f23086d8e74"
+    },
+    "repeatability_report": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0.json",
+      "sha256": "c04d67f5106d886c22e118d4697a50cab76d03bc6b7d8a32bac35355d0eb64a0"
+    },
+    "repeatability_result": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/repeatability_and_drift_result_v0.json",
+      "sha256": "dc38806993db5be2e7d3e27db4e60c2da85b5b53b77cc491e932d035b106e320"
+    }
+  },
+  "status_summary": {
+    "active_call_hits": 0,
+    "drift": "5/5 drift",
+    "four_shape_loop": "PASS_WITH_HOLD",
+    "repeatability": "3/3 positive",
+    "trace_rows": 4
+  },
+  "timing_summary": {
+    "intake": {
+      "max": 0.000295,
+      "mean": 0.00026,
+      "min": 0.000207,
+      "spread": 8.8e-05
+    },
+    "merge": {
+      "max": 0.00048,
+      "mean": 0.000455,
+      "min": 0.000407,
+      "spread": 7.3e-05
+    },
+    "receipt": {
+      "max": 0.000329,
+      "mean": 0.000264,
+      "min": 0.000228,
+      "spread": 0.000101
+    },
+    "space_reading": {
+      "max": 0.000324,
+      "mean": 0.000313,
+      "min": 0.000305,
+      "spread": 1.9e-05
+    }
+  },
+  "validation_checks": [
+    {
+      "check": "required_fields",
+      "pass": true
+    },
+    {
+      "check": "safe_entrypoints_exist",
+      "pass": true
+    },
+    {
+      "check": "entrypoint_count>=5",
+      "pass": true
+    },
+    {
+      "check": "display_only_no_authority",
+      "pass": true
+    },
+    {
+      "check": "no_call_boundaries",
+      "pass": true
+    },
+    {
+      "check": "repeatability_summary_present",
+      "pass": true
+    },
+    {
+      "check": "trace_rows_present",
+      "pass": true
+    },
+    {
+      "check": "active_call_hits==0",
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_OPERATOR_SURFACE_AND_RECOVERY_CARD_WITH_HOLD"
+}
+exec
+/bin/bash -lc "sed -n '1,220p' app/work/VECTORFL_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_20260524_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "active_call_hits": 0,
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "loop": "new user original -> original intake -> actual space reading -> model fixture -> merge -> receipt writer -> trace/operator status",
+  "meaning": "First minimal VectorFL loop rehearsal using all four extracted shapes passed with actual local space refs and receipt-backed HOLD evidence.",
+  "negative_cases": 4,
+  "negative_passed_cases": 4,
+  "next_safe_lane": "FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+  "parts": [
+    {
+      "checks": [
+        {
+          "check": "all_required_intake_fields_present",
+          "pass": true
+        },
+        {
+          "check": "raw_original_preserved",
+          "pass": true
+        },
+        {
+          "check": "source_layer_input",
+          "pass": true
+        }
+      ],
+      "method": "build intake packet from new raw original using original-intake shape",
+      "part": "P1_original_intake_shape",
+      "seconds": 0.000404
+    },
+    {
+      "checks": [
+        {
+          "check": "current_position_anchor_present",
+          "pass": true
+        },
+        {
+          "check": "material_refs>=7",
+          "observed": 7,
+          "pass": true
+        },
+        {
+          "check": "safe_entry_points>=2",
+          "pass": true
+        },
+        {
+          "check": "guard_counts_ok",
+          "pass": true
+        },
+        {
+          "check": "no_authority",
+          "pass": true
+        }
+      ],
+      "method": "reuse actual-material space reading shape with current/guard/lens refs",
+      "part": "P2_space_reading_shape",
+      "seconds": 0.000299
+    },
+    {
+      "checks": [
+        {
+          "check": "has_original_ref",
+          "pass": true
+        },
+        {
+          "check": "has_space_reading_ref",
+          "pass": true
+        },
+        {
+          "check": "has_model_fixture_ref",
+          "pass": true
+        },
+        {
+          "check": "not_model_only",
+          "pass": true
+        },
+        {
+          "check": "hold",
+          "pass": true
+        }
+      ],
+      "method": "merge original packet + space reading packet + local model fixture",
+      "part": "P3_space_mediated_merge_shape",
+      "seconds": 0.000318
+    },
+    {
+      "checks": [
+        {
+          "actual": "DETECT_RAW_MUTATION",
+          "case_id": "LOOP-NEG-INTAKE-MUTATION",
+          "expected": "DETECT_RAW_MUTATION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MISSING_CURRENT_POSITION",
+          "case_id": "LOOP-NEG-SPACE-MISSING-CURRENT",
+          "expected": "FAIL_MISSING_CURRENT_POSITION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MODEL_ONLY_MERGE",
+          "case_id": "LOOP-NEG-MERGE-MODEL-ONLY",
+          "expected": "FAIL_MODEL_ONLY_MERGE",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+          "case_id": "LOOP-NEG-RECEIPT-HIDDEN-FAILURE",
+          "expected": "FAIL_HIDDEN_VALIDATOR_FAILURE",
+          "ok": true
+        }
+      ],
+      "method": "check loop-level failure classes for intake/space/merge/receipt",
+      "part": "P4_loop_negative_checks",
+      "seconds": 0.000295
+    },
+    {
+      "checks": [
+        {
+          "check": "active_call_hits==0",
+          "observed": 0,
+          "pass": true
+        }
+      ],
+      "method": "scan generated data artifacts for active API/local endpoint primitives",
+      "part": "P5_forbidden_active_call_scan",
+      "seconds": 0.001332
+    }
+  ],
+  "receipt_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_receipt_v0.json",
+  "report_id": "VECTORFL_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_WITH_HOLD\nparts=5 total_measured_seconds=0.002648 negative_cases=4 active_call_hits=0\nP1_original_intake_shape seconds=0.000404 method=build intake packet from new raw original using original-intake shape\nP2_space_reading_shape seconds=0.000299 method=reuse actual-material space reading shape with current/guard/lens refs\nP3_space_mediated_merge_shape seconds=0.000318 method=merge original packet + space reading packet + local model fixture\nP4_loop_negative_checks seconds=0.000295 method=check loop-level failure classes for intake/space/merge/receipt\nP5_forbidden_active_call_scan seconds=0.001332 method=scan generated data artifacts for active API/local endpoint primitives",
+  "total_measured_seconds": 0.002648,
+  "trace_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_minimal_loop_rehearsal_with_four_extracted_shapes_v0/four_shape_loop_trace_rows_v0.json",
+  "verdict": "PASS_FOUR_SHAPE_MINIMAL_LOOP_REHEARSAL_WITH_HOLD"
+}
+codex
+첫 세 파일에서는 stable loop shape가 `original intake -> actual space reading -> merge -> receipt/trace`로 고정되어 있고, promotion은 HOLD이며 active call은 0으로 유지되는 것을 확인했습니다. 이제 실제 space material과 scenario 1 anchor 쪽을 읽어 구체적인 spatial values를 대조합니다.
+exec
+/bin/bash -lc "sed -n '1,260p' app/work/VECTORFL_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_20260524_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "active_call_hits": 0,
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "materials_used": {
+    "current_position": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.json",
+      "sha256": "ab8be7a567a1eb4bd154f8339c4655373ad82b570bee58730ff37b456594608b"
+    },
+    "customer_response_merge_doc": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/CUSTOMER_RESPONSE_REVIEW_DISCOVERY_MERGE_V0.md",
+      "sha256": "700a6011c22ab44f32a7612ba9518fa1b835d2b09a03964717a7bcfd78f1353d"
+    },
+    "guard_matrix": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.json",
+      "sha256": "e1e148b51fa3f88a19d554ec898e623ad40265f6350409591f267ca291846c63"
+    },
+    "intake_shape_actual_test": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_RECEIPT_AND_INTAKE_SHAPE_ACTUAL_TEST_20260524_V0.json",
+      "sha256": "63df2713e804faf75e756966ceff235802b63e400a89150de3f951c8e30cdc30"
+    },
+    "scenario_1_merge": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_mediated_merge_packet_v0.json",
+      "sha256": "09b2619e1d26f880f09f35dc392485600ad736a6af0472eb9ad2e75f524f1bf5"
+    },
+    "scenario_1_space_reading": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_packet_v0.json",
+      "sha256": "62271ee30f80c6b2eb598f3b2512aca3bb47add71e43fc4f8739d4a26770bbbb"
+    },
+    "space_wide_reread_packet": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/GEMINI_VECTORFL_SPACE_WIDE_FUNCTION_FAMILY_REREAD_PACKET_V0.md",
+      "sha256": "484bb317e445035ff71a8f0630f60c0e50c90463540b03a2c1e5e0486d4fede5"
+    }
+  },
+  "negative_cases": 5,
+  "negative_passed_cases": 5,
+  "next_safe_lane": "SPACE_READING_AND_MERGE_SHAPE_EXTRACTION_FROM_ACTUAL_TEST_NO_AUTHORITY_MUTATION_V0",
+  "parts": [
+    {
+      "checks": [
+        {
+          "check": "existing_materials>=7",
+          "observed": 7,
+          "pass": true
+        },
+        {
+          "check": "contains_current_position",
+          "pass": true
+        },
+        {
+          "check": "contains_space_wide_reread_packet",
+          "pass": true
+        },
+        {
+          "check": "contains_merge_doc",
+          "pass": true
+        }
+      ],
+      "method": "file material index verification by sha256/path existence, no broad mutation",
+      "part": "P1_material_discovery",
+      "seconds": 1.1e-05
+    },
+    {
+      "checks": [
+        {
+          "check": "current_position_present",
+          "pass": true
+        },
+        {
+          "check": "safe_entry_points>=2",
+          "observed": 2,
+          "pass": true
+        },
+        {
+          "check": "guard_matrix_present",
+          "pass": true
+        },
+        {
+          "check": "space_wide_frame_detected",
+          "pass": true
+        },
+        {
+          "check": "candidate_only_merge_boundary_detected",
+          "pass": true
+        }
+      ],
+      "method": "read actual local files -> extract current/safe/guard/lens/boundary facts -> write packet",
+      "part": "P2_space_reading_actual_materials",
+      "seconds": 0.001506
+    },
+    {
+      "checks": [
+        {
+          "check": "has_original_ref",
+          "pass": true
+        },
+        {
+          "check": "has_space_reading_ref",
+          "pass": true
+        },
+        {
+          "check": "has_model_fixture_ref",
+          "pass": true
+        },
+        {
+          "check": "not_model_only",
+          "pass": true
+        },
+        {
+          "check": "promotion_hold",
+          "pass": true
+        }
+      ],
+      "method": "merge actual original material + actual space reading packet + local model fixture into directive",
+      "part": "P3_space_mediated_merge_actual_materials",
+      "seconds": 0.000973
+    },
+    {
+      "checks": [
+        {
+          "actual": "FAIL_MISSING_CURRENT_POSITION",
+          "case_id": "SPACE-NEG-001",
+          "expected": "FAIL_MISSING_CURRENT_POSITION",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_INSUFFICIENT_SPACE_REFS",
+          "case_id": "SPACE-NEG-002",
+          "expected": "FAIL_INSUFFICIENT_SPACE_REFS",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MISSING_ORIGINAL_REF",
+          "case_id": "MERGE-NEG-001",
+          "expected": "FAIL_MISSING_ORIGINAL_REF",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_MODEL_ONLY_MERGE",
+          "case_id": "MERGE-NEG-002",
+          "expected": "FAIL_MODEL_ONLY_MERGE",
+          "ok": true
+        },
+        {
+          "actual": "FAIL_AUTHORITY_OR_PROMOTION_DRIFT",
+          "case_id": "MERGE-NEG-003",
+          "expected": "FAIL_AUTHORITY_OR_PROMOTION_DRIFT",
+          "ok": true
+        }
+      ],
+      "method": "programmatic negative validation of required anchors and merge inputs",
+      "part": "P4_negative_processing_checks",
+      "seconds": 0.000331
+    },
+    {
+      "checks": [
+        {
+          "check": "active_call_hits==0",
+          "observed": 0,
+          "pass": true
+        }
+      ],
+      "method": "scan generated artifacts for active network/local endpoint primitives",
+      "part": "P5_forbidden_active_call_scan",
+      "seconds": 0.001409
+    }
+  ],
+  "processing_review": {
+    "merge_method": "original material + space reading + model fixture -> merged directive",
+    "space_reading_method": "actual file refs -> extract anchors/lens/guard/boundary -> packet",
+    "validation_method": "positive structural checks + negative required-anchor/merge-input checks + forbidden primitive scan"
+  },
+  "repair_note": "First run exposed two validator-order issues and a self-scan issue: SPACE-NEG-002 was classified as missing current-position because empty dict was treated as absent; MERGE-NEG-002 was classified as missing original before model-only; scan included runner script literals. Patched validator ordering/presence semantics and scanned generated data artifacts excluding control script. Re-run PASS.",
+  "report_id": "VECTORFL_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_reading_and_merge_actual_material_test_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_WITH_HOLD\nparts=5 total_measured_seconds=0.004230 negative_cases=5 active_call_hits=0\nP1_material_discovery seconds=0.000011 method=file material index verification by sha256/path existence, no broad mutation\nP2_space_reading_actual_materials seconds=0.001506 method=read actual local files -> extract current/safe/guard/lens/boundary facts -> write packet\nP3_space_mediated_merge_actual_materials seconds=0.000973 method=merge actual original material + actual space reading packet + local model fixture into directive\nP4_negative_processing_checks seconds=0.000331 method=programmatic negative validation of required anchors and merge inputs\nP5_forbidden_active_call_scan seconds=0.001409 method=scan generated artifacts for active network/local endpoint primitives",
+  "total_measured_seconds": 0.00423,
+  "verdict": "PASS_SPACE_READING_AND_MERGE_ACTUAL_MATERIAL_TEST_WITH_HOLD"
+}
+exec
+/bin/bash -lc "sed -n '1,260p' app/work/VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_20260524_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "promotion": "HOLD",
+    "real_model_execution": "NO_FIXTURE_ONLY",
+    "registry_mutation": "NO"
+  },
+  "created_artifacts": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_codex_reinsertion_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_final_operator_output_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_final_operator_output_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_gemini_exploration_need_assessment_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_hermes_execution_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_hermes_execution_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_hermes_execution_receipt_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_guard_review_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_lite_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_raw_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_receipt_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_reentry_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_original_input_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_original_input_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_asset_index_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_asset_index_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_effect_observation_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_mediated_merge_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_mediated_merge_summary_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_summary_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_spatial_maturation_candidate_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_subject_routing_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_trace_ledger_rows_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_trace_ledger_rows_v0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/validate_vectorfl_scenario_1_space_mediated_program_behavior.py"
+  ],
+  "hermes_no_call_seconds": 0.171,
+  "meaning": "Scenario 1 now uses existing space assets to pass a program-behavior rehearsal: original input, space reading, model fixture intake, merge, subject routing, Hermes no-call execution, Codex reinsertion/maturation, Gemini need assessment, spatial effect observation, operator output, trace ledger, and validator.",
+  "next_safe_lane": "SCENARIO_1_INTERNAL_FUNCTION_ALIGNMENT_REVIEW_NO_AUTHORITY_MUTATION_V0",
+  "report_id": "VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0",
+  "space_assets_existing": 18,
+  "trace_rows": 6,
+  "validator_rc": 0,
+  "validator_stderr": "",
+  "validator_stdout": "PASS_VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_WITH_HOLD\nassets_existing=18 trace_rows=6 validators_run=2 seconds=0.171",
+  "validators_run_by_hermes": 2,
+  "verdict": "PASS_VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_WITH_HOLD"
+}
+exec
+/bin/bash -lc "sed -n '1,260p' app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+exec
+/bin/bash -lc "sed -n '1,220p' app/work/CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0.json" in /Users/sungsookim/universe/vectorfl_replica
+ succeeded in 0ms:
+{
+  "authority_mutation": "NO",
+  "case_count": 12,
+  "cases_by_status": {
+    "HOLD_STOP_REVIEW": 4,
+    "HOLD_UNTIL_APPROVED_MODEL_OUTPUT": 1,
+    "PASS_WITH_HOLD": 2,
+    "STOP": 3,
+    "WATCH": 2
+  },
+  "created_at": "2026-05-23 10:13:27 KST",
+  "guard_status_count": 5,
+  "layer_count": 6,
+  "model_execution": "NO",
+  "next_smallest_action": "app/work/VECTORFL_SURFACE_TO_EVIDENCE_TRACE_MAP_CANDIDATE_20260523_V0.md",
+  "promotion": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "schema_mutation": "NO",
+  "shared_db_mutation": "NO",
+  "status": "CROSS_LAYER_GUARD_MATRIX_DASHBOARD_WITH_HOLD"
+}
+
+ succeeded in 0ms:
+{
+  "position_id": "CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0",
+  "status": "current_position_entry_applied_with_hold",
+  "created_at": "2026-05-24T00:29:00+0900",
+  "approved_by_user": true,
+  "approval_text": "승인!",
+  "position": "NO_CALL_OPERATOR_HANDOFF_ENTRYPOINT_REALIZED_WITH_HOLD",
+  "source_proposal_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_no_call_current_position_proposal_for_reuse_chain_v0/no_call_current_position_proposal_for_reuse_chain_v0.json",
+  "source_review_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_review_or_hold_current_position_proposal_v0/review_or_hold_current_position_proposal_v0.json",
+  "previous_current_position_entry_ref": "app/work/CURRENT_POSITION_20260506_ANCHOR_STACK_AFTER_SET_A_V0.md",
+  "previous_entry_backup_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_approved_no_call_current_position_entry_apply_v0/backup_CURRENT_POSITION_20260506_ANCHOR_STACK_AFTER_SET_A_V0.md",
+  "summary": "A no-call reuse chain now exists from prior Phase 1 evidence through filled evidence receipt, trace, operator row, static card, scrubbed card, rollup, and operator handoff index. It is evidence reuse only, not authority or promotion.",
+  "latest_completed_lane": "NO_CALL_OPERATOR_HANDOFF_INDEX_FOR_SCRUBBED_REUSE_CHAIN_V0",
+  "latest_verified_verdict": "PASS_NO_CALL_OPERATOR_HANDOFF_INDEX_WITH_HOLD",
+  "safe_entry_points": [
+    {
+      "label": "Scrubbed no-call static operator card",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_scrubbed_static_operator_card_copy_v0/single_row_static_operator_card_scrubbed_no_call_v0.json",
+      "purpose": "operator-facing safe view; display-only archived evidence; no endpoint replay"
+    },
+    {
+      "label": "No-call reuse chain consistency rollup",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_reuse_chain_consistency_rollup_v0/no_call_reuse_chain_consistency_rollup_v0.json",
+      "purpose": "lineage/boundary verification; no replay scripts"
+    }
+  ],
+  "chain": [
+    "existing receipt",
+    "filled evidence receipt",
+    "surface-to-evidence trace object",
+    "operator dashboard row",
+    "static operator card",
+    "scrubbed no-call static operator card copy"
+  ],
+  "lineage_all_pass": true,
+  "layer_count": 5,
+  "watch": [
+    "filled_receipt and trace still contain archived legacy endpoint replay source refs; scrubbed card quarantines them as display-only/no-call",
+    "static_card is pre-scrub copy; prefer scrubbed_card for operator-facing display",
+    "root current-position pointer is not mutated by this proposal",
+    "codex_/root pointer may remain stale relative to this vectorfl_replica no-call reuse chain"
+  ],
+  "valid_for": [
+    "current-position re-entry",
+    "operator handoff orientation",
+    "no-call evidence reuse chain review",
+    "HOLD boundary review"
+  ],
+  "not_valid_for": [
+    "root pointer mutation",
+    "authority mutation",
+    "Program Alpha",
+    "registry creation",
+    "bulk conversion",
+    "endpoint replay evidence refresh",
+    "model execution evidence"
+  ],
+  "forbidden_actions": [
+    "mutate root current-position pointer without explicit approval",
+    "run endpoint replay scripts",
+    "start local server",
+    "call external API",
+    "use API-direct",
+    "create registry",
+    "promote Program Alpha",
+    "treat as authority"
+  ],
+  "apply_scope": "new current-position entry only; previous historical entry preserved; no root authority/registry mutation",
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "program_alpha_status": "NOT_READY"
+}
+
+codex
+{"agent":"Codex","role":"read-only spatial evidence explorer for VectorFL Scenario 1","spatial_findings":{"current_position_anchor":"CURRENT_POSITION_20260524_NO_CALL_REUSE_CHAIN_AFTER_OPERATOR_HANDOFF_V0 / NO_CALL_OPERATOR_HANDOFF_ENTRYPOINT_REALIZED_WITH_HOLD","primary_loop_shape":"new user original -> original intake -> actual space reading -> model fixture -> merge -> receipt writer -> trace/operator status","stable_parts":["intake","space_reading","merge","receipt"],"space_reading_required_values":["current_position_anchor_present","material_refs>=7","safe_entry_points>=2","guard_matrix_present","space_wide_frame_detected","candidate_only_merge_boundary_detected","no_authority"],"scenario_1_existing_space_assets":18,"safe_entry_points":["Scrubbed no-call static operator card","No-call reuse chain consistency rollup"],"guard_anchor":"VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0; 12 cases, 6 layers, 5 guard statuses, promotion HOLD","boundary_values":{"api_call":"NO","api_direct":"NO","local_http_endpoint_replay":"NO","local_server_start":"NO","model_execution":"NO_FIXTURE_ONLY","authority_mutation":"NO","registry_mutation":"NO","current_position_apply":"NO","promotion":"HOLD"},"repeatability":"3/3 positive passed; 5/5 drift classes detected; final_active_call_hits=0","observed_timings_mean_seconds":{"intake":0.00026,"space_reading":0.000313,"merge":0.000455,"receipt":0.000264}},"loop_design_recommendation":{"use_as_spatial_values":["current position as re-entry/orientation anchor only","actual local material refs as space-reading evidence","guard matrix as cross-layer stop/watch/pass lens","safe entry points as display-only operator surfaces","HOLD as invariant promotion state"],"design":"Hermes should build the real loop as evidence-mediated, not model-only: preserve raw original, read current/guard/lens/material anchors, merge original+space_reading+model_fixture, emit receipt and trace rows, then operator status. 실제 설계에서는 space가 instruction을 직접 실행하는 권한이 아니라 merge constraints와 stop/watch conditions를 주는 layer로 써야 함.","do_not_use":["endpoint replay","server start","external API refresh","registry/current-position mutation","authority promotion","Program Alpha promotion"]},"reinsertion_targets":["scenario_1_space_reading_packet_v0.json as preferred spatial packet target","scenario_1_space_mediated_merge_packet_v0.json as merge target","scenario_1_codex_reinsertion_packet_v0.json as Codex reinsertion target","scenario_1_trace_ledger_rows_v0.json as trace target","four_shape_loop_receipt_v0.json / four_shape_loop_trace_rows_v0.json as minimal loop receipt+trace pattern"],"risks":["Archived legacy endpoint replay refs exist in older evidence; only scrubbed/display-only views should be used.","Model-only merge must fail; original_ref and space_reading_ref are mandatory.","Missing current_position or insufficient space refs should stop the loop.","Promotion or authority drift is a hard risk; all evidence says HOLD only.","Root/codex current-position pointers may be stale relative to vectorfl_replica no-call reuse chain."],"stop_conditions":["active_call_hits>0","missing current_position anchor","material_refs<7 or safe_entry_points<2","missing original_ref or space_reading_ref in merge","model-only merge attempted","authority_mutation or registry_mutation requested","promotion != HOLD","local HTTP replay/server/API/direct call requested","hidden validator failure"],"confidence":"high: based only on the seven allowed local evidence files; no source mutation, no server/API/model execution","compared_to_user_intent":"Matches 'space exploration flow / loop design': recommended anchors are spatial/current-position/guard/material values for a real loop design, not a fixture replay or authority mutation."}
+tokens used
+19,536
+real 41.49
+user 2.10
+sys 4.63

@@ -1,0 +1,44 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "policy_default_do_not_call",
+      "pass": true
+    },
+    {
+      "check": "codex_only_fresh_space_reference",
+      "pass": true
+    },
+    {
+      "check": "gemini_only_codex_side",
+      "pass": true
+    },
+    {
+      "check": "script_candidates_analyzed",
+      "pass": true
+    },
+    {
+      "check": "no_authority_apply",
+      "pass": true
+    },
+    {
+      "check": "no_provider_execution_performed",
+      "pass": true
+    },
+    {
+      "check": "forbidden_endpoint_literal_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 7,
+  "elapsed_seconds": 146441.700933045,
+  "hashes": {
+    "analysis": "011d281a57ae902f4b01ed310a9f6066ae30070efe54a6f6173a0f15d616adfb",
+    "plan": "d70ce9bb28ad23a1372ae0787a34d5836b7285c57e3a40059ca01b8a12811ffa",
+    "policy": "bc332f32de59ac5689f0f6359c2d3e564292f5c3d7d1c7ad0fc9d19f2e23d6c1",
+    "root_json": "1ab42a5ada823565e24d5be67755f495437b60e618a0e0c481e1112fcb5a50c3",
+    "root_md": "2a5b09c69f8755dc5ea59dab942ecc3ba2557f6274395101866c9836c06fe647"
+  },
+  "verdict": "PASS_CODEX_GEMINI_ON_DEMAND_POLICY_AND_SCRIPT_CHAIN_ANALYSIS_WITH_HOLD"
+}

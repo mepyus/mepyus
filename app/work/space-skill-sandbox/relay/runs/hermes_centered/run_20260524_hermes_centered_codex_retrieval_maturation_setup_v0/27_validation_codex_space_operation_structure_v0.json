@@ -1,0 +1,68 @@
+{
+  "packet_id": "27_validation_codex_space_operation_structure_v0",
+  "verdict": "PASS_CODEX_SPACE_OPERATION_ROUTER_WITH_HOLD",
+  "checks": [
+    {
+      "check": "router_file_created",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/23_CODEX_SPACE_OPERATION_ROUTER.md"
+    },
+    {
+      "check": "operation_contract_json_valid",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/24_CODEX_SPACE_OPERATION_CONTRACT.json"
+    },
+    {
+      "check": "space_check_schema_json_valid",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/25_CODEX_SPACE_CHECK_RETURN_SCHEMA.json"
+    },
+    {
+      "check": "hermes_work_analysis_schema_json_valid",
+      "pass": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/26_CODEX_HERMES_WORK_ANALYSIS_RETURN_SCHEMA.json"
+    },
+    {
+      "check": "required_routes_present",
+      "pass": true,
+      "routes": [
+        "CODEX_SPACE_CHECK",
+        "CODEX_HERMES_WORK_ANALYSIS",
+        "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL",
+        "CODEX_SPACE_MATURATION_BY_REENTRY_RECORD"
+      ]
+    },
+    {
+      "check": "artifact_channels_present",
+      "pass": true,
+      "count": 5
+    },
+    {
+      "check": "promotion_hold",
+      "pass": true
+    },
+    {
+      "check": "no_direct_api_boundary",
+      "pass": true
+    },
+    {
+      "check": "no_authority_current_position_registry_source_folder_mutation",
+      "pass": true
+    }
+  ],
+  "checks_count": 9,
+  "hashes": {
+    "router": "c94815e767fd09b046a11ca1d88a23edaf34e353eae32cba0e800e2795740820",
+    "operation_contract": "a7570e131e46908bfd4ce636998554ba8ee2388a1b315b29aec0e6db12685490",
+    "space_check_schema": "17cb75db65fdf17ca3b6284063b3486f5c3afdbc42b72a314997e000b6f19254",
+    "hermes_work_analysis_schema": "b107387c8fa868fec3dbdfa7b62e7e54d01cd8c52b1ecc123d86fa8990349288"
+  },
+  "what_this_structures": [
+    "When the user says '공간을 확인해', Codex runs CODEX_SPACE_CHECK from compact space controls and returns a bounded space snapshot.",
+    "When the user says '헤르메스 작업 내용을 분석해', Codex runs CODEX_HERMES_WORK_ANALYSIS from Hermes merge, execution trace, reentry, maturation merge, and validation artifacts.",
+    "When Hermes needs space material, Codex runs CODEX_SPACE_RETRIEVAL_BY_ORIGINAL and returns selected/rejected refs for Hermes merge.",
+    "When Hermes has produced a reentry record, Codex runs CODEX_SPACE_MATURATION_BY_REENTRY_RECORD and returns HOLD-only maturation proposals."
+  ],
+  "next_safe_lane": "USE_CODEX_OPERATION_ROUTER_FOR_SPACE_CHECK_OR_HERMES_WORK_ANALYSIS_WITH_HOLD_V0",
+  "promotion_status": "HOLD"
+}

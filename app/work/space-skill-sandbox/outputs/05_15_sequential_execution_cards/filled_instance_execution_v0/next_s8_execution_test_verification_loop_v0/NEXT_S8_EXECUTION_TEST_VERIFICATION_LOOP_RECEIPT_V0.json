@@ -1,0 +1,87 @@
+{
+  "verdict": "NEXT_S8_LOOP_CREATED_FROM_POST_EXECUTION_CANDIDATE_STATE",
+  "created_at_utc": "2026-05-17T09:56:46Z",
+  "base": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0",
+  "all_declared_evidence_present": true,
+  "status": {
+    "packet": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+      "exists": true,
+      "size": 11751,
+      "sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2"
+    },
+    "state": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/space_model_boundary_v0/CURRENT_EXECUTION_LANE_STATE_V0.json",
+      "exists": true,
+      "size": 580,
+      "sha256": "da7f7ce7e3ab9debe3319a8cc154c4c58f7b077aaf8e9c559bc8d87d6c08b4be"
+    },
+    "dashboard": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_dashboard_v0/POST_EXECUTION_DASHBOARD_V0.json",
+      "exists": true,
+      "size": 1646,
+      "sha256": "bca424a0be92c1c15a9c7eac47989286e4dd70640952c9f6bdfc9f63ceb477e3"
+    },
+    "hermes_receipt": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_V0.json",
+      "exists": true,
+      "size": 1605,
+      "sha256": "08917200a7b7ea0042c70fc4dacad50e4d8e7451d871ee43473658439e97c2b8"
+    },
+    "s8_receipt": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/s8_real_output_recovery_gate_v0/S8_REAL_OUTPUT_RECOVERY_GATE_RECEIPT_V0.json",
+      "exists": true,
+      "size": 2583,
+      "sha256": "724711d35e77124d6a1f64c4bbeeb6260419db88a688db2d649c4cfeaf840ab5"
+    },
+    "post_index_receipt": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_evidence_index_v0/POST_EXECUTION_EVIDENCE_INDEX_RECEIPT_V0.json",
+      "exists": true,
+      "size": 925,
+      "sha256": "b2c6635be554b1fe836bf21cfec929423e4d5ccce2fde48c6247429cb7b86882"
+    },
+    "gemini_raw": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_raw_output.txt",
+      "exists": true,
+      "size": 2939,
+      "sha256": "8f69adc93384f3be1316c093bcc3d18d8aff5796f12ff77d71ad773e4d13f7b6"
+    },
+    "gemini_lite": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_lite_output.json",
+      "exists": true,
+      "size": 2939,
+      "sha256": "8f69adc93384f3be1316c093bcc3d18d8aff5796f12ff77d71ad773e4d13f7b6"
+    },
+    "codex_return": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/codex_combined_bridge_recovery_return.md",
+      "exists": true,
+      "size": 5255,
+      "sha256": "60bde538abde1160062bad1199da1718cf95b218557a5fc66a52bff1216f4ccb"
+    }
+  },
+  "parsed_summary": {
+    "state_verdict": "EXECUTION_LANE_STATE_S8_REAL_GATE_CLASSIFIED_CANDIDATE_WITH_AUTHORITY_HOLD",
+    "active_state": "S8_VECTORFL_RECOVERY_GATE_CLASSIFICATION_COMPLETE",
+    "dashboard_verdict": "POST_EXECUTION_DASHBOARD_GREEN_CANDIDATE_WITH_PROMOTION_HOLD",
+    "dashboard_current_state": "S8_VECTORFL_RECOVERY_GATE_CLASSIFICATION_COMPLETE",
+    "hermes_verdict": "HERMES_EXECUTION_RECEIPT_DONE_WITH_PROMOTION_HOLD",
+    "s8_verdict": "S8_REAL_OUTPUT_RECOVERY_GATE_CLASSIFIED_CANDIDATE_WITH_AUTHORITY_HOLD",
+    "post_index_verdict": "POST_EXECUTION_EVIDENCE_INDEX_LOCKED_WITH_PROMOTION_HOLD",
+    "classification": "candidate",
+    "promotion": false,
+    "vectorfl_authority_mutation": false
+  },
+  "actions_performed_this_turn": [
+    "read receipts/dashboard/state",
+    "ran validate-static",
+    "ran validate-codex-return",
+    "wrote next loop report/receipt"
+  ],
+  "non_actions": [
+    "no Gemini execution",
+    "no Codex execution",
+    "no promotion",
+    "no VectorFL authority mutation"
+  ],
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

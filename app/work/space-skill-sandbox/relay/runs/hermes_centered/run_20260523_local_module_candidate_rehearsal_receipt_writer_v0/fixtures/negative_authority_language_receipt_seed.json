@@ -1,0 +1,19 @@
+{
+  "case_id": "RW-NEG-HOLD-001",
+  "title": "권한 언어 혼입",
+  "body": "receipt가 authority source처럼 읽힐 수 있는 모호한 표현을 포함한다.",
+  "source_type": "synthetic_negative_guard",
+  "lens": "authority_language_drift",
+  "boundary_level": "ambiguous_authority_language",
+  "valid_for": [
+    "negative_guard"
+  ],
+  "not_valid_for": [
+    "authority_mutation",
+    "registry_update",
+    "baseline_update"
+  ],
+  "expected_recovery": "HOLD_STOP_REVIEW",
+  "approval_applied": "no",
+  "ambiguous_claim": "receipt accepted as source of truth"
+}

@@ -1,0 +1,96 @@
+{
+  "HOLD_receipt": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "current_position_apply": "NO",
+    "promotion_status": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "codex_assessment": {
+    "assessment": "Reused prior actual Codex-derived requirement: space refs must change judgment; this dry-run satisfies it through explicit deltas.",
+    "mode": "NO_NEW_CALL_BUDGET_GATE"
+  },
+  "conflict_detected": false,
+  "gemini_layer_assessment": {
+    "assessment": "PASS_AS_DRY_RUN: target is small but not pure plumbing; it connects SPACE_EVIDENCE to OPERATOR_REENTRY while preserving HOLD.",
+    "mode": "NO_NEW_CALL_BUDGET_GATE"
+  },
+  "gemini_layer_questions": [
+    "Does the checklist stay connected to the big frame rather than internal plumbing only?",
+    "Does it avoid treating space as answer/authority?",
+    "Does it reduce operator load?"
+  ],
+  "heavy_escalation_triggered": false,
+  "hermes_merge_or_execution_result": {
+    "artifact_type": "HOLD_CANDIDATE_OPERATOR_CHECKLIST",
+    "candidate_id": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_HOLD_CANDIDATE_V0",
+    "checklist_items": [
+      "Preserve user original or digest before merge.",
+      "Select at most four refs by source-selection rule unless heavy gate triggers.",
+      "For each ref, write used_for and changed_judgment.",
+      "Write space_reference_delta before calling result space-referenced.",
+      "Run decision-table priority classifier before final PASS.",
+      "Confirm HOLD/no authority/no registry/no current-position apply.",
+      "Keep output mind-sized for operator review."
+    ],
+    "why_not_model_only": "Checklist items are derived from applied validator result, next lane, source-selection rule, and AI Frontier impact report rather than from model preference alone."
+  },
+  "lens_card_results": {
+    "T_brain_operator_load": "PASS: seven-item checklist, four refs only.",
+    "ai_native_vs_assisted": "ASSISTED_STRUCTURE_FOR_NATIVE_LOOP",
+    "maintainability_debt_watch": "PASS_WITH_WATCH: decision-table classifier must be run on packet.",
+    "mind_sized_bite": "PASS: one operator-facing checklist candidate.",
+    "slow_ai_guard": "PASS: no unnecessary external agent calls."
+  },
+  "next_safe_lane": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_NEGATIVE_CASES_NO_AUTHORITY_MUTATION_V0",
+  "packet_id": "02_phase2_space_reference_delta_real_packet_dry_run_v0",
+  "space_reference_delta": [
+    {
+      "changed_judgment": "Dry-run must not merely create another validator; it must run a real packet through the applied priority classifier and verify PASS/no masking.",
+      "ref_id": "applied_validator_report"
+    },
+    {
+      "changed_judgment": "Target is narrowed to an operator-facing checklist candidate instead of router/schema work; HOLD/no promotion remains explicit.",
+      "ref_id": "latest_next_lane"
+    },
+    {
+      "changed_judgment": "References are capped at four and every reference includes used_for plus changed_judgment, preventing decorative citation.",
+      "ref_id": "source_selection_rule"
+    },
+    {
+      "changed_judgment": "Checklist must be mind-sized and include operator-load/maintainability checks, not only technical safety checks.",
+      "ref_id": "aifrontier_impact"
+    }
+  ],
+  "space_references_used": [
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0.json",
+      "exists": true,
+      "ref_id": "applied_validator_report",
+      "sha256": "2ca6da1c7a20934ded5638c60d504fee1edccbacb985eb2d8993b6ba233000a7",
+      "used_for": "Confirm decision-table applied validator passed and provide priority order."
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0.md",
+      "exists": true,
+      "ref_id": "latest_next_lane",
+      "sha256": "dbf8c592ef55b9d63e9c5c45ac9254a8af976e893396c403cd07e08281677b58",
+      "used_for": "Constrain target to one small non-plumbing dry-run with HOLD boundary."
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0.json",
+      "exists": true,
+      "ref_id": "source_selection_rule",
+      "sha256": "1166cd4ef756af219d57f24bdc2d8bfed6448ace7eefe2e5b00f5a2d81c984c1",
+      "used_for": "Enforce max 4 refs and require changed_judgment for every ref."
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "exists": true,
+      "ref_id": "aifrontier_impact",
+      "sha256": "613724ad6011a923815f201f321b2ad9cded0e9c9cffb5e3b0842c70ace398c7",
+      "used_for": "Add mind-sized/operator-load/maintainability lenses to avoid internal overfit."
+    }
+  ],
+  "target": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_HOLD_CANDIDATE_V0",
+  "user_intent_verbatim_or_digest": "Continue by applying the decision-table validator to a small real Phase2 packet dry-run, not just validator plumbing."
+}

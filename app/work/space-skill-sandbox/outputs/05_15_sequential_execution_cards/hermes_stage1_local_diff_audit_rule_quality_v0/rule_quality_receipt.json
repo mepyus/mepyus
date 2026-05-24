@@ -1,0 +1,144 @@
+{
+  "verdict": "[HERMES_STAGE1_LOCAL_DIFF_AUDIT_RULE_QUALITY_RECEIPT]",
+  "timestamp": "2026-05-16T06:44:04.432178+00:00",
+  "command": "python3 audit_rule_quality.py",
+  "input_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_clean.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_borderline.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_false_positive.patch"
+  ],
+  "output_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_clean.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_borderline.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/fixture_false_positive.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/audit_rule_quality.py",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/rule_quality_report.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_rule_quality_v0/rule_quality_receipt.json"
+  ],
+  "exit_code": 0,
+  "network_used": false,
+  "packages_installed": false,
+  "subprocess_used": false,
+  "git_used": false,
+  "input_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "source_files_modified": false,
+  "patches_applied": false,
+  "repo_wide_search_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "results": [
+    {
+      "fixture": "fixture_clean.patch",
+      "diff_path": "app/export_status.py",
+      "docs_context": false,
+      "removed_line_count": 1,
+      "hard_finding_count": 0,
+      "review_note_count": 0,
+      "findings": []
+    },
+    {
+      "fixture": "fixture_borderline.patch",
+      "diff_path": "app/logging.py",
+      "docs_context": false,
+      "removed_line_count": 1,
+      "hard_finding_count": 0,
+      "review_note_count": 1,
+      "findings": [
+        {
+          "kind": "review_note",
+          "rule": "TODO/FIXME review note",
+          "line": 9,
+          "evidence": "    # TODO: replace user_id with stable audit-safe identifier after privacy review",
+          "severity": "low",
+          "note": "TODO/FIXME is review-only because it is not paired with high-risk code or shell signal."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture_false_positive.patch",
+      "diff_path": "docs/security_examples.md",
+      "docs_context": true,
+      "removed_line_count": 1,
+      "hard_finding_count": 0,
+      "review_note_count": 3,
+      "findings": [
+        {
+          "kind": "review_note",
+          "rule": "documentation-context review note",
+          "line": 9,
+          "evidence": "Do not hardcode values such as password = \"example\".",
+          "severity": "info",
+          "note": "Secret-looking marker appears in docs explanatory context; not hard finding."
+        },
+        {
+          "kind": "review_note",
+          "rule": "documentation-context review note",
+          "line": 10,
+          "evidence": "Do not pipe curl to bash in production scripts.",
+          "severity": "info",
+          "note": "curl/bashing wording appears in docs explanatory context; not hard finding."
+        },
+        {
+          "kind": "review_note",
+          "rule": "documentation-context review note",
+          "line": 11,
+          "evidence": "Example marker only: sk_live_example_should_not_be_used.",
+          "severity": "info",
+          "note": "Secret-looking marker appears in docs explanatory context; not hard finding."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "hard_findings": 0,
+    "review_notes": 4,
+    "by_rule": {
+      "debug print": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "hardcoded secret-looking string": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "bare except": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "TODO/FIXME review note": {
+        "hard_findings": 0,
+        "review_notes": 1
+      },
+      "suspicious shell command: curl pipe bash": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "suspicious shell command: rm -rf": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "large deletion marker": {
+        "hard_findings": 0,
+        "review_notes": 0
+      },
+      "documentation-context review note": {
+        "hard_findings": 0,
+        "review_notes": 3
+      }
+    }
+  },
+  "notes": [
+    "Stage 1 local deterministic rule-quality execution only.",
+    "Fixture patches are synthetic and were not applied.",
+    "Receipt is evidence only, not VectorFL authority.",
+    "Refined diff-audit rules are candidate only, not component/workflow/skill/baseline."
+  ]
+}

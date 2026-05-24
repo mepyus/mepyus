@@ -1,0 +1,94 @@
+{
+  "session_id": "61b6bbbe-a2ed-4428-9676-adbfb59f0273",
+  "response": "# Gemini Vessel Working Standard Fresh Check Return\n\n## 1. Verdict\n\n[VESSEL_WORKING_STANDARD_FRESH_CHECK_RETURNED_WITH_WATCH]\n\n## 2. Read Scope\n\n**Read:**\n- `app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_VESSEL_WORKING_STANDARD_CANDIDATE_V0.md` (Primary Standard)\n- `runtime/views/current_asset_map_v1.md` (Context: Authority hierarchy and SSOT list)\n- `docs/specs/folder_role_table_v1.md` (Context: Folder responsibilities)\n- `runtime/views/engine_operating_layer_manifest_v1.json` (Context: Layer hierarchy)\n\n**Not Read:**\n- `run_403` through `run_410` (Individual run logs)\n\n## 3. Case Results\n\n| Case | Selected vessel(s) | Selected mode | Safe answer | WATCH | HOLD |\n|---|---|---|---|---|---|\n| Case A | IIC | complexity probe | Detects authority and automation pressure in \"policy pipeline\" and \"자동으로 쓰자\". | \"pipeline\" drift, \"policy\" pressure. | no automation script, no policy creation. |\n| Case B | SOF | authority check | Promotion of a \"candidate\" to the official `docs/specs/` folder is blocked. | promotion boundary crossing. | no docs/specs move. |\n| Case C | RML | trace recovery | Criteria recovery from runs run_403 through run_410. | None. | None. |\n| Case D | MOL | route mapping | Gemini's path involves IIC, SOF, MOL, RML above the 0-9 family. | \"pipeline\" drift. | None. |\n| Case E | IIC, SOF, RML | sequential handoff | Request to use as \"default routine\" triggers the STOP rule. | \"always use this\" pressure. | no persistent hidden behavior change, no policy creation. |\n\n## 4. Fresh Use Adequacy\n\nThe standard candidate is highly adequate for standalone chat use. It provides:\n- Clear definitions of responsibilities (vessel roles).\n- Semantic mapping of keywords (e.g., what \"pipeline\" means in each vessel).\n- Explicit \"Stop Rules\" and \"Dangerous Phrases\".\n- Concrete output formats for both detailed and compact use.\n\n## 5. Ambiguities Found\n\n- The distinction between IIC \"authority pressure detection\" (detecting user intent/tone) and SOF \"authority check\" (checking actual rules) is clear but requires the operator to be disciplined in separation.\n- MOL \"read-only\" allows mapping \"runner behavior\", which could be interpreted by a user as a request to modify it if not strictly held.\n\n## 6. Required Edits Before User-Ready\n\n- None. The document explicitly states it is a `working_standard_candidate` and defines its own limits (Section 11).\n\n## 7. Readiness Judgment\n\nuser_ready_chat_standard_candidate\n\n## 8. Hard Stop Confirmation\n\nno AGENTS.md update\nno SKILL.md creation\nno automation script\nno baseline promotion\nno workflow/schema/registry/ontology creation\nno current-position update\nno output_manifest update\nno local core / derived / surface authority change\nno official ontology promotion\nno file modifications",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 5,
+          "totalErrors": 2,
+          "totalLatencyMs": 23019
+        },
+        "tokens": {
+          "input": 21087,
+          "prompt": 69068,
+          "candidates": 1176,
+          "total": 72362,
+          "cached": 47981,
+          "thoughts": 2118,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 5,
+            "totalErrors": 2,
+            "totalLatencyMs": 23019,
+            "tokens": {
+              "input": 21087,
+              "prompt": 69068,
+              "candidates": 1176,
+              "total": 72362,
+              "cached": 47981,
+              "thoughts": 2118,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 9,
+      "totalSuccess": 9,
+      "totalFail": 0,
+      "totalDurationMs": 107,
+      "totalDecisions": {
+        "accept": 9,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 12,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "glob": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 49,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 46,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

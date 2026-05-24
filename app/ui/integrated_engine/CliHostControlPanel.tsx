@@ -1224,7 +1224,7 @@ export function CliHostControlPanel({ activeSurface = "vectorfl", onSurfaceChang
           <div>
             <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-cyan-300">
             <GitPullRequest className="h-4 w-4" />
-              Integrated Engine chat
+              VectorFL Surface · Control
             </div>
             <div className="mt-1 text-sm font-bold text-slate-100">대화하듯 지시하면 내부 공간 읽기, 패키지 형성, CLI 실행, 반환 재독해가 한 흐름으로 보입니다.</div>
             {activePackage ? (

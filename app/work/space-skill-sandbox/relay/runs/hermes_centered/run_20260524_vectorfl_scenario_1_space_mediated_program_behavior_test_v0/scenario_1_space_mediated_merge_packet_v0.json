@@ -1,0 +1,39 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_space_mediated_merge_no_authority_mutation",
+  "conflicts": [
+    {
+      "conflict": "User wants first program behavior test, but no API/model endpoint should run.",
+      "resolution": "Use fixture + no-call validators; mark real model execution as future scoped lane."
+    }
+  ],
+  "guard_status": "PASS_WITH_HOLD",
+  "hold_boundaries": [
+    "api_contract_replay.py",
+    "api_drift_replay_gate.py",
+    "phase1_deterministic_stable_cycle.py",
+    "external API",
+    "local HTTP endpoint replay",
+    "local server start",
+    "real model execution",
+    "authority mutation",
+    "registry mutation",
+    "promotion"
+  ],
+  "inputs": {
+    "model_fixture_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_model_result_fixture_packet_v0.json",
+    "original_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_original_input_v0.json",
+    "space_reading_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_packet_v0.json"
+  },
+  "merged_directive": "Execute a no-call Scenario 1 VectorFL program-behavior test using existing space assets: preserve original input, read space bundles/current/guard/trace/model-reentry assets, merge with synthetic model interpretation fixture, route subjects, run Hermes validators/scans, create Codex reinsertion/maturation and Gemini need-assessment packets, produce operator output, and validate all lineage/HOLD boundaries.",
+  "packet_id": "scenario_1_space_mediated_merge_packet_v0",
+  "promotion_status": "HOLD",
+  "resolved_decisions": [
+    "Use existing 6-layer trace ledger rather than inventing a standalone schema.",
+    "Use existing model-result intake capture contract for synthetic model fixture.",
+    "Use Hermes for local no-call execution only.",
+    "Use Codex as reinsertion/maturation packet owner, not executor in this lane.",
+    "Use Gemini as need-assessment/stub only, not actual execution."
+  ],
+  "source_layer": "review_guard_layer"
+}

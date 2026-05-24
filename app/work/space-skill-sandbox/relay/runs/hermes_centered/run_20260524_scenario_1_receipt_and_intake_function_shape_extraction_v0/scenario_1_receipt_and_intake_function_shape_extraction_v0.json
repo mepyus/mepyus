@@ -1,0 +1,27 @@
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "decision": "Extract only function shapes, not implementation modules. Use these shapes as next alignment targets for future no-call harnesses.",
+  "fixtures": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/fixture_original_intake_packet_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/fixture_receipt_writer_receipt_v0.json"
+  ],
+  "next_safe_lane": "SCENARIO_1_SPACE_READING_AND_MERGE_FUNCTION_SHAPE_EXTRACTION_NO_AUTHORITY_MUTATION_V0",
+  "review_id": "scenario_1_receipt_and_intake_function_shape_extraction_v0",
+  "shapes": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_original_intake_packet_shape_candidate_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/vectorfl_receipt_writer_shape_candidate_v0.json"
+  ],
+  "source_index": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_scenario_1_receipt_and_intake_function_shape_extraction_v0/scenario_1_receipt_and_intake_shape_source_index_v0.json",
+  "status": "RECEIPT_AND_INTAKE_FUNCTION_SHAPE_EXTRACTION_WITH_HOLD"
+}

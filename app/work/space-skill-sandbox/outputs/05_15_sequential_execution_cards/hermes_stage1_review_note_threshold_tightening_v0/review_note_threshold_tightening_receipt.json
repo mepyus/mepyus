@@ -1,0 +1,978 @@
+{
+  "verdict": "[HERMES_STAGE1_REVIEW_NOTE_THRESHOLD_TIGHTENING_RECEIPT]",
+  "timestamp": "2026-05-16T08:26:38.850498+00:00",
+  "command": "python3 app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening.py",
+  "input_files": [
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_report.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_receipt.json",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_historical_code_diff_sample_audit_v0/patches/4601f7c18.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_historical_code_diff_sample_audit_v0/patches/4e0389a4d.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_historical_code_diff_sample_audit_v0/patches/a542716f3.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_historical_code_diff_sample_audit_v0/patches/a998543da.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_seeded_true_positive_pressure_v0/fixtures/app_source_true_positive.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_seeded_true_positive_pressure_v0/fixtures/benign_semantic_noise.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_seeded_true_positive_pressure_v0/fixtures/config_true_positive.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_seeded_true_positive_pressure_v0/fixtures/docs_tests_noise.patch",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_seeded_true_positive_pressure_v0/fixtures/script_deploy_true_positive.patch"
+  ],
+  "prior_report_bytes": 19562,
+  "output_files": [
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening.py",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_report.md",
+    "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_receipt.json"
+  ],
+  "exit_code": 0,
+  "before_historical_hard_findings": 1,
+  "before_historical_review_notes": 118,
+  "before_seeded_hard_findings": 19,
+  "before_seeded_review_notes": 31,
+  "after_historical_hard_findings": 1,
+  "after_historical_review_notes": 7,
+  "after_seeded_hard_findings": 19,
+  "after_seeded_review_notes": 27,
+  "historical_suppressed_review_notes": 22,
+  "seeded_suppressed_review_notes": 2,
+  "hard_findings_stable": true,
+  "historical_results": [
+    {
+      "group": "historical",
+      "patch": "4601f7c18.patch",
+      "files_touched_count": 2,
+      "sample_files_touched": [
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/CliHostControlPanel.tsx"
+      ],
+      "added_lines_seen": 138,
+      "deleted_lines_seen": 25,
+      "hard_findings": 0,
+      "review_notes": 0,
+      "suppressed_review_notes": 0,
+      "contexts": {
+        "app_source": 2
+      },
+      "rule_hits": {},
+      "hard_examples": [],
+      "review_examples": [],
+      "suppressed_examples": []
+    },
+    {
+      "group": "historical",
+      "patch": "4e0389a4d.patch",
+      "files_touched_count": 5,
+      "sample_files_touched": [
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/App.tsx",
+        "app/ui/integrated_engine/main.tsx",
+        "app/ui/integrated_engine/package.json",
+        "app/ui/integrated_engine/vite.config.ts"
+      ],
+      "added_lines_seen": 3714,
+      "deleted_lines_seen": 0,
+      "hard_findings": 1,
+      "review_notes": 1,
+      "suppressed_review_notes": 3,
+      "contexts": {
+        "app_source": 4,
+        "config_or_env_like": 1
+      },
+      "rule_hits": {
+        "unresolved_todo": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "debug_print_js": {
+          "hard_finding": 1,
+          "review_note": 0
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "debug_print_js",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/ui/integrated_engine/main.tsx",
+          "line_no": 3686,
+          "context": "app_source",
+          "excerpt": "console.log(\"VectorFL Sandbox: Starting Boot Sequence...\");"
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "unresolved_todo",
+          "reason": "unresolved_marker",
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "line_no": 651,
+          "context": "app_source",
+          "excerpt": "\"current_signal\": \"extract repeated pressure before TODO language\","
+        }
+      ],
+      "suppressed_examples": [
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "line_no": 160,
+          "context": "app_source",
+          "excerpt": "PATH_TOKEN_RE = re.compile(r\"(?:(?:runtime|docs|app|scripts|references|gemini)/[A-Za-z0-9._@%+=:,/\\\\-]+)\")"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "line_no": 186,
+          "context": "app_source",
+          "excerpt": "for match in PATH_TOKEN_RE.findall(text):"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "line_no": 1769,
+          "context": "app_source",
+          "excerpt": "if any(token in explicit_tail for token in tokens):"
+        }
+      ]
+    },
+    {
+      "group": "historical",
+      "patch": "a542716f3.patch",
+      "files_touched_count": 7,
+      "sample_files_touched": [
+        "app/core/runtime/external_input_comparison.py",
+        "app/core/runtime/lower_support_layers.py",
+        "app/runtime/vectorfl_integrated_engine_api.py",
+        "app/ui/integrated_engine/App.tsx",
+        "app/ui/integrated_engine/CliHostControlPanel.tsx",
+        "app/ui/integrated_engine/EngineStateDashboard.tsx",
+        "app/ui/integrated_engine/VectorFLIntegrationShell.tsx"
+      ],
+      "added_lines_seen": 1333,
+      "deleted_lines_seen": 8,
+      "hard_findings": 0,
+      "review_notes": 0,
+      "suppressed_review_notes": 3,
+      "contexts": {
+        "app_source": 7
+      },
+      "rule_hits": {},
+      "hard_examples": [],
+      "review_examples": [],
+      "suppressed_examples": [
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/lower_support_layers.py",
+          "line_no": 223,
+          "context": "app_source",
+          "excerpt": "def _tokenize(text: str) -> list[str]:"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/lower_support_layers.py",
+          "line_no": 227,
+          "context": "app_source",
+          "excerpt": "for token in tokens"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/lower_support_layers.py",
+          "line_no": 350,
+          "context": "app_source",
+          "excerpt": "counter.update(_tokenize(text))"
+        }
+      ]
+    },
+    {
+      "group": "historical",
+      "patch": "a998543da.patch",
+      "files_touched_count": 6,
+      "sample_files_touched": [
+        "app/core/runtime/dust_field.py",
+        "app/core/runtime/graph_view.py",
+        "app/core/runtime/live_input_space.py",
+        "scripts/ingest_fragments.py",
+        "scripts/run_review_fixture_check.py",
+        "tests/unit/test_formation_service.py"
+      ],
+      "added_lines_seen": 11322,
+      "deleted_lines_seen": 0,
+      "hard_findings": 0,
+      "review_notes": 6,
+      "suppressed_review_notes": 16,
+      "contexts": {
+        "app_source": 3,
+        "scripts_or_deploy": 1,
+        "tests_or_fixtures": 2
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 0,
+          "review_note": 4
+        },
+        "debug_print_python": {
+          "hard_finding": 0,
+          "review_note": 2
+        }
+      },
+      "hard_examples": [],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5292,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(value)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5296,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5979,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(value)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5983,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/ingest_fragments.py",
+          "line_no": 6112,
+          "context": "scripts_or_deploy",
+          "excerpt": "print(\"usage: ingest_fragments.py <runtime_root> <fragments.json> [--project]\")"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "non_secret_pattern_outside_hard_context",
+          "file": "scripts/ingest_fragments.py",
+          "line_no": 6308,
+          "context": "scripts_or_deploy",
+          "excerpt": "print(json.dumps(result, ensure_ascii=False, indent=2))"
+        }
+      ],
+      "suppressed_examples": [
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 4310,
+          "context": "app_source",
+          "excerpt": "canonicalizable_token_pair_count=int(promotion_review_data.get(\"canonicalizable_token_pair_count\", 0) or 0),"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5045,
+          "context": "app_source",
+          "excerpt": "canonicalizable_token_pair_count=int(direct_overlap_review.get(\"canonicalizable_token_pair_count\", 0) or 0),"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5059,
+          "context": "app_source",
+          "excerpt": "canonicalizable_token_pair_count=int(direct_overlap_review.get(\"canonicalizable_token_pair_count\", 0) or 0),"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5171,
+          "context": "app_source",
+          "excerpt": "overlap_tokens = set(semantic_overlap + structural_overlap + process_overlap + object_overlap)"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5172,
+          "context": "app_source",
+          "excerpt": "translated_but_not_canonicalized_count = len([value for value in translated_hits if value not in overlap_tokens])"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5282,
+          "context": "app_source",
+          "excerpt": "def _collect_anchor_tokens(materials: Sequence[Dict[str, object]]) -> Set[str]:"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5294,
+          "context": "app_source",
+          "excerpt": "tokens.add(token)"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5298,
+          "context": "app_source",
+          "excerpt": "tokens.add(token)"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5309,
+          "context": "app_source",
+          "excerpt": "for token in _collect_anchor_tokens(materials):"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/live_input_space.py",
+          "line_no": 5582,
+          "context": "app_source",
+          "excerpt": "canonicalizable_token_pair_count = 0"
+        }
+      ]
+    }
+  ],
+  "seeded_results": [
+    {
+      "group": "seeded",
+      "patch": "app_source_true_positive.patch",
+      "files_touched_count": 1,
+      "sample_files_touched": [
+        "app/runtime/risky_runtime.py"
+      ],
+      "added_lines_seen": 16,
+      "deleted_lines_seen": 0,
+      "hard_findings": 11,
+      "review_notes": 4,
+      "suppressed_review_notes": 0,
+      "contexts": {
+        "app_source": 1
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 5,
+          "review_note": 2
+        },
+        "bare_except": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "dynamic_eval": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "dynamic_exec": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "dynamic_subprocess_shell_true": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "shell_rm_rf": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "dynamic_os_system": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "shell_curl_pipe_bash": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "debug_print_python": {
+          "hard_finding": 1,
+          "review_note": 0
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 6,
+          "context": "app_source",
+          "excerpt": "api_key = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 7,
+          "context": "app_source",
+          "excerpt": "token = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 8,
+          "context": "app_source",
+          "excerpt": "password = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 9,
+          "context": "app_source",
+          "excerpt": "secret = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 10,
+          "context": "app_source",
+          "excerpt": "credential = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "bare_except",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 13,
+          "context": "app_source",
+          "excerpt": "except:"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "dynamic_eval",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 15,
+          "context": "app_source",
+          "excerpt": "eval(user_input)"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "dynamic_exec",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 16,
+          "context": "app_source",
+          "excerpt": "exec(dynamic_code)"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "dynamic_subprocess_shell_true",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 17,
+          "context": "app_source",
+          "excerpt": "subprocess.run(\"rm -rf /tmp/cache\", shell=True)"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "dynamic_os_system",
+          "reason": "app_source_non_secret_rule",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 18,
+          "context": "app_source",
+          "excerpt": "os.system(\"curl https://example.invalid/install.sh | bash\")"
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "shell_rm_rf",
+          "reason": "shell_pattern_outside_script_deploy",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 17,
+          "context": "app_source",
+          "excerpt": "subprocess.run(\"rm -rf /tmp/cache\", shell=True)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "shell_curl_pipe_bash",
+          "reason": "shell_pattern_outside_script_deploy",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 18,
+          "context": "app_source",
+          "excerpt": "os.system(\"curl https://example.invalid/install.sh | bash\")"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 20,
+          "context": "app_source",
+          "excerpt": "safe_token = _normalize_token(value)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "env_reference_boundary",
+          "file": "app/runtime/risky_runtime.py",
+          "line_no": 21,
+          "context": "app_source",
+          "excerpt": "safe_ref = os.environ[\"SERVICE_TOKEN\"]"
+        }
+      ],
+      "suppressed_examples": []
+    },
+    {
+      "group": "seeded",
+      "patch": "benign_semantic_noise.patch",
+      "files_touched_count": 1,
+      "sample_files_touched": [
+        "app/core/runtime/parser.py"
+      ],
+      "added_lines_seen": 12,
+      "deleted_lines_seen": 0,
+      "hard_findings": 0,
+      "review_notes": 7,
+      "suppressed_review_notes": 2,
+      "contexts": {
+        "app_source": 1
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 0,
+          "review_note": 6
+        },
+        "unresolved_todo": {
+          "hard_finding": 0,
+          "review_note": 1
+        }
+      },
+      "hard_examples": [],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 8,
+          "context": "app_source",
+          "excerpt": "token = token.lower()"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 9,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(value)"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "semantic_token_assignment",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 10,
+          "context": "app_source",
+          "excerpt": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "explicit_secret_or_credential_name",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 12,
+          "context": "app_source",
+          "excerpt": "api_key_name = \"field name, not credential\""
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "explicit_secret_or_credential_name",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 13,
+          "context": "app_source",
+          "excerpt": "password_label = \"label only\""
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "explicit_secret_or_credential_name",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 14,
+          "context": "app_source",
+          "excerpt": "credential_kind = \"metadata\""
+        },
+        {
+          "severity": "review_note",
+          "rule": "unresolved_todo",
+          "reason": "unresolved_marker",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 16,
+          "context": "app_source",
+          "excerpt": "todo_label = \"TODO wording in data\""
+        }
+      ],
+      "suppressed_examples": [
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 6,
+          "context": "app_source",
+          "excerpt": "def parse(sentence_tokens, values):"
+        },
+        {
+          "reason": "ordinary_token_processing_noise",
+          "file": "app/core/runtime/parser.py",
+          "line_no": 7,
+          "context": "app_source",
+          "excerpt": "for token in sentence_tokens:"
+        }
+      ]
+    },
+    {
+      "group": "seeded",
+      "patch": "config_true_positive.patch",
+      "files_touched_count": 1,
+      "sample_files_touched": [
+        "config/prod.env"
+      ],
+      "added_lines_seen": 8,
+      "deleted_lines_seen": 0,
+      "hard_findings": 3,
+      "review_notes": 3,
+      "suppressed_review_notes": 0,
+      "contexts": {
+        "config_or_env_like": 1
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 3,
+          "review_note": 3
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "config/prod.env",
+          "line_no": 6,
+          "context": "config_or_env_like",
+          "excerpt": "API_KEY = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "config/prod.env",
+          "line_no": 7,
+          "context": "config_or_env_like",
+          "excerpt": "SERVICE_TOKEN = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "config/prod.env",
+          "line_no": 10,
+          "context": "config_or_env_like",
+          "excerpt": "SECRET = [REDACTED]"
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "placeholder_or_env_secret_value",
+          "file": "config/prod.env",
+          "line_no": 8,
+          "context": "config_or_env_like",
+          "excerpt": "PASSWORD = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "placeholder_or_env_secret_value",
+          "file": "config/prod.env",
+          "line_no": 9,
+          "context": "config_or_env_like",
+          "excerpt": "TOKEN = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "placeholder_or_env_secret_value",
+          "file": "config/prod.env",
+          "line_no": 11,
+          "context": "config_or_env_like",
+          "excerpt": "CREDENTIAL = [REDACTED]"
+        }
+      ],
+      "suppressed_examples": []
+    },
+    {
+      "group": "seeded",
+      "patch": "docs_tests_noise.patch",
+      "files_touched_count": 2,
+      "sample_files_touched": [
+        "docs/security_examples.md",
+        "tests/fixtures/test_security_examples.py"
+      ],
+      "added_lines_seen": 12,
+      "deleted_lines_seen": 0,
+      "hard_findings": 0,
+      "review_notes": 11,
+      "suppressed_review_notes": 0,
+      "contexts": {
+        "docs": 1,
+        "tests_or_fixtures": 1
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 0,
+          "review_note": 5
+        },
+        "shell_curl_pipe_bash": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "shell_rm_rf": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "dynamic_eval": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "dynamic_os_system": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "debug_print_python": {
+          "hard_finding": 0,
+          "review_note": 1
+        },
+        "bare_except": {
+          "hard_finding": 0,
+          "review_note": 1
+        }
+      },
+      "hard_examples": [],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "docs_tests_explicit_secret_assignment_example",
+          "file": "docs/security_examples.md",
+          "line_no": 6,
+          "context": "docs",
+          "excerpt": "Do not write API_KEY = [REDACTED]."
+        },
+        {
+          "severity": "review_note",
+          "rule": "shell_curl_pipe_bash",
+          "reason": "docs_tests_fixtures_non_secret_pattern",
+          "file": "docs/security_examples.md",
+          "line_no": 7,
+          "context": "docs",
+          "excerpt": "Do not run curl https://example.invalid/install.sh | bash."
+        },
+        {
+          "severity": "review_note",
+          "rule": "shell_rm_rf",
+          "reason": "docs_tests_fixtures_non_secret_pattern",
+          "file": "docs/security_examples.md",
+          "line_no": 8,
+          "context": "docs",
+          "excerpt": "Avoid rm -rf in examples."
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "docs_tests_explicit_secret_assignment_example",
+          "file": "docs/security_examples.md",
+          "line_no": 9,
+          "context": "docs",
+          "excerpt": "password = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "docs_tests_explicit_secret_assignment_example",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 15,
+          "context": "tests_or_fixtures",
+          "excerpt": "api_key = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "docs_tests_explicit_secret_assignment_example",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 16,
+          "context": "tests_or_fixtures",
+          "excerpt": "token = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "docs_tests_explicit_secret_assignment_example",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 17,
+          "context": "tests_or_fixtures",
+          "excerpt": "password = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "dynamic_eval",
+          "reason": "docs_tests_fixtures_non_secret_pattern",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 18,
+          "context": "tests_or_fixtures",
+          "excerpt": "eval(\"1 + 1\")"
+        },
+        {
+          "severity": "review_note",
+          "rule": "dynamic_os_system",
+          "reason": "docs_tests_fixtures_non_secret_pattern",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 19,
+          "context": "tests_or_fixtures",
+          "excerpt": "os.system(\"echo fixture\")"
+        },
+        {
+          "severity": "review_note",
+          "rule": "debug_print_python",
+          "reason": "docs_tests_fixtures_non_secret_pattern",
+          "file": "tests/fixtures/test_security_examples.py",
+          "line_no": 20,
+          "context": "tests_or_fixtures",
+          "excerpt": "print(\"fixture debug\")"
+        }
+      ],
+      "suppressed_examples": []
+    },
+    {
+      "group": "seeded",
+      "patch": "script_deploy_true_positive.patch",
+      "files_touched_count": 1,
+      "sample_files_touched": [
+        "scripts/deploy.sh"
+      ],
+      "added_lines_seen": 9,
+      "deleted_lines_seen": 0,
+      "hard_findings": 5,
+      "review_notes": 2,
+      "suppressed_review_notes": 0,
+      "contexts": {
+        "scripts_or_deploy": 1
+      },
+      "rule_hits": {
+        "secret_boundary": {
+          "hard_finding": 2,
+          "review_note": 2
+        },
+        "shell_curl_pipe_bash": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "shell_rm_rf": {
+          "hard_finding": 1,
+          "review_note": 0
+        },
+        "shell_chmod_777": {
+          "hard_finding": 1,
+          "review_note": 0
+        }
+      },
+      "hard_examples": [
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "scripts/deploy.sh",
+          "line_no": 7,
+          "context": "scripts_or_deploy",
+          "excerpt": "API_KEY = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "secret_boundary",
+          "reason": "literal_secret_assignment",
+          "file": "scripts/deploy.sh",
+          "line_no": 8,
+          "context": "scripts_or_deploy",
+          "excerpt": "SERVICE_TOKEN = [REDACTED]"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "shell_curl_pipe_bash",
+          "reason": "script_shell_or_destructive_command",
+          "file": "scripts/deploy.sh",
+          "line_no": 9,
+          "context": "scripts_or_deploy",
+          "excerpt": "curl https://example.invalid/install.sh | bash"
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "shell_rm_rf",
+          "reason": "script_shell_or_destructive_command",
+          "file": "scripts/deploy.sh",
+          "line_no": 10,
+          "context": "scripts_or_deploy",
+          "excerpt": "rm -rf \"$DEPLOY_ROOT\""
+        },
+        {
+          "severity": "hard_finding",
+          "rule": "shell_chmod_777",
+          "reason": "script_shell_or_destructive_command",
+          "file": "scripts/deploy.sh",
+          "line_no": 11,
+          "context": "scripts_or_deploy",
+          "excerpt": "chmod 777 \"$DEPLOY_ROOT\""
+        }
+      ],
+      "review_examples": [
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "placeholder_or_env_secret_value",
+          "file": "scripts/deploy.sh",
+          "line_no": 13,
+          "context": "scripts_or_deploy",
+          "excerpt": "TOKEN = [REDACTED]"
+        },
+        {
+          "severity": "review_note",
+          "rule": "secret_boundary",
+          "reason": "placeholder_or_env_secret_value",
+          "file": "scripts/deploy.sh",
+          "line_no": 14,
+          "context": "scripts_or_deploy",
+          "excerpt": "SECRET = [REDACTED]"
+        }
+      ],
+      "suppressed_examples": []
+    }
+  ],
+  "network_used": false,
+  "packages_installed": false,
+  "git_used": false,
+  "source_files_modified": false,
+  "prior_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false
+}

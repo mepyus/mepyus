@@ -1,0 +1,114 @@
+{
+  "active_hits": 0,
+  "asset_index_items": 12,
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "provider_api_note": "Hermes conversation uses provider API separately; VectorFL-internal execution here is script-only.",
+    "reason": "User approved work, but task is local spec/handoff generation from existing space assets; no live Codex/Gemini needed.",
+    "selected_mode": "FAST_NO_CALL_SCRIPT_ONLY_SPEC_DRAFT"
+  },
+  "checks": 17,
+  "core_loop": [
+    "Hermes preserves raw original and reads bounded space refs",
+    "Hermes creates execution output + receipt + minimal_space_delta",
+    "Codex Space Steward reads referenced_material + reinserted_material + lacl/layer resources",
+    "Codex produces spatial recovery/index/cross-link findings, not authority changes",
+    "Gemini Layer Reader re-reads Codex findings for layer pressure, semantic flattening, and programization candidates",
+    "Hermes merges returned packets into next safe lane as HOLD evidence"
+  ],
+  "current_position_candidate": "CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_PASSED_WITH_HOLD",
+  "draft_files_created": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/03_VECTORFL_CURRENT_SPACE_HANDOFF_DRAFT.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/04_VECTORFL_SPACE_LAYER_MAP_DRAFT.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/05_VECTORFL_ASSET_INDEX_DRAFT.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/06_VECTORFL_CODEX_SPACE_STEWARD_GUIDE_DRAFT.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/07_VECTORFL_GEMINI_LAYER_READER_GUIDE_DRAFT.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/08_VECTORFL_SPACE_MATURATION_PACKET_SCHEMA_DRAFT.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md"
+  ],
+  "early_attach_points": 3,
+  "elapsed_seconds": 0.0025257320000000028,
+  "handoff_files_to_generate": [
+    "VECTORFL_CURRENT_SPACE_HANDOFF.md",
+    "VECTORFL_SPACE_LAYER_MAP.md",
+    "VECTORFL_ASSET_INDEX_DRAFT.json",
+    "VECTORFL_CODEX_SPACE_STEWARD_GUIDE.md",
+    "VECTORFL_GEMINI_LAYER_READER_GUIDE.md",
+    "VECTORFL_SPACE_MATURATION_PACKET_SCHEMA.json",
+    "VECTORFL_NO_MUTATION_BOUNDARY.md"
+  ],
+  "maturation_success_criteria": [
+    "Codex can read <=7 files and understand current position",
+    "Codex returns primary_layer plus secondary_links without moving files",
+    "Gemini can judge layer pressure from Codex packet without reading whole history",
+    "Hermes can merge both packets into next safe lane with minimal provider context",
+    "Each loop creates fewer-but-denser handoff assets, not artifact sprawl"
+  ],
+  "next_safe_lane": "SPACE_MATURATION_HANDOFF_FILES_DRAFT_VALIDATION_NO_FOLDER_MOVE_V0",
+  "report_id": "VECTORFL_CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_20260524_V0",
+  "roles": {
+    "CODEX_SPACE_STEWARD": {
+      "must_not": [
+        "move folders",
+        "promote authority",
+        "mutate current-position",
+        "call API/server/replay",
+        "treat proposal as source of truth"
+      ],
+      "responsibility": [
+        "read handoff first",
+        "map referenced_material vs reinserted_material",
+        "classify assets primary_layer plus secondary_links",
+        "detect duplicate/archaeology pressure",
+        "prepare Gemini layer questions",
+        "return spatial packet only"
+      ]
+    },
+    "GEMINI_LAYER_READER": {
+      "must_not": [
+        "override authority",
+        "turn watch-only issues into fixes",
+        "replace Codex file-grounded findings with abstract opinion"
+      ],
+      "responsibility": [
+        "read Codex spatial packet",
+        "detect layer flattening and over-internalization",
+        "judge whether space design reflects Phase1 whole-flow",
+        "identify function strengthening opportunities",
+        "return layer packet only"
+      ]
+    },
+    "HERMES_EXECUTION_WORKBENCH": {
+      "must_output": [
+        "raw_original_handle",
+        "used_space_refs",
+        "space_reference_delta",
+        "receipt",
+        "next_safe_lane"
+      ],
+      "responsibility": [
+        "preserve original",
+        "select bounded refs",
+        "execute local scripts or bounded approved commands",
+        "write receipts/reports",
+        "avoid authority mutation unless separately approved"
+      ]
+    }
+  },
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0",
+  "spec_id": "CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_V0",
+  "verdict": "PASS_CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_WITH_HOLD"
+}

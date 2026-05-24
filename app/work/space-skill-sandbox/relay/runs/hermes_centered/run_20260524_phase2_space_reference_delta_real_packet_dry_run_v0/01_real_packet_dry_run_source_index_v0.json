@@ -1,0 +1,51 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "Small dry-run on known PASS/HOLD lane; no fresh layer ambiguity; validates packet behavior rather than asking new model judgment.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_real_packet_dry_run_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_space_reference_delta_real_packet_dry_run_v0",
+  "space_refs": [
+    {
+      "changed_judgment": "TBD in packet delta",
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0.json",
+      "ref_id": "applied_validator_report",
+      "sha256": "2ca6da1c7a20934ded5638c60d504fee1edccbacb985eb2d8993b6ba233000a7",
+      "used_for": "establish applied validator passed and next lane"
+    },
+    {
+      "changed_judgment": "TBD in packet delta",
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0.md",
+      "ref_id": "latest_next_lane",
+      "sha256": "dbf8c592ef55b9d63e9c5c45ac9254a8af976e893396c403cd07e08281677b58",
+      "used_for": "select one small non-plumbing target and keep HOLD"
+    },
+    {
+      "changed_judgment": "TBD in packet delta",
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0.json",
+      "ref_id": "source_selection_rule",
+      "sha256": "1166cd4ef756af219d57f24bdc2d8bfed6448ace7eefe2e5b00f5a2d81c984c1",
+      "used_for": "apply max 4 refs and changed_judgment requirement"
+    },
+    {
+      "changed_judgment": "TBD in packet delta",
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "ref_id": "aifrontier_impact",
+      "sha256": "613724ad6011a923815f201f321b2ad9cded0e9c9cffb5e3b0842c70ace398c7",
+      "used_for": "add mind-sized/operator-load/maintainability lens"
+    }
+  ],
+  "target": "Mini target: create a HOLD candidate operator-facing space-reference-delta checklist for Phase2 packets"
+}

@@ -1,0 +1,30 @@
+{
+  "active_hits": 0,
+  "attached_phase1_stage": "S1_INTAKE",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": 12,
+  "codex_cli_execution": "NO",
+  "current_position_candidate": "S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.001348690999999999,
+  "gemini_cli_execution": "NO",
+  "intent_classification": "CONTINUATION_OF_DECLARED_NEXT_SAFE_LANE",
+  "next_safe_lane": "S2_SOURCE_SELECTION_REAL_NON_VALIDATOR_TARGET_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "A short continuation such as 응 계속해봐 carries little content by itself. Correct handling depends on reading the latest next-lane space card; otherwise Hermes may guess or drift into generic/internal work.",
+    "gap_id": "S1_GAP_CONTINUATION_IS_UNDERSPECIFIED_BUT_SPACE_CAN_DISAMBIGUATE",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S1_CONTINUATION_INPUT_REQUIRES_LATEST_NEXT_LANE_LOOKUP",
+    "reason": "If repeated across Phase2 function tests, add global intake rule for continuation-only inputs.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "report_id": "VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s1_intake_original_preservation_function_test_v0",
+  "space_affecting_gate": "SPACE_AFFECTING_META_WORK",
+  "tested_function": "S1_INTAKE_ORIGINAL_PRESERVATION_TASK_CLASSIFICATION",
+  "validator_repair_note": "Initial validator falsely rejected NON_VALIDATOR_TARGET because it searched raw VALIDATOR substring; repaired to reject only validator-hardening/checklist lanes. Accumulate as S1/S7 observation, not global fix yet.",
+  "verdict": "PASS_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_WITH_HOLD"
+}

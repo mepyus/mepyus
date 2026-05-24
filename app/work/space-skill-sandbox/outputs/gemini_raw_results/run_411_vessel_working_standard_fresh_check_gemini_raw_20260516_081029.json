@@ -1,0 +1,94 @@
+{
+  "session_id": "1ec002cc-d233-492c-b4b6-fb8a3cc12314",
+  "response": "# Gemini Vessel Working Standard Fresh Check Return\n\n## 1. Verdict\n\n[VESSEL_WORKING_STANDARD_FRESH_CHECK_RETURNED_WITH_WATCH]\n\n## 2. Read Scope\n\nWhat was read:\n- `app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_VESSEL_WORKING_STANDARD_CANDIDATE_V0.md` (Primary)\n- `runtime/views/current_asset_map_v1.md`\n- `docs/specs/folder_role_table_v1.md`\n- `runtime/views/engine_operating_layer_manifest_v1.json`\n\nWhat was not read:\n- `run_403` through `run_410` (per instruction).\n- `docs/indexes/plan_from_space_position_map_seed_v0.md` or other secondary references.\n\n## 3. Case Results\n\n| Case | Selected vessel(s) | Selected mode | Safe answer | WATCH | HOLD |\n|---|---|---|---|---|---|\n| A | IIC | complexity probe | Detected authority pressure (`policy`) and automation request (\"자동으로\"). Identifies high complexity requiring a STOP. | Pressure | TRUE |\n| B | SOF | authority check | Candidate is `sandbox-local`. Section 11 prohibits placement changes outside the sandbox. Movement to `docs/specs` is denied. | Promotion | TRUE |\n| C | RML | trace recovery | Basis is the 05-15 recovery sequence (runs 403-410) testing linguistic integrity and vessel handoffs. | Provenance | FALSE |\n| D | MOL | route mapping | Gemini path consists of IIC -> SOF -> RML vessels, supported by the 0-9 function family as lower retrieval components. | Read-only | FALSE |\n| E | IIC, SOF, RML | check sequence | STOP. Violates Stop Rule (Section 5) regarding \"persistent hidden behavior change\". Chat approval cannot override SOF authority. | Rule-drift | TRUE |\n\n## 4. Fresh Use Adequacy\n\nYes. The standard candidate provides sufficient definitions of vessel responsibilities, \"Dangerous Phrases,\" and \"Stop Rules\" to allow a fresh Gemini instance to correctly classify and guard against out-of-bounds requests without prior session memory.\n\n## 5. Ambiguities Found\n\n- The criteria for \"WATCH\" and \"HOLD\" statuses (required in the output format) are not explicitly defined in the standard text itself, though they are implied by the \"Stop Rule.\"\n- The interaction between the \"4 Vessels\" and the \"0-9 Family\" is listed as a relationship but lacks a detailed execution protocol for how a worker should transition between them.\n- \"MOL\" is described as read-only but the threshold for \"explicitly approved\" execution machinery is not detailed.\n\n## 6. Required Edits Before User-Ready\n\n- Add explicit definitions for `WATCH` (warning/observation) and `HOLD` (STOP trigger) to Section 10 (Return Format).\n- Clarify the \"explicit approval\" criteria for MOL to prevent accidental execution drift.\n- Formalize the handoff sequence (IIC -> SOF -> RML) as a mandatory check for multi-vessel requests.\n\n## 7. Readiness Judgment\n\nusable_with_operator_context\n\n## 8. Hard Stop Confirmation\n\nno AGENTS.md update\nno SKILL.md creation\nno automation script\nno baseline promotion\nno workflow/schema/registry/ontology creation\nno current-position update\nno output_manifest update\nno local core / derived / surface authority change\nno official ontology promotion\nno file modifications",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 5,
+          "totalErrors": 2,
+          "totalLatencyMs": 23470
+        },
+        "tokens": {
+          "input": 36692,
+          "prompt": 68611,
+          "candidates": 1246,
+          "total": 72033,
+          "cached": 31919,
+          "thoughts": 2176,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 5,
+            "totalErrors": 2,
+            "totalLatencyMs": 23470,
+            "tokens": {
+              "input": 36692,
+              "prompt": 68611,
+              "candidates": 1246,
+              "total": 72033,
+              "cached": 31919,
+              "thoughts": 2176,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 9,
+      "totalSuccess": 9,
+      "totalFail": 0,
+      "totalDurationMs": 100,
+      "totalDecisions": {
+        "accept": 9,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 11,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "glob": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 47,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 42,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

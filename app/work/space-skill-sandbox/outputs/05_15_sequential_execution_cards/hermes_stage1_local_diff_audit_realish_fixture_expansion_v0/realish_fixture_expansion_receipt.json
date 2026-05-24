@@ -1,0 +1,253 @@
+{
+  "verdict": "[HERMES_STAGE1_LOCAL_DIFF_AUDIT_REALISH_FIXTURE_EXPANSION_RECEIPT]",
+  "timestamp": "2026-05-16T06:38:56.877011+00:00",
+  "command": "python3 app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/audit_realish_fixtures.py",
+  "input_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_actual_risk.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_clean_refactor.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_config_risk.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_docs_example.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_generated_file.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_test_fixture.patch"
+  ],
+  "output_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_actual_risk.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_clean_refactor.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_config_risk.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_docs_example.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_generated_file.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/fixture_test_fixture.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/audit_realish_fixtures.py",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/realish_fixture_expansion_report.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_realish_fixture_expansion_v0/realish_fixture_expansion_receipt.json"
+  ],
+  "exit_code": 0,
+  "network_used": false,
+  "packages_installed": false,
+  "subprocess_used": false,
+  "git_used": false,
+  "input_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "source_files_modified": false,
+  "patches_applied": false,
+  "repo_wide_search_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "results": [
+    {
+      "fixture": "fixture_actual_risk.patch",
+      "target_path": "app/payment_webhook.py",
+      "context": "code",
+      "removed_line_count": 1,
+      "hard_findings": 4,
+      "review_notes": 0,
+      "findings": [
+        {
+          "rule": "debug print",
+          "line": 8,
+          "severity": "hard_finding",
+          "context": "code",
+          "evidence": "    print(\"DEBUG payload=\", payload)",
+          "note": "risk pattern in executable or operational context."
+        },
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 9,
+          "severity": "hard_finding",
+          "context": "code",
+          "evidence": "    stripe_secret = \"sk_live_realish_fixture_only\"",
+          "note": "risk pattern in executable or operational context."
+        },
+        {
+          "rule": "bare except",
+          "line": 12,
+          "severity": "hard_finding",
+          "context": "code",
+          "evidence": "    except:",
+          "note": "risk pattern in executable or operational context."
+        },
+        {
+          "rule": "unresolved TODO / FIXME",
+          "line": 16,
+          "severity": "hard_finding",
+          "context": "code",
+          "evidence": "# FIXME: add signature verification before production",
+          "note": "TODO/FIXME is tied to production/launch risk."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture_clean_refactor.patch",
+      "target_path": "app/export_status.py",
+      "context": "code",
+      "removed_line_count": 1,
+      "hard_findings": 0,
+      "review_notes": 0,
+      "findings": []
+    },
+    {
+      "fixture": "fixture_config_risk.patch",
+      "target_path": "config/release.env",
+      "context": "config",
+      "removed_line_count": 1,
+      "hard_findings": 3,
+      "review_notes": 0,
+      "findings": [
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 9,
+          "severity": "hard_finding",
+          "context": "config",
+          "evidence": "API_TOKEN=token = \"release-token-placeholder\"",
+          "note": "secret-looking value in config context."
+        },
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 10,
+          "severity": "hard_finding",
+          "context": "config",
+          "evidence": "PASSWORD=password = \"temporary\"",
+          "note": "secret-looking value in config context."
+        },
+        {
+          "rule": "unresolved TODO / FIXME",
+          "line": 11,
+          "severity": "hard_finding",
+          "context": "config",
+          "evidence": "# TODO: rotate before launch",
+          "note": "TODO/FIXME is tied to production/launch risk."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture_docs_example.patch",
+      "target_path": "docs/security_examples.md",
+      "context": "docs",
+      "removed_line_count": 1,
+      "hard_findings": 0,
+      "review_notes": 3,
+      "findings": [
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 9,
+          "severity": "review_note",
+          "context": "docs",
+          "evidence": "Do not hardcode values like password = \"example\".",
+          "note": "documentation-context example; not executable code."
+        },
+        {
+          "rule": "suspicious shell command: curl pipe bash",
+          "line": 10,
+          "severity": "review_note",
+          "context": "docs",
+          "evidence": "Do not use curl https://example.invalid/install.sh | bash.",
+          "note": "documentation-context example; not executable code."
+        },
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 11,
+          "severity": "review_note",
+          "context": "docs",
+          "evidence": "Do not commit values that look like sk_live_example.",
+          "note": "documentation-context example; not executable code."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture_generated_file.patch",
+      "target_path": "generated/client_stub.py",
+      "context": "generated",
+      "removed_line_count": 1,
+      "hard_findings": 0,
+      "review_notes": 1,
+      "findings": [
+        {
+          "rule": "unresolved TODO / FIXME",
+          "line": 9,
+          "severity": "review_note",
+          "context": "generated",
+          "evidence": "    # TODO: generated placeholder from upstream schema",
+          "note": "generated context; fix upstream or generator before manual patching."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture_test_fixture.patch",
+      "target_path": "tests/fixtures/test_security_examples.py",
+      "context": "test",
+      "removed_line_count": 1,
+      "hard_findings": 0,
+      "review_notes": 3,
+      "findings": [
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 9,
+          "severity": "review_note",
+          "context": "test",
+          "evidence": "        \"api_key\": \"sk_live_test_fixture_only\",",
+          "note": "test fixture context; review only unless copied to production."
+        },
+        {
+          "rule": "debug print",
+          "line": 12,
+          "severity": "review_note",
+          "context": "test",
+          "evidence": "    print(\"DEBUG test fixture\", sample)",
+          "note": "test fixture context; review only unless copied to production."
+        },
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 13,
+          "severity": "review_note",
+          "context": "test",
+          "evidence": "    assert sample[\"api_key\"].startswith(\"sk_live\")",
+          "note": "test fixture context; review only unless copied to production."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "rule_hits": {
+      "debug print": 2,
+      "hardcoded secret-looking string": 7,
+      "bare except": 1,
+      "unresolved TODO / FIXME": 3,
+      "suspicious shell command: curl pipe bash": 1
+    },
+    "context_summary": {
+      "code": {
+        "hard_findings": 4,
+        "review_notes": 0
+      },
+      "config": {
+        "hard_findings": 3,
+        "review_notes": 0
+      },
+      "docs": {
+        "hard_findings": 0,
+        "review_notes": 3
+      },
+      "generated": {
+        "hard_findings": 0,
+        "review_notes": 1
+      },
+      "test": {
+        "hard_findings": 0,
+        "review_notes": 3
+      }
+    }
+  },
+  "notes": [
+    "Stage 1 local deterministic execution only.",
+    "Fixture patch files are synthetic and were not applied.",
+    "Receipt is evidence only, not VectorFL authority.",
+    "Refined diff-audit rules are candidate only, not component/workflow/skill/baseline."
+  ]
+}

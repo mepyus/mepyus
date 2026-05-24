@@ -1,0 +1,23 @@
+{
+  "verdict": "POST_EXECUTION_EVIDENCE_INDEX_LOCKED_WITH_PROMOTION_HOLD",
+  "status": "post_s8_classification_snapshot",
+  "file_count": 98,
+  "real_outputs_present": {
+    "outputs/gemini_raw_output.txt": true,
+    "outputs/gemini_lite_output.json": true,
+    "outputs/codex_combined_bridge_recovery_return.md": true,
+    "HERMES_EXECUTION_RECEIPT_V0.json": true,
+    "HERMES_EXECUTION_REPORT_V0.md": true,
+    "real_execution_closeout_v0/REAL_EXECUTION_CLOSEOUT_RECEIPT_V0.json": true,
+    "s8_real_output_recovery_gate_v0/S8_REAL_OUTPUT_RECOVERY_GATE_RECEIPT_V0.json": true
+  },
+  "packet_approval_yes_count": 1,
+  "promotion_no_count": 1,
+  "real_gemini_execution": true,
+  "real_codex_execution": true,
+  "hermes_closeout": true,
+  "s8_classification": "candidate",
+  "vectorfl_authority_mutation": false,
+  "promotion": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

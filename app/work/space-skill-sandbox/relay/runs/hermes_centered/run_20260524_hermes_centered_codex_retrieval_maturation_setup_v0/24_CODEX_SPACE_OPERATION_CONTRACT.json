@@ -1,0 +1,200 @@
+{
+  "packet_id": "24_CODEX_SPACE_OPERATION_CONTRACT_20260524_V0",
+  "status": "HOLD_OPERATIONAL_CONTRACT",
+  "purpose": "Define Codex duties for space checking, Hermes work analysis, original-based retrieval, and reentry-based maturation inside the Hermes-centered VectorFL loop.",
+  "default_boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "roles": {
+    "HERMES": {
+      "owns": [
+        "user original preservation",
+        "original interpretation",
+        "requesting Codex space retrieval through CLI/script bridge",
+        "model merge with retrieved space",
+        "bounded execution",
+        "Codex-readable reentry record"
+      ],
+      "does_not_own": [
+        "space map authority mutation",
+        "registry mutation",
+        "direct Gemini invocation"
+      ]
+    },
+    "CODEX": {
+      "owns": [
+        "space check",
+        "original-based space retrieval",
+        "selected/rejected reference judgment",
+        "Hermes work analysis",
+        "reentry-based space maturation proposal"
+      ],
+      "does_not_own": [
+        "Hermes model execution",
+        "authority promotion without explicit approval",
+        "direct API invocation"
+      ]
+    },
+    "GEMINI": {
+      "owns": [
+        "optional layer/space analysis when invoked inside Codex script-chain"
+      ],
+      "does_not_own": [
+        "Hermes direct execution lane",
+        "authority override"
+      ]
+    }
+  },
+  "operation_routes": [
+    {
+      "route_id": "CODEX_SPACE_CHECK",
+      "trigger_examples": [
+        "공간을 확인해",
+        "현재 공간 확인",
+        "space check"
+      ],
+      "required_reads": [
+        "12_LIGHT_REPORT_FOR_CODEX_HERMES_CENTERED_LOOP.md",
+        "02_hermes_centered_loop_contract_v0.json",
+        "03_codex_reference_path_index_v0.json",
+        "06_VECTORFL_SPACE_LAYER_MAP_COMPACT.json",
+        "07_VECTORFL_ASSET_INDEX_COMPACT.json",
+        "09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md"
+      ],
+      "return_fields": [
+        "packet_id",
+        "role",
+        "read_files",
+        "space_snapshot",
+        "active_controls",
+        "relevant_assets",
+        "hold_or_authority_boundary",
+        "missing_handles",
+        "next_safe_lane",
+        "promotion_status"
+      ]
+    },
+    {
+      "route_id": "CODEX_HERMES_WORK_ANALYSIS",
+      "trigger_examples": [
+        "헤르메스 작업 내용을 분석해",
+        "Hermes가 뭘 했는지 확인해",
+        "Hermes work analysis"
+      ],
+      "required_reads": [
+        "15_hermes_model_merge_from_codex_retrieval_v0.json",
+        "16_hermes_execution_trace_and_codex_reentry_record_v0.json",
+        "17_validation_hermes_merge_from_codex_retrieval_v0.json",
+        "19_CODEX_SPACE_MATURATION_RETURN_PACKET.json",
+        "20_hermes_merge_from_codex_maturation_v0.json",
+        "21_codex_readable_maturation_merge_status_v0.json",
+        "22_validation_codex_maturation_merge_v0.json"
+      ],
+      "return_fields": [
+        "packet_id",
+        "role",
+        "read_files",
+        "hermes_inputs",
+        "space_refs_used",
+        "model_merge_judgment",
+        "execution_decision",
+        "execution_trace",
+        "codex_reentry_record",
+        "space_reinsertion_candidates",
+        "risks",
+        "next_safe_lane",
+        "promotion_status"
+      ]
+    },
+    {
+      "route_id": "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL",
+      "trigger_examples": [
+        "공간자료를 찾아줘",
+        "Hermes Codex retrieval request",
+        "original-related space retrieval"
+      ],
+      "required_reads": [
+        "user_original_or_task_packet",
+        "compact_layer_map",
+        "compact_asset_index",
+        "reference_path_index",
+        "no_mutation_boundary",
+        "retrieval_return_schema"
+      ],
+      "return_fields": [
+        "packet_id",
+        "role",
+        "read_files",
+        "selected_space_material",
+        "rejected_space_material",
+        "original_to_space_fit",
+        "changed_judgment_for_hermes",
+        "risks",
+        "recommended_hermes_merge_inputs",
+        "next_for_hermes",
+        "promotion_status"
+      ]
+    },
+    {
+      "route_id": "CODEX_SPACE_MATURATION_BY_REENTRY_RECORD",
+      "trigger_examples": [
+        "공간 숙성 판단해",
+        "Hermes reentry record available",
+        "mature from reentry"
+      ],
+      "required_reads": [
+        "hermes_execution_trace_and_codex_reentry_record",
+        "hermes_merge_packet",
+        "codex_retrieval_return_packet",
+        "reference_path_index",
+        "no_mutation_boundary",
+        "reentry_instruction"
+      ],
+      "return_fields": [
+        "packet_id",
+        "role",
+        "read_files",
+        "maturation_decision",
+        "space_assets_to_reindex",
+        "gemini_via_codex_script_used",
+        "gemini_findings_ref_or_inline",
+        "changed_judgment",
+        "next_safe_lane",
+        "promotion_status"
+      ]
+    }
+  ],
+  "artifact_channels": [
+    {
+      "channel_id": "HERMES_TO_CODEX_RETRIEVAL_REQUEST",
+      "purpose": "Hermes provides original/task packet and asks Codex to retrieve bounded space material."
+    },
+    {
+      "channel_id": "CODEX_TO_HERMES_RETRIEVAL_RETURN",
+      "purpose": "Codex returns selected/rejected refs and changed judgment for Hermes merge."
+    },
+    {
+      "channel_id": "HERMES_TO_CODEX_REENTRY_RECORD",
+      "purpose": "Hermes records what space was used, how it merged with model reasoning, what execution happened, and what Codex should read next."
+    },
+    {
+      "channel_id": "CODEX_TO_HERMES_MATURATION_RETURN",
+      "purpose": "Codex returns HOLD-only space maturation judgment after reading Hermes reentry."
+    },
+    {
+      "channel_id": "HERMES_TO_CODEX_STATUS_AFTER_MATURATION_MERGE",
+      "purpose": "Hermes accepts or records Codex maturation as evidence/proposal without applying authority."
+    }
+  ],
+  "next_safe_lane": "USE_CODEX_OPERATION_ROUTER_FOR_SPACE_CHECK_OR_HERMES_WORK_ANALYSIS_WITH_HOLD_V0"
+}
+

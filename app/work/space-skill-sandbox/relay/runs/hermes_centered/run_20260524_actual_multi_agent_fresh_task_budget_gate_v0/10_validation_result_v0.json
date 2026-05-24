@@ -1,0 +1,43 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_artifacts_exist",
+      "pass": true
+    },
+    {
+      "check": "codex_gemini_once_each",
+      "pass": true
+    },
+    {
+      "check": "policy_has_heavy_and_fast_triggers",
+      "pass": true
+    },
+    {
+      "check": "budget_thresholds_present",
+      "pass": true
+    },
+    {
+      "check": "agreement_true",
+      "pass": true
+    },
+    {
+      "check": "timings_positive",
+      "observed": {
+        "codex_budget_gate_seconds": 43.35,
+        "gemini_budget_gate_seconds": 40.98
+      },
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "active_endpoint_or_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_ACTUAL_MULTI_AGENT_FRESH_TASK_BUDGET_GATE_WITH_HOLD"
+}

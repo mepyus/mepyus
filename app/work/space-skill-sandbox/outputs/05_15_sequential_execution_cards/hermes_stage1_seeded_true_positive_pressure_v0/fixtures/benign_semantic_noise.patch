@@ -1,0 +1,17 @@
+diff --git a/app/core/runtime/parser.py b/app/core/runtime/parser.py
+new file mode 100644
+--- /dev/null
++++ b/app/core/runtime/parser.py
+@@ -0,0 +1,12 @@
++def parse(sentence_tokens, values):
++    for token in sentence_tokens:
++        token = token.lower()
++    token = _normalize_token(value)
++    token = _normalize_token(str(value).strip())
++    tokens = {_normalize_token(v) for v in values}
++    api_key_name = "field name, not credential"
++    password_label = "label only"
++    credential_kind = "metadata"
++    print_usage = "print( is just text"
++    todo_label = "TODO wording in data"
++    return tokens

@@ -1,0 +1,60 @@
+{
+  "verdict": "S0_S8_ROUTE_MAP_PREPARED_WITH_S8_REHEARSED_AND_EXECUTION_HOLD",
+  "real_lane_active_state": "S4_APPROVAL_GATE_WAITING",
+  "s8_rehearsed": true,
+  "s8_rehearsal_mode": "no_model_no_authority_classification_only",
+  "real_s5_entered": false,
+  "real_s6_entered": false,
+  "real_s7_entered": false,
+  "real_s8_authority_entered": false,
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "states": [
+    {
+      "state": "S0_DRY_RUN_PROOF",
+      "status": "completed",
+      "meaning": "template_instance_dry_run_v0 preserved"
+    },
+    {
+      "state": "S1_EXECUTION_STRUCTURE_PREP",
+      "status": "completed",
+      "meaning": "packet/prompts/contracts prepared"
+    },
+    {
+      "state": "S2_REVIEW_ONLY_PREFLIGHT",
+      "status": "completed",
+      "meaning": "local preflight + Codex review-only prompt"
+    },
+    {
+      "state": "S3_EXECUTION_HARNESS_READY",
+      "status": "completed",
+      "meaning": "guarded runner/materializer/validators/closeout scripts"
+    },
+    {
+      "state": "S4_APPROVAL_GATE_WAITING",
+      "status": "active",
+      "meaning": "real execution blocked until explicit approval"
+    },
+    {
+      "state": "S5_GEMINI_SPACE_MEDIATED_RUN",
+      "status": "not_entered",
+      "meaning": "requires approval yes; writes real gemini raw/lite"
+    },
+    {
+      "state": "S6_CODEX_SPACE_MEDIATED_RECOVERY",
+      "status": "not_entered",
+      "meaning": "requires valid real Gemini outputs; writes real Codex recovery"
+    },
+    {
+      "state": "S7_HERMES_RECEIPT_REPORT_CLOSEOUT",
+      "status": "not_entered",
+      "meaning": "requires real Gemini+Codex outputs; writes real receipt/report"
+    },
+    {
+      "state": "S8_VECTORFL_RECOVERY_GATE",
+      "status": "rehearsed_no_authority_only",
+      "meaning": "synthetic/no-model classification candidate; no authority mutation"
+    }
+  ],
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

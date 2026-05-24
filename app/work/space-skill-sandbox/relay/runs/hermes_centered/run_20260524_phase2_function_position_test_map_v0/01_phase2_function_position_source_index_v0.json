@@ -1,0 +1,46 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "User gives structural correction and asks to rethink Phase2; use actual space reports to create work/test map. No immediate Codex/Gemini needed unless next selected function has ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_phase2_function_position_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_ACTUAL_MULTI_AGENT_SCENARIO1_PROCESS_TEST_20260524_V0.json",
+      "ref_id": "phase1_whole_flow",
+      "sha256": "cd5edadb0258afa87916125ae45152b1655673dacbc0d5d00e536c74e13580cf",
+      "used_for": "build phase1->phase2->phase3 test map"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+      "ref_id": "phase2_initial_structure",
+      "sha256": "4694c3c5db4e2a832133a83414137ede5e63228e0026156f4e9bbea62a380ee6",
+      "used_for": "build phase1->phase2->phase3 test map"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0.json",
+      "ref_id": "convergence_correction",
+      "sha256": "d13268da3c48cde221992e46026df55d92099bdea6b6a5ef15061f14ea447de7",
+      "used_for": "build phase1->phase2->phase3 test map"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_CONVERGENCE_CORRECTION_20260524_V0.md",
+      "ref_id": "latest_next",
+      "sha256": "54ae0c838b238a645e2f7cc08b8fedb7ad3f586ce64746de07acaf8626bfffa5",
+      "used_for": "build phase1->phase2->phase3 test map"
+    }
+  ]
+}

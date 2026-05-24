@@ -1,0 +1,15 @@
+{
+  "case_id": "ELP-NEG-HOLD-001",
+  "event_type": "shared_db_ambiguity",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface"
+  ],
+  "claim_language": "write to the shared ops DB unless it already exists",
+  "expected_record": "HOLD_STOP_REVIEW_SHARED_DB_LANGUAGE",
+  "expected_recovery": "HOLD_STOP_REVIEW",
+  "target_store": "ambiguous_shared_db",
+  "approval_applied": "no"
+}

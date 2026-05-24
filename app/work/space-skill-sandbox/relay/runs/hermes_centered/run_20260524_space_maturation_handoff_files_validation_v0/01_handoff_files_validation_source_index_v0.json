@@ -1,0 +1,83 @@
+{
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "Validate readability/shape and draft user Codex instructions from existing files. No live Codex/Gemini needed.",
+    "selected_mode": "FAST_NO_CALL_SCRIPT_ONLY_VALIDATION"
+  },
+  "draft_files": [
+    {
+      "bytes": 684,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/03_VECTORFL_CURRENT_SPACE_HANDOFF_DRAFT.md",
+      "sha256": "15003f9295234c614df06f6730247ebc2e54cd29d6d15b1fb9420a526b53dd81"
+    },
+    {
+      "bytes": 3687,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/04_VECTORFL_SPACE_LAYER_MAP_DRAFT.json",
+      "sha256": "ffec8c17a11941f7f4ed3f1f1d404f221846d01a2c0293ae4597e2cde112aac7"
+    },
+    {
+      "bytes": 6935,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/05_VECTORFL_ASSET_INDEX_DRAFT.json",
+      "sha256": "3d63eb697768067377c2820e7ac7a128e93ee130307bf8c6a3d1e91733a53dd9"
+    },
+    {
+      "bytes": 887,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/06_VECTORFL_CODEX_SPACE_STEWARD_GUIDE_DRAFT.md",
+      "sha256": "b1b3081f5742af7685b1f4b597d9c4f99e06ff392846f515dc460cbcaf3f6338"
+    },
+    {
+      "bytes": 928,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/07_VECTORFL_GEMINI_LAYER_READER_GUIDE_DRAFT.md",
+      "sha256": "733b4360c67534f5b96a0db00fc58db9bf3dd31da407c3d18b77b7fa131c82cd"
+    },
+    {
+      "bytes": 1272,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/08_VECTORFL_SPACE_MATURATION_PACKET_SCHEMA_DRAFT.json",
+      "sha256": "91dc346a68aa5fb87972bec871035ddc4d847b6ede6dbb3120270a661e5be337"
+    },
+    {
+      "bytes": 479,
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md",
+      "sha256": "834cc2126899404160ebe747970f218945409293c1403a0f62c7a82ef8e27514"
+    }
+  ],
+  "packet_id": "01_handoff_files_validation_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_20260524_V0.json",
+      "ref_id": "handoff_spec_root",
+      "sha256": "6e7e5aad08c75f8a1d360d57f3ad5c2acee94ea9c8668e6315baf0e8f7e2a027",
+      "used_for": "root spec and draft file list"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_SPACE_MATURATION_HANDOFF_SPEC_20260524_V0.md",
+      "ref_id": "next_after_handoff_spec",
+      "sha256": "21b95738c2c7d3659dbfa758a217aad91283cdc4a9326cc5d1f20b74c077f71a",
+      "used_for": "validation lane scope"
+    }
+  ],
+  "user_original_verbatim_sha256": "e460ce5f1a8c26bb11b870a7caa5c1e2a9286ca2c71d926e994f9be8b07efe81"
+}

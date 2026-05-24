@@ -1,0 +1,38 @@
+{
+  "active_hits": 0,
+  "asset_index_items": 12,
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "Validate readability/shape and draft user Codex instructions from existing files. No live Codex/Gemini needed.",
+    "selected_mode": "FAST_NO_CALL_SCRIPT_ONLY_VALIDATION"
+  },
+  "checks": 15,
+  "codex_input_minimum_count": 6,
+  "codex_instruction_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/03_USER_INSTRUCTION_FOR_CODEX_SPACE_STEWARD_DRY_RUN.md",
+  "compact_files_added": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/06_VECTORFL_SPACE_LAYER_MAP_COMPACT.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/07_VECTORFL_ASSET_INDEX_COMPACT.json"
+  ],
+  "current_position_candidate": "SPACE_MATURATION_HANDOFF_FILES_VALIDATED_WITH_CODEX_INSTRUCTIONS_HOLD",
+  "elapsed_seconds": 0.0017193109999999977,
+  "gemini_input_minimum_count": 4,
+  "gemini_instruction_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/04_USER_INSTRUCTION_FOR_GEMINI_LAYER_READER_AFTER_CODEX.md",
+  "next_safe_lane": "OPTIONAL_BOUNDED_CODEX_SPACE_STEWARD_DRY_RUN_OR_HOLD_V0",
+  "observed_correction": "Full layer map and asset index were readable but slightly long; compact defaults added for faster Codex/Gemini first pass.",
+  "report_id": "VECTORFL_SPACE_MATURATION_HANDOFF_FILES_VALIDATION_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0",
+  "verdict": "PASS_SPACE_MATURATION_HANDOFF_FILES_VALIDATION_WITH_CODEX_INSTRUCTIONS_HOLD"
+}

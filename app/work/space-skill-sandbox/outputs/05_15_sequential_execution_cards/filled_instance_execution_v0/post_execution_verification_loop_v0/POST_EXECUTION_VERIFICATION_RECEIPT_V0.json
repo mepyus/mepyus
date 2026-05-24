@@ -1,0 +1,270 @@
+{
+  "verdict": "POST_EXECUTION_VERIFICATION_LOOP_PASS_CANDIDATE_WITH_PROMOTION_HOLD",
+  "created_at_utc": "2026-05-17T10:01:07Z",
+  "base": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0",
+  "results": {
+    "t1_evidence_integrity_check": {
+      "pass": true,
+      "missing": [],
+      "parse_errors": {},
+      "evidence_count": 15
+    },
+    "t2_scope_gap_review": {
+      "pass": true,
+      "observed_scope_count": 5,
+      "uncertainties_count": 3,
+      "do_not_promote_count": 2,
+      "scope_line_hits": [
+        {
+          "source": "gemini_raw",
+          "line": 2,
+          "text": "  \"observed_scope\": ["
+        },
+        {
+          "source": "gemini_raw",
+          "line": 17,
+          "text": "    \"Workspace boundary restriction preventing access to primary inputs (Section 5 of bridge packet)\","
+        },
+        {
+          "source": "gemini_raw",
+          "line": 21,
+          "text": "  \"uncertainties\": ["
+        },
+        {
+          "source": "gemini_raw",
+          "line": 22,
+          "text": "    \"Placement of primary input files in unreachable sibling directories relative to the execution workbench\","
+        },
+        {
+          "source": "gemini_raw",
+          "line": 23,
+          "text": "    \"Availability of manual relay mechanism to provide content from inaccessible inputs\","
+        },
+        {
+          "source": "gemini_raw",
+          "line": 27,
+          "text": "    \"Boundary Violation: Primary inputs reside outside the workspace directory\","
+        },
+        {
+          "source": "gemini_raw",
+          "line": 29,
+          "text": "    \"Incomplete Review: Bulk review scope is limited to contract assets, excluding primary operation test assets\""
+        },
+        {
+          "source": "gemini_raw",
+          "line": 31,
+          "text": "  \"do_not_promote\": ["
+        },
+        {
+          "source": "gemini_raw",
+          "line": 32,
+          "text": "    \"Any logic or component derived from inaccessible primary inputs\","
+        },
+        {
+          "source": "gemini_raw",
+          "line": 37,
+          "text": "    \"How should the execution proceed if primary inputs in sibling directories remain unreachable?\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 2,
+          "text": "  \"observed_scope\": ["
+        },
+        {
+          "source": "gemini_lite",
+          "line": 17,
+          "text": "    \"Workspace boundary restriction preventing access to primary inputs (Section 5 of bridge packet)\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 21,
+          "text": "  \"uncertainties\": ["
+        },
+        {
+          "source": "gemini_lite",
+          "line": 22,
+          "text": "    \"Placement of primary input files in unreachable sibling directories relative to the execution workbench\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 23,
+          "text": "    \"Availability of manual relay mechanism to provide content from inaccessible inputs\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 27,
+          "text": "    \"Boundary Violation: Primary inputs reside outside the workspace directory\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 29,
+          "text": "    \"Incomplete Review: Bulk review scope is limited to contract assets, excluding primary operation test assets\""
+        },
+        {
+          "source": "gemini_lite",
+          "line": 31,
+          "text": "  \"do_not_promote\": ["
+        },
+        {
+          "source": "gemini_lite",
+          "line": 32,
+          "text": "    \"Any logic or component derived from inaccessible primary inputs\","
+        },
+        {
+          "source": "gemini_lite",
+          "line": 37,
+          "text": "    \"How should the execution proceed if primary inputs in sibling directories remain unreachable?\","
+        },
+        {
+          "source": "codex_return",
+          "line": 25,
+          "text": "codex_read_scope: exactly_four_declared_inputs"
+        },
+        {
+          "source": "codex_return",
+          "line": 26,
+          "text": "codex_write_scope: declared_recovery_return_only"
+        },
+        {
+          "source": "codex_return",
+          "line": 28,
+          "text": "actual_gemini_scope"
+        },
+        {
+          "source": "codex_return",
+          "line": 29,
+          "text": "Gemini's actual observed scope, as represented by both lite JSON and raw output, was limited to:"
+        },
+        {
+          "source": "codex_return",
+          "line": 36,
+          "text": "Gemini did not establish direct review of the declared primary reference files in sibling candidate/test directories. Any Gemini item depending on those unavailable primary inputs is only a boundary observation or uncertainty, not recovered evidence."
+        },
+        {
+          "source": "codex_return",
+          "line": 41,
+          "text": "- any conclusion that inaccessible primary inputs were reviewed"
+        },
+        {
+          "source": "codex_return",
+          "line": 47,
+          "text": "- workspace boundary restriction preventing access to primary inputs"
+        },
+        {
+          "source": "codex_return",
+          "line": 50,
+          "text": "- availability of a manual relay mechanism for inaccessible inputs"
+        },
+        {
+          "source": "codex_return",
+          "line": 58,
+          "text": "- Gemini conclusion treated as truth beyond its observed scope"
+        },
+        {
+          "source": "codex_return",
+          "line": 59,
+          "text": "- Gemini scope overread as including inaccessible primary reference files"
+        },
+        {
+          "source": "codex_return",
+          "line": 81,
+          "text": "Hermes may record this recovery return in the approved execution receipt/report only, preserving promotion hold and marking Gemini's observed scope as limited to the five reported filled-instance contract/readiness assets."
+        },
+        {
+          "source": "s8_report",
+          "line": 16,
+          "text": "  gemini_scope_limited: True"
+        },
+        {
+          "source": "s8_report",
+          "line": 19,
+          "text": "  - Gemini did not establish direct review of inaccessible primary sibling inputs"
+        },
+        {
+          "source": "s8_report",
+          "line": 20,
+          "text": "  - Codex explicitly downgraded Gemini conclusions beyond observed scope"
+        },
+        {
+          "source": "s8_report",
+          "line": 31,
+          "text": "  Gemini limited scope overread as source review"
+        }
+      ]
+    },
+    "t3_codex_recovery_quality_review": {
+      "pass": true,
+      "required_codex_presence": {
+        "CODEX_RECOVERY_DONE": true,
+        "actual_gemini_scope": true,
+        "premature_claims_removed": true
+      },
+      "forbidden_hits": []
+    },
+    "t4_hermes_closeout_consistency_review": {
+      "pass": true,
+      "fields": {
+        "state_active": "S8_VECTORFL_RECOVERY_GATE_CLASSIFICATION_COMPLETE",
+        "state_promotion": false,
+        "state_authority": false,
+        "state_recovery_class": "candidate",
+        "dashboard_state": "S8_VECTORFL_RECOVERY_GATE_CLASSIFICATION_COMPLETE",
+        "dashboard_promotion": false,
+        "dashboard_authority": false,
+        "dashboard_class": "candidate",
+        "hermes_gemini": true,
+        "hermes_codex": true,
+        "hermes_promotion": false,
+        "hermes_authority": false,
+        "s8_classification": "candidate",
+        "s8_promotion": false,
+        "s8_authority": false,
+        "post_index_s8_classification": "candidate",
+        "post_index_promotion": false,
+        "post_index_authority": false
+      },
+      "contradictions": []
+    },
+    "t5_s8_classification_review": {
+      "pass": true,
+      "why_not_component": [
+        "Gemini did not establish direct review of inaccessible primary sibling inputs",
+        "Codex explicitly downgraded Gemini conclusions beyond observed scope",
+        "approved_promotion remains no",
+        "approved_vectorfl_authority_mutation remains no"
+      ],
+      "conditions": {
+        "no_missing_inputs": true,
+        "hermes_promotion_false": true,
+        "hermes_authority_false": true,
+        "codex_promotion_hold": true,
+        "codex_completion": true,
+        "gemini_completion": true,
+        "gemini_scope_limited": true
+      },
+      "limitation": "Gemini could not directly access declared primary sibling inputs; recovery class remains candidate, not component"
+    },
+    "t6_regression_guard_update": {
+      "pass": true,
+      "runner": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_verification_loop_v0/RUN_POST_EXECUTION_SAFE_REGRESSION_V0.sh",
+      "note": "post-execution runner does not call run-gemini-after-approval or run-codex-after-approval"
+    },
+    "t7_promotion_gate_packet_prepare_only": {
+      "pass": true,
+      "packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_verification_loop_v0/PROMOTION_GATE_REVIEW_ONLY_PACKET_V0.md",
+      "promotion_approved": false
+    },
+    "t8_final_s8_watch_closeout": {
+      "pass": true,
+      "watch_closeout": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_verification_loop_v0/FINAL_S8_WATCH_CLOSEOUT_V0.md"
+    }
+  },
+  "non_actions": [
+    "no Gemini execution",
+    "no Codex execution",
+    "no model API transport",
+    "no promotion",
+    "no VectorFL authority mutation"
+  ],
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

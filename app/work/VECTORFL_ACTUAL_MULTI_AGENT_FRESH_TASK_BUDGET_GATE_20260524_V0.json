@@ -1,0 +1,37 @@
+{
+  "active_hits": 0,
+  "budget_thresholds": {
+    "budgeted_heavy_target_seconds": "60-90s using Codex 1 + Gemini 1 + Hermes merge, no post-review unless drift",
+    "fast_target_seconds": "<5s local validators/artifact writes",
+    "full_heavy_expected_seconds": "120s+ when Codex/Gemini post-review both run",
+    "post_review_gate": "run one post reviewer only if Codex/Gemini disagree, STOP/HOLD_STOP_REVIEW appears, or reinsertion effect is unclear"
+  },
+  "checks": 8,
+  "codex_seconds": 43.35,
+  "current_position_candidate": "ACTUAL_MULTI_AGENT_FRESH_TASK_BUDGET_GATE_PASSED_WITH_HOLD",
+  "default_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+  "fast_triggers": [
+    "small continuation from known safe lane",
+    "shape/receipt/trace local validation only",
+    "repeatability already passed and no new layer pressure",
+    "operator needs quick status/recovery surface",
+    "no fresh spatial ambiguity and no external agent insight needed"
+  ],
+  "gemini_seconds": 40.98,
+  "heavy_triggers": [
+    "user explicitly asks for actual Hermes/Codex/Gemini participation",
+    "task changes VectorFL operating principle or architecture",
+    "space interpretation is ambiguous across layers",
+    "drift/risk class appears: model-only merge, missing current-position, authority drift, hidden receipt failure, endpoint/API drift",
+    "promotion/authority pressure exists but must remain HOLD",
+    "fresh task requires cross-agent comparison not just artifact validation"
+  ],
+  "meaning": "Fresh concrete task was handled by actual Hermes+Codex+Gemini budgeted heavy mode: one Codex, one Gemini, Hermes merge/execute, no post-review because agent outputs agreed and no drift appeared.",
+  "next_safe_lane": "APPLY_BUDGET_GATE_TO_NEXT_REAL_VECTORFL_TASK_WITH_FAST_FIRST_MODE_V0",
+  "post_review": "SKIPPED_BY_BUDGET_GATE",
+  "report_id": "VECTORFL_ACTUAL_MULTI_AGENT_FRESH_TASK_BUDGET_GATE_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_fresh_task_budget_gate_v0",
+  "task": "Budget gate for heavy actual Hermes+Codex+Gemini vs fast no-call/local validation",
+  "total_external_seconds": 84.33,
+  "verdict": "PASS_ACTUAL_MULTI_AGENT_FRESH_TASK_BUDGET_GATE_WITH_HOLD"
+}

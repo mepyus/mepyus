@@ -1,0 +1,116 @@
+{
+  "active_hits": 0,
+  "attached_phase1_stage": "S7_BUDGET_GATE",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "S7 is deterministic rollup over completed S1-S6 evidence; no fresh external-agent ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "budget_session_log": {
+    "FAST_NO_CALL_LOCAL_VALIDATION": [
+      "S1",
+      "S2",
+      "S3",
+      "S6",
+      "S7"
+    ],
+    "HEAVY_BUDGETED": [
+      "S4/S5"
+    ],
+    "codex_actual_runs": 1,
+    "gemini_actual_runs": 1,
+    "post_review_runs": 0,
+    "post_review_skip_reason": "S4/S5 outputs were complementary and non-conflicting; no STOP/HOLD_STOP_REVIEW or unclear reinsertion effect."
+  },
+  "checks": 16,
+  "current_position_candidate": "S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.0019269820000000007,
+  "next_safe_lane": "PHASE2_TO_PHASE3_REVISION_PLAN_FROM_ACCUMULATED_FUNCTION_TESTS_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "The rollup reveals several good Phase3 candidates, but applying them now would violate the user’s rule against one-by-one convergence. S7 should separate repeated-pattern evidence from actual Phase3 revision work.",
+    "gap_id": "S7_GAP_ROLLUP_CAN_BECOME_PREMATURE_PHASE3_FIX_LIST",
+    "severity": "HIGH",
+    "single_observation": false
+  },
+  "patterns_count": 5,
+  "phase2_completion_status": "S1_S2_S3_S4_S5_S6_S7_PLACEMENT_TESTS_COMPLETED_WITH_HOLD",
+  "phase3_backlog_delta": {
+    "candidate": "PHASE3_REVISION_SHOULD_USE_S1_S7_ROLLUP_NOT_SINGLE_FIXES",
+    "pattern_ids": [
+      "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "P5_SOURCE_SELECTION_REJECTION_LOG"
+    ],
+    "reason": "S1-S7 evidence now supplies a whole-flow basis for Phase3 revision; fixes should be batched by repeated pattern, not patched immediately.",
+    "status": "READY_FOR_PHASE3_PLANNING_HOLD_NOT_APPLIED"
+  },
+  "promotion_status": "HOLD",
+  "repeated_patterns_and_phase3_basis": [
+    {
+      "evidence": [
+        "S3 status card can lose explicit delta",
+        "S4 Codex reentry surface can lose packet-level evidence",
+        "S6 surface can be safe but too summary"
+      ],
+      "pattern_id": "P1_REENTRY_SURFACE_DELTA_LOSS",
+      "phase3_revision_basis": "If repeated after S7, require minimal space delta line across merge/output/operator surfaces.",
+      "seen_in": [
+        "S3",
+        "S4/S5",
+        "S6"
+      ]
+    },
+    {
+      "evidence": [
+        "short continuation carries little content",
+        "latest next-lane card disambiguates each step"
+      ],
+      "pattern_id": "P2_CONTINUATION_NEEDS_SPACE_NEXT_LOOKUP",
+      "phase3_revision_basis": "If repeated, intake gate should require latest next-lane lookup for continuation-only prompts.",
+      "seen_in": [
+        "S1",
+        "S6/S7 continuation chain"
+      ]
+    },
+    {
+      "evidence": [
+        "NON_VALIDATOR_TARGET substring false positive",
+        "not validator/checklist hardening exclusion phrase false positive"
+      ],
+      "pattern_id": "P3_VALIDATOR_WORDING_SCOPE_FALSE_POSITIVE",
+      "phase3_revision_basis": "If repeated, validator/string scans must distinguish exclusion wording from target classification.",
+      "seen_in": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "evidence": [
+        "Codex/Gemini were complementary but had minor overlap around generic status-card risk"
+      ],
+      "pattern_id": "P4_ROLE_DISTINCTION_NEEDS_UNIQUE_DELTA_METRIC",
+      "phase3_revision_basis": "If repeated, add role-handoff value metric to separate productive overlap from duplication.",
+      "seen_in": [
+        "S4/S5"
+      ]
+    },
+    {
+      "evidence": [
+        "selected refs alone are insufficient; rejected refs with reasons prevent archaeology/decorative refs"
+      ],
+      "pattern_id": "P5_SOURCE_SELECTION_REJECTION_LOG",
+      "phase3_revision_basis": "If repeated, source-selection policy should require rejected-ref logging.",
+      "seen_in": [
+        "S2"
+      ]
+    }
+  ],
+  "report_id": "VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s7_budget_gate_phase2_rollup_v0",
+  "tested_function": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP",
+  "verdict": "PASS_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_WITH_HOLD"
+}

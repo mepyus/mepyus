@@ -1,0 +1,90 @@
+{
+  "classification": "HOLD_CANDIDATE_DECISION_TABLE",
+  "decision_table": [
+    {
+      "class": "FAIL_AUTHORITY_OVERPROMOTION",
+      "detect_when": [
+        "promotion_status != HOLD",
+        "current_position_apply != NO",
+        "authority_effect != NO_AUTHORITY_MUTATION",
+        "authority/current-position/registry used as writable authority"
+      ],
+      "masks": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+        "FAIL_OPERATOR_OVERLOAD",
+        "FAIL_NO_SPACE_REFERENCE"
+      ],
+      "priority": 1,
+      "reason": "Authority drift changes governance boundary and must be seen first."
+    },
+    {
+      "class": "FAIL_OPERATOR_OVERLOAD",
+      "detect_when": [
+        "len(space_references_used) > max_default_refs and heavy_escalation_triggered != true",
+        "T_brain_operator_load starts with FAIL"
+      ],
+      "masks": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ],
+      "priority": 2,
+      "reason": "Too much space archaeology can hide as citation-shape failure but is primarily human-load drift."
+    },
+    {
+      "class": "FAIL_HEAVY_ESCALATION_MISSING",
+      "detect_when": [
+        "source refs conflict and heavy_escalation_triggered != true",
+        "space_reference_delta unclear but mode remains fast"
+      ],
+      "masks": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+        "FAIL_NO_SPACE_REFERENCE"
+      ],
+      "priority": 3,
+      "reason": "Conflict means the budget gate, not just citation shape, failed."
+    },
+    {
+      "class": "FAIL_MODEL_ONLY_DRIFT",
+      "detect_when": [
+        "space_references_used empty and why_not_model_only claims model reasoning only",
+        "space_reference_delta empty and output asserts model-only rule"
+      ],
+      "masks": [
+        "FAIL_NO_SPACE_REFERENCE"
+      ],
+      "priority": 4,
+      "reason": "No-space can be mere missing context, but model-only claim is stronger drift."
+    },
+    {
+      "class": "FAIL_NO_SPACE_REFERENCE",
+      "detect_when": [
+        "space_references_used empty",
+        "immediate predecessor/latest next-work ref missing"
+      ],
+      "masks": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ],
+      "priority": 5,
+      "reason": "Missing space layer blocks Phase2 packet before per-ref citation quality."
+    },
+    {
+      "class": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+      "detect_when": [
+        "ref lacks matching delta",
+        "changed_judgment blank/too short",
+        "used_for exists but does not alter judgment"
+      ],
+      "masks": [],
+      "priority": 6,
+      "reason": "Citation-quality failure is real, but lower priority than governance/load/conflict failures."
+    }
+  ],
+  "elapsed_seconds": 1.2340999091975391e-05,
+  "not_authority": [
+    "not schema",
+    "not router",
+    "not registry",
+    "not current-position",
+    "not promotion"
+  ],
+  "table_id": "PHASE2_GUARD_PRIORITY_MINI_DECISION_TABLE_V0"
+}

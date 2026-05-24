@@ -1,0 +1,13 @@
+diff --git a/tests/fixtures/test_security_examples.py b/tests/fixtures/test_security_examples.py
+index bbb1111..ccc2222 100644
+--- a/tests/fixtures/test_security_examples.py
++++ b/tests/fixtures/test_security_examples.py
+@@ -1,6 +1,11 @@
+ def test_detect_secret_examples():
+-    sample = {}
++    sample = {
++        "api_key": "sk_live_test_fixture_only",
++        "password": "example",
++    }
++    print("DEBUG test fixture", sample)
++    assert sample["api_key"].startswith("sk_live")

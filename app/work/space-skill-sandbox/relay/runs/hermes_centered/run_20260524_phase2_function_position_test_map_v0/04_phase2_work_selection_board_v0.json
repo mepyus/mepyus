@@ -1,0 +1,89 @@
+{
+  "classification": "PHASE2_WORK_SELECTION_BOARD_HOLD",
+  "columns": [
+    "candidate_work",
+    "why_now",
+    "phase",
+    "attached_phase1_stage",
+    "required_space_refs",
+    "expected_space_reference_delta",
+    "codex_gemini_need",
+    "operator_load_risk",
+    "phase3_backlog_delta"
+  ],
+  "next_recommended": "S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "packet_id": "04_phase2_work_selection_board_v0",
+  "promotion_status": "HOLD",
+  "rows": [
+    {
+      "attached_phase1_stage": "S1_INTAKE",
+      "candidate_work": "Test S1 intake/original preservation on a small real instruction",
+      "codex_gemini_need": "FAST unless classification ambiguous",
+      "expected_space_reference_delta": "Distinguish light tasks vs space-affecting tasks before merge.",
+      "operator_load_risk": "LOW",
+      "phase": "Phase2 now",
+      "phase3_backlog_delta": "If ambiguity repeats, revise intake gate globally.",
+      "required_space_refs": [
+        "phase1_whole_flow",
+        "phase2_matrix"
+      ],
+      "why_now": "Every later function depends on correct original preservation and task classification."
+    },
+    {
+      "attached_phase1_stage": "S2_SPACE_SELECTION",
+      "candidate_work": "Test S2 source-selection on one real non-validator target",
+      "codex_gemini_need": "FAST, HEAVY if refs conflict",
+      "expected_space_reference_delta": "Show which refs changed judgment and which refs were rejected.",
+      "operator_load_risk": "MEDIUM",
+      "phase": "Phase2 now",
+      "phase3_backlog_delta": "Collect missing/ref-overload patterns.",
+      "required_space_refs": [
+        "phase1_whole_flow",
+        "source_selection_rule",
+        "latest_next"
+      ],
+      "why_now": "Space reference is core; must avoid model-only and avoid archaeology."
+    },
+    {
+      "attached_phase1_stage": "S3_HERMES_MERGE_EXECUTION",
+      "candidate_work": "Test S3 Hermes merge trace on a small real output",
+      "codex_gemini_need": "HEAVY if merge interpretation is layered or contested",
+      "expected_space_reference_delta": "Prove space refs altered merge/execution result.",
+      "operator_load_risk": "MEDIUM",
+      "phase": "Phase2 now",
+      "phase3_backlog_delta": "Accumulate merge contract revisions.",
+      "required_space_refs": [
+        "phase1_whole_flow",
+        "phase2_internal_structure"
+      ],
+      "why_now": "Phase2 must verify function placement in actual Hermes execution, not only validators."
+    },
+    {
+      "attached_phase1_stage": "S4_CODEX_EVALUATION / S5_GEMINI_LAYER_JUDGMENT",
+      "candidate_work": "Test S4/S5 Codex-Gemini role handoff on one bounded result",
+      "codex_gemini_need": "HEAVY_BUDGETED",
+      "expected_space_reference_delta": "Identify where Codex/Gemini add non-duplicate value.",
+      "operator_load_risk": "HIGH",
+      "phase": "Phase2 now after S1-S3 small tests",
+      "phase3_backlog_delta": "Role boundary revisions.",
+      "required_space_refs": [
+        "phase1_whole_flow",
+        "actual multi-agent comparison"
+      ],
+      "why_now": "User specifically wants Codex evaluating Hermes result and Gemini evaluating structure/layers."
+    },
+    {
+      "attached_phase1_stage": "S6_OPERATOR_RECEIPT_REENTRY",
+      "candidate_work": "Checklist/validator negative hardening",
+      "codex_gemini_need": "FAST later",
+      "expected_space_reference_delta": "N/A until enough Phase2 observations accumulate.",
+      "operator_load_risk": "MEDIUM",
+      "phase": "Phase3 backlog",
+      "phase3_backlog_delta": "Already deferred.",
+      "required_space_refs": [
+        "deferred backlog"
+      ],
+      "why_now": "Useful but too inward now."
+    }
+  ]
+}

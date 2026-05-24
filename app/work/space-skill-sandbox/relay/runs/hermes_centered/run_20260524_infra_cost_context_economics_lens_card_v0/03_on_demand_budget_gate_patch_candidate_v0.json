@@ -1,0 +1,48 @@
+{
+  "after": "Codex/Gemini provider-backed CLI is not default; it is allowed only for fresh space reference, Codex-side layer ambiguity, or explicit user approval.",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "before": "Codex/Gemini could be over-used for actual test/repeatability even when no fresh space reference was needed.",
+  "gate_matrix": [
+    {
+      "case": "inventory/status/list/repeatability",
+      "codex": "NO",
+      "gemini": "NO",
+      "route": "Hermes local deterministic validation"
+    },
+    {
+      "case": "fresh original needs unknown space refs",
+      "codex": "MAYBE_ON_DEMAND",
+      "gemini": "NO",
+      "route": "Codex retrieval packet/read-first first"
+    },
+    {
+      "case": "Hermes reentry creates maturation ambiguity",
+      "codex": "MAYBE_ON_DEMAND",
+      "gemini": "NO_BY_HERMES",
+      "route": "Codex maturation"
+    },
+    {
+      "case": "Codex judges layer analysis needed",
+      "codex": "YES_OWNER",
+      "gemini": "MAYBE_CODEX_SIDE",
+      "route": "Codex-authored Gemini request + lite/raw/receipt"
+    },
+    {
+      "case": "future direct API integration needed",
+      "codex": "SEPARATE_SETUP_LATER",
+      "gemini": "SEPARATE_SETUP_LATER",
+      "route": "Do not prebuild now"
+    }
+  ],
+  "packet_id": "03_on_demand_budget_gate_patch_candidate_v0",
+  "promotion_status": "HOLD",
+  "reject_conditions": [
+    "No fresh space reference needed",
+    "Existing return packet sufficient",
+    "Prompt would include large raw corpus without read-first/index/lite reduction",
+    "Operator-load increases without changed_judgment benefit",
+    "User did not approve heavy provider-backed call"
+  ],
+  "rule_name": "ON_DEMAND_CODEX_GEMINI_INFRA_COST_GATE",
+  "status": "HOLD_PATCH_CANDIDATE_NO_APPLY"
+}

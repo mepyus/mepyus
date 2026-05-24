@@ -1,0 +1,25 @@
+{
+  "active_hits": 0,
+  "checks": 8,
+  "current_position_candidate": "APPLY_BUDGET_GATE_FAST_FIRST_PASSED_WITH_HOLD",
+  "fast_trigger_hits": [
+    "small continuation from known safe lane",
+    "operator needs quick status/recovery surface",
+    "no fresh spatial ambiguity and no external agent insight needed"
+  ],
+  "heavy_trigger_hits": [],
+  "meaning": "Budget gate was actually applied to the next continuation request. Because no explicit heavy-agent request or new drift/ambiguity appeared, Hermes stayed fast-first and avoided Codex/Gemini CLI calls.",
+  "next_safe_lane": "FAST_FIRST_REAL_TASK_INTAKE_AND_ESCALATION_WATCH_V0",
+  "reason": "Continuation after a passed safe lane; no explicit actual multi-agent request; no new architecture/principle change; no drift signal.",
+  "report_id": "VECTORFL_APPLY_BUDGET_GATE_FAST_FIRST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_apply_budget_gate_fast_first_v0",
+  "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+  "timings": {
+    "gate_decision_seconds": 0.000284,
+    "route_card_seconds": 0.000425,
+    "source_read_seconds": 0.001134,
+    "total_seconds": 0.001843
+  },
+  "user_original": "응 계속해보자!!",
+  "verdict": "PASS_APPLY_BUDGET_GATE_FAST_FIRST_WITH_HOLD"
+}

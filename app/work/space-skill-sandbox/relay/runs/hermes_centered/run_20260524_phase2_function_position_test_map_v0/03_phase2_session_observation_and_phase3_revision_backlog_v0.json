@@ -1,0 +1,54 @@
+{
+  "initial_observations": [
+    {
+      "attached_phase1_stage": "S7_BUDGET_GATE / S6_OPERATOR_RECEIPT_REENTRY",
+      "local_patch_or_watch": "deferred to Phase3 backlog",
+      "observed_gap": "validator/checklist hardening continued after it became Phase3-like",
+      "phase3_revision_candidate": "Add anti-convergence lane classifier before continuing any Phase2 subtest.",
+      "repeat_count": 1,
+      "return_condition": "When Phase2 work board shows enough real function tests.",
+      "session_id": "phase2_convergence_correction",
+      "severity": "HIGH",
+      "tested_function": "phase2 lane selection"
+    },
+    {
+      "attached_phase1_stage": "S2_SPACE_SELECTION / S6_OPERATOR_RECEIPT_REENTRY",
+      "local_patch_or_watch": "scan generated evidence artifacts, not validator source",
+      "observed_gap": "self-scan false positive from validator source literals",
+      "phase3_revision_candidate": "Standardize forbidden-pattern scan scope across validators.",
+      "repeat_count": 1,
+      "return_condition": "If reused by multiple validators.",
+      "session_id": "phase2_decision_table_applied_validator",
+      "severity": "MEDIUM",
+      "tested_function": "guard priority classifier"
+    },
+    {
+      "attached_phase1_stage": "S2_SPACE_SELECTION",
+      "local_patch_or_watch": "priority order repaired",
+      "observed_gap": "severe drift masked by decorative citation failure",
+      "phase3_revision_candidate": "Global failure-class priority table.",
+      "repeat_count": 1,
+      "return_condition": "If two or more function tests reveal masking.",
+      "session_id": "phase2_source_selection_negative_drift",
+      "severity": "HIGH",
+      "tested_function": "source-selection failure classifier"
+    }
+  ],
+  "observation_fields": [
+    "session_id",
+    "tested_function",
+    "attached_phase1_stage",
+    "space_refs_used",
+    "space_reference_delta",
+    "observed_gap",
+    "local_patch_or_watch",
+    "phase3_revision_candidate",
+    "severity",
+    "repeat_count",
+    "return_condition"
+  ],
+  "packet_id": "03_phase2_session_observation_and_phase3_revision_backlog_v0",
+  "phase3_rule": "Do not modify globally from a single Phase2 observation unless it blocks safety/authority. Accumulate observations and revise based on whole-flow impact.",
+  "promotion_status": "HOLD",
+  "purpose": "During each Phase2 function test, log shortages/fixes/watches so Phase3 can revise globally instead of one-by-one convergence."
+}

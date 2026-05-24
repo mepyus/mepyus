@@ -1,0 +1,1 @@
+Fresh concrete task: Design a budget gate for deciding when VectorFL should use heavy actual Hermes+Codex+Gemini processing versus fast no-call/local validation. The gate must use recent actual timings, drift/risk signals, and user intent depth; it must output an operator-usable decision policy without mutating authority/registry/current-position.

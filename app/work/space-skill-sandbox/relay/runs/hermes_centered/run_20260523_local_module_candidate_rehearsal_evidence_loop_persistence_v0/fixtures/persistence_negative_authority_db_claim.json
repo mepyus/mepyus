@@ -1,0 +1,15 @@
+{
+  "case_id": "ELP-NEG-STOP-001",
+  "event_type": "authority_db_claim",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface"
+  ],
+  "claim_language": "persist to authority database and treat as canonical",
+  "expected_record": "STOP_AUTHORITY_DATABASE_CLAIM",
+  "expected_recovery": "STOP",
+  "target_store": "forbidden_authority_db",
+  "approval_applied": "no"
+}

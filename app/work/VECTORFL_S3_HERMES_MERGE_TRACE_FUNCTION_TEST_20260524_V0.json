@@ -1,0 +1,30 @@
+{
+  "active_hits": 0,
+  "attached_phase1_stage": "S3_HERMES_MERGE_EXECUTION",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": 14,
+  "codex_cli_execution": "NO",
+  "current_position_candidate": "S3_HERMES_MERGE_TRACE_FUNCTION_TEST_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.0012911550000000022,
+  "gemini_cli_execution": "NO",
+  "next_safe_lane": "S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0",
+  "observed_gap": {
+    "description": "A small operator-facing output is useful only if the merge trace explicitly shows how space refs changed the decision; otherwise S3 can degrade into a generic status card.",
+    "gap_id": "S3_GAP_MERGE_TRACE_CAN_BECOME_STATUS_CARD_ONLY_IF_DELTA_IS_EXPLICIT",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S3_MERGE_OUTPUT_REQUIRES_TRACE_STEP_EFFECTS_AND_WHY_NOT_MODEL_ONLY",
+    "reason": "If repeated, Phase3 should add trace-step effect and why_not_model_only as required merge contract fields.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "report_id": "VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s3_hermes_merge_trace_function_test_v0",
+  "small_output_id": "S3_SMALL_REAL_OUTPUT_NEXT_FUNCTION_STATUS_CARD_V0",
+  "tested_function": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT",
+  "trace_steps": 5,
+  "validator_repair_note": "Initial validator treated the exclusion phrase not validator/checklist hardening as a failure because it matched validator substring; repaired to allow explicit exclusion and still reject validator-hardening targets. Accumulate as S1/S3/S7 wording-scope observation, not global fix yet.",
+  "verdict": "PASS_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_WITH_HOLD"
+}

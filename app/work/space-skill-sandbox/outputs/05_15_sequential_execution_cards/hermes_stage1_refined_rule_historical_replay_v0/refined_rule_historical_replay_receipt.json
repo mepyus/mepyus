@@ -1,0 +1,413 @@
+{
+  "verdict": "[CODEX_STAGE1_REFINED_RULE_HISTORICAL_REPLAY_RECEIPT]",
+  "timestamp": "2026-05-16T08:05:14.706583+00:00",
+  "command": "python3 app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_rule_historical_replay_v0/replay_refined_rules_on_historical_patches.py",
+  "input_files": [
+    "hermes_stage1_historical_code_diff_sample_audit_v0/patches/4601f7c18.patch",
+    "hermes_stage1_historical_code_diff_sample_audit_v0/patches/4e0389a4d.patch",
+    "hermes_stage1_historical_code_diff_sample_audit_v0/patches/a542716f3.patch",
+    "hermes_stage1_historical_code_diff_sample_audit_v0/patches/a998543da.patch"
+  ],
+  "output_files": [
+    "refined_rule_historical_replay_report.md",
+    "refined_rule_historical_replay_receipt.json"
+  ],
+  "exit_code": 0,
+  "old_hard_findings_estimate": 5,
+  "old_review_notes_estimate": 29,
+  "refined_hard_findings": 1,
+  "refined_review_notes": 30,
+  "hard_finding_delta": -4,
+  "network_used": false,
+  "packages_installed": false,
+  "git_used": false,
+  "source_files_modified": false,
+  "prior_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "per_patch_summary": [
+    {
+      "patch": "4601f7c18.patch",
+      "files_touched_count": 2,
+      "old_hard_findings": 0,
+      "old_review_notes": 0,
+      "refined_hard_findings": 0,
+      "refined_review_notes": 0,
+      "rows": []
+    },
+    {
+      "patch": "4e0389a4d.patch",
+      "files_touched_count": 5,
+      "old_hard_findings": 1,
+      "old_review_notes": 2,
+      "refined_hard_findings": 1,
+      "refined_review_notes": 2,
+      "rows": [
+        {
+          "line_no": 651,
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "context": "app_source",
+          "rule": "unresolved_todo",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "non_secret_rule_unchanged",
+          "line": "\"current_signal\": \"extract repeated pressure before TODO language\","
+        },
+        {
+          "line_no": 1769,
+          "file": "app/runtime/vectorfl_integrated_engine_api.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if any(token in explicit_tail for token in tokens):"
+        },
+        {
+          "line_no": 3686,
+          "file": "app/ui/integrated_engine/main.tsx",
+          "context": "app_source",
+          "rule": "debug_print_js",
+          "old": "hard_finding",
+          "refined": "hard_finding",
+          "reason": "non_secret_rule_unchanged",
+          "line": "console.log(\"VectorFL Sandbox: Starting Boot Sequence...\");"
+        }
+      ]
+    },
+    {
+      "patch": "a542716f3.patch",
+      "files_touched_count": 7,
+      "old_hard_findings": 0,
+      "old_review_notes": 4,
+      "refined_hard_findings": 0,
+      "refined_review_notes": 3,
+      "rows": [
+        {
+          "line_no": 226,
+          "file": "app/core/runtime/lower_support_layers.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "token"
+        },
+        {
+          "line_no": 227,
+          "file": "app/core/runtime/lower_support_layers.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "for token in tokens"
+        },
+        {
+          "line_no": 228,
+          "file": "app/core/runtime/lower_support_layers.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token"
+        },
+        {
+          "line_no": 351,
+          "file": "app/core/runtime/lower_support_layers.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "none",
+          "reason": "assignment_not_secret_named",
+          "line": "repeated = [token for token, count in counter.most_common(5) if count >= 2]"
+        }
+      ]
+    },
+    {
+      "patch": "a998543da.patch",
+      "files_touched_count": 6,
+      "old_hard_findings": 4,
+      "old_review_notes": 23,
+      "refined_hard_findings": 0,
+      "refined_review_notes": 25,
+      "rows": [
+        {
+          "line_no": 5292,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "hard_finding",
+          "refined": "review_note",
+          "reason": "semantic_or_env_boundary_not_literal_secret",
+          "line": "token = _normalize_token(value)"
+        },
+        {
+          "line_no": 5293,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token:"
+        },
+        {
+          "line_no": 5294,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "tokens.add(token)"
+        },
+        {
+          "line_no": 5296,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "hard_finding",
+          "refined": "review_note",
+          "reason": "semantic_or_env_boundary_not_literal_secret",
+          "line": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "line_no": 5297,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token:"
+        },
+        {
+          "line_no": 5298,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "tokens.add(token)"
+        },
+        {
+          "line_no": 5309,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "for token in _collect_anchor_tokens(materials):"
+        },
+        {
+          "line_no": 5310,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "none",
+          "reason": "assignment_not_secret_named",
+          "line": "kinds = _anchor_token_kinds(token)"
+        },
+        {
+          "line_no": 5312,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "profile[\"semantic\"].add(token)"
+        },
+        {
+          "line_no": 5315,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "profile.setdefault(kind, set()).add(token)"
+        },
+        {
+          "line_no": 5319,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "def _anchor_token_kinds(token: str) -> Set[str]:"
+        },
+        {
+          "line_no": 5320,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "none",
+          "reason": "assignment_not_secret_named",
+          "line": "lowered = _normalize_token(token)"
+        },
+        {
+          "line_no": 5712,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "for token in (\"property\", \"ontology\", \"object\"):"
+        },
+        {
+          "line_no": 5713,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "rows.append(token)"
+        },
+        {
+          "line_no": 5744,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "for token in (\"property\", \"ontology\", \"object\"):"
+        },
+        {
+          "line_no": 5745,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "rows.append(token)"
+        },
+        {
+          "line_no": 5776,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "for token in (\"property\", \"ontology\", \"object\"):"
+        },
+        {
+          "line_no": 5777,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token in \" \".join(roots + list(live_tokens)).lower() or live_hint:"
+        },
+        {
+          "line_no": 5778,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "proposals.append(token)"
+        },
+        {
+          "line_no": 5979,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "hard_finding",
+          "refined": "review_note",
+          "reason": "semantic_or_env_boundary_not_literal_secret",
+          "line": "token = _normalize_token(value)"
+        },
+        {
+          "line_no": 5980,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token:"
+        },
+        {
+          "line_no": 5981,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "rows.add(token)"
+        },
+        {
+          "line_no": 5983,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "hard_finding",
+          "refined": "review_note",
+          "reason": "semantic_or_env_boundary_not_literal_secret",
+          "line": "token = _normalize_token(str(value).strip())"
+        },
+        {
+          "line_no": 5984,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "if token:"
+        },
+        {
+          "line_no": 5985,
+          "file": "app/core/runtime/live_input_space.py",
+          "context": "app_source",
+          "rule": "secret_boundary",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "secret_word_without_direct_assignment",
+          "line": "rows.add(token)"
+        },
+        {
+          "line_no": 6112,
+          "file": "scripts/ingest_fragments.py",
+          "context": "scripts_or_deploy",
+          "rule": "debug_print_python",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "non_secret_rule_unchanged",
+          "line": "print(\"usage: ingest_fragments.py <runtime_root> <fragments.json> [--project]\")"
+        },
+        {
+          "line_no": 6308,
+          "file": "scripts/ingest_fragments.py",
+          "context": "scripts_or_deploy",
+          "rule": "debug_print_python",
+          "old": "review_note",
+          "refined": "review_note",
+          "reason": "non_secret_rule_unchanged",
+          "line": "print(json.dumps(result, ensure_ascii=False, indent=2))"
+        }
+      ]
+    }
+  ]
+}

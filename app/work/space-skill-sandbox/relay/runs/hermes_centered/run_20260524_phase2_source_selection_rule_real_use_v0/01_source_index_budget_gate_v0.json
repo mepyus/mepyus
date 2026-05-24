@@ -1,0 +1,49 @@
+{
+  "boundary": {
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "fast_trigger_hits": [
+      "known PASS/HOLD continuation",
+      "small internal detail target",
+      "actual space refs already sufficient",
+      "no new cross-agent ambiguity"
+    ],
+    "gemini_cli_execution": "NO",
+    "heavy_trigger_hits": 0,
+    "reason": "Apply Phase2 packet shape to one real small space-affecting detail. Prior actual Codex/Gemini already established structure; this lane tests use of that structure without unnecessary heavy calls.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_source_index_budget_gate_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_source_selection_rule_real_use_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+      "sha256": "c468a9ae08dbe9148dc887228a429dd29014e82a8572f8b6ef9537592e35ba52"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.md",
+      "sha256": "ac84080f1d6ae83538dac5a822303b9d41484081733f756cd7b8fc1020e20794"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+      "sha256": "4694c3c5db4e2a832133a83414137ede5e63228e0026156f4e9bbea62a380ee6"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "sha256": "613724ad6011a923815f201f321b2ad9cded0e9c9cffb5e3b0842c70ace398c7"
+    }
+  ],
+  "target_internal_detail": "Phase2 source-selection rule candidate for space-affecting work"
+}

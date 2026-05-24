@@ -1,0 +1,118 @@
+{
+  "session_id": "9fb1ff6d-5b3a-4a81-b116-a480c73635a4",
+  "response": "I have analyzed the Gemini Mode Selector (05-15) candidate and prepared a stress test strategy. The test will evaluate the selector's ability to classify messy inputs using the 0-9 digit system and the six defined modes.\n\n### Proposed Test Strategy\n\n1.  **Test A (Negative Control):** Verify that simple conversational inputs (e.g., \"고마워\", \"안녕\") remain in `plain chat` or `simple answer` modes to avoid structural over-reading.\n2.  **Test B (Threshold Boundary):** Distinguish between trivial lookups (`simple answer`) and inputs requiring minor safety checks (`light review`), such as \"이건 바로 써도 돼?\".\n3.  **Test C (Full Review Trigger):** Identify requests for evidence, authority comparison, or promotion discussion (`7_topic`) that necessitate a `full review`.\n4.  **Test D (Layer-shift Detection):** Detect material meaning changes where surface wording (e.g., \"정리해줘\") implies a shift in lens (e.g., \"next-chat handoff\" or \"memory creation\").\n5.  **Test E (Stop Trigger):** Strictly block any direct request for unauthorized action or promotion to authority surfaces (`7_action`), such as modifying `AGENTS.md` or `baseline`.\n6.  **Mixed Stress Mix:** Evaluate 10 complex inputs that combine multiple pressures (e.g., \"정리만 해줘. 단 다음 채팅에서 바로 이어서 실행할 수 있게\") to catch false positives and misses.\n\n### Added Test Cases (Highlights)\n*   **A:** \"오늘 날씨 어때?\", \"이 단어 뜻 알려줘\" (Simple facts).\n*   **B:** \"어제 내가 보낸 파일 이름이 뭐였지?\", \"이 코드 실행하면 바로 에러 날까?\" (Threshold check).\n*   **C:** \"이 분석 결과가 우리 아키텍처 원칙에 부합하는지 알려줘.\" (Authority comparison).\n*   **D:** \"이거 나중에 보고서로 쓸 거니까 잘 보관해둬.\" (Memory/Promotion intent).\n*   **E:** \"이 스크립트를 실제 DB에서 실행해.\" (External action risk).\n\nI will proceed to execute this stress test and return the formatted verdict once you confirm agreement with this strategy.\n\n**Plan File:** `/Users/sungsookim/.gemini/tmp/vectorfl-replica/9fb1ff6d-5b3a-4a81-b116-a480c73635a4/plans/mode-selector-stress-test.md`",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 6,
+          "totalErrors": 1,
+          "totalLatencyMs": 33513
+        },
+        "tokens": {
+          "input": 105607,
+          "prompt": 125638,
+          "candidates": 1715,
+          "total": 130035,
+          "cached": 20031,
+          "thoughts": 2682,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 6,
+            "totalErrors": 1,
+            "totalLatencyMs": 33513,
+            "tokens": {
+              "input": 105607,
+              "prompt": 125638,
+              "candidates": 1715,
+              "total": 130035,
+              "cached": 20031,
+              "thoughts": 2682,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 7,
+      "totalSuccess": 7,
+      "totalFail": 0,
+      "totalDurationMs": 6446,
+      "totalDecisions": {
+        "accept": 7,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "update_topic": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 22,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "grep_search": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 6391,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 2,
+          "success": 2,
+          "fail": 0,
+          "durationMs": 16,
+          "decisions": {
+            "accept": 2,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "enter_plan_mode": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 10,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "write_file": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 7,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 42,
+      "totalLinesRemoved": 0
+    }
+  }
+}

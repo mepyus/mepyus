@@ -1,0 +1,63 @@
+{
+  "verdict": "REAL_OPERATION_TEST_OPTION2_GEMINI_ONLY_RETURNED_WITH_WATCH",
+  "status": "execution_complete",
+  "request_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/GEMINI_ONLY_LITE_TEST_REQUEST_V0.md",
+  "prompt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/GEMINI_ONLY_LITE_TEST_PROMPT_V0.md",
+  "output_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/outputs",
+  "command_executed": "gemini --approval-mode plan --sandbox --output-format text -p \"$(cat GEMINI_ONLY_LITE_TEST_PROMPT_V0.md)\" > gemini_raw_output.txt; python3 extract JSON to gemini_lite_output.json",
+  "exit_code": 0,
+  "files_read_declared_for_gemini": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/bridge_real_operation_preflight_v0/GEMINI_LITE_OUTPUT_CONTRACT_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_ONLY_BRIDGE_REHEARSAL_RECEIPT_V0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/outputs/codex_recovery_return.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option1_codex_only_v0/HERMES_REAL_CODEX_ONLY_EXECUTION_RECEIPT_V0.json"
+  ],
+  "files_written_observed": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/outputs/gemini_raw_output.txt",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/outputs/gemini_lite_output.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/HERMES_REAL_GEMINI_ONLY_EXECUTION_RECEIPT_V0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/real_operation_test_option2_gemini_only_v0/HERMES_REAL_GEMINI_ONLY_EXECUTION_REPORT_V0.md"
+  ],
+  "real_codex_executed": false,
+  "real_gemini_executed": true,
+  "network_used": true,
+  "model_api_transport_used": true,
+  "live_web_lookup_used": false,
+  "external_source_fetch_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "external_connector_used": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_modified": false,
+  "promotion_performed": false,
+  "gemini_lite_json_valid": true,
+  "gemini_lite_format": "GEMINI_BULK_REVIEW_LITE_V0",
+  "gemini_lite_status": "returned_with_watch",
+  "negative_evidence_present": true,
+  "receipt_conflict_check_present": true,
+  "raw_audit_trigger_present": true,
+  "stop_flags": [],
+  "recovery_required_by_codex": true,
+  "recovery_completed_by_codex": false,
+  "recovery_class_hint": "candidate",
+  "watch": [
+    "Gemini reported 'Real Gemini execution remains unverified in all observed receipts' because it inspected prior receipts, not this new Hermes receipt.",
+    "Gemini raw_limits says 'model_api_transport_only for Codex CLI', which should be normalized to Gemini CLI in later contract/recovery.",
+    "Gemini-only success is not combined Codex+Gemini bridge validation.",
+    "Gemini lite output is evidence, not truth or promotion."
+  ],
+  "hold": [
+    "combined Codex+Gemini bridge",
+    "Codex recovery over this Gemini output until separately run",
+    "live web/source lookup",
+    "external connector",
+    "memory/skill/cron/config mutation",
+    "VectorFL authority mutation",
+    "baseline/workflow/schema/registry/ontology/component promotion"
+  ],
+  "timestamp": "2026-05-17T05:12:25Z"
+}

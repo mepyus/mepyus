@@ -1,0 +1,53 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_tool_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "flow": [
+    "USER_ORIGINAL_TO_HERMES",
+    "HERMES_ORIGINAL_INTERPRETATION",
+    "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL_VIA_CLI_SCRIPT",
+    "HERMES_MODEL_MERGE_ORIGINAL_SPACE_MODEL",
+    "HERMES_EXECUTION_AND_TRACE",
+    "CODEX_READABLE_REENTRY_RECORD",
+    "CODEX_SPACE_MATURATION_DECISION",
+    "OPTIONAL_GEMINI_VIA_CODEX_SCRIPT_CHAIN",
+    "CODEX_MATURATION_PACKET_TO_HERMES"
+  ],
+  "must_not": [
+    "Codex/Gemini direct API invocation",
+    "Hermes direct Gemini invocation",
+    "local HTTP endpoint/server/replay",
+    "folder tree mutation",
+    "source/authority/current-position/registry mutation"
+  ],
+  "name": "HERMES_CENTERED_CODEX_SPACE_RETRIEVAL_AND_MATURATION_LOOP",
+  "owners": {
+    "CODEX": [
+      "retrieve original-related space material",
+      "record selected/rejected refs",
+      "later judge space maturation from reentry record"
+    ],
+    "GEMINI": [
+      "only via Codex-linked script-chain for layer/space analysis"
+    ],
+    "HERMES": [
+      "preserve original",
+      "interpret original",
+      "request Codex retrieval via script/CLI",
+      "merge original+space+model",
+      "execute",
+      "write Codex-readable reentry record"
+    ]
+  },
+  "packet_id": "02_hermes_centered_loop_contract_v0",
+  "principle": "Hermes remains execution/merge center. Codex first retrieves original-related space material for Hermes; after Hermes execution, Codex handles space maturation from Codex-readable reentry records. Gemini is used only inside Codex-linked script-chain if Codex needs layer/space analysis."
+}

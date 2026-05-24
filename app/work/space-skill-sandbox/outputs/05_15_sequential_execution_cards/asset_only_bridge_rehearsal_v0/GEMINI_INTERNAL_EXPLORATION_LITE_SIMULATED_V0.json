@@ -1,0 +1,82 @@
+{
+  "format": "GEMINI_INTERNAL_EXPLORATION_LITE_SIMULATED_FROM_EXISTING_ASSETS",
+  "status": "asset_only_simulation_no_real_gemini",
+  "observed_assets": [
+    "FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+    "FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+    "hermes_codex_gemini_connection_diagnostic_v0/connection_diagnostic_report.md",
+    "gemini_script_runner_boundary_sandbox_v0/outputs/sandbox_feasibility_report.md",
+    "gemini_script_runner_boundary_sandbox_v0/outputs/runner_receipt.json",
+    "gemini_script_runner_boundary_sandbox_v0/outputs/gemini_lite_output_simulated.json"
+  ],
+  "repeated_patterns": [
+    {
+      "pattern": "Codex owns framing and recovery, not runtime burden",
+      "evidence": [
+        "selected pattern names Codex-owned request",
+        "bottleneck check identifies Codex runtime burden as the bottleneck",
+        "sandbox report assigns Codex request author + recovery judge"
+      ]
+    },
+    {
+      "pattern": "Hermes may host bounded execution but must not become VectorFL authority",
+      "evidence": [
+        "current topology permits Hermes-hosted bounded runner if explicitly approved",
+        "connection diagnostic forbids Hermes report -> VectorFL approval",
+        "receipt must record no authority mutation"
+      ]
+    },
+    {
+      "pattern": "Gemini lite output is evidence for Codex recovery, not truth",
+      "evidence": [
+        "bottleneck check requires JSON/Lite output shape",
+        "lite output contract includes uncertainties and do_not_promote",
+        "connection diagnostic forbids Gemini output becoming truth/component"
+      ]
+    },
+    {
+      "pattern": "Return path must remain multi-step",
+      "evidence": [
+        "Gemini output -> Codex recovery -> Hermes receipt/report -> VectorFL classification -> User promotion decision",
+        "forbidden shortcuts list blocks direct output-to-approval jumps"
+      ]
+    }
+  ],
+  "candidate_items": [
+    "Asset-only search can be packetized for Codex without using live web or model API transport.",
+    "The existing fields are sufficient to express the simulated handoff route.",
+    "The lite-output shape is suitable for a Codex recovery check without forcing raw reread by default.",
+    "A future real test needs a CODEX_WORKER_REQUEST_V0 template before any real Codex/Gemini invocation."
+  ],
+  "uncertainties": [
+    "Real Codex behavior on this packet was not tested.",
+    "Real Gemini internal exploration was not tested.",
+    "Exact model API transport command remains undefined and unapproved.",
+    "Whether Codex can recover from lite output alone needs future real or bounded simulated test."
+  ],
+  "possible_risks": [
+    "The rehearsal packet may be mistaken for dispatch approval.",
+    "The Gemini-lite simulated output may be mistaken for real Gemini validation.",
+    "Codex recovery may be skipped if Hermes report looks complete.",
+    "Asset search may expand into broad repo search unless path scope is fixed.",
+    "User transfer burden reduction may be mistaken for user approval reduction."
+  ],
+  "questions_for_codex": [
+    "Is the packed evidence sufficient to classify the pattern as candidate rather than component?",
+    "Should CODEX_WORKER_REQUEST_V0 require both APPROVED_REQUEST_FILE and APPROVED_EVIDENCE_PACKET fields?",
+    "What minimum lite fields are enough for recovery without raw reread?",
+    "Where should Codex record over-promotion removals?"
+  ],
+  "do_not_promote": [
+    "Do not promote this rehearsal to workflow/schema/registry/ontology/baseline/component.",
+    "Do not treat this as real Codex/Gemini bridge validation.",
+    "Do not treat asset-only search as permission for live web/source search."
+  ],
+  "raw_limits": [
+    "existing VectorFL sandbox assets only",
+    "no real Gemini",
+    "no real Codex",
+    "no model API transport",
+    "no network/live web/source lookup"
+  ]
+}

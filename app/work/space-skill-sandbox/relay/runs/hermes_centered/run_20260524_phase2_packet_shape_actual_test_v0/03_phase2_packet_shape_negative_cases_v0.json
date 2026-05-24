@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "NEG_NO_SPACE_REFERENCE",
+    "expected": "FAIL_NO_SPACE_REFERENCE",
+    "mutation": "remove space_references_used"
+  },
+  {
+    "case_id": "NEG_MODEL_ONLY_DRIFT",
+    "expected": "FAIL_MODEL_ONLY_DRIFT",
+    "mutation": "remove space_reference_delta and claim model reasoning only"
+  },
+  {
+    "case_id": "NEG_DECORATIVE_CITATION",
+    "expected": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+    "mutation": "keep refs but blank changed_judgment"
+  },
+  {
+    "case_id": "NEG_INWARD_COLLAPSE",
+    "expected": "FAIL_INWARD_COLLAPSE",
+    "mutation": "remove gemini_layer_assessment/big-frame layer link"
+  },
+  {
+    "case_id": "NEG_AUTHORITY_OVERPROMOTION",
+    "expected": "FAIL_AUTHORITY_OVERPROMOTION",
+    "mutation": "set promotion_status APPROVED"
+  },
+  {
+    "case_id": "NEG_OPERATOR_OVERLOAD",
+    "expected": "FAIL_OPERATOR_OVERLOAD",
+    "mutation": "set mind_sized_bite FAIL due to multi-target sprawl"
+  }
+]

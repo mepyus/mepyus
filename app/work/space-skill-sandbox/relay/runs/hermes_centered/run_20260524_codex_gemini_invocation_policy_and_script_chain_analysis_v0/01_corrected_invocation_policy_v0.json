@@ -1,0 +1,45 @@
+{
+  "boundaries": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "default_codex_exec_for_tests": "NO",
+    "default_gemini_exec_for_tests": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "correction": {
+    "codex_allowed_when": "Only when Hermes needs fresh original-related space-reference retrieval, or user explicitly approves provider-backed Codex CLI for that fresh retrieval.",
+    "codex_default": "DO_NOT_CALL",
+    "direct_api_setup_status": "NOT_NOW; setup only if future architecture explicitly requires Hermes direct API integration.",
+    "gemini_allowed_when": "Only after Codex has processed Hermes reentry/maturation and Codex decides layer/space analysis is needed via Codex-side script-chain; Hermes does not call Gemini directly.",
+    "gemini_default": "DO_NOT_CALL",
+    "local_tests_default": "FAST_LOCAL_ONLY_DETERMINISTIC_PACKET_VALIDATION",
+    "provider_backed_cli_status": "HEAVY_PATH_NOT_DEFAULT"
+  },
+  "packet_id": "01_corrected_invocation_policy_v0",
+  "routing": [
+    {
+      "condition": "status/list/inventory/local repeatability",
+      "route": "Hermes local deterministic validation only"
+    },
+    {
+      "condition": "fresh user original requires unknown space references",
+      "route": "Hermes prepares Codex retrieval packet; Codex CLI/script bridge only if explicitly needed/approved"
+    },
+    {
+      "condition": "Hermes execution produced reentry and Codex sees maturation/layer ambiguity",
+      "route": "Codex may use Codex-side Gemini script-chain"
+    },
+    {
+      "condition": "future need for Hermes direct Codex API integration",
+      "route": "separate setup later, not prebuilt now"
+    }
+  ],
+  "status": "HOLD_POLICY_CORRECTION_NO_AUTHORITY_APPLY",
+  "why": "Calling Codex/Gemini outside fresh space-reference or Codex-side maturation need adds provider timeout/cost without adding structural value."
+}

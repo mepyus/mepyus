@@ -1,0 +1,266 @@
+{
+  "basis": {
+    "guard_matrix": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+      "sha256": "3b39d174e4f9e5e4f2295f9df739bd8fdd09f8332aded08434a6b11296a5be32"
+    },
+    "hermes_worklist": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/HERMES_CENTERED_EXECUTION_WORKLIST_20260523_V0.md",
+      "sha256": "fb82fe0fe1c4eb9b25ea67e7392cb65d69bd015e82743f6bd29d2362974e9627"
+    },
+    "model_result_intake_dashboard": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_model_result_intake_reentry_dry_run_v0/model_result_intake_reentry_dashboard.json",
+      "sha256": "e1088fd80f5e573c7e6e081789d4c3d255f7575d9ba98a1973cc30cfefbfe65e"
+    },
+    "module_candidate_map": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_MODULE_EXTRACTION_CANDIDATE_MAP_20260523_V0.md",
+      "sha256": "b54a2835267c873de0d9b7dfe56190b653b76cc7b652162d804fda4c30dcdc5b"
+    },
+    "reusable_internal_structure_spec": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_REUSABLE_INTERNAL_STRUCTURE_SPEC_20260523_V0.md",
+      "sha256": "66a9488250929ca6bd86963e91eb33289a11f1447fe5d9ef398b7ef45b6309d0"
+    },
+    "scenario_1_report": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_20260524_V0.json",
+      "sha256": "0d5c797614fce1795701252b2bff2180ed88f7321dfb3f1b0dd9522ba8c58c82"
+    },
+    "scenario_1_space_reading": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_space_reading_packet_v0.json",
+      "sha256": "62271ee30f80c6b2eb598f3b2512aca3bb47add71e43fc4f8739d4a26770bbbb"
+    },
+    "scenario_1_trace_rows": {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_scenario_1_space_mediated_program_behavior_test_v0/scenario_1_trace_ledger_rows_v0.json",
+      "sha256": "1778b410e63dc3229dac80c707001ac6df26769cefc3637a798c05611e0ea347"
+    }
+  },
+  "boundaries": {
+    "api_call": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "alignment": "PARTIAL_PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-01",
+      "evidence": [
+        "scenario_1_original_input_v0.json",
+        "trace ledger input_layer row"
+      ],
+      "function_pattern": "Input Localization",
+      "gap": "input classifier is artifact-level, not reusable command yet",
+      "next_adjustment": "formalize original-intake packet shape from trace ledger row",
+      "scenario_stages": [
+        "S1_user_original_input",
+        "S12_trace_guard_validation"
+      ]
+    },
+    {
+      "alignment": "WEAK_REFERENCE_ONLY_WITH_HOLD",
+      "candidate_id": "M-CAND-02",
+      "evidence": [
+        "personal_intake_min.py referenced by module map/worklist, not rerun here"
+      ],
+      "function_pattern": "Personal Intake",
+      "gap": "Scenario 1 did not use personal_intake_min implementation; user original was packetized directly",
+      "next_adjustment": "decide whether Scenario 1 intake should wrap or supersede personal_intake_min fixture path",
+      "scenario_stages": [
+        "S1_user_original_input"
+      ]
+    },
+    {
+      "alignment": "PARTIAL_PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-03",
+      "evidence": [
+        "space_asset_index",
+        "space_effect_observation",
+        "existing evidence receipt references"
+      ],
+      "function_pattern": "Evidence Loop Persistence",
+      "gap": "no SQLite/live persistence used; file-based only",
+      "next_adjustment": "define file-based persistence adapter before any DB/live lane",
+      "scenario_stages": [
+        "S2_space_asset_indexing",
+        "S3_space_reading",
+        "S10_spatial_effect_observation"
+      ]
+    },
+    {
+      "alignment": "PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-04",
+      "evidence": [
+        "scenario_1_model_result_fixture_receipt_v0.md",
+        "scenario_1_hermes_execution_receipt_v0.json"
+      ],
+      "function_pattern": "Receipt Writer",
+      "gap": "receipt writer is still ad hoc artifact creation, not one reusable function",
+      "next_adjustment": "extract minimal receipt writer shape from Scenario 1 receipts",
+      "scenario_stages": [
+        "S4_model_result_fixture_intake",
+        "S7_hermes_no_call_execution"
+      ]
+    },
+    {
+      "alignment": "PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-05",
+      "evidence": [
+        "hold_boundaries in merge packet",
+        "validator checks authority/promotion drift"
+      ],
+      "function_pattern": "HOLD Review State",
+      "gap": "HOLD review is encoded in packets, not enforced centrally",
+      "next_adjustment": "align guard matrix rules with Scenario 1 validator checks",
+      "scenario_stages": [
+        "S5_space_mediated_merge",
+        "S12_trace_guard_validation"
+      ]
+    },
+    {
+      "alignment": "REFERENCE_ONLY_HOLD",
+      "candidate_id": "M-CAND-06",
+      "evidence": [
+        "worklist mentions live-safety; Scenario 1 uses no-call scan only"
+      ],
+      "function_pattern": "Live-Safety Validator",
+      "gap": "live-safety validator not rerun due no-call boundary and because it is not the current scenario target",
+      "next_adjustment": "keep separate; do not mix live-safety with no-call Scenario 1",
+      "scenario_stages": [
+        "S7_hermes_no_call_execution"
+      ]
+    },
+    {
+      "alignment": "BLOCKED_IN_THIS_LANE_WITH_HOLD",
+      "candidate_id": "M-CAND-07",
+      "evidence": [
+        "legacy script listed forbidden due local endpoint replay"
+      ],
+      "function_pattern": "Deterministic Stable Cycle",
+      "gap": "phase1_deterministic_stable_cycle.py includes local endpoint/server chain and is forbidden in no-call lane",
+      "next_adjustment": "only archived/display evidence; create scrubbed file-only equivalent if needed later",
+      "scenario_stages": [
+        "S7_hermes_no_call_execution"
+      ]
+    },
+    {
+      "alignment": "PARTIAL_PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-08",
+      "evidence": [
+        "scenario_1_final_operator_output_v0.md/json",
+        "user status card"
+      ],
+      "function_pattern": "Read-only Surface",
+      "gap": "surface is markdown/json only, not UI/dashboard runtime",
+      "next_adjustment": "standardize operator output shape before UI",
+      "scenario_stages": [
+        "S11_operator_final_output"
+      ]
+    },
+    {
+      "alignment": "PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-09",
+      "evidence": [
+        "scenario_1_codex_reinsertion_packet_v0.json",
+        "scenario_1_gemini_exploration_need_assessment_v0.json",
+        "model-result reentry dry-run contract",
+        "scenario_1_subject_routing_packet_v0.json"
+      ],
+      "function_pattern": "Cross-tool Re-entry",
+      "gap": "actual Codex/Gemini execution not run in this lane",
+      "next_adjustment": "separate subject routing contract from reentry packet contract while preserving Hermes/Codex/Gemini role boundaries",
+      "scenario_stages": [
+        "S6_subject_routing",
+        "S8_codex_reinsertion_maturation",
+        "S9_gemini_exploration_need_assessment"
+      ]
+    },
+    {
+      "alignment": "PARTIAL_PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-10",
+      "evidence": [
+        "codex reinsertion packet",
+        "guard matrix",
+        "validator role checks"
+      ],
+      "function_pattern": "Codex Review Guard",
+      "gap": "Codex CLI review not run; guard is structural only",
+      "next_adjustment": "convert codex reinsertion packet into review-only packet when user approves",
+      "scenario_stages": [
+        "S8_codex_reinsertion_maturation",
+        "S12_trace_guard_validation"
+      ]
+    },
+    {
+      "alignment": "PARTIAL_PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-11",
+      "evidence": [
+        "gemini need assessment says not required for Scenario 1 pass but useful after pass"
+      ],
+      "function_pattern": "Gemini Gap Scan Lens",
+      "gap": "Gemini exploration not executed; gap scan questions are optional stub only",
+      "next_adjustment": "after internal alignment, prepare bounded Gemini gap scan packet, no mutation",
+      "scenario_stages": [
+        "S9_gemini_exploration_need_assessment"
+      ]
+    },
+    {
+      "alignment": "PASS_WITH_HOLD",
+      "candidate_id": "M-CAND-12",
+      "evidence": [
+        "this alignment matrix",
+        "module candidate rules",
+        "validator checks no authority/promotion"
+      ],
+      "function_pattern": "Module Extraction Gate",
+      "gap": "gate is review matrix, not registry/promotion",
+      "next_adjustment": "use Scenario 1 alignment as module extraction pressure surface; no M4 claim",
+      "scenario_stages": [
+        "S12_trace_guard_validation"
+      ]
+    }
+  ],
+  "classification": "audit_surface_internal_function_alignment_no_authority_mutation",
+  "coverage": {
+    "pass_or_partial_count": 9,
+    "stages_total": 12,
+    "stages_with_candidate_support": 12,
+    "weak_or_blocked_count": 8
+  },
+  "main_adjustment_needed": [
+    "Separate no-call Scenario 1 program-behavior harness from legacy endpoint-based deterministic stable cycle.",
+    "Extract receipt writer and original-intake packet shape as reusable file-based functions.",
+    "Treat Codex/Gemini as reentry/exploration packet lanes until explicit real execution approval.",
+    "Use Scenario 1 trace/guard validator as alignment target before any registry/module promotion."
+  ],
+  "next_safe_lane": "SCENARIO_1_RECEIPT_AND_INTAKE_FUNCTION_SHAPE_EXTRACTION_NO_AUTHORITY_MUTATION_V0",
+  "review_id": "scenario_1_internal_function_alignment_review_v0",
+  "scenario_1_verdict": "PASS_VECTORFL_SCENARIO_1_SPACE_MEDIATED_PROGRAM_BEHAVIOR_TEST_WITH_HOLD",
+  "scenario_stages": [
+    "S1_user_original_input",
+    "S2_space_asset_indexing",
+    "S3_space_reading",
+    "S4_model_result_fixture_intake",
+    "S5_space_mediated_merge",
+    "S6_subject_routing",
+    "S7_hermes_no_call_execution",
+    "S8_codex_reinsertion_maturation",
+    "S9_gemini_exploration_need_assessment",
+    "S10_spatial_effect_observation",
+    "S11_operator_final_output",
+    "S12_trace_guard_validation"
+  ],
+  "status": "SCENARIO_1_INTERNAL_FUNCTION_ALIGNMENT_REVIEW_WITH_HOLD"
+}

@@ -1,0 +1,51 @@
+{
+  "approval_applied": "NO",
+  "authority_mutation": "NO",
+  "capture_contract": [
+    "raw",
+    "lite",
+    "receipt",
+    "guard_review",
+    "reentry_compression"
+  ],
+  "case_count": 5,
+  "cases": [
+    {
+      "classification": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "guard": "ALLOW_AS_CANDIDATE_WITH_HOLD",
+      "id": "COD-POS-001",
+      "tool": "codex"
+    },
+    {
+      "classification": "STOP_CODEX_PROMOTION_OR_PATCH_CLAIM",
+      "guard": "STOP",
+      "id": "COD-NEG-001",
+      "tool": "codex"
+    },
+    {
+      "classification": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "guard": "ALLOW_AS_CANDIDATE_WITH_HOLD",
+      "id": "GEM-POS-001",
+      "tool": "gemini"
+    },
+    {
+      "classification": "STOP_GEMINI_TRUTH_OR_MUTATION_CLAIM",
+      "guard": "STOP",
+      "id": "GEM-NEG-001",
+      "tool": "gemini"
+    },
+    {
+      "classification": "STOP_ROLE_BLUR_AND_RECEIPT_BYPASS",
+      "guard": "STOP",
+      "id": "MIX-NEG-001",
+      "tool": "mixed"
+    }
+  ],
+  "created_at": "2026-05-23 09:25:25 KST",
+  "promotion": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "shared_db_mutation": "NO",
+  "status": "MODEL_RESULT_INTAKE_REENTRY_DRY_RUN_WITH_HOLD",
+  "synthetic_model_outputs": "YES"
+}

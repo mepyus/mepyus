@@ -1,0 +1,23 @@
+{
+  "boundary": "HOLD_ONLY_NO_SKILL_CREATE_NO_AUTHORITY_MUTATION",
+  "packet_id": "03_vectorfl_space_operator_skill_assessment_v0",
+  "recommended_trigger_phrases": [
+    "공간을 확인해",
+    "헤르메스 작업 내용을 분석해",
+    "공간자료를 찾아줘",
+    "공간 숙성 판단해"
+  ],
+  "verdict": "GOOD_CANDIDATE_FOR_SKILL_WITH_HOLD",
+  "what_to_adjust_before_real_skill": [
+    "Make paths relative/placeholders instead of locking to one run directory.",
+    "Keep SKILL.md short; put full contract/schemas in references/.",
+    "Add on-demand policy: do not run provider-backed Codex/Gemini by default.",
+    "Separate Codex skill behavior from Hermes skill behavior: this skill tells Codex how to operate, Hermes only prepares/reads packets."
+  ],
+  "why_skill_is_right_unit": [
+    "The router maps repeated natural-language triggers to stable Codex duties.",
+    "The same role split will recur across sessions.",
+    "Return schemas reduce context-dependence.",
+    "Boundaries prevent Codex from overpromoting or mutating authority."
+  ]
+}

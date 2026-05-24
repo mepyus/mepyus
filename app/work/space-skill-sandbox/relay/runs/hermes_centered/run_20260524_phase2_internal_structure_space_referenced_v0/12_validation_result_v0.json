@@ -1,0 +1,60 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_artifacts_exist",
+      "pass": true
+    },
+    {
+      "check": "space_not_answer_principle_present",
+      "pass": true
+    },
+    {
+      "check": "five_lenses_present",
+      "pass": true
+    },
+    {
+      "check": "codex_and_gemini_present",
+      "pass": true
+    },
+    {
+      "check": "packet_fields_include_space_delta_and_gemini",
+      "pass": true
+    },
+    {
+      "check": "stop_conditions_include_model_only_and_no_space",
+      "pass": true
+    },
+    {
+      "check": "source_selection_rejects_decorative_citation",
+      "pass": true
+    },
+    {
+      "check": "trace_rows>=4",
+      "observed": 4,
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "timings_present",
+      "observed": {
+        "codex_seconds": 46.77,
+        "gemini_seconds": 27.25
+      },
+      "pass": true
+    },
+    {
+      "check": "report_mentions_big_frame",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_WITH_HOLD"
+}

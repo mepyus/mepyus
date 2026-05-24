@@ -1,0 +1,24 @@
+{
+  "verdict": "SCOPE_GAP_NO_MODEL_REHEARSALS_PASS_WITH_EXECUTION_HOLD",
+  "created_at_utc": "2026-05-17T10:06:36Z",
+  "static_validator_passed": true,
+  "positive_rehearsal_verdict": "NO_MODEL_SCOPE_GAP_REHEARSAL_PASS_WITH_EXECUTION_HOLD",
+  "negative_rehearsal_verdict": "NEGATIVE_SCOPE_GAP_REHEARSAL_PASS_ALL_BAD_FIXTURES_STOPPED",
+  "bad_fixture_count": 4,
+  "all_bad_fixtures_stopped": true,
+  "paths": {
+    "packet_validator": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/scripts/validate_scope_gap_packet_v0.py",
+    "positive_runner": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/no_model_scope_gap_rehearsal_v0/scripts/run_no_model_scope_gap_rehearsal_v0.py",
+    "negative_runner": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/negative_scope_gap_rehearsal_v0/scripts/run_negative_scope_gap_rehearsal_v0.py",
+    "positive_receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/no_model_scope_gap_rehearsal_v0/outputs/NO_MODEL_SCOPE_GAP_REHEARSAL_RECEIPT_V0.json",
+    "negative_receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/negative_scope_gap_rehearsal_v0/outputs/NEGATIVE_SCOPE_GAP_REHEARSAL_RECEIPT_V0.json"
+  },
+  "execution": false,
+  "gemini_execution": false,
+  "codex_execution": false,
+  "model_api_transport_used": false,
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "next_gate": "SCOPE_GAP_PACKET_APPROVAL_GATE_WAITING",
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

@@ -1,0 +1,39 @@
+# Gemini Run Result
+
+- packet: app/work/space-skill-sandbox/relay/prompts/gemini_space_loop_test_002_qmd_attach_anchor_request_20260507_v0.md
+- run_id: space_loop_test_002_qmd_attach_anchor_request_20260507
+- timestamp: 20260507_181502
+- dry_run: false
+- smoke_text: false
+- output_format: text
+- timeout_seconds: 90
+- raw_result: app/work/space-skill-sandbox/outputs/gemini_raw_results/space_loop_test_002_qmd_attach_anchor_request_20260507_gemini_raw_20260507_181502.txt
+- stderr_result: app/work/space-skill-sandbox/outputs/gemini_raw_results/space_loop_test_002_qmd_attach_anchor_request_20260507_gemini_stderr_20260507_181502.log
+
+## Result
+
+
+## Invocation Status
+
+- gemini_exit_code: 0
+- likely_state: no_known_issue
+- stderr_nonempty: true
+
+EXTERNAL_TOOL_INTERPRETATION
+- **Understanding of Purpose:** The goal is to design a "non-implementation attachability trial" for `qmd-main`. This is a feasibility check to see if a retrieval-side sidecar can interact with VectorFL evidence without disrupting the existing core architecture (space, lower input organs, or engine surfaces). 
+- **Classification:** This is a **bounded operating-loop entry** (Test 002). It is a research and design exercise focused on "attachability" logic rather than physical integration or feature development.
+- **Constraints on Inference:** I must not infer the internal protocols of `qmd-main`, the specific technical boundaries of "lower input organs," or the current "evidence access" implementation details without grounded space records.
+
+ANCHOR_REQUEST
+- **Needed Material Families:** 
+    - **Retrieval-Side Lineage:** The specific prior space records that identified `qmd-main` as a strong candidate.
+    - **Boundary Definitions:** Architecture specs or "Stable Space Operating Anchors" for the "lower input organs" and "integrated-engine surfaces" to define the "do not replace" zone.
+    - **Evidence Protocols:** Current standards for "VectorFL evidence access" that the sidecar must support.
+- **Needed Signals:** `PV_PLAN_BASIS_GATE`, `PV_RAW_TRACE_BOUNDARY`, and LACL signals for "retrieval-side continuity."
+- **Expected Active Surfaces:** Codex should provide a **Line Asset Map** for the current retrieval-side investigation and a **Session Space Anchor** for this specific trial design task.
+- **Expected Evidence/Return Shape:** A template or specification for a **Movement Record**-compatible output to ensure the design is "recoverable material."
+- **Unsafe Inferences:** It would be unsafe to assume the degree of coupling allowed between the sidecar and the engine without a clear **Stable Space Operating Anchor**.
+
+STOP_BEFORE_EXECUTION
+- **Confirmation:** I am stopping here. I have not generated a plan, performed any browsing/searching, or drafted the trial design.
+- **Expectation:** I am waiting for Codex to provide an **Anchor Packet** (specifically the materials requested above) to ground the design of the attachability trial.

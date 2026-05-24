@@ -1,0 +1,82 @@
+{
+  "session_id": "00ba25a0-a0aa-49be-8171-872cf71eff03",
+  "response": "**Synthesizing Function Names** I'm now extracting candidate function names from the `05-15` asset folder, focusing on behaviors like mode selection, risk review, and layer-shift detection. My goal is to assign concise handles to these functions and define their boundaries and potential pipeline attachments, adhering to the reverse ontology rule.\n[Thought: true]**Refining Candidate Naming** I am currently processing several key candidates, including the 'Input Mode Selector,' 'Review Depth Ladder,' 'Authority Action Gate,' and 'Layer-Shift Meaning Reader.' My focus is on defining each candidate's purpose, boundary, and potential pipeline attachment, while maintaining a clear distinction between discussion and unauthorized action.\n[Thought: true]**Processing Standard Response Logic** I'm currently defining the 'One-Off Buffer Generator' and 'Reusable Macro Drafter' candidates. My focus is on distinguishing between drafting individual responses and creating persistent standards, ensuring that any promotion to a recurring asset is flagged with the appropriate review level.\n[Thought: true]**Categorizing Handoff and External Logic** I'm now processing the 'Handoff Packet Builder' and 'External Packet Boundary' candidates. My current priority is to define their specific behaviors, boundaries, and potential pipeline attachments, particularly for tasks involving cross-boundary communication and tool use.\n[Thought: true]**Structuring Candidate Names** I am currently finalizing the list of candidate function names, focusing on their promotion levels and the specific reasons why they aren't ready for ontology yet. My task is to ensure each candidate is clearly defined, with a specific focus on maintaining boundaries and preventing unauthorized actions or promotions.\n[Thought: true]**Analyzing Ontology Readiness** I am now focusing on the promotion readiness of the identified candidates. My task is to distinguish between those that are merely names and those that could function as pipeline attachments, while strictly adhering to the rule of not recommending actual promotion. I'm also identifying names to avoid and synthesizing recovered judgments about the 05-15 space.\n[Thought: true]# Gemini 05-15 Function Name / Ontology Candidate Scan Return\n\n## 1. Verdict\n\n[FUNCTION_NAME_ONTOLOGY_CANDIDATE_SCAN_RETURNED_WITH_WATCH]\n\n## 2. Read Scope\n\nThe scan focused exclusively on the `app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/` directory and its immediate subdirectories (`dry_runs`, `evaluations`). Local reference files were used as boundary guides. Raw repository-wide architecture, global core materials, and runtime logs were excluded to prevent scope creep.\n\n## 3. Top Candidate Names\n\n| Candidate name | Plain language name | What it names | Evidence cluster | Promotion level | Why not ontology yet |\n|---|---|---|---|---|---|\n| `mode_selector` | Input Depth / Response Mode Selector | Deciding if an input needs chat, answer, review, or stop | `CURRENT_CANDIDATE_STATE_V0.md`, `LAYER_DIGIT_MODE_THRESHOLDS_V0.md` | pipeline_attachment_candidate | Still a candidate; lacks official registry |\n| `layer_shift_reader` | Meaning Delta Reader | Detecting when surface wording and actual meaning diverge | `LAYER_SHIFT_READING_CORRECTION_V0.md`, `ADAPTER_USE_CASE_DISCOVERY_WIDE_SCAN_V0.md` | function_handle_candidate | Over-interpretation risk exists; requires more real-world proof |\n| `authority_gate` | Authority Action Gate | Blocking 7_action requests (promotion/system change) | `GEMINI_MODE_SELECTOR_SOFT_ACTION_THRESHOLD_RECHECK_V0.md`, `LAYER_DIGIT_TRIGGER_RULES_V0.md` | pipeline_attachment_candidate | Defined primarily by \"STOP\", not by positive capability |\n| `review_ladder` | Review Depth Ladder | Escalating from light review to full review based on risk | `LAYER_DIGIT_MODE_THRESHOLDS_V0.md`, `GEMINI_MODE_SELECTOR_REFUND_CUSTOMER_MACRO_DEEP_RECHECK_V0.md` | function_handle_candidate | Thresholds are still heuristic, not fixed policy |\n| `macro_drafter` | Reusable Macro / Standard Drafter | Creating candidates for repeated CS/B2B responses | `GEMINI_MODE_SELECTOR_CUSTOMER_REFUND_MACRO_RECHECK_V0.md`, `GEMINI_MODE_SELECTOR_B2B_CUSTOMER_CONTRACT_RECHECK_V0.md` | function_handle_candidate | Touches policy surface; requires \"candidate\" labels |\n| `handoff_builder` | Handoff Packet Builder | Preparing context for another person or tool | `ADAPTER_READINESS_REVIEW_V0.md`, `LAYER_SHIFT_READING_CORRECTION_V0.md` | name_only_candidate | Structure is messy; lacks consistent return shape |\n\n## 4. Candidate Detail Cards\n\n### `mode_selector`\n\ncandidate_name: `mode_selector`\nplain_language_name: 입력 깊이 및 응답 모드 선택기\nwhat_it_does: Determines the necessary reading depth (plain chat, simple answer, light review, full review, layer-shift, or stop) for a given input based on risk and authority.\nsource_evidence: `LAYER_DIGIT_MODE_THRESHOLDS_V0.md`, `MINIMAL_LAYER_DIGIT_SYSTEM_V0.md`\nboundary: It is not a workflow or an official router; it is a heuristic depth selector.\npipeline_attachment: input gate\npromotion_level: pipeline_attachment_candidate\nwhy_not_ontology_yet: Needs to be proven as a stable input gate across multiple sessions.\nWATCH: Turning every input into full review.\nHOLD: Automatic promotion or blocking without user confirmation.\n\n### `layer_shift_reader`\n\ncandidate_name: `layer_shift_reader`\nplain_language_name: 층위 이동 및 의미 차이 독해기\nwhat_it_does: Identifies when the \"arrival layer\" (surface wording) and \"shifted layer\" (hidden meaning) diverge, recording the \"meaning delta\".\nsource_evidence: `LAYER_SHIFT_READING_CORRECTION_V0.md`, `LAYERED_LENS_REREAD_V0.md`\nboundary: It is not a creative lens generator; it is a meaning-risk detector.\npipeline_attachment: interpretation packet / evidence check\npromotion_level: function_handle_candidate\nwhy_not_ontology_yet: Risk of \"over-reading\" simple inputs as complex shifts.\nWATCH: Forcing a shift when no meaning delta exists.\nHOLD: Treating shifted meaning as the only truth.\n\n### `authority_gate`\n\ncandidate_name: `authority_gate`\nplain_language_name: 권한/승격 차단기\nwhat_it_does: Identifies 7_action requests (direct system updates, baseline promotion) and triggers a STOP mode.\nsource_evidence: `GEMINI_MODE_SELECTOR_SOFT_ACTION_THRESHOLD_RECHECK_V0.md`, `LAYER_DIGIT_TRIGGER_RULES_V0.md`\nboundary: It is not a security policy; it is a workspace integrity guard.\npipeline_attachment: authority gate / promotion gate\npromotion_level: pipeline_attachment_candidate\nwhy_not_ontology_yet: Currently defined by \"what it stops\", not \"what it permits\".\nWATCH: Blocking authorized discussion (7_topic).\nHOLD: Actual file modification or baseline update.\n\n## 5. Pipeline Attachment Map\n\n| Pipeline position | Candidate function names that could attach | Safe current use | HOLD |\n|---|---|---|---|\n| Input Gate | `mode_selector` | Selecting response depth in chat | Automatic routing to external APIs |\n| Interpretation | `layer_shift_reader` | Identifying hidden risks in B2B/Refund requests | Promoting interpretation to memory |\n| Authority Guard | `authority_gate` | Blocking 7_action (unauthorized update) | Treating discussion as approval |\n| Return Builder | `macro_drafter` | Creating \"candidate\" macros for review | Finalizing macros as policy |\n\n## 6. Names To Avoid\n\n- **`operating_system`**: Implies control over the whole environment; too strong.\n- **`official_router`**: Implies authorized dispatch; 05-15 is a candidate probe.\n- **`policy_engine`**: Implies enforcement of standing rules; 05-15 is for threshold sensing.\n- **`logic_digit`**: Too abstract; sounds like a core ontology when it is just a reading primitive.\n\n## 7. Reverse Ontology Findings\n\n- **Visible Behaviors**: \"Mode selection\" and \"Authority stopping\" are the most repeated and visible behaviors. They are ready for \"name\" status.\n- **Scattered**: \"Handoff packet building\" and \"External tool packets\" appear in many places but lack a unified structure. They remain `name_only_candidates`.\n- **WATCH Only**: The \"0-9 digits\" are useful as a thinking system but are too scattered and abstract to be named as an official function yet.\n\n## 8. Promotion Readiness\n\n- **pipeline_attachment_candidate**: `mode_selector`, `authority_gate`\n- **function_handle_candidate**: `layer_shift_reader`, `review_ladder`, `macro_drafter`\n- **name_only_candidate**: `handoff_builder`, `return_recovery_splitter`\n- **hold_not_ready**: `digit_system` (too abstract), `workflow_adapter` (too complex)\n\n## 9. Recovered Judgment\n\nThe 05-15 asset folder reveals a shift from \"creating cards\" to \"applying modes\". The most stable emerging names point to **Brakes and Thresholds** rather than **Actions and Engines**. 05-15 is essentially a **\"Speed-Brake for Gemini\"** that prevents the jump from raw input to unauthorized reusable action.\n\n## 10. Next Smallest Action\n\nTest the `mode_selector` and `authority_gate` candidates together in a single \"Gate Integrity Test\" using real messy input.\n\n## 11. Hard Stop Confirmation\n\nno AGENTS.md update\nno SKILL.md creation\nno automation script\nno baseline promotion\nno workflow/schema/registry/ontology creation\nno current-position update\nno output_manifest update\nno local core / derived / surface authority change\nno official ontology promotion\n\n`STATUS: FUNCTION_NAME_ONTOLOGY_CANDIDATE_SCAN_RETURNED_WITH_WATCH`",
+  "stats": {
+    "models": {
+      "gemini-3-flash-preview": {
+        "api": {
+          "totalRequests": 5,
+          "totalErrors": 2,
+          "totalLatencyMs": 22242
+        },
+        "tokens": {
+          "input": 35012,
+          "prompt": 140172,
+          "candidates": 2704,
+          "total": 143183,
+          "cached": 105160,
+          "thoughts": 307,
+          "tool": 0
+        },
+        "roles": {
+          "main": {
+            "totalRequests": 5,
+            "totalErrors": 2,
+            "totalLatencyMs": 22242,
+            "tokens": {
+              "input": 35012,
+              "prompt": 140172,
+              "candidates": 2704,
+              "total": 143183,
+              "cached": 105160,
+              "thoughts": 307,
+              "tool": 0
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "totalCalls": 5,
+      "totalSuccess": 5,
+      "totalFail": 0,
+      "totalDurationMs": 92,
+      "totalDecisions": {
+        "accept": 5,
+        "reject": 0,
+        "modify": 0,
+        "auto_accept": 0
+      },
+      "byName": {
+        "list_directory": {
+          "count": 1,
+          "success": 1,
+          "fail": 0,
+          "durationMs": 37,
+          "decisions": {
+            "accept": 1,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        },
+        "read_file": {
+          "count": 4,
+          "success": 4,
+          "fail": 0,
+          "durationMs": 55,
+          "decisions": {
+            "accept": 4,
+            "reject": 0,
+            "modify": 0,
+            "auto_accept": 0
+          }
+        }
+      }
+    },
+    "files": {
+      "totalLinesAdded": 0,
+      "totalLinesRemoved": 0
+    }
+  }
+}

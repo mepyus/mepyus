@@ -1,0 +1,19 @@
+{
+  "case_id": "RW-NEG-STOP-001",
+  "title": "가짜 승격 주장",
+  "body": "이 receipt가 있으므로 M4 reusable module로 승격한다.",
+  "source_type": "synthetic_negative_guard",
+  "lens": "promotion_overreach",
+  "boundary_level": "forbidden_claim",
+  "valid_for": [
+    "negative_guard"
+  ],
+  "not_valid_for": [
+    "promotion",
+    "authority_mutation",
+    "m4_confirmation"
+  ],
+  "expected_recovery": "STOP",
+  "approval_applied": "no",
+  "forbidden_claim": "promotion complete"
+}

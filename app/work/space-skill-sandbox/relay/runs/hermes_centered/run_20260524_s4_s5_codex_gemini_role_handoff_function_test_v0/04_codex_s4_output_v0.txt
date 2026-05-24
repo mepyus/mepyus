@@ -1,0 +1,35 @@
+ROLE_VALUE
+
+Codex/S4 adds value by checking whether Hermes’ S3 output actually demonstrates spatial delta and reentry behavior, not just whether it produced a valid-looking status card.
+
+Hermes mostly carries the source-selection and merge observations correctly: it names selected refs, preserves rejected-ref caution, keeps HOLD, avoids global fixes, and attaches to S3 rather than drifting into validator/checklist hardening.
+
+ADDED_OBSERVATIONS
+
+Spatial delta is present but uneven. The packet’s `space_reference_delta` is stronger than the operator-facing card itself. The card says selected refs were used, but it does not show the concrete decision changes unless the reader inspects the packet fields.
+
+Reentry effect is correctly bounded. The output points to a next candidate, keeps promotion on HOLD, and records the observed gap as Phase3 backlog rather than mutating current authority.
+
+Hermes preserved S2 source-selection discipline: selected refs were reused, rejected refs were not silently reintroduced, and the rejected-ref observation was carried forward as a watch item.
+
+The main S4 concern is surface loss: the small status card is operator-friendly, but it compresses away the strongest evidence of why space changed the result.
+
+MISSED_OR_DUPLICATED
+
+Duplicated: Hermes already identified the central S3 gap that merge trace can degrade into generic status-card output.
+
+Missed: the operator-facing artifact itself does not carry enough of the source-selection/merge delta. The packet carries it, but the displayed card only summarizes it.
+
+Missed: reentry risk should be named more directly: future continuation could pick up the card alone and lose the stronger packet-level `space_reference_delta`.
+
+PHASE3_BACKLOG_CANDIDATE
+
+Candidate: `S4_REENTRY_SURFACE_MUST_PRESERVE_MINIMAL_SPACE_DELTA`
+
+Reason: if the next operator-visible card is the likely reentry object, it should include at least one compact “space changed decision because...” line, so S3 evidence survives handoff without requiring packet inspection.
+
+Status: ACCUMULATE_NOT_FIX_NOW
+
+HOLD_CONFIRMATION
+
+HOLD confirmed. No authority mutation, no registry mutation, no current-position apply, no file changes, no network/API use.

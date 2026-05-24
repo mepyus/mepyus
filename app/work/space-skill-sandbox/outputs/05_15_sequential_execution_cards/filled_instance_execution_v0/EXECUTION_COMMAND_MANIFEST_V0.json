@@ -1,0 +1,22 @@
+{
+  "manifest_id": "EXECUTION_COMMAND_MANIFEST_V0",
+  "status": "prepared_execution_harness_with_execution_hold",
+  "base_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0",
+  "packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+  "scripts": {
+    "static_validator": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_execution_contract_v0.py",
+    "gemini_lite_materializer": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/materialize_gemini_lite_v0.py",
+    "guarded_runner": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh"
+  },
+  "safe_now_commands": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh validate-static"
+  ],
+  "post_approval_commands": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh run-gemini-after-approval",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh run-codex-after-approval"
+  ],
+  "required_env_for_real_execution": "I_UNDERSTAND_THIS_RUNS_GEMINI_AND_CODEX=yes",
+  "current_approval_expected": "EXECUTION_APPROVAL_GRANTED_FOR_THIS_PACKET: no",
+  "promotion": "HOLD",
+  "hard_stop": "No execution is allowed until packet approval is changed to yes by explicit user approval."
+}

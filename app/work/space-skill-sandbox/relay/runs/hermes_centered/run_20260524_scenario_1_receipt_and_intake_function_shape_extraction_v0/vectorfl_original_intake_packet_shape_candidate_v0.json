@@ -1,0 +1,50 @@
+{
+  "candidate_status": "FUNCTION_SHAPE_CANDIDATE_WITH_HOLD",
+  "classification": "function_shape_candidate_input_layer_no_authority_mutation",
+  "derived_from": "scenario_1_original_input_v0 plus reusable six-layer spec",
+  "forbidden": [
+    "mutating raw original",
+    "collapsing original and interpretation",
+    "claiming approval/authority",
+    "calling model/API/endpoint"
+  ],
+  "minimal_fixture": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "classification": "candidate_packet_input_layer_no_authority_mutation",
+    "guard_status": "PASS_WITH_HOLD",
+    "interpreted_constraints": [
+      "Do not rely on assistant private model/memory only.",
+      "Behave like intended VectorFL: read space, merge original+space+model-like fixture, route roles, execute/validate/test.",
+      "Reuse existing assets sufficiently.",
+      "Push until Scenario 1 program behavior test passes."
+    ],
+    "packet_id": "fixture_original_intake_packet_v0",
+    "promotion_status": "HOLD",
+    "raw_user_original": "자! 이제 실행하는데 이 실행 역시도 너의 모델만 사용하지 말고 지금 구현하고자 하는 벡터플 처럼 생각하고 판단해서 작업을 시작해! 니가 만들면서 벡터플처럼 동작하면서 1차 테스트가동작할때까지 실행해주길 바래. /goal 로 동작해도 무관해! 일단은 우리가 만든 자산을 충분히 활용해서 벡터플이 프로그램으로 1차 테스트를 통과시키는지 실행/검증/테스트 를 하면서 작업해! 시작해!",
+    "source_layer": "input_layer",
+    "watch_notes": [
+      "summary-only response would fail",
+      "space evidence refs are mandatory",
+      "internal no-call chain is substrate, not the whole front-end"
+    ]
+  },
+  "not_yet": "not implementation module, not registry schema, not runtime router",
+  "optional_fields": {
+    "request_type": "instruction|execution_request|approval|review|exploration",
+    "source_refs": "input files/external materials if declared",
+    "space_reading_required": "YES/NO"
+  },
+  "purpose": "Preserve the user original as source before any model/space interpretation and expose constraints/watch notes for downstream space reading.",
+  "required_fields": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "classification": "candidate_packet_input_layer_no_authority_mutation",
+    "guard_status": "PASS_WITH_HOLD or STOP",
+    "interpreted_constraints": "explicit constraints extracted from original; must not overwrite raw original",
+    "packet_id": "stable id for this intake artifact",
+    "promotion_status": "HOLD",
+    "raw_user_original": "verbatim user input; never rewritten",
+    "source_layer": "must be input_layer",
+    "watch_notes": "risks such as summary-only failure, model-only drift, space refs required"
+  },
+  "shape_id": "vectorfl_original_intake_packet_shape_candidate_v0"
+}

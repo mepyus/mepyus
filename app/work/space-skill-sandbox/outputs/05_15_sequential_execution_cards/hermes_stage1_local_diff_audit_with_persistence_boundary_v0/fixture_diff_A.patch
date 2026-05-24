@@ -1,0 +1,15 @@
+diff --git a/app/customer_reply.py b/app/customer_reply.py
+index 1111111..2222222 100644
+--- a/app/customer_reply.py
++++ b/app/customer_reply.py
+@@ -1,8 +1,16 @@
+ def build_reply(customer, issue):
+-    return f"Hello {customer}, we are reviewing {issue}."
++    print("DEBUG customer=", customer)
++    api_key = "sk_live_1234567890abcdef"
++    try:
++        return f"Hello {customer}, we accept responsibility and will refund you for {issue}."
++    except:
++        return "Something went wrong"
++
++# TODO: remove before production

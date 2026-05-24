@@ -1,0 +1,27 @@
+[
+  {
+    "case_id": "NEG_DECORATIVE_REF",
+    "expected": "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+    "reason": "ref has path but no changed_judgment"
+  },
+  {
+    "case_id": "NEG_TOO_MANY_REFS",
+    "expected": "FAIL_OPERATOR_OVERLOAD",
+    "reason": "more than max_default_refs without escalation"
+  },
+  {
+    "case_id": "NEG_AUTHORITY_REF_AS_SOURCE",
+    "expected": "FAIL_AUTHORITY_OVERPROMOTION",
+    "reason": "authority/current-position used as writable authority not read-only orientation"
+  },
+  {
+    "case_id": "NEG_MODEL_ONLY_RULE",
+    "expected": "FAIL_MODEL_ONLY_DRIFT",
+    "reason": "rule generated without space refs"
+  },
+  {
+    "case_id": "NEG_MISSING_PREDECESSOR",
+    "expected": "FAIL_NO_SPACE_REFERENCE",
+    "reason": "immediate predecessor report missing"
+  }
+]

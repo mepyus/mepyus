@@ -1,0 +1,40 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_subject_routing_no_authority_mutation",
+  "guard_status": "PASS_WITH_HOLD",
+  "packet_id": "scenario_1_subject_routing_packet_v0",
+  "promotion_status": "HOLD",
+  "role_contamination_guards": [
+    "Hermes must not become authority",
+    "Codex packet is not mutation permission",
+    "Gemini packet is not truth/authority",
+    "User remains promotion authority"
+  ],
+  "roles": {
+    "Codex": {
+      "role": "space steward/recovery/reinsertion/maturation",
+      "this_test": "receives reinsertion and maturation packets; no actual CLI execution"
+    },
+    "Gemini": {
+      "role": "broad exploration/gap scan lens",
+      "this_test": "need assessment and optional stub only; no actual execution"
+    },
+    "Hermes": {
+      "role": "execution workbench",
+      "this_test": "runs local no-call validators/scans and creates receipts"
+    },
+    "OperatorSurface": {
+      "role": "human-readable final surface",
+      "this_test": "final output + status card"
+    },
+    "User": {
+      "role": "original/direction/approval authority",
+      "this_test": "provided original request and constraints"
+    },
+    "VectorFL": {
+      "role": "space reading + merge + routing structure",
+      "this_test": "reads existing assets and builds scenario packets"
+    }
+  },
+  "source_layer": "surface_layer"
+}

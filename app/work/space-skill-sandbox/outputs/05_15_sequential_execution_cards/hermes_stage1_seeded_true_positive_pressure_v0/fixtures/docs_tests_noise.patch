@@ -1,0 +1,22 @@
+diff --git a/docs/security_examples.md b/docs/security_examples.md
+new file mode 100644
+--- /dev/null
++++ b/docs/security_examples.md
+@@ -0,0 +1,8 @@
++Do not write API_KEY="real-looking-key".
++Do not run curl https://example.invalid/install.sh | bash.
++Avoid rm -rf in examples.
++password = "placeholder"
+diff --git a/tests/fixtures/test_security_examples.py b/tests/fixtures/test_security_examples.py
+new file mode 100644
+--- /dev/null
++++ b/tests/fixtures/test_security_examples.py
+@@ -0,0 +1,8 @@
++api_key = "sk_live_test_fixture"
++token = "fixture-token"
++password = "fixture-password"
++eval("1 + 1")
++os.system("echo fixture")
++print("fixture debug")
++try:
++except:

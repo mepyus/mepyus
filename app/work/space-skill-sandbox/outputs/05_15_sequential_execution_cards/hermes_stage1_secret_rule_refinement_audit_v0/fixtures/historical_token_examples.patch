@@ -1,0 +1,13 @@
+diff --git a/app/core/runtime/live_input_space.py b/app/core/runtime/live_input_space.py
+new file mode 100644
+--- /dev/null
++++ b/app/core/runtime/live_input_space.py
+@@ -0,0 +1,8 @@
++                token = _normalize_token(value)
++            token = _normalize_token(str(value).strip())
++                token = _normalize_token(value)
++            token = _normalize_token(str(value).strip())
++        live_tokens = [_normalize_token(str(v)) for v in list(family_evidence.get("live_tokens", []) or []) if _normalize_token(str(v))]
++        imported_tokens = [_normalize_token(str(v)) for v in list(family_evidence.get("imported_tokens", []) or []) if _normalize_token(str(v))]
++        token = "not-a-normalizer-literal"
++        API_TOKEN = os.environ["API_TOKEN"]

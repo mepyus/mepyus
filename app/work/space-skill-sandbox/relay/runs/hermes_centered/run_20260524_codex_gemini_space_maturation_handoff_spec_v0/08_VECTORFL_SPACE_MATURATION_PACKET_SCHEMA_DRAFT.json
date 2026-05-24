@@ -1,0 +1,53 @@
+{
+  "boundary_required": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "codex_return_packet_required": [
+    "packet_id",
+    "role",
+    "read_files",
+    "referenced_material",
+    "reinserted_material",
+    "primary_layer_assignments",
+    "secondary_links",
+    "changed_judgment",
+    "missing_material",
+    "gemini_questions",
+    "next_safe_lane",
+    "boundary"
+  ],
+  "gemini_return_packet_required": [
+    "packet_id",
+    "role",
+    "read_files",
+    "layer_findings",
+    "flattening_risk",
+    "function_strengthening_candidates",
+    "programization_candidate_pressure",
+    "changed_judgment",
+    "codex_packet_quality",
+    "next_safe_lane",
+    "boundary"
+  ],
+  "hermes_merge_packet_required": [
+    "packet_id",
+    "original_user_input",
+    "space_refs_used",
+    "codex_packet_ref",
+    "gemini_packet_ref",
+    "space_reference_delta",
+    "merge_decision",
+    "output_refs",
+    "next_safe_lane",
+    "boundary"
+  ],
+  "schema_id": "VECTORFL_SPACE_MATURATION_PACKET_SCHEMA_DRAFT_20260524_V0"
+}

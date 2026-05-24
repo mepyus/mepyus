@@ -1,0 +1,54 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_artifacts_exist",
+      "pass": true
+    },
+    {
+      "check": "article_extracted_substantial_text",
+      "observed": 31855,
+      "pass": true
+    },
+    {
+      "check": "codex_gemini_outputs_present",
+      "pass": true
+    },
+    {
+      "check": "space_impact_classification_present",
+      "pass": true
+    },
+    {
+      "check": "new_lenses_present",
+      "pass": true
+    },
+    {
+      "check": "report_mentions_core_article_terms",
+      "pass": true
+    },
+    {
+      "check": "trace_rows>=4",
+      "observed": 4,
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "timings_present",
+      "observed": {
+        "codex_space_impact_seconds": 56.81,
+        "gemini_layer_impact_seconds": 24.18,
+        "web_fetch_seconds": 0.201832
+      },
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_WITH_HOLD"
+}

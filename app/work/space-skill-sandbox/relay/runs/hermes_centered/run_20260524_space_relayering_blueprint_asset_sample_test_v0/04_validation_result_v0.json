@@ -1,0 +1,84 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "script_only_budget",
+      "pass": true
+    },
+    {
+      "check": "source_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "sample_assets_bounded",
+      "pass": true
+    },
+    {
+      "check": "all_sample_hashes",
+      "pass": true
+    },
+    {
+      "check": "classification_for_each_asset",
+      "pass": true
+    },
+    {
+      "check": "all_layers_covered",
+      "pass": true
+    },
+    {
+      "check": "multi_layer_assets_detected",
+      "pass": true
+    },
+    {
+      "check": "early_attach_detected",
+      "pass": true
+    },
+    {
+      "check": "function_strengthening_links_present",
+      "pass": true
+    },
+    {
+      "check": "no_manual_low_confidence",
+      "pass": true
+    },
+    {
+      "check": "observed_gaps_present",
+      "pass": true
+    },
+    {
+      "check": "next_crosslink_not_tree_move",
+      "pass": true
+    },
+    {
+      "check": "hold_boundaries_no_mutation",
+      "pass": true
+    },
+    {
+      "check": "endpoint_api_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "early_attach_candidates_detected": 3,
+  "elapsed_seconds": 0.0016491809999999996,
+  "folder_tree_mutation": "NO",
+  "layer_coverage": {
+    "L0_USER_ORIGINAL_AND_CONTINUATION": 1,
+    "L1_SPACE_READING_AND_ASSET_SELECTION": 2,
+    "L2_MODEL_MERGE_AND_EXECUTION": 2,
+    "L3_CROSS_AGENT_SPACE_EVALUATION": 1,
+    "L4_OPERATOR_REENTRY_SURFACE": 1,
+    "L5_BUDGET_AND_GOVERNANCE": 2,
+    "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT": 5
+  },
+  "multi_layer_assets_count": 2,
+  "next_safe_lane": "SPACE_RELAYERING_INDEX_CROSSLINK_PLAN_NO_TREE_MUTATION_V0",
+  "promotion_status": "HOLD",
+  "sample_count": 12,
+  "verdict": "PASS_SPACE_RELAYERING_BLUEPRINT_ASSET_SAMPLE_TEST_WITH_HOLD"
+}

@@ -1,0 +1,22 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_input_layer_no_authority_mutation",
+  "guard_status": "PASS_WITH_HOLD",
+  "interpreted_constraints": [
+    "use four extracted shapes",
+    "preserve original",
+    "require actual space refs",
+    "merge original+space+model fixture",
+    "receipt is evidence only",
+    "HOLD"
+  ],
+  "packet_id": "four_shape_loop_original_intake_packet_v0",
+  "promotion_status": "HOLD",
+  "raw_user_original": "# New User Original For Four Shape Loop V0\n\n요청: 현재 VectorFL 자산을 이용해 새 사용자 입력 하나를 original intake -> space reading -> merge -> receipt writer까지 최소 루프로 실제 통과시켜라. 각 파트 처리 시간과 guard/boundary를 남겨라.\n\n경계: no API, no local endpoint, no server, no real model/Codex/Gemini execution, no authority/registry/current-position mutation, HOLD.\n",
+  "source_layer": "input_layer",
+  "watch_notes": [
+    "minimal loop rehearsal only",
+    "not runtime router",
+    "not registry"
+  ]
+}

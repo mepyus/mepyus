@@ -1,0 +1,99 @@
+{
+  "active_hits": 0,
+  "applied_contract_id": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+  "applied_rules": {
+    "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES": {
+      "acceptance": "Surface is mind-sized but includes a delta line and deeper evidence handle.",
+      "rule": "Merge outputs, role reviews, and operator surfaces must include one compact minimal_space_delta line plus evidence handles when reentry could lose packet-level context.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP": {
+      "acceptance": "Short continuation must cite latest next-lane evidence in space_reference_delta.",
+      "rule": "For continuation-only user inputs, preserve raw original, read latest next-lane card, then classify intent/budget. Do not infer next lane from model memory alone.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R3_SOURCE_SELECTION_REJECTED_REF_LOG": {
+      "acceptance": "Selected refs have changed_judgment; rejected refs have reason; rejected refs are not silently reintroduced.",
+      "rule": "Source-selection surfaces must record rejected refs with reasons when rejection prevents archaeology, overload, or decorative citation.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC": {
+      "acceptance": "Comparison explains why both agents were useful or why one should be skipped/reviewed.",
+      "rule": "When Codex/Gemini heavy mode is used, record each agent unique_delta and classify overlap as productive, duplicative, or conflicting.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R5_VALIDATOR_WORDING_SCOPE_GUARD": {
+      "acceptance": "Watch future validators; do not harden now without recurrence.",
+      "rule": "If wording false positives recur, distinguish exclusion wording from target classification.",
+      "status": "WATCH_ONLY_NOT_APPLIED"
+    }
+  },
+  "applied_rules_count": 5,
+  "applied_status": "APPLIED_TO_HOLD_SPEC_ARTIFACTS_ONLY",
+  "approval_received": "YES",
+  "approval_scope": "apply reviewed-structure spec into new HOLD operating contract artifacts under app/work only",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "User approved bounded plan execution, but scope is document/spec application from reviewed local evidence; no new cross-agent ambiguity or external-agent need.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "checks": 15,
+  "current_position_apply": "NO",
+  "current_position_candidate": "PHASE3_BOUNDED_APPLY_FROM_REVIEWED_SPEC_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.002046731000000003,
+  "hold_boundaries": {
+    "approval_granted": "YES_FOR_BOUNDED_APP_WORK_SPEC_ARTIFACTS",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "implementation_apply": "YES_BOUNDED_SPEC_ARTIFACTS_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO",
+    "source_schema_change": "NO"
+  },
+  "interface_contracts": {
+    "agent_role_contract": [
+      "Codex: spatial delta/reentry effect",
+      "Gemini: layer/big-frame/inward-collapse pressure",
+      "unique_delta + overlap classification in heavy mode"
+    ],
+    "budget_contract": [
+      "default FAST for known safe lanes",
+      "HEAVY only for explicit agent role test, architecture ambiguity, drift/risk, or cross-agent comparison",
+      "post-review only on disagreement/STOP/unclear reinsertion"
+    ],
+    "input_contract": [
+      "raw original first",
+      "continuation-only requires latest next-lane lookup",
+      "approval/permission separation preserved"
+    ],
+    "merge_contract": [
+      "original + selected refs + model reasoning merge",
+      "why_not_model_only for drift-prone outputs",
+      "minimal_space_delta + evidence handles"
+    ],
+    "operator_surface_contract": [
+      "mind-sized status",
+      "HOLD boundary",
+      "minimal_space_delta",
+      "evidence handles",
+      "next safe lane"
+    ],
+    "space_reference_contract": [
+      "selected refs: absolute_path/exists/sha256/used_for/changed_judgment",
+      "rejected refs: reason when material",
+      "space_reference_delta explains judgment change"
+    ]
+  },
+  "next_safe_lane": "PHASE3_APPLIED_CONTRACT_SMOKE_TEST_NO_AUTHORITY_MUTATION_V0",
+  "promotion_status": "HOLD",
+  "registry_mutation": "NO",
+  "report_id": "VECTORFL_PHASE3_BOUNDED_APPLY_FROM_REVIEWED_SPEC_20260524_V0",
+  "revised_plan_id": "PHASE3_REVISED_BOUNDED_APPLY_PLAN_FROM_REVIEWED_STRUCTURE_SPEC_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase3_bounded_apply_from_reviewed_spec_v0",
+  "source_code_mutation": "NO",
+  "source_schema_change": "NO",
+  "verdict": "PASS_PHASE3_BOUNDED_APPLY_FROM_REVIEWED_SPEC_WITH_HOLD"
+}

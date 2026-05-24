@@ -1,0 +1,31 @@
+{
+  "classification": "PIPELINE_PHASE1_READONLY_CONTRACT_HARDENING_V0",
+  "verdict": "PASS_READONLY_CONTRACT_HARDENED",
+  "created_at": "2026-05-20T10:57:01Z",
+  "test_command": "python3 tests/test_readonly_contract.py",
+  "test_returncode": 0,
+  "test_pass": true,
+  "tests": [
+    "mutating methods unsupported",
+    "unknown routes 404",
+    "api summary schema",
+    "all 7 request details",
+    "guardrail probe schema"
+  ],
+  "db_facts": {
+    "requests": 7,
+    "guardrail_events": 22,
+    "fail_events": 0,
+    "authority_mutations": 0,
+    "non_hold_reviews": 0
+  },
+  "hold": {
+    "promotion": "HOLD",
+    "authority_mutation": "NO",
+    "program_alpha": "NO",
+    "external_model_tool_network_execution": "NO",
+    "real_company_data": "NO",
+    "production_deployment": "NO"
+  },
+  "next_lane": "PIPELINE_PHASE1_API_CONTRACT_SNAPSHOT_V0"
+}

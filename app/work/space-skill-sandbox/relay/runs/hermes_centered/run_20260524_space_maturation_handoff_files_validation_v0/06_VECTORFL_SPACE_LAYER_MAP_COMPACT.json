@@ -1,0 +1,65 @@
+{
+  "cross_link_rule": "Each asset has one primary_layer and zero-or-more secondary_links. Physical folder move is not allowed in this draft.",
+  "layers": [
+    {
+      "attached_functions": [
+        "S1 intake",
+        "R2 next-lane lookup"
+      ],
+      "layer": "L0_USER_ORIGINAL_AND_CONTINUATION",
+      "purpose": "raw user request/original input preservation; continuation disambiguation"
+    },
+    {
+      "attached_functions": [
+        "S2 source selection",
+        "R3 rejected-ref log"
+      ],
+      "layer": "L1_SPACE_READING_AND_ASSET_SELECTION",
+      "purpose": "select space refs, rejected refs, changed_judgment, archaeology control"
+    },
+    {
+      "attached_functions": [
+        "S3 merge trace",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L2_MODEL_MERGE_AND_EXECUTION",
+      "purpose": "Hermes merges original + space + model reasoning into concrete output"
+    },
+    {
+      "attached_functions": [
+        "S4 Codex evaluation",
+        "S5 Gemini layer judgment",
+        "R4 unique_delta metric"
+      ],
+      "layer": "L3_CROSS_AGENT_SPACE_EVALUATION",
+      "purpose": "Codex/Gemini evaluate the produced output against space and layer structure"
+    },
+    {
+      "attached_functions": [
+        "S6 operator surface",
+        "R1 minimal_space_delta"
+      ],
+      "layer": "L4_OPERATOR_REENTRY_SURFACE",
+      "purpose": "mind-sized status, HOLD receipt, evidence handles"
+    },
+    {
+      "attached_functions": [
+        "S7 budget gate",
+        "authority separation"
+      ],
+      "layer": "L5_BUDGET_AND_GOVERNANCE",
+      "purpose": "fast/heavy gate, post-review skip, HOLD/approval separation"
+    },
+    {
+      "attached_functions": [
+        "new blueprint lane",
+        "space relayering",
+        "asset index normalization"
+      ],
+      "layer": "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT",
+      "purpose": "future folder-tree/spec/program setup based on asset roles, not current artifact sprawl"
+    }
+  ],
+  "map_id": "VECTORFL_SPACE_LAYER_MAP_COMPACT_20260524_V0",
+  "read_first_note": "Compact layer map for Codex/Gemini. Full draft remains available, but this is the default handoff read."
+}

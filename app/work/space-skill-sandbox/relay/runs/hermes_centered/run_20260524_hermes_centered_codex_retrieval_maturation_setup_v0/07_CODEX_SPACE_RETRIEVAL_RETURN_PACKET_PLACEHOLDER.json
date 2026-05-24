@@ -1,0 +1,248 @@
+{
+  "packet_id": "CODEX_SPACE_RETRIEVAL_RETURN_PACKET_20260524_HERMES_CENTERED_V0",
+  "role": "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL",
+  "read_files": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/04_CODEX_READ_FIRST_FOR_SPACE_RETRIEVAL.md",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/05_codex_space_retrieval_task_packet_v0.json",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/03_codex_reference_path_index_v0.json",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/06_VECTORFL_SPACE_LAYER_MAP_COMPACT.json",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/07_VECTORFL_ASSET_INDEX_COMPACT.json",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md",
+      "read_type": "required"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/00_user_original_verbatim.md",
+      "read_type": "task_reference"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/06_expected_codex_space_retrieval_return_schema_v0.json",
+      "read_type": "task_reference"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/07_CODEX_SPACE_RETRIEVAL_RETURN_PACKET_PLACEHOLDER.json",
+      "read_type": "task_reference_existing_output_placeholder"
+    }
+  ],
+  "selected_space_material": [
+    {
+      "ref": "user_original_hermes_centered_loop",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/00_user_original_verbatim.md",
+      "fit": "highest",
+      "reason": "Defines the corrected role split: Hermes preserves and interprets the original, asks Codex CLI/script bridge for original-related space retrieval, merges original + space + model value, records trace for Codex reentry, and keeps Gemini only inside Codex script-chain support."
+    },
+    {
+      "ref": "compact_layer_map",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/06_VECTORFL_SPACE_LAYER_MAP_COMPACT.json",
+      "fit": "high",
+      "reason": "Provides the relevant layer structure for this correction: L0 original preservation, L1 space reading and source selection, L2 Hermes merge and execution, L3 cross-agent evaluation, L4 operator reentry, L5 governance, and L6 future blueprint preparation."
+    },
+    {
+      "ref": "compact_asset_index",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/07_VECTORFL_ASSET_INDEX_COMPACT.json",
+      "fit": "high",
+      "reason": "Supplies bounded asset candidates by primary layer and secondary links, allowing Hermes to merge against indexed space without broad archaeology or folder mutation."
+    },
+    {
+      "ref": "no_mutation_boundary",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md",
+      "fit": "high",
+      "reason": "Confirms the current lane is HOLD-only and forbids folder moves, source/authority/registry/current-position mutation, promotion, API/direct/server/replay execution, Codex live calls, and Gemini live calls."
+    },
+    {
+      "ref": "indexed_s1_intake_original_preservation",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0.json",
+      "fit": "high_indexed_candidate",
+      "reason": "Indexed under L0_USER_ORIGINAL_AND_CONTINUATION, matching the user requirement that Hermes preserve the original and continuation meaning before merge."
+    },
+    {
+      "ref": "indexed_s2_source_selection",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+      "fit": "high_indexed_candidate",
+      "reason": "Indexed under L1_SPACE_READING_AND_ASSET_SELECTION with rejected-ref logging, matching this retrieval pass and the need to separate selected from rejected materials."
+    },
+    {
+      "ref": "indexed_s3_hermes_merge_trace",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+      "fit": "highest_indexed_candidate",
+      "reason": "Indexed under L2_MODEL_MERGE_AND_EXECUTION, directly matching Hermes as the merge/execute center that records how original + retrieved space + model reasoning were combined."
+    },
+    {
+      "ref": "indexed_s4_s5_codex_gemini_role_handoff",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0.json",
+      "fit": "medium_high_indexed_candidate",
+      "reason": "Indexed under L3_CROSS_AGENT_SPACE_EVALUATION, useful after Hermes execution for Codex/Gemini evaluation, but must be interpreted through the corrected rule that Gemini is not directly invoked in this retrieval pass."
+    },
+    {
+      "ref": "indexed_s6_operator_receipt_reentry_hold_surface",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0.json",
+      "fit": "high_indexed_candidate",
+      "reason": "Indexed under L4_OPERATOR_REENTRY_SURFACE, matching the requirement that Hermes produce a Codex-readable trace and later reentry surface while promotion remains HOLD."
+    },
+    {
+      "ref": "indexed_s7_budget_gate_phase2_rollup",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0.json",
+      "fit": "medium_indexed_candidate",
+      "reason": "Indexed under L5_BUDGET_AND_GOVERNANCE, relevant for enforcing HOLD/approval separation and avoiding live/direct calls."
+    }
+  ],
+  "rejected_space_material": [
+    {
+      "ref": "indexed_structure_spec_intent_correction_space_relayering",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_STRUCTURE_SPEC_INTENT_CORRECTION_SPACE_RELAYERING_20260524_V0.json",
+      "reason": "Indexed under L6 future blueprint preparation; useful later for programization, but not first-pass Hermes merge execution."
+    },
+    {
+      "ref": "indexed_actual_multi_agent_scenario1_process_test",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_ACTUAL_MULTI_AGENT_SCENARIO1_PROCESS_TEST_20260524_V0.json",
+      "reason": "Indexed under L2 with L6 secondary link, but scenario-level process evidence is less directly bounded than S3 Hermes merge trace for this correction."
+    },
+    {
+      "ref": "indexed_phase2_internal_structure_space_referenced",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+      "reason": "Indexed under L6 blueprint preparation; lower fit for immediate retrieval/merge than L0-L5 function tests and compact controls."
+    },
+    {
+      "ref": "indexed_phase2_source_selection_rule_real_use",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0.json",
+      "reason": "Related to L1 source selection, but redundant for this first pass because the compact asset index and S2 source-selection candidate already provide bounded retrieval controls."
+    },
+    {
+      "ref": "indexed_aifrontier_ep97_space_impact_report",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_AIFRONTIER_EP97_SPACE_IMPACT_REPORT_20260524_V0.json",
+      "reason": "Governance/programization impact material, not directly needed for corrected Hermes-centered role split."
+    },
+    {
+      "ref": "indexed_phase3_revision_plan_from_phase2_rollup",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0.json",
+      "reason": "Future revision planning material; outside this retrieval pass and should wait for Hermes execution/reentry."
+    },
+    {
+      "ref": "optional_root_reports",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CODEX_SPACE_STEWARD_RETURN_MERGE_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_SPACE_MATURATION_HANDOFF_FILES_VALIDATION_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CODEX_GEMINI_SPACE_MATURATION_HANDOFF_SPEC_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_CODEX_RETURN_MERGE_20260524_V0.md"
+      ],
+      "reason": "Available as optional verification refs in the reference index, but not read because the required compact controls were sufficient and this pass should avoid broad archaeology."
+    }
+  ],
+  "original_to_space_fit": {
+    "fit_summary": "The original correction maps cleanly to the compact VectorFL layer model: Hermes owns L0 interpretation preservation and L2 merge/execution trace; Codex owns L1 retrieval in this pass and later L3/L4 maturation review after Hermes reentry; governance remains L5 HOLD with no direct API/server/replay and no mutation.",
+    "layer_fit": [
+      {
+        "layer": "L0_USER_ORIGINAL_AND_CONTINUATION",
+        "fit": "Hermes must preserve the user's original/correction and use it as the merge anchor."
+      },
+      {
+        "layer": "L1_SPACE_READING_AND_ASSET_SELECTION",
+        "fit": "Codex retrieves bounded space material and records selected/rejected refs without performing maturation."
+      },
+      {
+        "layer": "L2_MODEL_MERGE_AND_EXECUTION",
+        "fit": "Hermes merges original + retrieved space + model reasoning and records the trace."
+      },
+      {
+        "layer": "L3_CROSS_AGENT_SPACE_EVALUATION",
+        "fit": "Codex/Gemini evaluation is later-stage only; Gemini is script-chain support, not a direct live call."
+      },
+      {
+        "layer": "L4_OPERATOR_REENTRY_SURFACE",
+        "fit": "Hermes should produce a Codex-readable reentry record after merge/execution."
+      },
+      {
+        "layer": "L5_BUDGET_AND_GOVERNANCE",
+        "fit": "Promotion remains HOLD and no direct API/server/replay or authority mutation is allowed."
+      },
+      {
+        "layer": "L6_PROGRAMIZATION_PREP_SPACE_BLUEPRINT",
+        "fit": "Blueprint/programization material is relevant later but should not drive first-pass execution."
+      }
+    ]
+  },
+  "changed_judgment_for_hermes": {
+    "judgment": "Use Hermes-centered merge/execute as the active interpretation. Any older handoff/live-call framing in prior reports is superseded by this correction.",
+    "changes": [
+      "Codex is not the execution center in this pass; Codex performs original-related space retrieval through CLI/script bridge.",
+      "Hermes must reinterpret and execute using original + retrieved space + model reasoning, then leave a readable trace for Codex reentry.",
+      "Gemini is not directly invoked in retrieval and should only appear later as support inside Codex script-chain space exploration/analysis.",
+      "Promotion remains HOLD; no source, authority, current-position, registry, folder-tree, API/direct/server/replay, Codex-live-call, or Gemini-live-call mutation is permitted."
+    ]
+  },
+  "risks": [
+    {
+      "risk": "Accidentally treating this retrieval packet as a maturation/execution artifact.",
+      "mitigation": "Hermes should perform the merge/execution and create the reentry record; Codex maturation waits until after Hermes reentry."
+    },
+    {
+      "risk": "Reintroducing older direct Gemini/API/live-call wording from optional reports.",
+      "mitigation": "Use the current no-mutation boundary and Hermes-centered original as authority for this pass."
+    },
+    {
+      "risk": "Over-reading optional refs or broad same-day artifact history.",
+      "mitigation": "Use the compact layer map and compact asset index as the bounded retrieval surface unless Hermes needs explicit optional verification."
+    },
+    {
+      "risk": "Confusing indexed candidates with files actually read in this pass.",
+      "mitigation": "Read-files list distinguishes required/task references from indexed candidate selection; no optional verification files were opened."
+    }
+  ],
+  "recommended_hermes_merge_inputs": [
+    {
+      "input": "original_user_correction",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0/00_user_original_verbatim.md",
+      "use": "Primary semantic authority for the role split."
+    },
+    {
+      "input": "compact_layer_map",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/06_VECTORFL_SPACE_LAYER_MAP_COMPACT.json",
+      "use": "Layer vocabulary and responsibility boundaries."
+    },
+    {
+      "input": "compact_asset_index",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/07_VECTORFL_ASSET_INDEX_COMPACT.json",
+      "use": "Bounded list of candidate space assets and rejected candidates."
+    },
+    {
+      "input": "no_mutation_boundary",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_space_maturation_handoff_spec_v0/09_VECTORFL_NO_MUTATION_BOUNDARY_DRAFT.md",
+      "use": "Governance constraints and HOLD boundary."
+    },
+    {
+      "input": "highest_fit_indexed_candidates",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0.json"
+      ],
+      "use": "Candidate assets for Hermes merge/reentry logic if Hermes chooses to open indexed files during its execution phase."
+    }
+  ],
+  "next_for_hermes": {
+    "action": "HERMES_MODEL_MERGE_ORIGINAL_SPACE_MODEL_WITH_HOLD",
+    "instructions": [
+      "Merge the original correction, this retrieval packet, compact layer map, compact asset index, and no-mutation boundary.",
+      "Execute only within the allowed draft/reentry lane and record how Hermes interpreted the role split.",
+      "Write a Codex-readable reentry trace for later Codex maturation judgment.",
+      "Keep promotion_status as HOLD and do not perform direct API/server/replay, Gemini live call, folder move, or source/authority/current-position/registry mutation."
+    ]
+  },
+  "promotion_status": "HOLD"
+}

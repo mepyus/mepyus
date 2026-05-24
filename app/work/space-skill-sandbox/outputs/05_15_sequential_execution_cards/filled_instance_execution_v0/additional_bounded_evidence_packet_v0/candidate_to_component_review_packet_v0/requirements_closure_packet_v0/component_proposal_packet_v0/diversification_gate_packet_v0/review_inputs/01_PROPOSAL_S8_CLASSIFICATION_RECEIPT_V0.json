@@ -1,0 +1,29 @@
+{
+  "verdict": "PROPOSAL_S8_CLASSIFIED_PROPOSAL_CANDIDATE_READY_WITH_PROMOTION_HOLD",
+  "status": "classification_only_no_authority_mutation",
+  "created_at_utc": "2026-05-17T12:09:37Z",
+  "classification": "proposal_candidate_ready",
+  "meaning": "component proposal candidate exists as evidence package; not proposal_review_ready and not promoted component",
+  "proposal_candidate_name": "bounded_combined_bridge_component_proposal_candidate_v0",
+  "conditions": {
+    "real_proposal_gemini_executed": true,
+    "real_proposal_codex_executed": true,
+    "gemini_completion": true,
+    "codex_completion": true,
+    "codex_classification_proposal_candidate_ready": true,
+    "promotion_false": true,
+    "authority_false": true,
+    "registry_schema_workflow_integration_false": true
+  },
+  "why_not_proposal_review_ready": [
+    "Gemini and Codex classify proposal_candidate_ready, not proposal_review_ready",
+    "promotion is not approved",
+    "authority mutation is not approved",
+    "registry/schema/workflow integration is not approved"
+  ],
+  "next_smallest_action": "prepare proposal-review-readiness gate packet, still no promotion/authority mutation, to decide whether proposal_candidate_ready can become proposal_review_ready",
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "registry_schema_workflow_integration": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

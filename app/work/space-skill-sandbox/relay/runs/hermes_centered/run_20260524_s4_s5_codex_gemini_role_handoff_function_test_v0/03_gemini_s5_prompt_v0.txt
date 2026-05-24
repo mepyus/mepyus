@@ -1,0 +1,222 @@
+You are participating in a bounded VectorFL Phase2 function test. Do not modify files. Do not use network. Do not call APIs. Treat all artifacts as HOLD evidence only. Evaluate the provided Hermes S3 small output and role-handoff question. Return concise plain text with sections: ROLE_VALUE, ADDED_OBSERVATIONS, MISSED_OR_DUPLICATED, PHASE3_BACKLOG_CANDIDATE, HOLD_CONFIRMATION.
+
+Your role is Gemini/S5: evaluate structural/layer pressure, big-frame alignment, inward-collapse risk, and whether the role-handoff itself is too internal or still attached to Phase1 whole flow. Do not duplicate Codex spatial-delta review except when needed. Identify non-duplicate value Gemini adds beyond Hermes/Codex.
+
+S3_PACKET_JSON:
+{
+  "HOLD_receipt": {
+    "authority_effect": "NO_AUTHORITY_MUTATION",
+    "current_position_apply": "NO",
+    "promotion_status": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "attached_phase1_stage": "S3_HERMES_MERGE_EXECUTION",
+  "function_test_result": {
+    "execution_receipt": "PASS",
+    "merge_trace": "PASS",
+    "not_global_fix": "PASS",
+    "small_real_output": "PASS",
+    "space_reference_delta": "PASS",
+    "why_not_model_only": "PASS"
+  },
+  "hermes_merge_or_execution_result": {
+    "artifact_id": "S3_SMALL_REAL_OUTPUT_NEXT_FUNCTION_STATUS_CARD_V0",
+    "content": [
+      "S3 function test is attached to Phase1 stage S3_HERMES_MERGE_EXECUTION.",
+      "Original continuation was preserved before merge.",
+      "S2 selected refs were used; rejected refs were not silently reintroduced.",
+      "Merge result is a small operator-facing next-step card, not validator/checklist hardening.",
+      "Observed gaps are recorded for Phase3 backlog, not globally fixed now.",
+      "HOLD boundary remains active."
+    ],
+    "type": "operator_status_card"
+  },
+  "merge_trace": [
+    {
+      "effect": "preserved continuation text before interpretation",
+      "input": "raw original",
+      "step": 1
+    },
+    {
+      "effect": "classified continuation as S3 merge trace function test",
+      "input": "S2 predecessor + latest next",
+      "step": 2
+    },
+    {
+      "effect": "used selected refs and carried rejected-ref observation without global fix",
+      "input": "S2 packet",
+      "step": 3
+    },
+    {
+      "effect": "limited scope to S3 merge/trace/receipt",
+      "input": "phase2 matrix",
+      "step": 4
+    },
+    {
+      "effect": "formed small operator-facing output with HOLD boundary",
+      "input": "model reasoning",
+      "step": 5
+    }
+  ],
+  "next_test_candidate": "S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0",
+  "observed_gap": {
+    "description": "A small operator-facing output is useful only if the merge trace explicitly shows how space refs changed the decision; otherwise S3 can degrade into a generic status card.",
+    "gap_id": "S3_GAP_MERGE_TRACE_CAN_BECOME_STATUS_CARD_ONLY_IF_DELTA_IS_EXPLICIT",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "original_plus_space_plus_model_merge": {
+    "merged_decision": "Produce a small operator-facing S3 next-function status card and trace why selected refs changed the output.",
+    "model_reasoning_component": "Because S3 tests merge behavior, the output should be a small real status card demonstrating the merge, not another source-selection or validator-hardening step.",
+    "original_component": "User asked to continue.",
+    "space_component": "Latest S2 next card requires S3 merge trace; S2 packet supplies selected refs and rejected-ref watch; matrix limits S3 to merge/trace/why_not_model_only/receipt."
+  },
+  "packet_id": "02_s3_hermes_merge_trace_function_test_v0",
+  "phase1_stage_role": "Hermes merges user original + selected space refs + model reasoning into one small execution output with trace and HOLD receipt.",
+  "phase3_backlog_delta": {
+    "candidate": "S3_MERGE_OUTPUT_REQUIRES_TRACE_STEP_EFFECTS_AND_WHY_NOT_MODEL_ONLY",
+    "reason": "If repeated, Phase3 should add trace-step effect and why_not_model_only as required merge contract fields.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "proposed_fix_or_watch": "WATCH: S3 outputs should include trace step effects and why_not_model_only. Accumulate before revising merge contract globally.",
+  "selected_space_references_used": [
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+      "exists": true,
+      "ref_id": "s2_predecessor",
+      "sha256": "cd00aa4856d4083f80eed36ebbe0f6c3d677afb475a993c146028c296dafbd45",
+      "used_for": "confirm S2 PASS and selected/rejected ref counts"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.md",
+      "exists": true,
+      "ref_id": "latest_next_lane",
+      "sha256": "5d238530a6893685c5d35f44109c8e78159b4dc43b5c2f1f0046156257747ee0",
+      "used_for": "declare S3 merge trace rules"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_s2_source_selection_function_test_v0/02_s2_source_selection_function_test_v0.json",
+      "exists": true,
+      "ref_id": "s2_packet",
+      "sha256": "f8a949a1e06d6912ea83516863ccbb2c8976403b16c06f640a05771ab040cb0a",
+      "used_for": "reuse selected refs and carry forward S2 rejected-ref observation"
+    },
+    {
+      "absolute_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_function_position_test_map_v0/02_phase2_function_position_matrix_v0.json",
+      "exists": true,
+      "ref_id": "phase2_matrix",
+      "sha256": "2c48cd6698b1d491a2da317cce9cb9da86fc9641b5336d31feaf82f490276499",
+      "used_for": "attach test to whole-flow stage S3 and limit scope"
+    }
+  ],
+  "space_reference_delta": [
+    {
+      "changed_judgment": "S3 starts because S2 PASS named it next; S2 rejected-ref observation must be carried forward but not globally fixed.",
+      "ref_id": "s2_predecessor"
+    },
+    {
+      "changed_judgment": "Output must show original + selected space refs + model merge result and include why_not_model_only.",
+      "ref_id": "latest_next_lane"
+    },
+    {
+      "changed_judgment": "Use S2 selected refs and do not silently reintroduce rejected phase1/aifrontier/checklist refs into this narrow S3 test.",
+      "ref_id": "s2_packet"
+    },
+    {
+      "changed_judgment": "S3 scope is merge trace, space_reference_delta, why_not_model_only, and execution receipt; not Codex/Gemini role testing yet.",
+      "ref_id": "phase2_matrix"
+    }
+  ],
+  "tested_function": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT",
+  "user_original_verbatim": "응 계속해봐",
+  "why_not_model_only": "A model-only continuation would only infer “continue”; the selected space refs determine that the correct action is S3 merge trace, constrain the output away from validator/checklist hardening, and require carry-forward observations for Phase3 backlog."
+}
+
+PHASE2_MATRIX_JSON:
+{
+  "anti_convergence_rule": "If a function test turns into validator/checklist hardening without showing its Phase1 stage attachment, stop and backlog it for Phase3.",
+  "packet_id": "02_phase2_function_position_matrix_v0",
+  "phase2_session_rule": "Every Phase2 function test must output: tested_function, attached_phase1_stage, observed_gap, proposed_fix_or_watch, phase3_backlog_delta, next_test_candidate.",
+  "principle": "Phase1 = whole-flow rehearsal. Phase2 = function placement/testing against whole-flow stages. Phase3 = revise using accumulated Phase2 observations, not one-by-one patches.",
+  "promotion_status": "HOLD",
+  "whole_flow_stages": [
+    {
+      "phase1_evidence": "Hermes recognized user correction and preserved raw original.",
+      "phase2_function_tests": [
+        "original preservation",
+        "intent classification",
+        "space-affecting vs light-task gate"
+      ],
+      "phase3_revision_basis": "If repeated failures appear, revise intake gate globally.",
+      "stage": "User original intake",
+      "stage_id": "S1_INTAKE"
+    },
+    {
+      "phase1_evidence": "Codex added stable anchors/current-position as orientation/repeatability/drift evidence.",
+      "phase2_function_tests": [
+        "source-selection rule",
+        "space refs max/default",
+        "changed_judgment required"
+      ],
+      "phase3_revision_basis": "Revise source policy only after multiple function tests show missing/ref overload/conflict patterns.",
+      "stage": "Space evidence selection",
+      "stage_id": "S2_SPACE_SELECTION"
+    },
+    {
+      "phase1_evidence": "Hermes merge moved from internal fixture to actual VectorFL-like processing.",
+      "phase2_function_tests": [
+        "merge trace",
+        "space_reference_delta",
+        "why_not_model_only",
+        "execution receipt"
+      ],
+      "phase3_revision_basis": "Revise merge contract based on accumulated deltas and failure classes.",
+      "stage": "Hermes original + space + model merge execution",
+      "stage_id": "S3_HERMES_MERGE_EXECUTION"
+    },
+    {
+      "phase1_evidence": "Codex evaluated spatial delta/reentry artifacts and guard matrix values.",
+      "phase2_function_tests": [
+        "Codex assessment field",
+        "spatial delta review",
+        "reentry effect watch"
+      ],
+      "phase3_revision_basis": "Revise Codex role if assessments repeatedly duplicate Hermes or miss deltas.",
+      "stage": "Codex evaluates space refs + Hermes output",
+      "stage_id": "S4_CODEX_EVALUATION"
+    },
+    {
+      "phase1_evidence": "Gemini added layer reading and speed-vs-depth tension.",
+      "phase2_function_tests": [
+        "Gemini layer questions",
+        "big-frame alignment",
+        "inward-collapse watch"
+      ],
+      "phase3_revision_basis": "Revise Gemini role if layer questions become generic or too internal.",
+      "stage": "Gemini evaluates structural/layer pressure",
+      "stage_id": "S5_GEMINI_LAYER_JUDGMENT"
+    },
+    {
+      "phase1_evidence": "Receipts remained evidence only; no authority/promotion.",
+      "phase2_function_tests": [
+        "HOLD receipt",
+        "operator status card",
+        "mind-sized output"
+      ],
+      "phase3_revision_basis": "Revise operator surface if overload or unclear next lanes recur.",
+      "stage": "Operator receipt/reentry and HOLD",
+      "stage_id": "S6_OPERATOR_RECEIPT_REENTRY"
+    },
+    {
+      "phase1_evidence": "Full heavy worked but was slow; later fast-first applied.",
+      "phase2_function_tests": [
+        "heavy trigger detection",
+        "fast continuation",
+        "post-review skip gate"
+      ],
+      "phase3_revision_basis": "Revise budget thresholds after session log shows under/over-escalation.",
+      "stage": "Fast/heavy budget gate",
+      "stage_id": "S7_BUDGET_GATE"
+    }
+  ]
+}

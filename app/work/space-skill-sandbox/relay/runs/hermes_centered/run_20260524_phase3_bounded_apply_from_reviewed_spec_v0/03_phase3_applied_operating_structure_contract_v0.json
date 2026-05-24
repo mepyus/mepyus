@@ -1,0 +1,108 @@
+{
+  "applied_from": [
+    "VECTORFL_PRE_APPROVAL_REVIEWED_STRUCTURE_SPEC_V0",
+    "PHASE3_REVISION_PLAN_FROM_ACCUMULATED_PHASE2_FUNCTION_TESTS_V0",
+    "VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0"
+  ],
+  "applied_rules": {
+    "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES": {
+      "acceptance": "Surface is mind-sized but includes a delta line and deeper evidence handle.",
+      "rule": "Merge outputs, role reviews, and operator surfaces must include one compact minimal_space_delta line plus evidence handles when reentry could lose packet-level context.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP": {
+      "acceptance": "Short continuation must cite latest next-lane evidence in space_reference_delta.",
+      "rule": "For continuation-only user inputs, preserve raw original, read latest next-lane card, then classify intent/budget. Do not infer next lane from model memory alone.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R3_SOURCE_SELECTION_REJECTED_REF_LOG": {
+      "acceptance": "Selected refs have changed_judgment; rejected refs have reason; rejected refs are not silently reintroduced.",
+      "rule": "Source-selection surfaces must record rejected refs with reasons when rejection prevents archaeology, overload, or decorative citation.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC": {
+      "acceptance": "Comparison explains why both agents were useful or why one should be skipped/reviewed.",
+      "rule": "When Codex/Gemini heavy mode is used, record each agent unique_delta and classify overlap as productive, duplicative, or conflicting.",
+      "status": "APPLIED_TO_CONTRACT"
+    },
+    "R5_VALIDATOR_WORDING_SCOPE_GUARD": {
+      "acceptance": "Watch future validators; do not harden now without recurrence.",
+      "rule": "If wording false positives recur, distinguish exclusion wording from target classification.",
+      "status": "WATCH_ONLY_NOT_APPLIED"
+    }
+  },
+  "approval_received": "YES_BOUNDED",
+  "contract_id": "VECTORFL_PHASE3_APPLIED_OPERATING_STRUCTURE_CONTRACT_20260524_V0",
+  "hold_boundaries": {
+    "approval_granted": "YES_FOR_BOUNDED_APP_WORK_SPEC_ARTIFACTS",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "implementation_apply": "YES_BOUNDED_SPEC_ARTIFACTS_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO",
+    "source_schema_change": "NO"
+  },
+  "interface_contracts": {
+    "agent_role_contract": [
+      "Codex: spatial delta/reentry effect",
+      "Gemini: layer/big-frame/inward-collapse pressure",
+      "unique_delta + overlap classification in heavy mode"
+    ],
+    "budget_contract": [
+      "default FAST for known safe lanes",
+      "HEAVY only for explicit agent role test, architecture ambiguity, drift/risk, or cross-agent comparison",
+      "post-review only on disagreement/STOP/unclear reinsertion"
+    ],
+    "input_contract": [
+      "raw original first",
+      "continuation-only requires latest next-lane lookup",
+      "approval/permission separation preserved"
+    ],
+    "merge_contract": [
+      "original + selected refs + model reasoning merge",
+      "why_not_model_only for drift-prone outputs",
+      "minimal_space_delta + evidence handles"
+    ],
+    "operator_surface_contract": [
+      "mind-sized status",
+      "HOLD boundary",
+      "minimal_space_delta",
+      "evidence handles",
+      "next safe lane"
+    ],
+    "space_reference_contract": [
+      "selected refs: absolute_path/exists/sha256/used_for/changed_judgment",
+      "rejected refs: reason when material",
+      "space_reference_delta explains judgment change"
+    ]
+  },
+  "next_safe_lane": "PHASE3_APPLIED_CONTRACT_SMOKE_TEST_NO_AUTHORITY_MUTATION_V0",
+  "not_authority": "This contract is an applied evidence/spec artifact, not authority, registry, current-position, or promotion.",
+  "packet_id": "03_phase3_applied_operating_structure_contract_v0",
+  "phase_model": {
+    "Phase1": "whole-flow rehearsal: actual processing loop, not internal validator/card substrate only",
+    "Phase2": "function placement/testing against Phase1 whole-flow stages with observed gaps and Phase3 backlog deltas",
+    "Phase3": "batched revision based on accumulated Phase2 observations, not one-by-one convergence patches"
+  },
+  "space_reference_delta": [
+    {
+      "changed_judgment": "Execution target is new applied operating-structure contract artifact, not mutating authority/source.",
+      "ref_id": "pre_approval_spec"
+    },
+    {
+      "changed_judgment": "R1-R4 move from plan to bounded contract rules; R5 remains watch-only.",
+      "ref_id": "phase3_plan"
+    },
+    {
+      "changed_judgment": "Applied rules remain grouped by repeated patterns and whole-flow stages.",
+      "ref_id": "s7_rollup"
+    },
+    {
+      "changed_judgment": "Approval is interpreted as bounded apply lane only because exact authority mutation was not named.",
+      "ref_id": "latest_next_lane"
+    }
+  ],
+  "status": "APPLIED_TO_HOLD_SPEC_ARTIFACTS_ONLY",
+  "whole_flow_stage_count": 7
+}

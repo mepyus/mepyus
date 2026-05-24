@@ -1,0 +1,79 @@
+{
+  "api_direct": "NO",
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "budget_thresholds": {
+    "budgeted_heavy_target_seconds": "60-90s using Codex 1 + Gemini 1 + Hermes merge, no post-review unless drift",
+    "fast_target_seconds": "<5s local validators/artifact writes",
+    "full_heavy_expected_seconds": "120s+ when Codex/Gemini post-review both run",
+    "post_review_gate": "run one post reviewer only if Codex/Gemini disagree, STOP/HOLD_STOP_REVIEW appears, or reinsertion effect is unclear"
+  },
+  "classification": "operator_usable_budget_gate_policy_with_hold",
+  "current_position_apply": "NO",
+  "default_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+  "fast_mode_use_when": [
+    "small continuation from known safe lane",
+    "shape/receipt/trace local validation only",
+    "repeatability already passed and no new layer pressure",
+    "operator needs quick status/recovery surface",
+    "no fresh spatial ambiguity and no external agent insight needed"
+  ],
+  "heavy_mode_use_when": [
+    "user explicitly asks for actual Hermes/Codex/Gemini participation",
+    "task changes VectorFL operating principle or architecture",
+    "space interpretation is ambiguous across layers",
+    "drift/risk class appears: model-only merge, missing current-position, authority drift, hidden receipt failure, endpoint/API drift",
+    "promotion/authority pressure exists but must remain HOLD",
+    "fresh task requires cross-agent comparison not just artifact validation"
+  ],
+  "inputs": {
+    "codex_output": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_fresh_task_budget_gate_v0/05_codex_budget_gate_output_v0.txt",
+    "comparison": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_fresh_task_budget_gate_v0/07_budget_gate_codex_gemini_comparison_v0.json",
+    "gemini_output": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_fresh_task_budget_gate_v0/06_gemini_budget_gate_output_v0.txt"
+  },
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "operator_decision_table": [
+    {
+      "max_calls": "Codex1+Gemini1, optional one post",
+      "mode": "HEAVY_BUDGETED",
+      "signal": "explicit actual multi-agent request"
+    },
+    {
+      "mode": "FAST unless previous next lane says heavy",
+      "signal": "simple 계속 after PASS safe lane"
+    },
+    {
+      "mode": "HEAVY_BUDGETED_ONCE then set gate",
+      "signal": "too slow complaint plus process correction"
+    },
+    {
+      "mode": "REVIEW_HOLD, not automatic heavy",
+      "signal": "authority/promotion request"
+    },
+    {
+      "mode": "HEAVY_OR_POST_REVIEW depending on class",
+      "signal": "local validator failure or drift"
+    }
+  ],
+  "policy_id": "08_vectorfl_heavy_vs_fast_budget_gate_policy_v0",
+  "post_review_decision": {
+    "needed": false,
+    "reason": "SKIP_POST_REVIEW: Codex and Gemini both returned heavy/fast trigger structures; no STOP/HOLD_STOP_REVIEW conflict detected."
+  },
+  "process_rule_for_hermes": [
+    "Preserve raw original first",
+    "Read actual space materials before deciding mode",
+    "If heavy mode: run Codex once for spatial anchors and Gemini once for layer pressure",
+    "Compare original/Hermes/Codex/Gemini before merge",
+    "Execute one concrete output and receipt",
+    "Reinsert as evidence only; never authority by default"
+  ],
+  "promotion_status": "HOLD",
+  "purpose": "Decide when Hermes should use heavy actual Codex/Gemini participation versus fast no-call/local validation.",
+  "registry_mutation": "NO",
+  "timings": {
+    "codex_budget_gate_seconds": 43.35,
+    "gemini_budget_gate_seconds": 40.98
+  },
+  "verdict": "PASS_BUDGET_GATED_ACTUAL_MULTI_AGENT_FRESH_TASK_WITH_HOLD"
+}

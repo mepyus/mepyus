@@ -1,0 +1,44 @@
+{
+  "verdict": "EXECUTION_V0_READY_UNTIL_APPROVAL_GATE_WITH_EXECUTION_HOLD",
+  "status": "execution_readiness_harness_prepared_and_guard_verified",
+  "static_validator_passed": true,
+  "guard_test_performed": true,
+  "guard_test_result": "blocked_before_gemini_execution_because_packet_approval_is_no",
+  "guard_exit_code": 2,
+  "guard_stop_message": "STOP: packet does not grant execution approval: yes",
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "hermes_dispatch": false,
+  "model_api_transport_for_bridge_execution": false,
+  "live_web_lookup": false,
+  "external_connector": false,
+  "vectorfl_authority_mutation": false,
+  "promotion": false,
+  "created_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/validate_execution_contract_v0.py",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/materialize_gemini_lite_v0.py",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/EXECUTION_COMMAND_MANIFEST_V0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/HERMES_EXECUTION_READINESS_RUNBOOK_V0.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/EXECUTION_APPROVAL_GATE_V0.md"
+  ],
+  "safe_now_command": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh validate-static",
+  "post_approval_commands": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh run-gemini-after-approval",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/scripts/run_execution_v0.sh run-codex-after-approval"
+  ],
+  "required_env_for_real_execution": "I_UNDERSTAND_THIS_RUNS_GEMINI_AND_CODEX=yes",
+  "watch": [
+    "harness mistaken as approval",
+    "guard env var mistaken as packet approval",
+    "packet execution approval mistaken as promotion approval"
+  ],
+  "hold": [
+    "Gemini execution",
+    "Codex recovery execution",
+    "Hermes dispatch",
+    "promotion",
+    "VectorFL authority mutation"
+  ],
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

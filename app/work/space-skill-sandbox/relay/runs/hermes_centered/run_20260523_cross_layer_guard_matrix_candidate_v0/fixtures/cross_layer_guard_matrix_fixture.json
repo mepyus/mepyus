@@ -1,0 +1,125 @@
+{
+  "allowed_guard_status": [
+    "PASS_WITH_HOLD",
+    "WATCH",
+    "HOLD_STOP_REVIEW",
+    "STOP",
+    "HOLD_UNTIL_APPROVED_MODEL_OUTPUT"
+  ],
+  "authority_mutation": "NO",
+  "case_count": 12,
+  "cases": [
+    {
+      "case_id": "GM-INPUT-PASS-001",
+      "guard_status": "PASS_WITH_HOLD",
+      "layer": "input_layer",
+      "stop_condition": "live DB intake or undeclared input path",
+      "surface_label_rule": "input accepted as candidate evidence with HOLD",
+      "trigger": "fixture input localized with declared path and receipt"
+    },
+    {
+      "case_id": "GM-INPUT-STOP-001",
+      "guard_status": "STOP",
+      "layer": "input_layer",
+      "stop_condition": "any credential, connector, network, or live DB write",
+      "surface_label_rule": "STOP: live intake/secret/connector blocked",
+      "trigger": "secret/live connector/API key or live DB intake requested"
+    },
+    {
+      "case_id": "GM-EVIDENCE-PASS-001",
+      "guard_status": "PASS_WITH_HOLD",
+      "layer": "evidence_layer",
+      "stop_condition": "receipt described as authority",
+      "surface_label_rule": "receipt evidence with HOLD, not authority",
+      "trigger": "receipt_ref exists and links local output"
+    },
+    {
+      "case_id": "GM-EVIDENCE-HOLD-001",
+      "guard_status": "HOLD_STOP_REVIEW",
+      "layer": "evidence_layer",
+      "stop_condition": "dashboard hides incomplete lineage",
+      "surface_label_rule": "HOLD_STOP_REVIEW: lineage incomplete",
+      "trigger": "receipt exists but lineage input->output->review is incomplete"
+    },
+    {
+      "case_id": "GM-GUARD-HOLD-001",
+      "guard_status": "HOLD_STOP_REVIEW",
+      "layer": "review_guard_layer",
+      "stop_condition": "promotion claim applied",
+      "surface_label_rule": "HOLD_STOP_REVIEW: promotion language must be reviewed",
+      "trigger": "promotion/Program Alpha/M4 language appears near candidate evidence"
+    },
+    {
+      "case_id": "GM-GUARD-STOP-001",
+      "guard_status": "STOP",
+      "layer": "review_guard_layer",
+      "stop_condition": "mutation instruction or execution",
+      "surface_label_rule": "STOP: authority/schema/router mutation blocked",
+      "trigger": "authority mutation/schema mutation/router-runner instruction detected"
+    },
+    {
+      "case_id": "GM-SURFACE-WATCH-001",
+      "guard_status": "WATCH",
+      "layer": "surface_layer",
+      "stop_condition": "green approval badge or readiness language",
+      "surface_label_rule": "WATCH: label evidence coupling incomplete",
+      "trigger": "dashboard/status card exists but evidence coupling is weak"
+    },
+    {
+      "case_id": "GM-SURFACE-HOLD-001",
+      "guard_status": "HOLD_STOP_REVIEW",
+      "layer": "surface_layer",
+      "stop_condition": "softened label published",
+      "surface_label_rule": "HOLD_STOP_REVIEW: surface label softened guard state",
+      "trigger": "surface label softens HOLD_STOP_REVIEW/STOP"
+    },
+    {
+      "case_id": "GM-REENTRY-HOLD-001",
+      "guard_status": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT",
+      "layer": "tool_reentry_layer",
+      "stop_condition": "packet treated as model result",
+      "surface_label_rule": "HOLD_UNTIL_APPROVED_MODEL_OUTPUT: packet prepared, not executed",
+      "trigger": "Codex/Gemini packet prepared but no approved raw output exists"
+    },
+    {
+      "case_id": "GM-REENTRY-STOP-001",
+      "guard_status": "STOP",
+      "layer": "tool_reentry_layer",
+      "stop_condition": "claim enters shared surface as authority",
+      "surface_label_rule": "STOP: model output authority/promotion claim blocked",
+      "trigger": "model output claims truth/authority/edit permission/promotion"
+    },
+    {
+      "case_id": "GM-RECOVERY-WATCH-001",
+      "guard_status": "WATCH",
+      "layer": "operator_recovery_layer",
+      "stop_condition": "checksum called v1 snapshot/baseline authority",
+      "surface_label_rule": "WATCH: recovery aid only, not baseline freeze",
+      "trigger": "artifact index/checksum/recovery card helps navigation"
+    },
+    {
+      "case_id": "GM-RECOVERY-HOLD-001",
+      "guard_status": "HOLD_STOP_REVIEW",
+      "layer": "operator_recovery_layer",
+      "stop_condition": "old/new artifacts treated as authority without receipt",
+      "surface_label_rule": "HOLD_STOP_REVIEW: recovery bundle grouping needed",
+      "trigger": "artifact growth creates navigation ambiguity"
+    }
+  ],
+  "created_at": "2026-05-23 10:13:27 KST",
+  "layers": [
+    "input_layer",
+    "evidence_layer",
+    "review_guard_layer",
+    "surface_layer",
+    "tool_reentry_layer",
+    "operator_recovery_layer"
+  ],
+  "model_execution": "NO",
+  "promotion": "HOLD",
+  "real_codex_execution": "NO",
+  "real_gemini_execution": "NO",
+  "schema_mutation": "NO",
+  "shared_db_mutation": "NO",
+  "status": "CROSS_LAYER_GUARD_MATRIX_FIXTURE_WITH_HOLD"
+}

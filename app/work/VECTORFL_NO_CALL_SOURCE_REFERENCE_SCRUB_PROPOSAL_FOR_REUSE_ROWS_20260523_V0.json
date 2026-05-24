@@ -1,0 +1,115 @@
+{
+  "status": "NO_CALL_SOURCE_REFERENCE_SCRUB_PROPOSAL_WITH_HOLD",
+  "created_at": "2026-05-23T23:44:00+0900",
+  "proposal": {
+    "proposal_id": "no_call_source_reference_scrub:reuse_rows:v0",
+    "proposal_status": "PROPOSAL_ONLY_WITH_HOLD",
+    "scope": "future operator rows and cards only; no source receipt mutation",
+    "problem": "Legacy local endpoint replay script names can surface as API-like active work and may cause accidental expensive localhost endpoint replay if wrappers are executed.",
+    "source_inputs": [
+      "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_single_row_static_operator_card_rehearsal_v0/single_row_static_operator_card_v0.json",
+      "app/work/VECTORFL_NO_API_CALL_AUDIT_FOR_STATIC_OPERATOR_CARD_20260523_V0.md"
+    ],
+    "detected_calling_scripts": [
+      {
+        "path": "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_contract_replay.py",
+        "risk": "starts local server and fetches localhost endpoints",
+        "future_surface_label": "archived local endpoint replay evidence; do not execute in no-call lanes"
+      },
+      {
+        "path": "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/api_drift_replay_gate.py",
+        "risk": "starts local server and fetches localhost endpoints",
+        "future_surface_label": "archived local endpoint drift evidence; do not execute in no-call lanes"
+      },
+      {
+        "path": "app/work/vectorfl_ops_phase_1_web_mvp_skeleton/tools/phase1_deterministic_stable_cycle.py",
+        "risk": "wrapper invokes endpoint replay scripts",
+        "future_surface_label": "archived stable-cycle receipt source; do not rerun in no-call lanes"
+      }
+    ],
+    "scrub_rules": [
+      {
+        "match": "api_contract_replay.py",
+        "display_as": "archived_local_endpoint_contract_replay_evidence",
+        "execution_policy": "DO_NOT_RUN_IN_NO_CALL_LANES"
+      },
+      {
+        "match": "api_drift_replay_gate.py",
+        "display_as": "archived_local_endpoint_drift_replay_evidence",
+        "execution_policy": "DO_NOT_RUN_IN_NO_CALL_LANES"
+      },
+      {
+        "match": "phase1_deterministic_stable_cycle.py",
+        "display_as": "archived_stable_cycle_receipt_source",
+        "execution_policy": "DO_NOT_RUN_IN_NO_CALL_LANES"
+      },
+      {
+        "match": "/api/",
+        "display_as": "legacy_local_endpoint_path_label",
+        "execution_policy": "DISPLAY_ONLY_NOT_ACTIVE_CALL"
+      },
+      {
+        "match": "API_CONTRACT_REPLAY_PASS",
+        "display_as": "archived_contract_replay_pass_label",
+        "execution_policy": "DISPLAY_ONLY_NOT_ACTIVE_CALL"
+      },
+      {
+        "match": "PASS_API_DRIFT_REPLAY_MATCH",
+        "display_as": "archived_drift_replay_pass_label",
+        "execution_policy": "DISPLAY_ONLY_NOT_ACTIVE_CALL"
+      }
+    ],
+    "allowed_no_call_operations": [
+      "read existing JSON/MD/text files",
+      "hash files",
+      "pure Python validation with no urllib/requests/httpx/fetch/socket/subprocess server start",
+      "static HTML/MD/JSON generation"
+    ],
+    "forbidden_operations": [
+      "run stable-cycle wrapper",
+      "run endpoint replay scripts",
+      "start local server",
+      "fetch localhost endpoint",
+      "call external API",
+      "use API-direct",
+      "plan API adapter",
+      "run model lane",
+      "mutate authority",
+      "promote Program Alpha"
+    ],
+    "future_row_policy": {
+      "must_include_api_call": "NO",
+      "must_include_local_http_endpoint_replay": "NO",
+      "must_include_source_execution_policy": "DISPLAY_ONLY_NOT_ACTIVE_CALL",
+      "must_hide_or_scrub_legacy_api_labels": true,
+      "must_show_hold": true,
+      "must_not_mutate_source_receipt": true
+    },
+    "promotion": "HOLD",
+    "authority_mutation": "NO",
+    "model_execution": "NO",
+    "api_call": "NO",
+    "api_direct": "NO",
+    "local_http_endpoint_replay": "NO",
+    "source_mutation": "NO",
+    "registry_mutation": "NO"
+  },
+  "source_inputs": [
+    "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_single_row_static_operator_card_rehearsal_v0/single_row_static_operator_card_v0.json",
+    "app/work/VECTORFL_NO_API_CALL_AUDIT_FOR_STATIC_OPERATOR_CARD_20260523_V0.md"
+  ],
+  "scrub_rule_count": 6,
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "promotion": "HOLD",
+  "source_mutation": "NO",
+  "registry_mutation": "NO",
+  "final_verdict": "PASS_NO_CALL_SOURCE_REFERENCE_SCRUB_PROPOSAL_WITH_HOLD",
+  "input_sha256": {
+    "card": "ee41659ffe700c3b4a59d3dc4994713a591ea6f1bfcbd8516cdc49d0a3ae899f",
+    "audit": "9bcb994b2ce047c7a996d2d18c87dfd590383611f9df9db84a09bea1ef625507"
+  }
+}

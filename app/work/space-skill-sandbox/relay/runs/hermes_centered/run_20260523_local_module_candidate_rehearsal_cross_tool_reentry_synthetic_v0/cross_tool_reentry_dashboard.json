@@ -1,0 +1,79 @@
+{
+  "approval_applied": "no",
+  "authority_database": "no",
+  "authority_inheritance": "no",
+  "candidate_id": "M-CAND-09",
+  "cases": [
+    {
+      "case_id": "XTR-POS-001",
+      "expected": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "observed": "CANDIDATE_MATERIAL_WITH_HOLD"
+    },
+    {
+      "case_id": "XTR-POS-002",
+      "expected": "CANDIDATE_MATERIAL_WITH_HOLD",
+      "observed": "CANDIDATE_MATERIAL_WITH_HOLD"
+    },
+    {
+      "case_id": "XTR-NEG-STOP-001",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "XTR-NEG-STOP-002",
+      "expected": "STOP",
+      "observed": "STOP"
+    },
+    {
+      "case_id": "XTR-NEG-HOLD-001",
+      "expected": "HOLD_STOP_REVIEW",
+      "observed": "HOLD_STOP_REVIEW"
+    }
+  ],
+  "created_at": "2026-05-23 08:45:28 KST",
+  "function_pattern": "Cross-tool Re-entry",
+  "hidden_transport": "no",
+  "lanes": [
+    "raw",
+    "lite",
+    "receipt",
+    "compressed_reentry",
+    "guard_review"
+  ],
+  "live_db_mutation": "no",
+  "m4_reusable_module": "no",
+  "model_execution": "no",
+  "module_promotion": "no",
+  "program_alpha_ready": "no",
+  "program_alpha_status": "NOT_READY",
+  "promotion_status": "HOLD",
+  "real_codex_execution": "no",
+  "real_gemini_execution": "no",
+  "router_runner_claim": "no",
+  "schema_mutation": "no",
+  "shared_db_mutation": "no",
+  "snapshot_mutation": "no",
+  "source_chain": [
+    "M-CAND-01 Input Localization",
+    "M-CAND-04 Receipt Writer",
+    "M-CAND-05 HOLD Review State",
+    "M-CAND-08 Read-only Surface",
+    "M-CAND-03 Evidence Loop Persistence",
+    "M-CAND-06 Live-Safety Validator",
+    "M-CAND-07 Deterministic Stable Cycle",
+    "M-CAND-12 Module Extraction Gate",
+    "M-CAND-10 Codex Review Guard synthetic"
+  ],
+  "status": "LOCAL_NO_MODEL_SYNTHETIC_CROSS_TOOL_REENTRY_REHEARSAL_WITH_HOLD",
+  "summary": {
+    "candidate": 2,
+    "hold_stop_review": 1,
+    "problem_count": 0,
+    "stop": 2,
+    "total": 5
+  },
+  "synthetic_tool_output": "yes",
+  "v1_snapshot_creation": "no",
+  "vectorfl_authority_mutation": "no",
+  "write_ui": "no"
+}

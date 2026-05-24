@@ -1,0 +1,70 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s1",
+      "pass": true
+    },
+    {
+      "check": "tests_s1_scope_only",
+      "pass": true
+    },
+    {
+      "check": "all_s1_results_pass",
+      "pass": true
+    },
+    {
+      "check": "space_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "continuation_disambiguated_by_space",
+      "pass": true
+    },
+    {
+      "check": "phase3_backlog_accumulate_not_fix",
+      "pass": true
+    },
+    {
+      "check": "next_is_s2_not_validator_hardening",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.001348690999999999,
+  "next_safe_lane": "S2_SOURCE_SELECTION_REAL_NON_VALIDATOR_TARGET_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "A short continuation such as 응 계속해봐 carries little content by itself. Correct handling depends on reading the latest next-lane space card; otherwise Hermes may guess or drift into generic/internal work.",
+    "gap_id": "S1_GAP_CONTINUATION_IS_UNDERSPECIFIED_BUT_SPACE_CAN_DISAMBIGUATE",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S1_CONTINUATION_INPUT_REQUIRES_LATEST_NEXT_LANE_LOOKUP",
+    "reason": "If repeated across Phase2 function tests, add global intake rule for continuation-only inputs.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "verdict": "PASS_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_WITH_HOLD"
+}

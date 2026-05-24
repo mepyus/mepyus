@@ -1,0 +1,147 @@
+{
+  "status": "NO_CALL_REUSE_CHAIN_CONSISTENCY_ROLLUP_WITH_HOLD",
+  "created_at": "2026-05-23T23:59:00+0900",
+  "rollup": {
+    "rollup_id": "no_call_reuse_chain_consistency_rollup:phase1_stable_cycle:v0",
+    "rollup_status": "NO_CALL_REUSE_CHAIN_CONSISTENCY_ROLLUP_WITH_HOLD",
+    "chain": [
+      "existing receipt",
+      "filled evidence receipt",
+      "surface-to-evidence trace object",
+      "operator dashboard row",
+      "static operator card",
+      "scrubbed no-call static operator card copy"
+    ],
+    "lineage_checks": {
+      "trace_points_to_filled_receipt": true,
+      "row_points_to_trace": true,
+      "row_points_to_filled_receipt": true,
+      "static_card_points_to_trace": true,
+      "static_card_points_to_filled_receipt": true,
+      "scrubbed_card_points_to_trace": true,
+      "scrubbed_card_points_to_filled_receipt": true,
+      "source_receipt_consistent": true
+    },
+    "lineage_all_pass": true,
+    "layers": [
+      {
+        "layer": "filled_receipt",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_evidence_layer_field_fill_rehearsal_v0/phase1_deterministic_stable_cycle_evidence_layer_receipt_filled_v0.json",
+        "sha256": "734eb898b2e8c96989f156bcedc139c8c1b9385776f50cc33c6b75bd84a9e7f7",
+        "hold": true,
+        "authority_mutation": "NO",
+        "model_execution": "NO",
+        "schema_registry_mutation": "NO",
+        "api_call": "NO",
+        "local_http_endpoint_replay": "NO",
+        "source_mutation": "NO"
+      },
+      {
+        "layer": "trace_object",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_surface_to_evidence_trace_rehearsal_v0/program_spine_phase1_stable_cycle_surface_to_evidence_trace_v0.json",
+        "sha256": "7c61c4110edd42e15d2958b207381292916d08dd421cc31df6155cc5575e6e55",
+        "hold": true,
+        "authority_mutation": "NO",
+        "model_execution": "NO",
+        "schema_registry_mutation": "NO",
+        "api_call": "NO",
+        "local_http_endpoint_replay": "NO",
+        "source_mutation": "NO"
+      },
+      {
+        "layer": "operator_row",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_reuse_led_operator_dashboard_row_rehearsal_v0/program_spine_phase1_stable_cycle_operator_dashboard_row_v0.json",
+        "sha256": "eef74f20c0c9334589f58d3b8b73c6c7fe9dbb59c8a46866baa9ceb5d3123eae",
+        "hold": true,
+        "authority_mutation": "NO",
+        "model_execution": "NO",
+        "schema_registry_mutation": "NO",
+        "api_call": "NO",
+        "local_http_endpoint_replay": "NO",
+        "source_mutation": "NO"
+      },
+      {
+        "layer": "static_card",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_model_single_row_static_operator_card_rehearsal_v0/single_row_static_operator_card_v0.json",
+        "sha256": "ee41659ffe700c3b4a59d3dc4994713a591ea6f1bfcbd8516cdc49d0a3ae899f",
+        "hold": true,
+        "authority_mutation": "NO",
+        "model_execution": "NO",
+        "schema_registry_mutation": "NO",
+        "api_call": "NO",
+        "local_http_endpoint_replay": "NO",
+        "source_mutation": "NO"
+      },
+      {
+        "layer": "scrubbed_card",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_scrubbed_static_operator_card_copy_v0/single_row_static_operator_card_scrubbed_no_call_v0.json",
+        "sha256": "c39fa4d72bae91fbfab2631782735b18ca92eb7974ff40904e8fa9bd7d8d7e43",
+        "hold": true,
+        "authority_mutation": "NO",
+        "model_execution": "NO",
+        "schema_registry_mutation": "NO",
+        "api_call": "NO",
+        "local_http_endpoint_replay": "NO",
+        "source_mutation": "NO"
+      }
+    ],
+    "consistent_boundaries": {
+      "api_call": "NO",
+      "api_direct": "NO",
+      "local_http_endpoint_replay": "NO",
+      "local_server_start": "NO",
+      "model_execution": "NO",
+      "authority_mutation": "NO",
+      "registry_mutation": "NO",
+      "source_mutation": "NO",
+      "promotion": "HOLD"
+    },
+    "watch": [
+      "filled_receipt and trace still contain archived legacy endpoint replay source refs; scrubbed card quarantines them as display-only/no-call",
+      "static_card is pre-scrub copy; prefer scrubbed_card for operator-facing display"
+    ],
+    "valid_for": [
+      "no-call reuse chain consistency review",
+      "operator-surface lineage check",
+      "HOLD boundary confirmation"
+    ],
+    "not_valid_for": [
+      "Program Alpha",
+      "authority mutation",
+      "registry creation",
+      "bulk conversion",
+      "model execution evidence",
+      "endpoint replay evidence refresh"
+    ],
+    "forbidden_actions": [
+      "run endpoint replay scripts",
+      "start local server",
+      "call external API",
+      "use API-direct",
+      "mutate original receipt/row/card",
+      "create registry",
+      "promote Program Alpha"
+    ],
+    "promotion": "HOLD",
+    "api_call": "NO",
+    "api_direct": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "authority_mutation": "NO",
+    "registry_mutation": "NO",
+    "source_mutation": "NO"
+  },
+  "lineage_all_pass": true,
+  "layer_count": 5,
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "final_verdict": "PASS_NO_CALL_REUSE_CHAIN_CONSISTENCY_ROLLUP_WITH_HOLD"
+}

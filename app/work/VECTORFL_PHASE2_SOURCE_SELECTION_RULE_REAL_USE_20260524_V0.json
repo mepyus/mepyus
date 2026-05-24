@@ -1,0 +1,43 @@
+{
+  "active_hits": 0,
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": 11,
+  "current_position_candidate": "PHASE2_SOURCE_SELECTION_RULE_REAL_USE_PASSED_WITH_HOLD",
+  "elapsed_seconds": 0.0009540830069454387,
+  "negative_cases": 5,
+  "new_codex_gemini_calls": "NO_SKIPPED_BY_BUDGET_GATE",
+  "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+  "promotion_status": "HOLD",
+  "report_id": "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0",
+  "rule_summary": {
+    "escalate_to_heavy_when": [
+      "source refs conflict",
+      "space_reference_delta unclear",
+      "architecture/principle pressure appears",
+      "Codex/Gemini disagreement is needed",
+      "authority/promotion pressure appears"
+    ],
+    "max_default_refs": 4,
+    "output_requirement": "Every Phase2 packet must include space_reference_delta before being called space-referenced.",
+    "primary_refs": "Use current user original + immediate predecessor PASS/HOLD report + latest next-work card + one domain/pressure artifact if it changes judgment.",
+    "reject_ref_when": [
+      "no changed_judgment",
+      "citation is only decorative",
+      "reference increases operator load without changing decision",
+      "reference is authority/current-position/registry unless explicitly approved for read-only orientation"
+    ],
+    "required_for_each_ref": [
+      "absolute_path",
+      "exists",
+      "sha256",
+      "used_for",
+      "changed_judgment"
+    ],
+    "secondary_refs": "Use older/broader space artifacts only when current refs conflict, are insufficient, or trigger architecture/layer ambiguity."
+  },
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_source_selection_rule_real_use_v0",
+  "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION",
+  "space_reference_delta_count": 4,
+  "target_internal_detail": "Phase2 source-selection rule candidate",
+  "verdict": "PASS_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_WITH_HOLD"
+}

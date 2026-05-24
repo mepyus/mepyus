@@ -1,0 +1,533 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "compared_space_refs": [
+    "EP97 space impact report",
+    "older aifrontier_01_28 core/refinement contracts"
+  ],
+  "ep96_source_url": "https://aifrontier.kr/ko/episodes/ep96/",
+  "ep96_title": "EP 96: LLM 추론 인프라와 토큰 경제학 | AI Frontier",
+  "hermes_changed_judgment": "EP96 does not merely add another AI Frontier episode. It supplies the infra/cost causal layer underneath EP97’s operator-load and slow-AI guard. Therefore VectorFL should treat provider-backed Codex/Gemini calls as on-demand scarce resources for both human-load and inference-load reasons.",
+  "lack_or_lacl_candidates": [
+    {
+      "lack_id": "LACK_INFRA_COST_LENS_CARD",
+      "missing_piece": "KV cache/prefill/decode/batch/memory-bound를 VectorFL budget gate와 연결하는 infra-cost lens card",
+      "severity": "HIGH",
+      "why_now": "EP96와 EP97이 겹치면서 heavy agent call의 비용을 human-load와 infra-load 둘 다로 평가해야 함"
+    },
+    {
+      "lack_id": "LACK_CONTEXT_ECONOMICS_FIELD",
+      "missing_piece": "report/packet에 context footprint, read-first size, expected prefill pressure를 기록하는 field",
+      "severity": "HIGH",
+      "why_now": "EP96의 200K tier/cache TTL/context economics가 context를 자원으로 보게 만듦"
+    },
+    {
+      "lack_id": "LACK_MODEL_LOAD_OPERATOR_LOAD_PAIRING",
+      "missing_piece": "T_brain/operator-load와 model-serving-load를 함께 보는 paired gate",
+      "severity": "MEDIUM",
+      "why_now": "EP97은 인간 소화 부담, EP96은 inference serving 부담을 설명함"
+    },
+    {
+      "lack_id": "LACK_CODEX_GEMINI_ON_DEMAND_REASON_FIELD",
+      "missing_piece": "Codex/Gemini 호출 필요성을 fresh space reference / layer ambiguity / explicit approval로 분류하는 reason field",
+      "severity": "MEDIUM",
+      "why_now": "EP96가 불필요한 provider-backed call의 구조 비용을 강화함"
+    }
+  ],
+  "layer_scores": {
+    "ep96": {
+      "L0_source_intake_originality": {
+        "hits": [
+          {
+            "count": 4,
+            "term": "EP 96"
+          },
+          {
+            "count": 3,
+            "term": "LLM 추론"
+          },
+          {
+            "count": 3,
+            "term": "토큰 경제학"
+          },
+          {
+            "count": 11,
+            "term": "Dwarkesh"
+          },
+          {
+            "count": 2,
+            "term": "챕터"
+          },
+          {
+            "count": 1,
+            "term": "2026년 5월 8일"
+          }
+        ],
+        "score": 24
+      },
+      "L1_space_reading_external_case": {
+        "hits": [
+          {
+            "count": 3,
+            "term": "AI Frontier"
+          }
+        ],
+        "score": 3
+      },
+      "L2_inference_infra_budget": {
+        "hits": [
+          {
+            "count": 7,
+            "term": "inference"
+          },
+          {
+            "count": 22,
+            "term": "추론"
+          },
+          {
+            "count": 4,
+            "term": "serving"
+          },
+          {
+            "count": 8,
+            "term": "서빙"
+          },
+          {
+            "count": 23,
+            "term": "KV cache"
+          },
+          {
+            "count": 10,
+            "term": "prefill"
+          },
+          {
+            "count": 6,
+            "term": "decode"
+          },
+          {
+            "count": 19,
+            "term": "batch"
+          },
+          {
+            "count": 9,
+            "term": "HBM"
+          },
+          {
+            "count": 11,
+            "term": "GPU"
+          },
+          {
+            "count": 3,
+            "term": "memory bound"
+          },
+          {
+            "count": 2,
+            "term": "compute bound"
+          }
+        ],
+        "score": 169
+      },
+      "L3_harness_control_layer": {
+        "hits": [
+          {
+            "count": 12,
+            "term": "Claude Code"
+          },
+          {
+            "count": 6,
+            "term": "Codex"
+          },
+          {
+            "count": 2,
+            "term": "tool call"
+          },
+          {
+            "count": 4,
+            "term": "agent"
+          },
+          {
+            "count": 2,
+            "term": "agentic"
+          }
+        ],
+        "score": 26
+      },
+      "L4_operator_surface_tbrain": {
+        "hits": [
+          {
+            "count": 12,
+            "term": "Claude Code"
+          },
+          {
+            "count": 3,
+            "term": "워크로드"
+          },
+          {
+            "count": 1,
+            "term": "동접"
+          },
+          {
+            "count": 5,
+            "term": "latency"
+          },
+          {
+            "count": 1,
+            "term": "기다려"
+          }
+        ],
+        "score": 22
+      },
+      "L5_budget_governance": {
+        "hits": [
+          {
+            "count": 16,
+            "term": "가격"
+          },
+          {
+            "count": 2,
+            "term": "pricing"
+          },
+          {
+            "count": 12,
+            "term": "비용"
+          },
+          {
+            "count": 4,
+            "term": "토큰당"
+          },
+          {
+            "count": 10,
+            "term": "캐시"
+          },
+          {
+            "count": 4,
+            "term": "TTL"
+          },
+          {
+            "count": 5,
+            "term": "200K"
+          }
+        ],
+        "score": 53
+      },
+      "L6_future_asset_tree": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "inference farm"
+          },
+          {
+            "count": 5,
+            "term": "프론티어 랩"
+          },
+          {
+            "count": 1,
+            "term": "moat"
+          },
+          {
+            "count": 1,
+            "term": "엔지니어링 인프라"
+          },
+          {
+            "count": 7,
+            "term": "NVL72"
+          },
+          {
+            "count": 2,
+            "term": "Blackwell"
+          },
+          {
+            "count": 3,
+            "term": "rack"
+          },
+          {
+            "count": 1,
+            "term": "GPU 팜"
+          }
+        ],
+        "score": 21
+      }
+    },
+    "ep97_report": {
+      "L0_source_intake_originality": {
+        "hits": [],
+        "score": 0
+      },
+      "L1_space_reading_external_case": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "AI Frontier"
+          },
+          {
+            "count": 3,
+            "term": "aifrontier"
+          },
+          {
+            "count": 1,
+            "term": "episode"
+          }
+        ],
+        "score": 5
+      },
+      "L2_inference_infra_budget": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "추론"
+          }
+        ],
+        "score": 1
+      },
+      "L3_harness_control_layer": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "Claude Code"
+          },
+          {
+            "count": 6,
+            "term": "Codex"
+          },
+          {
+            "count": 8,
+            "term": "agent"
+          },
+          {
+            "count": 4,
+            "term": "workflow"
+          },
+          {
+            "count": 5,
+            "term": "하네스"
+          }
+        ],
+        "score": 24
+      },
+      "L4_operator_surface_tbrain": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "Claude Code"
+          },
+          {
+            "count": 5,
+            "term": "operator"
+          },
+          {
+            "count": 1,
+            "term": "사용자"
+          },
+          {
+            "count": 7,
+            "term": "T_brain"
+          },
+          {
+            "count": 7,
+            "term": "mind-sized"
+          }
+        ],
+        "score": 21
+      },
+      "L5_budget_governance": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "비용"
+          },
+          {
+            "count": 2,
+            "term": "TTL"
+          },
+          {
+            "count": 6,
+            "term": "budget gate"
+          },
+          {
+            "count": 6,
+            "term": "heavy"
+          },
+          {
+            "count": 2,
+            "term": "fast local"
+          }
+        ],
+        "score": 17
+      },
+      "L6_future_asset_tree": {
+        "hits": [],
+        "score": 0
+      }
+    },
+    "older_aifrontier_contract": {
+      "L0_source_intake_originality": {
+        "hits": [],
+        "score": 0
+      },
+      "L1_space_reading_external_case": {
+        "hits": [
+          {
+            "count": 3,
+            "term": "aifrontier"
+          },
+          {
+            "count": 1,
+            "term": "external_case"
+          },
+          {
+            "count": 1,
+            "term": "source_ref"
+          }
+        ],
+        "score": 5
+      },
+      "L2_inference_infra_budget": {
+        "hits": [],
+        "score": 0
+      },
+      "L3_harness_control_layer": {
+        "hits": [
+          {
+            "count": 2,
+            "term": "agent"
+          },
+          {
+            "count": 2,
+            "term": "agentic"
+          }
+        ],
+        "score": 4
+      },
+      "L4_operator_surface_tbrain": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "operator"
+          },
+          {
+            "count": 3,
+            "term": "사용자"
+          }
+        ],
+        "score": 4
+      },
+      "L5_budget_governance": {
+        "hits": [
+          {
+            "count": 1,
+            "term": "TTL"
+          }
+        ],
+        "score": 1
+      },
+      "L6_future_asset_tree": {
+        "hits": [],
+        "score": 0
+      }
+    }
+  },
+  "overlap_layers": [
+    {
+      "collision_type": "OVERLAP_STRENGTHENS_EXISTING_LAYER",
+      "ep96_score": 3,
+      "ep97_score": 5,
+      "layer": "L1_space_reading_external_case",
+      "older_aifrontier_score": 5
+    },
+    {
+      "collision_type": "OVERLAP_STRENGTHENS_EXISTING_LAYER",
+      "ep96_score": 169,
+      "ep97_score": 1,
+      "layer": "L2_inference_infra_budget",
+      "older_aifrontier_score": 0
+    },
+    {
+      "collision_type": "OVERLAP_STRENGTHENS_EXISTING_LAYER",
+      "ep96_score": 26,
+      "ep97_score": 24,
+      "layer": "L3_harness_control_layer",
+      "older_aifrontier_score": 4
+    },
+    {
+      "collision_type": "OVERLAP_STRENGTHENS_EXISTING_LAYER",
+      "ep96_score": 22,
+      "ep97_score": 21,
+      "layer": "L4_operator_surface_tbrain",
+      "older_aifrontier_score": 4
+    },
+    {
+      "collision_type": "OVERLAP_STRENGTHENS_EXISTING_LAYER",
+      "ep96_score": 53,
+      "ep97_score": 17,
+      "layer": "L5_budget_governance",
+      "older_aifrontier_score": 1
+    }
+  ],
+  "packet_id": "03_ep96_ep97_overlap_lacl_analysis_v0",
+  "promotion_status": "HOLD",
+  "proposed_mapping_if_ep96_enters_space": [
+    {
+      "asset": "AI Frontier EP96 fetched article text",
+      "primary_layer": "L2_inference_infra_budget",
+      "secondary_layers": [
+        "L5_budget_governance",
+        "L3_harness_control_layer",
+        "L4_operator_surface_tbrain"
+      ],
+      "status": "HOLD_PROPOSED_ONLY"
+    },
+    {
+      "asset": "EP96 overlap/lacl analysis",
+      "primary_layer": "L5_budget_governance",
+      "secondary_layers": [
+        "L2_inference_infra_budget",
+        "L4_operator_surface_tbrain"
+      ],
+      "status": "HOLD_PROPOSED_ONLY"
+    }
+  ],
+  "space_reference_delta": [
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "heavy/provider-backed call을 줄이라는 판단이 단순 운영 취향이 아니라 inference cost/context economics에 의해 구조적으로 강화된다.",
+      "delta_id": "DELTA_EP96_INFRA_COST_CAUSALITY",
+      "description": "EP97의 T_brain/budget gate 압력 뒤에 있는 실제 추론 인프라 원인(KV cache, prefill/decode, memory-bound, batching, 200K tier)을 EP96가 설명한다.",
+      "kind": "new_causal_underlay"
+    },
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L3_harness_control_layer",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "VectorFL의 context compaction/read-first 최소화가 편의가 아니라 서빙 경제학과 맞닿는 제약으로 재해석된다.",
+      "delta_id": "DELTA_CONTEXT_AS_PHYSICAL_RESOURCE",
+      "description": "EP96는 context가 추상 텍스트가 아니라 HBM/KV cache/TTL 비용을 점유하는 물리 자원임을 보여준다.",
+      "kind": "layer_overlap_plus_lack"
+    },
+    {
+      "affected_layers": [
+        "L3_harness_control_layer",
+        "L4_operator_surface_tbrain"
+      ],
+      "changed_judgment": "Codex/Gemini default call 금지는 timeout 회피만이 아니라 model workload와 human workload를 함께 줄이는 guard로 강화된다.",
+      "delta_id": "DELTA_AGENT_WORKLOAD_PREFILL_TOOLCALL_PRESSURE",
+      "description": "Claude Code/Codex/tool call은 대량 prefill/context reload를 발생시키며 EP97의 operator-load와 결합해 model-load/operator-load 동시 압력을 만든다.",
+      "kind": "overlap_with_ep97_operator_load"
+    },
+    {
+      "affected_layers": [
+        "L2_inference_infra_budget",
+        "L4_operator_surface_tbrain",
+        "L5_budget_governance"
+      ],
+      "changed_judgment": "현재 공간에는 EP97의 human-load lens는 있으나 EP96의 infra-cost causal lens가 별도 카드로 부족하다. Proposed HOLD card가 필요하다.",
+      "delta_id": "DELTA_LACL_LAYER_COLLISION",
+      "description": "EP96가 들어오면 L2 infra-budget이 L5 governance를 강하게 밀고, EP97의 L4/T_brain 렌즈와 충돌/결합한다. 부족한 것은 infra-cost lens를 budget gate에 명시적으로 연결하는 카드다.",
+      "kind": "lacl_or_lack_detected"
+    }
+  ],
+  "verdict": "EP96_CREATES_OVERLAP_AND_LACK_PRESSURE_WITH_EP97_HOLD"
+}

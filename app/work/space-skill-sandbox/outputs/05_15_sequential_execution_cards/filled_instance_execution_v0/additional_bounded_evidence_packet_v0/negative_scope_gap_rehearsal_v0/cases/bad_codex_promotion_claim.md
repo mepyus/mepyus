@@ -1,0 +1,2 @@
+completion_signal: CODEX_SCOPE_GAP_RECOVERY_DONE
+promotion_performed: true

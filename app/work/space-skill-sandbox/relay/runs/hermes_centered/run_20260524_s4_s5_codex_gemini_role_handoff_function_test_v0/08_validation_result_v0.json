@@ -1,0 +1,85 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "attached_to_s4_s5",
+      "pass": true
+    },
+    {
+      "check": "budget_gate_heavy",
+      "pass": true
+    },
+    {
+      "check": "actual_outputs_exist",
+      "pass": true
+    },
+    {
+      "check": "codex_sections_present",
+      "pass": true
+    },
+    {
+      "check": "gemini_sections_present",
+      "pass": true
+    },
+    {
+      "check": "codex_spatial_reentry_value",
+      "pass": true
+    },
+    {
+      "check": "gemini_layer_value",
+      "pass": true
+    },
+    {
+      "check": "comparison_complementary",
+      "pass": true
+    },
+    {
+      "check": "post_review_skipped_with_reason",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_and_phase3_backlog",
+      "pass": true
+    },
+    {
+      "check": "next_is_s6_operator_surface",
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "codex_seconds": 13.6,
+  "elapsed_seconds": 0.00448826699999999,
+  "gemini_seconds": 17.3,
+  "next_safe_lane": "S6_OPERATOR_RECEIPT_REENTRY_AND_HOLD_SURFACE_FUNCTION_TEST_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "observed_gap": {
+    "description": "Actual Codex and Gemini outputs were complementary, but both touched the generic-status-card risk. Phase3 may need a role-handoff value metric to separate productive overlap from duplication.",
+    "gap_id": "S4_S5_GAP_ROLE_VALUE_IS_REAL_BUT_OVERLAP_NEEDS_METRIC",
+    "severity": "MEDIUM",
+    "single_observation": true
+  },
+  "phase3_backlog_delta": {
+    "candidate": "S4_S5_ROLE_HANDOFF_VALUE_METRIC_AND_MINIMAL_REENTRY_DELTA",
+    "children": [
+      "S4_REENTRY_SURFACE_MUST_PRESERVE_MINIMAL_SPACE_DELTA",
+      "S3_STRUCTURAL_DELTA_BY_LAYER",
+      "ROLE_HANDOFF_VALUE_METRIC"
+    ],
+    "reason": "If repeated, Phase3 should require role handoff tests to record each agent’s unique delta and whether overlap is productive or duplicative.",
+    "status": "ACCUMULATE_NOT_FIX_NOW"
+  },
+  "promotion_status": "HOLD",
+  "verdict": "PASS_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_WITH_HOLD"
+}

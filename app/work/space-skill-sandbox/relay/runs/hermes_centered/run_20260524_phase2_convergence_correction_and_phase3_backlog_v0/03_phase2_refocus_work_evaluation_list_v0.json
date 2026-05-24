@@ -1,0 +1,45 @@
+{
+  "card_id": "03_phase2_refocus_work_evaluation_list_v0",
+  "classification": "PHASE2_REFOCUS_HOLD",
+  "corrected_verdict": "USER_CORRECTION_ACCEPTED_TOO_CONVERGENT",
+  "next_safe_lane": "PHASE2_WORK_SELECTION_BOARD_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+  "phase2_should_do_now": "Evaluate and list what work should be done next, using internal details as signals but not continuing into internal hardening loops.",
+  "phase2_stop_rule": "If next action mostly hardens validators/checklists without changing a real work lane, defer to Phase3 backlog.",
+  "promotion_status": "HOLD",
+  "work_lanes": [
+    {
+      "examples": [
+        "external material impact report follow-up",
+        "one actual Obsidian/Telegram workflow mapping candidate",
+        "one VectorFL asset archaeology target with explicit delta"
+      ],
+      "lane": "A_SPACE_AFFECTING_REAL_TASKS",
+      "purpose": "Pick real tasks where user original + space references + merge changes output."
+    },
+    {
+      "examples": [
+        "Hermes executes original+space+merge",
+        "Codex evaluates result against space traces",
+        "Gemini evaluates structural/layer pressure"
+      ],
+      "lane": "B_AGENT_ROLE_STRUCTURING",
+      "purpose": "Clarify Hermes/Codex/Gemini handoff at process level, not validator implementation level."
+    },
+    {
+      "examples": [
+        "task list not authority",
+        "rank by big-frame effect and operator load"
+      ],
+      "lane": "C_WORK_SELECTION_BOARD",
+      "purpose": "Make a shortlist/backlog of next Phase2 work with why/when/space_refs/expected_delta."
+    },
+    {
+      "examples": [
+        "current deferred checklist negative cases",
+        "decision-table validator hardening"
+      ],
+      "lane": "D_PHASE3_INTERNAL_HARDENING_BACKLOG",
+      "purpose": "Store validator/checklist/negative-case hardening for later return."
+    }
+  ]
+}

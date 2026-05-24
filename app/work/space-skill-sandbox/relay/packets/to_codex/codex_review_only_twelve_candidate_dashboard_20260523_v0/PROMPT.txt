@@ -1,0 +1,27 @@
+Read the packet and listed files, then return review-only output.
+
+Packet:
+/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/packets/to_codex/codex_review_only_twelve_candidate_dashboard_20260523_v0/PACKET.md
+
+Hard constraints:
+- read-only review only
+- do not edit files
+- do not patch files
+- do not run repo mutation commands
+- do not claim approval/promotion/authority
+- do not call Gemini/network/MCP/browser
+- classify anything risky as WATCH, HOLD_STOP_REVIEW, or STOP
+
+Return exactly these sections:
+
+verdict:
+read_before_work:
+files_touched:
+commands_run:
+receipts_created_or_updated:
+state_mutations_observed:
+WATCH:
+HOLD:
+overclaim_findings:
+missing_evidence:
+next_smallest_action:

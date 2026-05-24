@@ -1,0 +1,41 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "required_artifacts_exist",
+      "pass": true
+    },
+    {
+      "check": "fast_first_selected",
+      "pass": true
+    },
+    {
+      "check": "no_heavy_cli_execution",
+      "pass": true
+    },
+    {
+      "check": "fast_trigger_hits_present",
+      "pass": true
+    },
+    {
+      "check": "timing_under_5s",
+      "observed": 0.001843,
+      "pass": true
+    },
+    {
+      "check": "hold_no_authority",
+      "pass": true
+    },
+    {
+      "check": "trace_rows_present",
+      "observed": 2,
+      "pass": true
+    },
+    {
+      "check": "active_endpoint_or_replay_hits==0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_APPLY_BUDGET_GATE_FAST_FIRST_WITH_HOLD"
+}

@@ -1,0 +1,109 @@
+{
+  "request_id": 3,
+  "title": "Run 003 DEEP repo feature",
+  "classification": "STRUCTURED_LOCAL_RUN_EXPORT",
+  "data": {
+    "request": [
+      {
+        "id": 3,
+        "title": "Run 003 DEEP repo feature",
+        "body": "이 기능을 repo에 구현해줘.",
+        "depth": "DEEP",
+        "state": "MATURED_OR_HELD",
+        "source_known": 0,
+        "audience_known": 0,
+        "sensitivity_known": 0,
+        "approval_marker": "SAMPLE_LOCAL_APPROVAL_MARKER",
+        "scope_marker": "SAMPLE_LOCAL_SCOPE_MARKER",
+        "promotion_status": "HOLD",
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "assets": [],
+    "decisions": [
+      {
+        "id": 3,
+        "decision": "ROUTE_DEEP",
+        "reason": "route before execution",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "executions": [
+      {
+        "id": 3,
+        "execution_type": "DEEP_PATCH_CANDIDATE_RECORD_ONLY",
+        "status": "COMPLETED",
+        "output_classification": "FUTURE_PATCH_CANDIDATE_ONLY_NOT_PROGRAM_ALPHA_EVIDENCE",
+        "created_at": "2026-05-20 09:57:38",
+        "updated_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "receipts": [
+      {
+        "id": 3,
+        "execution_id": 3,
+        "content": "synthetic local receipt; no external tool; no real company data",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "reviews": [
+      {
+        "id": 3,
+        "verdict": "LOCAL_SAMPLE_PASS_WITH_HOLD",
+        "next_smallest_action": "review sample recovery and keep promotion HOLD",
+        "promotion_status": "HOLD",
+        "authority_status": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "maturation": [
+      {
+        "id": 3,
+        "summary": "sample recovered into local maturation record",
+        "next_work_easier_value": "routing and recovery path verified for DEEP",
+        "authority_mutation": "NO",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ],
+    "next_actions": [],
+    "guardrail_events": [
+      {
+        "id": 11,
+        "guardrail": "G4",
+        "result": "PASS_BLOCKED",
+        "detail": "DEEP requires approval and scope marker",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 12,
+        "guardrail": "G5",
+        "result": "PASS",
+        "detail": "COMPLETED -> RECEIPT_REQUIRED",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 13,
+        "guardrail": "G7",
+        "result": "PASS",
+        "detail": "receipt -> REVIEW_REQUIRED",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 14,
+        "guardrail": "G8_G9_G10_G11",
+        "result": "PASS",
+        "detail": "review has next/HOLD, promotion HOLD, authority NO",
+        "created_at": "2026-05-20 09:57:38"
+      },
+      {
+        "id": 15,
+        "guardrail": "G12",
+        "result": "PASS",
+        "detail": "no authority mutation",
+        "created_at": "2026-05-20 09:57:38"
+      }
+    ]
+  },
+  "boundary_ok": true
+}

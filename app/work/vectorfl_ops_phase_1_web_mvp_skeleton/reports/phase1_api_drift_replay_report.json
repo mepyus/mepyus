@@ -1,0 +1,49 @@
+{
+  "base_url": "http://127.0.0.1:8880",
+  "classification": "PIPELINE_PHASE1_API_DRIFT_REPLAY_VALIDATOR_V0",
+  "created_at": "2026-05-22T22:29:28Z",
+  "endpoint_count": 13,
+  "hold": {
+    "authority_mutation": "NO",
+    "external_model_tool_network_execution": "NO",
+    "production_deployment": "NO",
+    "program_alpha": "NO",
+    "promotion": "HOLD",
+    "real_company_data": "NO",
+    "write_ui": "NO"
+  },
+  "live_hashes": {
+    "/": "e1f364b49c2be02c8d5cacf8090d7854a5e4d131fa61b9ea7c5e7c5938d3c86c",
+    "/api/guardrails": "8eaa06fed74163d968eb9086117fef13832fa52ec702177db1beeed5d0f312b3",
+    "/api/request/1": "15caec3fea4ce32834fcb80b69428f6ec2895e9dc227d3a2634fc148314fcfc8",
+    "/api/request/2": "9ea24ad1d1792dad5c920fad1091ce9b503c9c178c0d1feb812c65bcd95f75dd",
+    "/api/request/3": "604e95eca9dec2fc27935ee94c9da608bf5a044ef75abd7b4b5700ec39a1ce29",
+    "/api/request/4": "4822bc86b2ecb2ee6a6b65db51594e4fdaf70783bacf66e105720bc8fb97e9de",
+    "/api/request/5": "3f08708ee591773bf371af45e70bbe8c42f5b1b680a38ca9e0823ae25e88b194",
+    "/api/request/6": "d7905647fffdb8352cc7d05aea9847979f757924d623b8c16c7eaf6b49bc15fd",
+    "/api/request/7": "dceb349c3f40dbcc0da543ff5e47842a43d161965b4819d68e65f0fe3ee76daf",
+    "/api/requests": "74be3c9d5755af55035ed1d45558239559da4b0e14efcea1efa1ef294ae1040f",
+    "/api/summary": "6a030ad4e2361636e9d1ec0a7660a484281524da613e14ba250939e0d3c14075",
+    "/api/ui-surface": "94714894635a34cae4f67b2bb2931c796d6ddd63cdc51b5c5c2d3f1add29dc1d",
+    "/health": "3514e9789cabe770fd71e95b876742e9046431f6be15dac1af20b8d25ce8448b"
+  },
+  "next_lane": "PIPELINE_PHASE1_UI_SURFACE_COMPLETENESS_V0",
+  "problems": [],
+  "snapshot_manifest": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_1_web_mvp_skeleton/snapshots/phase1_api_contract_snapshot_v0/manifest.json",
+  "strict_hash": false,
+  "verdict": "PASS_API_DRIFT_REPLAY_MATCH",
+  "watches": [
+    "/health response hash changed or runtime ordering differs",
+    "/api/summary response hash changed or runtime ordering differs",
+    "/api/requests response hash changed or runtime ordering differs",
+    "/api/guardrails response hash changed or runtime ordering differs",
+    "/ response hash changed or runtime ordering differs",
+    "/api/request/1 response hash changed or runtime ordering differs",
+    "/api/request/2 response hash changed or runtime ordering differs",
+    "/api/request/3 response hash changed or runtime ordering differs",
+    "/api/request/4 response hash changed or runtime ordering differs",
+    "/api/request/5 response hash changed or runtime ordering differs",
+    "/api/request/6 response hash changed or runtime ordering differs",
+    "/api/request/7 response hash changed or runtime ordering differs"
+  ]
+}

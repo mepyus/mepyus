@@ -1,0 +1,27 @@
+{
+  "verdict": "C2C_S8_CLASSIFIED_CANDIDATE_UPGRADE_REVIEW_NEEDED_WITH_PROMOTION_HOLD",
+  "status": "classification_only_no_authority_mutation",
+  "created_at_utc": "2026-05-17T11:55:33Z",
+  "classification": "candidate_upgrade_review_needed",
+  "gemini_recommendation": "component_proposal_ready",
+  "codex_recovered_classification": "candidate_upgrade_review_needed",
+  "why_not_component_proposal_ready": [
+    "Codex downgraded Gemini component_proposal_ready to candidate_upgrade_review_needed",
+    "permission inheritance remains unresolved",
+    "raw audit trigger policy remains unresolved",
+    "promotion remains explicitly unapproved",
+    "VectorFL authority mutation remains explicitly unapproved"
+  ],
+  "conditions": {
+    "real_c2c_gemini_executed": true,
+    "real_c2c_codex_executed": true,
+    "gemini_completion": true,
+    "codex_completion": true,
+    "promotion_false": true,
+    "authority_false": true
+  },
+  "next_smallest_action": "derive permission-inheritance and raw-audit-trigger requirement packet before any component proposal gate",
+  "promotion": false,
+  "vectorfl_authority_mutation": false,
+  "required_final_line": "No promotion was performed. Recovery class remains candidate."
+}

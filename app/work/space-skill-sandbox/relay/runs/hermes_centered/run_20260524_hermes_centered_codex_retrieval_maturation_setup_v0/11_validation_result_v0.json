@@ -1,0 +1,85 @@
+{
+  "active_hits": [],
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_tool_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "checks": [
+    {
+      "check": "user_original_preserved",
+      "pass": true
+    },
+    {
+      "check": "hermes_centered_principle",
+      "pass": true
+    },
+    {
+      "check": "codex_two_phase_role",
+      "pass": true
+    },
+    {
+      "check": "gemini_only_via_codex_script_chain",
+      "pass": true
+    },
+    {
+      "check": "no_direct_agent_api_boundary",
+      "pass": true
+    },
+    {
+      "check": "reference_index_read_first_lte_6",
+      "pass": true
+    },
+    {
+      "check": "task_packet_handle_explicit",
+      "pass": true
+    },
+    {
+      "check": "codex_return_placeholder_exists",
+      "pass": true
+    },
+    {
+      "check": "schema_has_required_fields",
+      "pass": true
+    },
+    {
+      "check": "hermes_merge_template_has_original_space_model",
+      "pass": true
+    },
+    {
+      "check": "codex_reentry_file_points_to_maturation",
+      "pass": true
+    },
+    {
+      "check": "cli_template_only_no_execution",
+      "pass": true
+    },
+    {
+      "check": "no_folder_source_authority_mutation",
+      "pass": true
+    },
+    {
+      "check": "forbidden_api_endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "source_refs_exist",
+      "pass": true
+    }
+  ],
+  "checks_count": 15,
+  "elapsed_seconds": 0.010824653000000004,
+  "next_safe_lane": "USER_RUN_CODEX_SPACE_RETRIEVAL_CLI_OR_HOLD_V0",
+  "promotion_status": "HOLD",
+  "read_first_count": 6,
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_hermes_centered_codex_retrieval_maturation_setup_v0",
+  "verdict": "PASS_HERMES_CENTERED_CODEX_RETRIEVAL_MATURATION_SETUP_NO_DIRECT_API_WITH_HOLD"
+}

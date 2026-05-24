@@ -1,0 +1,37 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "budget_gate": {
+    "codex_cli_execution": "NO",
+    "gemini_cli_execution": "NO",
+    "reason": "User correction + local reframing; no need for Codex/Gemini because the issue is operational lane placement, not cross-agent ambiguity.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_convergence_correction_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_phase2_convergence_correction_and_phase3_backlog_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0.json",
+      "sha256": "0a953c4c4d214e3d4d24c7d94001d71f23a454909baeea099114cc8496ab3c6f",
+      "used_for": "judge convergence drift and reframe next work"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0.md",
+      "sha256": "4c146189a0726a1493c9453ddcdf2794729842011e607b96697649973f933d2e",
+      "used_for": "judge convergence drift and reframe next work"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+      "sha256": "4694c3c5db4e2a832133a83414137ede5e63228e0026156f4e9bbea62a380ee6",
+      "used_for": "judge convergence drift and reframe next work"
+    }
+  ],
+  "user_correction": "Phase2 work is over-converging into validator/checklist internals; defer these to Phase3 backlog and refocus Phase2 on evaluating/listing work in the big frame."
+}

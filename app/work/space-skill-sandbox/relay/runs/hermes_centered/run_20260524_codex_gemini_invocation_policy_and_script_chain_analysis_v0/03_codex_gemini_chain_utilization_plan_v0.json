@@ -1,0 +1,89 @@
+{
+  "candidate_existing_scripts": [
+    {
+      "fit": "Useful only as optional fresh-space/worker bridge; not default local test path.",
+      "kind": "Codex provider-backed CLI bridge",
+      "observed_structure": [
+        "loads runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json",
+        "builds compact prompt from handoff",
+        "runs codex exec read-only with output schema",
+        "writes runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+        "timeout=45s in script, but Codex CLI itself can still use provider layer"
+      ],
+      "risk": "Provider-backed Codex CLI can time out or consume time; not needed for inventory/repeatability when return packet already exists.",
+      "script": "scripts/run_vectorfl_paper_codex_bridge.py"
+    },
+    {
+      "fit": "Good candidate pattern for Codex→Gemini script-chain after Codex has a return and needs layer/cross-check review.",
+      "kind": "Gemini provider-backed CLI crosscheck bridge",
+"observed_structure": [
+          "reads latest Codex return from runtime/manifests/vectorfl_paper_codex_return_latest_v0.json",
+          "builds Gemini prompt",
+          "runs Gemini CLI with prompt/output-format arguments (provider-backed; on-demand only)",
+          "parses JSON object from Gemini stdout",
+          "writes runtime/manifests/vectorfl_paper_gemini_review_latest_v0.json",
+          "timeout=45s in script"
+        ],
+      "risk": "Should not be invoked by Hermes directly as default; provider-backed Gemini CLI only when Codex-side policy triggers it.",
+      "script": "scripts/run_vectorfl_paper_gemini_crosscheck_bridge.py"
+    },
+    {
+      "fit": "Best immediate local-only test pattern for Codex-authored Gemini request without provider call.",
+      "kind": "No-network simulated Gemini lens runner",
+      "observed_structure": [
+        "reads codex_authored_gemini_request.json",
+        "reads only declared input_files",
+        "writes raw_output, lite_output, runner_receipt, sandbox report",
+        "declares codex_executed=false, gemini_executed=false, network_used=false, model_api_transport_used=false"
+      ],
+      "risk": "Simulation only; cannot be treated as real Gemini validation.",
+      "script": "app/work/.../gemini_script_runner_boundary_sandbox_v0/scripts/gemini_lens_runner_sim.py"
+    }
+  ],
+  "do_not_do": [
+    "Do not call Codex/Gemini for inventory/list/status/repeatability when packets already exist.",
+    "Do not prebuild direct API integration now.",
+    "Do not let Gemini runner become authority.",
+    "Do not mutate compact index/registry/current-position/folder tree without separate explicit scope."
+  ],
+  "packet_id": "03_codex_gemini_chain_utilization_plan_v0",
+  "pattern_name": "CODEX_OWNED_GEMINI_SCRIPT_CHAIN_ON_DEMAND",
+  "status": "HOLD_PLAN_ONLY",
+  "steps": [
+    {
+      "action": "Preserve user original, execute/merge as center. If fresh space reference is missing, prepare Codex retrieval packet only.",
+      "owner": "Hermes",
+      "step": 1
+    },
+    {
+      "action": "Retrieve original-related space refs only when needed; return selected/rejected refs and changed_judgment.",
+      "owner": "Codex",
+      "step": 2
+    },
+    {
+      "action": "Merge original + Codex refs + model interpretation; execute and write reentry.",
+      "owner": "Hermes",
+      "step": 3
+    },
+    {
+      "action": "Read reentry and decide maturation. If layer ambiguity remains, author Gemini request packet.",
+      "owner": "Codex",
+      "step": 4
+    },
+    {
+      "action": "Run Gemini lens/bridge on declared inputs only; produce raw/lite/receipt. Default test is simulated/local; real Gemini CLI requires explicit approval.",
+      "owner": "Codex-side script",
+      "step": 5
+    },
+    {
+      "action": "Read Gemini lite/raw as needed and produce maturation judgment.",
+      "owner": "Codex",
+      "step": 6
+    },
+    {
+      "action": "Merge Codex maturation as evidence/HOLD; no authority apply by default.",
+      "owner": "Hermes",
+      "step": 7
+    }
+  ]
+}

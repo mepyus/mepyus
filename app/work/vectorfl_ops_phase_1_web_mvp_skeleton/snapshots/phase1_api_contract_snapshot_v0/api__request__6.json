@@ -1,0 +1,41 @@
+{
+  "bytes": 818,
+  "content_type": "application/json; charset=utf-8",
+  "json": {
+    "assets": [],
+    "decisions": [],
+    "executions": [],
+    "guardrail_events": [
+      {
+        "created_at": "2026-05-20 10:10:18",
+        "detail": "probe: RECEIPT_REQUIRED cannot close without receipt",
+        "guardrail": "G6",
+        "id": 21,
+        "request_id": 6,
+        "result": "PASS_BLOCKED"
+      }
+    ],
+    "maturation": [],
+    "next_actions": [],
+    "receipts": [],
+    "request": {
+      "approval_marker": "",
+      "audience_known": 0,
+      "authority_status": "NO",
+      "body": "Try to close from RECEIPT_REQUIRED without receipt",
+      "created_at": "2026-05-20 10:10:18",
+      "depth": "STANDARD",
+      "id": 6,
+      "promotion_status": "HOLD",
+      "scope_marker": "",
+      "sensitivity_known": 0,
+      "source_known": 0,
+      "state": "RECEIPT_REQUIRED",
+      "title": "Probe G6 close without receipt"
+    },
+    "reviews": []
+  },
+  "path": "/api/request/6",
+  "sha256": "ce7b16394579f98660bdb1b5259e69bf375b3ae6abfa55efd9378cfd4ac9426a",
+  "status": 200
+}

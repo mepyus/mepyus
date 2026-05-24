@@ -1,0 +1,45 @@
+{
+  "observed_inputs": [
+    "REQUIREMENTS_CLOSURE_PACKET_V0.md",
+    "REQ_REVIEW_INPUT_MANIFEST_V0.json",
+    "review_inputs/01_C2C_S8_CLASSIFICATION_RECEIPT_V0.json",
+    "review_inputs/02_C2C_S8_CLASSIFICATION_REPORT_V0.md",
+    "review_inputs/03_C2C_REVIEW_RECEIPT_V0.json",
+    "review_inputs/04_C2C_REVIEW_REPORT_V0.md",
+    "review_inputs/05_codex_c2c_recovery_return.md",
+    "review_inputs/06_gemini_c2c_lite_output.json"
+  ],
+  "permission_inheritance_requirement": "The component must implement a 'Permission Inheritance Bridge' for combined model transport. This requirement mandates that any transport packet derived from multiple source components must automatically aggregate and inherit the source permission sets. The resulting transport metadata header must include a verifiable 'permissions_provenance' block that is checked against the active execution context at the transport gateway.",
+  "raw_audit_trigger_requirement": "The component must enforce a 'Raw Audit Trigger Policy' where all cross-boundary transport events (specifically S8-to-Component or Candidate-to-Component transitions) trigger an immediate, immutable raw trace. The audit record must capture the raw input state, the specific transformation skill used, and the authorization token of the triggering process, stored in a dedicated audit-registry separate from general execution logs.",
+  "acceptance_tests": [
+    "Verify transport packet rejection if inherited permission metadata is missing or fails verification.",
+    "Verify that a simulated S8-to-Component boundary crossing generates a raw audit entry in the persistent trace log with correct provenance fields.",
+    "Verify that combined transport correctly aggregates permissions from at least two distinct source components."
+  ],
+  "remaining_blockers": [
+    "Promotion remains explicitly unapproved per HOLD constraints.",
+    "VectorFL authority mutation remains explicitly unapproved.",
+    "Formal integration of these requirements into the Component Proposal Registry is pending authorized gate approval."
+  ],
+  "watch_items": [
+    "Transition from one-off rehearsal to reusable packet template requires explicit gate approval.",
+    "Template existence is evidence, not established authority.",
+    "Gemini component-ready framing must stay subordinate to Codex recovery."
+  ],
+  "hold_items": [
+    "Promotion",
+    "VectorFL authority mutation",
+    "Modification of baseline, workflow, schema, registry, ontology, or current-position files."
+  ],
+  "recommended_classification_one_of_requirements_incomplete_requirements_candidate_ready_component_proposal_requirements_ready_STOP": "component_proposal_requirements_ready",
+  "do_not_promote": [
+    "01_BOUNDED_COMBINED_BRIDGE_PACKET_TEMPLATE_CANDIDATE_V0.md",
+    "02_BOUNDED_COMBINED_BRIDGE_USAGE_CARD_CANDIDATE_V0.md",
+    "Requirements classification to component level without authorized gate review."
+  ],
+  "questions_for_codex": [
+    "Do these explicit requirements adequately address the 'Safe Next Review Requirements' identified in input 05?",
+    "Can the Raw Audit Trigger requirement be satisfied by extending the RUNLOG.jsonl schema, or does 'audit-registry' imply a new file structure?"
+  ],
+  "completion_signal": "GEMINI_REQUIREMENTS_LITE_DONE"
+}

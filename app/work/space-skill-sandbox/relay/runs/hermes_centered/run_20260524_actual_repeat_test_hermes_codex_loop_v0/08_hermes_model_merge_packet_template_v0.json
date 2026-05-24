@@ -1,0 +1,32 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_tool_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "fields_to_fill_after_retrieval": [
+    "space_refs_used",
+    "original_reading",
+    "codex_retrieved_material_summary",
+    "hermes_model_reinterpretation",
+    "changed_judgment",
+    "execution_decision",
+    "execution_trace_ref",
+    "codex_readable_reentry_record_ref"
+  ],
+  "inputs": {
+    "codex_retrieval_return": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_repeat_test_hermes_codex_loop_v0/07_CODEX_SPACE_RETRIEVAL_RETURN_PACKET_ACTUAL_TEST.json",
+    "reference_path_index": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_repeat_test_hermes_codex_loop_v0/03_codex_reference_path_index_v0.json",
+    "user_original": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_repeat_test_hermes_codex_loop_v0/00_user_original_verbatim.md"
+  },
+  "packet_id": "08_hermes_model_merge_packet_template_v0",
+  "purpose": "Hermes fills after Codex retrieval: original + retrieved space + model reinterpretation + execution/trace.",
+  "status": "TEMPLATE_HOLD"
+}

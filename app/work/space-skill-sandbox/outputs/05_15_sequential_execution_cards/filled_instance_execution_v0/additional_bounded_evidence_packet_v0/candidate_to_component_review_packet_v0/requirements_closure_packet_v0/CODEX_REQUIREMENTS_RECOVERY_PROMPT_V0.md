@@ -1,0 +1,19 @@
+# Codex Requirements Closure Recovery Prompt v0
+
+Read exactly:
+1. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/REQUIREMENTS_CLOSURE_PACKET_V0.md
+2. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/outputs/gemini_requirements_lite_output.json
+3. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/outputs/gemini_requirements_raw_output.txt
+4. /Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/REQUIREMENTS_CLOSURE_RECEIPT_CONTRACT_V0.json
+
+Write only:
+/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/outputs/codex_requirements_recovery_return.md
+
+Task:
+Recover Gemini requirements closure evidence into VectorFL-safe requirements classification.
+Classify as one of: requirements_incomplete, requirements_candidate_ready, component_proposal_requirements_ready, STOP.
+Remove any promotion/component authority claims.
+Preserve WATCH/HOLD.
+End with completion_signal: CODEX_REQUIREMENTS_RECOVERY_DONE
+
+No promotion. No authority mutation.

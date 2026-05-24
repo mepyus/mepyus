@@ -1,0 +1,65 @@
+{
+  "boundaries": {
+    "api_call": "NO",
+    "api_direct": "NO",
+    "authority_mutation": "NO",
+    "codex_cli_execution": "NO",
+    "current_position_apply": "NO",
+    "gemini_cli_execution": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO_FIXTURE_ONLY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO"
+  },
+  "drift_count": 5,
+  "drift_passed": 5,
+  "field_stability": {
+    "all_positive_required_fields_pass": true,
+    "case_count": 3,
+    "stable_parts": [
+      "intake",
+      "space_reading",
+      "merge",
+      "receipt"
+    ]
+  },
+  "final_clean_active_call_hits": 0,
+  "intentional_active_literal_detection_count": 1,
+  "meaning": "Four-shape minimal loop stayed stable across 3 varied positive inputs and detected 5 drift classes, with final generated artifacts clean and HOLD boundaries preserved.",
+  "next_safe_lane": "FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_NO_AUTHORITY_MUTATION_V0",
+  "part_time_stats": {
+    "intake": {
+      "max": 0.000295,
+      "mean": 0.00026,
+      "min": 0.000207,
+      "spread": 8.8e-05
+    },
+    "merge": {
+      "max": 0.00048,
+      "mean": 0.000455,
+      "min": 0.000407,
+      "spread": 7.3e-05
+    },
+    "receipt": {
+      "max": 0.000329,
+      "mean": 0.000264,
+      "min": 0.000228,
+      "spread": 0.000101
+    },
+    "space_reading": {
+      "max": 0.000324,
+      "mean": 0.000313,
+      "min": 0.000305,
+      "spread": 1.9e-05
+    }
+  },
+  "positive_count": 3,
+  "positive_passed": 3,
+  "report_id": "VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0",
+  "runner_rc": 0,
+  "runner_stderr": "",
+  "runner_stdout": "PASS_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_WITH_HOLD\npositive=3/3 drift=5/5 final_active_call_hits=0\nintake mean=0.000260 spread=0.000088 min=0.000207 max=0.000295\nspace_reading mean=0.000313 spread=0.000019 min=0.000305 max=0.000324\nmerge mean=0.000455 spread=0.000073 min=0.000407 max=0.000480\nreceipt mean=0.000264 spread=0.000101 min=0.000228 max=0.000329",
+  "verdict": "PASS_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_WITH_HOLD"
+}

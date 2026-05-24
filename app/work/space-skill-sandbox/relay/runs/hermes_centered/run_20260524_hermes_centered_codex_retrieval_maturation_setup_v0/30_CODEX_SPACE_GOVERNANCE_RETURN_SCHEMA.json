@@ -1,0 +1,41 @@
+{
+  "packet_id": "30_CODEX_SPACE_GOVERNANCE_RETURN_SCHEMA_20260524_V0",
+  "role": "CODEX_SPACE_GOVERNANCE_CHECK",
+  "required_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "input_classification",
+    "space_state_before",
+    "hermes_execution_links",
+    "space_delta",
+    "gemini_exploration_decision",
+    "maturation_decision",
+    "risks",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "field_meanings": {
+    "input_classification": "Classify the user input or Hermes packet as original, continuation, correction, status check, retrieval request, or reentry analysis.",
+    "space_state_before": "Bounded summary of the relevant space controls and current HOLD/proposal state before action.",
+    "hermes_execution_links": "Hermes merge, trace, receipt, validation, and reentry handles relevant to this operation.",
+    "space_delta": "What changed in space meaning, layer pressure, stale/current status, duplicate pressure, or missing handles.",
+    "gemini_exploration_decision": "YES/NO plus reason; if YES, Gemini remains Codex-internal analysis input only.",
+    "maturation_decision": "HOLD-only proposal, reject, defer, or no maturation needed.",
+    "risks": "Boundary, stale reference, broad archaeology, direct API, authority confusion, and missing reentry risks.",
+    "next_safe_lane": "Next action that preserves HOLD and no-mutation boundaries.",
+    "promotion_status": "HOLD unless explicit bounded approval exists."
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_direct_api_invocation": "NO",
+    "current_position_apply": "NO",
+    "external_api_direct_server_replay": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_direct_api_invocation": "NO",
+    "hermes_direct_gemini_invocation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "verdict": "S5_STOP_INVALID_LITE",
+  "scenario": "gemini_lite_invalid",
+  "status": "simulated_failure_response_only",
+  "action": "STOP_AND_PRESERVE",
+  "recovery_class": "residue_or_STOP",
+  "real_gemini_execution": false,
+  "real_codex_execution": false,
+  "model_api_transport_used": false,
+  "promotion_performed": false,
+  "vectorfl_authority_modified": false,
+  "preserve_policy": "preserve raw/lite/recovery if they exist; never silently edit model outputs",
+  "quarantine_policy": "quarantine suspicious Codex promotion/authority claims",
+  "required_final_line": "No execution was performed. No promotion was performed. Recovery class remains candidate."
+}

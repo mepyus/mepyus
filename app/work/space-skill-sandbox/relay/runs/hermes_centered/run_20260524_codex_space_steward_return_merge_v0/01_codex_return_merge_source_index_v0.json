@@ -1,0 +1,39 @@
+{
+  "boundary": {
+    "api_direct_server_replay": "NO",
+    "authority_mutation": "NO",
+    "codex_live_call_from_hermes": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_live_call": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "budget_gate": {
+    "api_direct_server_replay": "NO",
+    "codex_cli_execution": "NO_ALREADY_SUPPLIED_BY_USER",
+    "gemini_cli_execution": "NO",
+    "reason": "User supplied Codex output; Hermes only validates/merges locally and prepares Gemini input.",
+    "selected_mode": "FAST_NO_CALL_LOCAL_VALIDATION"
+  },
+  "packet_id": "01_codex_return_merge_source_index_v0",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_space_steward_return_merge_v0",
+  "space_refs": [
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/08_CODEX_SPACE_STEWARD_RETURN_PACKET_DRY_RUN.json",
+      "ref_id": "codex_return_packet",
+      "sha256": "7e62f73111c7f8e4759f62bbe193e84a271dde6887154112eca6a151dc44ccab",
+      "used_for": "Codex Space Steward result to validate/merge"
+    },
+    {
+      "exists": true,
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_space_maturation_handoff_files_validation_v0/04_USER_INSTRUCTION_FOR_GEMINI_LAYER_READER_AFTER_CODEX.md",
+      "ref_id": "gemini_instruction_prior",
+      "sha256": "4d9c8460ab68fbbc24dbbc1ee0fd8917957de621a97a3e3a09fd9d8e6ae67121",
+      "used_for": "update Gemini prompt with Codex return packet"
+    }
+  ],
+  "user_original_verbatim_sha256": "52fad51b1a5cb69a6b9c63dc71da3a0282dc9e1ce3b53a2f5d726fec81aaec27"
+}

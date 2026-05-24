@@ -1,0 +1,1537 @@
+commit a542716f376d48713d72cfda707af8c42b801471
+Author: mepyus <mepyus24@naver.com>
+Date:   Sat May 2 06:33:47 2026 +0900
+
+    Align whole-space orientation and Package 033 candidate-evidence closeout
+
+diff --git a/app/core/runtime/external_input_comparison.py b/app/core/runtime/external_input_comparison.py
+index c9367b186..29fc7dfef 100644
+--- a/app/core/runtime/external_input_comparison.py
++++ b/app/core/runtime/external_input_comparison.py
+@@ -10,6 +10,7 @@ from app.core.runtime.external_input_gate import assess_external_input_gate
+ from app.core.runtime.external_transcript_preprocess import preprocess_transcript_file
+ from app.core.runtime.inputter import build_dust_inputs_from_source
+ from app.core.runtime.labeler import label_dust_inputs
++from app.core.runtime.lower_support_layers import build_support_layers_for_preprocess_comparison
+ 
+ 
+ def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object]:
+@@ -44,7 +45,7 @@ def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object
+         },
+     }
+ 
+-    return {
++    payload = {
+         "comparison_name": "transcript_preprocess_comparison_v0",
+         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+         "input_path": str(input_path).replace("\\", "/"),
+@@ -55,6 +56,8 @@ def build_transcript_preprocess_comparison(input_path: Path) -> Dict[str, object
+         "after_probe": after_probe,
+         "comparison": comparison,
+     }
++    payload["support_layers"] = build_support_layers_for_preprocess_comparison(payload)
++    return payload
+ 
+ 
+ def _build_probe_summary(input_path: Path) -> Dict[str, object]:
+diff --git a/app/core/runtime/lower_support_layers.py b/app/core/runtime/lower_support_layers.py
+new file mode 100644
+index 000000000..9c112f21f
+--- /dev/null
++++ b/app/core/runtime/lower_support_layers.py
+@@ -0,0 +1,758 @@
++from __future__ import annotations
++
++import json
++import re
++from collections import Counter
++from pathlib import Path
++from typing import Any
++
++
++ROLE_KEYWORDS: dict[str, tuple[str, ...]] = {
++    "definition": (
++        "definition",
++        "define",
++        "means",
++        "purpose",
++        "scope",
++        "what this is",
++        "정의",
++        "의미",
++        "목적",
++    ),
++    "background": (
++        "background",
++        "context",
++        "source identity",
++        "input info",
++        "profile",
++        "origin",
++        "배경",
++        "맥락",
++        "입력 정보",
++    ),
++    "main_claim": (
++        "main gap",
++        "missing",
++        "need",
++        "must",
++        "core",
++        "dominant gap",
++        "핵심",
++        "부족",
++        "필요",
++        "주요",
++    ),
++    "transition": (
++        "next",
++        "then",
++        "after",
++        "before",
++        "proceed",
++        "다음",
++        "이후",
++        "전환",
++        "단계",
++    ),
++    "correction": (
++        "instead",
++        "rather",
++        "correction",
++        "fix",
++        "보정",
++        "수정",
++        "바로잡",
++    ),
++    "objection": (
++        "however",
++        "but ",
++        "risk",
++        "problem",
++        "issue",
++        "objection",
++        "한계",
++        "문제",
++        "리스크",
++    ),
++    "example": ("example", "for example", "예시", "사례"),
++    "exception": ("except", "unless", "예외", "단,"),
++    "connective": (
++        "bridge",
++        "link",
++        "connect",
++        "mapping",
++        "handoff",
++        "연결",
++        "매핑",
++        "bridge minimum",
++    ),
++    "axis_support_candidate": (
++        "axis",
++        "camera",
++        "lens",
++        "corridor",
++        "arrival axis",
++        "line seed",
++        "축",
++        "카메라",
++        "렌즈",
++        "라인",
++    ),
++}
++
++SEED_DRIVER_ROLES = {
++    "main_claim",
++    "correction",
++    "objection",
++    "connective",
++    "axis_support_candidate",
++}
++
++CHANGE_CUES = (
++    "change",
++    "changed",
++    "shift",
++    "move",
++    "moved",
++    "recast",
++    "re-read",
++    "scope",
++    "revision",
++    "delta",
++    "regroup",
++    "reduced",
++    "moved down",
++    "바뀌",
++    "변화",
++    "전환",
++    "재정리",
++)
++
++BOUNDARY_CUES = (
++    "hold",
++    "not yet",
++    "evidence_only",
++    "thin",
++    "weak",
++    "unknown",
++    "risk",
++    "unclear",
++    "spec-first",
++    "light patch",
++    "caution",
++    "missing",
++    "보류",
++    "아직",
++    "얇",
++    "약",
++    "주의",
++    "부족",
++    "still not",
++    "should still be checked",
++    "not direct-ingest-safe",
++    "before mutation",
++    "before any real ingest",
++    "too strong",
++    "too flat",
++)
++
++FLOW_CUES = (
++    "sequence",
++    "layer position",
++    "handoff",
++    "carry-forward",
++    "carry forward",
++    "between",
++    "between-layer",
++    "between layer",
++    "insertion",
++    "position",
++    "chain",
++    "순서",
++    "레이어",
++    "연결",
++    "handoff chain",
++)
++
++
++def _normalize_text(value: str) -> str:
++    return re.sub(r"\s+", " ", value or "").strip()
++
++
++def _tokenize(text: str) -> list[str]:
++    tokens = re.findall(r"[A-Za-z_][A-Za-z0-9_-]{2,}|[가-힣]{2,}", text.lower())
++    return [
++        token
++        for token in tokens
++        if token
++        not in {
++            "this",
++            "that",
++            "with",
++            "from",
++            "into",
++            "then",
++            "there",
++            "input",
++            "source",
++            "path",
++            "line",
++            "note",
++            "report",
++            "stage",
++            "bridge",
++            "lower",
++            "upper",
++            "artifact",
++            "bundle",
++        }
++    ]
++
++
++def _score_roles(text: str) -> dict[str, int]:
++    lowered = text.lower()
++    scores: dict[str, int] = {}
++    for role, keywords in ROLE_KEYWORDS.items():
++        scores[role] = sum(1 for keyword in keywords if keyword.lower() in lowered)
++    if "not " in lowered and " but " in lowered:
++        scores["correction"] += 1
++    if any(marker in lowered for marker in ("why ", "how ", "무엇", "왜 ", "어떻게")):
++        scores["main_claim"] += 1
++    return scores
++
++
++def infer_content_role(
++    text: str,
++    *,
++    ref_hint: str = "",
++    source_ref: str = "",
++) -> dict[str, Any]:
++    normalized = _normalize_text(" ".join(part for part in [ref_hint, text] if part))
++    scores = _score_roles(normalized)
++    ranked = sorted(scores.items(), key=lambda item: (item[1], item[0]), reverse=True)
++    top_role, top_score = ranked[0]
++    second_role, second_score = ranked[1]
++
++    if top_score <= 0:
++        return {
++            "content_role": "unknown",
++            "secondary_role": "",
++            "role_confidence": "low",
++            "role_status": "weak",
++            "role_basis_note": "No bounded lexical role signal was strong enough.",
++            "why_this_role": "The chunk is still readable, but role should remain honest and weak.",
++            "source_ref": source_ref,
++        }
++
++    mixed = second_score > 0 and top_score == second_score
++    role_confidence = "high" if top_score >= 3 and not mixed else "medium"
++    role_status = "mixed" if mixed else "bounded"
++    content_role = top_role
++    secondary_role = second_role if mixed or second_score > 0 else ""
++
++    why = {
++        "definition": "The chunk defines scope, purpose, or meaning-bearing terms.",
++        "background": "The chunk situates source context or provenance-adjacent explanation.",
++        "main_claim": "The chunk pushes a dominant gap, need, or claim-like pressure.",
++        "transition": "The chunk moves the reader into a next stage or adjacent step.",
++        "correction": "The chunk corrects, narrows, or redirects a prior reading.",
++        "objection": "The chunk carries risk, limit, or pushback pressure.",
++        "example": "The chunk exemplifies a broader point with a bounded case.",
++        "exception": "The chunk limits the rule with an exception-style condition.",
++        "connective": "The chunk links surfaces, routes, or handoff meaning across blocks.",
++        "axis_support_candidate": "The chunk contains directional language but not enough support for promotion.",
++    }.get(content_role, "The chunk carries a bounded local role.")
++
++    return {
++        "content_role": content_role,
++        "secondary_role": secondary_role,
++        "role_confidence": role_confidence,
++        "role_status": role_status,
++        "role_basis_note": f"Keyword-weighted lower role inference from local text and ref hint. top={top_role}:{top_score}",
++        "why_this_role": why,
++        "source_ref": source_ref,
++    }
++
++
++def build_content_role_tags_for_split_units(
++    source_ref: str,
++    split_units: list[dict[str, Any]],
++) -> list[dict[str, Any]]:
++    rows: list[dict[str, Any]] = []
++    for unit in split_units:
++        inferred = infer_content_role(
++            unit.get("text_excerpt", ""),
++            ref_hint=f"{unit.get('start_ref', '')} {unit.get('end_ref', '')}",
++            source_ref=source_ref,
++        )
++        rows.append(
++            {
++                "tag_id": f"role_{unit['unit_id']}",
++                "source_ref": source_ref,
++                "split_unit_ref": unit["unit_id"],
++                "content_role": inferred["content_role"],
++                "secondary_role": inferred["secondary_role"],
++                "role_confidence": inferred["role_confidence"],
++                "role_status": inferred["role_status"],
++                "role_basis_note": inferred["role_basis_note"],
++                "why_this_role": inferred["why_this_role"],
++                "char_count": unit.get("char_count", 0),
++                "excerpt_preview": unit.get("text_excerpt", "")[:160],
++            }
++        )
++    return rows
++
++
++def _dominant_tokens(texts: list[str]) -> list[str]:
++    counter = Counter()
++    for text in texts:
++        counter.update(_tokenize(text))
++    repeated = [token for token, count in counter.most_common(5) if count >= 2]
++    return repeated[:3]
++
++
++def _seed_question(roles: list[str]) -> str:
++    if "correction" in roles:
++        return "What misunderstanding is this local material trying to correct?"
++    if "objection" in roles:
++        return "What risk or resistance should later upper reading keep visible?"
++    if "axis_support_candidate" in roles:
++        return "Which later source keeps the same directional pull without promoting it yet?"
++    return "What repeated local pressure makes these adjacent units worth rereading together?"
++
++
++def _count_cues(texts: list[str], cues: tuple[str, ...]) -> list[str]:
++    lowered = " ".join(texts).lower()
++    return [cue for cue in cues if cue.lower() in lowered]
++
++
++def _match_change_cues(texts: list[str]) -> list[str]:
++    lowered = " ".join(texts).lower()
++    matched: list[str] = []
++    has_before = "before" in lowered or "이전" in lowered or "전 " in lowered
++    has_after = "after" in lowered or "이후" in lowered or "후 " in lowered
++    if has_before and has_after:
++        matched.append("before_after_pair")
++    matched.extend(_count_cues(texts, CHANGE_CUES))
++    return list(dict.fromkeys(matched))
++
++
++def _match_boundary_cues(texts: list[str]) -> list[str]:
++    matched = _count_cues(texts, BOUNDARY_CUES)
++    return list(dict.fromkeys(matched))
++
++
++def _match_flow_cues(texts: list[str]) -> list[str]:
++    lowered = " ".join(texts).lower()
++    matched = _count_cues(texts, FLOW_CUES)
++    if "between" in lowered and "layer" in lowered and "between-layer" not in matched:
++        matched.append("between-layer")
++    if "next checkpoint" in lowered:
++        matched.append("next_checkpoint")
++    if "support chain" in lowered or "bounded support chain" in lowered:
++        matched.append("support_chain")
++    return list(dict.fromkeys(matched))
++
++
++def _slot(
++    strength: str,
++    summary: str,
++    matched_cues: list[str],
++    support_refs: list[str],
++) -> dict[str, Any]:
++    return {
++        "strength": strength,
++        "summary": summary,
++        "matched_cues": matched_cues[:4],
++        "support_refs": support_refs,
++    }
++
++
++def _bounded_summary(kind: str, strength: str) -> str:
++    summaries = {
++        "change": {
++            "has_signal": "Local shift or before-after support is visible.",
++            "thin": "Change-like support is present but thin.",
++            "unclear": "Change-like support is mixed and still unclear.",
++            "insufficient": "Change-like support is insufficient.",
++        },
++        "boundary": {
++            "has_signal": "Hold or thinness support is visible.",
++            "thin": "Boundary-like support is present but thin.",
++            "unclear": "Boundary-like support is mixed and still unclear.",
++            "insufficient": "Boundary-like support is insufficient.",
++        },
++        "flow": {
++            "has_signal": "Sequence or handoff support is visible.",
++            "thin": "Flow-like support is present but thin.",
++            "unclear": "Flow-like support is mixed and still unclear.",
++            "insufficient": "Flow-like support is insufficient.",
++        },
++    }
++    return summaries[kind][strength]
++
++
++def _camera_strength(
++    *,
++    matched_cues: list[str],
++    roles: list[str],
++    preferred_roles: set[str],
++    text_count: int,
++    cue_hits_for_signal: int = 2,
++    require_role_for_single_cue_signal: bool = True,
++    allow_role_only_thin: bool = False,
++) -> str:
++    role_hits = len([role for role in roles if role in preferred_roles])
++    cue_hits = len(matched_cues)
++    if cue_hits >= cue_hits_for_signal:
++        return "has_signal"
++    if cue_hits >= 1 and role_hits >= 1 and require_role_for_single_cue_signal:
++        return "has_signal"
++    if cue_hits >= 1 and not require_role_for_single_cue_signal:
++        return "has_signal"
++    if cue_hits == 1:
++        return "thin"
++    if allow_role_only_thin and role_hits >= 1:
++        return "thin"
++    if text_count > 0 and roles:
++        return "insufficient"
++    return "insufficient"
++
++
++def _camera_summary(change_strength: str, boundary_strength: str, flow_strength: str) -> str:
++    visible = [
++        name
++        for name, strength in (
++            ("change", change_strength),
++            ("boundary", boundary_strength),
++            ("flow", flow_strength),
++        )
++        if strength in {"has_signal", "thin", "unclear"}
++    ]
++    if visible:
++        return f"Lower support suggests {' + '.join(visible)} reread potential."
++    return "Lower support remains too thin for camera-oriented reread beyond traceable context."
++
++
++def _gap_summary(change_strength: str, boundary_strength: str, flow_strength: str) -> str:
++    if all(strength == "insufficient" for strength in (change_strength, boundary_strength, flow_strength)):
++        return "Support remains sparse; keep this as local traceable context only."
++    if "thin" in {change_strength, boundary_strength, flow_strength}:
++        return "At least one signal is thin; broader reread is still needed before stronger use."
++    return "Signals are local and still need broader reread before any stronger organization."
++
++
++def build_camera_support_bundles_for_split_units(
++    source_ref: str,
++    split_units: list[dict[str, Any]],
++    role_tags: list[dict[str, Any]],
++    line_seed_bundles: list[dict[str, Any]],
++) -> list[dict[str, Any]]:
++    role_by_ref = {row["split_unit_ref"]: row for row in role_tags}
++    unit_by_ref = {unit["unit_id"]: unit for unit in split_units}
++    bundles: list[dict[str, Any]] = []
++
++    seed_rows = line_seed_bundles or [
++        {
++            "bundle_id": "line_seed_fallback_001",
++            "split_unit_refs": [unit["unit_id"] for unit in split_units[:2]],
++            "provisional_role_mix": [
++                role_by_ref[unit["unit_id"]]["content_role"]
++                for unit in split_units[:2]
++                if unit["unit_id"] in role_by_ref
++            ],
++            "repeated_pressure_note": "",
++            "linkage_hint": "",
++        }
++    ]
++
++    for index, seed in enumerate(seed_rows, start=1):
++        refs = [ref for ref in seed.get("split_unit_refs", []) if ref in unit_by_ref]
++        texts = [unit_by_ref[ref].get("text_excerpt", "") for ref in refs]
++        roles = [
++            role_by_ref.get(ref, {}).get("content_role", "unknown")
++            for ref in refs
++        ]
++        seed_text = " ".join(
++            [
++                str(seed.get("repeated_pressure_note", "")),
++                str(seed.get("linkage_hint", "")),
++                str(seed.get("question_inducement", "")),
++                str(seed.get("misunderstanding_correction", "")),
++                str(seed.get("tension_marker", "")),
++            ]
++        ).strip()
++        combined_texts = texts + ([seed_text] if seed_text else [])
++
++        change_cues = _match_change_cues(combined_texts)
++        boundary_cues = _match_boundary_cues(combined_texts)
++        flow_cues = _match_flow_cues(combined_texts)
++
++        change_strength = _camera_strength(
++            matched_cues=change_cues,
++            roles=roles,
++            preferred_roles={"correction", "main_claim"},
++            text_count=len(combined_texts),
++            cue_hits_for_signal=1,
++        )
++        boundary_strength = _camera_strength(
++            matched_cues=boundary_cues,
++            roles=roles,
++            preferred_roles={"objection"},
++            text_count=len(combined_texts),
++            cue_hits_for_signal=2,
++        )
++        flow_strength = _camera_strength(
++            matched_cues=flow_cues,
++            roles=roles,
++            preferred_roles={"transition", "connective"},
++            text_count=len(combined_texts),
++            cue_hits_for_signal=2,
++        )
++
++        bundles.append(
++            {
++                "camera_support_id": f"camera_support_{index:03d}",
++                "artifact_id": f"camera_support_{index:03d}",
++                "source_ref": source_ref,
++                "source_unit_refs": refs,
++                "upstream_artifact_refs": [seed.get("bundle_id", "")] if seed.get("bundle_id") else [],
++                "classification": "evidence_only",
++                "camera_signal_summary": _camera_summary(change_strength, boundary_strength, flow_strength),
++                "change_support": _slot(
++                    change_strength,
++                    _bounded_summary("change", change_strength),
++                    change_cues,
++                    refs,
++                ),
++                "boundary_support": _slot(
++                    boundary_strength,
++                    _bounded_summary("boundary", boundary_strength),
++                    boundary_cues,
++                    refs,
++                ),
++                "flow_support": _slot(
++                    flow_strength,
++                    _bounded_summary("flow", flow_strength),
++                    flow_cues,
++                    refs,
++                ),
++                "insufficiency_or_gap": _gap_summary(change_strength, boundary_strength, flow_strength),
++                "carry_forward_handle": {
++                    "reread_hint": "Use the upstream seed and source units for bounded upper reread.",
++                    "upstream_seed_ref": seed.get("bundle_id", ""),
++                    "source_unit_refs": refs,
++                },
++            }
++        )
++    return bundles
++
++
++def build_line_seed_bundles_for_split_units(
++    source_ref: str,
++    split_units: list[dict[str, Any]],
++    role_tags: list[dict[str, Any]],
++) -> list[dict[str, Any]]:
++    bundles: list[dict[str, Any]] = []
++    role_by_ref = {row["split_unit_ref"]: row for row in role_tags}
++    for index in range(len(split_units) - 1):
++        window = split_units[index : index + 2]
++        if len(window) < 2:
++            continue
++        roles = [role_by_ref[unit["unit_id"]]["content_role"] for unit in window]
++        non_unknown = [role for role in roles if role != "unknown"]
++        if not any(role in SEED_DRIVER_ROLES for role in non_unknown):
++            continue
++        texts = [unit.get("text_excerpt", "") for unit in window]
++        repeated = _dominant_tokens(texts)
++        if not repeated and len(non_unknown) < 2:
++            continue
++        bundle_id = f"line_seed_{index + 1:03d}"
++        correction_present = any(role == "correction" for role in roles)
++        objection_present = any(role == "objection" for role in roles)
++        axis_present = any(role == "axis_support_candidate" for role in roles)
++        bundles.append(
++            {
++                "bundle_id": bundle_id,
++                "source_ref": source_ref,
++                "split_unit_refs": [unit["unit_id"] for unit in window],
++                "repeated_pressure_note": (
++                    f"Repeated local pressure around: {', '.join(repeated)}."
++                    if repeated
++                    else "Adjacent units keep a local claim/connective pressure alive."
++                ),
++                "linkage_hint": "Adjacent split units share local role pressure and should be reread together before upper evidence use.",
++                "question_inducement": _seed_question(roles),
++                "misunderstanding_correction": (
++                    "A correction-like move is present across the bundle."
++                    if correction_present
++                    else ""
++                ),
++                "tension_marker": (
++                    "Objection or risk pressure remains active in the bundle."
++                    if objection_present
++                    else ("Directional pull is visible but still locally bounded." if axis_present else "")
++                ),
++                "provisional_role_mix": non_unknown or ["unknown"],
++                "why_line_seed": "The bundle preserves repeated pressure or connective movement that would harden too early if each unit were used alone.",
++                "not_yet_axis_reason": "This bundle is source-local support only and lacks broader cross-source validation for axis promotion.",
++                "seed_confidence": "medium" if repeated or len(set(non_unknown)) > 1 else "low",
++            }
++        )
++    return bundles
++
++
++def _preprocess_components(payload: dict[str, Any]) -> list[dict[str, str]]:
++    comparison = payload.get("comparison", {})
++    check_surface = comparison.get("check_surface", {})
++    rows = [
++        {
++            "component_ref": "before_gate.decision_reason",
++            "text": str(payload.get("before_gate", {}).get("decision_reason", "")),
++        },
++        {
++            "component_ref": "after_gate.decision_reason",
++            "text": str(payload.get("after_gate", {}).get("decision_reason", "")),
++        },
++        {
++            "component_ref": "comparison.readiness_read.reason",
++            "text": str(comparison.get("readiness_read", {}).get("reason", "")),
++        },
++        {
++            "component_ref": "comparison.check_surface.what_improved",
++            "text": " ".join(check_surface.get("what_improved", []) or []),
++        },
++        {
++            "component_ref": "comparison.check_surface.what_is_still_missing",
++            "text": " ".join(check_surface.get("what_is_still_missing", []) or []),
++        },
++        {
++            "component_ref": "comparison.check_surface.next_checkpoint",
++            "text": str(check_surface.get("next_checkpoint", "")),
++        },
++    ]
++    return [row for row in rows if row["text"].strip()]
++
++
++def build_support_layers_for_preprocess_comparison(
++    payload: dict[str, Any],
++) -> dict[str, Any]:
++    source_ref = str(payload.get("input_path", ""))
++    components = _preprocess_components(payload)
++    role_tags: list[dict[str, Any]] = []
++    for row in components:
++        inferred = infer_content_role(row["text"], ref_hint=row["component_ref"], source_ref=source_ref)
++        role_tags.append(
++            {
++                "tag_id": f"role_{row['component_ref'].replace('.', '_').replace('[', '_').replace(']', '')}",
++                "source_ref": source_ref,
++                "split_unit_ref": row["component_ref"],
++                "content_role": inferred["content_role"],
++                "secondary_role": inferred["secondary_role"],
++                "role_confidence": inferred["role_confidence"],
++                "role_status": inferred["role_status"],
++                "role_basis_note": inferred["role_basis_note"],
++                "why_this_role": inferred["why_this_role"],
++                "excerpt_preview": row["text"][:160],
++            }
++        )
++
++    bundles: list[dict[str, Any]] = []
++    if components:
++        texts = [row["text"] for row in components]
++        roles = [row["content_role"] for row in role_tags if row["content_role"] != "unknown"]
++        bundles.append(
++            {
++                "bundle_id": "line_seed_preprocess_001",
++                "source_ref": source_ref,
++                "split_unit_refs": [row["component_ref"] for row in components[:4]],
++                "repeated_pressure_note": (
++                    f"Preprocess comparison keeps returning: {', '.join(_dominant_tokens(texts))}."
++                    if _dominant_tokens(texts)
++                    else "The artifact repeatedly contrasts raw fragmentation with regrouped meaning support."
++                ),
++                "linkage_hint": "Gate reason, readiness read, and next checkpoint form one bounded support chain.",
++                "question_inducement": "What local meaning pressure survives regroup strongly enough to support later evidence use?",
++                "misunderstanding_correction": "The comparison is explicitly correcting a too-flat direct-ingest reading.",
++                "tension_marker": "The artifact keeps the risk of over-flat ingest visible even after regroup.",
++                "provisional_role_mix": roles or ["unknown"],
++                "why_line_seed": "This comparison carries repeated correction pressure and a next-step question before any packet use.",
++                "not_yet_axis_reason": "Preprocess comparison remains a lower support artifact and does not justify axis or packet promotion by itself.",
++                "seed_confidence": "medium",
++            }
++        )
++
++    camera_support_bundles: list[dict[str, Any]] = []
++    texts = [row["text"] for row in components]
++    roles = [row["content_role"] for row in role_tags if row["content_role"] != "unknown"]
++    if components:
++        change_cues = _match_change_cues(texts)
++        boundary_cues = _match_boundary_cues(texts)
++        flow_cues = _match_flow_cues(texts)
++        change_strength = _camera_strength(
++            matched_cues=change_cues,
++            roles=roles,
++            preferred_roles={"correction", "main_claim"},
++            text_count=len(texts),
++            cue_hits_for_signal=1,
++        )
++        boundary_strength = _camera_strength(
++            matched_cues=boundary_cues,
++            roles=roles,
++            preferred_roles={"objection"},
++            text_count=len(texts),
++            cue_hits_for_signal=2,
++        )
++        flow_strength = _camera_strength(
++            matched_cues=flow_cues,
++            roles=roles,
++            preferred_roles={"transition", "connective"},
++            text_count=len(texts),
++            cue_hits_for_signal=2,
++        )
++        camera_support_bundles.append(
++            {
++                "camera_support_id": "camera_support_preprocess_001",
++                "artifact_id": "camera_support_preprocess_001",
++                "source_ref": source_ref,
++                "source_unit_refs": [row["component_ref"] for row in components[:4]],
++                "upstream_artifact_refs": [bundles[0]["bundle_id"]] if bundles else [],
++                "classification": "evidence_only",
++                "camera_signal_summary": _camera_summary(change_strength, boundary_strength, flow_strength),
++                "change_support": _slot(
++                    change_strength,
++                    _bounded_summary("change", change_strength),
++                    change_cues,
++                    [row["component_ref"] for row in components[:4]],
++                ),
++                "boundary_support": _slot(
++                    boundary_strength,
++                    _bounded_summary("boundary", boundary_strength),
++                    boundary_cues,
++                    [row["component_ref"] for row in components[:4]],
++                ),
++                "flow_support": _slot(
++                    flow_strength,
++                    _bounded_summary("flow", flow_strength),
++                    flow_cues,
++                    [row["component_ref"] for row in components[:4]],
++                ),
++                "insufficiency_or_gap": _gap_summary(change_strength, boundary_strength, flow_strength),
++                "carry_forward_handle": {
++                    "reread_hint": "Use gate reason, readiness read, and seed support for bounded upper reread.",
++                    "upstream_seed_ref": bundles[0]["bundle_id"] if bundles else "",
++                    "source_unit_refs": [row["component_ref"] for row in components[:4]],
++                },
++            }
++        )
++
++    return {
++        "content_role_tags": role_tags,
++        "line_seed_bundles": bundles,
++        "camera_support_bundles": camera_support_bundles,
++        "support_layer_note": "These support layers are additive and do not change lower readiness or upper admission.",
++    }
++
++
++def write_support_payload(path: Path, payload: Any) -> None:
++    path.parent.mkdir(parents=True, exist_ok=True)
++    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+diff --git a/app/runtime/vectorfl_integrated_engine_api.py b/app/runtime/vectorfl_integrated_engine_api.py
+index 48b433e82..56445dc23 100644
+--- a/app/runtime/vectorfl_integrated_engine_api.py
++++ b/app/runtime/vectorfl_integrated_engine_api.py
+@@ -73,6 +73,8 @@ CLI_SESSION_MARKS = {
+ LANGUAGE_LOOP_ROOT = "runtime/language_loops"
+ PACKAGE_RUN_EVENT_LEDGER = "runtime/events/integrated_engine_package_run_events.jsonl"
+ WORKER_RETURN_SCHEMA_VERSION = "integrated_engine_worker_return_v0"
++WORKER_RETURN_BLOCK_START = "WORKER_RETURN_JSON"
++WORKER_RETURN_BLOCK_END = "END_WORKER_RETURN_JSON"
+ 
+ 
+ def _utc_now() -> str:
+@@ -242,6 +244,39 @@ def _list_from_worker_return(value: Any) -> List[str]:
+     return []
+ 
+ 
++def _extract_worker_emitted_return_with_status(stdout: str) -> Tuple[Dict[str, Any], str]:
++    text = str(stdout or "")
++    if WORKER_RETURN_BLOCK_START not in text or WORKER_RETURN_BLOCK_END not in text:
++        return {}, "missing_block"
++    start_match = None
++    end_match = None
++    for match in re.finditer(rf"(?m)^\s*{re.escape(WORKER_RETURN_BLOCK_START)}\s*$", text):
++        start_match = match
++    if not start_match:
++        return {}, "missing_delimiter"
++    for match in re.finditer(rf"(?m)^\s*{re.escape(WORKER_RETURN_BLOCK_END)}\s*$", text[start_match.end():]):
++        end_match = match
++        break
++    if not end_match:
++        return {}, "missing_end_delimiter"
++    body = text[start_match.end():start_match.end() + end_match.start()].strip()
++    if body.startswith("```"):
++        body = re.sub(r"^```(?:json)?\s*", "", body, flags=re.IGNORECASE).strip()
++        body = re.sub(r"\s*```$", "", body).strip()
++    try:
++        parsed = json.loads(body)
++    except Exception:
++        return {}, "invalid_json"
++    if not isinstance(parsed, dict):
++        return {}, "invalid_shape"
++    return parsed, "valid"
++
++
++def _extract_worker_emitted_return(stdout: str) -> Dict[str, Any]:
++    parsed, status = _extract_worker_emitted_return_with_status(stdout)
++    return parsed if status == "valid" else {}
++
++
+ def _profile_findings_from_context_profiles(context_profiles: List[Dict[str, Any]]) -> List[str]:
+     findings: List[str] = []
+     for profile in context_profiles:
+@@ -285,10 +320,20 @@ def _normalize_worker_return(
+     active_package = session.get("active_package") if isinstance(session.get("active_package"), dict) else {}
+     package_id = str(active_package.get("id") or "package_1")
+     existing = structured_return.get("worker_return") if isinstance(structured_return.get("worker_return"), dict) else {}
++    worker_return_source = str(existing.get("worker_return_source") or structured_return.get("worker_return_source") or "").strip()
+     top_level_answer = structured_return.get("answer") or existing.get("answer")
+     profile_findings = _profile_findings_from_context_profiles(context_profiles or [])
+     fallback_findings = _unique_list(_extract_structural_profile_findings(raw_text) + _extract_bullets(raw_text))
+     findings = _list_from_worker_return(existing.get("findings") or structured_return.get("findings")) or profile_findings or fallback_findings
++    if not worker_return_source:
++        if existing:
++            worker_return_source = "runtime_normalized"
++        elif profile_findings:
++            worker_return_source = "runtime_normalized"
++        elif fallback_findings:
++            worker_return_source = "parser_fallback"
++        else:
++            worker_return_source = "raw_fallback"
+     answer = str(top_level_answer or "").strip() or _first_useful_block(raw_text)
+     if not answer and findings:
+         answer = "\n".join(findings[:5])[:1200]
+@@ -307,6 +352,20 @@ def _normalize_worker_return(
+             next_hint = "Attach latest run artifacts and ask the next package-specific question."
+     risks = _list_from_worker_return(existing.get("risks_or_limits") or structured_return.get("risks_or_limits"))
+     risks.extend(_list_from_worker_return(structured_return.get("uncertainty_or_failure_notes")))
++    extraction_status = str(structured_return.get("worker_return_extraction_status") or "").strip()
++    if extraction_status and extraction_status != "valid":
++        risks.append(f"worker return block extraction status: {extraction_status}")
++    if existing and worker_return_source == "worker_emitted":
++        required_fields = ["answer", "findings", "files_artifacts", "next_continue_hint", "source_refs"]
++        missing_fields = [field for field in required_fields if not existing.get(field)]
++        if missing_fields:
++            risks.append("worker-emitted return missing fields normalized by runtime: " + ", ".join(missing_fields))
++    execution_status = str(structured_return.get("status") or session.get("status") or "").strip()
++    exit_code = structured_return.get("exit_code", session.get("exit_code"))
++    if execution_status and execution_status not in {"done", "queued", "running"}:
++        risks.append(f"worker execution status: {execution_status}")
++    if exit_code not in (None, "", 0):
++        risks.append(f"worker exit code: {exit_code}")
+     if session.get("dry_run") and "dry-run validates spine/context carryover, not worker reasoning quality" not in risks:
+         risks.append("dry-run validates spine/context carryover, not worker reasoning quality")
+     if error_message:
+@@ -315,6 +374,12 @@ def _normalize_worker_return(
+         risks.append("no reliable findings extracted from return text")
+     if suggested == "reread_target" and "return remains reread-target; not approval or completion" not in risks:
+         risks.append("return remains reread-target; not approval or completion")
++    if suggested == "deposit_candidate" and "deposit candidate requires supervisor review; not automatic ingestion" not in risks:
++        risks.append("deposit candidate requires supervisor review; not automatic ingestion")
++    if not answer and execution_status == "failed":
++        answer = error_message or _tail_text(str(structured_return.get("result_summary") or raw_text or ""), 1200) or "Worker run failed before a readable answer was returned."
++    if not findings and execution_status == "failed":
++        findings = ["worker run failed; inspect stderr/session artifacts before continuation"]
+     open_questions = _list_from_worker_return(existing.get("open_questions") or structured_return.get("open_questions"))
+     if ("not final approval" in raw_text.lower() or "not approval" in raw_text.lower()) and not open_questions:
+         open_questions.append("What should be validated before reuse or redeposit?")
+@@ -324,8 +389,11 @@ def _normalize_worker_return(
+         + _extract_path_refs(raw_text)
+     )
+     source_refs = _list_from_worker_return(existing.get("source_refs") or structured_return.get("source_refs")) or _list_from_worker_return(session.get("bounded_context_refs"))
++    if not source_refs and files_artifacts:
++        source_refs = [ref for ref in files_artifacts if ref.endswith((".md", ".json", ".log", ".py", ".tsx", ".ts", ".txt"))][:6]
+     return {
+         "schema_version": existing.get("schema_version") or WORKER_RETURN_SCHEMA_VERSION,
++        "worker_return_source": worker_return_source,
+         "worker_id": existing.get("worker_id") or session.get("backend_kind") or "codex",
+         "package_id": existing.get("package_id") or package_id,
+         "run_kind": existing.get("run_kind") or session.get("task_type") or "",
+@@ -343,8 +411,11 @@ def _normalize_worker_return(
+ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any], *, package_id: str, input_packet_id: str, event_count: int = 0) -> Dict[str, Any]:
+     result_summary = str(structured_return.get("result_summary") or session.get("result_summary") or "").strip()
+     worker_return = _normalize_worker_return(session, structured_return, result_summary)
++    worker_hint = str(worker_return.get("next_continue_hint") or "").strip()
+     next_hint = str(structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "").strip()
+-    if next_hint == "reread_target":
++    if worker_hint:
++        next_hint = worker_hint
++    elif next_hint == "reread_target":
+         next_hint = "Reread the latest answer with its artifact refs and decide the next package-specific question."
+     elif next_hint == "validation_target":
+         next_hint = "Validate the latest run before using it as package material."
+@@ -371,6 +442,7 @@ def _enrich_run_record(session: Dict[str, Any], structured_return: Dict[str, Any
+         "open_questions": worker_return["open_questions"][:6],
+         "risks_or_limits": worker_return["risks_or_limits"][:6],
+         "source_refs": worker_return["source_refs"],
++        "worker_return_source": worker_return["worker_return_source"],
+         "worker_return": worker_return,
+         "return_refs": [session.get("structured_return_path") or "", session.get("deposit_candidate_path") or "", session.get("operator_report_path") or ""],
+         "artifact_paths": [session.get("stdout_path") or "", session.get("stderr_path") or "", session.get("prompt_path") or ""],
+@@ -1545,6 +1617,23 @@ def _cli_session_prompt(session_spec: Dict[str, Any]) -> str:
+         "- risks_or_limits: uncertainty, weak spots, dry-run limits, or blocked areas\n"
+         "- source_refs: bounded context refs actually used\n"
+         "- suggested next use: reread target / implementation return / validation target / deposit candidate\n"
++        "\nYou must also include one machine-readable block near the end of the answer.\n"
++        "Use exactly this delimiter format and valid JSON. Keep arrays as arrays of strings.\n"
++        f"{WORKER_RETURN_BLOCK_START}\n"
++        "{\n"
++        f"  \"schema_version\": \"{WORKER_RETURN_SCHEMA_VERSION}\",\n"
++        f"  \"worker_id\": \"{session_spec.get('backend_kind') or 'codex'}\",\n"
++        "  \"package_id\": \"<package id if known>\",\n"
++        f"  \"run_kind\": \"{session_spec.get('task_type') or 'inspect'}\",\n"
++        "  \"answer\": \"<direct answer or main response>\",\n"
++        "  \"findings\": [\"<key observation>\"],\n"
++        "  \"files_artifacts\": [\"<path or artifact ref>\"],\n"
++        "  \"next_continue_hint\": \"<specific next step for this same package>\",\n"
++        "  \"open_questions\": [\"<unresolved blocker>\"],\n"
++        "  \"risks_or_limits\": [\"<uncertainty or limit>\"],\n"
++        "  \"source_refs\": [\"<bounded context ref actually used>\"]\n"
++        "}\n"
++        f"{WORKER_RETURN_BLOCK_END}\n"
+     )
+ 
+ 
+@@ -1667,6 +1756,13 @@ class CodexCliAdapter:
+             "suggested_next_use": _infer_cli_suggested_next_use(stdout, status),
+             "created_at": _utc_now(),
+         }
++        worker_emitted_return, extraction_status = _extract_worker_emitted_return_with_status(stdout)
++        structured_return["worker_return_extraction_status"] = extraction_status
++        if worker_emitted_return:
++            structured_return["worker_return"] = {
++                **worker_emitted_return,
++                "worker_return_source": "worker_emitted",
++            }
+         structured_return["worker_return"] = _normalize_worker_return(
+             session,
+             structured_return,
+@@ -2190,6 +2286,7 @@ def _build_cli_package_notebooks(repo_root: Path, index: Dict[str, Any], events:
+             "open_questions": enriched["open_questions"],
+             "risks_or_limits": enriched["risks_or_limits"],
+             "source_refs": enriched["source_refs"],
++            "worker_return_source": enriched["worker_return_source"],
+             "worker_return": enriched["worker_return"],
+             "suggested_next_use": structured_return.get("suggested_next_use") or session.get("suggested_next_use") or "",
+             "route_label": _classify_cli_turn_route(session, structured_return),
+diff --git a/app/ui/integrated_engine/App.tsx b/app/ui/integrated_engine/App.tsx
+index 73e06c3f3..ca3666b8f 100644
+--- a/app/ui/integrated_engine/App.tsx
++++ b/app/ui/integrated_engine/App.tsx
+@@ -1,7 +1,11 @@
+ import React from "react";
++import EngineStateDashboard from "./EngineStateDashboard.tsx";
+ import VectorFLIntegrationShell from "./VectorFLIntegrationShell.tsx";
+ 
+ function App() {
++  if (window.location.pathname === "/engine-state-dashboard") {
++    return <EngineStateDashboard />;
++  }
+   return <VectorFLIntegrationShell />;
+ }
+ 
+diff --git a/app/ui/integrated_engine/CliHostControlPanel.tsx b/app/ui/integrated_engine/CliHostControlPanel.tsx
+index 1b37cbec6..5ac85b25e 100644
+--- a/app/ui/integrated_engine/CliHostControlPanel.tsx
++++ b/app/ui/integrated_engine/CliHostControlPanel.tsx
+@@ -91,8 +91,10 @@ type PackageNotebookRun = {
+   open_questions?: string[];
+   risks_or_limits?: string[];
+   source_refs?: string[];
++  worker_return_source?: string;
+   worker_return?: {
+     schema_version?: string;
++    worker_return_source?: string;
+     worker_id?: string;
+     package_id?: string;
+     run_kind?: string;
+@@ -643,9 +645,12 @@ function PackageNotebookPanel({
+             이 패키지의 이전 실행을 붙잡고 계속 작업한다. 결과/산출물/맥락은 여기에 누적되고, 다음 지시는 아래 입력창에서 이어간다.
+           </p>
+         </div>
+-        <div className="flex flex-wrap gap-2">
++          <div className="flex flex-wrap gap-2">
+           <Badge className="border-cyan-500/20 bg-cyan-500/10 text-cyan-100">{runs.length} runs</Badge>
+           <Badge className="border-white/10 bg-slate-950 text-slate-300">{notebook?.latest_stage || activePackage?.stage || "not started"}</Badge>
++          {latestRun?.worker_return_source ? (
++            <Badge className="border-white/10 bg-slate-950 text-slate-300">return: {latestRun.worker_return_source}</Badge>
++          ) : null}
+         </div>
+       </div>
+ 
+diff --git a/app/ui/integrated_engine/EngineStateDashboard.tsx b/app/ui/integrated_engine/EngineStateDashboard.tsx
+new file mode 100644
+index 000000000..78192710b
+--- /dev/null
++++ b/app/ui/integrated_engine/EngineStateDashboard.tsx
+@@ -0,0 +1,401 @@
++import React, { useEffect, useMemo, useState } from "react";
++import {
++  Activity,
++  ArrowRight,
++  Braces,
++  Camera,
++  CircleDot,
++  FileInput,
++  GitBranch,
++  History,
++  Layers3,
++  RefreshCcw,
++  ShieldCheck,
++  Sparkles,
++} from "lucide-react";
++import { cx } from "./ui-components";
++
++type DashboardState = {
++  schema_version?: string;
++  current_posture?: string;
++  core_sentence?: string;
++  cli_host_control?: {
++    latest_readable_return?: any;
++    recent_readable_returns?: any[];
++    deposit_ready_returns?: any[];
++    package_run_events?: any[];
++    package_notebooks?: any[];
++    guard?: Record<string, boolean>;
++  };
++  session_worker_policy?: {
++    primary_operator?: any;
++    secondary_operator?: any;
++    script_first_jobs?: string[];
++    cli_worker_jobs?: string[];
++    forbidden?: string[];
++  };
++  guard?: Record<string, boolean>;
++  next_implementation_boundary?: {
++    first_real_object?: string;
++    first_real_actions?: string[];
++    do_not_build_yet?: string[];
++  };
++};
++
++type RefreshState = {
++  status: "loading" | "live" | "error";
++  lastUpdated: string;
++  error: string;
++};
++
++function compact(value?: string, fallback = "pending", limit = 160) {
++  const text = String(value || "").trim();
++  if (!text) return fallback;
++  return text.length > limit ? `${text.slice(0, limit - 1)}...` : text;
++}
++
++function shortId(value?: string) {
++  return value ? value.replace("cli_", "") : "none";
++}
++
++function routeLabel(turn?: any) {
++  const label = turn?.route_label || turn?.suggested_next_use || "";
++  return label ? String(label).replace(/_/g, " ") : "unrouted";
++}
++
++function ShellCard({ className, children }: { className?: string; children: React.ReactNode }) {
++  return (
++    <section className={cx("rounded-[26px] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/20", className)}>
++      {children}
++    </section>
++  );
++}
++
++function Eyebrow({ icon: Icon, label, tone = "text-cyan-300" }: { icon: any; label: string; tone?: string }) {
++  return (
++    <div className={cx("flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em]", tone)}>
++      <Icon className="h-3.5 w-3.5" />
++      {label}
++    </div>
++  );
++}
++
++function Metric({ label, value, note, active }: { label: string; value: string; note?: string; active?: boolean }) {
++  return (
++    <div className={cx("rounded-2xl border px-4 py-3", active ? "border-cyan-300/30 bg-cyan-300/10" : "border-white/10 bg-slate-950/70")}>
++      <div className="text-[9px] font-black uppercase tracking-[0.15em] text-slate-500">{label}</div>
++      <div className="mt-1 text-sm font-black text-slate-100">{value}</div>
++      {note ? <div className="mt-1 line-clamp-2 text-[10px] leading-4 text-slate-500">{note}</div> : null}
++    </div>
++  );
++}
++
++function FlowStep({
++  index,
++  label,
++  status,
++  detail,
++  active,
++}: {
++  index: number;
++  label: string;
++  status: string;
++  detail: string;
++  active?: boolean;
++}) {
++  return (
++    <div className="grid grid-cols-[34px_1fr] gap-3">
++      <div className="flex flex-col items-center">
++        <div className={cx("grid h-8 w-8 place-items-center rounded-full border text-xs font-black", active ? "border-cyan-300 bg-cyan-300 text-slate-950" : "border-white/10 bg-slate-950 text-slate-500")}>
++          {index}
++        </div>
++        {index < 7 ? <div className="my-2 h-8 w-px bg-gradient-to-b from-white/20 to-transparent" /> : null}
++      </div>
++      <div className="pb-3">
++        <div className="flex flex-wrap items-center justify-between gap-2">
++          <div className="text-sm font-black text-slate-100">{label}</div>
++          <div className={cx("rounded-full border px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.1em]", active ? "border-cyan-300/30 bg-cyan-300/10 text-cyan-100" : "border-white/10 bg-white/[0.04] text-slate-400")}>
++            {status}
++          </div>
++        </div>
++        <p className="mt-1 text-[11px] leading-5 text-slate-500">{detail}</p>
++      </div>
++    </div>
++  );
++}
++
++function EventRow({ event }: { event: any }) {
++  return (
++    <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-3">
++      <div className="flex items-start justify-between gap-3">
++        <div>
++          <div className="text-xs font-black text-slate-100">{compact(event.label || event.event_type || "event", "event", 70)}</div>
++          <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-slate-500">
++            {event.stage || event.package_id || "runtime event"}
++          </div>
++        </div>
++        <div className="rounded-full border border-white/10 px-2 py-0.5 text-[9px] font-bold text-slate-400">{event.status || event.confidence || "recorded"}</div>
++      </div>
++      <p className="mt-2 line-clamp-3 text-[10px] leading-4 text-slate-500">{compact(event.detail || event.signal, "no detail", 220)}</p>
++    </div>
++  );
++}
++
++function LensRail({ lenses }: { lenses: Array<{ label: string; value: string; note: string; active?: boolean }> }) {
++  return (
++    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
++      {lenses.map((lens) => (
++        <div key={lens.label} className={cx("rounded-2xl border p-4", lens.active ? "border-emerald-300/30 bg-emerald-300/10" : "border-white/10 bg-slate-950/60")}>
++          <div className="text-[9px] font-black uppercase tracking-[0.16em] text-slate-500">{lens.label}</div>
++          <div className="mt-2 text-lg font-black text-slate-100">{lens.value}</div>
++          <p className="mt-1 text-[10px] leading-4 text-slate-500">{lens.note}</p>
++        </div>
++      ))}
++    </div>
++  );
++}
++
++export default function EngineStateDashboard() {
++  const [state, setState] = useState<DashboardState>({});
++  const [refresh, setRefresh] = useState<RefreshState>({ status: "loading", lastUpdated: "", error: "" });
++
++  async function refreshState() {
++    try {
++      const response = await fetch("/api/vectorfl-engine/state");
++      const result = await response.json();
++      if (!response.ok) throw new Error(result.error || "failed to read engine state");
++      setState(result);
++      setRefresh({ status: "live", lastUpdated: new Date().toLocaleTimeString(), error: "" });
++    } catch (error: any) {
++      setRefresh({ status: "error", lastUpdated: new Date().toLocaleTimeString(), error: error?.message || "failed to refresh" });
++    }
++  }
++
++  useEffect(() => {
++    refreshState();
++    const intervalId = window.setInterval(refreshState, 5000);
++    return () => window.clearInterval(intervalId);
++  }, []);
++
++  const cli = state.cli_host_control || {};
++  const latest = cli.latest_readable_return || {};
++  const recent = cli.recent_readable_returns || [];
++  const events = cli.package_run_events || [];
++  const notebooks = cli.package_notebooks || [];
++  const workerPolicy = state.session_worker_policy || {};
++  const hasLatest = Boolean(latest.session_id);
++  const hasEvents = events.length > 0;
++
++  const flowSteps = useMemo(
++    () => [
++      {
++        label: "사용자 입력 / 터미널 대화",
++        status: hasLatest ? "captured" : "waiting",
++        detail: hasLatest ? compact(latest.purpose_text, "latest session captured", 180) : "아직 runtime/cli_sessions에 반영된 최신 대화가 없다.",
++        active: true,
++      },
++      {
++        label: "lookup / 공정 힌트",
++        status: "script-suggested",
++        detail: "space_boundary_lookup_packet 같은 스크립트는 source surface, 후보 자산, lens를 제안만 한다.",
++        active: true,
++      },
++      {
++        label: "VectorFL 판독",
++        status: routeLabel(latest),
++        detail: "최종 렌즈, route, 과승격 금지선은 Codex/VectorFL 판독에서 결정한다.",
++        active: hasLatest,
++      },
++      {
++        label: "Codex 기본 모드",
++        status: "interpreter/output",
++        detail: "기본은 실행자가 아니라 해석/출력 모드. 필요할 때만 bounded worker-role로 올린다.",
++        active: true,
++      },
++      {
++        label: "운동 / worker elevation",
++        status: hasLatest ? latest.task_type || "reread" : "not elevated",
++        detail: "bounded comparer, packet preparer, implementation worker 같은 역할 제한이 붙어야 한다.",
++        active: hasLatest && latest.task_type,
++      },
++      {
++        label: "validation return",
++        status: hasLatest ? latest.status || "returned" : "pending",
++        detail: hasLatest ? compact(latest.structured_return_preview, "return exists, reread needed", 180) : "결과는 final이 아니라 다시 형성층으로 돌아오는 재료다.",
++        active: hasLatest,
++      },
++      {
++        label: "공간 재투입 / 숙성",
++        status: latest.route_label === "deposit_candidate" ? "candidate" : "manual judgment",
++        detail: "공간에 넣을지, hold할지, residue로 남길지는 별도 판단이다. 자동 ingestion이 아니다.",
++        active: hasLatest,
++      },
++    ],
++    [hasLatest, latest]
++  );
++
++  const lensSignals = [
++    {
++      label: "L / camera",
++      value: "visible",
++      note: "이 화면은 통합엔진 조작 화면이 아니라 흐름 관측 카메라다.",
++      active: true,
++    },
++    {
++      label: "T / maturity",
++      value: state.current_posture || "forming",
++      note: "대부분의 반환은 final보다 PASS_WITH_NOTE / hold / reread 후보로 남는다.",
++      active: true,
++    },
++    {
++      label: "X / translation",
++      value: hasLatest ? "runtime -> dashboard" : "pending",
++      note: "터미널 대화가 runtime state로 번역될 때 화면에 잡힌다.",
++      active: hasLatest,
++    },
++    {
++      label: "R / residue",
++      value: `${recent.length} recent`,
++      note: "CLI session, event ledger, report가 다시 찾을 수 있는 흔적이 된다.",
++      active: recent.length > 0,
++    },
++  ];
++
++  return (
++    <div className="min-h-screen bg-[#07110f] text-slate-100">
++      <div className="pointer-events-none fixed inset-0 opacity-70">
++        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.18),transparent_35%),radial-gradient(circle_at_85%_20%,rgba(251,191,36,0.12),transparent_32%),linear-gradient(135deg,#07110f,#0f172a_48%,#111827)]" />
++        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:42px_42px]" />
++      </div>
++
++      <main className="relative mx-auto max-w-[1500px] px-5 py-6">
++        <header className="rounded-[32px] border border-white/10 bg-black/30 p-6 shadow-2xl backdrop-blur">
++          <div className="flex flex-wrap items-start justify-between gap-5">
++            <div>
++              <Eyebrow icon={Activity} label="Formation-Movement Flow Dashboard" />
++              <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-white md:text-5xl">
++                지금 재료가 어디를 지나고 있는지 보는 화면
++              </h1>
++              <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-400">
++                기존 통합엔진 UI 코드를 참조하되, 목적은 조작이 아니라 관측이다. 터미널 대화, lookup hint, Codex return, 공간 재투입 후보를 한 장에서 본다.
++              </p>
++            </div>
++            <button
++              onClick={refreshState}
++              className="rounded-2xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-100"
++            >
++              <RefreshCcw className="mr-2 inline h-4 w-4" />
++              refresh
++            </button>
++          </div>
++          <div className="mt-5 grid gap-3 md:grid-cols-4">
++            <Metric label="state source" value="/api/vectorfl-engine/state" note="5초 poll" active />
++            <Metric label="latest session" value={shortId(latest.session_id)} note={routeLabel(latest)} />
++            <Metric label="events" value={String(events.length)} note="package run events" />
++            <Metric label="refresh" value={refresh.status} note={refresh.error || refresh.lastUpdated || "starting"} />
++          </div>
++        </header>
++
++        <div className="mt-5 grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
++          <ShellCard className="bg-black/35 backdrop-blur">
++            <Eyebrow icon={GitBranch} label="Default Flow" tone="text-amber-300" />
++            <h2 className="mt-2 text-2xl font-black">입력에서 공간 재투입까지</h2>
++            <p className="mt-2 text-xs leading-5 text-slate-500">
++              이 흐름은 자동 실행 경로가 아니라 현재 재료의 위치를 읽기 위한 관측선이다.
++            </p>
++            <div className="mt-5">
++              {flowSteps.map((step, index) => (
++                <FlowStep key={step.label} index={index + 1} {...step} />
++              ))}
++            </div>
++          </ShellCard>
++
++          <div className="space-y-5">
++            <ShellCard className="bg-black/35 backdrop-blur">
++              <Eyebrow icon={Camera} label="Lens / Camera Rail" tone="text-emerald-300" />
++              <h2 className="mt-2 text-2xl font-black">현재 보이는 렌즈 값</h2>
++              <p className="mt-2 text-xs leading-5 text-slate-500">렌즈는 확정값이 아니라 어떤 방식으로 읽고 있는지 보여주는 관측 값이다.</p>
++              <div className="mt-5">
++                <LensRail lenses={lensSignals} />
++              </div>
++            </ShellCard>
++
++            <ShellCard className="bg-black/35 backdrop-blur">
++              <Eyebrow icon={ShieldCheck} label="Guardrails" tone="text-lime-300" />
++              <div className="mt-4 grid gap-3 md:grid-cols-2">
++                {Object.entries({ ...(state.guard || {}), ...(cli.guard || {}) })
++                  .slice(0, 8)
++                  .map(([key, value]) => (
++                    <Metric key={key} label={key} value={value ? "true" : "false"} />
++                  ))}
++              </div>
++            </ShellCard>
++          </div>
++        </div>
++
++        <div className="mt-5 grid gap-5 xl:grid-cols-3">
++          <ShellCard className="xl:col-span-2 bg-black/35 backdrop-blur">
++            <Eyebrow icon={History} label="Runtime Return Feed" tone="text-sky-300" />
++            <div className="mt-4 grid gap-3 md:grid-cols-2">
++              {recent.slice(0, 6).map((turn) => (
++                <div key={turn.session_id} className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
++                  <div className="flex items-start justify-between gap-3">
++                    <div>
++                      <div className="text-sm font-black text-white">{shortId(turn.session_id)}</div>
++                      <div className="mt-1 text-[10px] uppercase tracking-[0.14em] text-slate-500">{turn.task_type || "turn"} · {routeLabel(turn)}</div>
++                    </div>
++                    <div className="rounded-full border border-white/10 px-2 py-0.5 text-[9px] font-bold text-slate-400">{turn.status || "unknown"}</div>
++                  </div>
++                  <p className="mt-3 line-clamp-4 text-[11px] leading-5 text-slate-400">{compact(turn.structured_return_preview || turn.purpose_text, "no preview", 360)}</p>
++                </div>
++              ))}
++              {!recent.length ? <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-xs text-slate-500">No recent CLI returns yet.</div> : null}
++            </div>
++          </ShellCard>
++
++          <ShellCard className="bg-black/35 backdrop-blur">
++            <Eyebrow icon={CircleDot} label="Events" tone="text-orange-300" />
++            <div className="mt-4 space-y-3">
++              {events.slice(0, 7).map((event, index) => (
++                <EventRow key={event.event_id || index} event={event} />
++              ))}
++              {!events.length ? <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-xs text-slate-500">No package events yet.</div> : null}
++            </div>
++          </ShellCard>
++        </div>
++
++        <div className="mt-5 grid gap-5 xl:grid-cols-3">
++          <ShellCard className="bg-black/35 backdrop-blur">
++            <Eyebrow icon={FileInput} label="Script First" tone="text-teal-300" />
++            <div className="mt-4 space-y-2">
++              {(workerPolicy.script_first_jobs || []).map((item) => (
++                <div key={item} className="rounded-xl border border-white/10 bg-slate-950/70 px-3 py-2 text-xs text-slate-300">{item}</div>
++              ))}
++            </div>
++          </ShellCard>
++          <ShellCard className="bg-black/35 backdrop-blur">
++            <Eyebrow icon={Braces} label="Codex Role" tone="text-cyan-300" />
++            <div className="mt-4 space-y-3">
++              <Metric label="primary" value={workerPolicy.primary_operator?.worker || "codex"} note={workerPolicy.primary_operator?.role || "interpreter/output mode by default"} active />
++              <Metric label="secondary" value={workerPolicy.secondary_operator?.worker || "gemini"} note={workerPolicy.secondary_operator?.role || "cross-check when needed"} />
++            </div>
++          </ShellCard>
++          <ShellCard className="bg-black/35 backdrop-blur">
++            <Eyebrow icon={GitBranch} label="Next Boundary" tone="text-amber-300" />
++            <div className="mt-4 space-y-2">
++              <Metric label="first real object" value={state.next_implementation_boundary?.first_real_object || "work_packet"} />
++              {(state.next_implementation_boundary?.do_not_build_yet || []).slice(0, 4).map((item) => (
++                <div key={item} className="rounded-xl border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-xs text-amber-100">do not: {item}</div>
++              ))}
++            </div>
++          </ShellCard>
++        </div>
++
++        <footer className="mt-6 rounded-[24px] border border-white/10 bg-black/25 p-4 text-[11px] leading-5 text-slate-500">
++          <Sparkles className="mr-2 inline h-3.5 w-3.5 text-cyan-300" />
++          이 대시보드는 기존 통합엔진 화면을 대체하지 않는다. 목적은 사용자가 터미널에서 하는 작업이 공간/공정/렌즈/return loop 안에서 어디에 놓이는지 빠르게 보는 것이다.
++        </footer>
++      </main>
++    </div>
++  );
++}
+diff --git a/app/ui/integrated_engine/VectorFLIntegrationShell.tsx b/app/ui/integrated_engine/VectorFLIntegrationShell.tsx
+index 8555b5185..b0c13a161 100644
+--- a/app/ui/integrated_engine/VectorFLIntegrationShell.tsx
++++ b/app/ui/integrated_engine/VectorFLIntegrationShell.tsx
+@@ -47,6 +47,12 @@ type PackageCard = {
+ 
+ type ModalKind = "setup" | "result" | "watch" | null;
+ 
++type DashboardRefreshState = {
++  status: "idle" | "refreshing" | "live" | "error";
++  lastUpdated: string;
++  error: string;
++};
++
+ const pkg: any = packageInstance;
+ const vectorflMeaning: any = (translationProjection as any).vectorfl_meaning;
+ const engineMeaning: any = (translationProjection as any).engine_meaning;
+@@ -546,12 +552,39 @@ export default function VectorFLIntegrationShell() {
+   const [packages, setPackages] = useState<PackageCard[]>(() => loadPackageStack());
+   const [selectedPackageId, setSelectedPackageId] = useState(() => loadSelectedPackageId());
+   const [modal, setModal] = useState<{ kind: ModalKind; packageId: string }>({ kind: null, packageId: "" });
++  const [dashboardRefresh, setDashboardRefresh] = useState<DashboardRefreshState>({
++    status: "idle",
++    lastUpdated: "",
++    error: "",
++  });
++
++  async function refreshDashboardState(silent = false) {
++    if (!silent) {
++      setDashboardRefresh((current) => ({ ...current, status: "refreshing", error: "" }));
++    }
++    try {
++      const response = await fetch("/api/vectorfl-engine/state");
++      const result = await response.json();
++      if (!response.ok) throw new Error(result.error || "failed to refresh engine state");
++      setCliHostState(result.cli_host_control || {});
++      setDashboardRefresh({
++        status: "live",
++        lastUpdated: new Date().toLocaleTimeString(),
++        error: "",
++      });
++    } catch (error: any) {
++      setDashboardRefresh({
++        status: "error",
++        lastUpdated: new Date().toLocaleTimeString(),
++        error: error?.message || "failed to refresh",
++      });
++    }
++  }
+ 
+   useEffect(() => {
+-    fetch("/api/vectorfl-engine/state")
+-      .then((response) => response.json())
+-      .then((result) => setCliHostState(result.cli_host_control || {}))
+-      .catch(() => {});
++    refreshDashboardState(true);
++    const intervalId = window.setInterval(() => refreshDashboardState(true), 5000);
++    return () => window.clearInterval(intervalId);
+   }, []);
+ 
+   const latestTurn = cliHostState.latest_readable_return || cliHostState.recent_readable_returns?.[0];
+@@ -608,11 +641,35 @@ export default function VectorFLIntegrationShell() {
+         <main className="min-h-0 overflow-y-auto bg-slate-900 p-5">
+           <div className="mx-auto max-w-5xl">
+             <header className="mb-4 rounded-xl border border-white/10 bg-white/[0.04] p-4">
+-        <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">Active Package Workbench</div>
++              <div className="flex flex-wrap items-start justify-between gap-3">
++                <div>
++                  <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">Active Package Workbench</div>
++                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
++                    terminal conversation mirror / runtime poll
++                  </div>
++                </div>
++                <button
++                  onClick={() => refreshDashboardState(false)}
++                  className="rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-cyan-100"
++                >
++                  {dashboardRefresh.status === "refreshing" ? "refreshing" : "refresh now"}
++                </button>
++              </div>
+               <h2 className="mt-2 text-2xl font-black tracking-tight">{selectedPackage.title}</h2>
+               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+                 {selectedPackage.summary} 선택된 패키지 하나를 그릇으로 보고, 내부 라인/축 후보를 읽은 뒤 처리 결과를 재투입 가능한 재료로 다시 읽는다.
+               </p>
++              <div className="mt-3 rounded-lg border border-white/10 bg-slate-950 px-3 py-2 text-[10px] leading-4 text-slate-400">
++                <span className="font-black uppercase tracking-[0.16em] text-cyan-300">live source</span>
++                <span className="ml-2">
++                  `/api/vectorfl-engine/state`를 5초마다 읽어 `runtime/cli_sessions`, package run events, latest return을 화면에 반영한다.
++                </span>
++                <span className="ml-2 text-slate-500">
++                  status={dashboardRefresh.status}
++                  {dashboardRefresh.lastUpdated ? ` · last=${dashboardRefresh.lastUpdated}` : ""}
++                  {dashboardRefresh.error ? ` · error=${dashboardRefresh.error}` : ""}
++                </span>
++              </div>
+               <div className="mt-3 grid gap-2 md:grid-cols-3">
+                 <SmallStat label="stage" value={selectedPackage.stage} />
+                 <SmallStat label="executor" value={selectedPackage.executor} />

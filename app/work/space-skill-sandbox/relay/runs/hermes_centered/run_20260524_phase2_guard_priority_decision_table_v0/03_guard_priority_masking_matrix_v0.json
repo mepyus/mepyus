@@ -1,0 +1,50 @@
+{
+  "known_masking_repair": {
+    "after": "severe governance/load/conflict drift checked before citation-shape drift",
+    "before": "operator-overload and authority-overpromotion were masked by decorative-citation classification"
+  },
+  "masking_edges": [
+    {
+      "higher": "FAIL_AUTHORITY_OVERPROMOTION",
+      "masks_lower": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+        "FAIL_OPERATOR_OVERLOAD",
+        "FAIL_NO_SPACE_REFERENCE"
+      ]
+    },
+    {
+      "higher": "FAIL_OPERATOR_OVERLOAD",
+      "masks_lower": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ]
+    },
+    {
+      "higher": "FAIL_HEAVY_ESCALATION_MISSING",
+      "masks_lower": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY",
+        "FAIL_NO_SPACE_REFERENCE"
+      ]
+    },
+    {
+      "higher": "FAIL_MODEL_ONLY_DRIFT",
+      "masks_lower": [
+        "FAIL_NO_SPACE_REFERENCE"
+      ]
+    },
+    {
+      "higher": "FAIL_NO_SPACE_REFERENCE",
+      "masks_lower": [
+        "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+      ]
+    }
+  ],
+  "matrix_id": "03_guard_priority_masking_matrix_v0",
+  "priority_order": [
+    "FAIL_AUTHORITY_OVERPROMOTION",
+    "FAIL_OPERATOR_OVERLOAD",
+    "FAIL_HEAVY_ESCALATION_MISSING",
+    "FAIL_MODEL_ONLY_DRIFT",
+    "FAIL_NO_SPACE_REFERENCE",
+    "FAIL_SPACE_REFERENCE_DECORATION_ONLY"
+  ]
+}

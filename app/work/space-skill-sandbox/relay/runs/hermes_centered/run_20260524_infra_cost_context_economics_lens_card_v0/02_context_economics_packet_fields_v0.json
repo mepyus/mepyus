@@ -1,0 +1,107 @@
+{
+  "fields": [
+    {
+      "field": "fresh_space_reference_needed",
+      "meaning": "현재 Hermes만으로 공간 자료 선택이 가능한지",
+      "values": [
+        "YES",
+        "NO",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "field": "layer_ambiguity_requires_codex_or_gemini",
+      "meaning": "모델 호출 필요성이 어느 단계에서 생기는지",
+      "values": [
+        "NONE",
+        "CODEX_RETRIEVAL",
+        "CODEX_MATURATION",
+        "CODEX_SIDE_GEMINI"
+      ]
+    },
+    {
+      "field": "context_footprint_class",
+      "meaning": "읽힐 first-pass material과 raw corpus의 context 부담",
+      "values": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    {
+      "field": "expected_prefill_pressure",
+      "meaning": "대량 파일/원문/trace를 모델에게 넣어야 하는 정도",
+      "values": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    {
+      "field": "operator_load_delta",
+      "meaning": "heavy call이 사람 판단 부담을 줄이는지 늘리는지",
+      "values": [
+        "REDUCES",
+        "NEUTRAL",
+        "INCREASES"
+      ]
+    },
+    {
+      "field": "on_demand_reason",
+      "meaning": "Codex/Gemini 호출의 정당화 이유",
+      "values": [
+        "fresh_space_reference",
+        "layer_ambiguity",
+        "explicit_user_approval",
+        "not_needed"
+      ]
+    },
+    {
+      "field": "read_first_file_count",
+      "meaning": "Codex/Gemini first-pass file count cap",
+      "recommended_max": 7,
+      "type": "integer"
+    },
+    {
+      "field": "raw_corpus_available_but_not_default",
+      "meaning": "raw는 index로 찾게 하고 default prompt에는 넣지 않음",
+      "type": "boolean"
+    },
+    {
+      "field": "lite_output_required",
+      "meaning": "Gemini/Codex-side scripts는 raw보다 lite를 먼저 반환해야 함",
+      "type": "boolean"
+    },
+    {
+      "field": "provider_backed_call_budget",
+      "keys": [
+        "allowed",
+        "reason",
+        "max_seconds",
+        "fallback"
+      ],
+      "meaning": "heavy call 승인/제한/실패시 fallback",
+      "type": "object"
+    }
+  ],
+  "packet_id": "02_context_economics_packet_fields_v0",
+  "sample": {
+    "context_footprint_class": "M",
+    "expected_prefill_pressure": "LOW",
+    "fresh_space_reference_needed": "NO",
+    "layer_ambiguity_requires_codex_or_gemini": "NONE",
+    "lite_output_required": true,
+    "on_demand_reason": "not_needed",
+    "operator_load_delta": "REDUCES",
+    "provider_backed_call_budget": {
+      "allowed": false,
+      "fallback": "Hermes local deterministic validation",
+      "max_seconds": 0,
+      "reason": "local repeatability/status test only"
+    },
+    "raw_corpus_available_but_not_default": true,
+    "read_first_file_count": 4
+  },
+  "status": "HOLD_SCHEMA_CANDIDATE_ONLY"
+}

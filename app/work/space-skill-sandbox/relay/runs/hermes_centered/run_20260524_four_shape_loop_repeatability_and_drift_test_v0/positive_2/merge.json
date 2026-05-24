@@ -1,0 +1,28 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "classification": "candidate_packet_space_mediated_merge_repeatability_no_authority_mutation",
+  "guard_status": "PASS_WITH_HOLD",
+  "hold_boundaries": [
+    "no API",
+    "no local endpoint",
+    "no server",
+    "no real model/Codex/Gemini",
+    "no authority/registry/current-position mutation",
+    "HOLD"
+  ],
+  "inputs": {
+    "model_fixture_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/positive_2/model_fixture.md",
+    "original_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/positive_2/intake.json",
+    "space_reading_ref": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_four_shape_loop_repeatability_and_drift_test_v0/positive_2/space_reading.json"
+  },
+  "merge_decisions": [
+    "raw original preserved",
+    "actual space fixture reused",
+    "model fixture no execution",
+    "receipt evidence only"
+  ],
+  "merged_directive": "Repeatability loop case positive_2 passes through four-shape loop with HOLD boundaries.",
+  "packet_id": "positive_2_merge",
+  "promotion_status": "HOLD",
+  "source_layer": "review_guard_layer"
+}

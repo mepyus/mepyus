@@ -1,0 +1,92 @@
+{
+  "active_hits": [],
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "checks": [
+    {
+      "check": "raw_original_saved",
+      "pass": true
+    },
+    {
+      "check": "plan_only_purpose",
+      "pass": true
+    },
+    {
+      "check": "source_refs_exist",
+      "pass": true
+    },
+    {
+      "check": "delta_for_each_ref",
+      "pass": true
+    },
+    {
+      "check": "budget_fast_no_calls",
+      "pass": true
+    },
+    {
+      "check": "five_grouped_revisions",
+      "pass": true
+    },
+    {
+      "check": "priority_split",
+      "pass": true
+    },
+    {
+      "check": "all_not_apply_now",
+      "pass": true
+    },
+    {
+      "check": "acceptance_tests_present",
+      "pass": true
+    },
+    {
+      "check": "whole_flow_stages_present",
+      "pass": true
+    },
+    {
+      "check": "non_convergence_guard",
+      "pass": true
+    },
+    {
+      "check": "hold_boundaries_complete",
+      "pass": true
+    },
+    {
+      "check": "observed_gap_requires_approval",
+      "pass": true
+    },
+    {
+      "check": "next_is_review_apply_decision",
+      "pass": true
+    },
+    {
+      "check": "endpoint_replay_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "elapsed_seconds": 0.0013979320000000045,
+  "implementation_apply": "NO",
+  "items": 5,
+  "next_safe_lane": "PHASE3_REVISION_PLAN_REVIEW_AND_APPLY_DECISION_HOLD_OR_APPROVE_V0",
+  "observed_gap": {
+    "description": "The Phase3 plan is now structured, but applying it would be a separate authorization lane. This plan must stay HOLD evidence until the user approves implementation/revision application.",
+    "gap_id": "PHASE3_PLAN_GAP_READY_BUT_NOT_AUTHORIZED_TO_APPLY",
+    "severity": "HIGH",
+    "single_observation": false
+  },
+  "priority_summary": {
+    "MUST_FIX": [
+      "R1_MINIMAL_SPACE_DELTA_ACROSS_REENTRY_SURFACES",
+      "R2_CONTINUATION_INTAKE_NEXT_LANE_LOOKUP"
+    ],
+    "SHOULD_FIX": [
+      "R3_SOURCE_SELECTION_REJECTED_REF_LOG",
+      "R4_ROLE_HANDOFF_UNIQUE_DELTA_METRIC"
+    ],
+    "WATCH_ONLY": [
+      "R5_VALIDATOR_WORDING_SCOPE_GUARD"
+    ]
+  },
+  "promotion_status": "HOLD",
+  "verdict": "PASS_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_WITH_HOLD"
+}

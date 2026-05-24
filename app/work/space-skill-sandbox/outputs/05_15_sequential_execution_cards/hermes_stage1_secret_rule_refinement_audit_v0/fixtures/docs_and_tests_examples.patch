@@ -1,0 +1,18 @@
+diff --git a/docs/secret_examples.md b/docs/secret_examples.md
+new file mode 100644
+--- /dev/null
++++ b/docs/secret_examples.md
+@@ -0,0 +1,6 @@
++Use API_KEY = "example-key" only as documentation.
++Do not set token = "secret-token-value" in source.
++password = "placeholder"
+diff --git a/tests/fixtures/test_secret_fixture.py b/tests/fixtures/test_secret_fixture.py
+new file mode 100644
+--- /dev/null
++++ b/tests/fixtures/test_secret_fixture.py
+@@ -0,0 +1,5 @@
++api_key = "sk_live_test_fixture"
++token = "fixture-token"
++password = "fixture-password"
++secret = "fixture-secret"
++credential = "fixture-credential"

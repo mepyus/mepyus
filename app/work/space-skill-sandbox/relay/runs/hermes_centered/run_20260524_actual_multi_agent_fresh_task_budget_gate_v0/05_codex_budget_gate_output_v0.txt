@@ -1,0 +1,143 @@
+{
+  "agent": "Codex",
+  "role": "evidence_anchor_designer_for_budget_gate_policy",
+  "timing_evidence": {
+    "heavy_actual_multi_agent": {
+      "source_report": "VECTORFL_ACTUAL_MULTI_AGENT_SCENARIO1_PROCESS_TEST_20260524_V0",
+      "total_external_agent_seconds": 135.02,
+      "component_seconds": {
+        "codex_space_exploration": 41.49,
+        "gemini_layer_reading": 40.41,
+        "codex_reinsertion_effect_review": 29.07,
+        "gemini_post_merge_layer_reading": 24.05
+      },
+      "observed_issue": "Actual CLI agent calls dominate time; Gemini quota retry in first pass proves external agent latency must be budgeted."
+    },
+    "fast_local_validation": {
+      "source_reports": [
+        "VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0",
+        "VECTORFL_FOUR_SHAPE_LOOP_OPERATOR_SURFACE_AND_RECOVERY_CARD_20260524_V0"
+      ],
+      "part_time_stats_seconds": {
+        "intake": {
+          "mean": 0.00026,
+          "spread": 0.000088,
+          "min": 0.000207,
+          "max": 0.000295
+        },
+        "space_reading": {
+          "mean": 0.000313,
+          "spread": 0.000019,
+          "min": 0.000305,
+          "max": 0.000324
+        },
+        "merge": {
+          "mean": 0.000455,
+          "spread": 0.000073,
+          "min": 0.000407,
+          "max": 0.00048
+        },
+        "receipt": {
+          "mean": 0.000264,
+          "spread": 0.000101,
+          "min": 0.000228,
+          "max": 0.000329
+        }
+      },
+      "observed_issue": "Local artifact validation is extremely fast and stable, but insufficient when the user intent requires actual Hermes/Codex/Gemini participation."
+    }
+  },
+  "drift_evidence": {
+    "repeatability_report": "VECTORFL_FOUR_SHAPE_LOOP_REPEATABILITY_AND_DRIFT_TEST_20260524_V0",
+    "positive_passed": "3/3",
+    "drift_passed": "5/5",
+    "field_stability": {
+      "all_positive_required_fields_pass": true,
+      "stable_parts": [
+        "intake",
+        "space_reading",
+        "merge",
+        "receipt"
+      ]
+    },
+    "active_call_hits": 0,
+    "operator_surface_status": {
+      "safe_entrypoint_count": 5,
+      "validation_checks_passed": "8/8",
+      "active_call_hits": 0
+    },
+    "guard_matrix_anchor": {
+      "source_report": "VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0",
+      "case_count": 12,
+      "layer_count": 6,
+      "guard_status_count": 5,
+      "cases_by_status": {
+        "HOLD_STOP_REVIEW": 4,
+        "HOLD_UNTIL_APPROVED_MODEL_OUTPUT": 1,
+        "PASS_WITH_HOLD": 2,
+        "STOP": 3,
+        "WATCH": 2
+      }
+    }
+  },
+  "heavy_mode_triggers": [
+    "User explicitly requires actual Hermes/Codex/Gemini processing, not fixture-only or local validation.",
+    "Task asks whether process behavior itself is VectorFL-like, requiring comparison across agent roles and reinsertion-effect review.",
+    "Layer pressure, routing, HOLD boundary interpretation, or cross-layer guard status must be judged by independent actual agent readings.",
+    "A fresh task has ambiguous authority, promotion, registry, schema, shared DB, or current-position implications.",
+    "Guard status is STOP, HOLD_STOP_REVIEW, HOLD_UNTIL_APPROVED_MODEL_OUTPUT, or unresolved WATCH after local validation.",
+    "Local drift checks fail, required fields are unstable, active call literals appear in generated artifacts, or safe entrypoints are missing.",
+    "The expected value of reducing interpretation error exceeds roughly 135 external-agent seconds."
+  ],
+  "fast_mode_triggers": [
+    "Task is repeatability, drift detection, receipt verification, safe-entrypoint display, or no-call boundary validation.",
+    "User does not require actual external agent participation.",
+    "Artifacts are display-only or evidence/recovery material under HOLD, with no authority mutation, promotion, registry mutation, schema mutation, shared DB mutation, endpoint replay, server start, API call, or API-direct work.",
+    "Known four-shape loop fields remain stable across intake, space_reading, merge, and receipt.",
+    "Positive cases pass 3/3, drift classes pass 5/5, validation checks pass 8/8, and active_call_hits remains 0.",
+    "Guard status is PASS_WITH_HOLD and the requested action is bounded to local artifact inspection."
+  ],
+  "budget_thresholds": {
+    "default_fast_mode": {
+      "external_agent_seconds": 0,
+      "required_evidence": [
+        "positive_passed == 3/3",
+        "drift_passed == 5/5",
+        "active_call_hits == 0",
+        "validation_checks == 8/8 where applicable",
+        "promotion == HOLD"
+      ]
+    },
+    "heavy_mode_minimum_budget": {
+      "external_agent_seconds": 135.02,
+      "basis": "Observed actual multi-agent Scenario 1 total external-agent time."
+    },
+    "heavy_mode_recommended_budget": {
+      "external_agent_seconds": 180,
+      "basis": "135.02 observed seconds plus buffer for quota retry, CLI variance, and post-merge rereading."
+    },
+    "escalation_rule": "Use fast mode unless the task crosses an actual-agent, authority, guard, or failed-drift trigger; reserve heavy mode for cases where correctness depends on real multi-agent interpretation."
+  },
+  "risks": [
+    "Fast local validation can prove boundary cleanliness and repeatability but cannot prove actual Hermes/Codex/Gemini behavior.",
+    "Heavy actual processing is materially slower and exposed to external CLI latency or quota retry.",
+    "Artifacts reinserted as evidence must not be treated as authority, registry state, current-position application, or promotion.",
+    "HOLD_STOP_REVIEW must remain first-class; collapsing it into PASS_WITH_HOLD would hide routing risk.",
+    "A policy based only on elapsed time may under-escalate tasks where authority or cross-layer ambiguity is the real risk."
+  ],
+  "recommendation": {
+    "policy": "Adopt a budget-gated two-lane policy: fast no-call/local validation as the default lane; heavy actual Hermes+Codex+Gemini only when explicit actual-agent participation, failed local evidence, or guard/authority ambiguity is present.",
+    "evidence_anchors": [
+      "135.02 seconds observed heavy external-agent cost",
+      "sub-millisecond local loop part means",
+      "3/3 positive repeatability",
+      "5/5 drift detection",
+      "0 active call hits",
+      "5 safe entrypoints",
+      "8/8 operator-surface validation checks",
+      "cross-layer guard matrix with STOP, WATCH, HOLD_STOP_REVIEW, HOLD_UNTIL_APPROVED_MODEL_OUTPUT, and PASS_WITH_HOLD statuses"
+    ],
+    "next_safe_lane": "ACTUAL_MULTI_AGENT_SCENARIO1_FRESH_TASK_REPEAT_WITH_BUDGET_GATE_V0"
+  },
+  "confidence": "high"
+}
