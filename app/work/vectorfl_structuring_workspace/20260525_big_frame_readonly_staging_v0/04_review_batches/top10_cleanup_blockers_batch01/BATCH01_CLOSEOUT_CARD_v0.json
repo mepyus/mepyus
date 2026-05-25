@@ -1,0 +1,36 @@
+{
+  "closeout_id": "WORKSPACE_BATCH01_CLOSEOUT_V0",
+  "created_at": "2026-05-25T13:51:45.622202+09:00",
+  "batch": "top10_cleanup_blockers_batch01",
+  "verdict": "BATCH01_CLOSED_AS_REVIEW_ONLY_NO_MOVE_HOLD",
+  "evidence": {
+    "move_risk_rollup": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_move_risk_rollup_v0.json",
+    "copy_manifest": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/manifest/03_p10_readonly_copy_view_manifest_v0.json",
+    "operator_cards": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+    "workspace_rule_update_root": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TOP10_MOVE_RISK_ROLLUP_AND_WORKSPACE_RULE_UPDATE_V0_20260525.json"
+  },
+  "confirmed": {
+    "top10_count": 10,
+    "high_true_move_blocker": 6,
+    "medium_control_surface_update_risk": 4,
+    "low_safe_to_move": 0,
+    "copy_view_created": true,
+    "workspace_indexed": true
+  },
+  "lessons": [
+    "Do not start with mv while structure is incomplete.",
+    "Copy/view workspace reduces confusion only if marked NOT_AUTHORITY.",
+    "Original path remains orientation/source-of-truth handle.",
+    "Actual search must accompany setup artifacts."
+  ],
+  "status": "CLOSED_FOR_NOW__REOPEN_ONLY_FOR_READ_ONLY_REVIEW_OR_APPROVED_MANIFEST_DESIGN",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

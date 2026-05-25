@@ -1,0 +1,53 @@
+{
+  "policy_id": "VECTORTUBE_AUTOLOOP_POLICY_V0_1",
+  "created_at": "2026-05-25T08:37:35.870164+09:00",
+  "status": "AUTOLOOP_V0_1_PREPARED_EXECUTABLE_HOLD",
+  "change_from_v0": [
+    "slot별 source_type/source_priority 명시",
+    "policy_boundary는 official_web_docs_first",
+    "quality_failure는 how-to positive source를 경고/격하",
+    "slot_quality_review 필수",
+    "부적합 slot은 추가 fetch보다 missing_source_marker 우선"
+  ],
+  "scope": {
+    "seed_video_id": "5LqCwO7x_Gc",
+    "focus_window": "3012s vicinity",
+    "primary_question": "AI 자동화가 실무 혁신이 되는 지점과 플랫폼/운영 리스크가 되는 지점은 어디서 갈라지는가?"
+  },
+  "slots": [
+    {
+      "slot": "policy_boundary",
+      "source_type": "official_web_docs_first",
+      "required_quality": "official_policy_or_platform_docs",
+      "max_official_sources": 3,
+      "youtube_fallback": false
+    },
+    {
+      "slot": "quality_failure",
+      "source_type": "youtube_or_web_case",
+      "required_quality": "failure_limitation_or_real_case_not_howto_only",
+      "max_candidates": 5,
+      "max_transcripts": 1
+    },
+    {
+      "slot": "human_workflow_guard",
+      "source_type": "youtube_or_web_workflow",
+      "required_quality": "human_review_guardrail_workflow",
+      "max_candidates": 5,
+      "max_transcripts": 1
+    }
+  ],
+  "budgets": {
+    "official_web_docs_max": 3,
+    "youtube_queries_max": 2,
+    "youtube_candidate_limit_per_slot": 5,
+    "youtube_transcript_hard_cap": 2
+  },
+  "stop_conditions": [
+    "slot result becomes bypass/how-to evasion",
+    "slot result is purely positive how-to for failure slot",
+    "no transcript available within candidates",
+    "main-space mutation pressure appears"
+  ],
+  "promotion": "HOLD"
+}

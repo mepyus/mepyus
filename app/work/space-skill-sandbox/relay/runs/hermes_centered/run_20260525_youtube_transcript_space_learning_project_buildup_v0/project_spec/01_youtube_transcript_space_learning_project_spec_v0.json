@@ -1,0 +1,143 @@
+{
+  "project_id": "YOUTUBE_TRANSCRIPT_SPACE_LEARNING_FEEDER_V0",
+  "status": "HOLD_SIDE_PROJECT_BUILDUP_NOT_CONTRACT",
+  "one_line": "YouTube/Web transcript-first source collector that summarizes, analyzes, and converts dialogue/script material into VectorFL space-learning and maturation packets.",
+  "notebooklm_similarity": "source-grounded summary/organization/analysis over original transcript sources",
+  "vectorfl_difference": "primary output is not just answer/summary but bias-countering multi-layer space-maturation evidence with source deltas and Codex-readable matching packets",
+  "core_intent": [
+    "collect transcript-based materials, not video/audio",
+    "increase diversity of layers and interpretations in VectorFL space",
+    "avoid one-sided space bias by intentionally sampling sources across claims, tensions, actors, contexts, and counter-frames",
+    "preserve original source and timestamp grounding",
+    "produce learning cards that can later be matched against existing VectorFL space maps"
+  ],
+  "actors": {
+    "Hermes": "search/fetch/normalize/analyze/organize/write HOLD packets; preserve original and changed_judgment",
+    "Codex": "later read-only space-map matching and maturation proposal from Hermes packets; not called by default",
+    "Gemini": "optional Codex-side wide/layer lens when Codex judges layer ambiguity; not Hermes-direct default"
+  },
+  "mvp_pipeline": [
+    {
+      "stage": "S0_PROJECT_ORIENTATION",
+      "input": "query/theme/domain",
+      "output": "collection_intent_card.json",
+      "notes": "state why this source batch counters or enriches space bias"
+    },
+    {
+      "stage": "S1_SEARCH",
+      "input": "web/youtube query",
+      "output": "candidate_source_index.json",
+      "notes": "record discovered_from_query and reject reasons"
+    },
+    {
+      "stage": "S2_TRANSCRIPT_FETCH",
+      "input": "video_id + language fallback",
+      "output": "raw_transcript.json + timestamped_transcript.md",
+      "notes": "no video download; transcript availability is a hard gate"
+    },
+    {
+      "stage": "S3_SOURCE_CARD",
+      "input": "raw transcript + metadata",
+      "output": "source_card.json",
+      "notes": "sha256, language, duration, segment_count, url, fetched_at"
+    },
+    {
+      "stage": "S4_NOTEBOOK_SUMMARY",
+      "input": "timestamped transcript",
+      "output": "summary_card.md/json",
+      "notes": "chapters, key claims, concepts, quotes, open questions"
+    },
+    {
+      "stage": "S5_VECTORFL_LAYER_EXTRACTION",
+      "input": "source_card + summary",
+      "output": "vectorfl_layer_card.json",
+      "notes": "claims, assumptions, tensions, LACL candidates, layer shifts, operator-load/context-cost"
+    },
+    {
+      "stage": "S6_BIAS_DIVERSITY_CHECK",
+      "input": "batch layer cards",
+      "output": "diversity_balance_card.json",
+      "notes": "detect one-sided corpus, missing counter-frames, domain skew, authority over-weight"
+    },
+    {
+      "stage": "S7_SPACE_MATURATION_PACKET",
+      "input": "layer cards + diversity card",
+      "output": "codex_space_matching_request.json",
+      "notes": "Codex-readable HOLD request, no promotion"
+    }
+  ],
+  "folder_tree_candidate": {
+    "project_root_candidate": "app/work/youtube_transcript_space_learning_feeder/  # HOLD; not created as authority",
+    "folders": [
+      "runs/<run_id>/inputs",
+      "runs/<run_id>/sources/<source_id>",
+      "runs/<run_id>/analysis",
+      "runs/<run_id>/vectorfl_packets",
+      "runs/<run_id>/reports"
+    ],
+    "root_files": [
+      "README_HOLD.md",
+      "schema_candidate.json",
+      "collector_config_candidate.json"
+    ]
+  },
+  "data_shapes": {
+    "source_card": [
+      "source_id",
+      "source_type",
+      "url",
+      "video_id",
+      "title",
+      "channel",
+      "language",
+      "duration",
+      "segment_count",
+      "fetched_at",
+      "transcript_sha256",
+      "timestamped_text_path",
+      "availability_status"
+    ],
+    "vectorfl_layer_card": [
+      "source_id",
+      "source_bias_position",
+      "claims",
+      "counterclaims_or_absences",
+      "assumptions",
+      "tensions",
+      "layer_shifts",
+      "lacl_candidates",
+      "operator_load_notes",
+      "context_cost_notes",
+      "changed_judgment_from_source",
+      "space_attachment_candidates",
+      "promotion_status"
+    ],
+    "codex_space_matching_request": [
+      "request_id",
+      "source_batch",
+      "read_only_assertion",
+      "existing_space_handles_to_compare",
+      "matching_questions",
+      "expected_codex_return_fields",
+      "forbidden_actions",
+      "promotion_status"
+    ]
+  },
+  "bias_countering_rules": [
+    "Do not collect only agreement sources; require contrastive or orthogonal sources per batch when possible.",
+    "Separate speaker claims from Hermes interpretation.",
+    "Record missing perspectives explicitly.",
+    "Preserve rejected refs and why they did not change judgment.",
+    "Do not treat popular/high-view videos as authority.",
+    "Use timestamps for every strong claim when available."
+  ],
+  "mvp_non_goals": [
+    "video/audio download",
+    "YouTube Data API dependency",
+    "automatic Obsidian write",
+    "authority/current-position mutation",
+    "Codex/Gemini live call by default",
+    "web app UI before pipeline proof"
+  ],
+  "promotion_status": "HOLD"
+}

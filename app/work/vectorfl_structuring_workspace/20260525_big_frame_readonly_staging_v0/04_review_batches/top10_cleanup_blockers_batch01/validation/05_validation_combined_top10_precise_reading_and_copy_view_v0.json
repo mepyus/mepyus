@@ -1,0 +1,44 @@
+{
+  "validation_id": "VALIDATION_COMBINED_TOP10_PRECISE_READING_AND_COPY_VIEW_V0",
+  "created_at": "2026-05-25T12:45:56.898233+09:00",
+  "verdict": "PASS_COMBINED_TOP10_PRECISE_READING_AND_COPY_VIEW_WITH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 53,
+  "checks_passed": 53,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_COPY_AS_AUTHORITY",
+      "claim": "copied file is authority/source of truth",
+      "caught": true,
+      "hold_reason": "HOLD_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_COPY_REPLACES_ORIGINAL",
+      "claim": "copy path replaces original path",
+      "caught": true,
+      "hold_reason": "HOLD_SOURCE_OF_TRUTH_ORIGINAL_PATH"
+    },
+    {
+      "name": "NEG_COPY_VIEW_IMPLIES_MOVE_APPROVAL",
+      "claim": "copy view authorizes move/archive",
+      "caught": true,
+      "hold_reason": "HOLD_NO_APPLY_APPROVAL"
+    },
+    {
+      "name": "NEG_EDIT_COPY_TO_EDIT_SOURCE",
+      "claim": "editing copy edits source",
+      "caught": true,
+      "hold_reason": "HOLD_COPY_IS_VIEW_ONLY"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

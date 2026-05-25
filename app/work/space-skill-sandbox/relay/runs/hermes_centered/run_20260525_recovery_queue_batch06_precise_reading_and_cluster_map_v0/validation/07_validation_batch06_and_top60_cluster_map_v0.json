@@ -1,0 +1,58 @@
+{
+  "validation_id": "VALIDATION_BATCH06_AND_TOP60_CLUSTER_MAP_V0",
+  "created_at": "2026-05-25T11:17:50.213274+09:00",
+  "verdict": "PASS_BATCH06_AND_TOP60_CLUSTER_MAP_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/source_index/00_batch06_source_index_v0.json": {
+      "exists": true,
+      "sha256": "736aa20a9b1d1eb1ecdaf67b993d6f006cafaa42449f7091b6592a894ab63467",
+      "bytes": 2869
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/readings/01_batch06_precise_reading_v0.json": {
+      "exists": true,
+      "sha256": "9cf236898cc79890e965370844facd2bcb26787d95e463b67e4aafaac5bddb21",
+      "bytes": 83147
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/routes/02_batch06_route_pack_v0.json": {
+      "exists": true,
+      "sha256": "9d9463371210cddb35d4583a5808589f4ae429060caab81cef6756f6ba7eb394",
+      "bytes": 24007
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/comparison/03_batch06_cumulative_cluster_shift_v0.json": {
+      "exists": true,
+      "sha256": "b788d8873b2be4472bf5d959971013e69d3803d73f39612481696dd56daa205d",
+      "bytes": 3778
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/cluster_map/04_top60_recovery_cluster_map_v0.json": {
+      "exists": true,
+      "sha256": "5d14885d76abd1b4a74b149b036e4afcf0ae11bd416e82486ccb69d7f0b8c61a",
+      "bytes": 31382
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/handoff/05_CODEX_GEMINI_HERMES_BATCH06_TOP60_HANDOFF_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "80a5d9b657a96427f71a1e8d7a192fb7599c43f3ff78fb0fd79f9dd204a574c4",
+      "bytes": 3830
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch06_precise_reading_and_cluster_map_v0/reports/06_batch06_and_top60_cluster_report_v0.md": {
+      "exists": true,
+      "sha256": "655e8b37ec058601293792f88332a249a2705469a0628b0d76f5512fcecc4fe6",
+      "bytes": 2295
+    }
+  },
+  "content_checks": {
+    "batch_count": 10,
+    "top60_count": 60,
+    "relations_count": 45,
+    "route_packs": 1,
+    "all_sources_exist": true,
+    "has_cumulative_comparison": true,
+    "has_m8_candidate": true,
+    "m8_count": 10,
+    "confirmed_modules_count": 7,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

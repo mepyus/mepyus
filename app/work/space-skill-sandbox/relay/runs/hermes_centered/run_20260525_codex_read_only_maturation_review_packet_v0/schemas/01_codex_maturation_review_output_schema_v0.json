@@ -1,0 +1,72 @@
+{
+  "schema_id": "CODEX_MATURATION_REVIEW_OUTPUT_SCHEMA_V0",
+  "required_top_level_keys": [
+    "review_id",
+    "reviewed_sources",
+    "placement_map",
+    "conflict_map",
+    "gap_map",
+    "risk_hold_map",
+    "next_actions",
+    "mutation_statement"
+  ],
+  "schema": {
+    "review_id": "string",
+    "reviewed_sources": "array of source path+sha256 objects",
+    "placement_map": [
+      {
+        "asset_or_module": "string",
+        "current_lane": "string",
+        "recommended_lane": "string",
+        "reason": "string",
+        "confidence": "low|medium|high",
+        "status": "keep|split|merge|demote|needs_gemini"
+      }
+    ],
+    "conflict_map": [
+      {
+        "conflict_id": "string",
+        "surface": "M1|M2|M3|M4|M5|M6|M7|M8|rubric|cleanup",
+        "description": "string",
+        "severity": "low|medium|high|blocker",
+        "hold_marker": "string",
+        "resolution_candidate": "string"
+      }
+    ],
+    "gap_map": [
+      {
+        "gap_id": "string",
+        "missing": "string",
+        "needed_for": "inbox|candidate|matured|authority|cleanup|saas_mvp",
+        "suggested_next_step": "string",
+        "owner_route": "Hermes|Codex|Gemini|User"
+      }
+    ],
+    "risk_hold_map": [
+      {
+        "hold_id": "string",
+        "applies_to": "string",
+        "hold_type": "HOLD_NOT_AUTHORITY|HOLD_AUTHORITY_SENSITIVE|HOLD_CLEANUP_PRECONDITION|HOLD_MISSING_EVIDENCE|HOLD_CONFLICT|HOLD_TRACE_INSUFFICIENT",
+        "reason": "string"
+      }
+    ],
+    "next_actions": [
+      {
+        "action_id": "string",
+        "actor": "Hermes|Codex|Gemini|User",
+        "action": "string",
+        "side_effects": "none|read_only|requires_approval",
+        "preconditions": [
+          "string"
+        ]
+      }
+    ],
+    "mutation_statement": {
+      "file_move": false,
+      "authority_mutation": false,
+      "registry_mutation": false,
+      "current_position_mutation": false,
+      "promotion": false
+    }
+  }
+}

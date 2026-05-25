@@ -1,0 +1,437 @@
+{
+  "map_id": "MEDIUM_4_REFERENCE_MAP_BATCH01_V0",
+  "created_at": "2026-05-25T13:32:55.061618+09:00",
+  "verdict": "PASS_MEDIUM_4_REFERENCE_MAP_WITH_HOLD",
+  "source_precheck": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+  "medium_count": 4,
+  "file_count_scanned": 8142,
+  "elapsed_ms": 6619.47,
+  "verdict_distribution": {
+    "CONTROL_SURFACE_UPDATE_RISK_ONLY__KEEP_POINTER_VIEW": 4
+  },
+  "items": [
+    {
+      "pointer_id": "WS_TOP10_B01_01",
+      "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "original_path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "copy_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/files/docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "medium_rescan_verdict": "CONTROL_SURFACE_UPDATE_RISK_ONLY__KEEP_POINTER_VIEW",
+      "nonself_hit_count": 151,
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 151,
+      "basename_noise_count": 61,
+      "copy_path_reference_count": 8,
+      "context_distribution": {
+        "workspace_control_surface": 42,
+        "run_receipt_or_report_surface": 109
+      },
+      "top_strong_references": [],
+      "top_control_references": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+          "line": 10,
+          "text": "\"relpath\": \"docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+          "line": 11,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "agent_function_reception_readiness_correction_v0.md",
+          "line": 10,
+          "text": "\"relpath\": \"docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "agent_function_reception_readiness_correction_v0.md",
+          "line": 11,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_abs",
+          "token": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md",
+          "line": 11,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "sample_basename_noise": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "agent_function_reception_readiness_correction_v0.md",
+          "line": 10,
+          "text": "\"relpath\": \"docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "agent_function_reception_readiness_correction_v0.md",
+          "line": 11,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "token_kind": "basename",
+          "token": "agent_function_reception_readiness_correction_v0.md",
+          "line": 5,
+          "text": "## 01. docs/reports/agent_function_reception_readiness_correction_v0.md",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "copy_substitution_allowed": false,
+      "move_recommendation": "DO_NOT_MOVE__CONTROL_POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_06",
+      "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "original_path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "copy_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/files/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "medium_rescan_verdict": "CONTROL_SURFACE_UPDATE_RISK_ONLY__KEEP_POINTER_VIEW",
+      "nonself_hit_count": 148,
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 148,
+      "basename_noise_count": 59,
+      "copy_path_reference_count": 8,
+      "context_distribution": {
+        "workspace_control_surface": 42,
+        "run_receipt_or_report_surface": 106
+      },
+      "top_strong_references": [],
+      "top_control_references": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 517,
+          "text": "\"relpath\": \"docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 518,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 517,
+          "text": "\"relpath\": \"docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 518,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_abs",
+          "token": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 518,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "sample_basename_noise": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 517,
+          "text": "\"relpath\": \"docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 518,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "token_kind": "basename",
+          "token": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "line": 139,
+          "text": "## 06. docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "copy_substitution_allowed": false,
+      "move_recommendation": "DO_NOT_MOVE__CONTROL_POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_08",
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "original_path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+      "copy_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/files/docs/reports/relation_first_input_gate_spec_v0.md",
+      "medium_rescan_verdict": "CONTROL_SURFACE_UPDATE_RISK_ONLY__KEEP_POINTER_VIEW",
+      "nonself_hit_count": 153,
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 153,
+      "basename_noise_count": 59,
+      "copy_path_reference_count": 8,
+      "context_distribution": {
+        "workspace_control_surface": 42,
+        "run_receipt_or_report_surface": 111
+      },
+      "top_strong_references": [],
+      "top_control_references": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/relation_first_input_gate_spec_v0.md",
+          "line": 699,
+          "text": "\"relpath\": \"docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/relation_first_input_gate_spec_v0.md",
+          "line": 700,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_input_gate_spec_v0.md",
+          "line": 699,
+          "text": "\"relpath\": \"docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_input_gate_spec_v0.md",
+          "line": 700,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_abs",
+          "token": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+          "line": 700,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "sample_basename_noise": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_input_gate_spec_v0.md",
+          "line": 699,
+          "text": "\"relpath\": \"docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_input_gate_spec_v0.md",
+          "line": 700,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "token_kind": "basename",
+          "token": "relation_first_input_gate_spec_v0.md",
+          "line": 190,
+          "text": "## 08. docs/reports/relation_first_input_gate_spec_v0.md",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "copy_substitution_allowed": false,
+      "move_recommendation": "DO_NOT_MOVE__CONTROL_POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_09",
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "original_path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "copy_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/files/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "medium_rescan_verdict": "CONTROL_SURFACE_UPDATE_RISK_ONLY__KEEP_POINTER_VIEW",
+      "nonself_hit_count": 142,
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 142,
+      "basename_noise_count": 56,
+      "copy_path_reference_count": 8,
+      "context_distribution": {
+        "workspace_control_surface": 42,
+        "run_receipt_or_report_surface": 100
+      },
+      "top_strong_references": [],
+      "top_control_references": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+          "line": 806,
+          "text": "\"relpath\": \"docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_relpath",
+          "token": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+          "line": 807,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_repetition_operation_batch001_v0.md",
+          "line": 806,
+          "text": "\"relpath\": \"docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_repetition_operation_batch001_v0.md",
+          "line": 807,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "original_abs",
+          "token": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+          "line": 807,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "sample_basename_noise": [
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_repetition_operation_batch001_v0.md",
+          "line": 806,
+          "text": "\"relpath\": \"docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+          "token_kind": "basename",
+          "token": "relation_first_repetition_operation_batch001_v0.md",
+          "line": 807,
+          "text": "\"path\": \"/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md\",",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        },
+        {
+          "referencing_file": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "referencing_relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+          "token_kind": "basename",
+          "token": "relation_first_repetition_operation_batch001_v0.md",
+          "line": 218,
+          "text": "## 09. docs/reports/relation_first_repetition_operation_batch001_v0.md",
+          "context": "workspace_control_surface",
+          "self_reference": false
+        }
+      ],
+      "copy_substitution_allowed": false,
+      "move_recommendation": "DO_NOT_MOVE__CONTROL_POINTER_FIRST"
+    }
+  ],
+  "copy_path_reference_total": 32,
+  "control_update_candidate_count": 200,
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

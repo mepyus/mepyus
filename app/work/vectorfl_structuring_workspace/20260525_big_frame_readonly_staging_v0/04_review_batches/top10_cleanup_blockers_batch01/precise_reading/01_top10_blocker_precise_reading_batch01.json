@@ -1,0 +1,1014 @@
+{
+  "reading_id": "TOP10_BLOCKER_PRECISE_READING_BATCH01",
+  "created_at": "2026-05-25T12:45:56.898233+09:00",
+  "verdict": "PASS_PRECISE_READING_WITH_HOLD",
+  "top10_count": 10,
+  "elapsed_ms": 47.42,
+  "readings": [
+    {
+      "rank": 1,
+      "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "exists": true,
+      "sha256": "a628a40de42244a7113ef2537b4b00b91152c996f70b392fa04ffcc8986a98c5",
+      "bytes": 2305,
+      "freeze_id": "M4FRZ_0009",
+      "pointer_id": "M2PTR_0010",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 33,
+            "text": "*   NO current-position update or baseline promotion."
+          }
+        ],
+        "registry": [
+          {
+            "line": 31,
+            "text": "*   NO registry, index, or ledger."
+          }
+        ],
+        "authority": [
+          {
+            "line": 33,
+            "text": "*   NO current-position update or baseline promotion."
+          },
+          {
+            "line": 37,
+            "text": "*   NO Gemini autonomous authority."
+          },
+          {
+            "line": 38,
+            "text": "*   NO Codex final authority."
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 7,
+            "text": "## 2. Corrected Candidate Names"
+          },
+          {
+            "line": 8,
+            "text": "*   **Skill Candidate:** `External Repo Structure Reading Skill` (Previously: `Space-Skill-Intake-Processor`)"
+          },
+          {
+            "line": 9,
+            "text": "*   **Hook Candidate:** `Source Contamination Detected Hook` (Consistent)"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 3,
+            "text": "## 1. Verdict"
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 20,
+            "text": "*   **Source Contamination:** Removed terms derived from Ouroboros/GoModel that were incorrectly mixed into the Vibe-Trading context."
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 2,
+      "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "exists": true,
+      "sha256": "53921c2a7014a8dea4f3cb88131789b84469445de8b56e5dd39133d75d154686",
+      "bytes": 15546,
+      "freeze_id": "M4FRZ_0003",
+      "pointer_id": "M2PTR_0004",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 16,
+            "text": "It does not run Gemini, read the source, adopt the material, create automation, create a router, create a workflow, update current-position, or create a result inbox/log."
+          },
+          {
+            "line": 27,
+            "text": "current_anchor = app/work/space-skill-sandbox/outputs/current_position_entry_after_external_material_gate_v0.md"
+          },
+          {
+            "line": 44,
+            "text": "no current-position update"
+          }
+        ],
+        "registry": [
+          {
+            "line": 40,
+            "text": "no registry/index/ledger creation"
+          }
+        ],
+        "authority": [
+          {
+            "line": 7,
+            "text": "Authority: candidate packet design / not executable automation"
+          },
+          {
+            "line": 37,
+            "text": "no baseline promotion"
+          },
+          {
+            "line": 56,
+            "text": "AUTHORITY_RISK"
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 1,
+            "text": "# Gemini External Material Queue 001 Task Packets Candidate v0"
+          },
+          {
+            "line": 6,
+            "text": "Status: task packet candidates"
+          },
+          {
+            "line": 7,
+            "text": "Authority: candidate packet design / not executable automation"
+          }
+        ],
+        "receipt_trace": [],
+        "cleanup_archive": [
+          {
+            "line": 41,
+            "text": "no package movement"
+          },
+          {
+            "line": 58,
+            "text": "PACKAGE_MOVEMENT_RISK"
+          },
+          {
+            "line": 212,
+            "text": "forbidden_actions = do not create adoption plan; do not create implementation plan; do not create package movement"
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 3,
+      "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "exists": true,
+      "sha256": "ff02c4d9107d52508d9cadc406f4e1fb0e9fd3c92bcb81aa7753693932f346d8",
+      "bytes": 2812,
+      "freeze_id": "M4FRZ_0013",
+      "pointer_id": "M2PTR_0014",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 36,
+            "text": "*   This is not baseline, not an official workflow, and not a current-position update."
+          },
+          {
+            "line": 63,
+            "text": "- NO current-position update."
+          }
+        ],
+        "registry": [
+          {
+            "line": 60,
+            "text": "- NO registry, index, ledger."
+          }
+        ],
+        "authority": [
+          {
+            "line": 36,
+            "text": "*   This is not baseline, not an official workflow, and not a current-position update."
+          },
+          {
+            "line": 64,
+            "text": "- NO baseline promotion."
+          },
+          {
+            "line": 69,
+            "text": "- NO Gemini verified-truth authority."
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 4,
+            "text": "**STATUS: COMPONENT_CHAIN_MODE_SELECTION_CLOSED_AS_USAGE_RULE_CANDIDATE**"
+          },
+          {
+            "line": 9,
+            "text": "- **Candidate Grammar:** The entire chain is preserved as a \"Candidate Judgment Grammar,\" not as automation or official system architecture."
+          },
+          {
+            "line": 14,
+            "text": "External candidate / material input"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 3,
+            "text": "## 1. Verdict"
+          }
+        ],
+        "cleanup_archive": []
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 4,
+      "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "exists": true,
+      "sha256": "95c8ffc8b5c655e8f893fef8073e4391d3ec51703a96ee1697b327010fcba683",
+      "bytes": 8212,
+      "freeze_id": "M4FRZ_0016",
+      "pointer_id": "M2PTR_0018",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 21,
+            "text": "It is not a workflow, automation, registry, index, ledger, router, controller, formal schema, current-position update, or baseline."
+          },
+          {
+            "line": 63,
+            "text": "no current-position update"
+          },
+          {
+            "line": 132,
+            "text": "current-position entry"
+          }
+        ],
+        "registry": [
+          {
+            "line": 21,
+            "text": "It is not a workflow, automation, registry, index, ledger, router, controller, formal schema, current-position update, or baseline."
+          },
+          {
+            "line": 205,
+            "text": "Do not call Indexed Session Memory equivalent to our registry."
+          },
+          {
+            "line": 215,
+            "text": "!= registry"
+          }
+        ],
+        "authority": [
+          {
+            "line": 21,
+            "text": "It is not a workflow, automation, registry, index, ledger, router, controller, formal schema, current-position update, or baseline."
+          },
+          {
+            "line": 64,
+            "text": "no baseline promotion"
+          },
+          {
+            "line": 83,
+            "text": "authority: Gemini worker evidence + Codex packaging only"
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 1,
+            "text": "# External Candidate Reading Packaging - context-mode v0"
+          },
+          {
+            "line": 19,
+            "text": "It is not an adoption candidate."
+          },
+          {
+            "line": 64,
+            "text": "no baseline promotion"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 3,
+            "text": "## 1. Verdict"
+          },
+          {
+            "line": 32,
+            "text": "SQLite / FTS5 indexed trace memory"
+          },
+          {
+            "line": 44,
+            "text": "context-mode addresses session continuity by preserving indexed trace memory and producing re-entry guidance."
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 267,
+            "text": "any movement toward Reusable Setting"
+          },
+          {
+            "line": 275,
+            "text": "Only the User can approve movement beyond operation-reference handling."
+          },
+          {
+            "line": 290,
+            "text": "The safe move is to preserve it and continue the planned one-source-at-a-time external candidate reading sequence."
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 5,
+      "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "exists": true,
+      "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+      "bytes": 22159,
+      "freeze_id": "M4FRZ_0024",
+      "pointer_id": "M2PTR_0027",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 34,
+            "text": "not current-position update"
+          },
+          {
+            "line": 441,
+            "text": "current-position update inferred from useful fit"
+          },
+          {
+            "line": 578,
+            "text": "It does not update current-position."
+          }
+        ],
+        "registry": [
+          {
+            "line": 32,
+            "text": "not registry/index/ledger"
+          },
+          {
+            "line": 75,
+            "text": "process reusable without turning it into a large layer, controller, registry,"
+          },
+          {
+            "line": 107,
+            "text": "not registry/index/ledger"
+          }
+        ],
+        "authority": [
+          {
+            "line": 28,
+            "text": "not baseline"
+          },
+          {
+            "line": 60,
+            "text": "line-axis placement, role/authority check, watch items, mistake-memory,"
+          },
+          {
+            "line": 102,
+            "text": "authority_status:"
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 5,
+            "text": "This report tests whether `Function/Process Formation Prework Candidate v0` can hold a real recent case."
+          },
+          {
+            "line": 12,
+            "text": "function/material candidate"
+          },
+          {
+            "line": 26,
+            "text": "candidate reference"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 150,
+            "text": "validation_tool"
+          },
+          {
+            "line": 310,
+            "text": "let Gemini handle bounded execution / validation / repeated evidence tasks"
+          },
+          {
+            "line": 630,
+            "text": "Verdict = FIT_CONFIRMED_WITH_NOTES"
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 39,
+            "text": "The recent case moved through these steps:"
+          },
+          {
+            "line": 545,
+            "text": "avoid archive-only storage"
+          },
+          {
+            "line": 588,
+            "text": "package movement"
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 6,
+      "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "exists": true,
+      "sha256": "1cb6f25a7d78713a7945f71505b51a76361500b6348a66bbfc9994b8b39897f0",
+      "bytes": 7245,
+      "freeze_id": "M4FRZ_0029",
+      "pointer_id": "M2PTR_0033",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 11,
+            "text": "Do not update current-position."
+          },
+          {
+            "line": 388,
+            "text": "no current-position update"
+          }
+        ],
+        "registry": [
+          {
+            "line": 10,
+            "text": "Do not create registry, index, ledger, router, controller, formal schema, official workflow, or ontology."
+          },
+          {
+            "line": 298,
+            "text": "registry/index/ledger"
+          },
+          {
+            "line": 385,
+            "text": "no registry/index/ledger"
+          }
+        ],
+        "authority": [
+          {
+            "line": 12,
+            "text": "Do not promote any line or axis to baseline."
+          },
+          {
+            "line": 16,
+            "text": "Do not treat Gemini output as verified truth or final authority."
+          },
+          {
+            "line": 296,
+            "text": "baseline"
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 22,
+            "text": "The purpose is to test whether lower-level process assets produce connection seeds, line candidates, and possible axis candidates."
+          },
+          {
+            "line": 39,
+            "text": "-> LINE_CANDIDATE"
+          },
+          {
+            "line": 41,
+            "text": "-> AXIS_CANDIDATE"
+          }
+        ],
+        "receipt_trace": [],
+        "cleanup_archive": [
+          {
+            "line": 95,
+            "text": "broad historical archive"
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 7,
+      "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "exists": true,
+      "sha256": "cfb366bf4c5f02afa36cec2ccea0e6f55cbda58a9ff451b9d2dbe5e0ab519897",
+      "bytes": 4617,
+      "freeze_id": "M4FRZ_0042",
+      "pointer_id": "M2PTR_0046",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 34,
+            "text": "| `ExecutionRoutePanel` | route/support | current position and next route judgment | 다음 이동 방향 | `route_candidate` |"
+          }
+        ],
+        "registry": [
+          {
+            "line": 48,
+            "text": "| `WatchpointRegistryPanel` | warning / failure evidence | 주의/실패 흔적 |"
+          }
+        ],
+        "authority": [],
+        "promotion_state": [
+          {
+            "line": 9,
+            "text": "This backlog translates the 2026-04-17 source notes into implementation candidates."
+          },
+          {
+            "line": 29,
+            "text": "| current component | current role | locked interpretation | surface human language candidate | internal label |"
+          },
+          {
+            "line": 34,
+            "text": "| `ExecutionRoutePanel` | route/support | current position and next route judgment | 다음 이동 방향 | `route_candidate` |"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 3,
+            "text": "## Verdict"
+          },
+          {
+            "line": 38,
+            "text": "| `VectorFLValidationQueuePanel` | validation/reread queue | reread slot | 다시 볼 항목 | `vectorfl_reread` |"
+          },
+          {
+            "line": 49,
+            "text": "| `BridgePanel` | movement / connection trace | 연결 기록 |"
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 34,
+            "text": "| `ExecutionRoutePanel` | route/support | current position and next route judgment | 다음 이동 방향 | `route_candidate` |"
+          },
+          {
+            "line": 49,
+            "text": "| `BridgePanel` | movement / connection trace | 연결 기록 |"
+          },
+          {
+            "line": 82,
+            "text": "3. Internal labels moved into badges."
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 8,
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+      "exists": true,
+      "sha256": "268e2577026b630330107a4137d00b8bc01cbc88bd8ea51578b512db2f21d7f9",
+      "bytes": 12776,
+      "freeze_id": "M4FRZ_0058",
+      "pointer_id": "M2PTR_0062",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 15,
+            "text": "Not current-position update"
+          },
+          {
+            "line": 388,
+            "text": "Re-entry Signal is not current-position update."
+          },
+          {
+            "line": 600,
+            "text": "Re-entry Signal becoming current-position update"
+          }
+        ],
+        "registry": [
+          {
+            "line": 14,
+            "text": "Not registry/index/ledger"
+          },
+          {
+            "line": 152,
+            "text": "prevents material from sliding into authority, automation, implementation, baseline, workflow, registry, or ontology."
+          },
+          {
+            "line": 304,
+            "text": "Placement is not registry state."
+          }
+        ],
+        "authority": [
+          {
+            "line": 8,
+            "text": "Authority = orientation / usage support"
+          },
+          {
+            "line": 9,
+            "text": "Not baseline"
+          },
+          {
+            "line": 152,
+            "text": "prevents material from sliding into authority, automation, implementation, baseline, workflow, registry, or ontology."
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 7,
+            "text": "Status = CANDIDATE_OPERATION_SPEC"
+          },
+          {
+            "line": 25,
+            "text": "This document specifies the current shape of the candidate operating frame."
+          },
+          {
+            "line": 293,
+            "text": "Process Asset Candidate"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 267,
+            "text": "PROCESS_TRACE: trace of how the work happened"
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 84,
+            "text": "What is it trying to move?"
+          },
+          {
+            "line": 192,
+            "text": "What is its internal movement?"
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 9,
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "exists": true,
+      "sha256": "d1e66e1d6b8411481ece668666661cf2569aa1ec2d89db78fcf60f3282a896d9",
+      "bytes": 3102,
+      "freeze_id": "M4FRZ_0060",
+      "pointer_id": "M2PTR_0067",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 55,
+            "text": "- NO current-position update or baseline promotion."
+          }
+        ],
+        "registry": [
+          {
+            "line": 32,
+            "text": "| **Registry Drift** | HIGH | 모든 연결을 index로 만들려 함 | '후보' 상태 보존 | Formal registry 생성 |"
+          },
+          {
+            "line": 53,
+            "text": "- NO registry, index, ledger, router, controller."
+          }
+        ],
+        "authority": [
+          {
+            "line": 34,
+            "text": "| **Authority Drift** | HIGH | 워커의 해석이 사실로 굳어짐 | 'Worker Evidence' 라벨링 | verified truth 선언 |"
+          },
+          {
+            "line": 55,
+            "text": "- NO current-position update or baseline promotion."
+          },
+          {
+            "line": 60,
+            "text": "- NO Gemini verified-truth authority."
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 32,
+            "text": "| **Registry Drift** | HIGH | 모든 연결을 index로 만들려 함 | '후보' 상태 보존 | Formal registry 생성 |"
+          },
+          {
+            "line": 48,
+            "text": "*   후보 신호들이 너무 빨리 시스템의 '법'으로 승격되는 것."
+          },
+          {
+            "line": 55,
+            "text": "- NO current-position update or baseline promotion."
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 6,
+            "text": "## 2. Verdict"
+          },
+          {
+            "line": 26,
+            "text": "*   **Worker-Role Elevation:** Evidence Packaging을 통해 사람의 검증을 대체하지 않고 사용자의 판단을 지원."
+          },
+          {
+            "line": 43,
+            "text": "*   공간 내에서 새로운 마찰(대기, 검증 등)이 발생할 때."
+          }
+        ],
+        "cleanup_archive": []
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    },
+    {
+      "rank": 10,
+      "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "exists": true,
+      "sha256": "aaaa473c471ee7e1c4c4b0f7df8b5309ea50f16c002a9252c22871ca48c18f12",
+      "bytes": 7349,
+      "freeze_id": "M4FRZ_0026",
+      "pointer_id": "M2PTR_0030",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "dominant_risk": "CURRENT_POSITION_PATH_CONTEXT_RISK",
+      "active_risk_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup_archive"
+      ],
+      "cited_lines": {
+        "current_position": [
+          {
+            "line": 165,
+            "text": "Return adoption, promotion, implementation, attachment, current-position update, and authority changes to the User."
+          },
+          {
+            "line": 327,
+            "text": "no current-position update"
+          },
+          {
+            "line": 337,
+            "text": "no current-position update by implication"
+          }
+        ],
+        "registry": [
+          {
+            "line": 32,
+            "text": "registry"
+          },
+          {
+            "line": 103,
+            "text": "registry"
+          },
+          {
+            "line": 208,
+            "text": "no larger layer/controller/registry/workflow created"
+          }
+        ],
+        "authority": [
+          {
+            "line": 39,
+            "text": "baseline"
+          },
+          {
+            "line": 106,
+            "text": "baseline"
+          },
+          {
+            "line": 165,
+            "text": "Return adoption, promotion, implementation, attachment, current-position update, and authority changes to the User."
+          }
+        ],
+        "promotion_state": [
+          {
+            "line": 9,
+            "text": "2. v0 candidate creation"
+          },
+          {
+            "line": 20,
+            "text": "docs/reports/function_process_formation_prework_candidate_v0.md"
+          },
+          {
+            "line": 23,
+            "text": "docs/reports/function_process_formation_prework_candidate_v1.md"
+          }
+        ],
+        "receipt_trace": [
+          {
+            "line": 168,
+            "text": "## 4. What Changed During Validation"
+          },
+          {
+            "line": 174,
+            "text": "Verdict = FIT_CONFIRMED_WITH_NOTES"
+          },
+          {
+            "line": 190,
+            "text": "Verdict = GENERALIZATION_CONFIRMED_WITH_NOTES"
+          }
+        ],
+        "cleanup_archive": [
+          {
+            "line": 62,
+            "text": "Otherwise, records become archive."
+          },
+          {
+            "line": 331,
+            "text": "no package movement"
+          }
+        ]
+      },
+      "precise_judgment": "DO_NOT_MOVE_OR_ARCHIVE__READONLY_COPY_VIEW_ALLOWED_WITH_MANIFEST",
+      "why_no_move": "원본 경로/내용이 authority-current-position-registry-promotion-receipt-cleanup 축 중 하나 이상과 연결되어 있어 현재 mv/archive는 맥락 붕괴 위험이 큼.",
+      "copy_view_purpose": "사람/Codex가 보기 쉬운 검토면 생성. 원본 대체 또는 authority 아님.",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "source_edit": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      }
+    }
+  ],
+  "boundary": "No source move/archive; read-only copy view allowed with manifest."
+}

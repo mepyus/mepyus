@@ -1,0 +1,13 @@
+{
+  "goal_id": "GOAL_LOOP_FIXTURE_BUILD_EXECUTION_SPACE_STRUCTURE_UNTIL_READY_V0",
+  "loop_policy": {
+    "budget_gate": "reject heavy call when local indexed artifacts answer the step",
+    "fresh_space_reference_gate": "MAYBE_CODEX_ONLY_IF_UNKNOWN_SPACE_REF_REQUIRED",
+    "provider_backed_call_gate": "NO_FOR_FIXTURE",
+    "space_first_read": "shared_handoff/90_QUICK_EXCHANGE_BOARD then summary cards then pointer table; if local evidence sufficient, do not call Codex/Gemini"
+  },
+  "max_steps": 7,
+  "promotion_status": "HOLD",
+  "success_condition": "Create a HOLD-only execution structure that can run with original + space references + model reasoning, and leaves Codex-readable reentry without role collision.",
+  "user_goal_assumption": "/goal 지금의 실행 구조가 될 때까지 작업해"
+}

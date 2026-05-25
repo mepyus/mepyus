@@ -1,0 +1,25 @@
+{
+  "boundaries": {
+    "authority_mutation": "NO",
+    "codex_default_call": "NO_UNLESS_FRESH_SPACE_REFERENCE",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_default_call": "NO_UNLESS_CODEX_SIDE_LAYER_AMBIGUITY",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "execution_space_setup_owner": "HERMES",
+  "latest_handles": {},
+  "namespace_roots": {
+    "codex_log_root": "runs/hermes_centered/<run_id>/codex_space/",
+    "hermes_log_root": "runs/hermes_centered/<run_id>/hermes_exec/",
+    "rule": "Each actor writes only inside its own namespace. Shared handoff files are append-by-new-version only, never in-place rewritten.",
+    "shared_log_root": "runs/hermes_centered/<run_id>/shared_handoff/"
+  },
+  "packet_id": "02_dual_log_run_manifest_template_v0",
+  "run_id": "<YYYYMMDD_short_task_slug_vN>",
+  "space_maturation_setup_owner": "CODEX",
+  "user_original_ref": "<path-or-inline-digest>",
+  "versioning": "immutable_artifacts_plus_latest_pointer"
+}

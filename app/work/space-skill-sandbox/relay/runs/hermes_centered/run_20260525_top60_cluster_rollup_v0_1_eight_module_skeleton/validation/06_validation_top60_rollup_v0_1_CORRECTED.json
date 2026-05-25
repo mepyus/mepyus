@@ -1,0 +1,41 @@
+{
+  "validation_id": "VALIDATION_TOP60_ROLLUP_V0_1_CORRECTED",
+  "created_at": "2026-05-25T11:24:27.448681+09:00",
+  "verdict": "PASS_TOP60_ROLLUP_SEVEN_CONFIRMED_CLUSTERS_EIGHT_MODULE_SKELETON_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json": {
+      "exists": true,
+      "sha256": "a8907c2a638f3e195d18d2ecf1d0ddd3f210d497ff6d088eafee7fb27fe9995d",
+      "bytes": 30756
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/skeleton/01_vectorfl_eight_module_saas_skeleton_v0_1.json": {
+      "exists": true,
+      "sha256": "edc853af03957a00533ce51cf16f1e76dd6edfdc5e4d54a3e4be90a67c3eca56",
+      "bytes": 4132
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json": {
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc",
+      "bytes": 2175
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/handoff/03_CODEX_GEMINI_HERMES_TOP60_ROLLUP_V0_1_HANDOFF_HOLD.json": {
+      "exists": true,
+      "sha256": "fbc4e7bb9d8983cd126e6de969a17aeabcbb28fb77df62dc0f6a08894c2e75e9",
+      "bytes": 775
+    }
+  },
+  "content_checks": {
+    "total_assets": 60,
+    "modules_defined_in_skeleton": 8,
+    "top60_confirmed_cluster_count": 7,
+    "m1_status": "STRUCTURAL_BROAD_FIELD_MODULE_NOT_TOP60_CONFIRMED_AFTER_SPLIT",
+    "m3_status": "TOP60_CONFIRMED_CLUSTER",
+    "has_cleanup_required_triads": true,
+    "m2_m7_m8_required": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

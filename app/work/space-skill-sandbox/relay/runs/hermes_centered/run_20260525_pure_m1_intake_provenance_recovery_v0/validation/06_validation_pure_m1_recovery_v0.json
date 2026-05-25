@@ -1,0 +1,57 @@
+{
+  "validation_id": "VALIDATION_PURE_M1_RECOVERY_V0",
+  "created_at": "2026-05-25T11:38:41.064651+09:00",
+  "verdict": "PASS_PURE_M1_REPRESENTATIVES_RECOVERED_AND_SUPPLEMENTED_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/candidates/00_pure_m1_candidate_scan_v0.json": {
+      "exists": true,
+      "sha256": "4ce25793142c7ff697ba92a2b7b85f2a59d547c05ae122104d7e07dc37901fa0",
+      "bytes": 12173
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/readings/01_pure_m1_intake_provenance_representatives_v0.json": {
+      "exists": true,
+      "sha256": "ebcd38f6df426c6247144a36102edc392a7dbbef502c52e705bebd398955d63c",
+      "bytes": 52734
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/evidence_balance/02_eight_module_evidence_balance_after_m1_recovery_v0.json": {
+      "exists": true,
+      "sha256": "e0626685fd6bdb78d0dc803ef0f13ae37e3ae0217761860753f2ce7367adbc01",
+      "bytes": 1104
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/evidence_balance/03_mock_review_gap001_patch_candidate_v0.json": {
+      "exists": true,
+      "sha256": "e145191acdb7fac9aa400655db4404737d6b8e4cf899d9b06cd14d2ef40f0e39",
+      "bytes": 455
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/handoff/04_M1_RECOVERY_TO_CODEX_REVIEW_HANDOFF_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "b833bea32364f8c89f8eb8d34fa18e6fdb96f15b31f6eab09ee8f429cf4b04ee",
+      "bytes": 697
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/reports/05_pure_m1_recovery_report_v0.md": {
+      "exists": true,
+      "sha256": "4373538932ea6c863d94f019c0f0a8b29d19e716804874a5d9048bde7f3ccdc8",
+      "bytes": 256
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_pure_m1_intake_provenance_recovery_v0/candidates/00b_direct_broad_scan_supplement_v0.json": {
+      "exists": true,
+      "sha256": "40aebd128ffadabf0295356e3c5b48ba48c1170238a26a9d1dbad88b4e9b0cb6",
+      "bytes": 2358
+    }
+  },
+  "content_checks": {
+    "candidate_pool_count": 52,
+    "representative_count": 15,
+    "subrole_count": 3,
+    "all_representatives_exist": true,
+    "gap001_patch_candidate_created": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true,
+    "direct_scan_candidates": 4351,
+    "supplement_added_count": 10,
+    "target_min_10_met": true
+  }
+}

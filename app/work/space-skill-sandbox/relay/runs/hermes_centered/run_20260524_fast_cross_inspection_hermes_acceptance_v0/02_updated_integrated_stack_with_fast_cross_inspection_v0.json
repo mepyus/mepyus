@@ -1,0 +1,54 @@
+{
+  "apply_status": "NOT_APPLIED_HOLD_ONLY",
+  "does_not_replace": [
+    "full immutable traces",
+    "validation files",
+    "root reports",
+    "authority approval"
+  ],
+  "first_read_rule": "Every actor first reads 90_QUICK_EXCHANGE_BOARD, then its own/latest counterpart summary card, then 99_LATEST_POINTERS only for sha/deep verification.",
+  "layers": [
+    {
+      "function": "preserve original and classify execution-space need",
+      "layer": "L0_USER_ORIGINAL",
+      "owner": "Hermes"
+    },
+    {
+      "function": "classify input, judge space delta, decide Gemini need, maturation boundary",
+      "layer": "L1_SPACE_GOVERNANCE",
+      "owner": "Codex"
+    },
+    {
+      "function": "map instruction to CODEX_SPACE_CHECK / HERMES_WORK_ANALYSIS / RETRIEVAL / MATURATION",
+      "layer": "L2_OPERATION_ROUTER",
+      "owner": "Codex"
+    },
+    {
+      "function": "separate write zones: hermes_exec, codex_space, shared_handoff",
+      "layer": "L3_DUAL_LOG_NAMESPACE",
+      "owner": "Hermes+Codex"
+    },
+    {
+      "function": "first-read quick board for latest state without full-log scan",
+      "layer": "L3_FAST_CROSS_INSPECTION",
+      "owner": "shared_handoff plus role summary cards"
+    },
+    {
+      "function": "merge original+space+model and execute/hold with trace",
+      "layer": "L4_HERMES_EXECUTION",
+      "owner": "Hermes"
+    },
+    {
+      "function": "read Hermes reentry and propose HOLD-only maturation",
+      "layer": "L5_CODEX_MATURATION",
+      "owner": "Codex"
+    },
+    {
+      "function": "wide/layer ambiguity analysis only when Codex decides needed",
+      "layer": "L6_OPTIONAL_WIDE_LENS",
+      "owner": "Gemini via Codex only"
+    }
+  ],
+  "packet_id": "02_updated_integrated_stack_with_fast_cross_inspection_v0",
+  "status": "HOLD_STACK_MAP_ONLY"
+}

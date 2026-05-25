@@ -1,0 +1,62 @@
+{
+  "policy_id": "VECTORTUBE_LAYER_FIRST_MINI_SPACE_POLICY_20260525_V0",
+  "created_at": "2026-05-25T07:36:42.962812+09:00",
+  "status": "HOLD_POLICY_REFINEMENT_NOT_AUTHORITY",
+  "user_correction": "벡터튜브가 정리/요약만 하면 안 된다. 논지/의견이 어떤 맥락, 정보, 감정, 배경지식 등 수많은 층위 위에 서 있는지를 다양하게 읽고 그 기준으로 작은 공간을 만들어야 한다.",
+  "core_rule": "LAYER_READING_BEFORE_SUMMARY",
+  "negative_rule": "If the output is only summary/cleanup without layer detection, change direction before expanding the space.",
+  "layer_lenses": [
+    {
+      "id": "L0_source_surface",
+      "name": "표면 발화/주장 층위",
+      "question": "화자가 실제로 무엇을 말했나? timestamp 근거는?"
+    },
+    {
+      "id": "L1_conceptual",
+      "name": "개념/정의 층위",
+      "question": "어떤 개념 정의와 구분 위에 논지가 서 있나?"
+    },
+    {
+      "id": "L2_information_structure",
+      "name": "정보구조/데이터 층위",
+      "question": "어떤 데이터 구조, 관계, 스키마, 증거 체계를 전제하나?"
+    },
+    {
+      "id": "L3_context_background",
+      "name": "역사/산업/도메인 배경 층위",
+      "question": "이 주장은 어떤 역사, 산업 변화, 도메인 지식 위에서 나온 것인가?"
+    },
+    {
+      "id": "L4_emotional_rhetorical",
+      "name": "감정/수사/불안·기대 층위",
+      "question": "화자는 어떤 불안, 기대, 위기감, 확신, 과장, 설득 장치를 사용하나?"
+    },
+    {
+      "id": "L5_power_authority",
+      "name": "권위/이해관계/제도 층위",
+      "question": "누가 권위를 갖는가? 기업/국가/표준/전문가/플랫폼 권력이 어떻게 작동하나?"
+    },
+    {
+      "id": "L6_practical_operational",
+      "name": "실행/운영/워크플로 층위",
+      "question": "현장에서는 어떤 사람, 도구, 프로세스, 피드백 루프가 필요하나?"
+    },
+    {
+      "id": "L7_counter_uncertainty",
+      "name": "반론/불확실성/실패 가능성 층위",
+      "question": "무엇이 과장됐거나 실패할 수 있나? 다른 해석은?"
+    },
+    {
+      "id": "L8_vectorfl_mapping",
+      "name": "VectorFL 공간 매핑 층위",
+      "question": "이 자료가 VectorFL의 공간/권위/HOLD/재진입 구조에 무엇을 바꾸나?"
+    }
+  ],
+  "mini_space_requirement": "Every source must produce at least: surface claims, context/background, information structure, rhetoric/emotion, authority/power, operational implications, counter/uncertainty, VectorFL relevance.",
+  "hold_boundaries": {
+    "main_space_mutation": false,
+    "authority_mutation": false,
+    "codex_gemini_live_call": false,
+    "obsidian_write": false
+  }
+}

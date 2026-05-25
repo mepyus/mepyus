@@ -1,0 +1,255 @@
+{
+  "authority_boundary": {
+    "artifact_type": "HOLD_ONLY_PATTERN_INDEX",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion_status": "HOLD"
+  },
+  "canonical_sources": {
+    "chronological_index": {
+      "path": "shared_handoff/02_CODEX_FULL_HISTORY_CHRONOLOGICAL_INDEX.md",
+      "sha256": "d79a0765fec9476cd8b81c4b88b124292f4199668392101709f507674214bdee"
+    },
+    "full_history_sync_packet": {
+      "path": "shared_handoff/01_CODEX_FULL_HISTORY_SYNC_PACKET.json",
+      "sha256": "bf5af91eec05079388a6543ce109c47bfe8833cf46022ce4bfe8fd32c9871178"
+    },
+    "codex_full_history_review": {
+      "path": "codex_space/91_CODEX_FULL_HISTORY_SYNC_REVIEW_V0.json",
+      "sha256": "fb2fef707a05de168be2a208683fbea85816646ec695b4cb16f12144c30c11ee"
+    }
+  },
+  "gemini_exploration_decision": {
+    "decision": "NO_FOR_INDEX_CREATION",
+    "reason": "The pattern index is a bounded Codex structuring pass over Hermes-validated sources. Gemini should be reserved for a later ambiguity review if pattern boundaries become contested."
+  },
+  "index_scope": {
+    "accepted_scope": "FULL_HISTORY_FROM_INITIAL_20260524_VECTORFL_BUILDUP_TO_CURRENT_CHANNEL_WORK",
+    "root_item_count": 57,
+    "recent_only": false,
+    "source_of_truth_for_full_root_listing": "shared_handoff/01_CODEX_FULL_HISTORY_SYNC_PACKET.json"
+  },
+  "operating_pattern_index": [
+    {
+      "pattern_id": "P01_NO_CALL_RECOVERY_AND_CURRENT_POSITION_SURFACE",
+      "primary_arc": "A_FOUNDATION_RECOVERY_POINTERS",
+      "supporting_root_sequences": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        16,
+        47
+      ],
+      "space_meaning": "The project established no-call recovery, current-position handling, compact handoff, and reentry surfaces before later function testing.",
+      "hold_actions": [
+        "Normalize UNKNOWN verdicts for roots 001-006 into authority/proposal/historical-evidence status.",
+        "Keep approved current-position history separate from new HOLD proposals."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P02_PROTOTYPE_BEHAVIOR_LOOP",
+      "primary_arc": "Z_OTHER",
+      "supporting_root_sequences": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        43
+      ],
+      "space_meaning": "Scenario 1, receipt/intake, space reading/merge, four-shape loop, repeatability, and budget-gate work form the prototype behavior substrate.",
+      "hold_actions": [
+        "Reclassify this from Z_OTHER into a named prototype layer in future indexes.",
+        "Use it as prerequisite evidence for Phase2 function positions."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P03_PHASE2_FUNCTION_POSITION_STACK",
+      "primary_arc": "B_PHASE2_FUNCTION_TESTS",
+      "supporting_root_sequences": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "space_meaning": "Phase2 converts prototype behavior into tested VectorFL function positions: packet shape, source selection, guard priority, merge trace, role handoff, receipt/reentry/HOLD surface, and budget rollup.",
+      "hold_actions": [
+        "Preserve space_reference_delta and changed_judgment as required future packet fields.",
+        "Treat S1-S7 as tested function positions, not isolated reports."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P04_PHASE3_STRUCTURE_RELAYERING",
+      "primary_arc": "C_PHASE3_STRUCTURE_RELAYERING",
+      "supporting_root_sequences": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "space_meaning": "Phase3 turns Phase2 function evidence into reviewed structure, bounded apply, intent correction, and relayering/asset classification proposals.",
+      "hold_actions": [
+        "Keep bounded apply records distinct from authority mutation.",
+        "Use relayering blueprint as a proposal source for later approved structure work."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P05_HERMES_CENTERED_CODEX_SPACE_LOOP",
+      "primary_arc": "D_CODEX_GEMINI_HANDOFF_HERMES_LOOP",
+      "supporting_root_sequences": [
+        41,
+        42,
+        44,
+        45,
+        46,
+        54
+      ],
+      "space_meaning": "The operating loop matured into Hermes-centered execution: Hermes preserves/merges/executes, Codex retrieves and matures space, and Gemini remains a Codex-side optional wide lens.",
+      "hold_actions": [
+        "Mark older direct Codex/Gemini handoff language as superseded by Hermes-centered policy.",
+        "Use dual-log and reentry records for future maturation proposals."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P06_PROVIDER_CALL_BUDGET_GOVERNANCE",
+      "primary_arc": "E_POLICY_TIMEOUT_INVOCATION",
+      "supporting_root_sequences": [
+        48
+      ],
+      "space_meaning": "Provider-backed Codex/Gemini calls are exceptional, budget-governed, and justified by fresh-space need or Codex-detected layer ambiguity.",
+      "hold_actions": [
+        "Require context-economic justification before provider-backed CLI calls.",
+        "Add Agent Trace Audit when provider-backed calls are used."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P07_EXTERNAL_SPACE_LENS_STACK",
+      "primary_arc": "F_EXTERNAL_AIFRONTIER_SPACE",
+      "supporting_root_sequences": [
+        20,
+        49,
+        50,
+        51,
+        56
+      ],
+      "space_meaning": "AI Frontier materials provide external-space lenses around operator load, infrastructure cost, context economics, and series-level pattern indexing.",
+      "hold_actions": [
+        "Keep EP93-EP97 as lens/pattern-index candidates, not authority.",
+        "Retain Gemini-assisted AI Frontier review as supporting evidence only."
+      ],
+      "status": "HOLD_PATTERN"
+    },
+    {
+      "pattern_id": "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL",
+      "primary_arc": "G_SPACE_OPERATOR_GOVERNANCE_CHANNELS",
+      "supporting_root_sequences": [
+        52,
+        53,
+        55,
+        57
+      ],
+      "space_meaning": "Codex becomes the space operator through governance, router, dual-log namespace isolation, quick exchange board, and vectorfl-space-operator skill candidate.",
+      "hold_actions": [
+        "Keep skill candidate separate from installed skill until explicitly approved.",
+        "Use immutable versioned quick boards and sha256 pointers for Hermes/Codex cross-inspection."
+      ],
+      "status": "HOLD_PATTERN"
+    }
+  ],
+  "packet_id": "93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0",
+  "promotion_status": "HOLD",
+  "quick_read_summary": {
+    "current_space_position": "VectorFL has matured from recovery/prototype tests into a Hermes-centered execution and Codex-centered space-operation structure.",
+    "most_important_change": "The unit of reading should now be full-history operating patterns, not individual recent reports.",
+    "default_route_for_future_user_commands": {
+      "analyze_hermes_work": "Read quick board -> Hermes summary card -> relevant sync/reentry packet -> Codex pattern index -> return HOLD analysis.",
+      "check_space": "Read full-history/pattern index first, then select current arc/layer evidence.",
+      "retrieve_space_for_hermes": "Return selected/rejected refs with changed_judgment and no mutation.",
+      "mature_space_from_reentry": "Use Hermes reentry record and write Codex HOLD proposal under codex_space."
+    }
+  },
+  "stale_supersession_map_hold_only": [
+    {
+      "candidate": "EARLY_FOUNDATION_UNKNOWN_VERDICT_ROOTS",
+      "proposed_status": "HISTORICAL_EVIDENCE_NEEDS_STATUS_NORMALIZATION",
+      "applies_to_sequences": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "candidate": "OLDER_CODEX_GEMINI_DIRECT_HANDOFF_LANGUAGE",
+      "proposed_status": "SUPERSEDED_BY_HERMES_CENTERED_NO_DIRECT_API_POLICY",
+      "applies_to_sequences": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "candidate": "Z_OTHER_BUCKET",
+      "proposed_status": "RECLASSIFY_AS_PROTOTYPE_BEHAVIOR_LOOP",
+      "applies_to_sequences": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        43
+      ]
+    },
+    {
+      "candidate": "QUICK_BOARD_POINTER_REBUILD_HISTORY",
+      "proposed_status": "KEEP_AS_IMMUTABLE_TRACE_WITH_LATEST_POINTER_NOTE",
+      "applies_to_sequences": []
+    }
+  ],
+  "validation_expectations": [
+    "Pattern index remains HOLD-only.",
+    "All 57 source roots remain referenced by the Hermes sync packet, not copied as authority.",
+    "Every operating pattern maps to one accepted arc/layer.",
+    "No Hermes namespace file is modified by this Codex artifact.",
+    "Gemini is not invoked for this bounded structuring pass."
+  ]
+}

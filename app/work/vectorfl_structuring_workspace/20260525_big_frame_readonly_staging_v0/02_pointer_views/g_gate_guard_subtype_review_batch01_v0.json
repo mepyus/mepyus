@@ -1,0 +1,1315 @@
+{
+  "review_id": "G_GATE_GUARD_SUBTYPE_REVIEW_BATCH01_V0",
+  "created_at": "2026-05-25T20:12:04.595982+09:00",
+  "status": "POINTER_ONLY_GUARD_SUBTYPE_REVIEW_NOT_AUTHORITY",
+  "source_compact": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/g_gate_guard_asset_compact_pointer_view_v0.json",
+  "sample_count": 31,
+  "action_distribution": {
+    "PRESERVE_CLEANUP_APPLY_GUARD": 10,
+    "PRESERVE_AUTHORITY_BOUNDARY_GUARD": 18,
+    "PRESERVE_EXTERNAL_CALL_GUARD": 2,
+    "GENERAL_GUARD_POINTER_REVIEW": 1
+  },
+  "subtype_distribution": {
+    "hold_stop_guard": 5,
+    "validation_guard": 5,
+    "general_gate_guard": 5,
+    "approval_boundary_guard": 5,
+    "rollback_guard": 5,
+    "precheck_gate": 4,
+    "negative_test_guard": 2
+  },
+  "reviews": [
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_01",
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/faq.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/help/faq.md",
+      "sha256": "4a35f1c4cf0196e1b3e5e42a7a0e11cb9b6e624fc021fdee8886bad5e6ae1389",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 3,
+        "external_terms": 69,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 15,
+          "text": "快速解答及针对实际部署场景（本地开发、VPS、多智能体、OAuth/API 密钥、模型故障转移）的深入故障排除。运行时诊断请参阅[故障排除](/gateway/troubleshooting)。完整配置参考请参阅[配置](/gateway/configuration)。"
+        },
+        {
+          "line": 50,
+          "text": "- [Codex 认证如何工作？](#how-does-codex-auth-work)"
+        },
+        {
+          "line": 51,
+          "text": "- [是否支持 OpenAI 订阅认证（Codex OAuth）？](#do-you-support-openai-subscription-auth-codex-oauth)"
+        },
+        {
+          "line": 52,
+          "text": "- [如何设置 Gemini CLI OAuth？](#how-do-i-set-up-gemini-cli-oauth)"
+        },
+        {
+          "line": 65,
+          "text": "- [应该在笔记本电脑还是 VPS 上运行 Gateway 网关？](#should-i-run-the-gateway-on-my-laptop-or-a-vps)"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_02",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+      "sha256": "3482226c4b744714ba4ee10004a43c29ab9c1b02442f84f38a5c3b7398b6cd97",
+      "surface": "workspace_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 105,
+        "cleanup_terms": 132,
+        "external_terms": 31,
+        "negative_terms": 0,
+        "validation_terms": 43,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_SUBTYPE_REVIEW_NOT_AUTHORITY\","
+        },
+        {
+          "line": 8,
+          "text": "\"FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE\": 21,"
+        },
+        {
+          "line": 12,
+          "text": "\"HOLD_CLEANUP_LANGUAGE_NO_APPLY\": 1"
+        },
+        {
+          "line": 16,
+          "text": "\"validation_run_bundle\": 5,"
+        },
+        {
+          "line": 31,
+          "text": "\"disposition\": \"RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD\","
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_03",
+      "relpath": "scripts/run_vectorfl_paper_proper_mock.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_vectorfl_paper_proper_mock.py",
+      "sha256": "55d8c107fba366fe093c23fb861afcf0969ba20620b3c22d9c9eab0465cfb908",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 9,
+        "cleanup_terms": 2,
+        "external_terms": 175,
+        "negative_terms": 0,
+        "validation_terms": 63,
+        "approval_terms": 1
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 13,
+          "text": "HANDOFF_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_handoff_latest_v0.json\""
+        },
+        {
+          "line": 14,
+          "text": "RETURN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_return_latest_v0.json\""
+        },
+        {
+          "line": 16,
+          "text": "GEMINI_REVIEW_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_gemini_review_latest_v0.json\""
+        },
+        {
+          "line": 17,
+          "text": "ACTUAL_EXPORT_VALIDATION_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_actual_export_gate_validation_latest_v0.json\""
+        },
+        {
+          "line": 18,
+          "text": "ACTUAL_EXPORT_VALIDATION_DRY_RUN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_actual_export_gate_validation_dry_run_v0.json\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_04",
+      "relpath": "references/git_search/openclaw-main/docs/tools/exec-approvals.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/tools/exec-approvals.md",
+      "sha256": "e3493d84216cf8113ead7a6bca0a696e34b83205d5af7c3833c2176b15f1ff4a",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 3,
+        "external_terms": 5,
+        "negative_terms": 0,
+        "validation_terms": 1,
+        "approval_terms": 124
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "summary: \"Exec approvals, allowlists, and sandbox escape prompts\""
+        },
+        {
+          "line": 4,
+          "text": "- Configuring exec approvals or allowlists"
+        },
+        {
+          "line": 5,
+          "text": "- Implementing exec approval UX in the macOS app"
+        },
+        {
+          "line": 7,
+          "text": "title: \"Exec Approvals\""
+        },
+        {
+          "line": 10,
+          "text": "# Exec approvals"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_05",
+      "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_package_draft_v0.md",
+      "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+      "surface": "source_docs",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 34,
+        "cleanup_terms": 86,
+        "external_terms": 45,
+        "negative_terms": 0,
+        "validation_terms": 64,
+        "approval_terms": 2
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Formation-Movement Interface Package Draft v0"
+        },
+        {
+          "line": 22,
+          "text": "- a package candidate for operating the interface between the formation layer and the movement layer"
+        },
+        {
+          "line": 23,
+          "text": "- a guard against premature promotion"
+        },
+        {
+          "line": 24,
+          "text": "- a practical grammar for provisional objects, sidecars, lifecycle transitions, and validation returns"
+        },
+        {
+          "line": 28,
+          "text": "This package defines how provisional objects formed in the formation layer can move into the movement layer and return to the formation layer without being mistaken for final conclusions."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_06",
+      "relpath": "references/git_search/openclaw-main/docs/help/testing.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/help/testing.md",
+      "sha256": "29b17d9c4068432d3685bf7790a9910cdcf5fd72f5cca5e6801676c06284e544",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 5,
+        "cleanup_terms": 1,
+        "external_terms": 85,
+        "negative_terms": 0,
+        "validation_terms": 3,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 6,
+          "text": "- Debugging gateway + agent behavior"
+        },
+        {
+          "line": 25,
+          "text": "- Full gate (expected before push): `pnpm build && pnpm check && pnpm test`"
+        },
+        {
+          "line": 32,
+          "text": "- Coverage gate: `pnpm test:coverage`"
+        },
+        {
+          "line": 37,
+          "text": "- Live suite (models + gateway tool/image probes): `pnpm test:live`"
+        },
+        {
+          "line": 53,
+          "text": "- In-process integration tests (gateway auth, routing, tooling, parsing, config)"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_07",
+      "relpath": "runtime/manifests/folder_inventory/docs.reports.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/docs.reports.json",
+      "sha256": "c4c57f557294537985865f82a601612a38bd8bd5a814bf262d6bef86669a4cdb",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 6,
+        "cleanup_terms": 2,
+        "external_terms": 39,
+        "negative_terms": 0,
+        "validation_terms": 52,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 98,
+          "text": "\"summary\": \"- 이번 기록의 목적은 repo 전체를 다시 inventory 하는 것이 아니다. - 자산 3개를 실제로 따라가며, 공간 안에서 어떤 데이터가 어떤 방식으로 살아남았는지와 그 판단 방식이 재사용 가능한지를 교차 판독하는 것이다. - 또한 이번 턴에서 Codex가 무엇을 읽고 어떤 근거로 판단했는지도 복원 가능하게 남긴다.\""
+        },
+        {
+          "line": 215,
+          "text": "\"summary\": \"[[A]] [[OBJ:common_vs_asset_specific_failure_surface_split_v1]] [[SEM:split_between_repeated_gate_failures_and_asset_specific_failure_surfaces]]\""
+        },
+        {
+          "line": 218,
+          "text": "\"name\": \"context_linked_segmentation_validation_reading_handoff_v0.md\","
+        },
+        {
+          "line": 219,
+          "text": "\"path\": \"docs/reports/context_linked_segmentation_validation_reading_handoff_v0.md\","
+        },
+        {
+          "line": 223,
+          "text": "\"title\": \"context linked segmentation validation reading handoff v0\","
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_08",
+      "relpath": "runtime/manifests/folder_inventory/runtime.receipts.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/runtime.receipts.json",
+      "sha256": "b7d2a6b9f51d5bd2261106d8ea57717733179f5ff8056b856ff8720e8fb3fe27",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 0,
+        "external_terms": 219,
+        "negative_terms": 0,
+        "validation_terms": 25,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_EXTERNAL_CALL_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 41,
+          "text": "\"summary\": \"- operation_date: 2026-03-28 - operation_scope: attention item lifecycle lock over derived state change attention queue - prepared_by: Codex\""
+        },
+        {
+          "line": 107,
+          "text": "\"name\": \"doc_codex_baseline_program_grade_workspace_upgrade_v1_operation_receipt.md\","
+        },
+        {
+          "line": 108,
+          "text": "\"path\": \"runtime/receipts/doc_codex_baseline_program_grade_workspace_upgrade_v1_operation_receipt.md\","
+        },
+        {
+          "line": 112,
+          "text": "\"title\": \"operation receipt / doc_codex_baseline_program_grade_workspace_upgrade_v1\","
+        },
+        {
+          "line": 113,
+          "text": "\"summary\": \"- doc_id: `doc_codex_baseline_program_grade_workspace_upgrade_v1` - source_path: `/Users/sungsookim/universe/vectorfl_replica/docs/policies/codex_baseline_program_grade_workspace_upgrade_v1.md`\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_09",
+      "relpath": "app/core/runtime/line_thickening.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/line_thickening.py",
+      "sha256": "9edf74a37c77547afea524dab41a0278d77983da01b4fdfdf165c76b041ea95c",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 26,
+        "cleanup_terms": 0,
+        "external_terms": 0,
+        "negative_terms": 0,
+        "validation_terms": 27,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 9,
+          "text": "from app.core.events.event_append_guard import append_jsonl_locked"
+        },
+        {
+          "line": 32,
+          "text": "ValidationProfile = Literal["
+        },
+        {
+          "line": 115,
+          "text": "validation_path_id: str = \"\""
+        },
+        {
+          "line": 146,
+          "text": "validation_profile: ValidationProfile = \"insufficient_profile\""
+        },
+        {
+          "line": 148,
+          "text": "primary_only_validation_profile: ValidationProfile = \"insufficient_profile\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_10",
+      "relpath": "docs/reports/integrated_engine_operating_object_slot_movement_rules_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_operating_object_slot_movement_rules_v0.md",
+      "sha256": "b9e703bcf7dac41e96eea88904175ebfc616b8cddb868e8cb0ec29ab6b74a22e",
+      "surface": "source_docs",
+      "subtype": "validation_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 22,
+        "external_terms": 35,
+        "negative_terms": 0,
+        "validation_terms": 37,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine Operating Object Slot Movement Rules v0"
+        },
+        {
+          "line": 9,
+          "text": "It defines minimum slot-movement rules for operating objects such as:"
+        },
+        {
+          "line": 14,
+          "text": "- validation request"
+        },
+        {
+          "line": 30,
+          "text": "- v0 movement grammar for low-intensity integrated-engine operation"
+        },
+        {
+          "line": 31,
+          "text": "- a guard against skipping VectorFL review, validation, and return judgment"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_11",
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/security/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/gateway/security/index.md",
+      "sha256": "2b9d45799c0bc137827f93784b5adda83bcba6e0a21d07c8ec3350ea125b8d45",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 4,
+        "external_terms": 5,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 11,
+          "text": "source_path: gateway/security/index.md"
+        },
+        {
+          "line": 29,
+          "text": "它会标记常见的安全隐患（Gateway 网关认证暴露、浏览器控制暴露、提权白名单、文件系统权限）。"
+        },
+        {
+          "line": 51,
+          "text": "- **网络暴露**（Gateway 网关绑定/认证、Tailscale Serve/Funnel、弱/短认证令牌）。"
+        },
+        {
+          "line": 57,
+          "text": "如果运行 `--deep`，OpenClaw 还会尝试尽力进行实时 Gateway 网关探测。"
+        },
+        {
+          "line": 84,
+          "text": "控制 UI 需要**安全上下文**（HTTPS 或 localhost）来生成设备身份。如果你启用 `gateway.controlUi.allowInsecureAuth`，UI 会回退到**仅令牌认证**，并在省略设备身份时跳过设备配对。这是安全性降级——优先使用 HTTPS（Tailscale Serve）或在 `127.0.0.1` 上打开 UI。"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_12",
+      "relpath": "references/git_search/openclaw-main/README.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/README.md",
+      "sha256": "4e2d827e6833b761dc2a9faa50d2aeae9b940364b851df8f521d6204218fb95e",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 2,
+        "cleanup_terms": 0,
+        "external_terms": 7,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 22,
+          "text": "It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage, BlueBubbles, IRC, Microsoft Teams, Matrix, Feishu, LINE, Mattermost, Nextcloud Talk, Nostr, Synology Chat, Tlon, Twitch, Zalo"
+        },
+        {
+          "line": 29,
+          "text": "OpenClaw Onboard guides you step by step through setting up the gateway, workspace, channels, and skills. It is the recommended CLI setup path and works on **macOS, Linux, and Windows (via WSL2; strongly recommended)**."
+        },
+        {
+          "line": 90,
+          "text": "- **[OpenAI](https://openai.com/)** (ChatGPT/Codex)"
+        },
+        {
+          "line": 110,
+          "text": "OpenClaw Onboard installs the Gateway daemon (launchd/systemd user service) so it stays running."
+        },
+        {
+          "line": 121,
+          "text": "openclaw gateway --port 18789 --verbose"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_13",
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/testing.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/help/testing.md",
+      "sha256": "fa11e7a38086d0199e75d83a79da11843880af50199bc8b2b82e23d9e3ae4f79",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 0,
+        "external_terms": 60,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_EXTERNAL_CALL_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "- 调试 Gateway 网关 + 智能体行为"
+        },
+        {
+          "line": 41,
+          "text": "- 实时套件（模型 + Gateway 网关工具/图像探测）：`pnpm test:live`"
+        },
+        {
+          "line": 56,
+          "text": "- 进程内集成测试（Gateway 网关认证、路由、工具、解析、配置）"
+        },
+        {
+          "line": 63,
+          "text": "### 端到端测试（Gateway 网关冒烟测试）"
+        },
+        {
+          "line": 69,
+          "text": "- 多实例 Gateway 网关端到端行为"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_14",
+      "relpath": "references/git_search/openclaw-main/scripts/run-openclaw-podman.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/run-openclaw-podman.sh",
+      "sha256": "9b573d1d5f5751c3fe5bb1eb243725ffb174987da9e458632a295c541458b2a0",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 2,
+        "external_terms": 0,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 6,
+          "text": "#   ./scripts/run-openclaw-podman.sh launch        # Start gateway"
+        },
+        {
+          "line": 13,
+          "text": "# Legacy: \"setup-host\" delegates to the Podman setup script"
+        },
+        {
+          "line": 170,
+          "text": "OPENCLAW_GATEWAY_TOKEN|OPENCLAW_PODMAN_CONTAINER|OPENCLAW_PODMAN_IMAGE|OPENCLAW_IMAGE|OPENCLAW_PODMAN_PULL|OPENCLAW_PODMAN_GATEWAY_HOST_PORT|OPENCLAW_GATEWAY_PORT|OPENCLAW_PODMAN_BRIDGE_HOST_PORT|OPENCLAW_BRIDGE_PORT|OPENCLAW_GATEWAY_BIND|O"
+        },
+        {
+          "line": 243,
+          "text": "HOST_GATEWAY_PORT=\"${OPENCLAW_PODMAN_GATEWAY_HOST_PORT:-${OPENCLAW_GATEWAY_PORT:-18789}}\""
+        },
+        {
+          "line": 252,
+          "text": "validate_port \"gateway host port\" \"$HOST_GATEWAY_PORT\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_15",
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/platforms/android.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/platforms/android.md",
+      "sha256": "b28cef3e25bd81778e95fc4f9a6a43e13c016d280576f745243d416793bc4bcc",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "GENERAL_GUARD_POINTER",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 0,
+        "external_terms": 0,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "GENERAL_GUARD_POINTER_REVIEW",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "- 调试 Android Gateway 网关发现或认证"
+        },
+        {
+          "line": 21,
+          "text": "- 角色：配套节点应用（Android 不托管 Gateway 网关）。"
+        },
+        {
+          "line": 22,
+          "text": "- 需要 Gateway 网关：是（在 macOS、Linux 或通过 WSL2 的 Windows 上运行）。"
+        },
+        {
+          "line": 23,
+          "text": "- 安装：[入门指南](/start/getting-started) + [配对](/gateway/pairing)。"
+        },
+        {
+          "line": 24,
+          "text": "- Gateway 网关：[操作手册](/gateway) + [配置](/gateway/configuration)。"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_16",
+      "relpath": "references/git_search/openclaw-main/docs/gateway/security/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/gateway/security/index.md",
+      "sha256": "bf1beaae7562cb5ce3c4a7d1babbf467b89d78923a188f450cdb92d8089a2a3a",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 2,
+        "cleanup_terms": 3,
+        "external_terms": 14,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 26
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "summary: \"Security considerations and threat model for running an AI gateway with shell access\""
+        },
+        {
+          "line": 11,
+          "text": "**Personal assistant trust model:** this guidance assumes one trusted operator boundary per gateway (single-user/personal assistant model)."
+        },
+        {
+          "line": 12,
+          "text": "OpenClaw is **not** a hostile multi-tenant security boundary for multiple adversarial users sharing one agent/gateway."
+        },
+        {
+          "line": 13,
+          "text": "If you need mixed-trust or adversarial-user operation, split trust boundaries (separate gateway + credentials, ideally separate OS users/hosts)."
+        },
+        {
+          "line": 22,
+          "text": "- Supported security posture: one user/trust boundary per gateway (prefer one OS user/host/VPS per boundary)."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_17",
+      "relpath": "references/git_search/openclaw-main/docs/help/faq.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/help/faq.md",
+      "sha256": "e06faeeb2d35bdfa65a0abc0eeaba09f93204138915b55f1daa49f543684b103",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 3,
+        "cleanup_terms": 3,
+        "external_terms": 30,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 15
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 11,
+          "text": "Quick answers plus deeper troubleshooting for real-world setups (local dev, VPS, multi-agent, OAuth/API keys, model failover). For runtime diagnostics, see [Troubleshooting](/gateway/troubleshooting). For the full config reference, see [Con"
+        },
+        {
+          "line": 21,
+          "text": "Fast local summary: OS + update, gateway/service reachability, agents/sessions, provider config + runtime issues (when gateway is reachable)."
+        },
+        {
+          "line": 34,
+          "text": "openclaw gateway status"
+        },
+        {
+          "line": 45,
+          "text": "Runs gateway health checks + provider probes (requires a reachable gateway). See [Health](/gateway/health)."
+        },
+        {
+          "line": 59,
+          "text": "File logs are separate from service logs; see [Logging](/logging) and [Troubleshooting](/gateway/troubleshooting)."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_18",
+      "relpath": "references/git_search/openclaw-main/docs/docs.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/docs.json",
+      "sha256": "3a7fe502541232bed4c37e22b93578b4be6dcc9224975fbe700cfe11f01718ee",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 1,
+        "external_terms": 10,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 2
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"description\": \"Self-hosted gateway that connects WhatsApp, Telegram, Discord, iMessage, and more to AI coding agents. Run a single Gateway process on your own machine and message your AI assistant from anywhere.\","
+        },
+        {
+          "line": 104,
+          "text": "\"source\": \"/gemini-search\","
+        },
+        {
+          "line": 105,
+          "text": "\"destination\": \"/tools/gemini-search\""
+        },
+        {
+          "line": 269,
+          "text": "\"destination\": \"/gateway/sandboxing\""
+        },
+        {
+          "line": 309,
+          "text": "\"destination\": \"/gateway/background-process\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_19",
+      "relpath": "references/git_search/paperclip-master/scripts/smoke/openclaw-gateway-e2e.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/paperclip-master/scripts/smoke/openclaw-gateway-e2e.sh",
+      "sha256": "1dc328320b688d62f53f1bfdd5f4a0ce1858b36eb72483b69141684f9e002c5e",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 12,
+        "external_terms": 73,
+        "negative_terms": 0,
+        "validation_terms": 3,
+        "approval_terms": 5
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "echo \"[openclaw-gateway-e2e] $*\""
+        },
+        {
+          "line": 9,
+          "text": "echo \"[openclaw-gateway-e2e] WARN: $*\" >&2"
+        },
+        {
+          "line": 13,
+          "text": "echo \"[openclaw-gateway-e2e] ERROR: $*\" >&2"
+        },
+        {
+          "line": 32,
+          "text": "OPENCLAW_AGENT_NAME=\"${OPENCLAW_AGENT_NAME:-OpenClaw Gateway Smoke Agent}\""
+        },
+        {
+          "line": 33,
+          "text": "OPENCLAW_GATEWAY_URL=\"${OPENCLAW_GATEWAY_URL:-ws://127.0.0.1:18789}\""
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_20",
+      "relpath": "references/git_search/openclaw-main/docs/nodes/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/nodes/index.md",
+      "sha256": "ed301494d8af0dcabe2240bc9476c609cfa27eae55f69e573ee4195e65e1a24c",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 1,
+        "external_terms": 0,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 24
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "- Pairing iOS/Android nodes to a gateway"
+        },
+        {
+          "line": 12,
+          "text": "A **node** is a companion device (macOS/iOS/Android/headless) that connects to the Gateway **WebSocket** (same port as operators) with `role: \"node\"` and exposes a command surface (e.g. `canvas.*`, `camera.*`, `device.*`, `notifications.*`,"
+        },
+        {
+          "line": 14,
+          "text": "Legacy transport: [Bridge protocol](/gateway/bridge-protocol) (TCP JSONL; deprecated/removed for current nodes)."
+        },
+        {
+          "line": 16,
+          "text": "macOS can also run in **node mode**: the menubar app connects to the Gateway’s WS server and exposes its local canvas/camera commands as a node (so `openclaw nodes …` works against this Mac)."
+        },
+        {
+          "line": 20,
+          "text": "- Nodes are **peripherals**, not gateways. They don’t run the gateway service."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_21",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+      "sha256": "57e724468ef51e49fb4180a0c3bf9c0d72a8643d587444c4176b57c3d91cbc97",
+      "surface": "workspace_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 129,
+        "cleanup_terms": 64,
+        "external_terms": 91,
+        "negative_terms": 0,
+        "validation_terms": 30,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"compact_id\": \"P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_V0\","
+        },
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_RECEIPT_COMPACT_NOT_AUTHORITY\","
+        },
+        {
+          "line": 5,
+          "text": "\"source_dedupe_map\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json\","
+        },
+        {
+          "line": 8,
+          "text": "\"RECEIPT_AUTHORITY_SENSITIVE_HOLD\": 426,"
+        },
+        {
+          "line": 10,
+          "text": "\"VALIDATION_ONLY_ARTIFACT_COMPACT\": 60,"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_22",
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+      "sha256": "e839c37b3648de92e617f0efc169f2558509ac298f6cc9d4e121dc513e729a00",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 63,
+        "cleanup_terms": 4,
+        "external_terms": 53,
+        "negative_terms": 0,
+        "validation_terms": 1,
+        "approval_terms": 61
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 10,
+          "text": "- app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_execution_to_space_recovery_gate_buildup_v0/execution_to_space_recovery_gate_buildup.md"
+        },
+        {
+          "line": 24,
+          "text": "- VectorFL baseline, registry, schema, workflow, ontology, current-position, output_manifest, local core / derived / surface authority files"
+        },
+        {
+          "line": 33,
+          "text": "This does not mean Hermes outputs become VectorFL authority. Hermes execution permission and VectorFL recovery permission are separate. Hermes may be allowed to perform a native task, while VectorFL recovers only a receipt, residue, candida"
+        },
+        {
+          "line": 37,
+          "text": "- external action approval: can Hermes create a side effect such as sending, writing, mutating, scheduling, or persisting?"
+        },
+        {
+          "line": 38,
+          "text": "- VectorFL recovery permission: can the resulting output enter VectorFL as receipt/residue/candidate/component/proposal, and does any part remain HOLD/STOP?"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_23",
+      "relpath": "references/git_search/openclaw-main/scripts/docker/setup.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/docker/setup.sh",
+      "sha256": "df42d4b8c3d7498dc0eb58cb72377ef0b974840f5d5fd56f465d82fc2706954d",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 1,
+        "external_terms": 0,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 42,
+          "text": "read_config_gateway_token() {"
+        },
+        {
+          "line": 59,
+          "text": "gateway = cfg.get(\"gateway\")"
+        },
+        {
+          "line": 60,
+          "text": "if not isinstance(gateway, dict):"
+        },
+        {
+          "line": 62,
+          "text": "auth = gateway.get(\"auth\")"
+        },
+        {
+          "line": 79,
+          "text": "const token = [REDACTED]"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_24",
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "sha256": "238aaeedee09b066b602f48289585c499380d37d92626eab49cac375f9b29086",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 56,
+        "cleanup_terms": 2,
+        "external_terms": 44,
+        "negative_terms": 0,
+        "validation_terms": 1,
+        "approval_terms": 49
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 6,
+          "text": "VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1_DRAFTED_WITH_POST_PACKET_DISPATCH_APPROVAL_WATCH"
+        },
+        {
+          "line": 13,
+          "text": "scope: call routing / mode selection / gate sequence / external-tool lane selection"
+        },
+        {
+          "line": 14,
+          "text": "authority: sandbox-local candidate"
+        },
+        {
+          "line": 15,
+          "text": "change_from_v0: adds explicit Post-Packet Dispatch Approval gate"
+        },
+        {
+          "line": 35,
+          "text": "This document defines how a user request should move through the VectorFL flow-network."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_25",
+      "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+      "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 6,
+        "cleanup_terms": 24,
+        "external_terms": 65,
+        "negative_terms": 0,
+        "validation_terms": 37,
+        "approval_terms": 5
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 21,
+          "text": "./app/work/archive_review/transition_support/youtube_transcript_probe_0322/generated/youtube_03_22_readable_passage_report.md"
+        },
+        {
+          "line": 22,
+          "text": "./app/work/archive_review/transition_support/youtube_transcript_probe_0322/generated/youtube_03_22_readable_anchor_report.md"
+        },
+        {
+          "line": 23,
+          "text": "./app/work/archive_review/transition_support/youtube_transcript_probe_0322/generated/youtube_03_22_readable_timeline_report.md"
+        },
+        {
+          "line": 24,
+          "text": "./app/work/archive_review/transition_support/youtube_transcript_probe_0322_b/generated/readable_passage_report_round2.md"
+        },
+        {
+          "line": 25,
+          "text": "./app/work/archive_review/transition_support/youtube_transcript_probe_0322_b/generated/readable_anchor_report_round2.md"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_26",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+      "sha256": "4d83b68f569c173360ba61662015aa9a1c0f60f8b1c5712b19f3d3955f89a37e",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 108,
+        "cleanup_terms": 88,
+        "external_terms": 47,
+        "negative_terms": 0,
+        "validation_terms": 1,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_DEDUPE_EVIDENCE_NOT_ARCHIVE_NOT_DELETE\","
+        },
+        {
+          "line": 9,
+          "text": "\"AUTHORITY_SENSITIVE_GENERATED_EVIDENCE_HOLD\": 1106,"
+        },
+        {
+          "line": 12,
+          "text": "\"CLEANUP_LANGUAGE_GENERATED_HOLD\": 154,"
+        },
+        {
+          "line": 13,
+          "text": "\"PRESERVE_VALIDATION_RECEIPT_EVIDENCE\": 27,"
+        },
+        {
+          "line": 29,
+          "text": "\"AUTHORITY_SENSITIVE_GENERATED_EVIDENCE_HOLD\": 4"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_27",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+      "sha256": "e9f42c8e6fd321d16973f84dd1f5db49e7f9d1c6afcb00faaedae4ad05e80ba4",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 81,
+        "cleanup_terms": 63,
+        "external_terms": 19,
+        "negative_terms": 0,
+        "validation_terms": 16,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_NOT_AUTHORITY_NO_ARCHIVE_HOLD\","
+        },
+        {
+          "line": 20,
+          "text": "\"RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD\": 711,"
+        },
+        {
+          "line": 21,
+          "text": "\"CLEANUP_LANGUAGE_RUN_BUNDLE_HOLD\": 202,"
+        },
+        {
+          "line": 23,
+          "text": "\"PRESERVE_VALIDATION_RECEIPT_EVIDENCE\": 31"
+        },
+        {
+          "line": 30,
+          "text": "\"disposition\": \"RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD\","
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_29",
+      "relpath": "references/git_search/openclaw-main/scripts/e2e/parallels-windows-smoke.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/e2e/parallels-windows-smoke.sh",
+      "sha256": "69c55bfea7c9de50c6c94f32ba5f6a86423fece421053994b656667e0edf014c",
+      "surface": "work_control",
+      "subtype": "precheck_gate",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 0,
+        "cleanup_terms": 4,
+        "external_terms": 40,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_CLEANUP_APPLY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 40,
+          "text": "TIMEOUT_GATEWAY_S=120"
+        },
+        {
+          "line": 45,
+          "text": "FRESH_GATEWAY_STATUS=\"skip\""
+        },
+        {
+          "line": 48,
+          "text": "UPGRADE_PRECHECK_STATUS=\"skip\""
+        },
+        {
+          "line": 51,
+          "text": "UPGRADE_GATEWAY_STATUS=\"skip\""
+        },
+        {
+          "line": 110,
+          "text": "--skip-latest-ref-check    Skip latest-release ref-mode precheck."
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_30",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "sha256": "9a98807b2ad6b30fd607aca96226d70ef0ce41169b58399c7fc62190f9edd970",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 98,
+        "cleanup_terms": 37,
+        "external_terms": 99,
+        "negative_terms": 0,
+        "validation_terms": 0,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"map_id\": \"P_PACKET_CODEX_REVIEW_PACKET_NO_CALL_DEDUPE_MAP_V0\","
+        },
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_NO_CALL_NO_APPLY_NOT_AUTHORITY\","
+        },
+        {
+          "line": 8,
+          "text": "\"GENERAL_CODEX_REVIEW_POINTER\": 4605,"
+        },
+        {
+          "line": 9,
+          "text": "\"AUTHORITY_SENSITIVE_FREEZE\": 2538,"
+        },
+        {
+          "line": 11,
+          "text": "\"ACTIVE_FUTURE_CODEX_REVIEW_CANDIDATE_NO_CALL\": 16"
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_31",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+      "sha256": "f168378f622f220b7813f7a29d7f2c8a0484a82f54eb25cc96df93da51f173ad",
+      "surface": "workspace_control",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 22,
+        "cleanup_terms": 22,
+        "external_terms": 26,
+        "negative_terms": 1,
+        "validation_terms": 1,
+        "approval_terms": 6
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"status\": \"POINTER_ONLY_NOT_AUTHORITY\","
+        },
+        {
+          "line": 15,
+          "text": "\"definition\": \"Codex/Gemini/Hermes handoff, read-only review packet, task packet 계열\","
+        },
+        {
+          "line": 38,
+          "text": "\"relpath\": \"app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md\","
+        },
+        {
+          "line": 44,
+          "text": "\"relpath\": \"app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json\","
+        },
+        {
+          "line": 56,
+          "text": "\"definition\": \"receipt/trace/validation/rollback/sha evidence 계열\","
+        }
+      ]
+    },
+    {
+      "review_id": "G_GATE_GUARD_REVIEW_32",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+      "sha256": "fed817173b6bc7d0fc841359f58b65f2711c1b2d88408c3238a6e4f9030543c1",
+      "surface": "workspace_control",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "signals": {
+        "authority_terms": 30,
+        "cleanup_terms": 8,
+        "external_terms": 140,
+        "negative_terms": 15,
+        "validation_terms": 2,
+        "approval_terms": 0
+      },
+      "recommended_action": "PRESERVE_AUTHORITY_BOUNDARY_GUARD",
+      "safe_line": "GUARD_EVIDENCE_ONLY_NOT_APPROVAL",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"pattern_id\": \"P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0\","
+        },
+        {
+          "line": 5,
+          "text": "\"source_split\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_batch01_v0.json\","
+        },
+        {
+          "line": 34,
+          "text": "\"field\": \"negative_tests\","
+        },
+        {
+          "line": 49,
+          "text": "\"field\": \"rollback_trace\","
+        },
+        {
+          "line": 62,
+          "text": "\"negative_tests\","
+        }
+      ]
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "repair_note": {
+    "created_at": "2026-05-25T20:15:50.847283+09:00",
+    "reason": "MANIFEST_v0.json is an intentionally modified workspace control surface in this run; it must not be used as immutable review source for sha stability checks. Removed from guard review sample, kept manifest modification validation separately.",
+    "removed_count": 1,
+    "removed_relpaths": [
+      "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json"
+    ]
+  }
+}

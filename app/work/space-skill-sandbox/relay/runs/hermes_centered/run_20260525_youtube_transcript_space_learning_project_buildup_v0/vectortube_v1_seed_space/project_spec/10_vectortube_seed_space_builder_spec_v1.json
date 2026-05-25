@@ -1,0 +1,155 @@
+{
+  "project_id": "VECTORTUBE_SEED_SPACE_BUILDER_V1",
+  "korean_name": "벡터튜브",
+  "status": "HOLD_SIDE_PROJECT_SPEC_NOT_CONTRACT",
+  "one_line": "사용자가 지정한 YouTube seed 영상의 자막을 공간의 사고방식으로 읽고, 관련/보강/반대 스크립트를 선별해 하나의 작은 mini-space로 만든 뒤 VectorFL 공간에 투입 후보로 넘기는 사이드 프로젝트.",
+  "reframe_from_v0": {
+    "old": "YouTube/Web transcript source collector and feeder",
+    "new": "User-curated seed-video mini-space builder",
+    "critical_change": "자동 검색이 아니라 사용자가 기록한 seed 영상 목록에서 시작한다. 검색/확장은 seed 해석 후 필요한 경우에만 제안/승인 기반으로 수행한다."
+  },
+  "core_principles": [
+    "USER_SEED_FIRST: 사용자가 필요하다고 기록한 하나의 영상/목록이 출발점이다.",
+    "NO_AUTO_SEARCH_BY_DEFAULT: 관련 영상 자동 검색은 기본 OFF이며, seed 분석 후 보강 필요성이 명시될 때만 후보 제안한다.",
+    "TRANSCRIPT_ONLY_MVP: 영상/음성 다운로드 없이 자막/스크립트 중심으로 처리한다.",
+    "MINI_SPACE_BEFORE_MAIN_SPACE: 원본을 바로 VectorFL에 넣지 않고 작은 공간에서 정리/충돌/보강/반대/누락 검사를 거친다.",
+    "SPACE_THINKING_FIRST: 요약 전에 공간의 사고방식으로 claim, layer, tension, missing perspective, LACL candidate를 분해한다.",
+    "CONFUSION_CONTROL: 공간 크기 증가보다 혼동 감소가 우선이다.",
+    "MODEL_REASONING_AS_ENRICHER_NOT_AUTHORITY: 모델 추론은 관련/보강/반대 관점 후보를 생성하지만 authority가 아니다.",
+    "PUSH_AS_PACKET_NOT_PROMOTION: VectorFL 본공간에는 mini-space packet/HOLD candidate로 밀어 넣는다."
+  ],
+  "operating_flow": [
+    {
+      "stage": "V0_USER_SEED_INTAKE",
+      "input": "user-provided YouTube URL/video_id/list + why user saved it",
+      "output": "seed_intake_card.json",
+      "gate": "No search. Preserve user reason and original URL."
+    },
+    {
+      "stage": "V1_TRANSCRIPT_CAPTURE",
+      "input": "seed video_id",
+      "output": "seed_raw_transcript.json + seed_timestamped_transcript.md + seed_source_card.json",
+      "gate": "Transcript unavailable => STOP_OR_MANUAL_TRANSCRIPT_REQUIRED."
+    },
+    {
+      "stage": "V2_SPACE_READING_OF_SEED",
+      "input": "seed transcript",
+      "output": "seed_space_reading_card.json",
+      "gate": "Must separate speaker claims from Hermes interpretation."
+    },
+    {
+      "stage": "V3_MODEL_ENRICHMENT_PLAN",
+      "input": "seed_space_reading_card",
+      "output": "enrichment_need_card.json",
+      "gate": "Model proposes what kind of related material is needed: reinforcement, opposition, historical context, technical grounding, LACL/component analogy, missing stakeholder."
+    },
+    {
+      "stage": "V4_RELATED_SCRIPT_CANDIDATE_SELECTION",
+      "input": "user-approved candidate list or user-provided extra URLs",
+      "output": "related_candidate_index.json",
+      "gate": "No automatic crawl. Candidate relation must state why it strengthens/conflicts/contrasts."
+    },
+    {
+      "stage": "V5_RELATED_TRANSCRIPT_READING",
+      "input": "approved related URLs",
+      "output": "related_source_cards + related_space_readings",
+      "gate": "Each related script must produce changed_judgment_or_rejected_reason."
+    },
+    {
+      "stage": "V6_MINI_SPACE_COMPOSITION",
+      "input": "seed + related readings",
+      "output": "vectortube_mini_space.json/md",
+      "gate": "Must include agreements, tensions, contradictions, absences, LACL candidates, and attachment candidates."
+    },
+    {
+      "stage": "V7_CONFUSION_AND_BIAS_GATE",
+      "input": "mini_space",
+      "output": "mini_space_quality_gate.json",
+      "gate": "If confusion grows faster than structure, HOLD_REVIEW instead of push."
+    },
+    {
+      "stage": "V8_VECTORFL_PUSH_PACKET",
+      "input": "quality-passed mini_space",
+      "output": "vectorfl_ingestion_candidate_packet.json",
+      "gate": "HOLD packet only; no authority/current-position/registry mutation."
+    }
+  ],
+  "mini_space_shape": {
+    "mini_space_id": "vectortube_<seed_video_id>_<date>",
+    "seed_source": [
+      "url",
+      "video_id",
+      "title",
+      "channel",
+      "user_saved_reason",
+      "transcript_sha256",
+      "timestamped_path"
+    ],
+    "space_reading": [
+      "primary_claims",
+      "speaker_positions",
+      "implicit_assumptions",
+      "layer_shifts",
+      "tensions",
+      "lacl_candidates",
+      "operator_load",
+      "context_cost",
+      "quotes_with_timestamps"
+    ],
+    "enrichment_axes": [
+      "reinforce",
+      "oppose",
+      "contextualize",
+      "technical_ground",
+      "historical_parallel",
+      "missing_stakeholder",
+      "failure_case",
+      "alternative_frame"
+    ],
+    "related_sources": [
+      "source_card",
+      "relation_to_seed",
+      "changed_judgment",
+      "agreement_or_conflict",
+      "rejected_reason_if_any"
+    ],
+    "composition": [
+      "seed_digest",
+      "multi_source_map",
+      "tension_matrix",
+      "lacl_parts",
+      "layer_map",
+      "confusion_risks",
+      "vectorfl_attachment_candidates"
+    ],
+    "push_packet": [
+      "mini_space_summary",
+      "what_it_changes",
+      "where_it_might_attach",
+      "what_not_to_ingest",
+      "codex_review_questions",
+      "promotion_status"
+    ]
+  },
+  "vectorfl_module_reuse_tests": [
+    "SPACE_USE_PRECHECK per seed batch",
+    "source_card and sha grounding",
+    "changed_judgment_from_source required",
+    "HOLD receipt and reentry",
+    "Codex-readable matching request",
+    "confusion/bias gate before insertion"
+  ],
+  "default_boundaries": {
+    "auto_search": "NO",
+    "bulk_crawl": "NO",
+    "video_download": "NO",
+    "transcript_fetch": "YES_FOR_USER_SEED_OR_APPROVED_RELATED",
+    "model_enrichment": "YES_AS_HYPOTHESIS",
+    "codex_cli": "NO_UNLESS_MINI_SPACE_MATCHING_REVIEW_APPROVED",
+    "gemini": "NO_UNLESS_CODEX_SIDE_LAYER_AMBIGUITY_APPROVED",
+    "obsidian_write": "NO_BY_DEFAULT",
+    "vectorfl_main_space_push": "HOLD_PACKET_ONLY_UNTIL_APPROVED"
+  },
+  "first_mvp_test": "User supplies one seed YouTube URL. VectorTube fetches transcript, writes seed source card, seed space reading card, enrichment need card, and mini-space skeleton without searching related videos.",
+  "promotion_status": "HOLD"
+}

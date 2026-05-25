@@ -1,0 +1,37 @@
+{
+  "packet_id": "VECTORTUBE_5LqCwO7x_Gc_3012s_NEXT_SOURCE_PACKET_HOLD_V0",
+  "created_at": "2026-05-25T08:13:07.655156+09:00",
+  "status": "HOLD_CANDIDATE_ONLY_NO_SEARCH_EXECUTED",
+  "primary_question": {
+    "id": "Q1",
+    "question": "AI 자동화가 “실무 혁신”이 되는 지점과 “플랫폼/운영 리스크”가 되는 지점은 어디서 갈라지는가?",
+    "reason": "현재 excerpt에서 가장 강한 층위가 실행 성공담과 YouTube/API/크롤링/우회 리스크의 충돌이기 때문."
+  },
+  "allowed_next_search_policy": {
+    "mode": "seed_bounded_calibrated",
+    "max_queries": 3,
+    "candidate_only_first": true,
+    "transcript_fetch_before_review": 0
+  },
+  "candidate_query_intents": [
+    {
+      "slot": "policy_boundary",
+      "query_intent": "YouTube automated access API quota scraping policy platform rules"
+    },
+    {
+      "slot": "quality_failure",
+      "query_intent": "AI video generation character consistency failure workflow"
+    },
+    {
+      "slot": "human_workflow_guard",
+      "query_intent": "human in the loop automated publishing review workflow"
+    }
+  ],
+  "stop_conditions": [
+    "policy source unavailable",
+    "search results become how-to bypass guides",
+    "candidate list drifts into growth hacking only",
+    "operator load too high"
+  ],
+  "promotion": "HOLD"
+}

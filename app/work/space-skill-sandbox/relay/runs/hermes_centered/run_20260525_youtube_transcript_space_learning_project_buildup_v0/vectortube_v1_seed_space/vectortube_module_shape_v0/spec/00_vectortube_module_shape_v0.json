@@ -1,0 +1,119 @@
+{
+  "module_id": "VECTORTUBE_MODULE_SHAPE_20260525_V0",
+  "created_at": "2026-05-25T07:48:46.599965+09:00",
+  "status": "HOLD_MODULE_SHAPE_NOT_AUTHORITY",
+  "purpose": "VectorTube side-project module shape: user-seeded YouTube transcript sources are turned into a layer-aware mini-space for VectorFL without direct main-space mutation.",
+  "core_identity": {
+    "not_a_summarizer": true,
+    "not_bulk_crawler": true,
+    "seed_bounded_calibrated_search": true,
+    "layer_reading_before_summary": true,
+    "mini_space_before_main_space": true,
+    "receipts_are_evidence_not_authority": true
+  },
+  "canonical_flow": [
+    {
+      "stage": "S0_SEED_INTAKE",
+      "input": "user-designated YouTube URL/ID",
+      "output": "seed_source_card + raw/timestamped transcript",
+      "gate": "transcript must be non-empty; source is evidence not authority"
+    },
+    {
+      "stage": "S1_SEED_SPACE_READING",
+      "input": "seed transcript",
+      "output": "seed claims/layers/LACL/tensions/confusion risks",
+      "gate": "must include timestamped claims and changed judgment; summary-only fails"
+    },
+    {
+      "stage": "S2_BOUNDED_SEARCH_PLAN",
+      "input": "seed layer reading",
+      "output": "max 3 query intents + budget",
+      "gate": "query must derive from seed layers, not generic curiosity"
+    },
+    {
+      "stage": "S3_CANDIDATE_SEARCH_ONLY",
+      "input": "bounded queries",
+      "output": "candidate URLs/metadata only",
+      "gate": "no transcript fetch yet; candidate count capped"
+    },
+    {
+      "stage": "S4_APPROVED_EXPANSION_FETCH",
+      "input": "approved candidates or safe default approval lane",
+      "output": "raw/timestamped expansion transcripts + source cards",
+      "gate": "fetch count capped; no bulk crawl"
+    },
+    {
+      "stage": "S5_LAYER_CARD_GENERATION",
+      "input": "each source transcript",
+      "output": "9-lens layer-grounded claim table",
+      "gate": "L0-L8 coverage required; timestamp grounding required"
+    },
+    {
+      "stage": "S6_COUNTER_FAILURE_GATE",
+      "input": "current mini-space bias/tension state",
+      "output": "negative-validation source or explicit missing-counter marker",
+      "gate": "if pro-source/vendor bias high, add one counter/failure source before template/push"
+    },
+    {
+      "stage": "S7_LAYERED_MINI_SPACE_COMPOSITION",
+      "input": "seed + expansions + counter + layer cards",
+      "output": "cross-source agreement/tension/drift table",
+      "gate": "PASS_WITH_CAUTION or stronger; blockers recorded"
+    },
+    {
+      "stage": "S8_HOLD_PUSH_PACKET",
+      "input": "layered mini-space",
+      "output": "VectorFL/Codex read-only matching request + HOLD packet",
+      "gate": "no main-space mutation; no authority/current-position/registry mutation"
+    }
+  ],
+  "default_budgets": {
+    "queries_per_seed": 3,
+    "candidate_videos_per_query": 5,
+    "transcripts_before_review": 0,
+    "approved_expansion_transcripts_default": 3,
+    "counter_failure_sources_default": 1,
+    "hard_cap_transcripts_per_seed_batch": 7
+  },
+  "layer_lenses": [
+    "L0_source_surface",
+    "L1_conceptual",
+    "L2_information_structure",
+    "L3_context_background",
+    "L4_emotional_rhetorical",
+    "L5_power_authority",
+    "L6_practical_operational",
+    "L7_counter_uncertainty",
+    "L8_vectorfl_mapping"
+  ],
+  "module_receipts": [
+    "source_card",
+    "transcript_sha256",
+    "layer_card",
+    "search_budget_receipt",
+    "counter_gate_receipt",
+    "cross_source_tension_table",
+    "hold_push_packet"
+  ],
+  "references": {
+    "seed_source_card": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/cards/02_seed_source_card_qqnRzpLNfxY_v0.json",
+    "seed_deep_reading": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/mini_space/06_seed_space_reading_deep_qqnRzpLNfxY_v0.json",
+    "bounded_candidates": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/bounded_search_candidates_v0/cards/09_bounded_search_candidates_qqnRzpLNfxY_v0.json",
+    "approved_expansion_mini_space": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/approved_expansions_v0/mini_space/04_mini_space_integration_with_3_expansions_light_v0.json",
+    "layer_policy": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/layered_mini_space_v0/policy/00_layer_first_mini_space_policy_v0.json",
+    "layered_mini_space": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/layered_mini_space_v0/mini_space/02_layered_mini_space_qqnRzpLNfxY_v0.json",
+    "deep_layer_tables": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/layered_mini_space_v0/deep_expansion_layer_tables_v0",
+    "counter_gate": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/counter_failure_source_v0/mini_space/05_counter_balanced_drift_gate_v0.json",
+    "layer_card_template": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/counter_failure_source_v0/templates/06_vectortube_layer_card_template_v0.json"
+  },
+  "hold_boundaries": {
+    "main_space_mutation": false,
+    "authority_mutation": false,
+    "current_position_mutation": false,
+    "registry_mutation": false,
+    "obsidian_write": false,
+    "codex_gemini_live_call": false,
+    "video_audio_download": false,
+    "bulk_crawl": false
+  }
+}

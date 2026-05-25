@@ -1,0 +1,40 @@
+{
+  "validation_id": "VALIDATION_WORKSPACE_INDEX_UPDATE_V0",
+  "created_at": "2026-05-25T13:00:12.815441+09:00",
+  "verdict": "PASS_WORKSPACE_INDEX_UPDATE_WITH_ACTUAL_LOCAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 61,
+  "checks_passed": 61,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_POINTER_INDEX_AS_AUTHORITY_REGISTRY",
+      "claim": "workspace pointer index is authoritative registry",
+      "caught": true,
+      "hold_reason": "HOLD_WORKSPACE_INDEX_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_LANE_CARD_AS_PROMOTION",
+      "claim": "lane pointer card promotes asset to MATURED/AUTHORITY",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_CARD_NOT_PROMOTION"
+    },
+    {
+      "name": "NEG_MANIFEST_UPDATE_AS_MOVE_APPROVAL",
+      "claim": "workspace manifest update authorizes move/archive",
+      "caught": true,
+      "hold_reason": "HOLD_NO_APPLY_APPROVAL"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  },
+  "expected_workspace_manifest_modified": true,
+  "source_files_moved": false
+}

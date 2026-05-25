@@ -1,0 +1,278 @@
+{
+  "schema_id": "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY_V0",
+  "created_at": "2026-05-25T21:22:00+09:00",
+  "status": "SCHEMA_CANDIDATE_HOLD_NOT_AUTHORITY",
+  "owner_namespace": "codex_space",
+  "purpose": "Define the minimum Codex-side receipt shape for receiving Hermes execution closeouts as space-operation material without converting execution results into authority.",
+  "source_handles": [
+    {
+      "id": "CROSS_INSPECTION_REENTRY_SCHEMA",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_dual_log_collision_free_execution_space_setup_v0/03_cross_inspection_reentry_schema_v0.json",
+      "used_for": "anti-collision, cross-inspection, Hermes-to-Codex fields",
+      "read_only_assertion": true
+    },
+    {
+      "id": "REAL_REENTRY_FIXTURE_INDEX",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_space_operator_skill_and_dual_log_fixture_test_v0/real_reentry_fixture_run/shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json",
+      "used_for": "expected route and codex-readable reentry pattern",
+      "read_only_assertion": true
+    },
+    {
+      "id": "MATURATION_REVIEW_OUTPUT_SCHEMA",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/schemas/01_codex_maturation_review_output_schema_v0.json",
+      "used_for": "placement, conflict, gap, risk-hold, next-actions shape",
+      "read_only_assertion": true
+    },
+    {
+      "id": "X_POINTER_GRAPH",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/03_X_POINTER_GRAPH_ASSET_POINTER_ONLY_MAP_V0.json",
+      "used_for": "family graph read order, blocked edges, missing handles",
+      "read_only_assertion": true
+    }
+  ],
+  "schema_contract": {
+    "receipt_id": "string",
+    "schema_version": "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY_V0",
+    "created_at": "ISO-8601 string",
+    "writer_role": "Codex",
+    "allowed_namespace": "codex_space",
+    "immutable_after_publish": true,
+    "supersedes_handle_or_null": "string|null",
+    "does_not_mutate_handles": [
+      "source",
+      "authority",
+      "registry",
+      "current_position",
+      "promotion",
+      "folder_tree"
+    ],
+    "input_reentry": {
+      "source_execution_id": "string",
+      "hermes_run_dir": "string",
+      "hermes_reentry_handle": "string",
+      "hermes_reentry_sha256": "string",
+      "original_input_handle": "string|null",
+      "original_input_sha256_or_null": "string|null",
+      "trigger_input_summary": "string",
+      "hermes_execution_status": "executed|withheld|partial|dry_run|unknown",
+      "hermes_promotion_status": "HOLD|HOLD_NOT_AUTHORITY|UNKNOWN"
+    },
+    "cross_read_records": [
+      {
+        "source_handle": "string",
+        "source_sha256": "string",
+        "used_for": "string",
+        "changed_judgment": "string",
+        "owner_namespace": "hermes_exec|codex_space|shared_handoff|workspace_pointer_view|workspace_principle_candidate|unknown",
+        "read_only_assertion": true
+      }
+    ],
+    "space_baseline_before": {
+      "baseline_id": "string",
+      "current_position_or_null": "string|null",
+      "active_pointer_graph": "string",
+      "active_pointer_graph_sha256": "string",
+      "active_controls": [
+        "string"
+      ],
+      "hard_hold": [
+        "NO_MOVE",
+        "NO_ARCHIVE",
+        "NO_DELETE",
+        "NO_SOURCE_EDIT",
+        "NO_PROMOTION",
+        "NO_AUTHORITY_MUTATION",
+        "NO_REGISTRY_MUTATION",
+        "NO_CURRENT_POSITION_MUTATION",
+        "NO_CLEANUP_APPLY",
+        "NO_LIVE_EXTERNAL_CALL"
+      ]
+    },
+    "space_contact": {
+      "families_touched": [
+        "T_L_SCHEMA|P_PACKET_HANDOFF_ASSET|U_RUN_BUNDLE_ASSET|G_GATE_GUARD_ASSET|S_STATE_PROMOTION_ASSET|B_BRIDGE_ADAPTER_ASSET|X_POINTER_GRAPH_ASSET|other"
+      ],
+      "pointer_graph_edges_touched": [
+        "E01_SCHEMA_CLASSIFIES_ALL|E02_U_EVIDENCE_TO_P_PACKET|E03_G_GUARDS_S_STATE|E04_S_FLAGS_X_AUTHORITY_SENSITIVE_EDGES|E05_X_CONNECTS_FAMILY_RETRIEVAL|E06_B_BRIDGE_MUST_NOT_TOUCH_S_DIRECTLY|E07_P_PACKET_TO_B_BRIDGE_REQUIRES_SCOPE|E08_U_RUN_TO_CLEANUP_APPLY_BLOCKED|none"
+      ],
+      "space_refs_used_by_hermes": [
+        {
+          "handle": "string",
+          "sha256_or_null": "string|null",
+          "family_or_layer": "string",
+          "used_by_hermes_for": "string"
+        }
+      ],
+      "codex_additional_refs_read": [
+        {
+          "handle": "string",
+          "sha256_or_null": "string|null",
+          "used_by_codex_for": "space_contact|space_effect|maturation|risk|gap|route"
+        }
+      ]
+    },
+    "execution_to_space_split": {
+      "hermes_execution_summary": "string",
+      "codex_space_reading_summary": "string",
+      "what_is_execution_result": [
+        "string"
+      ],
+      "what_is_space_effect": [
+        "string"
+      ],
+      "what_must_not_be_promoted": [
+        "string"
+      ]
+    },
+    "space_effect_classification": {
+      "primary_effect_type": "NO_SPACE_EFFECT|REFERENCE_EVIDENCE|PATTERN_CONFIRMED|PATTERN_STRENGTHENED|PATTERN_CHANGED|NEW_PATTERN_CANDIDATE|MISSING_HANDLE_EXPOSED|STALE_OR_SUPERSEDED_EFFECT|DUPLICATE_PRESSURE|BOUNDARY_RISK|REENTRY_REPAIR_NEEDED",
+      "secondary_effect_types": [
+        "NO_SPACE_EFFECT|REFERENCE_EVIDENCE|PATTERN_CONFIRMED|PATTERN_STRENGTHENED|PATTERN_CHANGED|NEW_PATTERN_CANDIDATE|MISSING_HANDLE_EXPOSED|STALE_OR_SUPERSEDED_EFFECT|DUPLICATE_PRESSURE|BOUNDARY_RISK|REENTRY_REPAIR_NEEDED"
+      ],
+      "reasoning": "string",
+      "touched_patterns": [
+        "string"
+      ],
+      "changed_judgment": "string"
+    },
+    "risk_hold_map": [
+      {
+        "hold_id": "string",
+        "applies_to": "string",
+        "hold_type": "HOLD_NOT_AUTHORITY|HOLD_AUTHORITY_SENSITIVE|HOLD_CLEANUP_PRECONDITION|HOLD_MISSING_EVIDENCE|HOLD_CONFLICT|HOLD_TRACE_INSUFFICIENT|HOLD_LIVE_CALL_SCOPE",
+        "reason": "string",
+        "blocked_edge_or_family": "string|null"
+      }
+    ],
+    "gap_map": [
+      {
+        "gap_id": "string",
+        "missing_handle": "string",
+        "needed_for": "space_contact|reentry|maturation|rollback|layer_policing|retention|authority_decision_gate",
+        "suggested_next_step_hold_only": "string",
+        "owner_route": "Hermes|Codex|Gemini|User"
+      }
+    ],
+    "stale_or_duplicate_pressure": [
+      {
+        "pressure_id": "string",
+        "families": [
+          "string"
+        ],
+        "risk": "string",
+        "hold_only_action": "string"
+      }
+    ],
+    "maturation_decision": {
+      "decision": "NO_SPACE_DELTA|REFERENCE_ONLY|STRENGTHEN_EXISTING_PATTERN|NEW_PATTERN_CANDIDATE|LAYER_REASSIGNMENT_CANDIDATE|STALE_OR_SUPERSEDED_HANDLE|MISSING_HANDLE|BOUNDARY_RISK",
+      "proposal_status": "HOLD_ONLY",
+      "proposed_space_changes_hold_only": [
+        "string"
+      ],
+      "rejected_maturation_options": [
+        "string"
+      ],
+      "gemini_exploration_decision": "not_needed|needed_later|used_by_codex_only",
+      "gemini_findings_ref_or_null": "string|null"
+    },
+    "next_actions": [
+      {
+        "action_id": "string",
+        "actor": "Hermes|Codex|Gemini|User",
+        "action": "string",
+        "side_effects": "none|read_only|requires_approval",
+        "preconditions": [
+          "string"
+        ]
+      }
+    ],
+    "validation": {
+      "required_fields_present": true,
+      "source_files_unchanged": true,
+      "namespace_collision_check": "pass|fail|not_checked",
+      "blocked_edges_respected": true,
+      "mutation_statement_all_false": true,
+      "negative_tests": [
+        {
+          "name": "string",
+          "caught": true,
+          "hold_reason": "string"
+        }
+      ]
+    },
+    "mutation_statement": {
+      "file_move": false,
+      "archive": false,
+      "delete": false,
+      "source_edit": false,
+      "authority_mutation": false,
+      "registry_mutation": false,
+      "current_position_mutation": false,
+      "promotion": false,
+      "cleanup_apply": false,
+      "live_external_call": false
+    },
+    "next_safe_lane": "string",
+    "promotion_status": "HOLD_NOT_AUTHORITY"
+  },
+  "required_top_level_keys": [
+    "receipt_id",
+    "schema_version",
+    "created_at",
+    "writer_role",
+    "allowed_namespace",
+    "immutable_after_publish",
+    "does_not_mutate_handles",
+    "input_reentry",
+    "cross_read_records",
+    "space_baseline_before",
+    "space_contact",
+    "execution_to_space_split",
+    "space_effect_classification",
+    "risk_hold_map",
+    "gap_map",
+    "stale_or_duplicate_pressure",
+    "maturation_decision",
+    "next_actions",
+    "validation",
+    "mutation_statement",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "negative_test_requirements": [
+    {
+      "name": "NEG_EXECUTION_RESULT_AS_AUTHORITY",
+      "must_catch": "Hermes execution result being interpreted as authority, registry, current-position, or promotion"
+    },
+    {
+      "name": "NEG_PACKET_EDGE_AS_LIVE_CALL_SCOPE",
+      "must_catch": "packet or bridge edge being interpreted as approval for Codex/Gemini/API call"
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_AS_CLEANUP_APPROVAL",
+      "must_catch": "run bundle or generated evidence being interpreted as permission to move/archive/delete"
+    },
+    {
+      "name": "NEG_POINTER_GRAPH_AS_SOURCE_OF_TRUTH",
+      "must_catch": "X pointer graph being interpreted as authority or registry"
+    },
+    {
+      "name": "NEG_MATURED_AS_AUTHORITY",
+      "must_catch": "matured or strengthened pattern being interpreted as official authority"
+    }
+  ],
+  "default_next_safe_lane": "USE_THIS_SCHEMA_ON_NEXT_HERMES_REENTRY_DRY_RUN_HOLD_ONLY",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "promotion_status": "HOLD_NOT_AUTHORITY"
+}

@@ -1,0 +1,98 @@
+{
+  "validation_id": "VALIDATION_DRY_RUN_CODEX_SPACE_REENTRY_RECEIPT_REAL_REENTRY_FIXTURE_V0",
+  "created_at": "2026-05-25T21:40:00+09:00",
+  "verdict": "PASS_DRY_RUN_CODEX_SPACE_REENTRY_RECEIPT_WITH_HOLD",
+  "validated_file": {
+    "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/09_DRY_RUN_CODEX_SPACE_REENTRY_RECEIPT_REAL_REENTRY_FIXTURE_V0.json",
+    "sha256": "7368f9ccd847196ae89cc8b15ff0829e97a080b1d61c0e967f7823dd832a8677",
+    "json_valid": true
+  },
+  "checks": [
+    {
+      "name": "schema_version_matches",
+      "expected": "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY_V0",
+      "passed": true
+    },
+    {
+      "name": "allowed_namespace_codex_space",
+      "passed": true
+    },
+    {
+      "name": "space_effect_classified",
+      "expected": "PATTERN_STRENGTHENED",
+      "passed": true
+    },
+    {
+      "name": "maturation_decision_hold_only",
+      "expected": "STRENGTHEN_EXISTING_PATTERN",
+      "passed": true
+    },
+    {
+      "name": "negative_tests_count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "name": "real_reentry_fixture_standard_gap_exposed",
+      "passed": true
+    },
+    {
+      "name": "execution_to_space_split_present",
+      "passed": true
+    },
+    {
+      "name": "mutation_statement_all_false",
+      "passed": true
+    },
+    {
+      "name": "promotion_status_hold_not_authority",
+      "passed": true
+    }
+  ],
+  "negative_tests": [
+    {
+      "name": "NEG_EXECUTION_RESULT_AS_AUTHORITY",
+      "caught": true
+    },
+    {
+      "name": "NEG_PACKET_EDGE_AS_LIVE_CALL_SCOPE",
+      "caught": true
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_AS_CLEANUP_APPROVAL",
+      "caught": true
+    },
+    {
+      "name": "NEG_POINTER_GRAPH_AS_SOURCE_OF_TRUTH",
+      "caught": true
+    },
+    {
+      "name": "NEG_MATURED_AS_AUTHORITY",
+      "caught": true
+    }
+  ],
+  "space_delta_judgment": {
+    "primary": "STRENGTHEN_EXISTING_PATTERN",
+    "secondary": [
+      "MISSING_HANDLE_EXPOSED",
+      "REFERENCE_EVIDENCE"
+    ],
+    "target_pattern": "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL",
+    "missing_handle": "REAL_REENTRY_FIXTURE_STANDARD"
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "next_safe_lane_after_this": "DEFINE_REAL_REENTRY_FIXTURE_STANDARD_HOLD_ONLY",
+  "promotion_status": "HOLD_NOT_AUTHORITY"
+}

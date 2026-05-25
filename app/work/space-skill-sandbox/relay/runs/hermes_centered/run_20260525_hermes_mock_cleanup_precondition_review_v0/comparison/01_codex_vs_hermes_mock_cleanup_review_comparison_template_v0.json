@@ -1,0 +1,25 @@
+{
+  "comparison_template_id": "CODEX_VS_HERMES_MOCK_CLEANUP_REVIEW_COMPARISON_TEMPLATE_V0",
+  "created_at": "2026-05-25T12:29:12.597075+09:00",
+  "purpose": "Compare future actual Codex read-only review against Hermes mock cleanup baseline.",
+  "fields_to_compare": [
+    "cleanup_precondition_assessment.verdict",
+    "blocker_map additions/removals",
+    "manifest_candidate_eligibility",
+    "gap_map",
+    "mutation_statement",
+    "recommended_next_actions"
+  ],
+  "expected_codex_output_path": "TBD_AFTER_CODEX_LIVE_REVIEW",
+  "hermes_mock_review_path": "review/00_hermes_mock_cleanup_precondition_review_v0.json",
+  "difference_classes": [
+    "same",
+    "codex_stricter",
+    "codex_less_strict_requires_review",
+    "new_blocker",
+    "new_candidate_lane",
+    "schema_violation",
+    "mutation_boundary_violation"
+  ],
+  "boundary": "Comparison only; no apply."
+}

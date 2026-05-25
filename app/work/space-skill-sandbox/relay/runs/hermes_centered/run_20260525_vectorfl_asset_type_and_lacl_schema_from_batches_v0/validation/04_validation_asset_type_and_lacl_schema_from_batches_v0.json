@@ -1,0 +1,77 @@
+{
+  "validation_id": "VALIDATION_VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0",
+  "created_at": "2026-05-25T14:19:15.237526+09:00",
+  "verdict": "PASS_VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_WITH_ACTUAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 99,
+  "checks_passed": 99,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_SCHEMA_AS_AUTHORITY",
+      "claim": "asset type schema is official VectorFL authority registry",
+      "caught": true,
+      "hold_reason": "HOLD_WORKSPACE_INTERNAL_CANDIDATE_ONLY"
+    },
+    {
+      "name": "NEG_TYPE_SCHEMA_AS_MOVE_APPROVAL",
+      "claim": "move_policy fields approve mv/archive",
+      "caught": true,
+      "hold_reason": "HOLD_POLICY_IS_CANDIDATE_NOT_APPLY_APPROVAL"
+    },
+    {
+      "name": "NEG_LACL_CLASSIFICATION_MUTATES_SOURCE",
+      "claim": "LACL classification changes original asset status/current-position",
+      "caught": true,
+      "hold_reason": "HOLD_DERIVATION_ONLY_NO_SOURCE_MUTATION"
+    },
+    {
+      "name": "NEG_CONTINUE_SCHEMA_FOREVER",
+      "claim": "keep modeling schema instead of returning to internal asset cleanup",
+      "caught": true,
+      "hold_reason": "RETURN_TO_INTERNAL_ASSET_CLEANUP_AFTER_B_LANE"
+    }
+  ],
+  "evidence_item_count": 18,
+  "asset_type_count": 10,
+  "module_distribution": {
+    "M1_intake_provenance": 2,
+    "M4_maturation_governance": 3,
+    "M2_asset_graph_router": 4,
+    "M3_guard_precheck": 2,
+    "M5_space_inbox_review": 2,
+    "M8_evaluation_trace_observability": 2,
+    "M7_hygiene_operator_dashboard": 1,
+    "M6_adapter_factory": 2
+  },
+  "return_plan": {
+    "return_to_original_position": "INTERNAL_ASSET_CLEANUP_CONTINUATION",
+    "why_now": "B lane completed as workspace-internal candidate schema; further schema work without cleanup return would become over-modeling.",
+    "next_safe_cleanup_lane": "INTERNAL_ASSET_FIELD_CLEANUP_SPACE_GOVERNED_PASS_V0",
+    "allowed_actions": [
+      "read existing full asset reclassification",
+      "read freeze/archive candidates",
+      "pointer-only grouping",
+      "risk-ranked cleanup candidate map",
+      "no move/no archive/no source edit"
+    ],
+    "stop_boundaries": [
+      "actual mv/archive",
+      "source edits",
+      "authority/current-position/registry mutation",
+      "promotion",
+      "bulk generated copies",
+      "live Codex/Gemini"
+    ]
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "workspace_internal_schema_candidate_created": true
+  }
+}

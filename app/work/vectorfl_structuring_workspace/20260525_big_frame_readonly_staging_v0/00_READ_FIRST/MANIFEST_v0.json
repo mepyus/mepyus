@@ -1,0 +1,470 @@
+{
+  "manifest_id": "VECTORFL_STRUCTURING_WORKSPACE_MANIFEST_V0",
+  "created_at": "2026-05-25T12:41:02.987935+09:00",
+  "workspace": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0",
+  "status": "CREATED_EMPTY_BIG_FRAME_NO_SOURCE_MOVE",
+  "directories": [
+    "00_READ_FIRST",
+    "01_principles",
+    "02_pointer_views",
+    "03_module_lanes",
+    "03_module_lanes/M1_intake_provenance",
+    "03_module_lanes/M2_asset_graph_router",
+    "03_module_lanes/M3_guard_precheck",
+    "03_module_lanes/M4_maturation_governance",
+    "03_module_lanes/M5_space_inbox_review",
+    "03_module_lanes/M6_adapter_factory",
+    "03_module_lanes/M7_hygiene_operator_dashboard",
+    "03_module_lanes/M8_evaluation_trace_observability",
+    "04_review_batches",
+    "05_codex_handoff",
+    "06_m8_trace",
+    "99_receipts"
+  ],
+  "files": [
+    "00_READ_FIRST/README_NOT_AUTHORITY.md",
+    "01_principles/STRUCTURING_PRINCIPLES_v0.json",
+    "03_module_lanes/M1_intake_provenance/README.md",
+    "03_module_lanes/M2_asset_graph_router/README.md",
+    "03_module_lanes/M3_guard_precheck/README.md",
+    "03_module_lanes/M4_maturation_governance/README.md",
+    "03_module_lanes/M5_space_inbox_review/README.md",
+    "03_module_lanes/M6_adapter_factory/README.md",
+    "03_module_lanes/M7_hygiene_operator_dashboard/README.md",
+    "03_module_lanes/M8_evaluation_trace_observability/README.md"
+  ],
+  "source_refs": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CLEANUP_PRECONDITION_ROLLUP_V0_20260525.json",
+      "exists": true,
+      "sha256": "a9ceb86bee2148c005ff7f25c2f74410f2bfdd22453852574fd652ab89e9ef37"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TOP10_CLEANUP_BLOCKER_ACTUAL_LOCAL_VALIDATION_V0_20260525.json",
+      "exists": true,
+      "sha256": "ba1c20ad11f497415fb73056898a65d61f1abd007f1a41f1b1a0a82548c23010"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M2_POINTER_DEDUPE_CONFLICT_MAP_V0_20260525.json",
+      "exists": true,
+      "sha256": "0ee83318d002a5849a0513a7cfdfa2888136c0004b4bfa1c3389939fa617e779"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M4_AUTHORITY_SENSITIVE_FREEZE_REVIEW_V0_20260525.json",
+      "exists": true,
+      "sha256": "dc6f3112c730dd80f44bbd00a92e4a6491459468b49c709c5b9a1cb4c31e2f0d"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M7_HYGIENE_OPERATOR_DASHBOARD_V0_20260525.json",
+      "exists": true,
+      "sha256": "dc51c00cb3d8e4c160989bfd9225f3155c5ec422540f1c6aa112600bb497b00b"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M8_ROLLBACK_VALIDATION_TRACE_PLAN_V0_20260525.json",
+      "exists": true,
+      "sha256": "6293801eb607cac7eab03a3a6d65dfe2e1a3e6356cbb0e6e9518df878cf5fb45"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  },
+  "next_safe_use": "Create top-10 readonly copy view or pointer cards inside this workspace, with sha validation.",
+  "workspace_batches": [
+    {
+      "batch_id": "top10_cleanup_blockers_batch01",
+      "created_at": "2026-05-25T13:00:12.815441+09:00",
+      "batch_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01",
+      "pointer_index": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_pointer_index_v0.json",
+      "precise_reading": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+      "operator_cards": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/cards/02_top10_blocker_operator_cards.md",
+      "copy_manifest": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/manifest/03_p10_readonly_copy_view_manifest_v0.json",
+      "validation": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_precise_reading_and_readonly_copy_view_v0/validation/05_validation_combined_top10_precise_reading_and_copy_view_v0.json",
+      "status": "READONLY_COPY_VIEW_NOT_AUTHORITY",
+      "item_count": 10,
+      "source_of_truth": "original files only"
+    }
+  ],
+  "last_updated_at": "2026-05-25T13:00:12.815441+09:00",
+  "workspace_internal_pointers": [
+    {
+      "id": "top10_move_risk_rollup_v0",
+      "created_at": "2026-05-25T13:47:13.980456+09:00",
+      "type": "workspace_internal_pointer",
+      "status": "NOT_AUTHORITY__NO_MOVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_move_risk_rollup_v0.json",
+      "evidence": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_compact_operator_view_v0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_reference_map_batch01_v0.json"
+      ],
+      "risk_distribution": {
+        "HIGH_TRUE_MOVE_BLOCKER": 6,
+        "MEDIUM_CONTROL_SURFACE_UPDATE_RISK": 4
+      },
+      "rules": [
+        "copy_path_must_not_replace_original_path",
+        "maps_are_evidence_not_apply_permission",
+        "no_mv_archive_without_future_explicit_approval"
+      ]
+    },
+    {
+      "id": "batch02_module_spread_learning_batch_v0",
+      "created_at": "2026-05-25T13:58:47.772315+09:00",
+      "type": "workspace_review_batch_pointer",
+      "status": "NOT_AUTHORITY__READONLY_COPY_VIEW__NO_MOVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_module_spread_learning_batch_pointer_index_v0.json",
+      "batch_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/batch02_module_spread_learning_batch_v0",
+      "item_count": 10,
+      "module_distribution": {
+        "M1_intake_provenance": 1,
+        "M4_maturation_governance": 2,
+        "M2_asset_graph_router": 2,
+        "M3_guard_precheck": 1,
+        "M5_space_inbox_review": 1,
+        "M8_evaluation_trace_observability": 1,
+        "M7_hygiene_operator_dashboard": 1,
+        "M6_adapter_factory": 1
+      }
+    },
+    {
+      "id": "batch02_closeout_v0",
+      "created_at": "2026-05-25T14:08:28.046172+09:00",
+      "type": "workspace_closeout_pointer",
+      "status": "NOT_AUTHORITY__NO_MOVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/batch02_module_spread_learning_batch_v0/BATCH02_CLOSEOUT_CARD_v0.json"
+    },
+    {
+      "id": "workspace_batch01_batch02_coverage_rollup_v0",
+      "created_at": "2026-05-25T14:08:28.046172+09:00",
+      "type": "coverage_rollup_pointer",
+      "status": "NOT_AUTHORITY__EVIDENCE_ONLY",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/workspace_batch01_batch02_coverage_rollup_v0.json"
+    },
+    {
+      "id": "batch03_space_governed_learning_batch_v0",
+      "created_at": "2026-05-25T14:08:28.046172+09:00",
+      "type": "workspace_review_batch_pointer",
+      "status": "NOT_AUTHORITY__READONLY_COPY_VIEW__NO_MOVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch03_space_governed_learning_batch_pointer_index_v0.json",
+      "batch_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/batch03_space_governed_learning_batch_v0",
+      "item_count": 8,
+      "module_distribution": {
+        "M1_intake_provenance": 1,
+        "M4_maturation_governance": 1,
+        "M2_asset_graph_router": 2,
+        "M3_guard_precheck": 1,
+        "M6_adapter_factory": 1,
+        "M8_evaluation_trace_observability": 1,
+        "M5_space_inbox_review": 1
+      }
+    },
+    {
+      "id": "vectorfl_asset_type_and_lacl_schema_from_batches_v0",
+      "created_at": "2026-05-25T14:19:15.237526+09:00",
+      "type": "workspace_schema_candidate_pointer",
+      "status": "NOT_AUTHORITY__CANDIDATE_ONLY__HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_OPERATOR_VIEW_V0.md",
+      "evidence_item_count": 18
+    },
+    {
+      "id": "internal_asset_taxonomy_broad_search_safe_line_map_v0",
+      "created_at": "2026-05-25T14:24:24.439757+09:00",
+      "type": "pointer_only_taxonomy_search_map",
+      "status": "NOT_AUTHORITY__NO_MOVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+      "search_file_count": 7847,
+      "family_count": 12
+    },
+    {
+      "id": "internal_asset_family_priority_queue_v0",
+      "created_at": "2026-05-25T14:24:24.439757+09:00",
+      "type": "pointer_only_priority_queue",
+      "status": "NOT_AUTHORITY__NO_APPLY",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_family_priority_queue_v0.json",
+      "next_recommended_family": "P_PACKET_HANDOFF_ASSET"
+    },
+    {
+      "id": "p_packet_handoff_asset_compact_pointer_view_v0",
+      "created_at": "2026-05-25T14:27:03.897074+09:00",
+      "type": "family_compact_pointer_view",
+      "status": "NOT_AUTHORITY__NO_LIVE_CALL__HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_asset_compact_pointer_view_v0.json",
+      "scan_count": 11077,
+      "subtype_count": 7
+    },
+    {
+      "id": "p_packet_handoff_subtype_review_batch01_v0",
+      "created_at": "2026-05-25T14:34:29.505181+09:00",
+      "type": "subtype_review_pointer",
+      "status": "NOT_AUTHORITY__NO_CALL__NO_APPLY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_subtype_review_batch01_v0.json",
+      "sample_count": 28,
+      "next_recommended": "P_PACKET_CODEX_REVIEW_PACKET_NO_CALL_DEDUPE_MAP_V0"
+    },
+    {
+      "id": "p_packet_codex_review_packet_no_call_dedupe_map_v0",
+      "created_at": "2026-05-25T14:39:49.421448+09:00",
+      "type": "codex_review_packet_dedupe_pointer_map",
+      "status": "NOT_AUTHORITY__NO_CALL__NO_DELETE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "scan_count": 7660,
+      "exact_duplicate_group_count": 118,
+      "fuzzy_duplicate_group_count": 31,
+      "next_recommended": "P_PACKET_CODEX_REVIEW_FREEZE_AND_REUSABLE_SPLIT_BATCH01_V0"
+    },
+    {
+      "id": "p_packet_codex_review_freeze_reusable_split_batch01_v0",
+      "created_at": "2026-05-25T14:43:11.880854+09:00",
+      "type": "codex_review_packet_split_pointer_batch",
+      "status": "NOT_AUTHORITY__NO_CALL__NO_PROMOTION_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_batch01_v0.json",
+      "cards": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_cards_v0.md",
+      "summary": {
+        "FREEZE_AUTHORITY_SENSITIVE": 20,
+        "REUSABLE_PATTERN_CANDIDATE": 12,
+        "ACTIVE_FUTURE_NO_CALL": 12
+      },
+      "next_recommended": "P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0"
+    },
+    {
+      "id": "p_packet_codex_review_reusable_pattern_cards_batch01_v0",
+      "created_at": "2026-05-25T14:48:29.388552+09:00",
+      "type": "reusable_pattern_cards_candidate",
+      "status": "NOT_SKILL__NOT_TEMPLATE__NO_CALL_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_operator_view_v0.md",
+      "principle_candidate": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/CODEX_REVIEW_PACKET_REUSABLE_PATTERN_CANDIDATE_V0.json",
+      "card_count": 12,
+      "next_recommended": "P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_V0"
+    },
+    {
+      "id": "p_packet_codex_review_one_shot_receipt_compact_v0",
+      "created_at": "2026-05-25T14:53:35.731948+09:00",
+      "type": "one_shot_receipt_compact_pointer_view",
+      "status": "NOT_AUTHORITY__NO_DELETE__NO_ARCHIVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_operator_view_v0.md",
+      "scan_count": 600,
+      "next_recommended": "P_PACKET_CODEX_REVIEW_ACTIVE_NO_CALL_CANDIDATE_BRIEF_V0"
+    },
+    {
+      "id": "p_packet_codex_review_active_no_call_candidate_brief_v0",
+      "created_at": "2026-05-25T15:07:29.641486+09:00",
+      "type": "active_no_call_candidate_brief",
+      "status": "NOT_AUTHORITY__NO_SEND__NO_CALL_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_active_no_call_candidate_brief_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_active_no_call_candidate_operator_view_v0.md",
+      "candidate_count": 24,
+      "status_distribution": {
+        "AMBIGUOUS_CANDIDATE_POINTER_REVIEW": 2,
+        "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL": 3,
+        "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE": 9,
+        "FREEZE_AUTHORITY_SENSITIVE_NO_CALL": 10
+      },
+      "next_recommended": "P_PACKET_FAMILY_CLOSEOUT_AND_NEXT_FAMILY_SELECTOR_V0"
+    },
+    {
+      "id": "p_packet_family_closeout_and_next_family_selector_v0",
+      "created_at": "2026-05-25T15:10:57.137001+09:00",
+      "type": "family_closeout_next_selector",
+      "status": "NOT_AUTHORITY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_family_closeout_and_next_family_selector_v0.json",
+      "selected_next_family": "U_RUN_BUNDLE_ASSET"
+    },
+    {
+      "id": "u_run_bundle_asset_compact_pointer_view_v0",
+      "created_at": "2026-05-25T15:10:57.137001+09:00",
+      "type": "family_compact_pointer_view",
+      "status": "NO_ARCHIVE_NO_DELETE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+      "scan_count": 41449,
+      "subtype_count": 7
+    },
+    {
+      "id": "u_run_bundle_subtype_review_batch01_v0",
+      "created_at": "2026-05-25T15:10:57.137001+09:00",
+      "type": "subtype_review_pointer",
+      "status": "NO_ARCHIVE_NO_DELETE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+      "sample_count": 32,
+      "next_recommended": "U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_V0"
+    },
+    {
+      "id": "u_run_bundle_evidence_retention_rule_candidate_v0",
+      "created_at": "2026-05-25T20:00:44.893722+09:00",
+      "type": "rule_candidate_pointer",
+      "status": "NOT_AUTHORITY__NO_APPLY_HOLD",
+      "rule": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_V0.json",
+      "pointer": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_evidence_retention_rule_candidate_pointer_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_evidence_retention_rule_operator_view_v0.md",
+      "next_recommended": "U_RUN_BUNDLE_GENERATED_COMPACT_DEDUPE_EVIDENCE_MAP_V0"
+    },
+    {
+      "id": "u_run_bundle_generated_compact_dedupe_evidence_map_v0",
+      "created_at": "2026-05-25T20:02:45.771822+09:00",
+      "type": "generated_run_bundle_dedupe_evidence_map",
+      "status": "NO_DELETE_NO_ARCHIVE_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_operator_view_v0.md",
+      "scan_count": 2200,
+      "exact_duplicate_group_count": 41,
+      "fuzzy_duplicate_group_count": 44,
+      "next_recommended": "U_RUN_BUNDLE_CLOSEOUT_AND_NEXT_FAMILY_SELECTOR_V0"
+    },
+    {
+      "id": "u_run_bundle_closeout_and_next_family_selector_v0",
+      "created_at": "2026-05-25T20:12:04.595982+09:00",
+      "type": "family_closeout_next_selector",
+      "status": "NOT_AUTHORITY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_closeout_and_next_family_selector_v0.json",
+      "selected_next_family": "G_GATE_GUARD_ASSET"
+    },
+    {
+      "id": "g_gate_guard_asset_compact_pointer_view_v0",
+      "created_at": "2026-05-25T20:12:04.595982+09:00",
+      "type": "guard_family_compact",
+      "status": "GUARD_POINTER_ONLY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/g_gate_guard_asset_compact_pointer_view_v0.json",
+      "scan_count": 6530,
+      "subtype_count": 8
+    },
+    {
+      "id": "g_gate_guard_subtype_review_batch01_v0",
+      "created_at": "2026-05-25T20:12:04.595982+09:00",
+      "type": "guard_subtype_review",
+      "status": "NOT_AUTHORITY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/g_gate_guard_subtype_review_batch01_v0.json",
+      "sample_count": 32
+    },
+    {
+      "id": "g_gate_guard_rule_candidate_v0",
+      "created_at": "2026-05-25T20:12:04.595982+09:00",
+      "type": "guard_rule_candidate",
+      "status": "NOT_AUTHORITY_NO_APPLY_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/G_GATE_GUARD_RULE_CANDIDATE_V0.json",
+      "next_recommended": "G_GATE_GUARD_CLOSEOUT_AND_SAFE_STOP_V0"
+    },
+    {
+      "id": "s_state_promotion_asset_readonly_freeze_map_v0",
+      "created_at": "2026-05-25T20:20:00.938287+09:00",
+      "type": "authority_sensitive_state_freeze_map",
+      "status": "READ_ONLY_NO_PROMOTION_HOLD",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/s_state_promotion_asset_readonly_freeze_map_v0.json",
+      "scan_count": 9000
+    },
+    {
+      "id": "s_state_promotion_boundary_operator_card_v0",
+      "created_at": "2026-05-25T20:20:00.938287+09:00",
+      "type": "state_boundary_rule_candidate",
+      "status": "NOT_AUTHORITY_SAFE_STOP",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/S_STATE_PROMOTION_BOUNDARY_OPERATOR_CARD_V0.json"
+    },
+    {
+      "id": "internal_asset_family_map_and_position_rollup_v0",
+      "created_at": "2026-05-25T20:20:00.938287+09:00",
+      "type": "position_rollup_map",
+      "status": "NOT_AUTHORITY_CURRENT_WORKBENCH_POSITION",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_family_map_and_position_rollup_v0.json",
+      "ascii_map": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_family_map_ascii_v0.txt",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/s_state_promotion_and_current_position_operator_view_v0.md"
+    },
+    {
+      "id": "internal_asset_cleanup_stop_and_review_closeout_v0",
+      "created_at": "2026-05-25T20:31:39.181976+09:00",
+      "type": "stop_and_review_closeout",
+      "status": "SAFE_CLOSEOUT_HOLD_NOT_AUTHORITY",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_cleanup_stop_and_review_closeout_v0.json",
+      "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_cleanup_stop_and_review_closeout_operator_view_v0.md",
+      "current_position": "S_STATE_PROMOTION_ASSET_READ_ONLY_FREEZE_MAP_SAFE_STOP"
+    }
+  ],
+  "last_workspace_rule_update_v0": {
+    "created_at": "2026-05-25T13:47:13.980456+09:00",
+    "update": "top10_move_risk_rollup pointer + README rule block",
+    "status": "WORKSPACE_INTERNAL_ONLY_NOT_AUTHORITY"
+  },
+  "last_batch02_workspace_update_v0": {
+    "created_at": "2026-05-25T13:58:47.772315+09:00",
+    "status": "WORKSPACE_INTERNAL_ONLY_NOT_AUTHORITY",
+    "recovered_filename_too_long": true
+  },
+  "last_space_governed_autopush_v0": {
+    "created_at": "2026-05-25T14:08:28.046172+09:00",
+    "status": "WORKSPACE_INTERNAL_ONLY_STOPPED_BEFORE_FORBIDDEN_BOUNDARY",
+    "stopped_before": [
+      "mv/archive",
+      "source edit",
+      "authority mutation",
+      "promotion",
+      "live Codex/Gemini",
+      "bulk restructuring"
+    ]
+  },
+  "last_b_lane_schema_candidate_v0": {
+    "created_at": "2026-05-25T14:19:15.237526+09:00",
+    "status": "B_LANE_DONE_RETURN_TO_INTERNAL_ASSET_CLEANUP"
+  },
+  "last_internal_asset_taxonomy_broad_search_v0": {
+    "created_at": "2026-05-25T14:24:24.439757+09:00",
+    "status": "RETURNED_TO_INTERNAL_ASSET_CLEANUP_SAFE_LINE"
+  },
+  "last_packet_handoff_compact_v0": {
+    "created_at": "2026-05-25T14:27:03.897074+09:00",
+    "status": "POINTER_ONLY_DONE_STOP_BEFORE_LIVE_CALL_OR_PROMOTION"
+  },
+  "last_p_packet_subtype_review_v0": {
+    "created_at": "2026-05-25T14:34:29.505181+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_codex_review_packet_dedupe_map_v0": {
+    "created_at": "2026-05-25T14:39:49.421448+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_codex_review_freeze_reusable_split_batch01_v0": {
+    "created_at": "2026-05-25T14:43:11.880854+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_reusable_pattern_cards_batch01_v0": {
+    "created_at": "2026-05-25T14:48:29.388552+09:00",
+    "status": "PATTERN_CARDS_ONLY_DONE"
+  },
+  "last_one_shot_receipt_compact_v0": {
+    "created_at": "2026-05-25T14:53:35.731948+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_active_no_call_candidate_brief_v0": {
+    "created_at": "2026-05-25T15:07:29.641486+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_packet_closeout_run_bundle_autopush_v0": {
+    "created_at": "2026-05-25T15:10:57.137001+09:00",
+    "status": "SAFE_BOUNDARY_REACHED"
+  },
+  "last_u_run_bundle_retention_rule_candidate_v0": {
+    "created_at": "2026-05-25T20:00:44.893722+09:00",
+    "status": "RULE_CANDIDATE_ONLY_DONE"
+  },
+  "last_u_run_bundle_generated_dedupe_evidence_map_v0": {
+    "created_at": "2026-05-25T20:02:45.771822+09:00",
+    "status": "POINTER_ONLY_DONE"
+  },
+  "last_u_closeout_g_gate_guard_autopush_v0": {
+    "created_at": "2026-05-25T20:12:04.595982+09:00",
+    "status": "SAFE_STOP_REACHED"
+  },
+  "last_s_state_position_rollup_v0": {
+    "created_at": "2026-05-25T20:20:00.938287+09:00",
+    "status": "SAFE_STOP_REACHED"
+  },
+  "last_internal_asset_cleanup_stop_and_review_closeout_v0": {
+    "created_at": "2026-05-25T20:31:39.181976+09:00",
+    "status": "STOP_AND_REVIEW_SELECTED"
+  }
+}

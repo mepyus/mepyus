@@ -1,0 +1,127 @@
+{
+  "rollup_id": "TOP10_MOVE_RISK_ROLLUP_AND_WORKSPACE_RULE_UPDATE_V0",
+  "created_at": "2026-05-25T13:47:13.980456+09:00",
+  "verdict": "TOP10_MOVE_RISK_CONFIRMED__NO_MOVE_HOLD",
+  "top10_count": 10,
+  "risk_distribution": {
+    "HIGH_TRUE_MOVE_BLOCKER": 6,
+    "MEDIUM_CONTROL_SURFACE_UPDATE_RISK": 4
+  },
+  "source_evidence": {
+    "link_precheck": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+    "high_compact_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_compact_operator_view_v0.json",
+    "medium_reference_map": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_reference_map_batch01_v0.json",
+    "high_cards": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_operator_cards.md",
+    "medium_cards": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_operator_cards.md"
+  },
+  "core_rules": [
+    "Original paths remain source-of-truth orientation handles.",
+    "Workspace copy paths must not replace original paths.",
+    "Pointer/view/control-surface artifacts are NOT authority registry.",
+    "No mv/archive until future approved manifest + rollback + post-apply validation.",
+    "HIGH/MEDIUM risk maps are evidence only, not apply permission."
+  ],
+  "items": [
+    {
+      "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 3,
+      "medium_reference_count": 73,
+      "noise_reference_count": 64
+    },
+    {
+      "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 1,
+      "medium_reference_count": 85,
+      "noise_reference_count": 70
+    },
+    {
+      "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 3,
+      "medium_reference_count": 90,
+      "noise_reference_count": 73
+    },
+    {
+      "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 2,
+      "medium_reference_count": 86,
+      "noise_reference_count": 70
+    },
+    {
+      "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 2,
+      "medium_reference_count": 80,
+      "noise_reference_count": 67
+    },
+    {
+      "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "risk_class": "HIGH_TRUE_MOVE_BLOCKER",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "strong original path/reference surfaces exist",
+      "strong_reference_count": 3,
+      "medium_reference_count": 84,
+      "noise_reference_count": 71
+    },
+    {
+      "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "risk_class": "MEDIUM_CONTROL_SURFACE_UPDATE_RISK",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "control/workspace pointer surfaces require preservation; copy path must not substitute original",
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 151,
+      "copy_path_reference_count": 8
+    },
+    {
+      "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "risk_class": "MEDIUM_CONTROL_SURFACE_UPDATE_RISK",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "control/workspace pointer surfaces require preservation; copy path must not substitute original",
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 148,
+      "copy_path_reference_count": 8
+    },
+    {
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "risk_class": "MEDIUM_CONTROL_SURFACE_UPDATE_RISK",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "control/workspace pointer surfaces require preservation; copy path must not substitute original",
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 153,
+      "copy_path_reference_count": 8
+    },
+    {
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "risk_class": "MEDIUM_CONTROL_SURFACE_UPDATE_RISK",
+      "move_status": "NO_MOVE_HOLD",
+      "reason": "control/workspace pointer surfaces require preservation; copy path must not substitute original",
+      "strong_reference_count": 0,
+      "control_surface_reference_count": 142,
+      "copy_path_reference_count": 8
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "workspace_readme_update": true,
+    "workspace_manifest_update": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

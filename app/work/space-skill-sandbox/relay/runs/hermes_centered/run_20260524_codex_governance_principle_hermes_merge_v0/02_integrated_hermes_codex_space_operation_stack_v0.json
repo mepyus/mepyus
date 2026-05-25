@@ -1,0 +1,50 @@
+{
+  "apply_status": "NOT_APPLIED_HOLD_ONLY",
+  "collision_policy": [
+    "Governance defines who decides what; router defines which task; dual-log defines where each actor writes; schemas define return fields.",
+    "If governance and router disagree, governance wins for role/boundary; router wins for route-specific required reads/return fields.",
+    "If Codex proposes maturation but Hermes lacks user approval, Hermes records HOLD receipt only."
+  ],
+  "layers": [
+    {
+      "function": "preserve original and decide if fresh space reference is needed",
+      "layer": "L0_USER_ORIGINAL",
+      "owner": "Hermes"
+    },
+    {
+      "function": "classify input, judge space delta, decide Gemini exploration need, define maturation boundary",
+      "layer": "L1_SPACE_GOVERNANCE",
+      "owner": "Codex",
+      "source": "28/29/30 governance files"
+    },
+    {
+      "function": "map user/Hermes instruction to one of four Codex routes",
+      "layer": "L2_OPERATION_ROUTER",
+      "owner": "Codex",
+      "source": "23/24 router files"
+    },
+    {
+      "function": "prevent log collisions with hermes_exec, codex_space, shared_handoff",
+      "layer": "L3_DUAL_LOG_HANDOFF",
+      "owner": "Hermes+Codex separated namespaces",
+      "source": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_DUAL_LOG_COLLISION_FREE_EXECUTION_SPACE_SETUP_20260524_V0.json"
+    },
+    {
+      "function": "merge original+retrieved space+model and execute/hold with trace",
+      "layer": "L4_HERMES_EXECUTION",
+      "owner": "Hermes"
+    },
+    {
+      "function": "read Hermes reentry and propose HOLD-only space maturation",
+      "layer": "L5_CODEX_MATURATION",
+      "owner": "Codex"
+    },
+    {
+      "function": "wide cluster/layer ambiguity analysis when Codex cannot decide from bounded records",
+      "layer": "L6_OPTIONAL_WIDE_LENS",
+      "owner": "Gemini via Codex only"
+    }
+  ],
+  "packet_id": "02_integrated_hermes_codex_space_operation_stack_v0",
+  "status": "HOLD_STACK_MAP_ONLY"
+}

@@ -1,0 +1,43 @@
+{
+  "validation_id": "VALIDATION_WORKSPACE_LINK_INTEGRITY_PRECHECK_V0",
+  "created_at": "2026-05-25T13:02:22.005854+09:00",
+  "verdict": "PASS_WORKSPACE_LINK_INTEGRITY_PRECHECK_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 30,
+  "checks_passed": 30,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_MOVE_BECAUSE_LOW_RISK",
+      "claim": "LOW_POINTER_VIEW_ONLY item can be moved now",
+      "caught": true,
+      "hold_reason": "HOLD_NO_BATCH_APPLY_APPROVAL"
+    },
+    {
+      "name": "NEG_COPY_PATH_REPLACES_REFERENCES",
+      "claim": "replace original references with copy paths",
+      "caught": true,
+      "hold_reason": "HOLD_COPY_VIEW_NOT_SUBSTITUTION"
+    },
+    {
+      "name": "NEG_PRECHECK_AS_ROLLBACK_MANIFEST",
+      "claim": "link precheck is rollback manifest/apply approval",
+      "caught": true,
+      "hold_reason": "HOLD_M8_EVIDENCE_ONLY"
+    }
+  ],
+  "risk_distribution": {
+    "MEDIUM_CONTROL_SURFACE_REFERENCE_WOULD_NEED_UPDATE_ON_MOVE": 4,
+    "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE": 6
+  },
+  "file_count_scanned": 8110,
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

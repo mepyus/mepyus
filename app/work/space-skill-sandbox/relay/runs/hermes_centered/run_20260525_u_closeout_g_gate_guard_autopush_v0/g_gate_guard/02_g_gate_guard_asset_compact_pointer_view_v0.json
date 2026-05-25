@@ -1,0 +1,1218 @@
+{
+  "compact_id": "G_GATE_GUARD_ASSET_COMPACT_POINTER_VIEW_V0",
+  "created_at": "2026-05-25T20:12:04.595982+09:00",
+  "status": "POINTER_ONLY_GUARD_ASSET_COMPACT_NOT_AUTHORITY",
+  "scan_count": 6530,
+  "subtype_count": 8,
+  "subtypes": [
+    {
+      "subtype": "hold_stop_guard",
+      "count": 4479,
+      "surface_distribution": {
+        "work_control": 2780,
+        "workspace_control": 49,
+        "run_generated": 975,
+        "source_docs": 675
+      },
+      "disposition_distribution": {
+        "CLEANUP_APPLY_GUARD_PRESERVE": 483,
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 3398,
+        "EXTERNAL_CALL_GUARD_PRESERVE": 355,
+        "GENERAL_GUARD_POINTER": 169,
+        "VALIDATION_GUARD_EVIDENCE": 74
+      },
+      "representatives": [
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/faq.md",
+          "sha256": "4a35f1c4cf0196e1b3e5e42a7a0e11cb9b6e624fc021fdee8886bad5e6ae1389",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 259
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+          "sha256": "3482226c4b744714ba4ee10004a43c29ab9c1b02442f84f38a5c3b7398b6cd97",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 177
+        },
+        {
+          "relpath": "scripts/run_vectorfl_paper_proper_mock.py",
+          "sha256": "55d8c107fba366fe093c23fb861afcf0969ba20620b3c22d9c9eab0465cfb908",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 158
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/tools/exec-approvals.md",
+          "sha256": "e3493d84216cf8113ead7a6bca0a696e34b83205d5af7c3833c2176b15f1ff4a",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 155
+        },
+        {
+          "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+          "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 129
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/cli/index.md",
+          "sha256": "5f83a2d1289f31a5d24d46f0584af1ddd2e6cb2c774d79a2e818b7eb1c8806da",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 123
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/index.md",
+          "sha256": "5f21c13d51943b158bc6971e620aec4d0f5c4767ca42b5bbb2cbbdb75da015a8",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 118
+        },
+        {
+          "relpath": "references/vectorfl_next/runtime/reports/reactive_space_report.md",
+          "sha256": "1a3bf3097bcef5e0681736963a431b1b49eeb8796d2e74ad63daa11bd4fd0fa3",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 118
+        },
+        {
+          "relpath": "references/vectorfl_next_gemini_session/reference_engine/vectorfl_next/runtime/reports/reactive_space_report.md",
+          "sha256": "1a3bf3097bcef5e0681736963a431b1b49eeb8796d2e74ad63daa11bd4fd0fa3",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 118
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/troubleshooting.md",
+          "sha256": "79faf7c8b6293c7999c358ceeae63ba40823bdfa27b92bb3d64a455b2362e7cb",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 110
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/cli/gateway.md",
+          "sha256": "c4b274d92c2903e26a107c6b3bbee762287a2531a85d26c5000ee4349806f29f",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 108
+        },
+        {
+          "relpath": "references/git_search/OpenHarness-main/tests/test_ohmo/test_gateway.py",
+          "sha256": "04f29e9fadabd1cb3c253e4b40ff6ec2c360a6128a9560408a3c608b84b34f65",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 107
+        }
+      ]
+    },
+    {
+      "subtype": "validation_guard",
+      "count": 730,
+      "surface_distribution": {
+        "work_control": 525,
+        "workspace_control": 3,
+        "run_generated": 11,
+        "source_docs": 191
+      },
+      "disposition_distribution": {
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 330,
+        "EXTERNAL_CALL_GUARD_PRESERVE": 201,
+        "VALIDATION_GUARD_EVIDENCE": 84,
+        "CLEANUP_APPLY_GUARD_PRESERVE": 115
+      },
+      "representatives": [
+        {
+          "relpath": "references/git_search/openclaw-main/docs/help/testing.md",
+          "sha256": "29b17d9c4068432d3685bf7790a9910cdcf5fd72f5cca5e6801676c06284e544",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 119
+        },
+        {
+          "relpath": "runtime/manifests/folder_inventory/docs.reports.json",
+          "sha256": "c4c57f557294537985865f82a601612a38bd8bd5a814bf262d6bef86669a4cdb",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 84
+        },
+        {
+          "relpath": "runtime/manifests/folder_inventory/runtime.receipts.json",
+          "sha256": "b7d2a6b9f51d5bd2261106d8ea57717733179f5ff8056b856ff8720e8fb3fe27",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 50
+        },
+        {
+          "relpath": "app/core/runtime/line_thickening.py",
+          "sha256": "9edf74a37c77547afea524dab41a0278d77983da01b4fdfdf165c76b041ea95c",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 47
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_operating_object_slot_movement_rules_v0.md",
+          "sha256": "b9e703bcf7dac41e96eea88904175ebfc616b8cddb868e8cb0ec29ab6b74a22e",
+          "surface": "source_docs",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 38
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/scripts/pr-lib/review.sh",
+          "sha256": "5ea57b9430eec4d20706d6ef1a11465e75d3b3b3d5982dd1dedafcf6c5ac8194",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 34
+        },
+        {
+          "relpath": "app/work/operating_ui/generated/internal_search_panel_demo_20260402T212134Z.json",
+          "sha256": "6707c0f0f58142dc0d9773062c474341a62b402664536fe9219ea003c4e4c262",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 34
+        },
+        {
+          "relpath": "runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json",
+          "sha256": "205988b729211c095bf7d65062d585268e733c109dce037e24dbd9f589b7a105",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 32
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/cli/onboard.md",
+          "sha256": "09e6c6840fe06396b980c54c973a0e98500329d34e08ee3d7f8c3019c2bd1662",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 32
+        },
+        {
+          "relpath": "app/runtime/operating_ui_live.py",
+          "sha256": "274090a59c29ea27d7025ed6867d7d037e82f92e807ec711a99869aba9f30836",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 31
+        },
+        {
+          "relpath": "runtime/manifests/line_registry.json",
+          "sha256": "038b7ea97fec33e15cb599c69635f8098a54f74821f5e9f883e14b8d8bbf35dd",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 30
+        },
+        {
+          "relpath": "docs/reports/vectorfl_integrated_engine_internal_inspection_v0.md",
+          "sha256": "91b19bf912f829b4e75439fcfb0a24ce2ed83da5d2931cffe96836255d8ec282",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 29
+        }
+      ]
+    },
+    {
+      "subtype": "general_gate_guard",
+      "count": 581,
+      "surface_distribution": {
+        "work_control": 538,
+        "run_generated": 6,
+        "source_docs": 37
+      },
+      "disposition_distribution": {
+        "CLEANUP_APPLY_GUARD_PRESERVE": 126,
+        "GENERAL_GUARD_POINTER": 195,
+        "EXTERNAL_CALL_GUARD_PRESERVE": 170,
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 81,
+        "VALIDATION_GUARD_EVIDENCE": 9
+      },
+      "representatives": [
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/security/index.md",
+          "sha256": "2b9d45799c0bc137827f93784b5adda83bcba6e0a21d07c8ec3350ea125b8d45",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 94
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/README.md",
+          "sha256": "4e2d827e6833b761dc2a9faa50d2aeae9b940364b851df8f521d6204218fb95e",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 75
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/testing.md",
+          "sha256": "fa11e7a38086d0199e75d83a79da11843880af50199bc8b2b82e23d9e3ae4f79",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 72
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/scripts/run-openclaw-podman.sh",
+          "sha256": "9b573d1d5f5751c3fe5bb1eb243725ffb174987da9e458632a295c541458b2a0",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 50
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/platforms/android.md",
+          "sha256": "b28cef3e25bd81778e95fc4f9a6a43e13c016d280576f745243d416793bc4bcc",
+          "surface": "work_control",
+          "disposition": "GENERAL_GUARD_POINTER",
+          "score": 49
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/gateway/discovery.md",
+          "sha256": "101d87ed6dbad24423f29d0a7f4d42c9bb3b6fbe27936dfe652b9274d69749ce",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 48
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/discovery.md",
+          "sha256": "82fc94729b19b2452f6f42583a2a59e1254d6eb6612b459c0850d6e055f20214",
+          "surface": "work_control",
+          "disposition": "GENERAL_GUARD_POINTER",
+          "score": 44
+        },
+        {
+          "relpath": "references/git_search/paperclip-master/scripts/smoke/openclaw-docker-ui.sh",
+          "sha256": "63e609ba56b8d98a98583cd1a2330a18a874e4c884aae4dc3cd11a7a431bb0a6",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 43
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/remote.md",
+          "sha256": "8cc22bf9feb00d154a8a9de5f6bf989842c3c0c5d43f18c31f4b3858a56ee260",
+          "surface": "work_control",
+          "disposition": "GENERAL_GUARD_POINTER",
+          "score": 41
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/start/wizard-cli-automation.md",
+          "sha256": "b63fcdf79d8166dbdbbf9c0a513cef98a104d85d20f366c69f633eb802c10095",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 39
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/gateway/trusted-proxy-auth.md",
+          "sha256": "d1b8a7c7e6ee5081603cb3f0f9e63045146a02833ecc7a31b92c8cba381322b5",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 39
+        },
+        {
+          "relpath": "runtime/reread_trials/phase1_19_selection_tuning/preprocess_jung_selection_compare.json",
+          "sha256": "6ba2f1baf0ce2fa9bda33ae7737612c9296801673ace55223370c6a50a1d15fd",
+          "surface": "work_control",
+          "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+          "score": 39
+        }
+      ]
+    },
+    {
+      "subtype": "approval_boundary_guard",
+      "count": 261,
+      "surface_distribution": {
+        "work_control": 216,
+        "workspace_control": 2,
+        "run_generated": 3,
+        "source_docs": 40
+      },
+      "disposition_distribution": {
+        "EXTERNAL_CALL_GUARD_PRESERVE": 35,
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 110,
+        "CLEANUP_APPLY_GUARD_PRESERVE": 92,
+        "GENERAL_GUARD_POINTER": 20,
+        "VALIDATION_GUARD_EVIDENCE": 4
+      },
+      "representatives": [
+        {
+          "relpath": "references/git_search/openclaw-main/docs/gateway/security/index.md",
+          "sha256": "bf1beaae7562cb5ce3c4a7d1babbf467b89d78923a188f450cdb92d8089a2a3a",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 212
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/help/faq.md",
+          "sha256": "e06faeeb2d35bdfa65a0abc0eeaba09f93204138915b55f1daa49f543684b103",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 132
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/docs.json",
+          "sha256": "3a7fe502541232bed4c37e22b93578b4be6dcc9224975fbe700cfe11f01718ee",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 109
+        },
+        {
+          "relpath": "references/git_search/paperclip-master/scripts/smoke/openclaw-gateway-e2e.sh",
+          "sha256": "1dc328320b688d62f53f1bfdd5f4a0ce1858b36eb72483b69141684f9e002c5e",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 82
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/nodes/index.md",
+          "sha256": "ed301494d8af0dcabe2240bc9476c609cfa27eae55f69e573ee4195e65e1a24c",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 78
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/help/troubleshooting.md",
+          "sha256": "c48be76ad818e367fbf7e25d631a0d1b5e6bb9999550fee299471bc8555c514a",
+          "surface": "work_control",
+          "disposition": "GENERAL_GUARD_POINTER",
+          "score": 76
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_batch01_v0.json",
+          "sha256": "6f44ff6f8a29ed4454fdef8b95bfdcfaaa12e35d77776600b7b5d8e1dcc9ff34",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 75
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/concepts/delegate-architecture.md",
+          "sha256": "59cd4aa84e831e2138252b64b00af366bdf06d742c23e93865ba4ce91244c184",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 73
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/SECURITY.md",
+          "sha256": "b9c0f01b8c89c84ad266d75e580f948154686cf9eb1bf724a4ff93ae8f74b461",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 71
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/platforms/ios.md",
+          "sha256": "b070f98b7aec53873196ee6d4f5eb6ee505eae16e37f9c8f08e9fbbca2fcfb09",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 67
+        },
+        {
+          "relpath": "references/git_search/paperclip-master/doc/plans/2026-02-19-ceo-agent-creation-and-hiring.md",
+          "sha256": "f0a85f9b49b0a2413d54b7166e7a42c805ce557696f22e974431e0d414e2e366",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 64
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/docs/tools/exec.md",
+          "sha256": "e37174bdd599b25ab550124b64c065985616018bd76a0c86ece2ac5ae30be19a",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 58
+        }
+      ]
+    },
+    {
+      "subtype": "rollback_guard",
+      "count": 226,
+      "surface_distribution": {
+        "work_control": 116,
+        "workspace_control": 7,
+        "run_generated": 32,
+        "source_docs": 71
+      },
+      "disposition_distribution": {
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 142,
+        "CLEANUP_APPLY_GUARD_PRESERVE": 53,
+        "EXTERNAL_CALL_GUARD_PRESERVE": 17,
+        "VALIDATION_GUARD_EVIDENCE": 2,
+        "GENERAL_GUARD_POINTER": 12
+      },
+      "representatives": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+          "sha256": "57e724468ef51e49fb4180a0c3bf9c0d72a8643d587444c4176b57c3d91cbc97",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 241
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+          "sha256": "e839c37b3648de92e617f0efc169f2558509ac298f6cc9d4e121dc513e729a00",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 101
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/scripts/docker/setup.sh",
+          "sha256": "df42d4b8c3d7498dc0eb58cb72377ef0b974840f5d5fd56f465d82fc2706954d",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 92
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+          "sha256": "238aaeedee09b066b602f48289585c499380d37d92626eab49cac375f9b29086",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 87
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 86
+        },
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/vectorfl_ops_cli.py",
+          "sha256": "ae575b58b5efee92b7a4ae1f20d8d2629f71fafb600b6c56381becbe3a5f4861",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 77
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_provisional_camera_candidate_review_note_v0.md",
+          "sha256": "143d0acd160f45372bc79034be816ad689da95cd96b1dab3cde3b58560c3e2ee",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 67
+        },
+        {
+          "relpath": "references/git_search/paperclip-master/doc/spec/ui.md",
+          "sha256": "0d8fd5e4a737924ca9fbdf497ff4ea3ddba4761b3eb2972089ad110cd6a28ab6",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 66
+        },
+        {
+          "relpath": "references/git_search/paperclip-master/skills/paperclip/references/api-reference.md",
+          "sha256": "3803e86e70af5a2faff6d3acd5ea0ac3bdf14d2b4b7be17c74c9a4243b684fc6",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 63
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0.md",
+          "sha256": "3860851a7e968317c66520ea101afb1d575c3fda252dcdaa3bac8e7a21fd6f34",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 52
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_rollback_rule_reread_validation_note_v0.md",
+          "sha256": "fd20c65788babe57e7a99bad3e3ceef79ea61581159df2c1e2f8bd27e7fc80c6",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 50
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_translation_bridge_lexicon_v0.md",
+          "sha256": "3785f0f591806be1b8547b2c4aa7d58bb59f448ef0ddeb6b3a7bef0b4a32ebb3",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 47
+        }
+      ]
+    },
+    {
+      "subtype": "precheck_gate",
+      "count": 162,
+      "surface_distribution": {
+        "work_control": 23,
+        "workspace_control": 36,
+        "run_generated": 102,
+        "source_docs": 1
+      },
+      "disposition_distribution": {
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 147,
+        "CLEANUP_APPLY_GUARD_PRESERVE": 12,
+        "EXTERNAL_CALL_GUARD_PRESERVE": 3
+      },
+      "representatives": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+          "sha256": "4d83b68f569c173360ba61662015aa9a1c0f60f8b1c5712b19f3d3955f89a37e",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 252
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+          "sha256": "e9f42c8e6fd321d16973f84dd1f5db49e7f9d1c6afcb00faaedae4ad05e80ba4",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 196
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+          "sha256": "c362799391ff76a8bb3a4ec4932668204374711565380c643c8eab3efa8734d8",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 72
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/scripts/e2e/parallels-windows-smoke.sh",
+          "sha256": "69c55bfea7c9de50c6c94f32ba5f6a86423fece421053994b656667e0edf014c",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 70
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+          "sha256": "9a98807b2ad6b30fd607aca96226d70ef0ce41169b58399c7fc62190f9edd970",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 63
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 46
+        },
+        {
+          "relpath": "references/git_search/openclaw-main/scripts/e2e/parallels-macos-smoke.sh",
+          "sha256": "5b4c42a2065d1b1c135b1151378ab8a66b5b2c46813989ef813c65edea3b7269",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 46
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 41
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/batch02_module_spread_learning_batch_v0/cards/02_batch02_precise_reading_v0.json",
+          "sha256": "26c839f43e409f10d967ff9ce913500cd9d20d2679431110b537cb02102d7614",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 39
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/GEMINI_MODE_SELECTOR_STRESS_TEST_PACKET_V0.md",
+          "sha256": "6db8f274f9ab283cf05f9f6edead0db4914719c4cb7a17d87506e12f87e8ebb1",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 38
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/06_m8_trace/medium_4_control_update_candidates_no_edit_v0.json",
+          "sha256": "b9d178240be9d1e0ccd3d5c772ec47bc5d9e77fcbe32c93ef74b3a17274070f1",
+          "surface": "workspace_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 35
+        },
+        {
+          "relpath": "app/work/VECTORFL_LIKE_HERMES_EXECUTION_PRECHECK_LAYER_20260524_V0.json",
+          "sha256": "b3f87a57b39bc82e52f205318bbcd29bc4bb16f9ec9382b8d0328efdaf7f7412",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 30
+        }
+      ]
+    },
+    {
+      "subtype": "negative_test_guard",
+      "count": 56,
+      "surface_distribution": {
+        "work_control": 5,
+        "workspace_control": 7,
+        "run_generated": 37,
+        "source_docs": 7
+      },
+      "disposition_distribution": {
+        "CLEANUP_APPLY_GUARD_PRESERVE": 1,
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 54,
+        "NEGATIVE_TEST_GUARD_REUSABLE_CANDIDATE": 1
+      },
+      "representatives": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+          "sha256": "f168378f622f220b7813f7a29d7f2c8a0484a82f54eb25cc96df93da51f173ad",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 63
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+          "sha256": "fed817173b6bc7d0fc841359f58b65f2711c1b2d88408c3238a6e4f9030543c1",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 47
+        },
+        {
+          "relpath": "docs/reports/internal_reread_hierarchy_c_maturation_grammar_check_v0.md",
+          "sha256": "7127a87e7c023afe5cb7aad0dbdfd00e5d13ed834b5a8659705e26f80923bba3",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 30
+        },
+        {
+          "relpath": "docs/reports/internal_reread_hierarchy_check_round_2_lane_c_observation_v0.md",
+          "sha256": "3ad6d6a482d36949d7f2f7ad99a3bdfa184ee3b85f6fe03e6888d43e9948728f",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 29
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_operator_view_v0.md",
+          "sha256": "26c9346c1014b84e1b6f5994f636797dc315f7457a7f7582a7291ed5fd4bfe64",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 24
+        },
+        {
+          "relpath": "app/work/VECTORFL_TOP10_CLEANUP_BLOCKER_ACTUAL_LOCAL_VALIDATION_V0_20260525.json",
+          "sha256": "ba1c20ad11f497415fb73056898a65d61f1abd007f1a41f1b1a0a82548c23010",
+          "surface": "work_control",
+          "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+          "score": 23
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/validation/05_validation_combined_top10_precise_reading_and_copy_view_v0.json",
+          "sha256": "e57273aadde0a9509c87e52c6a98729e3d849ea19b9435dc98024ca0f9dce60c",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 18
+        },
+        {
+          "relpath": "docs/reports/internal_reread_hierarchy_check_round_2_execution_checklist_v0.md",
+          "sha256": "e2ec66ad806e3cd44fa23075148149a6e15d5a096c392aee23f709d25d213124",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 12
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/CODEX_REVIEW_PACKET_REUSABLE_PATTERN_CANDIDATE_V0.json",
+          "sha256": "d291fdff5e28429d645e3f179b50e7bd7781c0e901b832a7623bddf00c989367",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 8
+        },
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/post_implementation_review_v0/02_GAP_AND_FIX_BACKLOG.md",
+          "sha256": "f4d304a198b0692997d81e14b4c674ceb5510ff553d10dc17790dc7479c1668d",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 8
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_closeout_and_next_family_selector_v0.json",
+          "sha256": "b3f056d94c9966e56349b0c9358938c6434b9d683705836890386351a44474eb",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 8
+        },
+        {
+          "relpath": "docs/reports/internal_reread_hierarchy_check_round_2_lane_b_observation_v0.md",
+          "sha256": "86487634ef349d6a09dd7e3f70c074ed8f7124b4c3578fa6307b8ff3dcc2aa33",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 7
+        }
+      ]
+    },
+    {
+      "subtype": "authority_boundary_guard",
+      "count": 35,
+      "surface_distribution": {
+        "work_control": 19,
+        "workspace_control": 4,
+        "run_generated": 6,
+        "source_docs": 6
+      },
+      "disposition_distribution": {
+        "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 35
+      },
+      "representatives": [
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_execution_to_space_recovery_gate_buildup_v0/execution_to_space_recovery_gate_buildup_receipt.md",
+          "sha256": "7a9184cae506dbeacd484d2ffbffc4ad728e2e2cdf513f55333ef8120a98a0ef",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 17
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/runtime_api_response_key_inspection_20260509_v0.md",
+          "sha256": "7c7e390e78f8d79b6a39b6a6a9b109876cffa527155fc7b71aaeef9bceb7b49b",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 17
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/runs/run_251_qmd_vectorfl_subset_002_gate_specs_trial.md",
+          "sha256": "d05d63369c516b10f9682d011d1986552211c564b935c5b7b3031abb90575a42",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 14
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/manifest/03_p10_readonly_copy_view_manifest_v0.json",
+          "sha256": "02de05ce9aee93a157af0db97915ae60c0fed57a06d527e9bcdad84843a61d2c",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 14
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_pointer_index_v0.json",
+          "sha256": "e390b05e78fcba1c1078d66da810187784ca4a00d4353fa8d9983e9d8b3bcc0f",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 14
+        },
+        {
+          "relpath": "docs/reports/external_ai_material_internalization_pipeline_readiness_check_v0.md",
+          "sha256": "36580e0ce84214fd80d9e4c345804d03ecce3934d7a5db85ae51c2aef092cc66",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 10
+        },
+        {
+          "relpath": "docs/reports/external_candidate_reference_materials_list_v0.md",
+          "sha256": "3983a82815185ba05227b5efd0b70b71f0d3490f2c54bcbe08d6dc466ea4eb76",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 10
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_operator_cards.md",
+          "sha256": "84e3f0a967331075eb8d481a5a475d7147b160b635bc4fa9ad35336f37dce1fb",
+          "surface": "workspace_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 8
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/candidate_to_component_review_packet_v0/requirements_closure_packet_v0/component_proposal_packet_v0/diversification_gate_packet_v0/DIVERSIFICATION_RECEIPT_V0.json",
+          "sha256": "b78bfea782126ce72cedd8876e88e986a717573ffec0f4844afe368159b958be",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 7
+        },
+        {
+          "relpath": "runtime/manifests/vectorfl_integrated_engine_worker_launch_draft_latest_v0.json",
+          "sha256": "c3b7a1c7cd857885dc4bc3d2df39c8e16c8f68a17f643857058344f96674b30e",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 7
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/judgment_lineage_map_candidate_20260509_v0.md",
+          "sha256": "2991235d7ae3b7cb4e0978ee8fa7cd2b4d2008d2853e1f273a2bd66d09f402da",
+          "surface": "work_control",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 6
+        },
+        {
+          "relpath": "docs/specs/compact_position_anchor_template_v0.md",
+          "sha256": "5eb1d636f7190850c1ef2e654ace6510297d3d46d08f8485af3b37f73a3e9536",
+          "surface": "source_docs",
+          "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "disposition_distribution": {
+    "CLEANUP_APPLY_GUARD_PRESERVE": 882,
+    "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 4297,
+    "EXTERNAL_CALL_GUARD_PRESERVE": 781,
+    "GENERAL_GUARD_POINTER": 396,
+    "VALIDATION_GUARD_EVIDENCE": 173,
+    "NEGATIVE_TEST_GUARD_REUSABLE_CANDIDATE": 1
+  },
+  "surface_distribution": {
+    "work_control": 4222,
+    "workspace_control": 108,
+    "run_generated": 1172,
+    "source_docs": 1028
+  },
+  "exact_duplicate_group_count": 173,
+  "fuzzy_duplicate_group_count": 201,
+  "representatives": [
+    {
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/faq.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/help/faq.md",
+      "sha256": "4a35f1c4cf0196e1b3e5e42a7a0e11cb9b6e624fc021fdee8886bad5e6ae1389",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+      "sha256": "3482226c4b744714ba4ee10004a43c29ab9c1b02442f84f38a5c3b7398b6cd97",
+      "surface": "workspace_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "scripts/run_vectorfl_paper_proper_mock.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_vectorfl_paper_proper_mock.py",
+      "sha256": "55d8c107fba366fe093c23fb861afcf0969ba20620b3c22d9c9eab0465cfb908",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/tools/exec-approvals.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/tools/exec-approvals.md",
+      "sha256": "e3493d84216cf8113ead7a6bca0a696e34b83205d5af7c3833c2176b15f1ff4a",
+      "surface": "work_control",
+      "subtype": "hold_stop_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_package_draft_v0.md",
+      "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+      "surface": "source_docs",
+      "subtype": "hold_stop_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/help/testing.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/help/testing.md",
+      "sha256": "29b17d9c4068432d3685bf7790a9910cdcf5fd72f5cca5e6801676c06284e544",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "runtime/manifests/folder_inventory/docs.reports.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/docs.reports.json",
+      "sha256": "c4c57f557294537985865f82a601612a38bd8bd5a814bf262d6bef86669a4cdb",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "runtime/manifests/folder_inventory/runtime.receipts.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/runtime.receipts.json",
+      "sha256": "b7d2a6b9f51d5bd2261106d8ea57717733179f5ff8056b856ff8720e8fb3fe27",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/core/runtime/line_thickening.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/core/runtime/line_thickening.py",
+      "sha256": "9edf74a37c77547afea524dab41a0278d77983da01b4fdfdf165c76b041ea95c",
+      "surface": "work_control",
+      "subtype": "validation_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "docs/reports/integrated_engine_operating_object_slot_movement_rules_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_operating_object_slot_movement_rules_v0.md",
+      "sha256": "b9e703bcf7dac41e96eea88904175ebfc616b8cddb868e8cb0ec29ab6b74a22e",
+      "surface": "source_docs",
+      "subtype": "validation_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/gateway/security/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/gateway/security/index.md",
+      "sha256": "2b9d45799c0bc137827f93784b5adda83bcba6e0a21d07c8ec3350ea125b8d45",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/README.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/README.md",
+      "sha256": "4e2d827e6833b761dc2a9faa50d2aeae9b940364b851df8f521d6204218fb95e",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/help/testing.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/help/testing.md",
+      "sha256": "fa11e7a38086d0199e75d83a79da11843880af50199bc8b2b82e23d9e3ae4f79",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "EXTERNAL_CALL_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/scripts/run-openclaw-podman.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/run-openclaw-podman.sh",
+      "sha256": "9b573d1d5f5751c3fe5bb1eb243725ffb174987da9e458632a295c541458b2a0",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/zh-CN/platforms/android.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/zh-CN/platforms/android.md",
+      "sha256": "b28cef3e25bd81778e95fc4f9a6a43e13c016d280576f745243d416793bc4bcc",
+      "surface": "work_control",
+      "subtype": "general_gate_guard",
+      "disposition": "GENERAL_GUARD_POINTER",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/gateway/security/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/gateway/security/index.md",
+      "sha256": "bf1beaae7562cb5ce3c4a7d1babbf467b89d78923a188f450cdb92d8089a2a3a",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/help/faq.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/help/faq.md",
+      "sha256": "e06faeeb2d35bdfa65a0abc0eeaba09f93204138915b55f1daa49f543684b103",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/docs.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/docs.json",
+      "sha256": "3a7fe502541232bed4c37e22b93578b4be6dcc9224975fbe700cfe11f01718ee",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/paperclip-master/scripts/smoke/openclaw-gateway-e2e.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/paperclip-master/scripts/smoke/openclaw-gateway-e2e.sh",
+      "sha256": "1dc328320b688d62f53f1bfdd5f4a0ce1858b36eb72483b69141684f9e002c5e",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/docs/nodes/index.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/nodes/index.md",
+      "sha256": "ed301494d8af0dcabe2240bc9476c609cfa27eae55f69e573ee4195e65e1a24c",
+      "surface": "work_control",
+      "subtype": "approval_boundary_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json",
+      "sha256": "57e724468ef51e49fb4180a0c3bf9c0d72a8643d587444c4176b57c3d91cbc97",
+      "surface": "workspace_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+      "sha256": "e839c37b3648de92e617f0efc169f2558509ac298f6cc9d4e121dc513e729a00",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/scripts/docker/setup.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/docker/setup.sh",
+      "sha256": "df42d4b8c3d7498dc0eb58cb72377ef0b974840f5d5fd56f465d82fc2706954d",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "sha256": "238aaeedee09b066b602f48289585c499380d37d92626eab49cac375f9b29086",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+      "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+      "surface": "work_control",
+      "subtype": "rollback_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_generated_compact_dedupe_evidence_map_v0.json",
+      "sha256": "4d83b68f569c173360ba61662015aa9a1c0f60f8b1c5712b19f3d3955f89a37e",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+      "sha256": "e9f42c8e6fd321d16973f84dd1f5db49e7f9d1c6afcb00faaedae4ad05e80ba4",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+      "sha256": "c362799391ff76a8bb3a4ec4932668204374711565380c643c8eab3efa8734d8",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "references/git_search/openclaw-main/scripts/e2e/parallels-windows-smoke.sh",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/scripts/e2e/parallels-windows-smoke.sh",
+      "sha256": "69c55bfea7c9de50c6c94f32ba5f6a86423fece421053994b656667e0edf014c",
+      "surface": "work_control",
+      "subtype": "precheck_gate",
+      "disposition": "CLEANUP_APPLY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "sha256": "9a98807b2ad6b30fd607aca96226d70ef0ce41169b58399c7fc62190f9edd970",
+      "surface": "workspace_control",
+      "subtype": "precheck_gate",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_safe_line_map_v0.json",
+      "sha256": "f168378f622f220b7813f7a29d7f2c8a0484a82f54eb25cc96df93da51f173ad",
+      "surface": "workspace_control",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+      "sha256": "fed817173b6bc7d0fc841359f58b65f2711c1b2d88408c3238a6e4f9030543c1",
+      "surface": "workspace_control",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "docs/reports/internal_reread_hierarchy_c_maturation_grammar_check_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/internal_reread_hierarchy_c_maturation_grammar_check_v0.md",
+      "sha256": "7127a87e7c023afe5cb7aad0dbdfd00e5d13ed834b5a8659705e26f80923bba3",
+      "surface": "source_docs",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "docs/reports/internal_reread_hierarchy_check_round_2_lane_c_observation_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/internal_reread_hierarchy_check_round_2_lane_c_observation_v0.md",
+      "sha256": "3ad6d6a482d36949d7f2f7ad99a3bdfa184ee3b85f6fe03e6888d43e9948728f",
+      "surface": "source_docs",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_operator_view_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_taxonomy_broad_search_operator_view_v0.md",
+      "sha256": "26c9346c1014b84e1b6f5994f636797dc315f7457a7f7582a7291ed5fd4bfe64",
+      "surface": "workspace_control",
+      "subtype": "negative_test_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_execution_to_space_recovery_gate_buildup_v0/execution_to_space_recovery_gate_buildup_receipt.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_execution_to_space_recovery_gate_buildup_v0/execution_to_space_recovery_gate_buildup_receipt.md",
+      "sha256": "7a9184cae506dbeacd484d2ffbffc4ad728e2e2cdf513f55333ef8120a98a0ef",
+      "surface": "work_control",
+      "subtype": "authority_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/outputs/runtime_api_response_key_inspection_20260509_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/runtime_api_response_key_inspection_20260509_v0.md",
+      "sha256": "7c7e390e78f8d79b6a39b6a6a9b109876cffa527155fc7b71aaeef9bceb7b49b",
+      "surface": "work_control",
+      "subtype": "authority_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/space-skill-sandbox/runs/run_251_qmd_vectorfl_subset_002_gate_specs_trial.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/runs/run_251_qmd_vectorfl_subset_002_gate_specs_trial.md",
+      "sha256": "d05d63369c516b10f9682d011d1986552211c564b935c5b7b3031abb90575a42",
+      "surface": "work_control",
+      "subtype": "authority_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/manifest/03_p10_readonly_copy_view_manifest_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/manifest/03_p10_readonly_copy_view_manifest_v0.json",
+      "sha256": "02de05ce9aee93a157af0db97915ae60c0fed57a06d527e9bcdad84843a61d2c",
+      "surface": "workspace_control",
+      "subtype": "authority_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    },
+    {
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_pointer_index_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_pointer_index_v0.json",
+      "sha256": "e390b05e78fcba1c1078d66da810187784ca4a00d4353fa8d9983e9d8b3bcc0f",
+      "surface": "workspace_control",
+      "subtype": "authority_boundary_guard",
+      "disposition": "AUTHORITY_BOUNDARY_GUARD_PRESERVE",
+      "safe_line": "PRESERVE_GUARD_POINTER_ONLY_NO_APPLY"
+    }
+  ],
+  "operator_judgment": {
+    "why_safe": "guard assets strengthen boundaries without applying mutations",
+    "risk": "guards can be mistaken for approval/authority; keep candidate/evidence only"
+  },
+  "next_recommended": "G_GATE_GUARD_SUBTYPE_REVIEW_AND_RULE_CANDIDATE_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

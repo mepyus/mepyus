@@ -1,0 +1,32 @@
+{
+  "readiness_id": "M7_HYGIENE_CLEANUP_READINESS_V0",
+  "created_at": "2026-05-25T11:53:12.134946+09:00",
+  "verdict": "CLEANUP_NOT_READY__M7_DASHBOARD_CREATED",
+  "completed": [
+    "M2 pointer/conflict candidate map",
+    "M4 freeze class review",
+    "M7 operator dashboard v0"
+  ],
+  "still_required": [
+    "Codex read-only review of freeze/cleanup blockers",
+    "M8 rollback+validation trace plan",
+    "move/archive manifest candidate",
+    "explicit user approval before apply"
+  ],
+  "hard_blockers": [
+    {
+      "blocker": "archive_not_allowed_board_nonempty",
+      "count": 61
+    },
+    {
+      "blocker": "cleanup_blocker_board_nonempty",
+      "count": 63
+    },
+    {
+      "blocker": "m8_trace_missing",
+      "count": 61
+    }
+  ],
+  "cleanup_apply_ready": false,
+  "decision": "No move/archive. Use dashboard to reduce operator load and prepare M8 trace lane."
+}

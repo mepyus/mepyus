@@ -1,0 +1,31 @@
+{
+  "packet_id": "00_fast_cross_inspection_source_index_v0",
+  "purpose": "Create a fast Hermes/Codex cross-inspection channel so each side can quickly read the other side's latest processing values without editing the other namespace.",
+  "source_refs": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_dual_log_collision_free_execution_space_setup_v0/01_hermes_codex_dual_log_contract_v0.json",
+      "used_for": "namespace separation and immutable pointer rules"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_dual_log_collision_free_execution_space_setup_v0/03_cross_inspection_reentry_schema_v0.json",
+      "used_for": "cross-read required fields"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_space_operator_skill_and_dual_log_fixture_test_v0/dual_log_fixture_run/shared_handoff/99_LATEST_POINTERS.json",
+      "used_for": "existing latest pointer fixture"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_vectorfl_space_operator_skill_and_dual_log_fixture_test_v0/vectorfl-space-operator/references/dual_log_collision_free.md",
+      "used_for": "skill dual-log reference to extend with quick channel"
+    }
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  }
+}
+

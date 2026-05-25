@@ -1,0 +1,112 @@
+{
+  "matrix_id": "VECTORFL_PROMOTION_GATE_MATRIX_V0",
+  "created_at": "2026-05-25T11:29:32.609594+09:00",
+  "rows": [
+    {
+      "gate": "G0_source_provenance",
+      "module": "M1",
+      "required_for": [
+        "INBOX",
+        "CANDIDATE",
+        "MATURED",
+        "AUTHORITY"
+      ],
+      "pass_condition": "source pointer/hash exists and claim/interpretation/authority are separated",
+      "fail_state": "HOLD_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "G1_route_pointer",
+      "module": "M2",
+      "required_for": [
+        "CANDIDATE",
+        "MATURED",
+        "AUTHORITY",
+        "CLEANUP"
+      ],
+      "pass_condition": "asset has route, pointer, relation/dedupe/conflict hypothesis",
+      "fail_state": "HOLD_CONFLICT"
+    },
+    {
+      "gate": "G2_precheck_contract",
+      "module": "M3",
+      "required_for": [
+        "execution-related CANDIDATE",
+        "MATURED",
+        "AUTHORITY apply"
+      ],
+      "pass_condition": "dry-run/preflight contract passes or warnings acknowledged",
+      "fail_state": "HOLD_PRECHECK_FAILED"
+    },
+    {
+      "gate": "G3_maturation_boundary",
+      "module": "M4",
+      "required_for": [
+        "CANDIDATE",
+        "MATURED",
+        "AUTHORITY"
+      ],
+      "pass_condition": "M4 boundary approves state; authority-sensitive assets frozen",
+      "fail_state": "HOLD_AUTHORITY_SENSITIVE"
+    },
+    {
+      "gate": "G4_inbox_review",
+      "module": "M5",
+      "required_for": [
+        "INBOX",
+        "CANDIDATE"
+      ],
+      "pass_condition": "inbox/reentry review queue pointer exists",
+      "fail_state": "HOLD_REVIEW_NOT_ROUTED"
+    },
+    {
+      "gate": "G5_adapter_scope",
+      "module": "M6",
+      "required_for": [
+        "adapter/tool surfaces"
+      ],
+      "pass_condition": "adapter shell separated from core function and evidence instance",
+      "fail_state": "HOLD_ADAPTER_SCOPE_AMBIGUOUS"
+    },
+    {
+      "gate": "G6_hygiene_cleanup",
+      "module": "M7",
+      "required_for": [
+        "CLEANUP",
+        "archive",
+        "decay",
+        "folder move"
+      ],
+      "pass_condition": "freeze/archive/decay/operator dashboard and rollback manifest exist",
+      "fail_state": "HOLD_CLEANUP_PRECONDITION"
+    },
+    {
+      "gate": "G7_trace_observability",
+      "module": "M8",
+      "required_for": [
+        "CANDIDATE",
+        "MATURED",
+        "AUTHORITY",
+        "CLEANUP"
+      ],
+      "pass_condition": "validation/receipt/trace records exist and are linked to asset state",
+      "fail_state": "HOLD_TRACE_INSUFFICIENT"
+    }
+  ],
+  "cleanup_specific_sequence": [
+    "G1_route_pointer",
+    "G3_maturation_boundary",
+    "G6_hygiene_cleanup",
+    "G7_trace_observability",
+    "explicit_user_approval",
+    "one_shot_apply",
+    "post_apply_G7_validation"
+  ],
+  "promotion_specific_sequence": [
+    "G0_source_provenance",
+    "G1_route_pointer",
+    "G2_precheck_contract_if_execution",
+    "G3_maturation_boundary",
+    "G7_trace_observability",
+    "explicit_user_approval_for_authority"
+  ]
+}

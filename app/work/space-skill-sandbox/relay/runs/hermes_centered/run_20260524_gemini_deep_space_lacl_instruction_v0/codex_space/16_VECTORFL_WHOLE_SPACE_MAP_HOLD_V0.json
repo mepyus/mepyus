@@ -1,0 +1,189 @@
+{
+  "packet_id": "16_VECTORFL_WHOLE_SPACE_MAP_HOLD_V0",
+  "role": "CODEX_SPACE_OPERATOR",
+  "status": "HOLD_MAP_NOT_AUTHORITY",
+  "source_handles": [
+    {
+      "source_handle": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+      "source_sha256": "15fd28caa5f10e247aea4d26be63e590bc0c896779c5aaae2f18200d3ddf9a69",
+      "used_for": "whole-space arc/layer/pattern/status map",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+      "source_sha256": "f351ca86b9187259441aabc2d33bcb11e8dc7fff03a3fbcc3d449ba494f683f8",
+      "used_for": "pressure and stale/superseded map",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/11_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_HOLD_V0.json",
+      "source_sha256": "7eea584d63c7fe3cecffd4db05fe9a6b50e03824639dddb0c68ea3dc804741cd",
+      "used_for": "maintenance queues and next safe lane",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "shared_handoff/90_QUICK_EXCHANGE_BOARD.json",
+      "source_sha256": "dd9cf1cadf28a414a0e1e32376498d08f0bc913a3a119971e7abed6d552897e8",
+      "used_for": "canonical fast read path",
+      "owner_namespace": "shared_handoff",
+      "read_only_assertion": true
+    }
+  ],
+  "top_level_shape": {
+    "user_intent": "enters Hermes-centered operating loop",
+    "hermes": {
+      "role": "EXECUTION_WORKBENCH",
+      "writes": "hermes_exec/",
+      "responsibilities": [
+        "preserve original input",
+        "request bounded Codex retrieval when fresh space reference is needed",
+        "merge original + space + model reasoning",
+        "execute or hold",
+        "write trace/reentry for Codex"
+      ]
+    },
+    "codex": {
+      "role": "SPACE_OPERATOR",
+      "writes": "codex_space/",
+      "responsibilities": [
+        "check current space",
+        "retrieve bounded references",
+        "analyze Hermes execution/reentry",
+        "judge space_delta",
+        "propose HOLD-only maturation",
+        "maintain arc/layer/pattern maps"
+      ]
+    },
+    "gemini": {
+      "role": "CODEX_SIDE_WIDE_LENS",
+      "writes": "none in Hermes path",
+      "responsibilities": [
+        "assist layer ambiguity exploration",
+        "supply evidence only",
+        "never act as authority"
+      ]
+    }
+  },
+  "canonical_fast_read_path": [
+    "shared_handoff/90_QUICK_EXCHANGE_BOARD.json",
+    "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json",
+    "codex_space/11_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_HOLD_V0.json",
+    "shared_handoff/99_LATEST_POINTERS.json"
+  ],
+  "readability_test": {
+    "verdict": "PASS_CANONICAL_FAST_CROSS_INSPECTION_READABILITY_WITH_HOLD",
+    "checks_passed": 9,
+    "checks_failed": 0
+  },
+  "root_item_count": 57,
+  "layer_pattern_counts": [
+    {
+      "layer": "L1_FOUNDATION_RECOVERY_CURRENT_POSITION",
+      "pattern_id": "P01_NO_CALL_RECOVERY_AND_CURRENT_POSITION_SURFACE",
+      "root_items": 9
+    },
+    {
+      "layer": "L2_PROTOTYPE_BEHAVIOR_LOOP",
+      "pattern_id": "P02_PROTOTYPE_BEHAVIOR_LOOP",
+      "root_items": 12
+    },
+    {
+      "layer": "L3_PHASE2_FUNCTION_POSITIONS",
+      "pattern_id": "P03_PHASE2_FUNCTION_POSITION_STACK",
+      "root_items": 16
+    },
+    {
+      "layer": "L4_PHASE3_STRUCTURE_RELAYERING",
+      "pattern_id": "P04_PHASE3_STRUCTURE_RELAYERING",
+      "root_items": 4
+    },
+    {
+      "layer": "L5_HERMES_CENTERED_CODEX_SPACE_LOOP",
+      "pattern_id": "P05_HERMES_CENTERED_CODEX_SPACE_LOOP",
+      "root_items": 6
+    },
+    {
+      "layer": "L6_PROVIDER_CALL_BUDGET_GOVERNANCE",
+      "pattern_id": "P06_PROVIDER_CALL_BUDGET_GOVERNANCE",
+      "root_items": 1
+    },
+    {
+      "layer": "L7_EXTERNAL_SPACE_LENS_STACK",
+      "pattern_id": "P07_EXTERNAL_SPACE_LENS_STACK",
+      "root_items": 5
+    },
+    {
+      "layer": "L8_SPACE_OPERATOR_GOVERNANCE_CHANNEL",
+      "pattern_id": "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL",
+      "root_items": 4
+    }
+  ],
+  "status_counts": {
+    "HOLD_EVIDENCE": 49,
+    "HISTORICAL_EVIDENCE_NEEDS_STATUS_NORMALIZATION": 5,
+    "APPLIED_CURRENT_POSITION_HISTORY_KEEP_BOUNDARY_NOTE": 1,
+    "APPLY_OR_STRUCTURE_HISTORY_HOLD_REVIEW_REQUIRED": 2
+  },
+  "pressure_map": [
+    {
+      "pressure": "FOUNDATION_STATUS_AMBIGUITY",
+      "primary_layer": "L1",
+      "current_handling": "AUTHORITY_VS_PROPOSAL_STATUS_MAP"
+    },
+    {
+      "pressure": "PROTOTYPE_EVIDENCE_MISCLASSIFICATION",
+      "primary_layer": "L2",
+      "current_handling": "PROTOTYPE_BEHAVIOR_LOOP_RECLASSIFICATION_HOLD"
+    },
+    {
+      "pressure": "PHASE2_DUPLICATE_PRESSURE",
+      "primary_layer": "L3",
+      "current_handling": "PHASE2_FUNCTION_ROLLUP_INDEX_HOLD"
+    },
+    {
+      "pressure": "STALE_HANDOFF_LANGUAGE",
+      "primary_layer": "L5_L6",
+      "current_handling": "STALE_SUPERSEDED_HANDLE_MAP"
+    },
+    {
+      "pressure": "PROVIDER_CALL_RECURRENCE_RISK",
+      "primary_layer": "L6",
+      "current_handling": "L4_USER_ATTENTION_ONLY"
+    },
+    {
+      "pressure": "EXTERNAL_LENS_OVERPROMOTION",
+      "primary_layer": "L7",
+      "current_handling": "KEEP_AS_LENS_EVIDENCE"
+    },
+    {
+      "pressure": "QUICK_BOARD_VERSION_PRESSURE",
+      "primary_layer": "L8",
+      "current_handling": "CANONICAL_90_BOARD_PLUS_VERSIONED_BOARDS_AND_99_POINTERS"
+    }
+  ],
+  "maintenance_queues": [
+    "L3M01_STATUS_NORMALIZATION_QUEUE",
+    "L3M02_PHASE2_ROLLUP_QUEUE",
+    "L3M03_STALE_HANDOFF_SUPERSEDED_QUEUE",
+    "L3M04_PROTOTYPE_RECLASSIFICATION_QUEUE",
+    "L3M05_EXTERNAL_LENS_BUDGET_QUEUE"
+  ],
+  "current_judgment": {
+    "space_delta_judgment": "STRENGTHEN_EXISTING_PATTERN",
+    "maturation_decision": "USE_WHOLE_SPACE_MAP_AS_HOLD_ORIENTATION_FOR_NEXT_L3_BATCH_WORK",
+    "main_bottleneck": "PHASE2_DUPLICATE_PRESSURE",
+    "next_safe_lane": "RUN_L3M02_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0"
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "promotion_status": "HOLD"
+}

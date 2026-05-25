@@ -1,0 +1,55 @@
+{
+  "readiness_id": "M2_CLEANUP_READINESS_V0",
+  "created_at": "2026-05-25T11:44:58.204842+09:00",
+  "verdict": "NOT_READY_FOR_MOVE__POINTER_INDEX_CREATED_WITH_HOLD",
+  "pointer_count": 70,
+  "exact_duplicate_groups": 0,
+  "fuzzy_duplicate_groups": 0,
+  "conflict_candidates": 49,
+  "module_counts": {
+    "M1": 38,
+    "M8": 4,
+    "M4": 22,
+    "M3": 2,
+    "M2": 3,
+    "M5": 1
+  },
+  "hold_counts": {
+    "HOLD_NOT_AUTHORITY": 6,
+    "HOLD_AUTHORITY_SENSITIVE": 63,
+    "HOLD_CLEANUP_PRECONDITION": 17
+  },
+  "cleanup_preconditions": [
+    {
+      "gate": "M2 pointer index",
+      "status": "PARTIAL_CREATED",
+      "evidence": "this run pointer index"
+    },
+    {
+      "gate": "M2 dedupe/conflict map",
+      "status": "CANDIDATE_CREATED",
+      "evidence": "exact/fuzzy/conflict candidate maps"
+    },
+    {
+      "gate": "M4 authority-sensitive freeze review",
+      "status": "REQUIRED_NEXT",
+      "evidence": "HOLD_AUTHORITY_SENSITIVE pointers"
+    },
+    {
+      "gate": "M7 hygiene/operator dashboard",
+      "status": "NOT_CREATED_IN_THIS_RUN",
+      "evidence": "future lane"
+    },
+    {
+      "gate": "M8 validation/rollback trace",
+      "status": "NOT_CREATED_IN_THIS_RUN",
+      "evidence": "future lane"
+    },
+    {
+      "gate": "explicit apply approval",
+      "status": "NO",
+      "evidence": "HOLD"
+    }
+  ],
+  "decision": "No folder move/archive/apply. This map reduces uncertainty but is not sufficient for cleanup."
+}

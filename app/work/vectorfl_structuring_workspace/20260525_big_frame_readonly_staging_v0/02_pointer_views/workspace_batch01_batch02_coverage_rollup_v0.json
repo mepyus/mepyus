@@ -1,0 +1,58 @@
+{
+  "coverage_id": "WORKSPACE_BATCH01_BATCH02_COVERAGE_ROLLUP_V0",
+  "created_at": "2026-05-25T14:08:28.046172+09:00",
+  "verdict": "WORKSPACE_HAS_TWO_VALIDATED_BATCHES_WITH_COMPLEMENTARY_ROLES_HOLD",
+  "batch01": {
+    "role": "cleanup blocker/move-risk proof",
+    "count": 10,
+    "risk_distribution": {
+      "HIGH_TRUE_MOVE_BLOCKER": 6,
+      "MEDIUM_CONTROL_SURFACE_UPDATE_RISK": 4
+    }
+  },
+  "batch02": {
+    "role": "M1-M8 module-spread learning sample",
+    "count": 10,
+    "module_distribution": {
+      "M1_intake_provenance": 1,
+      "M4_maturation_governance": 2,
+      "M2_asset_graph_router": 2,
+      "M3_guard_precheck": 1,
+      "M5_space_inbox_review": 1,
+      "M8_evaluation_trace_observability": 1,
+      "M7_hygiene_operator_dashboard": 1,
+      "M6_adapter_factory": 1
+    },
+    "link_risk_distribution": {
+      "HIGH_SOURCE_REFERENCE": 3,
+      "CONTROL_SURFACE_ONLY": 7
+    }
+  },
+  "combined_interpretation": [
+    "batch01 tells where not to move",
+    "batch02 tells how to connect module-spread assets safely",
+    "workspace can continue with small read-only copy batches based on space evidence"
+  ],
+  "not_ready_for": [
+    "mv/archive",
+    "authority registry update",
+    "promotion",
+    "bulk restructuring"
+  ],
+  "safe_to_continue_with": [
+    "pointer-only selector",
+    "small read-only copy view",
+    "precise reading",
+    "link-integrity precheck",
+    "closeout/coverage rollup"
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

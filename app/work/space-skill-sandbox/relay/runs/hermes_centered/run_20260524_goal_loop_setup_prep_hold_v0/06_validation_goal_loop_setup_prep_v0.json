@@ -1,0 +1,66 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "setup_contract_created",
+      "pass": true
+    },
+    {
+      "check": "iteration_schema_created",
+      "pass": true
+    },
+    {
+      "check": "continuation_schema_created",
+      "pass": true
+    },
+    {
+      "check": "skill_patch_candidate_not_applied",
+      "pass": true
+    },
+    {
+      "check": "runtime_mutation_no",
+      "pass": true
+    },
+    {
+      "check": "codex_reentry_created",
+      "pass": true
+    },
+    {
+      "check": "quick_board_created",
+      "pass": true
+    },
+    {
+      "check": "latest_pointers_valid",
+      "pass": true
+    },
+    {
+      "check": "no_codex_gemini_executed",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary",
+      "pass": true
+    },
+    {
+      "check": "active_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 11,
+  "elapsed_marker": 162354.166435284,
+  "hashes": {
+    "00_goal_loop_setup_prep_source_index_v0.json": "46cf5610ace45fc8b63d4e815eda46bbcd72d020caa2a8d0b658093aa73593d9",
+    "01_GOAL_LOOP_EXECUTION_SETUP_PREP_CONTRACT.json": "d4f45d8f9c9aa9b0879afb9e7877855a26a368c6fbfd63c797937b9d249f0af6",
+    "02_GOAL_LOOP_ITERATION_RECEIPT_SCHEMA_CANDIDATE.json": "10b7c613c074277498dcea0986b93ef8dad6f3ed7a4e8fff041908bf1796612b",
+    "03_GOAL_LOOP_CONTINUATION_DELTA_SCHEMA_CANDIDATE.json": "740915664c1418f3b57d8c07a6410296c393d0b528fda2c8e5fc47f5b60dfc52",
+    "04_VECTORFL_SPACE_OPERATOR_SKILL_GOAL_LOOP_PATCH_CANDIDATE.json": "47c62f14e7a9ef0470ca612f84ccd082851b711ec39900c3e75d12bc97cee9e3",
+    "05_goal_loop_setup_prep_report_v0.md": "85511c4cdfb628caab056bf1375b69057771c94a194824586858482318f66d6b",
+    "21_CODEX_READABLE_REENTRY_GOAL_LOOP_SETUP_PREP.json": "2d38c936a5f026056be11c7ee8b6ff648555259ecfd027dbb136793e895ea3fd",
+    "90_CODEX_LATEST_SUMMARY_CARD.json": "2d07e3883164033e9816c7100a96bee291178709377076a4bcf0a9b715350053",
+    "90_HERMES_LATEST_SUMMARY_CARD.json": "75e88289fc411d48fa6692a6c3fb40250ac267fe6ccec7345d0be5df995e97bd",
+    "90_QUICK_EXCHANGE_BOARD.json": "9b5ce316fe7fe4d4df5165e6be7a39255c1966fbb385e484de0ac6d33f0870f7",
+    "99_LATEST_POINTERS.json": "8f3394b1cba8130f31698ed590f52da6509cf98e6c343c978a484a5252a69a8b"
+  },
+  "verdict": "PASS_GOAL_LOOP_EXECUTION_SETUP_PREP_WITH_HOLD"
+}

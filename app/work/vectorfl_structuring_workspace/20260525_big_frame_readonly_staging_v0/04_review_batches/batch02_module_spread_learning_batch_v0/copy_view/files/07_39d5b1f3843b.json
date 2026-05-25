@@ -1,0 +1,98 @@
+{
+  "status": "PROPOSAL_ONLY_WITH_HOLD",
+  "created_at": "2026-05-24T00:13:00+0900",
+  "proposal_json": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_no_call_current_position_proposal_for_reuse_chain_v0/no_call_current_position_proposal_for_reuse_chain_v0.json",
+  "proposal_md": "app/work/VECTORFL_NO_CALL_CURRENT_POSITION_PROPOSAL_FOR_REUSE_CHAIN_20260524_V0.md",
+  "latest_completed_lane": "NO_CALL_OPERATOR_HANDOFF_INDEX_FOR_SCRUBBED_REUSE_CHAIN_V0",
+  "lineage_all_pass": true,
+  "api_call": "NO",
+  "api_direct": "NO",
+  "local_http_endpoint_replay": "NO",
+  "local_server_start": "NO",
+  "model_execution": "NO",
+  "authority_mutation": "NO",
+  "registry_mutation": "NO",
+  "root_pointer_mutation": "NO",
+  "source_mutation": "NO",
+  "promotion": "HOLD",
+  "final_verdict": "PASS_NO_CALL_CURRENT_POSITION_PROPOSAL_WITH_HOLD",
+  "input_sha256": {
+    "handoff_index": "e38cdc3a68d879c2b086e9d778816032a7bd839a8b0ec5fce50e5a51f4cba6b2",
+    "rollup": "90bd262330415eac308ca401095d94733223f316b47c4dfa7aa7210277df2c8f"
+  },
+  "proposal": {
+    "proposal_id": "current_position_proposal:no_call_reuse_chain:v0",
+    "proposal_status": "PROPOSAL_ONLY_WITH_HOLD",
+    "proposed_current_position": "NO_CALL_OPERATOR_HANDOFF_ENTRYPOINT_REALIZED_WITH_HOLD",
+    "position_summary": "A no-call reuse chain now exists from prior Phase 1 evidence through filled evidence receipt, trace, operator row, static card, scrubbed card, rollup, and operator handoff index. It is evidence reuse only, not authority or promotion.",
+    "latest_completed_lane": "NO_CALL_OPERATOR_HANDOFF_INDEX_FOR_SCRUBBED_REUSE_CHAIN_V0",
+    "latest_verified_verdict": "PASS_NO_CALL_OPERATOR_HANDOFF_INDEX_WITH_HOLD",
+    "supporting_rollup_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_reuse_chain_consistency_rollup_v0/no_call_reuse_chain_consistency_rollup_v0.json",
+    "safe_operator_entry_ref": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_no_call_operator_handoff_index_for_scrubbed_reuse_chain_v0/no_call_operator_handoff_index_v0.json",
+    "safe_entry_points": [
+      {
+        "label": "Scrubbed no-call static operator card",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_scrubbed_static_operator_card_copy_v0/single_row_static_operator_card_scrubbed_no_call_v0.json",
+        "purpose": "operator-facing safe view; display-only archived evidence; no endpoint replay"
+      },
+      {
+        "label": "No-call reuse chain consistency rollup",
+        "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_no_call_reuse_chain_consistency_rollup_v0/no_call_reuse_chain_consistency_rollup_v0.json",
+        "purpose": "lineage/boundary verification; no replay scripts"
+      }
+    ],
+    "chain": [
+      "existing receipt",
+      "filled evidence receipt",
+      "surface-to-evidence trace object",
+      "operator dashboard row",
+      "static operator card",
+      "scrubbed no-call static operator card copy"
+    ],
+    "lineage_all_pass": true,
+    "layer_count": 5,
+    "watch": [
+      "filled_receipt and trace still contain archived legacy endpoint replay source refs; scrubbed card quarantines them as display-only/no-call",
+      "static_card is pre-scrub copy; prefer scrubbed_card for operator-facing display",
+      "root current-position pointer is not mutated by this proposal",
+      "codex_/root pointer may remain stale relative to this vectorfl_replica no-call reuse chain"
+    ],
+    "valid_for": [
+      "current-position discussion",
+      "operator handoff orientation",
+      "no-call reuse chain summary",
+      "HOLD boundary review"
+    ],
+    "not_valid_for": [
+      "root pointer mutation",
+      "authority mutation",
+      "Program Alpha",
+      "registry creation",
+      "bulk conversion",
+      "endpoint replay evidence refresh",
+      "model execution evidence"
+    ],
+    "forbidden_actions": [
+      "mutate root current-position pointer without explicit approval",
+      "run endpoint replay scripts",
+      "start local server",
+      "call external API",
+      "use API-direct",
+      "create registry",
+      "promote Program Alpha",
+      "treat as authority"
+    ],
+    "next_safe_action": "review this proposal; only after explicit approval consider pointer proposal/apply in the correct workspace, still no-call/no-authority unless separately approved",
+    "api_call": "NO",
+    "api_direct": "NO",
+    "local_http_endpoint_replay": "NO",
+    "local_server_start": "NO",
+    "model_execution": "NO",
+    "authority_mutation": "NO",
+    "registry_mutation": "NO",
+    "root_pointer_mutation": "NO",
+    "source_mutation": "NO",
+    "promotion": "HOLD",
+    "program_alpha_status": "NOT_READY"
+  }
+}

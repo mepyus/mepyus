@@ -1,0 +1,1589 @@
+{
+  "batch_id": "VECTORFL_RECOVERY_QUEUE_BATCH06_PRECISE_READING_V0",
+  "created_at": "2026-05-25T11:17:50.213274+09:00",
+  "source_queue": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_recovery_queue_and_saas_skeleton_v0/indexes/00_priority_recovery_queue_60_compact_index_v0.json",
+  "batch_scope": "priority recovery queue ranks 51-60",
+  "verdict": "PASS_BATCH06_PRECISE_READING_WITH_HOLD",
+  "readings": [
+    {
+      "rank": 51,
+      "asset_id": "pre12_bridge_surface_identification_report_v0",
+      "relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/pre12_bridge_surface_identification_report_v0.md",
+      "sha256": "690b9a64e4d08ab23ba38dd13b1074c87d092a07fc3f9817aa018ac34fe3ab0c",
+      "bytes": 6608,
+      "headings": [
+        "# Pre-1.12B Bridge Surface Identification Report v0",
+        "## Verdict",
+        "## Execution",
+        "### Lower Readiness Examples",
+        "### Upper Currently Consumable Artifact Kinds",
+        "### Direct Contact Points",
+        "### Break Points",
+        "## Interpretation",
+        "## Validation",
+        "## Stage Closeout"
+      ],
+      "key_bullets_sample": [
+        "1. A lower artifact path can already be carried into an upper `search_targets` list.",
+        "2. A split unit can already become an upper evidence pointer or excerpt.",
+        "3. A source manifest can already support provenance and selected asset reasons.",
+        "4. A preprocess comparison can already seed an upper comparison or verification packet.",
+        "5. A lower action or readiness report can already become a constraint or ambiguity note.",
+        "- classify lower readiness;",
+        "- decide whether the artifact is evidence or packet material;",
+        "- map lower fields into upper packet or evidence fields;",
+        "- detect over-promotion risk;",
+        "- decide what ambiguity must stay lower.",
+        "- Real lower artifact examples are identified: `PASS`.",
+        "- Upper surfaces are reference-only and not redefined: `PASS`.",
+        "- Lower material intake is kept separate from upper request intake: `PASS`.",
+        "- The main gap is specified as admission and mapping discipline, not new structure: `PASS`."
+      ],
+      "signal_lines_sample": [
+        "## Verdict",
+        "| readiness | real artifact example | current lower meaning | upper surface candidate |",
+        "| residue-only | `runtime/events/engine_event_ledger.jsonl` | operational trace and run residue | reject for direct upper use; cite only as trace context when needed |",
+        "| residue-only | `runtime/receipts/*` | operation receipt or provenance residue | reject for packet use; possible supporting trace |",
+        "| evidence-ready | `app/work/observer_ingest_min/generated/source_manifest_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260328_071128.json` | source identity, profile, split mode, run id | upper evidence source or selected asset reason |",
+        "| evidence-ready | `app/work/observer_ingest_min/generated/split_units_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.json` | segmented source units with excerpt pointers | upper evidence units, excerpt pointers, selected asset reasons |",
+        "| evidence-ready | `app/work/observer_ingest_min/generated/operator_summary_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.md` | human-readable lower interpretation | evidence-only support unless paired with readiness and route note |",
+        "| engine-ingest-ready | `app/work/external_input_preprocess/generated/builder_choi_interview_transcript_regroup_compare_20260405T074527Z.txt` | preprocessed transcript-like material | ingest-ready material, not automatically packet-candidate |",
+        "| packet-candidate | `app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json` | before/after gate, readiness signals, checkpoints | packet candidate or evidence bundle seed after admission checklist |",
+        "| packet-candidate | `app/work/observer_ingest_min/generated/gmd_native_read_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.json` | native read with lower interpretation surface | packet candidate when scope, provenance, and route are clear |",
+        "| upper surface | currently accepted shape | lower source that can feed it | current gap |",
+        "| question packet `search_targets` | path refs, asset refs, target reasons | source manifests, split units, preprocess comparisons | no rule for when lower path becomes a search target |",
+        "| question packet `constraints` | scope limits, hold notes, ambiguity notes | readiness read, gate decision, trace notes | no direct lower-to-constraint mapping |",
+        "| exploration `selected_assets` | asset refs with selection reasons | source manifests, operator summaries, split units | selection still depends on operator interpretation |",
+        "| exploration `evidence_units` | source refs, pointers, excerpt, why it matters | split units, readable boards, comparison JSON | readiness does not automatically produce why-it-matters |",
+        "| merge/diff/hold `final_reasoning_basis` | comparison of space position and Codex position | preprocess comparison, lower readiness notes | lower quality and upper packet-worthiness are not separated |",
+        "| reingress `future_probe_note` | next probe hints and unresolved notes | lower action maps, probe reports, comparison checkpoints | bridge hints are not consistently carried forward |",
+        "2. A split unit can already become an upper evidence pointer or excerpt.",
+        "3. A source manifest can already support provenance and selected asset reasons.",
+        "| readiness not encoded as upper admission | Codex reads several lower artifacts and infers status manually | bridge must separate lower readiness from upper admission |"
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": false,
+        "maturation": true,
+        "inbox": true,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Pre-1.12B Bridge Surface Identification Report v0 / ## Verdict / ## Execution / ### Lower Readiness Examples / ### Upper Currently Consumable Artifact Kinds"
+    },
+    {
+      "rank": 52,
+      "asset_id": "pre12_lower_output_readiness_recheck_v0",
+      "relpath": "docs/reports/pre12_lower_output_readiness_recheck_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/pre12_lower_output_readiness_recheck_v0.md",
+      "sha256": "817670bf56b77c102669749abe4b8008bb45e247689edde4aa25473899bcfe53",
+      "bytes": 4278,
+      "headings": [
+        "# Pre-1.12 Lower Output Readiness Recheck v0",
+        "## Verdict",
+        "## Readiness Ladder",
+        "## Example Reclassification",
+        "## Why Some Outputs Are Not Packet-Candidate",
+        "## Interpretation",
+        "## Validation",
+        "## Next Stage Entry"
+      ],
+      "key_bullets_sample": [
+        "- `app/work/observer_ingest_min/generated/source_manifest_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260328_071128.json`: evidence-ready. It identifies source path, profile, split mode, unit count, and run id.",
+        "- `app/work/observer_ingest_min/generated/split_units_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.json`: evidence-ready. It contains unit refs and excerpts, but not a line/axis decision.",
+        "- `app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json`: packet-candidate. It has before/after gates, readiness read, and next checkpoint, but still needs bridge mapping into upper packet fields.",
+        "- `app/work/external_input_preprocess/generated/*regroup*.txt`: engine-ingest-ready or evidence-ready depending on whether probe has passed. Alone it is not packet-candidate.",
+        "- `docs/reports/raw_intake_gap_analysis_before_middle_layer_fix_v1.md`: evidence-ready and action-informing, but not packet-candidate because it intentionally says patch later and does not encode a runtime admission object.",
+        "- split units say what was cut, not what should be asked;",
+        "- operator summaries say what is readable, not what is claim-ready;",
+        "- preprocess sidecars improve shape but need a post-preprocess probe;",
+        "- raw input probes expose flattening, but do not package topic-bearing frame blocks.",
+        "- `residue-only` is not a failure.",
+        "- `evidence-ready` is the common healthy lower output.",
+        "- `engine-ingest-ready` means lower machinery can read it, not that upper can answer with it.",
+        "- `packet-candidate` should be reserved for lower outputs with source, reason, readiness, candidate frame, and next route/axis hints.",
+        "- Readiness categories are non-identical: PASS."
+      ],
+      "signal_lines_sample": [
+        "## Verdict",
+        "The readiness ladder remains useful, but most lower outputs stop at residue-only or evidence-ready. Only a smaller subset is engine-ingest-ready, and packet-candidate remains provisional because lower outputs do not yet carry a stable admission rule into the upper CLI packet/evidence spine.",
+        "| `residue-only` | Useful trace/residue, not enough for direct reasoning or packet admission | `runtime/events/*`, `runtime/receipts/*`, repeated generated boards, `runtime/views/*` derived views | Records activity and history but often lacks compact claim/evidence/readiness shape |",
+        "- `app/work/observer_ingest_min/generated/source_manifest_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260328_071128.json`: evidence-ready. It identifies source path, profile, split mode, unit count, and run id.",
+        "- `app/work/observer_ingest_min/generated/split_units_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.json`: evidence-ready. It contains unit refs and excerpts, but not a line/axis decision.",
+        "- `app/work/external_input_preprocess/generated/builder_choi_interview_transcript_preprocess_comparison.json`: packet-candidate. It has before/after gates, readiness read, and next checkpoint, but still needs bridge mapping into upper packet fields.",
+        "- `app/work/external_input_preprocess/generated/*regroup*.txt`: engine-ingest-ready or evidence-ready depending on whether probe has passed. Alone it is not packet-candidate.",
+        "- `docs/reports/raw_intake_gap_analysis_before_middle_layer_fix_v1.md`: evidence-ready and action-informing, but not packet-candidate because it intentionally says patch later and does not encode a runtime admission object.",
+        "## Why Some Outputs Are Not Packet-Candidate",
+        "- operator summaries say what is readable, not what is claim-ready;",
+        "The upper CLI packet requires a request-like structure: interpreted goal, constraints, search targets, expected output shape, ambiguity handling, and merge mode candidate. Lower outputs do not yet consistently provide that.",
+        "The readiness criteria still hold:",
+        "- `evidence-ready` is the common healthy lower output.",
+        "- `packet-candidate` should be reserved for lower outputs with source, reason, readiness, candidate frame, and next route/axis hints.",
+        "## Validation",
+        "- Packet-candidate remains intentionally narrow: PASS."
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": false,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": false,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": false,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Pre-1.12 Lower Output Readiness Recheck v0 / ## Verdict / ## Readiness Ladder / ## Example Reclassification / ## Why Some Outputs Are Not Packet-Candidate"
+    },
+    {
+      "rank": 53,
+      "asset_id": "process_memory_operating_layer_candidate_v0",
+      "relpath": "docs/reports/process_memory_operating_layer_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/process_memory_operating_layer_candidate_v0.md",
+      "sha256": "a4f72fef5f420cfee5809e9481f7ef47ffca348ea79e61ad920e38279c65b43b",
+      "bytes": 9378,
+      "headings": [
+        "# Process Memory Operating Layer Candidate v0",
+        "## 1. Status",
+        "## 2. Reading of the external material",
+        "## 2.1 Current VectorFL frame",
+        "## 3. Borrow / Hold / Reject",
+        "### Borrow",
+        "### Hold",
+        "### Reject",
+        "## 4. VectorFL translation",
+        "### 4.1 Entry-point memory"
+      ],
+      "key_bullets_sample": [
+        "- status: candidate only",
+        "- source_lens: `agent-work-mem`",
+        "- use: operating-principle candidate for reusable process memory",
+        "- baseline: false",
+        "- implementation_plan: false",
+        "- automation_instruction: false",
+        "- folder_migration: false",
+        "- install_instruction: false",
+        "- read a small entry point before reading old history",
+        "- separate current, recent, and old memory",
+        "- preserve append-only traces",
+        "- use structured handoff artifacts instead of chat-only summaries",
+        "- declare capability before accepting work",
+        "- detect unfinished work before continuing"
+      ],
+      "signal_lines_sample": [
+        "# Process Memory Operating Layer Candidate v0",
+        "- status: candidate only",
+        "- source_lens: `agent-work-mem`",
+        "- use: operating-principle candidate for reusable process memory",
+        "- folder_migration: false",
+        "The useful part of `agent-work-mem` is not its folder shape. The useful part is its convention for shared working memory across changing AI sessions and agents:",
+        "- preserve append-only traces",
+        "- use structured handoff artifacts instead of chat-only summaries",
+        "For VectorFL, this becomes a candidate for a Process Memory Operating Layer.",
+        "This candidate should be read against the actual ongoing work:",
+        "-> lens / camera testing",
+        "-> Gemini / Codex role validation",
+        "-> return signals to integrated engine / line-axis / CLI attachment / process memory",
+        "lenses, and candidate rules be reread and reused by changing AI workers",
+        "without losing direction, overreading evidence, or depending on chat memory?",
+        "## 3. Borrow / Hold / Reject",
+        "- structured handoff type vocabulary",
+        "### Hold",
+        "- any `AIMemory/` folder installation",
+        "- any replacement of `RUNLOG`, runtime receipts, package records, or sandbox records"
+      ],
+      "prior_family": "PROVENANCE_BOUNDARY_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": false,
+        "maturation": true,
+        "inbox": true,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Process Memory Operating Layer Candidate v0 / ## 1. Status / - status: candidate only / - source_lens: `agent-work-mem` / - use: operating-principle candidate for reusable process memory"
+    },
+    {
+      "rank": 54,
+      "asset_id": "relation_first_input_gate_spec_v0",
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+      "sha256": "268e2577026b630330107a4137d00b8bc01cbc88bd8ea51578b512db2f21d7f9",
+      "bytes": 12776,
+      "headings": [
+        "# Relation-first Input Gate Spec v0",
+        "## 1. Document Status",
+        "## 2. Name",
+        "## 3. One-sentence Definition",
+        "## 4. Core Essence",
+        "### 4.1 Relation-first",
+        "### 4.2 Compact-first",
+        "### 4.3 No-file Default",
+        "## 5. Three Layers",
+        "### 5.1 Reading Layer"
+      ],
+      "key_bullets_sample": [
+        "1. External material is not automatically accepted.",
+        "2. External material is not implemented directly.",
+        "3. External tools are not adopted directly.",
+        "4. External cases are first read as relation pressure and risk.",
+        "5. Start Compact-first.",
+        "6. File creation is not default.",
+        "7. Reject / Hold are normal outcomes.",
+        "8. Heavy Watch is risk isolation, not adoption planning.",
+        "9. User Gate is always preserved."
+      ],
+      "signal_lines_sample": [
+        "# Relation-first Input Gate Spec v0",
+        "Document = Relation-first Input Gate Spec v0",
+        "Status = CANDIDATE_OPERATION_SPEC",
+        "Authority = orientation / usage support",
+        "Not registry/index/ledger",
+        "Clarify what the Relation-first / Compact-first input operating frame is, what it does, what it does not do, which components it uses, and where it stops.",
+        "This document specifies the current shape of the candidate operating frame.",
+        "Relation-first Input Gate",
+        "Why \"Gate\":",
+        "It checks, routes, holds, rejects, or escalates materials before they enter deeper project handling.",
+        "Relation-first Input Gate는 외부 자료를 바로 요약·구현·자동화·자산화하지 않고,",
+        "Compact / Standard / Heavy Watch / Hold / Reject 중 하나로 분기하는",
+        "Before splitting a source into many fragments, read the whole flow and its relationship pressure.",
+        "Then route:",
+        "If unclear -> Hold",
+        "## 5. Three Layers",
+        "### 5.1 Reading Layer",
+        "### 5.2 Operation Layer",
+        "Compact / Standard / Heavy Watch / Hold / Reject",
+        "### 5.3 Safety Layer"
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Input Gate Spec v0 / ## 1. Document Status / ## 2. Name / ## 3. One-sentence Definition / ## 4. Core Essence"
+    },
+    {
+      "rank": 55,
+      "asset_id": "relation_first_input_observation_surface_candidate_v0",
+      "relpath": "docs/reports/relation_first_input_observation_surface_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_observation_surface_candidate_v0.md",
+      "sha256": "36be9d721b3a6112dd09c7967a864e20a961ea01315d372577346a4cf56a19e2",
+      "bytes": 5176,
+      "headings": [
+        "# Relation-first Input Observation Surface Check v0",
+        "## 1. Status",
+        "## 2. Sources used",
+        "## 3. Executive summary",
+        "## 4. Pass 1 — Minimum Visibility Check",
+        "## 5. Pass 2 — Input Report Card Shape",
+        "### Input Report Card (Standard/Heavy)",
+        "# Input Report Card",
+        "### Mini Input Card (Compact)",
+        "# Mini Input Card"
+      ],
+      "key_bullets_sample": [
+        "- `docs/reports/relation_first_space_input_processor_candidate_closeout_v0.md`",
+        "- `docs/reports/relation_first_space_input_processor_candidate_v0.md`",
+        "- `docs/reports/evidence_provenance_classification_candidate_v0.md`",
+        "- `docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md`",
+        "- `docs/reports/line_axis_linkage_gate_candidate_spec_v0.md`",
+        "- `docs/reports/standardized_intake_packet_candidate_spec_v0.md`",
+        "- `docs/reports/cross_session_reentry_support_candidate_spec_v0.md`",
+        "- source:",
+        "- user intent:",
+        "- source-level reading:",
+        "- meaning blocks:",
+        "- key relations:",
+        "- evidence labels:",
+        "- placement:"
+      ],
+      "signal_lines_sample": [
+        "## 2. Sources used",
+        "- `docs/reports/relation_first_space_input_processor_candidate_closeout_v0.md`",
+        "- `docs/reports/relation_first_space_input_processor_candidate_v0.md`",
+        "- `docs/reports/evidence_provenance_classification_candidate_v0.md`",
+        "- `docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md`",
+        "- `docs/reports/line_axis_linkage_gate_candidate_spec_v0.md`",
+        "- `docs/reports/standardized_intake_packet_candidate_spec_v0.md`",
+        "- `docs/reports/cross_session_reentry_support_candidate_spec_v0.md`",
+        "| **Source Identity** | Yes | Name only | - | 입력을 구별하기 위함 |",
+        "| **Evidence Label** | Yes | Label name | - | 근거 신뢰성 확인 |",
+        "| **Placement** | Yes | Label name | - | 현재 상태(Watch/Hold 등) |",
+        "- source:",
+        "- source-level reading:",
+        "- evidence labels:",
+        "- line/axis pressure:",
+        "- watch/hold:",
+        "- User Gate:",
+        "## 6. Pass 3 — Relation Map Visibility Check",
+        "| **Source -> Claim** | Relation list | EXTRACTED | - | Confirmed Fact |",
+        "| **Claim -> Evidence** | Trace | PROCESS_TRACE | - | Truth Source |"
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": false,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": true,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Input Observation Surface Check v0 / ## 1. Status / ## 2. Sources used / - `docs/reports/relation_first_space_input_processor_candidate_closeout_v0.md` / - `docs/reports/relation_first_space_input_processor_candidate_v0.md`"
+    },
+    {
+      "rank": 56,
+      "asset_id": "relation_first_light_compression_rule_v0",
+      "relpath": "docs/reports/relation_first_light_compression_rule_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_light_compression_rule_v0.md",
+      "sha256": "72b678545cc6ecb2d76e0384c06a2cab0c3310c246cdcfe8b2ed87a822805a2a",
+      "bytes": 4331,
+      "headings": [
+        "# Relation-first Light Compression Rule v0",
+        "## 1. Status",
+        "## 2. Executive summary",
+        "## 3. Mode Classification Table",
+        "## 4. Mode Selection Definitions",
+        "### 4.1 Compact Mode",
+        "### 4.2 Standard Mode",
+        "### 4.3 Heavy Mode",
+        "## 5. Key Design Principles",
+        "## 6. Structural problem list"
+      ],
+      "key_bullets_sample": [
+        "- **Use when:** 1회성 확인, 저위험 입력, 빠른 정렬.",
+        "- **Goal:** 최소한의 맥락 보존 및 판단 기록.",
+        "- **Fields:** Source Identity, User Intent, Placement, Next Action, Re-entry Signal.",
+        "- **Use when:** 재사용 가능성이 있는 외부 자료, 기존 라인과의 연결성 검토 필요 시.",
+        "- **Goal:** 원본 맥락 보존 및 구조적 연결 확인.",
+        "- **Fields:** Compact + Meaning Block, Evidence Label, Linkage Status.",
+        "- **Use when:** 도구/API 도입, 워크플로우 변경, 고위험 판단이 필요한 경우.",
+        "- **Goal:** 전체 구조적 압력 분석 및 잠재적 리스크 심층 검토.",
+        "- **Fields:** All fields + Drift Analysis, Old/New comparison.",
+        "1. **Compact에서 경계를 생략하지 않음:** 정보의 양은 줄여도, `do-not-infer`나 `User Gate` 같은 안전 경계는 1줄로라도 남겨야 합니다.",
+        "2. **증거 추적의 미니멀화:** `Evidence trace`는 필수로 남기되, Compact 모드에서는 (Source, Key Judgment, Next Action) 형태의 미니 추적으로 압축합니다.",
+        "3. **Hook의 수동성:** 훅(Hook)은 자동 블로커가 아니라 '판단을 위한 수동 정지 신호'로 사용합니다.",
+        "4. **Invocation Context:** 스킬은 로더를 만들지 말고, 어떤 맥락에서 수동으로 꺼내 쓸지(Invocation Context)를 기록하여 사용합니다.",
+        "- NO implementation, automation, or runtime script creation."
+      ],
+      "signal_lines_sample": [
+        "**STATUS: RELATION_FIRST_LIGHT_COMPRESSION_RULE_CANDIDATE_COMPLETE**",
+        "| Component | Compact | Standard | Heavy | Note |",
+        "| **Source Bundle** | Yes | Yes | Yes | 원본 흐름 보존 |",
+        "| **Source-level Reading** | Yes | Yes | Yes | 최소 문맥 유지 |",
+        "| **Relation Map** | - | - | Yes | 구조적 관계 |",
+        "| **Evidence / Provenance Label**| Yes | Yes | Yes | 증거 신분 확인 |",
+        "| **Line / Axis Pressure** | - | Yes | Yes | 구조적 긴장 확인 |",
+        "| **Watch / Hold** | Yes | Yes | Yes | 안전 보류 |",
+        "| **User Gate** | Yes | Yes | Yes | 최종 판단 |",
+        "- **Fields:** Source Identity, User Intent, Placement, Next Action, Re-entry Signal.",
+        "- **Fields:** Compact + Meaning Block, Evidence Label, Linkage Status.",
+        "1. **Compact에서 경계를 생략하지 않음:** 정보의 양은 줄여도, `do-not-infer`나 `User Gate` 같은 안전 경계는 1줄로라도 남겨야 합니다.",
+        "2. **증거 추적의 미니멀화:** `Evidence trace`는 필수로 남기되, Compact 모드에서는 (Source, Key Judgment, Next Action) 형태의 미니 추적으로 압축합니다.",
+        "| **Authority Drift** | HIGH | 워커의 해석이 사실로 굳어짐 | User Gate 강화 | Gemini 증거를 Truth로 승격 |",
+        "**KEEP_AS_RELATION_FIRST_LIGHT_COMPRESSION_RULE_CANDIDATE_WITH_WATCH**",
+        "*   소프트웨어적 도구(Graphify/Karpathy)가 곧바로 우리 공간의 아키텍처가 되는 압박.",
+        "- NO registry, index, ledger, router, controller.",
+        "- NO current-position update or baseline promotion.",
+        "- NO tool/API/function attachment.",
+        "- NO Gemini verified-truth authority."
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": false,
+        "operator": false,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Light Compression Rule v0 / ## 1. Status / ## 2. Executive summary / ## 3. Mode Classification Table / ## 4. Mode Selection Definitions"
+    },
+    {
+      "rank": 57,
+      "asset_id": "relation_first_real_input_trial_claude_code_v0",
+      "relpath": "docs/reports/relation_first_real_input_trial_claude_code_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_real_input_trial_claude_code_v0.md",
+      "sha256": "041e1374ff7ffb85c18b9462e3897435f1dad0c7408fc458a9e1d8afbe59d6e6",
+      "bytes": 6700,
+      "headings": [
+        "# Relation-first Real Input Trial — Claude Code Productivity v0",
+        "## 1. Status",
+        "## 2. Verdict",
+        "## 3. Executive summary",
+        "## 4. Pass 1 — Source Bundle Capture",
+        "## 5. Pass 2 — Source-level Reading",
+        "## 6. Pass 3 — Meaning Block Detection",
+        "## 7. Pass 4 — Relation Map / Line-Axis Pressure",
+        "## 8. Pass 5 — Old vs New Processing Comparison",
+        "## 9. Input Report Card"
+      ],
+      "key_bullets_sample": [
+        "- **source_bundle_name:** Claude-Code-Productivity-Bundle-001",
+        "- **sources:** [Neil Kakkar Blog](https://neilkakkar.com/productive-with-claude-code.html), [GeekNews Discussion](https://news.hada.io/topic?id=27817)",
+        "- **user_intent:** Agent workspace 구조 참조를 위한 관계 흐름 보존",
+        "- **why_now:** 에이전트의 생산성을 프롬프트가 아닌 '인프라/마찰 제거' 관점으로 재정립하기 위해",
+        "- **input_type:** external article / operational reference",
+        "- **selected_mode:** `STANDARD`",
+        "- **do_not_infer:** 구현, 자동화, 베이스라인 승격 금지",
+        "- **watch_items:** 외부 도구의 구조가 내부 아키텍처로 오인되는 것",
+        "- **next_safe_action:** 관찰 및 렌즈 보존",
+        "- **source-level reading:** AI 에이전트 작업 시 발생할 수 있는 대기 시간, 빌드 충돌, 수동 검토 등 '작업 마찰(Friction)'을 인프라로 해결하는 과정.",
+        "- **core mechanism:** 반복 작업 자동화 -> 대기 시간 제거 -> 검증 위임 -> 병렬 워크트리 인프라.",
+        "- **structural pressure:** 단순 실행 도구(CLI)가 아니라 에이전트 운영 환경 전체를 배려해야 함.",
+        "- **what the material wanted to move:** 구현 중심의 도구 사용에서 '운영 인프라 중심'의 에이전트 운영 체계로.",
+        "- **source:** Neil Kakkar Productivity Study"
+      ],
+      "signal_lines_sample": [
+        "## 2. Verdict",
+        "## 4. Pass 1 — Source Bundle Capture",
+        "- **source_bundle_name:** Claude-Code-Productivity-Bundle-001",
+        "- **sources:** [Neil Kakkar Blog](https://neilkakkar.com/productive-with-claude-code.html), [GeekNews Discussion](https://news.hada.io/topic?id=27817)",
+        "## 5. Pass 2 — Source-level Reading",
+        "- **source-level reading:** AI 에이전트 작업 시 발생할 수 있는 대기 시간, 빌드 충돌, 수동 검토 등 '작업 마찰(Friction)'을 인프라로 해결하는 과정.",
+        "| Meaning Block | Preserves | Old fragmented form | Diluted aspect | Evidence label |",
+        "## 7. Pass 4 — Relation Map / Line-Axis Pressure",
+        "| **Source -> Claim** | EXTRACTED | Candidate | 생산성 인프라의 핵심 증명 | 지표 오용(커밋 수) |",
+        "| **Claim -> Evidence** | PROCESS_TRACE | Process Asset | 운영 패턴의 재현 가능성 | 레지스트리화 위험 |",
+        "| **Line Pressure -> Axis** | INFERRED | Watch | 노동의 축(수행자->감독자) 이동 확인 | ontology화 위험 |",
+        "| **Source flow** | 코드 파편 중심 | 인프라/마찰 제거 중심 | 맥락적 구조 회복 | 과잉 해석 |",
+        "- **source:** Neil Kakkar Productivity Study",
+        "- **source-level reading:** 에이전트 생산성은 프롬프트가 아닌 '마찰 없는 인프라'에서 옴",
+        "- **evidence labels:** EXTRACTED, INTERPRETED, INFERRED",
+        "- **placement:** Process Asset Candidate",
+        "- **line/axis pressure:** 에이전트 운영 인프라의 Line 압력",
+        "- **watch/hold:** 지표(PR 수)의 사실화, 자동화 압박",
+        "- **User Gate:** 통과",
+        "| **Authority Drift** | HIGH | 외부 도구의 지표를 우리 진실로 오독함 | 인프라 관점으로만 차용 | 성과 지표 강제 |"
+      ],
+      "prior_family": "PROVENANCE_BOUNDARY_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": false,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": true
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Real Input Trial — Claude Code Productivity v0 / ## 1. Status / ## 2. Verdict / ## 3. Executive summary / ## 4. Pass 1 — Source Bundle Capture"
+    },
+    {
+      "rank": 58,
+      "asset_id": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relpath": "docs/reports/relation_first_real_input_trial_karpathy_graphify_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_real_input_trial_karpathy_graphify_v0.md",
+      "sha256": "7289e26b297a418764c3c9947cfcaa53d12c4d2c332bf9d822d5747edce290e2",
+      "bytes": 6249,
+      "headings": [
+        "# Relation-first Real Input Trial — Karpathy llm-wiki + Graphify v0",
+        "## 1. Status",
+        "## 2. Verdict",
+        "## 3. Executive summary",
+        "## 4. Pass 1 — Source Bundle Capture",
+        "## 5. Pass 2 — Source-level Reading",
+        "## 6. Pass 3 — Meaning Block Detection",
+        "## 7. Pass 4 — Relation Map",
+        "## 8. Pass 5 — Line / Axis Pressure Check",
+        "## 9. Pass 6 — Selective Segmentation"
+      ],
+      "key_bullets_sample": [
+        "- **source_bundle_name:** AI-Source-Bundle-V001 (Karpathy/Graphify)",
+        "- **sources:** Karpathy llm-wiki gist, Graphify GitHub",
+        "- **user_intent:** Agent workspace 구조 참조를 위한 관계 흐름 보존",
+        "- **why_now:** 공간의 입력을 파편화하지 않고 구조적으로 보존하는 문법 검증 필요",
+        "- **input_type:** external repo / reference material",
+        "- **selected_mode:** `STANDARD`",
+        "- **do_not_infer:** 자동화/실행계획/온톨로지화 금지",
+        "- **watch_items:** 외부 도구의 구조가 시스템 설계로 직결되는 압박",
+        "- **next_safe_action:** 관찰 및 렌즈 보존",
+        "- **source:** Karpathy llm-wiki",
+        "- **source-level reading:** LLM을 이용한 지속적인 지식 관리(Persistent intermediate wiki)와 추론/로그의 분리.",
+        "- **core mechanism:** Raw vs Generated layer separation, Index vs Log.",
+        "- **source:** Graphify",
+        "- **source-level reading:** 증거 기반의 관계 추출과 쿼리 가능한 경로(Query path) 관리."
+      ],
+      "signal_lines_sample": [
+        "# Relation-first Real Input Trial — Karpathy llm-wiki + Graphify v0",
+        "**STATUS: RELATION_FIRST_REAL_INPUT_TRIAL_KARPATHY_GRAPHIFY_COMPLETE**",
+        "## 2. Verdict",
+        "Karpathy의 `llm-wiki`와 `Graphify`를 실제 소스 번들로 태워본 결과, '관계 우선(Relation-first)' 입력기 체인은 자료를 조각내지 않고도 의미의 압력(Meaning Pressure)을 보존함을 확인했습니다. 다만, 분석 대상이 풍부할수록 필드 작성 과정에서 의식(Ceremony)이 발생할 위험이 있으므로, 향후 운영 시에는 'Standard' 이상의 모드를 사용할 때 신중한 필드 선별이 요구됩니다.",
+        "## 4. Pass 1 — Source Bundle Capture",
+        "- **source_bundle_name:** AI-Source-Bundle-V001 (Karpathy/Graphify)",
+        "- **sources:** Karpathy llm-wiki gist, Graphify GitHub",
+        "## 5. Pass 2 — Source-level Reading",
+        "- **source:** Karpathy llm-wiki",
+        "- **source-level reading:** LLM을 이용한 지속적인 지식 관리(Persistent intermediate wiki)와 추론/로그의 분리.",
+        "- **core mechanism:** Raw vs Generated layer separation, Index vs Log.",
+        "- **source:** Graphify",
+        "- **source-level reading:** 증거 기반의 관계 추출과 쿼리 가능한 경로(Query path) 관리.",
+        "- **core mechanism:** Evidence relation map, extraction/inference/ambiguous label.",
+        "**Synthesis:** 두 자료는 모두 '상태(State)'가 아니라 '흐름(Flow)'과 '증거(Evidence)'를 관리하는 데 집중합니다.",
+        "| Meaning Block | Source | Preserves | Why it matters | Label |",
+        "| **Layered Context** | Karpathy | Raw vs Generated | 소스 근거 유지 | EXTRACTED |",
+        "| **Evidence Relation** | Graphify | Evidence Map | 맥락적 연결 보존 | INFERRED |",
+        "| **Trace Memory** | Graphify | 이력 추적 | 작업의 재생 가능성 | PROCESS_TRACE |",
+        "## 7. Pass 4 — Relation Map"
+      ],
+      "prior_family": "PROVENANCE_BOUNDARY_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": false,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Real Input Trial — Karpathy llm-wiki + Graphify v0 / ## 1. Status / ## 2. Verdict / ## 3. Executive summary / ## 4. Pass 1 — Source Bundle Capture"
+    },
+    {
+      "rank": 59,
+      "asset_id": "relation_first_repetition_operation_batch001_v0",
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "sha256": "d1e66e1d6b8411481ece668666661cf2569aa1ec2d89db78fcf60f3282a896d9",
+      "bytes": 3102,
+      "headings": [
+        "# Relation-first Repetition Operation Batch 001",
+        "## 1. Status",
+        "## 2. Verdict",
+        "## 3. Executive summary",
+        "## 4. Materials Tested / Route Table",
+        "## 5. Functional advantages found",
+        "## 6. Structural problem list",
+        "## 7. Current state",
+        "## 8. When to reuse",
+        "## 9. Watch items"
+      ],
+      "key_bullets_sample": [
+        "- NO implementation, automation, or runtime script creation.",
+        "- NO registry, index, ledger, router, controller.",
+        "- NO formal schema or official workflow.",
+        "- NO current-position update or baseline promotion.",
+        "- NO tool/API/function attachment.",
+        "- NO ontology creation.",
+        "- NO forced pipeline creation.",
+        "- NO integrated engine implementation.",
+        "- NO Gemini verified-truth authority.",
+        "- NO Codex final authority."
+      ],
+      "signal_lines_sample": [
+        "## 2. Verdict",
+        "모든 자료를 하나의 배치 안에서 가볍게 처리했지만, 개별 route는 Compact / Standard / Heavy Watch / Hold / Reject로 분기되었습니다.",
+        "## 4. Materials Tested / Route Table",
+        "| Material | Route | Placement | Preserve? | File? | Reason |",
+        "| **llmstxt.org** | Standard | Source Context | Yes | No | 유용한 운영 참고자료 |",
+        "| **Stack Overflow** | Standard | Guideline/Review | Yes | No | 유용한 운영 참고자료 |",
+        "| **Google/Verge** | Heavy | Tool Risk Case | Watch | No | 보안/권한 이슈 검토 필요 |",
+        "| **Yandatini** | Compact | Hold | No | No | 신호 부족 |",
+        "*   **Worker-Role Elevation:** Evidence Packaging을 통해 사람의 검증을 대체하지 않고 사용자의 판단을 지원.",
+        "| **Registry Drift** | HIGH | 모든 연결을 index로 만들려 함 | '후보' 상태 보존 | Formal registry 생성 |",
+        "| **Authority Drift** | HIGH | 워커의 해석이 사실로 굳어짐 | 'Worker Evidence' 라벨링 | verified truth 선언 |",
+        "*   소프트웨어적 도구(Graphify/Karpathy)가 곧바로 우리 공간의 아키텍처가 되는 압박.",
+        "- NO registry, index, ledger, router, controller.",
+        "- NO current-position update or baseline promotion.",
+        "- NO tool/API/function attachment.",
+        "- NO Gemini verified-truth authority.",
+        "- NO Codex final authority."
+      ],
+      "prior_family": "PROVENANCE_BOUNDARY_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": false,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Repetition Operation Batch 001 / ## 1. Status / ## 2. Verdict / ## 3. Executive summary / ## 4. Materials Tested / Route Table"
+    },
+    {
+      "rank": 60,
+      "asset_id": "relation_first_space_input_processor_candidate_v0",
+      "relpath": "docs/reports/relation_first_space_input_processor_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_space_input_processor_candidate_v0.md",
+      "sha256": "689c0633029060c18b78edaa4bbcfb391a131fb01ec51754d4c1fddd5e7c5adf",
+      "bytes": 6272,
+      "headings": [
+        "# Relation-first Space Input Processor Candidate v0",
+        "## 1. Status",
+        "## 2. Sources used",
+        "## 3. Executive summary",
+        "## 4. Old input problem diagnosis",
+        "## 5. Larger input units",
+        "## 6. Relation-first processing flow",
+        "## 7. Karpathy / Graphify fit (Corrected)",
+        "## 8. Line / Axis centered input check",
+        "## 9. Candidate processor shape"
+      ],
+      "key_bullets_sample": [
+        "- `docs/reports/space_input_processor_readiness_scan_corrected.md`",
+        "- `docs/reports/integrated_engine_component_map_and_part_spec_reading_v0.md`",
+        "- `docs/reports/standardized_intake_packet_candidate_spec_v0.md`",
+        "- `docs/reports/line_axis_linkage_gate_candidate_spec_v0.md`",
+        "- `docs/reports/cross_session_reentry_support_candidate_spec_v0.md`",
+        "- `docs/reports/vibe_trading_corrected_structure_reference_packaging_v0.md`",
+        "- **Source Bundle:** 전체 원본의 흐름이 보존된 단위.",
+        "- **Source-level Reading:** 파편이 아닌 원본 전체를 관통하는 흐름 파악.",
+        "- **Meaning Block:** 분절 전의 거시적 의미 단위.",
+        "- **Relation Cluster:** 연결 씨앗이 뭉쳐있는 맥락적 덩어리.",
+        "- **Line / Axis Pressure:** 자료가 기존 공간에 가하는 인지적 압력/연결 요구.",
+        "- **연결 씨앗:** `Intake Packet`의 목적과 기존 `Line/Axis`를 비교하여 검출.",
+        "- **라인 압력:** 반복되는 연결 확인 시 `Line Candidate`로 승격.",
+        "- **축 압력:** 여러 라인이 동일 질문을 가리킬 때 `Axis Candidate`로 식별."
+      ],
+      "signal_lines_sample": [
+        "# Relation-first Space Input Processor Candidate v0",
+        "**STATUS: RELATION_FIRST_SPACE_INPUT_PROCESSOR_CANDIDATE_COMPLETE**",
+        "## 2. Sources used",
+        "- `docs/reports/integrated_engine_component_map_and_part_spec_reading_v0.md`",
+        "- `docs/reports/standardized_intake_packet_candidate_spec_v0.md`",
+        "- `docs/reports/line_axis_linkage_gate_candidate_spec_v0.md`",
+        "- `docs/reports/cross_session_reentry_support_candidate_spec_v0.md`",
+        "- **Source Bundle:** 전체 원본의 흐름이 보존된 단위.",
+        "- **Source-level Reading:** 파편이 아닌 원본 전체를 관통하는 흐름 파악.",
+        "- **Line / Axis Pressure:** 자료가 기존 공간에 가하는 인지적 압력/연결 요구.",
+        "| **1. Source Capture** | 원본 보존 | External Material | Source Bundle | 원본 흐름 | 공식 진실 |",
+        "| **2. Meaning Detection** | 의미 덩어리 파악 | Source Bundle | Meaning Blocks | 거시적 의도 | Ontology |",
+        "| **3. Relation Extraction** | 관계 파악 | Meaning Blocks | Internal Relation Map | 연결 씨앗 | Registry |",
+        "| **4. Space Linkage** | 구조 연결 | Relation Map | Linkage Verdict | 기존 축 압력 | 자동화 파이프라인 |",
+        "| **5. Selective Segment** | 필요 분절 | Linkage Verdict | Essential Units | 필수 핵심 정보 | 무분별한 파편화 |",
+        "## 7. Karpathy / Graphify fit (Corrected)",
+        "| Signal | Source-supported structure | Project reading | Keep as |",
+        "| **Relation graph/report** | Graphify Lens | 증거 관계 맵 | Reference |",
+        "| **Query / Path / Explain** | Graphify Lens | 구조적 검증 도구 | Reference |",
+        "## 8. Line / Axis centered input check"
+      ],
+      "prior_family": "EXECUTION_GATE_SURFACE",
+      "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+      "flags": {
+        "asset_graph": true,
+        "cleanup": true,
+        "operator": true,
+        "prov": true,
+        "gate": true,
+        "axis": true,
+        "component": true,
+        "maturation": true,
+        "inbox": true,
+        "adapter": true,
+        "eval": true,
+        "closeout": true,
+        "product": false
+      },
+      "layer_tags_precise": [
+        "L0_source_evidence",
+        "L1_concept_layer_axis",
+        "L2_structure_route",
+        "L3_context_history",
+        "L5_authority_governance",
+        "L6_execution_workflow",
+        "L7_risk_uncertainty",
+        "L8_productization_saas"
+      ],
+      "lacl_fit": {
+        "lens": "primary",
+        "asset": "primary",
+        "context": "primary",
+        "loop": "primary"
+      },
+      "changed_judgment": "HIGH: suggests an 8th module for validation/trace/quality observability so the system can prove maturation and execution quality, not just route assets.",
+      "route_confirmed": "Hermes_validation_trace_then_Codex_quality_mature",
+      "saas_module_confirmed": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "cleanup_policy_confirmed": "KEEP_STABLE__INDEX_POINTER_FIRST",
+      "authority_boundary": "HOLD_AUTHORITY_SENSITIVE",
+      "codex_question": "Does this define evaluation/trace/observability as a separate module or as M3/M7 support?",
+      "gemini_question": "What quality/trace/layer implication must be visible in a SaaS UI?",
+      "hermes_use": "Use as local validation/trace surface only; no authority/promotion.",
+      "surface_digest": "# Relation-first Space Input Processor Candidate v0 / ## 1. Status / ## 2. Sources used / - `docs/reports/space_input_processor_readiness_scan_corrected.md` / - `docs/reports/integrated_engine_component_map_and_part_spec_reading_v0.md`"
+    }
+  ],
+  "within_batch_relations": [
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "pre12_lower_output_readiness_recheck_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "process_memory_operating_layer_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_input_gate_spec_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_input_observation_surface_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_light_compression_rule_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_bridge_surface_identification_report_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "process_memory_operating_layer_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_input_gate_spec_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_input_observation_surface_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_light_compression_rule_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "pre12_lower_output_readiness_recheck_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_input_gate_spec_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_input_observation_surface_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_light_compression_rule_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "process_memory_operating_layer_candidate_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_input_observation_surface_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_light_compression_rule_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_gate_spec_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_observation_surface_candidate_v0",
+      "to": "relation_first_light_compression_rule_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_observation_surface_candidate_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_observation_surface_candidate_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_observation_surface_candidate_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_input_observation_surface_candidate_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_light_compression_rule_v0",
+      "to": "relation_first_real_input_trial_claude_code_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_light_compression_rule_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_light_compression_rule_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_light_compression_rule_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_real_input_trial_claude_code_v0",
+      "to": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_real_input_trial_claude_code_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_real_input_trial_claude_code_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "to": "relation_first_repetition_operation_batch001_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_real_input_trial_karpathy_graphify_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    },
+    {
+      "from": "relation_first_repetition_operation_batch001_v0",
+      "to": "relation_first_space_input_processor_candidate_v0",
+      "relation_basis": [
+        "saas_module",
+        "family",
+        "layers:L0_source_evidence,L1_concept_layer_axis,L2_structure_route,L3_context_history,L5_authority_governance,L6_execution_workflow,L7_risk_uncertainty,L8_productization_saas"
+      ],
+      "suggested_relation": "evaluation_trace_observability_cluster"
+    }
+  ],
+  "distribution": {
+    "precise_family": {
+      "EVALUATION_TRACE_OBSERVABILITY_SURFACE": 10
+    },
+    "route": {
+      "Hermes_validation_trace_then_Codex_quality_mature": 10
+    },
+    "saas_module": {
+      "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": 10
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "cumulative_comparison": {
+    "comparison_id": "BATCH06_CUMULATIVE_CLUSTER_SHIFT_V0",
+    "created_at": "2026-05-25T11:17:50.213274+09:00",
+    "batch_distributions": [
+      {
+        "precise_family": {
+          "EXECUTION_CONTRACT_GATE": 3,
+          "PROVENANCE_GATE": 7
+        },
+        "route": {
+          "Hermes_precheck_surface_then_Codex_mature": 10
+        },
+        "saas_module": {
+          "SAAS_M1_INTAKE_PROVENANCE": 10
+        },
+        "cleanup_policy": {
+          "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+        }
+      },
+      {
+        "precise_family": {
+          "MATURATION_GOVERNANCE_GATE": 10
+        },
+        "route": {
+          "Hermes_precheck_surface_then_Codex_mature": 10
+        },
+        "saas_module": {
+          "SAAS_M4_MATURATION_GOVERNANCE": 10
+        },
+        "cleanup_policy": {
+          "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE": 10
+        }
+      },
+      {
+        "precise_family": {
+          "ASSET_GRAPH_ROUTE_SURFACE": 5,
+          "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE": 5
+        },
+        "route": {
+          "Codex_mature_with_Gemini_layer_if_ambiguous": 5,
+          "Codex_inbox_review_with_Hermes_reentry_check": 5
+        },
+        "saas_module": {
+          "SAAS_M6_ADAPTER_FACTORY": 5,
+          "SAAS_M5_SPACE_INBOX_REVIEW": 5
+        },
+        "cleanup_policy": {
+          "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+        }
+      },
+      {
+        "precise_family": {
+          "ASSET_GRAPH_ROUTER_CORE_SURFACE": 10
+        },
+        "route": {
+          "Codex_asset_graph_router_review": 10
+        },
+        "saas_module": {
+          "SAAS_M2_ASSET_GRAPH_ROUTER": 10
+        },
+        "cleanup_policy": {
+          "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+        }
+      },
+      {
+        "precise_family": {
+          "OPERATOR_CLEANUP_DASHBOARD_SURFACE": 5,
+          "OPERATOR_REVIEW_BOARD_SURFACE": 5
+        },
+        "route": {
+          "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check": 10
+        },
+        "saas_module": {
+          "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD": 10
+        },
+        "cleanup_policy": {
+          "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+        }
+      },
+      {
+        "precise_family": {
+          "EVALUATION_TRACE_OBSERVABILITY_SURFACE": 10
+        },
+        "route": {
+          "Hermes_validation_trace_then_Codex_quality_mature": 10
+        },
+        "saas_module": {
+          "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": 10
+        },
+        "cleanup_policy": {
+          "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+        }
+      }
+    ],
+    "cumulative_saas_module_asset_counts": {
+      "SAAS_M1_INTAKE_PROVENANCE": 10,
+      "SAAS_M4_MATURATION_GOVERNANCE": 10,
+      "SAAS_M6_ADAPTER_FACTORY": 5,
+      "SAAS_M5_SPACE_INBOX_REVIEW": 5,
+      "SAAS_M2_ASSET_GRAPH_ROUTER": 10,
+      "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD": 10,
+      "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": 10
+    },
+    "cumulative_family_counts": {
+      "EXECUTION_CONTRACT_GATE": 3,
+      "PROVENANCE_GATE": 7,
+      "MATURATION_GOVERNANCE_GATE": 10,
+      "ASSET_GRAPH_ROUTE_SURFACE": 5,
+      "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE": 5,
+      "ASSET_GRAPH_ROUTER_CORE_SURFACE": 10,
+      "OPERATOR_CLEANUP_DASHBOARD_SURFACE": 5,
+      "OPERATOR_REVIEW_BOARD_SURFACE": 5,
+      "EVALUATION_TRACE_OBSERVABILITY_SURFACE": 10
+    },
+    "cumulative_route_counts": {
+      "Hermes_precheck_surface_then_Codex_mature": 20,
+      "Codex_mature_with_Gemini_layer_if_ambiguous": 5,
+      "Codex_inbox_review_with_Hermes_reentry_check": 5,
+      "Codex_asset_graph_router_review": 10,
+      "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check": 10,
+      "Hermes_validation_trace_then_Codex_quality_mature": 10
+    },
+    "observed_shift": "M8 candidate emerges as evaluation/trace/observability module",
+    "judgment": "Batch06 tests whether validation/receipt/trace/quality is merely M3 support or a separate observability module. A strong M8 signal means SaaS must expose evidence of execution/maturation quality."
+  },
+  "batch_judgment": "M8 candidate emerges as evaluation/trace/observability module",
+  "hold_boundaries": {
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion": "HOLD"
+  }
+}

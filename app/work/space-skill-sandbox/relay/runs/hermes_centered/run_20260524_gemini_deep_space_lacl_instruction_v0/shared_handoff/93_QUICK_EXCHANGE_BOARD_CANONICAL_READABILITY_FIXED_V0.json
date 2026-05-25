@@ -1,0 +1,28 @@
+{
+  "board_id": "93_QUICK_EXCHANGE_BOARD_CANONICAL_READABILITY_FIXED_V0",
+  "status": "VERSIONED_CANONICAL_READABILITY_FIX_WITH_HOLD",
+  "canonical_board_handle": "shared_handoff/90_QUICK_EXCHANGE_BOARD.json",
+  "canonical_board_sha256": "dd9cf1cadf28a414a0e1e32376498d08f0bc913a3a119971e7abed6d552897e8",
+  "reason": "Actual readability test showed that 92 resolved artifacts but did not satisfy the canonical fast cross-inspection board shape. 90_QUICK_EXCHANGE_BOARD.json fixes the shape without mutating authority.",
+  "fixed_missing_sections": [
+    "hermes_latest",
+    "open_questions",
+    "blocked_or_waiting_on",
+    "latest_pointer_ref"
+  ],
+  "source_failed_shape_test": {
+    "handle": "shared_handoff/92_QUICK_EXCHANGE_BOARD_L3_BATCH_MAINTENANCE_READY_V0.json",
+    "sha256": "1a3557507026b7f3c9c4de74ed8adef87cbc262e5da1c0b701520792c7a58773",
+    "verdict": "PASS_ARTIFACT_READABLE_BUT_FAIL_CANONICAL_BOARD_SHAPE"
+  },
+  "next_safe_lane": "RUN_CANONICAL_FAST_CROSS_INSPECTION_READABILITY_TEST_V1",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "promotion_status": "HOLD"
+}

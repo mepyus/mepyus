@@ -1,0 +1,132 @@
+{
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "collision_rules": [
+    "No actor edits another actor namespace.",
+    "No in-place overwrite of return/trace/receipt once published; create *_vN or new timestamped file.",
+    "Shared latest pointer may only point to immutable artifacts and must include sha256.",
+    "Every cross-read must cite handle + sha256 + changed_judgment or used_for.",
+    "Authority/current-position/registry/folder tree are read-only unless user separately approves apply."
+  ],
+  "log_namespaces": {
+    "codex_log_root": "runs/hermes_centered/<run_id>/codex_space/",
+    "hermes_log_root": "runs/hermes_centered/<run_id>/hermes_exec/",
+    "rule": "Each actor writes only inside its own namespace. Shared handoff files are append-by-new-version only, never in-place rewritten.",
+    "shared_log_root": "runs/hermes_centered/<run_id>/shared_handoff/"
+  },
+  "packet_id": "01_hermes_codex_dual_log_contract_v0",
+  "promotion_status": "HOLD",
+  "purpose": "Prevent Hermes execution-space setup logs and Codex space-maturation logs from colliding while allowing each side to immediately inspect the other side through stable handoff indexes.",
+  "role_split": {
+    "CODEX": {
+      "must_not": [
+        "mutate Hermes execution log",
+        "rewrite Hermes merge/execution trace",
+        "perform Hermes execution",
+        "promote authority/current-position/registry/folder tree"
+      ],
+      "owns": [
+        "space check",
+        "Hermes work analysis",
+        "space retrieval for Hermes when fresh space reference is needed",
+        "space maturation proposal from Hermes reentry",
+        "optional Codex-side Gemini request when layer ambiguity remains"
+      ]
+    },
+    "GEMINI": {
+      "must_not": [
+        "direct Hermes lane",
+        "authority override"
+      ],
+      "owns": [
+        "optional layer/space reading inside Codex-side script-chain only"
+      ]
+    },
+    "HERMES": {
+      "must_not": [
+        "mutate Codex maturation log",
+        "edit Codex return packets",
+        "call Gemini directly",
+        "promote authority/current-position/registry/folder tree"
+      ],
+      "owns": [
+        "user original preservation",
+        "space-to-execution selection setup",
+        "model merge",
+        "bounded execution decision",
+        "execution trace",
+        "Codex-readable execution reentry index"
+      ]
+    }
+  },
+  "shared_handles": [
+    {
+      "handle": "shared_handoff/00_RUN_MANIFEST.json",
+      "purpose": "declares run_id, original handle, boundaries, latest pointers",
+      "readers": [
+        "HERMES",
+        "CODEX"
+      ],
+      "writer": "HERMES_INITIALIZER"
+    },
+    {
+      "handle": "shared_handoff/01_SPACE_REFERENCE_REQUEST.json",
+      "purpose": "if fresh space reference is needed, tells Codex what original/task to use and what not to mutate",
+      "readers": [
+        "CODEX"
+      ],
+      "writer": "HERMES"
+    },
+    {
+      "handle": "codex_space/10_CODEX_RETRIEVAL_RETURN.json",
+      "purpose": "selected/rejected refs and changed_judgment for Hermes merge",
+      "readers": [
+        "HERMES"
+      ],
+      "writer": "CODEX"
+    },
+    {
+      "handle": "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+      "purpose": "what Hermes used, merged, executed, and withheld",
+      "readers": [
+        "CODEX"
+      ],
+      "writer": "HERMES"
+    },
+    {
+      "handle": "shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json",
+      "purpose": "compact index to Hermes logs for Codex maturation",
+      "readers": [
+        "CODEX"
+      ],
+      "writer": "HERMES"
+    },
+    {
+      "handle": "codex_space/30_CODEX_MATURATION_PROPOSAL.json",
+      "purpose": "HOLD-only space maturation proposal",
+      "readers": [
+        "HERMES"
+      ],
+      "writer": "CODEX"
+    },
+    {
+      "handle": "hermes_exec/40_HERMES_MATURATION_MERGE_RECEIPT.json",
+      "purpose": "Hermes records Codex proposal as evidence/HOLD without applying authority",
+      "readers": [
+        "CODEX",
+        "USER"
+      ],
+      "writer": "HERMES"
+    },
+    {
+      "handle": "shared_handoff/99_LATEST_POINTERS.json",
+      "purpose": "points to latest immutable versioned handles; update by new version only",
+      "readers": [
+        "HERMES",
+        "CODEX",
+        "USER"
+      ],
+      "writer": "HERMES_OR_CODEX_APPEND_VERSION"
+    }
+  ],
+  "verdict": "PROPOSED_DUAL_LOG_CONTRACT_WITH_HOLD"
+}

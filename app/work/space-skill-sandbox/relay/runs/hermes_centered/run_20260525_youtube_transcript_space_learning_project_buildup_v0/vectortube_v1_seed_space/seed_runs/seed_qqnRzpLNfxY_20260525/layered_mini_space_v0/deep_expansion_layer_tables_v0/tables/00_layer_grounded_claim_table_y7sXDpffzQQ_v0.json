@@ -1,0 +1,81 @@
+{
+  "table_id": "LAYER_GROUNDED_CLAIM_TABLE_y7sXDpffzQQ_V0",
+  "created_at": "2026-05-25T07:39:17.244114+09:00",
+  "source": {
+    "video_id": "y7sXDpffzQQ",
+    "title": "What is a Knowledge Graph?",
+    "slot": "technical_foundation",
+    "url": "https://www.youtube.com/watch?v=y7sXDpffzQQ"
+  },
+  "lens_count": 9,
+  "layers": {
+    "L0_source_surface": [
+      {
+        "t": "0:22-0:28",
+        "claim": "virtual assistant answers can be pulled from a knowledge graph; graphs represent semantic information between entities."
+      },
+      {
+        "t": "1:02-1:18",
+        "claim": "a knowledge graph is made of nodes connected by edges; nodes describe objects/persons/places and edges define relationships."
+      }
+    ],
+    "L1_conceptual": [
+      {
+        "t": "1:40-2:30",
+        "claim": "the same pair of nodes can have multiple relationship edges, e.g. Paris as capital of France and city of Roman Empire."
+      }
+    ],
+    "L2_information_structure": [
+      {
+        "t": "2:32-3:03",
+        "claim": "knowledge graphs bind different data sources together and can infer missing facts beyond one incomplete/outdated data source."
+      },
+      {
+        "t": "3:11-3:50",
+        "claim": "NLP can classify unstructured text and perform semantic enrichment to create correlated datasets and a knowledge graph."
+      }
+    ],
+    "L3_context_background": [
+      {
+        "t": "3:52-4:31",
+        "claim": "commercial applications include Q&A, YouTube recommendations, insurance fraud checks, and retail product relations."
+      }
+    ],
+    "L4_emotional_rhetorical": [
+      {
+        "t": "0:00-0:26",
+        "claim": "the speaker uses familiarity and everyday assistant examples to reduce technical distance."
+      },
+      {
+        "t": "4:34-5:24",
+        "claim": "the coffee/sleep example uses humor to make node-edge modeling memorable."
+      }
+    ],
+    "L5_power_authority": [
+      {
+        "t": "3:52-4:31",
+        "claim": "platforms and companies use knowledge graphs to steer recommendations, claims, and retail pairings; this carries commercial decision power."
+      }
+    ],
+    "L6_practical_operational": [
+      {
+        "t": "3:11-3:50",
+        "claim": "an operational pipeline is implied: unstructured text -> NLP classification -> semantic enrichment -> correlated datasets -> knowledge graph."
+      }
+    ],
+    "L7_counter_uncertainty": [
+      {
+        "t": "2:43-3:09",
+        "claim": "single data sources may be outdated or misclassified, so graph inference depends on data quality and source integration."
+      }
+    ],
+    "L8_vectorfl_mapping": [
+      {
+        "t": "0:29-0:59",
+        "claim": "supports VectorFL mini-space structure: meaning arises from explicit relationships between entities rather than isolated notes."
+      }
+    ]
+  },
+  "status": "DEEP_LAYER_TABLE_FROM_TIMESTAMPED_TRANSCRIPT",
+  "hold": "evidence table only; not authority"
+}

@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "check": "install_preflight_created",
+      "artifact": "11_vectorfl_space_operator_skill_install_preflight_hold_v0.json",
+      "pass": true
+    },
+    {
+      "check": "install_command_packet_created_as_hold_only",
+      "artifact": "12_vectorfl_space_operator_skill_install_command_packet_HOLD_ONLY.md",
+      "pass": true
+    },
+    {
+      "check": "explicit_approval_required",
+      "pass": true
+    },
+    {
+      "check": "continue_not_treated_as_approval",
+      "pass": true
+    },
+    {
+      "check": "skill_not_installed",
+      "observed": "NO",
+      "pass": true
+    },
+    {
+      "check": "candidate_file_count",
+      "observed": 9,
+      "pass": true
+    },
+    {
+      "check": "evidence_chain_count",
+      "observed": 5,
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "hashes": {
+    "11_vectorfl_space_operator_skill_install_preflight_hold_v0.json": "e6daa37d2568654cbc876c7aa66bc5a13b908b206c424aeac07ea96bd2ed078e",
+    "12_vectorfl_space_operator_skill_install_command_packet_HOLD_ONLY.md": "6cdc0a9de11d45207ffcd32b56e62a90f87e80890dc3f642569a743cdf8afcaf"
+  },
+  "next_safe_lane": "USER_EXPLICITLY_APPROVE_INSTALL_OR_KEEP_HOLD_WITH_INSTALL_PREFLIGHT_READY_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "approval_required": true,
+    "continue_not_approval": true,
+    "evidence_count": true,
+    "files_count": true,
+    "hold": true,
+    "not_installed": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_INSTALL_PREFLIGHT_WITH_HOLD"
+}

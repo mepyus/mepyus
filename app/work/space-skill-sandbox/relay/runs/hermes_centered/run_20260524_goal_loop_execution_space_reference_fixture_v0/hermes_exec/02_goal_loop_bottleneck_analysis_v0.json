@@ -1,0 +1,34 @@
+{
+  "call_bottleneck": "NO_CODEX_GEMINI_PROVIDER_CALLS_IN_FIXTURE",
+  "likely_real_bottlenecks_if_uncontrolled": [
+    "full history/log scan every iteration",
+    "provider-backed Codex/Gemini call inside loop without fresh-space gate",
+    "raw corpus loading instead of quick board/lite card",
+    "shared file mutation conflict",
+    "missing loop continuation delta causing repeated work"
+  ],
+  "max_step_elapsed_seconds": 0.0005682350019924343,
+  "mean_step_elapsed_seconds": 0.0004386691434774548,
+  "mitigations_required": [
+    "90_QUICK_EXCHANGE_BOARD first-read per iteration",
+    "summary-card then pointer then immutable artifact descent",
+    "per-iteration budget gate",
+    "read-only cross-namespace rule",
+    "write compact delta/reentry after each iteration",
+    "only request Codex when unknown space reference changes judgment"
+  ],
+  "packet_id": "02_goal_loop_bottleneck_analysis_v0",
+  "per_step_elapsed_seconds": [
+    0.00040254800114780664,
+    0.0005016959912609309,
+    0.0004732979869004339,
+    0.00038264901377260685,
+    0.0005682350019924343,
+    0.0004972820170223713,
+    0.00024497599224559963
+  ],
+  "promotion_status": "HOLD",
+  "space_reference_bottleneck": "NO_LOCAL_POINTER_HASH_READS_ONLY",
+  "total_elapsed_seconds": 0.0030980480078142136,
+  "verdict": "LOCAL_LOOP_NO_SPACE_REFERENCE_BOTTLENECK_OBSERVED"
+}

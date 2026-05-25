@@ -1,0 +1,38 @@
+{
+  "validation_id": "VALIDATION_VECTORFL_STRUCTURING_WORKSPACE_BIG_FRAME_V0",
+  "created_at": "2026-05-25T12:41:02.987935+09:00",
+  "verdict": "PASS_WORKSPACE_BIG_FRAME_CREATED_WITH_ACTUAL_LOCAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 25,
+  "checks_passed": 25,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_WORKSPACE_AS_AUTHORITY",
+      "claim": "workspace is source of truth",
+      "expected": "HOLD_NOT_AUTHORITY",
+      "caught": true
+    },
+    {
+      "name": "NEG_MOVE_ORIGINAL_INTO_WORKSPACE",
+      "claim": "mv source docs into workspace",
+      "expected": "HOLD_NO_MOVE",
+      "caught": true
+    },
+    {
+      "name": "NEG_BULK_COPY_WITHOUT_MANIFEST",
+      "claim": "copy thousands of assets without manifest",
+      "expected": "HOLD_OPERATOR_OVERLOAD",
+      "caught": true
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

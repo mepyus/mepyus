@@ -1,0 +1,58 @@
+{
+  "validation_id": "VALIDATION_BATCH02_PRECHECK_PRECISE_READING_COPY_VIEW_V0",
+  "created_at": "2026-05-25T13:58:47.772315+09:00",
+  "verdict": "PASS_BATCH02_PRECHECK_PRECISE_READING_COPY_VIEW_WITH_ACTUAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 51,
+  "checks_passed": 51,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_BATCH02_COPY_AS_AUTHORITY",
+      "claim": "batch02 copy view is authority/source-of-truth",
+      "caught": true,
+      "hold_reason": "HOLD_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_BATCH02_COPY_AS_MOVE_APPROVAL",
+      "claim": "batch02 copy view authorizes mv/archive",
+      "caught": true,
+      "hold_reason": "HOLD_NO_MOVE_APPROVAL"
+    },
+    {
+      "name": "NEG_BATCH02_SELECTOR_AS_PROMOTION",
+      "claim": "module-spread selection promotes assets to MATURED/AUTHORITY",
+      "caught": true,
+      "hold_reason": "HOLD_SELECTION_NOT_PROMOTION"
+    },
+    {
+      "name": "NEG_LONG_FILENAME_COPY_STRATEGY",
+      "claim": "copy-view filenames should preserve full relpath even if too long",
+      "caught": true,
+      "hold_reason": "USE_SHORT_HASHED_COPY_FILENAMES_WITH_MANIFEST"
+    }
+  ],
+  "item_count": 10,
+  "module_distribution": {
+    "M1_intake_provenance": 1,
+    "M4_maturation_governance": 2,
+    "M2_asset_graph_router": 2,
+    "M3_guard_precheck": 1,
+    "M5_space_inbox_review": 1,
+    "M8_evaluation_trace_observability": 1,
+    "M7_hygiene_operator_dashboard": 1,
+    "M6_adapter_factory": 1
+  },
+  "allowed_workspace_manifest_update": true,
+  "recovered_previous_error": "OSError filename too long; fixed by short hash filenames + manifest",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "copy_view_created_later_in_same_safe_run": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "validation_id": "VALIDATION_HERMES_MOCK_CLEANUP_PRECONDITION_REVIEW_V0",
+  "created_at": "2026-05-25T12:29:12.597075+09:00",
+  "verdict": "PASS_HERMES_MOCK_CLEANUP_REVIEW_BASELINE_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_cleanup_precondition_review_v0/source_index/00_mock_cleanup_review_source_index_v0.json": {
+      "exists": true,
+      "sha256": "cafca186ea1968b7f5fad2ac64f19d4e03e0cf899c9a86e755614561c9176be2",
+      "bytes": 3348
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_cleanup_precondition_review_v0/review/00_hermes_mock_cleanup_precondition_review_v0.json": {
+      "exists": true,
+      "sha256": "3e17793a8b2b72eb119db6d94e16259057bcb9c43065c2a763e52cf4e8476307",
+      "bytes": 4199
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_cleanup_precondition_review_v0/comparison/01_codex_vs_hermes_mock_cleanup_review_comparison_template_v0.json": {
+      "exists": true,
+      "sha256": "587e07563f3253e3192667749ba73bf3e85f63e31243722070496399bdefcb8a",
+      "bytes": 874
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_cleanup_precondition_review_v0/handoff/02_HERMES_MOCK_CLEANUP_REVIEW_TO_CODEX_BASELINE_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "9eedf27c4b19e2b20a8cf394ee7064021aa1f6492a2262ded8a0bec64fa948d0",
+      "bytes": 445
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_cleanup_precondition_review_v0/reports/03_hermes_mock_cleanup_precondition_review_report_v0.md": {
+      "exists": true,
+      "sha256": "1702524eb3d31dd8c6762539fbc7bfbc7e6472355a8d32ac245b45a4195f0ffb",
+      "bytes": 211
+    }
+  },
+  "content_checks": {
+    "schema_keys_present": true,
+    "blocker_count": 6,
+    "gap_count": 5,
+    "eligible_now_count": 0,
+    "comparison_template_created": true,
+    "live_codex_call_executed": false,
+    "is_actual_codex_review": false,
+    "cleanup_apply_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "archive": false,
+    "promotion_hold": true
+  }
+}

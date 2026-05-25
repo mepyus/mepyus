@@ -1,0 +1,45 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "fixture_only": true,
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "fixture_input": {
+    "hermes_execution_trace_fixture": {
+      "execution_decision": "HOLD_EXECUTION_TRACE_FIXTURE_ONLY",
+      "model_reasoning_added": [
+        "Hermes inferred that the new user instruction is not an execution request but a request to validate Codex's space operating principle."
+      ],
+      "original_input_classification": "test_space_maturation_principle",
+      "reentry_record": {
+        "changed_judgment": "Space operation needs a concrete validation lane, not only a written principle.",
+        "codex_readable": true,
+        "reentry_type": "SPACE_MATURATION_PRINCIPLE_TEST",
+        "space_reference_delta": "The existing principle is now tested against a fixture that requires Codex to classify, compare, judge delta, and return HOLD-only maturation."
+      },
+      "space_refs_used": [
+        "codex_space/95_CODEX_SPACE_MATURATION_OPERATING_PRINCIPLE_HOLD_V0.md",
+        "codex_space/96_CODEX_SPACE_MATURATION_OPERATING_CONTRACT_HOLD_V0.json",
+        "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json"
+      ]
+    },
+    "packet_id": "98_SPACE_MATURATION_PRINCIPLE_LOCAL_FIXTURE_INPUT_V0"
+  },
+  "fixture_expected_codex_behavior": [
+    "OBSERVE",
+    "CLASSIFY",
+    "COMPARE",
+    "JUDGE_SPACE_DELTA",
+    "DECIDE_GEMINI",
+    "PROPOSE_MATURATION",
+    "VERIFY",
+    "RETURN"
+  ],
+  "packet_id": "98_SPACE_MATURATION_PRINCIPLE_LOCAL_FIXTURE_V0",
+  "promotion_status": "HOLD",
+  "test_goal": "Verify that the Codex space maturation operating principle can handle a Hermes reentry-like fixture without mutating authority or Hermes namespace."
+}

@@ -1,0 +1,62 @@
+{
+  "packet_id": "01_fast_cross_inspection_channel_contract_v0",
+  "status": "HOLD_CHANNEL_CONTRACT",
+  "purpose": "Add a fast shared_handoff channel for Hermes and Codex to inspect each other's latest processing state without reading full logs or mutating each other's namespace.",
+  "channel_name": "FAST_CROSS_INSPECTION_CHANNEL",
+  "channel_handles": {
+    "quick_exchange_board": "shared_handoff/90_QUICK_EXCHANGE_BOARD.json",
+    "latest_pointers": "shared_handoff/99_LATEST_POINTERS.json",
+    "hermes_summary_card": "hermes_exec/90_HERMES_LATEST_SUMMARY_CARD.json",
+    "codex_summary_card": "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json"
+  },
+  "write_rules": [
+    "Hermes writes Hermes summary cards only in hermes_exec/.",
+    "Codex writes Codex summary cards only in codex_space/.",
+    "shared_handoff/90_QUICK_EXCHANGE_BOARD.json points to immutable summary cards and latest artifacts with sha256.",
+    "shared_handoff/90_QUICK_EXCHANGE_BOARD.json is append-by-new-version in real runs; do not overwrite historical boards.",
+    "shared_handoff/99_LATEST_POINTERS.json remains the full integrity pointer table; quick board is the human/agent-readable fast lane."
+  ],
+  "quick_board_required_sections": [
+    "run_id",
+    "board_version",
+    "last_updated_by",
+    "hermes_latest",
+    "codex_latest",
+    "open_questions",
+    "blocked_or_waiting_on",
+    "next_safe_lane",
+    "boundary"
+  ],
+  "summary_card_required_fields": [
+    "packet_id",
+    "run_id",
+    "writer_role",
+    "owner_namespace",
+    "source_handle",
+    "source_sha256",
+    "latest_state",
+    "used_for",
+    "changed_judgment",
+    "next_for_other_actor",
+    "read_only_assertion",
+    "promotion_status"
+  ],
+  "cross_read_required_fields": [
+    "source_handle",
+    "source_sha256",
+    "used_for",
+    "changed_judgment",
+    "owner_namespace",
+    "read_only_assertion"
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "next_safe_lane": "ADD_FAST_CROSS_INSPECTION_BOARD_TO_DUAL_LOG_FIXTURE_OR_SKILL_WITH_HOLD_V0"
+}
+

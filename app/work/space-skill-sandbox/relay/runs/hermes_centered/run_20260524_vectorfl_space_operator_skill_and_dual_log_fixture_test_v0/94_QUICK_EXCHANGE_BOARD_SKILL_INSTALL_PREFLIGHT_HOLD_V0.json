@@ -1,0 +1,29 @@
+{
+  "blocked_or_waiting_on": "Waiting for explicit user approval to install vectorfl-space-operator skill, or keep HOLD with install preflight ready.",
+  "board_version": "skill_install_preflight_hold_v0",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "skill_installation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "codex_latest": {
+    "install_command_packet": "12_vectorfl_space_operator_skill_install_command_packet_HOLD_ONLY.md",
+    "install_command_packet_sha256": "6cdc0a9de11d45207ffcd32b56e62a90f87e80890dc3f642569a743cdf8afcaf",
+    "preflight": "11_vectorfl_space_operator_skill_install_preflight_hold_v0.json",
+    "preflight_sha256": "e6daa37d2568654cbc876c7aa66bc5a13b908b206c424aeac07ea96bd2ed078e",
+    "state": "INSTALL_PREFLIGHT_READY_BUT_NOT_INSTALLED",
+    "summary": "The vectorfl-space-operator skill candidate is install-ready only if explicitly approved. '계속' is recorded as not sufficient approval."
+  },
+  "last_updated_by": "CODEX",
+  "next_safe_lane": "USER_EXPLICITLY_APPROVE_INSTALL_OR_KEEP_HOLD_WITH_INSTALL_PREFLIGHT_READY_V0",
+  "packet_id": "94_QUICK_EXCHANGE_BOARD_SKILL_INSTALL_PREFLIGHT_HOLD_V0",
+  "promotion_status": "HOLD",
+  "validation": {
+    "artifact": "13_validation_skill_install_preflight_hold_v0.json",
+    "verdict": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_INSTALL_PREFLIGHT_WITH_HOLD"
+  }
+}

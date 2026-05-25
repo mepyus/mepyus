@@ -1,0 +1,32 @@
+{
+  "future_runtime_loop": [
+    "preserve_original_goal",
+    "read_90_QUICK_EXCHANGE_BOARD_first",
+    "read_summary_card_then_latest_pointers_only_if_needed",
+    "merge_original_space_model_reasoning",
+    "apply_per_iteration_budget_gate",
+    "execute_local_step_or_write_space_reference_request",
+    "write_immutable_iteration_receipt",
+    "write_loop_continuation_delta",
+    "update_quick_board",
+    "publish_codex_readable_reentry_on_exit_or_pause"
+  ],
+  "goal": "Prepare schema/instructions so future /goal-style execution can iterate with original + space + model reasoning without full-log or provider-call bottlenecks.",
+  "hard_gates": {
+    "fresh_space_reference_gate": "Codex request only if unknown space refs may change judgment.",
+    "full_log_scan_gate": "Default NO inside loop; use quick board and pointer descent.",
+    "gemini_gate": "Hermes never direct; only Codex-side if Codex judges layer ambiguity.",
+    "provider_backed_call_gate": "Default NO; require user approval and explicit budget reason.",
+    "write_namespace_gate": "Hermes writes hermes_exec; Codex writes codex_space; shared_handoff for boards/pointers only."
+  },
+  "not_doing_now": [
+    "no /goal engine mutation",
+    "no skill store install",
+    "no authority/current-position/registry/folder/source mutation",
+    "no Codex/Gemini/provider-backed CLI execution",
+    "no promotion"
+  ],
+  "packet_id": "01_GOAL_LOOP_EXECUTION_SETUP_PREP_CONTRACT_V0",
+  "promotion_status": "HOLD",
+  "status": "HOLD_SETUP_PREP_ONLY"
+}

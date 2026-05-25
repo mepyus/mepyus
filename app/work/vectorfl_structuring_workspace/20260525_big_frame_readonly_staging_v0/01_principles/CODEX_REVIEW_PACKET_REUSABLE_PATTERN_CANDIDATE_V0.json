@@ -1,0 +1,60 @@
+{
+  "id": "CODEX_REVIEW_PACKET_REUSABLE_PATTERN_CANDIDATE_V0",
+  "created_at": "2026-05-25T14:48:29.388552+09:00",
+  "status": "CANDIDATE_ONLY_NOT_TEMPLATE_NOT_SKILL",
+  "derived_from": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_reusable_pattern_cards_batch01_v0.json",
+  "candidate_structure": {
+    "status": "CANDIDATE_STRUCTURE_ONLY_NOT_TEMPLATE",
+    "common_required_like_fields": [
+      "identity",
+      "source_context",
+      "scope_boundary",
+      "task_instruction",
+      "output_contract",
+      "negative_tests",
+      "handoff",
+      "evidence_requirements"
+    ],
+    "common_optional_like_fields": [
+      "rollback_trace"
+    ],
+    "proposed_packet_skeleton_candidate": [
+      "identity",
+      "source_context",
+      "scope_boundary",
+      "task_instruction",
+      "evidence_requirements",
+      "authority_guard",
+      "output_contract",
+      "negative_tests",
+      "handoff/trace metadata"
+    ],
+    "must_preserve_guards": [
+      "NO_LIVE_CODEX_CALL",
+      "READ_ONLY_REVIEW",
+      "NOT_AUTHORITY",
+      "NO_PROMOTION",
+      "NO_SOURCE_EDIT",
+      "NO_DELETE_OR_DEDUPE_APPLY"
+    ]
+  },
+  "approval_needed_for": [
+    "skill creation",
+    "template promotion",
+    "live Codex call",
+    "source edits",
+    "cleanup/delete"
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "skill_created": false,
+    "template_promoted": false
+  }
+}

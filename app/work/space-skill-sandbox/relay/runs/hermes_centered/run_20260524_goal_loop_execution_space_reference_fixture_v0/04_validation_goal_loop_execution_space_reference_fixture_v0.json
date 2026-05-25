@@ -1,0 +1,74 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "goal_loop_steps_completed",
+      "observed": 7,
+      "pass": true
+    },
+    {
+      "check": "original_space_model_each_step",
+      "pass": true
+    },
+    {
+      "check": "no_codex_gemini_executed",
+      "pass": true
+    },
+    {
+      "check": "space_reference_no_local_bottleneck",
+      "max_step_elapsed_seconds": 0.0005682350019924343,
+      "pass": true
+    },
+    {
+      "check": "call_bottleneck_absent_in_fixture",
+      "pass": true
+    },
+    {
+      "check": "dual_log_namespaces_present",
+      "pass": true
+    },
+    {
+      "check": "codex_reentry_created",
+      "pass": true
+    },
+    {
+      "check": "quick_board_created",
+      "pass": true
+    },
+    {
+      "check": "latest_pointers_valid",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary",
+      "pass": true
+    },
+    {
+      "check": "active_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 11,
+  "elapsed_marker": 162085.616820561,
+  "hashes": {
+    "00_goal_loop_fixture_source_index_v0.json": "cb29bfb2925733c6be04fd9c8e2b78bd736b0ec84cf578c64e67ae7d80fdf564",
+    "01_goal_loop_execution_state_machine_v0.json": "4a05bee9866dce23d35b87560f71db79703c2b312d1e4c57d50d47f7750633e4",
+    "01_goal_loop_input_fixture_v0.json": "eddd064739ff60733d4a8bd3ffe2469777886e9b00daa47a58d1e9db149fd802",
+    "02_goal_loop_bottleneck_analysis_v0.json": "f7d055d0925bcd8f9b9e5f533b77278d0fdfbe4f2652331d590e34fd3df69032",
+    "03_goal_loop_execution_space_reference_fixture_report_v0.md": "d7eadf6fc2ec8c3a9bebfb61399e7c1dbfbab4d7d4581518238dbcd7be8a8438",
+    "10_goal_loop_step_01_intake_goal_and_preserve_original_receipt_v0.json": "1a0988cf42813f8cbd8f6cdf946ad2070ca061a0f3304dd03c8dbb3b52ef9a19",
+    "10_goal_loop_step_02_read_current_space_first_board_receipt_v0.json": "0841a4277a6c61309fcb7f5b05ab57aa7136578c6010f642b62241d1a2b30552",
+    "10_goal_loop_step_03_apply_governance_router_dual_log_constraints_receipt_v0.json": "78cd0a22d8bad78f9487fe2d40d43b0d282aaefcf9549fa88b78e31b98a06c58",
+    "10_goal_loop_step_04_check_budget_gate_for_fresh_space_need_receipt_v0.json": "e5e083eed1a8bb63473d3c35b220ba9f25bcd610a1e24500f27eb1bb1ea1ff77",
+    "10_goal_loop_step_05_execute_structural_iteration_receipt_v0.json": "b483ac7ff07bb4e5302e81f261ae02f6bedc66759caf65163d865e037983fbc2",
+    "10_goal_loop_step_06_publish_codex_readable_reentry_receipt_v0.json": "8a654b581fd3b9268f4fbec5763253e7cb9b52c7689dde8557e8f83edad40298",
+    "10_goal_loop_step_07_loop_exit_or_continue_decision_receipt_v0.json": "a85c3cf47d712eb9d0d09b5a821cfee7b7a8c11fc9bc847bf829985785a5bc69",
+    "21_CODEX_READABLE_REENTRY_AFTER_GOAL_LOOP_FIXTURE.json": "9c35e5d60c1d0bbf9329ddebfc400f3a32074a09c9ac53f1b4f2e082afaa1d7e",
+    "90_CODEX_LATEST_SUMMARY_CARD.json": "01bcb51b0d7f806068b20c3b5fb6698d830b087a8d041736ca476a2e5a6baff4",
+    "90_HERMES_LATEST_SUMMARY_CARD.json": "bbeaaeb51d17ee76beb024372ce731c8647cdde228f3d58cba5264b27dabe6f4",
+    "90_QUICK_EXCHANGE_BOARD.json": "72140533b1fa74523f244c90c738283fd08dddee5c0e298c18b4f9c730fee482",
+    "99_LATEST_POINTERS.json": "1c5812f3a5efac02fa5d0bc013b6aaa70474cf5bea237ca3f185bb65c51f9176"
+  },
+  "verdict": "PASS_GOAL_LOOP_EXECUTION_SPACE_REFERENCE_FIXTURE_WITH_HOLD"
+}

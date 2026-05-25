@@ -1,0 +1,34 @@
+{
+  "template_id": "M8_VALIDATION_RECEIPT_TEMPLATE_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "status": "TEMPLATE_ONLY",
+  "receipt_fields": [
+    "receipt_id",
+    "operation_id",
+    "started_at",
+    "ended_at",
+    "elapsed_ms",
+    "inputs",
+    "precheck_results",
+    "mutation_statement",
+    "outputs",
+    "post_validation",
+    "rollback_status",
+    "verdict",
+    "hold_reasons"
+  ],
+  "minimum_precheck_results": {
+    "G1_route_pointer": "REQUIRED",
+    "G3_maturation_boundary": "REQUIRED",
+    "G6_hygiene_cleanup": "REQUIRED",
+    "G7_trace_observability": "REQUIRED"
+  },
+  "valid_verdicts": [
+    "PASS_READ_ONLY_TRACE",
+    "HOLD_TRACE_INSUFFICIENT",
+    "HOLD_CLEANUP_PRECONDITION",
+    "HOLD_AUTHORITY_SENSITIVE",
+    "PASS_APPROVED_APPLY_WITH_ROLLBACK_READY",
+    "FAIL_ROLLBACK_OR_VALIDATION"
+  ]
+}

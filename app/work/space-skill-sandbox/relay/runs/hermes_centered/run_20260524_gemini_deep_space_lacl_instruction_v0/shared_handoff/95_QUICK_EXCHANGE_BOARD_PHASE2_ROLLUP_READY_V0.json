@@ -1,0 +1,57 @@
+{
+  "board_id": "95_QUICK_EXCHANGE_BOARD_PHASE2_ROLLUP_READY_V0",
+  "status": "PHASE2_ROLLUP_READY_WITH_HOLD",
+  "purpose": "Fast mutual inspection board for the Phase2 function rollup index.",
+  "owner_namespace": "shared_handoff",
+  "codex_latest": {
+    "summary": "Codex reduced Phase2 duplicate pressure by creating a rollup-first index over 16 Phase2 root items, grouped into six function groups while preserving all root evidence handles.",
+    "artifacts": [
+      {
+        "handle": "codex_space/18_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0.json",
+        "sha256": "d6ef65c98b39c6446b937d15dc332e3d95212180d367cae4927c6d260630ba57",
+        "use_for": "Phase2 first-read retrieval surface."
+      },
+      {
+        "handle": "codex_space/19_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PHASE2_ROLLUP_V0.json",
+        "sha256": "0a5339d34f21711248885bd9406401b31d5d099c2591d960c682d729dee456b9",
+        "use_for": "Space-effect inspection proving duplicate pressure reduction."
+      },
+      {
+        "handle": "codex_space/20_validation_phase2_function_rollup_index_hold_v0.json",
+        "sha256": "e4894969a110e15940ceafe9af8ed8eff6f3fa5341a7ffb01d01029a7ddcb266",
+        "use_for": "Validation receipt for Phase2 rollup."
+      }
+    ]
+  },
+  "rollup_summary": {
+    "pattern_id": "P03_PHASE2_FUNCTION_POSITION_STACK",
+    "root_item_count": 16,
+    "function_group_count": 6,
+    "space_effect_type": "DUPLICATE_PRESSURE_REDUCED",
+    "retrieval_policy": "rollup-first; individual root files remain evidence"
+  },
+  "hermes_cross_read_hint": {
+    "read_only_assertion": true,
+    "recommended_use": [
+      "Use 18 before opening individual Phase2 root files.",
+      "Open individual roots only for exact S1-S7 or validator evidence.",
+      "Record use of this rollup in future retrieval returns when Phase2 is touched."
+    ],
+    "do_not_use_for": [
+      "authority apply",
+      "current-position mutation",
+      "source mutation",
+      "Phase3 apply without separate approval"
+    ]
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "USE_PHASE2_ROLLUP_IN_NEXT_SPACE_RETRIEVAL_OR_RUN_L3M01_STATUS_NORMALIZATION_HOLD_V0",
+  "promotion_status": "HOLD"
+}

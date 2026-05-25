@@ -1,0 +1,63 @@
+{
+  "packet_id": "13_VALIDATION_L3_BATCH_PATTERN_MAINTENANCE_INPUT_V0",
+  "verdict": "PASS_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_WITH_HOLD",
+  "validated_artifacts": [
+    {
+      "handle": "codex_space/11_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_HOLD_V0.json",
+      "sha256": "7eea584d63c7fe3cecffd4db05fe9a6b50e03824639dddb0c68ea3dc804741cd"
+    },
+    {
+      "handle": "codex_space/12_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_L3_BATCH_INPUT_V0.json",
+      "sha256": "cce7ed7677677dc4e2975be4586992a024dc9536a86acd3d86b97cda6a93815f"
+    }
+  ],
+  "checks": [
+    {
+      "name": "l3_maintenance_lanes_present",
+      "pass": true,
+      "detail": {
+        "lane_count": 5
+      }
+    },
+    {
+      "name": "pattern_counts_preserved",
+      "pass": true,
+      "detail": {
+        "root_item_count": 57,
+        "pattern_total": 57
+      }
+    },
+    {
+      "name": "program_result_space_effect_separated",
+      "pass": true
+    },
+    {
+      "name": "gemini_not_recalled",
+      "pass": true
+    },
+    {
+      "name": "owner_namespace_only",
+      "pass": true
+    },
+    {
+      "name": "boundary_hold",
+      "pass": true
+    }
+  ],
+  "active_hits": 0,
+  "codex_judgment": {
+    "space_delta_judgment": "STRENGTHEN_EXISTING_PATTERN",
+    "maturation_decision": "USE_AS_L3_BATCH_PATTERN_MAINTENANCE_INPUT_HOLD_ONLY",
+    "changed_judgment": "The Gemini deep reading has now been converted from broad analysis into concrete L3 queues. The next bounded work should reduce Phase2 duplicate pressure first, because it has the largest root count and directly affects program-result space-effect retrieval."
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "RUN_L3M02_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0",
+  "promotion_status": "HOLD"
+}

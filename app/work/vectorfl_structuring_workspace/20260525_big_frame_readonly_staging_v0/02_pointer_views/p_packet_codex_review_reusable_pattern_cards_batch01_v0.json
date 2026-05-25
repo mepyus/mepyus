@@ -1,0 +1,916 @@
+{
+  "pattern_id": "P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0",
+  "created_at": "2026-05-25T14:48:29.388552+09:00",
+  "status": "WORKSPACE_INTERNAL_PATTERN_CARDS_NOT_SKILL_NOT_TEMPLATE",
+  "source_split": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_batch01_v0.json",
+  "card_count": 12,
+  "common_fields": [
+    {
+      "field": "identity",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "source_context",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "scope_boundary",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "task_instruction",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "output_contract",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "negative_tests",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "handoff",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "evidence_requirements",
+      "present_in_cards": 9,
+      "coverage": 0.75
+    },
+    {
+      "field": "rollback_trace",
+      "present_in_cards": 4,
+      "coverage": 0.333
+    }
+  ],
+  "candidate_structure": {
+    "status": "CANDIDATE_STRUCTURE_ONLY_NOT_TEMPLATE",
+    "common_required_like_fields": [
+      "identity",
+      "source_context",
+      "scope_boundary",
+      "task_instruction",
+      "output_contract",
+      "negative_tests",
+      "handoff",
+      "evidence_requirements"
+    ],
+    "common_optional_like_fields": [
+      "rollback_trace"
+    ],
+    "proposed_packet_skeleton_candidate": [
+      "identity",
+      "source_context",
+      "scope_boundary",
+      "task_instruction",
+      "evidence_requirements",
+      "authority_guard",
+      "output_contract",
+      "negative_tests",
+      "handoff/trace metadata"
+    ],
+    "must_preserve_guards": [
+      "NO_LIVE_CODEX_CALL",
+      "READ_ONLY_REVIEW",
+      "NOT_AUTHORITY",
+      "NO_PROMOTION",
+      "NO_SOURCE_EDIT",
+      "NO_DELETE_OR_DEDUPE_APPLY"
+    ]
+  },
+  "cards": [
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_01",
+      "relpath": "docs/reports/formation_movement_interface_codex_coupling_diagnostic_note_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_codex_coupling_diagnostic_note_v0.md",
+      "sha256": "440b4200fc56f2f95967c81454eef93879810aa7470817e24cf20030a373e5c4",
+      "surface": "source_docs",
+      "field_hits": {
+        "identity": 19,
+        "source_context": 8,
+        "scope_boundary": 1,
+        "task_instruction": 8,
+        "evidence_requirements": 16,
+        "authority_guard": 0,
+        "output_contract": 24,
+        "negative_tests": 2,
+        "handoff": 72,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# Formation-Movement Interface Codex Coupling Diagnostic Note v0",
+        "## 1. status",
+        "## 2. question",
+        "The core question is not:",
+        "It is:",
+        "## 3. compressed diagnosis",
+        "More concretely:",
+        "## 4. what already works",
+        "### A. Codex is no longer treated as automatic execution",
+        "The package successfully established:",
+        "### B. Codex can already play multiple roles in theory",
+        "### C. return-to-space logic exists"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Formation-Movement Interface Codex Coupling Diagnostic Note v0"
+        },
+        {
+          "line": 7,
+          "text": "focus: package_to_codex_coupling"
+        },
+        {
+          "line": 9,
+          "text": "purpose: inspect whether the current assets connect to Codex naturally and goal-directionally"
+        },
+        {
+          "line": 12,
+          "text": "no_schema_enforcement: true"
+        },
+        {
+          "line": 22,
+          "text": "- can Codex be used?"
+        },
+        {
+          "line": 26,
+          "text": "- does the current package make Codex a natural part of the flow?"
+        },
+        {
+          "line": 27,
+          "text": "- does Codex receive inputs in a purpose-shaped way?"
+        },
+        {
+          "line": 28,
+          "text": "- does Codex return outputs that the space can naturally reread?"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_02",
+      "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.de.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.de.md",
+      "sha256": "74c4ed9a5383b274cc5c6280a5292899fcb4e99041fce4acd5e0c00abc8497fb",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 11,
+        "source_context": 5,
+        "scope_boundary": 5,
+        "task_instruction": 6,
+        "evidence_requirements": 0,
+        "authority_guard": 0,
+        "output_contract": 4,
+        "negative_tests": 3,
+        "handoff": 54,
+        "rollback_trace": 2
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# oh-my-codex (OMX)",
+        "## Neu in v0.9.0 — Spark Initiative",
+        "## Erste Sitzung",
+        "Innerhalb von Codex:",
+        "Vom Terminal:",
+        "## Empfohlener Workflow",
+        "## Kernmodell",
+        "OMX installiert und verbindet diese Schichten:",
+        "## Hauptbefehle",
+        "## Hooks-Erweiterung (Additive Oberfläche)",
+        "## Start-Flags",
+        "### MCP workingDirectory-Richtlinie (optionale Härtung)"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# oh-my-codex (OMX)"
+        },
+        {
+          "line": 4,
+          "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+        },
+        {
+          "line": 6,
+          "text": "<em>Dein Codex ist nicht allein.</em>"
+        },
+        {
+          "line": 9,
+          "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+        },
+        {
+          "line": 13,
+          "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+        },
+        {
+          "line": 15,
+          "text": "Multi-Agenten-Orchestrierungsschicht für [OpenAI Codex CLI](https://github.com/openai/codex)."
+        },
+        {
+          "line": 21,
+          "text": "- **Nativer Harness für `omx explore`** — führt Read-only-Repository-Exploration über einen schnelleren und strengeren Rust-Pfad aus."
+        },
+        {
+          "line": 30,
+          "text": "Innerhalb von Codex:"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_03",
+      "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.fr.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.fr.md",
+      "sha256": "66f21c6e0630a5279b08196942601ba32e967cb6e4b5d9c49efcb19b1564f588",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 16,
+        "source_context": 5,
+        "scope_boundary": 11,
+        "task_instruction": 7,
+        "evidence_requirements": 1,
+        "authority_guard": 0,
+        "output_contract": 4,
+        "negative_tests": 3,
+        "handoff": 54,
+        "rollback_trace": 2
+      },
+      "field_presence_count": 9,
+      "section_hints": [
+        "# oh-my-codex (OMX)",
+        "## Nouveautés de la v0.9.0 — Spark Initiative",
+        "## Première session",
+        "Dans Codex :",
+        "Depuis le terminal :",
+        "## Flux recommandé",
+        "## Modèle de base",
+        "OMX installe et connecte ces couches :",
+        "## Commandes principales",
+        "## Extension Hooks (Surface additive)",
+        "## Flags de lancement",
+        "### Politique MCP workingDirectory (durcissement optionnel)"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# oh-my-codex (OMX)"
+        },
+        {
+          "line": 4,
+          "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+        },
+        {
+          "line": 6,
+          "text": "<em>Votre codex n'est pas seul.</em>"
+        },
+        {
+          "line": 9,
+          "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+        },
+        {
+          "line": 13,
+          "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+        },
+        {
+          "line": 15,
+          "text": "Couche d'orchestration multi-agents pour [OpenAI Codex CLI](https://github.com/openai/codex)."
+        },
+        {
+          "line": 21,
+          "text": "- **Harness natif pour `omx explore`** — exécute l’exploration read-only du dépôt via une voie Rust plus rapide et plus stricte."
+        },
+        {
+          "line": 30,
+          "text": "Dans Codex :"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_04",
+      "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.ru.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.ru.md",
+      "sha256": "f9694da6470f1f7da427a7bd4fb20a32c176fbfc6a7a721dadc9e6046d009d33",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 9,
+        "source_context": 5,
+        "scope_boundary": 4,
+        "task_instruction": 6,
+        "evidence_requirements": 0,
+        "authority_guard": 0,
+        "output_contract": 4,
+        "negative_tests": 3,
+        "handoff": 54,
+        "rollback_trace": 2
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# oh-my-codex (OMX)",
+        "## Что нового в v0.9.0 — Spark Initiative",
+        "## Первая сессия",
+        "## Рекомендуемый рабочий процесс",
+        "## Базовая модель",
+        "## Основные команды",
+        "## Расширение Hooks (Дополнительная поверхность)",
+        "## Флаги запуска",
+        "### Политика workingDirectory MCP (опциональное усиление)",
+        "## Codex-First управление промптами",
+        "## Командный режим",
+        "### Team shutdown policy"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# oh-my-codex (OMX)"
+        },
+        {
+          "line": 4,
+          "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+        },
+        {
+          "line": 6,
+          "text": "<em>Ваш codex не одинок.</em>"
+        },
+        {
+          "line": 9,
+          "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+        },
+        {
+          "line": 13,
+          "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+        },
+        {
+          "line": 15,
+          "text": "Слой мультиагентной оркестрации для [OpenAI Codex CLI](https://github.com/openai/codex)."
+        },
+        {
+          "line": 21,
+          "text": "- **Нативный harness для `omx explore`** — ускоряет и ужесточает read-only исследование репозитория через Rust-путь."
+        },
+        {
+          "line": 30,
+          "text": "Внутри Codex:"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_05",
+      "relpath": "references/git_search/oh-my-codex-main/README.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/README.md",
+      "sha256": "953d13b2ec72f5b13b7f191a9180ecc83d6c85cc60f291c94813115f5931a60b",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 23,
+        "source_context": 12,
+        "scope_boundary": 4,
+        "task_instruction": 5,
+        "evidence_requirements": 3,
+        "authority_guard": 0,
+        "output_contract": 9,
+        "negative_tests": 4,
+        "handoff": 50,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# oh-my-codex (OMX)",
+        "It keeps Codex as the execution engine and makes it easier to:",
+        "## Core Maintainers",
+        "## Ambassadors",
+        "## Top Collaborators",
+        "## Recommended default flow",
+        "Then work normally inside Codex:",
+        "## What OMX is for",
+        "## Quick start",
+        "### Requirements",
+        "### A good first session",
+        "Launch OMX the recommended way:"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# oh-my-codex (OMX)"
+        },
+        {
+          "line": 4,
+          "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+        },
+        {
+          "line": 6,
+          "text": "<em>Start Codex stronger, then let OMX add better prompts, workflows, and runtime help when the work grows.</em>"
+        },
+        {
+          "line": 9,
+          "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+        },
+        {
+          "line": 14,
+          "text": "**Website:** https://yeachan-heo.github.io/oh-my-codex-website/"
+        },
+        {
+          "line": 16,
+          "text": "**Community:** [Discord](https://discord.gg/PUwSMR9XNk) — shared OMX/community server for oh-my-codex and related tooling."
+        },
+        {
+          "line": 18,
+          "text": "OMX is a workflow layer for [OpenAI Codex CLI](https://github.com/openai/codex)."
+        },
+        {
+          "line": 22,
+          "text": "<td><strong>🚨 CAUTION — RECOMMENDED DEFAULT ONLY: macOS or Linux with Codex CLI.</strong><br><br><strong>OMX is primarily designed and actively tuned for that path.</strong><br><strong>Native Windows and Codex App are not the default experience, may break or b"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_06",
+      "relpath": "references/git_search/everything-claude-code-main/README.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/README.md",
+      "sha256": "923e86fd63e105a4d3e03bd98cbdf822016ecf9b1db600756441d0b12e2bb5cd",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 120,
+        "source_context": 41,
+        "scope_boundary": 6,
+        "task_instruction": 32,
+        "evidence_requirements": 33,
+        "authority_guard": 0,
+        "output_contract": 68,
+        "negative_tests": 75,
+        "handoff": 56,
+        "rollback_trace": 1
+      },
+      "field_presence_count": 9,
+      "section_hints": [
+        "# Everything Claude Code",
+        "## The Guides",
+        "## What's New",
+        "### v1.9.0 — Selective Install & Language Expansion (Mar 2026)",
+        "### v1.8.0 — Harness Performance System (Mar 2026)",
+        "### v1.7.0 — Cross-Platform Expansion & Presentation Builder (Feb 2026)",
+        "### v1.6.0 — Codex CLI, AgentShield & Marketplace (Feb 2026)",
+        "### v1.4.1 — Bug Fix (Feb 2026)",
+        "### v1.4.0 — Multi-Language Rules, Installation Wizard & PM2 (Feb 2026)",
+        "### v1.3.0 — OpenCode Plugin Support (Feb 2026)",
+        "### v1.2.0 — Unified Commands & Skills (Feb 2026)",
+        "## Quick Start"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 39,
+          "text": "Works across **Claude Code**, **Codex**, **Cowork**, and other AI agent harnesses."
+        },
+        {
+          "line": 76,
+          "text": "| Continuous Learning | Auto-extract patterns from sessions into reusable skills |"
+        },
+        {
+          "line": 79,
+          "text": "| Subagent Orchestration | The context problem, iterative retrieval pattern |"
+        },
+        {
+          "line": 89,
+          "text": "- **New skills** — `pytorch-patterns` for deep learning workflows, `documentation-lookup` for API reference research, `bun-runtime` and `nextjs-turbopack` for modern JS toolchains, plus 8 operational domain skills and `mcp-server-patterns`."
+        },
+        {
+          "line": 95,
+          "text": "- **CI hardening** — 19 test failure fixes, catalog count enforcement, install manifest validation, and full test suite green."
+        },
+        {
+          "line": 104,
+          "text": "- **Cross-harness parity** — behavior tightened across Claude Code, Cursor, OpenCode, and Codex app/CLI."
+        },
+        {
+          "line": 109,
+          "text": "- **Codex app + CLI support** — Direct `AGENTS.md`-based Codex support, installer targeting, and Codex docs"
+        },
+        {
+          "line": 112,
+          "text": "- **Broader tool coverage** — Cursor, Codex, and OpenCode support tightened so the same repo ships cleanly across all major harnesses"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_07",
+      "relpath": "runtime/cli_sessions/index.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/index.json",
+      "sha256": "f3f65dbe6c285b0d082649c8c6a7db7fb6de78f5fcd4836eb489db0de482da57",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 38,
+        "source_context": 31,
+        "scope_boundary": 2,
+        "task_instruction": 60,
+        "evidence_requirements": 3,
+        "authority_guard": 0,
+        "output_contract": 32,
+        "negative_tests": 1,
+        "handoff": 36,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"schema_version\": \"integrated_engine_cli_session_index_v0\","
+        },
+        {
+          "line": 6,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 16,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 26,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 36,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 46,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 56,
+          "text": "\"backend_kind\": \"codex\","
+        },
+        {
+          "line": 59,
+          "text": "\"purpose_text\": \"Actual worker contract smoke 2: emit parseable WORKER_RETURN_JSON for package continuity validation.\","
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_08",
+      "relpath": "scripts/run_vectorfl_paper_codex_bridge.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_vectorfl_paper_codex_bridge.py",
+      "sha256": "62f2841929d084199d155b8cede497e915accd378b1d2c4e3032aa1e3adc408f",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 20,
+        "source_context": 34,
+        "scope_boundary": 10,
+        "task_instruction": 11,
+        "evidence_requirements": 0,
+        "authority_guard": 0,
+        "output_contract": 51,
+        "negative_tests": 11,
+        "handoff": 61,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 7,
+      "section_hints": [
+        "if missing:",
+        "Task:",
+        "Goal:",
+        "Selected context summary:",
+        "Relevant files:",
+        "Codex top files:",
+        "External record anchor:",
+        "Constraints:",
+        "Requested action:",
+        "Expected output:",
+        "Forbidden scope:",
+        "Your job:"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 13,
+          "text": "HANDOFF_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_handoff_latest_v0.json\""
+        },
+        {
+          "line": 14,
+          "text": "RETURN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_return_latest_v0.json\""
+        },
+        {
+          "line": 33,
+          "text": "\"expected_output\","
+        },
+        {
+          "line": 34,
+          "text": "\"forbidden_scope\","
+        },
+        {
+          "line": 42,
+          "text": "def _output_schema() -> Dict[str, Any]:"
+        },
+        {
+          "line": 70,
+          "text": "return f\"\"\"You are Codex running in a read-only bridge adapter for VectorFL Paper."
+        },
+        {
+          "line": 72,
+          "text": "Use the handoff below as the only required task context. Do not change any files. Do not broaden scope. Return only structured output matching the provided JSON schema."
+        },
+        {
+          "line": 86,
+          "text": "Codex top files:"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_09",
+      "relpath": "references/git_search/everything-claude-code-main/.claude/ecc-tools.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/.claude/ecc-tools.json",
+      "sha256": "9c7947db9e950015ae9a3506e821f7606ebcc935085641c5d3de159cb0262148",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 26,
+        "source_context": 28,
+        "scope_boundary": 3,
+        "task_instruction": 2,
+        "evidence_requirements": 1,
+        "authority_guard": 0,
+        "output_contract": 11,
+        "negative_tests": 5,
+        "handoff": 28,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "\"schemaVersion\": \"1.0\","
+        },
+        {
+          "line": 141,
+          "text": "\".codex/config.toml\","
+        },
+        {
+          "line": 142,
+          "text": "\".codex/AGENTS.md\","
+        },
+        {
+          "line": 143,
+          "text": "\".codex/agents/explorer.toml\","
+        },
+        {
+          "line": 144,
+          "text": "\".codex/agents/reviewer.toml\","
+        },
+        {
+          "line": 145,
+          "text": "\".codex/agents/docs-researcher.toml\","
+        },
+        {
+          "line": 161,
+          "text": "\".codex/config.toml\","
+        },
+        {
+          "line": 162,
+          "text": "\".codex/AGENTS.md\","
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_10",
+      "relpath": "codex_content_pack.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/codex_content_pack.md",
+      "sha256": "da54d389f2f1c25b0178fa080befb448f4768d89e6268b4f1207679dd2db8e7c",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 18,
+        "source_context": 5,
+        "scope_boundary": 2,
+        "task_instruction": 1,
+        "evidence_requirements": 4,
+        "authority_guard": 0,
+        "output_contract": 15,
+        "negative_tests": 3,
+        "handoff": 26,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# CODEX CONTEXT PACK — REPLICA 입력기 / 앵커기 / 라벨기 / 비교 실험 기준선 v1",
+        "## 0. 이 문서의 목적",
+        "## 1. 이 프로젝트의 진짜 상위 목적",
+        "### 상위 목적",
+        "## 2. 왜 입력기 / 앵커기 / 라벨기가 중요한가",
+        "### 핵심 문장",
+        "## 3. 현재 단계에서 외부 LLM을 쓰는 이유",
+        "### 외부 LLM 비교의 진짜 목적",
+        "## 4. 현재 단계의 작업 범위",
+        "### 지금 하는 일",
+        "### 지금 하지 않는 일",
+        "## 5. 이 프로젝트에서 \"공간\"의 의미"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# CODEX CONTEXT PACK — REPLICA 입력기 / 앵커기 / 라벨기 / 비교 실험 기준선 v1"
+        },
+        {
+          "line": 5,
+          "text": "이 문서는 Codex가 현재 프로젝트의 겉모습이 아니라 **의도와 방향성**을 이해하도록 만드는 맥락 문서다."
+        },
+        {
+          "line": 7,
+          "text": "이 문서를 읽는 Codex는 다음을 이해해야 한다."
+        },
+        {
+          "line": 73,
+          "text": "Codex / ChatGPT / Gemini를 지금 쓰는 이유는"
+        },
+        {
+          "line": 79,
+          "text": "동일 fragment를 동일 schema로 처리하게 한 뒤,"
+        },
+        {
+          "line": 99,
+          "text": "- 동일 input fragment를 여러 처리자(Codex, ChatGPT, Gemini)에게 같은 schema로 처리시킨다."
+        },
+        {
+          "line": 173,
+          "text": "### Codex가 기억할 것"
+        },
+        {
+          "line": 203,
+          "text": "### anchor_scope"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_11",
+      "relpath": "references/git_search/graphify-5/CHANGELOG.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/graphify-5/CHANGELOG.md",
+      "sha256": "7998152d2eaab96f83c1c7716b87cfdf897387279e24410475bac4d610c7997d",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 73,
+        "source_context": 51,
+        "scope_boundary": 6,
+        "task_instruction": 7,
+        "evidence_requirements": 13,
+        "authority_guard": 0,
+        "output_contract": 47,
+        "negative_tests": 23,
+        "handoff": 37,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# Changelog",
+        "## 0.4.23 (2026-04-18)",
+        "## 0.4.22 (2026-04-18)",
+        "## 0.4.21 (2026-04-17)",
+        "## 0.4.20 (2026-04-17)",
+        "## 0.4.19 (2026-04-17)",
+        "## 0.4.16 (2026-04-16)",
+        "## 0.4.15 (2026-04-15)",
+        "## 0.4.14 (2026-04-15)",
+        "## 0.4.13 (2026-04-14)",
+        "## 0.4.12 (2026-04-13)",
+        "## 0.4.11 (2026-04-13)"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 14,
+          "text": "- Fix: AST cache written to `src/graphify-out/cache/` instead of project root when all code files share a common prefix like `src/` — `extract()` now called with explicit `cache_root=watch_path` in `_rebuild_code` and `cache_root=Path('.')` in the Codex skill "
+        },
+        {
+          "line": 31,
+          "text": "- Fix: Windows `graphify-out/graphify-out` nesting bug — `cache_dir` and `_rebuild_code` in watch.py now call `.resolve()` on the root path, preventing a nested output directory when graphify is run from a subdirectory (#410)"
+        },
+        {
+          "line": 55,
+          "text": "- Fix: PHP extractor now handles `scoped_call_expression` (static method calls like `Helper::format()`) and `class_constant_access_expression` (enum/constant references like `Status::ACTIVE`) — both were silently dropped before (#230, #232)"
+        },
+        {
+          "line": 61,
+          "text": "- Fix: `CLAUDE.md`, Cursor, and Antigravity templates now use `graphify update .` instead of hardcoded `python3 -c` invocation (#287)"
+        },
+        {
+          "line": 82,
+          "text": "- Fix: `.graphifyignore` patterns from a parent directory now fire correctly when graphify is run on a subfolder — patterns are matched against paths relative to both the scan root and the `.graphifyignore`'s anchor directory (#303)"
+        },
+        {
+          "line": 89,
+          "text": "- Fix: `skill-codex.md` — `wait` → `wait_agent` (correct Codex tool name) (#273)"
+        },
+        {
+          "line": 97,
+          "text": "- Add: PHP extractor now captures service container bindings (`bind`, `singleton`, `scoped`, `instance`) as `bound_to` edges (#238)"
+        },
+        {
+          "line": 102,
+          "text": "- Add: CLI commands `path`, `explain`, `add`, `watch`, `update`, `cluster-only` now work as bare terminal commands (not just AI skill invocations) — documented in `--help` output (#277)"
+        }
+      ]
+    },
+    {
+      "card_id": "REUSABLE_PATTERN_CARD_12",
+      "relpath": "references/git_search/everything-claude-code-main/.codex/AGENTS.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/.codex/AGENTS.md",
+      "sha256": "bbccf76330bef2b0a2866246a47f1ce7fbc6626f239b55c81efa4dc26f0303b2",
+      "surface": "work_control",
+      "field_hits": {
+        "identity": 11,
+        "source_context": 12,
+        "scope_boundary": 1,
+        "task_instruction": 10,
+        "evidence_requirements": 1,
+        "authority_guard": 0,
+        "output_contract": 1,
+        "negative_tests": 7,
+        "handoff": 20,
+        "rollback_trace": 0
+      },
+      "field_presence_count": 8,
+      "section_hints": [
+        "# ECC for Codex CLI",
+        "## Model Recommendations",
+        "## Skills Discovery",
+        "Available skills:",
+        "## MCP Servers",
+        "### Automatic config.toml merging",
+        "## Multi-Agent Support",
+        "Sample role configs in this repo:",
+        "## Key Differences from Claude Code",
+        "## Security Without Hooks"
+      ],
+      "pattern_readiness": "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW",
+      "safe_line": "PATTERN_CARD_ONLY__NO_SKILL_NO_TEMPLATE_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# ECC for Codex CLI"
+        },
+        {
+          "line": 3,
+          "text": "This supplements the root `AGENTS.md` with Codex-specific guidance."
+        },
+        {
+          "line": 18,
+          "text": "- `agents/openai.yaml` — Codex interface metadata"
+        },
+        {
+          "line": 24,
+          "text": "- frontend-patterns — React/Next.js patterns"
+        },
+        {
+          "line": 31,
+          "text": "- backend-patterns — API design, database, caching"
+        },
+        {
+          "line": 35,
+          "text": "- api-design — REST API design patterns"
+        },
+        {
+          "line": 39,
+          "text": "- claude-api — Anthropic Claude API patterns and SDKs"
+        },
+        {
+          "line": 47,
+          "text": "Treat the project-local `.codex/config.toml` as the default Codex baseline for ECC. The current ECC baseline enables GitHub, Context7, Exa, Memory, Playwright, and Sequential Thinking; add heavier extras in `~/.codex/config.toml` only when a task actually need"
+        }
+      ]
+    }
+  ],
+  "next_recommended": "P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "skill_created": false,
+    "template_promoted": false
+  }
+}

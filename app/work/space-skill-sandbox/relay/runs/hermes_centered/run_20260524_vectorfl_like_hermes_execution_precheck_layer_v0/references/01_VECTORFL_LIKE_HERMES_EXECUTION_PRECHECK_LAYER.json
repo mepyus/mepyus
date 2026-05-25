@@ -1,0 +1,49 @@
+{
+  "applies_to": "Every non-trivial execution/setup/review/test/external-material/long-loop request. Trivial one-shot tasks may use NONE mode but must still preserve boundaries.",
+  "base_sequence": [
+    "USER_ORIGINAL_CAPTURE",
+    "REQUEST_FORM_CLASSIFICATION",
+    "SPACE_REFERENCE_MODE_SELECTION",
+    "MINIMAL_SPACE_ORIENTATION_READ",
+    "ORIGINAL_PLUS_SPACE_MODEL_MERGE",
+    "EXECUTION_SHAPE_AND_WORKLIST",
+    "BUDGET_AND_CALL_GATE",
+    "HERMES_EXECUTION",
+    "TRACE_RECEIPT_DELTA",
+    "CODEX_READABLE_REENTRY",
+    "HOLD_OR_APPROVED_PROMOTION_DECISION"
+  ],
+  "changed_judgment_rule": "If space does not change the plan, say NO_CHANGED_JUDGMENT and why. If it does, name the exact space ref and changed decision.",
+  "codex_rule": "Codex is not called by default. Codex receives reentry after Hermes execution, or a retrieval request only when fresh unknown space refs may change judgment.",
+  "gemini_rule": "Hermes never direct-calls Gemini. Gemini is Codex-side only when Codex judges layer ambiguity and user/budget permits.",
+  "mandatory_precheck_fields": [
+    "request_type",
+    "execution_form",
+    "space_reference_mode",
+    "read_handles",
+    "why_these_handles",
+    "what_was_not_read_and_why",
+    "space_delta_or_no_delta",
+    "changed_judgment_from_space",
+    "model_reasoning_role",
+    "worklist_granularity",
+    "budget_gate_decision",
+    "codex_needed_now",
+    "gemini_allowed_path",
+    "authority_boundary",
+    "next_output_surface"
+  ],
+  "packet_id": "01_VECTORFL_LIKE_HERMES_EXECUTION_PRECHECK_LAYER_V0",
+  "promotion_status": "HOLD",
+  "purpose": "Make Hermes execution start like VectorFL: preserve original, orient in space, reason with model over original+space, execute, then produce trace/reentry for Codex maturation.",
+  "space_reference_modes": {
+    "CODEX_MATURATION_REENTRY": "After Hermes execution, for Codex to deepen space later.",
+    "CODEX_RETRIEVAL_REQUEST": "Only when fresh unknown space reference may change judgment; Hermes does not fake it.",
+    "DEEP_ARTIFACT": "When compact surfaces are insufficient; descend to immutable trace/receipt/source index.",
+    "FULL_HISTORY": "Cross-arc or structural task; read full-history sync and selected root artifacts.",
+    "LITE_LENS": "Setup/reinterpretation/test task; read lite cards/lens/index roots.",
+    "NONE": "Trivial local one-shot; no durable VectorFL space needed.",
+    "QUICK_BOARD": "Known lane or current-position check; read first board/summary/pointers."
+  },
+  "status": "HOLD_REFERENCE_LAYER_ONLY"
+}

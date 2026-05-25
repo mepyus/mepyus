@@ -1,0 +1,41 @@
+{
+  "validation_id": "VALIDATION_VECTORFL_ASSET_TYPE_MAP_V0_1",
+  "created_at": "2026-05-25T10:24:39.618635+09:00",
+  "verdict": "PASS_ASSET_TYPE_MAP_AND_ROUTE_BATCH_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/type_map/00_vectorfl_asset_type_map_v0_1.json": {
+      "exists": true,
+      "sha256": "5405536eeb74ae674adaf08c36ad505c474bc82c2868f94acf07feb7dbc2b87a",
+      "bytes": 31675
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/routes/01_role_route_batch_plan_v0_1.json": {
+      "exists": true,
+      "sha256": "4d5e4d9f19ea45213ce7e47d6621d01e89bae22de012b8ae407e01f2f2d71457",
+      "bytes": 27012
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/batch_rules/02_next_asset_batch_rules_v0_1.json": {
+      "exists": true,
+      "sha256": "56a31733bbbe27c806e650079cb359870d953b070c6350726ab994e7cd9ab7b6",
+      "bytes": 1459
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/reports/03_asset_type_map_v0_1_report.md": {
+      "exists": true,
+      "sha256": "5ba586ca2d72c26e32545fe45ef68b521c337cf92a10fb4d68ba2aac4b2897b5",
+      "bytes": 721
+    }
+  },
+  "content_checks": {
+    "sample_count": 18,
+    "type_definitions": 6,
+    "route_batches": 3,
+    "next_selection_rules": 4,
+    "has_hermes_route": true,
+    "has_codex_route": true,
+    "has_gemini_route": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

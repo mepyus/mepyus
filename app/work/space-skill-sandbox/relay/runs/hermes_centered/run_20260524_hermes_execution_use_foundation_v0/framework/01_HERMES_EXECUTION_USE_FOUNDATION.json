@@ -1,0 +1,55 @@
+{
+  "codex_role": "Codex is the space maturation actor: inspect Hermes outputs/reentry, put results into space, deepen/index/mature space, decide if Gemini wide lens is needed inside Codex-side flow.",
+  "core_correction": "/goal, Ralph-loop, and AI Frontier are all examples. The real foundation is Hermes deciding execution form and processing direction from user intent + space references + model reasoning, then executing while leaving Codex-readable outputs for space maturation.",
+  "execution_form_spectrum": [
+    {
+      "form": "single_turn_action",
+      "hermes_use": "minimal quick board or known pattern check before execution",
+      "space_pressure": "low"
+    },
+    {
+      "form": "bounded_multi_step_setup",
+      "hermes_use": "space-referenced worklist, local validation, receipts, reentry",
+      "space_pressure": "medium"
+    },
+    {
+      "form": "external_material_reinterpretation",
+      "hermes_use": "source intake, lite cards, overlap/lack, VectorFL above/below mapping, HOLD proposals",
+      "space_pressure": "high"
+    },
+    {
+      "form": "long_running_or_days_loop",
+      "hermes_use": "iteration receipt/delta, budget gate, continuation state, periodic quick-board/reentry",
+      "space_pressure": "very_high"
+    },
+    {
+      "form": "space_maturation_after_execution",
+      "hermes_use": "publish reentry; do not block execution unless fresh retrieval is required",
+      "space_pressure": "codex_owned"
+    }
+  ],
+  "execution_start_algorithm": [
+    "preserve_user_original",
+    "classify_execution_form",
+    "read_minimal_space_orientation",
+    "infer task shape/worklist/setup from space",
+    "merge original + space + model reasoning",
+    "apply budget/fresh-space gate",
+    "execute or request Codex retrieval only if needed",
+    "write receipts/deltas",
+    "publish Codex-readable reentry",
+    "keep promotion HOLD unless explicitly approved"
+  ],
+  "hermes_role": "Hermes is the execution actor: preserve original, judge execution form, consult space, use model reasoning, create worklist/setup, execute local steps, write trace/receipt/reentry, and keep authority/promotion separate.",
+  "not_the_goal": [
+    "not merely /goal support",
+    "not only AI Frontier workflow",
+    "not small-session validation automation",
+    "not Codex replacing Hermes execution",
+    "not Hermes prebuilding every future feature"
+  ],
+  "packet_id": "01_HERMES_EXECUTION_USE_FOUNDATION_V0",
+  "promotion_status": "HOLD",
+  "status": "HOLD_FOUNDATION_ONLY",
+  "target_state": "Later, user can give compact direction; Hermes should use matured space to prepare first-pass structure/test/execution lane without requiring repeated micro-instructions. Codex then matures the outputs so future Hermes execution becomes lighter/deeper."
+}

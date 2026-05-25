@@ -1,0 +1,408 @@
+{
+  "rule_id": "U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_V0",
+  "created_at": "2026-05-25T20:00:44.893722+09:00",
+  "status": "WORKSPACE_INTERNAL_RULE_CANDIDATE_NOT_AUTHORITY_NOT_APPLY",
+  "source_compact": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_asset_compact_pointer_view_v0.json",
+  "source_review": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_subtype_review_batch01_v0.json",
+  "basis": {
+    "scan_count": 41449,
+    "subtype_count": 7,
+    "review_sample_count": 32,
+    "compact_disposition_distribution": {
+      "GENERAL_RUN_BUNDLE_POINTER": 33943,
+      "RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD": 4885,
+      "CLEANUP_LANGUAGE_RUN_BUNDLE_HOLD": 573,
+      "GENERATED_RUN_BUNDLE_COMPACT_POINTER": 1835,
+      "PRESERVE_VALIDATION_RECEIPT_EVIDENCE": 213
+    },
+    "review_action_distribution": {
+      "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE": 21,
+      "PRESERVE_EVIDENCE_POINTER_COMPACT_OK": 1,
+      "GENERAL_RUN_BUNDLE_REVIEW_POINTER": 8,
+      "KEEP_CLOSEOUT_INDEX_POINTER": 1,
+      "HOLD_CLEANUP_LANGUAGE_NO_APPLY": 1
+    }
+  },
+  "candidate_rules": [
+    {
+      "rule_id": "URB_R01_PRESERVE_VALIDATION_RECEIPT_EVIDENCE",
+      "trigger_dispositions": [
+        "PRESERVE_VALIDATION_RECEIPT_EVIDENCE"
+      ],
+      "candidate_policy": "preserve pointer/index and compact view; never auto-delete",
+      "allowed_actions": [
+        "pointer index",
+        "operator compact",
+        "sha validation"
+      ],
+      "forbidden_actions": [
+        "delete",
+        "archive",
+        "move",
+        "treat as authority registry"
+      ],
+      "evidence_count": 213
+    },
+    {
+      "rule_id": "URB_R02_FREEZE_AUTHORITY_SENSITIVE_RUN_BUNDLE",
+      "trigger_dispositions": [
+        "RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD"
+      ],
+      "candidate_policy": "freeze pointer-only until authority boundary review",
+      "allowed_actions": [
+        "freeze card",
+        "risk map",
+        "read-only review"
+      ],
+      "forbidden_actions": [
+        "promotion",
+        "registry mutation",
+        "current-position mutation",
+        "archive/delete"
+      ],
+      "evidence_count": 4885
+    },
+    {
+      "rule_id": "URB_R03_COMPACT_GENERATED_RUN_BUNDLE",
+      "trigger_dispositions": [
+        "GENERATED_RUN_BUNDLE_COMPACT_POINTER"
+      ],
+      "candidate_policy": "compact generated runs into operator view before any cleanup consideration",
+      "allowed_actions": [
+        "compact pointer view",
+        "dedupe evidence map",
+        "summary rollup"
+      ],
+      "forbidden_actions": [
+        "auto-archive",
+        "auto-delete",
+        "bulk move"
+      ],
+      "evidence_count": 1835
+    },
+    {
+      "rule_id": "URB_R04_HOLD_CLEANUP_LANGUAGE_BUNDLE",
+      "trigger_dispositions": [
+        "CLEANUP_LANGUAGE_RUN_BUNDLE_HOLD"
+      ],
+      "candidate_policy": "cleanup-language run bundles require explicit manifest/rollback before apply",
+      "allowed_actions": [
+        "hold card",
+        "precondition map",
+        "rollback candidate design"
+      ],
+      "forbidden_actions": [
+        "cleanup apply",
+        "archive",
+        "move",
+        "delete"
+      ],
+      "evidence_count": 573
+    },
+    {
+      "rule_id": "URB_R05_GENERAL_RUN_BUNDLE_POINTER_ONLY",
+      "trigger_dispositions": [
+        "GENERAL_RUN_BUNDLE_POINTER"
+      ],
+      "candidate_policy": "general run bundles remain pointer-only until grouped by evidence value",
+      "allowed_actions": [
+        "subtype review",
+        "sample reading",
+        "pointer grouping"
+      ],
+      "forbidden_actions": [
+        "source-of-truth substitution",
+        "bulk cleanup"
+      ],
+      "evidence_count": 33943
+    }
+  ],
+  "sample_support_top32": [
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_01",
+      "relpath": "runtime/exploration_results/phase1_14_wrapper_run_02_exploration_result.json",
+      "sha256": "e29ac2470abd9802e1d8ba35afa963ef0d1a26e2b1562499c69346eefa4210da",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "summary_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_02",
+      "relpath": "runtime/exploration_results/phase1_11_run_05_exploration_result.json",
+      "sha256": "ff84e47d4004861798108e9287501160d130dc115f74c5d90f09ca524c6c9886",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "summary_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_03",
+      "relpath": "runtime/exploration_results/phase1_11_run_01_exploration_result.json",
+      "sha256": "d6bdb0e42987e2aefc17e947bf6cd43ed0046df4fc095aad3da20eef2d1339a4",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "summary_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_04",
+      "relpath": "runtime/exploration_results/phase1_11_run_02_exploration_result.json",
+      "sha256": "3c9c758b10971280e74203c3db1b8904093667251cf71cf404c4b8e68f043265",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "summary_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_05",
+      "relpath": "runtime/exploration_results/phase1_12_run_05_exploration_result.json",
+      "sha256": "847ac4d2a06370da2d327a54036d25895ef748416bf185cfac180253bda2b7ee",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "summary_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_06",
+      "relpath": "runtime/manifests/folder_inventory/runtime.receipts.json",
+      "sha256": "b7d2a6b9f51d5bd2261106d8ea57717733179f5ff8056b856ff8720e8fb3fe27",
+      "action": "PRESERVE_EVIDENCE_POINTER_COMPACT_OK",
+      "subtype": "validation_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_07",
+      "relpath": "runtime/manifests/folder_inventory/runtime.views.json",
+      "sha256": "e53cd1406422accb679616945eb88dbb73de552e4171dd13e1decedd113e15ae",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "validation_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_08",
+      "relpath": "runtime/exploration_results/phase1_10_run_05_exploration_result.json",
+      "sha256": "ee7533e27f4871aed396ba0b5ddc6d2914a1f97a2f6e086361a0ba818465d809",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "validation_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_09",
+      "relpath": "runtime/manifests/folder_inventory/runtime.manifests.origin_maps.json",
+      "sha256": "96f432f5c2d9d45754676b478d38ce16962837d219ae68bfc3f3b497513a113e",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "validation_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_10",
+      "relpath": "runtime/manifests/folder_inventory/docs.reports.json",
+      "sha256": "c4c57f557294537985865f82a601612a38bd8bd5a814bf262d6bef86669a4cdb",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "validation_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_11",
+      "relpath": "runtime/manifests/provenance_compaction/provenance_link_index_snapshot_before_apply_v1.json",
+      "sha256": "4b7581f6b4febb4ac50d720ba1c71080c83aeea594a3b4efecf86aefd3bffe70",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "receipt_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_12",
+      "relpath": "runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json",
+      "sha256": "f5b4358e49d75b5d09e430f4fe2ee7a2523aba2715698423f69e4f2d5285bd67",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "receipt_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_13",
+      "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "sha256": "f720f89ce5acb9e8c71215ef89e5ebcf7066001d28b390866acdf4a2d5a9d341",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "receipt_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_14",
+      "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json",
+      "sha256": "36d7b4f02868a9eb91ca87a14efc4623a498a62ec2c05fc3f653ae77b8b9f68e",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "receipt_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_15",
+      "relpath": "runtime/views/multi_lens_document_reading/doc_raw_intake_gap_analysis_before_middle_layer_fix_v1_multi_lens_readout_raw_intake_gap_analysis_before_middle_layer_fix_v1_20260409_184529.json",
+      "sha256": "6cd47826f4ff41a85704273647f8615e8265aa5220453ea34f2af1ec185f8839",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "receipt_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_16",
+      "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+      "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "closeout_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_17",
+      "relpath": "scripts/run_vectorfl_paper_weekend_pilot_mock.py",
+      "sha256": "66486788d04b4f9f4c74767fa1d0c2d346061aec8689c199ec2b17e473d0b281",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "closeout_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_18",
+      "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/closeout_files.txt",
+      "sha256": "317cb7fbf7803d750b1a1770f9bb38112d4ce22ffa486194f438c5a5ad03c441",
+      "action": "KEEP_CLOSEOUT_INDEX_POINTER",
+      "subtype": "closeout_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_19",
+      "relpath": "runtime/manifests/folder_inventory/runtime.manifests.json",
+      "sha256": "4573f80c67de2cced9e5823fd073cc805aa4f9a7f28f9a87ab4f9d32a00890f6",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "closeout_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_20",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+      "sha256": "9a98807b2ad6b30fd607aca96226d70ef0ce41169b58399c7fc62190f9edd970",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "closeout_bundle",
+      "surface": "workspace_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_21",
+      "relpath": "references/vectorfl/app/work/stage0_min/tmp/cluster_inspect/set_101_weak_relation_pair_analysis.md",
+      "sha256": "f6d6be5198000993c101b24bae27e45b3b45e89afddd3bcc50cc23bea77d560b",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "report_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_22",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_operator_cards.md",
+      "sha256": "84e3f0a967331075eb8d481a5a475d7147b160b635bc4fa9ad35336f37dce1fb",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "report_bundle",
+      "surface": "workspace_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_23",
+      "relpath": "references/git_search/qmd-main/finetune/train.py",
+      "sha256": "8b2823fcfbbec40875983b518623bb7b4fab6835e460bbe3f50141318551f1c1",
+      "action": "HOLD_CLEANUP_LANGUAGE_NO_APPLY",
+      "subtype": "report_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_24",
+      "relpath": "references/git_search/paperclip-master/doc/SPEC.md",
+      "sha256": "36b2c9e63b6e4c18eb26a90779a8f949a1f67e446a74f5373c74df9745f05849",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "report_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_25",
+      "relpath": "references/git_search/graphify-5/tests/test_report.py",
+      "sha256": "2701c2a08af8f9e903d7fe0d12b5939cbdec10b443e070ce7728c7c9bbb63e8b",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "report_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_26",
+      "relpath": "references/vectorfl/app/work/stage0_min/tmp/cluster_inspect/run_filters_021_100.txt",
+      "sha256": "92923ce018f43412c2bdbe14cd4cbded79fda8a797bc02c362473513a7ee8b03",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "general_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_27",
+      "relpath": "references/vectorfl/app/work/stage0_min/tmp/cluster_inspect/run_filters_051_100.txt",
+      "sha256": "a65da722c3712261aff1ed8b62cba1df9a2bf7a4155fca47ae5a5a35123defeb",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "general_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_28",
+      "relpath": "references/vectorfl/runtime/temp/meaning_layer/dust_point_connections_multi_20260315_095640.txt",
+      "sha256": "872137bc0e56d6ed6ea55945e4b1feb46b83241a466a773336b0b7eb001848ad",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "general_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_29",
+      "relpath": "references/vectorfl/runtime/temp/meaning_layer/dust_point_connections_multi_20260315_115854.txt",
+      "sha256": "b99476698708c7cb1dbf64075c18a518e7c831a8281f100de316413d41f5d611",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "general_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_30",
+      "relpath": "references/vectorfl/app/work/stage0_min/tmp/cluster_inspect/stage1_run_dirs_021_100.txt",
+      "sha256": "22cf164d1c39d4d0226119abc4234a4b10256f4d870a9a8777fbd4ff4a305679",
+      "action": "GENERAL_RUN_BUNDLE_REVIEW_POINTER",
+      "subtype": "general_run_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_31",
+      "relpath": "references/git_search/paperclip-master/package-lock.json",
+      "sha256": "4f288cefb8d3574628e12f3c38deb08e4d4915b2bf62b8c5c89a14772b3f1523",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "rollup_bundle",
+      "surface": "work_control"
+    },
+    {
+      "review_id": "U_RUN_BUNDLE_REVIEW_32",
+      "relpath": "references/WashTank/package-lock.json",
+      "sha256": "4ca88cdb3132a5c243ff91e47ffa9fa34d1fff1d4704b70c12a62b83ef60b155",
+      "action": "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE",
+      "subtype": "rollup_bundle",
+      "surface": "work_control"
+    }
+  ],
+  "minimum_apply_preconditions_if_future_cleanup_is_requested": [
+    "explicit user approval id",
+    "filled archive/delete/move manifest",
+    "rollback manifest",
+    "post-apply validation plan",
+    "authority-boundary review",
+    "secret/redaction check",
+    "negative drift tests"
+  ],
+  "not_allowed_now": [
+    "archive",
+    "delete",
+    "move",
+    "source edit",
+    "authority registry mutation",
+    "promotion",
+    "bulk cleanup apply"
+  ],
+  "next_recommended": "U_RUN_BUNDLE_GENERATED_COMPACT_DEDUPE_EVIDENCE_MAP_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false
+  }
+}

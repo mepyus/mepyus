@@ -1,0 +1,35 @@
+{
+  "reading_id": "VECTORFL_LATENT_SAAS_READING_FROM_ASSET_FIELD_V0",
+  "created_at": "2026-05-25T10:44:24.090383+09:00",
+  "claim": "기존 자산을 layer/LACL 관점으로 읽으면 SaaS 프로그램의 모듈 윤곽이 이미 나타난다. 부족한 것은 자산이 없는 것이 아니라 product module lens로 읽지 않은 것이다.",
+  "modules": {
+    "SAAS_M1_INTAKE_PROVENANCE": "원문/외부자료/증거/출처 분리. upload/import/source card/provenance UI가 될 수 있음.",
+    "SAAS_M2_ASSET_GRAPH_ROUTER": "자산 map/index/route. 문서를 공간 기능으로 분류하고 graph route를 보여주는 core UI.",
+    "SAAS_M3_GUARD_PRECHECK_ENGINE": "실행 전 gate/precheck/validation. agent/tool 실행 안전장치.",
+    "SAAS_M4_MATURATION_GOVERNANCE": "inbox→candidate→matured→authority 승격/보류/충돌 검토.",
+    "SAAS_M5_SPACE_INBOX_REVIEW": "HOLD inbox, Codex review queue, reentry board.",
+    "SAAS_M6_ADAPTER_FACTORY": "VectorFL 기능을 여러 도구 앞/뒤에 붙이는 adapter shell 생성."
+  },
+  "module_distribution": {
+    "SAAS_M1_INTAKE_PROVENANCE": 6510,
+    "SAAS_M2_ASSET_GRAPH_ROUTER": 739,
+    "SAAS_M3_GUARD_PRECHECK_ENGINE": 209,
+    "SAAS_M6_ADAPTER_FACTORY": 77,
+    "SAAS_M5_SPACE_INBOX_REVIEW": 21,
+    "SAAS_M4_MATURATION_GOVERNANCE": 122
+  },
+  "why_not_productized_yet": [
+    "assets are scattered",
+    "classification/recovery incomplete",
+    "promotion rubric incomplete",
+    "Codex/Gemini bounded operations not routine",
+    "folder cleanup before classification would destroy latent relations"
+  ],
+  "productization_sequence": [
+    "classify/recover asset field",
+    "stabilize route map",
+    "define promotion rubric",
+    "build inbox/review UI",
+    "then adapter factory"
+  ]
+}

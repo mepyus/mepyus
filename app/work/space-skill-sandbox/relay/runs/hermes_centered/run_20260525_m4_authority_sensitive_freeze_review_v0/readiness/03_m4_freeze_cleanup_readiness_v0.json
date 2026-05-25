@@ -1,0 +1,17 @@
+{
+  "readiness_id": "M4_FREEZE_READINESS_FOR_CLEANUP_V0",
+  "created_at": "2026-05-25T11:47:07.755075+09:00",
+  "verdict": "CLEANUP_STILL_BLOCKED_BY_M4_FREEZE",
+  "input_authority_sensitive_count": 63,
+  "do_not_move_count": 61,
+  "pointer_only_count": 26,
+  "codex_review_required_count": 63,
+  "cleanup_apply_ready": false,
+  "next_required": [
+    "Codex read-only review of freeze classes",
+    "M7 hygiene/operator dashboard",
+    "M8 rollback+validation trace fields",
+    "explicit approval only after manifest"
+  ],
+  "decision": "No move/archive. Freeze classes are review surfaces only."
+}

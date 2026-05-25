@@ -1,0 +1,53 @@
+{
+  "template_id": "M8_ROLLBACK_MANIFEST_TEMPLATE_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "status": "TEMPLATE_ONLY_NOT_FILLED_NOT_APPLYABLE",
+  "manifest_required_sections": [
+    "operation_header",
+    "explicit_approval",
+    "pre_state_snapshot",
+    "intended_changes",
+    "affected_pointer_list",
+    "rollback_steps",
+    "post_apply_validation",
+    "failure_stop_conditions",
+    "operator_signoff"
+  ],
+  "operation_header": {
+    "operation_id": "REQUIRED",
+    "created_at": "REQUIRED",
+    "operator": "REQUIRED",
+    "scope": "REQUIRED",
+    "operation_type": "REQUIRED"
+  },
+  "explicit_approval": {
+    "approval_required": true,
+    "approval_id": "REQUIRED_FOR_APPLY_NULL_FOR_DRY_RUN",
+    "approved_scope": "REQUIRED_FOR_APPLY",
+    "approval_timestamp": "REQUIRED_FOR_APPLY"
+  },
+  "pre_state_snapshot_item": {
+    "absolute_path": "REQUIRED",
+    "sha256_before": "REQUIRED",
+    "bytes_before": "REQUIRED",
+    "mtime_before": "REQUIRED",
+    "freeze_class": "REQUIRED",
+    "cleanup_policy": "REQUIRED",
+    "authority_boundary": "REQUIRED"
+  },
+  "rollback_step_item": {
+    "if_changed_path": "REQUIRED",
+    "restore_from": "REQUIRED",
+    "restore_to": "REQUIRED",
+    "expected_sha256_after_rollback": "REQUIRED",
+    "validation": "REQUIRED"
+  },
+  "stop_conditions": [
+    "approval_id_missing",
+    "before_sha_mismatch",
+    "target_exists_conflict",
+    "registry_or_current_position_affected_without_authority_approval",
+    "post_apply_validation_failed",
+    "rollback_validation_failed"
+  ]
+}

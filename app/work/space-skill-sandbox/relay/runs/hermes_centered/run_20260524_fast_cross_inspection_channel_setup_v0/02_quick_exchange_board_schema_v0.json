@@ -1,0 +1,42 @@
+{
+  "packet_id": "02_quick_exchange_board_schema_v0",
+  "status": "HOLD_SCHEMA",
+  "purpose": "Schema for shared_handoff quick board that lets Hermes and Codex rapidly inspect each other's latest state.",
+  "required_fields": [
+    "packet_id",
+    "run_id",
+    "board_version",
+    "writer_role",
+    "allowed_namespace",
+    "immutable_after_publish",
+    "last_updated_by",
+    "hermes_latest",
+    "codex_latest",
+    "open_questions",
+    "blocked_or_waiting_on",
+    "latest_pointer_ref",
+    "next_safe_lane",
+    "boundary",
+    "promotion_status"
+  ],
+  "latest_entry_required_fields": [
+    "summary_card_handle",
+    "summary_card_sha256",
+    "latest_artifact_handle",
+    "latest_artifact_sha256",
+    "latest_state",
+    "changed_judgment",
+    "next_for_other_actor",
+    "owner_namespace",
+    "read_only_assertion"
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  }
+}
+

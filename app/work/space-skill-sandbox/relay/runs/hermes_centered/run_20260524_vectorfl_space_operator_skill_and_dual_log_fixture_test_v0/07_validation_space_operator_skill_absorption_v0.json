@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "check": "skill_frontmatter_still_present",
+      "pass": true
+    },
+    {
+      "check": "space_maturation_reference_added",
+      "artifact": "vectorfl-space-operator/references/space_maturation_principle.md",
+      "pass": true
+    },
+    {
+      "check": "program_result_space_effect_reference_added",
+      "artifact": "vectorfl-space-operator/references/program_result_space_effect.md",
+      "pass": true
+    },
+    {
+      "check": "maturation_loop_present_in_skill",
+      "pass": true
+    },
+    {
+      "check": "program_effect_enum_present",
+      "observed": "PATTERN_STRENGTHENED",
+      "pass": true
+    },
+    {
+      "check": "maturation_judgment_enum_present",
+      "observed": "STRENGTHEN_EXISTING_PATTERN",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "promotion": "HOLD",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "pass": true
+    },
+    {
+      "check": "skill_candidate_not_installed_or_promoted",
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "hashes": {
+    "SKILL.md": "b7afb84398302bf2f06bf072212ed29e93dd49154e0ea5d939944e5d2e6afe95",
+    "program_result_space_effect.md": "e679eb24125469bf2d66e5b56917ae9557d80baa257d4cf63316ba1d6612f643",
+    "space_maturation_principle.md": "ba6d1b7be42b10f0a59d9f862abb7b168d8909fb98a969c64db97342333b1067"
+  },
+  "next_safe_lane": "RUN_SKILL_CANDIDATE_FIXTURE_WITH_PROGRAM_RESULT_SPACE_EFFECT_OR_KEEP_HOLD_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_ABSORPTION_WITH_HOLD"
+}

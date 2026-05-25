@@ -1,0 +1,27 @@
+{
+  "destination_spec_id": "VECTORTUBE_THREE_MINI_SPACE_DESTINATION_SPEC_B_APPLY_PREP_V0",
+  "created_at": "2026-05-25T08:50:46.897195+09:00",
+  "status": "DESTINATION_SELECTED_NOT_APPLIED_HOLD",
+  "target_root": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0",
+  "layer_type": "runtime_space_inbox_candidate",
+  "why_this_destination": "runtime/space_inbox is proposed as a non-authority inbox layer: visible to VectorFL space operations, but separate from registry/current-position/authority surfaces.",
+  "not_chosen": [
+    "runtime/manifests/* because registry/authority mutation risk",
+    "docs/reports/* because it would flatten mini-space into report residue",
+    "Obsidian vault because user has not approved Obsidian write"
+  ],
+  "planned_files": {
+    "README": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/README.md",
+    "index": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/index/00_three_mini_space_source_index_v0.json",
+    "cross_link_map": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/cross_links/02_three_mini_space_cross_link_map_v0.json",
+    "guard_map": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/guards/03_space_insertion_guard_map_v0.json",
+    "handoff": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/handoff/04_CODEX_READABLE_THREE_MINI_SPACE_INSERTION_PACKET_HOLD_v0.json",
+    "ms1_card": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/cards/01_MS1_ONTOLOGY_SEMANTIC_FABRIC_space_insertion_card_v0.json",
+    "ms2_card": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/cards/01_MS2_AI_AUTOMATION_PLATFORM_RISK_space_insertion_card_v0.json",
+    "ms3_card": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/cards/01_MS3_AGENT_GIT_GUARD_space_insertion_card_v0.json",
+    "validation_copy": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0/validation/06_validation_three_mini_space_insertion_staging_v0.json"
+  },
+  "readme_preview": "# VectorTube contextual mini-spaces inbox candidate\n\nStatus: HOLD / NOT APPLIED\n\nThis target root is proposed for staging three VectorTube contextual mini-spaces inside VectorFL as an inbox layer, not as authority.\n\nMini-spaces:\n1. MS1_ONTOLOGY_SEMANTIC_FABRIC\n2. MS2_AI_AUTOMATION_PLATFORM_RISK\n3. MS3_AGENT_GIT_GUARD\n\nBoundaries:\n- NOT authority\n- NOT current-position\n- NOT registry\n- NOT promotion\n- Source artifacts remain immutable pointers\n",
+  "apply_requires_explicit_final_approval": true,
+  "promotion": "HOLD"
+}

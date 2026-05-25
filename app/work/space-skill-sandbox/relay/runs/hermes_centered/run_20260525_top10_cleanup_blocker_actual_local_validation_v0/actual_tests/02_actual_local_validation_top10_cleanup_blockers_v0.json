@@ -1,0 +1,59 @@
+{
+  "test_id": "ACTUAL_LOCAL_VALIDATION_TOP10_CLEANUP_BLOCKERS_V0",
+  "created_at": "2026-05-25T12:33:44.310872+09:00",
+  "verdict": "PASS_ACTUAL_LOCAL_VALIDATION_WITH_HOLD",
+  "actual_not_setup_only": true,
+  "elapsed_ms": 5.07,
+  "checks_count": 50,
+  "checks_passed": 50,
+  "checks_failed": [],
+  "negative_results": [
+    {
+      "name": "NEG_MOVE_WITHOUT_APPROVAL",
+      "mutation_statement": {
+        "file_move": true,
+        "archive": false,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      },
+      "approval_id": null,
+      "result": "PASS_NEGATIVE_CAUGHT__HOLD_REQUIRED"
+    },
+    {
+      "name": "NEG_ARCHIVE_AUTHORITY_SURFACE",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": true,
+        "authority_mutation": false,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": false
+      },
+      "approval_id": null,
+      "result": "PASS_NEGATIVE_CAUGHT__HOLD_REQUIRED"
+    },
+    {
+      "name": "NEG_PROMOTE_RECEIPT_AS_AUTHORITY",
+      "mutation_statement": {
+        "file_move": false,
+        "archive": false,
+        "authority_mutation": true,
+        "registry_mutation": false,
+        "current_position_mutation": false,
+        "promotion": true
+      },
+      "approval_id": "MISSING",
+      "result": "PASS_NEGATIVE_CAUGHT__HOLD_REQUIRED"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

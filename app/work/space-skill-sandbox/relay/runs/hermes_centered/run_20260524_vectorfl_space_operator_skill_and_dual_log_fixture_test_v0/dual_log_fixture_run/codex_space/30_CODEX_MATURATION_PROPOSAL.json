@@ -1,0 +1,30 @@
+{
+  "packet_id": "30_CODEX_MATURATION_PROPOSAL",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "CODEX",
+  "allowed_namespace": "codex_space",
+  "immutable_after_publish": true,
+  "read_hermes_handles": [
+    {
+      "source_handle": "shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json",
+      "source_sha256": "ca0542f0be9821cb66cc3122f10ca3503bdee4b43610dde28a13167b111ee0f4",
+      "used_for": "HOLD-only maturation proposal",
+      "changed_judgment": "Fixture validates namespace separation and reentry shape",
+      "owner_namespace": "shared_handoff",
+      "read_only_assertion": true
+    }
+  ],
+  "maturation_decision": "PROPOSE_PATTERN_ONLY",
+  "space_assets_to_reindex": [
+    "shared_handoff/00_RUN_MANIFEST.json",
+    "codex_space/10_CODEX_RETRIEVAL_RETURN.json",
+    "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+    "shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json"
+  ],
+  "rejected_maturation_options": [
+    "apply_authority",
+    "mutate_registry"
+  ],
+  "gemini_via_codex_script_used": "NO",
+  "promotion_status": "HOLD"
+}

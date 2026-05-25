@@ -1,0 +1,1217 @@
+{
+  "review_id": "P_PACKET_HANDOFF_SUBTYPE_REVIEW_BATCH01_V0",
+  "created_at": "2026-05-25T14:34:29.505181+09:00",
+  "status": "POINTER_ONLY_SUBTYPE_REVIEW_NOT_AUTHORITY",
+  "source_compact": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_asset_compact_pointer_view_v0.json",
+  "sample_count": 28,
+  "subtype_review": [
+    {
+      "subtype": "codex_review_packet",
+      "disposition_distribution": {
+        "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL": 3,
+        "GENERAL_PACKET_POINTER_REVIEW": 1
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "validation_packet",
+      "disposition_distribution": {
+        "ONE_SHOT_RECEIPT_TRACE_EVIDENCE": 4
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "gemini_queue_packet",
+      "disposition_distribution": {
+        "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL": 4
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "handoff_packet",
+      "disposition_distribution": {
+        "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL": 4
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "task_packet",
+      "disposition_distribution": {
+        "REUSABLE_TASK_PACKET_PATTERN_CANDIDATE": 4
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "general_packet_handoff",
+      "disposition_distribution": {
+        "GENERAL_PACKET_POINTER_REVIEW": 4
+      },
+      "sample_count": 4
+    },
+    {
+      "subtype": "inbox_apply_packet",
+      "disposition_distribution": {
+        "GENERAL_PACKET_POINTER_REVIEW": 4
+      },
+      "sample_count": 4
+    }
+  ],
+  "items": [
+    {
+      "review_id": "P_PACKET_REVIEW_01",
+      "subtype": "codex_review_packet",
+      "relpath": "runtime/manifests/folder_inventory/runtime.manifests.label_packets.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/runtime.manifests.label_packets.json",
+      "sha256": "eed712c1d3d3fed0feaf66729a3120fed34f1d8494b5d541049aa2eed3eb5db1",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"folder_key\": \"runtime.manifests.label_packets\","
+        },
+        {
+          "line": 3,
+          "text": "\"folder_path\": \"runtime/manifests/label_packets\","
+        },
+        {
+          "line": 9,
+          "text": "\"name\": \"doc_ai_future_segment_probe_v1_label_packet.json\","
+        },
+        {
+          "line": 10,
+          "text": "\"path\": \"runtime/manifests/label_packets/doc_ai_future_segment_probe_v1_label_packet.json\","
+        },
+        {
+          "line": 18,
+          "text": "\"name\": \"doc_andrej_karpathy_llm_wiki_medium_note_v0_label_packet.json\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_02",
+      "subtype": "codex_review_packet",
+      "relpath": "references/git_search/oh-my-codex-main/CHANGELOG.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/CHANGELOG.md",
+      "sha256": "a08acb38081c84cf53a236b0ea911f321ec50992823bd138185f36852a2e6905",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": true,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 12,
+          "text": "- **Analyze skill revival** — the `analyze` skill returns as a read-only, truth-telling investigation surface for OMX sessions. (PR [#1687](https://github.com/Yeachan-Heo/oh-my-codex/pull/1687))"
+        },
+        {
+          "line": 13,
+          "text": "- **OMX skill display prefix** — OMX-installed skills are now marked in `/skills` without being renamed, so users can tell OMX-managed skills apart from local ones. (PR [#1686](https://github.com/Yeachan-Heo/oh-my-codex/pull/1686))"
+        },
+        {
+          "line": 14,
+          "text": "- **Shift+Enter tmux triage docs** — documented Shift+Enter newline behavior in tmux so operators can separate terminal/env issues from OMX regressions. (PR [#1683](https://github.com/Yeachan-Heo/oh-my-codex/pull/1683), issue [#1682](https://github.com/Yeachan"
+        },
+        {
+          "line": 19,
+          "text": "- **Path traversal in identifier handling** — validated identifiers before they reach team/session joins and closed the parent path-traversal surface. (PRs [#1658](https://github.com/Yeachan-Heo/oh-my-codex/pull/1658), [#1674](https://github.com/Yeachan-Heo/oh"
+        },
+        {
+          "line": 20,
+          "text": "- **HUD state shell and regex injection** — `execFileSync` was replaced with async `execFile` in leader git polling, and git helpers now reject shell/regex metacharacters with regression coverage for HUD `remoteName` inputs. (PRs [#1662](https://github.com/Yea"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_03",
+      "subtype": "codex_review_packet",
+      "relpath": "runtime/obsidian_date_folder_intake/05-15/intake_payload.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/obsidian_date_folder_intake/05-15/intake_payload.json",
+      "sha256": "475386514aa5f77cf17f05bef8e42bbd50e07f94f312c17087264f0f78cbb351",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": true,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "\"status\": \"CANDIDATE_REFERENCE_ONLY\","
+        },
+        {
+          "line": 6,
+          "text": "\"source_folder\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15\","
+        },
+        {
+          "line": 9,
+          "text": "\"CANDIDATE_REFERENCE_ONLY\","
+        },
+        {
+          "line": 14,
+          "text": "\"path\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15/1.md\","
+        },
+        {
+          "line": 28,
+          "text": "\"# 2. 작업 묶음 B — External Tool Use Decision Packet 만들기\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_04",
+      "subtype": "codex_review_packet",
+      "relpath": "runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json",
+      "sha256": "f5b4358e49d75b5d09e430f4fe2ee7a2523aba2715698423f69e4f2d5285bd67",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": true,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "\"source_doc_ref\": \"codex_declaration_vectorfl_replica_material_and_operation_v1.md\","
+        },
+        {
+          "line": 11,
+          "text": "\"source_doc_ref\": \"codex_baseline_vectorfl_replica_intake_and_operation_v1.md\","
+        },
+        {
+          "line": 17,
+          "text": "\"source_doc_ref\": \"codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md\","
+        },
+        {
+          "line": 18,
+          "text": "\"derived_target_ref\": \"docs/policies/codex_material_and_operation_docs_index_v1.md\","
+        },
+        {
+          "line": 23,
+          "text": "\"source_doc_ref\": \"codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_05",
+      "subtype": "validation_packet",
+      "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+      "sha256": "f720f89ce5acb9e8c71215ef89e5ebcf7066001d28b390866acdf4a2d5a9d341",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": true,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "ONE_SHOT_RECEIPT_TRACE_EVIDENCE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+        },
+        {
+          "line": 4,
+          "text": "\"observer_run_id\": \"codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042\","
+        },
+        {
+          "line": 5,
+          "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json\","
+        },
+        {
+          "line": 9,
+          "text": "\"linked_segment_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md:0-0\","
+        },
+        {
+          "line": 10,
+          "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_06",
+      "subtype": "validation_packet",
+      "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json",
+      "sha256": "36d7b4f02868a9eb91ca87a14efc4623a498a62ec2c05fc3f653ae77b8b9f68e",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": true,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "ONE_SHOT_RECEIPT_TRACE_EVIDENCE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+        },
+        {
+          "line": 4,
+          "text": "\"observer_run_id\": \"codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911\","
+        },
+        {
+          "line": 5,
+          "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json\","
+        },
+        {
+          "line": 9,
+          "text": "\"linked_segment_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md:0-0\","
+        },
+        {
+          "line": 10,
+          "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_07",
+      "subtype": "validation_packet",
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PACKET_VALIDITY_REVIEW_FIVE_RISK_FAMILY_ASSESSMENT_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PACKET_VALIDITY_REVIEW_FIVE_RISK_FAMILY_ASSESSMENT_V0.md",
+      "sha256": "10c317c220f47b451c92f6045baba5982d24629e17c243b6a6cf5baf5dc70ae8",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "ONE_SHOT_RECEIPT_TRACE_EVIDENCE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Flow-Network Packet Validity Review Five Risk Family Assessment v0"
+        },
+        {
+          "line": 6,
+          "text": "FLOW_NETWORK_PACKET_VALIDITY_REVIEW_VALIDATED_ACROSS_FIVE_RISK_FAMILIES_WITH_DISPATCH_HOLD"
+        },
+        {
+          "line": 11,
+          "text": "This assessment synthesizes five packet validity reviews:"
+        },
+        {
+          "line": 14,
+          "text": "1. Diff-audit local execution packet"
+        },
+        {
+          "line": 15,
+          "text": "2. B2B customer draft simulated packet"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_08",
+      "subtype": "validation_packet",
+      "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md",
+      "sha256": "238aaeedee09b066b602f48289585c499380d37d92626eab49cac375f9b29086",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": true,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "ONE_SHOT_RECEIPT_TRACE_EVIDENCE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 6,
+          "text": "VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1_DRAFTED_WITH_POST_PACKET_DISPATCH_APPROVAL_WATCH"
+        },
+        {
+          "line": 12,
+          "text": "status: working_model_candidate_v0_1"
+        },
+        {
+          "line": 14,
+          "text": "authority: sandbox-local candidate"
+        },
+        {
+          "line": 15,
+          "text": "change_from_v0: adds explicit Post-Packet Dispatch Approval gate"
+        },
+        {
+          "line": 43,
+          "text": "which packet is needed?"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_09",
+      "subtype": "gemini_queue_packet",
+      "relpath": "app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+      "sha256": "f4607ab8377e4d6b436b39ad596ce88470019533863b482d0d1096f71c4391ba",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Rubric Two-Agent Gemini Execution Pipeline Candidate v0"
+        },
+        {
+          "line": 6,
+          "text": "Source = Rubric Labs / Claude한테 짜게 시키고 Codex한테 까게 시키기 / Ch 1"
+        },
+        {
+          "line": 7,
+          "text": "URL = https://rubric.im/curriculum/claude-codex-workflow/01-why-two-agents"
+        },
+        {
+          "line": 17,
+          "text": "Document = pipeline candidate design"
+        },
+        {
+          "line": 18,
+          "text": "Authority = candidate reference / orientation support"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_10",
+      "subtype": "gemini_queue_packet",
+      "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "sha256": "53921c2a7014a8dea4f3cb88131789b84469445de8b56e5dd39133d75d154686",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Gemini External Material Queue 001 Task Packets Candidate v0"
+        },
+        {
+          "line": 6,
+          "text": "Status: task packet candidates"
+        },
+        {
+          "line": 7,
+          "text": "Authority: candidate packet design / not executable automation"
+        },
+        {
+          "line": 9,
+          "text": "Gemini run: not run"
+        },
+        {
+          "line": 14,
+          "text": "This packet set is a non-executable candidate. It defines how Gemini could process one User-provided external material if execution is separately approved."
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_11",
+      "subtype": "gemini_queue_packet",
+      "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+      "surface": "source_docs",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "This report tests whether `Function/Process Formation Prework Candidate v0` can hold a real recent case."
+        },
+        {
+          "line": 12,
+          "text": "function/material candidate"
+        },
+        {
+          "line": 19,
+          "text": "using the `Tools Leave Their Maker` / Gemini intake flow."
+        },
+        {
+          "line": 26,
+          "text": "candidate reference"
+        },
+        {
+          "line": 56,
+          "text": "5. Codex created a Gemini Space Intake Worklist for Tools Leave Their Maker."
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_12",
+      "subtype": "gemini_queue_packet",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+      "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+      "surface": "workspace_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 12,
+          "text": "\"relpath\": \"app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md\","
+        },
+        {
+          "line": 13,
+          "text": "\"original_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md\","
+        },
+        {
+          "line": 14,
+          "text": "\"copy_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/04_review_batches/top10_cleanup_blockers_batch01/copy_view/files/app/work/space-skill-sandbox/outputs/gemini_external_mater"
+        },
+        {
+          "line": 18,
+          "text": "\"run_receipt_or_report_surface\": 91,"
+        },
+        {
+          "line": 31,
+          "text": "\"token\": \"app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md\","
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_13",
+      "subtype": "handoff_packet",
+      "relpath": "app/work/observer_ingest_min/generated/content_role_tags_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_flow_guard_20260422_185702.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/content_role_tags_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_flow_guard_20260422_185702.json",
+      "sha256": "882b68881f6f93a4963e67ce658a0920f1a81de0137815dd2a1fb909d2024c8a",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 4,
+          "text": "\"source_ref\": \"/Users/sungsookim/universe/vectorfl_replica/source_assets/handoffs/codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md\","
+        },
+        {
+          "line": 17,
+          "text": "\"source_ref\": \"/Users/sungsookim/universe/vectorfl_replica/source_assets/handoffs/codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md\","
+        },
+        {
+          "line": 26,
+          "text": "\"excerpt_preview\": \"# CODEX HANDOFF — STRUCTURED DOC ROUTING STABILITY BASELINE LOCK + NEXT STEP DIRECTIVE\""
+        },
+        {
+          "line": 30,
+          "text": "\"source_ref\": \"/Users/sungsookim/universe/vectorfl_replica/source_assets/handoffs/codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1.md\","
+        },
+        {
+          "line": 39,
+          "text": "\"excerpt_preview\": \"## 0. turn purpose 이번 턴의 목적은 기능 확장이 아니라 structured doc routing 경로의 운영 안정화를 기준선으로 잠그고, 다음 Codex가 바로 이어서 유지/정리 레이어 작업으로 들어갈 수 있게 하는 것이다. 현재 repo는 “더 똑똑한 해석 엔진”보다 \""
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_14",
+      "subtype": "handoff_packet",
+      "relpath": "app/work/space-skill-sandbox/packages/package_012_revised_metadata_scan_application/target_metadata_scan_report.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_012_revised_metadata_scan_application/target_metadata_scan_report.md",
+      "sha256": "48ea39ce6351ce2deb2e5faabf6788fb531c483b1389bee8f96205c8ad02b194",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 18,
+          "text": "codex_plan.md"
+        },
+        {
+          "line": 19,
+          "text": "codex_validation.md"
+        },
+        {
+          "line": 22,
+          "text": "session_01_agent_harness/codex_review_bundle.md"
+        },
+        {
+          "line": 23,
+          "text": "session_01_agent_harness/gemini_packet.md"
+        },
+        {
+          "line": 24,
+          "text": "session_01_agent_harness/handoff_log.md"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_15",
+      "subtype": "handoff_packet",
+      "relpath": "app/work/space-skill-sandbox/packages/package_019_tone_aware_metadata_scan_implementation/smoke_report_001.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_019_tone_aware_metadata_scan_implementation/smoke_report_001.md",
+      "sha256": "96d5dff41cc83367b6643a4b04289c6bb2f143a72c5d301ff04b63a1dee1777e",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 9,
+          "text": "- tone_guidance: avoid over-finalization (candidate requires review)"
+        },
+        {
+          "line": 20,
+          "text": "codex_plan.md"
+        },
+        {
+          "line": 21,
+          "text": "codex_validation.md"
+        },
+        {
+          "line": 24,
+          "text": "session_01_agent_harness/codex_review_bundle.md"
+        },
+        {
+          "line": 25,
+          "text": "session_01_agent_harness/gemini_packet.md"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_16",
+      "subtype": "handoff_packet",
+      "relpath": "app/work/space-skill-sandbox/packages/package_001_external_lens_reread/metadata_scan_report.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_001_external_lens_reread/metadata_scan_report.md",
+      "sha256": "96d5dff41cc83367b6643a4b04289c6bb2f143a72c5d301ff04b63a1dee1777e",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": true,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 9,
+          "text": "- tone_guidance: avoid over-finalization (candidate requires review)"
+        },
+        {
+          "line": 20,
+          "text": "codex_plan.md"
+        },
+        {
+          "line": 21,
+          "text": "codex_validation.md"
+        },
+        {
+          "line": 24,
+          "text": "session_01_agent_harness/codex_review_bundle.md"
+        },
+        {
+          "line": 25,
+          "text": "session_01_agent_harness/gemini_packet.md"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_17",
+      "subtype": "task_packet",
+      "relpath": "references/git_search/OpenHarness-main/src/openharness/tasks/manager.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/OpenHarness-main/src/openharness/tasks/manager.py",
+      "sha256": "a62d753d0c6e081c9a0ae81362d87576ebc6a722b446a69ef891383c2ae56306",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": false,
+        "has_authority_terms": false
+      },
+      "disposition": "REUSABLE_TASK_PACKET_PATTERN_CANDIDATE",
+      "risk": "LOW_POINTER_REVIEW",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "\"\"\"Background task manager.\"\"\""
+        },
+        {
+          "line": 13,
+          "text": "from openharness.config.paths import get_tasks_dir"
+        },
+        {
+          "line": 14,
+          "text": "from openharness.tasks.types import TaskRecord, TaskStatus, TaskType"
+        },
+        {
+          "line": 18,
+          "text": "class BackgroundTaskManager:"
+        },
+        {
+          "line": 19,
+          "text": "\"\"\"Manage shell and agent subprocess tasks.\"\"\""
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_18",
+      "subtype": "task_packet",
+      "relpath": "references/git_search/openclaw-main/docs/automation/tasks.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/automation/tasks.md",
+      "sha256": "a0931828e5553e7593b3daf97883fcfcc118a2b55b68ee4097e6b6c5c11f404e",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "REUSABLE_TASK_PACKET_PATTERN_CANDIDATE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "summary: \"Background task tracking for ACP runs, subagents, isolated cron jobs, and CLI operations\""
+        },
+        {
+          "line": 7,
+          "text": "title: \"Background Tasks\""
+        },
+        {
+          "line": 10,
+          "text": "# Background Tasks"
+        },
+        {
+          "line": 12,
+          "text": "> **Looking for scheduling?** See [Automation & Tasks](/automation) for choosing the right mechanism. This page covers **tracking** background work, not scheduling it."
+        },
+        {
+          "line": 14,
+          "text": "Background tasks track work that runs **outside your main conversation session**:"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_19",
+      "subtype": "task_packet",
+      "relpath": "references/git_search/oh-my-codex-main/DEMO.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/DEMO.md",
+      "sha256": "14dbba65d84e5132b8e19f13b11f8474b1e0551cd794bc42d4609649db5fe173",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": true,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "REUSABLE_TASK_PACKET_PATTERN_CANDIDATE",
+      "risk": "LOW_POINTER_REVIEW",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# oh-my-codex Demo Guide"
+        },
+        {
+          "line": 6,
+          "text": "- [Codex CLI](https://github.com/openai/codex) installed (`npm install -g @openai/codex`)"
+        },
+        {
+          "line": 13,
+          "text": "git clone https://github.com/Yeachan-Heo/oh-my-codex.git"
+        },
+        {
+          "line": 14,
+          "text": "cd oh-my-codex"
+        },
+        {
+          "line": 19,
+          "text": "# Run setup (installs prompts, skills, configures Codex CLI)"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_20",
+      "subtype": "task_packet",
+      "relpath": "app/work/space-skill-sandbox/outputs/operating_principle_task_inventory_20260513_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/operating_principle_task_inventory_20260513_candidate_v0.md",
+      "sha256": "d382e67eb13111f35f2ce364369c9c56dc67ca93b928a648f4265ea3b6fa68cc",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "REUSABLE_TASK_PACKET_PATTERN_CANDIDATE",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Operating Principle Task Inventory"
+        },
+        {
+          "line": 2,
+          "text": "# 2026-05-13 Candidate v0"
+        },
+        {
+          "line": 7,
+          "text": "candidate task inventory"
+        },
+        {
+          "line": 12,
+          "text": "Authority:"
+        },
+        {
+          "line": 29,
+          "text": "Turn the operating contracts into an actionable but non-automatic task inventory."
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_21",
+      "subtype": "general_packet_handoff",
+      "relpath": "app/work/archive_review/transition_support/result_value_bundle_stage1/run_result_value_compare_card_stage1.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/archive_review/transition_support/result_value_bundle_stage1/run_result_value_compare_card_stage1.py",
+      "sha256": "da11995ca1f80b8d6f5d75fc15c04a322db098ee051bb898bb90a673dc2714fb",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 12,
+          "text": "def _load_packet(name: str) -> dict[str, object]:"
+        },
+        {
+          "line": 17,
+          "text": "def _row(packet: dict[str, object], section: str, key: str) -> dict[str, object]:"
+        },
+        {
+          "line": 18,
+          "text": "return dict(dict(packet[section]).get(key, {}) or {})"
+        },
+        {
+          "line": 21,
+          "text": "def _status(packet: dict[str, object], section: str, key: str) -> str:"
+        },
+        {
+          "line": 22,
+          "text": "return str(_row(packet, section, key).get(\"status\", \"\")).strip() or \"missing\""
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_22",
+      "subtype": "general_packet_handoff",
+      "relpath": "app/work/archive_review/transition_support/youtube_transcript_probe_0322/run_youtube_transcript_probe_0322.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/archive_review/transition_support/youtube_transcript_probe_0322/run_youtube_transcript_probe_0322.py",
+      "sha256": "67ccdf585031451e53236bc5972c4897f369b10939aa0dc08deee064e000db58",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 84,
+          "text": "\"window_candidate_ids\": [],"
+        },
+        {
+          "line": 107,
+          "text": "\"window_candidate_ids\": [],"
+        },
+        {
+          "line": 139,
+          "text": "seg[\"window_candidate_ids\"].append(window_id)"
+        },
+        {
+          "line": 173,
+          "text": "repeated_anchor_candidates: list[str] = []"
+        },
+        {
+          "line": 202,
+          "text": "repeated_anchor_candidates = [group for group, count in group_counter.items() if count >= 2]"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_23",
+      "subtype": "general_packet_handoff",
+      "relpath": "app/work/archive_review/transition_support/workbench_stage1/run_workbench_stage1.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/archive_review/transition_support/workbench_stage1/run_workbench_stage1.py",
+      "sha256": "e584078143bb8fb212ccb34081e1ea3741720a8b2eab0006b04cfb94bcd27840",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 16,
+          "text": "CANDIDATE_CONFIGS = {"
+        },
+        {
+          "line": 141,
+          "text": "def build_workbench_packet(candidate_id: str) -> dict[str, object]:"
+        },
+        {
+          "line": 142,
+          "text": "config = dict(CANDIDATE_CONFIGS[candidate_id])"
+        },
+        {
+          "line": 198,
+          "text": "reading_category = \"canonical\" if candidate_id == \"canonical_doc005_doc006_stage1\" else \"mixed\""
+        },
+        {
+          "line": 201,
+          "text": "packet = {"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_24",
+      "subtype": "general_packet_handoff",
+      "relpath": "scripts/run_reservoir_pipeline_repo_seed_audit.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_reservoir_pipeline_repo_seed_audit.py",
+      "sha256": "f1d1c0648953da0596a85228afd8ede05728dd3f36489f3e0706142321875207",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": false,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": true
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "HIGH_AUTHORITY_LANGUAGE_FREEZE",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 43,
+          "text": "\"templates/script_candidate_card.md\","
+        },
+        {
+          "line": 50,
+          "text": "TRACE_PACKET_SECTIONS = ("
+        },
+        {
+          "line": 78,
+          "text": "class TracePacketAudit:"
+        },
+        {
+          "line": 103,
+          "text": "output_path = OUTPUT_DIR / f\"reservoir_pipeline_repo_seed_scriptable_setup_audit_{tag_slug}_{date_slug}_candidate_v0.md\""
+        },
+        {
+          "line": 129,
+          "text": "description=\"Audit the reservoir-pipeline repo seed for scriptable setup and trace-packet readiness.\""
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_25",
+      "subtype": "inbox_apply_packet",
+      "relpath": "app/runtime/state_attention_memory.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/runtime/state_attention_memory.py",
+      "sha256": "2f4f6b6e76ece43b95baa5494be35c3b8e9494735d03cee1311c3d2cdbc700d3",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 10,
+          "text": "from app.runtime.attention_resolution_loop import apply_attention_resolution_loop"
+        },
+        {
+          "line": 45,
+          "text": "\"queue_status\": \"new\" if routed.get(\"queue_candidate\") else \"suppressed\","
+        },
+        {
+          "line": 78,
+          "text": "if not routed.get(\"queue_candidate\") and diff.get(\"current_trigger\") == \"runtime_evidence\":"
+        },
+        {
+          "line": 81,
+          "text": "lifecycle = apply_attention_resolution_loop("
+        },
+        {
+          "line": 83,
+          "text": "current_item=queue_item if routed.get(\"queue_candidate\") else None,"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_26",
+      "subtype": "inbox_apply_packet",
+      "relpath": "references/git_search/openclaw-main/docs/logging.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/openclaw-main/docs/logging.md",
+      "sha256": "b0370a607dc774a734929a53d43593a0857584d2c117e5d9f0180ee5a79fa258",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": false,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 343,
+          "text": "- Respect `logging.level` (file log level). Console redaction does **not** apply"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_27",
+      "subtype": "inbox_apply_packet",
+      "relpath": "app/runtime/state_change_attention_queue.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/runtime/state_change_attention_queue.py",
+      "sha256": "62b57ec4fff879e87e87015bb5a3e3a2b3237dad8ad6d31d4a1d0360e9269b3b",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 9,
+          "text": "from app.runtime.attention_resolution_loop import apply_attention_resolution_loop"
+        },
+        {
+          "line": 61,
+          "text": "\"queue_status\": \"new\" if routed.get(\"queue_candidate\") else \"suppressed\","
+        },
+        {
+          "line": 134,
+          "text": "if not routed.get(\"queue_candidate\") and provenance_only_count > 0:"
+        },
+        {
+          "line": 143,
+          "text": "lifecycle = apply_attention_resolution_loop("
+        },
+        {
+          "line": 145,
+          "text": "current_item=queue_item if routed.get(\"queue_candidate\") else None,"
+        }
+      ]
+    },
+    {
+      "review_id": "P_PACKET_REVIEW_28",
+      "subtype": "inbox_apply_packet",
+      "relpath": "app/runtime/process_console_view/builder.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/runtime/process_console_view/builder.py",
+      "sha256": "38f2dbf26b60d930638c348d5a1c5e1b0916e47b3e451bb5864502d27964c6f8",
+      "surface": "work_control",
+      "signals": {
+        "has_explicit_no_call": false,
+        "has_apply_language": true,
+        "has_validation": false,
+        "has_future_candidate": true,
+        "has_stale_generated": true,
+        "has_authority_terms": false
+      },
+      "disposition": "GENERAL_PACKET_POINTER_REVIEW",
+      "risk": "MEDIUM_APPLY_LANGUAGE_HOLD",
+      "safe_line": "NO_LIVE_CALL_NO_APPLY_POINTER_ONLY",
+      "evidence_lines": [
+        {
+          "line": 29,
+          "text": "apply_state_filters,"
+        },
+        {
+          "line": 30,
+          "text": "build_compare_candidates,"
+        },
+        {
+          "line": 47,
+          "text": "filtered = apply_state_filters(items, filters or {})"
+        },
+        {
+          "line": 121,
+          "text": "\"packet_texture\","
+        },
+        {
+          "line": 142,
+          "text": "\"packet_texture\": row.get(\"packet_texture\"),"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "next": "P_PACKET_CODEX_REVIEW_PACKET_NO_CALL_DEDUPE_MAP_V0",
+      "why": "codex_review_packet is largest and needs no-call dedupe/reuse vs stale separation"
+    },
+    {
+      "next": "VALIDATION_PACKET_RECEIPT_TRACE_COMPACT_V0",
+      "why": "validation_packet likely receipt/trace evidence; compact before cleanup"
+    },
+    {
+      "next": "GEMINI_QUEUE_PACKET_BOUNDARY_REVIEW_V0",
+      "why": "Gemini queue should stay no-live-call and Codex-side boundary"
+    }
+  ],
+  "stop_boundary": "No live Codex/Gemini call, no packet promotion, no apply/move/archive.",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

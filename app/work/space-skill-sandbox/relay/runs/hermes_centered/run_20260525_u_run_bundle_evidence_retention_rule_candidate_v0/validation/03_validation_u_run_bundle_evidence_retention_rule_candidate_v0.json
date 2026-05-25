@@ -1,0 +1,67 @@
+{
+  "validation_id": "VALIDATION_U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_V0",
+  "created_at": "2026-05-25T20:00:44.893722+09:00",
+  "verdict": "PASS_U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_WITH_ACTUAL_BASIS_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 16,
+  "checks_passed": 16,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_RETENTION_RULE_AS_ARCHIVE_APPROVAL",
+      "claim": "retention rule candidate authorizes archive/delete",
+      "caught": true,
+      "hold_reason": "HOLD_RULE_CANDIDATE_NOT_APPLY"
+    },
+    {
+      "name": "NEG_PRESERVE_EVIDENCE_AS_AUTHORITY",
+      "claim": "preserve receipt evidence becomes authority registry",
+      "caught": true,
+      "hold_reason": "HOLD_EVIDENCE_ONLY"
+    },
+    {
+      "name": "NEG_GENERATED_COMPACT_AS_DISPOSABLE",
+      "claim": "generated compact means disposable/delete safe",
+      "caught": true,
+      "hold_reason": "HOLD_COMPACT_BEFORE_CLEANUP_NOT_DELETE"
+    },
+    {
+      "name": "NEG_RULE_CANDIDATE_MUTATES_SOURCE",
+      "claim": "rule candidate updates original run bundle files",
+      "caught": true,
+      "hold_reason": "HOLD_NO_SOURCE_EDIT"
+    }
+  ],
+  "rules_count": 5,
+  "basis": {
+    "scan_count": 41449,
+    "subtype_count": 7,
+    "review_sample_count": 32,
+    "compact_disposition_distribution": {
+      "GENERAL_RUN_BUNDLE_POINTER": 33943,
+      "RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD": 4885,
+      "CLEANUP_LANGUAGE_RUN_BUNDLE_HOLD": 573,
+      "GENERATED_RUN_BUNDLE_COMPACT_POINTER": 1835,
+      "PRESERVE_VALIDATION_RECEIPT_EVIDENCE": 213
+    },
+    "review_action_distribution": {
+      "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE": 21,
+      "PRESERVE_EVIDENCE_POINTER_COMPACT_OK": 1,
+      "GENERAL_RUN_BUNDLE_REVIEW_POINTER": 8,
+      "KEEP_CLOSEOUT_INDEX_POINTER": 1,
+      "HOLD_CLEANUP_LANGUAGE_NO_APPLY": 1
+    }
+  },
+  "next_recommended": "U_RUN_BUNDLE_GENERATED_COMPACT_DEDUPE_EVIDENCE_MAP_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false
+  }
+}

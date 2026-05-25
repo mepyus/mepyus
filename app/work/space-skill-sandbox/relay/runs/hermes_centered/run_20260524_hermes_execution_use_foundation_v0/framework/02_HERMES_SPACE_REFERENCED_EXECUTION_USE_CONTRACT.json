@@ -1,0 +1,44 @@
+{
+  "default_output_surfaces": [
+    "worklist/todo",
+    "source_index",
+    "execution_trace",
+    "validation",
+    "root_report",
+    "quick_board",
+    "Codex-readable_reentry"
+  ],
+  "model_reasoning_use": "Model reasoning is not a replacement for space; it interprets original + selected space refs and decides execution form, worklist, budget gate, and changed_judgment.",
+  "packet_id": "02_HERMES_SPACE_REFERENCED_EXECUTION_USE_CONTRACT_V0",
+  "promotion_status": "HOLD",
+  "required_pre_execution_decisions": [
+    "execution_form",
+    "space_orientation_needed",
+    "known_space_patterns",
+    "fresh_space_reference_needed",
+    "model_reasoning_role",
+    "worklist_granularity",
+    "validation_depth",
+    "Codex_role_now_or_later",
+    "Gemini_allowed_path",
+    "budget_gate",
+    "authority_boundary"
+  ],
+  "space_reference_modes": {
+    "codex_maturation_reentry": "after Hermes execution for space deepening",
+    "codex_retrieval_request": "unknown space reference that may change judgment",
+    "full_history_index": "cross-arc structural task",
+    "lite_cards_and_lens": "setup/reinterpretation task",
+    "none": "trivial/local one-shot",
+    "quick_board_only": "known lane, low ambiguity"
+  },
+  "status": "HOLD_CONTRACT_CANDIDATE",
+  "stop_conditions": [
+    "authority mutation requested but not approved",
+    "provider-backed call needed but budget/approval absent",
+    "space refs missing and judgment would be fabricated",
+    "namespace collision risk",
+    "secret/credential exposure risk"
+  ],
+  "trigger": "Every non-trivial Hermes execution, especially setup/build/test/external-material/long-loop tasks."
+}

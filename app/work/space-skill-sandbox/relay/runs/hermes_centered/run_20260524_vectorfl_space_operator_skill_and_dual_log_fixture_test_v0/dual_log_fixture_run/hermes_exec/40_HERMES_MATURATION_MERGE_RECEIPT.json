@@ -1,0 +1,20 @@
+{
+  "packet_id": "40_HERMES_MATURATION_MERGE_RECEIPT",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "HERMES",
+  "allowed_namespace": "hermes_exec",
+  "immutable_after_publish": true,
+  "read_codex_handles": [
+    {
+      "source_handle": "codex_space/30_CODEX_MATURATION_PROPOSAL.json",
+      "source_sha256": "059231203726243641d8c14e10dffba1bc752f8cdfb932b53340f219621ae20a",
+      "used_for": "record Codex proposal as evidence only",
+      "changed_judgment": "proposal accepted as HOLD evidence, not applied",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    }
+  ],
+  "applied": false,
+  "authority_effect": "NO_AUTHORITY_MUTATION",
+  "promotion_status": "HOLD"
+}

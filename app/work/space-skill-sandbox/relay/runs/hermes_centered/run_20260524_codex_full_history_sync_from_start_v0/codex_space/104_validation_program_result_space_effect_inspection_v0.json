@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "check": "inspection_principle_created",
+      "artifact": "codex_space/101_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PRINCIPLE_HOLD_V0.md",
+      "pass": true
+    },
+    {
+      "check": "inspection_contract_created",
+      "artifact": "codex_space/102_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_CONTRACT_HOLD_V0.json",
+      "pass": true
+    },
+    {
+      "check": "inspection_return_created",
+      "artifact": "codex_space/103_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_RETURN_V0.json",
+      "pass": true
+    },
+    {
+      "check": "required_fields_present",
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "check": "space_effect_enum_valid",
+      "observed": "PATTERN_STRENGTHENED",
+      "pass": true
+    },
+    {
+      "check": "space_contacts_present",
+      "contacts_count": 3,
+      "pass": true
+    },
+    {
+      "check": "touched_patterns_present",
+      "patterns": [
+        "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL",
+        "P03_PHASE2_FUNCTION_POSITION_STACK"
+      ],
+      "pass": true
+    },
+    {
+      "check": "maturation_decision_present",
+      "observed": "MATURE_AS_HOLD_TEST_LANE_CANDIDATE",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    },
+    {
+      "check": "gemini_not_used_for_clear_space_effect",
+      "observed": "NO",
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "hashes": {
+    "101_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PRINCIPLE_HOLD_V0.md": "cab53dc5cdd8dcc40be1cb2ca3720e66621b48553c79ab1300542e236885b369",
+    "102_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_CONTRACT_HOLD_V0.json": "1d327071d16049a8a13b589ea079b066c4f922c394ba38dede6c65d5b61c5a73",
+    "103_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_RETURN_V0.json": "b30647ea6a40679cde956d67bf70c868d8859efcd22cf5759afc6f88a8bb185a"
+  },
+  "next_safe_lane": "ABSORB_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_INTO_VECTORFL_SPACE_OPERATOR_SKILL_HOLD_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "boundary_ok": true,
+    "contacts_ok": true,
+    "effect_enum_ok": true,
+    "maturation_ok": true,
+    "missing_required_fields": [],
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_WITH_HOLD"
+}

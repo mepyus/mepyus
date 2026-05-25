@@ -1,0 +1,80 @@
+{
+  "handoff_id": "CODEX_GEMINI_HERMES_BATCH03_RECOVERY_HANDOFF_HOLD_V0",
+  "created_at": "2026-05-25T11:03:29.553882+09:00",
+  "status": "READ_ONLY_HOLD",
+  "codex_read_first": [
+    "source_index/00_batch03_source_index_v0.json",
+    "readings/01_batch03_precise_reading_v0.json",
+    "comparison/03_batch03_cumulative_cluster_shift_v0.json"
+  ],
+  "codex_task": "Compare batch03 with batch01-02 and produce placement/conflict/gap map for M2/M5/M6 emergence. No mutation.",
+  "gemini_task": "Only wide-read Codex-flagged layer/product ambiguities; especially LACL/SaaS implications.",
+  "hermes_task": "Use results as read-only route/inbox/adapter candidates. No folder move, no promotion.",
+  "route_packs": {
+    "Codex_mature_with_Gemini_layer_if_ambiguous": [
+      {
+        "asset_id": "function_process_formation_prework_real_test_round1_closeout_v0",
+        "relpath": "docs/reports/function_process_formation_prework_real_test_round1_closeout_v0.md",
+        "precise_family": "ASSET_GRAPH_ROUTE_SURFACE",
+        "saas_module": "SAAS_M6_ADAPTER_FACTORY"
+      },
+      {
+        "asset_id": "gemini_external_reference_materials_deep_reread_worklist_v0",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "precise_family": "ASSET_GRAPH_ROUTE_SURFACE",
+        "saas_module": "SAAS_M6_ADAPTER_FACTORY"
+      },
+      {
+        "asset_id": "harness_engineering_analysis_round_001",
+        "relpath": "docs/reports/harness_engineering_analysis_round_001.md",
+        "precise_family": "ASSET_GRAPH_ROUTE_SURFACE",
+        "saas_module": "SAAS_M6_ADAPTER_FACTORY"
+      },
+      {
+        "asset_id": "integrated_engine_current_translation_gap_note_v0",
+        "relpath": "docs/reports/integrated_engine_current_translation_gap_note_v0.md",
+        "precise_family": "ASSET_GRAPH_ROUTE_SURFACE",
+        "saas_module": "SAAS_M6_ADAPTER_FACTORY"
+      },
+      {
+        "asset_id": "integrated_engine_input_flow_map_v0",
+        "relpath": "docs/reports/integrated_engine_input_flow_map_v0.md",
+        "precise_family": "ASSET_GRAPH_ROUTE_SURFACE",
+        "saas_module": "SAAS_M6_ADAPTER_FACTORY"
+      }
+    ],
+    "Codex_inbox_review_with_Hermes_reentry_check": [
+      {
+        "asset_id": "function_process_formation_prework_setup_closeout_v0",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "precise_family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+        "saas_module": "SAAS_M5_SPACE_INBOX_REVIEW"
+      },
+      {
+        "asset_id": "gemini_four_axis_whole_space_reading_pass_worklist_v0",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "precise_family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+        "saas_module": "SAAS_M5_SPACE_INBOX_REVIEW"
+      },
+      {
+        "asset_id": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "precise_family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+        "saas_module": "SAAS_M5_SPACE_INBOX_REVIEW"
+      },
+      {
+        "asset_id": "integrated_engine_external_analysis_lens_fragment_inventory_v0",
+        "relpath": "docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md",
+        "precise_family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+        "saas_module": "SAAS_M5_SPACE_INBOX_REVIEW"
+      },
+      {
+        "asset_id": "integrated_engine_grammar_application_trial_closeout_note_v0",
+        "relpath": "docs/reports/integrated_engine_grammar_application_trial_closeout_note_v0.md",
+        "precise_family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+        "saas_module": "SAAS_M5_SPACE_INBOX_REVIEW"
+      }
+    ]
+  },
+  "hold": true
+}

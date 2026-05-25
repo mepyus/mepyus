@@ -1,0 +1,87 @@
+{
+  "validation_id": "VALIDATION_VECTORTUBE_AUTOLOOP_V0_1_PREP_AND_RUN",
+  "created_at": "2026-05-25T08:37:35.870164+09:00",
+  "verdict": "PASS_V0_1_PREPARED_AND_EXECUTED_WITH_HOLD",
+  "runner_exit_code": 0,
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/policy/00_vectortube_autoloop_policy_v0_1.json": {
+      "exists": true,
+      "sha256": "5ad6644ea2c06e477aa8966cd9d1a312b28bb392b27e94c4e6fb14cb50c69eff",
+      "bytes": 1787
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/scripts/vectortube_autoloop_runner_v0_1.py": {
+      "exists": true,
+      "sha256": "74cff9fb9418961c6f0a0b9cef8b16d72e77b4975b7e77f7eca9db8e98c3f45a",
+      "bytes": 10821
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/receipts/10_runner_stdout_v0_1.txt": {
+      "exists": true,
+      "sha256": "8a68c7b8048313874c3d8573d51f0f53ad12069779261ceb525ed15824f62700",
+      "bytes": 1929
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/mini_space/08_autoloop_v0_1_result_mini_space.json": {
+      "exists": true,
+      "sha256": "2ec6051853b002c968135887c1ca7dcddb770550bbf4e21a5a833c3fdb2cc478",
+      "bytes": 14877
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/validation/09_validation_autoloop_v0_1.json": {
+      "exists": true,
+      "sha256": "4409eaba09625e4d40063a8b3e08a504d38257b6294519388a960ffb67412583",
+      "bytes": 4277
+    }
+  },
+  "content_checks": {
+    "policy_created": true,
+    "runner_created": true,
+    "runner_executed": true,
+    "main_space_mutation": false,
+    "promotion_hold": true,
+    "runner_result": {
+      "verdict": "PASS_AUTOLOOP_V0_1_WITH_SLOT_WARNINGS_HOLD",
+      "mini_space": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/mini_space/08_autoloop_v0_1_result_mini_space.json",
+      "validation": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/validation/09_validation_autoloop_v0_1.json",
+      "content_checks": {
+        "slots": 3,
+        "official_policy_docs_used": true,
+        "youtube_transcripts_fetched": 2,
+        "slot_quality_review_count": 3,
+        "missing_source_markers": 0,
+        "warnings": 1,
+        "main_space_mutation": false,
+        "promotion_hold": true
+      },
+      "slot_quality_summary": {
+        "policy_boundary": {
+          "slot": "policy_boundary",
+          "status": "PASS_OFFICIAL_DOCS_ATTACHED_HOLD",
+          "score": 0.85,
+          "reasons": [
+            "official docs fetched",
+            "no YouTube fallback used",
+            "policy treated as boundary evidence not legal advice"
+          ],
+          "missing_source_marker": false
+        },
+        "quality_failure": {
+          "slot": "quality_failure",
+          "status": "PASS_OR_PARTIAL_FAILURE_FIT_HOLD",
+          "score": 0.65,
+          "missing_source_marker": false,
+          "reasons": [
+            "bounded source attached",
+            "requires manual layer read before promotion"
+          ]
+        },
+        "human_workflow_guard": {
+          "slot": "human_workflow_guard",
+          "status": "WARN_WEAK_HUMAN_GUARD_FIT_HOLD",
+          "score": 0.4,
+          "missing_source_marker": false,
+          "reasons": [
+            "weak title/text fit"
+          ]
+        }
+      }
+    }
+  }
+}

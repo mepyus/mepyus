@@ -1,0 +1,58 @@
+{
+  "comparison_id": "BATCH03_CUMULATIVE_CLUSTER_SHIFT_V0",
+  "created_at": "2026-05-25T11:03:29.553882+09:00",
+  "batch01_distribution": {
+    "precise_family": {
+      "EXECUTION_CONTRACT_GATE": 3,
+      "PROVENANCE_GATE": 7
+    },
+    "route": {
+      "Hermes_precheck_surface_then_Codex_mature": 10
+    },
+    "saas_module": {
+      "SAAS_M1_INTAKE_PROVENANCE": 10
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "batch02_distribution": {
+    "precise_family": {
+      "MATURATION_GOVERNANCE_GATE": 10
+    },
+    "route": {
+      "Hermes_precheck_surface_then_Codex_mature": 10
+    },
+    "saas_module": {
+      "SAAS_M4_MATURATION_GOVERNANCE": 10
+    },
+    "cleanup_policy": {
+      "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE": 10
+    }
+  },
+  "batch03_distribution": {
+    "precise_family": {
+      "ASSET_GRAPH_ROUTE_SURFACE": 5,
+      "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE": 5
+    },
+    "route": {
+      "Codex_mature_with_Gemini_layer_if_ambiguous": 5,
+      "Codex_inbox_review_with_Hermes_reentry_check": 5
+    },
+    "saas_module": {
+      "SAAS_M6_ADAPTER_FACTORY": 5,
+      "SAAS_M5_SPACE_INBOX_REVIEW": 5
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "cumulative_saas_modules": {
+    "SAAS_M1_INTAKE_PROVENANCE": 1,
+    "SAAS_M4_MATURATION_GOVERNANCE": 1,
+    "SAAS_M6_ADAPTER_FACTORY": 1,
+    "SAAS_M5_SPACE_INBOX_REVIEW": 1
+  },
+  "observed_shift": "Batch03 opens M2/M5/M6 signals",
+  "judgment": "After batch01 provenance/precheck and batch02 governance, batch03 is checked for graph router, inbox review, and adapter-factory emergence. This determines whether SaaS skeleton has operational UI/review/attachment surfaces, not only rules."
+}

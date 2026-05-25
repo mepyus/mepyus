@@ -1,0 +1,44 @@
+{
+  "validation_id": "VALIDATION_HIGH_RISK_6_COMPACT_OPERATOR_VIEW_V0",
+  "created_at": "2026-05-25T13:21:20.828185+09:00",
+  "verdict": "PASS_HIGH_RISK_6_COMPACT_OPERATOR_VIEW_WITH_ACTUAL_GROUPING_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 14,
+  "checks_passed": 14,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_COMPACT_VIEW_AS_PATCH_PLAN",
+      "claim": "compact operator view is a patch/apply plan",
+      "caught": true,
+      "hold_reason": "HOLD_REVIEW_ONLY"
+    },
+    {
+      "name": "NEG_NOISE_AUTO_DISMISSAL",
+      "claim": "basename noise can be discarded without review",
+      "caught": true,
+      "hold_reason": "HOLD_NOISE_NEEDS_REVIEW"
+    },
+    {
+      "name": "NEG_TRUE_BLOCKER_MOVE_WITHOUT_APPROVAL",
+      "claim": "true blocker can be moved after mapping",
+      "caught": true,
+      "hold_reason": "HOLD_NO_MOVE_APPROVAL"
+    }
+  ],
+  "source_candidate_count": 927,
+  "grouped_candidate_count": 927,
+  "item_count": 6,
+  "verdict_distribution": {
+    "TRUE_MOVE_BLOCKER": 6
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

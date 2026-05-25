@@ -1,0 +1,60 @@
+{
+  "packet_id": "92_validation_codex_aifrontier_fast_channel_review_v0",
+  "verdict": "PASS_CODEX_AIFRONTIER_FAST_CHANNEL_SPACE_REVIEW_WITH_HOLD",
+  "checks": [
+    {
+      "check": "quick_board_read",
+      "pass": true
+    },
+    {
+      "check": "hermes_summary_read",
+      "pass": true
+    },
+    {
+      "check": "batch_analysis_read",
+      "pass": true
+    },
+    {
+      "check": "lite_cards_read",
+      "pass": true
+    },
+    {
+      "check": "infra_lens_read",
+      "pass": true
+    },
+    {
+      "check": "codex_review_packet_created_in_codex_namespace",
+      "pass": true
+    },
+    {
+      "check": "quick_board_v1_created_without_overwriting_v0",
+      "pass": true
+    },
+    {
+      "check": "gemini_not_needed",
+      "pass": true
+    },
+    {
+      "check": "promotion_hold",
+      "pass": true
+    },
+    {
+      "check": "no_authority_registry_current_position_folder_source_mutation",
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "hashes": {
+    "codex_review_packet": "cd33cd653d509595bf763efd1ae4d4914944b702c46a89919b424a6697128aa5",
+    "hermes_summary_card": "6df2ff821b5b9cbe71c321a49eab6800c6a5b251be1c16897c06d25bb75f4e71",
+    "quick_board_v0": "375b5783d3c190ed63c0b5f343c1e3ffed8248103fa8128b63f1c1491bf3df3f"
+  },
+  "space_judgment": {
+    "verdict": "HOLD_MATURATION_RECOMMENDED_NO_APPLY",
+    "series_index": "AIFRONTIER_EP93_EP97_SERIES_INDEX",
+    "budget_lens": "INFRA_COST_CONTEXT_ECONOMICS_BUDGET_GATE_LENS",
+    "gemini": "NO"
+  },
+  "next_safe_lane": "HERMES_RECORD_CODEX_AIFRONTIER_REVIEW_AS_HOLD_EVIDENCE_OR_USER_APPROVE_BOUNDED_INDEX_PROPOSAL_V0",
+  "promotion_status": "HOLD"
+}

@@ -1,0 +1,48 @@
+{
+  "card_id": "SPACE_USE_PRECHECK_VECTORTUBE_SEED_SPACE_V1",
+  "timestamp_kst": "2026-05-25 07:11:39 KST",
+  "request_type": "SIDE_PROJECT_REFRAME_FROM_COLLECTOR_TO_SEED_SPACE_BUILDER",
+  "user_original": "그리고 자동으로 검색하진 말고 내가 유튜브에서 필요하겠다고 생각하는 것들을 기록해 놓으께. 그걸 기반으로 먼저 \"공간의 사고방식\"대로 읽고 그걸 기준으로 모델의추론으로 그 자료를 보강하거나 강화 혹은 반대의 의견등을 가져와서 그 자료를 강화시켜서 공간에 투입하게 만들어야 할 듯. 바로 공간에 입력하면 공간이 커지긴 해도 혼동이 커질 가능성도 높기 때문에 사이드프로젝트 \"벡터튜브\"(이름을 그렇게 붙이자) 가 사용자가 지정한 하나의 영상을 기준으로 다양한 관련된 영상 스크립트를 읽고 그걸 하나의 작은 공간으로 만들어 그걸 공간에 밀어 넣는 방식으로 하고 싶어! 그럼 이 사이드프로젝트 자체가 작은 공간을 만들고(우리가 만든 벡터플,공간의 기능을 작은 모듈로 가져와 쓰고 테스트 해보는 것도 되고) 그 공간에 하나의 영상에서 부터 시작되는 다양한 사고/맥락/층위/부품(lacl) 들을 담아 작은 공간의 형태로 벡터플 공간에 밀어 넣는다는 계산이야!",
+  "space_reference_mode": "READ_PREVIOUS_PROJECT_SPEC_AND_WHOLE_SPACE_MAP_BEFORE_REFRAMING",
+  "read_handles": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/project_spec/01_youtube_transcript_space_learning_project_spec_v0.json",
+      "used_for": "previous transcript feeder design",
+      "changed_judgment": "Replaced query/search-first collector with user-curated seed-video-first small-space builder named VectorTube."
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/hermes_exec/00_space_use_precheck_youtube_transcript_project_v0.json",
+      "used_for": "precheck and HOLD boundary continuity",
+      "changed_judgment": "Kept explicit read_handles, no default Codex/Gemini, no authority mutation, and no bulk crawl."
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_gemini_deep_space_lacl_instruction_v0/codex_space/16_VECTORFL_WHOLE_SPACE_MAP_HOLD_V0.json",
+      "used_for": "VectorFL whole-space attachment constraints",
+      "changed_judgment": "Mapped VectorTube output as a bounded mini-space that can attach to L7 external lens, L5 Hermes loop, L3 function patterns, and L8 governance rather than raw direct ingestion."
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/shared_handoff/21_CODEX_SPACE_MATCHING_REQUEST_YOUTUBE_TRANSCRIPT_FEEDER_V0.json",
+      "used_for": "Codex later matching packet continuity",
+      "changed_judgment": "Changed Codex request from matching a generic feeder to judging mini-space readiness, ambiguity, and insertion pressure."
+    }
+  ],
+  "what_was_not_read_and_why": [
+    "No live YouTube search: user explicitly said not to auto-search by default.",
+    "No transcript fetch yet: no seed URL provided in this turn.",
+    "No VectorFL authority/current-position/registry files: this is HOLD design, not insertion."
+  ],
+  "changed_judgment_from_space": "The prior design was too collector/search oriented. Current design should be VectorTube: a user-seeded transcript mini-space generator with enrichment/opposition/related-script expansion gated by user seed and confusion control.",
+  "codex_needed_now": "NO. Codex should later review mini-space matching/readiness, not be called during this design turn.",
+  "budget_gate": "FAST_LOCAL_SPEC_UPDATE_ONLY",
+  "next_output_surface": "VectorTube v1 seed-space spec + mini-space schema + Codex matching request",
+  "boundary": {
+    "auto_search": "NO_BY_DEFAULT",
+    "video_download": "NO",
+    "transcript_only": "YES",
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD"
+  }
+}

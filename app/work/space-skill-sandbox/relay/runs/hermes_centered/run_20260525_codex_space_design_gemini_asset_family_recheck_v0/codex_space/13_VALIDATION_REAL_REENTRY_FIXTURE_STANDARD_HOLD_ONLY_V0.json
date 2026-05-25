@@ -1,0 +1,107 @@
+{
+  "validation_id": "VALIDATION_REAL_REENTRY_FIXTURE_STANDARD_HOLD_ONLY_V0",
+  "created_at": "2026-05-25T21:53:00+09:00",
+  "verdict": "PASS_REAL_REENTRY_FIXTURE_STANDARD_CANDIDATE_WITH_HOLD",
+  "validated_files": [
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/11_REAL_REENTRY_FIXTURE_STANDARD_HOLD_ONLY_V0.json",
+      "sha256": "2ae0109c637b3c7bb3dacce0ec07ae5df0bcafe4a8b697e98aaa51e4475a0192",
+      "json_valid": true
+    },
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/12_REAL_REENTRY_FIXTURE_STANDARD_OPERATOR_VIEW_V0.md",
+      "sha256": "bf81c62e779413abdf9622113046737ed33d2384616be7f84cbe95d639f31d20"
+    }
+  ],
+  "checks": [
+    {
+      "name": "json_valid",
+      "passed": true
+    },
+    {
+      "name": "required_fixture_components_count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "name": "acceptance_checks_count",
+      "expected": 7,
+      "actual": 7,
+      "passed": true
+    },
+    {
+      "name": "negative_tests_required_count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "name": "decision_table_count",
+      "expected": 4,
+      "actual": 4,
+      "passed": true
+    },
+    {
+      "name": "current_example_kept_candidate_not_authority",
+      "passed": true
+    },
+    {
+      "name": "mutation_statement_all_false",
+      "passed": true
+    },
+    {
+      "name": "promotion_status_hold_not_authority",
+      "passed": true
+    }
+  ],
+  "negative_tests": [
+    {
+      "name": "NEG_STANDARD_AS_AUTHORITY",
+      "claim": "REAL_REENTRY_FIXTURE_STANDARD is now official authority",
+      "caught": true,
+      "hold_reason": "status is STANDARD_CANDIDATE_HOLD_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_FIXTURE_PASS_AS_SKILL_INSTALL_APPROVAL",
+      "claim": "real reentry fixture pass approves vectorfl-space-operator installation",
+      "caught": true,
+      "hold_reason": "standard_scope explicitly excludes skill installation"
+    },
+    {
+      "name": "NEG_STANDARD_AS_LIVE_CALL_SCOPE",
+      "claim": "fixture standard approves live external/API/tool calls",
+      "caught": true,
+      "hold_reason": "standard_scope excludes live calls and requires HOLD"
+    },
+    {
+      "name": "NEG_STANDARD_AS_CLEANUP_PERMISSION",
+      "claim": "fixture standard approves move/delete/archive/cleanup apply",
+      "caught": true,
+      "hold_reason": "mutation_statement all false"
+    }
+  ],
+  "space_delta_judgment": {
+    "primary": "NEW_PATTERN_CANDIDATE",
+    "secondary": [
+      "STRENGTHEN_EXISTING_PATTERN",
+      "MISSING_HANDLE_EXPOSED"
+    ],
+    "candidate_handle": "REAL_REENTRY_FIXTURE_STANDARD",
+    "reason": "The handle is now defined as a repeatable HOLD-only fixture standard candidate, derived from one strong reentry example."
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "next_safe_lane_after_this": "RUN_SECOND_REAL_REENTRY_FIXTURE_STANDARD_DRY_RUN_HOLD_ONLY_OR_STOP_REVIEW",
+  "promotion_status": "HOLD_NOT_AUTHORITY"
+}

@@ -1,0 +1,162 @@
+{
+  "evaluation_id": "VECTORTUBE_ASSETS_EVALUATION_20260525_V0",
+  "created_at": "2026-05-25T10:10:00.975165+09:00",
+  "scope": "오늘 만든 VectorTube 및 3 mini-space VectorFL inbox 자산 평가",
+  "target_root": "/Users/sungsookim/universe/vectorfl_replica/runtime/space_inbox/vectortube/contextual_mini_spaces/20260525_three_mini_spaces_v0",
+  "overall_verdict": "PASS_ASSET_FAMILY_EMERGED_WITH_HOLD",
+  "asset_family_reading": "오늘 만든 것은 단일 앱/요약기가 아니라 외부 영상 source를 timestamp evidence → layer card → contextual mini-space → bounded expansion → guard ring → VectorFL space_inbox/Codex handoff로 변환하는 자산군이다.",
+  "assets": [
+    {
+      "type": "A1_source_processor",
+      "name": "Transcript intake/repair/fallback",
+      "maturity": "M2_WORKING_PROTOTYPE",
+      "value": "YouTube transcript unavailable처럼 보이는 자료도 ko/en fallback 및 strict=False repair로 source화 가능",
+      "risk": "자막 없는 영상, HTML/search 취약성, transcript 품질 오류",
+      "next": "fetch/repair를 runner 모듈로 분리하고 failure receipt 표준화"
+    },
+    {
+      "type": "A2_layer_card_schema",
+      "name": "9-lens layer reading template",
+      "maturity": "M3_REUSABLE_PATTERN",
+      "value": "요약이 아니라 L0-L8 층위 독해로 source를 작은 공간화",
+      "risk": "Hermes 해석 비중이 커서 timestamp grounding/claim separation 유지 필요",
+      "next": "schema validator와 source-claim-interpretion 분리 강화"
+    },
+    {
+      "type": "A3_contextual_mini_space",
+      "name": "3 mini-spaces: ontology, automation/platform, agent git guard",
+      "maturity": "M3_SPACE_CANDIDATE",
+      "value": "자료 3개가 서로 다른 실행/권한/기록 공간으로 연결됨",
+      "risk": "본공간 authority로 승격하면 과잉 일반화 위험",
+      "next": "space_inbox에서 Codex read-only maturation review"
+    },
+    {
+      "type": "A4_autoloop_runner",
+      "name": "VectorTube bounded autoloop v0.1",
+      "maturity": "M2_WORKING_BUT_NEEDS_HARDENING",
+      "value": "사용자 매번 컨펌 없이 slot별 bounded expansion, official docs first, slot_quality_review 가능",
+      "risk": "검색 후보 품질/slot drift, how-to를 failure source로 오판 가능",
+      "next": "v0.2: strong/partial/weak/missing 등급과 retry cap 강화"
+    },
+    {
+      "type": "A5_guard_ring",
+      "name": "Platform/git/agent authority guard rings",
+      "maturity": "M3_REUSABLE_GUARD_SURFACE",
+      "value": "AI 실행력의 위험을 품질/권한/기록/검토 gate로 분리",
+      "risk": "guard가 체크리스트화되면 공간 독해가 다시 납작해짐",
+      "next": "실제 실패/counter 사례 붙여 guard의 근거 강화"
+    },
+    {
+      "type": "A6_space_inbox_bridge",
+      "name": "runtime/space_inbox apply + Codex channel pointer",
+      "maturity": "M3_INTEGRATED_HOLD_SURFACE",
+      "value": "mini-space를 VectorFL 안으로 넣되 authority/registry/current-position과 분리",
+      "risk": "inbox가 쌓이면 retrieval/index hygiene 필요",
+      "next": "Codex quick-board 기반 inbox review/maturation 루틴 설계"
+    }
+  ],
+  "type_map": [
+    {
+      "type": "T0_raw_evidence",
+      "examples": [
+        "timestamped transcripts",
+        "official docs snippets"
+      ],
+      "status": "evidence_only"
+    },
+    {
+      "type": "T1_source_card",
+      "examples": [
+        "seed source cards",
+        "space insertion cards"
+      ],
+      "status": "candidate metadata"
+    },
+    {
+      "type": "T2_layer_reading",
+      "examples": [
+        "L0-L8 layer tables"
+      ],
+      "status": "interpretive working surface"
+    },
+    {
+      "type": "T3_contextual_mini_space",
+      "examples": [
+        "MS1/MS2/MS3"
+      ],
+      "status": "space candidate HOLD"
+    },
+    {
+      "type": "T4_guard_ring",
+      "examples": [
+        "platform rules gate",
+        "git diff/secret/agent autonomy gate"
+      ],
+      "status": "risk boundary"
+    },
+    {
+      "type": "T5_autoloop",
+      "examples": [
+        "bounded autoloop v0.1"
+      ],
+      "status": "execution helper not authority"
+    },
+    {
+      "type": "T6_space_inbox_bridge",
+      "examples": [
+        "runtime/space_inbox + Codex pointer"
+      ],
+      "status": "VectorFL-visible HOLD layer"
+    },
+    {
+      "type": "T7_promotion_candidate",
+      "examples": [
+        "none yet"
+      ],
+      "status": "not reached"
+    }
+  ],
+  "strengths": [
+    "요약기에서 벗어나 작은 공간 생산 흐름을 실제 seed로 통과",
+    "HOLD/authority 분리가 유지됨",
+    "Codex 통로는 live call 없이 read-first로 남김",
+    "3개 mini-space가 cross-link를 형성",
+    "공식 문서 우선/slot quality review 학습이 생김"
+  ],
+  "weaknesses": [
+    "autoloop 검색 품질은 아직 낮음",
+    "counter/failure source 깊이가 부족한 slot 존재",
+    "schema/runner가 아직 한 run_dir 안의 prototype",
+    "space_inbox 누적 시 index/aging/cleanup 정책 없음",
+    "본공간 maturation criteria가 아직 명확한 rubric으로 고정되지 않음"
+  ],
+  "recommended_next_lanes": [
+    {
+      "lane": "L1_asset_typing",
+      "action": "오늘 산출물을 자산 유형 체계로 고정",
+      "why": "VectorFL 자산 평가/재사용 기준 마련"
+    },
+    {
+      "lane": "L2_runner_hardening",
+      "action": "VectorTube autoloop v0.2 모듈화",
+      "why": "매번 컨펌 없는 자동 루프를 안전하게 반복"
+    },
+    {
+      "lane": "L3_codex_readonly_review",
+      "action": "Codex가 space_inbox를 read-only로 평가하는 packet 실행 또는 사용자-run 준비",
+      "why": "Hermes 해석을 공간 steward 관점에서 검토"
+    },
+    {
+      "lane": "L4_promotion_rubric",
+      "action": "inbox→candidate→matured→authority 불가/가능 criteria 작성",
+      "why": "HOLD 자산이 무분별하게 권위화되는 것 방지"
+    }
+  ],
+  "hold_boundaries": {
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "obsidian_write": false,
+    "promotion": "HOLD"
+  }
+}

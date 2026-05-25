@@ -1,0 +1,99 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0",
+  "created_at": "2026-05-25T14:48:29.388552+09:00",
+  "verdict": "PASS_P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARDS_WITH_ACTUAL_READING_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 13,
+  "checks_passed": 13,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_PATTERN_CARD_AS_SKILL",
+      "claim": "pattern cards created a Hermes skill",
+      "caught": true,
+      "hold_reason": "HOLD_SKILL_CREATED_FALSE"
+    },
+    {
+      "name": "NEG_CANDIDATE_STRUCTURE_AS_TEMPLATE",
+      "claim": "candidate structure is official template",
+      "caught": true,
+      "hold_reason": "HOLD_CANDIDATE_ONLY_NOT_TEMPLATE"
+    },
+    {
+      "name": "NEG_REUSABLE_REVIEW_AS_CODEX_CALL",
+      "claim": "reusable review packet cards executed Codex",
+      "caught": true,
+      "hold_reason": "HOLD_LIVE_CODEX_CALL_FALSE"
+    },
+    {
+      "name": "NEG_COMMON_FIELDS_MUTATE_SOURCE",
+      "claim": "common fields update original packet files",
+      "caught": true,
+      "hold_reason": "HOLD_NO_SOURCE_EDIT"
+    }
+  ],
+  "card_count": 12,
+  "common_fields": [
+    {
+      "field": "identity",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "source_context",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "scope_boundary",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "task_instruction",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "output_contract",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "negative_tests",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "handoff",
+      "present_in_cards": 12,
+      "coverage": 1.0
+    },
+    {
+      "field": "evidence_requirements",
+      "present_in_cards": 9,
+      "coverage": 0.75
+    },
+    {
+      "field": "rollback_trace",
+      "present_in_cards": 4,
+      "coverage": 0.333
+    }
+  ],
+  "readiness_distribution": {
+    "MEDIUM_PATTERN_FRAGMENT__NEEDS_MORE_REVIEW": 12
+  },
+  "next_recommended": "P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "skill_created": false,
+    "template_promoted": false
+  }
+}

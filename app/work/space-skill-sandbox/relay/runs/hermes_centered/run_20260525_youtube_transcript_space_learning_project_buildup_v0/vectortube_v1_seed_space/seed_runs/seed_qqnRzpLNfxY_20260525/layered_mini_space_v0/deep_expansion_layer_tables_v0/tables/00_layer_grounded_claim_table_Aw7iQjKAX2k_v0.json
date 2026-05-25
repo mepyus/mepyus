@@ -1,0 +1,81 @@
+{
+  "table_id": "LAYER_GROUNDED_CLAIM_TABLE_Aw7iQjKAX2k_V0",
+  "created_at": "2026-05-25T07:39:17.244114+09:00",
+  "source": {
+    "video_id": "Aw7iQjKAX2k",
+    "title": "GraphRAG vs. Traditional RAG",
+    "slot": "rag_comparison",
+    "url": "https://www.youtube.com/watch?v=Aw7iQjKAX2k"
+  },
+  "lens_count": 9,
+  "layers": {
+    "L0_source_surface": [
+      {
+        "t": "0:00-0:21",
+        "claim": "GraphRAG maps relationships to provide more precise, personalized answers faster, especially where accuracy and speed matter."
+      },
+      {
+        "t": "0:26-0:36",
+        "claim": "the video compares GraphRAG to traditional RAG across development, production, and governance."
+      }
+    ],
+    "L1_conceptual": [
+      {
+        "t": "0:39-1:29",
+        "claim": "traditional RAG chunks private structured/unstructured data, stores embeddings in a vector database, retrieves context, and sends it to an LLM."
+      },
+      {
+        "t": "1:31-1:56",
+        "claim": "GraphRAG builds on text chunks by extracting entities and relational information into a knowledge graph."
+      }
+    ],
+    "L2_information_structure": [
+      {
+        "t": "1:51-2:01",
+        "claim": "GraphRAG does not retrieve isolated answers; it connects related information for higher response quality, accuracy, and insight."
+      },
+      {
+        "t": "2:34-3:17",
+        "claim": "relationship strength and nature can be quantified into weighted graphs that support targeted questions and contextual summaries."
+      }
+    ],
+    "L3_context_background": [
+      {
+        "t": "0:00-0:13",
+        "claim": "healthcare support line is used as the background where complex multi-step questions make relationship mapping valuable."
+      }
+    ],
+    "L4_emotional_rhetorical": [
+      {
+        "t": "0:13-0:21",
+        "claim": "the rhetoric stresses criticality, accuracy, speed, and completeness to frame GraphRAG as operationally necessary."
+      }
+    ],
+    "L5_power_authority": [
+      {
+        "t": "3:24-4:00",
+        "claim": "governance, explainability, traceability, and access controls are presented as enterprise authority/control benefits."
+      }
+    ],
+    "L6_practical_operational": [
+      {
+        "t": "3:24-4:00",
+        "claim": "once a graph is built, the speaker claims it is easier to maintain than traditional RAG and yields explainability/traceability/access control at query time."
+      }
+    ],
+    "L7_counter_uncertainty": [
+      {
+        "t": "3:40-3:57",
+        "claim": "the easier-maintenance claim depends on the graph already being built; graph construction cost and correctness are not addressed."
+      }
+    ],
+    "L8_vectorfl_mapping": [
+      {
+        "t": "1:31-2:01",
+        "claim": "confirms VectorTube should not stop at vector retrieval/summary; it should extract entities and relations into a layer-aware mini-space."
+      }
+    ]
+  },
+  "status": "DEEP_LAYER_TABLE_FROM_TIMESTAMPED_TRANSCRIPT",
+  "hold": "evidence table only; not authority"
+}

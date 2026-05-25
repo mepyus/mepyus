@@ -1,0 +1,285 @@
+{
+  "map_id": "X_POINTER_GRAPH_ASSET_POINTER_ONLY_MAP_V0",
+  "created_at": "2026-05-25T21:08:00+09:00",
+  "status": "POINTER_ONLY_MAP_HOLD_NOT_AUTHORITY",
+  "owner_namespace": "codex_space",
+  "purpose": "Connect Hermes-discovered asset families as Codex space-operation references without moving files, deleting files, mutating authority, or treating the graph as source of truth.",
+  "source_handles": [
+    {
+      "id": "POSITION_ROLLUP",
+      "path": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_family_map_and_position_rollup_v0.json",
+      "sha256": "8206b12d0b80be8bc23e30aad19a3cf2b1ef594f6632ea87f89729740476017a",
+      "owner_namespace": "workspace_pointer_view",
+      "used_for": "family sequence, current position, stop boundary",
+      "changed_judgment": "sets graph root and STOP boundary",
+      "read_only_assertion": true
+    },
+    {
+      "id": "P_PACKET_CLOSEOUT",
+      "path": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_family_closeout_and_next_family_selector_v0.json",
+      "sha256": "bd5552cb8de28d8a03a3879f9cd031b38092d4ad268d6a29d48443495406fde8",
+      "owner_namespace": "workspace_pointer_view",
+      "used_for": "packet handoff closeout, active/reusable/freeze boundary",
+      "changed_judgment": "P family is closed for now and must not imply live call",
+      "read_only_assertion": true
+    },
+    {
+      "id": "U_RUN_BUNDLE_CLOSEOUT",
+      "path": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_closeout_and_next_family_selector_v0.json",
+      "sha256": "b3f056d94c9966e56349b0c9358938c6434b9d683705836890386351a44474eb",
+      "owner_namespace": "workspace_pointer_view",
+      "used_for": "run bundle evidence retention and closeout boundary",
+      "changed_judgment": "U family feeds evidence, not cleanup apply",
+      "read_only_assertion": true
+    },
+    {
+      "id": "G_GATE_RULES",
+      "path": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/G_GATE_GUARD_RULE_CANDIDATE_V0.json",
+      "sha256": "e46fa6c63ad19281990fe933ce4daf525f4b24b2279fe5f4ef53ffa5b52855a5",
+      "owner_namespace": "workspace_principle_candidate",
+      "used_for": "guard rules for unsafe graph edges",
+      "changed_judgment": "guard edges block promotion, approval, live call, and cleanup apply overclaim",
+      "read_only_assertion": true
+    },
+    {
+      "id": "S_STATE_FREEZE_MAP",
+      "path": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/s_state_promotion_asset_readonly_freeze_map_v0.json",
+      "sha256": "c8f02420eef187b008c270c0c70ba9071113985acc1b4143972d7abc21045568",
+      "owner_namespace": "workspace_pointer_view",
+      "used_for": "state/promotion confusion and authority-sensitive edges",
+      "changed_judgment": "S family marks authority risk; it does not authorize promotion",
+      "read_only_assertion": true
+    },
+    {
+      "id": "CODEX_GEMINI_READING",
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/02_CODEX_SPACE_OPERATING_READING_FROM_GEMINI_V0.md",
+      "sha256": "26ec637ca792ba155f018278384c2a3d16a23c600f0d521c488cd6635daf8533",
+      "owner_namespace": "codex_space",
+      "used_for": "Codex correction and space-operating layer assignment",
+      "changed_judgment": "X pointer graph is not authority; it is a reference/control view with authority-sensitive edges",
+      "read_only_assertion": true
+    }
+  ],
+  "nodes": [
+    {
+      "id": "T_L_SCHEMA",
+      "family": "T/L schema lens",
+      "codex_layer": "L3_CONTROL_READ_LENS",
+      "space_role": "classification lens for all family reads",
+      "authority_status": "NOT_AUTHORITY"
+    },
+    {
+      "id": "P_PACKET_HANDOFF_ASSET",
+      "family": "P_PACKET_HANDOFF_ASSET",
+      "codex_layer": "L1_CONTEXT_TRANSFER + L6_ADAPTER_BOUNDARY_SENSITIVE",
+      "space_role": "handoff and review packet surface; can route future tool use only after explicit scope",
+      "authority_status": "NOT_AUTHORITY_CLOSED_FOR_NOW"
+    },
+    {
+      "id": "U_RUN_BUNDLE_ASSET",
+      "family": "U_RUN_BUNDLE_ASSET",
+      "codex_layer": "L5_EXECUTION_TRACE_EVIDENCE",
+      "space_role": "receipt, validation, closeout, rollback, and retention evidence",
+      "authority_status": "NOT_AUTHORITY_CLOSED_FOR_NOW"
+    },
+    {
+      "id": "G_GATE_GUARD_ASSET",
+      "family": "G_GATE_GUARD_ASSET",
+      "codex_layer": "L3_CONTROL_GUARD",
+      "space_role": "blocks overclaim, approval confusion, live call, cleanup apply, and authority mutation",
+      "authority_status": "RULE_CANDIDATE_NOT_AUTHORITY"
+    },
+    {
+      "id": "S_STATE_PROMOTION_ASSET",
+      "family": "S_STATE_PROMOTION_ASSET",
+      "codex_layer": "L4_MATURATION_BOUNDARY + L2_AUTHORITY_SENSITIVE",
+      "space_role": "marks inbox/candidate/matured/authority confusion and freezes promotion-sensitive surfaces",
+      "authority_status": "READ_ONLY_FREEZE_MAP_NOT_AUTHORITY"
+    },
+    {
+      "id": "B_BRIDGE_ADAPTER_ASSET",
+      "family": "B_BRIDGE_ADAPTER_ASSET",
+      "codex_layer": "L6_ADAPTER_BOUNDARY_DEFERRED",
+      "space_role": "external tool/API boundary; read-only boundary map only in later scoped lane",
+      "authority_status": "DEFERRED_HOLD"
+    },
+    {
+      "id": "X_POINTER_GRAPH_ASSET",
+      "family": "X_POINTER_GRAPH_ASSET",
+      "codex_layer": "L1_REFERENCE_GRAPH + L3_CONTROL_VIEW + L2_AUTHORITY_SENSITIVE_EDGES",
+      "space_role": "this map: connects families for retrieval and stale-handle detection without becoming authority",
+      "authority_status": "POINTER_ONLY_NOT_AUTHORITY"
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01_SCHEMA_CLASSIFIES_ALL",
+      "from": "T_L_SCHEMA",
+      "to": "P_PACKET_HANDOFF_ASSET,U_RUN_BUNDLE_ASSET,G_GATE_GUARD_ASSET,S_STATE_PROMOTION_ASSET,B_BRIDGE_ADAPTER_ASSET,X_POINTER_GRAPH_ASSET",
+      "edge_type": "classification_lens",
+      "safe_use": "use for reading and labeling only",
+      "risk": "if treated as registry, taxonomy becomes false authority",
+      "guard": "NOT_AUTHORITY_HEADER_REQUIRED"
+    },
+    {
+      "id": "E02_U_EVIDENCE_TO_P_PACKET",
+      "from": "U_RUN_BUNDLE_ASSET",
+      "to": "P_PACKET_HANDOFF_ASSET",
+      "edge_type": "validated_evidence_to_packet_source",
+      "safe_use": "only validation/receipt/closeout evidence can seed packet material",
+      "risk": "raw run output can be mistaken for send-ready packet",
+      "guard": "GG_R01_GUARD_IS_NOT_APPROVAL"
+    },
+    {
+      "id": "E03_G_GUARDS_S_STATE",
+      "from": "G_GATE_GUARD_ASSET",
+      "to": "S_STATE_PROMOTION_ASSET",
+      "edge_type": "guard_blocks_state_overclaim",
+      "safe_use": "block candidate/matured/authority confusion and registry/current-position mutation",
+      "risk": "guard language can be mistaken for approval language",
+      "guard": "GG_R04_AUTHORITY_BOUNDARY_GUARDS_FREEZE_MUTATION"
+    },
+    {
+      "id": "E04_S_FLAGS_X_AUTHORITY_SENSITIVE_EDGES",
+      "from": "S_STATE_PROMOTION_ASSET",
+      "to": "X_POINTER_GRAPH_ASSET",
+      "edge_type": "authority_sensitive_edge_annotation",
+      "safe_use": "mark risky pointer edges without promoting the graph",
+      "risk": "pointer graph can be mistaken for source of truth",
+      "guard": "X_POINTER_GRAPH_NOT_AUTHORITY_HEADER"
+    },
+    {
+      "id": "E05_X_CONNECTS_FAMILY_RETRIEVAL",
+      "from": "X_POINTER_GRAPH_ASSET",
+      "to": "P_PACKET_HANDOFF_ASSET,U_RUN_BUNDLE_ASSET,G_GATE_GUARD_ASSET,S_STATE_PROMOTION_ASSET",
+      "edge_type": "pointer_only_retrieval_map",
+      "safe_use": "future Codex can retrieve correct family context from Hermes closeout",
+      "risk": "map update could be confused with folder tree cleanup",
+      "guard": "NO_MOVE_NO_DELETE_NO_ARCHIVE"
+    },
+    {
+      "id": "E06_B_BRIDGE_MUST_NOT_TOUCH_S_DIRECTLY",
+      "from": "B_BRIDGE_ADAPTER_ASSET",
+      "to": "S_STATE_PROMOTION_ASSET",
+      "edge_type": "blocked_direct_edge",
+      "safe_use": "bridge outputs must enter through inbox/review and explicit scope",
+      "risk": "external tool output mutates authority/promotion state",
+      "guard": "GG_R03_EXTERNAL_CALL_GUARDS_PRECEDE_TOOL_USE"
+    },
+    {
+      "id": "E07_P_PACKET_TO_B_BRIDGE_REQUIRES_SCOPE",
+      "from": "P_PACKET_HANDOFF_ASSET",
+      "to": "B_BRIDGE_ADAPTER_ASSET",
+      "edge_type": "scoped_future_edge",
+      "safe_use": "packet can prepare future bridge call only after explicit user scope",
+      "risk": "packet existence can be mistaken for live call approval",
+      "guard": "EXPLICIT_SCOPE_REQUIRED"
+    },
+    {
+      "id": "E08_U_RUN_TO_CLEANUP_APPLY_BLOCKED",
+      "from": "U_RUN_BUNDLE_ASSET",
+      "to": "cleanup_apply",
+      "edge_type": "blocked_cleanup_edge",
+      "safe_use": "retention evidence only",
+      "risk": "generated duplicate evidence could be deleted without retention decision",
+      "guard": "RETENTION_RULE_AND_EXPLICIT_APPROVAL_REQUIRED"
+    }
+  ],
+  "retrieval_routes": [
+    {
+      "route_id": "ROUTE_FUTURE_HERMES_CLOSEOUT_TO_CODEX_SPACE",
+      "trigger": "Hermes produces execution closeout or reentry material",
+      "read_order": [
+        "U_RUN_BUNDLE_ASSET",
+        "G_GATE_GUARD_ASSET",
+        "S_STATE_PROMOTION_ASSET",
+        "P_PACKET_HANDOFF_ASSET",
+        "X_POINTER_GRAPH_ASSET"
+      ],
+      "return_product": "space contact map + space effect classification + HOLD-only maturation proposal"
+    },
+    {
+      "route_id": "ROUTE_PACKET_REVIEW_WITHOUT_LIVE_CALL",
+      "trigger": "User asks whether a packet can be prepared or reviewed",
+      "read_order": [
+        "P_PACKET_HANDOFF_ASSET",
+        "U_RUN_BUNDLE_ASSET",
+        "G_GATE_GUARD_ASSET",
+        "B_BRIDGE_ADAPTER_ASSET"
+      ],
+      "return_product": "no-call packet readiness and explicit live-call boundary"
+    },
+    {
+      "route_id": "ROUTE_STATE_PROMOTION_CONFUSION_CHECK",
+      "trigger": "User asks whether something is official, matured, or candidate",
+      "read_order": [
+        "S_STATE_PROMOTION_ASSET",
+        "G_GATE_GUARD_ASSET",
+        "X_POINTER_GRAPH_ASSET"
+      ],
+      "return_product": "read-only freeze judgment; no promotion"
+    }
+  ],
+  "stale_or_duplicate_pressure": [
+    {
+      "pressure_id": "P_U_DUPLICATE_PRESSURE",
+      "families": [
+        "P_PACKET_HANDOFF_ASSET",
+        "U_RUN_BUNDLE_ASSET"
+      ],
+      "risk": "packet summaries and run receipts can duplicate each other while serving different retention purposes",
+      "hold_only_action": "mark packet as transfer surface and run bundle as evidence surface"
+    },
+    {
+      "pressure_id": "S_MATURED_AUTHORITY_CONFUSION",
+      "families": [
+        "S_STATE_PROMOTION_ASSET"
+      ],
+      "risk": "matured evidence can be misread as authority",
+      "hold_only_action": "keep matured and authority separated by explicit decision gate"
+    },
+    {
+      "pressure_id": "X_GRAPH_AUTHORITY_OVERCLAIM",
+      "families": [
+        "X_POINTER_GRAPH_ASSET",
+        "S_STATE_PROMOTION_ASSET"
+      ],
+      "risk": "pointer graph can be misread as source of truth because it points to authority-sensitive handles",
+      "hold_only_action": "graph header must say POINTER_ONLY_NOT_AUTHORITY"
+    }
+  ],
+  "missing_handles": [
+    "ROLLBACK_MANIFEST_TEMPLATE",
+    "LAYER_POLICING_HANDLE",
+    "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA",
+    "X_POINTER_GRAPH_NOT_AUTHORITY_HEADER",
+    "STALE_PACKET_RETENTION_POLICY",
+    "MATURED_VS_AUTHORITY_DECISION_GATE"
+  ],
+  "validation_expectations": {
+    "source_files_unchanged": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false,
+    "graph_is_authority": false
+  },
+  "next_safe_lane_after_this": {
+    "selected": "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY",
+    "why": "future Hermes results need a Codex-specific reentry receipt shape so execution closeout and space-operation reading remain separated"
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "packet_id": "21_CODEX_READABLE_REENTRY_INDEX",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "HERMES",
+  "allowed_namespace": "shared_handoff",
+  "immutable_after_publish": true,
+  "read_hermes_handles": [
+    {
+      "source_handle": "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+      "source_sha256": "bedfe39ce9c65e91f56d02d2a4aebfc36547da8acb892fc3b845f5080e1327e4",
+      "used_for": "Codex maturation reentry",
+      "changed_judgment": "Hermes trace is ready for Codex space maturation check",
+      "owner_namespace": "hermes_exec",
+      "read_only_assertion": true
+    }
+  ],
+  "codex_questions": [
+    "Should fixture pattern be proposed for future indexing?"
+  ],
+  "next_safe_lane": "CODEX_MATURATION_PROPOSAL_OR_HOLD",
+  "promotion_status": "HOLD"
+}

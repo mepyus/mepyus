@@ -1,0 +1,226 @@
+{
+  "space_id": "VECTORTUBE_CONTEXTUAL_MINI_SPACE_rSvpKOyaefU_3000s_V0",
+  "created_at": "2026-05-25T08:42:29.407931+09:00",
+  "status": "MINI_SPACE_CANDIDATE_HOLD",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=rSvpKOyaefU&t=3000s",
+    "video_id": "rSvpKOyaefU",
+    "focus_window": "46:21-53:39",
+    "excerpt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_rSvpKOyaefU_20260525/raw/03_timestamp_excerpt_around_3000s_rSvpKOyaefU.md",
+    "source_card": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_rSvpKOyaefU_20260525/cards/04_seed_source_card_rSvpKOyaefU_v0.json"
+  },
+  "interpretation_shift": "이 구간은 Git/GitHub 사용법 요약이 아니라, AI coding agent가 로컬 작업을 원격 협업 공간으로 올리는 과정에서 공간·기록·권한·자동실행 경계가 생기는 작은 공간으로 읽는다.",
+  "space_question": "Claude Code가 git/GitHub 연동을 자동으로 처리할 때, 작업공간·스테이징·커밋기록·원격공간·인증권한은 어떻게 분리되어야 하며 어디서 위험이 생기는가?",
+  "evidence_snippets": [
+    {
+      "id": "E01",
+      "t": "46:29-47:08",
+      "quote": "git init/add/commit/push 흐름을 무대와 장면/메시지 비유로 설명"
+    },
+    {
+      "id": "E02",
+      "t": "47:14-47:24",
+      "quote": "기본 흐름을 알아야 문제가 생겼을 때 이해 가능"
+    },
+    {
+      "id": "E03",
+      "t": "48:06-48:19",
+      "quote": "Claude Code에게 GitHub에 올려달라고 하면 git init 여부를 보고 묻거나 알아서 init 가능"
+    },
+    {
+      "id": "E04",
+      "t": "48:30-49:12",
+      "quote": "add는 staging 공간에 올리는 것이고 commit은 변경 사진과 메시지를 남기는 것"
+    },
+    {
+      "id": "E05",
+      "t": "49:22-49:59",
+      "quote": "작업 폴더, staging, GitHub 저장소 세 영역 구분"
+    },
+    {
+      "id": "E06",
+      "t": "50:11-50:29",
+      "quote": "협업 중심 개발에서는 무엇을 왜 했는지 기록을 남겨야 함"
+    },
+    {
+      "id": "E07",
+      "t": "50:37-51:18",
+      "quote": "feat/fix/docs/chore 등 commit message 타입"
+    },
+    {
+      "id": "E08",
+      "t": "51:24-51:35",
+      "quote": "commit message 규칙은 조직마다 다름"
+    },
+    {
+      "id": "E09",
+      "t": "51:40-53:37",
+      "quote": "컴퓨터와 GitHub 인증, CLI/SSH 연동, Claude가 명령어를 실행해 검토"
+    }
+  ],
+  "entities": [
+    {
+      "id": "E_WORK",
+      "name": "작업 폴더",
+      "role": "실제 수정 공간"
+    },
+    {
+      "id": "E_STAGE",
+      "name": "staging area",
+      "role": "올릴 변경을 모으는 준비 공간"
+    },
+    {
+      "id": "E_COMMIT",
+      "name": "commit",
+      "role": "변경 스냅샷과 이유 기록"
+    },
+    {
+      "id": "E_REMOTE",
+      "name": "GitHub repository",
+      "role": "타인/협업자가 볼 수 있는 원격 공간"
+    },
+    {
+      "id": "E_AGENT",
+      "name": "Claude Code",
+      "role": "git 상태 확인/명령 실행/연동 보조 agent"
+    },
+    {
+      "id": "E_AUTH",
+      "name": "GitHub CLI/SSH 인증",
+      "role": "로컬-원격 권한 연결"
+    },
+    {
+      "id": "E_RULE",
+      "name": "조직 commit 규칙",
+      "role": "기록 형식/협업 표준"
+    }
+  ],
+  "relations": [
+    {
+      "from": "작업 폴더",
+      "rel": "changes_move_to",
+      "to": "staging area",
+      "evidence": [
+        "E04",
+        "E05"
+      ]
+    },
+    {
+      "from": "staging area",
+      "rel": "snapshot_by",
+      "to": "commit",
+      "evidence": [
+        "E04"
+      ]
+    },
+    {
+      "from": "commit",
+      "rel": "pushed_to",
+      "to": "GitHub repository",
+      "evidence": [
+        "E01",
+        "E05"
+      ]
+    },
+    {
+      "from": "Claude Code",
+      "rel": "may_execute_or_suggest",
+      "to": "git init/add/commit/push",
+      "evidence": [
+        "E03",
+        "E09"
+      ]
+    },
+    {
+      "from": "GitHub CLI/SSH 인증",
+      "rel": "grants_connection_to",
+      "to": "GitHub repository",
+      "evidence": [
+        "E09"
+      ]
+    },
+    {
+      "from": "조직 commit 규칙",
+      "rel": "shapes",
+      "to": "commit message",
+      "evidence": [
+        "E07",
+        "E08"
+      ]
+    }
+  ],
+  "layers": {
+    "L0_surface": "Git init/add/commit/push, GitHub CLI/SSH 인증, Claude Code 명령 실행 설명",
+    "L1_conceptual": "작업공간→스테이징→커밋→원격 저장소라는 공간 전환 모델",
+    "L2_information_structure": "변경사항, commit message, 타입(feat/fix/docs/chore), auth state, remote state가 분리된 정보 구조",
+    "L3_context_background": "AI coding 교육에서 비개발자가 협업 개발의 기본 공간/기록 규칙을 익히는 맥락",
+    "L4_emotional_rhetorical": "무대/사진/퀸십/악수 비유로 낯선 개념을 감각화; “알아야 문제를 이해”라는 불안 완화",
+    "L5_power_authority": "GitHub 인증과 SSH/CLI는 원격 권한을 여는 층위. Agent 자동명령은 권한 위임 문제와 만남",
+    "L6_practical_operational": "git init/add/commit/push, gh auth, 상태 점검, 조직별 commit rule 적용",
+    "L7_counter_uncertainty": "agent가 알아서 init/commit/push하면 원하지 않는 변경, secret 포함, 잘못된 remote, commit 규칙 위반 위험",
+    "L8_vectorfl_mapping": "VectorTube는 이 구간을 git tutorial이 아니라 agent-mediated source/control/authority boundary mini-space로 격리"
+  },
+  "tensions": [
+    {
+      "id": "T1",
+      "name": "자동 실행 편의 vs 권한 위임 위험"
+    },
+    {
+      "id": "T2",
+      "name": "쉬운 비유/교육 vs 실제 협업 규칙의 엄격성"
+    },
+    {
+      "id": "T3",
+      "name": "로컬 작업 속도 vs 원격 공개/기록 책임"
+    },
+    {
+      "id": "T4",
+      "name": "Claude가 알아서 함 vs 사용자가 흐름을 이해해야 함"
+    }
+  ],
+  "guard_ring_v0": [
+    {
+      "gate": "G1_GIT_DIFF_REVIEW",
+      "question": "push 전 diff/status 확인이 있었나?"
+    },
+    {
+      "gate": "G2_SECRET_SCAN",
+      "question": "commit/push 전 secret/env 파일 유출 위험을 봤나?"
+    },
+    {
+      "gate": "G3_REMOTE_AUTH_SCOPE",
+      "question": "GitHub CLI/SSH 권한 범위와 대상 계정/remote가 맞나?"
+    },
+    {
+      "gate": "G4_COMMIT_MESSAGE_RULE",
+      "question": "조직 commit convention에 맞나?"
+    },
+    {
+      "gate": "G5_AGENT_AUTONOMY_GATE",
+      "question": "agent가 init/add/commit/push를 무단 실행하지 않도록 승인 경계가 있나?"
+    }
+  ],
+  "next_source_need": [
+    {
+      "slot": "official_git_github_boundary",
+      "need": "Git/GitHub official docs for staging/commit/push/auth"
+    },
+    {
+      "slot": "agent_git_risk",
+      "need": "AI coding agent/git workflow risks, secret leakage, accidental commit/push"
+    },
+    {
+      "slot": "human_review_guard",
+      "need": "pre-commit/pre-push review/checklist or code review workflow"
+    }
+  ],
+  "hold_boundaries": {
+    "summary_only": false,
+    "search_executed": false,
+    "main_space_mutation": false,
+    "authority_mutation": false,
+    "obsidian_write": false,
+    "codex_gemini_call": false,
+    "promotion": "HOLD"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "queue_id": "INTERNAL_ASSET_FAMILY_PRIORITY_QUEUE_V0",
+  "created_at": "2026-05-25T14:24:24.439757+09:00",
+  "status": "POINTER_ONLY_NOT_AUTHORITY",
+  "priority": [
+    {
+      "family_id": "P_PACKET_HANDOFF_ASSET",
+      "candidate_count": 9846,
+      "source_weight": 7315,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "U_RUN_BUNDLE_ASSET",
+      "candidate_count": 6820,
+      "source_weight": 5363,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "S_STATE_PROMOTION_ASSET",
+      "candidate_count": 5642,
+      "source_weight": 4329,
+      "recommended_action": "FREEZE_POINTER_ONLY_REVIEW",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "B_BRIDGE_ADAPTER_ASSET",
+      "candidate_count": 5462,
+      "source_weight": 4005,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "G_GATE_GUARD_ASSET",
+      "candidate_count": 5103,
+      "source_weight": 3763,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "R_RECEIPT_TRACE_ASSET",
+      "candidate_count": 4606,
+      "source_weight": 3585,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "C_CONTEXT_LAYER_ASSET",
+      "candidate_count": 4197,
+      "source_weight": 3303,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "X_POINTER_GRAPH_ASSET",
+      "candidate_count": 4213,
+      "source_weight": 3280,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "O_OPERATOR_SURFACE_ASSET",
+      "candidate_count": 1791,
+      "source_weight": 1251,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "Q_QUEUE_INBOX_ASSET",
+      "candidate_count": 664,
+      "source_weight": 517,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "M_MODULE_SKELETON_ASSET",
+      "candidate_count": 887,
+      "source_weight": 403,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "SEC_SECRET_SURFACE_RISK",
+      "candidate_count": 676,
+      "source_weight": 565,
+      "recommended_action": "MANUAL_SECURITY_REDACTION_REVIEW_ONLY",
+      "safe_to_push_next": false
+    }
+  ],
+  "next_recommended_family": "P_PACKET_HANDOFF_ASSET",
+  "next_lane": "COMPACT_TOP_FAMILY_POINTER_VIEW_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "card_id": "SPACE_USE_PRECHECK_YOUTUBE_TRANSCRIPT_SPACE_LEARNING_PROJECT_V0",
+  "timestamp_kst": "2026-05-25 07:03:01 KST",
+  "request_type": "SIDE_PROJECT_BUILDUP_HOLD_SPEC",
+  "user_original": "응 이걸 별도의 프로젝트르 빌드업하자! 핵심은 공간 학습용으로 우리가 만든 공간이 한쪽으로 편향되지 않고 다양한 층위, 해석이 가능하게 만들고 그걸 보강할 자료를 유튜브를 통해 공간을 숙성시키려는 의도야. 지금은 영상은 필요없을 듯하고 자막을 가져와서 분석/요약/정리/학습하는 사이드 프로젝트야! 일단 사이드 프로젝트 빌드업 부터 하는데 (어제도 말했지만 이제부터 넌 공간을 참조하면서 작업을 해야돼)",
+  "space_reference_mode": "BOUNDED_READ_EXISTING_VECTORFL_SPACE_AND_YOUTUBE_TOOL_CAPABILITY",
+  "read_handles": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_gemini_deep_space_lacl_instruction_v0/codex_space/16_VECTORFL_WHOLE_SPACE_MAP_HOLD_V0.json",
+      "used_for": "current whole-space layer map and external lens/L5-L8 positioning",
+      "changed_judgment": "Changed project from generic NotebookLM clone to VectorFL feeder anchored to L7 external lens stack, L5 Hermes-centered loop, and L8 governance channel."
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_HERMES_EXECUTION_USE_FOUNDATION_20260524_V0.json",
+      "used_for": "Hermes execution-use foundation boundary",
+      "changed_judgment": "Kept Hermes as collector/analyzer/execution actor and Codex as later space-matching/maturation actor, not default live participant."
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_LIKE_HERMES_EXECUTION_PRECHECK_LAYER_20260524_V0.json",
+      "used_for": "required precheck fields and model-only drift guard",
+      "changed_judgment": "Added explicit read_handles, changed_judgment_from_space, codex_needed_now, budget gate, and next output surface."
+    },
+    {
+      "path": "/Users/sungsookim/.hermes/skills/media/youtube-content/scripts/fetch_transcript.py",
+      "used_for": "actual YouTube transcript extraction capability",
+      "changed_judgment": "Scoped MVP to captions/transcripts, language fallback, source cards, and transcript availability limits rather than video/audio ingestion."
+    }
+  ],
+  "what_was_not_read_and_why": [
+    "No broad repo archaeology: side project buildup needs compact current VectorFL surfaces only.",
+    "No Codex/Gemini execution: no fresh space ambiguity requiring provider-backed bridge now.",
+    "No Obsidian vault mutation: user asked project buildup, not source-note ingestion yet."
+  ],
+  "codex_needed_now": "NO; create Codex-readable HOLD packet for later space-map matching.",
+  "budget_gate": "FAST_LOCAL_SPEC_AND_VALIDATION; no provider-backed Codex/Gemini; no YouTube API key; no live bulk crawl.",
+  "next_output_surface": "project spec + structure map + Codex matching packet under isolated run_dir",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  }
+}

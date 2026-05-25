@@ -1,0 +1,30 @@
+{
+  "budget_gate_decision_values": [
+    "LOCAL_SPACE_SUFFICIENT_NO_CODEX",
+    "CODEX_SPACE_REQUEST_NEEDED_HOLD",
+    "WAITING_FOR_CODEX_RETURN",
+    "USER_APPROVAL_REQUIRED_FOR_PROVIDER_BACKED_CALL",
+    "STOP_BOUNDARY_RISK"
+  ],
+  "namespace_write": "hermes_exec",
+  "packet_id": "02_GOAL_LOOP_ITERATION_RECEIPT_SCHEMA_CANDIDATE_V0",
+  "promotion_status": "HOLD",
+  "required_fields": [
+    "iteration_id",
+    "goal_id",
+    "original_goal_fragment",
+    "previous_receipt_sha",
+    "read_first_handles",
+    "space_refs_used",
+    "model_reasoning_summary",
+    "changed_judgment_since_previous_iteration",
+    "budget_gate_decision",
+    "why_no_codex_call_or_codex_request_handle",
+    "execution_action",
+    "output_handles",
+    "next_iteration_read_first",
+    "namespace_write",
+    "promotion_status"
+  ],
+  "status": "HOLD_SCHEMA_CANDIDATE"
+}

@@ -1,0 +1,61 @@
+{
+  "card_id": "VECTORFL_EXECUTION_MODE_QUICK_USE_CARD_V0",
+  "created_at": "2026-05-25T20:57:52.666307+09:00",
+  "status": "QUICK_USE_CARD_CANDIDATE_NOT_AUTHORITY",
+  "purpose": "사용자가 스킬처럼 “실행모드”만 명시하면 Hermes가 만들어 둔 VectorFL 공간 자산을 참고/활용만 하고, 공간 수정/구조화 없이 빠르게 실행하도록 하는 간단한 규칙 카드.",
+  "user_invocation_examples": [
+    "실행모드: 이 작업 해줘",
+    "실행모드로 처리해줘",
+    "실행모드. 공간은 참고만 하고 실행해",
+    "실행모드: 만든 map 활용해서 답만 줘"
+  ],
+  "execution_mode_rule": "EXECUTION_MODE_SPACE_READONLY_USE_ONLY",
+  "meaning": "공간은 읽기/참조/판단 보조로만 사용한다. 공간 산출물을 새로 만들거나 수정/구조화하지 않는다.",
+  "speed_benefit": [
+    "새 map/pointer/view를 매번 만들지 않음",
+    "workspace 업데이트/validation/receipt 생성 부담을 줄임",
+    "이미 만든 guide/map/closeout/card를 read-first surface로만 활용",
+    "공간 설계와 실행 receipt를 분리해 불필요한 과정을 줄임"
+  ],
+  "default_read_surfaces": [
+    "latest position/closeout card",
+    "published guide draft if conceptual answer needed",
+    "relevant family map/card only when it changes judgment"
+  ],
+  "allowed": [
+    "read existing VectorFL assets",
+    "use existing maps/cards/receipts as context",
+    "perform user requested execution",
+    "answer directly or write only explicitly requested output",
+    "state briefly what space was used if useful"
+  ],
+  "forbidden": [
+    "create new VectorFL map/pointer/schema/card unless user asks to leave execution mode",
+    "modify workspace/space assets",
+    "restructure VectorFL space",
+    "promote candidate/matured/authority",
+    "registry/current-position mutation",
+    "move/archive/delete/source edit",
+    "live external call unless separately scoped"
+  ],
+  "fallback": "실행 중 공간 수정이 필요해 보이면 자동으로 하지 말고 “이건 실행모드 밖의 공간 설계/수정 작업”이라고 표시하고 HOLD한다.",
+  "minimal_precheck": [
+    "Does user explicitly say 실행모드?",
+    "What existing surfaces are enough?",
+    "Can task be done without space mutation?",
+    "If not, stop and split."
+  ],
+  "not_a_skill_yet": "이 카드는 skill 설치가 아니라 workspace-internal candidate다. 나중에 사용자가 원하면 Hermes skill 또는 prompt snippet으로 승격 가능.",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

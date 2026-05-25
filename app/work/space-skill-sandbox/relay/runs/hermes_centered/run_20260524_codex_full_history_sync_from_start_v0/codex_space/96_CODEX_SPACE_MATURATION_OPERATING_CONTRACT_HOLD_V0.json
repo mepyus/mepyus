@@ -1,0 +1,134 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "direct_codex_api": "NO",
+    "direct_gemini_api": "NO",
+    "folder_tree_mutation": "NO",
+    "hermes_direct_gemini": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "codex_space_operation_loop": [
+    "OBSERVE",
+    "CLASSIFY",
+    "COMPARE",
+    "JUDGE_SPACE_DELTA",
+    "DECIDE_GEMINI",
+    "PROPOSE_MATURATION",
+    "VERIFY",
+    "RETURN"
+  ],
+  "current_baseline": {
+    "pattern_index": "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json",
+    "pattern_index_sha256": "96790064653b7037507eb163c8ffc15cf4b0d190ed0864d06c32b03e22f9cd23",
+    "patterns": [
+      "P01_NO_CALL_RECOVERY_AND_CURRENT_POSITION_SURFACE",
+      "P02_PROTOTYPE_BEHAVIOR_LOOP",
+      "P03_PHASE2_FUNCTION_POSITION_STACK",
+      "P04_PHASE3_STRUCTURE_RELAYERING",
+      "P05_HERMES_CENTERED_CODEX_SPACE_LOOP",
+      "P06_PROVIDER_CALL_BUDGET_GOVERNANCE",
+      "P07_EXTERNAL_SPACE_LENS_STACK",
+      "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL"
+    ]
+  },
+  "default_routes": {
+    "check_space": {
+      "route": "CODEX_SPACE_CHECK",
+      "first_read": [
+        "shared_handoff/90_QUICK_EXCHANGE_BOARD*.json",
+        "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json",
+        "shared_handoff/99_LATEST_POINTERS.json"
+      ],
+      "output": "bounded space snapshot with HOLD boundary"
+    },
+    "analyze_hermes_work": {
+      "route": "CODEX_HERMES_WORK_ANALYSIS",
+      "first_read": [
+        "shared_handoff/90_QUICK_EXCHANGE_BOARD*.json",
+        "hermes_exec/*SUMMARY*",
+        "hermes_exec/*TRACE*",
+        "shared_handoff/*REENTRY*",
+        "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json"
+      ],
+      "output": "space refs used, Hermes merge behavior, execution/reentry result, and HOLD-only maturation judgment"
+    },
+    "retrieve_space_for_hermes": {
+      "route": "CODEX_SPACE_RETRIEVAL_BY_ORIGINAL",
+      "first_read": [
+        "Hermes request or user original",
+        "compact layer map",
+        "compact asset index",
+        "full-history pattern index",
+        "no-mutation boundary"
+      ],
+      "output": "selected refs, rejected refs, changed_judgment_for_hermes, recommended merge inputs, HOLD boundary"
+    },
+    "mature_space_from_reentry": {
+      "route": "CODEX_SPACE_MATURATION_BY_REENTRY_RECORD",
+      "first_read": [
+        "Hermes reentry record",
+        "Hermes execution trace",
+        "Codex retrieval return if present",
+        "full-history pattern index",
+        "stale/superseded map if present"
+      ],
+      "output": "HOLD-only maturation proposal with validation"
+    }
+  },
+  "gemini_policy": {
+    "default": "DO_NOT_CALL",
+    "allowed_when": [
+      "layer ambiguity remains after bounded file reading",
+      "semantic flattening is suspected",
+      "stale/current handle separation is unclear",
+      "a proposed maturation affects multiple arcs",
+      "Hermes trace conflicts with existing space index"
+    ],
+    "disallowed_when": [
+      "bounded files already decide the issue",
+      "simple status check",
+      "Gemini would only restate Codex judgment",
+      "call would normalize provider-backed exploration as execution"
+    ],
+    "authority": "Gemini output is evidence only; Codex remains responsible for judgment."
+  },
+  "maturation_judgment_enum": [
+    "NO_SPACE_DELTA",
+    "REFERENCE_ONLY",
+    "STRENGTHEN_EXISTING_PATTERN",
+    "NEW_PATTERN_CANDIDATE",
+    "LAYER_REASSIGNMENT_CANDIDATE",
+    "STALE_OR_SUPERSEDED_HANDLE",
+    "MISSING_HANDLE",
+    "BOUNDARY_RISK"
+  ],
+  "minimum_return_fields": [
+    "packet_id",
+    "role",
+    "read_files",
+    "input_classification",
+    "space_state_before",
+    "comparison_basis",
+    "space_delta_judgment",
+    "maturation_decision",
+    "gemini_exploration_decision",
+    "proposed_space_changes_hold_only",
+    "stale_or_superseded_handles_hold_only",
+    "missing_handles",
+    "boundary",
+    "validation",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "packet_id": "96_CODEX_SPACE_MATURATION_OPERATING_CONTRACT_HOLD_V0",
+  "promotion_status": "HOLD",
+  "role_split": {
+    "codex": "space operator: observe, classify, compare, judge delta, decide Gemini, propose HOLD maturation, verify",
+    "gemini": "optional Codex-side wide lens only",
+    "hermes": "execution operator: preserve original, request space, merge, execute/hold, trace, receipt, reentry"
+  },
+  "status": "HOLD_SPACE_OPERATING_CONTRACT"
+}

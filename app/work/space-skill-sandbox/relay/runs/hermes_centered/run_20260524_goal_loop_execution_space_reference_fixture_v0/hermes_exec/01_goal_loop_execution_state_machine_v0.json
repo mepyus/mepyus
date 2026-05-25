@@ -1,0 +1,102 @@
+{
+  "call_gate": {
+    "budget_gate": "reject heavy call when local indexed artifacts answer the step",
+    "fresh_space_reference_gate": "MAYBE_CODEX_ONLY_IF_UNKNOWN_SPACE_REF_REQUIRED",
+    "provider_backed_call_gate": "NO_FOR_FIXTURE",
+    "space_first_read": "shared_handoff/90_QUICK_EXCHANGE_BOARD then summary cards then pointer table; if local evidence sufficient, do not call Codex/Gemini"
+  },
+  "goal_id": "GOAL_LOOP_FIXTURE_BUILD_EXECUTION_SPACE_STRUCTURE_UNTIL_READY_V0",
+  "loop_safety": {
+    "immutable_receipts": "YES",
+    "max_steps": 7,
+    "promotion": "HOLD",
+    "shared_board_write": "Hermes may update quick board pointers; Codex writes its own summary/proposal later",
+    "single_writer_namespace": "hermes_exec"
+  },
+  "observed_steps": [
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.00040254800114780664,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_01_intake_goal_and_preserve_original_receipt_v0.json",
+      "space_ref_count": 1,
+      "step": 1,
+      "task": "intake_goal_and_preserve_original"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.0005016959912609309,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_02_read_current_space_first_board_receipt_v0.json",
+      "space_ref_count": 2,
+      "step": 2,
+      "task": "read_current_space_first_board"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.0004732979869004339,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_03_apply_governance_router_dual_log_constraints_receipt_v0.json",
+      "space_ref_count": 2,
+      "step": 3,
+      "task": "apply_governance_router_dual_log_constraints"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.00038264901377260685,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_04_check_budget_gate_for_fresh_space_need_receipt_v0.json",
+      "space_ref_count": 1,
+      "step": 4,
+      "task": "check_budget_gate_for_fresh_space_need"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.0005682350019924343,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_05_execute_structural_iteration_receipt_v0.json",
+      "space_ref_count": 2,
+      "step": 5,
+      "task": "execute_structural_iteration"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.0004972820170223713,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_06_publish_codex_readable_reentry_receipt_v0.json",
+      "space_ref_count": 2,
+      "step": 6,
+      "task": "publish_codex_readable_reentry"
+    },
+    {
+      "codex_called": false,
+      "elapsed_seconds": 0.00024497599224559963,
+      "gemini_called": false,
+      "provider_backed_call": false,
+      "receipt": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_07_loop_exit_or_continue_decision_receipt_v0.json",
+      "space_ref_count": 1,
+      "step": 7,
+      "task": "loop_exit_or_continue_decision"
+    }
+  ],
+  "packet_id": "01_goal_loop_execution_state_machine_v0",
+  "promotion_status": "HOLD",
+  "states": [
+    "GOAL_INTAKE",
+    "SPACE_FIRST_READ",
+    "MERGE_ORIGINAL_SPACE_MODEL",
+    "EXECUTE_STEP",
+    "WRITE_RECEIPT",
+    "UPDATE_QUICK_BOARD",
+    "DECIDE_CONTINUE_OR_EXIT",
+    "CODEX_REENTRY_AVAILABLE"
+  ],
+  "total_elapsed_seconds": 0.0030980480078142136,
+  "transition_rule": "Each iteration must decide whether local space is sufficient before any Codex/Gemini/provider-backed call. If sufficient, execute locally and write receipt/reentry. If not, write space_reference_request and HOLD or wait for Codex return."
+}

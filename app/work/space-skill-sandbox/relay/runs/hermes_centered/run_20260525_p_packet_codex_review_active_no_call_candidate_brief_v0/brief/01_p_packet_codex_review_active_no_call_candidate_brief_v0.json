@@ -1,0 +1,1180 @@
+{
+  "brief_id": "P_PACKET_CODEX_REVIEW_ACTIVE_NO_CALL_CANDIDATE_BRIEF_V0",
+  "created_at": "2026-05-25T15:07:29.641486+09:00",
+  "status": "POINTER_ONLY_ACTIVE_CANDIDATE_BRIEF_NOT_AUTHORITY",
+  "source_maps": {
+    "dedupe": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+    "split": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_freeze_reusable_split_batch01_v0.json",
+    "receipt_compact": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_one_shot_receipt_compact_v0.json"
+  },
+  "candidate_count": 24,
+  "status_distribution": {
+    "AMBIGUOUS_CANDIDATE_POINTER_REVIEW": 2,
+    "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL": 3,
+    "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE": 9,
+    "FREEZE_AUTHORITY_SENSITIVE_NO_CALL": 10
+  },
+  "briefs": [
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_01",
+      "relpath": "source_assets/baselines/codex_baseline_codex_gemini_session_batch_operation_contract_v1.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/source_assets/baselines/codex_baseline_codex_gemini_session_batch_operation_contract_v1.md",
+      "sha256": "670e1d5487458d6c3e09865c161618cc1d9f764fab2c8e076aa746d5b2c4298e",
+      "surface": "work_control",
+      "status": "AMBIGUOUS_CANDIDATE_POINTER_REVIEW",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "# OPERATION CONTRACT — CODEX ↔ GEMINI (SESSION-BATCH MODE → FUTURE INTEGRATION)"
+        },
+        {
+          "line": 8,
+          "text": "현재 구조에서 Codex와 Gemini CLI의 역할을 명확히 분리하고,"
+        },
+        {
+          "line": 18,
+          "text": "Codex = 실행 주체"
+        },
+        {
+          "line": 23,
+          "text": "1. Codex 실행"
+        },
+        {
+          "line": 33,
+          "text": "Codex (N회 실행)"
+        },
+        {
+          "line": 51,
+          "text": "- Codex 실행 직후 자동 호출"
+        },
+        {
+          "line": 97,
+          "text": "- 최근 receipt 일부"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_02",
+      "relpath": "app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md",
+      "sha256": "f2821bb9cb73d08077ce68209fb0cf593a3012fc45ac7d351e75dccc527d112b",
+      "surface": "work_control",
+      "status": "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": false,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "NEXT_SAFE_LANE: S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0"
+        },
+        {
+          "line": 6,
+          "text": "Continue Phase2 function tests with S4/S5 Codex-Gemini role handoff on one bounded result."
+        },
+        {
+          "line": 9,
+          "text": "- attach to Phase1 whole-flow stages S4_CODEX_EVALUATION and S5_GEMINI_LAYER_JUDGMENT"
+        },
+        {
+          "line": 11,
+          "text": "- this lane likely needs HEAVY_BUDGETED if actual Codex/Gemini role distinction must be tested"
+        },
+        {
+          "line": 12,
+          "text": "- use bounded prompt and read-only/sandbox principles if external agents are called"
+        },
+        {
+          "line": 13,
+          "text": "- compare whether Codex adds spatial delta/reentry review and Gemini adds layer/big-frame pressure"
+        },
+        {
+          "line": 14,
+          "text": "- record observed_gap and phase3_revision_candidate"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_03",
+      "relpath": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md",
+      "sha256": "60d136d02e53d4a8cd2e0f3902a42f735e4cc383942b1d282a33c97bf3223010",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": false,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 11,
+          "text": "Follow-up context smoke test: continue from the previous Codex conversation turn without manually opening raw artifacts."
+        },
+        {
+          "line": 16,
+          "text": "- `runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md`"
+        },
+        {
+          "line": 23,
+          "text": "3. Prior validation still stands from the selected turn:"
+        },
+        {
+          "line": 27,
+          "text": "- real read-only Codex session exited `0`"
+        },
+        {
+          "line": 30,
+          "text": "- This turn is a follow-up context smoke test over the prior Codex session artifacts."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_04",
+      "relpath": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md",
+      "sha256": "614538734d1dd2f7ccc5dea7850b5330532e49cf1929b283942a52077e904582",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": false,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 21,
+          "text": "2. CLI on-top layer may now operate through the stable app path. The note records a successful read-only Codex session through the stable app proxy, plus successful marking as `validation_target`."
+        },
+        {
+          "line": 32,
+          "text": "- Do not add Gemini adapter, background runner, or session browsing before the stable Codex path is hand-used."
+        },
+        {
+          "line": 34,
+          "text": "Validation already noted:"
+        },
+        {
+          "line": 38,
+          "text": "- real read-only Codex session completed with exit code `0`."
+        },
+        {
+          "line": 44,
+          "text": "Remaining uncertainty from the note: browser-click/user-feel validation still needs a human hand-check."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_05",
+      "relpath": "runtime/cli_sessions/cli_20260416T102854Z_33211af5/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102854Z_33211af5/deposit_candidate.md",
+      "sha256": "fb3503777cc15918ff741bf84d2c8aff34e1aa8b6920e9a722db0da715ccf2b9",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 11,
+          "text": "Continue from Codex turn cli_20260416T102612Z_277b5388 inside the VectorFL surface."
+        },
+        {
+          "line": 17,
+          "text": "- `runtime/cli_sessions/cli_20260416T102720Z_8e045e9b/deposit_candidate.md`"
+        },
+        {
+          "line": 20,
+          "text": "- `runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md`"
+        },
+        {
+          "line": 24,
+          "text": "The selected Codex turn remains valid. Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/reference clay; `runtime` remains for session artifacts, state, and returns."
+        },
+        {
+          "line": 29,
+          "text": "Prior validation still stands from the bounded context: `npm run build` passed in `app/ui/integrated_engine`, served title was confirmed as `VectorFL Integrated Engine`, API proxy to `127.0.0.1:8421` worked, and a real read-only Codex session exited `0`."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_06",
+      "relpath": "runtime/cli_sessions/cli_20260416T103344Z_b4acde63/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T103344Z_b4acde63/deposit_candidate.md",
+      "sha256": "bbcebd449d7e5e7fa7bdf759594e9fe32cd5461e6d8d03721f17a12feb68f22d",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 11,
+          "text": "Continue from Codex turn cli_20260416T102332Z_300af10e inside the VectorFL surface."
+        },
+        {
+          "line": 17,
+          "text": "- `runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md`"
+        },
+        {
+          "line": 28,
+          "text": "- marks: `implementation_return`, `reread_target`, `validation_target`, `deposit_candidate`"
+        },
+        {
+          "line": 30,
+          "text": "- Migration note records successful validation at the time:"
+        },
+        {
+          "line": 34,
+          "text": "- read-only Codex session `cli_20260416T101531Z_ba21f03e` succeeded through the stable app path"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_07",
+      "relpath": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md",
+      "sha256": "0b8e579189daf55330bfce16502f067bab82c18b87327f624d24795816b6c607",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 10,
+          "text": "- route_label: `engine_request_candidate`"
+        },
+        {
+          "line": 11,
+          "text": "- current_marks: `validation_target`"
+        },
+        {
+          "line": 12,
+          "text": "- user_decision_state: `pending_candidate_review`"
+        },
+        {
+          "line": 16,
+          "text": "Validate the new VectorFL current work packet layer as a read-only smoke turn."
+        },
+        {
+          "line": 27,
+          "text": "- 새 layer는 `Send Codex Turn` 앞에서 `current work packet formation`을 노출해, 사용자가 수동으로 조립하던 목적, refs, task lens, guard, expected return shape, next route candidate를 VectorFL mediation 영역 안에 보이게 합니다."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_08",
+      "relpath": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md",
+      "sha256": "ed8a01cee13d0178a76e1858ad5c2bfdf49346cca04dab4f1c0524482d529413",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 10,
+          "text": "- route_label: `engine_request_candidate`"
+        },
+        {
+          "line": 12,
+          "text": "- user_decision_state: `pending_candidate_review`"
+        },
+        {
+          "line": 16,
+          "text": "VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다."
+        },
+        {
+          "line": 28,
+          "text": "- 안정 앱에서 API proxy 및 read-only Codex CLI on-top 경로가 동작 확인됨."
+        },
+        {
+          "line": 29,
+          "text": "- 동일 세션을 `validation_target`으로 표시하는 흐름도 성공함."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_09",
+      "relpath": "docs/reports/integrated_engine_current_conversation_surface_snapshot_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_current_conversation_surface_snapshot_v0.md",
+      "sha256": "88adebf3a452056012f0e14e14d6004c3a93ca9d94bde8f643611717c6fc1913",
+      "surface": "source_docs",
+      "status": "AMBIGUOUS_CANDIDATE_POINTER_REVIEW",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 14,
+          "text": "- Codex CLI attached through the existing integrated-engine CLI session API"
+        },
+        {
+          "line": 71,
+          "text": "- `cli handoff`"
+        },
+        {
+          "line": 72,
+          "text": "- `codex`"
+        },
+        {
+          "line": 116,
+          "text": "The current `line hint` and `axis hint` are not real line/axis validation."
+        },
+        {
+          "line": 120,
+          "text": "### 2. Precedent mining is not executed here"
+        },
+        {
+          "line": 134,
+          "text": "The current Codex path uses the existing API:"
+        },
+        {
+          "line": 143,
+          "text": "The screen names a Gemini-ready slot only conceptually. The active backend path remains Codex."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_10",
+      "relpath": "docs/reports/paperclip_native_product_reading_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/paperclip_native_product_reading_v0.md",
+      "sha256": "358d2ab9ef2e8d13ebbe6791da2935cfff3eb79fc4d2b376360fbef270bec3fb",
+      "surface": "source_docs",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 363,
+          "text": "- `Approvals`와 `ApprovalDetail`은 read-only 보고서가 아니라 approve/reject/request revision/resubmit/comment로 hold/continue 판단을 실제 액션으로 귀속시키는 governance surface다."
+        },
+        {
+          "line": 375,
+          "text": "- `Work triage`: Paperclip Inbox에 해당한다. Codex/Gemini return, hold item, failed validation, actual candidate arrival을 우선순위 큐로 본다."
+        },
+        {
+          "line": 376,
+          "text": "- `Work packet board`: Paperclip Issues에 해당한다. scenario-bearing packet, validation packet, export candidate packet, merge packet을 배치한다."
+        },
+        {
+          "line": 379,
+          "text": "- `Organ runtime detail`: Paperclip AgentDetail에 해당한다. Codex/Gemini/미래 기관을 단순 텍스트가 아니라 instructions/configuration/skills/runs/budget 또는 VectorFL식 동등 슬롯으로 다룬다."
+        },
+        {
+          "line": 381,
+          "text": "- `Trace/audit surface`: Paperclip Activity에 해당한다. manifest 변경, worker run, validation result, decision을 append-only reading lane으로 본다."
+        },
+        {
+          "line": 386,
+          "text": "- Codex/Gemini를 이름만 표시하고 입력/선택/지정/확인/감독 장치 없이 worker로 부르지 말 것."
+        },
+        {
+          "line": 394,
+          "text": "이 기준으로만 `paper_proper`의 목적성, `operable_surface`의 본문 상태, actual Codex/Gemini bridge 결과를 상위 제품 페이지에 재배치해야 한다."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_11",
+      "relpath": "runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md",
+      "sha256": "af890c26b164407ed90a2f4c30c9206868bab9c3869afbfb697a649890a7074d",
+      "surface": "work_control",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI Deposit Candidate"
+        },
+        {
+          "line": 4,
+          "text": "- backend_kind: `codex`"
+        },
+        {
+          "line": 27,
+          "text": "- 실제 read-only Codex session 성공 기록 있음:"
+        },
+        {
+          "line": 33,
+          "text": "- 같은 session을 `validation_target`으로 마킹한 기록도 성공."
+        },
+        {
+          "line": 43,
+          "text": "- implementation return: 아직 보류. 안정 Codex path hand-use 전에는 Gemini adapter, background runner, session browsing 추가 금지."
+        },
+        {
+          "line": 44,
+          "text": "- validation target: `app/ui/integrated_engine` 브라우저에서 VectorFL CLI run 1회 hand-check."
+        },
+        {
+          "line": 45,
+          "text": "- deposit candidate: `integrated_engine_ui_stable_folder_migration_note_v0.md`는 deposit 가능하되, 조건부 note 포함: “CLI remains on-top; stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` is reference clay.”"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_12",
+      "relpath": "docs/reports/integrated_engine_cli_on_top_stop_and_use_validation_round_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_cli_on_top_stop_and_use_validation_round_v0.md",
+      "sha256": "b76308a8ddf0953be40b756fd82da584d672632d61f2868996ec0030099c4ced",
+      "surface": "source_docs",
+      "status": "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": false,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# Integrated Engine CLI On-Top Stop-And-Use Validation Round v0"
+        },
+        {
+          "line": 6,
+          "text": "Package 1.1 was used in stop-and-use mode with three tiny real read-only Codex runs. The runs used the same `/api/vectorfl-engine/actions/cli-session/run` path that the VectorFL CLI Host / Control panel calls. The VectorFL page was opened first, but the run ac"
+        },
+        {
+          "line": 12,
+          "text": "| 1 | `cli_20260416T094731Z_97d5f828` | `summarize` | `docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md` | `done` | `validation_target` |"
+        },
+        {
+          "line": 14,
+          "text": "| 3 | `cli_20260416T094830Z_7b2f3fa5` | `reread` | `docs/reports/integrated_engine_cli_on_top_package1_closeout_note_v0.md` | `done` | `deposit_candidate` |"
+        },
+        {
+          "line": 16,
+          "text": "All three runs were real Codex runs with dry-run off, read-only sandbox posture, captured stdout/stderr, generated `structured_return.json`, and generated `deposit_candidate.md`."
+        },
+        {
+          "line": 22,
+          "text": "- The mark buttons are enough for first-pass operation when the user only needs to classify the latest return as reread, validation, implementation return, or deposit candidate."
+        },
+        {
+          "line": 29,
+          "text": "- Marking is enough for current-session classification, but it does not give a small visible history of the three validation runs beyond the latest mark history."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_13",
+      "relpath": "codex_content_pack.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/codex_content_pack.md",
+      "sha256": "da54d389f2f1c25b0178fa080befb448f4768d89e6268b4f1207679dd2db8e7c",
+      "surface": "work_control",
+      "status": "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": false,
+        "authority_sensitive": false,
+        "external_action": false,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# CODEX CONTEXT PACK — REPLICA 입력기 / 앵커기 / 라벨기 / 비교 실험 기준선 v1"
+        },
+        {
+          "line": 5,
+          "text": "이 문서는 Codex가 현재 프로젝트의 겉모습이 아니라 **의도와 방향성**을 이해하도록 만드는 맥락 문서다."
+        },
+        {
+          "line": 7,
+          "text": "이 문서를 읽는 Codex는 다음을 이해해야 한다."
+        },
+        {
+          "line": 73,
+          "text": "Codex / ChatGPT / Gemini를 지금 쓰는 이유는"
+        },
+        {
+          "line": 99,
+          "text": "- 동일 input fragment를 여러 처리자(Codex, ChatGPT, Gemini)에게 같은 schema로 처리시킨다."
+        },
+        {
+          "line": 173,
+          "text": "### Codex가 기억할 것"
+        },
+        {
+          "line": 208,
+          "text": "### Codex가 기억할 것"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_14",
+      "relpath": "vectorfl_status.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/vectorfl_status.md",
+      "sha256": "8b57ba95f7aa5729bba6985b24f5846fc77ada2f60f694a89e542e6becc5f4f5",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 8,
+          "text": "- [vectorfl_integrated_engine_3_surface_cli_handoff_lock_v1.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/vectorfl_integrated_engine_3_surface_cli_handoff_lock_v1.md)"
+        },
+        {
+          "line": 26,
+          "text": "- [integrated_engine_working_lexicon_v1_candidate.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_working_lexicon_v1_candidate.md)"
+        },
+        {
+          "line": 27,
+          "text": "- [integrated_engine_working_protocol_v1_candidate.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_working_protocol_v1_candidate.md)"
+        },
+        {
+          "line": 28,
+          "text": "- [integrated_engine_working_interface_v1_candidate.md](/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_working_interface_v1_candidate.md)"
+        },
+        {
+          "line": 34,
+          "text": "- 통합엔진 v1 candidate 묶음은 final lock 이 아니라 current working baseline / current PASS baseline 으로 사용 가능하다."
+        },
+        {
+          "line": 37,
+          "text": "- 다음 채팅이나 다음 작업은 우선 `integrated_engine_working_lexicon_v1_candidate.md`, `integrated_engine_working_protocol_v1_candidate.md`, `integrated_engine_working_interface_v1_candidate.md` 3문서를 먼저 읽는다."
+        },
+        {
+          "line": 46,
+          "text": "- 반복 탐색용 최신 프로토콜은 `integrated_engine_exploration_question_set_v1_1.md` 이며, source priority / freshness_note / previous-run overlap / stable candidate 판단을 포함한다."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_15",
+      "relpath": "app/ui/integrated_engine/folder_status.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/ui/integrated_engine/folder_status.md",
+      "sha256": "2900b23a43154fe05953b7fd8276e048c07465d080ec912e99b884571f63a7f9",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": false,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 23,
+          "text": "| VectorFL Surface | CLI conversation/control, reread, mediation, validation, route sorting. |"
+        },
+        {
+          "line": 24,
+          "text": "| Engine Surface | processing return, validation feed, extraction/deposit candidate material. |"
+        },
+        {
+          "line": 42,
+          "text": "- Codex backend path through existing local CLI."
+        },
+        {
+          "line": 44,
+          "text": "- structured return / deposit candidate / operator report."
+        },
+        {
+          "line": 49,
+          "text": "- `user_assignment_candidate`"
+        },
+        {
+          "line": 50,
+          "text": "- `engine_request_candidate`"
+        },
+        {
+          "line": 51,
+          "text": "- `deposit_candidate`"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_16",
+      "relpath": "app/runtime/vectorfl_integrated_engine_api.py",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/runtime/vectorfl_integrated_engine_api.py",
+      "sha256": "fa7ca9cb5dc0086a59fcb82c87ad6a96253e024183dada89a25ca090535195c3",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "from __future__ import annotations"
+        },
+        {
+          "line": 38,
+          "text": "\"codex_run\": \"runtime/manifests/vectorfl_integrated_engine_codex_run_latest_v0.json\","
+        },
+        {
+          "line": 51,
+          "text": "\"codex_handoff\": \"runtime/manifests/vectorfl_paper_codex_handoff_latest_v0.json\","
+        },
+        {
+          "line": 52,
+          "text": "\"codex_return\": \"runtime/manifests/vectorfl_paper_codex_return_latest_v0.json\","
+        },
+        {
+          "line": 56,
+          "text": "\"gate_validation\": \"runtime/manifests/vectorfl_paper_actual_export_gate_validation_latest_v0.json\","
+        },
+        {
+          "line": 57,
+          "text": "\"dry_run\": \"runtime/manifests/vectorfl_paper_actual_export_gate_validation_dry_run_v0.json\","
+        },
+        {
+          "line": 58,
+          "text": "\"comparison\": \"runtime/manifests/vectorfl_paper_reference_candidate_validation_comparison_v0.json\","
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_17",
+      "relpath": "app/work/VECTORFL_MODULE_EXTRACTION_CANDIDATE_MAP_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_MODULE_EXTRACTION_CANDIDATE_MAP_20260523_V0.md",
+      "sha256": "b54a2835267c873de0d9b7dfe56190b653b76cc7b652162d804fda4c30dcdc5b",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# VECTORFL_MODULE_EXTRACTION_CANDIDATE_MAP_20260523_V0"
+        },
+        {
+          "line": 3,
+          "text": "status: MODULE_EXTRACTION_CANDIDATE_MAP_WITH_HOLD"
+        },
+        {
+          "line": 8,
+          "text": "VECTORFL_FUNCTIONS_CAN_BE_MAPPED_AS_MODULE_CANDIDATES_BUT_NOT_PROMOTED_WITHOUT_REPEATED_RECEIPT_EVIDENCE"
+        },
+        {
+          "line": 10,
+          "text": "## Module Candidate Test"
+        },
+        {
+          "line": 12,
+          "text": "A VectorFL function may become a module candidate only if it has:"
+        },
+        {
+          "line": 17,
+          "text": "3. receipt/evidence record"
+        },
+        {
+          "line": 21,
+          "text": "7. no authority inheritance"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_18",
+      "relpath": "app/work/VECTORFL_COMPACT_RECOVERY_BUNDLE_INDEX_20260523_V0.json",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_COMPACT_RECOVERY_BUNDLE_INDEX_20260523_V0.json",
+      "sha256": "999ebfaedbbc38bd45677a6cd1157eca8e142610c2b856f94d1d8ca529d194cc",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 2,
+          "text": "\"authority_mutation\": \"NO\","
+        },
+        {
+          "line": 50,
+          "text": "\"path\": \"app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260523_program_unit_structure_progress_review_v0/receipt.md\","
+        },
+        {
+          "line": 87,
+          "text": "\"boundary_note\": \"candidate evidence, not M4 modules\","
+        },
+        {
+          "line": 88,
+          "text": "\"bundle_id\": \"BUNDLE-03-CANDIDATE-CHAIN\","
+        },
+        {
+          "line": 92,
+          "text": "\"path\": \"app/work/VECTORFL_TWELVE_CANDIDATE_PERSONAL_PROGRAM_COMPLETE_CHAIN_RECEIPT_20260523_V0.md\","
+        },
+        {
+          "line": 98,
+          "text": "\"path\": \"app/work/VECTORFL_TWELVE_CANDIDATE_CONSOLIDATION_DASHBOARD_20260523_V0.json\","
+        },
+        {
+          "line": 104,
+          "text": "\"path\": \"app/work/VECTORFL_TWELVE_CANDIDATE_HOLD_STOP_COVERAGE_MAP_20260523_V0.md\","
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_19",
+      "relpath": "app/work/VECTORFL_MAY_GOAL_PERSONAL_PROGRAM_AND_MODULE_EXTRACTION_ALIGNMENT_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_MAY_GOAL_PERSONAL_PROGRAM_AND_MODULE_EXTRACTION_ALIGNMENT_20260523_V0.md",
+      "sha256": "38bc9a681e706251e408ad9128ae72d24d54d6e9095aa308ea34f0f0dcf9a16a",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 15,
+          "text": "Goal A: complete the VectorFL personal program as a local personal evidence-and-receipt program."
+        },
+        {
+          "line": 16,
+          "text": "Goal B: make VectorFL functions extractable as reusable module candidates without prematurely promoting them."
+        },
+        {
+          "line": 25,
+          "text": "The module candidates are not abstract libraries. They should be extracted only from repeated, receipt-backed pressure in the personal program loop:"
+        },
+        {
+          "line": 31,
+          "text": "-> receipt"
+        },
+        {
+          "line": 33,
+          "text": "-> read-only surface"
+        },
+        {
+          "line": 36,
+          "text": "-> module candidate extraction"
+        },
+        {
+          "line": 39,
+          "text": "If a function cannot survive this loop, it stays candidate/residue."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_20",
+      "relpath": "app/work/VECTORFL_TWELVE_CANDIDATE_USER_STATUS_CARD_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TWELVE_CANDIDATE_USER_STATUS_CARD_20260523_V0.md",
+      "sha256": "37f2f318cd339825fcb8020bf5189d30f3ffb59a85acfeef02aa431cda2014c4",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": false,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# VECTORFL_TWELVE_CANDIDATE_USER_STATUS_CARD_20260523_V0"
+        },
+        {
+          "line": 8,
+          "text": "TWELVE_CANDIDATE_PERSONAL_PROGRAM_CORE_CHAIN_WITH_HOLD"
+        },
+        {
+          "line": 12,
+          "text": "12개 module candidate 전체가 local/no-model 또는 synthetic/no-model rehearsal evidence를 갖췄다."
+        },
+        {
+          "line": 14,
+          "text": "하지만 이것은 승격이 아니다. 개인 프로그램의 뼈대 후보가 강해졌다는 뜻이지, M4 reusable module / Program Alpha ready / authority update가 아니다."
+        },
+        {
+          "line": 16,
+          "text": "## 12-candidate 상태표"
+        },
+        {
+          "line": 20,
+          "text": "| M-CAND-01 | Input Localization | local/no-model | PASS_INPUT_LOCALIZATION_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD | STOP authority claim; HOLD_STOP_REVIEW router/runner ambiguity |"
+        },
+        {
+          "line": 21,
+          "text": "| M-CAND-02 | Personal Intake coupling | local/no-model temp fixture DB | PASS_PERSONAL_INTAKE_COUPLING_MODULE_CANDIDATE_REHEARSAL_WITH_HOLD | STOP live DB intake claim; STOP write UI; STOP authority/promotion; HOLD_STOP_REVIEW soft live readiness |"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_21",
+      "relpath": "app/work/EXTERNAL_PROGRAM_PATTERN_MAP_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/EXTERNAL_PROGRAM_PATTERN_MAP_V0.md",
+      "sha256": "955d19055009ad0c32d4ee0d28f7c65d2570a818c686dfc82566dc337524aac6",
+      "surface": "work_control",
+      "status": "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": false,
+        "authority_sensitive": false,
+        "external_action": false,
+        "stale_generated": false
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 5,
+          "text": "| **OmX** | Codex Workflow Layer | Read-only Adapter | Recover |"
+        },
+        {
+          "line": 7,
+          "text": "| **OpenClaw** | Gateway/Control Plane | Future Reference | HOLD |"
+        },
+        {
+          "line": 8,
+          "text": "| **Codex** | File-based worker | Space Reader/Critique | Recover |"
+        },
+        {
+          "line": 12,
+          "text": "- **OmX**: Codex를 감싸는 워크플로우 레이어로서, VectorFL의 작업을 Codex가 읽기 좋은 형태로 구조화하는 'Exploration Harness'로 사용."
+        },
+        {
+          "line": 15,
+          "text": "- **Codex/Gemini**: 각각 내부 공간 읽기 및 외부 비교 분석의 특수 목적 도구로 한정."
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_22",
+      "relpath": "app/work/VECTORFL_REUSABLE_INTERNAL_STRUCTURE_SPEC_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_REUSABLE_INTERNAL_STRUCTURE_SPEC_20260523_V0.md",
+      "sha256": "66a9488250929ca6bd86963e91eb33289a11f1447fe5d9ef398b7ef45b6309d0",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 3,
+          "text": "status: REUSABLE_INTERNAL_STRUCTURE_SPEC_CANDIDATE_WITH_HOLD"
+        },
+        {
+          "line": 8,
+          "text": "Use this as a pocket reference when creating future VectorFL personal-program artifacts."
+        },
+        {
+          "line": 10,
+          "text": "It tells future work:"
+        },
+        {
+          "line": 15,
+          "text": "which receipt/evidence link it must carry"
+        },
+        {
+          "line": 23,
+          "text": "| input_layer | locate declared input/local fixture/personal intake boundary | input_ref + output_ref + receipt_ref | PASS_WITH_HOLD or STOP | live DB intake enabled |"
+        },
+        {
+          "line": 24,
+          "text": "| evidence_layer | preserve receipt/evidence lineage | receipt_ref + source_artifact + trace_id | PASS_WITH_HOLD or HOLD_STOP_REVIEW | receipt is authority |"
+        },
+        {
+          "line": 25,
+          "text": "| review_guard_layer | block promotion/authority/live drift | guard_status + negative-case reason | HOLD_STOP_REVIEW or STOP | M4/Program Alpha approved |"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_23",
+      "relpath": "app/work/VECTORFL_PROGRAM_UNIT_INTERNAL_STRUCTURE_SPEC_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PROGRAM_UNIT_INTERNAL_STRUCTURE_SPEC_20260523_V0.md",
+      "sha256": "fd8aee5af7f52140902ef685da410c4f75b9abe9f88cb397a501d94a319961ea",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 17,
+          "text": "TWELVE_CANDIDATE_PERSONAL_PROGRAM_CORE_CHAIN_WITH_MODEL_SAFE_REENTRY_PREPARED_AND_HOLD"
+        },
+        {
+          "line": 23,
+          "text": "12 module candidates have local/no-model or synthetic/no-model evidence."
+        },
+        {
+          "line": 26,
+          "text": "Authority and promotion remain unchanged."
+        },
+        {
+          "line": 64,
+          "text": "CANDIDATE_STRUCTURE_WITH_HOLD"
+        },
+        {
+          "line": 71,
+          "text": "모든 작업을 receipt/evidence loop로 남기는 층"
+        },
+        {
+          "line": 75,
+          "text": "- M-CAND-04 Receipt Writer"
+        },
+        {
+          "line": 81,
+          "text": "receipt는 authority 아님"
+        }
+      ]
+    },
+    {
+      "brief_id": "ACTIVE_NO_CALL_BRIEF_24",
+      "relpath": "app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+      "sha256": "3b39d174e4f9e5e4f2295f9df739bd8fdd09f8332aded08434a6b11296a5be32",
+      "surface": "work_control",
+      "status": "FREEZE_AUTHORITY_SENSITIVE_NO_CALL",
+      "signals": {
+        "no_call": true,
+        "future_candidate": true,
+        "closed_receipt": true,
+        "authority_sensitive": true,
+        "external_action": true,
+        "stale_generated": true
+      },
+      "recommended_action": "KEEP_POINTER_ONLY__DO_NOT_SEND__DO_NOT_EXECUTE",
+      "safe_line": "NO_SEND_NO_CALL_NO_APPLY_NO_PROMOTION",
+      "evidence_lines": [
+        {
+          "line": 1,
+          "text": "# VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0"
+        },
+        {
+          "line": 3,
+          "text": "status: CROSS_LAYER_GUARD_MATRIX_CANDIDATE_WITH_HOLD"
+        },
+        {
+          "line": 10,
+          "text": "This is no-model candidate material. It is not implementation, authority, promotion, workflow schema, or registry mutation."
+        },
+        {
+          "line": 16,
+          "text": "| PASS_WITH_HOLD | local evidence exists, validator passed, no authority/promotion implied | label must include HOLD or candidate/evidence language | never call READY/APPROVED/PROMOTED |"
+        },
+        {
+          "line": 18,
+          "text": "| HOLD_STOP_REVIEW | boundary pressure exists: label/authority/promotion could drift | label must include exact HOLD_STOP_REVIEW | do not soften to warning only |"
+        },
+        {
+          "line": 26,
+          "text": "| GM-INPUT-PASS-001 | input_layer | fixture input localized with declared path and receipt | PASS_WITH_HOLD | input accepted as candidate evidence with HOLD | live DB intake or undeclared input path |"
+        },
+        {
+          "line": 28,
+          "text": "| GM-EVIDENCE-PASS-001 | evidence_layer | receipt_ref exists and links local output | PASS_WITH_HOLD | receipt evidence with HOLD, not authority | receipt described as authority |"
+        }
+      ]
+    }
+  ],
+  "operator_judgment": {
+    "meaning": "active/no-call 후보는 미래 handoff 판단 재료일 뿐 전송/실행이 아님",
+    "safe_push": "brief + freeze/stale/active 분리까지 가능",
+    "stop_boundary": "actual Codex call/send, source edit, promotion, authority registry mutation"
+  },
+  "next_recommended": "P_PACKET_FAMILY_CLOSEOUT_AND_NEXT_FAMILY_SELECTOR_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "send_or_handoff_executed": false
+  }
+}

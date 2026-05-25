@@ -1,0 +1,287 @@
+{
+  "review_id": "HERMES_MOCK_CODEX_MATURATION_REVIEW_V0_NOT_ACTUAL_CODEX",
+  "created_at": "2026-05-25T11:33:57.859369+09:00",
+  "reviewed_sources": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/packet/00_CODEX_READ_ONLY_MATURATION_REVIEW_PACKET_v0.json",
+      "exists": true,
+      "sha256": "0728d7afe0e7cfed9bf0d3562c242126d28c4da60db24d4f4ba350876fc3f841",
+      "bytes": 3768
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/schemas/01_codex_maturation_review_output_schema_v0.json",
+      "exists": true,
+      "sha256": "8f4ab75b34a7d0254301fdd280539b6a63c145bf9fe77581fb747a32ca79f8d0",
+      "bytes": 1956
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json",
+      "exists": true,
+      "sha256": "a8907c2a638f3e195d18d2ecf1d0ddd3f210d497ff6d088eafee7fb27fe9995d",
+      "bytes": 30756
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/rubric/00_vectorfl_promotion_rubric_v0.json",
+      "exists": true,
+      "sha256": "67ba50cb16c8dbb146e78150065a35110524ac1c4029bf62c8696d71b3a8b1de",
+      "bytes": 8848
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/matrix/01_vectorfl_promotion_gate_matrix_v0.json",
+      "exists": true,
+      "sha256": "ed96fb2e245f248840d54a2327f17cb457582157a7f28e2add2ae2f9cbdabd75",
+      "bytes": 3030
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json",
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc",
+      "bytes": 2175
+    }
+  ],
+  "review_mode": "HERMES_MOCK_BASELINE__NO_LIVE_CODEX_CALL",
+  "placement_map": [
+    {
+      "asset_or_module": "SAAS_M1_INTAKE_PROVENANCE",
+      "current_lane": "WEAK_OR_PENDING",
+      "recommended_lane": "broad_field_structural_lane",
+      "reason": "top60에는 순수 M1 cluster가 없지만 전체 7678 broad inventory에서는 source/provenance 신호가 강하므로 구조 module로 유지. 순수 intake 대표 자산 재탐색 필요.",
+      "confidence": "medium",
+      "status": "needs_gemini"
+    },
+    {
+      "asset_or_module": "SAAS_M2_ASSET_GRAPH_ROUTER",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "mvp_core_first_lane",
+      "reason": "폴더정리/회수/라우팅 전제. top60 confirmed cluster이며 M7/M8/M4의 선행 index 역할.",
+      "confidence": "high",
+      "status": "keep"
+    },
+    {
+      "asset_or_module": "SAAS_M3_GUARD_PRECHECK_ENGINE",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "precheck_contract_lane",
+      "reason": "M1과 섞였던 batch01을 gate/preflight/contract/readiness 기준으로 분리해야 함.",
+      "confidence": "high",
+      "status": "split"
+    },
+    {
+      "asset_or_module": "SAAS_M4_MATURATION_GOVERNANCE",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "authority_boundary_lane",
+      "reason": "candidate/matured/authority 전환의 핵심 경계. 폴더정리 전 freeze gate로도 필요.",
+      "confidence": "high",
+      "status": "keep"
+    },
+    {
+      "asset_or_module": "SAAS_M5_SPACE_INBOX_REVIEW",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "review_queue_lane",
+      "reason": "HOLD inbox/reentry/Codex review queue 운영 표면. M4와 연결하되 authority와 분리.",
+      "confidence": "high",
+      "status": "keep"
+    },
+    {
+      "asset_or_module": "SAAS_M6_ADAPTER_FACTORY",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "adapter_shell_lane",
+      "reason": "VectorFL 기능을 도구 앞/뒤/주변에 붙이는 구조. VectorTube를 core가 아닌 example로 유지.",
+      "confidence": "high",
+      "status": "keep"
+    },
+    {
+      "asset_or_module": "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "cleanup_hygiene_lane",
+      "reason": "폴더정리/아카이브/decay/operator-load가 별도 운영 표면으로 확인됨.",
+      "confidence": "high",
+      "status": "keep"
+    },
+    {
+      "asset_or_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "current_lane": "CONFIRMED_CLUSTER",
+      "recommended_lane": "trace_quality_lane",
+      "reason": "validation/receipt/trace/timing/drift/quality evidence는 승격과 cleanup 안전성 증명에 필수.",
+      "confidence": "high",
+      "status": "keep"
+    }
+  ],
+  "conflict_map": [
+    {
+      "conflict_id": "C001_M1_M3_COLLAPSE",
+      "surface": "M1|M3",
+      "description": "초기 batch01에서 provenance/intake와 guard/precheck가 섞여 있었고 v0.1에서 M3로 대부분 재분리됨. 순수 M1 top60 cluster 부재.",
+      "severity": "medium",
+      "hold_marker": "HOLD_MISSING_EVIDENCE",
+      "resolution_candidate": "전체 inventory에서 pure intake/provenance 대표 자산 10개를 별도 회수해 M1 cluster를 보강."
+    },
+    {
+      "conflict_id": "C002_MATURED_NOT_AUTHORITY_CONFUSION",
+      "surface": "rubric",
+      "description": "MATURED 상태가 운영 표면으로 사용 가능하나 authority는 아님. 사용자 승인 없는 promotion 위험.",
+      "severity": "high",
+      "hold_marker": "HOLD_AUTHORITY_SENSITIVE",
+      "resolution_candidate": "M4 gate와 M8 trace를 MATURED_to_AUTHORITY 전환 필수조건으로 유지."
+    },
+    {
+      "conflict_id": "C003_CLEANUP_AS_MOVE_CONFUSION",
+      "surface": "cleanup",
+      "description": "폴더정리를 단순 파일 이동으로 오해할 수 있음. 실제로 M2/M7/M8/M4 precondition 필요.",
+      "severity": "blocker",
+      "hold_marker": "HOLD_CLEANUP_PRECONDITION",
+      "resolution_candidate": "move/archive manifest는 Codex review + rollback + explicit approval 전 생성만 하고 실행 금지."
+    },
+    {
+      "conflict_id": "C004_ADAPTER_EXAMPLE_VS_CORE",
+      "surface": "M6",
+      "description": "VectorTube 같은 adapter example을 VectorFL core로 과대승격할 위험.",
+      "severity": "medium",
+      "hold_marker": "HOLD_NOT_AUTHORITY",
+      "resolution_candidate": "adapter_shell / core_function / evidence_instance / maturation_surface 분리 유지."
+    },
+    {
+      "conflict_id": "C005_RECEIPT_AUTHORITY_BOUNDARY",
+      "surface": "M8|M4",
+      "description": "receipt/validation trace는 evidence이지 authority 자체가 아님.",
+      "severity": "high",
+      "hold_marker": "HOLD_AUTHORITY_SENSITIVE",
+      "resolution_candidate": "M8은 증거 제공, M4는 상태 전환 판단, user approval은 authority promotion 조건으로 분리."
+    }
+  ],
+  "gap_map": [
+    {
+      "gap_id": "GAP001_PURE_M1_CLUSTER",
+      "missing": "top60 안의 순수 M1 intake/provenance 대표 cluster",
+      "needed_for": "saas_mvp",
+      "suggested_next_step": "전체 7678 broad inventory에서 source/provenance/intake-only 자산 10-20개 별도 batch 회수",
+      "owner_route": "Hermes"
+    },
+    {
+      "gap_id": "GAP002_CODEX_ACTUAL_REVIEW",
+      "missing": "실제 Codex read-only placement/conflict/gap output",
+      "needed_for": "matured",
+      "suggested_next_step": "사용자 승인 후 Codex live review 실행 또는 packet을 Codex 통로에만 기록",
+      "owner_route": "Codex"
+    },
+    {
+      "gap_id": "GAP003_DEDUPE_CONFLICT_MAP",
+      "missing": "M2 기반 실제 dedupe/conflict map",
+      "needed_for": "cleanup",
+      "suggested_next_step": "top60 + full inventory에서 pointer index/dedupe/conflict map v0 생성",
+      "owner_route": "Hermes"
+    },
+    {
+      "gap_id": "GAP004_ROLLBACK_MANIFEST",
+      "missing": "folder cleanup apply 전 rollback manifest",
+      "needed_for": "cleanup",
+      "suggested_next_step": "move/archive 없이 rollback manifest template만 생성",
+      "owner_route": "Hermes"
+    },
+    {
+      "gap_id": "GAP005_GEMINI_BOUNDED_PROTOCOL",
+      "missing": "Gemini wide exploration bounded protocol",
+      "needed_for": "candidate",
+      "suggested_next_step": "Codex가 ambiguity 표시한 항목만 Gemini가 wide-read하는 slot/budget 규칙 작성",
+      "owner_route": "Gemini"
+    },
+    {
+      "gap_id": "GAP006_M8_METRIC_MINIMUMS",
+      "missing": "M8 trace/quality 최소 metric 기준",
+      "needed_for": "matured",
+      "suggested_next_step": "validation receipt 최소 필드, timing, negative/drift check rubric 추가",
+      "owner_route": "Hermes"
+    }
+  ],
+  "risk_hold_map": [
+    {
+      "hold_id": "HOLD001_NO_CLEANUP_APPLY",
+      "applies_to": "folder cleanup/archive/decay",
+      "hold_type": "HOLD_CLEANUP_PRECONDITION",
+      "reason": "M2 pointer/dedupe, M7 dashboard, M8 trace, M4 freeze, rollback, explicit approval 전 이동 금지."
+    },
+    {
+      "hold_id": "HOLD002_AUTHORITY_SURFACES",
+      "applies_to": "registry/current-position/authority files",
+      "hold_type": "HOLD_AUTHORITY_SENSITIVE",
+      "reason": "명시 승인 및 M4/M8 gate 전 mutation 금지."
+    },
+    {
+      "hold_id": "HOLD003_M1_GAP",
+      "applies_to": "M1_INTAKE_PROVENANCE",
+      "hold_type": "HOLD_MISSING_EVIDENCE",
+      "reason": "top60 priority cluster에서 pure intake representative가 부족함."
+    },
+    {
+      "hold_id": "HOLD004_CODEX_NOT_EXECUTED",
+      "applies_to": "this mock review",
+      "hold_type": "HOLD_NOT_AUTHORITY",
+      "reason": "Hermes mock baseline이며 Codex 실제 review가 아님."
+    },
+    {
+      "hold_id": "HOLD005_PROMOTION_FORBIDDEN",
+      "applies_to": "all clusters",
+      "hold_type": "HOLD_AUTHORITY_SENSITIVE",
+      "reason": "이번 review는 placement/conflict/gap baseline일 뿐 promotion decision이 아님."
+    }
+  ],
+  "next_actions": [
+    {
+      "action_id": "A001",
+      "actor": "Hermes",
+      "action": "pure M1 intake/provenance 대표 자산 별도 회수 batch 생성",
+      "side_effects": "read_only",
+      "preconditions": [
+        "full inventory exists",
+        "no file move"
+      ]
+    },
+    {
+      "action_id": "A002",
+      "actor": "Hermes",
+      "action": "M2 dedupe/conflict/pointer index v0 생성",
+      "side_effects": "read_only",
+      "preconditions": [
+        "top60 rollup v0.1",
+        "promotion rubric v0"
+      ]
+    },
+    {
+      "action_id": "A003",
+      "actor": "Hermes",
+      "action": "M8 minimum trace fields v0 작성",
+      "side_effects": "read_only",
+      "preconditions": [
+        "promotion rubric v0"
+      ]
+    },
+    {
+      "action_id": "A004",
+      "actor": "Codex",
+      "action": "read-only maturation review packet 실제 검토",
+      "side_effects": "requires_approval",
+      "preconditions": [
+        "user explicit approval",
+        "packet ready",
+        "no mutation mode"
+      ]
+    },
+    {
+      "action_id": "A005",
+      "actor": "Gemini",
+      "action": "Codex flagged ambiguity만 bounded wide-read",
+      "side_effects": "requires_approval",
+      "preconditions": [
+        "Codex ambiguity list",
+        "slot budget"
+      ]
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  },
+  "baseline_use": "실제 Codex review 결과와 비교하기 위한 Hermes baseline. authority 아님."
+}

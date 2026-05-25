@@ -1,0 +1,60 @@
+{
+  "card_id": "LAYER_READING_CARD_Aw7iQjKAX2k_V0",
+  "created_at": "2026-05-25T07:36:42.962812+09:00",
+  "source": {
+    "id": "Aw7iQjKAX2k",
+    "kind": "expansion",
+    "title": "GraphRAG vs. Traditional RAG",
+    "url": "https://www.youtube.com/watch?v=Aw7iQjKAX2k",
+    "slot": "rag_comparison"
+  },
+  "layer_reading": {
+    "L0_source_surface": {
+      "evidence_sample": [
+        "0:06 This is where GraphRAG comes in.",
+        "0:08 It helps map relationships, providing precise, personalized answer faster,",
+        "0:17 Today, we're going to take a look at how GraphRAG helps in delivering higher accuracy",
+        "0:21 and more complete answers, easier development and maintenance and enhanced governance.",
+        "0:26 We'll go over what is GraphRAG and uncover the benefits of GraphRAG relative to traditional RAG in development,",
+        "0:39 To understand GraphRAG, let's first break down how Baseline graph works.",
+        "0:44 We start off with a private data set,",
+        "1:02 and we store those embeddings in a vector database.",
+        "1:14 we use our vector database to extract the context, and then we send that context to our LLM,",
+        "1:23 We all know how tradition RAG works.",
+        "1:25 Now GraphRAG builds on top of that.",
+        "1:32 We start off with leveraging same text chunks,"
+      ],
+      "reading": "LIGHT: 관련 timestamp line sample만 확보. 다음 deep pass에서 claim 단위 확정 필요."
+    },
+    "L1_conceptual": {
+      "reading": "대안 비교 자료: GraphRAG/RAG 비교를 통해 그래프 구조가 검색·추론에 주는 차이를 시험한다."
+    },
+    "L2_information_structure": {
+      "reading": "표면 용어 감지: ['knowledge graph', 'relationship', 'RAG', 'GraphRAG', 'LLM', 'AI', 'data']. 이 자료가 seed의 정보구조 층위를 보강/비교/구현 중 어디에 붙는지 확인해야 한다."
+    },
+    "L3_context_background": {
+      "reading": "영어권 기술/제품 설명 맥락에서 seed의 한국어 산업·소버린 논지를 외부 기술 담론과 연결한다."
+    },
+    "L4_emotional_rhetorical": {
+      "reading": "LIGHT: 짧은 기술 영상 특성상 교육/제품/비교 수사가 섞일 수 있음. 과장/마케팅 톤은 deep pass에서 분리 필요."
+    },
+    "L5_power_authority": {
+      "reading": "채널/기업/브랜드 권위는 후보일 뿐이다. 특히 IBM/Palantir 계열 자료는 제품 이해관계 층위를 별도 표시해야 한다."
+    },
+    "L6_practical_operational": {
+      "reading": "seed의 추상 논지를 실제 검색, RAG, 플랫폼, 그래프 운영 방법으로 낮춰주는 실행 층위 후보."
+    },
+    "L7_counter_uncertainty": {
+      "reading": "LIGHT: counter source로 확정하지 말 것. 제품/교육 자료는 실패 가능성보다 장점을 강조할 수 있어 반론 자료가 추가 필요하다."
+    },
+    "L8_vectorfl_mapping": {
+      "reading": "seed mini-space에서 보강/비교/구현 슬롯 중 하나로만 위치시킨다. 본공간 투입 전 cross-source tension table 필요."
+    }
+  },
+  "layer_density_score": {
+    "claims": "LIGHT_SAMPLE_ONLY",
+    "layer_lenses_filled": 9,
+    "verdict": "NEEDS_DEEP_TIMESTAMP_PASS"
+  },
+  "hold": "expansion evidence only; not authority"
+}

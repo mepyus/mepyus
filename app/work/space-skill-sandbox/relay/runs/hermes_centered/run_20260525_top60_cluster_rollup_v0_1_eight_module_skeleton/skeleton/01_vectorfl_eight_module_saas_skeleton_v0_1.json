@@ -1,0 +1,131 @@
+{
+  "skeleton_id": "VECTORFL_EIGHT_MODULE_SAAS_SKELETON_V0_1",
+  "created_at": "2026-05-25T11:24:02.704323+09:00",
+  "modules": {
+    "SAAS_M1_INTAKE_PROVENANCE": {
+      "role": "원문/외부자료/증거/출처/claim/interpretation 분리 intake",
+      "mvp_surface": [
+        "source inbox",
+        "provenance badge",
+        "claim/evidence split panel"
+      ],
+      "backend": [
+        "source pointer store",
+        "metadata extractor",
+        "provenance classifier"
+      ]
+    },
+    "SAAS_M2_ASSET_GRAPH_ROUTER": {
+      "role": "자산 graph/router/index/pointer/relation/dedupe/conflict 표면",
+      "mvp_surface": [
+        "asset graph",
+        "route lanes",
+        "relation/conflict map",
+        "read-now queue"
+      ],
+      "backend": [
+        "asset crawler",
+        "classification index",
+        "relation scorer",
+        "pointer index"
+      ]
+    },
+    "SAAS_M3_GUARD_PRECHECK_ENGINE": {
+      "role": "실행 전 gate/preflight/contract/readiness 검증",
+      "mvp_surface": [
+        "preflight checklist",
+        "risk gate result",
+        "blocked reason panel"
+      ],
+      "backend": [
+        "policy runner",
+        "dry-run validator",
+        "rollback planner"
+      ]
+    },
+    "SAAS_M4_MATURATION_GOVERNANCE": {
+      "role": "inbox→candidate→matured→authority 승격/보류/충돌 governance",
+      "mvp_surface": [
+        "maturation board",
+        "promotion rubric panel",
+        "authority boundary diff"
+      ],
+      "backend": [
+        "status ledger",
+        "approval receipt writer",
+        "conflict checker"
+      ]
+    },
+    "SAAS_M5_SPACE_INBOX_REVIEW": {
+      "role": "HOLD inbox/reentry/Codex review queue 운영",
+      "mvp_surface": [
+        "space inbox queue",
+        "Codex handoff panel",
+        "review status board"
+      ],
+      "backend": [
+        "inbox index",
+        "handoff writer",
+        "review scheduler"
+      ]
+    },
+    "SAAS_M6_ADAPTER_FACTORY": {
+      "role": "VectorFL 기능을 도구 앞/뒤/주변에 붙이는 adapter shell 생성",
+      "mvp_surface": [
+        "adapter templates",
+        "tool binding wizard",
+        "function slice selector"
+      ],
+      "backend": [
+        "adapter manifest",
+        "pre/post hook runner",
+        "receipt adapter"
+      ]
+    },
+    "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD": {
+      "role": "cleanup/archive/decay/freeze/operator-load/status board",
+      "mvp_surface": [
+        "freeze list",
+        "archive candidate board",
+        "decay warning",
+        "operator-load dashboard"
+      ],
+      "backend": [
+        "hygiene policy engine",
+        "archive manifest planner",
+        "rollback manifest generator"
+      ]
+    },
+    "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": {
+      "role": "validation/receipt/trace/timing/drift/quality evidence 관측",
+      "mvp_surface": [
+        "validation trace timeline",
+        "receipt viewer",
+        "quality/drift panel"
+      ],
+      "backend": [
+        "trace store",
+        "validation aggregator",
+        "quality metric extractor"
+      ]
+    }
+  },
+  "recommended_mvp_order": [
+    "SAAS_M2_ASSET_GRAPH_ROUTER",
+    "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD",
+    "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+    "SAAS_M1_INTAKE_PROVENANCE",
+    "SAAS_M3_GUARD_PRECHECK_ENGINE",
+    "SAAS_M5_SPACE_INBOX_REVIEW",
+    "SAAS_M4_MATURATION_GOVERNANCE",
+    "SAAS_M6_ADAPTER_FACTORY"
+  ],
+  "why_mvp_order": "현재 병목은 새 입력이 아니라 흩어진 자산 회수/정리 전 안전성이다. 따라서 M2/M7/M8이 먼저고, M4는 authority freeze로 항상 함께 적용된다.",
+  "non_goals": [
+    "VectorTube를 core로 승격하지 않음",
+    "authority/current-position/registry 직접 수정하지 않음",
+    "폴더 이동/아카이브 실행하지 않음",
+    "Codex/Gemini live call 없음"
+  ],
+  "module_confirmation_note": "M1_INTAKE_PROVENANCE is retained as required structural module because broad inventory has strong intake/provenance signals, but top60 priority assets after split are mostly M3 gate/precheck rather than pure M1 intake."
+}

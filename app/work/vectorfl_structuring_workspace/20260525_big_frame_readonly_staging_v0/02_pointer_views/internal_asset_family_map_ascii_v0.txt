@@ -1,0 +1,23 @@
+VectorFL internal asset cleanup map (workspace-internal / NOT_AUTHORITY)
+
+[T/L schema lens]
+   |
+   v
+[P_PACKET_HANDOFF_ASSET] -- CLOSED_FOR_NOW
+   |  compact -> subtype -> codex no-call dedupe -> freeze/reusable/active -> receipt compact -> active brief
+   v
+[U_RUN_BUNDLE_ASSET] -- CLOSED_FOR_NOW
+   |  compact -> subtype review -> retention rule candidate -> generated dedupe evidence map
+   v
+[G_GATE_GUARD_ASSET] -- SAFE_STOP_RULE_CANDIDATE
+   |  compact -> subtype review -> guard rule candidate
+   v
+[S_STATE_PROMOTION_ASSET] -- READ_ONLY_FREEZE_MAP_SAFE_STOP
+   |  inbox/candidate/matured/authority confusion map
+   |  authority/registry/current-position/promotion boundary reached
+   X STOP: no promotion / no registry mutation / no current-position mutation
+
+Deferred:
+  - B_BRIDGE_ADAPTER_ASSET: live external/API/tool boundary
+  - X_POINTER_GRAPH_ASSET: future safer pointer-only candidate
+  - cleanup apply: requires explicit approval + manifest + rollback + post-validation

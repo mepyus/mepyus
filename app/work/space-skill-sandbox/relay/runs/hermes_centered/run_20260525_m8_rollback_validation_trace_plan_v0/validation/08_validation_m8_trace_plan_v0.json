@@ -1,0 +1,60 @@
+{
+  "validation_id": "VALIDATION_M8_ROLLBACK_VALIDATION_TRACE_PLAN_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "verdict": "PASS_M8_TRACE_PLAN_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/source_index/00_m8_source_index_v0.json": {
+      "exists": true,
+      "sha256": "7df195e5720151199c37a26dbee4a9812bf4e937ed04e6e6094fd5d00b6f7fb6",
+      "bytes": 1719
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/schema/01_m8_minimum_trace_fields_v0.json": {
+      "exists": true,
+      "sha256": "9294a5ebbbe243a5e8f7d1fe510f7f0737ece6ecfc1609f8953ac58280a06b91",
+      "bytes": 3112
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/trace_plan/02_m8_rollback_validation_trace_plan_v0.json": {
+      "exists": true,
+      "sha256": "fb23e3a426deee98b6304de70103d558e6c602e46959524fb987ed795b980a37",
+      "bytes": 67140
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/rollback/03_m8_rollback_manifest_template_v0.json": {
+      "exists": true,
+      "sha256": "5744ab3eb6180b1e5f112d7a7a9535cb95b6c21db55953056d54f64244cc0e1a",
+      "bytes": 1549
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/receipts/04_m8_validation_receipt_template_v0.json": {
+      "exists": true,
+      "sha256": "5fbfa268d92fea0925df40da17f059f4333bc521f3a28815f8a8884e741d9fd0",
+      "bytes": 839
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/readiness/05_m8_trace_cleanup_readiness_v0.json": {
+      "exists": true,
+      "sha256": "984c9927bbfca9d07335762f5c73176d5ed634ad477b2319243fdc9f07596273",
+      "bytes": 891
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/handoff/06_M8_TRACE_PLAN_TO_CODEX_REVIEW_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "152f3151b0fc627debef5f674f4001e162662b602a32b39f856f07dcaa823929",
+      "bytes": 631
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m8_rollback_validation_trace_plan_v0/reports/07_m8_trace_plan_report_v0.md": {
+      "exists": true,
+      "sha256": "b49cfe2993d6bb8bf6769dfba84bbfa5ec7f1abc7d6ee6797fb870f0c6955569",
+      "bytes": 228
+    }
+  },
+  "content_checks": {
+    "minimum_schema_created": true,
+    "trace_seed_count": 61,
+    "rollback_template_created": true,
+    "receipt_template_created": true,
+    "cleanup_apply_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "archive": false,
+    "promotion_hold": true
+  }
+}

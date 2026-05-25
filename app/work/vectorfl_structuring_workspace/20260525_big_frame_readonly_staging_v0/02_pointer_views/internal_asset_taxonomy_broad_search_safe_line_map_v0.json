@@ -1,0 +1,1866 @@
+{
+  "map_id": "INTERNAL_ASSET_TAXONOMY_BROAD_SEARCH_SAFE_LINE_MAP_V0",
+  "created_at": "2026-05-25T14:24:24.439757+09:00",
+  "status": "POINTER_ONLY_NOT_AUTHORITY",
+  "search_file_count": 7847,
+  "cluster_count": 11,
+  "family_count": 12,
+  "families": [
+    {
+      "family_id": "P_PACKET_HANDOFF_ASSET",
+      "from_clusters": [
+        "A_PACKET_TASK",
+        "H_ADAPTER_BRIDGE"
+      ],
+      "definition": "Codex/Gemini/Hermes handoff, read-only review packet, task packet 계열",
+      "safe_line": "pointer-only; no live call; no external action",
+      "candidate_count": 9846,
+      "surface_distribution": {
+        "work_control": 5067,
+        "workspace_control": 53,
+        "run_generated": 2531,
+        "source_docs": 2195
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "R_RECEIPT_TRACE_ASSET",
+      "from_clusters": [
+        "B_RECEIPT_TRACE"
+      ],
+      "definition": "receipt/trace/validation/rollback/sha evidence 계열",
+      "safe_line": "evidence only; not authority/approval",
+      "candidate_count": 4606,
+      "surface_distribution": {
+        "work_control": 2195,
+        "workspace_control": 42,
+        "run_generated": 1021,
+        "source_docs": 1348
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "G_GATE_GUARD_ASSET",
+      "from_clusters": [
+        "C_GATE_GUARD"
+      ],
+      "definition": "guard/precheck/negative test/STOP/HOLD 계열",
+      "safe_line": "can strengthen workspace rule; not apply approval",
+      "candidate_count": 5103,
+      "surface_distribution": {
+        "work_control": 2365,
+        "workspace_control": 37,
+        "run_generated": 1340,
+        "source_docs": 1361
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "S_STATE_PROMOTION_ASSET",
+      "from_clusters": [
+        "D_PROMOTION_STATE"
+      ],
+      "definition": "INBOX/CANDIDATE/MATURED/AUTHORITY/freeze 상태 계열",
+      "safe_line": "authority-sensitive; freeze; no promotion mutation",
+      "candidate_count": 5642,
+      "surface_distribution": {
+        "work_control": 2845,
+        "workspace_control": 55,
+        "run_generated": 1313,
+        "source_docs": 1429
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "X_POINTER_GRAPH_ASSET",
+      "from_clusters": [
+        "E_POINTER_INDEX"
+      ],
+      "definition": "pointer/index/route/dedupe/conflict map 계열",
+      "safe_line": "workspace pointer allowed; authoritative registry not allowed",
+      "candidate_count": 4213,
+      "surface_distribution": {
+        "work_control": 1963,
+        "workspace_control": 56,
+        "run_generated": 933,
+        "source_docs": 1261
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "Q_QUEUE_INBOX_ASSET",
+      "from_clusters": [
+        "F_QUEUE_INBOX"
+      ],
+      "definition": "queue/inbox/review/quarantine 계열",
+      "safe_line": "small batch review; no bulk apply",
+      "candidate_count": 664,
+      "surface_distribution": {
+        "work_control": 269,
+        "workspace_control": 25,
+        "run_generated": 147,
+        "source_docs": 223
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "surface": "source_docs",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+          "surface": "workspace_control",
+          "dominant_cluster": "A_PACKET_TASK"
+        }
+      ]
+    },
+    {
+      "family_id": "O_OPERATOR_SURFACE_ASSET",
+      "from_clusters": [
+        "G_OPERATOR_DASHBOARD"
+      ],
+      "definition": "operator dashboard/compact view/risk distribution 계열",
+      "safe_line": "operator attention only; not patch plan",
+      "candidate_count": 1791,
+      "surface_distribution": {
+        "work_control": 742,
+        "workspace_control": 39,
+        "run_generated": 540,
+        "source_docs": 470
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+          "surface": "workspace_control",
+          "dominant_cluster": "A_PACKET_TASK"
+        }
+      ]
+    },
+    {
+      "family_id": "B_BRIDGE_ADAPTER_ASSET",
+      "from_clusters": [
+        "H_ADAPTER_BRIDGE"
+      ],
+      "definition": "tool bridge/adapter/channel/shell 계열",
+      "safe_line": "no live API/Codex/Gemini unless scoped",
+      "candidate_count": 5462,
+      "surface_distribution": {
+        "work_control": 2850,
+        "workspace_control": 33,
+        "run_generated": 1457,
+        "source_docs": 1122
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "M_MODULE_SKELETON_ASSET",
+      "from_clusters": [
+        "I_MODULE_SKELETON"
+      ],
+      "definition": "M1~M8 module/skeleton/lane 계열",
+      "safe_line": "workspace design candidate; not architecture authority",
+      "candidate_count": 887,
+      "surface_distribution": {
+        "work_control": 249,
+        "workspace_control": 45,
+        "run_generated": 484,
+        "source_docs": 109
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+          "surface": "workspace_control",
+          "dominant_cluster": "A_PACKET_TASK"
+        }
+      ]
+    },
+    {
+      "family_id": "C_CONTEXT_LAYER_ASSET",
+      "from_clusters": [
+        "J_CONTEXT_LAYER"
+      ],
+      "definition": "context/layer/LACL/claim/authority-boundary 계열",
+      "safe_line": "classification candidate; no source mutation",
+      "candidate_count": 4197,
+      "surface_distribution": {
+        "work_control": 1982,
+        "workspace_control": 24,
+        "run_generated": 894,
+        "source_docs": 1297
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "surface": "source_docs",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        }
+      ]
+    },
+    {
+      "family_id": "U_RUN_BUNDLE_ASSET",
+      "from_clusters": [
+        "K_RUN_BUNDLE"
+      ],
+      "definition": "run/bundle/report/closeout/rollup 실행 산출물 계열",
+      "safe_line": "receipt/evidence; may be compacted but not source of truth",
+      "candidate_count": 6820,
+      "surface_distribution": {
+        "work_control": 3613,
+        "workspace_control": 28,
+        "run_generated": 1457,
+        "source_docs": 1722
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "surface": "workspace_control",
+          "dominant_cluster": "I_MODULE_SKELETON"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "surface": "workspace_control",
+          "dominant_cluster": "B_RECEIPT_TRACE"
+        }
+      ]
+    },
+    {
+      "family_id": "SEC_SECRET_SURFACE_RISK",
+      "from_clusters": [
+        "Z_SECURITY_SECRET_SURFACE"
+      ],
+      "definition": "token/password/secret/API-key 등 보안 민감 표면 가능성",
+      "safe_line": "do not copy lines; redact; manual/security review before any preservation",
+      "candidate_count": 676,
+      "surface_distribution": {
+        "work_control": 407,
+        "workspace_control": 6,
+        "run_generated": 111,
+        "source_docs": 152
+      },
+      "evidence_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "surface": "work_control",
+          "dominant_cluster": "K_RUN_BUNDLE"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "surface": "source_docs",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "sha256": "072ac5d3f2d62ae9cde8e31bcffdba638804e839e69fb06d844fd2b4e95df0f8",
+          "surface": "work_control",
+          "dominant_cluster": "H_ADAPTER_BRIDGE"
+        }
+      ]
+    }
+  ],
+  "clusters": {
+    "A_PACKET_TASK": {
+      "cluster_id": "A_PACKET_TASK",
+      "candidate_count": 4384,
+      "surface_distribution": {
+        "work_control": 2217,
+        "workspace_control": 20,
+        "run_generated": 1074,
+        "source_docs": 1073
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+          "size": 116295,
+          "score": 121,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "size": 29147,
+          "score": 119,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+          "sha256": "f4607ab8377e4d6b436b39ad596ce88470019533863b482d0d1096f71c4391ba",
+          "size": 13932,
+          "score": 112,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/reservoir-pipeline-repo-seed/records/output_manifest.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/reservoir-pipeline-repo-seed/records/output_manifest.md",
+          "sha256": "884232186183e36fcf12c64908c8dfdf2e1f2c3793f4df3c51d4529fffabfcaf",
+          "size": 20903,
+          "score": 109,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "sha256": "a6da01150934fa342f791274203a8e9ac368fd00ef8da317e0cd34f66ff18c50",
+          "size": 9515,
+          "score": 97,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+          "sha256": "a8408ad24ca03686d757f19093ba05931e596ec12c5a51709a8530d8bab16188",
+          "size": 132538,
+          "score": 96,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "size": 22159,
+          "score": 92,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_RUN_GEMINI_LITE_REVIEW_BRIDGE_PILOT_PACKET_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_RUN_GEMINI_LITE_REVIEW_BRIDGE_PILOT_PACKET_V0.md",
+          "sha256": "4f03a219c8a97251c2358d925ba59a795c78b440afc02aa4c0e01fe52bfeef54",
+          "size": 11806,
+          "score": 91,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/content_role_tags_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_flow_guard_20260422_185702.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/content_role_tags_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_flow_guard_20260422_185702.json",
+          "sha256": "882b68881f6f93a4963e67ce658a0920f1a81de0137815dd2a1fb909d2024c8a",
+          "size": 29634,
+          "score": 80,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "sha256": "072ac5d3f2d62ae9cde8e31bcffdba638804e839e69fb06d844fd2b4e95df0f8",
+          "size": 16357,
+          "score": 75,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/anchor_stack_manifest_v0.md",
+          "sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "size": 12037,
+          "score": 73,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PACKET_VALIDITY_REVIEW_FIVE_RISK_FAMILY_ASSESSMENT_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PACKET_VALIDITY_REVIEW_FIVE_RISK_FAMILY_ASSESSMENT_V0.md",
+          "sha256": "10c317c220f47b451c92f6045baba5982d24629e17c243b6a6cf5baf5dc70ae8",
+          "size": 12522,
+          "score": 72,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "B_RECEIPT_TRACE": {
+      "cluster_id": "B_RECEIPT_TRACE",
+      "candidate_count": 4606,
+      "surface_distribution": {
+        "work_control": 2195,
+        "workspace_control": 42,
+        "run_generated": 1021,
+        "source_docs": 1348
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/receipts/phase0_5_candidate_baseline_v1_preflight_receipt.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/receipts/phase0_5_candidate_baseline_v1_preflight_receipt.md",
+          "sha256": "3936a95049bfef6cb3265c4260ce591eff8c655457da90a6c9f3e0a4b996553d",
+          "size": 29650,
+          "score": 136,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/exports/phase0_5_candidate_baseline_v1_preflight_export.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/exports/phase0_5_candidate_baseline_v1_preflight_export.md",
+          "sha256": "bb121532aa09eb5ebf7b5fa3e9d532f7112b43746e325da81e0574d3e04c5f5c",
+          "size": 29649,
+          "score": 133,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "size": 22089,
+          "score": 122,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v0/IMMUTABLE_EVIDENCE_INDEX_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v0/IMMUTABLE_EVIDENCE_INDEX_V0.json",
+          "sha256": "3ba086ab1d6ed37e5a011fc5ced11819dea6db07b71471fc5a2c78b364414653",
+          "size": 39369,
+          "score": 115,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v1/IMMUTABLE_EVIDENCE_INDEX_V1.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v1/IMMUTABLE_EVIDENCE_INDEX_V1.json",
+          "sha256": "b06f9c2b89f70e5b53a1bb2e46c815ad6c05362b0598797be703969bf1a66b5a",
+          "size": 39632,
+          "score": 113,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v3_final_preapproval/IMMUTABLE_EVIDENCE_INDEX_V3_FINAL_PREAPPROVAL.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v3_final_preapproval/IMMUTABLE_EVIDENCE_INDEX_V3_FINAL_PREAPPROVAL.json",
+          "sha256": "dd591e05dba7683ec6657ea18c4b83eac3ca6e1f02d72e2b80c324abad48d949",
+          "size": 40221,
+          "score": 113,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v2/IMMUTABLE_EVIDENCE_INDEX_V2.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/immutable_evidence_index_v2/IMMUTABLE_EVIDENCE_INDEX_V2.json",
+          "sha256": "875989d8df8c67c42bfbcee015a240f45c613545695a96b9c9e53981203dd402",
+          "size": 39817,
+          "score": 112,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_evidence_index_v0/POST_EXECUTION_EVIDENCE_INDEX_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_evidence_index_v0/POST_EXECUTION_EVIDENCE_INDEX_V0.json",
+          "sha256": "e72639f2fb4d201a61c4a05cdac814ff32a762e0cacd8f1fd94f2965f5710feb",
+          "size": 44010,
+          "score": 110,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "size": 34056,
+          "score": 95,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/snapshots/phase0_5_candidate_baseline_v0/baseline_manifest.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/snapshots/phase0_5_candidate_baseline_v0/baseline_manifest.json",
+          "sha256": "419d8f304b123447b8275b5163f4d34f1bce5ad0e920a3a0be58555af597f83a",
+          "size": 18301,
+          "score": 87,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/final_readiness_audit_v0/FINAL_READINESS_AUDIT_RECEIPT_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/final_readiness_audit_v0/FINAL_READINESS_AUDIT_RECEIPT_V0.json",
+          "sha256": "bd3276381e48a67f08e8cca1db29a786c362d00073cd9724c641d0cba8373d1c",
+          "size": 21234,
+          "score": 63,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_package_draft_v0.md",
+          "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+          "size": 41010,
+          "score": 60,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "source_docs"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "C_GATE_GUARD": {
+      "cluster_id": "C_GATE_GUARD",
+      "candidate_count": 5103,
+      "surface_distribution": {
+        "work_control": 2365,
+        "workspace_control": 37,
+        "run_generated": 1340,
+        "source_docs": 1361
+      },
+      "top_examples": [
+        {
+          "relpath": "docs/reports/integrated_engine_common_language_extraction_v1.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_common_language_extraction_v1.md",
+          "sha256": "121dbb5c878fa312b3c5f6ea8e63526ab139f9a376ad1f6ea4e854de16abe57e",
+          "size": 48542,
+          "score": 82,
+          "dominant_cluster": "C_GATE_GUARD",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/CHATGPT_CODEX_GEMINI_MODEL_SAFE_HANDOFF_FROM_TEN_CANDIDATE_CHAIN_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/CHATGPT_CODEX_GEMINI_MODEL_SAFE_HANDOFF_FROM_TEN_CANDIDATE_CHAIN_20260523_V0.md",
+          "sha256": "f7c76435499f31dfa2f4daeeb2879d1fe61336a8f5c3c3d141e763ed1765feb3",
+          "size": 12267,
+          "score": 61,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_TWELVE_CANDIDATE_CONSOLIDATION_DASHBOARD_20260523_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TWELVE_CANDIDATE_CONSOLIDATION_DASHBOARD_20260523_V0.json",
+          "sha256": "60e4f8750f7cedff9dfb32b80a4af6fd11b31806a58809a9f995445eb5cf91aa",
+          "size": 6141,
+          "score": 60,
+          "dominant_cluster": "C_GATE_GUARD",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "size": 14225,
+          "score": 59,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+          "sha256": "464ebb1c27e9235c4033f0235e36e5d5369fc1cf53145bb3f1dfd7a89ba70d5f",
+          "size": 36924,
+          "score": 58,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/vectorfl_ops_phase_0_5/vectorfl_ops_cli.py",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_ops_phase_0_5/vectorfl_ops_cli.py",
+          "sha256": "ae575b58b5efee92b7a4ae1f20d8d2629f71fafb600b6c56381becbe3a5f4861",
+          "size": 19903,
+          "score": 56,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_package_draft_v0.md",
+          "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+          "size": 41010,
+          "score": 54,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_CROSS_LAYER_GUARD_MATRIX_CANDIDATE_20260523_V0.md",
+          "sha256": "3b39d174e4f9e5e4f2295f9df739bd8fdd09f8332aded08434a6b11296a5be32",
+          "size": 5441,
+          "score": 53,
+          "dominant_cluster": "C_GATE_GUARD",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/external_thought_asset_research_round_003_reingestion_gate_design_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_thought_asset_research_round_003_reingestion_gate_design_v0.md",
+          "sha256": "19cd796fa794d72d050f6c7a3200a60a7dca30490280f77a2c2559889587868d",
+          "size": 9363,
+          "score": 50,
+          "dominant_cluster": "C_GATE_GUARD",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/reports/space_operating_organ_reading_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/space_operating_organ_reading_v0.md",
+          "sha256": "f8d1b6e3853cf1c3834b21d098b3f529da0a1aa1880b7e53c9318f346980c888",
+          "size": 27560,
+          "score": 46,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/VECTORFL_NINE_CANDIDATE_PERSONAL_PROGRAM_CODEX_GUARD_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NINE_CANDIDATE_PERSONAL_PROGRAM_CODEX_GUARD_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "cb031dada096ebb6bf491cc9f347bc4466d9120db6eb6a4615974ae2e6ebcafb",
+          "size": 5248,
+          "score": 44,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/mission_packet_result_contract_v0_candidate_20260508.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/mission_packet_result_contract_v0_candidate_20260508.md",
+          "sha256": "f85aa343218d8eccd6b6cdc3696032c5e7d0449a72e4b4cb3be4a6d5e3d655dd",
+          "size": 14501,
+          "score": 43,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "D_PROMOTION_STATE": {
+      "cluster_id": "D_PROMOTION_STATE",
+      "candidate_count": 5642,
+      "surface_distribution": {
+        "work_control": 2845,
+        "workspace_control": 55,
+        "run_generated": 1313,
+        "source_docs": 1429
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/promotion_caution_genealogy_recovery_20260512_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/promotion_caution_genealogy_recovery_20260512_candidate_v0.md",
+          "sha256": "1c0b6a6c4333ebfe920f4010398230c7e22b3237ce6527046594efda6fd9afd6",
+          "size": 16688,
+          "score": 92,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_verification_loop_v0/scripts/run_post_execution_verification_v0.py",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/post_execution_verification_loop_v0/scripts/run_post_execution_verification_v0.py",
+          "sha256": "75e5f63f43ddba467925b799d26ea88cbd517de844ad426adfab59f9a1c29064",
+          "size": 14252,
+          "score": 91,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/whole_space_orientation_atlas_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/whole_space_orientation_atlas_candidate_v0.md",
+          "sha256": "b6d3984bfb2606f8f68aec166d5de3a3899dac03ec446a10cbe3ae7317c71459",
+          "size": 16241,
+          "score": 87,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/whole_space_handoff_checklist_v1_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/whole_space_handoff_checklist_v1_candidate.md",
+          "sha256": "29caae810c5ea9e291fc9c2522314c2b2411a252f5ea2615468fb25ee4442fd7",
+          "size": 18636,
+          "score": 83,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/space_program_setup_progress_inventory_20260509_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/space_program_setup_progress_inventory_20260509_v0.md",
+          "sha256": "3ec0d58d6d010dae2c6840d3ca27f542e07346a2bb47451c6e07d937bf50d4d8",
+          "size": 23637,
+          "score": 80,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/operating_order_principles_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/operating_order_principles_v0.md",
+          "sha256": "b2c721c7cf86514dc19f1fa943d83859b73f4fa432e055a969ad7b031cbba4d1",
+          "size": 19597,
+          "score": 78,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_compact_operator_view_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_compact_operator_view_v0.json",
+          "sha256": "9838f38f8fa8dd81bb078630805e48ffbd53692da50a5f3b2f355aacafbe8694",
+          "size": 58226,
+          "score": 77,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/reports/formation_movement_interface_package_draft_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_package_draft_v0.md",
+          "sha256": "62859403bbcac5a98fcfe0808b69308b94d5d1ecc80d264de99ddefdbc5a0ec5",
+          "size": 41010,
+          "score": 77,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "sha256": "072ac5d3f2d62ae9cde8e31bcffdba638804e839e69fb06d844fd2b4e95df0f8",
+          "size": 16357,
+          "score": 75,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/space_roles_reference_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/space_roles_reference_candidate_v0.md",
+          "sha256": "94464241d55e1cdd2cc327d112b74d0cdeb90d938f3d3e406c790ecdf388f56b",
+          "size": 17696,
+          "score": 75,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/external_candidate_reading_packet_plan_for_gemini_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_candidate_reading_packet_plan_for_gemini_v0.md",
+          "sha256": "2aac1cef3eedabbbf0513dc8fb8574780c8361a1a5fcdb923c38c1e6b2b3c466",
+          "size": 22299,
+          "score": 74,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+          "sha256": "e839c37b3648de92e617f0efc169f2558509ac298f6cc9d4e121dc513e729a00",
+          "size": 21023,
+          "score": 74,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "E_POINTER_INDEX": {
+      "cluster_id": "E_POINTER_INDEX",
+      "candidate_count": 4213,
+      "surface_distribution": {
+        "work_control": 1963,
+        "workspace_control": 56,
+        "run_generated": 933,
+        "source_docs": 1261
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "size": 29147,
+          "score": 104,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/06_m8_trace/medium_4_control_update_candidates_no_edit_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/06_m8_trace/medium_4_control_update_candidates_no_edit_v0.json",
+          "sha256": "b9d178240be9d1e0ccd3d5c772ec47bc5d9e77fcbe32c93ef74b3a17274070f1",
+          "size": 155044,
+          "score": 97,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_camera_guard_20260422_183238.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_camera_guard_20260422_183238.json",
+          "sha256": "2081e0c9439c183c3306547854480c40eb4bae1ea0a41a44b43d93378523683f",
+          "size": 22752,
+          "score": 83,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_20260422_063526.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_20260422_063526.json",
+          "sha256": "2081e0c9439c183c3306547854480c40eb4bae1ea0a41a44b43d93378523683f",
+          "size": 22752,
+          "score": 83,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_camera_patch_20260422_181812.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/content_role_tags_route_selection_policy_v0_camera_patch_20260422_181812.json",
+          "sha256": "2081e0c9439c183c3306547854480c40eb4bae1ea0a41a44b43d93378523683f",
+          "size": 22752,
+          "score": 83,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_M2_POINTER_DEDUPE_CONFLICT_MAP_V0_20260525.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M2_POINTER_DEDUPE_CONFLICT_MAP_V0_20260525.json",
+          "sha256": "0ee83318d002a5849a0513a7cfdfa2888136c0004b4bfa1c3389939fa617e779",
+          "size": 2049,
+          "score": 77,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/big_frame_candidate_map_preparation_recovery_20260512_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/big_frame_candidate_map_preparation_recovery_20260512_candidate_v0.md",
+          "sha256": "a61202e22714eff0429624a58cc9dee867c91a66a8df46448aa2ccb8bfdbb36c",
+          "size": 12905,
+          "score": 73,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/indexes/anchor_map_position_route_seed_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/anchor_map_position_route_seed_v0.md",
+          "sha256": "2d7a667f123962a86f8ea84f1ce92b8d027938dad4855330926ef0ccb23527e7",
+          "size": 7520,
+          "score": 66,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_camera_guard_20260422_183238.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_camera_guard_20260422_183238.json",
+          "sha256": "ce475ed3114bf0bca227ce76c7abfb445cd42b402a3508ab282b27154ddd8c70",
+          "size": 13546,
+          "score": 60,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_camera_patch_20260422_181812.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_camera_patch_20260422_181812.json",
+          "sha256": "ce475ed3114bf0bca227ce76c7abfb445cd42b402a3508ab282b27154ddd8c70",
+          "size": 13546,
+          "score": 60,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_20260422_063526.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_route_selection_policy_v0_20260422_063526.json",
+          "sha256": "ce475ed3114bf0bca227ce76c7abfb445cd42b402a3508ab282b27154ddd8c70",
+          "size": 13546,
+          "score": 60,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/space_program_setup_progress_inventory_20260509_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/space_program_setup_progress_inventory_20260509_v0.md",
+          "sha256": "3ec0d58d6d010dae2c6840d3ca27f542e07346a2bb47451c6e07d937bf50d4d8",
+          "size": 23637,
+          "score": 58,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "F_QUEUE_INBOX": {
+      "cluster_id": "F_QUEUE_INBOX",
+      "candidate_count": 664,
+      "surface_distribution": {
+        "work_control": 269,
+        "workspace_control": 25,
+        "run_generated": 147,
+        "source_docs": 223
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+          "sha256": "53921c2a7014a8dea4f3cb88131789b84469445de8b56e5dd39133d75d154686",
+          "size": 15546,
+          "score": 48,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json",
+          "sha256": "1577e62bb9df4654ef598e8ec6b0528cb3c199f3ab695ffda568ac56cae1c87e",
+          "size": 116295,
+          "score": 39,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/top10_cleanup_blockers_batch01_link_integrity_precheck_v0.json",
+          "sha256": "a8408ad24ca03686d757f19093ba05931e596ec12c5a51709a8530d8bab16188",
+          "size": 132538,
+          "score": 34,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/specs/vectorfl_cases_queue_shell_rewrite_brief_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/specs/vectorfl_cases_queue_shell_rewrite_brief_v0.md",
+          "sha256": "df43b18f5a02a7e4b201545c7cc2f1653a64702f428f2498883550156a5bc793",
+          "size": 5162,
+          "score": 33,
+          "dominant_cluster": "F_QUEUE_INBOX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/specs/vectorfl_cases_queue_adapter_contract_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/specs/vectorfl_cases_queue_adapter_contract_v0.md",
+          "sha256": "0961918355fe7f860d7d88f011970926c65f02532687f303678df7614d411b86",
+          "size": 4406,
+          "score": 26,
+          "dominant_cluster": "F_QUEUE_INBOX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_vectorfl_cli_conversation_control_round_v0.md",
+          "sha256": "e8d6cb90b340f127b2baca18883ba5e80ead7ea5216348798cfdf2e91143e012",
+          "size": 21242,
+          "score": 25,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/runs/run_229_external_material_queue_instance_001_review.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/runs/run_229_external_material_queue_instance_001_review.md",
+          "sha256": "001f8c9a3c0c9ea3eccf48c9e5cd213009898f3178ddfab20bcecae0b3cb0e76",
+          "size": 4394,
+          "score": 24,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "size": 22159,
+          "score": 23,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/runs/run_228_first_external_material_queue_instance_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/runs/run_228_first_external_material_queue_instance_candidate.md",
+          "sha256": "96159b783854124b9ed850e5ec0c91a3a03b80c83b793b18045e4fa15599788b",
+          "size": 3212,
+          "score": 21,
+          "dominant_cluster": "F_QUEUE_INBOX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/runs/run_233_external_material_queue_001_test_round_closeout.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/runs/run_233_external_material_queue_001_test_round_closeout.md",
+          "sha256": "e9b564809a58876395d7d2769aed8f35fd915a82042bd5ee5538b5e3f037aea7",
+          "size": 4116,
+          "score": 20,
+          "dominant_cluster": "F_QUEUE_INBOX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/next_chat_reentry_summary_after_external_material_queue_001_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/next_chat_reentry_summary_after_external_material_queue_001_v0.md",
+          "sha256": "7c47ed450eab154ae6b65a7c0e397b1adfedb533ffa0621ab57356f6ef4cab7c",
+          "size": 4285,
+          "score": 20,
+          "dominant_cluster": "F_QUEUE_INBOX",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md",
+          "sha256": "f4607ab8377e4d6b436b39ad596ce88470019533863b482d0d1096f71c4391ba",
+          "size": 13932,
+          "score": 18,
+          "dominant_cluster": "A_PACKET_TASK",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "G_OPERATOR_DASHBOARD": {
+      "cluster_id": "G_OPERATOR_DASHBOARD",
+      "candidate_count": 1791,
+      "surface_distribution": {
+        "work_control": 742,
+        "workspace_control": 39,
+        "run_generated": 540,
+        "source_docs": 470
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "size": 98351,
+          "score": 71,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/folder_status.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/folder_status.md",
+          "sha256": "8f3952a7f1dc9a19c1b9b46c7ecfe575cce6d677d65e165a49b21a4ab95ffc69",
+          "size": 10119,
+          "score": 48,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_M7_HYGIENE_OPERATOR_DASHBOARD_V0_20260525.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M7_HYGIENE_OPERATOR_DASHBOARD_V0_20260525.json",
+          "sha256": "dc51c00cb3d8e4c160989bfd9225f3155c5ec422540f1c6aa112600bb497b00b",
+          "size": 2006,
+          "score": 34,
+          "dominant_cluster": "G_OPERATOR_DASHBOARD",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_cli_operator_report_loop_patch_note_v0.md",
+          "sha256": "e6af76d3cf5e4376d3d4de1957646889e59908c6ecccec6232edd28e4988e00d",
+          "size": 6040,
+          "score": 33,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/implementation_readiness_discovery_20260509_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/implementation_readiness_discovery_20260509_v0.md",
+          "sha256": "c30db6eab7e1eaf001726a2f0a945e47e759654a506613c0f2b77457338d54aa",
+          "size": 14540,
+          "score": 29,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_NO_MODEL_REUSE_LED_OPERATOR_DASHBOARD_ROW_REHEARSAL_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NO_MODEL_REUSE_LED_OPERATOR_DASHBOARD_ROW_REHEARSAL_20260523_V0.md",
+          "sha256": "8f1bc3544a1baae1a43f6933822a40c48b49b20f3dc3b9073ce7df88ccb05870",
+          "size": 4483,
+          "score": 29,
+          "dominant_cluster": "G_OPERATOR_DASHBOARD",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/implementation_unit_001_operating_ui_component_spec_20260509_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/implementation_unit_001_operating_ui_component_spec_20260509_v0.md",
+          "sha256": "473aaec8a35bd99e38669d7f6f48daa184241432f67e4a36be6d68f41add5ffc",
+          "size": 11817,
+          "score": 27,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "size": 22089,
+          "score": 26,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/reviews/loop_demo_case_readout_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reviews/loop_demo_case_readout_v0.md",
+          "sha256": "113bf4ddabd85d40d7d7eced6213c7f0f8301edee73243f76d22786b9b87915f",
+          "size": 7020,
+          "score": 26,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/reports/flow_interpretation_vs_line_translation_boundary_validation_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/flow_interpretation_vs_line_translation_boundary_validation_v0.md",
+          "sha256": "96291bf3d22daead62ad6f955dc42d0ed977e1c4b9535a877e374d3bac0204ef",
+          "size": 17127,
+          "score": 25,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/VECTORFL_NO_MODEL_REUSE_LED_OPERATOR_DASHBOARD_ROW_REHEARSAL_20260523_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NO_MODEL_REUSE_LED_OPERATOR_DASHBOARD_ROW_REHEARSAL_20260523_V0.json",
+          "sha256": "c93cf0011e9270ba4456cca87d244c32850e834a4acd44f2282c6ab22a553804",
+          "size": 4568,
+          "score": 21,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_NO_CALL_SCRUBBED_STATIC_OPERATOR_CARD_COPY_20260523_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NO_CALL_SCRUBBED_STATIC_OPERATOR_CARD_COPY_20260523_V0.json",
+          "sha256": "21f20f7248534aec53df0d55f585f704327b31a025de5c7427fa7e0e9c87cc28",
+          "size": 6325,
+          "score": 21,
+          "dominant_cluster": "G_OPERATOR_DASHBOARD",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "H_ADAPTER_BRIDGE": {
+      "cluster_id": "H_ADAPTER_BRIDGE",
+      "candidate_count": 5462,
+      "surface_distribution": {
+        "work_control": 2850,
+        "workspace_control": 33,
+        "run_generated": 1457,
+        "source_docs": 1122
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "sha256": "a6da01150934fa342f791274203a8e9ac368fd00ef8da317e0cd34f66ff18c50",
+          "size": 9515,
+          "score": 187,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_codex_gemini_connection_diagnostic_v0/connection_diagnostic_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_codex_gemini_connection_diagnostic_v0/connection_diagnostic_report.md",
+          "sha256": "4dc7bf5be9be07f1721817906fde5dfe80dce158c9adc9fca88e4717e0b78ee4",
+          "size": 13148,
+          "score": 181,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_PROMPT_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_PROMPT_V0.md",
+          "sha256": "156afb1c3eee535c95846a8a6eff93c648e45c97bb5bf86c16546a0b495664ab",
+          "size": 10095,
+          "score": 181,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PROGRAM_TOPOLOGY_CHECK_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PROGRAM_TOPOLOGY_CHECK_V0.md",
+          "sha256": "ebfb5863173c6432d1f2da8e6c5ce139abfd5b55076186d4be93b52d6e746623",
+          "size": 13070,
+          "score": 173,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_CURRENT_EXECUTION_TOPOLOGY_STATE_V0.md",
+          "sha256": "072ac5d3f2d62ae9cde8e31bcffdba638804e839e69fb06d844fd2b4e95df0f8",
+          "size": 16357,
+          "score": 157,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/MOVEMENT_RECORD_20260506_PLAN_FROM_SPACE_SETUP_V0.md",
+          "sha256": "14b0a334cbd4001d93be28e811c21b1311808aa88d995dc42e3c5f2d018112f8",
+          "size": 29147,
+          "score": 156,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_native_harness_to_vectorfl_recovery_ladder_v0/native_harness_to_recovery_ladder_report.md",
+          "sha256": "e839c37b3648de92e617f0efc169f2558509ac298f6cc9d4e121dc513e729a00",
+          "size": 21023,
+          "score": 145,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_RUN_GEMINI_LITE_REVIEW_BRIDGE_PILOT_PACKET_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_RUN_GEMINI_LITE_REVIEW_BRIDGE_PILOT_PACKET_V0.md",
+          "sha256": "4f03a219c8a97251c2358d925ba59a795c78b440afc02aa4c0e01fe52bfeef54",
+          "size": 11806,
+          "score": 143,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_047_audit/flow_audit.txt",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_047_audit/flow_audit.txt",
+          "sha256": "e1480fa32ca9fc1d9d6b3fc6217c6179aff35a1245696d1f9e734d8c49a34877",
+          "size": 38002,
+          "score": 130,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "sha256": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+          "size": 22159,
+          "score": 129,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_PACKET_TOPOLOGY_FIELDS_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_PACKET_TOPOLOGY_FIELDS_V0.md",
+          "sha256": "757d60f00b64483729856889293d6b1f131bbd88eb82020752e2b8f40095da90",
+          "size": 10055,
+          "score": 115,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/asset_only_bridge_rehearsal_v0/ASSET_SEARCH_TO_CODEX_GEMINI_REHEARSAL_PACKET_V0.md",
+          "sha256": "5d61642732dd1a10e69e523d15bf71ddbcb43edaa338236c1bdbc1dd3e134185",
+          "size": 8394,
+          "score": 115,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "I_MODULE_SKELETON": {
+      "cluster_id": "I_MODULE_SKELETON",
+      "candidate_count": 887,
+      "surface_distribution": {
+        "work_control": 249,
+        "workspace_control": 45,
+        "run_generated": 484,
+        "source_docs": 109
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "size": 34056,
+          "score": 186,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_link_integrity_map_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_link_integrity_map_v0.json",
+          "sha256": "8f5d93c94757f5520374baa2db05a302d28d0ab9b2f1e9156565c6a3cd888df7",
+          "size": 69020,
+          "score": 77,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+          "sha256": "4d5ed6433cb4bb99e07c3c686b03a65f3310e6db7538bb20c1d22454bad8941f",
+          "size": 10913,
+          "score": 59,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_pointer_only_precheck_v0.json",
+          "sha256": "50a4aed0eb5956a9982afc6c83427958ad4253fe541cda2db30fb515afe166cc",
+          "size": 22089,
+          "score": 49,
+          "dominant_cluster": "B_RECEIPT_TRACE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_OPERATOR_VIEW_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_OPERATOR_VIEW_V0.md",
+          "sha256": "c66fa494ba32a96663545b8b14d714b490860cbae7aa5e03dd013625f916cea3",
+          "size": 8724,
+          "score": 38,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_TWELVE_CANDIDATE_PERSONAL_PROGRAM_COMPLETE_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TWELVE_CANDIDATE_PERSONAL_PROGRAM_COMPLETE_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "3d5cd5e27db7644b116d9882d08df60455db1208f7f0272a37bc107880dd1295",
+          "size": 5156,
+          "score": 35,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_module_spread_learning_batch_pointer_index_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_module_spread_learning_batch_pointer_index_v0.json",
+          "sha256": "ce744df45567fe1fc75914a08175141af04f604ec8ea84fa4c9557d102474c99",
+          "size": 6769,
+          "score": 35,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_EIGHT_CANDIDATE_PERSONAL_PROGRAM_MODULE_GATE_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_EIGHT_CANDIDATE_PERSONAL_PROGRAM_MODULE_GATE_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "51ef30168a401c1b28356ca02e2b94feac6a60b99d8fc9f008b6af038eacf200",
+          "size": 5146,
+          "score": 31,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/next_batch_selector_pointer_only_candidates_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/next_batch_selector_pointer_only_candidates_v0.json",
+          "sha256": "c9a680fc9e0a84e348bdabae4ee85987c95061141d9edb7d0d651e92e52fc09e",
+          "size": 10006,
+          "score": 30,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_ELEVEN_CANDIDATE_PERSONAL_PROGRAM_GEMINI_LENS_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_ELEVEN_CANDIDATE_PERSONAL_PROGRAM_GEMINI_LENS_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "b3a51c98b1a90092ec0e5fed7dbfbfa5cd7de85603b71ed89c776b6b2930d3ca",
+          "size": 4743,
+          "score": 29,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_TEN_CANDIDATE_PERSONAL_PROGRAM_CROSS_TOOL_REENTRY_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_TEN_CANDIDATE_PERSONAL_PROGRAM_CROSS_TOOL_REENTRY_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "b576e3d64b769c4769c3ab57ed3ce39803598adb2f237b1a1b6560a205021f1c",
+          "size": 4557,
+          "score": 29,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/VECTORFL_NINE_CANDIDATE_PERSONAL_PROGRAM_CODEX_GUARD_CHAIN_RECEIPT_20260523_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NINE_CANDIDATE_PERSONAL_PROGRAM_CODEX_GUARD_CHAIN_RECEIPT_20260523_V0.md",
+          "sha256": "cb031dada096ebb6bf491cc9f347bc4466d9120db6eb6a4615974ae2e6ebcafb",
+          "size": 5248,
+          "score": 28,
+          "dominant_cluster": "D_PROMOTION_STATE",
+          "surface": "work_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "J_CONTEXT_LAYER": {
+      "cluster_id": "J_CONTEXT_LAYER",
+      "candidate_count": 4197,
+      "surface_distribution": {
+        "work_control": 1982,
+        "workspace_control": 24,
+        "run_generated": 894,
+        "source_docs": 1297
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/archive_review/external_case_support/external_case_flowline_sweep/generated/external_case_flowline_sweep_20260402T223103Z.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/archive_review/external_case_support/external_case_flowline_sweep/generated/external_case_flowline_sweep_20260402T223103Z.json",
+          "sha256": "b772e54171a2e5e65b8a33b3905a3aaa64d8567ad463fc6b2cb19b6c867be9fc",
+          "size": 137025,
+          "score": 136,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/operating_term_disambiguation_table_20260513_candidate_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/operating_term_disambiguation_table_20260513_candidate_v0.md",
+          "sha256": "6f5e92508a4351de3534df92073eecbd4a794da6870cf101565c8e34702468e0",
+          "size": 11001,
+          "score": 122,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_report.md",
+          "sha256": "43ec4aaf758ae1d69e0e0ecfeb3d19727d2f52b059ab43bf18306959235b1ae6",
+          "size": 19386,
+          "score": 85,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/LAYER_SHIFT_READING_CORRECTION_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/LAYER_SHIFT_READING_CORRECTION_V0.md",
+          "sha256": "fe677b831ce42c0066a64d0db523bcd0a574fdd2f1a6a365a4d644f451d80f09",
+          "size": 9547,
+          "score": 83,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_report.md",
+          "sha256": "6adca1af799acd4191b1c98db44e2fcc66cda3abcac1358c71f076b579a1288e",
+          "size": 19566,
+          "score": 81,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_receipt.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_review_note_threshold_tightening_v0/review_note_threshold_tightening_receipt.json",
+          "sha256": "e9c65443568b13806752661d2e4ed52dd834642537b5719270a698a35a4a4718",
+          "size": 33462,
+          "score": 77,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+          "sha256": "0c0664e69f7962bd0b4d320990c93dc21e3e10e69603aa793f58fb8364ed187a",
+          "size": 34056,
+          "score": 70,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_receipt.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_stage1_refined_diff_audit_independent_rerun_v0/independent_refined_diff_audit_receipt.json",
+          "sha256": "e142531b4dcbcf10555ed054859388610f9fbe3793682ac4707255a5681b5602",
+          "size": 34498,
+          "score": 70,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/external_candidate_reading_packet_plan_for_gemini_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_candidate_reading_packet_plan_for_gemini_v0.md",
+          "sha256": "2aac1cef3eedabbbf0513dc8fb8574780c8361a1a5fcdb923c38c1e6b2b3c466",
+          "size": 22299,
+          "score": 63,
+          "dominant_cluster": "H_ADAPTER_BRIDGE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/LAYERED_LENS_REREAD_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/LAYERED_LENS_REREAD_V0.md",
+          "sha256": "7cfc2c6c4188f6ac9068d00563cbedc1b2a5c939d083c015ecdb7a983a201df6",
+          "size": 7940,
+          "score": 58,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/gmd_native_read_andrej_karpathy_llm_wiki_medium_note_v0_20260423_144304.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/gmd_native_read_andrej_karpathy_llm_wiki_medium_note_v0_20260423_144304.json",
+          "sha256": "323da28a256945963ebd761273e781f2d83a6ec8a10c757f8f5f8dffdb8c1a62",
+          "size": 16506,
+          "score": 53,
+          "dominant_cluster": "J_CONTEXT_LAYER",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/06_m8_trace/medium_4_control_update_candidates_no_edit_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/06_m8_trace/medium_4_control_update_candidates_no_edit_v0.json",
+          "sha256": "b9d178240be9d1e0ccd3d5c772ec47bc5d9e77fcbe32c93ef74b3a17274070f1",
+          "size": 155044,
+          "score": 50,
+          "dominant_cluster": "E_POINTER_INDEX",
+          "surface": "workspace_control"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    },
+    "K_RUN_BUNDLE": {
+      "cluster_id": "K_RUN_BUNDLE",
+      "candidate_count": 6820,
+      "surface_distribution": {
+        "work_control": 3613,
+        "workspace_control": 28,
+        "run_generated": 1457,
+        "source_docs": 1722
+      },
+      "top_examples": [
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_050_inventory/report_files.txt",
+          "sha256": "b66092948831dbd007e1c2135f87a8a99197b4370791a02d2b4ac8b37986c40d",
+          "size": 98351,
+          "score": 456,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/packages/package_050_inventory/closeout_files.txt",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_050_inventory/closeout_files.txt",
+          "sha256": "317cb7fbf7803d750b1a1770f9bb38112d4ce22ffa486194f438c5a5ad03c441",
+          "size": 6165,
+          "score": 160,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/observer_ingest_min/generated/folder_status.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/folder_status.md",
+          "sha256": "8f3952a7f1dc9a19c1b9b46c7ecfe575cce6d677d65e165a49b21a4ab95ffc69",
+          "size": 10119,
+          "score": 92,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_reference_map_batch01_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/medium_4_reference_map_batch01_v0.json",
+          "sha256": "8d1a1ed62453a3666d11d556547d96b8f734725693879d6d55bd5aec69049b99",
+          "size": 33110,
+          "score": 80,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/indexes/legacy_artifact_family_identity_map_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/legacy_artifact_family_identity_map_v0.json",
+          "sha256": "19af4a33371117e2267b4aa8e0e581c05cd934b525d7adbdf84e51f0c7cf2942",
+          "size": 12374,
+          "score": 74,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/notes/executable_runner_index_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/notes/executable_runner_index_v0.md",
+          "sha256": "bb00ff48eff0644b579502b5e8db01f53e509798c045ff99b09f5604e5e0208c",
+          "size": 14811,
+          "score": 69,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "docs/reports/integrated_engine_common_language_extraction_v2.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_common_language_extraction_v2.md",
+          "sha256": "d956683b9ed85f2a8999d442e205952af9664752ba33aa96f26387affda95c8e",
+          "size": 22710,
+          "score": 68,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/space-skill-sandbox/relay/prompts/gemini_broad_deep_lacl_material_topology_survey_20260506_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/prompts/gemini_broad_deep_lacl_material_topology_survey_20260506_v0.md",
+          "sha256": "0b048c9899fdd144d18d9edaa387653a5bb500ba2a961b7c7393528427ecc26d",
+          "size": 17098,
+          "score": 67,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_link_integrity_map_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/batch02_link_integrity_map_v0.json",
+          "sha256": "8f5d93c94757f5520374baa2db05a302d28d0ab9b2f1e9156565c6a3cd888df7",
+          "size": 69020,
+          "score": 66,
+          "dominant_cluster": "I_MODULE_SKELETON",
+          "surface": "workspace_control"
+        },
+        {
+          "relpath": "docs/reports/vectorfl_integrated_engine_asset_index_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/vectorfl_integrated_engine_asset_index_v0.md",
+          "sha256": "a4af0fb8ffde9bb73924f75ccf66c1656c804afc771ee88407536f11766b7c38",
+          "size": 20502,
+          "score": 63,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        },
+        {
+          "relpath": "app/work/operating_ui/components/selected_asset_detail_summary.py",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/operating_ui/components/selected_asset_detail_summary.py",
+          "sha256": "d3a873ee1ad3565c4f67bc3d2cce4343bef49cff495a3844d87f5c1393eec229",
+          "size": 6761,
+          "score": 61,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "work_control"
+        },
+        {
+          "relpath": "docs/reports/today_handoff_index_v1.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/today_handoff_index_v1.md",
+          "sha256": "b14709bd51695a06ab8461d39e74ff9a5fe1286feee30b7348d70225f505cdc6",
+          "size": 18831,
+          "score": 59,
+          "dominant_cluster": "K_RUN_BUNDLE",
+          "surface": "source_docs"
+        }
+      ],
+      "safe_line": "POINTER_ONLY_CLASSIFY_NO_MOVE_NO_EDIT",
+      "needs_secret_redaction_review": true
+    }
+  },
+  "global_boundaries": {
+    "no_move": true,
+    "no_archive": true,
+    "no_source_edit": true,
+    "no_authority_registry_current_position_mutation": true,
+    "no_promotion": true,
+    "no_live_codex_gemini": true,
+    "no_secret_value_preservation": true
+  },
+  "next_safe_lane": "INTERNAL_ASSET_FAMILY_PRIORITY_QUEUE_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

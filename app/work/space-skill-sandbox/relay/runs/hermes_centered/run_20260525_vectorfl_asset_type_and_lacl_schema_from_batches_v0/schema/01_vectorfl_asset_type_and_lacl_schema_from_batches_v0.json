@@ -1,0 +1,790 @@
+{
+  "schema_id": "VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0",
+  "created_at": "2026-05-25T14:19:15.237526+09:00",
+  "verdict": "WORKSPACE_INTERNAL_SCHEMA_CANDIDATE_CREATED_FROM_BATCH01_02_03_EVIDENCE_HOLD",
+  "status": "NOT_AUTHORITY__CANDIDATE_ONLY",
+  "source_batches": {
+    "batch01": "cleanup/move-risk proof",
+    "batch02": "module-spread learning batch",
+    "batch03": "space-governed LACL/layer learning batch"
+  },
+  "evidence_item_count": 18,
+  "batch_distribution": {
+    "batch02_module_spread": 10,
+    "batch03_space_governed_lacl": 8
+  },
+  "module_distribution": {
+    "M1_intake_provenance": 2,
+    "M4_maturation_governance": 3,
+    "M2_asset_graph_router": 4,
+    "M3_guard_precheck": 2,
+    "M5_space_inbox_review": 2,
+    "M8_evaluation_trace_observability": 2,
+    "M7_hygiene_operator_dashboard": 1,
+    "M6_adapter_factory": 2
+  },
+  "asset_types": [
+    {
+      "type_id": "T01_SOURCE_ORIENTATION_HANDLE",
+      "definition": "원본 경로/원본 sha가 판단과 연결의 기준점이 되는 자산. source of truth 자체로 승격하는 것이 아니라 방향/위치 핸들로 유지한다.",
+      "primary_modules": [
+        "M1_intake_provenance",
+        "M2_asset_graph_router"
+      ],
+      "lacl_role": "claim/source/context anchor",
+      "move_policy": "NO_MOVE_UNTIL_MANIFEST_ROLLBACK_APPROVAL",
+      "authority_boundary": "orientation handle != authority registry",
+      "evidence_selector": [
+        "source_orientation",
+        "authority_governance"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 106
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 81
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 74
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_02",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+          "original_sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2",
+          "module_guess": "M4_maturation_governance",
+          "score": 43
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_01",
+          "original_relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+          "original_sha256": "690b9a64e4d08ab23ba38dd13b1074c87d092a07fc3f9817aa018ac34fe3ab0c",
+          "module_guess": "M1_intake_provenance",
+          "score": 37
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 26
+        }
+      ]
+    },
+    {
+      "type_id": "T02_POINTER_VIEW",
+      "definition": "원본을 옮기지 않고 workspace/module lane에서 원본·copy·검토 산출물을 가리키는 pointer/index 자산.",
+      "primary_modules": [
+        "M2_asset_graph_router"
+      ],
+      "lacl_role": "relation/context routing layer",
+      "move_policy": "POINTER_ONLY_CAN_UPDATE_IN_WORKSPACE",
+      "authority_boundary": "not registry; not current-position mutation",
+      "evidence_selector": [
+        "pointer_router"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 54
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 36
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 33
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_06",
+          "original_relpath": "docs/reports/space_operating_organ_applied_validation_v0.md",
+          "original_sha256": "29587c6c2d4846dda65470133007fdf864e9036f2f408f0171a6edfde272c34e",
+          "module_guess": "M8_evaluation_trace_observability",
+          "score": 20
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_10",
+          "original_relpath": "docs/reports/first_order_second_order_connection_map_v1.md",
+          "original_sha256": "aa93bc419dc921c8fd6009ff649614b3d9a6cf8453ad1d29589cb73bdda2feb5",
+          "module_guess": "M2_asset_graph_router",
+          "score": 19
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_05",
+          "original_relpath": "docs/notes/git_search_deep_structure_reading_v0.md",
+          "original_sha256": "4f4069aebbc248e329e7602f7c5912cc681539bbe2a146c60624d83c40cc199c",
+          "module_guess": "M6_adapter_factory",
+          "score": 15
+        }
+      ]
+    },
+    {
+      "type_id": "T03_READONLY_COPY_VIEW",
+      "definition": "검토·Codex handoff·operator reading을 위한 copy surface. 원본 대체 금지.",
+      "primary_modules": [
+        "M5_space_inbox_review",
+        "M2_asset_graph_router"
+      ],
+      "lacl_role": "review surface / context copy",
+      "move_policy": "COPY_ALLOWED_SMALL_BATCH_WITH_MANIFEST_SHA",
+      "authority_boundary": "copy path must not replace original path",
+      "evidence_selector": [
+        "inbox_review",
+        "pointer_router"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 64
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 42
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 39
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 33
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_06",
+          "original_relpath": "docs/reports/space_operating_organ_applied_validation_v0.md",
+          "original_sha256": "29587c6c2d4846dda65470133007fdf864e9036f2f408f0171a6edfde272c34e",
+          "module_guess": "M8_evaluation_trace_observability",
+          "score": 26
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_10",
+          "original_relpath": "docs/reports/first_order_second_order_connection_map_v1.md",
+          "original_sha256": "aa93bc419dc921c8fd6009ff649614b3d9a6cf8453ad1d29589cb73bdda2feb5",
+          "module_guess": "M2_asset_graph_router",
+          "score": 23
+        }
+      ]
+    },
+    {
+      "type_id": "T04_CONTROL_SURFACE",
+      "definition": "workspace README/MANIFEST/operator card처럼 작업 흐름을 통제하지만 authority registry는 아닌 자산.",
+      "primary_modules": [
+        "M3_guard_precheck",
+        "M7_hygiene_operator_dashboard"
+      ],
+      "lacl_role": "control/guard layer",
+      "move_policy": "WORKSPACE_INTERNAL_EDIT_ALLOWED_WITH_VALIDATION",
+      "authority_boundary": "control surface != approval authority",
+      "evidence_selector": [
+        "guard_precheck",
+        "hygiene_operator"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 56
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_04",
+          "original_relpath": "docs/reports/formation_layer_provisional_object_metadata_note_v0.md",
+          "original_sha256": "eac37cd5e63632e605baa0f759b4ce3a84bac4e60b7cc27ea301a739a434ad30",
+          "module_guess": "M3_guard_precheck",
+          "score": 56
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 35
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 29
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 27
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_07",
+          "original_relpath": "app/work/VECTORFL_NO_CALL_CURRENT_POSITION_PROPOSAL_FOR_REUSE_CHAIN_20260524_V0.json",
+          "original_sha256": "39d5b1f3843bb5095219ff31d209bdc63abdd1759ed7540cf1e5647f6b7caa8d",
+          "module_guess": "M7_hygiene_operator_dashboard",
+          "score": 24
+        }
+      ]
+    },
+    {
+      "type_id": "T05_AUTHORITY_SENSITIVE_SURFACE",
+      "definition": "authority/current-position/registry/promotion과 혼동될 수 있어 freeze/HOLD가 필요한 자산.",
+      "primary_modules": [
+        "M4_maturation_governance"
+      ],
+      "lacl_role": "authority boundary layer",
+      "move_policy": "FREEZE_NO_MOVE_NO_ARCHIVE",
+      "authority_boundary": "requires explicit authority approval to mutate",
+      "evidence_selector": [
+        "authority_governance"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 69
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 53
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_02",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+          "original_sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2",
+          "module_guess": "M4_maturation_governance",
+          "score": 37
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 37
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 23
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_04",
+          "original_relpath": "docs/reports/formation_layer_provisional_object_metadata_note_v0.md",
+          "original_sha256": "eac37cd5e63632e605baa0f759b4ce3a84bac4e60b7cc27ea301a739a434ad30",
+          "module_guess": "M3_guard_precheck",
+          "score": 18
+        }
+      ]
+    },
+    {
+      "type_id": "T06_LACL_LAYER_CARD",
+      "definition": "논지/맥락/권위/감정/실행조건/반론/불확실성 등 층위를 읽어 구조화하는 카드형 자산.",
+      "primary_modules": [
+        "M1_intake_provenance",
+        "M4_maturation_governance",
+        "M8_evaluation_trace_observability"
+      ],
+      "lacl_role": "LACL/layer classification",
+      "move_policy": "READONLY_DERIVATION_ONLY",
+      "authority_boundary": "classification candidate not source mutation",
+      "evidence_selector": [
+        "lacl_layer"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 51
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 42
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 42
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 35
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_04",
+          "original_relpath": "docs/reports/formation_layer_provisional_object_metadata_note_v0.md",
+          "original_sha256": "eac37cd5e63632e605baa0f759b4ce3a84bac4e60b7cc27ea301a739a434ad30",
+          "module_guess": "M3_guard_precheck",
+          "score": 27
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_05",
+          "original_relpath": "docs/notes/git_search_deep_structure_reading_v0.md",
+          "original_sha256": "4f4069aebbc248e329e7602f7c5912cc681539bbe2a146c60624d83c40cc199c",
+          "module_guess": "M6_adapter_factory",
+          "score": 25
+        }
+      ]
+    },
+    {
+      "type_id": "T07_MATURATION_EVIDENCE",
+      "definition": "정밀 독해, risk rollup, closeout, coverage처럼 성숙 판단에 쓰는 evidence.",
+      "primary_modules": [
+        "M4_maturation_governance",
+        "M8_evaluation_trace_observability"
+      ],
+      "lacl_role": "maturation evidence layer",
+      "move_policy": "EVIDENCE_ONLY_NO_PROMOTION",
+      "authority_boundary": "evidence != promotion/authority",
+      "evidence_selector": [
+        "authority_governance",
+        "trace_observability"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_02",
+          "original_relpath": "docs/reports/external_thought_asset_research_round_005_manual_stage_0_event_dry_run_batch_v0.md",
+          "original_sha256": "74e62e6f113fd23a0ba32e666a63925c70edfaa86cf76765ba6773f810d550c3",
+          "module_guess": "M4_maturation_governance",
+          "score": 72
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 63
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 53
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_02",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+          "original_sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2",
+          "module_guess": "M4_maturation_governance",
+          "score": 51
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_06",
+          "original_relpath": "docs/reports/space_operating_organ_applied_validation_v0.md",
+          "original_sha256": "29587c6c2d4846dda65470133007fdf864e9036f2f408f0171a6edfde272c34e",
+          "module_guess": "M8_evaluation_trace_observability",
+          "score": 39
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 34
+        }
+      ]
+    },
+    {
+      "type_id": "T08_OPERATOR_DASHBOARD_ITEM",
+      "definition": "operator가 부담/위험/다음 행동을 볼 수 있게 압축된 카드/대시보드 자산.",
+      "primary_modules": [
+        "M7_hygiene_operator_dashboard"
+      ],
+      "lacl_role": "operator attention layer",
+      "move_policy": "NO_APPLY_FROM_DASHBOARD_ONLY",
+      "authority_boundary": "dashboard != apply approval",
+      "evidence_selector": [
+        "hygiene_operator"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_04",
+          "original_relpath": "docs/reports/formation_layer_provisional_object_metadata_note_v0.md",
+          "original_sha256": "eac37cd5e63632e605baa0f759b4ce3a84bac4e60b7cc27ea301a739a434ad30",
+          "module_guess": "M3_guard_precheck",
+          "score": 35
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_07",
+          "original_relpath": "app/work/VECTORFL_NO_CALL_CURRENT_POSITION_PROPOSAL_FOR_REUSE_CHAIN_20260524_V0.json",
+          "original_sha256": "39d5b1f3843bb5095219ff31d209bdc63abdd1759ed7540cf1e5647f6b7caa8d",
+          "module_guess": "M7_hygiene_operator_dashboard",
+          "score": 24
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 14
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_04",
+          "original_relpath": "app/work/VECTORFL_TOP10_MOVE_RISK_ROLLUP_AND_WORKSPACE_RULE_UPDATE_V0_20260525.json",
+          "original_sha256": "24697b44e5ffea5d54a9d60e3b5a458e70ed82d3a802db971b723163eb21a848",
+          "module_guess": "M3_guard_precheck",
+          "score": 12
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 7
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_01",
+          "original_relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+          "original_sha256": "690b9a64e4d08ab23ba38dd13b1074c87d092a07fc3f9817aa018ac34fe3ab0c",
+          "module_guess": "M1_intake_provenance",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "type_id": "T09_TRACE_RECEIPT_EVIDENCE",
+      "definition": "sha, validation, rollback, receipt처럼 실행 검증과 회수를 증명하지만 authority는 아닌 자산.",
+      "primary_modules": [
+        "M8_evaluation_trace_observability"
+      ],
+      "lacl_role": "trace/observability layer",
+      "move_policy": "REQUIRED_BEFORE_APPLY_BUT_NOT_APPROVAL",
+      "authority_boundary": "receipt is evidence only",
+      "evidence_selector": [
+        "trace_observability"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_06",
+          "original_relpath": "docs/reports/space_operating_organ_applied_validation_v0.md",
+          "original_sha256": "29587c6c2d4846dda65470133007fdf864e9036f2f408f0171a6edfde272c34e",
+          "module_guess": "M8_evaluation_trace_observability",
+          "score": 31
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 16
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_08",
+          "original_relpath": "docs/reports/integrated_engine_language_amplification_harvest_v0.md",
+          "original_sha256": "56cd3704d80c86dfca64cb0a3f17415916a32f5dd8babca4640902f825f44a99",
+          "module_guess": "M2_asset_graph_router",
+          "score": 16
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_02",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+          "original_sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2",
+          "module_guess": "M4_maturation_governance",
+          "score": 14
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_03",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_ASSET_FUNCTION_FAMILY_MAP_FROM_05_15_V0.md",
+          "original_sha256": "e92fe2f9666e4b279e11890e7cce89fc4db2b410695840f0223ce92c41124190",
+          "module_guess": "M2_asset_graph_router",
+          "score": 10
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_08",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/SCOPE_GAP_PACKET_VALIDATION_RECEIPT_V0.json",
+          "original_sha256": "29f463c7c749510fa9cbd84aa64b6a3995772f3618e5457b6f3609cc89bad500",
+          "module_guess": "M6_adapter_factory",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "type_id": "T10_ADAPTER_SHELL",
+      "definition": "외부 도구/내부 기능과 연결되는 adapter/bridge/shell 성격의 자산.",
+      "primary_modules": [
+        "M6_adapter_factory"
+      ],
+      "lacl_role": "tool boundary/adapter layer",
+      "move_policy": "NO_LIVE_CALL_OR_API_WITHOUT_SCOPE",
+      "authority_boundary": "adapter proposal != external action approval",
+      "evidence_selector": [
+        "adapter_bridge"
+      ],
+      "evidence_examples": [
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_01",
+          "original_relpath": "docs/reports/external_candidate_four_source_cross_synthesis_v0.md",
+          "original_sha256": "a8bf757b3b500479fa9ae0017d3dcaed71940681197f264eac5bb78e67837ed0",
+          "module_guess": "M1_intake_provenance",
+          "score": 22
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_05",
+          "original_relpath": "docs/notes/git_search_deep_structure_reading_v0.md",
+          "original_sha256": "4f4069aebbc248e329e7602f7c5912cc681539bbe2a146c60624d83c40cc199c",
+          "module_guess": "M6_adapter_factory",
+          "score": 20
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_02",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/FILLED_BOUNDED_COMBINED_BRIDGE_PACKET_EXECUTION_V0.md",
+          "original_sha256": "9d3fb452241a94562d64c3a861775fcca4ecaa562f629c9d203e9d024404e0c2",
+          "module_guess": "M4_maturation_governance",
+          "score": 18
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_08",
+          "original_relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/filled_instance_execution_v0/additional_bounded_evidence_packet_v0/SCOPE_GAP_PACKET_VALIDATION_RECEIPT_V0.json",
+          "original_sha256": "29f463c7c749510fa9cbd84aa64b6a3995772f3618e5457b6f3609cc89bad500",
+          "module_guess": "M6_adapter_factory",
+          "score": 17
+        },
+        {
+          "batch": "batch03_space_governed_lacl",
+          "item_id": "BATCH03_ITEM_03",
+          "original_relpath": "docs/indexes/anchor_stack_manifest_v0.md",
+          "original_sha256": "93f1d8624c697c43a5eb648846be8d0c1f7ffe9c0935dc0c6b587342dd3eb757",
+          "module_guess": "M2_asset_graph_router",
+          "score": 14
+        },
+        {
+          "batch": "batch02_module_spread",
+          "item_id": "BATCH02_ITEM_10",
+          "original_relpath": "docs/reports/first_order_second_order_connection_map_v1.md",
+          "original_sha256": "aa93bc419dc921c8fd6009ff649614b3d9a6cf8453ad1d29589cb73bdda2feb5",
+          "module_guess": "M2_asset_graph_router",
+          "score": 12
+        }
+      ]
+    }
+  ],
+  "module_lane_map": {
+    "M1_intake_provenance": [
+      "T01_SOURCE_ORIENTATION_HANDLE",
+      "T06_LACL_LAYER_CARD"
+    ],
+    "M2_asset_graph_router": [
+      "T01_SOURCE_ORIENTATION_HANDLE",
+      "T02_POINTER_VIEW",
+      "T03_READONLY_COPY_VIEW"
+    ],
+    "M5_space_inbox_review": [
+      "T03_READONLY_COPY_VIEW"
+    ],
+    "M3_guard_precheck": [
+      "T04_CONTROL_SURFACE"
+    ],
+    "M7_hygiene_operator_dashboard": [
+      "T04_CONTROL_SURFACE",
+      "T08_OPERATOR_DASHBOARD_ITEM"
+    ],
+    "M4_maturation_governance": [
+      "T05_AUTHORITY_SENSITIVE_SURFACE",
+      "T06_LACL_LAYER_CARD",
+      "T07_MATURATION_EVIDENCE"
+    ],
+    "M8_evaluation_trace_observability": [
+      "T06_LACL_LAYER_CARD",
+      "T07_MATURATION_EVIDENCE",
+      "T09_TRACE_RECEIPT_EVIDENCE"
+    ],
+    "M6_adapter_factory": [
+      "T10_ADAPTER_SHELL"
+    ]
+  },
+  "lacl_schema": {
+    "schema_id": "VECTORFL_LACL_LAYER_SCHEMA_V0",
+    "status": "WORKSPACE_INTERNAL_CANDIDATE_NOT_AUTHORITY",
+    "layers": [
+      {
+        "layer": "L0_SOURCE",
+        "question": "무엇이 원본/주장/소스인가?",
+        "asset_types": [
+          "T01_SOURCE_ORIENTATION_HANDLE"
+        ]
+      },
+      {
+        "layer": "L1_CONTEXT",
+        "question": "어떤 맥락/공간/관계 안에서 읽히는가?",
+        "asset_types": [
+          "T02_POINTER_VIEW",
+          "T03_READONLY_COPY_VIEW",
+          "T06_LACL_LAYER_CARD"
+        ]
+      },
+      {
+        "layer": "L2_AUTHORITY",
+        "question": "무엇이 권위로 오해될 수 있으며 어떤 경계가 필요한가?",
+        "asset_types": [
+          "T05_AUTHORITY_SENSITIVE_SURFACE"
+        ]
+      },
+      {
+        "layer": "L3_CONTROL",
+        "question": "어떤 guard/precheck/operator rule이 실행을 제어하는가?",
+        "asset_types": [
+          "T04_CONTROL_SURFACE",
+          "T08_OPERATOR_DASHBOARD_ITEM"
+        ]
+      },
+      {
+        "layer": "L4_MATURATION",
+        "question": "무엇이 성숙 evidence이고 무엇은 promotion이 아닌가?",
+        "asset_types": [
+          "T07_MATURATION_EVIDENCE"
+        ]
+      },
+      {
+        "layer": "L5_EXECUTION_TRACE",
+        "question": "무엇으로 검증/회수/rollback 가능성을 증명하는가?",
+        "asset_types": [
+          "T09_TRACE_RECEIPT_EVIDENCE"
+        ]
+      },
+      {
+        "layer": "L6_ADAPTER_BOUNDARY",
+        "question": "도구/외부 행동 경계는 어디인가?",
+        "asset_types": [
+          "T10_ADAPTER_SHELL"
+        ]
+      }
+    ]
+  },
+  "return_plan": {
+    "return_to_original_position": "INTERNAL_ASSET_CLEANUP_CONTINUATION",
+    "why_now": "B lane completed as workspace-internal candidate schema; further schema work without cleanup return would become over-modeling.",
+    "next_safe_cleanup_lane": "INTERNAL_ASSET_FIELD_CLEANUP_SPACE_GOVERNED_PASS_V0",
+    "allowed_actions": [
+      "read existing full asset reclassification",
+      "read freeze/archive candidates",
+      "pointer-only grouping",
+      "risk-ranked cleanup candidate map",
+      "no move/no archive/no source edit"
+    ],
+    "stop_boundaries": [
+      "actual mv/archive",
+      "source edits",
+      "authority/current-position/registry mutation",
+      "promotion",
+      "bulk generated copies",
+      "live Codex/Gemini"
+    ]
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "workspace_internal_schema_candidate_created": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "check": "codex_review_created",
+      "pass": true
+    },
+    {
+      "check": "requested_return_fields_present",
+      "fields": [
+        "packet_id",
+        "role",
+        "read_files",
+        "accepted_history_scope",
+        "accepted_structure_layers",
+        "arc_level_space_delta",
+        "stale_or_duplicate_handles_hold_only",
+        "maturation_proposals_hold_only",
+        "missing_handles",
+        "gemini_exploration_decision",
+        "risks",
+        "next_safe_lane",
+        "promotion_status"
+      ],
+      "pass": true
+    },
+    {
+      "check": "full_history_scope_accepted",
+      "observed_root_items": 57,
+      "pass": true
+    },
+    {
+      "check": "recent_channel_only_rejected",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "pass": true
+    },
+    {
+      "check": "hermes_namespace_not_modified",
+      "pass": true
+    },
+    {
+      "check": "authority_current_position_registry_folder_source_mutation",
+      "observed": "NO",
+      "pass": true
+    },
+    {
+      "check": "gemini_execution_not_required_for_initial_review",
+      "decision": "NO_FOR_INITIAL_FULL_HISTORY_REVIEW",
+      "pass": true
+    },
+    {
+      "check": "quick_board_versioned_not_overwritten",
+      "artifact": "shared_handoff/90_QUICK_EXCHANGE_BOARD_v2_CODEX_FULL_HISTORY_REVIEW.json",
+      "pass": true
+    }
+  ],
+  "checks_count": 9,
+  "hashes": {
+    "90_CODEX_LATEST_SUMMARY_CARD_v2_FULL_HISTORY_REVIEW.json": "0b06f9f85d363b2612692d86fb6d4638dab419e08c8a0e4f79d8a2cbed91ef6b",
+    "90_QUICK_EXCHANGE_BOARD_v2_CODEX_FULL_HISTORY_REVIEW.json": "102d426ca94d51a81a23bcb8a6e1b6b3ae46e8785155bbeefed7aab0805cb5d8",
+    "91_CODEX_FULL_HISTORY_SYNC_REVIEW_V0.json": "fb2fef707a05de168be2a208683fbea85816646ec695b4cb16f12144c30c11ee"
+  },
+  "next_safe_lane": "HERMES_RECORD_CODEX_FULL_HISTORY_REVIEW_AS_HOLD_EVIDENCE_OR_USER_APPROVE_BOUNDED_FULL_HISTORY_PATTERN_INDEX_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_CODEX_FULL_HISTORY_SYNC_REVIEW_WITH_HOLD"
+}

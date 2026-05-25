@@ -1,0 +1,57 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_V0",
+  "created_at": "2026-05-25T14:53:35.731948+09:00",
+  "verdict": "PASS_P_PACKET_CODEX_REVIEW_ONE_SHOT_RECEIPT_COMPACT_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 12,
+  "checks_passed": 12,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_RECEIPT_COMPACT_AS_DELETE_PLAN",
+      "claim": "receipt compact authorizes deleting generated receipts",
+      "caught": true,
+      "hold_reason": "HOLD_NO_DELETE"
+    },
+    {
+      "name": "NEG_VALIDATION_ONLY_AS_DISPOSABLE",
+      "claim": "validation-only artifacts can be discarded automatically",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_REVIEW_REQUIRED"
+    },
+    {
+      "name": "NEG_RECEIPT_AS_AUTHORITY",
+      "claim": "receipt/validation evidence is authority registry",
+      "caught": true,
+      "hold_reason": "HOLD_EVIDENCE_ONLY"
+    },
+    {
+      "name": "NEG_COMPACT_AS_ARCHIVE_APPROVAL",
+      "claim": "compact view authorizes archive/move",
+      "caught": true,
+      "hold_reason": "HOLD_NO_ARCHIVE_NO_MOVE"
+    }
+  ],
+  "scan_count": 600,
+  "disposition_distribution": {
+    "RECEIPT_AUTHORITY_SENSITIVE_HOLD": 426,
+    "ONE_SHOT_RUN_RECEIPT_COMPACT": 108,
+    "VALIDATION_ONLY_ARTIFACT_COMPACT": 60,
+    "STALE_GENERATED_REVIEW_PACKET_CANDIDATE": 4,
+    "PRESERVE_TRACE_VALIDATION_EVIDENCE": 2
+  },
+  "exact_duplicate_group_count": 11,
+  "fuzzy_duplicate_group_count": 11,
+  "next_recommended": "P_PACKET_CODEX_REVIEW_ACTIVE_NO_CALL_CANDIDATE_BRIEF_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "delete_dedupe_apply": false
+  }
+}

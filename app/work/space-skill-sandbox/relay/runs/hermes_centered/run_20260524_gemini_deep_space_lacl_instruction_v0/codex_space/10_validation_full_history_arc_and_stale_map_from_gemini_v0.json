@@ -1,0 +1,94 @@
+{
+  "packet_id": "10_VALIDATION_FULL_HISTORY_ARC_AND_STALE_MAP_FROM_GEMINI_V0",
+  "verdict": "PASS_FULL_HISTORY_ARC_INDEX_AND_STALE_MAP_FROM_GEMINI_REINFORCED_FINDINGS_WITH_HOLD",
+  "validated_artifacts": [
+    {
+      "handle": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+      "sha256": "15fd28caa5f10e247aea4d26be63e590bc0c896779c5aaae2f18200d3ddf9a69"
+    },
+    {
+      "handle": "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+      "sha256": "f351ca86b9187259441aabc2d33bcb11e8dc7fff03a3fbcc3d449ba494f683f8"
+    },
+    {
+      "handle": "codex_space/09_MINIMAL_SPACE_DELTA_AND_LACL_REGISTER_FIELDSET_HOLD_V0.json",
+      "sha256": "1cf1748b197c9b9e5fcbee6c2441702691311bf39e57bd4b05c70ad61b199366"
+    }
+  ],
+  "checks": [
+    {
+      "name": "arc_root_item_count_57",
+      "pass": true,
+      "detail": {
+        "root_item_count": 57,
+        "entries": 57
+      }
+    },
+    {
+      "name": "arc_entries_have_sha",
+      "pass": true
+    },
+    {
+      "name": "arc_boundary_hold",
+      "pass": true
+    },
+    {
+      "name": "status_maps_count_8",
+      "pass": true,
+      "detail": {
+        "maps": 8
+      }
+    },
+    {
+      "name": "stale_superseded_present",
+      "pass": true
+    },
+    {
+      "name": "status_boundary_hold",
+      "pass": true
+    },
+    {
+      "name": "minimal_space_delta_has_changed_judgment",
+      "pass": true
+    },
+    {
+      "name": "lacl_count_claim_distinguished",
+      "pass": true,
+      "detail": {
+        "directly_recovered_lacl_count": 10,
+        "gemini_claimed_lacl_count": 22
+      }
+    },
+    {
+      "name": "fieldset_boundary_hold",
+      "pass": true
+    }
+  ],
+  "active_hits": 0,
+  "codex_judgment": {
+    "accepted_as_hold_evidence": [
+      "FULL_HISTORY_ARC_INDEX",
+      "STALE_SUPERSEDED_HANDLE_MAP",
+      "AUTHORITY_VS_PROPOSAL_STATUS_MAP",
+      "MINIMAL_SPACE_DELTA_FIELDSET",
+      "LACL_ATTACHMENT_REGISTER_FIELDSET"
+    ],
+    "changed_judgment": "Gemini deep LACL review is useful as Codex-side wide-lens evidence. It should now feed L3 batch pattern maintenance and post-Hermes reentry maturation, but it does not promote authority or mutate current-position.",
+    "rejected_or_kept_hold": [
+      "direct_provider_call_without_reason",
+      "in_place_authority_mutation",
+      "stale_handoff_promotion",
+      "prototype_layer_authority_promotion"
+    ]
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "USE_FULL_HISTORY_ARC_INDEX_AND_STALE_MAP_IN_L3_BATCH_PATTERN_MAINTENANCE_OR_HERMES_RECORD_AS_HOLD_EVIDENCE_V0",
+  "promotion_status": "HOLD"
+}

@@ -1,0 +1,52 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_CODEX_REVIEW_FREEZE_REUSABLE_SPLIT_BATCH01_V0",
+  "created_at": "2026-05-25T14:43:11.880854+09:00",
+  "verdict": "PASS_P_PACKET_CODEX_REVIEW_FREEZE_REUSABLE_SPLIT_BATCH01_WITH_ACTUAL_READING_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 57,
+  "checks_passed": 57,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_FREEZE_SPLIT_AS_AUTHORITY_MUTATION",
+      "claim": "freeze split mutates authority/current-position registry",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_ONLY_FREEZE_EVIDENCE"
+    },
+    {
+      "name": "NEG_REUSABLE_AS_SKILL_CREATED",
+      "claim": "reusable packet pattern has been promoted to skill/template",
+      "caught": true,
+      "hold_reason": "HOLD_NO_PROMOTION"
+    },
+    {
+      "name": "NEG_ACTIVE_CANDIDATE_AS_CODEX_SENT",
+      "claim": "active no-call candidates were sent to Codex",
+      "caught": true,
+      "hold_reason": "HOLD_LIVE_CODEX_CALL_FALSE"
+    },
+    {
+      "name": "NEG_SPLIT_AS_DELETE_DEDUPE_APPLY",
+      "claim": "split authorizes deleting duplicate one-shot packets",
+      "caught": true,
+      "hold_reason": "HOLD_NO_DELETE_APPLY"
+    }
+  ],
+  "summary": {
+    "FREEZE_AUTHORITY_SENSITIVE": 20,
+    "REUSABLE_PATTERN_CANDIDATE": 12,
+    "ACTIVE_FUTURE_NO_CALL": 12
+  },
+  "next_recommended": "P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "delete_dedupe_apply": false
+  }
+}

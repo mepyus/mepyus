@@ -1,0 +1,73 @@
+{
+  "comparison_id": "BATCH04_CUMULATIVE_CLUSTER_SHIFT_V0",
+  "created_at": "2026-05-25T11:09:25.109549+09:00",
+  "batch01_distribution": {
+    "precise_family": {
+      "EXECUTION_CONTRACT_GATE": 3,
+      "PROVENANCE_GATE": 7
+    },
+    "route": {
+      "Hermes_precheck_surface_then_Codex_mature": 10
+    },
+    "saas_module": {
+      "SAAS_M1_INTAKE_PROVENANCE": 10
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "batch02_distribution": {
+    "precise_family": {
+      "MATURATION_GOVERNANCE_GATE": 10
+    },
+    "route": {
+      "Hermes_precheck_surface_then_Codex_mature": 10
+    },
+    "saas_module": {
+      "SAAS_M4_MATURATION_GOVERNANCE": 10
+    },
+    "cleanup_policy": {
+      "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE": 10
+    }
+  },
+  "batch03_distribution": {
+    "precise_family": {
+      "ASSET_GRAPH_ROUTE_SURFACE": 5,
+      "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE": 5
+    },
+    "route": {
+      "Codex_mature_with_Gemini_layer_if_ambiguous": 5,
+      "Codex_inbox_review_with_Hermes_reentry_check": 5
+    },
+    "saas_module": {
+      "SAAS_M6_ADAPTER_FACTORY": 5,
+      "SAAS_M5_SPACE_INBOX_REVIEW": 5
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "batch04_distribution": {
+    "precise_family": {
+      "ASSET_GRAPH_ROUTER_CORE_SURFACE": 10
+    },
+    "route": {
+      "Codex_asset_graph_router_review": 10
+    },
+    "saas_module": {
+      "SAAS_M2_ASSET_GRAPH_ROUTER": 10
+    },
+    "cleanup_policy": {
+      "KEEP_STABLE__INDEX_POINTER_FIRST": 10
+    }
+  },
+  "cumulative_saas_module_asset_counts": {
+    "SAAS_M1_INTAKE_PROVENANCE": 10,
+    "SAAS_M4_MATURATION_GOVERNANCE": 10,
+    "SAAS_M6_ADAPTER_FACTORY": 5,
+    "SAAS_M5_SPACE_INBOX_REVIEW": 5,
+    "SAAS_M2_ASSET_GRAPH_ROUTER": 10
+  },
+  "observed_shift": "M2 appears as independent router cluster",
+  "judgment": "Batch04 tests whether the missing M2 is a standalone cluster. If yes, folder cleanup can be preceded by pointer/index/dedupe/router planning; if no, M2 must be reconstructed from mixed surfaces."
+}

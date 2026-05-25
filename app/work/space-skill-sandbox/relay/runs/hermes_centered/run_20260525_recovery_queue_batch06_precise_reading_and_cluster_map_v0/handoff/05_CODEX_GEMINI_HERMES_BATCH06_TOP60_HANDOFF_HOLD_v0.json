@@ -1,0 +1,78 @@
+{
+  "handoff_id": "CODEX_GEMINI_HERMES_BATCH06_TOP60_HANDOFF_HOLD_V0",
+  "created_at": "2026-05-25T11:17:50.213274+09:00",
+  "status": "READ_ONLY_HOLD",
+  "codex_read_first": [
+    "cluster_map/04_top60_recovery_cluster_map_v0.json",
+    "readings/01_batch06_precise_reading_v0.json",
+    "comparison/03_batch06_cumulative_cluster_shift_v0.json"
+  ],
+  "codex_task": "Review top60 cluster map. Produce placement/conflict/gap map, especially M2/M7/M8 and promotion-rubric evidence. No mutation.",
+  "gemini_task": "Only if Codex flags ambiguity, wide-read quality/trace/operator-load/product implications.",
+  "hermes_task": "Use M8 only for local validation/trace surfaces; no authority/promotion/folder move.",
+  "route_packs": {
+    "Hermes_validation_trace_then_Codex_quality_mature": [
+      {
+        "asset_id": "pre12_bridge_surface_identification_report_v0",
+        "relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "pre12_lower_output_readiness_recheck_v0",
+        "relpath": "docs/reports/pre12_lower_output_readiness_recheck_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "process_memory_operating_layer_candidate_v0",
+        "relpath": "docs/reports/process_memory_operating_layer_candidate_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_input_gate_spec_v0",
+        "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_input_observation_surface_candidate_v0",
+        "relpath": "docs/reports/relation_first_input_observation_surface_candidate_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_light_compression_rule_v0",
+        "relpath": "docs/reports/relation_first_light_compression_rule_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_real_input_trial_claude_code_v0",
+        "relpath": "docs/reports/relation_first_real_input_trial_claude_code_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_real_input_trial_karpathy_graphify_v0",
+        "relpath": "docs/reports/relation_first_real_input_trial_karpathy_graphify_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_repetition_operation_batch001_v0",
+        "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      },
+      {
+        "asset_id": "relation_first_space_input_processor_candidate_v0",
+        "relpath": "docs/reports/relation_first_space_input_processor_candidate_v0.md",
+        "precise_family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+        "saas_module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY"
+      }
+    ]
+  },
+  "hold": true
+}

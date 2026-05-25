@@ -1,0 +1,51 @@
+{
+  "aifrontier_example_mapping": {
+    "simple_user_instruction": "Bring external AI Frontier materials into VectorFL space and test whether they reinterpret the repo.",
+    "space_aware_setup_should_infer": [
+      "fetch/extract only declared external sources",
+      "build lite cards and source index",
+      "compare against existing VectorFL structure/lenses",
+      "identify overlap/lack/lacl",
+      "produce HOLD-only proposed index/lens/gate fields",
+      "write fast channel for Codex review",
+      "avoid authority mutation unless approved"
+    ],
+    "why_this_matters": "User should not need to separately request every step: fetch, compare, negative drift, validation, reentry, Codex handoff. Existing space should provide the default flow."
+  },
+  "core_correction": "The target is not /goal itself. /goal is only an example of loop-like execution pressure. The real target is whether the VectorFL/Hermes structure can absorb large task setup by consulting space before execution so later usage can focus on doing, not repeatedly asking the user for micro review/test/direction.",
+  "execution_setup_layers": [
+    {
+      "function": "preserve user original and detect whether request is simple action, setup/build-up, external material reinterpretation, or maturation handoff",
+      "layer": "L0_original_intake"
+    },
+    {
+      "function": "read quick board/full-history sync/lite cards/lens cards before making worklist",
+      "layer": "L1_space_orientation"
+    },
+    {
+      "function": "infer likely work stages, validation lanes, missing space refs, expected artifacts, and hold boundaries",
+      "layer": "L2_task_shape_inference"
+    },
+    {
+      "function": "create worklist from original + space + model reasoning, not from blank planning",
+      "layer": "L3_space_anchored_worklist"
+    },
+    {
+      "function": "decide local-only vs Codex retrieval vs later Codex maturation; block default provider-backed calls",
+      "layer": "L4_execution_budget_gate"
+    },
+    {
+      "function": "execute local steps while writing receipts/deltas; do not re-ask user for every micro-stage if space already gives stable structure",
+      "layer": "L5_incremental_execution"
+    },
+    {
+      "function": "publish Codex-readable reentry/quick board so Codex can mature space after execution without blocking Hermes",
+      "layer": "L6_reentry_and_maturation_surface"
+    }
+  ],
+  "future_simple_instruction_target": "A short instruction should be enough for Hermes to set up a first-pass test lane: original preservation, relevant space orientation, task decomposition, local validation, HOLD artifacts, quick board, Codex reentry.",
+  "packet_id": "01_SPACE_AWARE_EXECUTION_SETUP_FRAMEWORK_V0",
+  "problem_statement": "If Hermes only handles one-turn execution, user must repeatedly instruct listing, validation, judgment, test, and direction. For external-material work like AI Frontier, that becomes a bottleneck. The structure should let Hermes use existing space to infer first-pass setup, test plan, evidence lanes, and safe boundaries from a simple instruction.",
+  "promotion_status": "HOLD",
+  "status": "HOLD_FRAMEWORK_ONLY"
+}

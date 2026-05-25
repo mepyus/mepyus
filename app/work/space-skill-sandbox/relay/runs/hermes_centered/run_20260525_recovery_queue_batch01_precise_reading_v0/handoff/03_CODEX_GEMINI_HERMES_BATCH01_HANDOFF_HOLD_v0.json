@@ -1,0 +1,77 @@
+{
+  "handoff_id": "CODEX_GEMINI_HERMES_BATCH01_RECOVERY_HANDOFF_HOLD_V0",
+  "created_at": "2026-05-25T10:54:05.314816+09:00",
+  "status": "READ_ONLY_HOLD",
+  "codex_read_first": [
+    "source_index/00_batch01_source_index_v0.json",
+    "readings/01_batch01_precise_reading_v0.json"
+  ],
+  "codex_task": "Read the 10 precise readings; produce placement/conflict/gap map only. No file moves, no registry/current-position/authority mutation.",
+  "gemini_task": "If Codex marks layer ambiguity, wide-read latent LACL/layer/product implications for the ambiguous assets only.",
+  "hermes_task": "Use confirmed gate/provenance assets only as dry-run precheck candidates; do not promote.",
+  "route_packs": {
+    "Hermes_precheck_surface_then_Codex_mature": [
+      {
+        "asset_id": "next_phase_options_draft",
+        "relpath": "app/work/processor_compare/reports/next_phase_options_draft.md",
+        "precise_family": "EXECUTION_CONTRACT_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "agent_function_reception_readiness_correction_v0",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "asset_method_comparison_round_001",
+        "relpath": "docs/reports/asset_method_comparison_round_001.md",
+        "precise_family": "EXECUTION_CONTRACT_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "axis_formation_rule_candidate_v0",
+        "relpath": "docs/reports/axis_formation_rule_candidate_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "cli_side_space_interaction_contract_final_addendum_preflight_guard",
+        "relpath": "docs/reports/cli_side_space_interaction_contract_final_addendum_preflight_guard.md",
+        "precise_family": "EXECUTION_CONTRACT_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "component_chain_mode_selection_closeout_v0",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "component_chain_mode_selection_rule_candidate_v0",
+        "relpath": "docs/reports/component_chain_mode_selection_rule_candidate_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "deep_space_light_cli_observation_transition_judgment_v0",
+        "relpath": "docs/reports/deep_space_light_cli_observation_transition_judgment_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "evidence_provenance_classification_candidate_v0",
+        "relpath": "docs/reports/evidence_provenance_classification_candidate_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      },
+      {
+        "asset_id": "external_candidate_context_mode_reading_packaging_v0",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "precise_family": "PROVENANCE_GATE",
+        "saas_module": "SAAS_M1_INTAKE_PROVENANCE"
+      }
+    ]
+  },
+  "hold": true
+}

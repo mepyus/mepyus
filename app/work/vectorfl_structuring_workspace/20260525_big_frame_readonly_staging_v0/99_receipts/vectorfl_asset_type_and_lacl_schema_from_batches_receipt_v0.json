@@ -1,0 +1,39 @@
+{
+  "receipt_id": "VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_RECEIPT_V0",
+  "created_at": "2026-05-25T14:19:15.237526+09:00",
+  "verdict": "WORKSPACE_INTERNAL_SCHEMA_CANDIDATE_CREATED_FROM_BATCH01_02_03_EVIDENCE_HOLD",
+  "schema": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json",
+  "operator_view": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_OPERATOR_VIEW_V0.md",
+  "evidence_item_count": 18,
+  "asset_type_count": 10,
+  "return_plan": {
+    "return_to_original_position": "INTERNAL_ASSET_CLEANUP_CONTINUATION",
+    "why_now": "B lane completed as workspace-internal candidate schema; further schema work without cleanup return would become over-modeling.",
+    "next_safe_cleanup_lane": "INTERNAL_ASSET_FIELD_CLEANUP_SPACE_GOVERNED_PASS_V0",
+    "allowed_actions": [
+      "read existing full asset reclassification",
+      "read freeze/archive candidates",
+      "pointer-only grouping",
+      "risk-ranked cleanup candidate map",
+      "no move/no archive/no source edit"
+    ],
+    "stop_boundaries": [
+      "actual mv/archive",
+      "source edits",
+      "authority/current-position/registry mutation",
+      "promotion",
+      "bulk generated copies",
+      "live Codex/Gemini"
+    ]
+  },
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "workspace_internal_schema_candidate_created": true
+  }
+}

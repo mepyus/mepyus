@@ -1,0 +1,60 @@
+{
+  "active_hits": [],
+  "checks": [
+    {
+      "check": "full_sync_packet_created",
+      "pass": true
+    },
+    {
+      "check": "chronological_index_created",
+      "pass": true
+    },
+    {
+      "check": "root_item_count_gt_recent_subset",
+      "count": 57,
+      "pass": true
+    },
+    {
+      "check": "all_major_arcs_present",
+      "pass": true
+    },
+    {
+      "check": "quick_board_created",
+      "pass": true
+    },
+    {
+      "check": "pointer_sha_valid",
+      "pass": true
+    },
+    {
+      "check": "codex_placeholder_not_judgment",
+      "pass": true
+    },
+    {
+      "check": "no_codex_gemini_executed",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary",
+      "pass": true
+    },
+    {
+      "check": "active_hits_0",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "elapsed_marker": 154053.726896527,
+  "hashes": {
+    "01_CODEX_FULL_HISTORY_SYNC_PACKET.json": "bf5af91eec05079388a6543ce109c47bfe8833cf46022ce4bfe8fd32c9871178",
+    "02_CODEX_FULL_HISTORY_CHRONOLOGICAL_INDEX.md": "d79a0765fec9476cd8b81c4b88b124292f4199668392101709f507674214bdee",
+    "03_codex_full_history_sync_from_start_report_v0.md": "001a94bf23e7049175911759dcb98a67e0ccf738878eddb08928218d9017faa8",
+    "90_CODEX_LATEST_SUMMARY_CARD.json": "e4cc72983689850835c4a2217f2f531d653dc921bff3e0cfb81dc6fc2e30da28",
+    "90_HERMES_LATEST_SUMMARY_CARD.json": "4037001775f7913c137e0af49b8291bd95b8d523352d6a791fc3079ceb0fa332",
+    "90_QUICK_EXCHANGE_BOARD.json": "b762bdb5af7a9d30c7718174d9ba0c8688d40ce6e0001af27363401a86c718e3",
+    "91_CODEX_READ_FIRST_FULL_HISTORY_SYNC.md": "089f5cdf6ad0e90ae8269f315b670a28c950fdb85d80f99601c93b8e39d44fc8",
+    "99_LATEST_POINTERS.json": "606423deaf089c1d40da81f274f73d935b6bf09c3d069a73841cc3e6d5efbf6c"
+  },
+  "verdict": "PASS_CODEX_FULL_HISTORY_SYNC_FROM_START_WITH_HOLD"
+}

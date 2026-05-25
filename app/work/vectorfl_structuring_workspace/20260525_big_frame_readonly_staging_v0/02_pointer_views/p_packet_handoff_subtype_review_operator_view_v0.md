@@ -1,0 +1,89 @@
+# P_PACKET_HANDOFF_SUBTYPE_REVIEW_BATCH01_V0
+
+status: POINTER_ONLY / NO_CALL / NO_APPLY / HOLD
+
+## codex_review_packet
+- sample_count: 4
+- dispositions: {'FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL': 3, 'GENERAL_PACKET_POINTER_REVIEW': 1}
+
+## validation_packet
+- sample_count: 4
+- dispositions: {'ONE_SHOT_RECEIPT_TRACE_EVIDENCE': 4}
+
+## gemini_queue_packet
+- sample_count: 4
+- dispositions: {'FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL': 4}
+
+## handoff_packet
+- sample_count: 4
+- dispositions: {'FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL': 4}
+
+## task_packet
+- sample_count: 4
+- dispositions: {'REUSABLE_TASK_PACKET_PATTERN_CANDIDATE': 4}
+
+## general_packet_handoff
+- sample_count: 4
+- dispositions: {'GENERAL_PACKET_POINTER_REVIEW': 4}
+
+## inbox_apply_packet
+- sample_count: 4
+- dispositions: {'GENERAL_PACKET_POINTER_REVIEW': 4}
+
+## Samples
+- P_PACKET_REVIEW_01 codex_review_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - runtime/manifests/folder_inventory/runtime.manifests.label_packets.json
+- P_PACKET_REVIEW_02 codex_review_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - references/git_search/oh-my-codex-main/CHANGELOG.md
+- P_PACKET_REVIEW_03 codex_review_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - runtime/obsidian_date_folder_intake/05-15/intake_payload.json
+- P_PACKET_REVIEW_04 codex_review_packet GENERAL_PACKET_POINTER_REVIEW HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json
+- P_PACKET_REVIEW_05 validation_packet ONE_SHOT_RECEIPT_TRACE_EVIDENCE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json
+- P_PACKET_REVIEW_06 validation_packet ONE_SHOT_RECEIPT_TRACE_EVIDENCE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json
+- P_PACKET_REVIEW_07 validation_packet ONE_SHOT_RECEIPT_TRACE_EVIDENCE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PACKET_VALIDITY_REVIEW_FIVE_RISK_FAMILY_ASSESSMENT_V0.md
+- P_PACKET_REVIEW_08 validation_packet ONE_SHOT_RECEIPT_TRACE_EVIDENCE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/VECTORFL_FLOW_NETWORK_CALL_RULES_V0_1.md
+- P_PACKET_REVIEW_09 gemini_queue_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/outputs/rubric_two_agent_gemini_execution_pipeline_candidate_v0.md
+- P_PACKET_REVIEW_10 gemini_queue_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md
+- P_PACKET_REVIEW_11 gemini_queue_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md
+- P_PACKET_REVIEW_12 gemini_queue_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/high_risk_6_reference_map_batch01_v0.json
+- P_PACKET_REVIEW_13 handoff_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/observer_ingest_min/generated/content_role_tags_codex_handoff_structured_doc_routing_stability_baseline_lock_and_next_step_directive_v1_flow_guard_20260422_185702.json
+- P_PACKET_REVIEW_14 handoff_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/packages/package_012_revised_metadata_scan_application/target_metadata_scan_report.md
+- P_PACKET_REVIEW_15 handoff_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/packages/package_019_tone_aware_metadata_scan_implementation/smoke_report_001.md
+- P_PACKET_REVIEW_16 handoff_packet FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/packages/package_001_external_lens_reread/metadata_scan_report.md
+- P_PACKET_REVIEW_17 task_packet REUSABLE_TASK_PACKET_PATTERN_CANDIDATE LOW_POINTER_REVIEW
+  - references/git_search/OpenHarness-main/src/openharness/tasks/manager.py
+- P_PACKET_REVIEW_18 task_packet REUSABLE_TASK_PACKET_PATTERN_CANDIDATE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - references/git_search/openclaw-main/docs/automation/tasks.md
+- P_PACKET_REVIEW_19 task_packet REUSABLE_TASK_PACKET_PATTERN_CANDIDATE LOW_POINTER_REVIEW
+  - references/git_search/oh-my-codex-main/DEMO.md
+- P_PACKET_REVIEW_20 task_packet REUSABLE_TASK_PACKET_PATTERN_CANDIDATE HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/space-skill-sandbox/outputs/operating_principle_task_inventory_20260513_candidate_v0.md
+- P_PACKET_REVIEW_21 general_packet_handoff GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - app/work/archive_review/transition_support/result_value_bundle_stage1/run_result_value_compare_card_stage1.py
+- P_PACKET_REVIEW_22 general_packet_handoff GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - app/work/archive_review/transition_support/youtube_transcript_probe_0322/run_youtube_transcript_probe_0322.py
+- P_PACKET_REVIEW_23 general_packet_handoff GENERAL_PACKET_POINTER_REVIEW HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - app/work/archive_review/transition_support/workbench_stage1/run_workbench_stage1.py
+- P_PACKET_REVIEW_24 general_packet_handoff GENERAL_PACKET_POINTER_REVIEW HIGH_AUTHORITY_LANGUAGE_FREEZE
+  - scripts/run_reservoir_pipeline_repo_seed_audit.py
+- P_PACKET_REVIEW_25 inbox_apply_packet GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - app/runtime/state_attention_memory.py
+- P_PACKET_REVIEW_26 inbox_apply_packet GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - references/git_search/openclaw-main/docs/logging.md
+- P_PACKET_REVIEW_27 inbox_apply_packet GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - app/runtime/state_change_attention_queue.py
+- P_PACKET_REVIEW_28 inbox_apply_packet GENERAL_PACKET_POINTER_REVIEW MEDIUM_APPLY_LANGUAGE_HOLD
+  - app/runtime/process_console_view/builder.py

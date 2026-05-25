@@ -1,0 +1,100 @@
+# P_PACKET_CODEX_REVIEW_FREEZE_AND_REUSABLE_SPLIT_BATCH01_V0
+
+status: POINTER_ONLY / NO_CALL / NO_DELETE / NO_PROMOTION / HOLD
+
+## FREEZE_AUTHORITY_SENSITIVE (20)
+- FREEZE_AUTHORITY_SENSITIVE_01 runtime/manifests/provenance_compaction/provenance_link_index_snapshot_before_apply_v1.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: 4b7581f6b4fe
+- FREEZE_AUTHORITY_SENSITIVE_02 runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: f5b4358e49d7
+- FREEZE_AUTHORITY_SENSITIVE_03 references/git_search/oh-my-codex-main/CHANGELOG.md
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: a08acb38081c
+- FREEZE_AUTHORITY_SENSITIVE_04 runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: f720f89ce5ac
+- FREEZE_AUTHORITY_SENSITIVE_05 runtime/views/multi_lens_document_reading/doc_openai_agent_first_codex_note_v0_multi_lens_readout_openai_agent_first_codex_note_v0_20260423_153057.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: e51d9ae8aa1f
+- FREEZE_AUTHORITY_SENSITIVE_06 runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: 36d7b4f02868
+- FREEZE_AUTHORITY_SENSITIVE_07 runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_readout_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: b8282dfa11d6
+- FREEZE_AUTHORITY_SENSITIVE_08 runtime/manifests/structured_internal_docs_registry_v1.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: 449ce18ad403
+- FREEZE_AUTHORITY_SENSITIVE_09 app/work/space-skill-sandbox/packages/package_047_audit/flow_audit.txt
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: e1480fa32ca9
+- FREEZE_AUTHORITY_SENSITIVE_10 runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_supervisor_surface_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json
+  - action: KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL
+  - sha: 3d21aaf89b05
+
+## REUSABLE_PATTERN_CANDIDATE (12)
+- REUSABLE_PATTERN_CANDIDATE_01 docs/reports/formation_movement_interface_codex_coupling_diagnostic_note_v0.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 440b4200fc56
+- REUSABLE_PATTERN_CANDIDATE_02 references/git_search/oh-my-codex-main/docs/readme/README.de.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 74c4ed9a5383
+- REUSABLE_PATTERN_CANDIDATE_03 references/git_search/oh-my-codex-main/docs/readme/README.fr.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 66f21c6e0630
+- REUSABLE_PATTERN_CANDIDATE_04 references/git_search/oh-my-codex-main/docs/readme/README.ru.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: f9694da6470f
+- REUSABLE_PATTERN_CANDIDATE_05 references/git_search/oh-my-codex-main/README.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 953d13b2ec72
+- REUSABLE_PATTERN_CANDIDATE_06 references/git_search/everything-claude-code-main/README.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 923e86fd63e1
+- REUSABLE_PATTERN_CANDIDATE_07 runtime/cli_sessions/index.json
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: f3f65dbe6c28
+- REUSABLE_PATTERN_CANDIDATE_08 scripts/run_vectorfl_paper_codex_bridge.py
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 62f2841929d0
+- REUSABLE_PATTERN_CANDIDATE_09 references/git_search/everything-claude-code-main/.claude/ecc-tools.json
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: 9c7947db9e95
+- REUSABLE_PATTERN_CANDIDATE_10 codex_content_pack.md
+  - action: REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW
+  - sha: da54d389f2f1
+
+## ACTIVE_FUTURE_NO_CALL (12)
+- ACTIVE_FUTURE_NO_CALL_01 source_assets/baselines/codex_baseline_codex_gemini_session_batch_operation_contract_v1.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 670e1d548745
+- ACTIVE_FUTURE_NO_CALL_02 app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: f2821bb9cb73
+- ACTIVE_FUTURE_NO_CALL_03 runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 60d136d02e53
+- ACTIVE_FUTURE_NO_CALL_04 runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 614538734d1d
+- ACTIVE_FUTURE_NO_CALL_05 runtime/cli_sessions/cli_20260416T102854Z_33211af5/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: fb3503777cc1
+- ACTIVE_FUTURE_NO_CALL_06 runtime/cli_sessions/cli_20260416T103344Z_b4acde63/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: bbcebd449d7e
+- ACTIVE_FUTURE_NO_CALL_07 runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 0b8e579189da
+- ACTIVE_FUTURE_NO_CALL_08 runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: ed8a01cee13d
+- ACTIVE_FUTURE_NO_CALL_09 docs/reports/integrated_engine_current_conversation_surface_snapshot_v0.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 88adebf3a452
+- ACTIVE_FUTURE_NO_CALL_10 docs/reports/paperclip_native_product_reading_v0.md
+  - action: KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE
+  - sha: 358d2ab9ef2e
+

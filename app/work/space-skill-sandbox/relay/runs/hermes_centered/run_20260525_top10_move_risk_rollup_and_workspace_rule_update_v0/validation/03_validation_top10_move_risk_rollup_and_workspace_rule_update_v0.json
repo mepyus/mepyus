@@ -1,0 +1,48 @@
+{
+  "validation_id": "VALIDATION_TOP10_MOVE_RISK_ROLLUP_AND_WORKSPACE_RULE_UPDATE_V0",
+  "created_at": "2026-05-25T13:47:13.980456+09:00",
+  "verdict": "PASS_TOP10_MOVE_RISK_ROLLUP_AND_WORKSPACE_RULE_UPDATE_WITH_ACTUAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 18,
+  "checks_passed": 18,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_RULE_UPDATE_AS_AUTHORITY",
+      "claim": "workspace README/MANIFEST rule update is authority registry update",
+      "caught": true,
+      "hold_reason": "HOLD_WORKSPACE_INTERNAL_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_ROLLUP_AS_MOVE_APPROVAL",
+      "claim": "risk rollup authorizes mv/archive",
+      "caught": true,
+      "hold_reason": "HOLD_EVIDENCE_ONLY_NO_APPLY_APPROVAL"
+    },
+    {
+      "name": "NEG_COPY_PATH_REPLACEMENT_AFTER_RULE",
+      "claim": "copy paths can now replace original paths because rules exist",
+      "caught": true,
+      "hold_reason": "HOLD_COPY_VIEW_NOT_SUBSTITUTION"
+    }
+  ],
+  "risk_distribution": {
+    "HIGH_TRUE_MOVE_BLOCKER": 6,
+    "MEDIUM_CONTROL_SURFACE_UPDATE_RISK": 4
+  },
+  "allowed_workspace_files_modified": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/README_NOT_AUTHORITY.md",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json"
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "workspace_readme_update": true,
+    "workspace_manifest_update": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

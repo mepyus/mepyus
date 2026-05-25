@@ -1,0 +1,660 @@
+{
+  "batch_id": "VECTORFL_ROLE_ROUTE_BATCH_PLAN_V0_1",
+  "created_at": "2026-05-25T10:24:39.618635+09:00",
+  "source_reading": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_wide_asset_sample_reading_v0/readings/01_wide_asset_sample_reading_v0.json",
+  "verdict": "PASS_ROUTE_BATCH_PLAN_WITH_HOLD",
+  "routes": {
+    "Codex_mature": {
+      "route_question": "이 자산은 VectorFL 공간 어디에 붙어야 하며, 기존 map/index와 충돌하거나 중복되는가?",
+      "batch_action": "read map/index assets, produce placement/conflict/gap map, no authority mutation",
+      "stop_conditions": [
+        "authority/current-position/registry mutation required",
+        "map conflict unresolved",
+        "asset lacks changed_judgment"
+      ],
+      "asset_count": 10,
+      "assets": [
+        {
+          "asset_id": "space_asset_map_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/space_asset_map_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "evidence/provenance layer",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "hold",
+            "authority",
+            "current",
+            "registry"
+          ],
+          "relations": [
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: authority, current, hold, registry",
+              "score": 4
+            },
+            {
+              "to": "external_material_microspace_index_v0",
+              "why": "shared tags/attach surface: current, evidence, hold",
+              "score": 3
+            },
+            {
+              "to": "relation_first_space_input_processor_candidate_closeout_v0",
+              "why": "shared tags/attach surface: authority, current, registry",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "asset_id": "legacy_artifact_family_identity_map_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/legacy_artifact_family_identity_map_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "residue",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, residue",
+              "score": 3
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, residue",
+              "score": 3
+            },
+            {
+              "to": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, residue",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "asset_id": "space_boundary_material_flow_map_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/space_boundary_material_flow_map_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "evidence/provenance layer",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "hold",
+            "residue",
+            "boundary"
+          ],
+          "relations": [
+            {
+              "to": "external_material_microspace_index_v0",
+              "why": "shared tags/attach surface: boundary, evidence, hold",
+              "score": 3
+            },
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: boundary, hold, residue",
+              "score": 3
+            },
+            {
+              "to": "space_asset_map_v0",
+              "why": "shared tags/attach surface: evidence, hold",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "asset_id": "internal_asset_recapitalization_map_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/internal_asset_recapitalization_map_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "evidence/provenance layer",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "current",
+            "boundary"
+          ],
+          "relations": [
+            {
+              "to": "external_material_microspace_index_v0",
+              "why": "shared tags/attach surface: boundary, current, evidence",
+              "score": 3
+            },
+            {
+              "to": "space_asset_map_v0",
+              "why": "shared tags/attach surface: current, evidence",
+              "score": 2
+            },
+            {
+              "to": "space_boundary_material_flow_map_v0",
+              "why": "shared tags/attach surface: boundary, evidence",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "asset_id": "external_material_microspace_index_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/external_material_microspace_index_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "evidence/provenance layer",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "hold",
+            "current",
+            "boundary",
+            "gate"
+          ],
+          "relations": [
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: boundary, current, gate, hold",
+              "score": 4
+            },
+            {
+              "to": "space_asset_map_v0",
+              "why": "shared tags/attach surface: current, evidence, hold",
+              "score": 3
+            },
+            {
+              "to": "space_boundary_material_flow_map_v0",
+              "why": "shared tags/attach surface: boundary, evidence, hold",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "asset_id": "space_translation_language_base_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/space_translation_language_base_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "space boundary / material flow",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "authority",
+            "current",
+            "residue",
+            "boundary"
+          ],
+          "relations": [
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: authority, boundary, current, residue",
+              "score": 4
+            },
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: boundary, current, residue",
+              "score": 3
+            },
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: authority, boundary, current",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "asset_id": "plan_from_space_line_asset_map_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/plan_from_space_line_asset_map_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "hold",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "plan_from_space_position_map_seed_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, gate",
+              "score": 5
+            },
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, gate",
+              "score": 4
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, gate, hold",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "asset_id": "plan_from_space_position_map_seed_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/plan_from_space_position_map_seed_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "hold",
+            "authority",
+            "provenance",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, authority, gate",
+              "score": 6
+            },
+            {
+              "to": "plan_from_space_line_asset_map_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, gate",
+              "score": 5
+            },
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: authority, boundary, gate, hold",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "asset_id": "anchor_stack_manifest_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/anchor_stack_manifest_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "current",
+            "registry",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, current, gate",
+              "score": 5
+            },
+            {
+              "to": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, current, gate",
+              "score": 5
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, current, gate",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "asset_id": "anchor_stack_operating_surface_tiers_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/indexes/anchor_stack_operating_surface_tiers_v0.md",
+          "space_role": "index_or_map",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_now",
+          "role_route": "Codex_mature",
+          "tags": [
+            "current",
+            "registry",
+            "residue",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "anchor_stack_manifest_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, current, gate",
+              "score": 5
+            }
+          ]
+        }
+      ]
+    },
+    "Hermes_execute_as_check_then_Codex_mature": {
+      "route_question": "이 자산을 실행 전 gate/check로 사용할 수 있는가, 그리고 check 결과를 Codex가 공간화할 수 있는가?",
+      "batch_action": "turn into dry-run precheck receipt; then handoff to Codex as check surface",
+      "stop_conditions": [
+        "check requires source mutation",
+        "criteria ambiguous",
+        "false authority risk"
+      ],
+      "asset_count": 2,
+      "assets": [
+        {
+          "asset_id": "relation_first_input_gate_spec_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+          "space_role": "guard_or_gate",
+          "attachment_point": "relation-first input processing",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HIGH_HOLD_current_position_sensitive",
+          "operator_load": "read_now",
+          "role_route": "Hermes_execute_as_check_then_Codex_mature",
+          "tags": [
+            "hold",
+            "authority",
+            "current",
+            "registry",
+            "boundary",
+            "gate",
+            "relation"
+          ],
+          "relations": [
+            {
+              "to": "relation_first_space_input_processor_candidate_closeout_v0",
+              "why": "shared tags/attach surface: authority, boundary, current, registry",
+              "score": 6
+            },
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: authority, boundary, gate, hold",
+              "score": 6
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: authority, gate, hold, registry",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "asset_id": "evidence_provenance_classification_candidate_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/evidence_provenance_classification_candidate_v0.md",
+          "space_role": "evidence_classifier",
+          "attachment_point": "relation-first input processing",
+          "changed_judgment": "can change routing/reading criteria, not just report content",
+          "authority_boundary": "HOLD_working_surface",
+          "operator_load": "read_now",
+          "role_route": "Hermes_execute_as_check_then_Codex_mature",
+          "tags": [
+            "hold",
+            "provenance",
+            "residue",
+            "gate",
+            "relation"
+          ],
+          "relations": [
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: gate, hold, provenance, relation",
+              "score": 6
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: gate, hold, provenance, relation",
+              "score": 5
+            },
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: gate, hold, relation, relation-first input processing",
+              "score": 4
+            }
+          ]
+        }
+      ]
+    },
+    "Gemini_explore_then_Codex_mature": {
+      "route_question": "이 자산이 아직 보지 않은 관계/층위/잠재 연결을 드러내는가?",
+      "batch_action": "wide exploration only; return candidate relations for Codex review",
+      "stop_conditions": [
+        "exploration becomes unbounded",
+        "no changed_judgment",
+        "current-position authority implied"
+      ],
+      "asset_count": 6,
+      "assets": [
+        {
+          "asset_id": "relation_first_space_input_processor_candidate_closeout_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_space_input_processor_candidate_closeout_v0.md",
+          "space_role": "phase_closeout",
+          "attachment_point": "relation-first input processing",
+          "changed_judgment": "candidate signal; requires relation to other assets before it changes judgment",
+          "authority_boundary": "HIGH_HOLD_current_position_sensitive",
+          "operator_load": "pointer_only",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "authority",
+            "current",
+            "registry",
+            "boundary",
+            "relation"
+          ],
+          "relations": [
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: authority, boundary, current, registry",
+              "score": 6
+            },
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: authority, boundary, relation, relation-first input processing",
+              "score": 4
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: authority, boundary, current, registry",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "asset_id": "watch_hold_residue_process_asset_placement_clarifier_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/watch_hold_residue_process_asset_placement_clarifier_v0.md",
+          "space_role": "report_or_candidate",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "candidate signal; requires relation to other assets before it changes judgment",
+          "authority_boundary": "HIGH_HOLD_current_position_sensitive",
+          "operator_load": "read_later",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "hold",
+            "authority",
+            "registry",
+            "provenance",
+            "residue",
+            "gate",
+            "anchor",
+            "relation"
+          ],
+          "relations": [
+            {
+              "to": "plan_from_space_position_map_seed_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, authority, gate",
+              "score": 6
+            },
+            {
+              "to": "unchecked_space_structure_audit_v0",
+              "why": "shared tags/attach surface: authority, gate, hold, provenance",
+              "score": 6
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, authority, gate",
+              "score": 6
+            }
+          ]
+        },
+        {
+          "asset_id": "unchecked_space_structure_audit_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/unchecked_space_structure_audit_v0.md",
+          "space_role": "audit_or_position_check",
+          "attachment_point": "relation-first input processing",
+          "changed_judgment": "can change confidence/current understanding but should not mutate current-position directly",
+          "authority_boundary": "HIGH_HOLD_current_position_sensitive",
+          "operator_load": "pointer_only",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "hold",
+            "authority",
+            "provenance",
+            "residue",
+            "boundary",
+            "gate",
+            "relation"
+          ],
+          "relations": [
+            {
+              "to": "relation_first_input_gate_spec_v0",
+              "why": "shared tags/attach surface: authority, boundary, gate, hold",
+              "score": 6
+            },
+            {
+              "to": "evidence_provenance_classification_candidate_v0",
+              "why": "shared tags/attach surface: gate, hold, provenance, relation",
+              "score": 6
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: authority, gate, hold, provenance",
+              "score": 6
+            }
+          ]
+        },
+        {
+          "asset_id": "may6_nine_doc_anchor_stack_alignment_review_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/may6_nine_doc_anchor_stack_alignment_review_v0.md",
+          "space_role": "audit_or_position_check",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change confidence/current understanding but should not mutate current-position directly",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_later",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "current",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 5
+            },
+            {
+              "to": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 5
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "asset_id": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/anchor_stack_big_frame_setup_closeout_20260506_v0.md",
+          "space_role": "phase_closeout",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "candidate signal; requires relation to other assets before it changes judgment",
+          "authority_boundary": "HOLD_candidate_orientation_not_authority",
+          "operator_load": "read_later",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "current",
+            "registry",
+            "residue",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "anchor_stack_manifest_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, current, gate",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "asset_id": "current_position_check_20260506_anchor_stack_after_set_a_v0",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/current_position_check_20260506_anchor_stack_after_set_a_v0.md",
+          "space_role": "audit_or_position_check",
+          "attachment_point": "anchor_stack / position stabilization",
+          "changed_judgment": "can change confidence/current understanding but should not mutate current-position directly",
+          "authority_boundary": "HIGH_HOLD_current_position_sensitive",
+          "operator_load": "read_later",
+          "role_route": "Gemini_explore_then_Codex_mature",
+          "tags": [
+            "authority",
+            "current",
+            "registry",
+            "residue",
+            "boundary",
+            "gate",
+            "anchor"
+          ],
+          "relations": [
+            {
+              "to": "anchor_stack_operating_surface_tiers_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "anchor_stack_big_frame_setup_closeout_20260506_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, boundary, current",
+              "score": 7
+            },
+            {
+              "to": "watch_hold_residue_process_asset_placement_clarifier_v0",
+              "why": "shared tags/attach surface: anchor, anchor_stack, authority, gate",
+              "score": 6
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "execution_order": [
+    "Hermes_execute_as_check_then_Codex_mature",
+    "Codex_mature",
+    "Gemini_explore_then_Codex_mature"
+  ],
+  "why_order": "먼저 gate/provenance check를 고정하고, 그 다음 map/index를 Codex가 숙성하며, 마지막에 Gemini가 넓은 탐색으로 gap을 보강한다."
+}

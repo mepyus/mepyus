@@ -1,0 +1,58 @@
+{
+  "schema_id": "VECTORTUBE_LAYER_CARD_SCHEMA_V0",
+  "created_at": "2026-05-25T07:48:46.599965+09:00",
+  "fields": {
+    "card_id": "string",
+    "source_identity": "video_id/url/title/source_role",
+    "evidence_grounding": "raw transcript, timestamped transcript, sha256, duration, segment_count",
+    "layers": {
+      "L0_source_surface": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L1_conceptual": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L2_information_structure": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L3_context_background": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L4_emotional_rhetorical": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L5_power_authority": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L6_practical_operational": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L7_counter_uncertainty": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      },
+      "L8_vectorfl_mapping": {
+        "required": "timestamped claims or explicit missing marker",
+        "purpose": "layer-specific reading"
+      }
+    },
+    "negative_validation": [
+      "misleading risk",
+      "missing layer",
+      "needed counter/orthogonal source"
+    ],
+    "promotion_gate": {
+      "summary_only": false,
+      "timestamped_claims_required": true,
+      "authority_hold": true,
+      "main_space_mutation": false
+    }
+  }
+}

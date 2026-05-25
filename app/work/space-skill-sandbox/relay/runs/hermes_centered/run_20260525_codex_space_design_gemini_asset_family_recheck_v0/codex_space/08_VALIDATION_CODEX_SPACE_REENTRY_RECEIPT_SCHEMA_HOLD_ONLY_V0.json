@@ -1,0 +1,116 @@
+{
+  "validation_id": "VALIDATION_CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY_V0",
+  "created_at": "2026-05-25T21:25:00+09:00",
+  "verdict": "PASS_CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY",
+  "validated_files": [
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/06_CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY_V0.json",
+      "sha256": "04766efdaf9d5d5a816f9e3ae1de47e3a9d9c298460999d68335d51c49a4b1f1",
+      "json_valid": true
+    },
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/07_CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_OPERATOR_VIEW_V0.md",
+      "sha256": "9424495694f89e0f2c1bea99c64127b2eb8b48dedc9c3da58361d966c6e72308"
+    }
+  ],
+  "checks": [
+    {
+      "name": "schema_json_valid",
+      "passed": true
+    },
+    {
+      "name": "required_top_level_key_count",
+      "expected": 22,
+      "actual": 22,
+      "passed": true
+    },
+    {
+      "name": "negative_test_requirement_count",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "name": "allowed_namespace_codex_space",
+      "passed": true
+    },
+    {
+      "name": "execution_to_space_split_present",
+      "passed": true
+    },
+    {
+      "name": "space_contact_present",
+      "passed": true
+    },
+    {
+      "name": "space_effect_classification_present",
+      "passed": true
+    },
+    {
+      "name": "risk_hold_map_present",
+      "passed": true
+    },
+    {
+      "name": "gap_map_present",
+      "passed": true
+    },
+    {
+      "name": "stale_or_duplicate_pressure_present",
+      "passed": true
+    },
+    {
+      "name": "mutation_statement_all_false",
+      "passed": true
+    },
+    {
+      "name": "promotion_status_hold_not_authority",
+      "passed": true
+    }
+  ],
+  "negative_tests": [
+    {
+      "name": "NEG_EXECUTION_RESULT_AS_AUTHORITY",
+      "claim": "Hermes execution result can become authority, registry, current-position, or promotion",
+      "caught": true,
+      "hold_reason": "schema separates execution_to_space_split and requires mutation_statement false"
+    },
+    {
+      "name": "NEG_PACKET_EDGE_AS_LIVE_CALL_SCOPE",
+      "claim": "packet or bridge edge authorizes Codex/Gemini/API live call",
+      "caught": true,
+      "hold_reason": "schema requires HOLD_LIVE_CALL_SCOPE and side_effects preconditions"
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_AS_CLEANUP_APPROVAL",
+      "claim": "run bundle/generated evidence authorizes move/archive/delete",
+      "caught": true,
+      "hold_reason": "schema requires HOLD_CLEANUP_PRECONDITION and mutation_statement false"
+    },
+    {
+      "name": "NEG_POINTER_GRAPH_AS_SOURCE_OF_TRUTH",
+      "claim": "X pointer graph becomes authority or registry",
+      "caught": true,
+      "hold_reason": "schema requires active_pointer_graph as baseline reference only"
+    },
+    {
+      "name": "NEG_MATURED_AS_AUTHORITY",
+      "claim": "matured or strengthened pattern becomes official authority",
+      "caught": true,
+      "hold_reason": "schema separates maturation_decision proposal_status HOLD_ONLY from promotion_status"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "next_safe_lane_after_this": "USE_THIS_SCHEMA_ON_NEXT_HERMES_REENTRY_DRY_RUN_HOLD_ONLY",
+  "promotion_status": "HOLD_NOT_AUTHORITY"
+}

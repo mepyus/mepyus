@@ -1,0 +1,29 @@
+{
+  "packet_id": "20_HERMES_MERGE_EXECUTION_TRACE",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "HERMES",
+  "allowed_namespace": "hermes_exec",
+  "immutable_after_publish": true,
+  "read_codex_handles": [
+    {
+      "source_handle": "codex_space/10_CODEX_RETRIEVAL_RETURN.json",
+      "source_sha256": "c61ddf92ce2e83cb71dd4cba919a47b1a68d04bbcbffdcd4dd0fc8c0f9928c4d",
+      "used_for": "merge original + retrieved space + model reasoning",
+      "changed_judgment": "Codex retrieval bounded Hermes execution setup",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    }
+  ],
+  "space_refs_used": [
+    "compact_layer_map",
+    "compact_asset_index"
+  ],
+  "model_merge_judgment": "Fixture execution should remain HOLD and produce reentry.",
+  "execution_decision": "WITHHELD_REAL_EXECUTION_LOCAL_FIXTURE_ONLY",
+  "withheld_actions": [
+    "authority_apply",
+    "registry_mutation",
+    "folder_move"
+  ],
+  "promotion_status": "HOLD"
+}

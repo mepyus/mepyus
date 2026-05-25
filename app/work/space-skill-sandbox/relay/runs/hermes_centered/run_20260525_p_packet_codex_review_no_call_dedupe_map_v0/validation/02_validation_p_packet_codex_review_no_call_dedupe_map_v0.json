@@ -1,0 +1,56 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_CODEX_REVIEW_PACKET_NO_CALL_DEDUPE_MAP_V0",
+  "created_at": "2026-05-25T14:39:49.421448+09:00",
+  "verdict": "PASS_P_PACKET_CODEX_REVIEW_NO_CALL_DEDUPE_MAP_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 13,
+  "checks_passed": 13,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_DEDUPE_MAP_AS_DELETE_PLAN",
+      "claim": "dedupe groups authorize deletion/cleanup",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_ONLY_NO_DELETE"
+    },
+    {
+      "name": "NEG_NO_CALL_MAP_AS_CODEX_EXECUTION",
+      "claim": "no-call map executed Codex review",
+      "caught": true,
+      "hold_reason": "HOLD_LIVE_CODEX_CALL_FALSE"
+    },
+    {
+      "name": "NEG_REUSABLE_PACKET_AS_SKILL_PROMOTION",
+      "claim": "reusable packet candidates are promoted to skill/template",
+      "caught": true,
+      "hold_reason": "HOLD_CANDIDATE_ONLY"
+    },
+    {
+      "name": "NEG_FREEZE_QUEUE_AS_AUTHORITY_REGISTRY",
+      "claim": "freeze queue mutates authority registry/current-position",
+      "caught": true,
+      "hold_reason": "HOLD_FREEZE_EVIDENCE_ONLY"
+    }
+  ],
+  "scan_count": 7660,
+  "disposition_distribution": {
+    "REUSABLE_REVIEW_PACKET_PATTERN_CANDIDATE": 82,
+    "GENERAL_CODEX_REVIEW_POINTER": 4605,
+    "AUTHORITY_SENSITIVE_FREEZE": 2538,
+    "ONE_SHOT_GENERATED_REVIEW_RECEIPT": 419,
+    "ACTIVE_FUTURE_CODEX_REVIEW_CANDIDATE_NO_CALL": 16
+  },
+  "exact_duplicate_group_count": 118,
+  "fuzzy_duplicate_group_count": 31,
+  "next_recommended": "P_PACKET_CODEX_REVIEW_FREEZE_AND_REUSABLE_SPLIT_BATCH01_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "operator_load_id": "M7_OPERATOR_LOAD_ESTIMATE_V0",
+  "created_at": "2026-05-25T11:53:12.134946+09:00",
+  "verdict": "HIGH_OPERATOR_LOAD__DASHBOARD_REQUIRED_BEFORE_CLEANUP",
+  "counts": {
+    "total_freeze_items": 63,
+    "boards": {
+      "freeze_board": 63,
+      "pointer_only_board": 26,
+      "codex_review_needed_board": 61,
+      "cleanup_blocker_board": 63,
+      "archive_not_allowed_board": 61,
+      "m8_trace_needed_board": 61
+    },
+    "freeze_classes": {
+      "F3_AUTHORITY_BOUNDARY_FREEZE": 24,
+      "F1_CURRENT_POSITION_FREEZE": 22,
+      "F2_REGISTRY_FREEZE": 15,
+      "F4_PROMOTION_STATE_FREEZE": 2
+    },
+    "cleanup_policies": {
+      "DO_NOT_MOVE_POINTER_ONLY": 24,
+      "DO_NOT_MOVE_DO_NOT_ARCHIVE": 37,
+      "POINTER_ONLY_CODEX_REVIEW": 2
+    },
+    "confusion_items": 61,
+    "m2_conflict_candidates": 49
+  },
+  "load_assessment": {
+    "manual_review_burden": "high",
+    "reason": "63 freeze items, 61 multi-axis confusion items; filenames alone are unsafe.",
+    "mind_sized_next_step": "Review board summaries and top 10 cleanup blockers, not all 63 at once.",
+    "t_brain_risk": "operator may collapse receipt/candidate/authority under cleanup pressure"
+  },
+  "recommended_batches": [
+    {
+      "batch": "M7-B1",
+      "scope": "F1_CURRENT_POSITION_FREEZE",
+      "count": 22,
+      "action": "confirm DO_NOT_MOVE / current-position pointer preservation"
+    },
+    {
+      "batch": "M7-B2",
+      "scope": "F2_REGISTRY_FREEZE",
+      "count": 15,
+      "action": "confirm registry-like surfaces are pointer-only"
+    },
+    {
+      "batch": "M7-B3",
+      "scope": "F3_AUTHORITY_BOUNDARY_FREEZE",
+      "count": 24,
+      "action": "separate authority language from actual authority"
+    },
+    {
+      "batch": "M7-B4",
+      "scope": "F4_PROMOTION_STATE_FREEZE",
+      "count": 2,
+      "action": "Codex review of promotion-state ambiguity"
+    }
+  ],
+  "cleanup_apply_ready": false
+}

@@ -1,0 +1,379 @@
+{
+  "summary_id": "TOP10_CLEANUP_BLOCKER_READ_ONLY_SUMMARY_V0",
+  "created_at": "2026-05-25T12:33:44.310872+09:00",
+  "verdict": "TOP10_BLOCKERS_SUMMARIZED_WITH_REAL_FILE_EVIDENCE_HOLD",
+  "selection_rule": "Highest freeze/policy/conflict risk from M7 cleanup_blocker_board; then real file existence/sha/content-term inspection.",
+  "input_blocker_count": 63,
+  "top10_count": 10,
+  "elapsed_ms": 26.04,
+  "rows": [
+    {
+      "rank": 1,
+      "freeze_id": "M4FRZ_0009",
+      "pointer_id": "M2PTR_0010",
+      "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "exists": true,
+      "sha256_actual": "a628a40de42244a7113ef2537b4b00b91152c996f70b392fa04ffcc8986a98c5",
+      "sha256_indexed": "a628a40de42244a7113ef2537b4b00b91152c996f70b392fa04ffcc8986a98c5",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 1,
+        "registry": 1,
+        "authority": 3,
+        "promotion": 12,
+        "receipt_trace": 0,
+        "cleanup": 1
+      },
+      "sample_evidence_lines": [
+        "## 2. Corrected Candidate Names",
+        "*   **Skill Candidate:** `External Repo Structure Reading Skill` (Previously: `Space-Skill-Intake-Processor`)",
+        "*   **Hook Candidate:** `Source Contamination Detected Hook` (Consistent)",
+        "*   **Harness Candidate:** `Standard Mode External Repo Reading Harness` (Previously: `Harness-Based-Work-Packet`)"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 2,
+      "freeze_id": "M4FRZ_0003",
+      "pointer_id": "M2PTR_0004",
+      "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "exists": true,
+      "sha256_actual": "53921c2a7014a8dea4f3cb88131789b84469445de8b56e5dd39133d75d154686",
+      "sha256_indexed": "53921c2a7014a8dea4f3cb88131789b84469445de8b56e5dd39133d75d154686",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 6,
+        "registry": 1,
+        "authority": 9,
+        "promotion": 25,
+        "receipt_trace": 0,
+        "cleanup": 2
+      },
+      "sample_evidence_lines": [
+        "# Gemini External Material Queue 001 Task Packets Candidate v0",
+        "Status: task packet candidates",
+        "Authority: candidate packet design / not executable automation",
+        "This packet set is a non-executable candidate. It defines how Gemini could process one User-provided external material if execution is separately approved."
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 3,
+      "freeze_id": "M4FRZ_0013",
+      "pointer_id": "M2PTR_0014",
+      "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "exists": true,
+      "sha256_actual": "ff02c4d9107d52508d9cadc406f4e1fb0e9fd3c92bcb81aa7753693932f346d8",
+      "sha256_indexed": "ff02c4d9107d52508d9cadc406f4e1fb0e9fd3c92bcb81aa7753693932f346d8",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace"
+      ],
+      "term_hits": {
+        "current_position": 2,
+        "registry": 1,
+        "authority": 4,
+        "promotion": 11,
+        "receipt_trace": 0,
+        "cleanup": 0
+      },
+      "sample_evidence_lines": [
+        "**STATUS: COMPONENT_CHAIN_MODE_SELECTION_CLOSED_AS_USAGE_RULE_CANDIDATE**",
+        "- **Candidate Grammar:** The entire chain is preserved as a \"Candidate Judgment Grammar,\" not as automation or official system architecture.",
+        "External candidate / material input",
+        "| **Standard** | 재사용 후보 / 외부 자료 / 기존 기록 | normal candidate judgment | mandatory workflow |"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 4,
+      "freeze_id": "M4FRZ_0016",
+      "pointer_id": "M2PTR_0018",
+      "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "exists": true,
+      "sha256_actual": "95c8ffc8b5c655e8f893fef8073e4391d3ec51703a96ee1697b327010fcba683",
+      "sha256_indexed": "95c8ffc8b5c655e8f893fef8073e4391d3ec51703a96ee1697b327010fcba683",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace"
+      ],
+      "term_hits": {
+        "current_position": 7,
+        "registry": 5,
+        "authority": 9,
+        "promotion": 12,
+        "receipt_trace": 11,
+        "cleanup": 3
+      },
+      "sample_evidence_lines": [
+        "# External Candidate Reading Packaging - context-mode v0",
+        "It is not an adoption candidate.",
+        "It is not a workflow, automation, registry, index, ledger, router, controller, formal schema, current-position update, or baseline.",
+        "SQLite / FTS5 indexed trace memory"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 5,
+      "freeze_id": "M4FRZ_0024",
+      "pointer_id": "M2PTR_0027",
+      "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "exists": true,
+      "sha256_actual": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+      "sha256_indexed": "bb085260a297ff61d6725b42684eb49cfceada07b460c608b94404a6a21f18a0",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 1,
+        "registry": 4,
+        "authority": 6,
+        "promotion": 27,
+        "receipt_trace": 2,
+        "cleanup": 1
+      },
+      "sample_evidence_lines": [
+        "This report tests whether `Function/Process Formation Prework Candidate v0` can hold a real recent case.",
+        "function/material candidate",
+        "candidate reference",
+        "not registry/index/ledger"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 6,
+      "freeze_id": "M4FRZ_0029",
+      "pointer_id": "M2PTR_0033",
+      "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "exists": true,
+      "sha256_actual": "1cb6f25a7d78713a7945f71505b51a76361500b6348a66bbfc9994b8b39897f0",
+      "sha256_indexed": "1cb6f25a7d78713a7945f71505b51a76361500b6348a66bbfc9994b8b39897f0",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 2,
+        "registry": 4,
+        "authority": 6,
+        "promotion": 36,
+        "receipt_trace": 0,
+        "cleanup": 1
+      },
+      "sample_evidence_lines": [
+        "Do not create registry, index, ledger, router, controller, formal schema, official workflow, or ontology.",
+        "Do not update current-position.",
+        "Do not treat Gemini output as verified truth or final authority.",
+        "The purpose is to test whether lower-level process assets produce connection seeds, line candidates, and possible axis candidates."
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 7,
+      "freeze_id": "M4FRZ_0042",
+      "pointer_id": "M2PTR_0046",
+      "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "exists": true,
+      "sha256_actual": "cfb366bf4c5f02afa36cec2ccea0e6f55cbda58a9ff451b9d2dbe5e0ab519897",
+      "sha256_indexed": "cfb366bf4c5f02afa36cec2ccea0e6f55cbda58a9ff451b9d2dbe5e0ab519897",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "promotion_state",
+        "receipt_trace",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 1,
+        "registry": 1,
+        "authority": 0,
+        "promotion": 21,
+        "receipt_trace": 4,
+        "cleanup": 4
+      },
+      "sample_evidence_lines": [
+        "This backlog translates the 2026-04-17 source notes into implementation candidates.",
+        "| current component | current role | locked interpretation | surface human language candidate | internal label |",
+        "| `ExecutionRoutePanel` | route/support | current position and next route judgment | 다음 이동 방향 | `route_candidate` |",
+        "| `UserCliAssignmentPanel` | user-side CLI return | assignment candidate slot | 사용자 확인/배정 | `user_assignment_candidate` |"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 8,
+      "freeze_id": "M4FRZ_0058",
+      "pointer_id": "M2PTR_0062",
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_input_gate_spec_v0.md",
+      "exists": true,
+      "sha256_actual": "268e2577026b630330107a4137d00b8bc01cbc88bd8ea51578b512db2f21d7f9",
+      "sha256_indexed": "268e2577026b630330107a4137d00b8bc01cbc88bd8ea51578b512db2f21d7f9",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 2,
+        "registry": 5,
+        "authority": 7,
+        "promotion": 8,
+        "receipt_trace": 2,
+        "cleanup": 2
+      },
+      "sample_evidence_lines": [
+        "Status = CANDIDATE_OPERATION_SPEC",
+        "Authority = orientation / usage support",
+        "Not registry/index/ledger",
+        "Not current-position update"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 9,
+      "freeze_id": "M4FRZ_0060",
+      "pointer_id": "M2PTR_0067",
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "exists": true,
+      "sha256_actual": "d1e66e1d6b8411481ece668666661cf2569aa1ec2d89db78fcf60f3282a896d9",
+      "sha256_indexed": "d1e66e1d6b8411481ece668666661cf2569aa1ec2d89db78fcf60f3282a896d9",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "current_position",
+        "registry",
+        "authority",
+        "promotion_state",
+        "receipt_trace"
+      ],
+      "term_hits": {
+        "current_position": 1,
+        "registry": 3,
+        "authority": 4,
+        "promotion": 4,
+        "receipt_trace": 2,
+        "cleanup": 0
+      },
+      "sample_evidence_lines": [
+        "| **Registry Drift** | HIGH | 모든 연결을 index로 만들려 함 | '후보' 상태 보존 | Formal registry 생성 |",
+        "| **Authority Drift** | HIGH | 워커의 해석이 사실로 굳어짐 | 'Worker Evidence' 라벨링 | verified truth 선언 |",
+        "- NO registry, index, ledger, router, controller.",
+        "- NO current-position update or baseline promotion."
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    },
+    {
+      "rank": 10,
+      "freeze_id": "M4FRZ_0026",
+      "pointer_id": "M2PTR_0030",
+      "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "exists": true,
+      "sha256_actual": "aaaa473c471ee7e1c4c4b0f7df8b5309ea50f16c002a9252c22871ca48c18f12",
+      "sha256_indexed": "aaaa473c471ee7e1c4c4b0f7df8b5309ea50f16c002a9252c22871ca48c18f12",
+      "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+      "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+      "conflict_count": 1,
+      "confusion_axes": [
+        "registry",
+        "authority",
+        "promotion_state",
+        "cleanup"
+      ],
+      "term_hits": {
+        "current_position": 3,
+        "registry": 5,
+        "authority": 9,
+        "promotion": 18,
+        "receipt_trace": 3,
+        "cleanup": 2
+      },
+      "sample_evidence_lines": [
+        "2. v0 candidate creation",
+        "docs/reports/function_process_formation_prework_candidate_v0.md",
+        "docs/reports/function_process_formation_prework_candidate_v1.md",
+        "registry"
+      ],
+      "operator_verdict": "TOP_BLOCKER__READ_ONLY__DO_NOT_MOVE",
+      "why": "High-risk cleanup blocker confirmed from real file content/sha/existence checks."
+    }
+  ],
+  "boundary": {
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": "HOLD"
+  }
+}

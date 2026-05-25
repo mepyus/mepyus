@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "check": "gemini_return_capture_created",
+      "artifact": "codex_space/03_GEMINI_DEEP_SPACE_LACL_RETURN_CAPTURE_V0.md",
+      "pass": true
+    },
+    {
+      "check": "normalized_return_created",
+      "artifact": "codex_space/04_GEMINI_DEEP_SPACE_LACL_RETURN_NORMALIZED_V0.json",
+      "pass": true
+    },
+    {
+      "check": "codex_recovery_created",
+      "artifact": "codex_space/05_CODEX_RECOVERY_FROM_GEMINI_DEEP_SPACE_LACL_REVIEW_V0.json",
+      "pass": true
+    },
+    {
+      "check": "layer_count_8",
+      "pass": true
+    },
+    {
+      "check": "claimed_lacl_count_recorded_with_caveat",
+      "claimed": 22,
+      "directly_recoverable": 10,
+      "pass": true
+    },
+    {
+      "check": "accepted_items_present",
+      "count": 5,
+      "pass": true
+    },
+    {
+      "check": "rejected_items_present",
+      "count": 3,
+      "pass": true
+    },
+    {
+      "check": "z_other_promotion_language_refined_to_hold_reclassification",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    }
+  ],
+  "checks_count": 9,
+  "hashes": {
+    "03_GEMINI_DEEP_SPACE_LACL_RETURN_CAPTURE_V0.md": "6d365b3deff9685c17625a80adec66c4f2a2997b16bfef0764195d38c9d54eb3",
+    "04_GEMINI_DEEP_SPACE_LACL_RETURN_NORMALIZED_V0.json": "85346b0191ccc47f0fb142007bc6e8e211dc876b7392488490269245e770d083",
+    "05_CODEX_RECOVERY_FROM_GEMINI_DEEP_SPACE_LACL_REVIEW_V0.json": "4289d6b107306cb11c8e8b30a8442f51d8132cc1b609b262664a0f58ec9f5168",
+    "90_QUICK_EXCHANGE_BOARD_GEMINI_DEEP_LACL_RETURN_CAPTURED_V0.json": "eec0c16518e47257b38b5d44bb37ceabc633e1ec42a5f7d7c6453b654dacf863"
+  },
+  "next_safe_lane": "CREATE_HOLD_FULL_HISTORY_ARC_INDEX_AND_STALE_SUPERSEDED_MAP_FROM_GEMINI_REINFORCED_FINDINGS_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "accepts_present": true,
+    "boundary_hold": true,
+    "claimed_lacl_22": true,
+    "layer_count_8": true,
+    "next_lane_set": true,
+    "refinement_present": true,
+    "rejects_present": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_CODEX_RECOVERY_FROM_GEMINI_DEEP_SPACE_LACL_REVIEW_WITH_HOLD"
+}

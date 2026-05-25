@@ -1,0 +1,92 @@
+{
+  "diagnosis_id": "VECTORFL_DESIGN_EXECUTION_MODE_DIAGNOSIS_V0",
+  "created_at": "2026-05-25T20:49:48.935689+09:00",
+  "status": "DIAGNOSIS_ONLY_NOT_AUTHORITY",
+  "user_issue": "작업 공간을 VectorFL에 연결하는 작업과 실제 실행 작업이 섞이고, 명시적 모드가 없어 공간 설계 구현이 실행으로 처리되거나 실행 지시가 공간 변형으로 흘러갈 수 있음.",
+  "space_reference_delta": [
+    {
+      "source": "published guide draft",
+      "changed_judgment": "문서상 VectorFL은 이미 실행 가능한 상태와 공식 권위 상태를 분리한다고 되어 있지만, 설계모드/실행모드라는 작업 시작 전 분류는 아직 별도 surface로 없음."
+    },
+    {
+      "source": "position rollup",
+      "changed_judgment": "현재 위치가 S_STATE_PROMOTION read-only freeze map safe stop이므로, mode 구분은 바로 공식 정책화하지 말고 candidate/guard로 만들어야 함."
+    },
+    {
+      "source": "guard/state reference",
+      "changed_judgment": "guard is not approval 원칙 때문에 모드 판정도 approval이 아니라 precheck/router로 둬야 함."
+    },
+    {
+      "source": "execution-use foundation reference",
+      "changed_judgment": "기존 execution_form/space_reference_mode는 좋은 기반이지만, 공간 설계 구현 vs 실제 실행이라는 두 축을 명시적으로 분리해야 함."
+    }
+  ],
+  "finding": "필요함. 지금 VectorFL에는 no-call/fast/heavy/space_reference_mode 같은 실행 비용/참조 모드는 있지만, 사용자의 지시를 SPACE_DESIGN_MODE와 EXECUTION_MODE로 먼저 가르는 내부 precheck가 부족함.",
+  "mode_confusion_patterns": [
+    {
+      "pattern": "EXECUTION_WITH_SPACE_MUTATION",
+      "example": "사용자는 실행을 원했는데 결과가 workspace/space/current-position을 바꾸는 작업으로 번짐",
+      "risk": "실행 receipt가 공간 authority 변경처럼 보일 수 있음"
+    },
+    {
+      "pattern": "SPACE_DESIGN_IMPLEMENTED_AS_EXECUTION",
+      "example": "사용자는 공간 설계/구조화/문서화를 원했는데 assistant가 실제 apply/test/server/tool-call로 처리",
+      "risk": "설계 후보가 실행 결과처럼 과승격됨"
+    },
+    {
+      "pattern": "GUARD_OR_MAP_AS_APPROVAL",
+      "example": "mode guard나 map이 생겼다는 이유로 move/archive/promotion을 실행",
+      "risk": "guard is not approval 원칙 위반"
+    },
+    {
+      "pattern": "WORKSPACE_CONNECT_AS_AUTHORITY_MUTATION",
+      "example": "작업 공간을 VectorFL에 연결한다는 말이 official registry/current-position update로 해석됨",
+      "risk": "명시 승인 없는 authority mutation"
+    }
+  ],
+  "proposed_internal_precheck_candidate": {
+    "name": "VECTORFL_MODE_PRECHECK_LAYER_CANDIDATE",
+    "status": "CANDIDATE_ONLY_NOT_AUTHORITY",
+    "fields": [
+      "user_original",
+      "primary_intent",
+      "space_effect",
+      "execution_effect",
+      "mode_candidate",
+      "allowed_outputs",
+      "forbidden_outputs",
+      "approval_needed",
+      "validation_needed",
+      "handoff_surface"
+    ],
+    "mode_candidates": {
+      "SPACE_DESIGN_MODE": "공간 구조, map, schema, pointer, guide, rule candidate, freeze map, workspace 연결 설계를 만드는 모드. 원본/authority/current-position 변경 금지.",
+      "EXECUTION_MODE": "사용자가 원하는 실제 작업을 수행하는 모드. 실행 결과/receipt는 남기되 공간 변경은 별도 승인 없이는 하지 않음.",
+      "MIXED_MODE_REQUIRES_SPLIT": "실행도 필요하고 공간 변화도 필요한 지시. 실행 파트와 공간 파트를 분리해 순서/승인/검증을 나눔.",
+      "AUTHORITY_MODE_REQUIRES_EXPLICIT_APPROVAL": "registry/current-position/promotion/source-of-truth 변경이 포함되는 경우. 명시 승인 없이는 HOLD."
+    }
+  },
+  "diagnostic_verdict": "MODE_SPLIT_NEEDED__CREATE_CANDIDATE_PRECHECK_NEXT__NO_APPLY_NOW",
+  "next_safe_lane": "VECTORFL_MODE_PRECHECK_LAYER_CANDIDATE_V0",
+  "hard_hold": [
+    "NO_SOURCE_EDIT",
+    "NO_AUTHORITY_MUTATION",
+    "NO_REGISTRY_MUTATION",
+    "NO_CURRENT_POSITION_MUTATION",
+    "NO_PROMOTION",
+    "NO_CLEANUP_APPLY",
+    "NO_LIVE_EXTERNAL_CALL"
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

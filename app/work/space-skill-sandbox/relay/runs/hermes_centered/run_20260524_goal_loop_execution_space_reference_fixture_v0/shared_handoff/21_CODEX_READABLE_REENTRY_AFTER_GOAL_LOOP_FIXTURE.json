@@ -1,0 +1,28 @@
+{
+  "changed_judgment": "Loop-style execution can use the same structure if each iteration performs a first-read board check, budget gate, local merge, immutable step receipt, and only then optional Codex request. The bottleneck is not local space reference; it is un-gated provider-backed calls or full-log scans.",
+  "packet_id": "21_CODEX_READABLE_REENTRY_AFTER_GOAL_LOOP_FIXTURE_V0",
+  "promotion_status": "HOLD",
+  "read_first_for_codex": [
+    "shared_handoff/90_QUICK_EXCHANGE_BOARD.json",
+    "hermes_exec/90_HERMES_LATEST_SUMMARY_CARD.json",
+    "hermes_exec/01_goal_loop_execution_state_machine_v0.json",
+    "shared_handoff/99_LATEST_POINTERS.json"
+  ],
+  "space_delta_candidates": [
+    "ADD_GOAL_LOOP_ITERATION_RECEIPT_SCHEMA",
+    "ADD_PER_ITERATION_SPACE_REF_BUDGET_GATE",
+    "ADD_LOOP_CONTINUATION_DELTA_FIELD",
+    "ADD_PROVIDER_BACKED_CALL_REJECTION_REASON_FIELD"
+  ],
+  "status": "HOLD_REENTRY_FOR_LATER_CODEX_MATURATION",
+  "step_receipts": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_01_intake_goal_and_preserve_original_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_02_read_current_space_first_board_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_03_apply_governance_router_dual_log_constraints_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_04_check_budget_gate_for_fresh_space_need_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_05_execute_structural_iteration_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_06_publish_codex_readable_reentry_receipt_v0.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_goal_loop_execution_space_reference_fixture_v0/hermes_exec/10_goal_loop_step_07_loop_exit_or_continue_decision_receipt_v0.json"
+  ],
+  "what_hermes_executed": "Local-only /goal-style loop fixture using original + space refs + model reasoning per iteration."
+}

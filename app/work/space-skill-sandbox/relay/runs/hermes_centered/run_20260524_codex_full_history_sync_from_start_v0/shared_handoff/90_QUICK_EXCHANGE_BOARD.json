@@ -1,0 +1,41 @@
+{
+  "blocked_or_waiting_on": "Waiting for user-run Codex full-history review. Hermes did not run provider-backed Codex/Gemini.",
+  "board_version": "v1_pointer_rebuilt",
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_executed_by_hermes": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_executed_by_hermes": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "chronological_index": "shared_handoff/02_CODEX_FULL_HISTORY_CHRONOLOGICAL_INDEX.md",
+  "chronological_index_sha256": "d79a0765fec9476cd8b81c4b88b124292f4199668392101709f507674214bdee",
+  "codex_latest": {
+    "sha256": "e4cc72983689850835c4a2217f2f531d653dc921bff3e0cfb81dc6fc2e30da28",
+    "state": "WAITING_FOR_CODEX_FULL_HISTORY_REVIEW_PLACEHOLDER",
+    "summary_card": "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json"
+  },
+  "hermes_latest": {
+    "sha256": "4037001775f7913c137e0af49b8291bd95b8d523352d6a791fc3079ceb0fa332",
+    "state": "FULL_HISTORY_SYNC_READY_FOR_CODEX",
+    "summary_card": "hermes_exec/90_HERMES_LATEST_SUMMARY_CARD.json"
+  },
+  "last_updated_by": "HERMES",
+  "latest_pointers": "shared_handoff/99_LATEST_POINTERS.json",
+  "latest_pointers_sha256": "606423deaf089c1d40da81f274f73d935b6bf09c3d069a73841cc3e6d5efbf6c",
+  "next_safe_lane": "CODEX_READ_FULL_HISTORY_SYNC_AND_RETURN_HOLD_MATURATION_REVIEW_V0",
+  "open_questions": [
+    "Which full-history arcs should Codex mature into space patterns?",
+    "Which artifacts are stale/duplicated but only as HOLD notes?",
+    "Is governance/router/dual-log/fast-channel enough for Codex space operation?",
+    "What missing handles block Codex maturation?"
+  ],
+  "packet_id": "90_QUICK_EXCHANGE_BOARD_FULL_HISTORY_SYNC_V0",
+  "purpose": "Full-history Codex sync board from initial 20260524 buildup to current channel work.",
+  "run_id": "run_20260524_codex_full_history_sync_from_start_v0",
+  "sync_packet": "shared_handoff/01_CODEX_FULL_HISTORY_SYNC_PACKET.json",
+  "sync_packet_sha256": "bf5af91eec05079388a6543ce109c47bfe8833cf46022ce4bfe8fd32c9871178"
+}

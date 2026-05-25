@@ -1,0 +1,76 @@
+{
+  "packet_id": "02_SPACE_REFERENCE_MODE_DECISION_TABLE_V0",
+  "promotion_status": "HOLD",
+  "rows": [
+    {
+      "codex_now": "NO",
+      "default_outputs": [
+        "answer or small receipt"
+      ],
+      "execution_form": "single_turn_action",
+      "mode": "NONE or QUICK_BOARD",
+      "request_signal": "single factual/local/file check"
+    },
+    {
+      "codex_now": "NO unless fresh space missing",
+      "default_outputs": [
+        "todo",
+        "source_index",
+        "validation",
+        "root_report",
+        "reentry"
+      ],
+      "execution_form": "bounded_multi_step_setup",
+      "mode": "QUICK_BOARD -> LITE_LENS",
+      "request_signal": "continue/build/setup/test/review"
+    },
+    {
+      "codex_now": "NO; later maturation",
+      "default_outputs": [
+        "source index",
+        "lite cards",
+        "overlap/lack/lacl",
+        "proposed index",
+        "fast channel"
+      ],
+      "execution_form": "external_material_reinterpretation",
+      "mode": "LITE_LENS -> DEEP_ARTIFACT as needed",
+      "request_signal": "external material / repo reinterpretation"
+    },
+    {
+      "codex_now": "NO unless space retrieval needed",
+      "default_outputs": [
+        "foundation/reference card",
+        "changed_judgment",
+        "quick board",
+        "reentry"
+      ],
+      "execution_form": "structural_alignment",
+      "mode": "FULL_HISTORY -> selected roots",
+      "request_signal": "cross-session/current structure/role correction"
+    },
+    {
+      "codex_now": "NO during loop unless fresh ref gate opens",
+      "default_outputs": [
+        "iteration receipts",
+        "continuation delta",
+        "periodic reentry"
+      ],
+      "execution_form": "continuation_loop",
+      "mode": "QUICK_BOARD per iteration + delta receipts",
+      "request_signal": "long-running loop / days process"
+    },
+    {
+      "codex_now": "USER/CODEX side, not Hermes direct by default",
+      "default_outputs": [
+        "Codex read-first packet",
+        "return schema",
+        "HOLD proposal surface"
+      ],
+      "execution_form": "codex_maturation_handoff",
+      "mode": "CODEX_MATURATION_REENTRY",
+      "request_signal": "space maturation request"
+    }
+  ],
+  "status": "HOLD_REFERENCE_ONLY"
+}

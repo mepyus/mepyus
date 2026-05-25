@@ -1,0 +1,38 @@
+{
+  "plan_id": "VECTORTUBE_BOUNDED_SEARCH_INTENTS_FROM_SEED_qqnRzpLNfxY_20260525_V0",
+  "created_at": "2026-05-25T07:23:14.860533+09:00",
+  "status": "HOLD_NO_SEARCH_EXECUTED",
+  "seed_deep_reading": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_qqnRzpLNfxY_20260525/mini_space/06_seed_space_reading_deep_qqnRzpLNfxY_v0.json",
+  "budget_defaults": {
+    "queries_per_seed": 3,
+    "candidate_videos_per_query": 5,
+    "transcripts_to_fetch_before_review": 0,
+    "approved_transcripts_default": 3,
+    "hard_cap_transcripts_per_seed_batch": 7
+  },
+  "candidate_query_intents": [
+    {
+      "slot": "technical_deeper",
+      "intent": "RDF/OWL/Knowledge Graph/Property Graph의 차이와 LLM 결합 실제 구조를 설명하는 자료"
+    },
+    {
+      "slot": "counter_or_caution",
+      "intent": "온톨로지 과잉 설계, knowledge graph 실패 사례, LLM-only/RAG-only 대안의 반론 자료"
+    },
+    {
+      "slot": "implementation_layer",
+      "intent": "제조/국방/의료에서 온톨로지+AI를 실제 업무 프로세스에 붙인 사례 자료"
+    },
+    {
+      "slot": "sovereignty_layer",
+      "intent": "Palantir/sovereign AI/on-prem semantic layer 관련 찬반 자료"
+    }
+  ],
+  "approval_required_before_transcript_fetch": true,
+  "stop_conditions": [
+    "drift_from_seed",
+    "repeating_claims_only",
+    "confusion_risk_high",
+    "budget_exceeded"
+  ]
+}

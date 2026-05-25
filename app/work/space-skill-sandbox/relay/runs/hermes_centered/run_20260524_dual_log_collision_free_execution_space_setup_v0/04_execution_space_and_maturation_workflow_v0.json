@@ -1,0 +1,53 @@
+{
+  "bottleneck_avoidance": [
+    "Hermes does not wait on Codex except when fresh space reference is necessary.",
+    "Codex does not block Hermes execution unless Hermes explicitly requested retrieval.",
+    "Maturation is asynchronous/HOLD: Codex can inspect reentry after Hermes execution.",
+    "Gemini is not in Hermes path; only Codex-side when Codex detects unresolved layer ambiguity.",
+    "Large raw files are indexed, not first-pass default."
+  ],
+  "conflict_resolution": [
+    "If both actors produce conflicting next_safe_lane, keep both in shared comparison file; Hermes may merge but not erase Codex proposal.",
+    "If Codex says apply but Hermes has no user approval, Hermes records HOLD_STOP_NO_APPROVAL.",
+    "If Hermes trace lacks space_reference_delta, Codex returns NEEDS_HERMES_REENTRY_REPAIR rather than guessing."
+  ],
+  "packet_id": "04_execution_space_and_maturation_workflow_v0",
+  "status": "HOLD_WORKFLOW_PROPOSAL_ONLY",
+  "steps": [
+    {
+      "action": "Create run manifest and hermes_exec namespace. Preserve original and decide whether fresh space reference is needed.",
+      "actor": "HERMES",
+      "step": 1
+    },
+    {
+      "action": "If needed, write shared_handoff/01_SPACE_REFERENCE_REQUEST.json for Codex. Otherwise do local deterministic space setup.",
+      "actor": "HERMES",
+      "step": 2
+    },
+    {
+      "action": "Read request + compact indexes only. Write codex_space/10_CODEX_RETRIEVAL_RETURN.json. Do not edit Hermes files.",
+      "actor": "CODEX",
+      "step": 3
+    },
+    {
+      "action": "Read Codex return, merge original+space+model, execute/withhold, write hermes_exec/20 trace and shared_handoff/21 reentry index.",
+      "actor": "HERMES",
+      "step": 4
+    },
+    {
+      "action": "Read reentry index and Hermes trace. Decide HOLD-only maturation. If Gemini needed, invoke only Codex-side script-chain and record it. Write codex_space/30 proposal.",
+      "actor": "CODEX",
+      "step": 5
+    },
+    {
+      "action": "Read Codex proposal and record hermes_exec/40 receipt. No authority apply unless separate approval.",
+      "actor": "HERMES",
+      "step": 6
+    },
+    {
+      "action": "Use shared_handoff/99 latest pointers for cross-inspection; never rewrite historical artifacts.",
+      "actor": "BOTH",
+      "step": 7
+    }
+  ]
+}

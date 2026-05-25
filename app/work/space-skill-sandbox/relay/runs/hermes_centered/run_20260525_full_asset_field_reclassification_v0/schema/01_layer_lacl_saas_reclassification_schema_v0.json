@@ -1,0 +1,29 @@
+{
+  "schema_id": "VECTORFL_LAYER_LACL_SAAS_RECLASSIFICATION_SCHEMA_V0",
+  "created_at": "2026-05-25T10:44:24.090383+09:00",
+  "layer_axis": [
+    "L0_SOURCE_EVIDENCE",
+    "L1_CONCEPTUAL_MODEL",
+    "L2_STRUCTURE_ROUTE",
+    "L3_CONTEXT_HISTORY",
+    "L4_OPERATOR_RHETORIC",
+    "L5_AUTHORITY_GOVERNANCE",
+    "L6_EXECUTION_WORKFLOW",
+    "L7_RISK_UNCERTAINTY",
+    "L8_PRODUCTIZATION_SAAS"
+  ],
+  "lacl_axis": {
+    "LACL_LENS": "how the asset is read/interpreted",
+    "LACL_ASSET": "what material/evidence/artifact it handles",
+    "LACL_CONTEXT": "where it sits in space/boundary/history",
+    "LACL_LOOP": "what recurring operation it enables"
+  },
+  "saas_modules": {
+    "SAAS_M1_INTAKE_PROVENANCE": "원문/외부자료/증거/출처 분리. upload/import/source card/provenance UI가 될 수 있음.",
+    "SAAS_M2_ASSET_GRAPH_ROUTER": "자산 map/index/route. 문서를 공간 기능으로 분류하고 graph route를 보여주는 core UI.",
+    "SAAS_M3_GUARD_PRECHECK_ENGINE": "실행 전 gate/precheck/validation. agent/tool 실행 안전장치.",
+    "SAAS_M4_MATURATION_GOVERNANCE": "inbox→candidate→matured→authority 승격/보류/충돌 검토.",
+    "SAAS_M5_SPACE_INBOX_REVIEW": "HOLD inbox, Codex review queue, reentry board.",
+    "SAAS_M6_ADAPTER_FACTORY": "VectorFL 기능을 여러 도구 앞/뒤에 붙이는 adapter shell 생성."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "do_not_apply_without_user_approval": true,
+  "new_reference_file_candidate": "references/goal_loop_execution.md",
+  "packet_id": "04_VECTORFL_SPACE_OPERATOR_SKILL_GOAL_LOOP_REFERENCE_PATCH_CANDIDATE_V0",
+  "promotion_status": "HOLD",
+  "section_summary": [
+    "When user gives loop-style /goal, Hermes execution remains local owner; Codex is not called unless fresh space reference gate opens.",
+    "Each iteration reads quick board first, then summary/pointers, then immutable artifact only if necessary.",
+    "Write per-iteration receipt and continuation delta.",
+    "Publish Codex-readable reentry when paused/exited so Codex can mature space later."
+  ],
+  "status": "HOLD_PATCH_CANDIDATE_NOT_APPLIED",
+  "target_skill_candidate": "vectorfl-space-operator"
+}

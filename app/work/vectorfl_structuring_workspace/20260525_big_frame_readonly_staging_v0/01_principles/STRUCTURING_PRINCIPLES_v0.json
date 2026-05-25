@@ -1,0 +1,35 @@
+{
+  "principles_id": "VECTORFL_STRUCTURING_WORKSPACE_PRINCIPLES_V0",
+  "created_at": "2026-05-25T12:41:02.987935+09:00",
+  "workspace": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0",
+  "user_judgment_confirmed": "Do not start with mv while structure is incomplete; create a big-frame folder/workspace and connect slowly.",
+  "mode": "READONLY_STAGING_WORKSPACE",
+  "not_authority": true,
+  "source_of_truth": "original files stay in original locations",
+  "allowed_actions": [
+    "create pointer indexes",
+    "create review batches",
+    "create read-only copy views with manifest",
+    "create Codex handoff packets",
+    "create M8 trace/receipt templates",
+    "run actual local validation"
+  ],
+  "forbidden_actions": [
+    "mv original assets",
+    "delete original assets",
+    "rewrite original assets",
+    "archive original assets",
+    "authority mutation",
+    "registry mutation",
+    "current-position mutation",
+    "promotion",
+    "bulk copy without manifest"
+  ],
+  "batch_policy": {
+    "default_batch_size": "top10 or smaller",
+    "requires_actual_validation": true,
+    "requires_manifest": true,
+    "requires_not_authority_readme": true
+  },
+  "future_move_policy": "Only after M2/M4/M7/M8 gates, Codex read-only review, filled rollback manifest, link integrity check, and explicit user approval."
+}

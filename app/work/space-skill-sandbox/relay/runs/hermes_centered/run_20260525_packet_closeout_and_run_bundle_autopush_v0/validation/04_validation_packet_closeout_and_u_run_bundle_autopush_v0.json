@@ -1,0 +1,66 @@
+{
+  "validation_id": "VALIDATION_PACKET_CLOSEOUT_AND_U_RUN_BUNDLE_AUTOPUSH_V0",
+  "created_at": "2026-05-25T15:10:57.137001+09:00",
+  "verdict": "PASS_PACKET_CLOSEOUT_AND_U_RUN_BUNDLE_AUTOPUSH_TO_SAFE_BOUNDARY_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 31,
+  "checks_passed": 31,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_PACKET_CLOSEOUT_AS_CLEANUP_DONE",
+      "claim": "P_PACKET closeout means delete/archive can proceed",
+      "caught": true,
+      "hold_reason": "HOLD_CLOSEOUT_NOT_APPLY"
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_COMPACT_AS_ARCHIVE_PLAN",
+      "claim": "run bundle compact authorizes archiving generated runs",
+      "caught": true,
+      "hold_reason": "HOLD_NO_ARCHIVE"
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_RECEIPT_AS_AUTHORITY",
+      "claim": "run receipt/validation becomes authority registry",
+      "caught": true,
+      "hold_reason": "HOLD_EVIDENCE_ONLY"
+    },
+    {
+      "name": "NEG_NEXT_FAMILY_SELECTOR_AS_UNBOUNDED_AUTOMATION",
+      "claim": "selector allows all families to run without stop boundary",
+      "caught": true,
+      "hold_reason": "HOLD_STOP_AT_AUTHORITY_OR_ARCHIVE_BOUNDARY"
+    }
+  ],
+  "packet_family_status": "CLOSED_FOR_NOW",
+  "u_run_bundle_scan_count": 41449,
+  "u_run_bundle_subtype_count": 7,
+  "u_run_bundle_review_sample_count": 32,
+  "u_run_bundle_disposition_distribution": {
+    "GENERAL_RUN_BUNDLE_POINTER": 33943,
+    "RUN_BUNDLE_AUTHORITY_SENSITIVE_HOLD": 4885,
+    "CLEANUP_LANGUAGE_RUN_BUNDLE_HOLD": 573,
+    "GENERATED_RUN_BUNDLE_COMPACT_POINTER": 1835,
+    "PRESERVE_VALIDATION_RECEIPT_EVIDENCE": 213
+  },
+  "u_run_review_action_distribution": {
+    "FREEZE_POINTER_ONLY_AUTHORITY_LANGUAGE": 21,
+    "PRESERVE_EVIDENCE_POINTER_COMPACT_OK": 1,
+    "GENERAL_RUN_BUNDLE_REVIEW_POINTER": 8,
+    "KEEP_CLOSEOUT_INDEX_POINTER": 1,
+    "HOLD_CLEANUP_LANGUAGE_NO_APPLY": 1
+  },
+  "next_recommended": "U_RUN_BUNDLE_EVIDENCE_RETENTION_RULE_CANDIDATE_V0",
+  "stop_reason": "Further progress becomes evidence retention rule design or archive/delete decision boundary; stop before archive/delete/apply.",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "delete_dedupe_apply": false
+  }
+}

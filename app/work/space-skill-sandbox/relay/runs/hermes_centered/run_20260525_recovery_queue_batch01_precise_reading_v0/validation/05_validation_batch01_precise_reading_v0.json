@@ -1,0 +1,43 @@
+{
+  "validation_id": "VALIDATION_BATCH01_PRECISE_READING_V0",
+  "created_at": "2026-05-25T10:54:05.314816+09:00",
+  "verdict": "PASS_BATCH01_PRECISE_READING_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/source_index/00_batch01_source_index_v0.json": {
+      "exists": true,
+      "sha256": "cd8fb7b4f25d65e260b485b4409c4459186309cebf65cc038ac71dd3e90af392",
+      "bytes": 2881
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/readings/01_batch01_precise_reading_v0.json": {
+      "exists": true,
+      "sha256": "582cd79327f83830b6e6f1cc0bcc7d58ece8a99dfba4f3877aecf73f379cfada",
+      "bytes": 50371
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/routes/02_batch01_route_pack_v0.json": {
+      "exists": true,
+      "sha256": "d9d2fc6627501897d120967343cb60b369056219aabd5e76067e5449aa0d2ca4",
+      "bytes": 20994
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/handoff/03_CODEX_GEMINI_HERMES_BATCH01_HANDOFF_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "29ae42381ebe9d8338034115ddd87372a4e7b1c68e738c5950af50ace0ac842e",
+      "bytes": 3479
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/reports/04_batch01_precise_reading_report_v0.md": {
+      "exists": true,
+      "sha256": "2131423725ad0e86aa9ff102a14408617d0835b9bc300b796fc26c64da9a8226",
+      "bytes": 1727
+    }
+  },
+  "content_checks": {
+    "batch_count": 10,
+    "relations_count": 45,
+    "route_packs": 1,
+    "all_sources_exist": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

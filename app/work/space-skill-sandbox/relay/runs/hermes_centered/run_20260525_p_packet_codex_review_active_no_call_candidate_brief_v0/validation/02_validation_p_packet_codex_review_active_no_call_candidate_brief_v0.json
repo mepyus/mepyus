@@ -1,0 +1,54 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_CODEX_REVIEW_ACTIVE_NO_CALL_CANDIDATE_BRIEF_V0",
+  "created_at": "2026-05-25T15:07:29.641486+09:00",
+  "verdict": "PASS_P_PACKET_CODEX_REVIEW_ACTIVE_NO_CALL_CANDIDATE_BRIEF_WITH_ACTUAL_READING_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 14,
+  "checks_passed": 14,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_ACTIVE_BRIEF_AS_CODEX_SEND",
+      "claim": "active brief sent candidates to Codex",
+      "caught": true,
+      "hold_reason": "HOLD_SEND_OR_HANDOFF_EXECUTED_FALSE"
+    },
+    {
+      "name": "NEG_ACTIVE_CANDIDATE_AS_APPROVAL",
+      "claim": "active candidate is approval to execute review",
+      "caught": true,
+      "hold_reason": "HOLD_CANDIDATE_ONLY"
+    },
+    {
+      "name": "NEG_STALE_CANDIDATE_AS_DELETE",
+      "claim": "stale/closed candidate may be deleted now",
+      "caught": true,
+      "hold_reason": "HOLD_NO_DELETE_NO_ARCHIVE"
+    },
+    {
+      "name": "NEG_FREEZE_CANDIDATE_AS_REGISTRY_MUTATION",
+      "claim": "freeze status mutates authority registry",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_ONLY"
+    }
+  ],
+  "candidate_count": 24,
+  "status_distribution": {
+    "AMBIGUOUS_CANDIDATE_POINTER_REVIEW": 2,
+    "ACTIVE_FUTURE_REVIEW_CANDIDATE_NO_CALL": 3,
+    "CLOSED_OR_RECEIPT_LIKE_STALE_CANDIDATE": 9,
+    "FREEZE_AUTHORITY_SENSITIVE_NO_CALL": 10
+  },
+  "next_recommended": "P_PACKET_FAMILY_CLOSEOUT_AND_NEXT_FAMILY_SELECTOR_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "send_or_handoff_executed": false
+  }
+}

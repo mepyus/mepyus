@@ -1,0 +1,647 @@
+{
+  "cluster_map_id": "VECTORFL_TOP60_RECOVERY_CLUSTER_MAP_V0",
+  "created_at": "2026-05-25T11:17:50.213274+09:00",
+  "source": "priority recovery queue ranks 1-60 precise readings",
+  "verdict": "PASS_TOP60_RECOVERY_CLUSTER_MAP_WITH_HOLD",
+  "total_assets": 60,
+  "module_counts": {
+    "SAAS_M1_INTAKE_PROVENANCE": 10,
+    "SAAS_M4_MATURATION_GOVERNANCE": 10,
+    "SAAS_M6_ADAPTER_FACTORY": 5,
+    "SAAS_M5_SPACE_INBOX_REVIEW": 5,
+    "SAAS_M2_ASSET_GRAPH_ROUTER": 10,
+    "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD": 10,
+    "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": 10
+  },
+  "family_counts": {
+    "EXECUTION_CONTRACT_GATE": 3,
+    "PROVENANCE_GATE": 7,
+    "MATURATION_GOVERNANCE_GATE": 10,
+    "ASSET_GRAPH_ROUTE_SURFACE": 5,
+    "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE": 5,
+    "ASSET_GRAPH_ROUTER_CORE_SURFACE": 10,
+    "OPERATOR_CLEANUP_DASHBOARD_SURFACE": 5,
+    "OPERATOR_REVIEW_BOARD_SURFACE": 5,
+    "EVALUATION_TRACE_OBSERVABILITY_SURFACE": 10
+  },
+  "route_counts": {
+    "Hermes_precheck_surface_then_Codex_mature": 20,
+    "Codex_mature_with_Gemini_layer_if_ambiguous": 5,
+    "Codex_inbox_review_with_Hermes_reentry_check": 5,
+    "Codex_asset_graph_router_review": 10,
+    "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check": 10,
+    "Hermes_validation_trace_then_Codex_quality_mature": 10
+  },
+  "clusters": {
+    "SAAS_M1_INTAKE_PROVENANCE": {
+      "definition": "source/evidence/claim/provenance intake split",
+      "count": 10,
+      "items": [
+        {
+          "rank": 1,
+          "asset_id": "next_phase_options_draft",
+          "relpath": "app/work/processor_compare/reports/next_phase_options_draft.md",
+          "family": "EXECUTION_CONTRACT_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 2,
+          "asset_id": "agent_function_reception_readiness_correction_v0",
+          "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 3,
+          "asset_id": "asset_method_comparison_round_001",
+          "relpath": "docs/reports/asset_method_comparison_round_001.md",
+          "family": "EXECUTION_CONTRACT_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 4,
+          "asset_id": "axis_formation_rule_candidate_v0",
+          "relpath": "docs/reports/axis_formation_rule_candidate_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 5,
+          "asset_id": "cli_side_space_interaction_contract_final_addendum_preflight_guard",
+          "relpath": "docs/reports/cli_side_space_interaction_contract_final_addendum_preflight_guard.md",
+          "family": "EXECUTION_CONTRACT_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 6,
+          "asset_id": "component_chain_mode_selection_closeout_v0",
+          "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 7,
+          "asset_id": "component_chain_mode_selection_rule_candidate_v0",
+          "relpath": "docs/reports/component_chain_mode_selection_rule_candidate_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 8,
+          "asset_id": "deep_space_light_cli_observation_transition_judgment_v0",
+          "relpath": "docs/reports/deep_space_light_cli_observation_transition_judgment_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 9,
+          "asset_id": "evidence_provenance_classification_candidate_v0",
+          "relpath": "docs/reports/evidence_provenance_classification_candidate_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        },
+        {
+          "rank": 10,
+          "asset_id": "external_candidate_context_mode_reading_packaging_v0",
+          "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+          "family": "PROVENANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_NOT_AUTHORITY__CAN_INFORM_PRECHECK_OR_ROUTING"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "source/evidence/claim/provenance intake split"
+    },
+    "SAAS_M2_ASSET_GRAPH_ROUTER": {
+      "definition": "asset graph/router/index/pointer/relation/cleanup precondition",
+      "count": 10,
+      "items": [
+        {
+          "rank": 31,
+          "asset_id": "integrated_engine_lower_input_readiness_worklog_v0",
+          "relpath": "docs/reports/integrated_engine_lower_input_readiness_worklog_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 32,
+          "asset_id": "integrated_engine_lower_to_upper_bridge_evaluation_note_v0",
+          "relpath": "docs/reports/integrated_engine_lower_to_upper_bridge_evaluation_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 33,
+          "asset_id": "integrated_engine_process_camera_cross_target_translation_demo_v0",
+          "relpath": "docs/reports/integrated_engine_process_camera_cross_target_translation_demo_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 34,
+          "asset_id": "integrated_engine_process_camera_worklog_v0",
+          "relpath": "docs/reports/integrated_engine_process_camera_worklog_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 35,
+          "asset_id": "integrated_engine_process_first_work_package_next_checklist_v0",
+          "relpath": "docs/reports/integrated_engine_process_first_work_package_next_checklist_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 36,
+          "asset_id": "integrated_engine_round6_boundary_closeout_note_v0",
+          "relpath": "docs/reports/integrated_engine_round6_boundary_closeout_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 37,
+          "asset_id": "integrated_engine_surface_information_exposure_reread_note_v0",
+          "relpath": "docs/reports/integrated_engine_surface_information_exposure_reread_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 38,
+          "asset_id": "integrated_engine_surface_language_and_panel_application_backlog_v0",
+          "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 39,
+          "asset_id": "integrated_engine_surface_projection_composition_patch_note_v0",
+          "relpath": "docs/reports/integrated_engine_surface_projection_composition_patch_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 40,
+          "asset_id": "integrated_engine_vectorfl_current_work_packet_formation_layer_patch_note_v0",
+          "relpath": "docs/reports/integrated_engine_vectorfl_current_work_packet_formation_layer_patch_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTER_CORE_SURFACE",
+          "route": "Codex_asset_graph_router_review",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "asset graph/router/index/pointer/relation/cleanup precondition"
+    },
+    "SAAS_M4_MATURATION_GOVERNANCE": {
+      "definition": "candidate/matured/authority/current-position promotion governance",
+      "count": 10,
+      "items": [
+        {
+          "rank": 11,
+          "asset_id": "external_lens_space_reevaluation_round_003_multi_agent_friction",
+          "relpath": "docs/reports/external_lens_space_reevaluation_round_003_multi_agent_friction.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 12,
+          "asset_id": "external_lens_space_reevaluation_round_008_ambient_maturation_signals",
+          "relpath": "docs/reports/external_lens_space_reevaluation_round_008_ambient_maturation_signals.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 13,
+          "asset_id": "external_lens_space_reevaluation_round_009_lightweight_maturation_vocabulary",
+          "relpath": "docs/reports/external_lens_space_reevaluation_round_009_lightweight_maturation_vocabulary.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 14,
+          "asset_id": "external_lens_space_reevaluation_round_011_consequential_alarm_suppression",
+          "relpath": "docs/reports/external_lens_space_reevaluation_round_011_consequential_alarm_suppression.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 15,
+          "asset_id": "external_lens_space_reevaluation_round_015_low_friction_human_review_ergonomics",
+          "relpath": "docs/reports/external_lens_space_reevaluation_round_015_low_friction_human_review_ergonomics.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 16,
+          "asset_id": "external_thought_asset_research_round_002_plan_v0",
+          "relpath": "docs/reports/external_thought_asset_research_round_002_plan_v0.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 17,
+          "asset_id": "formation_prework_next_real_test_candidate_selection_v0",
+          "relpath": "docs/reports/formation_prework_next_real_test_candidate_selection_v0.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 18,
+          "asset_id": "four_axis_whole_space_reading_pass_v0",
+          "relpath": "docs/reports/four_axis_whole_space_reading_pass_v0.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 19,
+          "asset_id": "function_process_formation_prework_first_application_tools_leave_their_maker_v0",
+          "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 20,
+          "asset_id": "function_process_formation_prework_real_test_aws_sample_deep_insight_v0",
+          "relpath": "docs/reports/function_process_formation_prework_real_test_aws_sample_deep_insight_v0.md",
+          "family": "MATURATION_GOVERNANCE_GATE",
+          "route": "Hermes_precheck_surface_then_Codex_mature",
+          "cleanup": "DO_NOT_MOVE__AUTHORITY_OR_POSITION_SENSITIVE",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "candidate/matured/authority/current-position promotion governance"
+    },
+    "SAAS_M5_SPACE_INBOX_REVIEW": {
+      "definition": "HOLD inbox/reentry/Codex review queue",
+      "count": 5,
+      "items": [
+        {
+          "rank": 22,
+          "asset_id": "function_process_formation_prework_setup_closeout_v0",
+          "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+          "family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+          "route": "Codex_inbox_review_with_Hermes_reentry_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 24,
+          "asset_id": "gemini_four_axis_whole_space_reading_pass_worklist_v0",
+          "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+          "family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+          "route": "Codex_inbox_review_with_Hermes_reentry_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 25,
+          "asset_id": "gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0",
+          "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+          "family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+          "route": "Codex_inbox_review_with_Hermes_reentry_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 28,
+          "asset_id": "integrated_engine_external_analysis_lens_fragment_inventory_v0",
+          "relpath": "docs/reports/integrated_engine_external_analysis_lens_fragment_inventory_v0.md",
+          "family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+          "route": "Codex_inbox_review_with_Hermes_reentry_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 29,
+          "asset_id": "integrated_engine_grammar_application_trial_closeout_note_v0",
+          "relpath": "docs/reports/integrated_engine_grammar_application_trial_closeout_note_v0.md",
+          "family": "SPACE_INBOX_REVIEW_GOVERNANCE_SURFACE",
+          "route": "Codex_inbox_review_with_Hermes_reentry_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "HOLD inbox/reentry/Codex review queue"
+    },
+    "SAAS_M6_ADAPTER_FACTORY": {
+      "definition": "before/after/around-tool VectorFL adapter shells",
+      "count": 5,
+      "items": [
+        {
+          "rank": 21,
+          "asset_id": "function_process_formation_prework_real_test_round1_closeout_v0",
+          "relpath": "docs/reports/function_process_formation_prework_real_test_round1_closeout_v0.md",
+          "family": "ASSET_GRAPH_ROUTE_SURFACE",
+          "route": "Codex_mature_with_Gemini_layer_if_ambiguous",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 23,
+          "asset_id": "gemini_external_reference_materials_deep_reread_worklist_v0",
+          "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+          "family": "ASSET_GRAPH_ROUTE_SURFACE",
+          "route": "Codex_mature_with_Gemini_layer_if_ambiguous",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 26,
+          "asset_id": "harness_engineering_analysis_round_001",
+          "relpath": "docs/reports/harness_engineering_analysis_round_001.md",
+          "family": "ASSET_GRAPH_ROUTE_SURFACE",
+          "route": "Codex_mature_with_Gemini_layer_if_ambiguous",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 27,
+          "asset_id": "integrated_engine_current_translation_gap_note_v0",
+          "relpath": "docs/reports/integrated_engine_current_translation_gap_note_v0.md",
+          "family": "ASSET_GRAPH_ROUTE_SURFACE",
+          "route": "Codex_mature_with_Gemini_layer_if_ambiguous",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 30,
+          "asset_id": "integrated_engine_input_flow_map_v0",
+          "relpath": "docs/reports/integrated_engine_input_flow_map_v0.md",
+          "family": "ASSET_GRAPH_ROUTE_SURFACE",
+          "route": "Codex_mature_with_Gemini_layer_if_ambiguous",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "before/after/around-tool VectorFL adapter shells"
+    },
+    "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD": {
+      "definition": "cleanup/archive/decay/freeze/operator-load/status board",
+      "count": 10,
+      "items": [
+        {
+          "rank": 41,
+          "asset_id": "integrated_engine_visual_patch_round1_closeout_note_v0",
+          "relpath": "docs/reports/integrated_engine_visual_patch_round1_closeout_note_v0.md",
+          "family": "OPERATOR_CLEANUP_DASHBOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 42,
+          "asset_id": "integrated_engine_wording_patch_promotion_gate_v0",
+          "relpath": "docs/reports/integrated_engine_wording_patch_promotion_gate_v0.md",
+          "family": "OPERATOR_REVIEW_BOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 43,
+          "asset_id": "interaction_contract_v0_1_operating_principles_candidate",
+          "relpath": "docs/reports/interaction_contract_v0_1_operating_principles_candidate.md",
+          "family": "OPERATOR_REVIEW_BOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 44,
+          "asset_id": "line_thickening_preflight_integration_v0",
+          "relpath": "docs/reports/line_thickening_preflight_integration_v0.md",
+          "family": "OPERATOR_CLEANUP_DASHBOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 45,
+          "asset_id": "minimum_agent_function_unit_candidate_closeout_v0",
+          "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+          "family": "OPERATOR_CLEANUP_DASHBOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 46,
+          "asset_id": "next_chat_reentry_after_component_refinement_v0",
+          "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+          "family": "OPERATOR_REVIEW_BOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 47,
+          "asset_id": "next_chat_reentry_summary_after_component_refinement_v0",
+          "relpath": "docs/reports/next_chat_reentry_summary_after_component_refinement_v0.md",
+          "family": "OPERATOR_REVIEW_BOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 48,
+          "asset_id": "observation_surface_dry_run_001_correction_note_v0",
+          "relpath": "docs/reports/observation_surface_dry_run_001_correction_note_v0.md",
+          "family": "OPERATOR_REVIEW_BOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 49,
+          "asset_id": "phase1_20_flow_aware_gating_validation_report_v0",
+          "relpath": "docs/reports/phase1_20_flow_aware_gating_validation_report_v0.md",
+          "family": "OPERATOR_CLEANUP_DASHBOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 50,
+          "asset_id": "pipeline_candidate_list_v0",
+          "relpath": "docs/reports/pipeline_candidate_list_v0.md",
+          "family": "OPERATOR_CLEANUP_DASHBOARD_SURFACE",
+          "route": "Codex_cleanup_hygiene_plan_with_Hermes_no_move_check",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "cleanup/archive/decay/freeze/operator-load/status board"
+    },
+    "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY": {
+      "definition": "validation/receipt/trace/timing/drift/quality evidence surface",
+      "count": 10,
+      "items": [
+        {
+          "rank": 51,
+          "asset_id": "pre12_bridge_surface_identification_report_v0",
+          "relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 52,
+          "asset_id": "pre12_lower_output_readiness_recheck_v0",
+          "relpath": "docs/reports/pre12_lower_output_readiness_recheck_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 53,
+          "asset_id": "process_memory_operating_layer_candidate_v0",
+          "relpath": "docs/reports/process_memory_operating_layer_candidate_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 54,
+          "asset_id": "relation_first_input_gate_spec_v0",
+          "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 55,
+          "asset_id": "relation_first_input_observation_surface_candidate_v0",
+          "relpath": "docs/reports/relation_first_input_observation_surface_candidate_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 56,
+          "asset_id": "relation_first_light_compression_rule_v0",
+          "relpath": "docs/reports/relation_first_light_compression_rule_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 57,
+          "asset_id": "relation_first_real_input_trial_claude_code_v0",
+          "relpath": "docs/reports/relation_first_real_input_trial_claude_code_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 58,
+          "asset_id": "relation_first_real_input_trial_karpathy_graphify_v0",
+          "relpath": "docs/reports/relation_first_real_input_trial_karpathy_graphify_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 59,
+          "asset_id": "relation_first_repetition_operation_batch001_v0",
+          "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        },
+        {
+          "rank": 60,
+          "asset_id": "relation_first_space_input_processor_candidate_v0",
+          "relpath": "docs/reports/relation_first_space_input_processor_candidate_v0.md",
+          "family": "EVALUATION_TRACE_OBSERVABILITY_SURFACE",
+          "route": "Hermes_validation_trace_then_Codex_quality_mature",
+          "cleanup": "KEEP_STABLE__INDEX_POINTER_FIRST",
+          "authority_boundary": "HOLD_AUTHORITY_SENSITIVE"
+        }
+      ],
+      "status": "CONFIRMED_CLUSTER",
+      "product_role": "validation/receipt/trace/timing/drift/quality evidence surface"
+    }
+  },
+  "product_skeleton_judgment": "Top60 confirms VectorFL SaaS as an 8-module asset-field maturation system, not a single adapter/tool. Folder cleanup must wait for M2+M7+M8 review surfaces.",
+  "recommended_next": [
+    "Codex read-only placement/conflict/gap review for M2/M7/M8",
+    "write promotion rubric v0 using M4 + M8 evidence requirements",
+    "build pointer-first cleanup manifest after Codex review, no move yet",
+    "derive MVP screen map from M2/M7/M8 plus M1/M3 gates"
+  ],
+  "hold_boundaries": {
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion": "HOLD"
+  }
+}

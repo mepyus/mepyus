@@ -1,0 +1,63 @@
+{
+  "table_id": "VECTORTUBE_CROSS_SOURCE_LAYER_TENSION_TABLE_qqnRzpLNfxY_V0",
+  "created_at": "2026-05-25T07:39:17.244114+09:00",
+  "sources": [
+    "seed_qqnRzpLNfxY",
+    "y7sXDpffzQQ",
+    "Aw7iQjKAX2k",
+    "YDAxITCNcko"
+  ],
+  "agreements": [
+    {
+      "layer": "L1_conceptual",
+      "agreement": "seed, knowledge graph, GraphRAG, and Palantir all treat knowledge as entities plus relationships rather than isolated text/data."
+    },
+    {
+      "layer": "L2_information_structure",
+      "agreement": "all expansion sources reinforce that graph/ontology adds relation structure on top of raw tables, chunks, documents, or system data."
+    },
+    {
+      "layer": "L6_practical_operational",
+      "agreement": "the practical loop is data -> relation/context model -> LLM/logic access -> decision/action."
+    },
+    {
+      "layer": "L8_vectorfl_mapping",
+      "agreement": "supports VectorTube as mini-space builder: vector/text retrieval alone is insufficient without relation/layer extraction."
+    }
+  ],
+  "tensions": [
+    {
+      "layer": "L4_emotional_rhetorical",
+      "tension": "seed frames urgency through national/industrial sovereignty; IBM videos frame education/governance; Palantir frames productized operational control."
+    },
+    {
+      "layer": "L5_power_authority",
+      "tension": "enterprise vendor videos may convert ontology from open conceptual structure into platform dependency; this must not become VectorFL authority."
+    },
+    {
+      "layer": "L7_counter_uncertainty",
+      "tension": "GraphRAG/Palantir materials emphasize benefits but understate graph construction cost, schema governance, vendor bias, and domain validation."
+    },
+    {
+      "layer": "L3_context_background",
+      "tension": "seed is Korean sovereign/industrial context; expansions are mostly English enterprise/vendor context, so direct transfer may drift."
+    }
+  ],
+  "drift_gate": {
+    "verdict": "PASS_WITH_CAUTION",
+    "noted_drifts": [
+      "English vendor/education sources shift from sovereign AI and national infrastructure toward enterprise product framing.",
+      "Counter/critique source is still weak; GraphRAG comparison is not a true failure-case critique."
+    ],
+    "keep_in_mini_space": true,
+    "do_not_push_main_space_yet": true,
+    "next_needed": "add one genuine counter/failure source OR mark current mini-space as pro-ontology tilted."
+  },
+  "layer_density_judgment": {
+    "seed": "strong",
+    "technical_foundation": "good basic conceptual grounding",
+    "rag_comparison": "good comparison but pro-GraphRAG",
+    "implementation_sovereignty": "good implementation axis but vendor-biased",
+    "overall": "usable for layer-reading practice; not balanced enough for authority/promotion"
+  }
+}

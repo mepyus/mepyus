@@ -1,0 +1,92 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "skill_installation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "candidate_skill": {
+    "install_candidate_name": "vectorfl-space-operator",
+    "path": "vectorfl-space-operator",
+    "status": "READY_FOR_USER_APPROVED_INSTALL_ONLY",
+    "target_install_area_if_approved": "$CODEX_HOME/skills/vectorfl-space-operator"
+  },
+  "evidence_chain": [
+    {
+      "artifact": "03_validation_skill_and_dual_log_fixture_v0.json",
+      "verdict": "PASS_SKILL_PACKAGE_AND_DUAL_LOG_LOCAL_FIXTURE_WITH_HOLD"
+    },
+    {
+      "artifact": "07_validation_space_operator_skill_absorption_v0.json",
+      "verdict": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_ABSORPTION_WITH_HOLD"
+    },
+    {
+      "artifact": "10_validation_skill_candidate_program_effect_fixture_v0.json",
+      "verdict": "PASS_SKILL_CANDIDATE_PROGRAM_EFFECT_FIXTURE_WITH_HOLD"
+    },
+    {
+      "artifact": "real_reentry_fixture_run/codex_space/31_validation_real_reentry_fixture_v0.json",
+      "verdict": "PASS_REAL_REENTRY_FIXTURE_FOR_SPACE_OPERATOR_SKILL_WITH_HOLD"
+    },
+    {
+      "artifact": "real_reentry_fixture_run/shared_handoff/42_validation_hermes_merge_real_reentry_fixture_v0.json",
+      "verdict": "PASS_HERMES_MERGE_REAL_REENTRY_FIXTURE_RESULT_WITH_HOLD"
+    }
+  ],
+  "files_to_install_if_approved": [
+    {
+      "path": "vectorfl-space-operator/SKILL.md",
+      "sha256": "b7afb84398302bf2f06bf072212ed29e93dd49154e0ea5d939944e5d2e6afe95"
+    },
+    {
+      "path": "vectorfl-space-operator/references/dual_log_collision_free.md",
+      "sha256": "d6344ddc8da01a4a90b127cb1b0a5dfbc03b9017a6b617fd9b606a9ce87316a1"
+    },
+    {
+      "path": "vectorfl-space-operator/references/fast_cross_inspection.md",
+      "sha256": "a9ddb2d3b52135fd47f675f48e852ab4fa5b70f1a0d88b359cd81f3925654774"
+    },
+    {
+      "path": "vectorfl-space-operator/references/integrated_stack.md",
+      "sha256": "af7a0f3440bf8364b17c1261874ef5a946828899113336f87fff52e87cf9e71a"
+    },
+    {
+      "path": "vectorfl-space-operator/references/operation_routes.md",
+      "sha256": "be854ccda43ad7ee6c971812bcdd579219f30f46511f56a5cd241003fcb9095d"
+    },
+    {
+      "path": "vectorfl-space-operator/references/program_result_space_effect.md",
+      "sha256": "e679eb24125469bf2d66e5b56917ae9557d80baa257d4cf63316ba1d6612f643"
+    },
+    {
+      "path": "vectorfl-space-operator/references/return_schemas.md",
+      "sha256": "a56007dded3bcfd31e37e05f823d8a1dfc99c91295fc3f709a0fd90cd1874897"
+    },
+    {
+      "path": "vectorfl-space-operator/references/space_governance.md",
+      "sha256": "2747c5ac8062e4ea22ab6a0a7a3d094d9644414dae58c08eaa7b2139cb928c8d"
+    },
+    {
+      "path": "vectorfl-space-operator/references/space_maturation_principle.md",
+      "sha256": "ba6d1b7be42b10f0a59d9f862abb7b168d8909fb98a969c64db97342333b1067"
+    }
+  ],
+  "install_requires_explicit_user_approval": true,
+  "not_authorized_by": [
+    "계속",
+    "테스트해봐",
+    "확인해봐"
+  ],
+  "packet_id": "11_vectorfl_space_operator_skill_install_preflight_hold_v0",
+  "promotion_status": "HOLD",
+  "readiness_judgment": "READY_FOR_INSTALL_ONLY_IF_USER_EXPLICITLY_APPROVES",
+  "remaining_risks": [
+    "Installing the skill changes Codex runtime behavior and should be treated as a user-approved operational change.",
+    "The candidate duplicates some HOLD evidence references from run artifacts; after installation the installed skill copy should be treated as the operational copy, while run artifacts remain evidence.",
+    "Authority/current-position/registry/source/folder boundaries must remain outside the skill unless separately approved."
+  ],
+  "safe_non_install_next_lane": "KEEP_HOLD_WITH_REAL_REENTRY_FIXTURE_EVIDENCE_OR_CREATE_INSTALL_COMMAND_PACKET_V0"
+}

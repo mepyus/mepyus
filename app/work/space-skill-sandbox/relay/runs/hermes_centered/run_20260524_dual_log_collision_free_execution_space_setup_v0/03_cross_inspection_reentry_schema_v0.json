@@ -1,0 +1,48 @@
+{
+  "anti_collision_fields": [
+    "writer_role",
+    "allowed_namespace",
+    "immutable_after_publish",
+    "supersedes_handle_or_null",
+    "does_not_mutate_handles"
+  ],
+  "codex_to_hermes_maturation_required_fields": [
+    "packet_id",
+    "run_id",
+    "read_files",
+    "read_hermes_handles",
+    "maturation_decision",
+    "space_assets_to_reindex",
+    "rejected_maturation_options",
+    "gemini_via_codex_script_used",
+    "changed_judgment",
+    "risks",
+    "next_for_hermes",
+    "promotion_status"
+  ],
+  "cross_inspection_fields": [
+    "source_handle",
+    "source_sha256",
+    "used_for",
+    "changed_judgment",
+    "owner_namespace",
+    "read_only_assertion"
+  ],
+  "hermes_to_codex_reentry_required_fields": [
+    "packet_id",
+    "run_id",
+    "user_original_ref",
+    "hermes_interpretation_ref",
+    "space_refs_used",
+    "space_reference_delta",
+    "model_merge_judgment",
+    "execution_decision",
+    "execution_trace_ref",
+    "withheld_actions",
+    "codex_questions",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "packet_id": "03_cross_inspection_reentry_schema_v0",
+  "status": "HOLD_SCHEMA_CANDIDATE_ONLY"
+}

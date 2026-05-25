@@ -1,0 +1,78 @@
+{
+  "handoff_id": "CODEX_GEMINI_HERMES_BATCH02_RECOVERY_HANDOFF_HOLD_V0",
+  "created_at": "2026-05-25T11:00:40.358634+09:00",
+  "status": "READ_ONLY_HOLD",
+  "codex_read_first": [
+    "source_index/00_batch02_source_index_v0.json",
+    "readings/01_batch02_precise_reading_v0.json",
+    "comparison/03_batch02_vs_batch01_cluster_shift_v0.json"
+  ],
+  "codex_task": "Create placement/conflict/gap map for batch02 and compare with batch01. Keep authority/current-position/registry HOLD.",
+  "gemini_task": "Only wide-read assets Codex flags as layer/axis ambiguity or SaaS product implication ambiguity.",
+  "hermes_task": "Do not execute except dry-run precheck candidates; no folder move.",
+  "route_packs": {
+    "Hermes_precheck_surface_then_Codex_mature": [
+      {
+        "asset_id": "external_lens_space_reevaluation_round_003_multi_agent_friction",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_003_multi_agent_friction.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "external_lens_space_reevaluation_round_008_ambient_maturation_signals",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_008_ambient_maturation_signals.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "external_lens_space_reevaluation_round_009_lightweight_maturation_vocabulary",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_009_lightweight_maturation_vocabulary.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "external_lens_space_reevaluation_round_011_consequential_alarm_suppression",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_011_consequential_alarm_suppression.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "external_lens_space_reevaluation_round_015_low_friction_human_review_ergonomics",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_015_low_friction_human_review_ergonomics.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "external_thought_asset_research_round_002_plan_v0",
+        "relpath": "docs/reports/external_thought_asset_research_round_002_plan_v0.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "formation_prework_next_real_test_candidate_selection_v0",
+        "relpath": "docs/reports/formation_prework_next_real_test_candidate_selection_v0.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "four_axis_whole_space_reading_pass_v0",
+        "relpath": "docs/reports/four_axis_whole_space_reading_pass_v0.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "function_process_formation_prework_first_application_tools_leave_their_maker_v0",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      },
+      {
+        "asset_id": "function_process_formation_prework_real_test_aws_sample_deep_insight_v0",
+        "relpath": "docs/reports/function_process_formation_prework_real_test_aws_sample_deep_insight_v0.md",
+        "precise_family": "MATURATION_GOVERNANCE_GATE",
+        "saas_module": "SAAS_M4_MATURATION_GOVERNANCE"
+      }
+    ]
+  },
+  "hold": true
+}

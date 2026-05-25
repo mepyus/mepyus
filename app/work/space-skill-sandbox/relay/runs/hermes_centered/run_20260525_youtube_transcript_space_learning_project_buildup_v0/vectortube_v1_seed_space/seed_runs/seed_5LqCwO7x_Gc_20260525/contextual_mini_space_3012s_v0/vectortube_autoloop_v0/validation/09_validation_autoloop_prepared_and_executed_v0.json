@@ -1,0 +1,83 @@
+{
+  "validation_id": "VALIDATION_VECTORTUBE_AUTOLOOP_PREP_AND_RUN_TOP_V0",
+  "created_at": "2026-05-25T08:22:35.346329+09:00",
+  "verdict": "PASS_AUTOLOOP_PREPARED_AND_EXECUTED_WITH_HOLD",
+  "runner_exit_code": 0,
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/policy/00_vectortube_autoloop_policy_v0.json": {
+      "exists": true,
+      "sha256": "ca878f26a12473e9b4c9d1efb50814fb23f3674b661f2b571920581882475c13",
+      "bytes": 1821
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/scripts/vectortube_autoloop_runner_v0.py": {
+      "exists": true,
+      "sha256": "b2bc5a17b17d81771c8b8f62a2d052b2ba840adb4386fd4b77f40b63bfa7656a",
+      "bytes": 8684
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/receipts/08_runner_stdout.json": {
+      "exists": true,
+      "sha256": "167262ea3d406e074e7eb9d48ca347873b0146cda5948e2ecc3af558af723260",
+      "bytes": 1772
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/mini_space/06_autoloop_result_mini_space_v0.json": {
+      "exists": true,
+      "sha256": "45b8980d1c085e7e0784e180db18845fc96e9d2f9485634e9b7e28ebf8b05204",
+      "bytes": 10120
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/validation/07_validation_vectortube_autoloop_v0.json": {
+      "exists": true,
+      "sha256": "b82c4ab74d45f0c2a8a9780ecc3d7d2a68fd46bba477e480c1f75a2a7bda1fb9",
+      "bytes": 5184
+    }
+  },
+  "content_checks": {
+    "policy_created": true,
+    "runner_created": true,
+    "runner_executed": true,
+    "main_space_mutation": false,
+    "promotion_hold": true,
+    "runner_result": {
+      "verdict": "PASS_AUTOLOOP_EXECUTED_WITH_HOLD",
+      "mini_space": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/mini_space/06_autoloop_result_mini_space_v0.json",
+      "validation": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0/validation/07_validation_vectortube_autoloop_v0.json",
+      "content_checks": {
+        "slots": 3,
+        "successful_transcripts": 3,
+        "layer_tables": 3,
+        "candidate_only_before_fetch": true,
+        "hard_cap_transcripts_total": 3,
+        "main_space_mutation": false,
+        "promotion_hold": true
+      },
+      "selected": [
+        [
+          "policy_boundary",
+          {
+            "video_id": "s7g_KopEkR4",
+            "url": "https://www.youtube.com/watch?v=s7g_KopEkR4",
+            "title": null,
+            "slot": "policy_boundary"
+          }
+        ],
+        [
+          "quality_failure",
+          {
+            "video_id": "dOmKYJoRboE",
+            "url": "https://www.youtube.com/watch?v=dOmKYJoRboE",
+            "title": "How to Make Long AI Videos with Consistent Characters (2026)",
+            "slot": "quality_failure"
+          }
+        ],
+        [
+          "human_workflow_guard",
+          {
+            "video_id": "CdnR-fNVPKI",
+            "url": "https://www.youtube.com/watch?v=CdnR-fNVPKI",
+            "title": "The Secret to Making AI Agents 100% Reliable - Human in the Loop (n8n)",
+            "slot": "human_workflow_guard"
+          }
+        ]
+      ]
+    }
+  }
+}

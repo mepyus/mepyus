@@ -1,0 +1,41 @@
+{
+  "template_id": "VECTORTUBE_LAYER_CARD_TEMPLATE_20260525_V0",
+  "created_at": "2026-05-25T07:42:02.163105+09:00",
+  "status": "TEMPLATE_CANDIDATE_HOLD",
+  "purpose": "Reusable layer-reading card for future VectorTube seed/expansion sources. Prevents summary-only processing.",
+  "required_fields": {
+    "source_identity": [
+      "video_id/url/title/source_role/seed_or_expansion"
+    ],
+    "evidence_grounding": [
+      "raw_transcript_path",
+      "timestamped_transcript_path",
+      "sha256",
+      "duration",
+      "segment_count"
+    ],
+    "layers": {
+      "L0_source_surface": "timestamped surface claims",
+      "L1_conceptual": "definitions and conceptual distinctions",
+      "L2_information_structure": "data/schema/relation/evidence structure",
+      "L3_context_background": "historical/domain/industry background",
+      "L4_emotional_rhetorical": "emotion, urgency, persuasion, metaphors",
+      "L5_power_authority": "institutions, vendors, experts, standards, incentives",
+      "L6_practical_operational": "people/tools/process/action/feedback loop",
+      "L7_counter_uncertainty": "failure modes, uncertainty, alternative views",
+      "L8_vectorfl_mapping": "how this changes VectorFL mini-space/HOLD/reentry"
+    },
+    "negative_validation": [
+      "what would make this source misleading?",
+      "what layer is missing?",
+      "what source type is needed next?"
+    ],
+    "promotion_gate": [
+      "summary_only must be false",
+      "timestamped claims required",
+      "authority remains HOLD",
+      "main-space mutation false"
+    ]
+  },
+  "default_next_action": "If layer coverage is weak, do not search more; improve lens or add one targeted counter/orthogonal source."
+}

@@ -1,0 +1,50 @@
+{
+  "validation_id": "VALIDATION_M4_AUTHORITY_FREEZE_REVIEW_V0",
+  "created_at": "2026-05-25T11:47:07.755075+09:00",
+  "verdict": "PASS_M4_FREEZE_REVIEW_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/source_index/00_m4_freeze_source_index_v0.json": {
+      "exists": true,
+      "sha256": "9ea870755c72407f8a80e3371bf651a02bd61577dd77141f51a0babdad505af7",
+      "bytes": 1724
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/freeze_review/01_m4_authority_sensitive_freeze_review_v0.json": {
+      "exists": true,
+      "sha256": "31917eb68b4f7f26254b2e58d925b9da4e7feb395a467442d6d2b84010a9f772",
+      "bytes": 83688
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/classes/02_m4_authority_confusion_map_v0.json": {
+      "exists": true,
+      "sha256": "16a42990dc6389a793756c56d5a388d2feafa2bfde1ffd2d7f33a0e7e8703075",
+      "bytes": 24686
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/readiness/03_m4_freeze_cleanup_readiness_v0.json": {
+      "exists": true,
+      "sha256": "0af8151614dafdf8e6d53a5b146c1cbbe0006f637156b291b13583291fc045b2",
+      "bytes": 599
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/handoff/04_M4_FREEZE_REVIEW_TO_CODEX_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "be5b284fbb069bed099fe9044a048f366fed6a07a54d6757f0f98aaeaaaedd5f",
+      "bytes": 526
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m4_authority_sensitive_freeze_review_v0/reports/05_m4_freeze_review_report_v0.md": {
+      "exists": true,
+      "sha256": "e84444993a3c1ec7451c3f1ed8d548e413165b046438230ffdcea8f9edd5dd78",
+      "bytes": 259
+    }
+  },
+  "content_checks": {
+    "input_authority_sensitive_count": 63,
+    "freeze_item_count": 63,
+    "class_count": 4,
+    "confusion_count": 61,
+    "do_not_move_count": 61,
+    "cleanup_apply_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

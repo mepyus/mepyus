@@ -1,0 +1,74 @@
+{
+  "packet_id": "CODEX_READ_ONLY_MATURATION_REVIEW_PACKET_V0",
+  "created_at": "2026-05-25T11:31:23.318499+09:00",
+  "verdict": "READY_FOR_CODEX_READ_ONLY_REVIEW_WITH_HOLD",
+  "purpose": "Codex를 VectorFL space steward/maturation actor로 읽게 하되, 이번 패킷에서는 placement/conflict/gap map만 반환하게 한다. 어떠한 파일 이동/authority mutation/promotion도 금지한다.",
+  "read_first_order": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json",
+      "exists": true,
+      "sha256": "a8907c2a638f3e195d18d2ecf1d0ddd3f210d497ff6d088eafee7fb27fe9995d",
+      "bytes": 30756
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/skeleton/01_vectorfl_eight_module_saas_skeleton_v0_1.json",
+      "exists": true,
+      "sha256": "edc853af03957a00533ce51cf16f1e76dd6edfdc5e4d54a3e4be90a67c3eca56",
+      "bytes": 4132
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/rubric/00_vectorfl_promotion_rubric_v0.json",
+      "exists": true,
+      "sha256": "67ba50cb16c8dbb146e78150065a35110524ac1c4029bf62c8696d71b3a8b1de",
+      "bytes": 8848
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/matrix/01_vectorfl_promotion_gate_matrix_v0.json",
+      "exists": true,
+      "sha256": "ed96fb2e245f248840d54a2327f17cb457582157a7f28e2add2ae2f9cbdabd75",
+      "bytes": 3030
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json",
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc",
+      "bytes": 2175
+    }
+  ],
+  "review_scope": {
+    "primary_questions": [
+      "top60 rollup v0.1의 7 confirmed clusters + 8-module skeleton 배치가 타당한가?",
+      "M1/M3 재분리가 맞는가, 아니면 순수 M1 top60 cluster를 다시 찾아야 하는가?",
+      "M2/M7/M8/M4를 folder cleanup 전 필수축으로 둔 판단에 conflict/gap이 있는가?",
+      "promotion rubric v0의 INBOX/CANDIDATE/MATURED/AUTHORITY 기준이 M4/M8과 일관적인가?",
+      "Codex가 실제 maturation review actor로 반복 운영하려면 추가로 필요한 packet field는 무엇인가?"
+    ],
+    "allowed_outputs": [
+      "placement_map",
+      "conflict_map",
+      "gap_map",
+      "risk_hold_map",
+      "next_review_batch_plan",
+      "rubric_patch_suggestions"
+    ],
+    "forbidden_outputs": [
+      "file edits",
+      "folder moves",
+      "registry/current-position/authority updates",
+      "promotion decisions as final authority",
+      "network/API calls",
+      "secret preservation"
+    ]
+  },
+  "hard_boundaries": {
+    "mode": "READ_ONLY",
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion": "FORBIDDEN_WITHOUT_EXPLICIT_USER_APPROVAL",
+    "live_codex_call_executed_by_hermes": false,
+    "codex_packet_is_authority": false
+  },
+  "operator_note": "이 파일은 Codex가 나중에 읽을 packet이다. Hermes가 Codex live call을 실행한 것이 아니며, 이 packet 자체는 authority가 아니다."
+}

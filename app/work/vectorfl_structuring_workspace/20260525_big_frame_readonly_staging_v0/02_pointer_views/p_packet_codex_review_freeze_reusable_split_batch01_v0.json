@@ -1,0 +1,1892 @@
+{
+  "split_id": "P_PACKET_CODEX_REVIEW_FREEZE_AND_REUSABLE_SPLIT_BATCH01_V0",
+  "created_at": "2026-05-25T14:43:11.880854+09:00",
+  "status": "POINTER_ONLY_SPLIT_NOT_AUTHORITY",
+  "source_map": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_codex_review_packet_no_call_dedupe_map_v0.json",
+  "groups": [
+    {
+      "group": "FREEZE_AUTHORITY_SENSITIVE",
+      "count": 20,
+      "records": [
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_01",
+          "relpath": "runtime/manifests/provenance_compaction/provenance_link_index_snapshot_before_apply_v1.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/provenance_compaction/provenance_link_index_snapshot_before_apply_v1.json",
+          "sha256": "4b7581f6b4febb4ac50d720ba1c71080c83aeea594a3b4efecf86aefd3bffe70",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 23,
+            "reusable_terms": 2,
+            "no_call_terms": 0,
+            "apply_terms": 1,
+            "receipt_terms": 36
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 5,
+              "text": "\"source_doc_ref\": \"codex_declaration_vectorfl_replica_material_and_operation_v1.md\","
+            },
+            {
+              "line": 6,
+              "text": "\"derived_target_ref\": \"runtime/manifests/structured_internal_docs_registry_v1.json\","
+            },
+            {
+              "line": 11,
+              "text": "\"source_doc_ref\": \"codex_baseline_vectorfl_replica_intake_and_operation_v1.md\","
+            },
+            {
+              "line": 12,
+              "text": "\"derived_target_ref\": \"runtime/manifests/structured_internal_docs_registry_v1.json\","
+            },
+            {
+              "line": 17,
+              "text": "\"source_doc_ref\": \"codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md\","
+            },
+            {
+              "line": 18,
+              "text": "\"derived_target_ref\": \"docs/policies/codex_material_and_operation_docs_index_v1.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_02",
+          "relpath": "runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/provenance_compaction/provenance_link_index_compacted_v1.json",
+          "sha256": "f5b4358e49d75b5d09e430f4fe2ee7a2523aba2715698423f69e4f2d5285bd67",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 21,
+            "reusable_terms": 2,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 35
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 5,
+              "text": "\"source_doc_ref\": \"codex_declaration_vectorfl_replica_material_and_operation_v1.md\","
+            },
+            {
+              "line": 6,
+              "text": "\"derived_target_ref\": \"runtime/manifests/structured_internal_docs_registry_v1.json\","
+            },
+            {
+              "line": 11,
+              "text": "\"source_doc_ref\": \"codex_baseline_vectorfl_replica_intake_and_operation_v1.md\","
+            },
+            {
+              "line": 12,
+              "text": "\"derived_target_ref\": \"runtime/manifests/structured_internal_docs_registry_v1.json\","
+            },
+            {
+              "line": 17,
+              "text": "\"source_doc_ref\": \"codex_directive_vectorfl_replica_bootstrap_and_operation_v1.md\","
+            },
+            {
+              "line": 18,
+              "text": "\"derived_target_ref\": \"docs/policies/codex_material_and_operation_docs_index_v1.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_03",
+          "relpath": "references/git_search/oh-my-codex-main/CHANGELOG.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/CHANGELOG.md",
+          "sha256": "a08acb38081c84cf53a236b0ea911f321ec50992823bd138185f36852a2e6905",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 5,
+            "reusable_terms": 5,
+            "no_call_terms": 3,
+            "apply_terms": 7,
+            "receipt_terms": 4
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 12,
+              "text": "- **Analyze skill revival** — the `analyze` skill returns as a read-only, truth-telling investigation surface for OMX sessions. (PR [#1687](https://github.com/Yeachan-Heo/oh-my-codex/pull/1687))"
+            },
+            {
+              "line": 13,
+              "text": "- **OMX skill display prefix** — OMX-installed skills are now marked in `/skills` without being renamed, so users can tell OMX-managed skills apart from local ones. (PR [#1686](https://github.com/Yeachan-Heo/oh-my-codex/pull/1686))"
+            },
+            {
+              "line": 14,
+              "text": "- **Shift+Enter tmux triage docs** — documented Shift+Enter newline behavior in tmux so operators can separate terminal/env issues from OMX regressions. (PR [#1683](https://github.com/Yeachan-Heo/oh-my-codex/pull/1683), issue [#1682](https://github.com/Yeachan"
+            },
+            {
+              "line": 19,
+              "text": "- **Path traversal in identifier handling** — validated identifiers before they reach team/session joins and closed the parent path-traversal surface. (PRs [#1658](https://github.com/Yeachan-Heo/oh-my-codex/pull/1658), [#1674](https://github.com/Yeachan-Heo/oh"
+            },
+            {
+              "line": 20,
+              "text": "- **HUD state shell and regex injection** — `execFileSync` was replaced with async `execFile` in leader git polling, and git helpers now reject shell/regex metacharacters with regression coverage for HUD `remoteName` inputs. (PRs [#1662](https://github.com/Yea"
+            },
+            {
+              "line": 21,
+              "text": "- **Reply acknowledgement redaction** — notification reply acknowledgements no longer leak quoted or multi-part secrets, without reviving unrelated watcher churn. (PR [#1670](https://github.com/Yeachan-Heo/oh-my-codex/pull/1670))"
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_04",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json",
+          "sha256": "f720f89ce5acb9e8c71215ef89e5ebcf7066001d28b390866acdf4a2d5a9d341",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 60,
+            "reusable_terms": 2,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 207
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042\","
+            },
+            {
+              "line": 5,
+              "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_160042.json\","
+            },
+            {
+              "line": 9,
+              "text": "\"linked_segment_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md:0-0\","
+            },
+            {
+              "line": 10,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_05",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_openai_agent_first_codex_note_v0_multi_lens_readout_openai_agent_first_codex_note_v0_20260423_153057.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_openai_agent_first_codex_note_v0_multi_lens_readout_openai_agent_first_codex_note_v0_20260423_153057.json",
+          "sha256": "e51d9ae8aa1f810b96e9993d9dd68a4d4617677a53cf7a9c5bf855a38c90f8aa",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 96,
+            "reusable_terms": 19,
+            "no_call_terms": 0,
+            "apply_terms": 9,
+            "receipt_terms": 0
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"openai_agent_first_codex_note_v0_20260423_153057\","
+            },
+            {
+              "line": 5,
+              "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_openai_agent_first_codex_note_v0_20260423_153057.json\","
+            },
+            {
+              "line": 9,
+              "text": "\"linked_segment_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md:0-0\","
+            },
+            {
+              "line": 10,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_06",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_codex_directive_document_routing_markers_and_operation_receipt_v1_multi_lens_readout_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json",
+          "sha256": "36d7b4f02868a9eb91ca87a14efc4623a498a62ec2c05fc3f653ae77b8b9f68e",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 58,
+            "reusable_terms": 2,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 204
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911\","
+            },
+            {
+              "line": 5,
+              "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_codex_directive_document_routing_markers_and_operation_receipt_v1_20260403_161911.json\","
+            },
+            {
+              "line": 9,
+              "text": "\"linked_segment_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md:0-0\","
+            },
+            {
+              "line": 10,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"source_id\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_07",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_readout_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_readout_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json",
+          "sha256": "b8282dfa11d64fbb1161867a113b5d527091213e6837f5ce74900796eddd9556",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 96,
+            "reusable_terms": 19,
+            "no_call_terms": 0,
+            "apply_terms": 5,
+            "receipt_terms": 1
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"token_efficiency_claude_codex_stdy_note_v0_20260423_212807\","
+            },
+            {
+              "line": 5,
+              "text": "\"split_units_path\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/observer_ingest_min/generated/split_units_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json\","
+            },
+            {
+              "line": 9,
+              "text": "\"linked_segment_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md:0-0\","
+            },
+            {
+              "line": 10,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_08",
+          "relpath": "runtime/manifests/structured_internal_docs_registry_v1.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/structured_internal_docs_registry_v1.json",
+          "sha256": "449ce18ad403e0164a0da543fcc75cf1c7ecf43095c020eaee454455cb269e82",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 6,
+            "reusable_terms": 4,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 10
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 2,
+              "text": "\"registry_name\": \"structured_internal_docs_registry_v1\","
+            },
+            {
+              "line": 3,
+              "text": "\"registry_role\": \"high-grade structured internal document intake registry\","
+            },
+            {
+              "line": 7,
+              "text": "\"doc_ref\": \"codex_declaration_vectorfl_replica_material_and_operation_v1.md\","
+            },
+            {
+              "line": 12,
+              "text": "\"source_session\": \"local_codex_session\","
+            },
+            {
+              "line": 18,
+              "text": "\"doc_ref\": \"codex_baseline_vectorfl_replica_intake_and_operation_v1.md\","
+            },
+            {
+              "line": 23,
+              "text": "\"source_session\": \"local_codex_session\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_09",
+          "relpath": "app/work/space-skill-sandbox/packages/package_047_audit/flow_audit.txt",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/packages/package_047_audit/flow_audit.txt",
+          "sha256": "e1480fa32ca9fc1d9d6b3fc6217c6179aff35a1245696d1f9e734d8c49a34877",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 8,
+            "reusable_terms": 0,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 20
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"asset_registered\", \"folder_key\": \"runtime.views.multi_lens_document_reading\", \"folder_path\": \"runtime/views/multi_lens_document_reading\", \"target_ref\": \"runtime/views/multi_lens_document_reading/doc_sof"
+            },
+            {
+              "line": 2,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"asset_registered\", \"folder_key\": \"runtime.views.multi_lens_document_reading\", \"folder_path\": \"runtime/views/multi_lens_document_reading\", \"target_ref\": \"runtime/views/multi_lens_document_reading/doc_sof"
+            },
+            {
+              "line": 3,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"doc_created\", \"folder_key\": \"app.work.observer_ingest_min.generated\", \"folder_path\": \"app/work/observer_ingest_min/generated\", \"target_ref\": \"app/work/observer_ingest_min/generated/operator_summary_soft"
+            },
+            {
+              "line": 4,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"doc_created\", \"folder_key\": \"app.work.observer_ingest_min.generated\", \"folder_path\": \"app/work/observer_ingest_min/generated\", \"target_ref\": \"app/work/observer_ingest_min/generated/readable_input_board_"
+            },
+            {
+              "line": 5,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"asset_registered\", \"folder_key\": \"app.work.observer_ingest_min.generated\", \"folder_path\": \"app/work/observer_ingest_min/generated\", \"target_ref\": \"app/work/observer_ingest_min/generated/camera_support_b"
+            },
+            {
+              "line": 6,
+              "text": "{\"timestamp\": \"2026-04-23T21:21:30+09:00\", \"event_type\": \"asset_registered\", \"folder_key\": \"app.work.observer_ingest_min.generated\", \"folder_path\": \"app/work/observer_ingest_min/generated\", \"target_ref\": \"app/work/observer_ingest_min/generated/content_role_tag"
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_10",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_supervisor_surface_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_token_efficiency_claude_codex_stdy_note_v0_multi_lens_supervisor_surface_token_efficiency_claude_codex_stdy_note_v0_20260423_212807.json",
+          "sha256": "3d21aaf89b05a957ecfe5bc8fe6a477f31cda668388658614a97394724cb3a48",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 52,
+            "reusable_terms": 10,
+            "no_call_terms": 0,
+            "apply_terms": 3,
+            "receipt_terms": 0
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"token_efficiency_claude_codex_stdy_note_v0_20260423_212807\","
+            },
+            {
+              "line": 7,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"linked_segment_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md:0-0\","
+            },
+            {
+              "line": 20,
+              "text": "\"source_id\": \"inputs/external_cases/token_efficiency_claude_codex_stdy_note_v0.md\","
+            },
+            {
+              "line": 30,
+              "text": "\"registry_path\": \"/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_11",
+          "relpath": "runtime/views/multi_lens_document_reading/doc_openai_agent_first_codex_note_v0_multi_lens_supervisor_surface_openai_agent_first_codex_note_v0_20260423_153057.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/views/multi_lens_document_reading/doc_openai_agent_first_codex_note_v0_multi_lens_supervisor_surface_openai_agent_first_codex_note_v0_20260423_153057.json",
+          "sha256": "e359bf8cd150cf2abac3aabbc15f0562ed83530d5a259fc7462db416da2e32a2",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 48,
+            "reusable_terms": 9,
+            "no_call_terms": 0,
+            "apply_terms": 4,
+            "receipt_terms": 0
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            },
+            {
+              "line": 4,
+              "text": "\"observer_run_id\": \"openai_agent_first_codex_note_v0_20260423_153057\","
+            },
+            {
+              "line": 7,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            },
+            {
+              "line": 19,
+              "text": "\"linked_segment_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md:0-0\","
+            },
+            {
+              "line": 20,
+              "text": "\"source_id\": \"inputs/external_cases/openai_agent_first_codex_note_v0.md\","
+            },
+            {
+              "line": 30,
+              "text": "\"registry_path\": \"/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/line_registry.json\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_12",
+          "relpath": "scripts/run_vectorfl_paper_proper_mock.py",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_vectorfl_paper_proper_mock.py",
+          "sha256": "55d8c107fba366fe093c23fb861afcf0969ba20620b3c22d9c9eab0465cfb908",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 13,
+            "reusable_terms": 7,
+            "no_call_terms": 1,
+            "apply_terms": 2,
+            "receipt_terms": 66
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 13,
+              "text": "HANDOFF_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_handoff_latest_v0.json\""
+            },
+            {
+              "line": 14,
+              "text": "RETURN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_return_latest_v0.json\""
+            },
+            {
+              "line": 17,
+              "text": "ACTUAL_EXPORT_VALIDATION_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_actual_export_gate_validation_latest_v0.json\""
+            },
+            {
+              "line": 18,
+              "text": "ACTUAL_EXPORT_VALIDATION_DRY_RUN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_actual_export_gate_validation_dry_run_v0.json\""
+            },
+            {
+              "line": 19,
+              "text": "REFERENCE_COMPARISON_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_reference_candidate_validation_comparison_v0.json\""
+            },
+            {
+              "line": 22,
+              "text": "CODEX_TOP_FILES = ["
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_13",
+          "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_subtype_review_batch01_v0.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_subtype_review_batch01_v0.json",
+          "sha256": "c32915af72b97e9f02cb6533ef3c5db49f0686bc5a410b045de229b355cc830c",
+          "surface": "workspace_control",
+          "signals": {
+            "authority_terms": 57,
+            "reusable_terms": 16,
+            "no_call_terms": 1,
+            "apply_terms": 85,
+            "receipt_terms": 92
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 2,
+              "text": "\"review_id\": \"P_PACKET_HANDOFF_SUBTYPE_REVIEW_BATCH01_V0\","
+            },
+            {
+              "line": 4,
+              "text": "\"status\": \"POINTER_ONLY_SUBTYPE_REVIEW_NOT_AUTHORITY\","
+            },
+            {
+              "line": 5,
+              "text": "\"source_compact\": \"/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_handoff_asset_compact_pointer_view_v0.json\","
+            },
+            {
+              "line": 9,
+              "text": "\"subtype\": \"codex_review_packet\","
+            },
+            {
+              "line": 11,
+              "text": "\"FUTURE_REVIEW_HANDOFF_CANDIDATE_NO_CALL\": 3,"
+            },
+            {
+              "line": 17,
+              "text": "\"subtype\": \"validation_packet\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_14",
+          "relpath": "runtime/manifests/folder_inventory/source_assets.directives.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/manifests/folder_inventory/source_assets.directives.json",
+          "sha256": "5427623d027f951663096161caa7a9fcc752ca331104fbfeb11b0183ca1b65df",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 4,
+            "reusable_terms": 3,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 6
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 8,
+              "text": "\"name\": \"codex_directive_core_input_layer_labeler_realization_v1.md\","
+            },
+            {
+              "line": 9,
+              "text": "\"path\": \"source_assets/directives/codex_directive_core_input_layer_labeler_realization_v1.md\","
+            },
+            {
+              "line": 13,
+              "text": "\"title\": \"codex_directive_core_input_layer_labeler_realization_v1\","
+            },
+            {
+              "line": 17,
+              "text": "\"name\": \"codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 18,
+              "text": "\"path\": \"source_assets/directives/codex_directive_document_routing_markers_and_operation_receipt_v1.md\","
+            },
+            {
+              "line": 22,
+              "text": "\"title\": \"codex_directive_document_routing_markers_and_operation_receipt_v1\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_15",
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PROGRAM_TOPOLOGY_CHECK_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_PROGRAM_TOPOLOGY_CHECK_V0.md",
+          "sha256": "ebfb5863173c6432d1f2da8e6c5ce139abfd5b55076186d4be93b52d6e746623",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 62,
+            "reusable_terms": 4,
+            "no_call_terms": 0,
+            "apply_terms": 1,
+            "receipt_terms": 15
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 13,
+              "text": "scope: Hermes main runtime -> Codex space worker -> Gemini exploration lens"
+            },
+            {
+              "line": 14,
+              "text": "authority: sandbox-local candidate"
+            },
+            {
+              "line": 24,
+              "text": "registry"
+            },
+            {
+              "line": 30,
+              "text": "current-position"
+            },
+            {
+              "line": 46,
+              "text": "-> Codex space worker"
+            },
+            {
+              "line": 54,
+              "text": "standardize packet / receipt / return path"
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_16",
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_codex_gemini_connection_diagnostic_v0/connection_diagnostic_report.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/hermes_codex_gemini_connection_diagnostic_v0/connection_diagnostic_report.md",
+          "sha256": "4dc7bf5be9be07f1721817906fde5dfe80dce158c9adc9fca88e4717e0b78ee4",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 54,
+            "reusable_terms": 8,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 15
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# Hermes / Codex / Gemini Connection Diagnostic Return v0"
+            },
+            {
+              "line": 6,
+              "text": "HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_RETURNED_WITH_WATCH"
+            },
+            {
+              "line": 12,
+              "text": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_PROMPT_V0.md"
+            },
+            {
+              "line": 24,
+              "text": "Codex recovers and judges."
+            },
+            {
+              "line": 25,
+              "text": "Gemini explores for Codex."
+            },
+            {
+              "line": 33,
+              "text": "Hermes can execute around the VectorFL space, but Hermes must not become VectorFL authority."
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_17",
+          "relpath": "runtime/obsidian_date_folder_intake/05-15/intake_payload.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/obsidian_date_folder_intake/05-15/intake_payload.json",
+          "sha256": "475386514aa5f77cf17f05bef8e42bbd50e07f94f312c17087264f0f78cbb351",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 10,
+            "reusable_terms": 12,
+            "no_call_terms": 4,
+            "apply_terms": 2,
+            "receipt_terms": 0
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 6,
+              "text": "\"source_folder\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15\","
+            },
+            {
+              "line": 10,
+              "text": "\"NEEDS_USER_DECISION_BEFORE_PROMOTION\""
+            },
+            {
+              "line": 14,
+              "text": "\"path\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15/1.md\","
+            },
+            {
+              "line": 64,
+              "text": "\"path\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15/10.md\","
+            },
+            {
+              "line": 114,
+              "text": "\"path\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15/11.md\","
+            },
+            {
+              "line": 164,
+              "text": "\"path\": \"/Users/sungsookim/Library/Mobile Documents/iCloud~md~obsidian/Documents/시냄스/codex_/05-15/12.md\","
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_18",
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/FLOW_NETWORK_GEMINI_BRIDGE_BOTTLENECK_CHECK_V0.md",
+          "sha256": "a6da01150934fa342f791274203a8e9ac368fd00ef8da317e0cd34f66ff18c50",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 22,
+            "reusable_terms": 8,
+            "no_call_terms": 0,
+            "apply_terms": 1,
+            "receipt_terms": 13
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 13,
+              "text": "scope: Codex-authored Gemini packet vs Codex-run Gemini vs Hermes-run Gemini"
+            },
+            {
+              "line": 14,
+              "text": "authority: sandbox-local candidate"
+            },
+            {
+              "line": 24,
+              "text": "registry"
+            },
+            {
+              "line": 30,
+              "text": "current-position"
+            },
+            {
+              "line": 38,
+              "text": "This document does not connect Codex, Hermes, and Gemini."
+            },
+            {
+              "line": 47,
+              "text": "Codex -> Python script -> Gemini -> output file -> Codex full re-read"
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_19",
+          "relpath": "docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/vectorfl_integrated_engine_worker_execution_loop_log_v0.md",
+          "sha256": "464ebb1c27e9235c4033f0235e36e5d5369fc1cf53145bb3f1dfd7a89ba70d5f",
+          "surface": "source_docs",
+          "signals": {
+            "authority_terms": 20,
+            "reusable_terms": 2,
+            "no_call_terms": 20,
+            "apply_terms": 4,
+            "receipt_terms": 9
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 5,
+              "text": "- The integrated engine now has one real operator loop beyond read-only display."
+            },
+            {
+              "line": 6,
+              "text": "- The loop is still bounded and read-only at the worker level."
+            },
+            {
+              "line": 13,
+              "text": "3. The assignment is converted into the existing Codex handoff shape."
+            },
+            {
+              "line": 14,
+              "text": "4. The existing read-only Codex bridge runs from that handoff."
+            },
+            {
+              "line": 15,
+              "text": "5. Codex writes a latest return manifest."
+            },
+            {
+              "line": 16,
+              "text": "6. The engine records a latest Codex run artifact."
+            }
+          ]
+        },
+        {
+          "id": "FREEZE_AUTHORITY_SENSITIVE_20",
+          "relpath": "app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_PROMPT_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/outputs/05_15_sequential_execution_cards/HERMES_CODEX_GEMINI_CONNECTION_DIAGNOSTIC_PROMPT_V0.md",
+          "sha256": "156afb1c3eee535c95846a8a6eff93c648e45c97bb5bf86c16546a0b495664ab",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 22,
+            "reusable_terms": 2,
+            "no_call_terms": 0,
+            "apply_terms": 0,
+            "receipt_terms": 12
+          },
+          "recommended_action": "KEEP_FROZEN_POINTER_ONLY__DO_NOT_PROMOTE_OR_CALL",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 2,
+              "text": "# Codex / Gemini / VectorFL Connection Diagnostic v0"
+            },
+            {
+              "line": 10,
+              "text": "Your task is to diagnose how Hermes, Codex, and Gemini should be connected so that:"
+            },
+            {
+              "line": 15,
+              "text": "Codex judges, validates, classifies, and recovers Hermes outputs into VectorFL."
+            },
+            {
+              "line": 16,
+              "text": "Gemini handles broad exploration / bulk comparison tasks needed by Codex."
+            },
+            {
+              "line": 17,
+              "text": "User keeps dispatch, side-effect, persistence, and promotion approval."
+            },
+            {
+              "line": 22,
+              "text": "Do not run Codex."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "REUSABLE_PATTERN_CANDIDATE",
+      "count": 12,
+      "records": [
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_01",
+          "relpath": "docs/reports/formation_movement_interface_codex_coupling_diagnostic_note_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/formation_movement_interface_codex_coupling_diagnostic_note_v0.md",
+          "sha256": "440b4200fc56f2f95967c81454eef93879810aa7470817e24cf20030a373e5c4",
+          "surface": "source_docs",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 4,
+            "no_call_terms": 0,
+            "apply_terms": 4,
+            "receipt_terms": 9
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# Formation-Movement Interface Codex Coupling Diagnostic Note v0"
+            },
+            {
+              "line": 7,
+              "text": "focus: package_to_codex_coupling"
+            },
+            {
+              "line": 9,
+              "text": "purpose: inspect whether the current assets connect to Codex naturally and goal-directionally"
+            },
+            {
+              "line": 22,
+              "text": "- can Codex be used?"
+            },
+            {
+              "line": 26,
+              "text": "- does the current package make Codex a natural part of the flow?"
+            },
+            {
+              "line": 27,
+              "text": "- does Codex receive inputs in a purpose-shaped way?"
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_02",
+          "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.de.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.de.md",
+          "sha256": "74c4ed9a5383b274cc5c6280a5292899fcb4e99041fce4acd5e0c00abc8497fb",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 1,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# oh-my-codex (OMX)"
+            },
+            {
+              "line": 4,
+              "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+            },
+            {
+              "line": 6,
+              "text": "<em>Dein Codex ist nicht allein.</em>"
+            },
+            {
+              "line": 9,
+              "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+            },
+            {
+              "line": 13,
+              "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+            },
+            {
+              "line": 15,
+              "text": "Multi-Agenten-Orchestrierungsschicht für [OpenAI Codex CLI](https://github.com/openai/codex)."
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_03",
+          "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.fr.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.fr.md",
+          "sha256": "66f21c6e0630a5279b08196942601ba32e967cb6e4b5d9c49efcb19b1564f588",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 1,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 1
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# oh-my-codex (OMX)"
+            },
+            {
+              "line": 4,
+              "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+            },
+            {
+              "line": 6,
+              "text": "<em>Votre codex n'est pas seul.</em>"
+            },
+            {
+              "line": 9,
+              "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+            },
+            {
+              "line": 13,
+              "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+            },
+            {
+              "line": 15,
+              "text": "Couche d'orchestration multi-agents pour [OpenAI Codex CLI](https://github.com/openai/codex)."
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_04",
+          "relpath": "references/git_search/oh-my-codex-main/docs/readme/README.ru.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/docs/readme/README.ru.md",
+          "sha256": "f9694da6470f1f7da427a7bd4fb20a32c176fbfc6a7a721dadc9e6046d009d33",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 1,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# oh-my-codex (OMX)"
+            },
+            {
+              "line": 4,
+              "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+            },
+            {
+              "line": 6,
+              "text": "<em>Ваш codex не одинок.</em>"
+            },
+            {
+              "line": 9,
+              "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+            },
+            {
+              "line": 13,
+              "text": "> **[Website](https://yeachan-heo.github.io/oh-my-codex-website/)** | **[Documentation](https://yeachan-heo.github.io/oh-my-codex-website/docs.html)** | **[CLI Reference](https://yeachan-heo.github.io/oh-my-codex-website/docs.html#cli-reference)** | **[Workflo"
+            },
+            {
+              "line": 15,
+              "text": "Слой мультиагентной оркестрации для [OpenAI Codex CLI](https://github.com/openai/codex)."
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_05",
+          "relpath": "references/git_search/oh-my-codex-main/README.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/oh-my-codex-main/README.md",
+          "sha256": "953d13b2ec72f5b13b7f191a9180ecc83d6c85cc60f291c94813115f5931a60b",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 2,
+            "no_call_terms": 1,
+            "apply_terms": 1,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# oh-my-codex (OMX)"
+            },
+            {
+              "line": 4,
+              "text": "<img src=\"https://yeachan-heo.github.io/oh-my-codex-website/omx-character-nobg.png\" alt=\"oh-my-codex character\" width=\"280\">"
+            },
+            {
+              "line": 6,
+              "text": "<em>Start Codex stronger, then let OMX add better prompts, workflows, and runtime help when the work grows.</em>"
+            },
+            {
+              "line": 9,
+              "text": "[![npm version](https://img.shields.io/npm/v/oh-my-codex)](https://www.npmjs.com/package/oh-my-codex)"
+            },
+            {
+              "line": 14,
+              "text": "**Website:** https://yeachan-heo.github.io/oh-my-codex-website/"
+            },
+            {
+              "line": 16,
+              "text": "**Community:** [Discord](https://discord.gg/PUwSMR9XNk) — shared OMX/community server for oh-my-codex and related tooling."
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_06",
+          "relpath": "references/git_search/everything-claude-code-main/README.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/README.md",
+          "sha256": "923e86fd63e105a4d3e03bd98cbdf822016ecf9b1db600756441d0b12e2bb5cd",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 63,
+            "no_call_terms": 2,
+            "apply_terms": 11,
+            "receipt_terms": 4
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 39,
+              "text": "Works across **Claude Code**, **Codex**, **Cowork**, and other AI agent harnesses."
+            },
+            {
+              "line": 76,
+              "text": "| Continuous Learning | Auto-extract patterns from sessions into reusable skills |"
+            },
+            {
+              "line": 95,
+              "text": "- **CI hardening** — 19 test failure fixes, catalog count enforcement, install manifest validation, and full test suite green."
+            },
+            {
+              "line": 104,
+              "text": "- **Cross-harness parity** — behavior tightened across Claude Code, Cursor, OpenCode, and Codex app/CLI."
+            },
+            {
+              "line": 109,
+              "text": "- **Codex app + CLI support** — Direct `AGENTS.md`-based Codex support, installer targeting, and Codex docs"
+            },
+            {
+              "line": 112,
+              "text": "- **Broader tool coverage** — Cursor, Codex, and OpenCode support tightened so the same repo ships cleanly across all major harnesses"
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_07",
+          "relpath": "runtime/cli_sessions/index.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/index.json",
+          "sha256": "f3f65dbe6c285b0d082649c8c6a7db7fb6de78f5fcd4836eb489db0de482da57",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 1,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 3
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 6,
+              "text": "\"backend_kind\": \"codex\","
+            },
+            {
+              "line": 16,
+              "text": "\"backend_kind\": \"codex\","
+            },
+            {
+              "line": 26,
+              "text": "\"backend_kind\": \"codex\","
+            },
+            {
+              "line": 36,
+              "text": "\"backend_kind\": \"codex\","
+            },
+            {
+              "line": 46,
+              "text": "\"backend_kind\": \"codex\","
+            },
+            {
+              "line": 56,
+              "text": "\"backend_kind\": \"codex\","
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_08",
+          "relpath": "scripts/run_vectorfl_paper_codex_bridge.py",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/scripts/run_vectorfl_paper_codex_bridge.py",
+          "sha256": "62f2841929d084199d155b8cede497e915accd378b1d2c4e3032aa1e3adc408f",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 10,
+            "no_call_terms": 3,
+            "apply_terms": 0,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 13,
+              "text": "HANDOFF_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_handoff_latest_v0.json\""
+            },
+            {
+              "line": 14,
+              "text": "RETURN_PATH = REPO_ROOT / \"runtime\" / \"manifests\" / \"vectorfl_paper_codex_return_latest_v0.json\""
+            },
+            {
+              "line": 22,
+              "text": "def _load_handoff() -> Dict[str, Any]:"
+            },
+            {
+              "line": 23,
+              "text": "if not HANDOFF_PATH.exists():"
+            },
+            {
+              "line": 24,
+              "text": "raise FileNotFoundError(f\"latest handoff not found: {HANDOFF_PATH}\")"
+            },
+            {
+              "line": 25,
+              "text": "payload = json.loads(HANDOFF_PATH.read_text(encoding=\"utf-8\"))"
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_09",
+          "relpath": "references/git_search/everything-claude-code-main/.claude/ecc-tools.json",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/.claude/ecc-tools.json",
+          "sha256": "9c7947db9e950015ae9a3506e821f7606ebcc935085641c5d3de159cb0262148",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 2,
+            "no_call_terms": 3,
+            "apply_terms": 2,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 141,
+              "text": "\".codex/config.toml\","
+            },
+            {
+              "line": 142,
+              "text": "\".codex/AGENTS.md\","
+            },
+            {
+              "line": 143,
+              "text": "\".codex/agents/explorer.toml\","
+            },
+            {
+              "line": 144,
+              "text": "\".codex/agents/reviewer.toml\","
+            },
+            {
+              "line": 145,
+              "text": "\".codex/agents/docs-researcher.toml\","
+            },
+            {
+              "line": 161,
+              "text": "\".codex/config.toml\","
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_10",
+          "relpath": "codex_content_pack.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/codex_content_pack.md",
+          "sha256": "da54d389f2f1c25b0178fa080befb448f4768d89e6268b4f1207679dd2db8e7c",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 8,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# CODEX CONTEXT PACK — REPLICA 입력기 / 앵커기 / 라벨기 / 비교 실험 기준선 v1"
+            },
+            {
+              "line": 5,
+              "text": "이 문서는 Codex가 현재 프로젝트의 겉모습이 아니라 **의도와 방향성**을 이해하도록 만드는 맥락 문서다."
+            },
+            {
+              "line": 7,
+              "text": "이 문서를 읽는 Codex는 다음을 이해해야 한다."
+            },
+            {
+              "line": 73,
+              "text": "Codex / ChatGPT / Gemini를 지금 쓰는 이유는"
+            },
+            {
+              "line": 99,
+              "text": "- 동일 input fragment를 여러 처리자(Codex, ChatGPT, Gemini)에게 같은 schema로 처리시킨다."
+            },
+            {
+              "line": 173,
+              "text": "### Codex가 기억할 것"
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_11",
+          "relpath": "references/git_search/graphify-5/CHANGELOG.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/graphify-5/CHANGELOG.md",
+          "sha256": "7998152d2eaab96f83c1c7716b87cfdf897387279e24410475bac4d610c7997d",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 10,
+            "no_call_terms": 1,
+            "apply_terms": 16,
+            "receipt_terms": 6
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 14,
+              "text": "- Fix: AST cache written to `src/graphify-out/cache/` instead of project root when all code files share a common prefix like `src/` — `extract()` now called with explicit `cache_root=watch_path` in `_rebuild_code` and `cache_root=Path('.')` in the Codex skill "
+            },
+            {
+              "line": 61,
+              "text": "- Fix: `CLAUDE.md`, Cursor, and Antigravity templates now use `graphify update .` instead of hardcoded `python3 -c` invocation (#287)"
+            },
+            {
+              "line": 89,
+              "text": "- Fix: `skill-codex.md` — `wait` → `wait_agent` (correct Codex tool name) (#273)"
+            },
+            {
+              "line": 106,
+              "text": "- Fix: platform skill files (aider, codex, opencode, claw, droid, copilot, windows) no longer contain Claude-specific language — references to \"Claude\" as the AI model replaced with platform-agnostic wording (#272)"
+            },
+            {
+              "line": 112,
+              "text": "- Add: Blade template support — `@include`, `<livewire:>` components, and `wire:click` bindings extracted from `.blade.php` files (#242)"
+            },
+            {
+              "line": 121,
+              "text": "- Fix: MCP server no longer crashes with `ValidationError` on blank lines sent between JSON messages by some clients (#201)"
+            }
+          ]
+        },
+        {
+          "id": "REUSABLE_PATTERN_CANDIDATE_12",
+          "relpath": "references/git_search/everything-claude-code-main/.codex/AGENTS.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/references/git_search/everything-claude-code-main/.codex/AGENTS.md",
+          "sha256": "bbccf76330bef2b0a2866246a47f1ce7fbc6626f239b55c81efa4dc26f0303b2",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 5,
+            "no_call_terms": 1,
+            "apply_terms": 2,
+            "receipt_terms": 0
+          },
+          "recommended_action": "REVIEW_AS_TEMPLATE_CANDIDATE_LATER__NO_SKILL_PROMOTION_NOW",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# ECC for Codex CLI"
+            },
+            {
+              "line": 3,
+              "text": "This supplements the root `AGENTS.md` with Codex-specific guidance."
+            },
+            {
+              "line": 18,
+              "text": "- `agents/openai.yaml` — Codex interface metadata"
+            },
+            {
+              "line": 47,
+              "text": "Treat the project-local `.codex/config.toml` as the default Codex baseline for ECC. The current ECC baseline enables GitHub, Context7, Exa, Memory, Playwright, and Sequential Thinking; add heavier extras in `~/.codex/config.toml` only when a task actually need"
+            },
+            {
+              "line": 49,
+              "text": "ECC's canonical Codex section name is `[mcp_servers.context7]`. The launcher package remains `@upstash/context7-mcp`; only the TOML section name is normalized for consistency with `codex mcp list` and the reference config."
+            },
+            {
+              "line": 53,
+              "text": "The sync script (`scripts/sync-ecc-to-codex.sh`) uses a Node-based TOML parser to safely merge ECC MCP servers into `~/.codex/config.toml`:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "ACTIVE_FUTURE_NO_CALL",
+      "count": 12,
+      "records": [
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_01",
+          "relpath": "source_assets/baselines/codex_baseline_codex_gemini_session_batch_operation_contract_v1.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/source_assets/baselines/codex_baseline_codex_gemini_session_batch_operation_contract_v1.md",
+          "sha256": "670e1d5487458d6c3e09865c161618cc1d9f764fab2c8e076aa746d5b2c4298e",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 1
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 5,
+              "text": "# OPERATION CONTRACT — CODEX ↔ GEMINI (SESSION-BATCH MODE → FUTURE INTEGRATION)"
+            },
+            {
+              "line": 8,
+              "text": "현재 구조에서 Codex와 Gemini CLI의 역할을 명확히 분리하고,"
+            },
+            {
+              "line": 18,
+              "text": "Codex = 실행 주체"
+            },
+            {
+              "line": 23,
+              "text": "1. Codex 실행"
+            },
+            {
+              "line": 33,
+              "text": "Codex (N회 실행)"
+            },
+            {
+              "line": 51,
+              "text": "- Codex 실행 직후 자동 호출"
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_02",
+          "relpath": "app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_NEXT_WORK_AFTER_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.md",
+          "sha256": "f2821bb9cb73d08077ce68209fb0cf593a3012fc45ac7d351e75dccc527d112b",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 1,
+            "receipt_terms": 0
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 3,
+              "text": "NEXT_SAFE_LANE: S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0"
+            },
+            {
+              "line": 6,
+              "text": "Continue Phase2 function tests with S4/S5 Codex-Gemini role handoff on one bounded result."
+            },
+            {
+              "line": 9,
+              "text": "- attach to Phase1 whole-flow stages S4_CODEX_EVALUATION and S5_GEMINI_LAYER_JUDGMENT"
+            },
+            {
+              "line": 11,
+              "text": "- this lane likely needs HEAVY_BUDGETED if actual Codex/Gemini role distinction must be tested"
+            },
+            {
+              "line": 12,
+              "text": "- use bounded prompt and read-only/sandbox principles if external agents are called"
+            },
+            {
+              "line": 13,
+              "text": "- compare whether Codex adds spatial delta/reentry review and Gemini adds layer/big-frame pressure"
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_03",
+          "relpath": "runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102612Z_277b5388/deposit_candidate.md",
+          "sha256": "60d136d02e53d4a8cd2e0f3902a42f735e4cc383942b1d282a33c97bf3223010",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 1,
+            "receipt_terms": 7
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 11,
+              "text": "Follow-up context smoke test: continue from the previous Codex conversation turn without manually opening raw artifacts."
+            },
+            {
+              "line": 23,
+              "text": "3. Prior validation still stands from the selected turn:"
+            },
+            {
+              "line": 27,
+              "text": "- real read-only Codex session exited `0`"
+            },
+            {
+              "line": 30,
+              "text": "- This turn is a follow-up context smoke test over the prior Codex session artifacts."
+            },
+            {
+              "line": 31,
+              "text": "- No implementation or validation was requested here."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_04",
+          "relpath": "runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102144Z_d65ce415/deposit_candidate.md",
+          "sha256": "614538734d1dd2f7ccc5dea7850b5330532e49cf1929b283942a52077e904582",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 2,
+            "apply_terms": 1,
+            "receipt_terms": 4
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 21,
+              "text": "2. CLI on-top layer may now operate through the stable app path. The note records a successful read-only Codex session through the stable app proxy, plus successful marking as `validation_target`."
+            },
+            {
+              "line": 32,
+              "text": "- Do not add Gemini adapter, background runner, or session browsing before the stable Codex path is hand-used."
+            },
+            {
+              "line": 34,
+              "text": "Validation already noted:"
+            },
+            {
+              "line": 38,
+              "text": "- real read-only Codex session completed with exit code `0`."
+            },
+            {
+              "line": 44,
+              "text": "Remaining uncertainty from the note: browser-click/user-feel validation still needs a human hand-check."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_05",
+          "relpath": "runtime/cli_sessions/cli_20260416T102854Z_33211af5/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102854Z_33211af5/deposit_candidate.md",
+          "sha256": "fb3503777cc15918ff741bf84d2c8aff34e1aa8b6920e9a722db0da715ccf2b9",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 8
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 11,
+              "text": "Continue from Codex turn cli_20260416T102612Z_277b5388 inside the VectorFL surface."
+            },
+            {
+              "line": 24,
+              "text": "The selected Codex turn remains valid. Stable UI source is `app/ui/integrated_engine`; `gemini/mock_test` remains proposal/reference clay; `runtime` remains for session artifacts, state, and returns."
+            },
+            {
+              "line": 29,
+              "text": "Prior validation still stands from the bounded context: `npm run build` passed in `app/ui/integrated_engine`, served title was confirmed as `VectorFL Integrated Engine`, API proxy to `127.0.0.1:8421` worked, and a real read-only Codex session exited `0`."
+            },
+            {
+              "line": 30,
+              "text": "Session `cli_20260416T102720Z_8e045e9b` resolves the earlier metadata mismatch: its structured field and mark both say `validation_target`."
+            },
+            {
+              "line": 31,
+              "text": "Session `cli_20260416T102612Z_277b5388` still contains the mismatch: embedded result says `validation target`, structured field says `reread_target`, but it was later marked `validation_target`."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_06",
+          "relpath": "runtime/cli_sessions/cli_20260416T103344Z_b4acde63/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T103344Z_b4acde63/deposit_candidate.md",
+          "sha256": "bbcebd449d7e5e7fa7bdf759594e9fe32cd5461e6d8d03721f17a12feb68f22d",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 4
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 11,
+              "text": "Continue from Codex turn cli_20260416T102332Z_300af10e inside the VectorFL surface."
+            },
+            {
+              "line": 28,
+              "text": "- marks: `implementation_return`, `reread_target`, `validation_target`, `deposit_candidate`"
+            },
+            {
+              "line": 30,
+              "text": "- Migration note records successful validation at the time:"
+            },
+            {
+              "line": 34,
+              "text": "- read-only Codex session `cli_20260416T101531Z_ba21f03e` succeeded through the stable app path"
+            },
+            {
+              "line": 41,
+              "text": "- Browser hand-use validation is still recorded as the remaining user-facing check."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_07",
+          "relpath": "runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260417T093643Z_d49a7ba6/deposit_candidate.md",
+          "sha256": "0b8e579189daf55330bfce16502f067bab82c18b87327f624d24795816b6c607",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 2,
+            "apply_terms": 0,
+            "receipt_terms": 4
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 11,
+              "text": "- current_marks: `validation_target`"
+            },
+            {
+              "line": 16,
+              "text": "Validate the new VectorFL current work packet layer as a read-only smoke turn."
+            },
+            {
+              "line": 27,
+              "text": "- 새 layer는 `Send Codex Turn` 앞에서 `current work packet formation`을 노출해, 사용자가 수동으로 조립하던 목적, refs, task lens, guard, expected return shape, next route candidate를 VectorFL mediation 영역 안에 보이게 합니다."
+            },
+            {
+              "line": 38,
+              "text": "validation target: main UI에서 `current work packet formation`이 `Send Codex Turn` 앞에 보이는지 확인하고, 작은 read-only Codex turn을 보내 current packet과 latest return이 하나의 흐름으로 읽히는지 검증. 이후에는 broad preset이 아니라 source/lock bundle helper 필요 여부를 bounded reread 대상으로 삼는 것이 적절합니다."
+            },
+            {
+              "line": 50,
+              "text": "validation_target"
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_08",
+          "relpath": "runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260418T034302Z_ac8bcb8c/deposit_candidate.md",
+          "sha256": "ed8a01cee13d0178a76e1858ad5c2bfdf49346cca04dab4f1c0524482d529413",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 6
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 16,
+              "text": "VectorFL면에서 Codex와 한 턴 대화하며 다음 운용 판단을 작게 검증한다."
+            },
+            {
+              "line": 28,
+              "text": "- 안정 앱에서 API proxy 및 read-only Codex CLI on-top 경로가 동작 확인됨."
+            },
+            {
+              "line": 29,
+              "text": "- 동일 세션을 `validation_target`으로 표시하는 흐름도 성공함."
+            },
+            {
+              "line": 34,
+              "text": "- engine: 처리/반환/deposit material을 만드는 면. 이번 Codex CLI는 engine 위에 얹힌 도구 호출이며, 별도 네 번째 surface가 아님."
+            },
+            {
+              "line": 38,
+              "text": "- validation_target: `app/ui/integrated_engine`에서 브라우저 수동 클릭/사용감 확인"
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_09",
+          "relpath": "docs/reports/integrated_engine_current_conversation_surface_snapshot_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_current_conversation_surface_snapshot_v0.md",
+          "sha256": "88adebf3a452056012f0e14e14d6004c3a93ca9d94bde8f643611717c6fc1913",
+          "surface": "source_docs",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 1,
+            "receipt_terms": 2
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 14,
+              "text": "- Codex CLI attached through the existing integrated-engine CLI session API"
+            },
+            {
+              "line": 71,
+              "text": "- `cli handoff`"
+            },
+            {
+              "line": 72,
+              "text": "- `codex`"
+            },
+            {
+              "line": 116,
+              "text": "The current `line hint` and `axis hint` are not real line/axis validation."
+            },
+            {
+              "line": 120,
+              "text": "### 2. Precedent mining is not executed here"
+            },
+            {
+              "line": 134,
+              "text": "The current Codex path uses the existing API:"
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_10",
+          "relpath": "docs/reports/paperclip_native_product_reading_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/paperclip_native_product_reading_v0.md",
+          "sha256": "358d2ab9ef2e8d13ebbe6791da2935cfff3eb79fc4d2b376360fbef270bec3fb",
+          "surface": "source_docs",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 1,
+            "receipt_terms": 3
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 363,
+              "text": "- `Approvals`와 `ApprovalDetail`은 read-only 보고서가 아니라 approve/reject/request revision/resubmit/comment로 hold/continue 판단을 실제 액션으로 귀속시키는 governance surface다."
+            },
+            {
+              "line": 375,
+              "text": "- `Work triage`: Paperclip Inbox에 해당한다. Codex/Gemini return, hold item, failed validation, actual candidate arrival을 우선순위 큐로 본다."
+            },
+            {
+              "line": 376,
+              "text": "- `Work packet board`: Paperclip Issues에 해당한다. scenario-bearing packet, validation packet, export candidate packet, merge packet을 배치한다."
+            },
+            {
+              "line": 379,
+              "text": "- `Organ runtime detail`: Paperclip AgentDetail에 해당한다. Codex/Gemini/미래 기관을 단순 텍스트가 아니라 instructions/configuration/skills/runs/budget 또는 VectorFL식 동등 슬롯으로 다룬다."
+            },
+            {
+              "line": 381,
+              "text": "- `Trace/audit surface`: Paperclip Activity에 해당한다. manifest 변경, worker run, validation result, decision을 append-only reading lane으로 본다."
+            },
+            {
+              "line": 386,
+              "text": "- Codex/Gemini를 이름만 표시하고 입력/선택/지정/확인/감독 장치 없이 worker로 부르지 말 것."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_11",
+          "relpath": "runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/runtime/cli_sessions/cli_20260416T102332Z_300af10e/deposit_candidate.md",
+          "sha256": "af890c26b164407ed90a2f4c30c9206868bab9c3869afbfb697a649890a7074d",
+          "surface": "work_control",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 1,
+            "apply_terms": 0,
+            "receipt_terms": 2
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 4,
+              "text": "- backend_kind: `codex`"
+            },
+            {
+              "line": 27,
+              "text": "- 실제 read-only Codex session 성공 기록 있음:"
+            },
+            {
+              "line": 33,
+              "text": "- 같은 session을 `validation_target`으로 마킹한 기록도 성공."
+            },
+            {
+              "line": 43,
+              "text": "- implementation return: 아직 보류. 안정 Codex path hand-use 전에는 Gemini adapter, background runner, session browsing 추가 금지."
+            },
+            {
+              "line": 44,
+              "text": "- validation target: `app/ui/integrated_engine` 브라우저에서 VectorFL CLI run 1회 hand-check."
+            }
+          ]
+        },
+        {
+          "id": "ACTIVE_FUTURE_NO_CALL_12",
+          "relpath": "docs/reports/integrated_engine_cli_on_top_stop_and_use_validation_round_v0.md",
+          "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/integrated_engine_cli_on_top_stop_and_use_validation_round_v0.md",
+          "sha256": "b76308a8ddf0953be40b756fd82da584d672632d61f2868996ec0030099c4ced",
+          "surface": "source_docs",
+          "signals": {
+            "authority_terms": 0,
+            "reusable_terms": 0,
+            "no_call_terms": 2,
+            "apply_terms": 1,
+            "receipt_terms": 7
+          },
+          "recommended_action": "KEEP_AS_NO_CALL_HANDOFF_CANDIDATE__AWAIT_EXPLICIT_REVIEW_SCOPE",
+          "safe_line": "NO_CALL_NO_DELETE_NO_MOVE_NO_PROMOTION",
+          "evidence_lines": [
+            {
+              "line": 1,
+              "text": "# Integrated Engine CLI On-Top Stop-And-Use Validation Round v0"
+            },
+            {
+              "line": 6,
+              "text": "Package 1.1 was used in stop-and-use mode with three tiny real read-only Codex runs. The runs used the same `/api/vectorfl-engine/actions/cli-session/run` path that the VectorFL CLI Host / Control panel calls. The VectorFL page was opened first, but the run ac"
+            },
+            {
+              "line": 12,
+              "text": "| 1 | `cli_20260416T094731Z_97d5f828` | `summarize` | `docs/reports/integrated_engine_cli_on_top_package1_1_closeout_note_v0.md` | `done` | `validation_target` |"
+            },
+            {
+              "line": 16,
+              "text": "All three runs were real Codex runs with dry-run off, read-only sandbox posture, captured stdout/stderr, generated `structured_return.json`, and generated `deposit_candidate.md`."
+            },
+            {
+              "line": 22,
+              "text": "- The mark buttons are enough for first-pass operation when the user only needs to classify the latest return as reread, validation, implementation return, or deposit candidate."
+            },
+            {
+              "line": 29,
+              "text": "- Marking is enough for current-session classification, but it does not give a small visible history of the three validation runs beyond the latest mark history."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "FREEZE_AUTHORITY_SENSITIVE": 20,
+    "REUSABLE_PATTERN_CANDIDATE": 12,
+    "ACTIVE_FUTURE_NO_CALL": 12
+  },
+  "operator_decision": {
+    "freeze_first": "AUTHORITY_SENSITIVE_FREEZE is not cleanup; keep frozen until authority boundary review.",
+    "reusable_second": "Reusable pattern candidates may later become templates/skills only by explicit separate approval.",
+    "active_third": "Active future no-call candidates are handoff candidates only; no Codex execution."
+  },
+  "next_recommended": "P_PACKET_CODEX_REVIEW_REUSABLE_PATTERN_CARD_BATCH01_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "live_codex_call": false,
+    "delete_dedupe_apply": false
+  }
+}

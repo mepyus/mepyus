@@ -1,0 +1,34 @@
+{
+  "decision_rules": {
+    "if_execution_structure": "create setup contract/schema/validation first, then optional skill/runtime apply only after approval",
+    "if_external_material": "create source index/lite cards/overlap-lack analysis/proposed index/reentry by default",
+    "if_known_pattern_exists": "reuse as first-pass worklist without asking user for micro-steps",
+    "if_provider_call_not_justified": "stay local-only and record rejection reason",
+    "if_space_ref_missing": "write Codex space_reference_request or HOLD pending user/Codex, do not fake it"
+  },
+  "inference_fields": [
+    "task_type",
+    "space_refs_consulted",
+    "known_patterns_reused",
+    "new_space_reference_needed",
+    "default_validation_lanes",
+    "hold_boundaries",
+    "expected_outputs",
+    "codex_role_if_any",
+    "gemini_role_if_any",
+    "budget_gate_decision",
+    "user_questions_avoided_by_space",
+    "remaining_user_decisions"
+  ],
+  "packet_id": "02_SPACE_REFERENCED_WORKLIST_INFERENCE_CONTRACT_V0",
+  "promotion_status": "HOLD",
+  "read_order": [
+    "active quick board if provided",
+    "latest full-history sync quick board",
+    "relevant lens/lite cards",
+    "latest pointers only if integrity/deep read needed",
+    "raw corpus only if compact references insufficient"
+  ],
+  "status": "HOLD_CONTRACT_CANDIDATE",
+  "trigger": "When Hermes receives a setup/build/experiment/external-material instruction, before creating todos/worklist it must consult compact space surfaces."
+}

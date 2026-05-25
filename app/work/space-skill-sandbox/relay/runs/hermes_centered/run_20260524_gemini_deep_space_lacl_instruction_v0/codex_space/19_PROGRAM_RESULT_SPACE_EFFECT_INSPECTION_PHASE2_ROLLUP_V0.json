@@ -1,0 +1,87 @@
+{
+  "packet_id": "19_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PHASE2_ROLLUP_V0",
+  "role": "CODEX_SPACE_OPERATOR",
+  "program_result_under_test": "18_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0.json",
+  "space_baseline_before": {
+    "root_item_count": 57,
+    "phase2_item_count_before": 16,
+    "main_bottleneck": "PHASE2_DUPLICATE_PRESSURE",
+    "promotion_status": "HOLD"
+  },
+  "space_contacts": {
+    "read_contacts": [
+      "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+      "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+      "codex_space/16_VECTORFL_WHOLE_SPACE_MAP_HOLD_V0.json"
+    ],
+    "write_contacts": [
+      "codex_space/18_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0.json",
+      "codex_space/19_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PHASE2_ROLLUP_V0.json"
+    ],
+    "owner_namespace_only": true
+  },
+  "local_execution_result": {
+    "phase2_entries_found": 16,
+    "function_groups_created": 6,
+    "all_items_hold_evidence": true,
+    "active_hits_observed": [
+      null,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "space_effect_type": "DUPLICATE_PRESSURE_REDUCED",
+  "space_effect_reasoning": "The rollup preserves all 16 Phase2 evidence handles while creating six function groups and a rollup-first retrieval policy. It reduces broad retrieval pressure without replacing root evidence.",
+  "touched_patterns": [
+    "P03_PHASE2_FUNCTION_POSITION_STACK",
+    "P04_PHASE3_STRUCTURE_RELAYERING",
+    "P06_PROVIDER_CALL_BUDGET_GOVERNANCE"
+  ],
+  "missing_handles": [],
+  "stale_or_duplicate_pressure": [
+    "phase2_duplicate_pressure_reduced_not_eliminated"
+  ],
+  "gemini_exploration_decision": {
+    "decision": "NO_NEW_GEMINI_CALL",
+    "reason": "No layer ambiguity remains for this lane; it is a bounded Codex-side rollup."
+  },
+  "maturation_decision": "KEEP_AS_HOLD_ROLLUP_INDEX_FOR_RETRIEVAL_FIRST_USE",
+  "proposed_space_changes_hold_only": [
+    "Use 18 as Phase2 first-read surface",
+    "Keep individual Phase2 root files as evidence",
+    "Record rollup use in future retrieval returns when Phase2 is touched"
+  ],
+  "validation": {
+    "verdict": "PASS_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_PHASE2_ROLLUP_WITH_HOLD",
+    "checks": [
+      "phase2_count_16",
+      "group_count_6",
+      "owner_namespace_only",
+      "root_evidence_preserved",
+      "no_authority_mutation"
+    ]
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "USE_PHASE2_ROLLUP_IN_NEXT_SPACE_RETRIEVAL_OR_RUN_L3M01_STATUS_NORMALIZATION_HOLD_V0",
+  "promotion_status": "HOLD"
+}

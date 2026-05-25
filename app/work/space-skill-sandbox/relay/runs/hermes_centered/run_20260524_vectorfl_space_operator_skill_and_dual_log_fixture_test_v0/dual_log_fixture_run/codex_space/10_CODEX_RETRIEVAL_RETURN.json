@@ -1,0 +1,26 @@
+{
+  "packet_id": "10_CODEX_RETRIEVAL_RETURN",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "CODEX",
+  "allowed_namespace": "codex_space",
+  "immutable_after_publish": true,
+  "read_requests": [
+    {
+      "source_handle": "shared_handoff/01_SPACE_REFERENCE_REQUEST.json",
+      "source_sha256": "73f24d85b58646d2c547dcfd0f25942d33c69e174b2e3b2f1f14dc4d4fecfc18",
+      "used_for": "space retrieval fixture input",
+      "changed_judgment": "fresh space reference is needed before Hermes merge",
+      "owner_namespace": "shared_handoff",
+      "read_only_assertion": true
+    }
+  ],
+  "selected_space_material": [
+    "compact_layer_map",
+    "compact_asset_index"
+  ],
+  "rejected_space_material": [
+    "broad_raw_history"
+  ],
+  "changed_judgment_for_hermes": "Use compact controls only for fixture merge.",
+  "promotion_status": "HOLD"
+}

@@ -1,0 +1,75 @@
+{
+  "checks": [
+    {
+      "check": "fixture_input_created",
+      "artifact": "08_skill_candidate_program_effect_fixture_input_v0.json",
+      "pass": true
+    },
+    {
+      "check": "fixture_return_created",
+      "artifact": "09_skill_candidate_program_effect_fixture_return_v0.json",
+      "pass": true
+    },
+    {
+      "check": "skill_mentions_program_effect",
+      "pass": true
+    },
+    {
+      "check": "skill_mentions_maturation_loop",
+      "pass": true
+    },
+    {
+      "check": "program_effect_reference_enum_valid",
+      "observed": "PATTERN_STRENGTHENED",
+      "pass": true
+    },
+    {
+      "check": "maturation_reference_present",
+      "observed": "STRENGTHEN_EXISTING_PATTERN",
+      "pass": true
+    },
+    {
+      "check": "required_fields_present",
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "check": "boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    },
+    {
+      "check": "route_selected",
+      "observed": "PROGRAM_RESULT_SPACE_EFFECT_INSPECTION",
+      "pass": true
+    },
+    {
+      "check": "skill_candidate_not_installed_or_promoted",
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "hashes": {
+    "08_skill_candidate_program_effect_fixture_input_v0.json": "642720f8d831ca9eafdf43145019f3389137c17b009e68bb92b1a7ad81e6f02b",
+    "09_skill_candidate_program_effect_fixture_return_v0.json": "0be77c3ea4080aaf8d5f2fec5c65e0e888cc4050028505c12dc98d8264481741"
+  },
+  "next_safe_lane": "OPTIONAL_INSTALL_VECTORFL_SPACE_OPERATOR_SKILL_OR_CREATE_REAL_REENTRY_FIXTURE_HOLD_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "boundary_ok": true,
+    "effect_reference_enum": true,
+    "maturation_reference_present": true,
+    "missing_required_fields": [],
+    "required_fields_ok": true,
+    "route_ok": true,
+    "skill_mentions_loop": true,
+    "skill_mentions_program_effect": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_SKILL_CANDIDATE_PROGRAM_EFFECT_FIXTURE_WITH_HOLD"
+}

@@ -1,0 +1,2187 @@
+{
+  "dashboard_id": "M7_ASSET_HYGIENE_OPERATOR_DASHBOARD_V0",
+  "created_at": "2026-05-25T11:53:12.134946+09:00",
+  "verdict": "PASS_M7_DASHBOARD_WITH_HOLD__CLEANUP_NOT_READY",
+  "purpose": "M4 freeze classes and M2 conflict signals into operator-readable hygiene boards; no move/archive.",
+  "board_counts": {
+    "freeze_board": 63,
+    "pointer_only_board": 26,
+    "codex_review_needed_board": 61,
+    "cleanup_blocker_board": 63,
+    "archive_not_allowed_board": 61,
+    "m8_trace_needed_board": 61
+  },
+  "freeze_class_counts": {
+    "F3_AUTHORITY_BOUNDARY_FREEZE": 24,
+    "F1_CURRENT_POSITION_FREEZE": 22,
+    "F2_REGISTRY_FREEZE": 15,
+    "F4_PROMOTION_STATE_FREEZE": 2
+  },
+  "cleanup_policy_counts": {
+    "DO_NOT_MOVE_POINTER_ONLY": 24,
+    "DO_NOT_MOVE_DO_NOT_ARCHIVE": 37,
+    "POINTER_ONLY_CODEX_REVIEW": 2
+  },
+  "status_lanes": [
+    {
+      "lane": "freeze_board",
+      "count": 63
+    },
+    {
+      "lane": "pointer_only_board",
+      "count": 26
+    },
+    {
+      "lane": "codex_review_needed_board",
+      "count": 61
+    },
+    {
+      "lane": "cleanup_blocker_board",
+      "count": 63
+    },
+    {
+      "lane": "archive_not_allowed_board",
+      "count": 61
+    },
+    {
+      "lane": "m8_trace_needed_board",
+      "count": 61
+    }
+  ],
+  "boards_preview": {
+    "freeze_board": [
+      {
+        "freeze_id": "M4FRZ_0003",
+        "pointer_id": "M2PTR_0004",
+        "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0009",
+        "pointer_id": "M2PTR_0010",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0013",
+        "pointer_id": "M2PTR_0014",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0016",
+        "pointer_id": "M2PTR_0018",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0024",
+        "pointer_id": "M2PTR_0027",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0026",
+        "pointer_id": "M2PTR_0030",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0027",
+        "pointer_id": "M2PTR_0031",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0028",
+        "pointer_id": "M2PTR_0032",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0029",
+        "pointer_id": "M2PTR_0033",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0042",
+        "pointer_id": "M2PTR_0046",
+        "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0049",
+        "pointer_id": "M2PTR_0053",
+        "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0050",
+        "pointer_id": "M2PTR_0054",
+        "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ],
+    "pointer_only_board": [
+      {
+        "freeze_id": "M4FRZ_0001",
+        "pointer_id": "M2PTR_0002",
+        "relpath": "app/work/processor_compare/reports/next_phase_options_draft.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0010",
+        "pointer_id": "M2PTR_0011",
+        "relpath": "docs/reports/asset_method_comparison_round_001.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0012",
+        "pointer_id": "M2PTR_0013",
+        "relpath": "docs/reports/cli_side_space_interaction_contract_final_addendum_preflight_guard.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0015",
+        "pointer_id": "M2PTR_0016",
+        "relpath": "docs/reports/deep_space_light_cli_observation_transition_judgment_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0017",
+        "pointer_id": "M2PTR_0019",
+        "relpath": "docs/reports/external_lens_space_reevaluation_round_003_multi_agent_friction.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0022",
+        "pointer_id": "M2PTR_0024",
+        "relpath": "docs/reports/external_thought_asset_research_round_002_plan_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0033",
+        "pointer_id": "M2PTR_0037",
+        "relpath": "docs/reports/integrated_engine_grammar_application_trial_closeout_note_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0035",
+        "pointer_id": "M2PTR_0039",
+        "relpath": "docs/reports/integrated_engine_lower_input_readiness_worklog_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0036",
+        "pointer_id": "M2PTR_0040",
+        "relpath": "docs/reports/integrated_engine_lower_to_upper_bridge_evaluation_note_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0039",
+        "pointer_id": "M2PTR_0043",
+        "relpath": "docs/reports/integrated_engine_process_first_work_package_next_checklist_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0040",
+        "pointer_id": "M2PTR_0044",
+        "relpath": "docs/reports/integrated_engine_round6_boundary_closeout_note_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0041",
+        "pointer_id": "M2PTR_0045",
+        "relpath": "docs/reports/integrated_engine_surface_information_exposure_reread_note_v0.md",
+        "freeze_class": "F3_AUTHORITY_BOUNDARY_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_POINTER_ONLY",
+        "why": "Authority/canonical/baseline language present; not necessarily authority but sensitive.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ],
+    "codex_review_needed_board": [
+      {
+        "freeze_id": "M4FRZ_0003",
+        "pointer_id": "M2PTR_0004",
+        "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0009",
+        "pointer_id": "M2PTR_0010",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0013",
+        "pointer_id": "M2PTR_0014",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0016",
+        "pointer_id": "M2PTR_0018",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0024",
+        "pointer_id": "M2PTR_0027",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0026",
+        "pointer_id": "M2PTR_0030",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0027",
+        "pointer_id": "M2PTR_0031",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0028",
+        "pointer_id": "M2PTR_0032",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0029",
+        "pointer_id": "M2PTR_0033",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0042",
+        "pointer_id": "M2PTR_0046",
+        "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0049",
+        "pointer_id": "M2PTR_0053",
+        "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0050",
+        "pointer_id": "M2PTR_0054",
+        "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ],
+    "cleanup_blocker_board": [
+      {
+        "freeze_id": "M4FRZ_0003",
+        "pointer_id": "M2PTR_0004",
+        "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0009",
+        "pointer_id": "M2PTR_0010",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0013",
+        "pointer_id": "M2PTR_0014",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0016",
+        "pointer_id": "M2PTR_0018",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0024",
+        "pointer_id": "M2PTR_0027",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0026",
+        "pointer_id": "M2PTR_0030",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0027",
+        "pointer_id": "M2PTR_0031",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0028",
+        "pointer_id": "M2PTR_0032",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0029",
+        "pointer_id": "M2PTR_0033",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0042",
+        "pointer_id": "M2PTR_0046",
+        "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0049",
+        "pointer_id": "M2PTR_0053",
+        "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0050",
+        "pointer_id": "M2PTR_0054",
+        "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ],
+    "archive_not_allowed_board": [
+      {
+        "freeze_id": "M4FRZ_0003",
+        "pointer_id": "M2PTR_0004",
+        "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0009",
+        "pointer_id": "M2PTR_0010",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0013",
+        "pointer_id": "M2PTR_0014",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0016",
+        "pointer_id": "M2PTR_0018",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0024",
+        "pointer_id": "M2PTR_0027",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0026",
+        "pointer_id": "M2PTR_0030",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0027",
+        "pointer_id": "M2PTR_0031",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0028",
+        "pointer_id": "M2PTR_0032",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0029",
+        "pointer_id": "M2PTR_0033",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0042",
+        "pointer_id": "M2PTR_0046",
+        "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0049",
+        "pointer_id": "M2PTR_0053",
+        "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0050",
+        "pointer_id": "M2PTR_0054",
+        "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ],
+    "m8_trace_needed_board": [
+      {
+        "freeze_id": "M4FRZ_0003",
+        "pointer_id": "M2PTR_0004",
+        "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0009",
+        "pointer_id": "M2PTR_0010",
+        "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0013",
+        "pointer_id": "M2PTR_0014",
+        "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0016",
+        "pointer_id": "M2PTR_0018",
+        "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "receipt_trace"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0024",
+        "pointer_id": "M2PTR_0027",
+        "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0026",
+        "pointer_id": "M2PTR_0030",
+        "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0027",
+        "pointer_id": "M2PTR_0031",
+        "relpath": "docs/reports/gemini_external_reference_materials_deep_reread_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0028",
+        "pointer_id": "M2PTR_0032",
+        "relpath": "docs/reports/gemini_four_axis_whole_space_reading_pass_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0029",
+        "pointer_id": "M2PTR_0033",
+        "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0042",
+        "pointer_id": "M2PTR_0046",
+        "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0049",
+        "pointer_id": "M2PTR_0053",
+        "relpath": "docs/reports/minimum_agent_function_unit_candidate_closeout_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "registry",
+          "promotion_state",
+          "receipt_trace",
+          "cleanup"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      },
+      {
+        "freeze_id": "M4FRZ_0050",
+        "pointer_id": "M2PTR_0054",
+        "relpath": "docs/reports/next_chat_reentry_after_component_refinement_v0.md",
+        "freeze_class": "F1_CURRENT_POSITION_FREEZE",
+        "cleanup_policy": "DO_NOT_MOVE_DO_NOT_ARCHIVE",
+        "why": "Touches current-position / active orientation surface.",
+        "conflict_count": 1,
+        "confusion_axes": [
+          "current_position",
+          "registry",
+          "authority",
+          "promotion_state"
+        ],
+        "operator_action": "READ_ONLY_REVIEW",
+        "allowed_now": [
+          "read",
+          "pointer",
+          "classify",
+          "handoff"
+        ],
+        "blocked_now": [
+          "move",
+          "archive",
+          "delete",
+          "promote",
+          "authority/registry/current-position mutation"
+        ]
+      }
+    ]
+  },
+  "boundaries": {
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": "HOLD"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "validation_id": "VALIDATION_CODEX_READ_ONLY_MATURATION_REVIEW_PACKET_V0",
+  "created_at": "2026-05-25T11:31:23.318499+09:00",
+  "verdict": "PASS_CODEX_READ_ONLY_PACKET_READY_WITH_HOLD",
+  "source_checks": {
+    "top60_rollup": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json",
+      "exists": true,
+      "sha256": "a8907c2a638f3e195d18d2ecf1d0ddd3f210d497ff6d088eafee7fb27fe9995d",
+      "bytes": 30756
+    },
+    "eight_module_skeleton": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/skeleton/01_vectorfl_eight_module_saas_skeleton_v0_1.json",
+      "exists": true,
+      "sha256": "edc853af03957a00533ce51cf16f1e76dd6edfdc5e4d54a3e4be90a67c3eca56",
+      "bytes": 4132
+    },
+    "folder_cleanup_preconditions": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json",
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc",
+      "bytes": 2175
+    },
+    "promotion_rubric": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/rubric/00_vectorfl_promotion_rubric_v0.json",
+      "exists": true,
+      "sha256": "67ba50cb16c8dbb146e78150065a35110524ac1c4029bf62c8696d71b3a8b1de",
+      "bytes": 8848
+    },
+    "promotion_gate_matrix": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/matrix/01_vectorfl_promotion_gate_matrix_v0.json",
+      "exists": true,
+      "sha256": "ed96fb2e245f248840d54a2327f17cb457582157a7f28e2add2ae2f9cbdabd75",
+      "bytes": 3030
+    }
+  },
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/packet/00_CODEX_READ_ONLY_MATURATION_REVIEW_PACKET_v0.json": {
+      "exists": true,
+      "sha256": "0728d7afe0e7cfed9bf0d3562c242126d28c4da60db24d4f4ba350876fc3f841",
+      "bytes": 3768
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/schemas/01_codex_maturation_review_output_schema_v0.json": {
+      "exists": true,
+      "sha256": "8f4ab75b34a7d0254301fdd280539b6a63c145bf9fe77581fb747a32ca79f8d0",
+      "bytes": 1956
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/instructions/02_CODEX_READ_FIRST_INSTRUCTIONS_v0.md": {
+      "exists": true,
+      "sha256": "9f49727873de3b9e18afadf495f945f7405a08f09c8c6e1e88e9e9d902dcb102",
+      "bytes": 1800
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/expected_outputs/03_expected_codex_review_output_stub_NOT_EXECUTED_v0.json": {
+      "exists": true,
+      "sha256": "7a10013ed928c12ec459c622e1d69d74a3471fa3d8e0a1c1f2eb26061847cc16",
+      "bytes": 2249
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_read_only_maturation_review_packet_v0/reports/04_codex_read_only_maturation_review_packet_report_v0.md": {
+      "exists": true,
+      "sha256": "0d52a1957da456c275ea51005a981a9a8d41b07e96f5aad68a01258b336e3b45",
+      "bytes": 231
+    }
+  },
+  "content_checks": {
+    "read_first_count": 5,
+    "all_sources_exist": true,
+    "has_output_schema": true,
+    "has_expected_stub": true,
+    "live_codex_call_executed": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

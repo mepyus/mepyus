@@ -1,0 +1,217 @@
+{
+  "slot": "official_git_github_boundary",
+  "created_at": "2026-05-25T08:42:29.407931+09:00",
+  "source_type": "official_docs",
+  "sources": [
+    {
+      "name": "git_staging",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+      "status_code": 200,
+      "text_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_rSvpKOyaefU_20260525/contextual_mini_space_3000s_v0/autoloop_v0_1/official_sources/01_git_staging.txt",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "Git - Recording Changes to the Repository"
+        },
+        {
+          "line": 105,
+          "text": "Getting a Git Repository"
+        },
+        {
+          "line": 107,
+          "text": "Recording Changes to the Repository"
+        },
+        {
+          "line": 109,
+          "text": "Viewing the Commit History"
+        },
+        {
+          "line": 113,
+          "text": "Working with Remotes"
+        },
+        {
+          "line": 131,
+          "text": "Remote Branches"
+        },
+        {
+          "line": 143,
+          "text": "Generating Your SSH Public Key"
+        },
+        {
+          "line": 313,
+          "text": "2.2 Git Basics - Recording Changes to the Repository"
+        },
+        {
+          "line": 314,
+          "text": "Recording Changes to the Repository"
+        },
+        {
+          "line": 317,
+          "text": "Git repository on your local machine, and a checkout or"
+        },
+        {
+          "line": 320,
+          "text": "Typically, you’ll want to start making changes and committing snapshots of those changes into your repository each time the project reaches a state you want to record."
+        },
+        {
+          "line": 326,
+          "text": "Tracked files are files that were in the last snapshot, as well as any newly staged files; they can be unmodified, modified, or staged."
+        },
+        {
+          "line": 329,
+          "text": "When you first clone a repository, all of your files will be tracked and unmodified because Git just checked them out and you haven’t edited anything."
+        },
+        {
+          "line": 330,
+          "text": "As you edit files, Git sees them as modified, because you’ve changed them since your last commit."
+        },
+        {
+          "line": 331,
+          "text": "As you work, you selectively stage these modified files and then commit all those staged changes, and the cycle repeats."
+        }
+      ]
+    },
+    {
+      "name": "github_cli_auth",
+      "url": "https://docs.github.com/en/github-cli/github-cli/quickstart",
+      "status_code": 200,
+      "text_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_rSvpKOyaefU_20260525/contextual_mini_space_3000s_v0/autoloop_v0_1/official_sources/01_github_cli_auth.txt",
+      "snippets": [
+        {
+          "line": 51,
+          "text": "in the GitHub CLI repository."
+        },
+        {
+          "line": 52,
+          "text": "To authenticate to GitHub, run the following command from your terminal."
+        },
+        {
+          "line": 53,
+          "text": "gh auth login"
+        },
+        {
+          "line": 54,
+          "text": "Select where you want to authenticate to:"
+        },
+        {
+          "line": 64,
+          "text": "GitHub CLI automatically stores your Git credentials for you when you choose HTTPS as your preferred protocol for Git operations and answer \"yes\" to the prompt asking if you would like to authenticate to Git with your GitHub credentials. This can be useful as it allows you to use Git commands like"
+        },
+        {
+          "line": 65,
+          "text": "git push"
+        },
+        {
+          "line": 68,
+          "text": "without needing to set up a separate credential manager or use SSH."
+        },
+        {
+          "line": 73,
+          "text": "- you'll be prompted to add extra scopes to your authentication token. Follow the onscreen instructions."
+        },
+        {
+          "line": 78,
+          "text": "Viewing a repository"
+        },
+        {
+          "line": 81,
+          "text": "to see the repository description and"
+        },
+        {
+          "line": 83,
+          "text": "for the repository. Enter"
+        },
+        {
+          "line": 85,
+          "text": "to view the repository in your default browser."
+        },
+        {
+          "line": 88,
+          "text": "subcommand from within the directory of a local Git repository that has a remote on GitHub you can omit"
+        },
+        {
+          "line": 91,
+          "text": "Cloning a repository"
+        },
+        {
+          "line": 98,
+          "text": "repository to the directory from which you ran this command on your local computer."
+        }
+      ]
+    },
+    {
+      "name": "github_ssh",
+      "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh",
+      "status_code": 200,
+      "text_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_rSvpKOyaefU_20260525/contextual_mini_space_3000s_v0/autoloop_v0_1/official_sources/01_github_ssh.txt",
+      "snippets": [
+        {
+          "line": 1,
+          "text": "Connecting to GitHub with SSH - GitHub Docs"
+        },
+        {
+          "line": 15,
+          "text": "Authentication"
+        },
+        {
+          "line": 17,
+          "text": "Connect with SSH"
+        },
+        {
+          "line": 19,
+          "text": "Authentication"
+        },
+        {
+          "line": 21,
+          "text": "Authentication to GitHub"
+        },
+        {
+          "line": 27,
+          "text": "Reviewing your SSH keys"
+        },
+        {
+          "line": 35,
+          "text": "SSH key fingerprints"
+        },
+        {
+          "line": 37,
+          "text": "Unauthorized access"
+        },
+        {
+          "line": 50,
+          "text": "Authenticate with a passkey"
+        },
+        {
+          "line": 54,
+          "text": "Connect with SSH"
+        },
+        {
+          "line": 55,
+          "text": "About SSH"
+        },
+        {
+          "line": 56,
+          "text": "Check for existing SSH key"
+        },
+        {
+          "line": 57,
+          "text": "Generate new SSH key"
+        },
+        {
+          "line": 58,
+          "text": "Add a new SSH key"
+        },
+        {
+          "line": 59,
+          "text": "Test your SSH connection"
+        }
+      ]
+    }
+  ],
+  "slot_quality_review": {
+    "status": "PASS_OFFICIAL_DOCS_ATTACHED_HOLD",
+    "score": 0.85,
+    "missing_source_marker": false
+  },
+  "promotion": "HOLD"
+}

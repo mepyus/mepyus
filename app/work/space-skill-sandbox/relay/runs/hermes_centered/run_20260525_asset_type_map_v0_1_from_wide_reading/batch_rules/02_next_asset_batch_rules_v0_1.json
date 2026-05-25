@@ -1,0 +1,48 @@
+{
+  "rules_id": "VECTORFL_NEXT_ASSET_BATCH_RULES_V0_1",
+  "created_at": "2026-05-25T10:24:39.618635+09:00",
+  "goal": "전체 repo를 무작정 읽지 않고 자산 유형별로 배치 숙성한다.",
+  "selection_rules": [
+    {
+      "priority": 1,
+      "select": "guard_or_gate + evidence_classifier",
+      "count": "2-5",
+      "reason": "Hermes precheck로 바로 재사용 가능하고 authority drift를 줄임"
+    },
+    {
+      "priority": 2,
+      "select": "index_or_map with read_now",
+      "count": "5-10",
+      "reason": "Codex route surface를 먼저 안정화해야 흩어진 자산 회수가 가능"
+    },
+    {
+      "priority": 3,
+      "select": "audit_or_position_check current-position sensitive",
+      "count": "3-5",
+      "reason": "위치 판단은 민감하므로 Gemini wide exploration 후 Codex review"
+    },
+    {
+      "priority": 4,
+      "select": "phase_closeout/report candidates",
+      "count": "only if relation score high",
+      "reason": "operator load 절약"
+    }
+  ],
+  "batch_caps": {
+    "max_assets_per_batch": 20,
+    "max_deep_reads_without_route": 0,
+    "max_authority_sensitive_apply": 0
+  },
+  "required_outputs": [
+    "asset_type_delta",
+    "route_map_delta",
+    "latent_relation_delta",
+    "HOLD validation"
+  ],
+  "forbidden": [
+    "bulk file mutation",
+    "registry/current-position mutation",
+    "promotion without explicit approval",
+    "reading all docs without route filter"
+  ]
+}

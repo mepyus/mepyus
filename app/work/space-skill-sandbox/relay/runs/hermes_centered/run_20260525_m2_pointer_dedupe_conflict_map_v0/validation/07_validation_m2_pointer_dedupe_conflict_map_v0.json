@@ -1,0 +1,55 @@
+{
+  "validation_id": "VALIDATION_M2_POINTER_DEDUPE_CONFLICT_MAP_V0",
+  "created_at": "2026-05-25T11:44:58.204842+09:00",
+  "verdict": "PASS_M2_POINTER_DEDUPE_CONFLICT_MAP_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/source_index/00_m2_source_index_v0.json": {
+      "exists": true,
+      "sha256": "63fcd55d2267e5e39f03c20d1e9761e8cbf2cd1898f940e4026c262be9005c21",
+      "bytes": 1822
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/pointer_index/01_m2_pointer_index_v0.json": {
+      "exists": true,
+      "sha256": "af31c5c32aca74db0ae43c2025c5bb880d40b0097c1b1a335a08001514f11dff",
+      "bytes": 69708
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/dedupe/02_m2_dedupe_map_v0.json": {
+      "exists": true,
+      "sha256": "cf755e49e3c0a57a092f232816c0e4d8ee96c2c04c5b00eed373de3a43277ba3",
+      "bytes": 235
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/conflict/03_m2_conflict_candidate_map_v0.json": {
+      "exists": true,
+      "sha256": "c6b2692aa4a498239c1c9292f42cd8575ce7f12cb248e99519c4410b96f88707",
+      "bytes": 23656
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/readiness/04_m2_cleanup_readiness_v0.json": {
+      "exists": true,
+      "sha256": "6fb80fdd111daa6cd12a686083f7e9f63f991e832c7fb61de00405b3da19d583",
+      "bytes": 1450
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/handoff/05_M2_POINTER_DEDUPE_CONFLICT_TO_CODEX_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "ec63674218f27a71cf66148e3ab02c6c35d5333ca56a1eca0f1ee90252b2a82d",
+      "bytes": 568
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m2_pointer_dedupe_conflict_map_v0/reports/06_m2_pointer_dedupe_conflict_report_v0.md": {
+      "exists": true,
+      "sha256": "ab8128ee8cdb2234173892e73f55d839935faa844fd92ec4d4596a9f39b69a03",
+      "bytes": 236
+    }
+  },
+  "content_checks": {
+    "pointer_count": 70,
+    "exact_duplicate_groups": 0,
+    "fuzzy_duplicate_groups": 0,
+    "conflict_candidates": 49,
+    "has_readiness": true,
+    "move_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

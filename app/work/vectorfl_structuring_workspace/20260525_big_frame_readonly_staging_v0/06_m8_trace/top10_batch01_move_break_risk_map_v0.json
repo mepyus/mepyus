@@ -1,0 +1,101 @@
+{
+  "risk_map_id": "MOVE_BREAK_RISK_MAP_TOP10_BATCH01_V0",
+  "created_at": "2026-05-25T13:02:22.005854+09:00",
+  "verdict": "MOVE_NOT_READY__REFERENCES_EXIST_OR_CONTROL_SURFACES_REQUIRE_POINTERS",
+  "high_risk_count": 6,
+  "medium_risk_count": 4,
+  "low_risk_count": 0,
+  "items": [
+    {
+      "pointer_id": "WS_TOP10_B01_01",
+      "relpath": "docs/reports/agent_function_reception_readiness_correction_v0.md",
+      "break_risk_if_moved": "MEDIUM_CONTROL_SURFACE_REFERENCE_WOULD_NEED_UPDATE_ON_MOVE",
+      "nonself_hit_count": 69,
+      "source_surface_hit_count": 0,
+      "control_surface_hit_count": 69,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_02",
+      "relpath": "app/work/space-skill-sandbox/outputs/gemini_external_material_queue_001_task_packets_candidate_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 58,
+      "source_surface_hit_count": 7,
+      "control_surface_hit_count": 51,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_03",
+      "relpath": "docs/reports/component_chain_mode_selection_closeout_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 74,
+      "source_surface_hit_count": 2,
+      "control_surface_hit_count": 72,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_04",
+      "relpath": "docs/reports/external_candidate_context_mode_reading_packaging_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 78,
+      "source_surface_hit_count": 6,
+      "control_surface_hit_count": 72,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_05",
+      "relpath": "docs/reports/function_process_formation_prework_first_application_tools_leave_their_maker_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 76,
+      "source_surface_hit_count": 4,
+      "control_surface_hit_count": 72,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_06",
+      "relpath": "docs/reports/gemini_line_to_axis_formation_process_asset_dry_run_worklist_v0.md",
+      "break_risk_if_moved": "MEDIUM_CONTROL_SURFACE_REFERENCE_WOULD_NEED_UPDATE_ON_MOVE",
+      "nonself_hit_count": 66,
+      "source_surface_hit_count": 0,
+      "control_surface_hit_count": 66,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_07",
+      "relpath": "docs/reports/integrated_engine_surface_language_and_panel_application_backlog_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 67,
+      "source_surface_hit_count": 4,
+      "control_surface_hit_count": 63,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_08",
+      "relpath": "docs/reports/relation_first_input_gate_spec_v0.md",
+      "break_risk_if_moved": "MEDIUM_CONTROL_SURFACE_REFERENCE_WOULD_NEED_UPDATE_ON_MOVE",
+      "nonself_hit_count": 79,
+      "source_surface_hit_count": 0,
+      "control_surface_hit_count": 79,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_09",
+      "relpath": "docs/reports/relation_first_repetition_operation_batch001_v0.md",
+      "break_risk_if_moved": "MEDIUM_CONTROL_SURFACE_REFERENCE_WOULD_NEED_UPDATE_ON_MOVE",
+      "nonself_hit_count": 68,
+      "source_surface_hit_count": 0,
+      "control_surface_hit_count": 68,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    },
+    {
+      "pointer_id": "WS_TOP10_B01_10",
+      "relpath": "docs/reports/function_process_formation_prework_setup_closeout_v0.md",
+      "break_risk_if_moved": "HIGH_EXISTING_SOURCE_REFERENCE_WOULD_BREAK_ON_MOVE",
+      "nonself_hit_count": 72,
+      "source_surface_hit_count": 6,
+      "control_surface_hit_count": 66,
+      "move_recommendation": "DO_NOT_MOVE__POINTER_FIRST"
+    }
+  ],
+  "policy": "Even LOW items stay HOLD because batch-level move/archive approval is absent and copy view is not authority."
+}

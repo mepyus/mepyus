@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "check": "loop_scaling_principle_created",
+      "artifact": "16_space_maturation_loop_scaling_principle_v0.md",
+      "pass": true
+    },
+    {
+      "check": "loop_scaling_contract_created",
+      "artifact": "17_space_maturation_loop_scaling_contract_v0.json",
+      "pass": true
+    },
+    {
+      "check": "loop_run_ledger_created",
+      "artifact": "18_space_maturation_loop_run_ledger_v0.json",
+      "pass": true
+    },
+    {
+      "check": "five_lanes_defined",
+      "pass": true
+    },
+    {
+      "check": "l0_l3_can_run_without_extra_user_attention_when_hold",
+      "lanes": [
+        "L0_ON_DEMAND_SPACE_CHECK",
+        "L1_POST_HERMES_REENTRY_MATURATION",
+        "L2_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION",
+        "L3_BATCH_PATTERN_MAINTENANCE"
+      ],
+      "pass": true
+    },
+    {
+      "check": "l4_requires_user_attention",
+      "lane": "L4_GEMINI_AMBIGUITY_EXPLORATION",
+      "pass": true
+    },
+    {
+      "check": "default_boundary_hold",
+      "promotion_default": "HOLD",
+      "authority_mutation_default": "NO",
+      "current_position_apply_default": "NO",
+      "direct_provider_call_default": "NO",
+      "pass": true
+    },
+    {
+      "check": "ledger_seeded",
+      "entries": 2,
+      "pass": true
+    },
+    {
+      "check": "installed_skill_referenced",
+      "skill": "/Users/sungsookim/.codex/skills/vectorfl-space-operator",
+      "pass": true
+    }
+  ],
+  "checks_count": 9,
+  "hashes": {
+    "16_space_maturation_loop_scaling_principle_v0.md": "73d26114f50c5e6ebba6bb2786e446ad198cf49fdd5aece23ad50cd094cd8368",
+    "17_space_maturation_loop_scaling_contract_v0.json": "a2ed67a397d6a4d2d6747e26f58b8158010aaba19bc8acb94041b22871e6992a",
+    "18_space_maturation_loop_run_ledger_v0.json": "3715607b6125b81847c34a45231e2fd26a59f4b843999664c9564cccee382544"
+  },
+  "next_safe_lane": "USE_L0_L3_LOOP_LANES_BY_DEFAULT_AND_REQUEST_USER_ATTENTION_ONLY_FOR_L4_OR_APPLY_V0",
+  "promotion_status": "INSTALLED_SKILL_OPERATION_HOLD_BY_DEFAULT",
+  "test_command_result": {
+    "default_hold": true,
+    "five_lanes": true,
+    "l0_no_user_attention": true,
+    "l1_no_user_attention": true,
+    "l2_no_user_attention": true,
+    "l3_no_user_attention": true,
+    "l4_user_attention": true,
+    "ledger_fields_present": true,
+    "ledger_seeded": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_SPACE_MATURATION_LOOP_SCALING_WITH_INSTALLED_SKILL_HOLD_DEFAULT"
+}

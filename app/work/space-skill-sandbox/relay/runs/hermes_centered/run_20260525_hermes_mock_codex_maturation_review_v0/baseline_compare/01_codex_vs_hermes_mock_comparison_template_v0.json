@@ -1,0 +1,20 @@
+{
+  "comparison_id": "CODEX_VS_HERMES_MOCK_REVIEW_COMPARISON_TEMPLATE_V0",
+  "created_at": "2026-05-25T11:33:57.859369+09:00",
+  "hermes_mock_review": {
+    "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_codex_maturation_review_v0/review/00_hermes_mock_codex_maturation_review_v0.json",
+    "sha256": "333739a0381f0414a978f35bcb322637892c362732f52796e2a8c8c668ede0f1"
+  },
+  "actual_codex_review": null,
+  "comparison_axes": [
+    "placement agreement",
+    "conflict severity differences",
+    "gap additions/removals",
+    "hold marker differences",
+    "mutation safety compliance",
+    "M1/M3 split judgment",
+    "M2/M7/M8 cleanup preconditions judgment"
+  ],
+  "decision_rule": "Codex와 Hermes가 모두 동의한 blocker만 next HOLD blocker로 승격. 불일치는 Gemini bounded ambiguity read 또는 사용자 판단으로 넘김.",
+  "status": "TEMPLATE_ONLY_ACTUAL_CODEX_NOT_EXECUTED"
+}

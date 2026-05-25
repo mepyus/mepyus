@@ -1,0 +1,44 @@
+{
+  "policy_id": "VECTORTUBE_AUTOLOOP_POLICY_20260525_V0",
+  "created_at": "2026-05-25T08:22:35.346329+09:00",
+  "status": "AUTOLOOP_PREPARED_AND_EXECUTED_FOR_CURRENT_SEED_WITH_HOLD",
+  "user_approval_interpretation": "User asked to stop requiring per-step confirmations and prepare/execute an automated loop. Scope is current VectorTube seed mini-space only.",
+  "scope": {
+    "seed_video_id": "5LqCwO7x_Gc",
+    "focus_window": "48:10-54:50 / t=3012s vicinity",
+    "source_packet": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/question_sharpening_v0/handoff/01_next_source_packet_HOLD_v0.json"
+  },
+  "autonomy_bounds": {
+    "allowed": [
+      "candidate search for declared slots",
+      "fetch at most one transcript per slot if transcript available",
+      "create layer tables",
+      "compose updated mini-space",
+      "write receipts/validation"
+    ],
+    "not_allowed": [
+      "main VectorFL space mutation",
+      "authority/current-position/registry mutation",
+      "Obsidian write",
+      "Codex/Gemini live calls",
+      "bulk crawl",
+      "video/audio download",
+      "extracting bypass how-to instructions",
+      "unbounded search"
+    ]
+  },
+  "budgets": {
+    "slots": 3,
+    "queries_per_slot": 1,
+    "candidate_limit_per_slot": 5,
+    "transcript_fetch_success_per_slot": 1,
+    "hard_cap_transcripts_total": 3
+  },
+  "stop_conditions": [
+    "search result is mainly bypass/how-to evasion",
+    "no transcript available after 5 candidates",
+    "source drifts away from selected primary question",
+    "operator safety risk exceeds evidence value"
+  ],
+  "promotion": "HOLD"
+}

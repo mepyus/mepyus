@@ -1,0 +1,40 @@
+{
+  "board_id": "90_QUICK_EXCHANGE_BOARD",
+  "status": "CANONICAL_FAST_CROSS_INSPECTION_READY_WITH_HOLD",
+  "hermes_latest": {
+    "status": "NOT_WRITTEN_IN_THIS_RUN",
+    "summary_card_handle": null,
+    "reason": "Codex does not write hermes_exec namespace. Hermes can add its own summary card later without changing Codex artifacts."
+  },
+  "codex_latest": {
+    "summary_card_handle": "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json",
+    "summary_card_sha256": "41a0bc3c016af5f47cdc5a76b1e4bb2cf232f55d967a77c22e9209f65e7bc47c",
+    "latest_artifact_handle": "codex_space/11_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_HOLD_V0.json",
+    "latest_artifact_sha256": "7eea584d63c7fe3cecffd4db05fe9a6b50e03824639dddb0c68ea3dc804741cd",
+    "latest_state": "L3_BATCH_PATTERN_MAINTENANCE_READY_WITH_HOLD",
+    "changed_judgment": "Gemini deep LACL review is now readable through a canonical fast cross-inspection route. The prior 92 board remains useful as a versioned queue board, while this 90 board supplies the standard read path."
+  },
+  "open_questions": [
+    "Should Hermes record the Gemini deep LACL review as HOLD evidence in hermes_exec?",
+    "Should Codex run the next L3M02 Phase2 function rollup index lane?"
+  ],
+  "blocked_or_waiting_on": [],
+  "latest_pointer_ref": {
+    "handle": "shared_handoff/99_LATEST_POINTERS.json",
+    "sha256": "573446d29806a8f0923c25b63b2c5b3151bb6abc54af7898e3138e02f1b3e681"
+  },
+  "versioned_board_ref": {
+    "handle": "shared_handoff/92_QUICK_EXCHANGE_BOARD_L3_BATCH_MAINTENANCE_READY_V0.json",
+    "sha256": "1a3557507026b7f3c9c4de74ed8adef87cbc262e5da1c0b701520792c7a58773"
+  },
+  "next_safe_lane": "RUN_L3M02_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "promotion_status": "HOLD"
+}

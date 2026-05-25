@@ -1,0 +1,521 @@
+{
+  "packet_id": "18_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0",
+  "role": "CODEX_SPACE_OPERATOR",
+  "status": "HOLD_ROLLUP_INDEX_NOT_AUTHORITY",
+  "source_handles": [
+    {
+      "source_handle": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+      "source_sha256": "15fd28caa5f10e247aea4d26be63e590bc0c896779c5aaae2f18200d3ddf9a69",
+      "used_for": "select Phase2 P03 entries",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+      "source_sha256": "f351ca86b9187259441aabc2d33bcb11e8dc7fff03a3fbcc3d449ba494f683f8",
+      "used_for": "confirm M05 duplicate pressure",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/16_VECTORFL_WHOLE_SPACE_MAP_HOLD_V0.json",
+      "source_sha256": "79a6bd7af61811e26ac717fc44ea3c945633001e65bb52d4e5d6193930be70b0",
+      "used_for": "confirm Phase2 as main bottleneck",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    }
+  ],
+  "rollup_scope": {
+    "pattern_id": "P03_PHASE2_FUNCTION_POSITION_STACK",
+    "layer": "L3_PHASE2_FUNCTION_POSITIONS",
+    "root_item_count": 16,
+    "seq_range": [
+      21,
+      36
+    ]
+  },
+  "function_groups": [
+    {
+      "group_id": "G01_PACKET_AND_INTERNAL_STRUCTURE",
+      "description": "Packet shape and internal structure checks establish the basic Phase2 test surface.",
+      "item_count": 2,
+      "seq_range": [
+        21,
+        22
+      ],
+      "reports": [
+        "VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0",
+        "VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    },
+    {
+      "group_id": "G02_SOURCE_SELECTION_AND_NEGATIVE_DRIFT",
+      "description": "Source selection tests and negative drift checks protect retrieval fit.",
+      "item_count": 3,
+      "seq_range": [
+        23,
+        31
+      ],
+      "reports": [
+        "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0",
+        "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_20260524_V0",
+        "VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    },
+    {
+      "group_id": "G03_GUARD_PRIORITY_AND_VALIDATOR",
+      "description": "Guard priority and validator application define decision-table behavior.",
+      "item_count": 2,
+      "seq_range": [
+        25,
+        26
+      ],
+      "reports": [
+        "VECTORFL_PHASE2_GUARD_PRIORITY_DECISION_TABLE_20260524_V0",
+        "VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    },
+    {
+      "group_id": "G04_SPACE_REFERENCE_DELTA_AND_POSITION_MAP",
+      "description": "Space-reference delta dry runs and position map connect tests to space effects.",
+      "item_count": 3,
+      "seq_range": [
+        27,
+        29
+      ],
+      "reports": [
+        "VECTORFL_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0",
+        "VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0",
+        "VECTORFL_PHASE2_FUNCTION_POSITION_TEST_MAP_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    },
+    {
+      "group_id": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "description": "S1-S7 function tests validate original preservation, source selection, Hermes merge trace, Codex/Gemini handoff, receipt/reentry, and budget gate.",
+      "item_count": 5,
+      "seq_range": [
+        30,
+        35
+      ],
+      "reports": [
+        "VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0",
+        "VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0",
+        "VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0",
+        "VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0",
+        "VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    },
+    {
+      "group_id": "G06_PHASE3_REVISION_BRIDGE",
+      "description": "Phase2 rollup feeds Phase3 revision planning without authority apply.",
+      "item_count": 1,
+      "seq_range": [
+        36,
+        36
+      ],
+      "reports": [
+        "VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0"
+      ],
+      "retrieval_use": "Read this group summary first; open individual root_json only if the current task touches the group specifically."
+    }
+  ],
+  "items": [
+    {
+      "seq": 21,
+      "report_id": "VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0",
+      "function_group": "G01_PACKET_AND_INTERNAL_STRUCTURE",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0.json",
+      "root_sha256": "4694c3c5db4e2a832133a83414137ede5e63228e0026156f4e9bbea62a380ee6",
+      "verdict": "PASS_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_WITH_HOLD",
+      "next_safe_lane": "PHASE2_PACKET_SHAPE_ACTUAL_TEST_WITH_SPACE_REFERENCE_DELTA_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 12,
+        "active_hits": null,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 22,
+      "report_id": "VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0",
+      "function_group": "G01_PACKET_AND_INTERNAL_STRUCTURE",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0.json",
+      "root_sha256": "c468a9ae08dbe9148dc887228a429dd29014e82a8572f8b6ef9537592e35ba52",
+      "verdict": "PASS_PHASE2_PACKET_SHAPE_ACTUAL_TEST_WITH_HOLD",
+      "next_safe_lane": "PHASE2_PACKET_SHAPE_REAL_USE_ON_SMALL_SPACE_AFFECTING_TASK_WITH_BUDGET_GATE_V0",
+      "root_read_summary": {
+        "checks_count": 10,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 23,
+      "report_id": "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0",
+      "function_group": "G02_SOURCE_SELECTION_AND_NEGATIVE_DRIFT",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0.json",
+      "root_sha256": "1166cd4ef756af219d57f24bdc2d8bfed6448ace7eefe2e5b00f5a2d81c984c1",
+      "verdict": "PASS_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_WITH_HOLD",
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 11,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 24,
+      "report_id": "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_20260524_V0",
+      "function_group": "G02_SOURCE_SELECTION_AND_NEGATIVE_DRIFT",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_20260524_V0.json",
+      "root_sha256": "81660213aed74f7c43141812c36508507d4b4f58084ffe3e9734eaff748d72fa",
+      "verdict": "PASS_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_WITH_HOLD",
+      "next_safe_lane": "PHASE2_SOURCE_SELECTION_RULE_REPAIR_NOTE_AND_MINI_DECISION_TABLE_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 9,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 25,
+      "report_id": "VECTORFL_PHASE2_GUARD_PRIORITY_DECISION_TABLE_20260524_V0",
+      "function_group": "G03_GUARD_PRIORITY_AND_VALIDATOR",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_GUARD_PRIORITY_DECISION_TABLE_20260524_V0.json",
+      "root_sha256": "5d03d2891c551035451863f121a87212281102cb8a4ce370194cf2d6b54c041c",
+      "verdict": "PASS_PHASE2_GUARD_PRIORITY_DECISION_TABLE_WITH_HOLD",
+      "next_safe_lane": "PHASE2_GUARD_PRIORITY_DECISION_TABLE_APPLIED_TO_PACKET_VALIDATOR_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 10,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 26,
+      "report_id": "VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0",
+      "function_group": "G03_GUARD_PRIORITY_AND_VALIDATOR",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0.json",
+      "root_sha256": "2ca6da1c7a20934ded5638c60d504fee1edccbacb985eb2d8993b6ba233000a7",
+      "verdict": "PASS_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_META_WITH_HOLD",
+      "next_safe_lane": "PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_WITH_DECISION_TABLE_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 9,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 27,
+      "report_id": "VECTORFL_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0",
+      "function_group": "G04_SPACE_REFERENCE_DELTA_AND_POSITION_MAP",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0.json",
+      "root_sha256": "0a953c4c4d214e3d4d24c7d94001d71f23a454909baeea099114cc8496ab3c6f",
+      "verdict": "PASS_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_WITH_HOLD",
+      "next_safe_lane": "PHASE2_OPERATOR_SPACE_REFERENCE_DELTA_CHECKLIST_NEGATIVE_CASES_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 9,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 28,
+      "report_id": "VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0",
+      "function_group": "G04_SPACE_REFERENCE_DELTA_AND_POSITION_MAP",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0.json",
+      "root_sha256": "d13268da3c48cde221992e46026df55d92099bdea6b6a5ef15061f14ea447de7",
+      "verdict": "PASS_PHASE2_CONVERGENCE_CORRECTION_PHASE3_BACKLOG_WITH_HOLD",
+      "next_safe_lane": "PHASE2_WORK_SELECTION_BOARD_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 9,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 29,
+      "report_id": "VECTORFL_PHASE2_FUNCTION_POSITION_TEST_MAP_20260524_V0",
+      "function_group": "G04_SPACE_REFERENCE_DELTA_AND_POSITION_MAP",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE2_FUNCTION_POSITION_TEST_MAP_20260524_V0.json",
+      "root_sha256": "9c71fa2492b731bd84000cf6942a54f7bacccdd3e6ee637322067fdb66bfd935",
+      "verdict": "PASS_PHASE2_FUNCTION_POSITION_TEST_MAP_WITH_HOLD",
+      "next_safe_lane": "S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 13,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": null,
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 30,
+      "report_id": "VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0",
+      "function_group": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0.json",
+      "root_sha256": "b4cb37aff0b0d955ce03c8b07d55fb2c43427193f13e003c73010e941a2f999d",
+      "verdict": "PASS_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_WITH_HOLD",
+      "next_safe_lane": "S2_SOURCE_SELECTION_REAL_NON_VALIDATOR_TARGET_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 12,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S1_INTAKE_ORIGINAL_PRESERVATION_TASK_CLASSIFICATION",
+        "observed_gap": {
+          "description": "A short continuation such as 응 계속해봐 carries little content by itself. Correct handling depends on reading the latest next-lane space card; otherwise Hermes may guess or drift into generic/internal work.",
+          "gap_id": "S1_GAP_CONTINUATION_IS_UNDERSPECIFIED_BUT_SPACE_CAN_DISAMBIGUATE",
+          "severity": "MEDIUM",
+          "single_observation": true
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 31,
+      "report_id": "VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0",
+      "function_group": "G02_SOURCE_SELECTION_AND_NEGATIVE_DRIFT",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0.json",
+      "root_sha256": "cd00aa4856d4083f80eed36ebbe0f6c3d677afb475a993c146028c296dafbd45",
+      "verdict": "PASS_S2_SOURCE_SELECTION_FUNCTION_TEST_WITH_HOLD",
+      "next_safe_lane": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 14,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S2_SPACE_EVIDENCE_SELECTION",
+        "observed_gap": {
+          "description": "S2 source selection is not complete when selected refs are listed; rejected refs and rejection reasons are needed to prove the agent did not silently over-read or decorate citations.",
+          "gap_id": "S2_GAP_REJECTION_RATIONALE_REQUIRED_TO_AVOID_ARCHAEOLOGY",
+          "severity": "MEDIUM",
+          "single_observation": true
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 32,
+      "report_id": "VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0",
+      "function_group": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0.json",
+      "root_sha256": "6704d0bf3926881025cc9dd254994e59be6e4cf8768c796a94d4d199b5629537",
+      "verdict": "PASS_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_WITH_HOLD",
+      "next_safe_lane": "S4_S5_CODEX_GEMINI_ROLE_HANDOFF_BOUNDED_RESULT_BUDGET_GATE_V0",
+      "root_read_summary": {
+        "checks_count": 14,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S3_HERMES_MERGE_TRACE_SMALL_REAL_OUTPUT",
+        "observed_gap": {
+          "description": "A small operator-facing output is useful only if the merge trace explicitly shows how space refs changed the decision; otherwise S3 can degrade into a generic status card.",
+          "gap_id": "S3_GAP_MERGE_TRACE_CAN_BECOME_STATUS_CARD_ONLY_IF_DELTA_IS_EXPLICIT",
+          "severity": "MEDIUM",
+          "single_observation": true
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 33,
+      "report_id": "VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0",
+      "function_group": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0.json",
+      "root_sha256": "cbdf99a0df430a36e91a96a8bc605767377c15b52a3078be8acbe271df02e3c3",
+      "verdict": "PASS_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_WITH_HOLD",
+      "next_safe_lane": "S6_OPERATOR_RECEIPT_REENTRY_AND_HOLD_SURFACE_FUNCTION_TEST_SPACE_REFERENCED_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 14,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S4_CODEX_EVALUATION_AND_S5_GEMINI_LAYER_JUDGMENT_ROLE_HANDOFF",
+        "observed_gap": {
+          "description": "Actual Codex and Gemini outputs were complementary, but both touched the generic-status-card risk. Phase3 may need a role-handoff value metric to separate productive overlap from duplication.",
+          "gap_id": "S4_S5_GAP_ROLE_VALUE_IS_REAL_BUT_OVERLAP_NEEDS_METRIC",
+          "severity": "MEDIUM",
+          "single_observation": true
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 34,
+      "report_id": "VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0",
+      "function_group": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0.json",
+      "root_sha256": "0ac54e232f6c82c8966c488f47facbb6d350b31df57a14c1bf776a490618c34b",
+      "verdict": "PASS_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_WITH_HOLD",
+      "next_safe_lane": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 15,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S6_OPERATOR_RECEIPT_REENTRY_AND_HOLD_SURFACE",
+        "observed_gap": {
+          "description": "A mind-sized operator surface is useful for reentry, but if it over-compresses the actual space delta it can become safe yet uninformative. It should preserve one minimal delta line and handles to deeper evidence.",
+          "gap_id": "S6_GAP_OPERATOR_SURFACE_CAN_BE_SAFE_BUT_TOO_SUMMARY",
+          "severity": "MEDIUM",
+          "single_observation": true
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 35,
+      "report_id": "VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0",
+      "function_group": "G05_S1_TO_S7_FUNCTION_TESTS",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0.json",
+      "root_sha256": "d06f7200b3c9899544c9fc4e4ba237a61e38f282c4f645e70fb44818e3159b01",
+      "verdict": "PASS_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_WITH_HOLD",
+      "next_safe_lane": "PHASE2_TO_PHASE3_REVISION_PLAN_FROM_ACCUMULATED_FUNCTION_TESTS_NO_AUTHORITY_MUTATION_V0",
+      "root_read_summary": {
+        "checks_count": 16,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": "S7_BUDGET_GATE_SESSION_LOG_AND_PHASE2_FUNCTION_TEST_ROLLUP",
+        "observed_gap": {
+          "description": "The rollup reveals several good Phase3 candidates, but applying them now would violate the user’s rule against one-by-one convergence. S7 should separate repeated-pattern evidence from actual Phase3 revision work.",
+          "gap_id": "S7_GAP_ROLLUP_CAN_BECOME_PREMATURE_PHASE3_FIX_LIST",
+          "severity": "HIGH",
+          "single_observation": false
+        },
+        "budget_gate": null
+      }
+    },
+    {
+      "seq": 36,
+      "report_id": "VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0",
+      "function_group": "G06_PHASE3_REVISION_BRIDGE",
+      "root_json": "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0.json",
+      "root_sha256": "38b15139e9aec38bf93b0f4fd0de9fe76e0bf14358e89795710d0930978c7967",
+      "verdict": "PASS_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_WITH_HOLD",
+      "next_safe_lane": "PHASE3_REVISION_PLAN_REVIEW_AND_APPLY_DECISION_HOLD_OR_APPROVE_V0",
+      "root_read_summary": {
+        "checks_count": 15,
+        "active_hits": 0,
+        "promotion_status": "HOLD",
+        "authority_effect": "NO_AUTHORITY_MUTATION",
+        "tested_function": null,
+        "observed_gap": {
+          "description": "The Phase3 plan is now structured, but applying it would be a separate authorization lane. This plan must stay HOLD evidence until the user approves implementation/revision application.",
+          "gap_id": "PHASE3_PLAN_GAP_READY_BUT_NOT_AUTHORIZED_TO_APPLY",
+          "severity": "HIGH",
+          "single_observation": false
+        },
+        "budget_gate": null
+      }
+    }
+  ],
+  "retrieval_policy": {
+    "default": "Use this rollup as the first Phase2 retrieval surface instead of opening all 16 root files.",
+    "open_individual_roots_when": [
+      "the user asks about a specific S1-S7 test",
+      "Hermes needs exact execution evidence for one function",
+      "a validation or contradiction requires root-level proof",
+      "Phase3 apply/review asks for concrete source evidence"
+    ],
+    "do_not_use_for": [
+      "authority apply",
+      "current-position mutation",
+      "source mutation",
+      "provider call enablement"
+    ]
+  },
+  "minimal_space_delta": {
+    "trigger_input": "RUN_L3M02_PHASE2_FUNCTION_ROLLUP_INDEX_HOLD_V0",
+    "source_artifacts": [
+      "07_FULL_HISTORY_ARC_INDEX",
+      "08_STALE_SUPERSEDED_MAP",
+      "16_WHOLE_SPACE_MAP"
+    ],
+    "space_baseline_before": "57 root items; P03 Phase2 has 16 items and largest duplicate pressure",
+    "selected_refs": [
+      "VECTORFL_PHASE2_INTERNAL_STRUCTURE_SPACE_REFERENCED_20260524_V0",
+      "VECTORFL_PHASE2_PACKET_SHAPE_ACTUAL_TEST_20260524_V0",
+      "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_REAL_USE_20260524_V0",
+      "VECTORFL_PHASE2_SOURCE_SELECTION_RULE_NEGATIVE_DRIFT_TEST_20260524_V0",
+      "VECTORFL_PHASE2_GUARD_PRIORITY_DECISION_TABLE_20260524_V0",
+      "VECTORFL_PHASE2_DECISION_TABLE_APPLIED_VALIDATOR_20260524_V0",
+      "VECTORFL_PHASE2_SPACE_REFERENCE_DELTA_REAL_PACKET_DRY_RUN_20260524_V0",
+      "VECTORFL_PHASE2_CONVERGENCE_CORRECTION_AND_PHASE3_BACKLOG_20260524_V0",
+      "VECTORFL_PHASE2_FUNCTION_POSITION_TEST_MAP_20260524_V0",
+      "VECTORFL_S1_INTAKE_ORIGINAL_PRESERVATION_FUNCTION_TEST_20260524_V0",
+      "VECTORFL_S2_SOURCE_SELECTION_FUNCTION_TEST_20260524_V0",
+      "VECTORFL_S3_HERMES_MERGE_TRACE_FUNCTION_TEST_20260524_V0",
+      "VECTORFL_S4_S5_CODEX_GEMINI_ROLE_HANDOFF_FUNCTION_TEST_20260524_V0",
+      "VECTORFL_S6_OPERATOR_RECEIPT_REENTRY_HOLD_SURFACE_FUNCTION_TEST_20260524_V0",
+      "VECTORFL_S7_BUDGET_GATE_PHASE2_FUNCTION_TEST_ROLLUP_20260524_V0",
+      "VECTORFL_PHASE3_REVISION_PLAN_FROM_PHASE2_ROLLUP_20260524_V0"
+    ],
+    "rejected_refs": [],
+    "changed_judgment": "Phase2 should be retrieved through a rollup-first index. Individual root files remain evidence but are no longer the default read surface for broad space checks.",
+    "space_effect_type": "DUPLICATE_PRESSURE_REDUCED",
+    "touched_patterns": [
+      "P03_PHASE2_FUNCTION_POSITION_STACK",
+      "P04_PHASE3_STRUCTURE_RELAYERING",
+      "P06_PROVIDER_CALL_BUDGET_GOVERNANCE"
+    ],
+    "missing_handles": [],
+    "stale_or_duplicate_pressure": [
+      "phase2_s1_s7_repetitive_reports_reduced_by_rollup"
+    ],
+    "boundary_risks": [
+      "rollup_must_not_replace_root_evidence",
+      "rollup_must_not_promote_phase3_apply"
+    ],
+    "next_safe_lane": "USE_PHASE2_ROLLUP_IN_NEXT_SPACE_RETRIEVAL_OR_RUN_L3M01_STATUS_NORMALIZATION_HOLD_V0",
+    "promotion_status": "HOLD"
+  },
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "promotion_status": "HOLD"
+}

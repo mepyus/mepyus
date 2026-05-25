@@ -1,0 +1,59 @@
+{
+  "ledger_policy": {
+    "purpose": "Track repeated vectorfl-space-operator loop execution so space maturation can proceed with less user attention while staying auditable.",
+    "write_zone": "codex_space or run root for fixture/ledger artifacts",
+    "authority": "LEDGER_IS_TRACE_NOT_AUTHORITY",
+    "promotion_default": "HOLD"
+  },
+  "minimum_entry_fields": [
+    "entry_id",
+    "timestamp_or_sequence",
+    "trigger",
+    "lane",
+    "read_files",
+    "output_artifact",
+    "space_effect_type",
+    "maturation_judgment",
+    "gemini_decision",
+    "user_attention_required",
+    "promotion_status"
+  ],
+  "packet_id": "18_space_maturation_loop_run_ledger_v0",
+  "promotion_status": "HOLD",
+  "seed_entries": [
+    {
+      "entry_id": "loop_seed_001_skill_install",
+      "gemini_decision": "NO",
+      "lane": "INSTALL_APPROVED_SKILL_SETUP",
+      "maturation_judgment": "INSTALLED_SKILL_ONLY_NO_AUTHORITY_PROMOTION",
+      "output_artifact": "14_vectorfl_space_operator_skill_install_receipt_v0.json",
+      "promotion_status": "INSTALLED_SKILL_ONLY_NO_AUTHORITY_PROMOTION",
+      "read_files": [
+        "11_vectorfl_space_operator_skill_install_preflight_hold_v0.json",
+        "vectorfl-space-operator/SKILL.md"
+      ],
+      "space_effect_type": "PATTERN_STRENGTHENED",
+      "timestamp_or_sequence": "20260524_seq_install",
+      "trigger": "승인!",
+      "user_attention_required": true
+    },
+    {
+      "entry_id": "loop_seed_002_scaling_policy",
+      "gemini_decision": "NO",
+      "lane": "L3_BATCH_PATTERN_MAINTENANCE",
+      "maturation_judgment": "NEW_PATTERN_CANDIDATE",
+      "output_artifact": "16_space_maturation_loop_scaling_principle_v0.md",
+      "promotion_status": "HOLD",
+      "read_files": [
+        "/Users/sungsookim/.codex/skills/vectorfl-space-operator/SKILL.md",
+        "/Users/sungsookim/.codex/skills/vectorfl-space-operator/references/space_maturation_principle.md",
+        "/Users/sungsookim/.codex/skills/vectorfl-space-operator/references/program_result_space_effect.md"
+      ],
+      "space_effect_type": "NEW_PATTERN_CANDIDATE",
+      "timestamp_or_sequence": "20260524_seq_loop_scaling",
+      "trigger": "user requests more skill/loop execution so space matures with less user focus",
+      "user_attention_required": false
+    }
+  ],
+  "status": "LEDGER_SEEDED"
+}

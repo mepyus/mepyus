@@ -1,0 +1,38 @@
+{
+  "packet_id": "99_LATEST_POINTERS",
+  "run_id": "dual_log_fixture_20260524_v0",
+  "writer_role": "HERMES_OR_CODEX_APPEND_VERSION",
+  "allowed_namespace": "shared_handoff",
+  "immutable_after_publish": true,
+  "pointers": {
+    "manifest": {
+      "handle": "shared_handoff/00_RUN_MANIFEST.json",
+      "sha256": "b07e28325aa93ba1fc79c483a906972dd6549c4e4182821a3df3ac6040099d26"
+    },
+    "space_reference_request": {
+      "handle": "shared_handoff/01_SPACE_REFERENCE_REQUEST.json",
+      "sha256": "73f24d85b58646d2c547dcfd0f25942d33c69e174b2e3b2f1f14dc4d4fecfc18"
+    },
+    "codex_retrieval_return": {
+      "handle": "codex_space/10_CODEX_RETRIEVAL_RETURN.json",
+      "sha256": "c61ddf92ce2e83cb71dd4cba919a47b1a68d04bbcbffdcd4dd0fc8c0f9928c4d"
+    },
+    "hermes_execution_trace": {
+      "handle": "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+      "sha256": "bedfe39ce9c65e91f56d02d2a4aebfc36547da8acb892fc3b845f5080e1327e4"
+    },
+    "codex_readable_reentry": {
+      "handle": "shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json",
+      "sha256": "ca0542f0be9821cb66cc3122f10ca3503bdee4b43610dde28a13167b111ee0f4"
+    },
+    "codex_maturation_proposal": {
+      "handle": "codex_space/30_CODEX_MATURATION_PROPOSAL.json",
+      "sha256": "059231203726243641d8c14e10dffba1bc752f8cdfb932b53340f219621ae20a"
+    },
+    "hermes_maturation_receipt": {
+      "handle": "hermes_exec/40_HERMES_MATURATION_MERGE_RECEIPT.json",
+      "sha256": "6eb0310e09300ce368de57f46413475dc4a8295f79f5c0d53fbd15083eb81ade"
+    }
+  },
+  "promotion_status": "HOLD"
+}

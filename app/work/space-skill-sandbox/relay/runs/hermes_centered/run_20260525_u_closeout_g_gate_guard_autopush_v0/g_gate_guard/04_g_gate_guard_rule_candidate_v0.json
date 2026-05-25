@@ -1,0 +1,109 @@
+{
+  "rule_id": "G_GATE_GUARD_RULE_CANDIDATE_V0",
+  "created_at": "2026-05-25T20:12:04.595982+09:00",
+  "status": "WORKSPACE_INTERNAL_GUARD_RULE_CANDIDATE_NOT_AUTHORITY",
+  "source_compact": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/g_gate_guard_asset_compact_pointer_view_v0.json",
+  "source_review": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/g_gate_guard_subtype_review_batch01_v0.json",
+  "basis": {
+    "scan_count": 6530,
+    "subtype_count": 8,
+    "review_sample_count": 31,
+    "disposition_distribution": {
+      "CLEANUP_APPLY_GUARD_PRESERVE": 882,
+      "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 4297,
+      "EXTERNAL_CALL_GUARD_PRESERVE": 781,
+      "GENERAL_GUARD_POINTER": 396,
+      "VALIDATION_GUARD_EVIDENCE": 173,
+      "NEGATIVE_TEST_GUARD_REUSABLE_CANDIDATE": 1
+    },
+    "review_action_distribution": {
+      "PRESERVE_CLEANUP_APPLY_GUARD": 10,
+      "PRESERVE_AUTHORITY_BOUNDARY_GUARD": 18,
+      "PRESERVE_EXTERNAL_CALL_GUARD": 2,
+      "GENERAL_GUARD_POINTER_REVIEW": 1
+    }
+  },
+  "candidate_rules": [
+    {
+      "rule_id": "GG_R01_GUARD_IS_NOT_APPROVAL",
+      "policy": "gate/guard/precheck/HOLD artifacts can block or warn, but never approve apply by themselves",
+      "basis_actions": [
+        "PRESERVE_CLEANUP_APPLY_GUARD",
+        "PRESERVE_AUTHORITY_BOUNDARY_GUARD"
+      ],
+      "forbidden": [
+        "treat guard as approval",
+        "skip explicit approval"
+      ]
+    },
+    {
+      "rule_id": "GG_R02_NEGATIVE_TESTS_ARE_REUSABLE_PATTERNS_NOT_SOURCE_MUTATIONS",
+      "policy": "negative tests can be reused as validation patterns; they do not mutate original assets",
+      "basis_actions": [
+        "REUSE_NEGATIVE_TEST_PATTERN_CANDIDATE"
+      ],
+      "forbidden": [
+        "promote to official test suite without scope",
+        "edit source"
+      ]
+    },
+    {
+      "rule_id": "GG_R03_EXTERNAL_CALL_GUARDS_PRECEDE_TOOL_USE",
+      "policy": "Codex/Gemini/API/live-tool guard must be checked before external execution",
+      "basis_actions": [
+        "PRESERVE_EXTERNAL_CALL_GUARD"
+      ],
+      "forbidden": [
+        "live call without explicit scope"
+      ]
+    },
+    {
+      "rule_id": "GG_R04_AUTHORITY_BOUNDARY_GUARDS_FREEZE_MUTATION",
+      "policy": "authority/current-position/registry/promotion guard creates HOLD until explicit authority review",
+      "basis_actions": [
+        "PRESERVE_AUTHORITY_BOUNDARY_GUARD"
+      ],
+      "forbidden": [
+        "registry/current-position mutation"
+      ]
+    },
+    {
+      "rule_id": "GG_R05_VALIDATION_GUARDS_REQUIRE_REAL_LOCAL_EVIDENCE",
+      "policy": "validation guard should include existence/sha/content/reference/negative drift checks when possible",
+      "basis_actions": [
+        "PRESERVE_VALIDATION_GUARD_EVIDENCE"
+      ],
+      "forbidden": [
+        "setup-only validation"
+      ]
+    }
+  ],
+  "not_allowed_now": [
+    "source edits",
+    "promotion",
+    "authority registry mutation",
+    "cleanup apply",
+    "live external calls"
+  ],
+  "next_recommended": "G_GATE_GUARD_CLOSEOUT_AND_SAFE_STOP_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "repair_note": {
+    "created_at": "2026-05-25T20:15:50.847283+09:00",
+    "reason": "MANIFEST_v0.json is an intentionally modified workspace control surface in this run; it must not be used as immutable review source for sha stability checks. Removed from guard review sample, kept manifest modification validation separately.",
+    "removed_count": 1,
+    "removed_relpaths": [
+      "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json"
+    ]
+  }
+}

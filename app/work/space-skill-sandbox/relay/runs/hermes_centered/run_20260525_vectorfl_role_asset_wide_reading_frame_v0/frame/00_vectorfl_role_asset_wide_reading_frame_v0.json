@@ -1,0 +1,135 @@
+{
+  "frame_id": "VECTORFL_ROLE_ASSET_WIDE_READING_FRAME_20260525_V0",
+  "created_at": "2026-05-25T10:16:02.446463+09:00",
+  "status": "ROLE_AND_ASSET_READING_FRAME_HOLD",
+  "user_correction_digest": "VectorFL의 실행은 Hermes, 공간 담당/숙성은 Codex, 공간 탐색은 Gemini로 역할이 어느 정도 나뉘었다. 큰 틀은 갖춰졌지만 흩어진 자산과 아직 보지 않은 자산이 많다. 하나의 문서를 넓게 읽어야 공간 숙성이 효율화된다.",
+  "role_split_v0": {
+    "Hermes": {
+      "role": "execution_actor_and_merge_center",
+      "does": [
+        "사용자 원문 보존",
+        "현재 공간/자료를 읽고 실행 형태 판단",
+        "원문+공간+모델 reasoning 병합",
+        "로컬 실행/검증/receipt 작성",
+        "Codex가 읽을 reentry 남김"
+      ],
+      "does_not": [
+        "공간 authority 독점",
+        "Codex/Gemini 역할 흡수",
+        "본공간 promotion 임의 수행"
+      ]
+    },
+    "Codex": {
+      "role": "space_steward_and_maturation_actor",
+      "does": [
+        "Hermes 산출물/reentry를 읽고 공간 어디에 붙을지 판단",
+        "흩어진 자산을 구조화/성숙",
+        "inbox→candidate→matured 경로 검토",
+        "authority/promotion 전 gap/conflict/placement 판단"
+      ],
+      "does_not": [
+        "Hermes 실행 대체",
+        "모든 자료를 무차별 적용",
+        "receipt를 authority로 승격"
+      ]
+    },
+    "Gemini": {
+      "role": "space_explorer_and_wide_layer_reader",
+      "does": [
+        "넓은 공간 탐색",
+        "문서/자산의 잠재 의미·층위·압력·연결 후보 탐색",
+        "Codex가 요청하는 layer ambiguity 해소",
+        "들여다보지 않은 자산의 후보 신호 발견"
+      ],
+      "does_not": [
+        "기본 실행자 역할",
+        "최종 authority 결정",
+        "무제한 탐색으로 operator load 증가"
+      ]
+    }
+  },
+  "current_big_frame_assessment": {
+    "verdict": "BIG_FRAME_EXISTS_BUT_ASSET_FIELD_IS_UNMATURED",
+    "what_is_now_clear": [
+      "Hermes/Codex/Gemini 역할 분리",
+      "HOLD/authority/current-position/registry 경계",
+      "space_inbox라는 비권위 중간층",
+      "external source→mini-space→Codex handoff 경로",
+      "실행과 공간 숙성의 분리"
+    ],
+    "what_is_still_scattered": [
+      "과거 산출물의 실제 의미층위",
+      "문서별 role/type/status 구분",
+      "어떤 문서가 공간 성숙에 영향을 주는지",
+      "obsolete/residue/candidate/authority의 분류",
+      "문서 간 cross-link와 retrieval surface"
+    ],
+    "main_risk": "자산이 많아질수록 단일 문서가 단순 report로 묻히고, 공간 숙성에 필요한 latent relation이 회수되지 못함"
+  },
+  "wide_document_reading_lens": [
+    {
+      "lens": "surface_content",
+      "question": "문서가 표면적으로 무엇을 말하는가?",
+      "output": "1-3 line digest"
+    },
+    {
+      "lens": "space_role",
+      "question": "이 문서는 evidence/card/receipt/guard/mini-space/index/authority 후보 중 무엇인가?",
+      "output": "asset_type"
+    },
+    {
+      "lens": "changed_judgment",
+      "question": "이 문서를 읽으면 기존 판단이 무엇이 바뀌는가?",
+      "output": "changed_judgment or decorative"
+    },
+    {
+      "lens": "attachment_point",
+      "question": "VectorFL 어느 공간/단계/Hermes-Codex-Gemini 역할에 붙는가?",
+      "output": "attach candidate"
+    },
+    {
+      "lens": "latent_relation",
+      "question": "다른 어떤 자산과 연결될 수 있는가?",
+      "output": "cross-link candidates"
+    },
+    {
+      "lens": "risk_or_guard",
+      "question": "이 문서가 만들거나 막는 위험은 무엇인가?",
+      "output": "guard/risk tags"
+    },
+    {
+      "lens": "maturation_need",
+      "question": "Codex/Gemini가 더 봐야 하는 이유가 있는가?",
+      "output": "mature/review/explore/ignore"
+    },
+    {
+      "lens": "authority_boundary",
+      "question": "이 문서를 authority처럼 쓰면 위험한가?",
+      "output": "HOLD/authority_possible/no"
+    },
+    {
+      "lens": "operator_load",
+      "question": "지금 사람이 읽어야 하는가, pointer만 있으면 되는가?",
+      "output": "read_now/read_later/pointer_only"
+    }
+  ],
+  "asset_maturation_pipeline_v0": [
+    "raw_or_existing_asset_discovery",
+    "wide_document_reading_lens_apply",
+    "asset_type_assignment",
+    "changed_judgment_filter",
+    "cross_link_candidate_map",
+    "role_route: Hermes execute / Codex mature / Gemini explore",
+    "space_inbox_or_candidate_surface",
+    "Codex read-only maturation review",
+    "promotion rubric only if explicitly approved"
+  ],
+  "recommended_next_work": "흩어진 자산 전체를 바로 통합하지 말고, 샘플 10-20개를 골라 wide_document_reading_lens로 재독해하여 자산 유형 분포와 latent relation map을 먼저 만든다.",
+  "hold_boundaries": {
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion": "HOLD"
+  }
+}

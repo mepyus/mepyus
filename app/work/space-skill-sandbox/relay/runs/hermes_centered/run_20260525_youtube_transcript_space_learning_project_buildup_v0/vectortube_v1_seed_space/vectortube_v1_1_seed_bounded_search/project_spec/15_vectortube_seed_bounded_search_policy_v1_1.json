@@ -1,0 +1,95 @@
+{
+  "report_id": "VECTORTUBE_SEED_BOUNDED_SEARCH_POLICY_20260525_V1_1",
+  "created_at": "2026-05-25T07:19:21.688705+09:00",
+  "status": "HOLD_POLICY_REFINEMENT_NOT_AUTHORITY",
+  "correction_from_user": "검색 기능은 off가 아니라, 사용자가 지정한 원본을 기준으로 너무 많은 것을 읽지 않도록 조정해서 검색할 수 있어야 한다.",
+  "replaces_interpretation": {
+    "old": "NO_AUTO_SEARCH_BY_DEFAULT / 자동 검색 OFF",
+    "new": "SEED_BOUNDED_CALIBRATED_SEARCH / seed 원본 기준의 제한·조정 검색"
+  },
+  "policy": {
+    "search_default": "disabled_until_seed_exists",
+    "search_after_seed": "allowed_only_as_seed_bounded_calibrated_expansion",
+    "not_bulk_crawl": true,
+    "not_open_ended_research": true,
+    "user_seed_is_anchor": true,
+    "model_role": "derive_search_intents_and_diversity_slots_from_seed; not authority",
+    "hermes_role": "execute bounded search only after scope parameters are explicit or safely defaulted",
+    "codex_role": "later read-only matching of mini-space packet to VectorFL space map"
+  },
+  "bounded_search_controls": {
+    "query_generation": "from seed transcript claims, tensions, missing contexts, counterframes, and LACL candidates",
+    "search_budget_default": {
+      "queries_per_seed": 3,
+      "candidate_videos_per_query": 5,
+      "transcripts_to_fetch_without_user_review": 0,
+      "transcripts_to_fetch_after_user_approval_default": 3,
+      "hard_cap_transcripts_per_seed_batch": 7
+    },
+    "diversity_slots": [
+      "same-context corroboration",
+      "technical/deeper explanation",
+      "counterargument or critique",
+      "adjacent/orthogonal lens",
+      "historical/background layer",
+      "implementation/practice layer"
+    ],
+    "stop_conditions": [
+      "search results repeat already captured claims",
+      "candidate list exceeds budget",
+      "transcripts drift away from seed anchor",
+      "confusion risk higher than enrichment value",
+      "user has not approved candidate transcript fetch"
+    ],
+    "ranking_not_authority": [
+      "views/subscribers/popularity may help triage but cannot become truth authority",
+      "speaker authority cannot override timestamped claim grounding",
+      "model-generated relevance score is a routing hint only"
+    ]
+  },
+  "pipeline_delta": [
+    {
+      "stage": "S0",
+      "name": "user seed intake",
+      "note": "unchanged: user-designated source is anchor"
+    },
+    {
+      "stage": "S1",
+      "name": "seed transcript + space reading",
+      "note": "derive search intents from seed, not generic search"
+    },
+    {
+      "stage": "S2",
+      "name": "calibrated search plan",
+      "note": "produce query intents and budgets before any search"
+    },
+    {
+      "stage": "S3",
+      "name": "candidate-only search",
+      "note": "collect candidate metadata/URLs, not bulk transcripts"
+    },
+    {
+      "stage": "S4",
+      "name": "user/cap gate",
+      "note": "fetch only approved or budget-allowed transcript candidates"
+    },
+    {
+      "stage": "S5",
+      "name": "mini-space composition",
+      "note": "merge seed + selected expansions with drift/confusion checks"
+    },
+    {
+      "stage": "S6",
+      "name": "VectorFL push packet HOLD",
+      "note": "no main-space mutation before approval"
+    }
+  ],
+  "hold_boundaries": {
+    "main_space_mutation": false,
+    "authority_mutation": false,
+    "obsidian_write": false,
+    "codex_gemini_live_call": false,
+    "youtube_bulk_crawl": false,
+    "video_or_audio_download": false
+  }
+}

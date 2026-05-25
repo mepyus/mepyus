@@ -1,0 +1,47 @@
+{
+  "packet_id": "90_QUICK_EXCHANGE_BOARD",
+  "run_id": "fast_cross_inspection_fixture_20260524_v0",
+  "board_version": "v0",
+  "writer_role": "HERMES_OR_CODEX_APPEND_VERSION",
+  "allowed_namespace": "shared_handoff",
+  "immutable_after_publish": true,
+  "last_updated_by": "CODEX_TEST_FIXTURE",
+  "hermes_latest": {
+    "summary_card_handle": "hermes_exec/90_HERMES_LATEST_SUMMARY_CARD.json",
+    "summary_card_sha256": "536776fd78026d6c54ba912a1a664b483331b742b5ad508533e307df628600b8",
+    "latest_artifact_handle": "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+    "latest_artifact_sha256": "319fdaca0d1d2fc639e4a10389740253b0023b2e35165cc9d000320be45b04ac",
+    "latest_state": "HERMES_EXECUTION_TRACE_READY_FOR_CODEX",
+    "changed_judgment": "Hermes has a trace ready for Codex inspection.",
+    "next_for_other_actor": "CODEX_READ_SUMMARY_OR_REENTRY",
+    "owner_namespace": "hermes_exec",
+    "read_only_assertion": true
+  },
+  "codex_latest": {
+    "summary_card_handle": "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json",
+    "summary_card_sha256": "4fe977f0e8f35c5b2013d253f8cd67d9d21e3e6e03eaaa7b701f8d5706fcee75",
+    "latest_artifact_handle": "codex_space/30_CODEX_MATURATION_PROPOSAL.json",
+    "latest_artifact_sha256": "fc853275fbc60802f0a99c1cb6e8ed94f53fdeb012370691c8776fbcf77873f7",
+    "latest_state": "CODEX_MATURATION_PROPOSAL_READY_FOR_HERMES",
+    "changed_judgment": "Codex has a HOLD proposal ready for Hermes receipt.",
+    "next_for_other_actor": "HERMES_RECORD_HOLD_RECEIPT",
+    "owner_namespace": "codex_space",
+    "read_only_assertion": true
+  },
+  "open_questions": [],
+  "blocked_or_waiting_on": "USER_APPROVAL_REQUIRED_FOR_ANY_APPLY",
+  "latest_pointer_ref": {
+    "handle": "shared_handoff/99_LATEST_POINTERS.json",
+    "sha256": "f983918c1004bbe8d33cee334665df4ce1e9cfab830c17948f7cacaaa1306b3b"
+  },
+  "next_safe_lane": "HERMES_OR_CODEX_READ_QUICK_BOARD_THEN_FOLLOW_POINTERS_WITH_HOLD",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "promotion_status": "HOLD"
+}

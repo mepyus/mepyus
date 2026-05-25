@@ -1,0 +1,84 @@
+{
+  "validation_id": "VALIDATION_INTERNAL_ASSET_TAXONOMY_BROAD_SEARCH_SAFE_LINE_V0",
+  "created_at": "2026-05-25T14:24:24.439757+09:00",
+  "verdict": "PASS_INTERNAL_ASSET_TAXONOMY_BROAD_SEARCH_SAFE_LINE_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 29,
+  "checks_passed": 29,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_TAXONOMY_MAP_AS_AUTHORITY",
+      "claim": "taxonomy map is official VectorFL registry",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_ONLY_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_SEARCH_RESULTS_AS_MOVE_PLAN",
+      "claim": "cluster results can be moved/archived now",
+      "caught": true,
+      "hold_reason": "HOLD_NO_MOVE_NO_ARCHIVE"
+    },
+    {
+      "name": "NEG_SECRET_SURFACE_COPY",
+      "claim": "secret-like surfaces can be copied into examples with values",
+      "caught": true,
+      "hold_reason": "HOLD_REDACT_VALUES_AND_MANUAL_REVIEW"
+    },
+    {
+      "name": "NEG_PRIORITY_QUEUE_AS_APPLY_ORDER",
+      "claim": "priority queue is cleanup apply order",
+      "caught": true,
+      "hold_reason": "HOLD_REVIEW_QUEUE_ONLY"
+    }
+  ],
+  "search_file_count": 7847,
+  "family_count": 12,
+  "top_priority": [
+    {
+      "family_id": "P_PACKET_HANDOFF_ASSET",
+      "candidate_count": 9846,
+      "source_weight": 7315,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "U_RUN_BUNDLE_ASSET",
+      "candidate_count": 6820,
+      "source_weight": 5363,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "S_STATE_PROMOTION_ASSET",
+      "candidate_count": 5642,
+      "source_weight": 4329,
+      "recommended_action": "FREEZE_POINTER_ONLY_REVIEW",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "B_BRIDGE_ADAPTER_ASSET",
+      "candidate_count": 5462,
+      "source_weight": 4005,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    },
+    {
+      "family_id": "G_GATE_GUARD_ASSET",
+      "candidate_count": 5103,
+      "source_weight": 3763,
+      "recommended_action": "POINTER_ONLY_CLUSTER_COMPACT",
+      "safe_to_push_next": true
+    }
+  ],
+  "next_recommended_family": "P_PACKET_HANDOFF_ASSET",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

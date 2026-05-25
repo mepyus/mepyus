@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "check": "target_skill_directory_exists",
+      "path": "/Users/sungsookim/.codex/skills/vectorfl-space-operator",
+      "pass": true
+    },
+    {
+      "check": "installed_file_count",
+      "observed": 9,
+      "pass": true
+    },
+    {
+      "check": "skill_frontmatter_present",
+      "pass": true
+    },
+    {
+      "check": "installed_hashes_match_preflight",
+      "pass": true
+    },
+    {
+      "check": "space_maturation_reference_installed",
+      "artifact": "/Users/sungsookim/.codex/skills/vectorfl-space-operator/references/space_maturation_principle.md",
+      "pass": true
+    },
+    {
+      "check": "program_result_space_effect_reference_installed",
+      "artifact": "/Users/sungsookim/.codex/skills/vectorfl-space-operator/references/program_result_space_effect.md",
+      "pass": true
+    },
+    {
+      "check": "authority_current_position_registry_source_not_mutated",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "source_code_mutation": "NO",
+      "pass": true
+    },
+    {
+      "check": "skill_installation_user_approved",
+      "observed": "YES_USER_APPROVED",
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "hashes": {
+    "SKILL.md": "b7afb84398302bf2f06bf072212ed29e93dd49154e0ea5d939944e5d2e6afe95",
+    "dual_log_collision_free.md": "d6344ddc8da01a4a90b127cb1b0a5dfbc03b9017a6b617fd9b606a9ce87316a1",
+    "fast_cross_inspection.md": "a9ddb2d3b52135fd47f675f48e852ab4fa5b70f1a0d88b359cd81f3925654774",
+    "integrated_stack.md": "af7a0f3440bf8364b17c1261874ef5a946828899113336f87fff52e87cf9e71a",
+    "operation_routes.md": "be854ccda43ad7ee6c971812bcdd579219f30f46511f56a5cd241003fcb9095d",
+    "program_result_space_effect.md": "e679eb24125469bf2d66e5b56917ae9557d80baa257d4cf63316ba1d6612f643",
+    "return_schemas.md": "a56007dded3bcfd31e37e05f823d8a1dfc99c91295fc3f709a0fd90cd1874897",
+    "space_governance.md": "2747c5ac8062e4ea22ab6a0a7a3d094d9644414dae58c08eaa7b2139cb928c8d",
+    "space_maturation_principle.md": "ba6d1b7be42b10f0a59d9f862abb7b168d8909fb98a969c64db97342333b1067"
+  },
+  "next_safe_lane": "USE_VECTORFL_SPACE_OPERATOR_SKILL_IN_NEXT_SPACE_OR_HERMES_ANALYSIS_REQUEST_V0",
+  "promotion_status": "INSTALLED_SKILL_ONLY_NO_AUTHORITY_PROMOTION",
+  "verdict": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_INSTALL_USER_APPROVED"
+}

@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "check": "pattern_index_created",
+      "artifact": "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json",
+      "pass": true
+    },
+    {
+      "check": "pattern_count",
+      "observed": 8,
+      "pass": true
+    },
+    {
+      "check": "full_history_scope_preserved",
+      "root_item_count": 57,
+      "source_of_truth": "shared_handoff/01_CODEX_FULL_HISTORY_SYNC_PACKET.json",
+      "pass": true
+    },
+    {
+      "check": "all_major_layers_covered",
+      "layers": [
+        "foundation_recovery_current_position",
+        "prototype_behavior_loop",
+        "phase2_function_positions",
+        "phase3_structure_relayering",
+        "hermes_centered_codex_space_loop",
+        "provider_call_budget_governance",
+        "external_space_lens_stack",
+        "space_operator_governance_channel"
+      ],
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "promotion_status": "HOLD",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "pass": true
+    },
+    {
+      "check": "gemini_not_invoked_for_bounded_index",
+      "decision": "NO_FOR_INDEX_CREATION",
+      "pass": true
+    },
+    {
+      "check": "quick_board_versioned_not_overwritten",
+      "artifact": "shared_handoff/90_QUICK_EXCHANGE_BOARD_v3_CODEX_PATTERN_INDEX.json",
+      "pass": true
+    },
+    {
+      "check": "hermes_namespace_not_modified",
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "hashes": {
+    "90_QUICK_EXCHANGE_BOARD_v3_CODEX_PATTERN_INDEX.json": "c920e49e2b151e10ddad6e2a97f97e6b8c2987f513ee804929f3a2182ca17831",
+    "93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json": "96790064653b7037507eb163c8ffc15cf4b0d190ed0864d06c32b03e22f9cd23"
+  },
+  "next_safe_lane": "HERMES_MERGE_CODEX_FULL_HISTORY_PATTERN_INDEX_AS_HOLD_EVIDENCE_OR_USER_APPROVE_APPLY_LANE_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_CODEX_FULL_HISTORY_PATTERN_INDEX_WITH_HOLD"
+}

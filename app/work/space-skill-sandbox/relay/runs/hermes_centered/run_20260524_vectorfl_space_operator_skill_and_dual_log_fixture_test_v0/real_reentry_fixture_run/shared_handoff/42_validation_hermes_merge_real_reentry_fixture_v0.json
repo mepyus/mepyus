@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "check": "hermes_merge_receipt_created",
+      "artifact": "hermes_exec/40_HERMES_REAL_REENTRY_FIXTURE_MERGE_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "codex_readable_merge_status_created",
+      "artifact": "shared_handoff/41_CODEX_READABLE_REAL_REENTRY_FIXTURE_MERGE_STATUS.json",
+      "pass": true
+    },
+    {
+      "check": "receipt_namespace_correct",
+      "observed": "hermes_exec",
+      "pass": true
+    },
+    {
+      "check": "status_namespace_correct",
+      "observed": "shared_handoff",
+      "pass": true
+    },
+    {
+      "check": "codex_return_sha_linked",
+      "sha256": "0ad4dc731e25763ee720e80e749902bd138095b5ab456e46d5d6c7fe4a72c080",
+      "pass": true
+    },
+    {
+      "check": "merge_as_hold_evidence_only",
+      "observed": "MERGE_AS_HOLD_EVIDENCE",
+      "pass": true
+    },
+    {
+      "check": "skill_not_installed",
+      "observed": "NO",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    }
+  ],
+  "checks_count": 8,
+  "hashes": {
+    "40_HERMES_REAL_REENTRY_FIXTURE_MERGE_RECEIPT.json": "770c12026c7b10c216a35d65cb6f936ea05f7c28f8089a62dcd02f9e6919f5c0",
+    "41_CODEX_READABLE_REAL_REENTRY_FIXTURE_MERGE_STATUS.json": "33af06e2fe25b070767a942926c92cd410b3939c1e5d16e1a150adb0f3d3d139"
+  },
+  "next_safe_lane": "USER_APPROVE_INSTALL_VECTORFL_SPACE_OPERATOR_SKILL_OR_KEEP_HOLD_WITH_REAL_REENTRY_FIXTURE_EVIDENCE_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "boundary_hold": true,
+    "codex_return_sha_linked": true,
+    "merge_hold": true,
+    "receipt_namespace": true,
+    "skill_not_installed": true,
+    "status_namespace": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_HERMES_MERGE_REAL_REENTRY_FIXTURE_RESULT_WITH_HOLD"
+}

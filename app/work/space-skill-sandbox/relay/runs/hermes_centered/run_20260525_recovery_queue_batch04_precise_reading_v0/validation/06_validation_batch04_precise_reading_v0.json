@@ -1,0 +1,51 @@
+{
+  "validation_id": "VALIDATION_BATCH04_PRECISE_READING_V0",
+  "created_at": "2026-05-25T11:09:25.109549+09:00",
+  "verdict": "PASS_BATCH04_PRECISE_READING_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/source_index/00_batch04_source_index_v0.json": {
+      "exists": true,
+      "sha256": "637562c5ccc706df08787db8ae657b53120688aade8104f0693fd6e87d1d8e01",
+      "bytes": 3015
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/readings/01_batch04_precise_reading_v0.json": {
+      "exists": true,
+      "sha256": "d2856d0a2c5b2d194e1e652db15f78cc80fd7fba227816038ce8827027c280a8",
+      "bytes": 73486
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/routes/02_batch04_route_pack_v0.json": {
+      "exists": true,
+      "sha256": "6b0919d304de1a966ec759b3219341ffd26c55eeacafd3c627a655b79d1e16ad",
+      "bytes": 24591
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/comparison/03_batch04_cumulative_cluster_shift_v0.json": {
+      "exists": true,
+      "sha256": "70e93d7649cbce8d18dd4baa42b58d1ce00dfca3c9b0f42065aa6b4e60bc3cd1",
+      "bytes": 2080
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/handoff/04_CODEX_GEMINI_HERMES_BATCH04_HANDOFF_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "fb38717c796a45d8ccee1b790858a5530a53f0d4aa54b9b44f64c549f39cd385",
+      "bytes": 3896
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch04_precise_reading_v0/reports/05_batch04_precise_reading_report_v0.md": {
+      "exists": true,
+      "sha256": "ce0855c4a8ea232d6d992167a6284898f99f623bb44486e76e66ce5537bc3baa",
+      "bytes": 1876
+    }
+  },
+  "content_checks": {
+    "batch_count": 10,
+    "relations_count": 45,
+    "route_packs": 1,
+    "all_sources_exist": true,
+    "has_cumulative_comparison": true,
+    "has_m2_signal": true,
+    "m2_count": 10,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

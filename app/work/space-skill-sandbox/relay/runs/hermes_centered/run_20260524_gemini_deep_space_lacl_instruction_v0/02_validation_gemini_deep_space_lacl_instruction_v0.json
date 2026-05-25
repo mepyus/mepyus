@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "check": "source_bundle_index_created",
+      "artifact": "00_gemini_deep_space_lacl_source_bundle_index_v0.json",
+      "pass": true
+    },
+    {
+      "check": "gemini_instruction_created",
+      "artifact": "01_GEMINI_DEEP_SPACE_LACL_READING_INSTRUCTION_V0.md",
+      "pass": true
+    },
+    {
+      "check": "bundle_count",
+      "observed": 7,
+      "pass": true
+    },
+    {
+      "check": "deep_lacl_tasks_present",
+      "tasks": [
+        "Layer Map",
+        "LACL Attachment Table",
+        "Route / PV / LACL Matrix",
+        "Hermes Execution vs Codex Space Operation",
+        "Program Result Space-Effect Reading",
+        "LACL-Based Maturation Proposal"
+      ],
+      "pass": true
+    },
+    {
+      "check": "return_schema_present",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    }
+  ],
+  "checks_count": 6,
+  "next_safe_lane": "USER_RUN_GEMINI_WITH_01_INSTRUCTION_AND_00_SOURCE_BUNDLE_INDEX_THEN_RETURN_OUTPUT_TO_CODEX_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_GEMINI_DEEP_SPACE_LACL_INSTRUCTION_READY_WITH_HOLD"
+}

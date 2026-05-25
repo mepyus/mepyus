@@ -1,0 +1,186 @@
+{
+  "selector_id": "WORKSPACE_NEXT_BATCH_SELECTOR_V0",
+  "created_at": "2026-05-25T13:51:45.622202+09:00",
+  "verdict": "NEXT_BATCH_POINTER_ONLY_CANDIDATES_SELECTED_WITH_HOLD",
+  "criteria": {
+    "selector_id": "NEXT_BATCH_SELECTOR_CRITERIA_V0",
+    "created_at": "2026-05-25T13:51:45.622202+09:00",
+    "selection_rule": "Choose structure-learning value, M1-M8 dispersion, low operator load, and local-testability; not low move-risk alone.",
+    "criteria": [
+      {
+        "name": "module_dispersion",
+        "reason": "avoid overfitting to cleanup blockers only"
+      },
+      {
+        "name": "operator_load_low_or_medium",
+        "reason": "mind-sized batch"
+      },
+      {
+        "name": "local_verifiability",
+        "reason": "user correction: no setup-only lanes"
+      },
+      {
+        "name": "authority_safety",
+        "reason": "prefer pointer-only until reviewed"
+      },
+      {
+        "name": "not_already_batch01",
+        "reason": "do not loop on same top10"
+      }
+    ],
+    "default_next_action": "POINTER_ONLY_REVIEW_BATCH_CANDIDATE__NO_COPY_YET"
+  },
+  "scan_count": 5215,
+  "selected_count": 10,
+  "module_distribution": {
+    "M4_maturation_governance": 2,
+    "M7_hygiene_operator_dashboard": 1,
+    "M8_evaluation_trace_observability": 1,
+    "M2_asset_graph_router": 2,
+    "M5_space_inbox_review": 1,
+    "M3_guard_precheck": 1,
+    "M1_intake_provenance": 1,
+    "M6_adapter_factory": 1
+  },
+  "candidates": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_codex_maturation_review_v0/review/00_hermes_mock_codex_maturation_review_v0.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_hermes_mock_codex_maturation_review_v0/review/00_hermes_mock_codex_maturation_review_v0.json",
+      "sha256": "333739a0381f0414a978f35bcb322637892c362732f52796e2a8c8c668ede0f1",
+      "size": 12005,
+      "module_guess": "M4_maturation_governance",
+      "vf_score": 109,
+      "verifiable_signal_count": 8,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_01",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+      "relpath": "app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/00_READ_FIRST/MANIFEST_v0.json",
+      "sha256": "54d972d64d9324ffdc5a288ebaefb4a86fc8fc211dcac1a33c746eaff2368790",
+      "size": 6660,
+      "module_guess": "M7_hygiene_operator_dashboard",
+      "vf_score": 95,
+      "verifiable_signal_count": 8,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_02",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_vectorfl_scenario1_v0/13_codex_reinsertion_effect_time_stderr_v0.txt",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_actual_multi_agent_vectorfl_scenario1_v0/13_codex_reinsertion_effect_time_stderr_v0.txt",
+      "sha256": "a14084c515c7f0e0c079098216bb8f4e7968157e38e1bdccec217df20ec6aaa9",
+      "size": 22718,
+      "module_guess": "M8_evaluation_trace_observability",
+      "vf_score": 98,
+      "verifiable_signal_count": 7,
+      "operator_load": "MEDIUM",
+      "candidate_id": "BATCH02_CAND_03",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_full_history_sync_from_start_v0/codex_space/91_CODEX_FULL_HISTORY_SYNC_REVIEW_V0.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_full_history_sync_from_start_v0/codex_space/91_CODEX_FULL_HISTORY_SYNC_REVIEW_V0.json",
+      "sha256": "fb2fef707a05de168be2a208683fbea85816646ec695b4cb16f12144c30c11ee",
+      "size": 11790,
+      "module_guess": "M2_asset_graph_router",
+      "vf_score": 75,
+      "verifiable_signal_count": 7,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_04",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/space_insertion_bundle_3_mini_spaces_20260525_v0/post_apply_codex_channel_20260525_v0/validation/99_validation_inbox_apply_and_codex_channel_v0.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/space_insertion_bundle_3_mini_spaces_20260525_v0/post_apply_codex_channel_20260525_v0/validation/99_validation_inbox_apply_and_codex_channel_v0.json",
+      "sha256": "2501694845c05a59e81e6b872fc522e2fd36c14ca8d0c558cf6eb84a920fdd2c",
+      "size": 7664,
+      "module_guess": "M5_space_inbox_review",
+      "vf_score": 73,
+      "verifiable_signal_count": 7,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_05",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/readings/01_batch01_precise_reading_v0.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_recovery_queue_batch01_precise_reading_v0/readings/01_batch01_precise_reading_v0.json",
+      "sha256": "582cd79327f83830b6e6f1cc0bcc7d58ece8a99dfba4f3877aecf73f379cfada",
+      "size": 50371,
+      "module_guess": "M3_guard_precheck",
+      "vf_score": 67,
+      "verifiable_signal_count": 7,
+      "operator_load": "MEDIUM",
+      "candidate_id": "BATCH02_CAND_06",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/docs/reports/pre12_bridge_surface_identification_report_v0.md",
+      "relpath": "docs/reports/pre12_bridge_surface_identification_report_v0.md",
+      "sha256": "690b9a64e4d08ab23ba38dd13b1074c87d092a07fc3f9817aa018ac34fe3ab0c",
+      "size": 6608,
+      "module_guess": "M1_intake_provenance",
+      "vf_score": 16,
+      "verifiable_signal_count": 7,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_07",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_invocation_policy_and_script_chain_analysis_v0/02_codex_to_gemini_script_chain_structure_analysis_v0.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260524_codex_gemini_invocation_policy_and_script_chain_analysis_v0/02_codex_to_gemini_script_chain_structure_analysis_v0.json",
+      "sha256": "011d281a57ae902f4b01ed310a9f6066ae30070efe54a6f6173a0f15d616adfb",
+      "size": 4145,
+      "module_guess": "M6_adapter_factory",
+      "vf_score": 73,
+      "verifiable_signal_count": 6,
+      "operator_load": "LOW",
+      "candidate_id": "BATCH02_CAND_08",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/type_map/00_vectorfl_asset_type_map_v0_1.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_asset_type_map_v0_1_from_wide_reading/type_map/00_vectorfl_asset_type_map_v0_1.json",
+      "sha256": "5405536eeb74ae674adaf08c36ad505c474bc82c2868f94acf07feb7dbc2b87a",
+      "size": 31675,
+      "module_guess": "M2_asset_graph_router",
+      "vf_score": 72,
+      "verifiable_signal_count": 6,
+      "operator_load": "MEDIUM",
+      "candidate_id": "BATCH02_CAND_09",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_precise_reading_and_readonly_copy_view_v0/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+      "relpath": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_precise_reading_and_readonly_copy_view_v0/precise_reading/01_top10_blocker_precise_reading_batch01.json",
+      "sha256": "7a408758eb41069772e23eba3ae86d7d18de6060ca5347a6d5bd29e3b2e70907",
+      "size": 34708,
+      "module_guess": "M4_maturation_governance",
+      "vf_score": 65,
+      "verifiable_signal_count": 6,
+      "operator_load": "MEDIUM",
+      "candidate_id": "BATCH02_CAND_10",
+      "status": "POINTER_ONLY_NOT_COPIED",
+      "recommended_first_test": "exists_sha_content_risk_axes_no_move_negative_drift"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

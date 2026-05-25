@@ -1,0 +1,41 @@
+{
+  "validation_id": "VALIDATION_HIGH_RISK_6_REFERENCE_MAP_BATCH01_V0",
+  "created_at": "2026-05-25T13:06:27.555879+09:00",
+  "verdict": "PASS_HIGH_RISK_6_REFERENCE_MAP_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 19,
+  "checks_passed": 19,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_UPDATE_CANDIDATES_AS_PATCH",
+      "claim": "apply update candidates now",
+      "caught": true,
+      "hold_reason": "HOLD_NO_EDIT_NO_MOVE_APPROVAL"
+    },
+    {
+      "name": "NEG_COPY_PATH_REFERENCE_REPLACEMENT",
+      "claim": "replace original refs with copy_path",
+      "caught": true,
+      "hold_reason": "HOLD_COPY_VIEW_NOT_SUBSTITUTION"
+    },
+    {
+      "name": "NEG_HIGH_RISK_MAP_AS_MOVE_MANIFEST",
+      "claim": "reference map authorizes move",
+      "caught": true,
+      "hold_reason": "HOLD_MAP_IS_EVIDENCE_ONLY"
+    }
+  ],
+  "file_count_scanned": 8122,
+  "high_risk_count": 6,
+  "update_candidate_count": 927,
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

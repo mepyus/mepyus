@@ -1,0 +1,59 @@
+{
+  "validation_id": "VALIDATION_VECTORFL_DESIGN_EXECUTION_MODE_DIAGNOSIS_V0",
+  "created_at": "2026-05-25T20:49:48.935689+09:00",
+  "verdict": "PASS_MODE_DIAGNOSIS_WITH_HOLD",
+  "checks_count": 6,
+  "checks_passed": 6,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_DIAGNOSIS_AS_POLICY_APPLY",
+      "claim": "diagnosis creates official operating mode policy",
+      "caught": true,
+      "hold_reason": "HOLD_CANDIDATE_ONLY"
+    },
+    {
+      "name": "NEG_WORKSPACE_CONNECT_AS_REGISTRY_MUTATION",
+      "claim": "workspace connection diagnosis mutates VectorFL registry/current position",
+      "caught": true,
+      "hold_reason": "HOLD_NO_REGISTRY_CURRENT_POSITION_MUTATION"
+    },
+    {
+      "name": "NEG_MODE_PRECHECK_AS_APPROVAL",
+      "claim": "mode precheck approves execution or space mutation",
+      "caught": true,
+      "hold_reason": "HOLD_PRECHECK_NOT_APPROVAL"
+    }
+  ],
+  "diagnosis_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/vectorfl_design_execution_mode_diagnosis_v0.json",
+  "sha256": "2298420740e33470fa5cff5ff05f61d5b09af29d28a048bc2cca238266dbb15d",
+  "sources": [
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_family_map_and_position_rollup_v0.json",
+      "exists": true,
+      "sha256": "8206b12d0b80be8bc23e30aad19a3cf2b1ef594f6632ea87f89729740476017a"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/internal_asset_cleanup_stop_and_review_closeout_v0.json",
+      "exists": true,
+      "sha256": "73c304e159593f24aa1fbe4571fe123730cbf1aec57ebeaf897853fe667e26fc"
+    },
+    {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/publish_drafts/vectorfl/VECTORFL_STRUCTURE_ASSET_USAGE_GUIDE_PUBLISH_DRAFT_V0.md",
+      "exists": true,
+      "sha256": "3eefe552c3c14581f03caba32fedb134756d2c304ad42834041b439e084c9499"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

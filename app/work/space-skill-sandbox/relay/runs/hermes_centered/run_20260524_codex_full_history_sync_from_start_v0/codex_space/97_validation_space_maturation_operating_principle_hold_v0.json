@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "check": "principle_document_created",
+      "artifact": "codex_space/95_CODEX_SPACE_MATURATION_OPERATING_PRINCIPLE_HOLD_V0.md",
+      "pass": true
+    },
+    {
+      "check": "contract_json_created",
+      "artifact": "codex_space/96_CODEX_SPACE_MATURATION_OPERATING_CONTRACT_HOLD_V0.json",
+      "pass": true
+    },
+    {
+      "check": "execution_and_space_operation_separated",
+      "hermes": "execution operator",
+      "codex": "space operator",
+      "pass": true
+    },
+    {
+      "check": "space_maturation_loop_defined",
+      "loop": [
+        "OBSERVE",
+        "CLASSIFY",
+        "COMPARE",
+        "JUDGE_SPACE_DELTA",
+        "DECIDE_GEMINI",
+        "PROPOSE_MATURATION",
+        "VERIFY",
+        "RETURN"
+      ],
+      "pass": true
+    },
+    {
+      "check": "maturation_judgment_enum_defined",
+      "count": 8,
+      "pass": true
+    },
+    {
+      "check": "current_full_history_baseline_referenced",
+      "artifact": "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json",
+      "pass": true
+    },
+    {
+      "check": "gemini_policy_remains_optional_codex_side",
+      "default": "DO_NOT_CALL",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    },
+    {
+      "check": "quick_board_versioned_not_overwritten",
+      "artifact": "shared_handoff/90_QUICK_EXCHANGE_BOARD_v4_SPACE_MATURATION_PRINCIPLE.json",
+      "pass": true
+    },
+    {
+      "check": "hermes_namespace_not_modified",
+      "pass": true
+    }
+  ],
+  "checks_count": 10,
+  "hashes": {
+    "95_CODEX_SPACE_MATURATION_OPERATING_PRINCIPLE_HOLD_V0.md": "a7b802dc3a2c2799291cbb9f725a4eea9aa05619b7b3eed53fea504fd977306e",
+    "96_CODEX_SPACE_MATURATION_OPERATING_CONTRACT_HOLD_V0.json": "fe9b63f6829de8d9388c4bf6e3ebfaa4f0b7538eea4a7987a9dbe99a6ffb0571"
+  },
+  "next_safe_lane": "HERMES_MERGE_SPACE_MATURATION_PRINCIPLE_AS_HOLD_EVIDENCE_OR_ABSORB_INTO_SPACE_OPERATOR_SKILL_V0",
+  "promotion_status": "HOLD",
+  "verdict": "PASS_CODEX_SPACE_MATURATION_OPERATING_PRINCIPLE_WITH_HOLD"
+}

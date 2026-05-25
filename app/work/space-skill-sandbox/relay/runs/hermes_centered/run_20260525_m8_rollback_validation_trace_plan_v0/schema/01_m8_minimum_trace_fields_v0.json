@@ -1,0 +1,124 @@
+{
+  "schema_id": "M8_MINIMUM_TRACE_FIELDS_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "purpose": "Minimum evidence required before any future cleanup/move/archive/promotion-affecting operation. This schema is not apply permission.",
+  "required_fields": [
+    {
+      "field": "trace_id",
+      "required": true,
+      "why": "unique immutable receipt id"
+    },
+    {
+      "field": "operation_type",
+      "allowed": [
+        "READ_ONLY_REVIEW",
+        "POINTER_UPDATE_CANDIDATE",
+        "MOVE_ARCHIVE_CANDIDATE",
+        "APPROVED_MOVE_ARCHIVE_APPLY",
+        "ROLLBACK_APPLY",
+        "PROMOTION_CANDIDATE",
+        "AUTHORITY_APPLY"
+      ],
+      "required": true
+    },
+    {
+      "field": "authority_boundary",
+      "required": true,
+      "must_include": [
+        "is_authority_surface",
+        "is_registry_surface",
+        "is_current_position_surface",
+        "promotion_state",
+        "explicit_user_approval_id_or_null"
+      ]
+    },
+    {
+      "field": "source_asset_before",
+      "required": true,
+      "must_include": [
+        "absolute_path",
+        "relpath",
+        "exists",
+        "sha256",
+        "bytes",
+        "mtime",
+        "freeze_class",
+        "cleanup_policy"
+      ]
+    },
+    {
+      "field": "intended_delta",
+      "required": true,
+      "must_include": [
+        "from_state",
+        "to_state",
+        "why",
+        "affected_pointers",
+        "affected_registry_or_current_position"
+      ]
+    },
+    {
+      "field": "precheck_gates",
+      "required": true,
+      "must_include": [
+        "G1_route_pointer",
+        "G3_maturation_boundary",
+        "G6_hygiene_cleanup",
+        "G7_trace_observability"
+      ]
+    },
+    {
+      "field": "rollback_plan",
+      "required": true,
+      "must_include": [
+        "rollback_possible",
+        "restore_path",
+        "restore_sha256",
+        "commands_or_manual_steps",
+        "rollback_validation"
+      ]
+    },
+    {
+      "field": "post_apply_validation",
+      "required": true,
+      "must_include": [
+        "exists_after",
+        "sha256_after",
+        "pointer_integrity",
+        "broken_links_check",
+        "authority_boundary_unchanged",
+        "operator_review_result"
+      ]
+    },
+    {
+      "field": "mutation_statement",
+      "required": true,
+      "must_include": [
+        "file_move",
+        "archive",
+        "authority_mutation",
+        "registry_mutation",
+        "current_position_mutation",
+        "promotion"
+      ]
+    },
+    {
+      "field": "hold_or_pass_verdict",
+      "required": true,
+      "allowed": [
+        "HOLD_TRACE_INSUFFICIENT",
+        "HOLD_AUTHORITY_SENSITIVE",
+        "HOLD_CLEANUP_PRECONDITION",
+        "PASS_READ_ONLY_TRACE",
+        "PASS_APPROVED_APPLY_WITH_ROLLBACK_READY"
+      ]
+    }
+  ],
+  "hard_rules": [
+    "Receipt is evidence, not authority.",
+    "Trace plan is not approval.",
+    "No move/archive unless explicit approval id exists and rollback/post validation are ready.",
+    "Registry/current-position mutation requires separate authority approval.",
+    "MATURED is not AUTHORITY."
+  ]
+}

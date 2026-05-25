@@ -1,0 +1,57 @@
+{
+  "report_id": "VECTORTUBE_AUTOLOOP_V0_1_5LqCwO7x_Gc_3012s_20260525",
+  "verdict": "PASS_V0_1_PREPARED_AND_EXECUTED_WITH_HOLD",
+  "run_dir": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1",
+  "policy": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/policy/00_vectortube_autoloop_policy_v0_1.json",
+  "runner": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/scripts/vectortube_autoloop_runner_v0_1.py",
+  "runner_stdout": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/receipts/10_runner_stdout_v0_1.txt",
+  "runner_result": {
+    "verdict": "PASS_AUTOLOOP_V0_1_WITH_SLOT_WARNINGS_HOLD",
+    "mini_space": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/mini_space/08_autoloop_v0_1_result_mini_space.json",
+    "validation": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/validation/09_validation_autoloop_v0_1.json",
+    "content_checks": {
+      "slots": 3,
+      "official_policy_docs_used": true,
+      "youtube_transcripts_fetched": 2,
+      "slot_quality_review_count": 3,
+      "missing_source_markers": 0,
+      "warnings": 1,
+      "main_space_mutation": false,
+      "promotion_hold": true
+    },
+    "slot_quality_summary": {
+      "policy_boundary": {
+        "slot": "policy_boundary",
+        "status": "PASS_OFFICIAL_DOCS_ATTACHED_HOLD",
+        "score": 0.85,
+        "reasons": [
+          "official docs fetched",
+          "no YouTube fallback used",
+          "policy treated as boundary evidence not legal advice"
+        ],
+        "missing_source_marker": false
+      },
+      "quality_failure": {
+        "slot": "quality_failure",
+        "status": "PASS_OR_PARTIAL_FAILURE_FIT_HOLD",
+        "score": 0.65,
+        "missing_source_marker": false,
+        "reasons": [
+          "bounded source attached",
+          "requires manual layer read before promotion"
+        ]
+      },
+      "human_workflow_guard": {
+        "slot": "human_workflow_guard",
+        "status": "WARN_WEAK_HUMAN_GUARD_FIT_HOLD",
+        "score": 0.4,
+        "missing_source_marker": false,
+        "reasons": [
+          "weak title/text fit"
+        ]
+      }
+    }
+  },
+  "validation": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/contextual_mini_space_3012s_v0/vectortube_autoloop_v0_1/validation/11_validation_autoloop_v0_1_prepared_and_executed.json",
+  "promotion_status": "HOLD"
+}

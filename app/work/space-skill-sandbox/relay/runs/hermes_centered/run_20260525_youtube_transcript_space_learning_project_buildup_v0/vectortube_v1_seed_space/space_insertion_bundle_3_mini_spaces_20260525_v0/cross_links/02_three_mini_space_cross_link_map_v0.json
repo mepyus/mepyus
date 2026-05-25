@@ -1,0 +1,52 @@
+{
+  "map_id": "VECTORTUBE_THREE_MINI_SPACE_CROSS_LINK_MAP_V0",
+  "created_at": "2026-05-25T08:45:41.588459+09:00",
+  "status": "CROSS_LINK_STAGING_HOLD",
+  "nodes": [
+    {
+      "id": "MS1_ONTOLOGY_SEMANTIC_FABRIC",
+      "title": "Ontology / LLM / semantic fabric / sovereign AI mini-space",
+      "role": "knowledge_relation_layer_space"
+    },
+    {
+      "id": "MS2_AI_AUTOMATION_PLATFORM_RISK",
+      "title": "AI automation pipeline vs platform/quality/operational risk mini-space",
+      "role": "automation_boundary_risk_space"
+    },
+    {
+      "id": "MS3_AGENT_GIT_GUARD",
+      "title": "AI coding agent git/GitHub guard mini-space",
+      "role": "agent_source_control_authority_space"
+    }
+  ],
+  "edges": [
+    {
+      "from": "MS1_ONTOLOGY_SEMANTIC_FABRIC",
+      "to": "MS2_AI_AUTOMATION_PLATFORM_RISK",
+      "relation": "knowledge_structure_to_operational_automation",
+      "why": "MS1 asks how structured knowledge supports AI; MS2 shows automation becoming operational and platform-bounded."
+    },
+    {
+      "from": "MS2_AI_AUTOMATION_PLATFORM_RISK",
+      "to": "MS3_AGENT_GIT_GUARD",
+      "relation": "automation_risk_to_source_control_guard",
+      "why": "MS2 guard ring needs human review/platform boundary; MS3 concretizes this as git diff/secret/remote/agent approval gates."
+    },
+    {
+      "from": "MS1_ONTOLOGY_SEMANTIC_FABRIC",
+      "to": "MS3_AGENT_GIT_GUARD",
+      "relation": "semantic_authority_to_commit_authority",
+      "why": "Both separate evidence/structure from authority; MS3 shows when model/agent outputs become durable commit records."
+    }
+  ],
+  "shared_lenses": [
+    "authority_vs_evidence",
+    "automation_boundary",
+    "human_review_gate",
+    "operational_infra",
+    "counter_uncertainty",
+    "VectorFL_HOLD_mapping"
+  ],
+  "space_effect": "세 공간을 합치면 VectorTube는 자료 요약기가 아니라 AI 실행력이 공간/권한/기록/플랫폼 경계와 만나는 지점을 읽는 feeder가 된다.",
+  "promotion": "HOLD"
+}

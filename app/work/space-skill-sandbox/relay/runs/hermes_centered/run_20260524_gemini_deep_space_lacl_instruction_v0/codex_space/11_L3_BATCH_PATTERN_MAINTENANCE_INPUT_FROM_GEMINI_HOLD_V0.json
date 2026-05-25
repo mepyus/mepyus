@@ -1,0 +1,120 @@
+{
+  "packet_id": "11_L3_BATCH_PATTERN_MAINTENANCE_INPUT_FROM_GEMINI_HOLD_V0",
+  "role": "CODEX_SPACE_OPERATOR",
+  "status": "HOLD_MAINTENANCE_INPUT_NOT_APPLIED",
+  "read_files": [
+    {
+      "source_handle": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+      "source_sha256": "15fd28caa5f10e247aea4d26be63e590bc0c896779c5aaae2f18200d3ddf9a69",
+      "used_for": "Arc, layer, pattern, and authority/proposal status rollup.",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+      "source_sha256": "f351ca86b9187259441aabc2d33bcb11e8dc7fff03a3fbcc3d449ba494f683f8",
+      "used_for": "Maintenance pressure classification.",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    },
+    {
+      "source_handle": "codex_space/09_MINIMAL_SPACE_DELTA_AND_LACL_REGISTER_FIELDSET_HOLD_V0.json",
+      "source_sha256": "1cf1748b197c9b9e5fcbee6c2441702691311bf39e57bd4b05c70ad61b199366",
+      "used_for": "Future reentry and program-result fieldset alignment.",
+      "owner_namespace": "codex_space",
+      "read_only_assertion": true
+    }
+  ],
+  "input_classification": "L3_BATCH_PATTERN_MAINTENANCE_INPUT",
+  "space_state_before": {
+    "root_item_count": 57,
+    "pattern_counts": {
+      "P01_NO_CALL_RECOVERY_AND_CURRENT_POSITION_SURFACE": 9,
+      "P02_PROTOTYPE_BEHAVIOR_LOOP": 12,
+      "P03_PHASE2_FUNCTION_POSITION_STACK": 16,
+      "P04_PHASE3_STRUCTURE_RELAYERING": 4,
+      "P05_HERMES_CENTERED_CODEX_SPACE_LOOP": 6,
+      "P06_PROVIDER_CALL_BUDGET_GOVERNANCE": 1,
+      "P07_EXTERNAL_SPACE_LENS_STACK": 5,
+      "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL": 4
+    },
+    "status_counts": {
+      "HISTORICAL_EVIDENCE_NEEDS_STATUS_NORMALIZATION": 5,
+      "APPLIED_CURRENT_POSITION_HISTORY_KEEP_BOUNDARY_NOTE": 1,
+      "HOLD_EVIDENCE": 49,
+      "APPLY_OR_STRUCTURE_HISTORY_HOLD_REVIEW_REQUIRED": 2
+    }
+  },
+  "maintenance_lanes_hold_only": [
+    {
+      "lane_id": "L3M01_STATUS_NORMALIZATION_QUEUE",
+      "trigger": "foundation roots with UNKNOWN or historically mixed status",
+      "touches_patterns": [
+        "P01_NO_CALL_RECOVERY_AND_CURRENT_POSITION_SURFACE"
+      ],
+      "space_effect_type": "MISSING_HANDLE_EXPOSED",
+      "proposed_hold_action": "Build AUTHORITY_VS_PROPOSAL_STATUS_MAP before using old foundation handoffs as current guidance."
+    },
+    {
+      "lane_id": "L3M02_PHASE2_ROLLUP_QUEUE",
+      "trigger": "Phase2 S1-S7 and support reports create duplicate pressure",
+      "touches_patterns": [
+        "P03_PHASE2_FUNCTION_POSITION_STACK"
+      ],
+      "space_effect_type": "DUPLICATE_PRESSURE",
+      "proposed_hold_action": "Create PHASE2_FUNCTION_ROLLUP_INDEX_HOLD to preserve evidence while reducing repeated retrieval pressure."
+    },
+    {
+      "lane_id": "L3M03_STALE_HANDOFF_SUPERSEDED_QUEUE",
+      "trigger": "older Codex/Gemini handoff docs can conflict with Hermes-centered no-direct-API policy",
+      "touches_patterns": [
+        "P05_HERMES_CENTERED_CODEX_SPACE_LOOP",
+        "P06_PROVIDER_CALL_BUDGET_GOVERNANCE"
+      ],
+      "space_effect_type": "STALE_OR_SUPERSEDED_EFFECT",
+      "proposed_hold_action": "Use STALE_SUPERSEDED_HANDLE_MAP when old handoff language appears in retrieval or execution setup."
+    },
+    {
+      "lane_id": "L3M04_PROTOTYPE_RECLASSIFICATION_QUEUE",
+      "trigger": "Z_OTHER prototype records are behavior evidence rather than noise",
+      "touches_patterns": [
+        "P02_PROTOTYPE_BEHAVIOR_LOOP"
+      ],
+      "space_effect_type": "LAYER_REASSIGNMENT_CANDIDATE",
+      "proposed_hold_action": "Keep prototype material as L2 behavior-loop evidence; do not promote to authority without separate approval."
+    },
+    {
+      "lane_id": "L3M05_EXTERNAL_LENS_BUDGET_QUEUE",
+      "trigger": "AI Frontier EP96/EP97 strengthens budget governance but remains an external lens",
+      "touches_patterns": [
+        "P06_PROVIDER_CALL_BUDGET_GOVERNANCE",
+        "P07_EXTERNAL_SPACE_LENS_STACK"
+      ],
+      "space_effect_type": "PATTERN_STRENGTHENED",
+      "proposed_hold_action": "Keep infra-cost and operator-load fields as proposed budget lens inputs, not authority."
+    }
+  ],
+  "gemini_exploration_decision": {
+    "decision": "NO_NEW_GEMINI_CALL",
+    "reason": "Gemini has already supplied wide-lens evidence for this lane. Remaining work is Codex-side normalization and HOLD indexing."
+  },
+  "maturation_decision": "STRENGTHEN_EXISTING_PATTERN_WITH_HOLD_INDEXES",
+  "proposed_space_changes_hold_only": [
+    "AUTHORITY_VS_PROPOSAL_STATUS_MAP",
+    "PHASE2_FUNCTION_ROLLUP_INDEX_HOLD",
+    "STALE_SUPERSEDED_HANDLE_MAP",
+    "PROTOTYPE_BEHAVIOR_LOOP_RECLASSIFICATION_HOLD",
+    "BUDGET_GATE_INFRA_COST_OPERATOR_LOAD_FIELDS_HOLD"
+  ],
+  "changed_judgment": "The deep Gemini review should not add a new execution route. It strengthens L3 batch maintenance as the default place to absorb accumulated file pressure, stale handoff risk, and repeated program-result evidence.",
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "RUN_L3M02_PHASE2_FUNCTION_ROLLUP_INDEX_OR_HERMES_RECORD_GEMINI_LACL_EVIDENCE_HOLD_V0",
+  "promotion_status": "HOLD"
+}

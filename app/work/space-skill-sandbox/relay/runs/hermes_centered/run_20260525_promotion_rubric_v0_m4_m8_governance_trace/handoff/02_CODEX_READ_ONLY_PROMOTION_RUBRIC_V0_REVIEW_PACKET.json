@@ -1,0 +1,21 @@
+{
+  "handoff_id": "CODEX_READ_ONLY_PROMOTION_RUBRIC_V0_REVIEW_PACKET",
+  "created_at": "2026-05-25T11:29:32.609594+09:00",
+  "status": "READ_ONLY_HOLD",
+  "read_first": [
+    "rubric/00_vectorfl_promotion_rubric_v0.json",
+    "matrix/01_vectorfl_promotion_gate_matrix_v0.json"
+  ],
+  "codex_task": "Review rubric for placement/conflict/gap only. Check M4/M8 consistency and whether folder cleanup preconditions block moves. Do not mutate files/registry/current-position/authority.",
+  "gemini_task": "Only if Codex flags ambiguity, wide-read layer/LACL implications of status transitions. No broad exploration.",
+  "hermes_task": "Use rubric for read-only classification/dry-run validation. No promotion apply.",
+  "forbidden": [
+    "file move",
+    "archive apply",
+    "authority mutation",
+    "registry/current-position mutation",
+    "live external connector call",
+    "secret preservation"
+  ],
+  "hold": true
+}

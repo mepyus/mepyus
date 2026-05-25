@@ -1,0 +1,104 @@
+{
+  "validation_id": "VALIDATION_X_POINTER_GRAPH_POINTER_ONLY_V0",
+  "created_at": "2026-05-25T21:10:00+09:00",
+  "verdict": "PASS_X_POINTER_GRAPH_POINTER_ONLY_WITH_HOLD",
+  "validated_files": [
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/03_X_POINTER_GRAPH_ASSET_POINTER_ONLY_MAP_V0.json",
+      "sha256": "e38e6f51d9c5968f9cdf3636baecc55f5b69b77a5fe3df1222876612516fadee",
+      "json_valid": true
+    },
+    {
+      "path": "app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_codex_space_design_gemini_asset_family_recheck_v0/codex_space/04_X_POINTER_GRAPH_OPERATOR_VIEW_V0.md",
+      "sha256": "00e299c43bfcddb2060ea2e94eeb45343598fe4936fe9a98383dc674f8667ded"
+    }
+  ],
+  "checks": [
+    {
+      "name": "node_count",
+      "expected": 7,
+      "actual": 7,
+      "passed": true
+    },
+    {
+      "name": "edge_count",
+      "expected": 8,
+      "actual": 8,
+      "passed": true
+    },
+    {
+      "name": "retrieval_route_count",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "name": "source_handles_have_sha256",
+      "passed": true
+    },
+    {
+      "name": "x_pointer_graph_marked_not_authority",
+      "passed": true
+    },
+    {
+      "name": "blocked_bridge_to_state_edge_present",
+      "passed": true
+    },
+    {
+      "name": "blocked_cleanup_apply_edge_present",
+      "passed": true
+    },
+    {
+      "name": "future_hermes_closeout_route_present",
+      "passed": true
+    },
+    {
+      "name": "mutation_statement_all_false",
+      "passed": true
+    },
+    {
+      "name": "graph_is_authority_false",
+      "passed": true
+    }
+  ],
+  "negative_tests": [
+    {
+      "name": "NEG_GRAPH_AS_AUTHORITY",
+      "claim": "pointer graph becomes source of truth or registry",
+      "caught": true,
+      "hold_reason": "X_POINTER_GRAPH_NOT_AUTHORITY_HEADER_REQUIRED"
+    },
+    {
+      "name": "NEG_PACKET_AS_LIVE_CALL_APPROVAL",
+      "claim": "packet handoff edge authorizes bridge/API/live call",
+      "caught": true,
+      "hold_reason": "EXPLICIT_SCOPE_REQUIRED"
+    },
+    {
+      "name": "NEG_RUN_BUNDLE_AS_CLEANUP_APPROVAL",
+      "claim": "run bundle evidence authorizes delete/archive/cleanup apply",
+      "caught": true,
+      "hold_reason": "RETENTION_RULE_AND_EXPLICIT_APPROVAL_REQUIRED"
+    },
+    {
+      "name": "NEG_BRIDGE_DIRECT_STATE_MUTATION",
+      "claim": "bridge adapter result can update promotion or authority state directly",
+      "caught": true,
+      "hold_reason": "B_BRIDGE_TO_S_STATE_DIRECT_EDGE_BLOCKED"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  },
+  "next_safe_lane_after_this": "CODEX_SPACE_REENTRY_RECEIPT_SCHEMA_HOLD_ONLY",
+  "promotion_status": "HOLD_NOT_AUTHORITY"
+}

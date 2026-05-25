@@ -1,0 +1,102 @@
+{
+  "correction_id": "VECTORFL_HERMES_EXECUTION_MODE_CORRECTION_V0",
+  "created_at": "2026-05-25T20:55:25.529701+09:00",
+  "status": "CORRECTED_CANDIDATE_NOT_AUTHORITY",
+  "supersedes": "VECTORFL_DESIGN_EXECUTION_MODE_DIAGNOSIS_V0 interpretation of design/execution split",
+  "user_correction": "문제는 일반적 설계모드/실행모드 이분법이 아니라, Hermes가 실행할 때 VectorFL 공간을 어떻게 다루는가의 모드 구분이다. 실행모드는 공간 자산을 활용만 하고 수정/구조화하지 않는다. 설계모드는 공간 자산을 수정/구조화할 수 있다. 직접 명시할 것은 실행모드만으로 충분해 보인다.",
+  "corrected_model": {
+    "default_context": "Hermes는 보통 VectorFL 공간을 참조해 판단하고, 필요하면 workspace/pointer/map 같은 공간 산출물을 만들 수 있다. 이것은 공간/설계 작업 흐름이다.",
+    "explicit_execution_mode": "사용자가 실행모드를 명시하면 Hermes는 공간 자산을 읽고 활용할 수 있지만, VectorFL 공간 자체를 수정/구조화/연결/승격하지 않는다.",
+    "design_or_space_mode": "공간 설계/구조화/연결/문서화/맵핑 작업. workspace 내부 candidate/pointer/view/rule을 만들 수 있으나 authority/source/current-position mutation은 별도 승인 전 금지.",
+    "why_only_execution_mode_explicit": "설계모드를 매번 명시하면 사용자가 공간을 다루려는 자연스러운 작업까지 과도하게 절차화된다. 반대로 실행모드만 명시하면 “이번에는 공간을 참고만 하고 건드리지 말라”는 안전선이 명확해진다."
+  },
+  "execution_mode_contract_candidate": {
+    "mode_label": "EXECUTION_MODE_SPACE_READONLY",
+    "trigger_phrases": [
+      "실행모드",
+      "실행 모드로",
+      "공간은 참고만",
+      "공간 수정 없이 실행",
+      "VectorFL 공간은 건드리지 말고 실행"
+    ],
+    "allowed": [
+      "read selected VectorFL space assets",
+      "use maps/cards/receipts as evidence",
+      "perform the requested scoped execution",
+      "write execution result only to user-declared output or ephemeral run receipt if scoped",
+      "report what space changed in judgment"
+    ],
+    "forbidden": [
+      "modify VectorFL workspace structure",
+      "create/update pointer maps as part of space design",
+      "connect workspace to VectorFL registry/current-position",
+      "promote candidate/matured/authority state",
+      "move/archive/delete/source edit",
+      "treat execution receipt as space authority"
+    ],
+    "required_receipt_fields": [
+      "mode_label",
+      "space_assets_read",
+      "changed_judgment_from_space",
+      "execution_outputs",
+      "space_mutation:false",
+      "authority_mutation:false"
+    ]
+  },
+  "space_design_mode_contract_candidate": {
+    "mode_label": "SPACE_DESIGN_OR_STRUCTURING_MODE",
+    "trigger": "default when user asks to 구조화/문서화/map/연결/정리/설계/공간에 밀기 unless they explicitly say execution mode",
+    "allowed": [
+      "create candidate maps",
+      "create pointer views",
+      "create publish drafts",
+      "create freeze/confusion maps",
+      "create operator cards",
+      "write workspace-internal validation"
+    ],
+    "forbidden_without_explicit_approval": [
+      "authority registry mutation",
+      "current-position mutation",
+      "source-of-truth change",
+      "file move/archive/delete",
+      "promotion",
+      "live external call"
+    ]
+  },
+  "mode_router_candidate": [
+    {
+      "if": "user explicitly says 실행모드",
+      "then": "EXECUTION_MODE_SPACE_READONLY",
+      "space_effect": "READ_ONLY_USE_ONLY"
+    },
+    {
+      "if": "user asks to map/structure/connect/design VectorFL space",
+      "then": "SPACE_DESIGN_OR_STRUCTURING_MODE",
+      "space_effect": "CANDIDATE_WORKSPACE_MUTATION_ALLOWED_WITH_HOLD"
+    },
+    {
+      "if": "task requires both real execution and space restructuring",
+      "then": "split: execution first under read-only space, then ask/mark separate space-design follow-up unless user already scoped it",
+      "space_effect": "SEPARATE_RECEIPTS"
+    },
+    {
+      "if": "authority/current-position/registry/promotion appears",
+      "then": "AUTHORITY_BOUNDARY_HOLD",
+      "space_effect": "NO_MUTATION_WITHOUT_EXPLICIT_APPROVAL"
+    }
+  ],
+  "diagnostic_verdict": "PREVIOUS_DIAGNOSIS_PARTIALLY_WRONG__EXECUTION_MODE_SHOULD_MEAN_SPACE_READONLY_USE__ONLY_EXECUTION_MODE_NEEDS_EXPLICIT_MARKING",
+  "next_safe_lane": "VECTORFL_EXECUTION_MODE_SPACE_READONLY_CONTRACT_CANDIDATE_V0",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

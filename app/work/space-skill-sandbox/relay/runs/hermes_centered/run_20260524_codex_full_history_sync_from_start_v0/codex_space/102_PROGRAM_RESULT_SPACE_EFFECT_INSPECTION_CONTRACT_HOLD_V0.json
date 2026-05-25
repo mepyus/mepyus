@@ -1,0 +1,60 @@
+{
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "effect_type_enum": [
+    "NO_SPACE_EFFECT",
+    "REFERENCE_EVIDENCE",
+    "PATTERN_CONFIRMED",
+    "PATTERN_STRENGTHENED",
+    "PATTERN_CHANGED",
+    "NEW_PATTERN_CANDIDATE",
+    "MISSING_HANDLE_EXPOSED",
+    "STALE_OR_SUPERSEDED_EFFECT",
+    "DUPLICATE_PRESSURE",
+    "BOUNDARY_RISK",
+    "REENTRY_REPAIR_NEEDED"
+  ],
+  "inspection_layers": [
+    "PROGRAM_BEHAVIOR",
+    "EXECUTION_TRACE",
+    "SPACE_CONTACT",
+    "SPACE_EFFECT",
+    "MATURATION_DECISION"
+  ],
+  "minimum_return_fields": [
+    "packet_id",
+    "role",
+    "program_result_under_test",
+    "space_baseline_before",
+    "space_contacts",
+    "local_execution_result",
+    "space_effect_type",
+    "space_effect_reasoning",
+    "touched_patterns",
+    "missing_handles",
+    "stale_or_duplicate_pressure",
+    "gemini_exploration_decision",
+    "maturation_decision",
+    "proposed_space_changes_hold_only",
+    "boundary",
+    "validation",
+    "next_safe_lane",
+    "promotion_status"
+  ],
+  "packet_id": "102_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION_CONTRACT_HOLD_V0",
+  "promotion_status": "HOLD",
+  "purpose": "Require every function/program test to inspect the result's effect on the VectorFL space, not only local pass/fail behavior.",
+  "space_baseline": {
+    "maturation_principle": "codex_space/95_CODEX_SPACE_MATURATION_OPERATING_PRINCIPLE_HOLD_V0.md",
+    "maturation_principle_sha256": "a7b802dc3a2c2799291cbb9f725a4eea9aa05619b7b3eed53fea504fd977306e",
+    "pattern_index": "codex_space/93_CODEX_FULL_HISTORY_PATTERN_INDEX_HOLD_V0.json",
+    "pattern_index_sha256": "96790064653b7037507eb163c8ffc15cf4b0d190ed0864d06c32b03e22f9cd23"
+  },
+  "status": "HOLD_PROGRAM_RESULT_SPACE_EFFECT_CONTRACT"
+}

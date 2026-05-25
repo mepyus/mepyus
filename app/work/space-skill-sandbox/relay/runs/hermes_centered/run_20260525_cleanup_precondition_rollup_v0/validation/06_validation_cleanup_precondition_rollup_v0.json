@@ -1,0 +1,52 @@
+{
+  "validation_id": "VALIDATION_CLEANUP_PRECONDITION_ROLLUP_V0",
+  "created_at": "2026-05-25T12:14:02.337636+09:00",
+  "verdict": "PASS_CLEANUP_PRECONDITION_ROLLUP_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/source_index/00_cleanup_precondition_source_index_v0.json": {
+      "exists": true,
+      "sha256": "d3a8d0a5da8b17b98c6c9fd1f38c8d74c43c46ec7e13285c76e57b2c1ae60efc",
+      "bytes": 4640
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/rollup/01_cleanup_precondition_rollup_v0.json": {
+      "exists": true,
+      "sha256": "f0ba458652ce950c7e86623167a5bed37b7b19c257b59bb4894147e966e68cda",
+      "bytes": 2280
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/conditions/02_limited_cleanup_manifest_candidate_conditions_v0.json": {
+      "exists": true,
+      "sha256": "386c0decc418bae42f3cd53ebeef7f8c201a5be3b08994996137897c2e726af4",
+      "bytes": 1247
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/codex_review/03_CODEX_READ_ONLY_CLEANUP_PRECONDITION_REVIEW_PACKET_v0.json": {
+      "exists": true,
+      "sha256": "b6a9e5b5e2c927fdab5954af6311fe1b574c596cfbc18efb988f961e9bb42105",
+      "bytes": 1722
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/readiness/04_cleanup_precondition_readiness_v0.json": {
+      "exists": true,
+      "sha256": "a0eca81e8120f119669222b2b3c98b4b0b9a48d1f6d837a9092374000975c439",
+      "bytes": 812
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_cleanup_precondition_rollup_v0/reports/05_cleanup_precondition_rollup_report_v0.md": {
+      "exists": true,
+      "sha256": "e861e140ce834287919a405040a4894faa1ea68fb3fc80312fe31605cb22b48e",
+      "bytes": 316
+    }
+  },
+  "content_checks": {
+    "m2_v0_present": true,
+    "m4_v0_present": true,
+    "m7_v0_present": true,
+    "m8_v0_present": true,
+    "limited_conditions_created": true,
+    "codex_review_packet_created": true,
+    "cleanup_apply_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "archive": false,
+    "promotion_hold": true
+  }
+}

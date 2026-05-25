@@ -1,0 +1,52 @@
+{
+  "validation_id": "VALIDATION_TOP10_CLEANUP_BLOCKER_ACTUAL_LOCAL_VALIDATION_V0",
+  "created_at": "2026-05-25T12:33:44.310872+09:00",
+  "verdict": "PASS_TOP10_CLEANUP_BLOCKER_ACTUAL_VALIDATION_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/source_index/00_top10_actual_validation_source_index_v0.json": {
+      "exists": true,
+      "sha256": "81bb59ce6c2c8ff6544da015cb5bf336f1bdb6df40bd4847ebf5049f3640b574",
+      "bytes": 2021
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/summary/01_top10_cleanup_blocker_read_only_summary_v0.json": {
+      "exists": true,
+      "sha256": "b3c541ae76513de81975308b6195b5475d1e7b7f0366239b2456ff587376b89d",
+      "bytes": 15925
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/actual_tests/02_actual_local_validation_top10_cleanup_blockers_v0.json": {
+      "exists": true,
+      "sha256": "dab5c280dd6c4a656d1e930226b2c4c9d26447771c9e9c307558f26f584a1c32",
+      "bytes": 1665
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/negative_tests/03_negative_drift_fixtures_results_v0.json": {
+      "exists": true,
+      "sha256": "21dace3d488e0fdecf44fda080d41ee5f6108e0dda72ee1a2abe9c2f2f99d21c",
+      "bytes": 1286
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/handoff/04_TOP10_CLEANUP_BLOCKERS_TO_CODEX_REVIEW_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "d243466b027b67b0be10ffe098425e9c3119c6bbcfa4f3b8d452877093db0445",
+      "bytes": 878
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top10_cleanup_blocker_actual_local_validation_v0/reports/05_top10_cleanup_blocker_actual_validation_report_v0.md": {
+      "exists": true,
+      "sha256": "5d69c17ff3d2becbb53085a94f9100b55d9e5d4204b7daa4cd3d37c3130a374b",
+      "bytes": 323
+    }
+  },
+  "content_checks": {
+    "top10_count": 10,
+    "actual_not_setup_only": true,
+    "actual_checks_count": 50,
+    "actual_checks_passed": 50,
+    "actual_checks_failed_count": 0,
+    "negative_tests_count": 3,
+    "negative_tests_caught": 3,
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion_hold": true
+  }
+}

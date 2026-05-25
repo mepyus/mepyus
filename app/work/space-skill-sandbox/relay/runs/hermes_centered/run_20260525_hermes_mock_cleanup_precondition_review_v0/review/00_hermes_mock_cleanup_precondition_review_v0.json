@@ -1,0 +1,127 @@
+{
+  "review_id": "HERMES_MOCK_CLEANUP_PRECONDITION_REVIEW_V0",
+  "created_at": "2026-05-25T12:29:12.597075+09:00",
+  "is_actual_codex_review": false,
+  "live_codex_call_executed": false,
+  "cleanup_precondition_assessment": {
+    "verdict": "HOLD_CLEANUP_PRECONDITION",
+    "summary": "M2/M4/M7/M8 v0 surfaces exist, but cleanup apply is blocked. The asset field is authority/freeze/conflict-heavy, not duplicate-heavy."
+  },
+  "blocker_map": [
+    {
+      "blocker_id": "B001_CLEANUP_BLOCKERS_NONEMPTY",
+      "axis": "M7",
+      "severity": "blocker",
+      "count": 63,
+      "reason": "cleanup_blocker_board is non-empty; no move/archive candidate can be assumed safe."
+    },
+    {
+      "blocker_id": "B002_ARCHIVE_NOT_ALLOWED_NONEMPTY",
+      "axis": "M7/M4",
+      "severity": "blocker",
+      "count": 61,
+      "reason": "archive_not_allowed_board contains current-position/registry/authority-sensitive items."
+    },
+    {
+      "blocker_id": "B003_AUTHORITY_FREEZE_HIGH",
+      "axis": "M4",
+      "severity": "blocker",
+      "count": 63,
+      "reason": "M4 freeze review shows authority-sensitive surfaces dominate."
+    },
+    {
+      "blocker_id": "B004_CONFLICT_CANDIDATES_UNRESOLVED",
+      "axis": "M2",
+      "severity": "high",
+      "count": 49,
+      "reason": "M2 conflict candidates are unresolved; dedupe is not the bottleneck."
+    },
+    {
+      "blocker_id": "B005_CODEX_REVIEW_NOT_EXECUTED",
+      "axis": "Codex",
+      "severity": "medium",
+      "count": 1,
+      "reason": "Only Hermes mock baseline exists; actual Codex read-only review not executed."
+    },
+    {
+      "blocker_id": "B006_EXPLICIT_APPROVAL_ABSENT",
+      "axis": "approval",
+      "severity": "blocker",
+      "count": 1,
+      "reason": "No explicit approval id for manifest creation or apply."
+    }
+  ],
+  "manifest_candidate_eligibility": {
+    "default_eligibility": "NONE_BY_DEFAULT",
+    "eligible_now_count": 0,
+    "eligible_now": [],
+    "why_none": [
+      "cleanup_blocker_board=63",
+      "archive_not_allowed_board=61",
+      "M4 do_not_move_count high",
+      "Codex review not executed",
+      "explicit approval absent"
+    ],
+    "possible_future_lane": "After Codex review, only items absent from archive_not_allowed/current-position/registry freeze and with M2 conflict resolved may become manifest candidate inputs.",
+    "apply_status": "NOT_APPLYABLE"
+  },
+  "gap_map": [
+    {
+      "gap_id": "GAP_CLEAN_001_CODEX_LIVE_REVIEW",
+      "owner": "Codex",
+      "status": "open",
+      "needed": "Read-only review over M2/M4/M7/M8 cleanup preconditions."
+    },
+    {
+      "gap_id": "GAP_CLEAN_002_SELECTED_ITEM_SHORTLIST",
+      "owner": "Hermes",
+      "status": "open",
+      "needed": "A tiny candidate shortlist with zero M2 conflict and not in archive_not_allowed board; none selected yet."
+    },
+    {
+      "gap_id": "GAP_CLEAN_003_LINK_INTEGRITY_CHECK",
+      "owner": "Hermes",
+      "status": "open",
+      "needed": "Before any move/archive candidate, scan references/pointers that would break."
+    },
+    {
+      "gap_id": "GAP_CLEAN_004_FILLED_ROLLBACK_MANIFEST",
+      "owner": "Hermes",
+      "status": "open",
+      "needed": "M8 rollback manifest template exists but is not filled for any target."
+    },
+    {
+      "gap_id": "GAP_CLEAN_005_APPROVAL_BOUNDARY",
+      "owner": "User",
+      "status": "open",
+      "needed": "Explicit approval is required separately for manifest candidate creation and apply."
+    }
+  ],
+  "recommended_next_actions": [
+    {
+      "actor": "Hermes",
+      "action": "prepare top-10 cleanup blocker read-only review summary, no move"
+    },
+    {
+      "actor": "Codex",
+      "action": "actual read-only cleanup precondition review, only with explicit approval"
+    },
+    {
+      "actor": "Hermes",
+      "action": "link-integrity precheck design for future manifest candidates"
+    },
+    {
+      "actor": "User",
+      "action": "decide whether to run actual Codex read-only review"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  },
+  "hold": true
+}

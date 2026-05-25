@@ -1,0 +1,57 @@
+{
+  "validation_id": "VALIDATION_M7_HYGIENE_OPERATOR_DASHBOARD_V0",
+  "created_at": "2026-05-25T11:53:12.134946+09:00",
+  "verdict": "PASS_M7_DASHBOARD_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/source_index/00_m7_source_index_v0.json": {
+      "exists": true,
+      "sha256": "f48ab4233d97ba34e758a4c7c92fefac08f51951785535a24878e5fba7ee4a46",
+      "bytes": 1746
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/dashboard/01_m7_hygiene_operator_dashboard_v0.json": {
+      "exists": true,
+      "sha256": "cce5ff3de1914be18fa281fdd238eb5670e8b6672746c58e8d00371b5aabc402",
+      "bytes": 65579
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/boards/02_m7_hygiene_boards_v0.json": {
+      "exists": true,
+      "sha256": "4d3b4a9b2644e56e6a47c13c3c52fe120656b1090b453b89de1dc1700578c1e3",
+      "bytes": 289821
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/operator_load/03_m7_operator_load_estimate_v0.json": {
+      "exists": true,
+      "sha256": "f8a35f72d4bea3a911934db3659de0b3aa20d16e22cc1051eb797b778f769157",
+      "bytes": 1931
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/readiness/04_m7_cleanup_readiness_v0.json": {
+      "exists": true,
+      "sha256": "5a99624eacea12dffcaba1c92b2e515e47e015dbd3953d152064adf7cf2da358",
+      "bytes": 885
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/handoff/05_M7_DASHBOARD_TO_CODEX_M8_HOLD_v0.json": {
+      "exists": true,
+      "sha256": "053e4edebfce02e0a2137ae12daf9c37f25c1698a8a63f08ab6dd6703cf99d36",
+      "bytes": 624
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_m7_hygiene_operator_dashboard_v0/reports/06_m7_dashboard_report_v0.md": {
+      "exists": true,
+      "sha256": "cb1882443ff293c14ee1d5861483133b5c489472cf20090d8d47cf1e463aa94b",
+      "bytes": 231
+    }
+  },
+  "content_checks": {
+    "freeze_items": 63,
+    "board_count": 6,
+    "cleanup_blockers": 63,
+    "archive_not_allowed": 61,
+    "codex_review_needed": 61,
+    "m8_trace_needed": 61,
+    "cleanup_apply_ready": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "archive": false,
+    "promotion_hold": true
+  }
+}

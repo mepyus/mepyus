@@ -1,0 +1,26 @@
+{
+  "readiness_id": "M8_TRACE_READINESS_FOR_CLEANUP_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "verdict": "TRACE_PLAN_CREATED__CLEANUP_STILL_NOT_READY",
+  "completed": [
+    "M2 pointer/conflict candidate map",
+    "M4 freeze review",
+    "M7 hygiene dashboard",
+    "M8 minimum trace schema",
+    "M8 trace seed plan",
+    "M8 rollback/receipt templates"
+  ],
+  "counts": {
+    "m8_trace_needed": 61,
+    "cleanup_blockers": 63,
+    "archive_not_allowed": 61
+  },
+  "still_required": [
+    "Codex read-only review of M2/M4/M7/M8 surfaces",
+    "actual move/archive manifest candidate only after blocker reduction",
+    "explicit user approval before any apply",
+    "post-apply validation only if approved apply occurs"
+  ],
+  "cleanup_apply_ready": false,
+  "decision": "No move/archive. M8 makes future evidence requirements explicit but does not remove M4/M7 blockers."
+}

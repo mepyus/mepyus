@@ -1,0 +1,46 @@
+{
+  "validation_id": "VALIDATION_TOP60_ROLLUP_V0_1",
+  "created_at": "2026-05-25T11:24:02.704323+09:00",
+  "verdict": "PASS_TOP60_ROLLUP_EIGHT_MODULE_SKELETON_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json": {
+      "exists": true,
+      "sha256": "36b5288213fb8fe9db8d45be1e2068ebda331be3312acbed9c83294cef291ab4",
+      "bytes": 30353
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/skeleton/01_vectorfl_eight_module_saas_skeleton_v0_1.json": {
+      "exists": true,
+      "sha256": "0e736c0babeffa9e71f0ef85a3debc18e26f85f0b9822c11ee00d05af1f74cce",
+      "bytes": 3880
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json": {
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc",
+      "bytes": 2175
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/handoff/03_CODEX_GEMINI_HERMES_TOP60_ROLLUP_V0_1_HANDOFF_HOLD.json": {
+      "exists": true,
+      "sha256": "fbc4e7bb9d8983cd126e6de969a17aeabcbb28fb77df62dc0f6a08894c2e75e9",
+      "bytes": 775
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/reports/04_top60_rollup_v0_1_report.md": {
+      "exists": true,
+      "sha256": "16af38aaf2dcacaed43150c9adb50fedc2b50ad283675a7fb7038d99c554d31a",
+      "bytes": 636
+    }
+  },
+  "content_checks": {
+    "total_assets": 60,
+    "modules_defined": 8,
+    "module_count_keys": 7,
+    "has_m1": false,
+    "has_m3": true,
+    "has_cleanup_required_triads": true,
+    "m2_m7_m8_required": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

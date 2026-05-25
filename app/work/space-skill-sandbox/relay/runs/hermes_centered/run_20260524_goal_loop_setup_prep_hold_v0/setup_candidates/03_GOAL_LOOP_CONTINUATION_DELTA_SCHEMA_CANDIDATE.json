@@ -1,0 +1,19 @@
+{
+  "packet_id": "03_GOAL_LOOP_CONTINUATION_DELTA_SCHEMA_CANDIDATE_V0",
+  "promotion_status": "HOLD",
+  "purpose": "Avoid repeated full scans by carrying only the delta between loop iterations.",
+  "required_fields": [
+    "goal_id",
+    "current_iteration",
+    "done_conditions",
+    "remaining_conditions",
+    "new_space_delta",
+    "stale_space_handles",
+    "next_safe_step",
+    "read_first_next",
+    "blocked_on",
+    "codex_reentry_available",
+    "promotion_status"
+  ],
+  "status": "HOLD_SCHEMA_CANDIDATE"
+}

@@ -1,0 +1,39 @@
+{
+  "packet_id": "CODEX_READ_ONLY_CLEANUP_PRECONDITION_REVIEW_PACKET_V0",
+  "created_at": "2026-05-25T12:14:02.337636+09:00",
+  "status": "READY_HOLD_NOT_EXECUTED",
+  "codex_role": "READ_ONLY_SPACE_STEWARD_REVIEW",
+  "task": "Review M2/M4/M7/M8 preconditions and return placement/conflict/gap corrections only. Identify whether any limited manifest candidate lane is safe to draft. Do not move/archive/mutate/promote.",
+  "read_first": [
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M2_POINTER_DEDUPE_CONFLICT_MAP_V0_20260525.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M4_AUTHORITY_SENSITIVE_FREEZE_REVIEW_V0_20260525.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M7_HYGIENE_OPERATOR_DASHBOARD_V0_20260525.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_M8_ROLLBACK_VALIDATION_TRACE_PLAN_V0_20260525.json",
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/VECTORFL_PROMOTION_RUBRIC_V0_20260525.json"
+  ],
+  "required_output": {
+    "cleanup_precondition_assessment": "PASS/HOLD with reasons",
+    "blocker_map": "list blockers by axis",
+    "manifest_candidate_eligibility": "none or scoped candidates with why",
+    "gap_map": "missing evidence/schema/review",
+    "mutation_statement": {
+      "file_move": false,
+      "archive": false,
+      "authority_mutation": false,
+      "registry_mutation": false,
+      "current_position_mutation": false,
+      "promotion": false
+    }
+  },
+  "forbidden": [
+    "file edit",
+    "folder move",
+    "archive",
+    "authority mutation",
+    "registry mutation",
+    "current-position mutation",
+    "promotion",
+    "network/API",
+    "secret preservation"
+  ]
+}

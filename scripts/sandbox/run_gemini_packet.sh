@@ -5,23 +5,35 @@ usage() {
   cat <<'USAGE'
 Usage:
   bash scripts/sandbox/run_gemini_packet.sh --preflight
-  bash scripts/sandbox/run_gemini_packet.sh [--dry-run] [--smoke-text] [--model MODEL] [--output-format json|text|stream-json] [--timeout-seconds N] [PACKET_PATH] RUN_ID
+  bash scripts/sandbox/run_gemini_packet.sh [--dry-run] [--smoke-text] [--resume SESSION|--resume-latest] [--model MODEL] [--output-format json|text|stream-json] [--timeout-seconds N] [PACKET_PATH] RUN_ID
+  bash scripts/sandbox/run_gemini_packet.sh --standby [--resume SESSION|--resume-latest] [--model MODEL] [PACKET_PATH] RUN_ID
 
 Examples:
   bash scripts/sandbox/run_gemini_packet.sh --preflight
   bash scripts/sandbox/run_gemini_packet.sh --smoke-text --timeout-seconds 60 smoke_text
+  bash scripts/sandbox/run_gemini_packet.sh --resume-latest --timeout-seconds 120 smoke_text
+  bash scripts/sandbox/run_gemini_packet.sh --resume-latest app/work/space-skill-sandbox/outputs/next_gemini_task_packet_run_032_tool_affordance_v0.md run_032
+  bash scripts/sandbox/run_gemini_packet.sh --standby app/work/space-skill-sandbox/outputs/next_gemini_task_packet_run_032_tool_affordance_v0.md run_032
   bash scripts/sandbox/run_gemini_packet.sh --dry-run app/work/space-skill-sandbox/outputs/next_gemini_task_packet_run_032_tool_affordance_v0.md run_032
   bash scripts/sandbox/run_gemini_packet.sh app/work/space-skill-sandbox/outputs/next_gemini_task_packet_run_032_tool_affordance_v0.md run_032
 
 This script is manually triggered. It does not watch files, install tools,
 apply Gemini output, modify source-space, or declare promotion.
+
+Notes:
+  --resume-latest reuses Gemini CLI's most recent saved session while still
+  running as a bounded headless invocation.
+  --standby uses gemini --prompt-interactive so Gemini executes the packet and
+  then stays open in the terminal. Use it only from an interactive TTY.
 USAGE
 }
 
 DRY_RUN=0
 PREFLIGHT=0
 SMOKE_TEXT=0
+STANDBY=0
 MODEL=""
+RESUME_SESSION=""
 OUTPUT_FORMAT="json"
 TIMEOUT_SECONDS=120
 OUT_DIR="app/work/space-skill-sandbox/relay/outbox"
@@ -70,6 +82,7 @@ write_preflight() {
   echo "- GOOGLE_GENAI_USE_VERTEXAI: $(env_present GOOGLE_GENAI_USE_VERTEXAI)"
   echo "- CI: $(env_present CI)"
   echo "- GITHUB_ACTIONS: $(env_present GITHUB_ACTIONS)"
+  echo "- existing_gemini_processes: $(pgrep -fl 'node .*gemini|/usr/local/bin/gemini|gemini$' 2>/dev/null | wc -l | tr -d ' ')"
   echo
   echo "Credential values are intentionally not printed."
 }
@@ -117,6 +130,24 @@ while [[ $# -gt 0 ]]; do
       ;;
     --smoke-text)
       SMOKE_TEXT=1
+      shift
+      ;;
+    --standby)
+      STANDBY=1
+      OUTPUT_FORMAT="text"
+      shift
+      ;;
+    --resume)
+      if [[ $# -lt 2 ]]; then
+        echo "Missing value for --resume" >&2
+        usage >&2
+        exit 2
+      fi
+      RESUME_SESSION="$2"
+      shift 2
+      ;;
+    --resume-latest)
+      RESUME_SESSION="latest"
       shift
       ;;
     --model)
@@ -190,6 +221,11 @@ else
   RUN_ID="$2"
 fi
 
+if [[ "$STANDBY" -eq 1 && "$OUTPUT_FORMAT" != "text" ]]; then
+  echo "--standby only supports text output because the Gemini CLI remains interactive." >&2
+  exit 2
+fi
+
 case "$OUTPUT_FORMAT" in
   json|text|stream-json) ;;
   *)
@@ -236,6 +272,8 @@ fi
   echo "- timestamp: $TIMESTAMP"
   echo "- dry_run: $([[ "$DRY_RUN" -eq 1 ]] && echo true || echo false)"
   echo "- smoke_text: $([[ "$SMOKE_TEXT" -eq 1 ]] && echo true || echo false)"
+  echo "- standby: $([[ "$STANDBY" -eq 1 ]] && echo true || echo false)"
+  echo "- resume_session: ${RESUME_SESSION:-none}"
   echo "- requested_model: ${MODEL:-default}"
   echo "- output_format: $OUTPUT_FORMAT"
   echo "- timeout_seconds: $TIMEOUT_SECONDS"
@@ -253,6 +291,8 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     echo "  \"packet\": \"${PACKET_PATH:-smoke-text}\","
     echo "  \"run_id\": \"${RUN_ID}\","
     echo "  \"timestamp\": \"${TIMESTAMP}\","
+    echo "  \"standby\": $([[ "$STANDBY" -eq 1 ]] && echo true || echo false),"
+    echo "  \"resume_session\": \"${RESUME_SESSION:-none}\","
     echo "  \"note\": \"Gemini CLI was not invoked.\""
     echo "}"
   } > "$RAW_FILE"
@@ -281,11 +321,18 @@ else
     PROMPT="$(cat "$PACKET_PATH")"
   fi
   PROMPT_BYTES="$(printf '%s' "$PROMPT" | wc -c | tr -d ' ')"
-  GEMINI_CMD=(gemini -p "$PROMPT")
+  if [[ "$STANDBY" -eq 1 ]]; then
+    GEMINI_CMD=(gemini -i "$PROMPT")
+  else
+    GEMINI_CMD=(gemini -p "$PROMPT")
+  fi
+  if [[ -n "$RESUME_SESSION" ]]; then
+    GEMINI_CMD+=(--resume "$RESUME_SESSION")
+  fi
   if [[ -n "$MODEL" ]]; then
     GEMINI_CMD+=(--model "$MODEL")
   fi
-  if [[ "$OUTPUT_FORMAT" == "json" || "$OUTPUT_FORMAT" == "stream-json" ]]; then
+  if [[ "$STANDBY" -ne 1 && ( "$OUTPUT_FORMAT" == "json" || "$OUTPUT_FORMAT" == "stream-json" ) ]]; then
     GEMINI_CMD+=(--output-format "$OUTPUT_FORMAT")
   fi
 
@@ -305,6 +352,8 @@ else
         echo
         echo "- timeout_seconds: ${TIMEOUT_SECONDS}"
         echo "- command_attempted: gemini -p \"<prompt redacted>\"$([[ -n "$MODEL" ]] && echo " --model $MODEL")$([[ "$OUTPUT_FORMAT" != "text" ]] && echo " --output-format $OUTPUT_FORMAT")"
+        echo "- standby: $([[ "$STANDBY" -eq 1 ]] && echo true || echo false)"
+        echo "- resume_session: ${RESUME_SESSION:-none}"
         echo "- requested_model: ${MODEL:-default}"
         echo "- gemini_path: ${GEMINI_BIN:-missing}"
         echo "- gemini_version: ${GEMINI_VERSION}"
@@ -353,13 +402,15 @@ else
     echo "- gemini_exit_code: $GEMINI_EXIT"
     echo "- likely_state: $(detect_likely_state "$RAW_FILE" "$ERR_FILE")"
     echo "- requested_model: ${MODEL:-default}"
+    echo "- standby: $([[ "$STANDBY" -eq 1 ]] && echo true || echo false)"
+    echo "- resume_session: ${RESUME_SESSION:-none}"
     echo "- gemini_path: ${GEMINI_BIN:-missing}"
     echo "- gemini_version: ${GEMINI_VERSION}"
     echo "- duration_seconds: ${DURATION_SECONDS}"
     echo "- prompt_bytes: ${PROMPT_BYTES}"
     echo "- raw_bytes: ${RAW_BYTES}"
     echo "- stderr_bytes: ${STDERR_BYTES}"
-    echo "- command_summary: gemini -p \"<prompt redacted>\"$([[ -n "$MODEL" ]] && echo " --model $MODEL")$([[ "$OUTPUT_FORMAT" != "text" ]] && echo " --output-format $OUTPUT_FORMAT")"
+    echo "- command_summary: gemini $([[ "$STANDBY" -eq 1 ]] && echo "-i" || echo "-p") \"<prompt redacted>\"$([[ -n "$RESUME_SESSION" ]] && echo " --resume $RESUME_SESSION")$([[ -n "$MODEL" ]] && echo " --model $MODEL")$([[ "$STANDBY" -ne 1 && "$OUTPUT_FORMAT" != "text" ]] && echo " --output-format $OUTPUT_FORMAT")"
     if [[ -s "$ERR_FILE" ]]; then
       echo "- stderr_nonempty: true"
     else

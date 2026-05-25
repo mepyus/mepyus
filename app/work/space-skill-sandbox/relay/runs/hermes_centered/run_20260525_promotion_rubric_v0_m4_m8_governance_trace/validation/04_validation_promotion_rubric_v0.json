@@ -1,0 +1,43 @@
+{
+  "validation_id": "VALIDATION_PROMOTION_RUBRIC_V0",
+  "created_at": "2026-05-25T11:29:32.609594+09:00",
+  "verdict": "PASS_PROMOTION_RUBRIC_V0_WITH_HOLD",
+  "checks": {
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/rubric/00_vectorfl_promotion_rubric_v0.json": {
+      "exists": true,
+      "sha256": "67ba50cb16c8dbb146e78150065a35110524ac1c4029bf62c8696d71b3a8b1de",
+      "bytes": 8848
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/matrix/01_vectorfl_promotion_gate_matrix_v0.json": {
+      "exists": true,
+      "sha256": "ed96fb2e245f248840d54a2327f17cb457582157a7f28e2add2ae2f9cbdabd75",
+      "bytes": 3030
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/handoff/02_CODEX_READ_ONLY_PROMOTION_RUBRIC_V0_REVIEW_PACKET.json": {
+      "exists": true,
+      "sha256": "ff2bc9f4bcee59ec47e6628aa6abd881dbfd757bb71f2cb076a0bdfb83caaf62",
+      "bytes": 919
+    },
+    "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_promotion_rubric_v0_m4_m8_governance_trace/reports/03_promotion_rubric_v0_report.md": {
+      "exists": true,
+      "sha256": "6278c06bee810ebf8964008beb7c1a318b89ef879b9b09984e5a0e07cae3434e",
+      "bytes": 398
+    }
+  },
+  "content_checks": {
+    "statuses_defined": 4,
+    "has_inbox": true,
+    "has_candidate": true,
+    "has_matured": true,
+    "has_authority": true,
+    "gate_count": 8,
+    "has_m4_gate": true,
+    "has_m8_gate": true,
+    "has_cleanup_sequence": true,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "file_move": false,
+    "promotion_hold": true
+  }
+}

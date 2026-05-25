@@ -1,0 +1,71 @@
+{
+  "rollup_id": "CLEANUP_PRECONDITION_ROLLUP_V0",
+  "created_at": "2026-05-25T12:14:02.337636+09:00",
+  "verdict": "CLEANUP_PRECONDITIONS_V0_EXIST__APPLY_NOT_READY_WITH_HOLD",
+  "purpose": "Unify M2/M4/M7/M8 cleanup precondition surfaces into one current-position style rollup without applying cleanup.",
+  "precondition_axes": [
+    {
+      "axis": "M2_POINTER_CONFLICT",
+      "status": "V0_CREATED",
+      "key_evidence": {
+        "pointer_count": 70,
+        "conflict_candidates": 49,
+        "exact_duplicate_groups": 0,
+        "fuzzy_duplicate_groups": 0
+      },
+      "judgment": "Problem is conflict/freeze, not duplicate cleanup."
+    },
+    {
+      "axis": "M4_AUTHORITY_FREEZE",
+      "status": "V0_CREATED",
+      "key_evidence": {
+        "freeze_item_count": 63,
+        "confusion_count": 61,
+        "do_not_move_count": 61
+      },
+      "judgment": "Authority/current-position/registry-sensitive items dominate; freeze before cleanup."
+    },
+    {
+      "axis": "M7_OPERATOR_DASHBOARD",
+      "status": "V0_CREATED",
+      "key_evidence": {
+        "cleanup_blockers": 63,
+        "archive_not_allowed": 61,
+        "codex_review_needed": 61,
+        "m8_trace_needed": 61
+      },
+      "judgment": "Operator dashboard shows cleanup blockers remain non-empty."
+    },
+    {
+      "axis": "M8_TRACE_ROLLBACK",
+      "status": "V0_CREATED",
+      "key_evidence": {
+        "trace_seed_count": 61,
+        "minimum_schema_created": true,
+        "rollback_template_created": true,
+        "receipt_template_created": true
+      },
+      "judgment": "Future proof requirements exist, but they do not authorize cleanup."
+    }
+  ],
+  "current_cleanup_verdict": "NOT_READY_FOR_MOVE_OR_ARCHIVE",
+  "why_not_ready": [
+    "M7 cleanup_blocker_board non-empty",
+    "M7 archive_not_allowed_board non-empty",
+    "M4 do_not_move_count high",
+    "M2 conflict candidates unresolved",
+    "Codex read-only review not executed",
+    "no limited manifest candidate approved",
+    "no explicit user apply approval"
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "codex_live_call": false
+  },
+  "hold": true
+}

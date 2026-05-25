@@ -1,0 +1,64 @@
+{
+  "cleanup_preconditions_id": "VECTORFL_FOLDER_CLEANUP_PRECONDITIONS_V0_1",
+  "created_at": "2026-05-25T11:24:02.704323+09:00",
+  "status": "NO_MOVE__PRECONDITION_ONLY",
+  "required_triads": {
+    "M2_pointer_index_relation_graph": {
+      "module": "SAAS_M2_ASSET_GRAPH_ROUTER",
+      "why_required": "무엇을 어디로 옮길지/묶을지/충돌하는지 알기 전에는 폴더 이동 금지",
+      "required_outputs": [
+        "pointer index",
+        "relation graph",
+        "dedupe map",
+        "conflict map"
+      ]
+    },
+    "M7_hygiene_operator_dashboard": {
+      "module": "SAAS_M7_ASSET_HYGIENE_OPERATOR_DASHBOARD",
+      "why_required": "archive/decay/freeze/operator load를 사람이 조작 가능한 상태로 분리해야 함",
+      "required_outputs": [
+        "freeze list",
+        "archive candidates",
+        "decay policy",
+        "rollback manifest",
+        "operator board"
+      ]
+    },
+    "M8_trace_observability": {
+      "module": "SAAS_M8_EVALUATION_TRACE_OBSERVABILITY",
+      "why_required": "정리/숙성/승격이 안전했는지 증명할 receipt와 validation trace가 필요함",
+      "required_outputs": [
+        "validation trace",
+        "receipt ledger",
+        "quality checks",
+        "negative/drift checks"
+      ]
+    },
+    "M4_authority_freeze_boundary": {
+      "module": "SAAS_M4_MATURATION_GOVERNANCE",
+      "why_required": "authority/current-position/registry 민감 자산은 명시 승인 전 이동/승격 금지",
+      "required_outputs": [
+        "authority-sensitive freeze list",
+        "promotion rubric",
+        "approval gate"
+      ]
+    }
+  },
+  "minimum_safe_sequence": [
+    "M2 pointer index 생성",
+    "M2 relation/dedupe/conflict map 생성",
+    "M4 authority-sensitive freeze list 적용",
+    "M7 archive/decay/operator dashboard 생성",
+    "M8 validation/receipt/rollback trace 준비",
+    "move/archive manifest 작성",
+    "explicit approval",
+    "one-shot apply",
+    "post-apply validation"
+  ],
+  "blocked_until": [
+    "Codex read-only placement/conflict/gap review",
+    "freeze list 확인",
+    "rollback manifest 확인",
+    "explicit user approval"
+  ]
+}

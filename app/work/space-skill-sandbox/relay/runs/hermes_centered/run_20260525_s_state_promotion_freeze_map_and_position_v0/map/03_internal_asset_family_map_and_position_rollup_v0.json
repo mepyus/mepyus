@@ -1,0 +1,135 @@
+{
+  "position_id": "INTERNAL_ASSET_FAMILY_MAP_AND_POSITION_ROLLUP_V0",
+  "created_at": "2026-05-25T20:20:00.938287+09:00",
+  "status": "POSITION_ROLLUP_NOT_AUTHORITY",
+  "current_position": "S_STATE_PROMOTION_ASSET_READ_ONLY_FREEZE_MAP_SAFE_STOP",
+  "nodes": [
+    {
+      "id": "T_L_SCHEMA",
+      "label": "T/L asset + LACL schema",
+      "status": "DONE_B_LANE",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/VECTORFL_ASSET_TYPE_AND_LACL_SCHEMA_FROM_BATCHES_V0.json"
+      ]
+    },
+    {
+      "id": "P_PACKET",
+      "label": "P_PACKET_HANDOFF_ASSET",
+      "status": "CLOSED_FOR_NOW",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/p_packet_family_closeout_and_next_family_selector_v0.json"
+      ]
+    },
+    {
+      "id": "U_RUN_BUNDLE",
+      "label": "U_RUN_BUNDLE_ASSET",
+      "status": "CLOSED_FOR_NOW",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/u_run_bundle_closeout_and_next_family_selector_v0.json"
+      ]
+    },
+    {
+      "id": "G_GATE_GUARD",
+      "label": "G_GATE_GUARD_ASSET",
+      "status": "SAFE_STOP_RULE_CANDIDATE",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/G_GATE_GUARD_RULE_CANDIDATE_V0.json"
+      ]
+    },
+    {
+      "id": "S_STATE_PROMOTION",
+      "label": "S_STATE_PROMOTION_ASSET",
+      "status": "READ_ONLY_FREEZE_MAP_SAFE_STOP",
+      "paths": [
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/02_pointer_views/s_state_promotion_asset_readonly_freeze_map_v0.json",
+        "/Users/sungsookim/universe/vectorfl_replica/app/work/vectorfl_structuring_workspace/20260525_big_frame_readonly_staging_v0/01_principles/S_STATE_PROMOTION_BOUNDARY_OPERATOR_CARD_V0.json"
+      ]
+    },
+    {
+      "id": "DEFER_B_BRIDGE",
+      "label": "B_BRIDGE_ADAPTER_ASSET",
+      "status": "DEFER_LIVE_EXTERNAL_BOUNDARY",
+      "paths": []
+    },
+    {
+      "id": "DEFER_X_Q_O",
+      "label": "X/Q/O and remaining families",
+      "status": "PENDING_POINTER_ONLY_FUTURE",
+      "paths": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "T_L_SCHEMA",
+      "to": "P_PACKET",
+      "reason": "internal taxonomy broadened beyond T/L"
+    },
+    {
+      "from": "P_PACKET",
+      "to": "U_RUN_BUNDLE",
+      "reason": "packet closeout selected run/bundle safer next"
+    },
+    {
+      "from": "U_RUN_BUNDLE",
+      "to": "G_GATE_GUARD",
+      "reason": "run bundle closeout selected guard safety reinforcement"
+    },
+    {
+      "from": "G_GATE_GUARD",
+      "to": "S_STATE_PROMOTION",
+      "reason": "guard rules provide safety for authority-sensitive state map"
+    },
+    {
+      "from": "S_STATE_PROMOTION",
+      "to": "STOP",
+      "reason": "authority/promotion boundary reached"
+    },
+    {
+      "from": "S_STATE_PROMOTION",
+      "to": "DEFER_B_BRIDGE",
+      "reason": "bridge/API family deferred due live external boundary"
+    }
+  ],
+  "completed_families": [
+    "P_PACKET_HANDOFF_ASSET",
+    "U_RUN_BUNDLE_ASSET"
+  ],
+  "safe_stop_families": [
+    "G_GATE_GUARD_ASSET",
+    "S_STATE_PROMOTION_ASSET"
+  ],
+  "deferred_boundaries": {
+    "B_BRIDGE_ADAPTER_ASSET": "live external tool/API boundary",
+    "S deeper promotion/policy": "authority registry/current-position mutation boundary",
+    "cleanup apply": "delete/archive/move/apply boundary"
+  },
+  "next_options": [
+    {
+      "option": "STOP_AND_REVIEW",
+      "recommended": true,
+      "why": "state family hit authority-sensitive boundary; user asked to mark end boundary well"
+    },
+    {
+      "option": "B_BRIDGE_ADAPTER_READONLY_BOUNDARY_MAP",
+      "recommended": false,
+      "why": "possible but live/API boundary 가까움; 다음 세션/명시 scope 권장"
+    },
+    {
+      "option": "X_POINTER_GRAPH_ASSET_POINTER_ONLY_MAP",
+      "recommended": true,
+      "why": "if continuing later, pointer graph is safer than bridge/live boundary"
+    }
+  ],
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

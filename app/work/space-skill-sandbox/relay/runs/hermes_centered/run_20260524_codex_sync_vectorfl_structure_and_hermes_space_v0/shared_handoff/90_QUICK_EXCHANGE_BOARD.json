@@ -1,0 +1,40 @@
+{
+  "blocked_or_waiting_on": "Waiting for user-run Codex review if desired. Hermes did not run provider-backed Codex/Gemini.",
+  "board_version": "v1_pointer_rebuilt",
+  "boundary": {
+    "authority_mutation": "NO",
+    "codex_executed_by_hermes": "NO",
+    "current_position_apply": "NO",
+    "folder_tree_mutation": "NO",
+    "gemini_executed_by_hermes": "NO",
+    "promotion": "HOLD",
+    "registry_mutation": "NO",
+    "source_code_mutation": "NO"
+  },
+  "codex_latest": {
+    "sha256": "96a5daea6e2da36c4139fc3d595355f8728ce59fece4c584e11f34108d36aad4",
+    "state": "WAITING_FOR_CODEX_STRUCTURE_SYNC_REVIEW_PLACEHOLDER",
+    "summary_card": "codex_space/90_CODEX_LATEST_SUMMARY_CARD.json"
+  },
+  "hermes_latest": {
+    "sha256": "95a56dbff4371a37c155d79f89996fc5256568078d2cd40c29f813ee853b087f",
+    "state": "VECTORFL_STRUCTURE_AND_HERMES_SPACE_SYNC_PACKET_READY_FOR_CODEX",
+    "summary_card": "hermes_exec/90_HERMES_LATEST_SUMMARY_CARD.json"
+  },
+  "last_updated_by": "HERMES",
+  "latest_pointers": "shared_handoff/99_LATEST_POINTERS.json",
+  "latest_pointers_sha256": "c44e8824ef4bddab6aac36ece487834a0aefbd126f8a06ec829efdbd8cc437fb",
+  "next_safe_lane": "CODEX_READ_SYNC_PACKET_AND_RETURN_HOLD_STRUCTURE_MATURATION_REVIEW_V0",
+  "open_questions": [
+    "Does Codex accept the current structure stack as sufficient for space operation?",
+    "Which Hermes-created artifacts should become HOLD-only maturation proposals?",
+    "Should AI Frontier EP93~EP97 become a proposed series index or stay external evidence?",
+    "Should infra-cost/context-economics lens be linked into budget gate fields?",
+    "Are any summary/reentry handles missing for Codex maturation?"
+  ],
+  "packet_id": "90_QUICK_EXCHANGE_BOARD_VECTORFL_STRUCTURE_SYNC_V0",
+  "purpose": "Codex sync board for current VectorFL structure and Hermes-created space artifacts.",
+  "run_id": "run_20260524_codex_sync_vectorfl_structure_and_hermes_space_v0",
+  "sync_packet": "shared_handoff/01_CODEX_SYNC_VECTORFL_STRUCTURE_AND_HERMES_SPACE_PACKET.json",
+  "sync_packet_sha256": "b02041c6f3e14d6ae41b73aa0c2413455c47a7dacfe24c300c692c10a8919434"
+}

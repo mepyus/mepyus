@@ -1,0 +1,126 @@
+{
+  "packet_id": "08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0",
+  "status": "HOLD_MAP_NOT_AUTHORITY",
+  "source_index": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+  "maps": [
+    {
+      "map_id": "M01_FOUNDATION_UNKNOWN_STATUS",
+      "type": "AUTHORITY_VS_PROPOSAL_STATUS_MAP",
+      "applies_to_seq": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "proposed_status": "HISTORICAL_EVIDENCE_NEEDS_STATUS_NORMALIZATION",
+      "reason": "Gemini and Codex both flagged foundation UNKNOWN roots as risky if read without status normalization."
+    },
+    {
+      "map_id": "M02_APPROVED_CURRENT_POSITION_HISTORY",
+      "type": "AUTHORITY_BOUNDARY_NOTE",
+      "applies_to_seq": [
+        4
+      ],
+      "proposed_status": "APPLIED_CURRENT_POSITION_HISTORY_KEEP_BOUNDARY_NOTE",
+      "reason": "Root 004 appears applied historically but this lane does not authorize any new current-position apply."
+    },
+    {
+      "map_id": "M03_OLDER_CODEX_GEMINI_HANDOFF",
+      "type": "STALE_SUPERSEDED_HANDLE_MAP",
+      "applies_to_seq": [
+        41,
+        42,
+        43
+      ],
+      "proposed_status": "SUPERSEDED_BY_HERMES_CENTERED_NO_DIRECT_API_POLICY",
+      "reason": "Older handoff language remains history but should not override Hermes-centered execution/Codex-space-operator policy."
+    },
+    {
+      "map_id": "M04_Z_OTHER_PROTOTYPE_LAYER",
+      "type": "LAYER_RECLASSIFICATION_HOLD",
+      "applies_to_seq": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        43
+      ],
+      "proposed_status": "RECLASSIFY_AS_PROTOTYPE_BEHAVIOR_LOOP_HOLD",
+      "reason": "Gemini proposed promotion; Codex refines this to HOLD reclassification, not authority promotion."
+    },
+    {
+      "map_id": "M05_PHASE2_DUPLICATE_PRESSURE",
+      "type": "DUPLICATE_PRESSURE",
+      "applies_to_seq": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "proposed_status": "ROLL_UP_BY_PHASE2_FUNCTION_POSITION_INDEX_HOLD",
+      "reason": "Phase2 S1-S7 and support reports are useful but repetitive; rollup prevents evidence loss and report bloat."
+    },
+    {
+      "map_id": "M06_PROVIDER_CALL_RECURRENCE_RISK",
+      "type": "AXIS_CONSTRAINT",
+      "applies_to_seq": [
+        33,
+        41,
+        42,
+        43,
+        48
+      ],
+      "proposed_status": "KEEP_PROVIDER_BACKED_CALLS_L4_USER_ATTENTION",
+      "reason": "Provider-backed Codex/Gemini calls must not become default loop execution."
+    },
+    {
+      "map_id": "M07_EXTERNAL_LENS_NOT_AUTHORITY",
+      "type": "BOUNDARY_RISK",
+      "applies_to_seq": [
+        20,
+        49,
+        50,
+        51,
+        56
+      ],
+      "proposed_status": "KEEP_AS_EXTERNAL_LENS_STACK_HOLD",
+      "reason": "AI Frontier and infra-cost lenses strengthen P06/P07 but are not core authority."
+    },
+    {
+      "map_id": "M08_QUICK_BOARD_VERSION_PRESSURE",
+      "type": "DUPLICATE_PRESSURE",
+      "applies_to_seq": [],
+      "proposed_status": "USE_IMMUTABLE_VERSIONED_BOARDS_WITH_LATEST_POINTERS",
+      "reason": "Multiple quick boards are useful cross-inspection surfaces but can be confused with authority if not versioned."
+    }
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "promotion_status": "HOLD"
+}

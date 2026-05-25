@@ -1,0 +1,14 @@
+{
+  "handoff_id": "M8_TRACE_PLAN_TO_CODEX_REVIEW_HOLD_V0",
+  "created_at": "2026-05-25T12:03:38.424110+09:00",
+  "status": "READ_ONLY_HOLD",
+  "codex_task": "Review whether M8 minimum trace fields are sufficient for future cleanup/promotion boundaries. Return gap map only. Do not apply/move/archive/promote.",
+  "read_first": [
+    "schema/01_m8_minimum_trace_fields_v0.json",
+    "trace_plan/02_m8_rollback_validation_trace_plan_v0.json",
+    "rollback/03_m8_rollback_manifest_template_v0.json",
+    "receipts/04_m8_validation_receipt_template_v0.json",
+    "readiness/05_m8_trace_cleanup_readiness_v0.json"
+  ],
+  "hold": true
+}

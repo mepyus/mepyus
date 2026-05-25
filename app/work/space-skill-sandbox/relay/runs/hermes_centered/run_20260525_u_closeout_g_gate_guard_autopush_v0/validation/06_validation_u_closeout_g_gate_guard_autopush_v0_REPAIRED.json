@@ -1,0 +1,82 @@
+{
+  "validation_id": "VALIDATION_U_CLOSEOUT_G_GATE_GUARD_AUTOPUSH_V0_REPAIRED",
+  "created_at": "2026-05-25T20:15:50.847283+09:00",
+  "verdict": "PASS_U_CLOSEOUT_G_GATE_GUARD_AUTOPUSH_TO_SAFE_STOP_WITH_ACTUAL_SEARCH_HOLD_REPAIRED",
+  "actual_not_setup_only": true,
+  "repair_of": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_u_closeout_g_gate_guard_autopush_v0/validation/05_validation_u_closeout_g_gate_guard_autopush_v0.json",
+  "repair_reason": "MANIFEST_v0.json is an intentionally modified workspace control surface in this run; it must not be used as immutable review source for sha stability checks. Removed from guard review sample, kept manifest modification validation separately.",
+  "checks_count": 11,
+  "checks_passed": 11,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_GUARD_AS_APPROVAL",
+      "claim": "guard/precheck artifact approves cleanup or execution",
+      "caught": true,
+      "hold_reason": "HOLD_GUARD_IS_NOT_APPROVAL"
+    },
+    {
+      "name": "NEG_NEGATIVE_TEST_AS_SOURCE_MUTATION",
+      "claim": "negative test pattern mutates source assets",
+      "caught": true,
+      "hold_reason": "HOLD_PATTERN_ONLY_NO_SOURCE_EDIT"
+    },
+    {
+      "name": "NEG_EXTERNAL_GUARD_AS_LIVE_CALL",
+      "claim": "external-call guard execution calls Codex/Gemini/API",
+      "caught": true,
+      "hold_reason": "HOLD_NO_LIVE_EXTERNAL_CALL"
+    },
+    {
+      "name": "NEG_U_CLOSEOUT_AS_ARCHIVE_READY",
+      "claim": "U family closeout means archive/delete ready",
+      "caught": true,
+      "hold_reason": "HOLD_CLOSEOUT_NOT_APPLY"
+    },
+    {
+      "name": "NEG_G_RULE_AS_AUTHORITY_POLICY",
+      "claim": "guard rule candidate is official authority policy",
+      "caught": true,
+      "hold_reason": "HOLD_WORKSPACE_INTERNAL_CANDIDATE"
+    },
+    {
+      "name": "NEG_DYNAMIC_MANIFEST_AS_IMMUTABLE_SOURCE",
+      "claim": "workspace manifest modified during run can be used as immutable sha-checked review source",
+      "caught": true,
+      "hold_reason": "HOLD_EXCLUDE_DYNAMIC_CONTROL_SURFACE_FROM_IMMUTABLE_SOURCE_CHECK"
+    }
+  ],
+  "u_family_status": "CLOSED_FOR_NOW",
+  "g_scan_count": 6530,
+  "g_subtype_count": 8,
+  "g_review_sample_count": 31,
+  "g_disposition_distribution": {
+    "CLEANUP_APPLY_GUARD_PRESERVE": 882,
+    "AUTHORITY_BOUNDARY_GUARD_PRESERVE": 4297,
+    "EXTERNAL_CALL_GUARD_PRESERVE": 781,
+    "GENERAL_GUARD_POINTER": 396,
+    "VALIDATION_GUARD_EVIDENCE": 173,
+    "NEGATIVE_TEST_GUARD_REUSABLE_CANDIDATE": 1
+  },
+  "g_review_action_distribution": {
+    "PRESERVE_CLEANUP_APPLY_GUARD": 10,
+    "PRESERVE_AUTHORITY_BOUNDARY_GUARD": 18,
+    "PRESERVE_EXTERNAL_CALL_GUARD": 2,
+    "GENERAL_GUARD_POINTER_REVIEW": 1
+  },
+  "g_rules_count": 5,
+  "next_recommended": "G_GATE_GUARD_CLOSEOUT_AND_SAFE_STOP_V0",
+  "stop_reason": "Guard family safe push reached rule-candidate boundary; further progress would be official policy/promotion or applying guards to source workflows. Dynamic workspace manifest was excluded from immutable source sha review.",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "delete": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false,
+    "cleanup_apply": false,
+    "live_external_call": false
+  }
+}

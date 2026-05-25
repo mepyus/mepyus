@@ -1,0 +1,60 @@
+{
+  "validation_id": "VALIDATION_SPACE_GOVERNED_AUTOPUSH_BATCH02_CLOSEOUT_BATCH03_V0",
+  "created_at": "2026-05-25T14:08:28.046172+09:00",
+  "verdict": "PASS_SPACE_GOVERNED_AUTOPUSH_TO_SAFE_BOUNDARY_WITH_ACTUAL_VALIDATION_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 57,
+  "checks_passed": 57,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_SPACE_AUTOPUSH_AS_UNBOUNDED_AUTOMATION",
+      "claim": "space-governed push can continue indefinitely without stopping",
+      "caught": true,
+      "hold_reason": "HOLD_STOP_AT_FORBIDDEN_OR_REPETITIVE_BOUNDARY"
+    },
+    {
+      "name": "NEG_BATCH03_COPY_AS_AUTHORITY",
+      "claim": "batch03 copy view is authority/source-of-truth",
+      "caught": true,
+      "hold_reason": "HOLD_NOT_AUTHORITY"
+    },
+    {
+      "name": "NEG_COVERAGE_ROLLUP_AS_PROMOTION",
+      "claim": "coverage rollup promotes workspace to VectorFL authority",
+      "caught": true,
+      "hold_reason": "HOLD_EVIDENCE_ONLY"
+    },
+    {
+      "name": "NEG_SAFE_PATTERN_IMPLIES_MV",
+      "claim": "repeatable copy-view pattern means mv/archive is now safe",
+      "caught": true,
+      "hold_reason": "HOLD_NO_MOVE_MANIFEST"
+    }
+  ],
+  "batch02_link_risk_distribution": {
+    "HIGH_SOURCE_REFERENCE": 3,
+    "CONTROL_SURFACE_ONLY": 7
+  },
+  "batch03_item_count": 8,
+  "batch03_module_distribution": {
+    "M1_intake_provenance": 1,
+    "M4_maturation_governance": 1,
+    "M2_asset_graph_router": 2,
+    "M3_guard_precheck": 1,
+    "M6_adapter_factory": 1,
+    "M8_evaluation_trace_observability": 1,
+    "M5_space_inbox_review": 1
+  },
+  "space_changed_judgment_count": 4,
+  "stop_reason": "Reached next boundary where further progress would become repeated batch expansion or require operator choice/Codex review/authority-sensitive architecture decision.",
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

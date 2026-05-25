@@ -1,0 +1,26 @@
+{
+  "packet_id": "02_SPACE_USE_PRECHECK_LAYER_CANDIDATE_V0",
+  "precheck_steps": [
+    "classify request complexity",
+    "select space_reference_mode: none/quick_board/lite_lens/full_history/codex_request",
+    "read minimal selected handles",
+    "state changed_judgment or no_changed_judgment",
+    "create worklist only after space orientation",
+    "write compact receipt/reentry when non-trivial"
+  ],
+  "promotion_status": "HOLD",
+  "purpose": "Make current/future Hermes discussion and execution actually use space before planning or answering.",
+  "required_fields": [
+    "request_type",
+    "space_reference_mode",
+    "read_handles",
+    "why_these_handles",
+    "changed_judgment_from_space",
+    "what_was_not_read_and_why",
+    "codex_needed_now",
+    "budget_gate",
+    "next_output_surface"
+  ],
+  "status": "HOLD_CANDIDATE_ONLY",
+  "where_to_attach": "Hermes execution-use foundation as a pre-execution/pre-response layer; optionally vectorfl-space-operator reference after approval."
+}

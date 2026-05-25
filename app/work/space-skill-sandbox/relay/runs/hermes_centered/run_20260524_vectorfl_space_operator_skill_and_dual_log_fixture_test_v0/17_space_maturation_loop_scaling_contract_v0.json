@@ -1,0 +1,80 @@
+{
+  "boundary": {
+    "authority_mutation_default": "NO",
+    "current_position_apply_default": "NO",
+    "direct_provider_call_default": "NO",
+    "folder_tree_mutation_default": "NO",
+    "promotion_default": "HOLD",
+    "registry_mutation_default": "NO",
+    "source_code_mutation_default": "NO"
+  },
+  "installed_skill": {
+    "name": "vectorfl-space-operator",
+    "path": "/Users/sungsookim/.codex/skills/vectorfl-space-operator",
+    "validation": "PASS_VECTORFL_SPACE_OPERATOR_SKILL_INSTALL_USER_APPROVED"
+  },
+  "loop_lanes": [
+    {
+      "lane": "L0_ON_DEMAND_SPACE_CHECK",
+      "trigger": [
+        "공간을 확인해",
+        "status after Hermes run",
+        "quick board latest artifact changes"
+      ],
+      "default_output": "CODEX_SPACE_CHECK_RETURN",
+      "user_attention_required": false
+    },
+    {
+      "lane": "L1_POST_HERMES_REENTRY_MATURATION",
+      "trigger": [
+        "Codex-readable reentry record exists",
+        "Hermes trace includes space_reference_delta",
+        "shared board says Codex waiting"
+      ],
+      "default_output": "CODEX_SPACE_MATURATION_RETURN",
+      "user_attention_required": false
+    },
+    {
+      "lane": "L2_PROGRAM_RESULT_SPACE_EFFECT_INSPECTION",
+      "trigger": [
+        "local fixture/test/program result exists",
+        "validation output exists",
+        "user says 계속 after a test result"
+      ],
+      "default_output": "PROGRAM_RESULT_SPACE_EFFECT_RETURN",
+      "user_attention_required": false
+    },
+    {
+      "lane": "L3_BATCH_PATTERN_MAINTENANCE",
+      "trigger": [
+        "multiple HOLD proposals accumulate",
+        "duplicate pressure appears",
+        "stale/superseded pressure appears",
+        "full-history pattern index becomes stale"
+      ],
+      "default_output": "PATTERN_MAINTENANCE_PROPOSAL",
+      "user_attention_required": false
+    },
+    {
+      "lane": "L4_GEMINI_AMBIGUITY_EXPLORATION",
+      "trigger": [
+        "bounded files cannot resolve layer ambiguity",
+        "multi-arc impact remains unclear",
+        "semantic flattening suspected",
+        "stale/current separation unclear"
+      ],
+      "default_output": "GEMINI_ASSISTED_SPACE_REVIEW",
+      "user_attention_required": true
+    }
+  ],
+  "packet_id": "17_space_maturation_loop_scaling_contract_v0",
+  "promotion_status": "INSTALLED_SKILL_OPERATION_HOLD_BY_DEFAULT",
+  "requires_user_attention_when": [
+    "skill install/update",
+    "authority/current-position/registry/source/folder mutation",
+    "promotion from HOLD to authority",
+    "provider-backed Gemini call without existing approval",
+    "external API/server/replay execution"
+  ],
+  "status": "LOOP_SCALING_CONTRACT_READY"
+}

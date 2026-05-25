@@ -1,0 +1,21 @@
+{
+  "readiness_id": "CLEANUP_PRECONDITION_READINESS_V0",
+  "created_at": "2026-05-25T12:14:02.337636+09:00",
+  "verdict": "V0_PRECONDITIONS_EXIST_BUT_CLEANUP_APPLY_BLOCKED",
+  "v0_completed": [
+    "M2 pointer/conflict",
+    "M4 freeze review",
+    "M7 hygiene dashboard",
+    "M8 trace/rollback plan"
+  ],
+  "blocked_by": [
+    "Codex read-only review not executed",
+    "cleanup blockers remain 63",
+    "archive_not_allowed remains 61",
+    "m8 trace seeds remain HOLD_TRACE_INSUFFICIENT",
+    "explicit apply approval absent"
+  ],
+  "next_safe_lane": "Codex read-only cleanup precondition review OR Hermes mock cleanup precondition review baseline",
+  "recommended_next": "Hermes mock cleanup precondition review baseline first, then Codex live only with explicit approval.",
+  "cleanup_apply_ready": false
+}

@@ -1,0 +1,40 @@
+{
+  "validation_id": "VALIDATION_P_PACKET_HANDOFF_ASSET_COMPACT_POINTER_VIEW_V0",
+  "created_at": "2026-05-25T14:27:03.897074+09:00",
+  "verdict": "PASS_P_PACKET_HANDOFF_COMPACT_POINTER_VIEW_WITH_ACTUAL_SEARCH_HOLD",
+  "actual_not_setup_only": true,
+  "checks_count": 12,
+  "checks_passed": 12,
+  "checks_failed": [],
+  "negative_tests": [
+    {
+      "name": "NEG_COMPACT_VIEW_AS_CODEX_CALL",
+      "claim": "compact packet view triggers Codex/Gemini call",
+      "caught": true,
+      "hold_reason": "HOLD_NO_LIVE_CALL"
+    },
+    {
+      "name": "NEG_PACKET_POINTER_AS_AUTHORITY",
+      "claim": "packet pointer becomes authority/source of truth",
+      "caught": true,
+      "hold_reason": "HOLD_POINTER_ONLY"
+    },
+    {
+      "name": "NEG_REPRESENTATIVES_AS_APPLY_LIST",
+      "claim": "representatives are apply/move list",
+      "caught": true,
+      "hold_reason": "HOLD_NO_MOVE_NO_APPLY"
+    }
+  ],
+  "scan_count": 11077,
+  "subtype_count": 7,
+  "mutation_statement": {
+    "file_move": false,
+    "archive": false,
+    "source_edit": false,
+    "authority_mutation": false,
+    "registry_mutation": false,
+    "current_position_mutation": false,
+    "promotion": false
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "check": "manifest_created",
+      "artifact": "shared_handoff/00_RUN_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "hermes_trace_created",
+      "artifact": "hermes_exec/20_HERMES_MERGE_EXECUTION_TRACE.json",
+      "pass": true
+    },
+    {
+      "check": "codex_readable_reentry_created",
+      "artifact": "shared_handoff/21_CODEX_READABLE_REENTRY_INDEX.json",
+      "pass": true
+    },
+    {
+      "check": "codex_maturation_and_space_effect_return_created",
+      "artifact": "codex_space/30_CODEX_MATURATION_AND_SPACE_EFFECT_RETURN.json",
+      "pass": true
+    },
+    {
+      "check": "namespace_write_zones_respected",
+      "hermes_trace_namespace": "hermes_exec",
+      "reentry_namespace": "shared_handoff",
+      "codex_return_namespace": "codex_space",
+      "pass": true
+    },
+    {
+      "check": "required_fields_present",
+      "missing_required_fields": [],
+      "pass": true
+    },
+    {
+      "check": "space_effect_enum_valid",
+      "observed": "PATTERN_STRENGTHENED",
+      "pass": true
+    },
+    {
+      "check": "maturation_judgment_valid",
+      "observed": "STRENGTHEN_EXISTING_PATTERN",
+      "pass": true
+    },
+    {
+      "check": "target_pattern_present",
+      "observed": "P08_SPACE_OPERATOR_GOVERNANCE_AND_CHANNEL",
+      "pass": true
+    },
+    {
+      "check": "gemini_not_used_for_clear_reentry_fixture",
+      "observed": "NO",
+      "pass": true
+    },
+    {
+      "check": "hold_boundary_preserved",
+      "authority_mutation": "NO",
+      "current_position_apply": "NO",
+      "registry_mutation": "NO",
+      "folder_tree_mutation": "NO",
+      "source_code_mutation": "NO",
+      "promotion": "HOLD",
+      "pass": true
+    },
+    {
+      "check": "skill_candidate_not_installed_or_promoted",
+      "pass": true
+    }
+  ],
+  "checks_count": 12,
+  "hashes": {
+    "00_RUN_MANIFEST.json": "da663155877a276bca40d37d6522030e764d04c45b1349c3402efcc31a58689b",
+    "20_HERMES_MERGE_EXECUTION_TRACE.json": "774e35016538fbd2cd7e09db1819c917fadad1b37f2712ee08f536ab7f969102",
+    "21_CODEX_READABLE_REENTRY_INDEX.json": "baf9a0e52a1ce038c41e6128906561fac2329b63dd22d33a038baa2fb3d33c1c",
+    "30_CODEX_MATURATION_AND_SPACE_EFFECT_RETURN.json": "0ad4dc731e25763ee720e80e749902bd138095b5ab456e46d5d6c7fe4a72c080"
+  },
+  "next_safe_lane": "HERMES_MERGE_REAL_REENTRY_FIXTURE_RESULT_OR_OPTIONAL_INSTALL_SKILL_WITH_APPROVAL_V0",
+  "promotion_status": "HOLD",
+  "test_command_result": {
+    "boundary_ok": true,
+    "effect_enum_ok": true,
+    "gemini_ok": true,
+    "missing_required_fields": [],
+    "pattern_ok": true,
+    "required_fields_ok": true,
+    "return_namespace": true,
+    "reentry_namespace": true,
+    "trace_namespace": true,
+    "verdict": "PASS"
+  },
+  "verdict": "PASS_REAL_REENTRY_FIXTURE_FOR_SPACE_OPERATOR_SKILL_WITH_HOLD"
+}

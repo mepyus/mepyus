@@ -1,0 +1,323 @@
+{
+  "space_id": "VECTORTUBE_CONTEXTUAL_MINI_SPACE_5LqCwO7x_Gc_3012s_V0",
+  "created_at": "2026-05-25T08:10:30.679116+09:00",
+  "status": "MINI_SPACE_CANDIDATE_HOLD",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=5LqCwO7x_Gc&t=3012s",
+    "video_id": "5LqCwO7x_Gc",
+    "focus_window": "48:10-54:50",
+    "excerpt_path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/raw/12_timestamp_excerpt_around_3012s_repaired.md",
+    "source_card": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_youtube_transcript_space_learning_project_buildup_v0/vectortube_v1_seed_space/seed_runs/seed_5LqCwO7x_Gc_20260525/cards/09_seed_source_card_5LqCwO7x_Gc_repaired_v0.json"
+  },
+  "interpretation_shift": "이 자료는 YouTube 정리/요약 대상이 아니라, AI 자동화 성공담·실무 파이프라인·품질 리스크·플랫폼 규칙 긴장이 한 덩어리로 얽힌 작은 공간으로 읽는다.",
+  "space_question": "비개발자/실무자가 Claude Code류 도구로 자동화 시스템을 만들 때, 어떤 층위들이 동시에 발생하며 어디에서 힘과 위험이 생기는가?",
+  "evidence_snippets": [
+    {
+      "id": "E01",
+      "t": "48:48-49:12",
+      "quote": "SNS 자동화 연계, 업로드, SEO, 제목/자막/설명란/썸네일, 테스트가 끝나면 딸깍 형태로 계정 운영"
+    },
+    {
+      "id": "E02",
+      "t": "50:12-50:17",
+      "quote": "질문: 여기 일관성 유지는 어떻게 되는지"
+    },
+    {
+      "id": "E03",
+      "t": "50:23-50:44",
+      "quote": "캐릭터 일관성은 지정하고, 분할 과정/AI 분석에 사전 스크립트를 넣어 일관성 유지 스크립트를 계속 업그레이드"
+    },
+    {
+      "id": "E04",
+      "t": "50:44-51:12",
+      "quote": "아직 대외적으로 깔끔한 일관성은 아니며, 스타일/캐릭터/스크립트/이미지 프롬프트를 함께 줘서 유지"
+    },
+    {
+      "id": "E05",
+      "t": "51:20-52:16",
+      "quote": "교육 전에는 메뉴/화면을 일일이 만들었지만, 지금은 10~20분/20~30분에 화면 구성이 가능"
+    },
+    {
+      "id": "E06",
+      "t": "52:52-53:16",
+      "quote": "썸네일/채널 참고자료 확인, YouTube API 대신 크롤링 데이터 저장"
+    },
+    {
+      "id": "E07",
+      "t": "53:16-53:33",
+      "quote": "API 사용량 때문에 크롤링을 미리 해두고, 10여 대 컴퓨터가 크롤링 작업에 투입"
+    },
+    {
+      "id": "E08",
+      "t": "53:39-54:09",
+      "quote": "YouTube 크롤링 블락 질문에 Claude Code가 우회해 수집, 78만 채널 수집, 10개 서버에서 우회 수집"
+    },
+    {
+      "id": "E09",
+      "t": "54:09-54:50",
+      "quote": "신규 채널 수집/기존 채널 업데이트/뉴스·정보 수집 서버 분리, VM/IP 분산 운용"
+    }
+  ],
+  "entities": [
+    {
+      "id": "P1",
+      "name": "발표자/빌더",
+      "role": "자동화 시스템 구축 경험자"
+    },
+    {
+      "id": "T1",
+      "name": "Claude Code",
+      "role": "개발/오류수정/자동화 실행 보조 도구"
+    },
+    {
+      "id": "S1",
+      "name": "영상 자동화 파이프라인",
+      "role": "이미지/영상 생성→렌더링→업로드→SEO 흐름"
+    },
+    {
+      "id": "D1",
+      "name": "크롤링 데이터 저장소",
+      "role": "소재/썸네일/채널 참고를 위한 수집 자료"
+    },
+    {
+      "id": "PL1",
+      "name": "YouTube/API/크롤링 제한",
+      "role": "플랫폼 규칙/제한/차단의 장"
+    },
+    {
+      "id": "Q1",
+      "name": "일관성 유지 문제",
+      "role": "자동 생성 시스템의 품질 병목"
+    },
+    {
+      "id": "I1",
+      "name": "VM/IP/서버 분산",
+      "role": "수집 운영 인프라"
+    }
+  ],
+  "relations": [
+    {
+      "from": "P1",
+      "rel": "uses",
+      "to": "T1",
+      "evidence": [
+        "E05"
+      ]
+    },
+    {
+      "from": "T1",
+      "rel": "accelerates_building",
+      "to": "S1",
+      "evidence": [
+        "E05"
+      ]
+    },
+    {
+      "from": "S1",
+      "rel": "depends_on",
+      "to": "Q1",
+      "evidence": [
+        "E02",
+        "E03",
+        "E04"
+      ]
+    },
+    {
+      "from": "S1",
+      "rel": "uses",
+      "to": "D1",
+      "evidence": [
+        "E06",
+        "E07"
+      ]
+    },
+    {
+      "from": "D1",
+      "rel": "constrained_by",
+      "to": "PL1",
+      "evidence": [
+        "E06",
+        "E07",
+        "E08"
+      ]
+    },
+    {
+      "from": "PL1",
+      "rel": "drives",
+      "to": "I1",
+      "evidence": [
+        "E08",
+        "E09"
+      ]
+    },
+    {
+      "from": "I1",
+      "rel": "increases",
+      "to": "operational_power_and_risk",
+      "evidence": [
+        "E09"
+      ]
+    }
+  ],
+  "layers": {
+    "L0_surface_claims": {
+      "reading": "표면은 자동 영상 제작/업로드 시스템 데모와 질의응답이다.",
+      "evidence": [
+        "E01",
+        "E02",
+        "E05"
+      ]
+    },
+    "L1_conceptual": {
+      "reading": "핵심 개념은 딸깍 자동화, 일관성 유지, 스크립트-프롬프트-이미지 결합, 크롤링 기반 콘텐츠 운영이다.",
+      "evidence": [
+        "E01",
+        "E03",
+        "E06"
+      ]
+    },
+    "L2_information_structure": {
+      "reading": "자료는 영상 요약 텍스트가 아니라 파이프라인의 정보흐름이다: script/style/character prompt + crawl DB + render/upload metadata.",
+      "evidence": [
+        "E03",
+        "E04",
+        "E06",
+        "E07"
+      ]
+    },
+    "L3_context_background": {
+      "reading": "Claude Code 교육 이후 비개발자/실무자가 자동화 시스템을 빠르게 구축하는 AI-native 업무 전환 맥락이다.",
+      "evidence": [
+        "E05"
+      ]
+    },
+    "L4_emotional_rhetorical": {
+      "reading": "효율, 놀라움, “대단하다”, “딸깍” 같은 성취감 수사가 강하지만, 이 감정이 위험층위를 가릴 수 있다.",
+      "evidence": [
+        "E01",
+        "E05"
+      ]
+    },
+    "L5_power_authority": {
+      "reading": "YouTube/API/차단/우회/IP 분산은 플랫폼 규칙, 권한, 이용조건, 자동화 욕망 사이의 권력층위를 만든다.",
+      "evidence": [
+        "E07",
+        "E08",
+        "E09"
+      ]
+    },
+    "L6_practical_operational": {
+      "reading": "실행 층위는 확장프로그램, 생성, 렌더링, 업로드, SEO, 크롤링, 업데이트 서버, VM/IP 운영으로 구성된다.",
+      "evidence": [
+        "E01",
+        "E06",
+        "E09"
+      ]
+    },
+    "L7_counter_uncertainty": {
+      "reading": "일관성은 아직 미완성이고, 오류·품질·크롤링 차단·API 사용량·우회 윤리/계정 리스크가 핵심 불확실성이다.",
+      "evidence": [
+        "E04",
+        "E07",
+        "E08"
+      ]
+    },
+    "L8_vectorfl_mapping": {
+      "reading": "이 source는 “자동화 사례 요약”으로 넣으면 안 되고, 성공/품질/권한/운영/위험이 얽힌 mini-space로 격리해야 한다.",
+      "evidence": [
+        "E01",
+        "E04",
+        "E08",
+        "E09"
+      ]
+    }
+  },
+  "tensions": [
+    {
+      "id": "TENSION_1",
+      "name": "딸깍 자동화 vs 품질 일관성",
+      "sides": [
+        "업로드/SEO까지 일괄 자동화",
+        "캐릭터/스타일 일관성은 아직 어려움"
+      ],
+      "evidence": [
+        "E01",
+        "E04"
+      ]
+    },
+    {
+      "id": "TENSION_2",
+      "name": "개발속도 증가 vs 오류/검증 부담",
+      "sides": [
+        "20~30분에 화면 구성",
+        "오류 체크/마지막 수정은 필요"
+      ],
+      "evidence": [
+        "E05"
+      ]
+    },
+    {
+      "id": "TENSION_3",
+      "name": "API 사용량 절약 vs 크롤링/우회 리스크",
+      "sides": [
+        "API 비용/사용량 회피",
+        "차단 우회/VM/IP 분산 운영"
+      ],
+      "evidence": [
+        "E07",
+        "E08",
+        "E09"
+      ]
+    },
+    {
+      "id": "TENSION_4",
+      "name": "개인 실험 vs 플랫폼/사회적 책임",
+      "sides": [
+        "개인적으로 욕심 있는 프로젝트",
+        "대규모 채널 수집/업로드 자동화가 생태계에 주는 영향"
+      ],
+      "evidence": [
+        "E01",
+        "E08"
+      ]
+    }
+  ],
+  "mini_space_shape": {
+    "center": "AI 자동화 파이프라인이 “가능해진다”는 사건",
+    "inner_ring": [
+      "스크립트/프롬프트/이미지/렌더링/업로드/SEO"
+    ],
+    "middle_ring": [
+      "Claude Code 교육 효과",
+      "비개발자 실행력",
+      "데이터 수집/참고자료 루프",
+      "일관성 품질 병목"
+    ],
+    "outer_ring": [
+      "YouTube 플랫폼 규칙",
+      "API/크롤링 제한",
+      "우회/서버/IP 인프라",
+      "윤리/계정/운영 리스크"
+    ],
+    "guard_ring": [
+      "HOLD",
+      "timestamp evidence",
+      "no authority promotion",
+      "no direct imitation of bypass tactics"
+    ]
+  },
+  "negative_validation": {
+    "not_enough_to_claim": "이 구간만으로 전체 영상/발표자의 전체 의도를 확정하면 안 됨.",
+    "risky_interpretation": "크롤링 우회 방법을 실행 가이드로 해석하면 안 됨. 여기서는 플랫폼 권력/운영 리스크 층위의 evidence로만 다룸.",
+    "needed_next_source": "플랫폼 정책/API 제한/크롤링 윤리/자동 생성 콘텐츠 품질 실패 사례가 counter layer로 필요."
+  },
+  "hold_boundaries": {
+    "summary_only": false,
+    "search_executed": false,
+    "main_space_mutation": false,
+    "authority_mutation": false,
+    "obsidian_write": false,
+    "codex_gemini_call": false,
+    "promotion": "HOLD"
+  }
+}

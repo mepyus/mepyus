@@ -1,0 +1,220 @@
+{
+  "rubric_id": "VECTORFL_PROMOTION_RUBRIC_V0_M4_M8_GOVERNANCE_TRACE",
+  "created_at": "2026-05-25T11:29:32.609594+09:00",
+  "verdict": "PASS_PROMOTION_RUBRIC_V0_WITH_HOLD",
+  "purpose": "VectorFL 자산을 inbox/candidate/matured/authority로 승격·보류·격하하는 기준을 명문화한다. M4 governance와 M8 trace/observability를 필수 증거 축으로 연결한다.",
+  "source_references": {
+    "rollup": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/rollup/00_top60_cluster_rollup_v0_1.json",
+      "exists": true,
+      "sha256": "a8907c2a638f3e195d18d2ecf1d0ddd3f210d497ff6d088eafee7fb27fe9995d"
+    },
+    "skeleton": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/skeleton/01_vectorfl_eight_module_saas_skeleton_v0_1.json",
+      "exists": true,
+      "sha256": "edc853af03957a00533ce51cf16f1e76dd6edfdc5e4d54a3e4be90a67c3eca56"
+    },
+    "cleanup_preconditions": {
+      "path": "/Users/sungsookim/universe/vectorfl_replica/app/work/space-skill-sandbox/relay/runs/hermes_centered/run_20260525_top60_cluster_rollup_v0_1_eight_module_skeleton/cleanup_preconditions/02_folder_cleanup_preconditions_v0_1.json",
+      "exists": true,
+      "sha256": "1e3bd4d22563c7f18b80aea10094a39434277fed8a34472e57262e4d33c6c2bc"
+    }
+  },
+  "global_principles": [
+    "receipt/candidate/spec/packet은 authority가 아니다",
+    "authority/current-position/registry mutation은 별도 명시 승인 전 HOLD",
+    "promotion은 상태 전환이며 파일 이동이나 registry 수정을 자동으로 의미하지 않는다",
+    "M4는 승격/보류/충돌/권위 경계 판단을 담당한다",
+    "M8은 validation/receipt/trace/timing/drift/quality evidence를 제공한다",
+    "M2/M7/M8/M4 없이는 폴더 정리 apply 금지",
+    "Codex/Gemini live call 없이도 read-only handoff surface는 만들 수 있다"
+  ],
+  "status_definitions": {
+    "INBOX": {
+      "meaning": "검역/회수 대기 상태. 자산은 공간 안으로 들어왔지만 아직 의미·위치·권위가 확정되지 않음.",
+      "allowed_inputs": [
+        "external/user original",
+        "run artifact",
+        "receipt",
+        "candidate note",
+        "mini-space",
+        "handoff packet",
+        "validation output"
+      ],
+      "entry_requirements": [
+        "source pointer exists",
+        "provenance/evidence/interpretation separation attempted",
+        "authority claim explicitly marked NOT_AUTHORITY",
+        "HOLD marker present",
+        "M8 minimal receipt or source hash present"
+      ],
+      "allowed_actions": [
+        "read",
+        "classify",
+        "add pointer",
+        "create receipt",
+        "route to Codex/Gemini/Hermes",
+        "mark missing evidence"
+      ],
+      "blocked_actions": [
+        "authority mutation",
+        "registry/current-position mutation",
+        "folder move/archive",
+        "promotion without review",
+        "secret preservation"
+      ],
+      "exit_to_candidate": [
+        "source exists and readable",
+        "M2 route candidate exists",
+        "M3 precheck if execution-related",
+        "M8 minimal validation exists",
+        "no immediate authority-sensitive blocker"
+      ]
+    },
+    "CANDIDATE": {
+      "meaning": "공간에 유용할 가능성이 확인된 후보. 아직 core/authority는 아님.",
+      "entry_requirements": [
+        "INBOX requirements passed",
+        "M2 placement hypothesis",
+        "layer/LACL tags assigned",
+        "conflict/duplicate check started",
+        "M4 boundary says promotion not blocked",
+        "M8 validation receipt present"
+      ],
+      "allowed_actions": [
+        "precise reading",
+        "relation map",
+        "gap map",
+        "bounded Gemini exploration",
+        "Codex placement/conflict/gap review",
+        "dry-run precheck"
+      ],
+      "blocked_actions": [
+        "authority/current-position/registry mutation",
+        "unreviewed merge",
+        "file move except explicit cleanup apply",
+        "treating popularity/agent output as authority"
+      ],
+      "exit_to_matured": [
+        "Codex placement/conflict/gap review complete",
+        "M8 trace shows validation passed or warnings acknowledged",
+        "M4 promotion rubric approves matured status",
+        "dependencies/gaps listed",
+        "rollback/decay policy exists if cleanup-related"
+      ]
+    },
+    "MATURED": {
+      "meaning": "반복 검토와 위치/충돌/증거 확인을 거쳐 운영에 사용할 수 있는 성숙 자산. 그래도 authority는 아님.",
+      "entry_requirements": [
+        "CANDIDATE requirements passed",
+        "stable role/route assigned",
+        "conflict/gap map resolved or explicitly HOLDed",
+        "M8 quality trace adequate",
+        "operator-load acceptable",
+        "M4 approval receipt for matured status"
+      ],
+      "allowed_actions": [
+        "use as operating surface",
+        "derive templates/specs",
+        "include in SaaS skeleton",
+        "prepare apply manifest",
+        "prepare Codex handoff"
+      ],
+      "blocked_actions": [
+        "silent authority promotion",
+        "current-position overwrite",
+        "registry mutation without explicit approval",
+        "cleanup apply without rollback+validation"
+      ],
+      "exit_to_authority": [
+        "explicit user approval",
+        "M4 authority boundary review",
+        "M8 post-review trace",
+        "rollback path exists where applicable",
+        "current-position/registry target identified and frozen before mutation"
+      ]
+    },
+    "AUTHORITY": {
+      "meaning": "공식 기준/현재위치/registry 등에 반영되는 권위 자산. 가장 좁고 엄격한 상태.",
+      "entry_requirements": [
+        "MATURED requirements passed",
+        "explicit promotion approval",
+        "target authority surface identified",
+        "M4 authority gate PASS",
+        "M8 validation+receipt+trace complete",
+        "rollback/revert path documented",
+        "post-apply validation required"
+      ],
+      "allowed_actions": [
+        "authorized registry/current-position/authority update",
+        "versioned pointer update",
+        "post-apply validation",
+        "announce current authority pointer"
+      ],
+      "blocked_actions": [
+        "implicit promotion",
+        "bulk mutation",
+        "unbounded agent rewrite",
+        "secret inclusion",
+        "promotion from raw receipt/candidate directly"
+      ],
+      "post_conditions": [
+        "post-apply validation PASS or rollback",
+        "receipt stored",
+        "previous authority pointer preserved",
+        "changed_judgment recorded"
+      ]
+    }
+  },
+  "demotion_rules": {
+    "authority_to_matured": "post-apply validation fails, conflict discovered, source authority invalidated, or user revokes authority",
+    "matured_to_candidate": "gap unresolved, Codex placement conflict, stale dependency, operator-load too high",
+    "candidate_to_inbox": "missing source/provenance, ambiguous route, insufficient M8 trace, duplicate not resolved",
+    "inbox_to_rejected_or_decay": "unreadable source, unsafe secret, out-of-scope, repeated validation failure, explicit user discard"
+  },
+  "minimum_evidence_by_transition": {
+    "INBOX_to_CANDIDATE": [
+      "source pointer/hash",
+      "provenance split",
+      "layer/LACL preliminary tags",
+      "M2 route hypothesis",
+      "M8 minimal validation"
+    ],
+    "CANDIDATE_to_MATURED": [
+      "Codex placement/conflict/gap review",
+      "M4 matured approval receipt",
+      "M8 validation trace",
+      "relation map",
+      "gap/rollback/decay policy if relevant"
+    ],
+    "MATURED_to_AUTHORITY": [
+      "explicit user approval",
+      "M4 authority gate PASS",
+      "target authority surface",
+      "M8 post-apply validation plan",
+      "rollback/revert manifest",
+      "post-apply receipt"
+    ],
+    "ANY_to_DEMOTE": [
+      "failure receipt",
+      "conflict note",
+      "changed_judgment",
+      "next safe state"
+    ]
+  },
+  "hold_markers": {
+    "HOLD_NOT_AUTHORITY": "may be read/routed but not treated as source of truth",
+    "HOLD_AUTHORITY_SENSITIVE": "touches authority/current-position/registry; manual review required",
+    "HOLD_CLEANUP_PRECONDITION": "folder move/archive blocked until M2/M7/M8/M4 preconditions pass",
+    "HOLD_MISSING_EVIDENCE": "source/provenance/trace insufficient",
+    "HOLD_CONFLICT": "dedupe/conflict/gap unresolved"
+  },
+  "non_goals": [
+    "no file move",
+    "no authority mutation",
+    "no registry mutation",
+    "no current-position mutation",
+    "no live Codex/Gemini call",
+    "no promotion apply"
+  ]
+}

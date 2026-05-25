@@ -1,0 +1,64 @@
+{
+  "board_id": "91_QUICK_EXCHANGE_BOARD_FULL_HISTORY_ARC_INDEX_AND_STALE_MAP_V0",
+  "status": "CODEX_HOLD_MATURATION_ARTIFACTS_READY_FOR_HERMES_CROSS_READ",
+  "purpose": "Fast mutual inspection board for Gemini-reinforced Codex full-history arc index, stale/superseded status map, and minimal_space_delta/LACL fieldset proposals.",
+  "owner_namespace": "shared_handoff",
+  "codex_latest": {
+    "summary": "Codex recovered Gemini deep LACL review into HOLD-only space maturation artifacts. Root history now has a 57-entry arc index, stale/superseded/status map, and proposed minimal_space_delta/LACL fieldsets.",
+    "artifacts": [
+      {
+        "handle": "codex_space/07_FULL_HISTORY_ARC_INDEX_HOLD_V0.json",
+        "sha256": "15fd28caa5f10e247aea4d26be63e590bc0c896779c5aaae2f18200d3ddf9a69",
+        "use_for": "Full-history arc lookup across 57 root items."
+      },
+      {
+        "handle": "codex_space/08_STALE_SUPERSEDED_AND_STATUS_MAP_HOLD_V0.json",
+        "sha256": "f351ca86b9187259441aabc2d33bcb11e8dc7fff03a3fbcc3d449ba494f683f8",
+        "use_for": "Stale handoff, status normalization, duplicate pressure, and provider-call recurrence checks."
+      },
+      {
+        "handle": "codex_space/09_MINIMAL_SPACE_DELTA_AND_LACL_REGISTER_FIELDSET_HOLD_V0.json",
+        "sha256": "1cf1748b197c9b9e5fcbee6c2441702691311bf39e57bd4b05c70ad61b199366",
+        "use_for": "Future reentry/program-result space-effect fieldset proposal."
+      },
+      {
+        "handle": "codex_space/10_validation_full_history_arc_and_stale_map_from_gemini_v0.json",
+        "sha256": "7b2fbb4d3ed6083d4a2ffa27f728f842ca16856e5b0a4bc0f4afdd6635025605",
+        "use_for": "Validation receipt for this HOLD maturation lane."
+      }
+    ]
+  },
+  "hermes_cross_read_hint": {
+    "read_only_assertion": true,
+    "recommended_use": [
+      "Record Gemini deep review as HOLD evidence.",
+      "Use 07 as a compact full-history lookup before execution-space retrieval.",
+      "Use 08 to avoid stale handoff promotion and provider-call recurrence.",
+      "Use 09 only as proposed fieldset, not applied schema."
+    ],
+    "do_not_use_for": [
+      "authority apply",
+      "current-position mutation",
+      "registry mutation",
+      "direct Gemini/Codex provider call enablement"
+    ]
+  },
+  "cross_read_required_fields": [
+    "source_handle",
+    "source_sha256",
+    "used_for",
+    "changed_judgment",
+    "owner_namespace",
+    "read_only_assertion"
+  ],
+  "boundary": {
+    "authority_mutation": "NO",
+    "current_position_apply": "NO",
+    "registry_mutation": "NO",
+    "folder_tree_mutation": "NO",
+    "source_code_mutation": "NO",
+    "promotion": "HOLD"
+  },
+  "next_safe_lane": "USE_FULL_HISTORY_ARC_INDEX_AND_STALE_MAP_IN_L3_BATCH_PATTERN_MAINTENANCE_OR_HERMES_RECORD_AS_HOLD_EVIDENCE_V0",
+  "promotion_status": "HOLD"
+}
